@@ -2245,6 +2245,533 @@ class GetConversationUrlResponse(TeaModel):
         return self
 
 
+class GetFamilySchoolConversationMsgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFamilySchoolConversationMsgRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        msg_types: List[int] = None,
+        next_token: int = None,
+        open_conversation_id: str = None,
+        union_id: str = None,
+    ):
+        # 查询最大消息数
+        self.max_results = max_results
+        # 要查询的消息类型
+        self.msg_types = msg_types
+        # 下一次查询的游标，毫秒值
+        self.next_token = next_token
+        # 接收卡片的群的openConversationId
+        self.open_conversation_id = open_conversation_id
+        # 用户唯一标识
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.msg_types is not None:
+            result['msgTypes'] = self.msg_types
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('msgTypes') is not None:
+            self.msg_types = m.get('msgTypes')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        file_type: str = None,
+        media_id: str = None,
+        size: str = None,
+        url: str = None,
+        video_pic_media_id: str = None,
+    ):
+        # 消息mediaId文件名称
+        self.file_name = file_name
+        # 消息mediaId文件类型
+        self.file_type = file_type
+        # 消息mediaId
+        self.media_id = media_id
+        # 消息mediaId文件大小
+        self.size = size
+        # 消息mediaId对应的下载地址
+        self.url = url
+        # 视频文件缩略图mediaId
+        self.video_pic_media_id = video_pic_media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.size is not None:
+            result['size'] = self.size
+        if self.url is not None:
+            result['url'] = self.url
+        if self.video_pic_media_id is not None:
+            result['videoPicMediaId'] = self.video_pic_media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('videoPicMediaId') is not None:
+            self.video_pic_media_id = m.get('videoPicMediaId')
+        return self
+
+
+class GetFamilySchoolConversationMsgResponseBodyMessages(TeaModel):
+    def __init__(
+        self,
+        content_type: int = None,
+        create_at: int = None,
+        media_models: List[GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels] = None,
+        open_msg_id: str = None,
+    ):
+        # 消息类型，2-图片、202视频、3100富文本消息
+        self.content_type = content_type
+        # 消息的创建时间
+        self.create_at = create_at
+        # media文件对象列表
+        self.media_models = media_models
+        # 消息的唯一标识
+        self.open_msg_id = open_msg_id
+
+    def validate(self):
+        if self.media_models:
+            for k in self.media_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        result['mediaModels'] = []
+        if self.media_models is not None:
+            for k in self.media_models:
+                result['mediaModels'].append(k.to_map() if k else None)
+        if self.open_msg_id is not None:
+            result['openMsgId'] = self.open_msg_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        self.media_models = []
+        if m.get('mediaModels') is not None:
+            for k in m.get('mediaModels'):
+                temp_model = GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels()
+                self.media_models.append(temp_model.from_map(k))
+        if m.get('openMsgId') is not None:
+            self.open_msg_id = m.get('openMsgId')
+        return self
+
+
+class GetFamilySchoolConversationMsgResponseBody(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        has_more: str = None,
+        messages: List[GetFamilySchoolConversationMsgResponseBodyMessages] = None,
+        next_token: str = None,
+        open_conversation_id: str = None,
+    ):
+        # 企业名称，corp123
+        self.corp_id = corp_id
+        # 是否有更多数据
+        self.has_more = has_more
+        # 消息数据
+        self.messages = messages
+        # 查询下次消息的游标,时间毫秒值
+        self.next_token = next_token
+        # 开放群Id
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        if self.messages:
+            for k in self.messages:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['messages'] = []
+        if self.messages is not None:
+            for k in self.messages:
+                result['messages'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.messages = []
+        if m.get('messages') is not None:
+            for k in m.get('messages'):
+                temp_model = GetFamilySchoolConversationMsgResponseBodyMessages()
+                self.messages.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetFamilySchoolConversationMsgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetFamilySchoolConversationMsgResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetFamilySchoolConversationMsgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFamilySchoolConversationsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFamilySchoolConversationsRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: int = None,
+        union_id: str = None,
+    ):
+        # 获取家校群数量
+        self.max_results = max_results
+        # 时间的毫秒值，分页游标
+        self.next_token = next_token
+        # 用户身份ID
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetFamilySchoolConversationsResponseBodyGroupInfoList(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        dept_name_chain: List[str] = None,
+        group_name: str = None,
+        group_type: str = None,
+        open_conversation_id: str = None,
+    ):
+        # 企业名称
+        self.corp_id = corp_id
+        # 部门名称链
+        self.dept_name_chain = dept_name_chain
+        # 群名称
+        self.group_name = group_name
+        # 群类型
+        self.group_type = group_type
+        # 群开放ID
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.dept_name_chain is not None:
+            result['deptNameChain'] = self.dept_name_chain
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deptNameChain') is not None:
+            self.dept_name_chain = m.get('deptNameChain')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetFamilySchoolConversationsResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_info_list: List[GetFamilySchoolConversationsResponseBodyGroupInfoList] = None,
+        has_more: str = None,
+        next_token: str = None,
+    ):
+        self.group_info_list = group_info_list
+        # 是否还有数据
+        self.has_more = has_more
+        # 返回下一页游标
+        self.next_token = next_token
+
+    def validate(self):
+        if self.group_info_list:
+            for k in self.group_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupInfoList'] = []
+        if self.group_info_list is not None:
+            for k in self.group_info_list:
+                result['groupInfoList'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_info_list = []
+        if m.get('groupInfoList') is not None:
+            for k in m.get('groupInfoList'):
+                temp_model = GetFamilySchoolConversationsResponseBodyGroupInfoList()
+                self.group_info_list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetFamilySchoolConversationsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetFamilySchoolConversationsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetFamilySchoolConversationsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetInterconnectionUrlHeaders(TeaModel):
     def __init__(
         self,

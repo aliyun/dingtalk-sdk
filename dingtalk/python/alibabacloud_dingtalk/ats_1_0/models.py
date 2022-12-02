@@ -952,9 +952,11 @@ class CollectResumeDetailRequestResumeDataWorkExperiences(TeaModel):
         company_name: str = None,
         department: str = None,
         description: str = None,
+        end_date: str = None,
         job_title: str = None,
         location: str = None,
         responsibility: str = None,
+        start_date: str = None,
     ):
         # 公司名称
         self.company_name = company_name
@@ -962,12 +964,14 @@ class CollectResumeDetailRequestResumeDataWorkExperiences(TeaModel):
         self.department = department
         # 工作详情描述
         self.description = description
+        self.end_date = end_date
         # 职位名称
         self.job_title = job_title
         # 工作地点
         self.location = location
         # 工作职责
         self.responsibility = responsibility
+        self.start_date = start_date
 
     def validate(self):
         pass
@@ -984,12 +988,16 @@ class CollectResumeDetailRequestResumeDataWorkExperiences(TeaModel):
             result['department'] = self.department
         if self.description is not None:
             result['description'] = self.description
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
         if self.job_title is not None:
             result['jobTitle'] = self.job_title
         if self.location is not None:
             result['location'] = self.location
         if self.responsibility is not None:
             result['responsibility'] = self.responsibility
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
         return result
 
     def from_map(self, m: dict = None):
@@ -1000,12 +1008,16 @@ class CollectResumeDetailRequestResumeDataWorkExperiences(TeaModel):
             self.department = m.get('department')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
         if m.get('jobTitle') is not None:
             self.job_title = m.get('jobTitle')
         if m.get('location') is not None:
             self.location = m.get('location')
         if m.get('responsibility') is not None:
             self.responsibility = m.get('responsibility')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
         return self
 
 

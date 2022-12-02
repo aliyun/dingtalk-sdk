@@ -7207,6 +7207,76 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}', 'json', req, runtime)
         )
 
+    def query_doctor_details_by_job_number(
+        self,
+        job_number: str,
+        request: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberRequest,
+    ) -> dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders()
+        return self.query_doctor_details_by_job_number_with_options(job_number, request, headers, runtime)
+
+    async def query_doctor_details_by_job_number_async(
+        self,
+        job_number: str,
+        request: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberRequest,
+    ) -> dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders()
+        return await self.query_doctor_details_by_job_number_with_options_async(job_number, request, headers, runtime)
+
+    def query_doctor_details_by_job_number_with_options(
+        self,
+        job_number: str,
+        request: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberRequest,
+        headers: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse:
+        UtilClient.validate_model(request)
+        job_number = OpenApiUtilClient.get_encode_param(job_number)
+        query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse(),
+            self.do_roarequest('QueryDoctorDetailsByJobNumber', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors/{job_number}', 'json', req, runtime)
+        )
+
+    async def query_doctor_details_by_job_number_with_options_async(
+        self,
+        job_number: str,
+        request: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberRequest,
+        headers: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse:
+        UtilClient.validate_model(request)
+        job_number = OpenApiUtilClient.get_encode_param(job_number)
+        query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse(),
+            await self.do_roarequest_async('QueryDoctorDetailsByJobNumber', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors/{job_number}', 'json', req, runtime)
+        )
+
     def query_group_info(
         self,
         group_id: str,

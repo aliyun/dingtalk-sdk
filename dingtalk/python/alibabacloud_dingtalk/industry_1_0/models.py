@@ -18770,6 +18770,493 @@ class QueryDepartmentInfoResponse(TeaModel):
         return self
 
 
+class QueryDoctorDetailsByJobNumberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDoctorDetailsByJobNumberRequest(TeaModel):
+    def __init__(
+        self,
+        month_mark: str = None,
+    ):
+        # 按月安排
+        self.month_mark = month_mark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.month_mark is not None:
+            result['monthMark'] = self.month_mark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('monthMark') is not None:
+            self.month_mark = m.get('monthMark')
+        return self
+
+
+class QueryDoctorDetailsByJobNumberResponseBodyContentDeptList(TeaModel):
+    def __init__(
+        self,
+        category_name: str = None,
+        dept_id: int = None,
+        dept_name: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        relation_id: int = None,
+    ):
+        # 科室大类名称
+        self.category_name = category_name
+        # 科室id
+        self.dept_id = dept_id
+        # 科室名称
+        self.dept_name = dept_name
+        # 创建时间
+        self.gmt_create = gmt_create
+        # 修改时间
+        self.gmt_modified = gmt_modified
+        # 人科关系关联id
+        self.relation_id = relation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.relation_id is not None:
+            result['relationId'] = self.relation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('relationId') is not None:
+            self.relation_id = m.get('relationId')
+        return self
+
+
+class QueryDoctorDetailsByJobNumberResponseBodyContentGroupList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        dept_name: str = None,
+        group_id: int = None,
+        group_name: str = None,
+        is_assess_group: str = None,
+        is_leader: bool = None,
+        relation_id: int = None,
+    ):
+        # 科室id
+        self.dept_id = dept_id
+        # 科室名称
+        self.dept_name = dept_name
+        # 医疗组id
+        self.group_id = group_id
+        # 医疗组名称
+        self.group_name = group_name
+        # 用户在该医疗组是否为考核医疗组
+        self.is_assess_group = is_assess_group
+        # 用户在该医疗组是否为组长
+        self.is_leader = is_leader
+        # 人组关系关联id
+        self.relation_id = relation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.is_assess_group is not None:
+            result['isAssessGroup'] = self.is_assess_group
+        if self.is_leader is not None:
+            result['isLeader'] = self.is_leader
+        if self.relation_id is not None:
+            result['relationId'] = self.relation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('isAssessGroup') is not None:
+            self.is_assess_group = m.get('isAssessGroup')
+        if m.get('isLeader') is not None:
+            self.is_leader = m.get('isLeader')
+        if m.get('relationId') is not None:
+            self.relation_id = m.get('relationId')
+        return self
+
+
+class QueryDoctorDetailsByJobNumberResponseBodyContentJobStatus(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        status_name: str = None,
+    ):
+        # 状态编码
+        self.code = code
+        # 状态名称
+        self.status_name = status_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.status_name is not None:
+            result['statusName'] = self.status_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('statusName') is not None:
+            self.status_name = m.get('statusName')
+        return self
+
+
+class QueryDoctorDetailsByJobNumberResponseBodyContentProfessionalTitle(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        professional_title_category: str = None,
+        professional_title_detail: str = None,
+    ):
+        # 职称编码
+        self.code = code
+        # 职称大类
+        self.professional_title_category = professional_title_category
+        # 职称明细
+        self.professional_title_detail = professional_title_detail
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.professional_title_category is not None:
+            result['professionalTitleCategory'] = self.professional_title_category
+        if self.professional_title_detail is not None:
+            result['professionalTitleDetail'] = self.professional_title_detail
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('professionalTitleCategory') is not None:
+            self.professional_title_category = m.get('professionalTitleCategory')
+        if m.get('professionalTitleDetail') is not None:
+            self.professional_title_detail = m.get('professionalTitleDetail')
+        return self
+
+
+class QueryDoctorDetailsByJobNumberResponseBodyContentUserProbList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        user_property_name: str = None,
+    ):
+        # 身份属性编码
+        self.code = code
+        # 身份属性名称
+        self.user_property_name = user_property_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.user_property_name is not None:
+            result['userPropertyName'] = self.user_property_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('userPropertyName') is not None:
+            self.user_property_name = m.get('userPropertyName')
+        return self
+
+
+class QueryDoctorDetailsByJobNumberResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        dept_list: List[QueryDoctorDetailsByJobNumberResponseBodyContentDeptList] = None,
+        group_list: List[QueryDoctorDetailsByJobNumberResponseBodyContentGroupList] = None,
+        job_number: str = None,
+        job_status: List[QueryDoctorDetailsByJobNumberResponseBodyContentJobStatus] = None,
+        professional_title: QueryDoctorDetailsByJobNumberResponseBodyContentProfessionalTitle = None,
+        user_id: str = None,
+        user_name: str = None,
+        user_prob_list: List[QueryDoctorDetailsByJobNumberResponseBodyContentUserProbList] = None,
+    ):
+        # 科室列表
+        self.dept_list = dept_list
+        # 医疗组列表
+        self.group_list = group_list
+        # 工号
+        self.job_number = job_number
+        # 状态列表
+        self.job_status = job_status
+        # 职称
+        self.professional_title = professional_title
+        # 医生的userId
+        self.user_id = user_id
+        # 用户名称
+        self.user_name = user_name
+        # 身份属性
+        self.user_prob_list = user_prob_list
+
+    def validate(self):
+        if self.dept_list:
+            for k in self.dept_list:
+                if k:
+                    k.validate()
+        if self.group_list:
+            for k in self.group_list:
+                if k:
+                    k.validate()
+        if self.job_status:
+            for k in self.job_status:
+                if k:
+                    k.validate()
+        if self.professional_title:
+            self.professional_title.validate()
+        if self.user_prob_list:
+            for k in self.user_prob_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['deptList'] = []
+        if self.dept_list is not None:
+            for k in self.dept_list:
+                result['deptList'].append(k.to_map() if k else None)
+        result['groupList'] = []
+        if self.group_list is not None:
+            for k in self.group_list:
+                result['groupList'].append(k.to_map() if k else None)
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
+        result['jobStatus'] = []
+        if self.job_status is not None:
+            for k in self.job_status:
+                result['jobStatus'].append(k.to_map() if k else None)
+        if self.professional_title is not None:
+            result['professionalTitle'] = self.professional_title.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        result['userProbList'] = []
+        if self.user_prob_list is not None:
+            for k in self.user_prob_list:
+                result['userProbList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.dept_list = []
+        if m.get('deptList') is not None:
+            for k in m.get('deptList'):
+                temp_model = QueryDoctorDetailsByJobNumberResponseBodyContentDeptList()
+                self.dept_list.append(temp_model.from_map(k))
+        self.group_list = []
+        if m.get('groupList') is not None:
+            for k in m.get('groupList'):
+                temp_model = QueryDoctorDetailsByJobNumberResponseBodyContentGroupList()
+                self.group_list.append(temp_model.from_map(k))
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
+        self.job_status = []
+        if m.get('jobStatus') is not None:
+            for k in m.get('jobStatus'):
+                temp_model = QueryDoctorDetailsByJobNumberResponseBodyContentJobStatus()
+                self.job_status.append(temp_model.from_map(k))
+        if m.get('professionalTitle') is not None:
+            temp_model = QueryDoctorDetailsByJobNumberResponseBodyContentProfessionalTitle()
+            self.professional_title = temp_model.from_map(m['professionalTitle'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        self.user_prob_list = []
+        if m.get('userProbList') is not None:
+            for k in m.get('userProbList'):
+                temp_model = QueryDoctorDetailsByJobNumberResponseBodyContentUserProbList()
+                self.user_prob_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryDoctorDetailsByJobNumberResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: QueryDoctorDetailsByJobNumberResponseBodyContent = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = QueryDoctorDetailsByJobNumberResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        return self
+
+
+class QueryDoctorDetailsByJobNumberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryDoctorDetailsByJobNumberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryDoctorDetailsByJobNumberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryGroupInfoHeaders(TeaModel):
     def __init__(
         self,

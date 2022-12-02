@@ -1053,6 +1053,158 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetConversationUrl', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/urls', 'json', req, runtime)
         )
 
+    def get_family_school_conversation_msg(
+        self,
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders()
+        return self.get_family_school_conversation_msg_with_options(request, headers, runtime)
+
+    async def get_family_school_conversation_msg_async(
+        self,
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders()
+        return await self.get_family_school_conversation_msg_with_options_async(request, headers, runtime)
+
+    def get_family_school_conversation_msg_with_options(
+        self,
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
+        headers: dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.msg_types):
+            body['msgTypes'] = request.msg_types
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse(),
+            self.do_roarequest('GetFamilySchoolConversationMsg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/messages/query', 'json', req, runtime)
+        )
+
+    async def get_family_school_conversation_msg_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
+        headers: dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.msg_types):
+            body['msgTypes'] = request.msg_types
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse(),
+            await self.do_roarequest_async('GetFamilySchoolConversationMsg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/messages/query', 'json', req, runtime)
+        )
+
+    def get_family_school_conversations(
+        self,
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
+        return self.get_family_school_conversations_with_options(request, headers, runtime)
+
+    async def get_family_school_conversations_async(
+        self,
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
+        return await self.get_family_school_conversations_with_options_async(request, headers, runtime)
+
+    def get_family_school_conversations_with_options(
+        self,
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
+        headers: dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetFamilySchoolConversationsResponse(),
+            self.do_roarequest('GetFamilySchoolConversations', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/query', 'json', req, runtime)
+        )
+
+    async def get_family_school_conversations_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
+        headers: dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetFamilySchoolConversationsResponse(),
+            await self.do_roarequest_async('GetFamilySchoolConversations', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/query', 'json', req, runtime)
+        )
+
     def get_interconnection_url(
         self,
         request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,

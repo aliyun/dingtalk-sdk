@@ -594,3 +594,155 @@ class Client(OpenApiClient):
             dingtalksns_storage__1__0_models.ListDentriesResponse(),
             await self.do_roarequest_async('ListDentries', 'snsStorage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/snsStorage/spaces/{space_id}/dentries', 'json', req, runtime)
         )
+
+    def subscribe_event(
+        self,
+        request: dingtalksns_storage__1__0_models.SubscribeEventRequest,
+    ) -> dingtalksns_storage__1__0_models.SubscribeEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksns_storage__1__0_models.SubscribeEventHeaders()
+        return self.subscribe_event_with_options(request, headers, runtime)
+
+    async def subscribe_event_async(
+        self,
+        request: dingtalksns_storage__1__0_models.SubscribeEventRequest,
+    ) -> dingtalksns_storage__1__0_models.SubscribeEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksns_storage__1__0_models.SubscribeEventHeaders()
+        return await self.subscribe_event_with_options_async(request, headers, runtime)
+
+    def subscribe_event_with_options(
+        self,
+        request: dingtalksns_storage__1__0_models.SubscribeEventRequest,
+        headers: dingtalksns_storage__1__0_models.SubscribeEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksns_storage__1__0_models.SubscribeEventResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.scope_id):
+            body['scopeId'] = request.scope_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksns_storage__1__0_models.SubscribeEventResponse(),
+            self.do_roarequest('SubscribeEvent', 'snsStorage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/snsStorage/events/subscribe', 'json', req, runtime)
+        )
+
+    async def subscribe_event_with_options_async(
+        self,
+        request: dingtalksns_storage__1__0_models.SubscribeEventRequest,
+        headers: dingtalksns_storage__1__0_models.SubscribeEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksns_storage__1__0_models.SubscribeEventResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.scope_id):
+            body['scopeId'] = request.scope_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksns_storage__1__0_models.SubscribeEventResponse(),
+            await self.do_roarequest_async('SubscribeEvent', 'snsStorage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/snsStorage/events/subscribe', 'json', req, runtime)
+        )
+
+    def unsubscribe_event(
+        self,
+        request: dingtalksns_storage__1__0_models.UnsubscribeEventRequest,
+    ) -> dingtalksns_storage__1__0_models.UnsubscribeEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksns_storage__1__0_models.UnsubscribeEventHeaders()
+        return self.unsubscribe_event_with_options(request, headers, runtime)
+
+    async def unsubscribe_event_async(
+        self,
+        request: dingtalksns_storage__1__0_models.UnsubscribeEventRequest,
+    ) -> dingtalksns_storage__1__0_models.UnsubscribeEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksns_storage__1__0_models.UnsubscribeEventHeaders()
+        return await self.unsubscribe_event_with_options_async(request, headers, runtime)
+
+    def unsubscribe_event_with_options(
+        self,
+        request: dingtalksns_storage__1__0_models.UnsubscribeEventRequest,
+        headers: dingtalksns_storage__1__0_models.UnsubscribeEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksns_storage__1__0_models.UnsubscribeEventResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.scope_id):
+            body['scopeId'] = request.scope_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksns_storage__1__0_models.UnsubscribeEventResponse(),
+            self.do_roarequest('UnsubscribeEvent', 'snsStorage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/snsStorage/events/unsubscribe', 'json', req, runtime)
+        )
+
+    async def unsubscribe_event_with_options_async(
+        self,
+        request: dingtalksns_storage__1__0_models.UnsubscribeEventRequest,
+        headers: dingtalksns_storage__1__0_models.UnsubscribeEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksns_storage__1__0_models.UnsubscribeEventResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.scope_id):
+            body['scopeId'] = request.scope_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksns_storage__1__0_models.UnsubscribeEventResponse(),
+            await self.do_roarequest_async('UnsubscribeEvent', 'snsStorage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/snsStorage/events/unsubscribe', 'json', req, runtime)
+        )
