@@ -431,6 +431,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
                 [Validation(Required=false)]
                 public string Description { get; set; }
 
+                [NameInMap("endDate")]
+                [Validation(Required=false)]
+                public string EndDate { get; set; }
+
                 /// <summary>
                 /// 职位名称
                 /// </summary>
@@ -451,6 +455,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
                 [NameInMap("responsibility")]
                 [Validation(Required=false)]
                 public string Responsibility { get; set; }
+
+                [NameInMap("startDate")]
+                [Validation(Required=false)]
+                public string StartDate { get; set; }
 
             }
 
