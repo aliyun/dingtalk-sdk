@@ -629,6 +629,182 @@ export class ListDentriesResponse extends $tea.Model {
   }
 }
 
+export class SubscribeEventHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SubscribeEventRequest extends $tea.Model {
+  scope?: string;
+  scopeId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      scope: 'scope',
+      scopeId: 'scopeId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scope: 'string',
+      scopeId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SubscribeEventResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SubscribeEventResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SubscribeEventResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SubscribeEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnsubscribeEventHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnsubscribeEventRequest extends $tea.Model {
+  scope?: string;
+  scopeId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      scope: 'scope',
+      scopeId: 'scopeId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scope: 'string',
+      scopeId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnsubscribeEventResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnsubscribeEventResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UnsubscribeEventResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UnsubscribeEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ResultItemsDentryAppPropertiesValue extends $tea.Model {
   name?: string;
   value?: string;
@@ -1707,6 +1883,84 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListDentriesResponse>(await this.doROARequest("ListDentries", "snsStorage_1.0", "HTTP", "GET", "AK", `/v1.0/snsStorage/spaces/${spaceId}/dentries`, "json", req, runtime), new ListDentriesResponse({}));
+  }
+
+  async subscribeEvent(request: SubscribeEventRequest): Promise<SubscribeEventResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SubscribeEventHeaders({ });
+    return await this.subscribeEventWithOptions(request, headers, runtime);
+  }
+
+  async subscribeEventWithOptions(request: SubscribeEventRequest, headers: SubscribeEventHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeEventResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.scope)) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.scopeId)) {
+      body["scopeId"] = request.scopeId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SubscribeEventResponse>(await this.doROARequest("SubscribeEvent", "snsStorage_1.0", "HTTP", "POST", "AK", `/v1.0/snsStorage/events/subscribe`, "json", req, runtime), new SubscribeEventResponse({}));
+  }
+
+  async unsubscribeEvent(request: UnsubscribeEventRequest): Promise<UnsubscribeEventResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UnsubscribeEventHeaders({ });
+    return await this.unsubscribeEventWithOptions(request, headers, runtime);
+  }
+
+  async unsubscribeEventWithOptions(request: UnsubscribeEventRequest, headers: UnsubscribeEventHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeEventResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.scope)) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.scopeId)) {
+      body["scopeId"] = request.scopeId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UnsubscribeEventResponse>(await this.doROARequest("UnsubscribeEvent", "snsStorage_1.0", "HTTP", "POST", "AK", `/v1.0/snsStorage/events/unsubscribe`, "json", req, runtime), new UnsubscribeEventResponse({}));
   }
 
 }

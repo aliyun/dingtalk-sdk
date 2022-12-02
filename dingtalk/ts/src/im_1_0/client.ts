@@ -1264,6 +1264,206 @@ export class GetConversationUrlResponse extends $tea.Model {
   }
 }
 
+export class GetFamilySchoolConversationMsgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationMsgRequest extends $tea.Model {
+  maxResults?: number;
+  msgTypes?: number[];
+  nextToken?: number;
+  openConversationId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      msgTypes: 'msgTypes',
+      nextToken: 'nextToken',
+      openConversationId: 'openConversationId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      msgTypes: { 'type': 'array', 'itemType': 'number' },
+      nextToken: 'number',
+      openConversationId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationMsgResponseBody extends $tea.Model {
+  corpId?: string;
+  hasMore?: string;
+  messages?: GetFamilySchoolConversationMsgResponseBodyMessages[];
+  nextToken?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      hasMore: 'hasMore',
+      messages: 'messages',
+      nextToken: 'nextToken',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      hasMore: 'string',
+      messages: { 'type': 'array', 'itemType': GetFamilySchoolConversationMsgResponseBodyMessages },
+      nextToken: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationMsgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetFamilySchoolConversationMsgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetFamilySchoolConversationMsgResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationsRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: number;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationsResponseBody extends $tea.Model {
+  groupInfoList?: GetFamilySchoolConversationsResponseBodyGroupInfoList[];
+  hasMore?: string;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupInfoList: 'groupInfoList',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupInfoList: { 'type': 'array', 'itemType': GetFamilySchoolConversationsResponseBodyGroupInfoList },
+      hasMore: 'string',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetFamilySchoolConversationsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetFamilySchoolConversationsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetInterconnectionUrlHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5279,6 +5479,99 @@ export class CreateSceneGroupConversationRequestManagementOptions extends $tea.M
   }
 }
 
+export class GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels extends $tea.Model {
+  fileName?: string;
+  fileType?: string;
+  mediaId?: string;
+  size?: string;
+  url?: string;
+  videoPicMediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      fileType: 'fileType',
+      mediaId: 'mediaId',
+      size: 'size',
+      url: 'url',
+      videoPicMediaId: 'videoPicMediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      fileType: 'string',
+      mediaId: 'string',
+      size: 'string',
+      url: 'string',
+      videoPicMediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationMsgResponseBodyMessages extends $tea.Model {
+  contentType?: number;
+  createAt?: number;
+  mediaModels?: GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels[];
+  openMsgId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contentType: 'contentType',
+      createAt: 'createAt',
+      mediaModels: 'mediaModels',
+      openMsgId: 'openMsgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contentType: 'number',
+      createAt: 'number',
+      mediaModels: { 'type': 'array', 'itemType': GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels },
+      openMsgId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFamilySchoolConversationsResponseBodyGroupInfoList extends $tea.Model {
+  corpId?: string;
+  deptNameChain?: string[];
+  groupName?: string;
+  groupType?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deptNameChain: 'deptNameChain',
+      groupName: 'groupName',
+      groupType: 'groupType',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deptNameChain: { 'type': 'array', 'itemType': 'string' },
+      groupName: 'string',
+      groupType: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GroupManageQueryResponseBodyGroupInfoList extends $tea.Model {
   banWordsMode?: number;
   capacity?: number;
@@ -6325,6 +6618,88 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetConversationUrlResponse>(await this.doROARequest("GetConversationUrl", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/urls`, "json", req, runtime), new GetConversationUrlResponse({}));
+  }
+
+  async getFamilySchoolConversationMsg(request: GetFamilySchoolConversationMsgRequest): Promise<GetFamilySchoolConversationMsgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFamilySchoolConversationMsgHeaders({ });
+    return await this.getFamilySchoolConversationMsgWithOptions(request, headers, runtime);
+  }
+
+  async getFamilySchoolConversationMsgWithOptions(request: GetFamilySchoolConversationMsgRequest, headers: GetFamilySchoolConversationMsgHeaders, runtime: $Util.RuntimeOptions): Promise<GetFamilySchoolConversationMsgResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.msgTypes)) {
+      body["msgTypes"] = request.msgTypes;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetFamilySchoolConversationMsgResponse>(await this.doROARequest("GetFamilySchoolConversationMsg", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/familySchools/messages/query`, "json", req, runtime), new GetFamilySchoolConversationMsgResponse({}));
+  }
+
+  async getFamilySchoolConversations(request: GetFamilySchoolConversationsRequest): Promise<GetFamilySchoolConversationsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFamilySchoolConversationsHeaders({ });
+    return await this.getFamilySchoolConversationsWithOptions(request, headers, runtime);
+  }
+
+  async getFamilySchoolConversationsWithOptions(request: GetFamilySchoolConversationsRequest, headers: GetFamilySchoolConversationsHeaders, runtime: $Util.RuntimeOptions): Promise<GetFamilySchoolConversationsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetFamilySchoolConversationsResponse>(await this.doROARequest("GetFamilySchoolConversations", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/familySchools/query`, "json", req, runtime), new GetFamilySchoolConversationsResponse({}));
   }
 
   async getInterconnectionUrl(request: GetInterconnectionUrlRequest): Promise<GetInterconnectionUrlResponse> {

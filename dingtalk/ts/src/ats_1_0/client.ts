@@ -1848,17 +1848,21 @@ export class CollectResumeDetailRequestResumeDataWorkExperiences extends $tea.Mo
   companyName?: string;
   department?: string;
   description?: string;
+  endDate?: string;
   jobTitle?: string;
   location?: string;
   responsibility?: string;
+  startDate?: string;
   static names(): { [key: string]: string } {
     return {
       companyName: 'companyName',
       department: 'department',
       description: 'description',
+      endDate: 'endDate',
       jobTitle: 'jobTitle',
       location: 'location',
       responsibility: 'responsibility',
+      startDate: 'startDate',
     };
   }
 
@@ -1867,9 +1871,11 @@ export class CollectResumeDetailRequestResumeDataWorkExperiences extends $tea.Mo
       companyName: 'string',
       department: 'string',
       description: 'string',
+      endDate: 'string',
       jobTitle: 'string',
       location: 'string',
       responsibility: 'string',
+      startDate: 'string',
     };
   }
 
