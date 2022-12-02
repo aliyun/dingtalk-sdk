@@ -657,6 +657,9 @@ public class CollectResumeDetailRequest extends TeaModel {
         @NameInMap("description")
         public String description;
 
+        @NameInMap("endDate")
+        public String endDate;
+
         // 职位名称
         @NameInMap("jobTitle")
         public String jobTitle;
@@ -668,6 +671,9 @@ public class CollectResumeDetailRequest extends TeaModel {
         // 工作职责
         @NameInMap("responsibility")
         public String responsibility;
+
+        @NameInMap("startDate")
+        public String startDate;
 
         public static CollectResumeDetailRequestResumeDataWorkExperiences build(java.util.Map<String, ?> map) throws Exception {
             CollectResumeDetailRequestResumeDataWorkExperiences self = new CollectResumeDetailRequestResumeDataWorkExperiences();
@@ -698,6 +704,14 @@ public class CollectResumeDetailRequest extends TeaModel {
             return this.description;
         }
 
+        public CollectResumeDetailRequestResumeDataWorkExperiences setEndDate(String endDate) {
+            this.endDate = endDate;
+            return this;
+        }
+        public String getEndDate() {
+            return this.endDate;
+        }
+
         public CollectResumeDetailRequestResumeDataWorkExperiences setJobTitle(String jobTitle) {
             this.jobTitle = jobTitle;
             return this;
@@ -720,6 +734,14 @@ public class CollectResumeDetailRequest extends TeaModel {
         }
         public String getResponsibility() {
             return this.responsibility;
+        }
+
+        public CollectResumeDetailRequestResumeDataWorkExperiences setStartDate(String startDate) {
+            this.startDate = startDate;
+            return this;
+        }
+        public String getStartDate() {
+            return this.startDate;
         }
 
     }
