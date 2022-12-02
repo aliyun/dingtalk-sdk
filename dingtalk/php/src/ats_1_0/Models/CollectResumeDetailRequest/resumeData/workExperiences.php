@@ -30,6 +30,11 @@ class workExperiences extends Model
     public $description;
 
     /**
+     * @var string
+     */
+    public $endDate;
+
+    /**
      * @description 职位名称
      *
      * @var string
@@ -49,13 +54,20 @@ class workExperiences extends Model
      * @var string
      */
     public $responsibility;
+
+    /**
+     * @var string
+     */
+    public $startDate;
     protected $_name = [
         'companyName'    => 'companyName',
         'department'     => 'department',
         'description'    => 'description',
+        'endDate'        => 'endDate',
         'jobTitle'       => 'jobTitle',
         'location'       => 'location',
         'responsibility' => 'responsibility',
+        'startDate'      => 'startDate',
     ];
 
     public function validate()
@@ -74,6 +86,9 @@ class workExperiences extends Model
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
+        if (null !== $this->endDate) {
+            $res['endDate'] = $this->endDate;
+        }
         if (null !== $this->jobTitle) {
             $res['jobTitle'] = $this->jobTitle;
         }
@@ -82,6 +97,9 @@ class workExperiences extends Model
         }
         if (null !== $this->responsibility) {
             $res['responsibility'] = $this->responsibility;
+        }
+        if (null !== $this->startDate) {
+            $res['startDate'] = $this->startDate;
         }
 
         return $res;
@@ -104,6 +122,9 @@ class workExperiences extends Model
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
+        if (isset($map['endDate'])) {
+            $model->endDate = $map['endDate'];
+        }
         if (isset($map['jobTitle'])) {
             $model->jobTitle = $map['jobTitle'];
         }
@@ -112,6 +133,9 @@ class workExperiences extends Model
         }
         if (isset($map['responsibility'])) {
             $model->responsibility = $map['responsibility'];
+        }
+        if (isset($map['startDate'])) {
+            $model->startDate = $map['startDate'];
         }
 
         return $model;

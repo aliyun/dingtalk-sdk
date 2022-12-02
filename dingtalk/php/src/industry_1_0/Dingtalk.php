@@ -270,6 +270,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoRequ
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDoctorDetailsByJobNumberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDoctorDetailsByJobNumberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDoctorDetailsByJobNumberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryGroupInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryHospitalDistrictInfoHeaders;
@@ -5191,6 +5194,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryDepartmentInfoResponse::fromMap($this->doROARequest('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/departments/' . $deptId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                               $jobNumber
+     * @param QueryDoctorDetailsByJobNumberRequest $request
+     *
+     * @return QueryDoctorDetailsByJobNumberResponse
+     */
+    public function queryDoctorDetailsByJobNumber($jobNumber, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDoctorDetailsByJobNumberHeaders([]);
+
+        return $this->queryDoctorDetailsByJobNumberWithOptions($jobNumber, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                               $jobNumber
+     * @param QueryDoctorDetailsByJobNumberRequest $request
+     * @param QueryDoctorDetailsByJobNumberHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return QueryDoctorDetailsByJobNumberResponse
+     */
+    public function queryDoctorDetailsByJobNumberWithOptions($jobNumber, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $jobNumber = OpenApiUtilClient::getEncodeParam($jobNumber);
+        $query     = [];
+        if (!Utils::isUnset($request->monthMark)) {
+            @$query['monthMark'] = $request->monthMark;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryDoctorDetailsByJobNumberResponse::fromMap($this->doROARequest('QueryDoctorDetailsByJobNumber', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/medicals/doctors/' . $jobNumber . '', 'json', $req, $runtime));
     }
 
     /**

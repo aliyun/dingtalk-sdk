@@ -48,6 +48,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationMsgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationMsgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationMsgResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlResponse;
@@ -876,6 +882,108 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetConversationUrlResponse::fromMap($this->doROARequest('GetConversationUrl', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/conversations/urls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetFamilySchoolConversationMsgRequest $request
+     *
+     * @return GetFamilySchoolConversationMsgResponse
+     */
+    public function getFamilySchoolConversationMsg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFamilySchoolConversationMsgHeaders([]);
+
+        return $this->getFamilySchoolConversationMsgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetFamilySchoolConversationMsgRequest $request
+     * @param GetFamilySchoolConversationMsgHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return GetFamilySchoolConversationMsgResponse
+     */
+    public function getFamilySchoolConversationMsgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->msgTypes)) {
+            @$body['msgTypes'] = $request->msgTypes;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetFamilySchoolConversationMsgResponse::fromMap($this->doROARequest('GetFamilySchoolConversationMsg', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/conversations/familySchools/messages/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetFamilySchoolConversationsRequest $request
+     *
+     * @return GetFamilySchoolConversationsResponse
+     */
+    public function getFamilySchoolConversations($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFamilySchoolConversationsHeaders([]);
+
+        return $this->getFamilySchoolConversationsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetFamilySchoolConversationsRequest $request
+     * @param GetFamilySchoolConversationsHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return GetFamilySchoolConversationsResponse
+     */
+    public function getFamilySchoolConversationsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetFamilySchoolConversationsResponse::fromMap($this->doROARequest('GetFamilySchoolConversations', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/conversations/familySchools/query', 'json', $req, $runtime));
     }
 
     /**
