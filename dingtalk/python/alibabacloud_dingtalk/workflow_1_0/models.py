@@ -4204,6 +4204,7 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
     def __init__(
         self,
         attachments: List[GetProcessInstanceResponseBodyResultOperationRecordsAttachments] = None,
+        cc_user_ids: List[str] = None,
         date: str = None,
         remark: str = None,
         result: str = None,
@@ -4212,6 +4213,8 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
     ):
         # 评论附件列表。
         self.attachments = attachments
+        # 抄送人userIds列表
+        self.cc_user_ids = cc_user_ids
         # 操作时间。
         self.date = date
         # 评论内容。  审批操作附带评论时才返回该字段。
@@ -4239,6 +4242,8 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
         if self.attachments is not None:
             for k in self.attachments:
                 result['attachments'].append(k.to_map() if k else None)
+        if self.cc_user_ids is not None:
+            result['ccUserIds'] = self.cc_user_ids
         if self.date is not None:
             result['date'] = self.date
         if self.remark is not None:
@@ -4258,6 +4263,8 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
             for k in m.get('attachments'):
                 temp_model = GetProcessInstanceResponseBodyResultOperationRecordsAttachments()
                 self.attachments.append(temp_model.from_map(k))
+        if m.get('ccUserIds') is not None:
+            self.cc_user_ids = m.get('ccUserIds')
         if m.get('date') is not None:
             self.date = m.get('date')
         if m.get('remark') is not None:

@@ -3077,6 +3077,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SheetAutofitRows', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/autofitRows', 'json', req, runtime)
         )
 
+    def sheet_find_all(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SheetFindAllRequest,
+    ) -> dingtalkdoc__1__0_models.SheetFindAllResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SheetFindAllHeaders()
+        return self.sheet_find_all_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def sheet_find_all_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SheetFindAllRequest,
+    ) -> dingtalkdoc__1__0_models.SheetFindAllResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SheetFindAllHeaders()
+        return await self.sheet_find_all_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def sheet_find_all_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SheetFindAllRequest,
+        headers: dingtalkdoc__1__0_models.SheetFindAllHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SheetFindAllResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.find_options):
+            body['findOptions'] = request.find_options
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SheetFindAllResponse(),
+            self.do_roarequest('SheetFindAll', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/findAll', 'json', req, runtime)
+        )
+
+    async def sheet_find_all_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SheetFindAllRequest,
+        headers: dingtalkdoc__1__0_models.SheetFindAllHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SheetFindAllResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.find_options):
+            body['findOptions'] = request.find_options
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SheetFindAllResponse(),
+            await self.do_roarequest_async('SheetFindAll', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/findAll', 'json', req, runtime)
+        )
+
     def update_range(
         self,
         workbook_id: str,
