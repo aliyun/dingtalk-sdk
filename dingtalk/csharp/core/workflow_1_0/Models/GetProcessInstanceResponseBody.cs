@@ -168,6 +168,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 }
 
                 /// <summary>
+                /// 抄送人userIds列表
+                /// </summary>
+                [NameInMap("ccUserIds")]
+                [Validation(Required=false)]
+                public List<string> CcUserIds { get; set; }
+
+                /// <summary>
                 /// 操作时间。
                 /// </summary>
                 [NameInMap("date")]
