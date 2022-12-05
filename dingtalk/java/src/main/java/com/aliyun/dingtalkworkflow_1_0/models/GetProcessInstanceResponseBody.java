@@ -174,6 +174,10 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<GetProcessInstanceResponseBodyResultOperationRecordsAttachments> attachments;
 
+        // 抄送人userIds列表
+        @NameInMap("ccUserIds")
+        public java.util.List<String> ccUserIds;
+
         // 操作时间。
         @NameInMap("date")
         public String date;
@@ -205,6 +209,14 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         }
         public java.util.List<GetProcessInstanceResponseBodyResultOperationRecordsAttachments> getAttachments() {
             return this.attachments;
+        }
+
+        public GetProcessInstanceResponseBodyResultOperationRecords setCcUserIds(java.util.List<String> ccUserIds) {
+            this.ccUserIds = ccUserIds;
+            return this;
+        }
+        public java.util.List<String> getCcUserIds() {
+            return this.ccUserIds;
         }
 
         public GetProcessInstanceResponseBodyResultOperationRecords setDate(String date) {
