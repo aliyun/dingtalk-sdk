@@ -3245,6 +3245,94 @@ export class SheetAutofitRowsResponse extends $tea.Model {
   }
 }
 
+export class SheetFindAllHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SheetFindAllRequest extends $tea.Model {
+  findOptions?: SheetFindAllRequestFindOptions;
+  text?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      findOptions: 'findOptions',
+      text: 'text',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      findOptions: SheetFindAllRequestFindOptions,
+      text: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SheetFindAllResponseBody extends $tea.Model {
+  value?: SheetFindAllResponseBodyValue[];
+  static names(): { [key: string]: string } {
+    return {
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      value: { 'type': 'array', 'itemType': SheetFindAllResponseBodyValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SheetFindAllResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SheetFindAllResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SheetFindAllResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateRangeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4505,6 +4593,62 @@ export class SearchWorkspaceDocsResponseBodyDocs extends $tea.Model {
     return {
       nodeBO: SearchWorkspaceDocsResponseBodyDocsNodeBO,
       workspaceBO: SearchWorkspaceDocsResponseBodyDocsWorkspaceBO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SheetFindAllRequestFindOptions extends $tea.Model {
+  includeHidden?: boolean;
+  matchCase?: boolean;
+  matchEntireCell?: boolean;
+  matchFormulaText?: boolean;
+  scope?: string;
+  unionCells?: boolean;
+  useRegExp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      includeHidden: 'includeHidden',
+      matchCase: 'matchCase',
+      matchEntireCell: 'matchEntireCell',
+      matchFormulaText: 'matchFormulaText',
+      scope: 'scope',
+      unionCells: 'unionCells',
+      useRegExp: 'useRegExp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      includeHidden: 'boolean',
+      matchCase: 'boolean',
+      matchEntireCell: 'boolean',
+      matchFormulaText: 'boolean',
+      scope: 'string',
+      unionCells: 'boolean',
+      useRegExp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SheetFindAllResponseBodyValue extends $tea.Model {
+  a1Notation?: string;
+  static names(): { [key: string]: string } {
+    return {
+      a1Notation: 'a1Notation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      a1Notation: 'string',
     };
   }
 
@@ -6006,6 +6150,47 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SheetAutofitRowsResponse>(await this.doROARequest("SheetAutofitRows", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/autofitRows`, "json", req, runtime), new SheetAutofitRowsResponse({}));
+  }
+
+  async sheetFindAll(workbookId: string, sheetId: string, request: SheetFindAllRequest): Promise<SheetFindAllResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SheetFindAllHeaders({ });
+    return await this.sheetFindAllWithOptions(workbookId, sheetId, request, headers, runtime);
+  }
+
+  async sheetFindAllWithOptions(workbookId: string, sheetId: string, request: SheetFindAllRequest, headers: SheetFindAllHeaders, runtime: $Util.RuntimeOptions): Promise<SheetFindAllResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    sheetId = OpenApiUtil.getEncodeParam(sheetId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset($tea.toMap(request.findOptions))) {
+      body["findOptions"] = request.findOptions;
+    }
+
+    if (!Util.isUnset(request.text)) {
+      body["text"] = request.text;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SheetFindAllResponse>(await this.doROARequest("SheetFindAll", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/findAll`, "json", req, runtime), new SheetFindAllResponse({}));
   }
 
   async updateRange(workbookId: string, sheetId: string, rangeAddress: string, request: UpdateRangeRequest): Promise<UpdateRangeResponse> {

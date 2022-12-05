@@ -4576,6 +4576,7 @@ export class GetProcessInstanceResponseBodyResultOperationRecordsAttachments ext
 
 export class GetProcessInstanceResponseBodyResultOperationRecords extends $tea.Model {
   attachments?: GetProcessInstanceResponseBodyResultOperationRecordsAttachments[];
+  ccUserIds?: string[];
   date?: string;
   remark?: string;
   result?: string;
@@ -4584,6 +4585,7 @@ export class GetProcessInstanceResponseBodyResultOperationRecords extends $tea.M
   static names(): { [key: string]: string } {
     return {
       attachments: 'attachments',
+      ccUserIds: 'ccUserIds',
       date: 'date',
       remark: 'remark',
       result: 'result',
@@ -4595,6 +4597,7 @@ export class GetProcessInstanceResponseBodyResultOperationRecords extends $tea.M
   static types(): { [key: string]: any } {
     return {
       attachments: { 'type': 'array', 'itemType': GetProcessInstanceResponseBodyResultOperationRecordsAttachments },
+      ccUserIds: { 'type': 'array', 'itemType': 'string' },
       date: 'string',
       remark: 'string',
       result: 'string',
