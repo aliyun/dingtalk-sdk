@@ -17,6 +17,13 @@ class operationRecords extends Model
     public $attachments;
 
     /**
+     * @description 抄送人userIds列表
+     *
+     * @var string[]
+     */
+    public $ccUserIds;
+
+    /**
      * @description 操作时间。
      *
      * @var string
@@ -52,6 +59,7 @@ class operationRecords extends Model
     public $userId;
     protected $_name = [
         'attachments' => 'attachments',
+        'ccUserIds'   => 'ccUserIds',
         'date'        => 'date',
         'remark'      => 'remark',
         'result'      => 'result',
@@ -74,6 +82,9 @@ class operationRecords extends Model
                     $res['attachments'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->ccUserIds) {
+            $res['ccUserIds'] = $this->ccUserIds;
         }
         if (null !== $this->date) {
             $res['date'] = $this->date;
@@ -109,6 +120,11 @@ class operationRecords extends Model
                 foreach ($map['attachments'] as $item) {
                     $model->attachments[$n++] = null !== $item ? attachments::fromMap($item) : $item;
                 }
+            }
+        }
+        if (isset($map['ccUserIds'])) {
+            if (!empty($map['ccUserIds'])) {
+                $model->ccUserIds = $map['ccUserIds'];
             }
         }
         if (isset($map['date'])) {

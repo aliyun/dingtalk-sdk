@@ -118,6 +118,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetAutofitRowsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetAutofitRowsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetAutofitRowsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetFindAllHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetFindAllRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetFindAllResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeResponse;
@@ -2107,6 +2110,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SheetAutofitRowsResponse::fromMap($this->doROARequest('SheetAutofitRows', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/autofitRows', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param SheetFindAllRequest $request
+     *
+     * @return SheetFindAllResponse
+     */
+    public function sheetFindAll($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SheetFindAllHeaders([]);
+
+        return $this->sheetFindAllWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param SheetFindAllRequest $request
+     * @param SheetFindAllHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return SheetFindAllResponse
+     */
+    public function sheetFindAllWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId    = OpenApiUtilClient::getEncodeParam($sheetId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->findOptions)) {
+            @$body['findOptions'] = $request->findOptions;
+        }
+        if (!Utils::isUnset($request->text)) {
+            @$body['text'] = $request->text;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SheetFindAllResponse::fromMap($this->doROARequest('SheetFindAll', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/findAll', 'json', $req, $runtime));
     }
 
     /**
