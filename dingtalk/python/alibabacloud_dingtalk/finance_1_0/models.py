@@ -7539,10 +7539,13 @@ class UploadInvoiceRequestExtension(TeaModel):
         self,
         biz_code: str = None,
         order_no: str = None,
+        order_no_list: List[str] = None,
         order_type: str = None,
     ):
         self.biz_code = biz_code
         self.order_no = order_no
+        # 订单号列表
+        self.order_no_list = order_no_list
         self.order_type = order_type
 
     def validate(self):
@@ -7558,6 +7561,8 @@ class UploadInvoiceRequestExtension(TeaModel):
             result['bizCode'] = self.biz_code
         if self.order_no is not None:
             result['orderNo'] = self.order_no
+        if self.order_no_list is not None:
+            result['orderNoList'] = self.order_no_list
         if self.order_type is not None:
             result['orderType'] = self.order_type
         return result
@@ -7568,6 +7573,8 @@ class UploadInvoiceRequestExtension(TeaModel):
             self.biz_code = m.get('bizCode')
         if m.get('orderNo') is not None:
             self.order_no = m.get('orderNo')
+        if m.get('orderNoList') is not None:
+            self.order_no_list = m.get('orderNoList')
         if m.get('orderType') is not None:
             self.order_type = m.get('orderType')
         return self

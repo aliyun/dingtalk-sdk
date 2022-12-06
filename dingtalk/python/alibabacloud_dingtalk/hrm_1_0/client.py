@@ -963,20 +963,23 @@ class Client(OpenApiClient):
 
     def roster_meta_field_options_update_with_options(
         self,
-        tmp_req: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,
+        request: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,
         headers: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_agent_id):
             query['appAgentId'] = request.app_agent_id
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        body = {}
+        if not UtilClient.is_unset(request.field_code):
+            body['fieldCode'] = request.field_code
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.labels):
+            body['labels'] = request.labels
+        if not UtilClient.is_unset(request.modify_type):
+            body['modifyType'] = request.modify_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -984,7 +987,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse(),
@@ -993,20 +997,23 @@ class Client(OpenApiClient):
 
     async def roster_meta_field_options_update_with_options_async(
         self,
-        tmp_req: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,
+        request: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,
         headers: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_agent_id):
             query['appAgentId'] = request.app_agent_id
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        body = {}
+        if not UtilClient.is_unset(request.field_code):
+            body['fieldCode'] = request.field_code
+        if not UtilClient.is_unset(request.group_id):
+            body['groupId'] = request.group_id
+        if not UtilClient.is_unset(request.labels):
+            body['labels'] = request.labels
+        if not UtilClient.is_unset(request.modify_type):
+            body['modifyType'] = request.modify_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1014,7 +1021,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse(),

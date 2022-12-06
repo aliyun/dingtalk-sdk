@@ -1079,6 +1079,88 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DeleteColumns', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/deleteColumns', 'json', req, runtime)
         )
 
+    def delete_dropdown_lists(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.DeleteDropdownListsRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteDropdownListsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteDropdownListsHeaders()
+        return self.delete_dropdown_lists_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    async def delete_dropdown_lists_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.DeleteDropdownListsRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteDropdownListsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteDropdownListsHeaders()
+        return await self.delete_dropdown_lists_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    def delete_dropdown_lists_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.DeleteDropdownListsRequest,
+        headers: dingtalkdoc__1__0_models.DeleteDropdownListsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteDropdownListsResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        range_address = OpenApiUtilClient.get_encode_param(range_address)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteDropdownListsResponse(),
+            self.do_roarequest('DeleteDropdownLists', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/deleteDropdownLists', 'json', req, runtime)
+        )
+
+    async def delete_dropdown_lists_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.DeleteDropdownListsRequest,
+        headers: dingtalkdoc__1__0_models.DeleteDropdownListsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteDropdownListsResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        range_address = OpenApiUtilClient.get_encode_param(range_address)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteDropdownListsResponse(),
+            await self.do_roarequest_async('DeleteDropdownLists', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/deleteDropdownLists', 'json', req, runtime)
+        )
+
     def delete_range_protection(
         self,
         workbook_id: str,
@@ -2375,6 +2457,96 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.InsertColumnsBeforeResponse(),
             await self.do_roarequest_async('InsertColumnsBefore', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/insertColumnsBefore', 'json', req, runtime)
+        )
+
+    def insert_dropdown_lists(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.InsertDropdownListsRequest,
+    ) -> dingtalkdoc__1__0_models.InsertDropdownListsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.InsertDropdownListsHeaders()
+        return self.insert_dropdown_lists_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    async def insert_dropdown_lists_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.InsertDropdownListsRequest,
+    ) -> dingtalkdoc__1__0_models.InsertDropdownListsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.InsertDropdownListsHeaders()
+        return await self.insert_dropdown_lists_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    def insert_dropdown_lists_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.InsertDropdownListsRequest,
+        headers: dingtalkdoc__1__0_models.InsertDropdownListsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.InsertDropdownListsResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        range_address = OpenApiUtilClient.get_encode_param(range_address)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.options):
+            body['options'] = request.options
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.InsertDropdownListsResponse(),
+            self.do_roarequest('InsertDropdownLists', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/insertDropdownLists', 'json', req, runtime)
+        )
+
+    async def insert_dropdown_lists_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.InsertDropdownListsRequest,
+        headers: dingtalkdoc__1__0_models.InsertDropdownListsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.InsertDropdownListsResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        sheet_id = OpenApiUtilClient.get_encode_param(sheet_id)
+        range_address = OpenApiUtilClient.get_encode_param(range_address)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.options):
+            body['options'] = request.options
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.InsertDropdownListsResponse(),
+            await self.do_roarequest_async('InsertDropdownLists', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/insertDropdownLists', 'json', req, runtime)
         )
 
     def insert_rows_before(
