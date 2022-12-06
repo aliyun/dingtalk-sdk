@@ -1229,40 +1229,27 @@ export class RosterMetaFieldOptionsUpdateHeaders extends $tea.Model {
 
 export class RosterMetaFieldOptionsUpdateRequest extends $tea.Model {
   appAgentId?: number;
-  body?: RosterMetaFieldOptionsUpdateRequestBody;
+  fieldCode?: string;
+  groupId?: string;
+  labels?: string[];
+  modifyType?: string;
   static names(): { [key: string]: string } {
     return {
       appAgentId: 'appAgentId',
-      body: 'body',
+      fieldCode: 'fieldCode',
+      groupId: 'groupId',
+      labels: 'labels',
+      modifyType: 'modifyType',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       appAgentId: 'number',
-      body: RosterMetaFieldOptionsUpdateRequestBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class RosterMetaFieldOptionsUpdateShrinkRequest extends $tea.Model {
-  appAgentId?: number;
-  bodyShrink?: string;
-  static names(): { [key: string]: string } {
-    return {
-      appAgentId: 'appAgentId',
-      bodyShrink: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      appAgentId: 'number',
-      bodyShrink: 'string',
+      fieldCode: 'string',
+      groupId: 'string',
+      labels: { 'type': 'array', 'itemType': 'string' },
+      modifyType: 'string',
     };
   }
 
@@ -2171,34 +2158,6 @@ export class QueryPositionsResponseBodyList extends $tea.Model {
   }
 }
 
-export class RosterMetaFieldOptionsUpdateRequestBody extends $tea.Model {
-  fieldCode?: string;
-  groupId?: string;
-  labels?: string[];
-  modifyType?: string;
-  static names(): { [key: string]: string } {
-    return {
-      fieldCode: 'fieldCode',
-      groupId: 'groupId',
-      labels: 'labels',
-      modifyType: 'modifyType',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldCode: 'string',
-      groupId: 'string',
-      labels: { 'type': 'array', 'itemType': 'string' },
-      modifyType: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class SyncTaskTemplateRequestTaskScopeVO extends $tea.Model {
   deptIds?: number[];
   positionIds?: string[];
@@ -2743,21 +2702,28 @@ export default class Client extends OpenApi {
     return await this.rosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
   }
 
-  async rosterMetaFieldOptionsUpdateWithOptions(tmpReq: RosterMetaFieldOptionsUpdateRequest, headers: RosterMetaFieldOptionsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaFieldOptionsUpdateResponse> {
-    Util.validateModel(tmpReq);
-    let request = new RosterMetaFieldOptionsUpdateShrinkRequest({ });
-    OpenApiUtil.convert(tmpReq, request);
-    if (!Util.isUnset($tea.toMap(tmpReq.body))) {
-      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle($tea.toMap(tmpReq.body), "body", "json");
-    }
-
+  async rosterMetaFieldOptionsUpdateWithOptions(request: RosterMetaFieldOptionsUpdateRequest, headers: RosterMetaFieldOptionsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaFieldOptionsUpdateResponse> {
+    Util.validateModel(request);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appAgentId)) {
       query["appAgentId"] = request.appAgentId;
     }
 
-    if (!Util.isUnset(request.bodyShrink)) {
-      query["body"] = request.bodyShrink;
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fieldCode)) {
+      body["fieldCode"] = request.fieldCode;
+    }
+
+    if (!Util.isUnset(request.groupId)) {
+      body["groupId"] = request.groupId;
+    }
+
+    if (!Util.isUnset(request.labels)) {
+      body["labels"] = request.labels;
+    }
+
+    if (!Util.isUnset(request.modifyType)) {
+      body["modifyType"] = request.modifyType;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -2772,6 +2738,7 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RosterMetaFieldOptionsUpdateResponse>(await this.doROARequest("RosterMetaFieldOptionsUpdate", "hrm_1.0", "HTTP", "PUT", "AK", `/v1.0/hrm/rosters/meta/fields/options`, "json", req, runtime), new RosterMetaFieldOptionsUpdateResponse({}));
   }

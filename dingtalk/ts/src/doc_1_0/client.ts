@@ -1116,6 +1116,88 @@ export class DeleteColumnsResponse extends $tea.Model {
   }
 }
 
+export class DeleteDropdownListsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDropdownListsRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDropdownListsResponseBody extends $tea.Model {
+  a1Notation?: string;
+  static names(): { [key: string]: string } {
+    return {
+      a1Notation: 'a1Notation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      a1Notation: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDropdownListsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteDropdownListsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteDropdownListsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteRangeProtectionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2506,6 +2588,91 @@ export class InsertColumnsBeforeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: InsertColumnsBeforeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertDropdownListsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertDropdownListsRequest extends $tea.Model {
+  options?: InsertDropdownListsRequestOptions[];
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      options: 'options',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      options: { 'type': 'array', 'itemType': InsertDropdownListsRequestOptions },
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertDropdownListsResponseBody extends $tea.Model {
+  a1Notation?: string;
+  static names(): { [key: string]: string } {
+    return {
+      a1Notation: 'a1Notation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      a1Notation: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertDropdownListsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InsertDropdownListsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InsertDropdownListsResponseBody,
     };
   }
 
@@ -4449,6 +4616,28 @@ export class InsertBlocksRequestLocation extends $tea.Model {
   }
 }
 
+export class InsertDropdownListsRequestOptions extends $tea.Model {
+  color?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      color: 'color',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      color: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListTemplateResponseBodyTemplateList extends $tea.Model {
   coverUrl?: string;
   createTime?: number;
@@ -5236,6 +5425,38 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteColumnsResponse>(await this.doROARequest("DeleteColumns", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/deleteColumns`, "json", req, runtime), new DeleteColumnsResponse({}));
   }
 
+  async deleteDropdownLists(workbookId: string, sheetId: string, rangeAddress: string, request: DeleteDropdownListsRequest): Promise<DeleteDropdownListsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteDropdownListsHeaders({ });
+    return await this.deleteDropdownListsWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+  }
+
+  async deleteDropdownListsWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: DeleteDropdownListsRequest, headers: DeleteDropdownListsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDropdownListsResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    sheetId = OpenApiUtil.getEncodeParam(sheetId);
+    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<DeleteDropdownListsResponse>(await this.doROARequest("DeleteDropdownLists", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/deleteDropdownLists`, "json", req, runtime), new DeleteDropdownListsResponse({}));
+  }
+
   async deleteRangeProtection(workbookId: string, sheetId: string, rangeAddress: string, protectionId: string, request: DeleteRangeProtectionRequest): Promise<DeleteRangeProtectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteRangeProtectionHeaders({ });
@@ -5810,6 +6031,44 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<InsertColumnsBeforeResponse>(await this.doROARequest("InsertColumnsBefore", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/insertColumnsBefore`, "json", req, runtime), new InsertColumnsBeforeResponse({}));
+  }
+
+  async insertDropdownLists(workbookId: string, sheetId: string, rangeAddress: string, request: InsertDropdownListsRequest): Promise<InsertDropdownListsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InsertDropdownListsHeaders({ });
+    return await this.insertDropdownListsWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+  }
+
+  async insertDropdownListsWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: InsertDropdownListsRequest, headers: InsertDropdownListsHeaders, runtime: $Util.RuntimeOptions): Promise<InsertDropdownListsResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    sheetId = OpenApiUtil.getEncodeParam(sheetId);
+    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.options)) {
+      body["options"] = request.options;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<InsertDropdownListsResponse>(await this.doROARequest("InsertDropdownLists", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/insertDropdownLists`, "json", req, runtime), new InsertDropdownListsResponse({}));
   }
 
   async insertRowsBefore(workbookId: string, sheetId: string, request: InsertRowsBeforeRequest): Promise<InsertRowsBeforeResponse> {

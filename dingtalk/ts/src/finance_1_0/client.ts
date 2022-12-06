@@ -4580,11 +4580,13 @@ export class UpateUserCodeInstanceRequestAvailableTimes extends $tea.Model {
 export class UploadInvoiceRequestExtension extends $tea.Model {
   bizCode?: string;
   orderNo?: string;
+  orderNoList?: string[];
   orderType?: string;
   static names(): { [key: string]: string } {
     return {
       bizCode: 'bizCode',
       orderNo: 'orderNo',
+      orderNoList: 'orderNoList',
       orderType: 'orderType',
     };
   }
@@ -4593,6 +4595,7 @@ export class UploadInvoiceRequestExtension extends $tea.Model {
     return {
       bizCode: 'string',
       orderNo: 'string',
+      orderNoList: { 'type': 'array', 'itemType': 'string' },
       orderType: 'string',
     };
   }
