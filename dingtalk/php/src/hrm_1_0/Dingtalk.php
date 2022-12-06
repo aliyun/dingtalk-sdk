@@ -45,7 +45,6 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateResponse;
-use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitResponse;
@@ -702,26 +701,31 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RosterMetaFieldOptionsUpdateRequest $tmpReq
+     * @param RosterMetaFieldOptionsUpdateRequest $request
      * @param RosterMetaFieldOptionsUpdateHeaders $headers
      * @param RuntimeOptions                      $runtime
      *
      * @return RosterMetaFieldOptionsUpdateResponse
      */
-    public function rosterMetaFieldOptionsUpdateWithOptions($tmpReq, $headers, $runtime)
+    public function rosterMetaFieldOptionsUpdateWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new RosterMetaFieldOptionsUpdateShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->body)) {
-            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
-        }
+        Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->appAgentId)) {
             @$query['appAgentId'] = $request->appAgentId;
         }
-        if (!Utils::isUnset($request->bodyShrink)) {
-            @$query['body'] = $request->bodyShrink;
+        $body = [];
+        if (!Utils::isUnset($request->fieldCode)) {
+            @$body['fieldCode'] = $request->fieldCode;
+        }
+        if (!Utils::isUnset($request->groupId)) {
+            @$body['groupId'] = $request->groupId;
+        }
+        if (!Utils::isUnset($request->labels)) {
+            @$body['labels'] = $request->labels;
+        }
+        if (!Utils::isUnset($request->modifyType)) {
+            @$body['modifyType'] = $request->modifyType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -733,6 +737,7 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
         return RosterMetaFieldOptionsUpdateResponse::fromMap($this->doROARequest('RosterMetaFieldOptionsUpdate', 'hrm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/hrm/rosters/meta/fields/options', 'json', $req, $runtime));

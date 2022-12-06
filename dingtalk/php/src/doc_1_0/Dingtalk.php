@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteColumnsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteColumnsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteColumnsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteDropdownListsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteDropdownListsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteDropdownListsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionResponse;
@@ -94,6 +97,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertColumnsBeforeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertDropdownListsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertDropdownListsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertDropdownListsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertRowsBeforeResponse;
@@ -826,6 +832,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteColumnsResponse::fromMap($this->doROARequest('DeleteColumns', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/deleteColumns', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                     $workbookId
+     * @param string                     $sheetId
+     * @param string                     $rangeAddress
+     * @param DeleteDropdownListsRequest $request
+     *
+     * @return DeleteDropdownListsResponse
+     */
+    public function deleteDropdownLists($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteDropdownListsHeaders([]);
+
+        return $this->deleteDropdownListsWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $workbookId
+     * @param string                     $sheetId
+     * @param string                     $rangeAddress
+     * @param DeleteDropdownListsRequest $request
+     * @param DeleteDropdownListsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return DeleteDropdownListsResponse
+     */
+    public function deleteDropdownListsWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId   = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId      = OpenApiUtilClient::getEncodeParam($sheetId);
+        $rangeAddress = OpenApiUtilClient::getEncodeParam($rangeAddress);
+        $query        = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return DeleteDropdownListsResponse::fromMap($this->doROARequest('DeleteDropdownLists', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/deleteDropdownLists', 'json', $req, $runtime));
     }
 
     /**
@@ -1659,6 +1716,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return InsertColumnsBeforeResponse::fromMap($this->doROARequest('InsertColumnsBefore', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/insertColumnsBefore', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                     $workbookId
+     * @param string                     $sheetId
+     * @param string                     $rangeAddress
+     * @param InsertDropdownListsRequest $request
+     *
+     * @return InsertDropdownListsResponse
+     */
+    public function insertDropdownLists($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InsertDropdownListsHeaders([]);
+
+        return $this->insertDropdownListsWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $workbookId
+     * @param string                     $sheetId
+     * @param string                     $rangeAddress
+     * @param InsertDropdownListsRequest $request
+     * @param InsertDropdownListsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return InsertDropdownListsResponse
+     */
+    public function insertDropdownListsWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId   = OpenApiUtilClient::getEncodeParam($workbookId);
+        $sheetId      = OpenApiUtilClient::getEncodeParam($sheetId);
+        $rangeAddress = OpenApiUtilClient::getEncodeParam($rangeAddress);
+        $query        = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->options)) {
+            @$body['options'] = $request->options;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InsertDropdownListsResponse::fromMap($this->doROARequest('InsertDropdownLists', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/insertDropdownLists', 'json', $req, $runtime));
     }
 
     /**

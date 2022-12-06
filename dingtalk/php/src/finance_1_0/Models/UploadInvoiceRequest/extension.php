@@ -19,13 +19,21 @@ class extension extends Model
     public $orderNo;
 
     /**
+     * @description 订单号列表
+     *
+     * @var string[]
+     */
+    public $orderNoList;
+
+    /**
      * @var string
      */
     public $orderType;
     protected $_name = [
-        'bizCode'   => 'bizCode',
-        'orderNo'   => 'orderNo',
-        'orderType' => 'orderType',
+        'bizCode'     => 'bizCode',
+        'orderNo'     => 'orderNo',
+        'orderNoList' => 'orderNoList',
+        'orderType'   => 'orderType',
     ];
 
     public function validate()
@@ -40,6 +48,9 @@ class extension extends Model
         }
         if (null !== $this->orderNo) {
             $res['orderNo'] = $this->orderNo;
+        }
+        if (null !== $this->orderNoList) {
+            $res['orderNoList'] = $this->orderNoList;
         }
         if (null !== $this->orderType) {
             $res['orderType'] = $this->orderType;
@@ -61,6 +72,11 @@ class extension extends Model
         }
         if (isset($map['orderNo'])) {
             $model->orderNo = $map['orderNo'];
+        }
+        if (isset($map['orderNoList'])) {
+            if (!empty($map['orderNoList'])) {
+                $model->orderNoList = $map['orderNoList'];
+            }
         }
         if (isset($map['orderType'])) {
             $model->orderType = $map['orderType'];
