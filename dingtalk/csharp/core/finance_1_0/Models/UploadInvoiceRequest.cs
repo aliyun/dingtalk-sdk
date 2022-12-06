@@ -21,6 +21,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string OrderNo { get; set; }
 
+            /// <summary>
+            /// 订单号列表
+            /// </summary>
+            [NameInMap("orderNoList")]
+            [Validation(Required=false)]
+            public List<string> OrderNoList { get; set; }
+
             [NameInMap("orderType")]
             [Validation(Required=false)]
             public string OrderType { get; set; }
