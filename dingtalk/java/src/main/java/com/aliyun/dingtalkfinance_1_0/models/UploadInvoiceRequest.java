@@ -50,6 +50,10 @@ public class UploadInvoiceRequest extends TeaModel {
         @NameInMap("orderNo")
         public String orderNo;
 
+        // 订单号列表
+        @NameInMap("orderNoList")
+        public java.util.List<String> orderNoList;
+
         @NameInMap("orderType")
         public String orderType;
 
@@ -72,6 +76,14 @@ public class UploadInvoiceRequest extends TeaModel {
         }
         public String getOrderNo() {
             return this.orderNo;
+        }
+
+        public UploadInvoiceRequestExtension setOrderNoList(java.util.List<String> orderNoList) {
+            this.orderNoList = orderNoList;
+            return this;
+        }
+        public java.util.List<String> getOrderNoList() {
+            return this.orderNoList;
         }
 
         public UploadInvoiceRequestExtension setOrderType(String orderType) {

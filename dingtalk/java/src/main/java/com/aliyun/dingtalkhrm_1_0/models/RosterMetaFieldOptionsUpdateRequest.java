@@ -7,8 +7,21 @@ public class RosterMetaFieldOptionsUpdateRequest extends TeaModel {
     @NameInMap("appAgentId")
     public Long appAgentId;
 
-    @NameInMap("body")
-    public RosterMetaFieldOptionsUpdateRequestBody body;
+    // 字段fieldCode
+    @NameInMap("fieldCode")
+    public String fieldCode;
+
+    // 花名册分组id
+    @NameInMap("groupId")
+    public String groupId;
+
+    // 需要修改的选项值
+    @NameInMap("labels")
+    public java.util.List<String> labels;
+
+    // 修改类型，OPTIONS_ADD选项添加，OPTIONS_DELETE选项删除
+    @NameInMap("modifyType")
+    public String modifyType;
 
     public static RosterMetaFieldOptionsUpdateRequest build(java.util.Map<String, ?> map) throws Exception {
         RosterMetaFieldOptionsUpdateRequest self = new RosterMetaFieldOptionsUpdateRequest();
@@ -23,68 +36,36 @@ public class RosterMetaFieldOptionsUpdateRequest extends TeaModel {
         return this.appAgentId;
     }
 
-    public RosterMetaFieldOptionsUpdateRequest setBody(RosterMetaFieldOptionsUpdateRequestBody body) {
-        this.body = body;
+    public RosterMetaFieldOptionsUpdateRequest setFieldCode(String fieldCode) {
+        this.fieldCode = fieldCode;
         return this;
     }
-    public RosterMetaFieldOptionsUpdateRequestBody getBody() {
-        return this.body;
+    public String getFieldCode() {
+        return this.fieldCode;
     }
 
-    public static class RosterMetaFieldOptionsUpdateRequestBody extends TeaModel {
-        // 字段fieldCode
-        @NameInMap("fieldCode")
-        public String fieldCode;
+    public RosterMetaFieldOptionsUpdateRequest setGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+    public String getGroupId() {
+        return this.groupId;
+    }
 
-        // 花名册分组id
-        @NameInMap("groupId")
-        public String groupId;
+    public RosterMetaFieldOptionsUpdateRequest setLabels(java.util.List<String> labels) {
+        this.labels = labels;
+        return this;
+    }
+    public java.util.List<String> getLabels() {
+        return this.labels;
+    }
 
-        // 需要修改的选项值
-        @NameInMap("labels")
-        public java.util.List<String> labels;
-
-        // 修改类型，OPTIONS_ADD选项添加，OPTIONS_DELETE选项删除
-        @NameInMap("modifyType")
-        public String modifyType;
-
-        public static RosterMetaFieldOptionsUpdateRequestBody build(java.util.Map<String, ?> map) throws Exception {
-            RosterMetaFieldOptionsUpdateRequestBody self = new RosterMetaFieldOptionsUpdateRequestBody();
-            return TeaModel.build(map, self);
-        }
-
-        public RosterMetaFieldOptionsUpdateRequestBody setFieldCode(String fieldCode) {
-            this.fieldCode = fieldCode;
-            return this;
-        }
-        public String getFieldCode() {
-            return this.fieldCode;
-        }
-
-        public RosterMetaFieldOptionsUpdateRequestBody setGroupId(String groupId) {
-            this.groupId = groupId;
-            return this;
-        }
-        public String getGroupId() {
-            return this.groupId;
-        }
-
-        public RosterMetaFieldOptionsUpdateRequestBody setLabels(java.util.List<String> labels) {
-            this.labels = labels;
-            return this;
-        }
-        public java.util.List<String> getLabels() {
-            return this.labels;
-        }
-
-        public RosterMetaFieldOptionsUpdateRequestBody setModifyType(String modifyType) {
-            this.modifyType = modifyType;
-            return this;
-        }
-        public String getModifyType() {
-            return this.modifyType;
-        }
-
+    public RosterMetaFieldOptionsUpdateRequest setModifyType(String modifyType) {
+        this.modifyType = modifyType;
+        return this;
+    }
+    public String getModifyType() {
+        return this.modifyType;
     }
 
 }
