@@ -23,6 +23,12 @@ public class ReportMessageStatusRequest extends TeaModel {
     @NameInMap("messageId")
     public String messageId;
 
+    @NameInMap("receiverUserId")
+    public String receiverUserId;
+
+    @NameInMap("senderUserId")
+    public String senderUserId;
+
     public static ReportMessageStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         ReportMessageStatusRequest self = new ReportMessageStatusRequest();
         return TeaModel.build(map, self);
@@ -66,6 +72,22 @@ public class ReportMessageStatusRequest extends TeaModel {
     }
     public String getMessageId() {
         return this.messageId;
+    }
+
+    public ReportMessageStatusRequest setReceiverUserId(String receiverUserId) {
+        this.receiverUserId = receiverUserId;
+        return this;
+    }
+    public String getReceiverUserId() {
+        return this.receiverUserId;
+    }
+
+    public ReportMessageStatusRequest setSenderUserId(String senderUserId) {
+        this.senderUserId = senderUserId;
+        return this;
+    }
+    public String getSenderUserId() {
+        return this.senderUserId;
     }
 
 }
