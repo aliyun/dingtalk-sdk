@@ -40,12 +40,24 @@ class ReportMessageStatusRequest extends Model
      * @var string
      */
     public $messageId;
+
+    /**
+     * @var string
+     */
+    public $receiverUserId;
+
+    /**
+     * @var string
+     */
+    public $senderUserId;
     protected $_name = [
-        'bizCode'   => 'bizCode',
-        'channel'   => 'channel',
-        'errorCode' => 'errorCode',
-        'errorMsg'  => 'errorMsg',
-        'messageId' => 'messageId',
+        'bizCode'        => 'bizCode',
+        'channel'        => 'channel',
+        'errorCode'      => 'errorCode',
+        'errorMsg'       => 'errorMsg',
+        'messageId'      => 'messageId',
+        'receiverUserId' => 'receiverUserId',
+        'senderUserId'   => 'senderUserId',
     ];
 
     public function validate()
@@ -69,6 +81,12 @@ class ReportMessageStatusRequest extends Model
         }
         if (null !== $this->messageId) {
             $res['messageId'] = $this->messageId;
+        }
+        if (null !== $this->receiverUserId) {
+            $res['receiverUserId'] = $this->receiverUserId;
+        }
+        if (null !== $this->senderUserId) {
+            $res['senderUserId'] = $this->senderUserId;
         }
 
         return $res;
@@ -96,6 +114,12 @@ class ReportMessageStatusRequest extends Model
         }
         if (isset($map['messageId'])) {
             $model->messageId = $map['messageId'];
+        }
+        if (isset($map['receiverUserId'])) {
+            $model->receiverUserId = $map['receiverUserId'];
+        }
+        if (isset($map['senderUserId'])) {
+            $model->senderUserId = $map['senderUserId'];
         }
 
         return $model;
