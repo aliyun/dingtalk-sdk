@@ -2706,6 +2706,8 @@ class ReportMessageStatusRequest(TeaModel):
         error_code: str = None,
         error_msg: str = None,
         message_id: str = None,
+        receiver_user_id: str = None,
+        sender_user_id: str = None,
     ):
         self.biz_code = biz_code
         # 渠道标识。
@@ -2716,6 +2718,8 @@ class ReportMessageStatusRequest(TeaModel):
         self.error_msg = error_msg
         # 消息ID。
         self.message_id = message_id
+        self.receiver_user_id = receiver_user_id
+        self.sender_user_id = sender_user_id
 
     def validate(self):
         pass
@@ -2736,6 +2740,10 @@ class ReportMessageStatusRequest(TeaModel):
             result['errorMsg'] = self.error_msg
         if self.message_id is not None:
             result['messageId'] = self.message_id
+        if self.receiver_user_id is not None:
+            result['receiverUserId'] = self.receiver_user_id
+        if self.sender_user_id is not None:
+            result['senderUserId'] = self.sender_user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2750,6 +2758,10 @@ class ReportMessageStatusRequest(TeaModel):
             self.error_msg = m.get('errorMsg')
         if m.get('messageId') is not None:
             self.message_id = m.get('messageId')
+        if m.get('receiverUserId') is not None:
+            self.receiver_user_id = m.get('receiverUserId')
+        if m.get('senderUserId') is not None:
+            self.sender_user_id = m.get('senderUserId')
         return self
 
 

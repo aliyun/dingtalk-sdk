@@ -990,6 +990,10 @@ class Client(OpenApiClient):
             body['errorMsg'] = request.error_msg
         if not UtilClient.is_unset(request.message_id):
             body['messageId'] = request.message_id
+        if not UtilClient.is_unset(request.receiver_user_id):
+            body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1024,6 +1028,10 @@ class Client(OpenApiClient):
             body['errorMsg'] = request.error_msg
         if not UtilClient.is_unset(request.message_id):
             body['messageId'] = request.message_id
+        if not UtilClient.is_unset(request.receiver_user_id):
+            body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
