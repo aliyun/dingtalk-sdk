@@ -1178,6 +1178,8 @@ export class ReportMessageStatusRequest extends $tea.Model {
   errorCode?: string;
   errorMsg?: string;
   messageId?: string;
+  receiverUserId?: string;
+  senderUserId?: string;
   static names(): { [key: string]: string } {
     return {
       bizCode: 'bizCode',
@@ -1185,6 +1187,8 @@ export class ReportMessageStatusRequest extends $tea.Model {
       errorCode: 'errorCode',
       errorMsg: 'errorMsg',
       messageId: 'messageId',
+      receiverUserId: 'receiverUserId',
+      senderUserId: 'senderUserId',
     };
   }
 
@@ -1195,6 +1199,8 @@ export class ReportMessageStatusRequest extends $tea.Model {
       errorCode: 'string',
       errorMsg: 'string',
       messageId: 'string',
+      receiverUserId: 'string',
+      senderUserId: 'string',
     };
   }
 
@@ -2553,6 +2559,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.messageId)) {
       body["messageId"] = request.messageId;
+    }
+
+    if (!Util.isUnset(request.receiverUserId)) {
+      body["receiverUserId"] = request.receiverUserId;
+    }
+
+    if (!Util.isUnset(request.senderUserId)) {
+      body["senderUserId"] = request.senderUserId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
