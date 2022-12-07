@@ -41,6 +41,14 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public string MessageId { get; set; }
 
+        [NameInMap("receiverUserId")]
+        [Validation(Required=false)]
+        public string ReceiverUserId { get; set; }
+
+        [NameInMap("senderUserId")]
+        [Validation(Required=false)]
+        public string SenderUserId { get; set; }
+
     }
 
 }
