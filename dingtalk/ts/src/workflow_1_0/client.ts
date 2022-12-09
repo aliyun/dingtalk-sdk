@@ -4030,10 +4030,12 @@ export class CopyProcessResponseBodyResult extends $tea.Model {
 }
 
 export class CreateIntegratedTaskRequestTasks extends $tea.Model {
+  customData?: string;
   url?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      customData: 'customData',
       url: 'url',
       userId: 'userId',
     };
@@ -4041,6 +4043,7 @@ export class CreateIntegratedTaskRequestTasks extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      customData: 'string',
       url: 'string',
       userId: 'string',
     };

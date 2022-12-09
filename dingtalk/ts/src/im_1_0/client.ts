@@ -5546,6 +5546,7 @@ export class GetFamilySchoolConversationsResponseBodyGroupInfoList extends $tea.
   deptNameChain?: string[];
   groupName?: string;
   groupType?: string;
+  joinGroupTime?: number;
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5553,6 +5554,7 @@ export class GetFamilySchoolConversationsResponseBodyGroupInfoList extends $tea.
       deptNameChain: 'deptNameChain',
       groupName: 'groupName',
       groupType: 'groupType',
+      joinGroupTime: 'joinGroupTime',
       openConversationId: 'openConversationId',
     };
   }
@@ -5563,6 +5565,7 @@ export class GetFamilySchoolConversationsResponseBodyGroupInfoList extends $tea.
       deptNameChain: { 'type': 'array', 'itemType': 'string' },
       groupName: 'string',
       groupType: 'string',
+      joinGroupTime: 'number',
       openConversationId: 'string',
     };
   }

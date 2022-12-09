@@ -703,6 +703,185 @@ export class GetMediaUrlResponse extends $tea.Model {
   }
 }
 
+export class GetMediaUrlsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMediaUrlsRequest extends $tea.Model {
+  mediaIds?: string[];
+  urlExpireTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      mediaIds: 'mediaIds',
+      urlExpireTime: 'urlExpireTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mediaIds: { 'type': 'array', 'itemType': 'string' },
+      urlExpireTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMediaUrlsResponseBody extends $tea.Model {
+  urls?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      urls: 'urls',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      urls: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMediaUrlsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetMediaUrlsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetMediaUrlsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSpaceFileUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSpaceFileUrlRequest extends $tea.Model {
+  fileId?: string;
+  senderUid?: string;
+  spaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileId: 'fileId',
+      senderUid: 'senderUid',
+      spaceId: 'spaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileId: 'string',
+      senderUid: 'string',
+      spaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSpaceFileUrlResponseBody extends $tea.Model {
+  headers?: { [key: string]: any };
+  internalResourceUrl?: string;
+  resourceUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      internalResourceUrl: 'internalResourceUrl',
+      resourceUrl: 'resourceUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      internalResourceUrl: 'string',
+      resourceUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSpaceFileUrlResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetSpaceFileUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetSpaceFileUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListGroupStaffMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1878,6 +2057,76 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetMediaUrlResponse>(await this.doROARequest("GetMediaUrl", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/medium/urls`, "json", req, runtime), new GetMediaUrlResponse({}));
+  }
+
+  async getMediaUrls(request: GetMediaUrlsRequest): Promise<GetMediaUrlsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMediaUrlsHeaders({ });
+    return await this.getMediaUrlsWithOptions(request, headers, runtime);
+  }
+
+  async getMediaUrlsWithOptions(request: GetMediaUrlsRequest, headers: GetMediaUrlsHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaUrlsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mediaIds)) {
+      body["mediaIds"] = request.mediaIds;
+    }
+
+    if (!Util.isUnset(request.urlExpireTime)) {
+      body["urlExpireTime"] = request.urlExpireTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetMediaUrlsResponse>(await this.doROARequest("GetMediaUrls", "impaas_1.0", "HTTP", "POST", "AK", `/v1.0/impaas/interconnections/mediaUrls/query`, "json", req, runtime), new GetMediaUrlsResponse({}));
+  }
+
+  async getSpaceFileUrl(request: GetSpaceFileUrlRequest): Promise<GetSpaceFileUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSpaceFileUrlHeaders({ });
+    return await this.getSpaceFileUrlWithOptions(request, headers, runtime);
+  }
+
+  async getSpaceFileUrlWithOptions(request: GetSpaceFileUrlRequest, headers: GetSpaceFileUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceFileUrlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fileId)) {
+      query["fileId"] = request.fileId;
+    }
+
+    if (!Util.isUnset(request.senderUid)) {
+      query["senderUid"] = request.senderUid;
+    }
+
+    if (!Util.isUnset(request.spaceId)) {
+      query["spaceId"] = request.spaceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetSpaceFileUrlResponse>(await this.doROARequest("GetSpaceFileUrl", "impaas_1.0", "HTTP", "GET", "AK", `/v1.0/impaas/interconnections/spaces/files/urls`, "json", req, runtime), new GetSpaceFileUrlResponse({}));
   }
 
   async listGroupStaffMembers(request: ListGroupStaffMembersRequest): Promise<ListGroupStaffMembersResponse> {

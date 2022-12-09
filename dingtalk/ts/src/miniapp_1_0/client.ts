@@ -816,6 +816,75 @@ export class QueryHtmlBundleBuildResponse extends $tea.Model {
   }
 }
 
+export class RollBackVersionRequest extends $tea.Model {
+  bundleId?: string;
+  miniAppId?: string;
+  rollbackVersion?: string;
+  targetVersion?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bundleId: 'bundleId',
+      miniAppId: 'miniAppId',
+      rollbackVersion: 'rollbackVersion',
+      targetVersion: 'targetVersion',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bundleId: 'string',
+      miniAppId: 'string',
+      rollbackVersion: 'string',
+      targetVersion: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollBackVersionResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollBackVersionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RollBackVersionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RollBackVersionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SetExtendSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1416,6 +1485,38 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryHtmlBundleBuildResponse>(await this.doROARequest("QueryHtmlBundleBuild", "miniapp_1.0", "HTTP", "GET", "AK", `/v1.0/miniapp/h5Bundles/buildResults`, "json", req, runtime), new QueryHtmlBundleBuildResponse({}));
+  }
+
+  async rollBackVersion(request: RollBackVersionRequest): Promise<RollBackVersionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.rollBackVersionWithOptions(request, headers, runtime);
+  }
+
+  async rollBackVersionWithOptions(request: RollBackVersionRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<RollBackVersionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bundleId)) {
+      body["bundleId"] = request.bundleId;
+    }
+
+    if (!Util.isUnset(request.miniAppId)) {
+      body["miniAppId"] = request.miniAppId;
+    }
+
+    if (!Util.isUnset(request.rollbackVersion)) {
+      body["rollbackVersion"] = request.rollbackVersion;
+    }
+
+    if (!Util.isUnset(request.targetVersion)) {
+      body["targetVersion"] = request.targetVersion;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RollBackVersionResponse>(await this.doROARequest("RollBackVersion", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/versions/rollback`, "json", req, runtime), new RollBackVersionResponse({}));
   }
 
   async setExtendSetting(request: SetExtendSettingRequest): Promise<SetExtendSettingResponse> {
