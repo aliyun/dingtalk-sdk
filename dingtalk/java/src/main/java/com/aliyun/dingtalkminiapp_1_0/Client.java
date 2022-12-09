@@ -379,6 +379,38 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryHtmlBundleBuild", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/h5Bundles/buildResults", "json", req, runtime), new QueryHtmlBundleBuildResponse());
     }
 
+    public RollBackVersionResponse rollBackVersion(RollBackVersionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.rollBackVersionWithOptions(request, headers, runtime);
+    }
+
+    public RollBackVersionResponse rollBackVersionWithOptions(RollBackVersionRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bundleId)) {
+            body.put("bundleId", request.bundleId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.miniAppId)) {
+            body.put("miniAppId", request.miniAppId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.rollbackVersion)) {
+            body.put("rollbackVersion", request.rollbackVersion);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetVersion)) {
+            body.put("targetVersion", request.targetVersion);
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("RollBackVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/rollback", "json", req, runtime), new RollBackVersionResponse());
+    }
+
     public SetExtendSettingResponse setExtendSetting(SetExtendSettingRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetExtendSettingHeaders headers = new SetExtendSettingHeaders();

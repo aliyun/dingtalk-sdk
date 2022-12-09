@@ -61,6 +61,10 @@ public class GetFamilySchoolConversationsResponseBody extends TeaModel {
         @NameInMap("groupType")
         public String groupType;
 
+        // 进群时间
+        @NameInMap("joinGroupTime")
+        public Long joinGroupTime;
+
         // 群开放ID
         @NameInMap("openConversationId")
         public String openConversationId;
@@ -100,6 +104,14 @@ public class GetFamilySchoolConversationsResponseBody extends TeaModel {
         }
         public String getGroupType() {
             return this.groupType;
+        }
+
+        public GetFamilySchoolConversationsResponseBodyGroupInfoList setJoinGroupTime(Long joinGroupTime) {
+            this.joinGroupTime = joinGroupTime;
+            return this;
+        }
+        public Long getJoinGroupTime() {
+            return this.joinGroupTime;
         }
 
         public GetFamilySchoolConversationsResponseBodyGroupInfoList setOpenConversationId(String openConversationId) {

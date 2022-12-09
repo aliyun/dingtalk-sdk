@@ -344,6 +344,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetMediaUrl", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/medium/urls", "json", req, runtime), new GetMediaUrlResponse());
     }
 
+    public GetMediaUrlsResponse getMediaUrls(GetMediaUrlsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetMediaUrlsHeaders headers = new GetMediaUrlsHeaders();
+        return this.getMediaUrlsWithOptions(request, headers, runtime);
+    }
+
+    public GetMediaUrlsResponse getMediaUrlsWithOptions(GetMediaUrlsRequest request, GetMediaUrlsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.mediaIds)) {
+            body.put("mediaIds", request.mediaIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.urlExpireTime)) {
+            body.put("urlExpireTime", request.urlExpireTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetMediaUrls", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/mediaUrls/query", "json", req, runtime), new GetMediaUrlsResponse());
+    }
+
+    public GetSpaceFileUrlResponse getSpaceFileUrl(GetSpaceFileUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetSpaceFileUrlHeaders headers = new GetSpaceFileUrlHeaders();
+        return this.getSpaceFileUrlWithOptions(request, headers, runtime);
+    }
+
+    public GetSpaceFileUrlResponse getSpaceFileUrlWithOptions(GetSpaceFileUrlRequest request, GetSpaceFileUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fileId)) {
+            query.put("fileId", request.fileId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.senderUid)) {
+            query.put("senderUid", request.senderUid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.spaceId)) {
+            query.put("spaceId", request.spaceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("GetSpaceFileUrl", "impaas_1.0", "HTTP", "GET", "AK", "/v1.0/impaas/interconnections/spaces/files/urls", "json", req, runtime), new GetSpaceFileUrlResponse());
+    }
+
     public ListGroupStaffMembersResponse listGroupStaffMembers(ListGroupStaffMembersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListGroupStaffMembersHeaders headers = new ListGroupStaffMembersHeaders();

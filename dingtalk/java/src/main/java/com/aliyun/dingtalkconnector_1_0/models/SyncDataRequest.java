@@ -45,6 +45,9 @@ public class SyncDataRequest extends TeaModel {
         @NameInMap("dataGmtModified")
         public Long dataGmtModified;
 
+        @NameInMap("integrationObject")
+        public String integrationObject;
+
         @NameInMap("jsonData")
         public String jsonData;
 
@@ -86,6 +89,14 @@ public class SyncDataRequest extends TeaModel {
         }
         public Long getDataGmtModified() {
             return this.dataGmtModified;
+        }
+
+        public SyncDataRequestTriggerDataList setIntegrationObject(String integrationObject) {
+            this.integrationObject = integrationObject;
+            return this;
+        }
+        public String getIntegrationObject() {
+            return this.integrationObject;
         }
 
         public SyncDataRequestTriggerDataList setJsonData(String jsonData) {
