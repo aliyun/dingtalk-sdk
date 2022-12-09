@@ -730,6 +730,158 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             return TeaModel.ToObject<GetMediaUrlResponse>(await DoROARequestAsync("GetMediaUrl", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/medium/urls", "json", req, runtime));
         }
 
+        public GetMediaUrlsResponse GetMediaUrls(GetMediaUrlsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMediaUrlsHeaders headers = new GetMediaUrlsHeaders();
+            return GetMediaUrlsWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetMediaUrlsResponse> GetMediaUrlsAsync(GetMediaUrlsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMediaUrlsHeaders headers = new GetMediaUrlsHeaders();
+            return await GetMediaUrlsWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetMediaUrlsResponse GetMediaUrlsWithOptions(GetMediaUrlsRequest request, GetMediaUrlsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaIds))
+            {
+                body["mediaIds"] = request.MediaIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UrlExpireTime))
+            {
+                body["urlExpireTime"] = request.UrlExpireTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetMediaUrlsResponse>(DoROARequest("GetMediaUrls", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/mediaUrls/query", "json", req, runtime));
+        }
+
+        public async Task<GetMediaUrlsResponse> GetMediaUrlsWithOptionsAsync(GetMediaUrlsRequest request, GetMediaUrlsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaIds))
+            {
+                body["mediaIds"] = request.MediaIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UrlExpireTime))
+            {
+                body["urlExpireTime"] = request.UrlExpireTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<GetMediaUrlsResponse>(await DoROARequestAsync("GetMediaUrls", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/mediaUrls/query", "json", req, runtime));
+        }
+
+        public GetSpaceFileUrlResponse GetSpaceFileUrl(GetSpaceFileUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSpaceFileUrlHeaders headers = new GetSpaceFileUrlHeaders();
+            return GetSpaceFileUrlWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetSpaceFileUrlResponse> GetSpaceFileUrlAsync(GetSpaceFileUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSpaceFileUrlHeaders headers = new GetSpaceFileUrlHeaders();
+            return await GetSpaceFileUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetSpaceFileUrlResponse GetSpaceFileUrlWithOptions(GetSpaceFileUrlRequest request, GetSpaceFileUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileId))
+            {
+                query["fileId"] = request.FileId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUid))
+            {
+                query["senderUid"] = request.SenderUid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                query["spaceId"] = request.SpaceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetSpaceFileUrlResponse>(DoROARequest("GetSpaceFileUrl", "impaas_1.0", "HTTP", "GET", "AK", "/v1.0/impaas/interconnections/spaces/files/urls", "json", req, runtime));
+        }
+
+        public async Task<GetSpaceFileUrlResponse> GetSpaceFileUrlWithOptionsAsync(GetSpaceFileUrlRequest request, GetSpaceFileUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileId))
+            {
+                query["fileId"] = request.FileId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUid))
+            {
+                query["senderUid"] = request.SenderUid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                query["spaceId"] = request.SpaceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetSpaceFileUrlResponse>(await DoROARequestAsync("GetSpaceFileUrl", "impaas_1.0", "HTTP", "GET", "AK", "/v1.0/impaas/interconnections/spaces/files/urls", "json", req, runtime));
+        }
+
         public ListGroupStaffMembersResponse ListGroupStaffMembers(ListGroupStaffMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

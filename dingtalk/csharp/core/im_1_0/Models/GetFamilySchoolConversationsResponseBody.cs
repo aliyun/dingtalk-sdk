@@ -42,6 +42,13 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             public string GroupType { get; set; }
 
             /// <summary>
+            /// 进群时间
+            /// </summary>
+            [NameInMap("joinGroupTime")]
+            [Validation(Required=false)]
+            public long? JoinGroupTime { get; set; }
+
+            /// <summary>
             /// 群开放ID
             /// </summary>
             [NameInMap("openConversationId")]

@@ -36,6 +36,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public long? DataGmtModified { get; set; }
 
+            [NameInMap("integrationObject")]
+            [Validation(Required=false)]
+            public string IntegrationObject { get; set; }
+
             [NameInMap("jsonData")]
             [Validation(Required=false)]
             public string JsonData { get; set; }

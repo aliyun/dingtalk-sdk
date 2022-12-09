@@ -806,6 +806,76 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
             return TeaModel.ToObject<QueryHtmlBundleBuildResponse>(await DoROARequestAsync("QueryHtmlBundleBuild", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/h5Bundles/buildResults", "json", req, runtime));
         }
 
+        public RollBackVersionResponse RollBackVersion(RollBackVersionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return RollBackVersionWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RollBackVersionResponse> RollBackVersionAsync(RollBackVersionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await RollBackVersionWithOptionsAsync(request, headers, runtime);
+        }
+
+        public RollBackVersionResponse RollBackVersionWithOptions(RollBackVersionRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BundleId))
+            {
+                body["bundleId"] = request.BundleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MiniAppId))
+            {
+                body["miniAppId"] = request.MiniAppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RollbackVersion))
+            {
+                body["rollbackVersion"] = request.RollbackVersion;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetVersion))
+            {
+                body["targetVersion"] = request.TargetVersion;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RollBackVersionResponse>(DoROARequest("RollBackVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/rollback", "json", req, runtime));
+        }
+
+        public async Task<RollBackVersionResponse> RollBackVersionWithOptionsAsync(RollBackVersionRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BundleId))
+            {
+                body["bundleId"] = request.BundleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MiniAppId))
+            {
+                body["miniAppId"] = request.MiniAppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RollbackVersion))
+            {
+                body["rollbackVersion"] = request.RollbackVersion;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetVersion))
+            {
+                body["targetVersion"] = request.TargetVersion;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RollBackVersionResponse>(await DoROARequestAsync("RollBackVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/rollback", "json", req, runtime));
+        }
+
         public SetExtendSettingResponse SetExtendSetting(SetExtendSettingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
