@@ -631,6 +631,146 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetMediaUrl', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/medium/urls', 'json', req, runtime)
         )
 
+    def get_media_urls(
+        self,
+        request: dingtalkimpaas__1__0_models.GetMediaUrlsRequest,
+    ) -> dingtalkimpaas__1__0_models.GetMediaUrlsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.GetMediaUrlsHeaders()
+        return self.get_media_urls_with_options(request, headers, runtime)
+
+    async def get_media_urls_async(
+        self,
+        request: dingtalkimpaas__1__0_models.GetMediaUrlsRequest,
+    ) -> dingtalkimpaas__1__0_models.GetMediaUrlsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.GetMediaUrlsHeaders()
+        return await self.get_media_urls_with_options_async(request, headers, runtime)
+
+    def get_media_urls_with_options(
+        self,
+        request: dingtalkimpaas__1__0_models.GetMediaUrlsRequest,
+        headers: dingtalkimpaas__1__0_models.GetMediaUrlsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.GetMediaUrlsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.media_ids):
+            body['mediaIds'] = request.media_ids
+        if not UtilClient.is_unset(request.url_expire_time):
+            body['urlExpireTime'] = request.url_expire_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.GetMediaUrlsResponse(),
+            self.do_roarequest('GetMediaUrls', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/mediaUrls/query', 'json', req, runtime)
+        )
+
+    async def get_media_urls_with_options_async(
+        self,
+        request: dingtalkimpaas__1__0_models.GetMediaUrlsRequest,
+        headers: dingtalkimpaas__1__0_models.GetMediaUrlsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.GetMediaUrlsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.media_ids):
+            body['mediaIds'] = request.media_ids
+        if not UtilClient.is_unset(request.url_expire_time):
+            body['urlExpireTime'] = request.url_expire_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.GetMediaUrlsResponse(),
+            await self.do_roarequest_async('GetMediaUrls', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/mediaUrls/query', 'json', req, runtime)
+        )
+
+    def get_space_file_url(
+        self,
+        request: dingtalkimpaas__1__0_models.GetSpaceFileUrlRequest,
+    ) -> dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.GetSpaceFileUrlHeaders()
+        return self.get_space_file_url_with_options(request, headers, runtime)
+
+    async def get_space_file_url_async(
+        self,
+        request: dingtalkimpaas__1__0_models.GetSpaceFileUrlRequest,
+    ) -> dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.GetSpaceFileUrlHeaders()
+        return await self.get_space_file_url_with_options_async(request, headers, runtime)
+
+    def get_space_file_url_with_options(
+        self,
+        request: dingtalkimpaas__1__0_models.GetSpaceFileUrlRequest,
+        headers: dingtalkimpaas__1__0_models.GetSpaceFileUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.file_id):
+            query['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.sender_uid):
+            query['senderUid'] = request.sender_uid
+        if not UtilClient.is_unset(request.space_id):
+            query['spaceId'] = request.space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse(),
+            self.do_roarequest('GetSpaceFileUrl', 'impaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/impaas/interconnections/spaces/files/urls', 'json', req, runtime)
+        )
+
+    async def get_space_file_url_with_options_async(
+        self,
+        request: dingtalkimpaas__1__0_models.GetSpaceFileUrlRequest,
+        headers: dingtalkimpaas__1__0_models.GetSpaceFileUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.file_id):
+            query['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.sender_uid):
+            query['senderUid'] = request.sender_uid
+        if not UtilClient.is_unset(request.space_id):
+            query['spaceId'] = request.space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse(),
+            await self.do_roarequest_async('GetSpaceFileUrl', 'impaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/impaas/interconnections/spaces/files/urls', 'json', req, runtime)
+        )
+
     def list_group_staff_members(
         self,
         request: dingtalkimpaas__1__0_models.ListGroupStaffMembersRequest,

@@ -2637,6 +2637,7 @@ class GetFamilySchoolConversationsResponseBodyGroupInfoList(TeaModel):
         dept_name_chain: List[str] = None,
         group_name: str = None,
         group_type: str = None,
+        join_group_time: int = None,
         open_conversation_id: str = None,
     ):
         # 企业名称
@@ -2647,6 +2648,8 @@ class GetFamilySchoolConversationsResponseBodyGroupInfoList(TeaModel):
         self.group_name = group_name
         # 群类型
         self.group_type = group_type
+        # 进群时间
+        self.join_group_time = join_group_time
         # 群开放ID
         self.open_conversation_id = open_conversation_id
 
@@ -2667,6 +2670,8 @@ class GetFamilySchoolConversationsResponseBodyGroupInfoList(TeaModel):
             result['groupName'] = self.group_name
         if self.group_type is not None:
             result['groupType'] = self.group_type
+        if self.join_group_time is not None:
+            result['joinGroupTime'] = self.join_group_time
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         return result
@@ -2681,6 +2686,8 @@ class GetFamilySchoolConversationsResponseBodyGroupInfoList(TeaModel):
             self.group_name = m.get('groupName')
         if m.get('groupType') is not None:
             self.group_type = m.get('groupType')
+        if m.get('joinGroupTime') is not None:
+            self.join_group_time = m.get('joinGroupTime')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         return self

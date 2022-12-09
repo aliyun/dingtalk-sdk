@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -697,6 +698,72 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkminiapp__1__0_models.QueryHtmlBundleBuildResponse(),
             await self.do_roarequest_async('QueryHtmlBundleBuild', 'miniapp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/miniapp/h5Bundles/buildResults', 'json', req, runtime)
+        )
+
+    def roll_back_version(
+        self,
+        request: dingtalkminiapp__1__0_models.RollBackVersionRequest,
+    ) -> dingtalkminiapp__1__0_models.RollBackVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.roll_back_version_with_options(request, headers, runtime)
+
+    async def roll_back_version_async(
+        self,
+        request: dingtalkminiapp__1__0_models.RollBackVersionRequest,
+    ) -> dingtalkminiapp__1__0_models.RollBackVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.roll_back_version_with_options_async(request, headers, runtime)
+
+    def roll_back_version_with_options(
+        self,
+        request: dingtalkminiapp__1__0_models.RollBackVersionRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminiapp__1__0_models.RollBackVersionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bundle_id):
+            body['bundleId'] = request.bundle_id
+        if not UtilClient.is_unset(request.mini_app_id):
+            body['miniAppId'] = request.mini_app_id
+        if not UtilClient.is_unset(request.rollback_version):
+            body['rollbackVersion'] = request.rollback_version
+        if not UtilClient.is_unset(request.target_version):
+            body['targetVersion'] = request.target_version
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkminiapp__1__0_models.RollBackVersionResponse(),
+            self.do_roarequest('RollBackVersion', 'miniapp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/miniapp/versions/rollback', 'json', req, runtime)
+        )
+
+    async def roll_back_version_with_options_async(
+        self,
+        request: dingtalkminiapp__1__0_models.RollBackVersionRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminiapp__1__0_models.RollBackVersionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bundle_id):
+            body['bundleId'] = request.bundle_id
+        if not UtilClient.is_unset(request.mini_app_id):
+            body['miniAppId'] = request.mini_app_id
+        if not UtilClient.is_unset(request.rollback_version):
+            body['rollbackVersion'] = request.rollback_version
+        if not UtilClient.is_unset(request.target_version):
+            body['targetVersion'] = request.target_version
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkminiapp__1__0_models.RollBackVersionResponse(),
+            await self.do_roarequest_async('RollBackVersion', 'miniapp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/miniapp/versions/rollback', 'json', req, runtime)
         )
 
     def set_extend_setting(

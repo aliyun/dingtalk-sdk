@@ -1149,6 +1149,289 @@ class GetMediaUrlResponse(TeaModel):
         return self
 
 
+class GetMediaUrlsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMediaUrlsRequest(TeaModel):
+    def __init__(
+        self,
+        media_ids: List[str] = None,
+        url_expire_time: int = None,
+    ):
+        # 多媒体id列表
+        self.media_ids = media_ids
+        # 过期时间
+        self.url_expire_time = url_expire_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.media_ids is not None:
+            result['mediaIds'] = self.media_ids
+        if self.url_expire_time is not None:
+            result['urlExpireTime'] = self.url_expire_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mediaIds') is not None:
+            self.media_ids = m.get('mediaIds')
+        if m.get('urlExpireTime') is not None:
+            self.url_expire_time = m.get('urlExpireTime')
+        return self
+
+
+class GetMediaUrlsResponseBody(TeaModel):
+    def __init__(
+        self,
+        urls: Dict[str, Any] = None,
+    ):
+        self.urls = urls
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.urls is not None:
+            result['urls'] = self.urls
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('urls') is not None:
+            self.urls = m.get('urls')
+        return self
+
+
+class GetMediaUrlsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetMediaUrlsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetMediaUrlsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSpaceFileUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSpaceFileUrlRequest(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        sender_uid: str = None,
+        space_id: str = None,
+    ):
+        # 钉盘文件id
+        self.file_id = file_id
+        # 发送人互通账号
+        self.sender_uid = sender_uid
+        # 钉盘spaceId
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.sender_uid is not None:
+            result['senderUid'] = self.sender_uid
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('senderUid') is not None:
+            self.sender_uid = m.get('senderUid')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GetSpaceFileUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, Any] = None,
+        internal_resource_url: str = None,
+        resource_url: str = None,
+    ):
+        self.headers = headers
+        self.internal_resource_url = internal_resource_url
+        self.resource_url = resource_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.internal_resource_url is not None:
+            result['internalResourceUrl'] = self.internal_resource_url
+        if self.resource_url is not None:
+            result['resourceUrl'] = self.resource_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('internalResourceUrl') is not None:
+            self.internal_resource_url = m.get('internalResourceUrl')
+        if m.get('resourceUrl') is not None:
+            self.resource_url = m.get('resourceUrl')
+        return self
+
+
+class GetSpaceFileUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetSpaceFileUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetSpaceFileUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListGroupStaffMembersHeaders(TeaModel):
     def __init__(
         self,

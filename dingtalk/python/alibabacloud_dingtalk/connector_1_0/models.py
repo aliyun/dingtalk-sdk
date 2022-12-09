@@ -1476,6 +1476,7 @@ class SyncDataRequestTriggerDataList(TeaModel):
         custom_trigger_id: str = None,
         data_gmt_create: int = None,
         data_gmt_modified: int = None,
+        integration_object: str = None,
         json_data: str = None,
         trigger_id: str = None,
     ):
@@ -1483,6 +1484,7 @@ class SyncDataRequestTriggerDataList(TeaModel):
         self.custom_trigger_id = custom_trigger_id
         self.data_gmt_create = data_gmt_create
         self.data_gmt_modified = data_gmt_modified
+        self.integration_object = integration_object
         self.json_data = json_data
         self.trigger_id = trigger_id
 
@@ -1503,6 +1505,8 @@ class SyncDataRequestTriggerDataList(TeaModel):
             result['dataGmtCreate'] = self.data_gmt_create
         if self.data_gmt_modified is not None:
             result['dataGmtModified'] = self.data_gmt_modified
+        if self.integration_object is not None:
+            result['integrationObject'] = self.integration_object
         if self.json_data is not None:
             result['jsonData'] = self.json_data
         if self.trigger_id is not None:
@@ -1519,6 +1523,8 @@ class SyncDataRequestTriggerDataList(TeaModel):
             self.data_gmt_create = m.get('dataGmtCreate')
         if m.get('dataGmtModified') is not None:
             self.data_gmt_modified = m.get('dataGmtModified')
+        if m.get('integrationObject') is not None:
+            self.integration_object = m.get('integrationObject')
         if m.get('jsonData') is not None:
             self.json_data = m.get('jsonData')
         if m.get('triggerId') is not None:

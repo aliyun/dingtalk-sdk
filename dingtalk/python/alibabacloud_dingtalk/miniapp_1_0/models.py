@@ -1381,6 +1381,116 @@ class QueryHtmlBundleBuildResponse(TeaModel):
         return self
 
 
+class RollBackVersionRequest(TeaModel):
+    def __init__(
+        self,
+        bundle_id: str = None,
+        mini_app_id: str = None,
+        rollback_version: str = None,
+        target_version: str = None,
+    ):
+        self.bundle_id = bundle_id
+        self.mini_app_id = mini_app_id
+        self.rollback_version = rollback_version
+        self.target_version = target_version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bundle_id is not None:
+            result['bundleId'] = self.bundle_id
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
+        if self.rollback_version is not None:
+            result['rollbackVersion'] = self.rollback_version
+        if self.target_version is not None:
+            result['targetVersion'] = self.target_version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bundleId') is not None:
+            self.bundle_id = m.get('bundleId')
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
+        if m.get('rollbackVersion') is not None:
+            self.rollback_version = m.get('rollbackVersion')
+        if m.get('targetVersion') is not None:
+            self.target_version = m.get('targetVersion')
+        return self
+
+
+class RollBackVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        # Id of the request
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class RollBackVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RollBackVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RollBackVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SetExtendSettingHeaders(TeaModel):
     def __init__(
         self,
