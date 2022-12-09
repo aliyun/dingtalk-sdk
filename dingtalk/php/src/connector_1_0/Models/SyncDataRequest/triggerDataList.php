@@ -31,6 +31,11 @@ class triggerDataList extends Model
     /**
      * @var string
      */
+    public $integrationObject;
+
+    /**
+     * @var string
+     */
     public $jsonData;
 
     /**
@@ -38,12 +43,13 @@ class triggerDataList extends Model
      */
     public $triggerId;
     protected $_name = [
-        'action'          => 'action',
-        'customTriggerId' => 'customTriggerId',
-        'dataGmtCreate'   => 'dataGmtCreate',
-        'dataGmtModified' => 'dataGmtModified',
-        'jsonData'        => 'jsonData',
-        'triggerId'       => 'triggerId',
+        'action'            => 'action',
+        'customTriggerId'   => 'customTriggerId',
+        'dataGmtCreate'     => 'dataGmtCreate',
+        'dataGmtModified'   => 'dataGmtModified',
+        'integrationObject' => 'integrationObject',
+        'jsonData'          => 'jsonData',
+        'triggerId'         => 'triggerId',
     ];
 
     public function validate()
@@ -64,6 +70,9 @@ class triggerDataList extends Model
         }
         if (null !== $this->dataGmtModified) {
             $res['dataGmtModified'] = $this->dataGmtModified;
+        }
+        if (null !== $this->integrationObject) {
+            $res['integrationObject'] = $this->integrationObject;
         }
         if (null !== $this->jsonData) {
             $res['jsonData'] = $this->jsonData;
@@ -94,6 +103,9 @@ class triggerDataList extends Model
         }
         if (isset($map['dataGmtModified'])) {
             $model->dataGmtModified = $map['dataGmtModified'];
+        }
+        if (isset($map['integrationObject'])) {
+            $model->integrationObject = $map['integrationObject'];
         }
         if (isset($map['jsonData'])) {
             $model->jsonData = $map['jsonData'];

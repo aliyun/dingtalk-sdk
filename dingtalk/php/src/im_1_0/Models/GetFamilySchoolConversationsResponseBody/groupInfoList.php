@@ -37,6 +37,13 @@ class groupInfoList extends Model
     public $groupType;
 
     /**
+     * @description 进群时间
+     *
+     * @var int
+     */
+    public $joinGroupTime;
+
+    /**
      * @description 群开放ID
      *
      * @var string
@@ -47,6 +54,7 @@ class groupInfoList extends Model
         'deptNameChain'      => 'deptNameChain',
         'groupName'          => 'groupName',
         'groupType'          => 'groupType',
+        'joinGroupTime'      => 'joinGroupTime',
         'openConversationId' => 'openConversationId',
     ];
 
@@ -68,6 +76,9 @@ class groupInfoList extends Model
         }
         if (null !== $this->groupType) {
             $res['groupType'] = $this->groupType;
+        }
+        if (null !== $this->joinGroupTime) {
+            $res['joinGroupTime'] = $this->joinGroupTime;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -97,6 +108,9 @@ class groupInfoList extends Model
         }
         if (isset($map['groupType'])) {
             $model->groupType = $map['groupType'];
+        }
+        if (isset($map['joinGroupTime'])) {
+            $model->joinGroupTime = $map['joinGroupTime'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];

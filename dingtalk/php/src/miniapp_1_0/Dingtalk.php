@@ -31,6 +31,8 @@ use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\ListAvaiableVersionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\QueryHtmlBundleBuildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\QueryHtmlBundleBuildRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\QueryHtmlBundleBuildResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\RollBackVersionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\RollBackVersionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\SetExtendSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\SetExtendSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\SetExtendSettingResponse;
@@ -505,6 +507,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryHtmlBundleBuildResponse::fromMap($this->doROARequest('QueryHtmlBundleBuild', 'miniapp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/miniapp/h5Bundles/buildResults', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RollBackVersionRequest $request
+     *
+     * @return RollBackVersionResponse
+     */
+    public function rollBackVersion($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->rollBackVersionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RollBackVersionRequest $request
+     * @param string[]               $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return RollBackVersionResponse
+     */
+    public function rollBackVersionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bundleId)) {
+            @$body['bundleId'] = $request->bundleId;
+        }
+        if (!Utils::isUnset($request->miniAppId)) {
+            @$body['miniAppId'] = $request->miniAppId;
+        }
+        if (!Utils::isUnset($request->rollbackVersion)) {
+            @$body['rollbackVersion'] = $request->rollbackVersion;
+        }
+        if (!Utils::isUnset($request->targetVersion)) {
+            @$body['targetVersion'] = $request->targetVersion;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RollBackVersionResponse::fromMap($this->doROARequest('RollBackVersion', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/versions/rollback', 'json', $req, $runtime));
     }
 
     /**

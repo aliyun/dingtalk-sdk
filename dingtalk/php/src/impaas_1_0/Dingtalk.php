@@ -29,6 +29,12 @@ use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetConversationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetMediaUrlsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetSpaceFileUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetSpaceFileUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\GetSpaceFileUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\ListGroupStaffMembersResponse;
@@ -478,6 +484,99 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetMediaUrlResponse::fromMap($this->doROARequest('GetMediaUrl', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/medium/urls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetMediaUrlsRequest $request
+     *
+     * @return GetMediaUrlsResponse
+     */
+    public function getMediaUrls($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMediaUrlsHeaders([]);
+
+        return $this->getMediaUrlsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetMediaUrlsRequest $request
+     * @param GetMediaUrlsHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetMediaUrlsResponse
+     */
+    public function getMediaUrlsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mediaIds)) {
+            @$body['mediaIds'] = $request->mediaIds;
+        }
+        if (!Utils::isUnset($request->urlExpireTime)) {
+            @$body['urlExpireTime'] = $request->urlExpireTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetMediaUrlsResponse::fromMap($this->doROARequest('GetMediaUrls', 'impaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/impaas/interconnections/mediaUrls/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetSpaceFileUrlRequest $request
+     *
+     * @return GetSpaceFileUrlResponse
+     */
+    public function getSpaceFileUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSpaceFileUrlHeaders([]);
+
+        return $this->getSpaceFileUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetSpaceFileUrlRequest $request
+     * @param GetSpaceFileUrlHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetSpaceFileUrlResponse
+     */
+    public function getSpaceFileUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->fileId)) {
+            @$query['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->senderUid)) {
+            @$query['senderUid'] = $request->senderUid;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            @$query['spaceId'] = $request->spaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetSpaceFileUrlResponse::fromMap($this->doROARequest('GetSpaceFileUrl', 'impaas_1.0', 'HTTP', 'GET', 'AK', '/v1.0/impaas/interconnections/spaces/files/urls', 'json', $req, $runtime));
     }
 
     /**
