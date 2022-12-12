@@ -8,21 +8,21 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
-    public class ListEventsResponseBody : TeaModel {
+    public class ListInstancesResponseBody : TeaModel {
         /// <summary>
         /// 日程
         /// </summary>
         [NameInMap("events")]
         [Validation(Required=false)]
-        public List<ListEventsResponseBodyEvents> Events { get; set; }
-        public class ListEventsResponseBodyEvents : TeaModel {
+        public List<ListInstancesResponseBodyEvents> Events { get; set; }
+        public class ListInstancesResponseBodyEvents : TeaModel {
             /// <summary>
             /// 日程参与人
             /// </summary>
             [NameInMap("attendees")]
             [Validation(Required=false)]
-            public List<ListEventsResponseBodyEventsAttendees> Attendees { get; set; }
-            public class ListEventsResponseBodyEventsAttendees : TeaModel {
+            public List<ListInstancesResponseBodyEventsAttendees> Attendees { get; set; }
+            public class ListInstancesResponseBodyEventsAttendees : TeaModel {
                 /// <summary>
                 /// 用户名
                 /// </summary>
@@ -76,8 +76,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             /// </summary>
             [NameInMap("end")]
             [Validation(Required=false)]
-            public ListEventsResponseBodyEventsEnd End { get; set; }
-            public class ListEventsResponseBodyEventsEnd : TeaModel {
+            public ListInstancesResponseBodyEventsEnd End { get; set; }
+            public class ListInstancesResponseBodyEventsEnd : TeaModel {
                 [NameInMap("date")]
                 [Validation(Required=false)]
                 public string Date { get; set; }
@@ -94,12 +94,12 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
             [NameInMap("extendedProperties")]
             [Validation(Required=false)]
-            public ListEventsResponseBodyEventsExtendedProperties ExtendedProperties { get; set; }
-            public class ListEventsResponseBodyEventsExtendedProperties : TeaModel {
+            public ListInstancesResponseBodyEventsExtendedProperties ExtendedProperties { get; set; }
+            public class ListInstancesResponseBodyEventsExtendedProperties : TeaModel {
                 [NameInMap("sharedProperties")]
                 [Validation(Required=false)]
-                public ListEventsResponseBodyEventsExtendedPropertiesSharedProperties SharedProperties { get; set; }
-                public class ListEventsResponseBodyEventsExtendedPropertiesSharedProperties : TeaModel {
+                public ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties SharedProperties { get; set; }
+                public class ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties : TeaModel {
                     [NameInMap("belongCorpId")]
                     [Validation(Required=false)]
                     public string BelongCorpId { get; set; }
@@ -131,8 +131,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             /// </summary>
             [NameInMap("location")]
             [Validation(Required=false)]
-            public ListEventsResponseBodyEventsLocation Location { get; set; }
-            public class ListEventsResponseBodyEventsLocation : TeaModel {
+            public ListInstancesResponseBodyEventsLocation Location { get; set; }
+            public class ListInstancesResponseBodyEventsLocation : TeaModel {
                 /// <summary>
                 /// 展示名称
                 /// </summary>
@@ -140,16 +140,12 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public string DisplayName { get; set; }
 
-                [NameInMap("meetingRooms")]
-                [Validation(Required=false)]
-                public List<string> MeetingRooms { get; set; }
-
             }
 
             [NameInMap("meetingRooms")]
             [Validation(Required=false)]
-            public List<ListEventsResponseBodyEventsMeetingRooms> MeetingRooms { get; set; }
-            public class ListEventsResponseBodyEventsMeetingRooms : TeaModel {
+            public List<ListInstancesResponseBodyEventsMeetingRooms> MeetingRooms { get; set; }
+            public class ListInstancesResponseBodyEventsMeetingRooms : TeaModel {
                 [NameInMap("displayName")]
                 [Validation(Required=false)]
                 public string DisplayName { get; set; }
@@ -166,8 +162,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
             [NameInMap("onlineMeetingInfo")]
             [Validation(Required=false)]
-            public ListEventsResponseBodyEventsOnlineMeetingInfo OnlineMeetingInfo { get; set; }
-            public class ListEventsResponseBodyEventsOnlineMeetingInfo : TeaModel {
+            public ListInstancesResponseBodyEventsOnlineMeetingInfo OnlineMeetingInfo { get; set; }
+            public class ListInstancesResponseBodyEventsOnlineMeetingInfo : TeaModel {
                 [NameInMap("conferenceId")]
                 [Validation(Required=false)]
                 public string ConferenceId { get; set; }
@@ -191,8 +187,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             /// </summary>
             [NameInMap("organizer")]
             [Validation(Required=false)]
-            public ListEventsResponseBodyEventsOrganizer Organizer { get; set; }
-            public class ListEventsResponseBodyEventsOrganizer : TeaModel {
+            public ListInstancesResponseBodyEventsOrganizer Organizer { get; set; }
+            public class ListInstancesResponseBodyEventsOrganizer : TeaModel {
                 /// <summary>
                 /// 用户名
                 /// </summary>
@@ -228,15 +224,15 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             /// </summary>
             [NameInMap("recurrence")]
             [Validation(Required=false)]
-            public ListEventsResponseBodyEventsRecurrence Recurrence { get; set; }
-            public class ListEventsResponseBodyEventsRecurrence : TeaModel {
+            public ListInstancesResponseBodyEventsRecurrence Recurrence { get; set; }
+            public class ListInstancesResponseBodyEventsRecurrence : TeaModel {
                 /// <summary>
                 /// 重复模式
                 /// </summary>
                 [NameInMap("pattern")]
                 [Validation(Required=false)]
-                public ListEventsResponseBodyEventsRecurrencePattern Pattern { get; set; }
-                public class ListEventsResponseBodyEventsRecurrencePattern : TeaModel {
+                public ListInstancesResponseBodyEventsRecurrencePattern Pattern { get; set; }
+                public class ListInstancesResponseBodyEventsRecurrencePattern : TeaModel {
                     [NameInMap("dayOfMonth")]
                     [Validation(Required=false)]
                     public int? DayOfMonth { get; set; }
@@ -267,8 +263,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 /// </summary>
                 [NameInMap("range")]
                 [Validation(Required=false)]
-                public ListEventsResponseBodyEventsRecurrenceRange Range { get; set; }
-                public class ListEventsResponseBodyEventsRecurrenceRange : TeaModel {
+                public ListInstancesResponseBodyEventsRecurrenceRange Range { get; set; }
+                public class ListInstancesResponseBodyEventsRecurrenceRange : TeaModel {
                     [NameInMap("endDate")]
                     [Validation(Required=false)]
                     public string EndDate { get; set; }
@@ -290,8 +286,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
             [NameInMap("reminders")]
             [Validation(Required=false)]
-            public List<ListEventsResponseBodyEventsReminders> Reminders { get; set; }
-            public class ListEventsResponseBodyEventsReminders : TeaModel {
+            public List<ListInstancesResponseBodyEventsReminders> Reminders { get; set; }
+            public class ListInstancesResponseBodyEventsReminders : TeaModel {
                 [NameInMap("method")]
                 [Validation(Required=false)]
                 public string Method { get; set; }
@@ -314,8 +310,8 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             /// </summary>
             [NameInMap("start")]
             [Validation(Required=false)]
-            public ListEventsResponseBodyEventsStart Start { get; set; }
-            public class ListEventsResponseBodyEventsStart : TeaModel {
+            public ListInstancesResponseBodyEventsStart Start { get; set; }
+            public class ListInstancesResponseBodyEventsStart : TeaModel {
                 /// <summary>
                 /// 日期，格式：yyyyMMdd
                 /// </summary>
@@ -368,13 +364,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
-
-        /// <summary>
-        /// 增量同步token
-        /// </summary>
-        [NameInMap("syncToken")]
-        [Validation(Required=false)]
-        public string SyncToken { get; set; }
 
     }
 

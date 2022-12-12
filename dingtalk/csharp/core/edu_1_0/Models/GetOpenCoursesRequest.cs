@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class GetOpenCoursesRequest : TeaModel {
         /// <summary>
-        /// 分页起始, 起始值为0
+        /// 分页起始, 起始值为1
         /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
