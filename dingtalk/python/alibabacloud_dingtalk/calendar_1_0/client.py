@@ -1843,6 +1843,104 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListEventsView', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/eventsview', 'json', req, runtime)
         )
 
+    def list_instances(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.ListInstancesRequest,
+    ) -> dingtalkcalendar__1__0_models.ListInstancesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListInstancesHeaders()
+        return self.list_instances_with_options(user_id, calendar_id, event_id, request, headers, runtime)
+
+    async def list_instances_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.ListInstancesRequest,
+    ) -> dingtalkcalendar__1__0_models.ListInstancesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListInstancesHeaders()
+        return await self.list_instances_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
+
+    def list_instances_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.ListInstancesRequest,
+        headers: dingtalkcalendar__1__0_models.ListInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListInstancesResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_attendees):
+            query['maxAttendees'] = request.max_attendees
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.time_max):
+            query['timeMax'] = request.time_max
+        if not UtilClient.is_unset(request.time_min):
+            query['timeMin'] = request.time_min
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListInstancesResponse(),
+            self.do_roarequest('ListInstances', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/instances', 'json', req, runtime)
+        )
+
+    async def list_instances_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.ListInstancesRequest,
+        headers: dingtalkcalendar__1__0_models.ListInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListInstancesResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        calendar_id = OpenApiUtilClient.get_encode_param(calendar_id)
+        event_id = OpenApiUtilClient.get_encode_param(event_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_attendees):
+            query['maxAttendees'] = request.max_attendees
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.time_max):
+            query['timeMax'] = request.time_max
+        if not UtilClient.is_unset(request.time_min):
+            query['timeMin'] = request.time_min
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListInstancesResponse(),
+            await self.do_roarequest_async('ListInstances', 'calendar_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/instances', 'json', req, runtime)
+        )
+
     def patch_event(
         self,
         user_id: str,
