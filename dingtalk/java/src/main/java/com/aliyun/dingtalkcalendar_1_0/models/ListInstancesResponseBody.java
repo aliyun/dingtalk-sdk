@@ -3,33 +3,29 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class ListEventsResponseBody extends TeaModel {
+public class ListInstancesResponseBody extends TeaModel {
     // 日程
     @NameInMap("events")
-    public java.util.List<ListEventsResponseBodyEvents> events;
+    public java.util.List<ListInstancesResponseBodyEvents> events;
 
     // 翻页token
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 增量同步token
-    @NameInMap("syncToken")
-    public String syncToken;
-
-    public static ListEventsResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        ListEventsResponseBody self = new ListEventsResponseBody();
+    public static ListInstancesResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        ListInstancesResponseBody self = new ListInstancesResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public ListEventsResponseBody setEvents(java.util.List<ListEventsResponseBodyEvents> events) {
+    public ListInstancesResponseBody setEvents(java.util.List<ListInstancesResponseBodyEvents> events) {
         this.events = events;
         return this;
     }
-    public java.util.List<ListEventsResponseBodyEvents> getEvents() {
+    public java.util.List<ListInstancesResponseBodyEvents> getEvents() {
         return this.events;
     }
 
-    public ListEventsResponseBody setNextToken(String nextToken) {
+    public ListInstancesResponseBody setNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
@@ -37,15 +33,7 @@ public class ListEventsResponseBody extends TeaModel {
         return this.nextToken;
     }
 
-    public ListEventsResponseBody setSyncToken(String syncToken) {
-        this.syncToken = syncToken;
-        return this;
-    }
-    public String getSyncToken() {
-        return this.syncToken;
-    }
-
-    public static class ListEventsResponseBodyEventsAttendees extends TeaModel {
+    public static class ListInstancesResponseBodyEventsAttendees extends TeaModel {
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -65,12 +53,12 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("self")
         public Boolean self;
 
-        public static ListEventsResponseBodyEventsAttendees build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsAttendees self = new ListEventsResponseBodyEventsAttendees();
+        public static ListInstancesResponseBodyEventsAttendees build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsAttendees self = new ListInstancesResponseBodyEventsAttendees();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsAttendees setDisplayName(String displayName) {
+        public ListInstancesResponseBodyEventsAttendees setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
         }
@@ -78,7 +66,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.displayName;
         }
 
-        public ListEventsResponseBodyEventsAttendees setId(String id) {
+        public ListInstancesResponseBodyEventsAttendees setId(String id) {
             this.id = id;
             return this;
         }
@@ -86,7 +74,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.id;
         }
 
-        public ListEventsResponseBodyEventsAttendees setIsOptional(Boolean isOptional) {
+        public ListInstancesResponseBodyEventsAttendees setIsOptional(Boolean isOptional) {
             this.isOptional = isOptional;
             return this;
         }
@@ -94,7 +82,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.isOptional;
         }
 
-        public ListEventsResponseBodyEventsAttendees setResponseStatus(String responseStatus) {
+        public ListInstancesResponseBodyEventsAttendees setResponseStatus(String responseStatus) {
             this.responseStatus = responseStatus;
             return this;
         }
@@ -102,7 +90,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.responseStatus;
         }
 
-        public ListEventsResponseBodyEventsAttendees setSelf(Boolean self) {
+        public ListInstancesResponseBodyEventsAttendees setSelf(Boolean self) {
             this.self = self;
             return this;
         }
@@ -112,7 +100,7 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsEnd extends TeaModel {
+    public static class ListInstancesResponseBodyEventsEnd extends TeaModel {
         @NameInMap("date")
         public String date;
 
@@ -122,12 +110,12 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("timeZone")
         public String timeZone;
 
-        public static ListEventsResponseBodyEventsEnd build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsEnd self = new ListEventsResponseBodyEventsEnd();
+        public static ListInstancesResponseBodyEventsEnd build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsEnd self = new ListInstancesResponseBodyEventsEnd();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsEnd setDate(String date) {
+        public ListInstancesResponseBodyEventsEnd setDate(String date) {
             this.date = date;
             return this;
         }
@@ -135,7 +123,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.date;
         }
 
-        public ListEventsResponseBodyEventsEnd setDateTime(String dateTime) {
+        public ListInstancesResponseBodyEventsEnd setDateTime(String dateTime) {
             this.dateTime = dateTime;
             return this;
         }
@@ -143,7 +131,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.dateTime;
         }
 
-        public ListEventsResponseBodyEventsEnd setTimeZone(String timeZone) {
+        public ListInstancesResponseBodyEventsEnd setTimeZone(String timeZone) {
             this.timeZone = timeZone;
             return this;
         }
@@ -153,19 +141,19 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsExtendedPropertiesSharedProperties extends TeaModel {
+    public static class ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties extends TeaModel {
         @NameInMap("belongCorpId")
         public String belongCorpId;
 
         @NameInMap("sourceOpenCid")
         public String sourceOpenCid;
 
-        public static ListEventsResponseBodyEventsExtendedPropertiesSharedProperties build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsExtendedPropertiesSharedProperties self = new ListEventsResponseBodyEventsExtendedPropertiesSharedProperties();
+        public static ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties self = new ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsExtendedPropertiesSharedProperties setBelongCorpId(String belongCorpId) {
+        public ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties setBelongCorpId(String belongCorpId) {
             this.belongCorpId = belongCorpId;
             return this;
         }
@@ -173,7 +161,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.belongCorpId;
         }
 
-        public ListEventsResponseBodyEventsExtendedPropertiesSharedProperties setSourceOpenCid(String sourceOpenCid) {
+        public ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties setSourceOpenCid(String sourceOpenCid) {
             this.sourceOpenCid = sourceOpenCid;
             return this;
         }
@@ -183,39 +171,36 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsExtendedProperties extends TeaModel {
+    public static class ListInstancesResponseBodyEventsExtendedProperties extends TeaModel {
         @NameInMap("sharedProperties")
-        public ListEventsResponseBodyEventsExtendedPropertiesSharedProperties sharedProperties;
+        public ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties sharedProperties;
 
-        public static ListEventsResponseBodyEventsExtendedProperties build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsExtendedProperties self = new ListEventsResponseBodyEventsExtendedProperties();
+        public static ListInstancesResponseBodyEventsExtendedProperties build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsExtendedProperties self = new ListInstancesResponseBodyEventsExtendedProperties();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsExtendedProperties setSharedProperties(ListEventsResponseBodyEventsExtendedPropertiesSharedProperties sharedProperties) {
+        public ListInstancesResponseBodyEventsExtendedProperties setSharedProperties(ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties sharedProperties) {
             this.sharedProperties = sharedProperties;
             return this;
         }
-        public ListEventsResponseBodyEventsExtendedPropertiesSharedProperties getSharedProperties() {
+        public ListInstancesResponseBodyEventsExtendedPropertiesSharedProperties getSharedProperties() {
             return this.sharedProperties;
         }
 
     }
 
-    public static class ListEventsResponseBodyEventsLocation extends TeaModel {
+    public static class ListInstancesResponseBodyEventsLocation extends TeaModel {
         // 展示名称
         @NameInMap("displayName")
         public String displayName;
 
-        @NameInMap("meetingRooms")
-        public java.util.List<String> meetingRooms;
-
-        public static ListEventsResponseBodyEventsLocation build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsLocation self = new ListEventsResponseBodyEventsLocation();
+        public static ListInstancesResponseBodyEventsLocation build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsLocation self = new ListInstancesResponseBodyEventsLocation();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsLocation setDisplayName(String displayName) {
+        public ListInstancesResponseBodyEventsLocation setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
         }
@@ -223,17 +208,9 @@ public class ListEventsResponseBody extends TeaModel {
             return this.displayName;
         }
 
-        public ListEventsResponseBodyEventsLocation setMeetingRooms(java.util.List<String> meetingRooms) {
-            this.meetingRooms = meetingRooms;
-            return this;
-        }
-        public java.util.List<String> getMeetingRooms() {
-            return this.meetingRooms;
-        }
-
     }
 
-    public static class ListEventsResponseBodyEventsMeetingRooms extends TeaModel {
+    public static class ListInstancesResponseBodyEventsMeetingRooms extends TeaModel {
         @NameInMap("displayName")
         public String displayName;
 
@@ -243,12 +220,12 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("roomId")
         public String roomId;
 
-        public static ListEventsResponseBodyEventsMeetingRooms build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsMeetingRooms self = new ListEventsResponseBodyEventsMeetingRooms();
+        public static ListInstancesResponseBodyEventsMeetingRooms build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsMeetingRooms self = new ListInstancesResponseBodyEventsMeetingRooms();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsMeetingRooms setDisplayName(String displayName) {
+        public ListInstancesResponseBodyEventsMeetingRooms setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
         }
@@ -256,7 +233,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.displayName;
         }
 
-        public ListEventsResponseBodyEventsMeetingRooms setResponseStatus(String responseStatus) {
+        public ListInstancesResponseBodyEventsMeetingRooms setResponseStatus(String responseStatus) {
             this.responseStatus = responseStatus;
             return this;
         }
@@ -264,7 +241,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.responseStatus;
         }
 
-        public ListEventsResponseBodyEventsMeetingRooms setRoomId(String roomId) {
+        public ListInstancesResponseBodyEventsMeetingRooms setRoomId(String roomId) {
             this.roomId = roomId;
             return this;
         }
@@ -274,7 +251,7 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsOnlineMeetingInfo extends TeaModel {
+    public static class ListInstancesResponseBodyEventsOnlineMeetingInfo extends TeaModel {
         @NameInMap("conferenceId")
         public String conferenceId;
 
@@ -287,12 +264,12 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("url")
         public String url;
 
-        public static ListEventsResponseBodyEventsOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsOnlineMeetingInfo self = new ListEventsResponseBodyEventsOnlineMeetingInfo();
+        public static ListInstancesResponseBodyEventsOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsOnlineMeetingInfo self = new ListInstancesResponseBodyEventsOnlineMeetingInfo();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsOnlineMeetingInfo setConferenceId(String conferenceId) {
+        public ListInstancesResponseBodyEventsOnlineMeetingInfo setConferenceId(String conferenceId) {
             this.conferenceId = conferenceId;
             return this;
         }
@@ -300,7 +277,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.conferenceId;
         }
 
-        public ListEventsResponseBodyEventsOnlineMeetingInfo setExtraInfo(java.util.Map<String, ?> extraInfo) {
+        public ListInstancesResponseBodyEventsOnlineMeetingInfo setExtraInfo(java.util.Map<String, ?> extraInfo) {
             this.extraInfo = extraInfo;
             return this;
         }
@@ -308,7 +285,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.extraInfo;
         }
 
-        public ListEventsResponseBodyEventsOnlineMeetingInfo setType(String type) {
+        public ListInstancesResponseBodyEventsOnlineMeetingInfo setType(String type) {
             this.type = type;
             return this;
         }
@@ -316,7 +293,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.type;
         }
 
-        public ListEventsResponseBodyEventsOnlineMeetingInfo setUrl(String url) {
+        public ListInstancesResponseBodyEventsOnlineMeetingInfo setUrl(String url) {
             this.url = url;
             return this;
         }
@@ -326,7 +303,7 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsOrganizer extends TeaModel {
+    public static class ListInstancesResponseBodyEventsOrganizer extends TeaModel {
         // 用户名
         @NameInMap("displayName")
         public String displayName;
@@ -343,12 +320,12 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("self")
         public Boolean self;
 
-        public static ListEventsResponseBodyEventsOrganizer build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsOrganizer self = new ListEventsResponseBodyEventsOrganizer();
+        public static ListInstancesResponseBodyEventsOrganizer build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsOrganizer self = new ListInstancesResponseBodyEventsOrganizer();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsOrganizer setDisplayName(String displayName) {
+        public ListInstancesResponseBodyEventsOrganizer setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
         }
@@ -356,7 +333,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.displayName;
         }
 
-        public ListEventsResponseBodyEventsOrganizer setId(String id) {
+        public ListInstancesResponseBodyEventsOrganizer setId(String id) {
             this.id = id;
             return this;
         }
@@ -364,7 +341,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.id;
         }
 
-        public ListEventsResponseBodyEventsOrganizer setResponseStatus(String responseStatus) {
+        public ListInstancesResponseBodyEventsOrganizer setResponseStatus(String responseStatus) {
             this.responseStatus = responseStatus;
             return this;
         }
@@ -372,7 +349,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.responseStatus;
         }
 
-        public ListEventsResponseBodyEventsOrganizer setSelf(Boolean self) {
+        public ListInstancesResponseBodyEventsOrganizer setSelf(Boolean self) {
             this.self = self;
             return this;
         }
@@ -382,7 +359,7 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsRecurrencePattern extends TeaModel {
+    public static class ListInstancesResponseBodyEventsRecurrencePattern extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
@@ -399,12 +376,12 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        public static ListEventsResponseBodyEventsRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsRecurrencePattern self = new ListEventsResponseBodyEventsRecurrencePattern();
+        public static ListInstancesResponseBodyEventsRecurrencePattern build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsRecurrencePattern self = new ListInstancesResponseBodyEventsRecurrencePattern();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsRecurrencePattern setDayOfMonth(Integer dayOfMonth) {
+        public ListInstancesResponseBodyEventsRecurrencePattern setDayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             return this;
         }
@@ -412,7 +389,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.dayOfMonth;
         }
 
-        public ListEventsResponseBodyEventsRecurrencePattern setDaysOfWeek(String daysOfWeek) {
+        public ListInstancesResponseBodyEventsRecurrencePattern setDaysOfWeek(String daysOfWeek) {
             this.daysOfWeek = daysOfWeek;
             return this;
         }
@@ -420,7 +397,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.daysOfWeek;
         }
 
-        public ListEventsResponseBodyEventsRecurrencePattern setIndex(String index) {
+        public ListInstancesResponseBodyEventsRecurrencePattern setIndex(String index) {
             this.index = index;
             return this;
         }
@@ -428,7 +405,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.index;
         }
 
-        public ListEventsResponseBodyEventsRecurrencePattern setInterval(Integer interval) {
+        public ListInstancesResponseBodyEventsRecurrencePattern setInterval(Integer interval) {
             this.interval = interval;
             return this;
         }
@@ -436,7 +413,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.interval;
         }
 
-        public ListEventsResponseBodyEventsRecurrencePattern setType(String type) {
+        public ListInstancesResponseBodyEventsRecurrencePattern setType(String type) {
             this.type = type;
             return this;
         }
@@ -446,7 +423,7 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsRecurrenceRange extends TeaModel {
+    public static class ListInstancesResponseBodyEventsRecurrenceRange extends TeaModel {
         @NameInMap("endDate")
         public String endDate;
 
@@ -457,12 +434,12 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        public static ListEventsResponseBodyEventsRecurrenceRange build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsRecurrenceRange self = new ListEventsResponseBodyEventsRecurrenceRange();
+        public static ListInstancesResponseBodyEventsRecurrenceRange build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsRecurrenceRange self = new ListInstancesResponseBodyEventsRecurrenceRange();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsRecurrenceRange setEndDate(String endDate) {
+        public ListInstancesResponseBodyEventsRecurrenceRange setEndDate(String endDate) {
             this.endDate = endDate;
             return this;
         }
@@ -470,7 +447,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.endDate;
         }
 
-        public ListEventsResponseBodyEventsRecurrenceRange setNumberOfOccurrences(Integer numberOfOccurrences) {
+        public ListInstancesResponseBodyEventsRecurrenceRange setNumberOfOccurrences(Integer numberOfOccurrences) {
             this.numberOfOccurrences = numberOfOccurrences;
             return this;
         }
@@ -478,7 +455,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.numberOfOccurrences;
         }
 
-        public ListEventsResponseBodyEventsRecurrenceRange setType(String type) {
+        public ListInstancesResponseBodyEventsRecurrenceRange setType(String type) {
             this.type = type;
             return this;
         }
@@ -488,51 +465,51 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsRecurrence extends TeaModel {
+    public static class ListInstancesResponseBodyEventsRecurrence extends TeaModel {
         // 重复模式
         @NameInMap("pattern")
-        public ListEventsResponseBodyEventsRecurrencePattern pattern;
+        public ListInstancesResponseBodyEventsRecurrencePattern pattern;
 
         // 重复范围
         @NameInMap("range")
-        public ListEventsResponseBodyEventsRecurrenceRange range;
+        public ListInstancesResponseBodyEventsRecurrenceRange range;
 
-        public static ListEventsResponseBodyEventsRecurrence build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsRecurrence self = new ListEventsResponseBodyEventsRecurrence();
+        public static ListInstancesResponseBodyEventsRecurrence build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsRecurrence self = new ListInstancesResponseBodyEventsRecurrence();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsRecurrence setPattern(ListEventsResponseBodyEventsRecurrencePattern pattern) {
+        public ListInstancesResponseBodyEventsRecurrence setPattern(ListInstancesResponseBodyEventsRecurrencePattern pattern) {
             this.pattern = pattern;
             return this;
         }
-        public ListEventsResponseBodyEventsRecurrencePattern getPattern() {
+        public ListInstancesResponseBodyEventsRecurrencePattern getPattern() {
             return this.pattern;
         }
 
-        public ListEventsResponseBodyEventsRecurrence setRange(ListEventsResponseBodyEventsRecurrenceRange range) {
+        public ListInstancesResponseBodyEventsRecurrence setRange(ListInstancesResponseBodyEventsRecurrenceRange range) {
             this.range = range;
             return this;
         }
-        public ListEventsResponseBodyEventsRecurrenceRange getRange() {
+        public ListInstancesResponseBodyEventsRecurrenceRange getRange() {
             return this.range;
         }
 
     }
 
-    public static class ListEventsResponseBodyEventsReminders extends TeaModel {
+    public static class ListInstancesResponseBodyEventsReminders extends TeaModel {
         @NameInMap("method")
         public String method;
 
         @NameInMap("minutes")
         public String minutes;
 
-        public static ListEventsResponseBodyEventsReminders build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsReminders self = new ListEventsResponseBodyEventsReminders();
+        public static ListInstancesResponseBodyEventsReminders build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsReminders self = new ListInstancesResponseBodyEventsReminders();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsReminders setMethod(String method) {
+        public ListInstancesResponseBodyEventsReminders setMethod(String method) {
             this.method = method;
             return this;
         }
@@ -540,7 +517,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.method;
         }
 
-        public ListEventsResponseBodyEventsReminders setMinutes(String minutes) {
+        public ListInstancesResponseBodyEventsReminders setMinutes(String minutes) {
             this.minutes = minutes;
             return this;
         }
@@ -550,7 +527,7 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEventsStart extends TeaModel {
+    public static class ListInstancesResponseBodyEventsStart extends TeaModel {
         // 日期，格式：yyyyMMdd
         @NameInMap("date")
         public String date;
@@ -563,12 +540,12 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("timeZone")
         public String timeZone;
 
-        public static ListEventsResponseBodyEventsStart build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEventsStart self = new ListEventsResponseBodyEventsStart();
+        public static ListInstancesResponseBodyEventsStart build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEventsStart self = new ListInstancesResponseBodyEventsStart();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEventsStart setDate(String date) {
+        public ListInstancesResponseBodyEventsStart setDate(String date) {
             this.date = date;
             return this;
         }
@@ -576,7 +553,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.date;
         }
 
-        public ListEventsResponseBodyEventsStart setDateTime(String dateTime) {
+        public ListInstancesResponseBodyEventsStart setDateTime(String dateTime) {
             this.dateTime = dateTime;
             return this;
         }
@@ -584,7 +561,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.dateTime;
         }
 
-        public ListEventsResponseBodyEventsStart setTimeZone(String timeZone) {
+        public ListInstancesResponseBodyEventsStart setTimeZone(String timeZone) {
             this.timeZone = timeZone;
             return this;
         }
@@ -594,10 +571,10 @@ public class ListEventsResponseBody extends TeaModel {
 
     }
 
-    public static class ListEventsResponseBodyEvents extends TeaModel {
+    public static class ListInstancesResponseBodyEvents extends TeaModel {
         // 日程参与人
         @NameInMap("attendees")
-        public java.util.List<ListEventsResponseBodyEventsAttendees> attendees;
+        public java.util.List<ListInstancesResponseBodyEventsAttendees> attendees;
 
         // 创建时间
         @NameInMap("createTime")
@@ -609,10 +586,10 @@ public class ListEventsResponseBody extends TeaModel {
 
         // 日程结束时间
         @NameInMap("end")
-        public ListEventsResponseBodyEventsEnd end;
+        public ListInstancesResponseBodyEventsEnd end;
 
         @NameInMap("extendedProperties")
-        public ListEventsResponseBodyEventsExtendedProperties extendedProperties;
+        public ListInstancesResponseBodyEventsExtendedProperties extendedProperties;
 
         // 日程事件id
         @NameInMap("id")
@@ -624,24 +601,24 @@ public class ListEventsResponseBody extends TeaModel {
 
         // 日程地点
         @NameInMap("location")
-        public ListEventsResponseBodyEventsLocation location;
+        public ListInstancesResponseBodyEventsLocation location;
 
         @NameInMap("meetingRooms")
-        public java.util.List<ListEventsResponseBodyEventsMeetingRooms> meetingRooms;
+        public java.util.List<ListInstancesResponseBodyEventsMeetingRooms> meetingRooms;
 
         @NameInMap("onlineMeetingInfo")
-        public ListEventsResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo;
+        public ListInstancesResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo;
 
         // 日程组织人
         @NameInMap("organizer")
-        public ListEventsResponseBodyEventsOrganizer organizer;
+        public ListInstancesResponseBodyEventsOrganizer organizer;
 
         // 日程重复规则
         @NameInMap("recurrence")
-        public ListEventsResponseBodyEventsRecurrence recurrence;
+        public ListInstancesResponseBodyEventsRecurrence recurrence;
 
         @NameInMap("reminders")
-        public java.util.List<ListEventsResponseBodyEventsReminders> reminders;
+        public java.util.List<ListInstancesResponseBodyEventsReminders> reminders;
 
         // 重复日程的主日程id，非重复日程为空
         @NameInMap("seriesMasterId")
@@ -649,7 +626,7 @@ public class ListEventsResponseBody extends TeaModel {
 
         // 日程开始时间
         @NameInMap("start")
-        public ListEventsResponseBodyEventsStart start;
+        public ListInstancesResponseBodyEventsStart start;
 
         // 日程状态
         @NameInMap("status")
@@ -663,20 +640,20 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("updateTime")
         public String updateTime;
 
-        public static ListEventsResponseBodyEvents build(java.util.Map<String, ?> map) throws Exception {
-            ListEventsResponseBodyEvents self = new ListEventsResponseBodyEvents();
+        public static ListInstancesResponseBodyEvents build(java.util.Map<String, ?> map) throws Exception {
+            ListInstancesResponseBodyEvents self = new ListInstancesResponseBodyEvents();
             return TeaModel.build(map, self);
         }
 
-        public ListEventsResponseBodyEvents setAttendees(java.util.List<ListEventsResponseBodyEventsAttendees> attendees) {
+        public ListInstancesResponseBodyEvents setAttendees(java.util.List<ListInstancesResponseBodyEventsAttendees> attendees) {
             this.attendees = attendees;
             return this;
         }
-        public java.util.List<ListEventsResponseBodyEventsAttendees> getAttendees() {
+        public java.util.List<ListInstancesResponseBodyEventsAttendees> getAttendees() {
             return this.attendees;
         }
 
-        public ListEventsResponseBodyEvents setCreateTime(String createTime) {
+        public ListInstancesResponseBodyEvents setCreateTime(String createTime) {
             this.createTime = createTime;
             return this;
         }
@@ -684,7 +661,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.createTime;
         }
 
-        public ListEventsResponseBodyEvents setDescription(String description) {
+        public ListInstancesResponseBodyEvents setDescription(String description) {
             this.description = description;
             return this;
         }
@@ -692,23 +669,23 @@ public class ListEventsResponseBody extends TeaModel {
             return this.description;
         }
 
-        public ListEventsResponseBodyEvents setEnd(ListEventsResponseBodyEventsEnd end) {
+        public ListInstancesResponseBodyEvents setEnd(ListInstancesResponseBodyEventsEnd end) {
             this.end = end;
             return this;
         }
-        public ListEventsResponseBodyEventsEnd getEnd() {
+        public ListInstancesResponseBodyEventsEnd getEnd() {
             return this.end;
         }
 
-        public ListEventsResponseBodyEvents setExtendedProperties(ListEventsResponseBodyEventsExtendedProperties extendedProperties) {
+        public ListInstancesResponseBodyEvents setExtendedProperties(ListInstancesResponseBodyEventsExtendedProperties extendedProperties) {
             this.extendedProperties = extendedProperties;
             return this;
         }
-        public ListEventsResponseBodyEventsExtendedProperties getExtendedProperties() {
+        public ListInstancesResponseBodyEventsExtendedProperties getExtendedProperties() {
             return this.extendedProperties;
         }
 
-        public ListEventsResponseBodyEvents setId(String id) {
+        public ListInstancesResponseBodyEvents setId(String id) {
             this.id = id;
             return this;
         }
@@ -716,7 +693,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.id;
         }
 
-        public ListEventsResponseBodyEvents setIsAllDay(Boolean isAllDay) {
+        public ListInstancesResponseBodyEvents setIsAllDay(Boolean isAllDay) {
             this.isAllDay = isAllDay;
             return this;
         }
@@ -724,55 +701,55 @@ public class ListEventsResponseBody extends TeaModel {
             return this.isAllDay;
         }
 
-        public ListEventsResponseBodyEvents setLocation(ListEventsResponseBodyEventsLocation location) {
+        public ListInstancesResponseBodyEvents setLocation(ListInstancesResponseBodyEventsLocation location) {
             this.location = location;
             return this;
         }
-        public ListEventsResponseBodyEventsLocation getLocation() {
+        public ListInstancesResponseBodyEventsLocation getLocation() {
             return this.location;
         }
 
-        public ListEventsResponseBodyEvents setMeetingRooms(java.util.List<ListEventsResponseBodyEventsMeetingRooms> meetingRooms) {
+        public ListInstancesResponseBodyEvents setMeetingRooms(java.util.List<ListInstancesResponseBodyEventsMeetingRooms> meetingRooms) {
             this.meetingRooms = meetingRooms;
             return this;
         }
-        public java.util.List<ListEventsResponseBodyEventsMeetingRooms> getMeetingRooms() {
+        public java.util.List<ListInstancesResponseBodyEventsMeetingRooms> getMeetingRooms() {
             return this.meetingRooms;
         }
 
-        public ListEventsResponseBodyEvents setOnlineMeetingInfo(ListEventsResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo) {
+        public ListInstancesResponseBodyEvents setOnlineMeetingInfo(ListInstancesResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo) {
             this.onlineMeetingInfo = onlineMeetingInfo;
             return this;
         }
-        public ListEventsResponseBodyEventsOnlineMeetingInfo getOnlineMeetingInfo() {
+        public ListInstancesResponseBodyEventsOnlineMeetingInfo getOnlineMeetingInfo() {
             return this.onlineMeetingInfo;
         }
 
-        public ListEventsResponseBodyEvents setOrganizer(ListEventsResponseBodyEventsOrganizer organizer) {
+        public ListInstancesResponseBodyEvents setOrganizer(ListInstancesResponseBodyEventsOrganizer organizer) {
             this.organizer = organizer;
             return this;
         }
-        public ListEventsResponseBodyEventsOrganizer getOrganizer() {
+        public ListInstancesResponseBodyEventsOrganizer getOrganizer() {
             return this.organizer;
         }
 
-        public ListEventsResponseBodyEvents setRecurrence(ListEventsResponseBodyEventsRecurrence recurrence) {
+        public ListInstancesResponseBodyEvents setRecurrence(ListInstancesResponseBodyEventsRecurrence recurrence) {
             this.recurrence = recurrence;
             return this;
         }
-        public ListEventsResponseBodyEventsRecurrence getRecurrence() {
+        public ListInstancesResponseBodyEventsRecurrence getRecurrence() {
             return this.recurrence;
         }
 
-        public ListEventsResponseBodyEvents setReminders(java.util.List<ListEventsResponseBodyEventsReminders> reminders) {
+        public ListInstancesResponseBodyEvents setReminders(java.util.List<ListInstancesResponseBodyEventsReminders> reminders) {
             this.reminders = reminders;
             return this;
         }
-        public java.util.List<ListEventsResponseBodyEventsReminders> getReminders() {
+        public java.util.List<ListInstancesResponseBodyEventsReminders> getReminders() {
             return this.reminders;
         }
 
-        public ListEventsResponseBodyEvents setSeriesMasterId(String seriesMasterId) {
+        public ListInstancesResponseBodyEvents setSeriesMasterId(String seriesMasterId) {
             this.seriesMasterId = seriesMasterId;
             return this;
         }
@@ -780,15 +757,15 @@ public class ListEventsResponseBody extends TeaModel {
             return this.seriesMasterId;
         }
 
-        public ListEventsResponseBodyEvents setStart(ListEventsResponseBodyEventsStart start) {
+        public ListInstancesResponseBodyEvents setStart(ListInstancesResponseBodyEventsStart start) {
             this.start = start;
             return this;
         }
-        public ListEventsResponseBodyEventsStart getStart() {
+        public ListInstancesResponseBodyEventsStart getStart() {
             return this.start;
         }
 
-        public ListEventsResponseBodyEvents setStatus(String status) {
+        public ListInstancesResponseBodyEvents setStatus(String status) {
             this.status = status;
             return this;
         }
@@ -796,7 +773,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.status;
         }
 
-        public ListEventsResponseBodyEvents setSummary(String summary) {
+        public ListInstancesResponseBodyEvents setSummary(String summary) {
             this.summary = summary;
             return this;
         }
@@ -804,7 +781,7 @@ public class ListEventsResponseBody extends TeaModel {
             return this.summary;
         }
 
-        public ListEventsResponseBodyEvents setUpdateTime(String updateTime) {
+        public ListInstancesResponseBodyEvents setUpdateTime(String updateTime) {
             this.updateTime = updateTime;
             return this;
         }
