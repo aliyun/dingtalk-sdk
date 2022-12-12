@@ -2,18 +2,18 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\attendees;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\end;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\extendedProperties;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\location;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\meetingRooms;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\onlineMeetingInfo;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\organizer;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\recurrence;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\reminders;
-use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponseBody\events\start;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\attendees;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\end;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\extendedProperties;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\location;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\meetingRooms;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\onlineMeetingInfo;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\organizer;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\recurrence;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\reminders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\start;
 use AlibabaCloud\Tea\Model;
 
 class events extends Model

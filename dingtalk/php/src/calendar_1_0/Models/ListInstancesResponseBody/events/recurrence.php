@@ -1,0 +1,65 @@
+<?php
+
+// This file is auto-generated, don't edit it. Thanks.
+
+namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events;
+
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\recurrence\pattern;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponseBody\events\recurrence\range;
+use AlibabaCloud\Tea\Model;
+
+class recurrence extends Model
+{
+    /**
+     * @description 重复模式
+     *
+     * @var pattern
+     */
+    public $pattern;
+
+    /**
+     * @description 重复范围
+     *
+     * @var range
+     */
+    public $range;
+    protected $_name = [
+        'pattern' => 'pattern',
+        'range'   => 'range',
+    ];
+
+    public function validate()
+    {
+    }
+
+    public function toMap()
+    {
+        $res = [];
+        if (null !== $this->pattern) {
+            $res['pattern'] = null !== $this->pattern ? $this->pattern->toMap() : null;
+        }
+        if (null !== $this->range) {
+            $res['range'] = null !== $this->range ? $this->range->toMap() : null;
+        }
+
+        return $res;
+    }
+
+    /**
+     * @param array $map
+     *
+     * @return recurrence
+     */
+    public static function fromMap($map = [])
+    {
+        $model = new self();
+        if (isset($map['pattern'])) {
+            $model->pattern = pattern::fromMap($map['pattern']);
+        }
+        if (isset($map['range'])) {
+            $model->range = range::fromMap($map['range']);
+        }
+
+        return $model;
+    }
+}
