@@ -9955,7 +9955,7 @@ class GetOpenCoursesRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
-        # 分页起始, 起始值为1
+        # 分页起始, 起始值为0
         self.page_number = page_number
         # 分页大小
         self.page_size = page_size
