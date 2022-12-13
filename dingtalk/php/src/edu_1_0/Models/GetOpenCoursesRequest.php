@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetOpenCoursesRequest extends Model
 {
     /**
-     * @description 分页起始, 起始值为1
+     * @description 分页起始, 起始值为0
      *
      * @var int
      */
