@@ -1466,6 +1466,226 @@ class CreateConditionalFormattingRuleResponse(TeaModel):
         return self
 
 
+class CreateDeveloperMetadataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateDeveloperMetadataRequestAssociatedColumn(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        sheet: str = None,
+    ):
+        # 列号，从0开始
+        self.column = column
+        self.sheet = sheet
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.sheet is not None:
+            result['sheet'] = self.sheet
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('sheet') is not None:
+            self.sheet = m.get('sheet')
+        return self
+
+
+class CreateDeveloperMetadataRequestAssociatedRow(TeaModel):
+    def __init__(
+        self,
+        row: int = None,
+        sheet: str = None,
+    ):
+        # 行号，从0开始
+        self.row = row
+        # 工作表ID或名称
+        self.sheet = sheet
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.row is not None:
+            result['row'] = self.row
+        if self.sheet is not None:
+            result['sheet'] = self.sheet
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        if m.get('sheet') is not None:
+            self.sheet = m.get('sheet')
+        return self
+
+
+class CreateDeveloperMetadataRequest(TeaModel):
+    def __init__(
+        self,
+        associated_column: CreateDeveloperMetadataRequestAssociatedColumn = None,
+        associated_row: CreateDeveloperMetadataRequestAssociatedRow = None,
+        value: str = None,
+        operator_id: str = None,
+    ):
+        # 元数据所关联到的列
+        self.associated_column = associated_column
+        # 元数据所关联到的行
+        self.associated_row = associated_row
+        # 元数据值
+        self.value = value
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.associated_column:
+            self.associated_column.validate()
+        if self.associated_row:
+            self.associated_row.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.associated_column is not None:
+            result['associatedColumn'] = self.associated_column.to_map()
+        if self.associated_row is not None:
+            result['associatedRow'] = self.associated_row.to_map()
+        if self.value is not None:
+            result['value'] = self.value
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('associatedColumn') is not None:
+            temp_model = CreateDeveloperMetadataRequestAssociatedColumn()
+            self.associated_column = temp_model.from_map(m['associatedColumn'])
+        if m.get('associatedRow') is not None:
+            temp_model = CreateDeveloperMetadataRequestAssociatedRow()
+            self.associated_row = temp_model.from_map(m['associatedRow'])
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CreateDeveloperMetadataResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class CreateDeveloperMetadataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateDeveloperMetadataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateDeveloperMetadataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateRangeProtectionHeaders(TeaModel):
     def __init__(
         self,
@@ -3344,6 +3564,219 @@ class GetAllSheetsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetAllSheetsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetDeveloperMetadataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDeveloperMetadataRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # 操作人unionId
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetDeveloperMetadataResponseBodyAssociatedColumn(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        sheet_id: str = None,
+    ):
+        # 列号，从0开始
+        self.column = column
+        self.sheet_id = sheet_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.sheet_id is not None:
+            result['sheetId'] = self.sheet_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('sheetId') is not None:
+            self.sheet_id = m.get('sheetId')
+        return self
+
+
+class GetDeveloperMetadataResponseBodyAssociatedRow(TeaModel):
+    def __init__(
+        self,
+        row: int = None,
+        sheet_id: str = None,
+    ):
+        # 行号，从0开始
+        self.row = row
+        # 工作表ID或名称
+        self.sheet_id = sheet_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.row is not None:
+            result['row'] = self.row
+        if self.sheet_id is not None:
+            result['sheetId'] = self.sheet_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        if m.get('sheetId') is not None:
+            self.sheet_id = m.get('sheetId')
+        return self
+
+
+class GetDeveloperMetadataResponseBody(TeaModel):
+    def __init__(
+        self,
+        associated_column: GetDeveloperMetadataResponseBodyAssociatedColumn = None,
+        associated_row: GetDeveloperMetadataResponseBodyAssociatedRow = None,
+        value: Any = None,
+    ):
+        # 元数据所关联到的列
+        self.associated_column = associated_column
+        # 元数据所关联到的行
+        self.associated_row = associated_row
+        self.value = value
+
+    def validate(self):
+        if self.associated_column:
+            self.associated_column.validate()
+        if self.associated_row:
+            self.associated_row.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.associated_column is not None:
+            result['associatedColumn'] = self.associated_column.to_map()
+        if self.associated_row is not None:
+            result['associatedRow'] = self.associated_row.to_map()
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('associatedColumn') is not None:
+            temp_model = GetDeveloperMetadataResponseBodyAssociatedColumn()
+            self.associated_column = temp_model.from_map(m['associatedColumn'])
+        if m.get('associatedRow') is not None:
+            temp_model = GetDeveloperMetadataResponseBodyAssociatedRow()
+            self.associated_row = temp_model.from_map(m['associatedRow'])
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetDeveloperMetadataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetDeveloperMetadataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetDeveloperMetadataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

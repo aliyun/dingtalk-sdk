@@ -657,6 +657,92 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateConditionalFormattingRule', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/conditionalFormattingRules', 'json', req, runtime)
         )
 
+    def create_developer_metadata(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.CreateDeveloperMetadataRequest,
+    ) -> dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders()
+        return self.create_developer_metadata_with_options(workbook_id, request, headers, runtime)
+
+    async def create_developer_metadata_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.CreateDeveloperMetadataRequest,
+    ) -> dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders()
+        return await self.create_developer_metadata_with_options_async(workbook_id, request, headers, runtime)
+
+    def create_developer_metadata_with_options(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.CreateDeveloperMetadataRequest,
+        headers: dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.associated_column):
+            body['associatedColumn'] = request.associated_column
+        if not UtilClient.is_unset(request.associated_row):
+            body['associatedRow'] = request.associated_row
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse(),
+            self.do_roarequest('CreateDeveloperMetadata', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/developerMetadatas', 'json', req, runtime)
+        )
+
+    async def create_developer_metadata_with_options_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.CreateDeveloperMetadataRequest,
+        headers: dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.associated_column):
+            body['associatedColumn'] = request.associated_column
+        if not UtilClient.is_unset(request.associated_row):
+            body['associatedRow'] = request.associated_row
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse(),
+            await self.do_roarequest_async('CreateDeveloperMetadata', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/developerMetadatas', 'json', req, runtime)
+        )
+
     def create_range_protection(
         self,
         workbook_id: str,
@@ -1711,6 +1797,82 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.GetAllSheetsResponse(),
             await self.do_roarequest_async('GetAllSheets', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets', 'json', req, runtime)
+        )
+
+    def get_developer_metadata(
+        self,
+        workbook_id: str,
+        developer_metadata_id: str,
+        request: dingtalkdoc__1__0_models.GetDeveloperMetadataRequest,
+    ) -> dingtalkdoc__1__0_models.GetDeveloperMetadataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders()
+        return self.get_developer_metadata_with_options(workbook_id, developer_metadata_id, request, headers, runtime)
+
+    async def get_developer_metadata_async(
+        self,
+        workbook_id: str,
+        developer_metadata_id: str,
+        request: dingtalkdoc__1__0_models.GetDeveloperMetadataRequest,
+    ) -> dingtalkdoc__1__0_models.GetDeveloperMetadataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders()
+        return await self.get_developer_metadata_with_options_async(workbook_id, developer_metadata_id, request, headers, runtime)
+
+    def get_developer_metadata_with_options(
+        self,
+        workbook_id: str,
+        developer_metadata_id: str,
+        request: dingtalkdoc__1__0_models.GetDeveloperMetadataRequest,
+        headers: dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetDeveloperMetadataResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        developer_metadata_id = OpenApiUtilClient.get_encode_param(developer_metadata_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetDeveloperMetadataResponse(),
+            self.do_roarequest('GetDeveloperMetadata', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/developerMetadatas/{developer_metadata_id}', 'json', req, runtime)
+        )
+
+    async def get_developer_metadata_with_options_async(
+        self,
+        workbook_id: str,
+        developer_metadata_id: str,
+        request: dingtalkdoc__1__0_models.GetDeveloperMetadataRequest,
+        headers: dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetDeveloperMetadataResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        developer_metadata_id = OpenApiUtilClient.get_encode_param(developer_metadata_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetDeveloperMetadataResponse(),
+            await self.do_roarequest_async('GetDeveloperMetadata', 'doc_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/developerMetadatas/{developer_metadata_id}', 'json', req, runtime)
         )
 
     def get_range(
