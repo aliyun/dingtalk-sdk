@@ -402,11 +402,11 @@ export default class Client extends OpenApi {
       body["callbackRouteKey"] = request.callbackRouteKey;
     }
 
-    if (!Util.isUnset($tea.toMap(request.cardData))) {
+    if (!Util.isUnset(request.cardData)) {
       body["cardData"] = request.cardData;
     }
 
-    if (!Util.isUnset($tea.toMap(request.cardSettings))) {
+    if (!Util.isUnset(request.cardSettings)) {
       body["cardSettings"] = request.cardSettings;
     }
 

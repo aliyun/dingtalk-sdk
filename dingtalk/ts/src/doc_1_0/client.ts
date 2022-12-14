@@ -646,6 +646,97 @@ export class CreateConditionalFormattingRuleResponse extends $tea.Model {
   }
 }
 
+export class CreateDeveloperMetadataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeveloperMetadataRequest extends $tea.Model {
+  associatedColumn?: CreateDeveloperMetadataRequestAssociatedColumn;
+  associatedRow?: CreateDeveloperMetadataRequestAssociatedRow;
+  value?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      associatedColumn: 'associatedColumn',
+      associatedRow: 'associatedRow',
+      value: 'value',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      associatedColumn: CreateDeveloperMetadataRequestAssociatedColumn,
+      associatedRow: CreateDeveloperMetadataRequestAssociatedRow,
+      value: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeveloperMetadataResponseBody extends $tea.Model {
+  id?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeveloperMetadataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateDeveloperMetadataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateDeveloperMetadataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateRangeProtectionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1710,6 +1801,94 @@ export class GetAllSheetsResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetAllSheetsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeveloperMetadataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeveloperMetadataRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeveloperMetadataResponseBody extends $tea.Model {
+  associatedColumn?: GetDeveloperMetadataResponseBodyAssociatedColumn;
+  associatedRow?: GetDeveloperMetadataResponseBodyAssociatedRow;
+  value?: any;
+  static names(): { [key: string]: string } {
+    return {
+      associatedColumn: 'associatedColumn',
+      associatedRow: 'associatedRow',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      associatedColumn: GetDeveloperMetadataResponseBodyAssociatedColumn,
+      associatedRow: GetDeveloperMetadataResponseBodyAssociatedRow,
+      value: 'any',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeveloperMetadataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetDeveloperMetadataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetDeveloperMetadataResponseBody,
     };
   }
 
@@ -4039,6 +4218,50 @@ export class CreateConditionalFormattingRuleRequestDuplicateCondition extends $t
   }
 }
 
+export class CreateDeveloperMetadataRequestAssociatedColumn extends $tea.Model {
+  column?: number;
+  sheet?: string;
+  static names(): { [key: string]: string } {
+    return {
+      column: 'column',
+      sheet: 'sheet',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      column: 'number',
+      sheet: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeveloperMetadataRequestAssociatedRow extends $tea.Model {
+  row?: number;
+  sheet?: string;
+  static names(): { [key: string]: string } {
+    return {
+      row: 'row',
+      sheet: 'sheet',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      row: 'number',
+      sheet: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateRangeProtectionRequestEditableSetting extends $tea.Model {
   deleteColumns?: boolean;
   deleteRows?: boolean;
@@ -4131,6 +4354,50 @@ export class GetAllSheetsResponseBodyValue extends $tea.Model {
     return {
       id: 'string',
       name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeveloperMetadataResponseBodyAssociatedColumn extends $tea.Model {
+  column?: number;
+  sheetId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      column: 'column',
+      sheetId: 'sheetId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      column: 'number',
+      sheetId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDeveloperMetadataResponseBodyAssociatedRow extends $tea.Model {
+  row?: number;
+  sheetId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      row: 'row',
+      sheetId: 'sheetId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      row: 'number',
+      sheetId: 'string',
     };
   }
 
@@ -5190,11 +5457,11 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.cellStyle))) {
+    if (!Util.isUnset(request.cellStyle)) {
       body["cellStyle"] = request.cellStyle;
     }
 
-    if (!Util.isUnset($tea.toMap(request.duplicateCondition))) {
+    if (!Util.isUnset(request.duplicateCondition)) {
       body["duplicateCondition"] = request.duplicateCondition;
     }
 
@@ -5219,6 +5486,50 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateConditionalFormattingRuleResponse>(await this.doROARequest("CreateConditionalFormattingRule", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/conditionalFormattingRules`, "json", req, runtime), new CreateConditionalFormattingRuleResponse({}));
   }
 
+  async createDeveloperMetadata(workbookId: string, request: CreateDeveloperMetadataRequest): Promise<CreateDeveloperMetadataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateDeveloperMetadataHeaders({ });
+    return await this.createDeveloperMetadataWithOptions(workbookId, request, headers, runtime);
+  }
+
+  async createDeveloperMetadataWithOptions(workbookId: string, request: CreateDeveloperMetadataRequest, headers: CreateDeveloperMetadataHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeveloperMetadataResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.associatedColumn)) {
+      body["associatedColumn"] = request.associatedColumn;
+    }
+
+    if (!Util.isUnset(request.associatedRow)) {
+      body["associatedRow"] = request.associatedRow;
+    }
+
+    if (!Util.isUnset(request.value)) {
+      body["value"] = request.value;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateDeveloperMetadataResponse>(await this.doROARequest("CreateDeveloperMetadata", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/developerMetadatas`, "json", req, runtime), new CreateDeveloperMetadataResponse({}));
+  }
+
   async createRangeProtection(workbookId: string, sheetId: string, rangeAddress: string, request: CreateRangeProtectionRequest): Promise<CreateRangeProtectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateRangeProtectionHeaders({ });
@@ -5236,7 +5547,7 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.editableSetting))) {
+    if (!Util.isUnset(request.editableSetting)) {
       body["editableSetting"] = request.editableSetting;
     }
 
@@ -5692,6 +6003,37 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAllSheetsResponse>(await this.doROARequest("GetAllSheets", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets`, "json", req, runtime), new GetAllSheetsResponse({}));
   }
 
+  async getDeveloperMetadata(workbookId: string, developerMetadataId: string, request: GetDeveloperMetadataRequest): Promise<GetDeveloperMetadataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDeveloperMetadataHeaders({ });
+    return await this.getDeveloperMetadataWithOptions(workbookId, developerMetadataId, request, headers, runtime);
+  }
+
+  async getDeveloperMetadataWithOptions(workbookId: string, developerMetadataId: string, request: GetDeveloperMetadataRequest, headers: GetDeveloperMetadataHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeveloperMetadataResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    developerMetadataId = OpenApiUtil.getEncodeParam(developerMetadataId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetDeveloperMetadataResponse>(await this.doROARequest("GetDeveloperMetadata", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workbooks/${workbookId}/developerMetadatas/${developerMetadataId}`, "json", req, runtime), new GetDeveloperMetadataResponse({}));
+  }
+
   async getRange(workbookId: string, sheetId: string, rangeAddress: string, request: GetRangeRequest): Promise<GetRangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetRangeHeaders({ });
@@ -5968,7 +6310,7 @@ export default class Client extends OpenApi {
       body["blocks"] = request.blocks;
     }
 
-    if (!Util.isUnset($tea.toMap(request.location))) {
+    if (!Util.isUnset(request.location)) {
       body["location"] = request.location;
     }
 
@@ -6206,7 +6548,7 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.findOptions))) {
+    if (!Util.isUnset(request.findOptions)) {
       body["findOptions"] = request.findOptions;
     }
 
@@ -6427,7 +6769,7 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.findOptions))) {
+    if (!Util.isUnset(request.findOptions)) {
       body["findOptions"] = request.findOptions;
     }
 

@@ -3956,7 +3956,7 @@ export default class Client extends OpenApi {
       body["sectionId"] = request.sectionId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.shareScope))) {
+    if (!Util.isUnset(request.shareScope)) {
       body["shareScope"] = request.shareScope;
     }
 
@@ -4848,7 +4848,7 @@ export default class Client extends OpenApi {
   async searchWithOptions(request: SearchRequest, headers: SearchHeaders, runtime: $Util.RuntimeOptions): Promise<SearchResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.dentryRequest))) {
+    if (!Util.isUnset(request.dentryRequest)) {
       body["dentryRequest"] = request.dentryRequest;
     }
 
@@ -4860,7 +4860,7 @@ export default class Client extends OpenApi {
       body["operatorId"] = request.operatorId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.spaceRequest))) {
+    if (!Util.isUnset(request.spaceRequest)) {
       body["spaceRequest"] = request.spaceRequest;
     }
 

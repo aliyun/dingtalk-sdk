@@ -2202,19 +2202,19 @@ export default class Client extends OpenApi {
   async appendSpaceWithOptions(request: AppendSpaceRequest, headers: AppendSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AppendSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.coFeedOpenSpaceModel))) {
+    if (!Util.isUnset(request.coFeedOpenSpaceModel)) {
       body["coFeedOpenSpaceModel"] = request.coFeedOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imGroupOpenSpaceModel))) {
+    if (!Util.isUnset(request.imGroupOpenSpaceModel)) {
       body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imRobotOpenSpaceModel))) {
+    if (!Util.isUnset(request.imRobotOpenSpaceModel)) {
       body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imSingleOpenSpaceModel))) {
+    if (!Util.isUnset(request.imSingleOpenSpaceModel)) {
       body["imSingleOpenSpaceModel"] = request.imSingleOpenSpaceModel;
     }
 
@@ -2222,11 +2222,11 @@ export default class Client extends OpenApi {
       body["outTrackId"] = request.outTrackId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.topOpenSpaceModel))) {
+    if (!Util.isUnset(request.topOpenSpaceModel)) {
       body["topOpenSpaceModel"] = request.topOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.workBenchOpenSpaceModel))) {
+    if (!Util.isUnset(request.workBenchOpenSpaceModel)) {
       body["workBenchOpenSpaceModel"] = request.workBenchOpenSpaceModel;
     }
 
@@ -2263,7 +2263,7 @@ export default class Client extends OpenApi {
       body["cardAtUserIds"] = request.cardAtUserIds;
     }
 
-    if (!Util.isUnset($tea.toMap(request.cardData))) {
+    if (!Util.isUnset(request.cardData)) {
       body["cardData"] = request.cardData;
     }
 
@@ -2271,39 +2271,39 @@ export default class Client extends OpenApi {
       body["cardTemplateId"] = request.cardTemplateId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.coFeedOpenDeliverModel))) {
+    if (!Util.isUnset(request.coFeedOpenDeliverModel)) {
       body["coFeedOpenDeliverModel"] = request.coFeedOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.coFeedOpenSpaceModel))) {
+    if (!Util.isUnset(request.coFeedOpenSpaceModel)) {
       body["coFeedOpenSpaceModel"] = request.coFeedOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imGroupOpenDeliverModel))) {
+    if (!Util.isUnset(request.imGroupOpenDeliverModel)) {
       body["imGroupOpenDeliverModel"] = request.imGroupOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imGroupOpenSpaceModel))) {
+    if (!Util.isUnset(request.imGroupOpenSpaceModel)) {
       body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imRobotOpenDeliverModel))) {
+    if (!Util.isUnset(request.imRobotOpenDeliverModel)) {
       body["imRobotOpenDeliverModel"] = request.imRobotOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imRobotOpenSpaceModel))) {
+    if (!Util.isUnset(request.imRobotOpenSpaceModel)) {
       body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imSingleOpenDeliverModel))) {
+    if (!Util.isUnset(request.imSingleOpenDeliverModel)) {
       body["imSingleOpenDeliverModel"] = request.imSingleOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imSingleOpenSpaceModel))) {
+    if (!Util.isUnset(request.imSingleOpenSpaceModel)) {
       body["imSingleOpenSpaceModel"] = request.imSingleOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.openDynamicDataConfig))) {
+    if (!Util.isUnset(request.openDynamicDataConfig)) {
       body["openDynamicDataConfig"] = request.openDynamicDataConfig;
     }
 
@@ -2319,11 +2319,11 @@ export default class Client extends OpenApi {
       body["privateData"] = request.privateData;
     }
 
-    if (!Util.isUnset($tea.toMap(request.topOpenDeliverModel))) {
+    if (!Util.isUnset(request.topOpenDeliverModel)) {
       body["topOpenDeliverModel"] = request.topOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.topOpenSpaceModel))) {
+    if (!Util.isUnset(request.topOpenSpaceModel)) {
       body["topOpenSpaceModel"] = request.topOpenSpaceModel;
     }
 
@@ -2335,11 +2335,11 @@ export default class Client extends OpenApi {
       body["userIdType"] = request.userIdType;
     }
 
-    if (!Util.isUnset($tea.toMap(request.workBenchOpenDeliverModel))) {
+    if (!Util.isUnset(request.workBenchOpenDeliverModel)) {
       body["workBenchOpenDeliverModel"] = request.workBenchOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.workBenchOpenSpaceModel))) {
+    if (!Util.isUnset(request.workBenchOpenSpaceModel)) {
       body["workBenchOpenSpaceModel"] = request.workBenchOpenSpaceModel;
     }
 
@@ -2376,7 +2376,7 @@ export default class Client extends OpenApi {
       body["cardAtUserIds"] = request.cardAtUserIds;
     }
 
-    if (!Util.isUnset($tea.toMap(request.cardData))) {
+    if (!Util.isUnset(request.cardData)) {
       body["cardData"] = request.cardData;
     }
 
@@ -2384,23 +2384,23 @@ export default class Client extends OpenApi {
       body["cardTemplateId"] = request.cardTemplateId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.coFeedOpenSpaceModel))) {
+    if (!Util.isUnset(request.coFeedOpenSpaceModel)) {
       body["coFeedOpenSpaceModel"] = request.coFeedOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imGroupOpenSpaceModel))) {
+    if (!Util.isUnset(request.imGroupOpenSpaceModel)) {
       body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imRobotOpenSpaceModel))) {
+    if (!Util.isUnset(request.imRobotOpenSpaceModel)) {
       body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imSingleOpenSpaceModel))) {
+    if (!Util.isUnset(request.imSingleOpenSpaceModel)) {
       body["imSingleOpenSpaceModel"] = request.imSingleOpenSpaceModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.openDynamicDataConfig))) {
+    if (!Util.isUnset(request.openDynamicDataConfig)) {
       body["openDynamicDataConfig"] = request.openDynamicDataConfig;
     }
 
@@ -2412,7 +2412,7 @@ export default class Client extends OpenApi {
       body["privateData"] = request.privateData;
     }
 
-    if (!Util.isUnset($tea.toMap(request.topOpenSpaceModel))) {
+    if (!Util.isUnset(request.topOpenSpaceModel)) {
       body["topOpenSpaceModel"] = request.topOpenSpaceModel;
     }
 
@@ -2424,7 +2424,7 @@ export default class Client extends OpenApi {
       body["userIdType"] = request.userIdType;
     }
 
-    if (!Util.isUnset($tea.toMap(request.workBenchOpenSpaceModel))) {
+    if (!Util.isUnset(request.workBenchOpenSpaceModel)) {
       body["workBenchOpenSpaceModel"] = request.workBenchOpenSpaceModel;
     }
 
@@ -2453,19 +2453,19 @@ export default class Client extends OpenApi {
   async deliverCardWithOptions(request: DeliverCardRequest, headers: DeliverCardHeaders, runtime: $Util.RuntimeOptions): Promise<DeliverCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.coFeedOpenDeliverModel))) {
+    if (!Util.isUnset(request.coFeedOpenDeliverModel)) {
       body["coFeedOpenDeliverModel"] = request.coFeedOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imGroupOpenDeliverModel))) {
+    if (!Util.isUnset(request.imGroupOpenDeliverModel)) {
       body["imGroupOpenDeliverModel"] = request.imGroupOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imRobotOpenDeliverModel))) {
+    if (!Util.isUnset(request.imRobotOpenDeliverModel)) {
       body["imRobotOpenDeliverModel"] = request.imRobotOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.imSingleOpenDeliverModel))) {
+    if (!Util.isUnset(request.imSingleOpenDeliverModel)) {
       body["imSingleOpenDeliverModel"] = request.imSingleOpenDeliverModel;
     }
 
@@ -2477,11 +2477,11 @@ export default class Client extends OpenApi {
       body["outTrackId"] = request.outTrackId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.topOpenDeliverModel))) {
+    if (!Util.isUnset(request.topOpenDeliverModel)) {
       body["topOpenDeliverModel"] = request.topOpenDeliverModel;
     }
 
-    if (!Util.isUnset($tea.toMap(request.workBenchOpenDeliverModel))) {
+    if (!Util.isUnset(request.workBenchOpenDeliverModel)) {
       body["workBenchOpenDeliverModel"] = request.workBenchOpenDeliverModel;
     }
 
@@ -2551,11 +2551,11 @@ export default class Client extends OpenApi {
   async updateCardWithOptions(request: UpdateCardRequest, headers: UpdateCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.cardData))) {
+    if (!Util.isUnset(request.cardData)) {
       body["cardData"] = request.cardData;
     }
 
-    if (!Util.isUnset($tea.toMap(request.cardUpdateOptions))) {
+    if (!Util.isUnset(request.cardUpdateOptions)) {
       body["cardUpdateOptions"] = request.cardUpdateOptions;
     }
 

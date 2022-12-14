@@ -2919,7 +2919,7 @@ export default class Client extends OpenApi {
       body["outerId"] = request.outerId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.taskScopeVO))) {
+    if (!Util.isUnset(request.taskScopeVO)) {
       body["taskScopeVO"] = request.taskScopeVO;
     }
 

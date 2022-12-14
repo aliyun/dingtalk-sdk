@@ -4591,7 +4591,7 @@ export default class Client extends OpenApi {
       body["hoursInPerDay"] = request.hoursInPerDay;
     }
 
-    if (!Util.isUnset($tea.toMap(request.leaveCertificate))) {
+    if (!Util.isUnset(request.leaveCertificate)) {
       body["leaveCertificate"] = request.leaveCertificate;
     }
 
@@ -4607,7 +4607,7 @@ export default class Client extends OpenApi {
       body["naturalDayLeave"] = request.naturalDayLeave;
     }
 
-    if (!Util.isUnset($tea.toMap(request.submitTimeRule))) {
+    if (!Util.isUnset(request.submitTimeRule)) {
       body["submitTimeRule"] = request.submitTimeRule;
     }
 
@@ -4834,7 +4834,7 @@ export default class Client extends OpenApi {
       body["opUserid"] = request.opUserid;
     }
 
-    if (!Util.isUnset($tea.toMap(request.punchParam))) {
+    if (!Util.isUnset(request.punchParam)) {
       body["punchParam"] = request.punchParam;
     }
 
@@ -5375,7 +5375,7 @@ export default class Client extends OpenApi {
       body["forbidHideOutSideAddress"] = request.forbidHideOutSideAddress;
     }
 
-    if (!Util.isUnset($tea.toMap(request.freeCheckSetting))) {
+    if (!Util.isUnset(request.freeCheckSetting)) {
       body["freeCheckSetting"] = request.freeCheckSetting;
     }
 
@@ -5550,7 +5550,7 @@ export default class Client extends OpenApi {
       body["forbidHideOutSideAddress"] = request.forbidHideOutSideAddress;
     }
 
-    if (!Util.isUnset($tea.toMap(request.freeCheckSetting))) {
+    if (!Util.isUnset(request.freeCheckSetting)) {
       body["freeCheckSetting"] = request.freeCheckSetting;
     }
 
@@ -5744,7 +5744,7 @@ export default class Client extends OpenApi {
       body["opUserId"] = request.opUserId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.punchParam))) {
+    if (!Util.isUnset(request.punchParam)) {
       body["punchParam"] = request.punchParam;
     }
 
@@ -5894,7 +5894,7 @@ export default class Client extends OpenApi {
       body["hoursInPerDay"] = request.hoursInPerDay;
     }
 
-    if (!Util.isUnset($tea.toMap(request.leaveCertificate))) {
+    if (!Util.isUnset(request.leaveCertificate)) {
       body["leaveCertificate"] = request.leaveCertificate;
     }
 
@@ -5914,7 +5914,7 @@ export default class Client extends OpenApi {
       body["naturalDayLeave"] = request.naturalDayLeave;
     }
 
-    if (!Util.isUnset($tea.toMap(request.submitTimeRule))) {
+    if (!Util.isUnset(request.submitTimeRule)) {
       body["submitTimeRule"] = request.submitTimeRule;
     }
 

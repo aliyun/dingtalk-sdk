@@ -5071,7 +5071,7 @@ export default class Client extends OpenApi {
       body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.contactInfo))) {
+    if (!Util.isUnset(request.contactInfo)) {
       body["contactInfo"] = request.contactInfo;
     }
 
@@ -5079,7 +5079,7 @@ export default class Client extends OpenApi {
       body["instId"] = request.instId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.legalPersonCertInfo))) {
+    if (!Util.isUnset(request.legalPersonCertInfo)) {
       body["legalPersonCertInfo"] = request.legalPersonCertInfo;
     }
 
@@ -5099,7 +5099,7 @@ export default class Client extends OpenApi {
       body["services"] = request.services;
     }
 
-    if (!Util.isUnset($tea.toMap(request.settleInfo))) {
+    if (!Util.isUnset(request.settleInfo)) {
       body["settleInfo"] = request.settleInfo;
     }
 
@@ -5107,19 +5107,19 @@ export default class Client extends OpenApi {
       body["solution"] = request.solution;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstAddressInfo))) {
+    if (!Util.isUnset(request.subInstAddressInfo)) {
       body["subInstAddressInfo"] = request.subInstAddressInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstAuthInfo))) {
+    if (!Util.isUnset(request.subInstAuthInfo)) {
       body["subInstAuthInfo"] = request.subInstAuthInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstBasicInfo))) {
+    if (!Util.isUnset(request.subInstBasicInfo)) {
       body["subInstBasicInfo"] = request.subInstBasicInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstCertifyInfo))) {
+    if (!Util.isUnset(request.subInstCertifyInfo)) {
       body["subInstCertifyInfo"] = request.subInstCertifyInfo;
     }
 
@@ -5127,11 +5127,11 @@ export default class Client extends OpenApi {
       body["subInstId"] = request.subInstId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstInvoiceInfo))) {
+    if (!Util.isUnset(request.subInstInvoiceInfo)) {
       body["subInstInvoiceInfo"] = request.subInstInvoiceInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstShopInfo))) {
+    if (!Util.isUnset(request.subInstShopInfo)) {
       body["subInstShopInfo"] = request.subInstShopInfo;
     }
 
@@ -5351,7 +5351,7 @@ export default class Client extends OpenApi {
       body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.contactInfo))) {
+    if (!Util.isUnset(request.contactInfo)) {
       body["contactInfo"] = request.contactInfo;
     }
 
@@ -5359,7 +5359,7 @@ export default class Client extends OpenApi {
       body["instId"] = request.instId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.legalPersonCertInfo))) {
+    if (!Util.isUnset(request.legalPersonCertInfo)) {
       body["legalPersonCertInfo"] = request.legalPersonCertInfo;
     }
 
@@ -5379,7 +5379,7 @@ export default class Client extends OpenApi {
       body["services"] = request.services;
     }
 
-    if (!Util.isUnset($tea.toMap(request.settleInfo))) {
+    if (!Util.isUnset(request.settleInfo)) {
       body["settleInfo"] = request.settleInfo;
     }
 
@@ -5387,19 +5387,19 @@ export default class Client extends OpenApi {
       body["solution"] = request.solution;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstAddressInfo))) {
+    if (!Util.isUnset(request.subInstAddressInfo)) {
       body["subInstAddressInfo"] = request.subInstAddressInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstAuthInfo))) {
+    if (!Util.isUnset(request.subInstAuthInfo)) {
       body["subInstAuthInfo"] = request.subInstAuthInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstBasicInfo))) {
+    if (!Util.isUnset(request.subInstBasicInfo)) {
       body["subInstBasicInfo"] = request.subInstBasicInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstCertifyInfo))) {
+    if (!Util.isUnset(request.subInstCertifyInfo)) {
       body["subInstCertifyInfo"] = request.subInstCertifyInfo;
     }
 
@@ -5407,11 +5407,11 @@ export default class Client extends OpenApi {
       body["subInstId"] = request.subInstId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstInvoiceInfo))) {
+    if (!Util.isUnset(request.subInstInvoiceInfo)) {
       body["subInstInvoiceInfo"] = request.subInstInvoiceInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstShopInfo))) {
+    if (!Util.isUnset(request.subInstShopInfo)) {
       body["subInstShopInfo"] = request.subInstShopInfo;
     }
 
@@ -5546,7 +5546,7 @@ export default class Client extends OpenApi {
       body["bindingAlipayLogonId"] = request.bindingAlipayLogonId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.contactInfo))) {
+    if (!Util.isUnset(request.contactInfo)) {
       body["contactInfo"] = request.contactInfo;
     }
 
@@ -5554,7 +5554,7 @@ export default class Client extends OpenApi {
       body["instId"] = request.instId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.legalPersonCertInfo))) {
+    if (!Util.isUnset(request.legalPersonCertInfo)) {
       body["legalPersonCertInfo"] = request.legalPersonCertInfo;
     }
 
@@ -5574,23 +5574,23 @@ export default class Client extends OpenApi {
       body["services"] = request.services;
     }
 
-    if (!Util.isUnset($tea.toMap(request.settleInfo))) {
+    if (!Util.isUnset(request.settleInfo)) {
       body["settleInfo"] = request.settleInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstAddressInfo))) {
+    if (!Util.isUnset(request.subInstAddressInfo)) {
       body["subInstAddressInfo"] = request.subInstAddressInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstAuthInfo))) {
+    if (!Util.isUnset(request.subInstAuthInfo)) {
       body["subInstAuthInfo"] = request.subInstAuthInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstBasicInfo))) {
+    if (!Util.isUnset(request.subInstBasicInfo)) {
       body["subInstBasicInfo"] = request.subInstBasicInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstCertifyInfo))) {
+    if (!Util.isUnset(request.subInstCertifyInfo)) {
       body["subInstCertifyInfo"] = request.subInstCertifyInfo;
     }
 
@@ -5598,11 +5598,11 @@ export default class Client extends OpenApi {
       body["subInstId"] = request.subInstId;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstInvoiceInfo))) {
+    if (!Util.isUnset(request.subInstInvoiceInfo)) {
       body["subInstInvoiceInfo"] = request.subInstInvoiceInfo;
     }
 
-    if (!Util.isUnset($tea.toMap(request.subInstShopInfo))) {
+    if (!Util.isUnset(request.subInstShopInfo)) {
       body["subInstShopInfo"] = request.subInstShopInfo;
     }
 
@@ -6332,7 +6332,7 @@ export default class Client extends OpenApi {
   async uploadInvoiceWithOptions(request: UploadInvoiceRequest, headers: UploadInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.extension))) {
+    if (!Util.isUnset(request.extension)) {
       body["extension"] = request.extension;
     }
 
@@ -6340,7 +6340,7 @@ export default class Client extends OpenApi {
       body["invoices"] = request.invoices;
     }
 
-    if (!Util.isUnset($tea.toMap(request.userIdentity))) {
+    if (!Util.isUnset(request.userIdentity)) {
       body["userIdentity"] = request.userIdentity;
     }
 
@@ -6369,7 +6369,7 @@ export default class Client extends OpenApi {
   async uploadInvoiceByAuthWithOptions(request: UploadInvoiceByAuthRequest, headers: UploadInvoiceByAuthHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceByAuthResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.extension))) {
+    if (!Util.isUnset(request.extension)) {
       body["extension"] = request.extension;
     }
 

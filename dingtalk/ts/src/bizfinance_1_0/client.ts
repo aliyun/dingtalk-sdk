@@ -8055,8 +8055,8 @@ export default class Client extends OpenApi {
     Util.validateModel(tmpReq);
     let request = new GetInvoiceByPageShrinkRequest({ });
     OpenApiUtil.convert(tmpReq, request);
-    if (!Util.isUnset($tea.toMap(tmpReq.request))) {
-      request.requestShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle($tea.toMap(tmpReq.request), "request", "json");
+    if (!Util.isUnset(tmpReq.request)) {
+      request.requestShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.request, "request", "json");
     }
 
     let query : {[key: string ]: any} = { };
@@ -8780,7 +8780,7 @@ export default class Client extends OpenApi {
   async updateInvoiceAbandonStatusWithOptions(request: UpdateInvoiceAbandonStatusRequest, headers: UpdateInvoiceAbandonStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAbandonStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.blueGeneralInvoiceVO))) {
+    if (!Util.isUnset(request.blueGeneralInvoiceVO)) {
       body["blueGeneralInvoiceVO"] = request.blueGeneralInvoiceVO;
     }
 
@@ -8800,7 +8800,7 @@ export default class Client extends OpenApi {
       body["operator"] = request.operator;
     }
 
-    if (!Util.isUnset($tea.toMap(request.redGeneralInvoiceVO))) {
+    if (!Util.isUnset(request.redGeneralInvoiceVO)) {
       body["redGeneralInvoiceVO"] = request.redGeneralInvoiceVO;
     }
 
@@ -8886,7 +8886,7 @@ export default class Client extends OpenApi {
   async updateInvoiceAndReceiptRelatedWithOptions(request: UpdateInvoiceAndReceiptRelatedRequest, headers: UpdateInvoiceAndReceiptRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAndReceiptRelatedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.generalInvoiceVO))) {
+    if (!Util.isUnset(request.generalInvoiceVO)) {
       body["generalInvoiceVO"] = request.generalInvoiceVO;
     }
 

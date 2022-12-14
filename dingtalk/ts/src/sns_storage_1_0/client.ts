@@ -1629,7 +1629,7 @@ export default class Client extends OpenApi {
       body["dentryIds"] = request.dentryIds;
     }
 
-    if (!Util.isUnset($tea.toMap(request.option))) {
+    if (!Util.isUnset(request.option)) {
       body["option"] = request.option;
     }
 
@@ -1666,7 +1666,7 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.option))) {
+    if (!Util.isUnset(request.option)) {
       body["option"] = request.option;
     }
 
@@ -1739,7 +1739,7 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.option))) {
+    if (!Util.isUnset(request.option)) {
       body["option"] = request.option;
     }
 
@@ -1810,7 +1810,7 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.option))) {
+    if (!Util.isUnset(request.option)) {
       body["option"] = request.option;
     }
 

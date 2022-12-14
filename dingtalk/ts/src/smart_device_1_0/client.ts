@@ -688,7 +688,7 @@ export default class Client extends OpenApi {
   async machineManagerUpdateWithOptions(request: MachineManagerUpdateRequest, headers: MachineManagerUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<MachineManagerUpdateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset($tea.toMap(request.atmManagerRightMap))) {
+    if (!Util.isUnset(request.atmManagerRightMap)) {
       body["atmManagerRightMap"] = request.atmManagerRightMap;
     }
 
