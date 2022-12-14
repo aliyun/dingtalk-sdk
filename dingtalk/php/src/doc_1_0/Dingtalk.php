@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateDeveloperMetadataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateDeveloperMetadataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateDeveloperMetadataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionResponse;
@@ -68,6 +71,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetAllSheetsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetAllSheetsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetAllSheetsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRangeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRangeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRangeResponse;
@@ -559,6 +565,62 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateConditionalFormattingRuleResponse::fromMap($this->doROARequest('CreateConditionalFormattingRule', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/conditionalFormattingRules', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                         $workbookId
+     * @param CreateDeveloperMetadataRequest $request
+     *
+     * @return CreateDeveloperMetadataResponse
+     */
+    public function createDeveloperMetadata($workbookId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateDeveloperMetadataHeaders([]);
+
+        return $this->createDeveloperMetadataWithOptions($workbookId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                         $workbookId
+     * @param CreateDeveloperMetadataRequest $request
+     * @param CreateDeveloperMetadataHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CreateDeveloperMetadataResponse
+     */
+    public function createDeveloperMetadataWithOptions($workbookId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId = OpenApiUtilClient::getEncodeParam($workbookId);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->associatedColumn)) {
+            @$body['associatedColumn'] = $request->associatedColumn;
+        }
+        if (!Utils::isUnset($request->associatedRow)) {
+            @$body['associatedRow'] = $request->associatedRow;
+        }
+        if (!Utils::isUnset($request->value)) {
+            @$body['value'] = $request->value;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateDeveloperMetadataResponse::fromMap($this->doROARequest('CreateDeveloperMetadata', 'doc_1.0', 'HTTP', 'POST', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/developerMetadatas', 'json', $req, $runtime));
     }
 
     /**
@@ -1233,6 +1295,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetAllSheetsResponse::fromMap($this->doROARequest('GetAllSheets', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/sheets', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                      $workbookId
+     * @param string                      $developerMetadataId
+     * @param GetDeveloperMetadataRequest $request
+     *
+     * @return GetDeveloperMetadataResponse
+     */
+    public function getDeveloperMetadata($workbookId, $developerMetadataId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDeveloperMetadataHeaders([]);
+
+        return $this->getDeveloperMetadataWithOptions($workbookId, $developerMetadataId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $workbookId
+     * @param string                      $developerMetadataId
+     * @param GetDeveloperMetadataRequest $request
+     * @param GetDeveloperMetadataHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetDeveloperMetadataResponse
+     */
+    public function getDeveloperMetadataWithOptions($workbookId, $developerMetadataId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $workbookId          = OpenApiUtilClient::getEncodeParam($workbookId);
+        $developerMetadataId = OpenApiUtilClient::getEncodeParam($developerMetadataId);
+        $query               = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetDeveloperMetadataResponse::fromMap($this->doROARequest('GetDeveloperMetadata', 'doc_1.0', 'HTTP', 'GET', 'AK', '/v1.0/doc/workbooks/' . $workbookId . '/developerMetadatas/' . $developerMetadataId . '', 'json', $req, $runtime));
     }
 
     /**
