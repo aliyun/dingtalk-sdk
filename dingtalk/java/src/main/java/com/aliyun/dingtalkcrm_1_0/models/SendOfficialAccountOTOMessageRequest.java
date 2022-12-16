@@ -513,6 +513,26 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
 
     }
 
+    public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyImage extends TeaModel {
+        // 图片mediaId，可以通过上传媒体文件接口上传图片获取mediaId。
+        @NameInMap("mediaId")
+        public String mediaId;
+
+        public static SendOfficialAccountOTOMessageRequestDetailMessageBodyImage build(java.util.Map<String, ?> map) throws Exception {
+            SendOfficialAccountOTOMessageRequestDetailMessageBodyImage self = new SendOfficialAccountOTOMessageRequestDetailMessageBodyImage();
+            return TeaModel.build(map, self);
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyImage setMediaId(String mediaId) {
+            this.mediaId = mediaId;
+            return this;
+        }
+        public String getMediaId() {
+            return this.mediaId;
+        }
+
+    }
+
     public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyLink extends TeaModel {
         // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
         @NameInMap("messageUrl")
@@ -626,6 +646,10 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
         @NameInMap("actionCard")
         public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard actionCard;
 
+        // 图片消息类型时，此参数必填。 设置此参数时，msgType必须为image类型
+        @NameInMap("image")
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyImage image;
+
         // 链接消息类型
         @NameInMap("link")
         public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink link;
@@ -649,6 +673,14 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
         }
         public SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard getActionCard() {
             return this.actionCard;
+        }
+
+        public SendOfficialAccountOTOMessageRequestDetailMessageBody setImage(SendOfficialAccountOTOMessageRequestDetailMessageBodyImage image) {
+            this.image = image;
+            return this;
+        }
+        public SendOfficialAccountOTOMessageRequestDetailMessageBodyImage getImage() {
+            return this.image;
         }
 
         public SendOfficialAccountOTOMessageRequestDetailMessageBody setLink(SendOfficialAccountOTOMessageRequestDetailMessageBodyLink link) {
