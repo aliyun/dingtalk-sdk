@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest\detail;
 
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest\detail\messageBody\actionCard;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest\detail\messageBody\image;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest\detail\messageBody\link;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest\detail\messageBody\markdown;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest\detail\messageBody\text;
@@ -18,6 +19,13 @@ class messageBody extends Model
      * @var actionCard
      */
     public $actionCard;
+
+    /**
+     * @description 图片消息类型时，此参数必填。 设置此参数时，msgType必须为image类型
+     *
+     * @var image
+     */
+    public $image;
 
     /**
      * @description 链接消息类型
@@ -41,6 +49,7 @@ class messageBody extends Model
     public $text;
     protected $_name = [
         'actionCard' => 'actionCard',
+        'image'      => 'image',
         'link'       => 'link',
         'markdown'   => 'markdown',
         'text'       => 'text',
@@ -55,6 +64,9 @@ class messageBody extends Model
         $res = [];
         if (null !== $this->actionCard) {
             $res['actionCard'] = null !== $this->actionCard ? $this->actionCard->toMap() : null;
+        }
+        if (null !== $this->image) {
+            $res['image'] = null !== $this->image ? $this->image->toMap() : null;
         }
         if (null !== $this->link) {
             $res['link'] = null !== $this->link ? $this->link->toMap() : null;
@@ -79,6 +91,9 @@ class messageBody extends Model
         $model = new self();
         if (isset($map['actionCard'])) {
             $model->actionCard = actionCard::fromMap($map['actionCard']);
+        }
+        if (isset($map['image'])) {
+            $model->image = image::fromMap($map['image']);
         }
         if (isset($map['link'])) {
             $model->link = link::fromMap($map['link']);
