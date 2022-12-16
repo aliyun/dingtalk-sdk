@@ -8265,6 +8265,25 @@ export class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard ext
   }
 }
 
+export class SendOfficialAccountOTOMessageRequestDetailMessageBodyImage extends $tea.Model {
+  mediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mediaId: 'mediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendOfficialAccountOTOMessageRequestDetailMessageBodyLink extends $tea.Model {
   messageUrl?: string;
   picUrl?: string;
@@ -8336,12 +8355,14 @@ export class SendOfficialAccountOTOMessageRequestDetailMessageBodyText extends $
 
 export class SendOfficialAccountOTOMessageRequestDetailMessageBody extends $tea.Model {
   actionCard?: SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard;
+  image?: SendOfficialAccountOTOMessageRequestDetailMessageBodyImage;
   link?: SendOfficialAccountOTOMessageRequestDetailMessageBodyLink;
   markdown?: SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown;
   text?: SendOfficialAccountOTOMessageRequestDetailMessageBodyText;
   static names(): { [key: string]: string } {
     return {
       actionCard: 'actionCard',
+      image: 'image',
       link: 'link',
       markdown: 'markdown',
       text: 'text',
@@ -8351,6 +8372,7 @@ export class SendOfficialAccountOTOMessageRequestDetailMessageBody extends $tea.
   static types(): { [key: string]: any } {
     return {
       actionCard: SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard,
+      image: SendOfficialAccountOTOMessageRequestDetailMessageBodyImage,
       link: SendOfficialAccountOTOMessageRequestDetailMessageBodyLink,
       markdown: SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown,
       text: SendOfficialAccountOTOMessageRequestDetailMessageBodyText,
