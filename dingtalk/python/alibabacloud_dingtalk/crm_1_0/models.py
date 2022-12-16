@@ -13749,6 +13749,34 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard(TeaModel):
         return self
 
 
+class SendOfficialAccountOTOMessageRequestDetailMessageBodyImage(TeaModel):
+    def __init__(
+        self,
+        media_id: str = None,
+    ):
+        # 图片mediaId，可以通过上传媒体文件接口上传图片获取mediaId。
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
 class SendOfficialAccountOTOMessageRequestDetailMessageBodyLink(TeaModel):
     def __init__(
         self,
@@ -13865,12 +13893,15 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBody(TeaModel):
     def __init__(
         self,
         action_card: SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard = None,
+        image: SendOfficialAccountOTOMessageRequestDetailMessageBodyImage = None,
         link: SendOfficialAccountOTOMessageRequestDetailMessageBodyLink = None,
         markdown: SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown = None,
         text: SendOfficialAccountOTOMessageRequestDetailMessageBodyText = None,
     ):
         # 卡片消息
         self.action_card = action_card
+        # 图片消息类型时，此参数必填。 设置此参数时，msgType必须为image类型
+        self.image = image
         # 链接消息类型
         self.link = link
         # markdown消息，仅对消息类型为markdown时有效
@@ -13881,6 +13912,8 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBody(TeaModel):
     def validate(self):
         if self.action_card:
             self.action_card.validate()
+        if self.image:
+            self.image.validate()
         if self.link:
             self.link.validate()
         if self.markdown:
@@ -13896,6 +13929,8 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBody(TeaModel):
         result = dict()
         if self.action_card is not None:
             result['actionCard'] = self.action_card.to_map()
+        if self.image is not None:
+            result['image'] = self.image.to_map()
         if self.link is not None:
             result['link'] = self.link.to_map()
         if self.markdown is not None:
@@ -13909,6 +13944,9 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBody(TeaModel):
         if m.get('actionCard') is not None:
             temp_model = SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard()
             self.action_card = temp_model.from_map(m['actionCard'])
+        if m.get('image') is not None:
+            temp_model = SendOfficialAccountOTOMessageRequestDetailMessageBodyImage()
+            self.image = temp_model.from_map(m['image'])
         if m.get('link') is not None:
             temp_model = SendOfficialAccountOTOMessageRequestDetailMessageBodyLink()
             self.link = temp_model.from_map(m['link'])
