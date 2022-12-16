@@ -105,6 +105,22 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 }
 
                 /// <summary>
+                /// 图片消息类型时，此参数必填。 设置此参数时，msgType必须为image类型
+                /// </summary>
+                [NameInMap("image")]
+                [Validation(Required=false)]
+                public SendOfficialAccountOTOMessageRequestDetailMessageBodyImage Image { get; set; }
+                public class SendOfficialAccountOTOMessageRequestDetailMessageBodyImage : TeaModel {
+                    /// <summary>
+                    /// 图片mediaId，可以通过上传媒体文件接口上传图片获取mediaId。
+                    /// </summary>
+                    [NameInMap("mediaId")]
+                    [Validation(Required=false)]
+                    public string MediaId { get; set; }
+
+                }
+
+                /// <summary>
                 /// 链接消息类型
                 /// </summary>
                 [NameInMap("link")]
