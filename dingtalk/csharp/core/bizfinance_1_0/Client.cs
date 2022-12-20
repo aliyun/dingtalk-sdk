@@ -1122,6 +1122,86 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetSupplierResponse>(await DoROARequestAsync("GetSupplier", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/suppliers/details", "json", req, runtime));
         }
 
+        public ProfessionBenefitConsumeResponse ProfessionBenefitConsume(ProfessionBenefitConsumeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ProfessionBenefitConsumeHeaders headers = new ProfessionBenefitConsumeHeaders();
+            return ProfessionBenefitConsumeWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ProfessionBenefitConsumeResponse> ProfessionBenefitConsumeAsync(ProfessionBenefitConsumeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ProfessionBenefitConsumeHeaders headers = new ProfessionBenefitConsumeHeaders();
+            return await ProfessionBenefitConsumeWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ProfessionBenefitConsumeResponse ProfessionBenefitConsumeWithOptions(ProfessionBenefitConsumeRequest request, ProfessionBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitCode))
+            {
+                body["benefitCode"] = request.BenefitCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizRequestId))
+            {
+                body["bizRequestId"] = request.BizRequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Quota))
+            {
+                body["quota"] = request.Quota;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ProfessionBenefitConsumeResponse>(DoROARequest("ProfessionBenefitConsume", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/professions/benefits/consume", "json", req, runtime));
+        }
+
+        public async Task<ProfessionBenefitConsumeResponse> ProfessionBenefitConsumeWithOptionsAsync(ProfessionBenefitConsumeRequest request, ProfessionBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitCode))
+            {
+                body["benefitCode"] = request.BenefitCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizRequestId))
+            {
+                body["bizRequestId"] = request.BizRequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Quota))
+            {
+                body["quota"] = request.Quota;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ProfessionBenefitConsumeResponse>(await DoROARequestAsync("ProfessionBenefitConsume", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/professions/benefits/consume", "json", req, runtime));
+        }
+
         public QueryCategoryByPageResponse QueryCategoryByPage(QueryCategoryByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

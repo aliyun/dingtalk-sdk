@@ -354,6 +354,102 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             return TeaModel.ToObject<AddCustomerTrackResponse>(await DoROARequestAsync("AddCustomerTrack", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/customerTracks", "json", req, runtime));
         }
 
+        public AddLeadsResponse AddLeads(AddLeadsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddLeadsHeaders headers = new AddLeadsHeaders();
+            return AddLeadsWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddLeadsResponse> AddLeadsAsync(AddLeadsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddLeadsHeaders headers = new AddLeadsHeaders();
+            return await AddLeadsWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AddLeadsResponse AddLeadsWithOptions(AddLeadsRequest request, AddLeadsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignTimestamp))
+            {
+                body["assignTimestamp"] = request.AssignTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignUserId))
+            {
+                body["assignUserId"] = request.AssignUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignedUserId))
+            {
+                body["assignedUserId"] = request.AssignedUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Leads))
+            {
+                body["leads"] = request.Leads;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTaskId))
+            {
+                body["outTaskId"] = request.OutTaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddLeadsResponse>(DoROARequest("AddLeads", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/leads", "json", req, runtime));
+        }
+
+        public async Task<AddLeadsResponse> AddLeadsWithOptionsAsync(AddLeadsRequest request, AddLeadsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignTimestamp))
+            {
+                body["assignTimestamp"] = request.AssignTimestamp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignUserId))
+            {
+                body["assignUserId"] = request.AssignUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignedUserId))
+            {
+                body["assignedUserId"] = request.AssignedUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Leads))
+            {
+                body["leads"] = request.Leads;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTaskId))
+            {
+                body["outTaskId"] = request.OutTaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddLeadsResponse>(await DoROARequestAsync("AddLeads", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/leads", "json", req, runtime));
+        }
+
         public AddRelationMetaFieldResponse AddRelationMetaField(AddRelationMetaFieldRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1478,6 +1574,70 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<DeleteCrmPersonalCustomerResponse>(await DoROARequestAsync("DeleteCrmPersonalCustomer", "crm_1.0", "HTTP", "DELETE", "AK", "/v1.0/crm/personalCustomers/" + dataId, "json", req, runtime));
+        }
+
+        public DeleteLeadsResponse DeleteLeads(DeleteLeadsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteLeadsHeaders headers = new DeleteLeadsHeaders();
+            return DeleteLeadsWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeleteLeadsResponse> DeleteLeadsAsync(DeleteLeadsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteLeadsHeaders headers = new DeleteLeadsHeaders();
+            return await DeleteLeadsWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DeleteLeadsResponse DeleteLeadsWithOptions(DeleteLeadsRequest request, DeleteLeadsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutLeadsIds))
+            {
+                body["outLeadsIds"] = request.OutLeadsIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeleteLeadsResponse>(DoROARequest("DeleteLeads", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/leads/remove", "json", req, runtime));
+        }
+
+        public async Task<DeleteLeadsResponse> DeleteLeadsWithOptionsAsync(DeleteLeadsRequest request, DeleteLeadsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutLeadsIds))
+            {
+                body["outLeadsIds"] = request.OutLeadsIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeleteLeadsResponse>(await DoROARequestAsync("DeleteLeads", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/leads/remove", "json", req, runtime));
         }
 
         public DeleteRelationMetaFieldResponse DeleteRelationMetaField(DeleteRelationMetaFieldRequest request)
