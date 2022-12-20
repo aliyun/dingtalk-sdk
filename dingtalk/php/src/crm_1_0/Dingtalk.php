@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCrmPersonalCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCustomerTrackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCustomerTrackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCustomerTrackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddLeadsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddLeadsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddLeadsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldResponse;
@@ -53,6 +56,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmFormInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteLeadsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteLeadsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteLeadsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldResponse;
@@ -332,6 +338,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddCustomerTrackResponse::fromMap($this->doROARequest('AddCustomerTrack', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customerTracks', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddLeadsRequest $request
+     *
+     * @return AddLeadsResponse
+     */
+    public function addLeads($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddLeadsHeaders([]);
+
+        return $this->addLeadsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddLeadsRequest $request
+     * @param AddLeadsHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return AddLeadsResponse
+     */
+    public function addLeadsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->assignTimestamp)) {
+            @$body['assignTimestamp'] = $request->assignTimestamp;
+        }
+        if (!Utils::isUnset($request->assignUserId)) {
+            @$body['assignUserId'] = $request->assignUserId;
+        }
+        if (!Utils::isUnset($request->assignedUserId)) {
+            @$body['assignedUserId'] = $request->assignedUserId;
+        }
+        if (!Utils::isUnset($request->leads)) {
+            @$body['leads'] = $request->leads;
+        }
+        if (!Utils::isUnset($request->outTaskId)) {
+            @$body['outTaskId'] = $request->outTaskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddLeadsResponse::fromMap($this->doROARequest('AddLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/leads', 'json', $req, $runtime));
     }
 
     /**
@@ -995,6 +1055,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteCrmPersonalCustomerResponse::fromMap($this->doROARequest('DeleteCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/crm/personalCustomers/' . $dataId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteLeadsRequest $request
+     *
+     * @return DeleteLeadsResponse
+     */
+    public function deleteLeads($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteLeadsHeaders([]);
+
+        return $this->deleteLeadsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteLeadsRequest $request
+     * @param DeleteLeadsHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return DeleteLeadsResponse
+     */
+    public function deleteLeadsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->outLeadsIds)) {
+            @$body['outLeadsIds'] = $request->outLeadsIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteLeadsResponse::fromMap($this->doROARequest('DeleteLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/leads/remove', 'json', $req, $runtime));
     }
 
     /**

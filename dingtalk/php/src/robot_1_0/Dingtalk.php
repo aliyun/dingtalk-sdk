@@ -35,6 +35,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotMessageFileDownloadHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotMessageFileDownloadRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotMessageFileDownloadResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageResponse;
@@ -538,6 +541,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryRobotPluginResponse::fromMap($this->doROARequest('QueryRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/plugins/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RobotMessageFileDownloadRequest $request
+     *
+     * @return RobotMessageFileDownloadResponse
+     */
+    public function robotMessageFileDownload($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RobotMessageFileDownloadHeaders([]);
+
+        return $this->robotMessageFileDownloadWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RobotMessageFileDownloadRequest $request
+     * @param RobotMessageFileDownloadHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return RobotMessageFileDownloadResponse
+     */
+    public function robotMessageFileDownloadWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->downloadCode)) {
+            @$body['downloadCode'] = $request->downloadCode;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RobotMessageFileDownloadResponse::fromMap($this->doROARequest('RobotMessageFileDownload', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/messageFiles/download', 'json', $req, $runtime));
     }
 
     /**

@@ -49,6 +49,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageResponse;
@@ -807,6 +810,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetSupplierResponse::fromMap($this->doROARequest('GetSupplier', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/suppliers/details', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ProfessionBenefitConsumeRequest $request
+     *
+     * @return ProfessionBenefitConsumeResponse
+     */
+    public function professionBenefitConsume($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ProfessionBenefitConsumeHeaders([]);
+
+        return $this->professionBenefitConsumeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ProfessionBenefitConsumeRequest $request
+     * @param ProfessionBenefitConsumeHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return ProfessionBenefitConsumeResponse
+     */
+    public function professionBenefitConsumeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            @$body['benefitCode'] = $request->benefitCode;
+        }
+        if (!Utils::isUnset($request->bizRequestId)) {
+            @$body['bizRequestId'] = $request->bizRequestId;
+        }
+        if (!Utils::isUnset($request->quota)) {
+            @$body['quota'] = $request->quota;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ProfessionBenefitConsumeResponse::fromMap($this->doROARequest('ProfessionBenefitConsume', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/bizfinance/professions/benefits/consume', 'json', $req, $runtime));
     }
 
     /**
