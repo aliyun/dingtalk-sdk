@@ -171,6 +171,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("AddCustomerTrack", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/customerTracks", "json", req, runtime), new AddCustomerTrackResponse());
     }
 
+    public AddLeadsResponse addLeads(AddLeadsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddLeadsHeaders headers = new AddLeadsHeaders();
+        return this.addLeadsWithOptions(request, headers, runtime);
+    }
+
+    public AddLeadsResponse addLeadsWithOptions(AddLeadsRequest request, AddLeadsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.assignTimestamp)) {
+            body.put("assignTimestamp", request.assignTimestamp);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.assignUserId)) {
+            body.put("assignUserId", request.assignUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.assignedUserId)) {
+            body.put("assignedUserId", request.assignedUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leads)) {
+            body.put("leads", request.leads);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outTaskId)) {
+            body.put("outTaskId", request.outTaskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddLeads", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/leads", "json", req, runtime), new AddLeadsResponse());
+    }
+
     public AddRelationMetaFieldResponse addRelationMetaField(AddRelationMetaFieldRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddRelationMetaFieldHeaders headers = new AddRelationMetaFieldHeaders();
@@ -693,6 +738,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("DeleteCrmPersonalCustomer", "crm_1.0", "HTTP", "DELETE", "AK", "/v1.0/crm/personalCustomers/" + dataId + "", "json", req, runtime), new DeleteCrmPersonalCustomerResponse());
+    }
+
+    public DeleteLeadsResponse deleteLeads(DeleteLeadsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteLeadsHeaders headers = new DeleteLeadsHeaders();
+        return this.deleteLeadsWithOptions(request, headers, runtime);
+    }
+
+    public DeleteLeadsResponse deleteLeadsWithOptions(DeleteLeadsRequest request, DeleteLeadsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.outLeadsIds)) {
+            body.put("outLeadsIds", request.outLeadsIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("DeleteLeads", "crm_1.0", "HTTP", "POST", "AK", "/v1.0/crm/leads/remove", "json", req, runtime), new DeleteLeadsResponse());
     }
 
     public DeleteRelationMetaFieldResponse deleteRelationMetaField(DeleteRelationMetaFieldRequest request) throws Exception {

@@ -519,6 +519,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetSupplier", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/suppliers/details", "json", req, runtime), new GetSupplierResponse());
     }
 
+    public ProfessionBenefitConsumeResponse professionBenefitConsume(ProfessionBenefitConsumeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ProfessionBenefitConsumeHeaders headers = new ProfessionBenefitConsumeHeaders();
+        return this.professionBenefitConsumeWithOptions(request, headers, runtime);
+    }
+
+    public ProfessionBenefitConsumeResponse professionBenefitConsumeWithOptions(ProfessionBenefitConsumeRequest request, ProfessionBenefitConsumeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCode)) {
+            body.put("benefitCode", request.benefitCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizRequestId)) {
+            body.put("bizRequestId", request.bizRequestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.quota)) {
+            body.put("quota", request.quota);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("ProfessionBenefitConsume", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/professions/benefits/consume", "json", req, runtime), new ProfessionBenefitConsumeResponse());
+    }
+
     public QueryCategoryByPageResponse queryCategoryByPage(QueryCategoryByPageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCategoryByPageHeaders headers = new QueryCategoryByPageHeaders();
