@@ -1031,6 +1031,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSupplier', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers/details', 'json', req, runtime)
         )
 
+    def profession_benefit_consume(
+        self,
+        request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders()
+        return self.profession_benefit_consume_with_options(request, headers, runtime)
+
+    async def profession_benefit_consume_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders()
+        return await self.profession_benefit_consume_with_options_async(request, headers, runtime)
+
+    def profession_benefit_consume_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
+        headers: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            body['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.quota):
+            body['quota'] = request.quota
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse(),
+            self.do_roarequest('ProfessionBenefitConsume', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/professions/benefits/consume', 'json', req, runtime)
+        )
+
+    async def profession_benefit_consume_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
+        headers: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            body['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.quota):
+            body['quota'] = request.quota
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse(),
+            await self.do_roarequest_async('ProfessionBenefitConsume', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/professions/benefits/consume', 'json', req, runtime)
+        )
+
     def query_category_by_page(
         self,
         request: dingtalkbizfinance__1__0_models.QueryCategoryByPageRequest,

@@ -283,6 +283,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddCustomerTrack', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerTracks', 'json', req, runtime)
         )
 
+    def add_leads(
+        self,
+        request: dingtalkcrm__1__0_models.AddLeadsRequest,
+    ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
+        return self.add_leads_with_options(request, headers, runtime)
+
+    async def add_leads_async(
+        self,
+        request: dingtalkcrm__1__0_models.AddLeadsRequest,
+    ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
+        return await self.add_leads_with_options_async(request, headers, runtime)
+
+    def add_leads_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.AddLeadsRequest,
+        headers: dingtalkcrm__1__0_models.AddLeadsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assign_timestamp):
+            body['assignTimestamp'] = request.assign_timestamp
+        if not UtilClient.is_unset(request.assign_user_id):
+            body['assignUserId'] = request.assign_user_id
+        if not UtilClient.is_unset(request.assigned_user_id):
+            body['assignedUserId'] = request.assigned_user_id
+        if not UtilClient.is_unset(request.leads):
+            body['leads'] = request.leads
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.AddLeadsResponse(),
+            self.do_roarequest('AddLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/leads', 'json', req, runtime)
+        )
+
+    async def add_leads_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.AddLeadsRequest,
+        headers: dingtalkcrm__1__0_models.AddLeadsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assign_timestamp):
+            body['assignTimestamp'] = request.assign_timestamp
+        if not UtilClient.is_unset(request.assign_user_id):
+            body['assignUserId'] = request.assign_user_id
+        if not UtilClient.is_unset(request.assigned_user_id):
+            body['assignedUserId'] = request.assigned_user_id
+        if not UtilClient.is_unset(request.leads):
+            body['leads'] = request.leads
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.AddLeadsResponse(),
+            await self.do_roarequest_async('AddLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/leads', 'json', req, runtime)
+        )
+
     def add_relation_meta_field(
         self,
         request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
@@ -1275,6 +1355,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse(),
             await self.do_roarequest_async('DeleteCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/personalCustomers/{data_id}', 'json', req, runtime)
+        )
+
+    def delete_leads(
+        self,
+        request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DeleteLeadsHeaders()
+        return self.delete_leads_with_options(request, headers, runtime)
+
+    async def delete_leads_async(
+        self,
+        request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DeleteLeadsHeaders()
+        return await self.delete_leads_with_options_async(request, headers, runtime)
+
+    def delete_leads_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
+        headers: dingtalkcrm__1__0_models.DeleteLeadsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.out_leads_ids):
+            body['outLeadsIds'] = request.out_leads_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DeleteLeadsResponse(),
+            self.do_roarequest('DeleteLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/leads/remove', 'json', req, runtime)
+        )
+
+    async def delete_leads_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
+        headers: dingtalkcrm__1__0_models.DeleteLeadsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.out_leads_ids):
+            body['outLeadsIds'] = request.out_leads_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DeleteLeadsResponse(),
+            await self.do_roarequest_async('DeleteLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/leads/remove', 'json', req, runtime)
         )
 
     def delete_relation_meta_field(

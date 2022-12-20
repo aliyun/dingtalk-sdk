@@ -538,6 +538,202 @@ class AddCustomerTrackResponse(TeaModel):
         return self
 
 
+class AddLeadsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddLeadsRequestLeads(TeaModel):
+    def __init__(
+        self,
+        leads_name: str = None,
+        out_leads_id: str = None,
+    ):
+        # 线索名称。
+        self.leads_name = leads_name
+        # 线索id。
+        self.out_leads_id = out_leads_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.leads_name is not None:
+            result['leadsName'] = self.leads_name
+        if self.out_leads_id is not None:
+            result['outLeadsId'] = self.out_leads_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('leadsName') is not None:
+            self.leads_name = m.get('leadsName')
+        if m.get('outLeadsId') is not None:
+            self.out_leads_id = m.get('outLeadsId')
+        return self
+
+
+class AddLeadsRequest(TeaModel):
+    def __init__(
+        self,
+        assign_timestamp: int = None,
+        assign_user_id: str = None,
+        assigned_user_id: str = None,
+        leads: List[AddLeadsRequestLeads] = None,
+        out_task_id: str = None,
+    ):
+        # 分配时间戳，如果不传则默认为当前时间。
+        self.assign_timestamp = assign_timestamp
+        # 分配线索的员工userId。
+        self.assign_user_id = assign_user_id
+        # 被分配线索的员工userId。
+        self.assigned_user_id = assigned_user_id
+        # 线索。
+        self.leads = leads
+        # 任务ID，用于幂等控制。
+        self.out_task_id = out_task_id
+
+    def validate(self):
+        if self.leads:
+            for k in self.leads:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assign_timestamp is not None:
+            result['assignTimestamp'] = self.assign_timestamp
+        if self.assign_user_id is not None:
+            result['assignUserId'] = self.assign_user_id
+        if self.assigned_user_id is not None:
+            result['assignedUserId'] = self.assigned_user_id
+        result['leads'] = []
+        if self.leads is not None:
+            for k in self.leads:
+                result['leads'].append(k.to_map() if k else None)
+        if self.out_task_id is not None:
+            result['outTaskId'] = self.out_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assignTimestamp') is not None:
+            self.assign_timestamp = m.get('assignTimestamp')
+        if m.get('assignUserId') is not None:
+            self.assign_user_id = m.get('assignUserId')
+        if m.get('assignedUserId') is not None:
+            self.assigned_user_id = m.get('assignedUserId')
+        self.leads = []
+        if m.get('leads') is not None:
+            for k in m.get('leads'):
+                temp_model = AddLeadsRequestLeads()
+                self.leads.append(temp_model.from_map(k))
+        if m.get('outTaskId') is not None:
+            self.out_task_id = m.get('outTaskId')
+        return self
+
+
+class AddLeadsResponseBody(TeaModel):
+    def __init__(
+        self,
+        out_task_id: str = None,
+    ):
+        self.out_task_id = out_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.out_task_id is not None:
+            result['outTaskId'] = self.out_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outTaskId') is not None:
+            self.out_task_id = m.get('outTaskId')
+        return self
+
+
+class AddLeadsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddLeadsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddLeadsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddRelationMetaFieldHeaders(TeaModel):
     def __init__(
         self,
@@ -4328,6 +4524,131 @@ class DeleteCrmPersonalCustomerResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteCrmPersonalCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteLeadsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteLeadsRequest(TeaModel):
+    def __init__(
+        self,
+        out_leads_ids: List[str] = None,
+    ):
+        # 线索ID列表。
+        self.out_leads_ids = out_leads_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.out_leads_ids is not None:
+            result['outLeadsIds'] = self.out_leads_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outLeadsIds') is not None:
+            self.out_leads_ids = m.get('outLeadsIds')
+        return self
+
+
+class DeleteLeadsResponseBody(TeaModel):
+    def __init__(
+        self,
+        out_leads_ids: List[str] = None,
+    ):
+        self.out_leads_ids = out_leads_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.out_leads_ids is not None:
+            result['outLeadsIds'] = self.out_leads_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outLeadsIds') is not None:
+            self.out_leads_ids = m.get('outLeadsIds')
+        return self
+
+
+class DeleteLeadsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteLeadsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteLeadsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

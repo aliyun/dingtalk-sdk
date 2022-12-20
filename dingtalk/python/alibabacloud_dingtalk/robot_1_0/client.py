@@ -743,6 +743,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/query', 'json', req, runtime)
         )
 
+    def robot_message_file_download(
+        self,
+        request: dingtalkrobot__1__0_models.RobotMessageFileDownloadRequest,
+    ) -> dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.RobotMessageFileDownloadHeaders()
+        return self.robot_message_file_download_with_options(request, headers, runtime)
+
+    async def robot_message_file_download_async(
+        self,
+        request: dingtalkrobot__1__0_models.RobotMessageFileDownloadRequest,
+    ) -> dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.RobotMessageFileDownloadHeaders()
+        return await self.robot_message_file_download_with_options_async(request, headers, runtime)
+
+    def robot_message_file_download_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.RobotMessageFileDownloadRequest,
+        headers: dingtalkrobot__1__0_models.RobotMessageFileDownloadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.download_code):
+            body['downloadCode'] = request.download_code
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse(),
+            self.do_roarequest('RobotMessageFileDownload', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/messageFiles/download', 'json', req, runtime)
+        )
+
+    async def robot_message_file_download_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.RobotMessageFileDownloadRequest,
+        headers: dingtalkrobot__1__0_models.RobotMessageFileDownloadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.download_code):
+            body['downloadCode'] = request.download_code
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse(),
+            await self.do_roarequest_async('RobotMessageFileDownload', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/messageFiles/download', 'json', req, runtime)
+        )
+
     def send_robot_ding_message(
         self,
         request: dingtalkrobot__1__0_models.SendRobotDingMessageRequest,
