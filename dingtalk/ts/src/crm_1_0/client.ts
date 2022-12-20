@@ -304,6 +304,100 @@ export class AddCustomerTrackResponse extends $tea.Model {
   }
 }
 
+export class AddLeadsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeadsRequest extends $tea.Model {
+  assignTimestamp?: number;
+  assignUserId?: string;
+  assignedUserId?: string;
+  leads?: AddLeadsRequestLeads[];
+  outTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assignTimestamp: 'assignTimestamp',
+      assignUserId: 'assignUserId',
+      assignedUserId: 'assignedUserId',
+      leads: 'leads',
+      outTaskId: 'outTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assignTimestamp: 'number',
+      assignUserId: 'string',
+      assignedUserId: 'string',
+      leads: { 'type': 'array', 'itemType': AddLeadsRequestLeads },
+      outTaskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeadsResponseBody extends $tea.Model {
+  outTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outTaskId: 'outTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outTaskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeadsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddLeadsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddLeadsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddRelationMetaFieldHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1524,6 +1618,88 @@ export class DeleteCrmPersonalCustomerResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteCrmPersonalCustomerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLeadsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLeadsRequest extends $tea.Model {
+  outLeadsIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      outLeadsIds: 'outLeadsIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outLeadsIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLeadsResponseBody extends $tea.Model {
+  outLeadsIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      outLeadsIds: 'outLeadsIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outLeadsIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteLeadsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteLeadsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteLeadsResponseBody,
     };
   }
 
@@ -4318,6 +4494,28 @@ export class AddCrmPersonalCustomerRequestPermission extends $tea.Model {
     return {
       ownerStaffIds: { 'type': 'array', 'itemType': 'string' },
       participantStaffIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddLeadsRequestLeads extends $tea.Model {
+  leadsName?: string;
+  outLeadsId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      leadsName: 'leadsName',
+      outLeadsId: 'outLeadsId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      leadsName: 'string',
+      outLeadsId: 'string',
     };
   }
 
@@ -9153,6 +9351,51 @@ export default class Client extends OpenApi {
     return $tea.cast<AddCustomerTrackResponse>(await this.doROARequest("AddCustomerTrack", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customerTracks`, "json", req, runtime), new AddCustomerTrackResponse({}));
   }
 
+  async addLeads(request: AddLeadsRequest): Promise<AddLeadsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddLeadsHeaders({ });
+    return await this.addLeadsWithOptions(request, headers, runtime);
+  }
+
+  async addLeadsWithOptions(request: AddLeadsRequest, headers: AddLeadsHeaders, runtime: $Util.RuntimeOptions): Promise<AddLeadsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assignTimestamp)) {
+      body["assignTimestamp"] = request.assignTimestamp;
+    }
+
+    if (!Util.isUnset(request.assignUserId)) {
+      body["assignUserId"] = request.assignUserId;
+    }
+
+    if (!Util.isUnset(request.assignedUserId)) {
+      body["assignedUserId"] = request.assignedUserId;
+    }
+
+    if (!Util.isUnset(request.leads)) {
+      body["leads"] = request.leads;
+    }
+
+    if (!Util.isUnset(request.outTaskId)) {
+      body["outTaskId"] = request.outTaskId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddLeadsResponse>(await this.doROARequest("AddLeads", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/leads`, "json", req, runtime), new AddLeadsResponse({}));
+  }
+
   async addRelationMetaField(request: AddRelationMetaFieldRequest): Promise<AddRelationMetaFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddRelationMetaFieldHeaders({ });
@@ -9675,6 +9918,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DeleteCrmPersonalCustomerResponse>(await this.doROARequest("DeleteCrmPersonalCustomer", "crm_1.0", "HTTP", "DELETE", "AK", `/v1.0/crm/personalCustomers/${dataId}`, "json", req, runtime), new DeleteCrmPersonalCustomerResponse({}));
+  }
+
+  async deleteLeads(request: DeleteLeadsRequest): Promise<DeleteLeadsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteLeadsHeaders({ });
+    return await this.deleteLeadsWithOptions(request, headers, runtime);
+  }
+
+  async deleteLeadsWithOptions(request: DeleteLeadsRequest, headers: DeleteLeadsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLeadsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.outLeadsIds)) {
+      body["outLeadsIds"] = request.outLeadsIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DeleteLeadsResponse>(await this.doROARequest("DeleteLeads", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/leads/remove`, "json", req, runtime), new DeleteLeadsResponse({}));
   }
 
   async deleteRelationMetaField(request: DeleteRelationMetaFieldRequest): Promise<DeleteRelationMetaFieldResponse> {

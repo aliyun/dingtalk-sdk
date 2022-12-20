@@ -1401,6 +1401,94 @@ export class GetSupplierResponse extends $tea.Model {
   }
 }
 
+export class ProfessionBenefitConsumeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProfessionBenefitConsumeRequest extends $tea.Model {
+  benefitCode?: string;
+  bizRequestId?: string;
+  quota?: number;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+      bizRequestId: 'bizRequestId',
+      quota: 'quota',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+      bizRequestId: 'string',
+      quota: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProfessionBenefitConsumeResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProfessionBenefitConsumeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ProfessionBenefitConsumeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ProfessionBenefitConsumeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCategoryByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8191,6 +8279,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetSupplierResponse>(await this.doROARequest("GetSupplier", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/suppliers/details`, "json", req, runtime), new GetSupplierResponse({}));
+  }
+
+  async professionBenefitConsume(request: ProfessionBenefitConsumeRequest): Promise<ProfessionBenefitConsumeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ProfessionBenefitConsumeHeaders({ });
+    return await this.professionBenefitConsumeWithOptions(request, headers, runtime);
+  }
+
+  async professionBenefitConsumeWithOptions(request: ProfessionBenefitConsumeRequest, headers: ProfessionBenefitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<ProfessionBenefitConsumeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      body["benefitCode"] = request.benefitCode;
+    }
+
+    if (!Util.isUnset(request.bizRequestId)) {
+      body["bizRequestId"] = request.bizRequestId;
+    }
+
+    if (!Util.isUnset(request.quota)) {
+      body["quota"] = request.quota;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ProfessionBenefitConsumeResponse>(await this.doROARequest("ProfessionBenefitConsume", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/professions/benefits/consume`, "json", req, runtime), new ProfessionBenefitConsumeResponse({}));
   }
 
   async queryCategoryByPage(request: QueryCategoryByPageRequest): Promise<QueryCategoryByPageResponse> {
