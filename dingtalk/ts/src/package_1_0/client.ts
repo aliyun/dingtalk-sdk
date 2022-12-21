@@ -595,16 +595,16 @@ export class OpenMicroAppPackageRequest extends $tea.Model {
 }
 
 export class OpenMicroAppPackageResponseBody extends $tea.Model {
-  result?: any;
+  miniAppId?: string;
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      miniAppId: 'miniAppId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: 'any',
+      miniAppId: 'string',
     };
   }
 
