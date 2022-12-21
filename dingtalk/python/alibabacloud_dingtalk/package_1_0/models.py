@@ -1032,9 +1032,10 @@ class OpenMicroAppPackageRequest(TeaModel):
 class OpenMicroAppPackageResponseBody(TeaModel):
     def __init__(
         self,
-        result: Any = None,
+        mini_app_id: str = None,
     ):
-        self.result = result
+        # 离线包ID
+        self.mini_app_id = mini_app_id
 
     def validate(self):
         pass
@@ -1045,14 +1046,14 @@ class OpenMicroAppPackageResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.result is not None:
-            result['result'] = self.result
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('result') is not None:
-            self.result = m.get('result')
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
         return self
 
 
