@@ -4,20 +4,21 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenMicroAppPackageResponseBody extends TeaModel {
-    @NameInMap("result")
-    public Object result;
+    // 离线包ID
+    @NameInMap("miniAppId")
+    public String miniAppId;
 
     public static OpenMicroAppPackageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         OpenMicroAppPackageResponseBody self = new OpenMicroAppPackageResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public OpenMicroAppPackageResponseBody setResult(Object result) {
-        this.result = result;
+    public OpenMicroAppPackageResponseBody setMiniAppId(String miniAppId) {
+        this.miniAppId = miniAppId;
         return this;
     }
-    public Object getResult() {
-        return this.result;
+    public String getMiniAppId() {
+        return this.miniAppId;
     }
 
 }
