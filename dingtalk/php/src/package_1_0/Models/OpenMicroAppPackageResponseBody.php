@@ -9,11 +9,13 @@ use AlibabaCloud\Tea\Model;
 class OpenMicroAppPackageResponseBody extends Model
 {
     /**
-     * @var mixed
+     * @description 离线包ID
+     *
+     * @var string
      */
-    public $result;
+    public $miniAppId;
     protected $_name = [
-        'result' => 'result',
+        'miniAppId' => 'miniAppId',
     ];
 
     public function validate()
@@ -23,8 +25,8 @@ class OpenMicroAppPackageResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = $this->result;
+        if (null !== $this->miniAppId) {
+            $res['miniAppId'] = $this->miniAppId;
         }
 
         return $res;
@@ -38,8 +40,8 @@ class OpenMicroAppPackageResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = $map['result'];
+        if (isset($map['miniAppId'])) {
+            $model->miniAppId = $map['miniAppId'];
         }
 
         return $model;
