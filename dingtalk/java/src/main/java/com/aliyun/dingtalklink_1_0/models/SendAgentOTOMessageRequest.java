@@ -133,6 +133,82 @@ public class SendAgentOTOMessageRequest extends TeaModel {
 
     }
 
+    public static class SendAgentOTOMessageRequestDetailMessageBodyImage extends TeaModel {
+        // 图片mediaId信息
+        @NameInMap("mediaId")
+        public String mediaId;
+
+        public static SendAgentOTOMessageRequestDetailMessageBodyImage build(java.util.Map<String, ?> map) throws Exception {
+            SendAgentOTOMessageRequestDetailMessageBodyImage self = new SendAgentOTOMessageRequestDetailMessageBodyImage();
+            return TeaModel.build(map, self);
+        }
+
+        public SendAgentOTOMessageRequestDetailMessageBodyImage setMediaId(String mediaId) {
+            this.mediaId = mediaId;
+            return this;
+        }
+        public String getMediaId() {
+            return this.mediaId;
+        }
+
+    }
+
+    public static class SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage extends TeaModel {
+        // 需要回调的互动卡片可通过此参数定义回调地址
+        @NameInMap("callbackUrl")
+        public String callbackUrl;
+
+        // 卡片ID，由开发者自定义，同一卡片此ID需要保持一致。
+        @NameInMap("cardBizId")
+        public String cardBizId;
+
+        // 互动卡片数据，必须是json object 格式
+        @NameInMap("cardData")
+        public String cardData;
+
+        // 卡片模板ID，可通过互动卡片搭建后台获取。
+        @NameInMap("cardTemplateId")
+        public String cardTemplateId;
+
+        public static SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage build(java.util.Map<String, ?> map) throws Exception {
+            SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage self = new SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage();
+            return TeaModel.build(map, self);
+        }
+
+        public SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage setCallbackUrl(String callbackUrl) {
+            this.callbackUrl = callbackUrl;
+            return this;
+        }
+        public String getCallbackUrl() {
+            return this.callbackUrl;
+        }
+
+        public SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage setCardBizId(String cardBizId) {
+            this.cardBizId = cardBizId;
+            return this;
+        }
+        public String getCardBizId() {
+            return this.cardBizId;
+        }
+
+        public SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage setCardData(String cardData) {
+            this.cardData = cardData;
+            return this;
+        }
+        public String getCardData() {
+            return this.cardData;
+        }
+
+        public SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage setCardTemplateId(String cardTemplateId) {
+            this.cardTemplateId = cardTemplateId;
+            return this;
+        }
+        public String getCardTemplateId() {
+            return this.cardTemplateId;
+        }
+
+    }
+
     public static class SendAgentOTOMessageRequestDetailMessageBodyLink extends TeaModel {
         // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
         @NameInMap("messageUrl")
@@ -246,6 +322,13 @@ public class SendAgentOTOMessageRequest extends TeaModel {
         @NameInMap("actionCard")
         public SendAgentOTOMessageRequestDetailMessageBodyActionCard actionCard;
 
+        // 图片类型的消息场景使用
+        @NameInMap("image")
+        public SendAgentOTOMessageRequestDetailMessageBodyImage image;
+
+        @NameInMap("interactiveMessage")
+        public SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage interactiveMessage;
+
         // 链接消息类型
         @NameInMap("link")
         public SendAgentOTOMessageRequestDetailMessageBodyLink link;
@@ -269,6 +352,22 @@ public class SendAgentOTOMessageRequest extends TeaModel {
         }
         public SendAgentOTOMessageRequestDetailMessageBodyActionCard getActionCard() {
             return this.actionCard;
+        }
+
+        public SendAgentOTOMessageRequestDetailMessageBody setImage(SendAgentOTOMessageRequestDetailMessageBodyImage image) {
+            this.image = image;
+            return this;
+        }
+        public SendAgentOTOMessageRequestDetailMessageBodyImage getImage() {
+            return this.image;
+        }
+
+        public SendAgentOTOMessageRequestDetailMessageBody setInteractiveMessage(SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage interactiveMessage) {
+            this.interactiveMessage = interactiveMessage;
+            return this;
+        }
+        public SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage getInteractiveMessage() {
+            return this.interactiveMessage;
         }
 
         public SendAgentOTOMessageRequestDetailMessageBody setLink(SendAgentOTOMessageRequestDetailMessageBodyLink link) {

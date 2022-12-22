@@ -219,6 +219,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("noticeSingle", request.noticeSingle);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationIds)) {
+            body.put("openConversationIds", request.openConversationIds);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.receiverUserIds)) {
             body.put("receiverUserIds", request.receiverUserIds);
         }

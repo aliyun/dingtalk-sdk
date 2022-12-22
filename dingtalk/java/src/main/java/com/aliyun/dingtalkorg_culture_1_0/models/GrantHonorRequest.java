@@ -24,6 +24,9 @@ public class GrantHonorRequest extends TeaModel {
     @NameInMap("noticeSingle")
     public Boolean noticeSingle;
 
+    @NameInMap("openConversationIds")
+    public java.util.List<String> openConversationIds;
+
     // 接受人userId
     @NameInMap("receiverUserIds")
     public java.util.List<String> receiverUserIds;
@@ -75,6 +78,14 @@ public class GrantHonorRequest extends TeaModel {
     }
     public Boolean getNoticeSingle() {
         return this.noticeSingle;
+    }
+
+    public GrantHonorRequest setOpenConversationIds(java.util.List<String> openConversationIds) {
+        this.openConversationIds = openConversationIds;
+        return this;
+    }
+    public java.util.List<String> getOpenConversationIds() {
+        return this.openConversationIds;
     }
 
     public GrantHonorRequest setReceiverUserIds(java.util.List<String> receiverUserIds) {

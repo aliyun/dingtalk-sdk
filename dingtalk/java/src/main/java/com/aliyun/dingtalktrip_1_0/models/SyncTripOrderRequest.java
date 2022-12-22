@@ -400,6 +400,9 @@ public class SyncTripOrderRequest extends TeaModel {
         @NameInMap("hotelAddress")
         public String hotelAddress;
 
+        @NameInMap("hotelCity")
+        public String hotelCity;
+
         // 酒店定位信息
         @NameInMap("hotelLocation")
         public SyncTripOrderRequestOrderDetailsHotelLocation hotelLocation;
@@ -555,6 +558,14 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public String getHotelAddress() {
             return this.hotelAddress;
+        }
+
+        public SyncTripOrderRequestOrderDetails setHotelCity(String hotelCity) {
+            this.hotelCity = hotelCity;
+            return this;
+        }
+        public String getHotelCity() {
+            return this.hotelCity;
         }
 
         public SyncTripOrderRequestOrderDetails setHotelLocation(SyncTripOrderRequestOrderDetailsHotelLocation hotelLocation) {
