@@ -44,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         [Validation(Required=false)]
         public bool? NoticeSingle { get; set; }
 
+        [NameInMap("openConversationIds")]
+        [Validation(Required=false)]
+        public List<string> OpenConversationIds { get; set; }
+
         /// <summary>
         /// 接受人userId
         /// </summary>

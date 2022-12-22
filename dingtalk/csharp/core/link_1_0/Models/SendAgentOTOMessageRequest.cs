@@ -91,6 +91,56 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
                 }
 
                 /// <summary>
+                /// 图片类型的消息场景使用
+                /// </summary>
+                [NameInMap("image")]
+                [Validation(Required=false)]
+                public SendAgentOTOMessageRequestDetailMessageBodyImage Image { get; set; }
+                public class SendAgentOTOMessageRequestDetailMessageBodyImage : TeaModel {
+                    /// <summary>
+                    /// 图片mediaId信息
+                    /// </summary>
+                    [NameInMap("mediaId")]
+                    [Validation(Required=false)]
+                    public string MediaId { get; set; }
+
+                }
+
+                [NameInMap("interactiveMessage")]
+                [Validation(Required=false)]
+                public SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage InteractiveMessage { get; set; }
+                public class SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage : TeaModel {
+                    /// <summary>
+                    /// 需要回调的互动卡片可通过此参数定义回调地址
+                    /// </summary>
+                    [NameInMap("callbackUrl")]
+                    [Validation(Required=false)]
+                    public string CallbackUrl { get; set; }
+
+                    /// <summary>
+                    /// 卡片ID，由开发者自定义，同一卡片此ID需要保持一致。
+                    /// </summary>
+                    [NameInMap("cardBizId")]
+                    [Validation(Required=false)]
+                    public string CardBizId { get; set; }
+
+                    /// <summary>
+                    /// 互动卡片数据，必须是json object 格式
+                    /// </summary>
+                    [NameInMap("cardData")]
+                    [Validation(Required=false)]
+                    public string CardData { get; set; }
+
+                    /// <summary>
+                    /// 卡片模板ID，可通过互动卡片搭建后台获取。
+                    /// </summary>
+                    [NameInMap("cardTemplateId")]
+                    [Validation(Required=false)]
+                    public string CardTemplateId { get; set; }
+
+                }
+
+                /// <summary>
                 /// 链接消息类型
                 /// </summary>
                 [NameInMap("link")]

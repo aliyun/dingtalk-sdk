@@ -190,6 +190,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string HotelAddress { get; set; }
 
+            [NameInMap("hotelCity")]
+            [Validation(Required=false)]
+            public string HotelCity { get; set; }
+
             /// <summary>
             /// 酒店定位信息
             /// </summary>
