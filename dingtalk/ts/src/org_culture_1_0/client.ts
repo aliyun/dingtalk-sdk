@@ -417,6 +417,7 @@ export class GrantHonorRequest extends $tea.Model {
   granterName?: string;
   noticeAnnouncer?: boolean;
   noticeSingle?: boolean;
+  openConversationIds?: string[];
   receiverUserIds?: string[];
   senderUserId?: string;
   static names(): { [key: string]: string } {
@@ -426,6 +427,7 @@ export class GrantHonorRequest extends $tea.Model {
       granterName: 'granterName',
       noticeAnnouncer: 'noticeAnnouncer',
       noticeSingle: 'noticeSingle',
+      openConversationIds: 'openConversationIds',
       receiverUserIds: 'receiverUserIds',
       senderUserId: 'senderUserId',
     };
@@ -438,6 +440,7 @@ export class GrantHonorRequest extends $tea.Model {
       granterName: 'string',
       noticeAnnouncer: 'boolean',
       noticeSingle: 'boolean',
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
       receiverUserIds: { 'type': 'array', 'itemType': 'string' },
       senderUserId: 'string',
     };
@@ -2264,6 +2267,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.noticeSingle)) {
       body["noticeSingle"] = request.noticeSingle;
+    }
+
+    if (!Util.isUnset(request.openConversationIds)) {
+      body["openConversationIds"] = request.openConversationIds;
     }
 
     if (!Util.isUnset(request.receiverUserIds)) {

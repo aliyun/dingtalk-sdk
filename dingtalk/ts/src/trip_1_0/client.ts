@@ -446,6 +446,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   destinationCityCode?: string;
   destinationStation?: string;
   hotelAddress?: string;
+  hotelCity?: string;
   hotelLocation?: SyncTripOrderRequestOrderDetailsHotelLocation;
   hotelName?: string;
   originCity?: string;
@@ -474,6 +475,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       destinationCityCode: 'destinationCityCode',
       destinationStation: 'destinationStation',
       hotelAddress: 'hotelAddress',
+      hotelCity: 'hotelCity',
       hotelLocation: 'hotelLocation',
       hotelName: 'hotelName',
       originCity: 'originCity',
@@ -505,6 +507,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       destinationCityCode: 'string',
       destinationStation: 'string',
       hotelAddress: 'string',
+      hotelCity: 'string',
       hotelLocation: SyncTripOrderRequestOrderDetailsHotelLocation,
       hotelName: 'string',
       originCity: 'string',

@@ -1368,6 +1368,53 @@ export class SendAgentOTOMessageRequestDetailMessageBodyActionCard extends $tea.
   }
 }
 
+export class SendAgentOTOMessageRequestDetailMessageBodyImage extends $tea.Model {
+  mediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mediaId: 'mediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage extends $tea.Model {
+  callbackUrl?: string;
+  cardBizId?: string;
+  cardData?: string;
+  cardTemplateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      callbackUrl: 'callbackUrl',
+      cardBizId: 'cardBizId',
+      cardData: 'cardData',
+      cardTemplateId: 'cardTemplateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callbackUrl: 'string',
+      cardBizId: 'string',
+      cardData: 'string',
+      cardTemplateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendAgentOTOMessageRequestDetailMessageBodyLink extends $tea.Model {
   messageUrl?: string;
   picUrl?: string;
@@ -1439,12 +1486,16 @@ export class SendAgentOTOMessageRequestDetailMessageBodyText extends $tea.Model 
 
 export class SendAgentOTOMessageRequestDetailMessageBody extends $tea.Model {
   actionCard?: SendAgentOTOMessageRequestDetailMessageBodyActionCard;
+  image?: SendAgentOTOMessageRequestDetailMessageBodyImage;
+  interactiveMessage?: SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage;
   link?: SendAgentOTOMessageRequestDetailMessageBodyLink;
   markdown?: SendAgentOTOMessageRequestDetailMessageBodyMarkdown;
   text?: SendAgentOTOMessageRequestDetailMessageBodyText;
   static names(): { [key: string]: string } {
     return {
       actionCard: 'actionCard',
+      image: 'image',
+      interactiveMessage: 'interactiveMessage',
       link: 'link',
       markdown: 'markdown',
       text: 'text',
@@ -1454,6 +1505,8 @@ export class SendAgentOTOMessageRequestDetailMessageBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       actionCard: SendAgentOTOMessageRequestDetailMessageBodyActionCard,
+      image: SendAgentOTOMessageRequestDetailMessageBodyImage,
+      interactiveMessage: SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage,
       link: SendAgentOTOMessageRequestDetailMessageBodyLink,
       markdown: SendAgentOTOMessageRequestDetailMessageBodyMarkdown,
       text: SendAgentOTOMessageRequestDetailMessageBodyText,
