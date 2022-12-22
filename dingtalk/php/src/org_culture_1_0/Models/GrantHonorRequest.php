@@ -44,6 +44,11 @@ class GrantHonorRequest extends Model
     public $noticeSingle;
 
     /**
+     * @var string[]
+     */
+    public $openConversationIds;
+
+    /**
      * @description 接受人userId
      *
      * @var string[]
@@ -57,13 +62,14 @@ class GrantHonorRequest extends Model
      */
     public $senderUserId;
     protected $_name = [
-        'expirationTime'  => 'expirationTime',
-        'grantReason'     => 'grantReason',
-        'granterName'     => 'granterName',
-        'noticeAnnouncer' => 'noticeAnnouncer',
-        'noticeSingle'    => 'noticeSingle',
-        'receiverUserIds' => 'receiverUserIds',
-        'senderUserId'    => 'senderUserId',
+        'expirationTime'      => 'expirationTime',
+        'grantReason'         => 'grantReason',
+        'granterName'         => 'granterName',
+        'noticeAnnouncer'     => 'noticeAnnouncer',
+        'noticeSingle'        => 'noticeSingle',
+        'openConversationIds' => 'openConversationIds',
+        'receiverUserIds'     => 'receiverUserIds',
+        'senderUserId'        => 'senderUserId',
     ];
 
     public function validate()
@@ -87,6 +93,9 @@ class GrantHonorRequest extends Model
         }
         if (null !== $this->noticeSingle) {
             $res['noticeSingle'] = $this->noticeSingle;
+        }
+        if (null !== $this->openConversationIds) {
+            $res['openConversationIds'] = $this->openConversationIds;
         }
         if (null !== $this->receiverUserIds) {
             $res['receiverUserIds'] = $this->receiverUserIds;
@@ -120,6 +129,11 @@ class GrantHonorRequest extends Model
         }
         if (isset($map['noticeSingle'])) {
             $model->noticeSingle = $map['noticeSingle'];
+        }
+        if (isset($map['openConversationIds'])) {
+            if (!empty($map['openConversationIds'])) {
+                $model->openConversationIds = $map['openConversationIds'];
+            }
         }
         if (isset($map['receiverUserIds'])) {
             if (!empty($map['receiverUserIds'])) {

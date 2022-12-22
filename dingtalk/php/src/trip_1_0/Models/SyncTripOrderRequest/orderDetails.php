@@ -94,6 +94,11 @@ class orderDetails extends Model
     public $hotelAddress;
 
     /**
+     * @var string
+     */
+    public $hotelCity;
+
+    /**
      * @description 酒店定位信息
      *
      * @var hotelLocation
@@ -203,6 +208,7 @@ class orderDetails extends Model
         'destinationCityCode' => 'destinationCityCode',
         'destinationStation'  => 'destinationStation',
         'hotelAddress'        => 'hotelAddress',
+        'hotelCity'           => 'hotelCity',
         'hotelLocation'       => 'hotelLocation',
         'hotelName'           => 'hotelName',
         'originCity'          => 'originCity',
@@ -261,6 +267,9 @@ class orderDetails extends Model
         }
         if (null !== $this->hotelAddress) {
             $res['hotelAddress'] = $this->hotelAddress;
+        }
+        if (null !== $this->hotelCity) {
+            $res['hotelCity'] = $this->hotelCity;
         }
         if (null !== $this->hotelLocation) {
             $res['hotelLocation'] = null !== $this->hotelLocation ? $this->hotelLocation->toMap() : null;
@@ -351,6 +360,9 @@ class orderDetails extends Model
         }
         if (isset($map['hotelAddress'])) {
             $model->hotelAddress = $map['hotelAddress'];
+        }
+        if (isset($map['hotelCity'])) {
+            $model->hotelCity = $map['hotelCity'];
         }
         if (isset($map['hotelLocation'])) {
             $model->hotelLocation = hotelLocation::fromMap($map['hotelLocation']);

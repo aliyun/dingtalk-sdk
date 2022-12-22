@@ -318,6 +318,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->noticeSingle)) {
             @$body['noticeSingle'] = $request->noticeSingle;
         }
+        if (!Utils::isUnset($request->openConversationIds)) {
+            @$body['openConversationIds'] = $request->openConversationIds;
+        }
         if (!Utils::isUnset($request->receiverUserIds)) {
             @$body['receiverUserIds'] = $request->receiverUserIds;
         }
