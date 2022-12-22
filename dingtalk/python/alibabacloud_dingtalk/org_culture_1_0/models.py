@@ -979,6 +979,7 @@ class GrantHonorRequest(TeaModel):
         granter_name: str = None,
         notice_announcer: bool = None,
         notice_single: bool = None,
+        open_conversation_ids: List[str] = None,
         receiver_user_ids: List[str] = None,
         sender_user_id: str = None,
     ):
@@ -992,6 +993,7 @@ class GrantHonorRequest(TeaModel):
         self.notice_announcer = notice_announcer
         # 是否触达单聊会话通知
         self.notice_single = notice_single
+        self.open_conversation_ids = open_conversation_ids
         # 接受人userId
         self.receiver_user_ids = receiver_user_ids
         # 发送人userId
@@ -1016,6 +1018,8 @@ class GrantHonorRequest(TeaModel):
             result['noticeAnnouncer'] = self.notice_announcer
         if self.notice_single is not None:
             result['noticeSingle'] = self.notice_single
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
         if self.receiver_user_ids is not None:
             result['receiverUserIds'] = self.receiver_user_ids
         if self.sender_user_id is not None:
@@ -1034,6 +1038,8 @@ class GrantHonorRequest(TeaModel):
             self.notice_announcer = m.get('noticeAnnouncer')
         if m.get('noticeSingle') is not None:
             self.notice_single = m.get('noticeSingle')
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
         if m.get('receiverUserIds') is not None:
             self.receiver_user_ids = m.get('receiverUserIds')
         if m.get('senderUserId') is not None:

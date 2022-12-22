@@ -1544,6 +1544,83 @@ class SendAgentOTOMessageRequestDetailMessageBodyActionCard(TeaModel):
         return self
 
 
+class SendAgentOTOMessageRequestDetailMessageBodyImage(TeaModel):
+    def __init__(
+        self,
+        media_id: str = None,
+    ):
+        # 图片mediaId信息
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage(TeaModel):
+    def __init__(
+        self,
+        callback_url: str = None,
+        card_biz_id: str = None,
+        card_data: str = None,
+        card_template_id: str = None,
+    ):
+        # 需要回调的互动卡片可通过此参数定义回调地址
+        self.callback_url = callback_url
+        # 卡片ID，由开发者自定义，同一卡片此ID需要保持一致。
+        self.card_biz_id = card_biz_id
+        # 互动卡片数据，必须是json object 格式
+        self.card_data = card_data
+        # 卡片模板ID，可通过互动卡片搭建后台获取。
+        self.card_template_id = card_template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_data is not None:
+            result['cardData'] = self.card_data
+        if self.card_template_id is not None:
+            result['cardTemplateId'] = self.card_template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardData') is not None:
+            self.card_data = m.get('cardData')
+        if m.get('cardTemplateId') is not None:
+            self.card_template_id = m.get('cardTemplateId')
+        return self
+
+
 class SendAgentOTOMessageRequestDetailMessageBodyLink(TeaModel):
     def __init__(
         self,
@@ -1660,12 +1737,17 @@ class SendAgentOTOMessageRequestDetailMessageBody(TeaModel):
     def __init__(
         self,
         action_card: SendAgentOTOMessageRequestDetailMessageBodyActionCard = None,
+        image: SendAgentOTOMessageRequestDetailMessageBodyImage = None,
+        interactive_message: SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage = None,
         link: SendAgentOTOMessageRequestDetailMessageBodyLink = None,
         markdown: SendAgentOTOMessageRequestDetailMessageBodyMarkdown = None,
         text: SendAgentOTOMessageRequestDetailMessageBodyText = None,
     ):
         # 卡片消息
         self.action_card = action_card
+        # 图片类型的消息场景使用
+        self.image = image
+        self.interactive_message = interactive_message
         # 链接消息类型
         self.link = link
         # markdown消息，仅对消息类型为markdown时有效
@@ -1676,6 +1758,10 @@ class SendAgentOTOMessageRequestDetailMessageBody(TeaModel):
     def validate(self):
         if self.action_card:
             self.action_card.validate()
+        if self.image:
+            self.image.validate()
+        if self.interactive_message:
+            self.interactive_message.validate()
         if self.link:
             self.link.validate()
         if self.markdown:
@@ -1691,6 +1777,10 @@ class SendAgentOTOMessageRequestDetailMessageBody(TeaModel):
         result = dict()
         if self.action_card is not None:
             result['actionCard'] = self.action_card.to_map()
+        if self.image is not None:
+            result['image'] = self.image.to_map()
+        if self.interactive_message is not None:
+            result['interactiveMessage'] = self.interactive_message.to_map()
         if self.link is not None:
             result['link'] = self.link.to_map()
         if self.markdown is not None:
@@ -1704,6 +1794,12 @@ class SendAgentOTOMessageRequestDetailMessageBody(TeaModel):
         if m.get('actionCard') is not None:
             temp_model = SendAgentOTOMessageRequestDetailMessageBodyActionCard()
             self.action_card = temp_model.from_map(m['actionCard'])
+        if m.get('image') is not None:
+            temp_model = SendAgentOTOMessageRequestDetailMessageBodyImage()
+            self.image = temp_model.from_map(m['image'])
+        if m.get('interactiveMessage') is not None:
+            temp_model = SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage()
+            self.interactive_message = temp_model.from_map(m['interactiveMessage'])
         if m.get('link') is not None:
             temp_model = SendAgentOTOMessageRequestDetailMessageBodyLink()
             self.link = temp_model.from_map(m['link'])

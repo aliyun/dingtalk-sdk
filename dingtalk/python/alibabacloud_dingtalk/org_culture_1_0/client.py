@@ -379,6 +379,8 @@ class Client(OpenApiClient):
             body['noticeAnnouncer'] = request.notice_announcer
         if not UtilClient.is_unset(request.notice_single):
             body['noticeSingle'] = request.notice_single
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
         if not UtilClient.is_unset(request.receiver_user_ids):
             body['receiverUserIds'] = request.receiver_user_ids
         if not UtilClient.is_unset(request.sender_user_id):
@@ -417,6 +419,8 @@ class Client(OpenApiClient):
             body['noticeAnnouncer'] = request.notice_announcer
         if not UtilClient.is_unset(request.notice_single):
             body['noticeSingle'] = request.notice_single
+        if not UtilClient.is_unset(request.open_conversation_ids):
+            body['openConversationIds'] = request.open_conversation_ids
         if not UtilClient.is_unset(request.receiver_user_ids):
             body['receiverUserIds'] = request.receiver_user_ids
         if not UtilClient.is_unset(request.sender_user_id):

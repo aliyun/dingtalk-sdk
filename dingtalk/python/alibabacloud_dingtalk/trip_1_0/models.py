@@ -537,6 +537,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         destination_city_code: str = None,
         destination_station: str = None,
         hotel_address: str = None,
+        hotel_city: str = None,
         hotel_location: SyncTripOrderRequestOrderDetailsHotelLocation = None,
         hotel_name: str = None,
         origin_city: str = None,
@@ -576,6 +577,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.destination_station = destination_station
         # 酒店地址
         self.hotel_address = hotel_address
+        self.hotel_city = hotel_city
         # 酒店定位信息
         self.hotel_location = hotel_location
         # 酒店名称
@@ -639,6 +641,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['destinationStation'] = self.destination_station
         if self.hotel_address is not None:
             result['hotelAddress'] = self.hotel_address
+        if self.hotel_city is not None:
+            result['hotelCity'] = self.hotel_city
         if self.hotel_location is not None:
             result['hotelLocation'] = self.hotel_location.to_map()
         if self.hotel_name is not None:
@@ -695,6 +699,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.destination_station = m.get('destinationStation')
         if m.get('hotelAddress') is not None:
             self.hotel_address = m.get('hotelAddress')
+        if m.get('hotelCity') is not None:
+            self.hotel_city = m.get('hotelCity')
         if m.get('hotelLocation') is not None:
             temp_model = SyncTripOrderRequestOrderDetailsHotelLocation()
             self.hotel_location = temp_model.from_map(m['hotelLocation'])
