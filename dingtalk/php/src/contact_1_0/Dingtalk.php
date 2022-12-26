@@ -103,6 +103,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryStatusHeaders;
@@ -1772,6 +1775,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return MultiOrgPermissionGrantResponse::fromMap($this->doROARequest('MultiOrgPermissionGrant', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/multiOrgPermissions/auth', 'none', $req, $runtime));
+    }
+
+    /**
+     * @param QueryCardVisitorStatisticDataRequest $request
+     *
+     * @return QueryCardVisitorStatisticDataResponse
+     */
+    public function queryCardVisitorStatisticData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCardVisitorStatisticDataHeaders([]);
+
+        return $this->queryCardVisitorStatisticDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCardVisitorStatisticDataRequest $request
+     * @param QueryCardVisitorStatisticDataHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return QueryCardVisitorStatisticDataResponse
+     */
+    public function queryCardVisitorStatisticDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryCardVisitorStatisticDataResponse::fromMap($this->doROARequest('QueryCardVisitorStatisticData', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/cards/visitors/statistics', 'json', $req, $runtime));
     }
 
     /**
