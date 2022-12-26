@@ -1,0 +1,1 @@
+module.exports = require('./dist').contract_1_0;

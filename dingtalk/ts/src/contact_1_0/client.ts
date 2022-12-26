@@ -2968,6 +2968,112 @@ export class MultiOrgPermissionGrantResponse extends $tea.Model {
   }
 }
 
+export class QueryCardVisitorStatisticDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCardVisitorStatisticDataRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCardVisitorStatisticDataResponseBody extends $tea.Model {
+  cardSendCnt?: number;
+  todayVisitAddCnt?: number;
+  todayVisitCnt?: number;
+  totalVisitAddCnt?: number;
+  totalVisitCnt?: number;
+  wechatTodayVisitAddCnt?: number;
+  wechatTodayVisitCnt?: number;
+  wechatTotalVisitAddCnt?: number;
+  wechatTotalVisitCnt?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cardSendCnt: 'cardSendCnt',
+      todayVisitAddCnt: 'todayVisitAddCnt',
+      todayVisitCnt: 'todayVisitCnt',
+      totalVisitAddCnt: 'totalVisitAddCnt',
+      totalVisitCnt: 'totalVisitCnt',
+      wechatTodayVisitAddCnt: 'wechatTodayVisitAddCnt',
+      wechatTodayVisitCnt: 'wechatTodayVisitCnt',
+      wechatTotalVisitAddCnt: 'wechatTotalVisitAddCnt',
+      wechatTotalVisitCnt: 'wechatTotalVisitCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardSendCnt: 'number',
+      todayVisitAddCnt: 'number',
+      todayVisitCnt: 'number',
+      totalVisitAddCnt: 'number',
+      totalVisitCnt: 'number',
+      wechatTodayVisitAddCnt: 'number',
+      wechatTodayVisitCnt: 'number',
+      wechatTotalVisitAddCnt: 'number',
+      wechatTotalVisitCnt: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCardVisitorStatisticDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryCardVisitorStatisticDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryCardVisitorStatisticDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryResourceManagementMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6853,6 +6959,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<MultiOrgPermissionGrantResponse>(await this.doROARequest("MultiOrgPermissionGrant", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/multiOrgPermissions/auth`, "none", req, runtime), new MultiOrgPermissionGrantResponse({}));
+  }
+
+  async queryCardVisitorStatisticData(request: QueryCardVisitorStatisticDataRequest): Promise<QueryCardVisitorStatisticDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCardVisitorStatisticDataHeaders({ });
+    return await this.queryCardVisitorStatisticDataWithOptions(request, headers, runtime);
+  }
+
+  async queryCardVisitorStatisticDataWithOptions(request: QueryCardVisitorStatisticDataRequest, headers: QueryCardVisitorStatisticDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCardVisitorStatisticDataResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryCardVisitorStatisticDataResponse>(await this.doROARequest("QueryCardVisitorStatisticData", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cards/visitors/statistics`, "json", req, runtime), new QueryCardVisitorStatisticDataResponse({}));
   }
 
   async queryResourceManagementMembers(resourceId: string): Promise<QueryResourceManagementMembersResponse> {

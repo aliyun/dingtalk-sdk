@@ -13,6 +13,7 @@ import * as conference_1_0 from './conference_1_0/client';
 import * as connector_1_0 from './connector_1_0/client';
 import * as contact_1_0 from './contact_1_0/client';
 import * as content_1_0 from './content_1_0/client';
+import * as contract_1_0 from './contract_1_0/client';
 import * as conv_file_1_0 from './conv_file_1_0/client';
 import * as crm_1_0 from './crm_1_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
@@ -92,6 +93,7 @@ export = {
   connector_1_0,
   contact_1_0,
   content_1_0,
+  contract_1_0,
   conv_file_1_0,
   crm_1_0,
   customer_service_1_0,
