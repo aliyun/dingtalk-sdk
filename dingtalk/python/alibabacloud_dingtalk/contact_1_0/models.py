@@ -6365,6 +6365,188 @@ class MultiOrgPermissionGrantResponse(TeaModel):
         return self
 
 
+class QueryCardVisitorStatisticDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCardVisitorStatisticDataRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # 用户的unionId
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryCardVisitorStatisticDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        card_send_cnt: int = None,
+        today_visit_add_cnt: int = None,
+        today_visit_cnt: int = None,
+        total_visit_add_cnt: int = None,
+        total_visit_cnt: int = None,
+        wechat_today_visit_add_cnt: int = None,
+        wechat_today_visit_cnt: int = None,
+        wechat_total_visit_add_cnt: int = None,
+        wechat_total_visit_cnt: int = None,
+    ):
+        # 发送名片数
+        self.card_send_cnt = card_send_cnt
+        # 今日访客增加数
+        self.today_visit_add_cnt = today_visit_add_cnt
+        # 今日访客数
+        self.today_visit_cnt = today_visit_cnt
+        # 总访客新增数
+        self.total_visit_add_cnt = total_visit_add_cnt
+        # 总访客数
+        self.total_visit_cnt = total_visit_cnt
+        # 微信今日访客新增数
+        self.wechat_today_visit_add_cnt = wechat_today_visit_add_cnt
+        # 微信今日访客数
+        self.wechat_today_visit_cnt = wechat_today_visit_cnt
+        # 微信今日访客增加数
+        self.wechat_total_visit_add_cnt = wechat_total_visit_add_cnt
+        # 微信访客数
+        self.wechat_total_visit_cnt = wechat_total_visit_cnt
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_send_cnt is not None:
+            result['cardSendCnt'] = self.card_send_cnt
+        if self.today_visit_add_cnt is not None:
+            result['todayVisitAddCnt'] = self.today_visit_add_cnt
+        if self.today_visit_cnt is not None:
+            result['todayVisitCnt'] = self.today_visit_cnt
+        if self.total_visit_add_cnt is not None:
+            result['totalVisitAddCnt'] = self.total_visit_add_cnt
+        if self.total_visit_cnt is not None:
+            result['totalVisitCnt'] = self.total_visit_cnt
+        if self.wechat_today_visit_add_cnt is not None:
+            result['wechatTodayVisitAddCnt'] = self.wechat_today_visit_add_cnt
+        if self.wechat_today_visit_cnt is not None:
+            result['wechatTodayVisitCnt'] = self.wechat_today_visit_cnt
+        if self.wechat_total_visit_add_cnt is not None:
+            result['wechatTotalVisitAddCnt'] = self.wechat_total_visit_add_cnt
+        if self.wechat_total_visit_cnt is not None:
+            result['wechatTotalVisitCnt'] = self.wechat_total_visit_cnt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardSendCnt') is not None:
+            self.card_send_cnt = m.get('cardSendCnt')
+        if m.get('todayVisitAddCnt') is not None:
+            self.today_visit_add_cnt = m.get('todayVisitAddCnt')
+        if m.get('todayVisitCnt') is not None:
+            self.today_visit_cnt = m.get('todayVisitCnt')
+        if m.get('totalVisitAddCnt') is not None:
+            self.total_visit_add_cnt = m.get('totalVisitAddCnt')
+        if m.get('totalVisitCnt') is not None:
+            self.total_visit_cnt = m.get('totalVisitCnt')
+        if m.get('wechatTodayVisitAddCnt') is not None:
+            self.wechat_today_visit_add_cnt = m.get('wechatTodayVisitAddCnt')
+        if m.get('wechatTodayVisitCnt') is not None:
+            self.wechat_today_visit_cnt = m.get('wechatTodayVisitCnt')
+        if m.get('wechatTotalVisitAddCnt') is not None:
+            self.wechat_total_visit_add_cnt = m.get('wechatTotalVisitAddCnt')
+        if m.get('wechatTotalVisitCnt') is not None:
+            self.wechat_total_visit_cnt = m.get('wechatTotalVisitCnt')
+        return self
+
+
+class QueryCardVisitorStatisticDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCardVisitorStatisticDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCardVisitorStatisticDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryResourceManagementMembersHeaders(TeaModel):
     def __init__(
         self,

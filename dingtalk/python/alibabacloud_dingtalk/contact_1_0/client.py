@@ -2413,6 +2413,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('MultiOrgPermissionGrant', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/multiOrgPermissions/auth', 'none', req, runtime)
         )
 
+    def query_card_visitor_statistic_data(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataRequest,
+    ) -> dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataHeaders()
+        return self.query_card_visitor_statistic_data_with_options(request, headers, runtime)
+
+    async def query_card_visitor_statistic_data_async(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataRequest,
+    ) -> dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataHeaders()
+        return await self.query_card_visitor_statistic_data_with_options_async(request, headers, runtime)
+
+    def query_card_visitor_statistic_data_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataRequest,
+        headers: dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataResponse(),
+            self.do_roarequest('QueryCardVisitorStatisticData', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/visitors/statistics', 'json', req, runtime)
+        )
+
+    async def query_card_visitor_statistic_data_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataRequest,
+        headers: dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.QueryCardVisitorStatisticDataResponse(),
+            await self.do_roarequest_async('QueryCardVisitorStatisticData', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/visitors/statistics', 'json', req, runtime)
+        )
+
     def query_resource_management_members(
         self,
         resource_id: str,
