@@ -1916,6 +1916,489 @@ class ListActivateDevicesResponse(TeaModel):
         return self
 
 
+class ListInspectInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListInspectInfoRequest(TeaModel):
+    def __init__(
+        self,
+        device_uuid: List[str] = None,
+        page_number: int = None,
+        page_size: int = None,
+        type: str = None,
+    ):
+        self.device_uuid = device_uuid
+        # 页码
+        self.page_number = page_number
+        # 当页大小
+        self.page_size = page_size
+        # 类型（inspect：巡检，protect：保养）
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class ListInspectInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        device_code: str = None,
+        device_name: str = None,
+        handle_time: str = None,
+        maintenance_staff: List[str] = None,
+        name: str = None,
+        remark: str = None,
+        repair_status: int = None,
+        status: int = None,
+        type: str = None,
+    ):
+        # 设备码
+        self.device_code = device_code
+        # 设备名称
+        self.device_name = device_name
+        # 处理时间
+        self.handle_time = handle_time
+        # 维修人员
+        self.maintenance_staff = maintenance_staff
+        # 巡检表名称
+        self.name = name
+        # 巡检/保养内容
+        self.remark = remark
+        # 处理结果（1:未修复，2:已修复）
+        self.repair_status = repair_status
+        # 巡检/保养结果：0:正常，1:异常
+        self.status = status
+        # 类型（inspect：巡检，protect：保养）
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_code is not None:
+            result['deviceCode'] = self.device_code
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.handle_time is not None:
+            result['handleTime'] = self.handle_time
+        if self.maintenance_staff is not None:
+            result['maintenanceStaff'] = self.maintenance_staff
+        if self.name is not None:
+            result['name'] = self.name
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.repair_status is not None:
+            result['repairStatus'] = self.repair_status
+        if self.status is not None:
+            result['status'] = self.status
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceCode') is not None:
+            self.device_code = m.get('deviceCode')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('handleTime') is not None:
+            self.handle_time = m.get('handleTime')
+        if m.get('maintenanceStaff') is not None:
+            self.maintenance_staff = m.get('maintenanceStaff')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('repairStatus') is not None:
+            self.repair_status = m.get('repairStatus')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class ListInspectInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListInspectInfoResponseBodyResult] = None,
+        success: bool = None,
+        total_count: int = None,
+    ):
+        # 结果集
+        self.result = result
+        # 是否成功
+        self.success = success
+        # 总共数量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListInspectInfoResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListInspectInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListInspectInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListInspectInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListMaintainInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListMaintainInfoRequest(TeaModel):
+    def __init__(
+        self,
+        device_uuid: List[str] = None,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        self.device_uuid = device_uuid
+        # 页码
+        self.page_number = page_number
+        # 页面大小
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class ListMaintainInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        device_code: str = None,
+        device_name: str = None,
+        gmt_create: str = None,
+        handle_time: str = None,
+        maintenance_staff: List[str] = None,
+        process_state: int = None,
+        remark: str = None,
+    ):
+        # 报修设备码
+        self.device_code = device_code
+        # 设备名称
+        self.device_name = device_name
+        # 报修时间
+        self.gmt_create = gmt_create
+        # 处理时间
+        self.handle_time = handle_time
+        # 报修人
+        self.maintenance_staff = maintenance_staff
+        # 处理结果，0:同意，1:拒绝，2:终止，3:删除，4:进行中
+        self.process_state = process_state
+        # 异常描述
+        self.remark = remark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_code is not None:
+            result['deviceCode'] = self.device_code
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.handle_time is not None:
+            result['handleTime'] = self.handle_time
+        if self.maintenance_staff is not None:
+            result['maintenanceStaff'] = self.maintenance_staff
+        if self.process_state is not None:
+            result['processState'] = self.process_state
+        if self.remark is not None:
+            result['remark'] = self.remark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceCode') is not None:
+            self.device_code = m.get('deviceCode')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('handleTime') is not None:
+            self.handle_time = m.get('handleTime')
+        if m.get('maintenanceStaff') is not None:
+            self.maintenance_staff = m.get('maintenanceStaff')
+        if m.get('processState') is not None:
+            self.process_state = m.get('processState')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        return self
+
+
+class ListMaintainInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListMaintainInfoResponseBodyResult] = None,
+        success: bool = None,
+        total_count: int = None,
+    ):
+        # 结果集
+        self.result = result
+        # 是否成功
+        self.success = success
+        # 总共的数量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListMaintainInfoResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListMaintainInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListMaintainInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListMaintainInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PullDeviceToGroupHeaders(TeaModel):
     def __init__(
         self,

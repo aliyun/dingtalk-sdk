@@ -825,6 +825,154 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListActivateDevices', 'devicemng_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/devicemng/customers/devices/activations/infos', 'json', req, runtime)
         )
 
+    def list_inspect_info(
+        self,
+        request: dingtalkdevicemng__1__0_models.ListInspectInfoRequest,
+    ) -> dingtalkdevicemng__1__0_models.ListInspectInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.ListInspectInfoHeaders()
+        return self.list_inspect_info_with_options(request, headers, runtime)
+
+    async def list_inspect_info_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.ListInspectInfoRequest,
+    ) -> dingtalkdevicemng__1__0_models.ListInspectInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.ListInspectInfoHeaders()
+        return await self.list_inspect_info_with_options_async(request, headers, runtime)
+
+    def list_inspect_info_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.ListInspectInfoRequest,
+        headers: dingtalkdevicemng__1__0_models.ListInspectInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.ListInspectInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.ListInspectInfoResponse(),
+            self.do_roarequest('ListInspectInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/devices/inspectInfos/query', 'json', req, runtime)
+        )
+
+    async def list_inspect_info_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.ListInspectInfoRequest,
+        headers: dingtalkdevicemng__1__0_models.ListInspectInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.ListInspectInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.ListInspectInfoResponse(),
+            await self.do_roarequest_async('ListInspectInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/devices/inspectInfos/query', 'json', req, runtime)
+        )
+
+    def list_maintain_info(
+        self,
+        request: dingtalkdevicemng__1__0_models.ListMaintainInfoRequest,
+    ) -> dingtalkdevicemng__1__0_models.ListMaintainInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.ListMaintainInfoHeaders()
+        return self.list_maintain_info_with_options(request, headers, runtime)
+
+    async def list_maintain_info_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.ListMaintainInfoRequest,
+    ) -> dingtalkdevicemng__1__0_models.ListMaintainInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdevicemng__1__0_models.ListMaintainInfoHeaders()
+        return await self.list_maintain_info_with_options_async(request, headers, runtime)
+
+    def list_maintain_info_with_options(
+        self,
+        request: dingtalkdevicemng__1__0_models.ListMaintainInfoRequest,
+        headers: dingtalkdevicemng__1__0_models.ListMaintainInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.ListMaintainInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.ListMaintainInfoResponse(),
+            self.do_roarequest('ListMaintainInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/devices/maintainInfos/query', 'json', req, runtime)
+        )
+
+    async def list_maintain_info_with_options_async(
+        self,
+        request: dingtalkdevicemng__1__0_models.ListMaintainInfoRequest,
+        headers: dingtalkdevicemng__1__0_models.ListMaintainInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdevicemng__1__0_models.ListMaintainInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_uuid):
+            body['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdevicemng__1__0_models.ListMaintainInfoResponse(),
+            await self.do_roarequest_async('ListMaintainInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/devicemng/customers/devices/maintainInfos/query', 'json', req, runtime)
+        )
+
     def pull_device_to_group(
         self,
         request: dingtalkdevicemng__1__0_models.PullDeviceToGroupRequest,
