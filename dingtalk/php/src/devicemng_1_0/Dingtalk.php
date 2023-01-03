@@ -37,6 +37,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\GetWholeDeviceGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListActivateDevicesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListActivateDevicesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListActivateDevicesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListInspectInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListInspectInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListInspectInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListMaintainInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListMaintainInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\ListMaintainInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullDeviceToGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullDeviceToGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdevicemng_1_0\Models\PullDeviceToGroupResponse;
@@ -627,6 +633,105 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListActivateDevicesResponse::fromMap($this->doROARequest('ListActivateDevices', 'devicemng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/devicemng/customers/devices/activations/infos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListInspectInfoRequest $request
+     *
+     * @return ListInspectInfoResponse
+     */
+    public function listInspectInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListInspectInfoHeaders([]);
+
+        return $this->listInspectInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListInspectInfoRequest $request
+     * @param ListInspectInfoHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ListInspectInfoResponse
+     */
+    public function listInspectInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceUuid)) {
+            @$body['deviceUuid'] = $request->deviceUuid;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListInspectInfoResponse::fromMap($this->doROARequest('ListInspectInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/devices/inspectInfos/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListMaintainInfoRequest $request
+     *
+     * @return ListMaintainInfoResponse
+     */
+    public function listMaintainInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListMaintainInfoHeaders([]);
+
+        return $this->listMaintainInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListMaintainInfoRequest $request
+     * @param ListMaintainInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ListMaintainInfoResponse
+     */
+    public function listMaintainInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceUuid)) {
+            @$body['deviceUuid'] = $request->deviceUuid;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListMaintainInfoResponse::fromMap($this->doROARequest('ListMaintainInfo', 'devicemng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/devicemng/customers/devices/maintainInfos/query', 'json', $req, $runtime));
     }
 
     /**
