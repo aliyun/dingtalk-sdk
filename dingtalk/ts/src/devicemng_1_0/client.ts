@@ -1001,6 +1001,197 @@ export class ListActivateDevicesResponse extends $tea.Model {
   }
 }
 
+export class ListInspectInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListInspectInfoRequest extends $tea.Model {
+  deviceUuid?: string[];
+  pageNumber?: number;
+  pageSize?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceUuid: 'deviceUuid',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceUuid: { 'type': 'array', 'itemType': 'string' },
+      pageNumber: 'number',
+      pageSize: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListInspectInfoResponseBody extends $tea.Model {
+  result?: ListInspectInfoResponseBodyResult[];
+  success?: boolean;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ListInspectInfoResponseBodyResult },
+      success: 'boolean',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListInspectInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListInspectInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListInspectInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMaintainInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMaintainInfoRequest extends $tea.Model {
+  deviceUuid?: string[];
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deviceUuid: 'deviceUuid',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceUuid: { 'type': 'array', 'itemType': 'string' },
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMaintainInfoResponseBody extends $tea.Model {
+  result?: ListMaintainInfoResponseBodyResult[];
+  success?: boolean;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ListMaintainInfoResponseBodyResult },
+      success: 'boolean',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMaintainInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListMaintainInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListMaintainInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PullDeviceToGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2320,6 +2511,86 @@ export class ListActivateDevicesResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ListInspectInfoResponseBodyResult extends $tea.Model {
+  deviceCode?: string;
+  deviceName?: string;
+  handleTime?: string;
+  maintenanceStaff?: string[];
+  name?: string;
+  remark?: string;
+  repairStatus?: number;
+  status?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceCode: 'deviceCode',
+      deviceName: 'deviceName',
+      handleTime: 'handleTime',
+      maintenanceStaff: 'maintenanceStaff',
+      name: 'name',
+      remark: 'remark',
+      repairStatus: 'repairStatus',
+      status: 'status',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCode: 'string',
+      deviceName: 'string',
+      handleTime: 'string',
+      maintenanceStaff: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      remark: 'string',
+      repairStatus: 'number',
+      status: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMaintainInfoResponseBodyResult extends $tea.Model {
+  deviceCode?: string;
+  deviceName?: string;
+  gmtCreate?: string;
+  handleTime?: string;
+  maintenanceStaff?: string[];
+  processState?: number;
+  remark?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceCode: 'deviceCode',
+      deviceName: 'deviceName',
+      gmtCreate: 'gmtCreate',
+      handleTime: 'handleTime',
+      maintenanceStaff: 'maintenanceStaff',
+      processState: 'processState',
+      remark: 'remark',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCode: 'string',
+      deviceName: 'string',
+      gmtCreate: 'string',
+      handleTime: 'string',
+      maintenanceStaff: { 'type': 'array', 'itemType': 'string' },
+      processState: 'number',
+      remark: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RegisterAndActivateDeviceResponseBodyResult extends $tea.Model {
   deviceCategory?: number;
   deviceCode?: string;
@@ -3039,6 +3310,84 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListActivateDevicesResponse>(await this.doROARequest("ListActivateDevices", "devicemng_1.0", "HTTP", "GET", "AK", `/v1.0/devicemng/customers/devices/activations/infos`, "json", req, runtime), new ListActivateDevicesResponse({}));
+  }
+
+  async listInspectInfo(request: ListInspectInfoRequest): Promise<ListInspectInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListInspectInfoHeaders({ });
+    return await this.listInspectInfoWithOptions(request, headers, runtime);
+  }
+
+  async listInspectInfoWithOptions(request: ListInspectInfoRequest, headers: ListInspectInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ListInspectInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceUuid)) {
+      body["deviceUuid"] = request.deviceUuid;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ListInspectInfoResponse>(await this.doROARequest("ListInspectInfo", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/devices/inspectInfos/query`, "json", req, runtime), new ListInspectInfoResponse({}));
+  }
+
+  async listMaintainInfo(request: ListMaintainInfoRequest): Promise<ListMaintainInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListMaintainInfoHeaders({ });
+    return await this.listMaintainInfoWithOptions(request, headers, runtime);
+  }
+
+  async listMaintainInfoWithOptions(request: ListMaintainInfoRequest, headers: ListMaintainInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ListMaintainInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceUuid)) {
+      body["deviceUuid"] = request.deviceUuid;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ListMaintainInfoResponse>(await this.doROARequest("ListMaintainInfo", "devicemng_1.0", "HTTP", "POST", "AK", `/v1.0/devicemng/customers/devices/maintainInfos/query`, "json", req, runtime), new ListMaintainInfoResponse({}));
   }
 
   async pullDeviceToGroup(request: PullDeviceToGroupRequest): Promise<PullDeviceToGroupResponse> {
