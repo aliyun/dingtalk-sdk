@@ -26,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\ListAllDentriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\ListDentriesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\ListDentriesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\ListDentriesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\ListExpiredHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\ListExpiredRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\ListExpiredResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\SubscribeEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\SubscribeEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsns_storage_1_0\Models\SubscribeEventResponse;
@@ -415,6 +418,56 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListDentriesResponse::fromMap($this->doROARequest('ListDentries', 'snsStorage_1.0', 'HTTP', 'GET', 'AK', '/v1.0/snsStorage/spaces/' . $spaceId . '/dentries', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListExpiredRequest $request
+     *
+     * @return ListExpiredResponse
+     */
+    public function listExpired($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListExpiredHeaders([]);
+
+        return $this->listExpiredWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListExpiredRequest $request
+     * @param ListExpiredHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return ListExpiredResponse
+     */
+    public function listExpiredWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListExpiredResponse::fromMap($this->doROARequest('ListExpired', 'snsStorage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/snsStorage/conversations/expiredFileLists/query', 'json', $req, $runtime));
     }
 
     /**
