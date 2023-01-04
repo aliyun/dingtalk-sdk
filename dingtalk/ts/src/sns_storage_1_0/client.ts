@@ -629,6 +629,97 @@ export class ListDentriesResponse extends $tea.Model {
   }
 }
 
+export class ListExpiredHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListExpiredRequest extends $tea.Model {
+  openConversationId?: string;
+  option?: ListExpiredRequestOption;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      option: 'option',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      option: ListExpiredRequestOption,
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListExpiredResponseBody extends $tea.Model {
+  files?: ListExpiredResponseBodyFiles[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      files: 'files',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      files: { 'type': 'array', 'itemType': ListExpiredResponseBodyFiles },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListExpiredResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListExpiredResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListExpiredResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SubscribeEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1597,6 +1688,92 @@ export class ListDentriesResponseBodyDentries extends $tea.Model {
   }
 }
 
+export class ListExpiredRequestOption extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListExpiredResponseBodyFiles extends $tea.Model {
+  conversationId?: string;
+  createTime?: string;
+  creatorId?: string;
+  extension?: string;
+  id?: string;
+  modifiedTime?: string;
+  modifierId?: string;
+  name?: string;
+  parentId?: string;
+  path?: string;
+  size?: number;
+  spaceId?: string;
+  status?: string;
+  type?: string;
+  uuid?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conversationId: 'conversationId',
+      createTime: 'createTime',
+      creatorId: 'creatorId',
+      extension: 'extension',
+      id: 'id',
+      modifiedTime: 'modifiedTime',
+      modifierId: 'modifierId',
+      name: 'name',
+      parentId: 'parentId',
+      path: 'path',
+      size: 'size',
+      spaceId: 'spaceId',
+      status: 'status',
+      type: 'type',
+      uuid: 'uuid',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationId: 'string',
+      createTime: 'string',
+      creatorId: 'string',
+      extension: 'string',
+      id: 'string',
+      modifiedTime: 'string',
+      modifierId: 'string',
+      name: 'string',
+      parentId: 'string',
+      path: 'string',
+      size: 'number',
+      spaceId: 'string',
+      status: 'string',
+      type: 'string',
+      uuid: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -1883,6 +2060,45 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ListDentriesResponse>(await this.doROARequest("ListDentries", "snsStorage_1.0", "HTTP", "GET", "AK", `/v1.0/snsStorage/spaces/${spaceId}/dentries`, "json", req, runtime), new ListDentriesResponse({}));
+  }
+
+  async listExpired(request: ListExpiredRequest): Promise<ListExpiredResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListExpiredHeaders({ });
+    return await this.listExpiredWithOptions(request, headers, runtime);
+  }
+
+  async listExpiredWithOptions(request: ListExpiredRequest, headers: ListExpiredHeaders, runtime: $Util.RuntimeOptions): Promise<ListExpiredResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ListExpiredResponse>(await this.doROARequest("ListExpired", "snsStorage_1.0", "HTTP", "POST", "AK", `/v1.0/snsStorage/conversations/expiredFileLists/query`, "json", req, runtime), new ListExpiredResponse({}));
   }
 
   async subscribeEvent(request: SubscribeEventRequest): Promise<SubscribeEventResponse> {
