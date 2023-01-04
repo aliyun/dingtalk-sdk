@@ -595,6 +595,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListDentries', 'snsStorage_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/snsStorage/spaces/{space_id}/dentries', 'json', req, runtime)
         )
 
+    def list_expired(
+        self,
+        request: dingtalksns_storage__1__0_models.ListExpiredRequest,
+    ) -> dingtalksns_storage__1__0_models.ListExpiredResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksns_storage__1__0_models.ListExpiredHeaders()
+        return self.list_expired_with_options(request, headers, runtime)
+
+    async def list_expired_async(
+        self,
+        request: dingtalksns_storage__1__0_models.ListExpiredRequest,
+    ) -> dingtalksns_storage__1__0_models.ListExpiredResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksns_storage__1__0_models.ListExpiredHeaders()
+        return await self.list_expired_with_options_async(request, headers, runtime)
+
+    def list_expired_with_options(
+        self,
+        request: dingtalksns_storage__1__0_models.ListExpiredRequest,
+        headers: dingtalksns_storage__1__0_models.ListExpiredHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksns_storage__1__0_models.ListExpiredResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksns_storage__1__0_models.ListExpiredResponse(),
+            self.do_roarequest('ListExpired', 'snsStorage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/snsStorage/conversations/expiredFileLists/query', 'json', req, runtime)
+        )
+
+    async def list_expired_with_options_async(
+        self,
+        request: dingtalksns_storage__1__0_models.ListExpiredRequest,
+        headers: dingtalksns_storage__1__0_models.ListExpiredHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksns_storage__1__0_models.ListExpiredResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalksns_storage__1__0_models.ListExpiredResponse(),
+            await self.do_roarequest_async('ListExpired', 'snsStorage_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/snsStorage/conversations/expiredFileLists/query', 'json', req, runtime)
+        )
+
     def subscribe_event(
         self,
         request: dingtalksns_storage__1__0_models.SubscribeEventRequest,
