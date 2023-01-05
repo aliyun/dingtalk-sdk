@@ -32,14 +32,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 public string ActivityId { get; set; }
 
                 /// <summary>
-                /// OA审批任务创建时间
+                /// OA审批任务创建时间。
                 /// </summary>
                 [NameInMap("createTime")]
                 [Validation(Required=false)]
-                public long? CreateTime { get; set; }
+                public string CreateTime { get; set; }
 
                 /// <summary>
-                /// OA审批任务完成时间
+                /// OA审批任务完成时间。
                 /// </summary>
                 [NameInMap("finishTime")]
                 [Validation(Required=false)]

@@ -88,6 +88,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string OuterUid { get; set; }
 
         /// <summary>
+        /// 用户唯一id。
+        /// </summary>
+        [NameInMap("outerUserId")]
+        [Validation(Required=false)]
+        public string OuterUserId { get; set; }
+
+        /// <summary>
         /// 买家支付id。
         /// </summary>
         [NameInMap("payId")]

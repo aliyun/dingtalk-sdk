@@ -1722,6 +1722,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["startTime"] = request.StartTime;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Statuses))
+            {
+                body["statuses"] = request.Statuses;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {
                 body["userIds"] = request.UserIds;
@@ -1766,6 +1770,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
                 body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Statuses))
+            {
+                body["statuses"] = request.Statuses;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
             {

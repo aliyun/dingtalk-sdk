@@ -49,6 +49,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
+        /// 流程实例状态，未传值代表查询所有状态的实例ID列表。
+        /// NEW：新创建  
+        /// RUNNING：审批中  
+        /// TERMINATED：被终止  
+        /// COMPLETED：完成  
+        /// CANCELED：取消
+        /// </summary>
+        [NameInMap("statuses")]
+        [Validation(Required=false)]
+        public List<string> Statuses { get; set; }
+
+        /// <summary>
         /// 发起userid列表，最大列表长度为10。
         /// </summary>
         [NameInMap("userIds")]
