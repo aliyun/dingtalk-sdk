@@ -225,6 +225,97 @@ export class ECertQueryResponse extends $tea.Model {
   }
 }
 
+export class HrmProcessRegularHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessRegularRequest extends $tea.Model {
+  operationId?: string;
+  regularDate?: number;
+  remark?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operationId: 'operationId',
+      regularDate: 'regularDate',
+      remark: 'remark',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operationId: 'string',
+      regularDate: 'number',
+      remark: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessRegularResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessRegularResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: HrmProcessRegularResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: HrmProcessRegularResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmProcessTransferHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2271,6 +2362,47 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<ECertQueryResponse>(await this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/eCerts`, "json", req, runtime), new ECertQueryResponse({}));
+  }
+
+  async hrmProcessRegular(request: HrmProcessRegularRequest): Promise<HrmProcessRegularResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmProcessRegularHeaders({ });
+    return await this.hrmProcessRegularWithOptions(request, headers, runtime);
+  }
+
+  async hrmProcessRegularWithOptions(request: HrmProcessRegularRequest, headers: HrmProcessRegularHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessRegularResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operationId)) {
+      body["operationId"] = request.operationId;
+    }
+
+    if (!Util.isUnset(request.regularDate)) {
+      body["regularDate"] = request.regularDate;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<HrmProcessRegularResponse>(await this.doROARequest("HrmProcessRegular", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/processes/regulars/become`, "json", req, runtime), new HrmProcessRegularResponse({}));
   }
 
   async hrmProcessTransfer(request: HrmProcessTransferRequest): Promise<HrmProcessTransferResponse> {

@@ -2127,6 +2127,7 @@ export class ListProcessInstanceIdsRequest extends $tea.Model {
   nextToken?: number;
   processCode?: string;
   startTime?: number;
+  statuses?: string[];
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -2135,6 +2136,7 @@ export class ListProcessInstanceIdsRequest extends $tea.Model {
       nextToken: 'nextToken',
       processCode: 'processCode',
       startTime: 'startTime',
+      statuses: 'statuses',
       userIds: 'userIds',
     };
   }
@@ -2146,6 +2148,7 @@ export class ListProcessInstanceIdsRequest extends $tea.Model {
       nextToken: 'number',
       processCode: 'string',
       startTime: 'number',
+      statuses: { 'type': 'array', 'itemType': 'string' },
       userIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -5687,7 +5690,7 @@ export class QueryFormInstanceResponseBodyFormInstDataList extends $tea.Model {
 
 export class QueryIntegratedTodoTaskResponseBodyResultList extends $tea.Model {
   activityId?: string;
-  createTime?: number;
+  createTime?: string;
   finishTime?: string;
   processInstanceId?: string;
   result?: string;
@@ -5710,7 +5713,7 @@ export class QueryIntegratedTodoTaskResponseBodyResultList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       activityId: 'string',
-      createTime: 'number',
+      createTime: 'string',
       finishTime: 'string',
       processInstanceId: 'string',
       result: 'string',
@@ -7380,6 +7383,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.startTime)) {
       body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.statuses)) {
+      body["statuses"] = request.statuses;
     }
 
     if (!Util.isUnset(request.userIds)) {
