@@ -25,11 +25,11 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
         @NameInMap("activityId")
         public String activityId;
 
-        // OA审批任务创建时间
+        // OA审批任务创建时间。
         @NameInMap("createTime")
-        public Long createTime;
+        public String createTime;
 
-        // OA审批任务完成时间
+        // OA审批任务完成时间。
         @NameInMap("finishTime")
         public String finishTime;
 
@@ -66,11 +66,11 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
             return this.activityId;
         }
 
-        public QueryIntegratedTodoTaskResponseBodyResultList setCreateTime(Long createTime) {
+        public QueryIntegratedTodoTaskResponseBodyResultList setCreateTime(String createTime) {
             this.createTime = createTime;
             return this;
         }
-        public Long getCreateTime() {
+        public String getCreateTime() {
             return this.createTime;
         }
 

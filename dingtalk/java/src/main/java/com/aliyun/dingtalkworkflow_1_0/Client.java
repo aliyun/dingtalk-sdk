@@ -808,6 +808,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("startTime", request.startTime);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.statuses)) {
+            body.put("statuses", request.statuses);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
             body.put("userIds", request.userIds);
         }

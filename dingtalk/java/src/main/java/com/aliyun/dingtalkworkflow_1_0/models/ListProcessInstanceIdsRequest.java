@@ -28,6 +28,15 @@ public class ListProcessInstanceIdsRequest extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
+    // 流程实例状态，未传值代表查询所有状态的实例ID列表。
+    // NEW：新创建  
+    // RUNNING：审批中  
+    // TERMINATED：被终止  
+    // COMPLETED：完成  
+    // CANCELED：取消
+    @NameInMap("statuses")
+    public java.util.List<String> statuses;
+
     // 发起userid列表，最大列表长度为10。
     @NameInMap("userIds")
     public java.util.List<String> userIds;
@@ -75,6 +84,14 @@ public class ListProcessInstanceIdsRequest extends TeaModel {
     }
     public Long getStartTime() {
         return this.startTime;
+    }
+
+    public ListProcessInstanceIdsRequest setStatuses(java.util.List<String> statuses) {
+        this.statuses = statuses;
+        return this;
+    }
+    public java.util.List<String> getStatuses() {
+        return this.statuses;
     }
 
     public ListProcessInstanceIdsRequest setUserIds(java.util.List<String> userIds) {
