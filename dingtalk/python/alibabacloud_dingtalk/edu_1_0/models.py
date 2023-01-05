@@ -15932,6 +15932,7 @@ class QueryOrderResponseBody(TeaModel):
         order_no: str = None,
         order_type: str = None,
         outer_uid: str = None,
+        outer_user_id: str = None,
         pay_id: str = None,
         pay_logon_id: str = None,
         pay_status: int = None,
@@ -15965,6 +15966,8 @@ class QueryOrderResponseBody(TeaModel):
         self.order_type = order_type
         # 用户唯一id。
         self.outer_uid = outer_uid
+        # 用户唯一id。
+        self.outer_user_id = outer_user_id
         # 买家支付id。
         self.pay_id = pay_id
         # 买家支付登陆id。
@@ -16016,6 +16019,8 @@ class QueryOrderResponseBody(TeaModel):
             result['orderType'] = self.order_type
         if self.outer_uid is not None:
             result['outerUid'] = self.outer_uid
+        if self.outer_user_id is not None:
+            result['outerUserId'] = self.outer_user_id
         if self.pay_id is not None:
             result['payId'] = self.pay_id
         if self.pay_logon_id is not None:
@@ -16064,6 +16069,8 @@ class QueryOrderResponseBody(TeaModel):
             self.order_type = m.get('orderType')
         if m.get('outerUid') is not None:
             self.outer_uid = m.get('outerUid')
+        if m.get('outerUserId') is not None:
+            self.outer_user_id = m.get('outerUserId')
         if m.get('payId') is not None:
             self.pay_id = m.get('payId')
         if m.get('payLogonId') is not None:
@@ -17787,6 +17794,7 @@ class QuerySnsOrderResponseBody(TeaModel):
         order_no: str = None,
         order_type: str = None,
         outer_uid: str = None,
+        outer_user_id: str = None,
         pay_id: str = None,
         pay_logon_id: str = None,
         pay_status: int = None,
@@ -17820,6 +17828,8 @@ class QuerySnsOrderResponseBody(TeaModel):
         self.order_type = order_type
         # 用户唯一id。
         self.outer_uid = outer_uid
+        # 用户唯一id。
+        self.outer_user_id = outer_user_id
         # 买家支付id。
         self.pay_id = pay_id
         # 买家支付登陆id。
@@ -17871,6 +17881,8 @@ class QuerySnsOrderResponseBody(TeaModel):
             result['orderType'] = self.order_type
         if self.outer_uid is not None:
             result['outerUid'] = self.outer_uid
+        if self.outer_user_id is not None:
+            result['outerUserId'] = self.outer_user_id
         if self.pay_id is not None:
             result['payId'] = self.pay_id
         if self.pay_logon_id is not None:
@@ -17919,6 +17931,8 @@ class QuerySnsOrderResponseBody(TeaModel):
             self.order_type = m.get('orderType')
         if m.get('outerUid') is not None:
             self.outer_uid = m.get('outerUid')
+        if m.get('outerUserId') is not None:
+            self.outer_user_id = m.get('outerUserId')
         if m.get('payId') is not None:
             self.pay_id = m.get('payId')
         if m.get('payLogonId') is not None:

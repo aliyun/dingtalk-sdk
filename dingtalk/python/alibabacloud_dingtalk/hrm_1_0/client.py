@@ -167,6 +167,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/eCerts', 'json', req, runtime)
         )
 
+    def hrm_process_regular(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessRegularResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmProcessRegularHeaders()
+        return self.hrm_process_regular_with_options(request, headers, runtime)
+
+    async def hrm_process_regular_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessRegularResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmProcessRegularHeaders()
+        return await self.hrm_process_regular_with_options_async(request, headers, runtime)
+
+    def hrm_process_regular_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,
+        headers: dingtalkhrm__1__0_models.HrmProcessRegularHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmProcessRegularResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operation_id):
+            body['operationId'] = request.operation_id
+        if not UtilClient.is_unset(request.regular_date):
+            body['regularDate'] = request.regular_date
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmProcessRegularResponse(),
+            self.do_roarequest('HrmProcessRegular', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/regulars/become', 'json', req, runtime)
+        )
+
+    async def hrm_process_regular_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,
+        headers: dingtalkhrm__1__0_models.HrmProcessRegularHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmProcessRegularResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operation_id):
+            body['operationId'] = request.operation_id
+        if not UtilClient.is_unset(request.regular_date):
+            body['regularDate'] = request.regular_date
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmProcessRegularResponse(),
+            await self.do_roarequest_async('HrmProcessRegular', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/regulars/become', 'json', req, runtime)
+        )
+
     def hrm_process_transfer(
         self,
         request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,

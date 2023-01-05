@@ -1579,6 +1579,8 @@ class Client(OpenApiClient):
             body['processCode'] = request.process_code
         if not UtilClient.is_unset(request.start_time):
             body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.statuses):
+            body['statuses'] = request.statuses
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
         real_headers = {}
@@ -1613,6 +1615,8 @@ class Client(OpenApiClient):
             body['processCode'] = request.process_code
         if not UtilClient.is_unset(request.start_time):
             body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.statuses):
+            body['statuses'] = request.statuses
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
         real_headers = {}

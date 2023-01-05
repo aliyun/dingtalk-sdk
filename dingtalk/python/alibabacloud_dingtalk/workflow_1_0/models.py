@@ -5498,6 +5498,7 @@ class ListProcessInstanceIdsRequest(TeaModel):
         next_token: int = None,
         process_code: str = None,
         start_time: int = None,
+        statuses: List[str] = None,
         user_ids: List[str] = None,
     ):
         # 审批实例结束时间，Unix时间戳，单位毫秒。  例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.14 23:59:59对应的时间戳1586879999000。
@@ -5514,6 +5515,13 @@ class ListProcessInstanceIdsRequest(TeaModel):
         # 
         # 例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.10 00:00:00对应的时间戳1586448000000。
         self.start_time = start_time
+        # 流程实例状态，未传值代表查询所有状态的实例ID列表。
+        # NEW：新创建  
+        # RUNNING：审批中  
+        # TERMINATED：被终止  
+        # COMPLETED：完成  
+        # CANCELED：取消
+        self.statuses = statuses
         # 发起userid列表，最大列表长度为10。
         self.user_ids = user_ids
 
@@ -5536,6 +5544,8 @@ class ListProcessInstanceIdsRequest(TeaModel):
             result['processCode'] = self.process_code
         if self.start_time is not None:
             result['startTime'] = self.start_time
+        if self.statuses is not None:
+            result['statuses'] = self.statuses
         if self.user_ids is not None:
             result['userIds'] = self.user_ids
         return result
@@ -5552,6 +5562,8 @@ class ListProcessInstanceIdsRequest(TeaModel):
             self.process_code = m.get('processCode')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
+        if m.get('statuses') is not None:
+            self.statuses = m.get('statuses')
         if m.get('userIds') is not None:
             self.user_ids = m.get('userIds')
         return self
@@ -8563,7 +8575,7 @@ class QueryIntegratedTodoTaskResponseBodyResultList(TeaModel):
     def __init__(
         self,
         activity_id: str = None,
-        create_time: int = None,
+        create_time: str = None,
         finish_time: str = None,
         process_instance_id: str = None,
         result: str = None,
@@ -8573,9 +8585,9 @@ class QueryIntegratedTodoTaskResponseBodyResultList(TeaModel):
     ):
         # 待办组ID，需要在调用创建流程中心集成任务接口时，主动设置该值。
         self.activity_id = activity_id
-        # OA审批任务创建时间
+        # OA审批任务创建时间。
         self.create_time = create_time
-        # OA审批任务完成时间
+        # OA审批任务完成时间。
         self.finish_time = finish_time
         # 流程实例ID
         self.process_instance_id = process_instance_id
