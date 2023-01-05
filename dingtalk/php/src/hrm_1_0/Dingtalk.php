@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferResponse;
@@ -164,6 +167,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ECertQueryResponse::fromMap($this->doROARequest('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/eCerts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param HrmProcessRegularRequest $request
+     *
+     * @return HrmProcessRegularResponse
+     */
+    public function hrmProcessRegular($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmProcessRegularHeaders([]);
+
+        return $this->hrmProcessRegularWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param HrmProcessRegularRequest $request
+     * @param HrmProcessRegularHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return HrmProcessRegularResponse
+     */
+    public function hrmProcessRegularWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operationId)) {
+            @$body['operationId'] = $request->operationId;
+        }
+        if (!Utils::isUnset($request->regularDate)) {
+            @$body['regularDate'] = $request->regularDate;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            @$body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return HrmProcessRegularResponse::fromMap($this->doROARequest('HrmProcessRegular', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/processes/regulars/become', 'json', $req, $runtime));
     }
 
     /**

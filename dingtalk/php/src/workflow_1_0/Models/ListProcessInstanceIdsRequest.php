@@ -46,6 +46,13 @@ class ListProcessInstanceIdsRequest extends Model
     public $startTime;
 
     /**
+     * @description 流程实例状态，未传值代表查询所有状态的实例ID列表。
+     * CANCELED：取消
+     * @var string[]
+     */
+    public $statuses;
+
+    /**
      * @description 发起userid列表，最大列表长度为10。
      *
      * @var string[]
@@ -57,6 +64,7 @@ class ListProcessInstanceIdsRequest extends Model
         'nextToken'   => 'nextToken',
         'processCode' => 'processCode',
         'startTime'   => 'startTime',
+        'statuses'    => 'statuses',
         'userIds'     => 'userIds',
     ];
 
@@ -81,6 +89,9 @@ class ListProcessInstanceIdsRequest extends Model
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->statuses) {
+            $res['statuses'] = $this->statuses;
         }
         if (null !== $this->userIds) {
             $res['userIds'] = $this->userIds;
@@ -111,6 +122,11 @@ class ListProcessInstanceIdsRequest extends Model
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
+        }
+        if (isset($map['statuses'])) {
+            if (!empty($map['statuses'])) {
+                $model->statuses = $map['statuses'];
+            }
         }
         if (isset($map['userIds'])) {
             if (!empty($map['userIds'])) {

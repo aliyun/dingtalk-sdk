@@ -16,14 +16,14 @@ class list_ extends Model
     public $activityId;
 
     /**
-     * @description OA审批任务创建时间
+     * @description OA审批任务创建时间。
      *
-     * @var int
+     * @var string
      */
     public $createTime;
 
     /**
-     * @description OA审批任务完成时间
+     * @description OA审批任务完成时间。
      *
      * @var string
      */

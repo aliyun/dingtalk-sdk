@@ -1193,6 +1193,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->startTime)) {
             @$body['startTime'] = $request->startTime;
         }
+        if (!Utils::isUnset($request->statuses)) {
+            @$body['statuses'] = $request->statuses;
+        }
         if (!Utils::isUnset($request->userIds)) {
             @$body['userIds'] = $request->userIds;
         }
