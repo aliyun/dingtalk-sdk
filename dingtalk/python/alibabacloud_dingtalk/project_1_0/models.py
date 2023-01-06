@@ -1238,8 +1238,13 @@ class CreateTaskRequest(TeaModel):
         due_date: str = None,
         executor_id: str = None,
         note: str = None,
+        parent_task_id: str = None,
         priority: int = None,
         project_id: str = None,
+        scenariofieldconfig_id: str = None,
+        stage_id: str = None,
+        start_date: str = None,
+        visible: str = None,
     ):
         # 任务标题
         self.content = content
@@ -1251,10 +1256,20 @@ class CreateTaskRequest(TeaModel):
         self.executor_id = executor_id
         # 任务备注
         self.note = note
+        # 父任务id。
+        self.parent_task_id = parent_task_id
         # 任务优先级
         self.priority = priority
         # 项目id
         self.project_id = project_id
+        # 任务类型id，任务类型比如：缺陷、需求。。
+        self.scenariofieldconfig_id = scenariofieldconfig_id
+        # 任务列id。
+        self.stage_id = stage_id
+        # 任务开始时间。
+        self.start_date = start_date
+        # 任务可见性,members,involves。
+        self.visible = visible
 
     def validate(self):
         if self.customfields:
@@ -1280,10 +1295,20 @@ class CreateTaskRequest(TeaModel):
             result['executorId'] = self.executor_id
         if self.note is not None:
             result['note'] = self.note
+        if self.parent_task_id is not None:
+            result['parentTaskId'] = self.parent_task_id
         if self.priority is not None:
             result['priority'] = self.priority
         if self.project_id is not None:
             result['projectId'] = self.project_id
+        if self.scenariofieldconfig_id is not None:
+            result['scenariofieldconfigId'] = self.scenariofieldconfig_id
+        if self.stage_id is not None:
+            result['stageId'] = self.stage_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.visible is not None:
+            result['visible'] = self.visible
         return result
 
     def from_map(self, m: dict = None):
@@ -1301,10 +1326,20 @@ class CreateTaskRequest(TeaModel):
             self.executor_id = m.get('executorId')
         if m.get('note') is not None:
             self.note = m.get('note')
+        if m.get('parentTaskId') is not None:
+            self.parent_task_id = m.get('parentTaskId')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
         if m.get('projectId') is not None:
             self.project_id = m.get('projectId')
+        if m.get('scenariofieldconfigId') is not None:
+            self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
+        if m.get('stageId') is not None:
+            self.stage_id = m.get('stageId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
         return self
 
 

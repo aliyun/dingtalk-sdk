@@ -427,10 +427,20 @@ class Client(OpenApiClient):
             body['executorId'] = request.executor_id
         if not UtilClient.is_unset(request.note):
             body['note'] = request.note
+        if not UtilClient.is_unset(request.parent_task_id):
+            body['parentTaskId'] = request.parent_task_id
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
         if not UtilClient.is_unset(request.project_id):
             body['projectId'] = request.project_id
+        if not UtilClient.is_unset(request.scenariofieldconfig_id):
+            body['scenariofieldconfigId'] = request.scenariofieldconfig_id
+        if not UtilClient.is_unset(request.stage_id):
+            body['stageId'] = request.stage_id
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.visible):
+            body['visible'] = request.visible
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -465,10 +475,20 @@ class Client(OpenApiClient):
             body['executorId'] = request.executor_id
         if not UtilClient.is_unset(request.note):
             body['note'] = request.note
+        if not UtilClient.is_unset(request.parent_task_id):
+            body['parentTaskId'] = request.parent_task_id
         if not UtilClient.is_unset(request.priority):
             body['priority'] = request.priority
         if not UtilClient.is_unset(request.project_id):
             body['projectId'] = request.project_id
+        if not UtilClient.is_unset(request.scenariofieldconfig_id):
+            body['scenariofieldconfigId'] = request.scenariofieldconfig_id
+        if not UtilClient.is_unset(request.stage_id):
+            body['stageId'] = request.stage_id
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.visible):
+            body['visible'] = request.visible
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
