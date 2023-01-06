@@ -487,6 +487,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 body["note"] = request.Note;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentTaskId))
+            {
+                body["parentTaskId"] = request.ParentTaskId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Priority))
             {
                 body["priority"] = request.Priority;
@@ -494,6 +498,22 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProjectId))
             {
                 body["projectId"] = request.ProjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScenariofieldconfigId))
+            {
+                body["scenariofieldconfigId"] = request.ScenariofieldconfigId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StageId))
+            {
+                body["stageId"] = request.StageId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visible))
+            {
+                body["visible"] = request.Visible;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -537,6 +557,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 body["note"] = request.Note;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentTaskId))
+            {
+                body["parentTaskId"] = request.ParentTaskId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Priority))
             {
                 body["priority"] = request.Priority;
@@ -544,6 +568,22 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProjectId))
             {
                 body["projectId"] = request.ProjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScenariofieldconfigId))
+            {
+                body["scenariofieldconfigId"] = request.ScenariofieldconfigId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StageId))
+            {
+                body["stageId"] = request.StageId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visible))
+            {
+                body["visible"] = request.Visible;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

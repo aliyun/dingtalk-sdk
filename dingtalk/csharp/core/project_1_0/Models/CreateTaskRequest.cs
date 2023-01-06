@@ -77,6 +77,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string Note { get; set; }
 
         /// <summary>
+        /// 父任务id。
+        /// </summary>
+        [NameInMap("parentTaskId")]
+        [Validation(Required=false)]
+        public string ParentTaskId { get; set; }
+
+        /// <summary>
         /// 任务优先级
         /// </summary>
         [NameInMap("priority")]
@@ -89,6 +96,34 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [NameInMap("projectId")]
         [Validation(Required=false)]
         public string ProjectId { get; set; }
+
+        /// <summary>
+        /// 任务类型id，任务类型比如：缺陷、需求。。
+        /// </summary>
+        [NameInMap("scenariofieldconfigId")]
+        [Validation(Required=false)]
+        public string ScenariofieldconfigId { get; set; }
+
+        /// <summary>
+        /// 任务列id。
+        /// </summary>
+        [NameInMap("stageId")]
+        [Validation(Required=false)]
+        public string StageId { get; set; }
+
+        /// <summary>
+        /// 任务开始时间。
+        /// </summary>
+        [NameInMap("startDate")]
+        [Validation(Required=false)]
+        public string StartDate { get; set; }
+
+        /// <summary>
+        /// 任务可见性,members,involves。
+        /// </summary>
+        [NameInMap("visible")]
+        [Validation(Required=false)]
+        public string Visible { get; set; }
 
     }
 
