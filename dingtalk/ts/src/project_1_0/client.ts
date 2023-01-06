@@ -420,8 +420,13 @@ export class CreateTaskRequest extends $tea.Model {
   dueDate?: string;
   executorId?: string;
   note?: string;
+  parentTaskId?: string;
   priority?: number;
   projectId?: string;
+  scenariofieldconfigId?: string;
+  stageId?: string;
+  startDate?: string;
+  visible?: string;
   static names(): { [key: string]: string } {
     return {
       content: 'content',
@@ -429,8 +434,13 @@ export class CreateTaskRequest extends $tea.Model {
       dueDate: 'dueDate',
       executorId: 'executorId',
       note: 'note',
+      parentTaskId: 'parentTaskId',
       priority: 'priority',
       projectId: 'projectId',
+      scenariofieldconfigId: 'scenariofieldconfigId',
+      stageId: 'stageId',
+      startDate: 'startDate',
+      visible: 'visible',
     };
   }
 
@@ -441,8 +451,13 @@ export class CreateTaskRequest extends $tea.Model {
       dueDate: 'string',
       executorId: 'string',
       note: 'string',
+      parentTaskId: 'string',
       priority: 'number',
       projectId: 'string',
+      scenariofieldconfigId: 'string',
+      stageId: 'string',
+      startDate: 'string',
+      visible: 'string',
     };
   }
 
@@ -3985,12 +4000,32 @@ export default class Client extends OpenApi {
       body["note"] = request.note;
     }
 
+    if (!Util.isUnset(request.parentTaskId)) {
+      body["parentTaskId"] = request.parentTaskId;
+    }
+
     if (!Util.isUnset(request.priority)) {
       body["priority"] = request.priority;
     }
 
     if (!Util.isUnset(request.projectId)) {
       body["projectId"] = request.projectId;
+    }
+
+    if (!Util.isUnset(request.scenariofieldconfigId)) {
+      body["scenariofieldconfigId"] = request.scenariofieldconfigId;
+    }
+
+    if (!Util.isUnset(request.stageId)) {
+      body["stageId"] = request.stageId;
+    }
+
+    if (!Util.isUnset(request.startDate)) {
+      body["startDate"] = request.startDate;
+    }
+
+    if (!Util.isUnset(request.visible)) {
+      body["visible"] = request.visible;
     }
 
     let realHeaders : {[key: string ]: string} = { };
