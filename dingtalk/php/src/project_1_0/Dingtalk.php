@@ -386,11 +386,26 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->note)) {
             @$body['note'] = $request->note;
         }
+        if (!Utils::isUnset($request->parentTaskId)) {
+            @$body['parentTaskId'] = $request->parentTaskId;
+        }
         if (!Utils::isUnset($request->priority)) {
             @$body['priority'] = $request->priority;
         }
         if (!Utils::isUnset($request->projectId)) {
             @$body['projectId'] = $request->projectId;
+        }
+        if (!Utils::isUnset($request->scenariofieldconfigId)) {
+            @$body['scenariofieldconfigId'] = $request->scenariofieldconfigId;
+        }
+        if (!Utils::isUnset($request->stageId)) {
+            @$body['stageId'] = $request->stageId;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            @$body['startDate'] = $request->startDate;
+        }
+        if (!Utils::isUnset($request->visible)) {
+            @$body['visible'] = $request->visible;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
