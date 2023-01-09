@@ -612,12 +612,14 @@ export class UpdateCardRequest extends $tea.Model {
   cardUpdateOptions?: UpdateCardRequestCardUpdateOptions;
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
+  userIdType?: number;
   static names(): { [key: string]: string } {
     return {
       cardData: 'cardData',
       cardUpdateOptions: 'cardUpdateOptions',
       outTrackId: 'outTrackId',
       privateData: 'privateData',
+      userIdType: 'userIdType',
     };
   }
 
@@ -627,6 +629,7 @@ export class UpdateCardRequest extends $tea.Model {
       cardUpdateOptions: UpdateCardRequestCardUpdateOptions,
       outTrackId: 'string',
       privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
+      userIdType: 'number',
     };
   }
 
@@ -2565,6 +2568,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.privateData)) {
       body["privateData"] = request.privateData;
+    }
+
+    if (!Util.isUnset(request.userIdType)) {
+      body["userIdType"] = request.userIdType;
     }
 
     let realHeaders : {[key: string ]: string} = { };
