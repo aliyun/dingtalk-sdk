@@ -66,6 +66,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public Dictionary<string, PrivateDataValue> PrivateData { get; set; }
 
+        [NameInMap("userIdType")]
+        [Validation(Required=false)]
+        public int? UserIdType { get; set; }
+
     }
 
 }
