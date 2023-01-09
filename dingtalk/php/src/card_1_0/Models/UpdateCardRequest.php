@@ -37,11 +37,17 @@ class UpdateCardRequest extends Model
      * @var PrivateDataValue[]
      */
     public $privateData;
+
+    /**
+     * @var int
+     */
+    public $userIdType;
     protected $_name = [
         'cardData'          => 'cardData',
         'cardUpdateOptions' => 'cardUpdateOptions',
         'outTrackId'        => 'outTrackId',
         'privateData'       => 'privateData',
+        'userIdType'        => 'userIdType',
     ];
 
     public function validate()
@@ -68,6 +74,9 @@ class UpdateCardRequest extends Model
                 }
             }
         }
+        if (null !== $this->userIdType) {
+            $res['userIdType'] = $this->userIdType;
+        }
 
         return $res;
     }
@@ -91,6 +100,9 @@ class UpdateCardRequest extends Model
         }
         if (isset($map['privateData'])) {
             $model->privateData = $map['privateData'];
+        }
+        if (isset($map['userIdType'])) {
+            $model->userIdType = $map['userIdType'];
         }
 
         return $model;
