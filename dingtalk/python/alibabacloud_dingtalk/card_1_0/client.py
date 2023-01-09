@@ -579,6 +579,8 @@ class Client(OpenApiClient):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.private_data):
             body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -609,6 +611,8 @@ class Client(OpenApiClient):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.private_data):
             body['privateData'] = request.private_data
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

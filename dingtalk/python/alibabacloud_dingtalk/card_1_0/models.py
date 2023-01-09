@@ -3740,6 +3740,7 @@ class UpdateCardRequest(TeaModel):
         card_update_options: UpdateCardRequestCardUpdateOptions = None,
         out_track_id: str = None,
         private_data: Dict[str, PrivateDataValue] = None,
+        user_id_type: int = None,
     ):
         # 卡片数据
         self.card_data = card_data
@@ -3751,6 +3752,7 @@ class UpdateCardRequest(TeaModel):
         # ● key：userId
         # ● value：用户私有数据（cardData）
         self.private_data = private_data
+        self.user_id_type = user_id_type
 
     def validate(self):
         if self.card_data:
@@ -3778,6 +3780,8 @@ class UpdateCardRequest(TeaModel):
         if self.private_data is not None:
             for k, v in self.private_data.items():
                 result['privateData'][k] = v.to_map()
+        if self.user_id_type is not None:
+            result['userIdType'] = self.user_id_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3795,6 +3799,8 @@ class UpdateCardRequest(TeaModel):
             for k, v in m.get('privateData').items():
                 temp_model = PrivateDataValue()
                 self.private_data[k] = temp_model.from_map(v)
+        if m.get('userIdType') is not None:
+            self.user_id_type = m.get('userIdType')
         return self
 
 
