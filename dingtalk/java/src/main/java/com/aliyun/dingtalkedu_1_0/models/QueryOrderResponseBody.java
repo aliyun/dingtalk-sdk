@@ -11,13 +11,21 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
-    // 订单关单时间。
+    // 订单关闭时间
     @NameInMap("closeTime")
-    public Long closeTime;
+    public String closeTime;
 
-    // 订单创建时间。
+    // 订单关闭时间戳
+    @NameInMap("closeTimestamp")
+    public Long closeTimestamp;
+
+    // 订单创建时间
     @NameInMap("createTime")
-    public Long createTime;
+    public String createTime;
+
+    // 订单创建时间戳
+    @NameInMap("createTimestamp")
+    public Long createTimestamp;
 
     // 扩展字段。
     @NameInMap("feature")
@@ -65,9 +73,13 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("payStatus")
     public Integer payStatus;
 
-    // 订单支付时间。
+    // 订单支付时间
     @NameInMap("payTime")
-    public Long payTime;
+    public String payTime;
+
+    // 订单支付时间戳
+    @NameInMap("payTimestamp")
+    public Long payTimestamp;
 
     // 买家支付渠道类型。
     @NameInMap("payType")
@@ -79,9 +91,13 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("refundStatus")
     public Integer refundStatus;
 
-    // 订单退款时间。
+    // 订单退款时间
     @NameInMap("refundTime")
-    public Long refundTime;
+    public String refundTime;
+
+    // 订单退款时间戳
+    @NameInMap("refundTimestamp")
+    public Long refundTimestamp;
 
     // 订单标题。
     @NameInMap("subject")
@@ -112,20 +128,36 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.alipayAppId;
     }
 
-    public QueryOrderResponseBody setCloseTime(Long closeTime) {
+    public QueryOrderResponseBody setCloseTime(String closeTime) {
         this.closeTime = closeTime;
         return this;
     }
-    public Long getCloseTime() {
+    public String getCloseTime() {
         return this.closeTime;
     }
 
-    public QueryOrderResponseBody setCreateTime(Long createTime) {
+    public QueryOrderResponseBody setCloseTimestamp(Long closeTimestamp) {
+        this.closeTimestamp = closeTimestamp;
+        return this;
+    }
+    public Long getCloseTimestamp() {
+        return this.closeTimestamp;
+    }
+
+    public QueryOrderResponseBody setCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-    public Long getCreateTime() {
+    public String getCreateTime() {
         return this.createTime;
+    }
+
+    public QueryOrderResponseBody setCreateTimestamp(Long createTimestamp) {
+        this.createTimestamp = createTimestamp;
+        return this;
+    }
+    public Long getCreateTimestamp() {
+        return this.createTimestamp;
     }
 
     public QueryOrderResponseBody setFeature(String feature) {
@@ -224,12 +256,20 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.payStatus;
     }
 
-    public QueryOrderResponseBody setPayTime(Long payTime) {
+    public QueryOrderResponseBody setPayTime(String payTime) {
         this.payTime = payTime;
         return this;
     }
-    public Long getPayTime() {
+    public String getPayTime() {
         return this.payTime;
+    }
+
+    public QueryOrderResponseBody setPayTimestamp(Long payTimestamp) {
+        this.payTimestamp = payTimestamp;
+        return this;
+    }
+    public Long getPayTimestamp() {
+        return this.payTimestamp;
     }
 
     public QueryOrderResponseBody setPayType(String payType) {
@@ -256,12 +296,20 @@ public class QueryOrderResponseBody extends TeaModel {
         return this.refundStatus;
     }
 
-    public QueryOrderResponseBody setRefundTime(Long refundTime) {
+    public QueryOrderResponseBody setRefundTime(String refundTime) {
         this.refundTime = refundTime;
         return this;
     }
-    public Long getRefundTime() {
+    public String getRefundTime() {
         return this.refundTime;
+    }
+
+    public QueryOrderResponseBody setRefundTimestamp(Long refundTimestamp) {
+        this.refundTimestamp = refundTimestamp;
+        return this;
+    }
+    public Long getRefundTimestamp() {
+        return this.refundTimestamp;
     }
 
     public QueryOrderResponseBody setSubject(String subject) {

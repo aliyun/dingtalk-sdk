@@ -22,6 +22,9 @@ public class UpdateCardRequest extends TeaModel {
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
+    @NameInMap("userIdType")
+    public Integer userIdType;
+
     public static UpdateCardRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateCardRequest self = new UpdateCardRequest();
         return TeaModel.build(map, self);
@@ -57,6 +60,14 @@ public class UpdateCardRequest extends TeaModel {
     }
     public java.util.Map<String, PrivateDataValue> getPrivateData() {
         return this.privateData;
+    }
+
+    public UpdateCardRequest setUserIdType(Integer userIdType) {
+        this.userIdType = userIdType;
+        return this;
+    }
+    public Integer getUserIdType() {
+        return this.userIdType;
     }
 
     public static class UpdateCardRequestCardData extends TeaModel {
