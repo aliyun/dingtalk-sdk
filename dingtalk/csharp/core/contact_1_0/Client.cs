@@ -3072,7 +3072,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetDisableResponse>(DoROARequest("SetDisable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/disable", "none", req, runtime));
+            return TeaModel.ToObject<SetDisableResponse>(DoROARequest("SetDisable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/disable", "json", req, runtime));
         }
 
         public async Task<SetDisableResponse> SetDisableWithOptionsAsync(SetDisableRequest request, SetDisableHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3101,7 +3101,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetDisableResponse>(await DoROARequestAsync("SetDisable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/disable", "none", req, runtime));
+            return TeaModel.ToObject<SetDisableResponse>(await DoROARequestAsync("SetDisable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/disable", "json", req, runtime));
         }
 
         public SetEnableResponse SetEnable(SetEnableRequest request)
@@ -3140,7 +3140,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetEnableResponse>(DoROARequest("SetEnable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/enable", "none", req, runtime));
+            return TeaModel.ToObject<SetEnableResponse>(DoROARequest("SetEnable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/enable", "json", req, runtime));
         }
 
         public async Task<SetEnableResponse> SetEnableWithOptionsAsync(SetEnableRequest request, SetEnableHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3165,7 +3165,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetEnableResponse>(await DoROARequestAsync("SetEnable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/enable", "none", req, runtime));
+            return TeaModel.ToObject<SetEnableResponse>(await DoROARequestAsync("SetEnable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/enable", "json", req, runtime));
         }
 
         public SignOutResponse SignOut(SignOutRequest request)
@@ -3208,7 +3208,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SignOutResponse>(DoROARequest("SignOut", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/signOut", "none", req, runtime));
+            return TeaModel.ToObject<SignOutResponse>(DoROARequest("SignOut", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/signOut", "json", req, runtime));
         }
 
         public async Task<SignOutResponse> SignOutWithOptionsAsync(SignOutRequest request, SignOutHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3237,7 +3237,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SignOutResponse>(await DoROARequestAsync("SignOut", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/signOut", "none", req, runtime));
+            return TeaModel.ToObject<SignOutResponse>(await DoROARequestAsync("SignOut", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/signOut", "json", req, runtime));
         }
 
         public SortUserResponse SortUser(SortUserRequest request)

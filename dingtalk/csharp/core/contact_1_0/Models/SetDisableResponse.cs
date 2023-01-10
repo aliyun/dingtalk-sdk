@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
+        [NameInMap("body")]
+        [Validation(Required=true)]
+        public SetDisableResponseBody Body { get; set; }
+
     }
 
 }

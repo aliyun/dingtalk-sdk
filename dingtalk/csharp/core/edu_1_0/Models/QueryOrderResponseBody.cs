@@ -21,18 +21,32 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string AlipayAppId { get; set; }
 
         /// <summary>
-        /// 订单关单时间。
+        /// 订单关闭时间
         /// </summary>
         [NameInMap("closeTime")]
         [Validation(Required=false)]
-        public long? CloseTime { get; set; }
+        public string CloseTime { get; set; }
 
         /// <summary>
-        /// 订单创建时间。
+        /// 订单关闭时间戳
+        /// </summary>
+        [NameInMap("closeTimestamp")]
+        [Validation(Required=false)]
+        public long? CloseTimestamp { get; set; }
+
+        /// <summary>
+        /// 订单创建时间
         /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
-        public long? CreateTime { get; set; }
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 订单创建时间戳
+        /// </summary>
+        [NameInMap("createTimestamp")]
+        [Validation(Required=false)]
+        public long? CreateTimestamp { get; set; }
 
         /// <summary>
         /// 扩展字段。
@@ -113,11 +127,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public int? PayStatus { get; set; }
 
         /// <summary>
-        /// 订单支付时间。
+        /// 订单支付时间
         /// </summary>
         [NameInMap("payTime")]
         [Validation(Required=false)]
-        public long? PayTime { get; set; }
+        public string PayTime { get; set; }
+
+        /// <summary>
+        /// 订单支付时间戳
+        /// </summary>
+        [NameInMap("payTimestamp")]
+        [Validation(Required=false)]
+        public long? PayTimestamp { get; set; }
 
         /// <summary>
         /// 买家支付渠道类型。
@@ -135,11 +156,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public int? RefundStatus { get; set; }
 
         /// <summary>
-        /// 订单退款时间。
+        /// 订单退款时间
         /// </summary>
         [NameInMap("refundTime")]
         [Validation(Required=false)]
-        public long? RefundTime { get; set; }
+        public string RefundTime { get; set; }
+
+        /// <summary>
+        /// 订单退款时间戳
+        /// </summary>
+        [NameInMap("refundTimestamp")]
+        [Validation(Required=false)]
+        public long? RefundTimestamp { get; set; }
 
         /// <summary>
         /// 订单标题。

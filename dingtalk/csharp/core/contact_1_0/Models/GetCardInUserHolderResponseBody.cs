@@ -17,6 +17,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string AvatarUrl { get; set; }
 
         /// <summary>
+        /// 名片收下状态
+        /// </summary>
+        [NameInMap("cardAcceptStatus")]
+        [Validation(Required=false)]
+        public int? CardAcceptStatus { get; set; }
+
+        /// <summary>
+        /// 名片收下时间
+        /// </summary>
+        [NameInMap("cardAcceptTime")]
+        [Validation(Required=false)]
+        public object CardAcceptTime { get; set; }
+
+        /// <summary>
         /// 名片ID
         /// </summary>
         [NameInMap("cardId")]
