@@ -62,6 +62,13 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        // 名片收下状态
+        @NameInMap("cardAcceptStatus")
+        public Integer cardAcceptStatus;
+
+        @NameInMap("cardAcceptTime")
+        public Object cardAcceptTime;
+
         // 名片ID
         @NameInMap("cardId")
         public String cardId;
@@ -105,6 +112,22 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
         }
         public String getAvatarUrl() {
             return this.avatarUrl;
+        }
+
+        public GetUserCardHolderListResponseBodyList setCardAcceptStatus(Integer cardAcceptStatus) {
+            this.cardAcceptStatus = cardAcceptStatus;
+            return this;
+        }
+        public Integer getCardAcceptStatus() {
+            return this.cardAcceptStatus;
+        }
+
+        public GetUserCardHolderListResponseBodyList setCardAcceptTime(Object cardAcceptTime) {
+            this.cardAcceptTime = cardAcceptTime;
+            return this;
+        }
+        public Object getCardAcceptTime() {
+            return this.cardAcceptTime;
         }
 
         public GetUserCardHolderListResponseBodyList setCardId(String cardId) {

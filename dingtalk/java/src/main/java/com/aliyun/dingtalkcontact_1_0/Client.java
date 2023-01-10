@@ -1420,7 +1420,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SetDisable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/disable", "none", req, runtime), new SetDisableResponse());
+        return TeaModel.toModel(this.doROARequest("SetDisable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/disable", "json", req, runtime), new SetDisableResponse());
     }
 
     public SetEnableResponse setEnable(SetEnableRequest request) throws Exception {
@@ -1449,7 +1449,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SetEnable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/enable", "none", req, runtime), new SetEnableResponse());
+        return TeaModel.toModel(this.doROARequest("SetEnable", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/enable", "json", req, runtime), new SetEnableResponse());
     }
 
     public SignOutResponse signOut(SignOutRequest request) throws Exception {
@@ -1482,7 +1482,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SignOut", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/signOut", "none", req, runtime), new SignOutResponse());
+        return TeaModel.toModel(this.doROARequest("SignOut", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/orgAccounts/signOut", "json", req, runtime), new SignOutResponse());
     }
 
     public SortUserResponse sortUser(SortUserRequest request) throws Exception {

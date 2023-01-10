@@ -8,6 +8,10 @@ public class SetEnableResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("body")
+    @Validation(required = true)
+    public SetEnableResponseBody body;
+
     public static SetEnableResponse build(java.util.Map<String, ?> map) throws Exception {
         SetEnableResponse self = new SetEnableResponse();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class SetEnableResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public SetEnableResponse setBody(SetEnableResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public SetEnableResponseBody getBody() {
+        return this.body;
     }
 
 }
