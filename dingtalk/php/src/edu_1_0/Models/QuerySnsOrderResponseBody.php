@@ -21,18 +21,32 @@ class QuerySnsOrderResponseBody extends Model
     public $alipayAppId;
 
     /**
-     * @description 订单关单时间。
+     * @description 订单关闭时间
      *
-     * @var int
+     * @var string
      */
     public $closeTime;
 
     /**
-     * @description 订单创建时间。
+     * @description 订单关闭时间戳
      *
      * @var int
      */
+    public $closeTimestamp;
+
+    /**
+     * @description 订单创建时间
+     *
+     * @var string
+     */
     public $createTime;
+
+    /**
+     * @description 订单创建时间戳
+     *
+     * @var int
+     */
+    public $createTimestamp;
 
     /**
      * @description 扩展字段。
@@ -115,11 +129,18 @@ class QuerySnsOrderResponseBody extends Model
     public $payStatus;
 
     /**
-     * @description 订单支付时间。
+     * @description 订单支付时间
+     *
+     * @var string
+     */
+    public $payTime;
+
+    /**
+     * @description 订单支付时间戳
      *
      * @var int
      */
-    public $payTime;
+    public $payTimestamp;
 
     /**
      * @description 买家支付渠道类型。
@@ -139,11 +160,18 @@ class QuerySnsOrderResponseBody extends Model
     public $refundStatus;
 
     /**
-     * @description 订单退款时间。
+     * @description 订单退款时间
+     *
+     * @var string
+     */
+    public $refundTime;
+
+    /**
+     * @description 订单退款时间戳
      *
      * @var int
      */
-    public $refundTime;
+    public $refundTimestamp;
 
     /**
      * @description 订单标题。
@@ -162,7 +190,9 @@ class QuerySnsOrderResponseBody extends Model
         'actualAmount'         => 'actualAmount',
         'alipayAppId'          => 'alipayAppId',
         'closeTime'            => 'closeTime',
+        'closeTimestamp'       => 'closeTimestamp',
         'createTime'           => 'createTime',
+        'createTimestamp'      => 'createTimestamp',
         'feature'              => 'feature',
         'labelAmount'          => 'labelAmount',
         'merchantId'           => 'merchantId',
@@ -176,10 +206,12 @@ class QuerySnsOrderResponseBody extends Model
         'payLogonId'           => 'payLogonId',
         'payStatus'            => 'payStatus',
         'payTime'              => 'payTime',
+        'payTimestamp'         => 'payTimestamp',
         'payType'              => 'payType',
         'refundAmount'         => 'refundAmount',
         'refundStatus'         => 'refundStatus',
         'refundTime'           => 'refundTime',
+        'refundTimestamp'      => 'refundTimestamp',
         'subject'              => 'subject',
         'tradeNo'              => 'tradeNo',
     ];
@@ -200,8 +232,14 @@ class QuerySnsOrderResponseBody extends Model
         if (null !== $this->closeTime) {
             $res['closeTime'] = $this->closeTime;
         }
+        if (null !== $this->closeTimestamp) {
+            $res['closeTimestamp'] = $this->closeTimestamp;
+        }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->createTimestamp) {
+            $res['createTimestamp'] = $this->createTimestamp;
         }
         if (null !== $this->feature) {
             $res['feature'] = $this->feature;
@@ -242,6 +280,9 @@ class QuerySnsOrderResponseBody extends Model
         if (null !== $this->payTime) {
             $res['payTime'] = $this->payTime;
         }
+        if (null !== $this->payTimestamp) {
+            $res['payTimestamp'] = $this->payTimestamp;
+        }
         if (null !== $this->payType) {
             $res['payType'] = $this->payType;
         }
@@ -253,6 +294,9 @@ class QuerySnsOrderResponseBody extends Model
         }
         if (null !== $this->refundTime) {
             $res['refundTime'] = $this->refundTime;
+        }
+        if (null !== $this->refundTimestamp) {
+            $res['refundTimestamp'] = $this->refundTimestamp;
         }
         if (null !== $this->subject) {
             $res['subject'] = $this->subject;
@@ -281,8 +325,14 @@ class QuerySnsOrderResponseBody extends Model
         if (isset($map['closeTime'])) {
             $model->closeTime = $map['closeTime'];
         }
+        if (isset($map['closeTimestamp'])) {
+            $model->closeTimestamp = $map['closeTimestamp'];
+        }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
+        }
+        if (isset($map['createTimestamp'])) {
+            $model->createTimestamp = $map['createTimestamp'];
         }
         if (isset($map['feature'])) {
             $model->feature = $map['feature'];
@@ -323,6 +373,9 @@ class QuerySnsOrderResponseBody extends Model
         if (isset($map['payTime'])) {
             $model->payTime = $map['payTime'];
         }
+        if (isset($map['payTimestamp'])) {
+            $model->payTimestamp = $map['payTimestamp'];
+        }
         if (isset($map['payType'])) {
             $model->payType = $map['payType'];
         }
@@ -334,6 +387,9 @@ class QuerySnsOrderResponseBody extends Model
         }
         if (isset($map['refundTime'])) {
             $model->refundTime = $map['refundTime'];
+        }
+        if (isset($map['refundTimestamp'])) {
+            $model->refundTimestamp = $map['refundTimestamp'];
         }
         if (isset($map['subject'])) {
             $model->subject = $map['subject'];

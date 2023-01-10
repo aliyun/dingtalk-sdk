@@ -2118,7 +2118,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return SetDisableResponse::fromMap($this->doROARequest('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/disable', 'none', $req, $runtime));
+        return SetDisableResponse::fromMap($this->doROARequest('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/disable', 'json', $req, $runtime));
     }
 
     /**
@@ -2160,7 +2160,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return SetEnableResponse::fromMap($this->doROARequest('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/enable', 'none', $req, $runtime));
+        return SetEnableResponse::fromMap($this->doROARequest('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/enable', 'json', $req, $runtime));
     }
 
     /**
@@ -2205,7 +2205,7 @@ class Dingtalk extends OpenApiClient
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
 
-        return SignOutResponse::fromMap($this->doROARequest('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/signOut', 'none', $req, $runtime));
+        return SignOutResponse::fromMap($this->doROARequest('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/orgAccounts/signOut', 'json', $req, $runtime));
     }
 
     /**

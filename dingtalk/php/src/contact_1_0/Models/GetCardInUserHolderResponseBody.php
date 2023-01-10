@@ -16,6 +16,20 @@ class GetCardInUserHolderResponseBody extends Model
     public $avatarUrl;
 
     /**
+     * @description 名片收下状态
+     *
+     * @var int
+     */
+    public $cardAcceptStatus;
+
+    /**
+     * @description 名片收下时间
+     *
+     * @var mixed
+     */
+    public $cardAcceptTime;
+
+    /**
      * @description 名片ID
      *
      * @var string
@@ -71,15 +85,17 @@ class GetCardInUserHolderResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'avatarUrl'    => 'avatarUrl',
-        'cardId'       => 'cardId',
-        'extension'    => 'extension',
-        'industryName' => 'industryName',
-        'introduce'    => 'introduce',
-        'name'         => 'name',
-        'orgName'      => 'orgName',
-        'templateId'   => 'templateId',
-        'title'        => 'title',
+        'avatarUrl'        => 'avatarUrl',
+        'cardAcceptStatus' => 'cardAcceptStatus',
+        'cardAcceptTime'   => 'cardAcceptTime',
+        'cardId'           => 'cardId',
+        'extension'        => 'extension',
+        'industryName'     => 'industryName',
+        'introduce'        => 'introduce',
+        'name'             => 'name',
+        'orgName'          => 'orgName',
+        'templateId'       => 'templateId',
+        'title'            => 'title',
     ];
 
     public function validate()
@@ -91,6 +107,12 @@ class GetCardInUserHolderResponseBody extends Model
         $res = [];
         if (null !== $this->avatarUrl) {
             $res['avatarUrl'] = $this->avatarUrl;
+        }
+        if (null !== $this->cardAcceptStatus) {
+            $res['cardAcceptStatus'] = $this->cardAcceptStatus;
+        }
+        if (null !== $this->cardAcceptTime) {
+            $res['cardAcceptTime'] = $this->cardAcceptTime;
         }
         if (null !== $this->cardId) {
             $res['cardId'] = $this->cardId;
@@ -130,6 +152,12 @@ class GetCardInUserHolderResponseBody extends Model
         $model = new self();
         if (isset($map['avatarUrl'])) {
             $model->avatarUrl = $map['avatarUrl'];
+        }
+        if (isset($map['cardAcceptStatus'])) {
+            $model->cardAcceptStatus = $map['cardAcceptStatus'];
+        }
+        if (isset($map['cardAcceptTime'])) {
+            $model->cardAcceptTime = $map['cardAcceptTime'];
         }
         if (isset($map['cardId'])) {
             $model->cardId = $map['cardId'];
