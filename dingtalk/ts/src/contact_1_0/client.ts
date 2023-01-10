@@ -956,6 +956,8 @@ export class GetCardInUserHolderHeaders extends $tea.Model {
 
 export class GetCardInUserHolderResponseBody extends $tea.Model {
   avatarUrl?: string;
+  cardAcceptStatus?: number;
+  cardAcceptTime?: any;
   cardId?: string;
   extension?: { [key: string]: any };
   industryName?: string;
@@ -967,6 +969,8 @@ export class GetCardInUserHolderResponseBody extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       avatarUrl: 'avatarUrl',
+      cardAcceptStatus: 'cardAcceptStatus',
+      cardAcceptTime: 'cardAcceptTime',
       cardId: 'cardId',
       extension: 'extension',
       industryName: 'industryName',
@@ -981,6 +985,8 @@ export class GetCardInUserHolderResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       avatarUrl: 'string',
+      cardAcceptStatus: 'number',
+      cardAcceptTime: 'any',
       cardId: 'string',
       extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       industryName: 'string',
@@ -3599,17 +3605,39 @@ export class SetDisableRequest extends $tea.Model {
   }
 }
 
+export class SetDisableResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SetDisableResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: SetDisableResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SetDisableResponseBody,
     };
   }
 
@@ -3659,17 +3687,39 @@ export class SetEnableRequest extends $tea.Model {
   }
 }
 
+export class SetEnableResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SetEnableResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: SetEnableResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SetEnableResponseBody,
     };
   }
 
@@ -3722,17 +3772,39 @@ export class SignOutRequest extends $tea.Model {
   }
 }
 
+export class SignOutResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SignOutResponse extends $tea.Model {
   headers: { [key: string]: string };
+  body: SignOutResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SignOutResponseBody,
     };
   }
 
@@ -5188,6 +5260,8 @@ export class GetCardInfoResponseBodyExtension extends $tea.Model {
 
 export class GetUserCardHolderListResponseBodyList extends $tea.Model {
   avatarUrl?: string;
+  cardAcceptStatus?: number;
+  cardAcceptTime?: any;
   cardId?: string;
   extension?: { [key: string]: any };
   industryName?: string;
@@ -5199,6 +5273,8 @@ export class GetUserCardHolderListResponseBodyList extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       avatarUrl: 'avatarUrl',
+      cardAcceptStatus: 'cardAcceptStatus',
+      cardAcceptTime: 'cardAcceptTime',
       cardId: 'cardId',
       extension: 'extension',
       industryName: 'industryName',
@@ -5213,6 +5289,8 @@ export class GetUserCardHolderListResponseBodyList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       avatarUrl: 'string',
+      cardAcceptStatus: 'number',
+      cardAcceptTime: 'any',
       cardId: 'string',
       extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       industryName: 'string',
@@ -7202,7 +7280,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SetDisableResponse>(await this.doROARequest("SetDisable", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/disable`, "none", req, runtime), new SetDisableResponse({}));
+    return $tea.cast<SetDisableResponse>(await this.doROARequest("SetDisable", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/disable`, "json", req, runtime), new SetDisableResponse({}));
   }
 
   async setEnable(request: SetEnableRequest): Promise<SetEnableResponse> {
@@ -7231,7 +7309,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SetEnableResponse>(await this.doROARequest("SetEnable", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/enable`, "none", req, runtime), new SetEnableResponse({}));
+    return $tea.cast<SetEnableResponse>(await this.doROARequest("SetEnable", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/enable`, "json", req, runtime), new SetEnableResponse({}));
   }
 
   async signOut(request: SignOutRequest): Promise<SignOutResponse> {
@@ -7264,7 +7342,7 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SignOutResponse>(await this.doROARequest("SignOut", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/signOut`, "none", req, runtime), new SignOutResponse({}));
+    return $tea.cast<SignOutResponse>(await this.doROARequest("SignOut", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/orgAccounts/signOut`, "json", req, runtime), new SignOutResponse({}));
   }
 
   async sortUser(request: SortUserRequest): Promise<SortUserResponse> {

@@ -6722,8 +6722,10 @@ export class QueryOrderRequest extends $tea.Model {
 export class QueryOrderResponseBody extends $tea.Model {
   actualAmount?: number;
   alipayAppId?: string;
-  closeTime?: number;
-  createTime?: number;
+  closeTime?: string;
+  closeTimestamp?: number;
+  createTime?: string;
+  createTimestamp?: number;
   feature?: string;
   labelAmount?: number;
   merchantId?: string;
@@ -6736,11 +6738,13 @@ export class QueryOrderResponseBody extends $tea.Model {
   payId?: string;
   payLogonId?: string;
   payStatus?: number;
-  payTime?: number;
+  payTime?: string;
+  payTimestamp?: number;
   payType?: string;
   refundAmount?: number;
   refundStatus?: number;
-  refundTime?: number;
+  refundTime?: string;
+  refundTimestamp?: number;
   subject?: string;
   tradeNo?: string;
   static names(): { [key: string]: string } {
@@ -6748,7 +6752,9 @@ export class QueryOrderResponseBody extends $tea.Model {
       actualAmount: 'actualAmount',
       alipayAppId: 'alipayAppId',
       closeTime: 'closeTime',
+      closeTimestamp: 'closeTimestamp',
       createTime: 'createTime',
+      createTimestamp: 'createTimestamp',
       feature: 'feature',
       labelAmount: 'labelAmount',
       merchantId: 'merchantId',
@@ -6762,10 +6768,12 @@ export class QueryOrderResponseBody extends $tea.Model {
       payLogonId: 'payLogonId',
       payStatus: 'payStatus',
       payTime: 'payTime',
+      payTimestamp: 'payTimestamp',
       payType: 'payType',
       refundAmount: 'refundAmount',
       refundStatus: 'refundStatus',
       refundTime: 'refundTime',
+      refundTimestamp: 'refundTimestamp',
       subject: 'subject',
       tradeNo: 'tradeNo',
     };
@@ -6775,8 +6783,10 @@ export class QueryOrderResponseBody extends $tea.Model {
     return {
       actualAmount: 'number',
       alipayAppId: 'string',
-      closeTime: 'number',
-      createTime: 'number',
+      closeTime: 'string',
+      closeTimestamp: 'number',
+      createTime: 'string',
+      createTimestamp: 'number',
       feature: 'string',
       labelAmount: 'number',
       merchantId: 'string',
@@ -6789,11 +6799,13 @@ export class QueryOrderResponseBody extends $tea.Model {
       payId: 'string',
       payLogonId: 'string',
       payStatus: 'number',
-      payTime: 'number',
+      payTime: 'string',
+      payTimestamp: 'number',
       payType: 'string',
       refundAmount: 'number',
       refundStatus: 'number',
-      refundTime: 'number',
+      refundTime: 'string',
+      refundTimestamp: 'number',
       subject: 'string',
       tradeNo: 'string',
     };
@@ -7594,8 +7606,10 @@ export class QuerySnsOrderRequest extends $tea.Model {
 export class QuerySnsOrderResponseBody extends $tea.Model {
   actualAmount?: number;
   alipayAppId?: string;
-  closeTime?: number;
-  createTime?: number;
+  closeTime?: string;
+  closeTimestamp?: number;
+  createTime?: string;
+  createTimestamp?: number;
   feature?: string;
   labelAmount?: number;
   merchantId?: string;
@@ -7608,11 +7622,13 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
   payId?: string;
   payLogonId?: string;
   payStatus?: number;
-  payTime?: number;
+  payTime?: string;
+  payTimestamp?: number;
   payType?: string;
   refundAmount?: number;
   refundStatus?: number;
-  refundTime?: number;
+  refundTime?: string;
+  refundTimestamp?: number;
   subject?: string;
   tradeNo?: string;
   static names(): { [key: string]: string } {
@@ -7620,7 +7636,9 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       actualAmount: 'actualAmount',
       alipayAppId: 'alipayAppId',
       closeTime: 'closeTime',
+      closeTimestamp: 'closeTimestamp',
       createTime: 'createTime',
+      createTimestamp: 'createTimestamp',
       feature: 'feature',
       labelAmount: 'labelAmount',
       merchantId: 'merchantId',
@@ -7634,10 +7652,12 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       payLogonId: 'payLogonId',
       payStatus: 'payStatus',
       payTime: 'payTime',
+      payTimestamp: 'payTimestamp',
       payType: 'payType',
       refundAmount: 'refundAmount',
       refundStatus: 'refundStatus',
       refundTime: 'refundTime',
+      refundTimestamp: 'refundTimestamp',
       subject: 'subject',
       tradeNo: 'tradeNo',
     };
@@ -7647,8 +7667,10 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
     return {
       actualAmount: 'number',
       alipayAppId: 'string',
-      closeTime: 'number',
-      createTime: 'number',
+      closeTime: 'string',
+      closeTimestamp: 'number',
+      createTime: 'string',
+      createTimestamp: 'number',
       feature: 'string',
       labelAmount: 'number',
       merchantId: 'string',
@@ -7661,11 +7683,13 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       payId: 'string',
       payLogonId: 'string',
       payStatus: 'number',
-      payTime: 'number',
+      payTime: 'string',
+      payTimestamp: 'number',
       payType: 'string',
       refundAmount: 'number',
       refundStatus: 'number',
-      refundTime: 'number',
+      refundTime: 'string',
+      refundTimestamp: 'number',
       subject: 'string',
       tradeNo: 'string',
     };
