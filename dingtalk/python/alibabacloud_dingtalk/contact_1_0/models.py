@@ -1808,6 +1808,8 @@ class GetCardInUserHolderResponseBody(TeaModel):
     def __init__(
         self,
         avatar_url: str = None,
+        card_accept_status: int = None,
+        card_accept_time: Any = None,
         card_id: str = None,
         extension: Dict[str, Any] = None,
         industry_name: str = None,
@@ -1819,6 +1821,10 @@ class GetCardInUserHolderResponseBody(TeaModel):
     ):
         # 头像
         self.avatar_url = avatar_url
+        # 名片收下状态
+        self.card_accept_status = card_accept_status
+        # 名片收下时间
+        self.card_accept_time = card_accept_time
         # 名片ID
         self.card_id = card_id
         # 扩展信息
@@ -1847,6 +1853,10 @@ class GetCardInUserHolderResponseBody(TeaModel):
         result = dict()
         if self.avatar_url is not None:
             result['avatarUrl'] = self.avatar_url
+        if self.card_accept_status is not None:
+            result['cardAcceptStatus'] = self.card_accept_status
+        if self.card_accept_time is not None:
+            result['cardAcceptTime'] = self.card_accept_time
         if self.card_id is not None:
             result['cardId'] = self.card_id
         if self.extension is not None:
@@ -1869,6 +1879,10 @@ class GetCardInUserHolderResponseBody(TeaModel):
         m = m or dict()
         if m.get('avatarUrl') is not None:
             self.avatar_url = m.get('avatarUrl')
+        if m.get('cardAcceptStatus') is not None:
+            self.card_accept_status = m.get('cardAcceptStatus')
+        if m.get('cardAcceptTime') is not None:
+            self.card_accept_time = m.get('cardAcceptTime')
         if m.get('cardId') is not None:
             self.card_id = m.get('cardId')
         if m.get('extension') is not None:
@@ -3802,6 +3816,8 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
     def __init__(
         self,
         avatar_url: str = None,
+        card_accept_status: int = None,
+        card_accept_time: Any = None,
         card_id: str = None,
         extension: Dict[str, Any] = None,
         industry_name: str = None,
@@ -3813,6 +3829,9 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
     ):
         # 头像
         self.avatar_url = avatar_url
+        # 名片收下状态
+        self.card_accept_status = card_accept_status
+        self.card_accept_time = card_accept_time
         # 名片ID
         self.card_id = card_id
         # 扩展信息
@@ -3841,6 +3860,10 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
         result = dict()
         if self.avatar_url is not None:
             result['avatarUrl'] = self.avatar_url
+        if self.card_accept_status is not None:
+            result['cardAcceptStatus'] = self.card_accept_status
+        if self.card_accept_time is not None:
+            result['cardAcceptTime'] = self.card_accept_time
         if self.card_id is not None:
             result['cardId'] = self.card_id
         if self.extension is not None:
@@ -3863,6 +3886,10 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
         m = m or dict()
         if m.get('avatarUrl') is not None:
             self.avatar_url = m.get('avatarUrl')
+        if m.get('cardAcceptStatus') is not None:
+            self.card_accept_status = m.get('cardAcceptStatus')
+        if m.get('cardAcceptTime') is not None:
+            self.card_accept_time = m.get('cardAcceptTime')
         if m.get('cardId') is not None:
             self.card_id = m.get('cardId')
         if m.get('extension') is not None:
@@ -7415,15 +7442,47 @@ class SetDisableRequest(TeaModel):
         return self
 
 
+class SetDisableResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
 class SetDisableResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: SetDisableResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7433,12 +7492,17 @@ class SetDisableResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SetDisableResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -7503,15 +7567,47 @@ class SetEnableRequest(TeaModel):
         return self
 
 
+class SetEnableResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
 class SetEnableResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: SetEnableResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7521,12 +7617,17 @@ class SetEnableResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SetEnableResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -7596,15 +7697,47 @@ class SignOutRequest(TeaModel):
         return self
 
 
+class SignOutResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
 class SignOutResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: SignOutResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7614,12 +7747,17 @@ class SignOutResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SignOutResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

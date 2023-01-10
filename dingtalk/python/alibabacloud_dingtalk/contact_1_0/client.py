@@ -2904,7 +2904,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SetDisableResponse(),
-            self.do_roarequest('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/disable', 'none', req, runtime)
+            self.do_roarequest('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/disable', 'json', req, runtime)
         )
 
     async def set_disable_with_options_async(
@@ -2930,7 +2930,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SetDisableResponse(),
-            await self.do_roarequest_async('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/disable', 'none', req, runtime)
+            await self.do_roarequest_async('SetDisable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/disable', 'json', req, runtime)
         )
 
     def set_enable(
@@ -2970,7 +2970,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SetEnableResponse(),
-            self.do_roarequest('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/enable', 'none', req, runtime)
+            self.do_roarequest('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/enable', 'json', req, runtime)
         )
 
     async def set_enable_with_options_async(
@@ -2994,7 +2994,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SetEnableResponse(),
-            await self.do_roarequest_async('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/enable', 'none', req, runtime)
+            await self.do_roarequest_async('SetEnable', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/enable', 'json', req, runtime)
         )
 
     def sign_out(
@@ -3036,7 +3036,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SignOutResponse(),
-            self.do_roarequest('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/signOut', 'none', req, runtime)
+            self.do_roarequest('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/signOut', 'json', req, runtime)
         )
 
     async def sign_out_with_options_async(
@@ -3062,7 +3062,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.SignOutResponse(),
-            await self.do_roarequest_async('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/signOut', 'none', req, runtime)
+            await self.do_roarequest_async('SignOut', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/orgAccounts/signOut', 'json', req, runtime)
         )
 
     def sort_user(

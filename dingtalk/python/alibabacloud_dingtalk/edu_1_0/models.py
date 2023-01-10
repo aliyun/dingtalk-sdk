@@ -15922,8 +15922,10 @@ class QueryOrderResponseBody(TeaModel):
         self,
         actual_amount: int = None,
         alipay_app_id: str = None,
-        close_time: int = None,
-        create_time: int = None,
+        close_time: str = None,
+        close_timestamp: int = None,
+        create_time: str = None,
+        create_timestamp: int = None,
         feature: str = None,
         label_amount: int = None,
         merchant_id: str = None,
@@ -15936,21 +15938,27 @@ class QueryOrderResponseBody(TeaModel):
         pay_id: str = None,
         pay_logon_id: str = None,
         pay_status: int = None,
-        pay_time: int = None,
+        pay_time: str = None,
+        pay_timestamp: int = None,
         pay_type: str = None,
         refund_amount: int = None,
         refund_status: int = None,
-        refund_time: int = None,
+        refund_time: str = None,
+        refund_timestamp: int = None,
         subject: str = None,
         trade_no: str = None,
     ):
         self.actual_amount = actual_amount
         # 支付宝应用id。
         self.alipay_app_id = alipay_app_id
-        # 订单关单时间。
+        # 订单关闭时间
         self.close_time = close_time
-        # 订单创建时间。
+        # 订单关闭时间戳
+        self.close_timestamp = close_timestamp
+        # 订单创建时间
         self.create_time = create_time
+        # 订单创建时间戳
+        self.create_timestamp = create_timestamp
         # 扩展字段。
         self.feature = feature
         self.label_amount = label_amount
@@ -15973,14 +15981,18 @@ class QueryOrderResponseBody(TeaModel):
         # 买家支付登陆id。
         self.pay_logon_id = pay_logon_id
         self.pay_status = pay_status
-        # 订单支付时间。
+        # 订单支付时间
         self.pay_time = pay_time
+        # 订单支付时间戳
+        self.pay_timestamp = pay_timestamp
         # 买家支付渠道类型。
         self.pay_type = pay_type
         self.refund_amount = refund_amount
         self.refund_status = refund_status
-        # 订单退款时间。
+        # 订单退款时间
         self.refund_time = refund_time
+        # 订单退款时间戳
+        self.refund_timestamp = refund_timestamp
         # 订单标题。
         self.subject = subject
         # 交易流水号。
@@ -16001,8 +16013,12 @@ class QueryOrderResponseBody(TeaModel):
             result['alipayAppId'] = self.alipay_app_id
         if self.close_time is not None:
             result['closeTime'] = self.close_time
+        if self.close_timestamp is not None:
+            result['closeTimestamp'] = self.close_timestamp
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
         if self.feature is not None:
             result['feature'] = self.feature
         if self.label_amount is not None:
@@ -16029,6 +16045,8 @@ class QueryOrderResponseBody(TeaModel):
             result['payStatus'] = self.pay_status
         if self.pay_time is not None:
             result['payTime'] = self.pay_time
+        if self.pay_timestamp is not None:
+            result['payTimestamp'] = self.pay_timestamp
         if self.pay_type is not None:
             result['payType'] = self.pay_type
         if self.refund_amount is not None:
@@ -16037,6 +16055,8 @@ class QueryOrderResponseBody(TeaModel):
             result['refundStatus'] = self.refund_status
         if self.refund_time is not None:
             result['refundTime'] = self.refund_time
+        if self.refund_timestamp is not None:
+            result['refundTimestamp'] = self.refund_timestamp
         if self.subject is not None:
             result['subject'] = self.subject
         if self.trade_no is not None:
@@ -16051,8 +16071,12 @@ class QueryOrderResponseBody(TeaModel):
             self.alipay_app_id = m.get('alipayAppId')
         if m.get('closeTime') is not None:
             self.close_time = m.get('closeTime')
+        if m.get('closeTimestamp') is not None:
+            self.close_timestamp = m.get('closeTimestamp')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
         if m.get('feature') is not None:
             self.feature = m.get('feature')
         if m.get('labelAmount') is not None:
@@ -16079,6 +16103,8 @@ class QueryOrderResponseBody(TeaModel):
             self.pay_status = m.get('payStatus')
         if m.get('payTime') is not None:
             self.pay_time = m.get('payTime')
+        if m.get('payTimestamp') is not None:
+            self.pay_timestamp = m.get('payTimestamp')
         if m.get('payType') is not None:
             self.pay_type = m.get('payType')
         if m.get('refundAmount') is not None:
@@ -16087,6 +16113,8 @@ class QueryOrderResponseBody(TeaModel):
             self.refund_status = m.get('refundStatus')
         if m.get('refundTime') is not None:
             self.refund_time = m.get('refundTime')
+        if m.get('refundTimestamp') is not None:
+            self.refund_timestamp = m.get('refundTimestamp')
         if m.get('subject') is not None:
             self.subject = m.get('subject')
         if m.get('tradeNo') is not None:
@@ -17784,8 +17812,10 @@ class QuerySnsOrderResponseBody(TeaModel):
         self,
         actual_amount: int = None,
         alipay_app_id: str = None,
-        close_time: int = None,
-        create_time: int = None,
+        close_time: str = None,
+        close_timestamp: int = None,
+        create_time: str = None,
+        create_timestamp: int = None,
         feature: str = None,
         label_amount: int = None,
         merchant_id: str = None,
@@ -17798,21 +17828,27 @@ class QuerySnsOrderResponseBody(TeaModel):
         pay_id: str = None,
         pay_logon_id: str = None,
         pay_status: int = None,
-        pay_time: int = None,
+        pay_time: str = None,
+        pay_timestamp: int = None,
         pay_type: str = None,
         refund_amount: int = None,
         refund_status: int = None,
-        refund_time: int = None,
+        refund_time: str = None,
+        refund_timestamp: int = None,
         subject: str = None,
         trade_no: str = None,
     ):
         self.actual_amount = actual_amount
         # 支付宝应用id。
         self.alipay_app_id = alipay_app_id
-        # 订单关单时间。
+        # 订单关闭时间
         self.close_time = close_time
-        # 订单创建时间。
+        # 订单关闭时间戳
+        self.close_timestamp = close_timestamp
+        # 订单创建时间
         self.create_time = create_time
+        # 订单创建时间戳
+        self.create_timestamp = create_timestamp
         # 扩展字段。
         self.feature = feature
         self.label_amount = label_amount
@@ -17835,14 +17871,18 @@ class QuerySnsOrderResponseBody(TeaModel):
         # 买家支付登陆id。
         self.pay_logon_id = pay_logon_id
         self.pay_status = pay_status
-        # 订单支付时间。
+        # 订单支付时间
         self.pay_time = pay_time
+        # 订单支付时间戳
+        self.pay_timestamp = pay_timestamp
         # 买家支付渠道类型。
         self.pay_type = pay_type
         self.refund_amount = refund_amount
         self.refund_status = refund_status
-        # 订单退款时间。
+        # 订单退款时间
         self.refund_time = refund_time
+        # 订单退款时间戳
+        self.refund_timestamp = refund_timestamp
         # 订单标题。
         self.subject = subject
         # 交易流水号。
@@ -17863,8 +17903,12 @@ class QuerySnsOrderResponseBody(TeaModel):
             result['alipayAppId'] = self.alipay_app_id
         if self.close_time is not None:
             result['closeTime'] = self.close_time
+        if self.close_timestamp is not None:
+            result['closeTimestamp'] = self.close_timestamp
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
         if self.feature is not None:
             result['feature'] = self.feature
         if self.label_amount is not None:
@@ -17891,6 +17935,8 @@ class QuerySnsOrderResponseBody(TeaModel):
             result['payStatus'] = self.pay_status
         if self.pay_time is not None:
             result['payTime'] = self.pay_time
+        if self.pay_timestamp is not None:
+            result['payTimestamp'] = self.pay_timestamp
         if self.pay_type is not None:
             result['payType'] = self.pay_type
         if self.refund_amount is not None:
@@ -17899,6 +17945,8 @@ class QuerySnsOrderResponseBody(TeaModel):
             result['refundStatus'] = self.refund_status
         if self.refund_time is not None:
             result['refundTime'] = self.refund_time
+        if self.refund_timestamp is not None:
+            result['refundTimestamp'] = self.refund_timestamp
         if self.subject is not None:
             result['subject'] = self.subject
         if self.trade_no is not None:
@@ -17913,8 +17961,12 @@ class QuerySnsOrderResponseBody(TeaModel):
             self.alipay_app_id = m.get('alipayAppId')
         if m.get('closeTime') is not None:
             self.close_time = m.get('closeTime')
+        if m.get('closeTimestamp') is not None:
+            self.close_timestamp = m.get('closeTimestamp')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
         if m.get('feature') is not None:
             self.feature = m.get('feature')
         if m.get('labelAmount') is not None:
@@ -17941,6 +17993,8 @@ class QuerySnsOrderResponseBody(TeaModel):
             self.pay_status = m.get('payStatus')
         if m.get('payTime') is not None:
             self.pay_time = m.get('payTime')
+        if m.get('payTimestamp') is not None:
+            self.pay_timestamp = m.get('payTimestamp')
         if m.get('payType') is not None:
             self.pay_type = m.get('payType')
         if m.get('refundAmount') is not None:
@@ -17949,6 +18003,8 @@ class QuerySnsOrderResponseBody(TeaModel):
             self.refund_status = m.get('refundStatus')
         if m.get('refundTime') is not None:
             self.refund_time = m.get('refundTime')
+        if m.get('refundTimestamp') is not None:
+            self.refund_timestamp = m.get('refundTimestamp')
         if m.get('subject') is not None:
             self.subject = m.get('subject')
         if m.get('tradeNo') is not None:
