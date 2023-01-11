@@ -6733,7 +6733,6 @@ export class QueryOrderResponseBody extends $tea.Model {
   merchantOrderNo?: string;
   orderNo?: string;
   orderType?: string;
-  outerUid?: string;
   outerUserId?: string;
   payId?: string;
   payLogonId?: string;
@@ -6762,7 +6761,6 @@ export class QueryOrderResponseBody extends $tea.Model {
       merchantOrderNo: 'merchantOrderNo',
       orderNo: 'orderNo',
       orderType: 'orderType',
-      outerUid: 'outerUid',
       outerUserId: 'outerUserId',
       payId: 'payId',
       payLogonId: 'payLogonId',
@@ -6794,7 +6792,6 @@ export class QueryOrderResponseBody extends $tea.Model {
       merchantOrderNo: 'string',
       orderNo: 'string',
       orderType: 'string',
-      outerUid: 'string',
       outerUserId: 'string',
       payId: 'string',
       payLogonId: 'string',
@@ -7617,7 +7614,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
   merchantOrderNo?: string;
   orderNo?: string;
   orderType?: string;
-  outerUid?: string;
   outerUserId?: string;
   payId?: string;
   payLogonId?: string;
@@ -7646,7 +7642,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       merchantOrderNo: 'merchantOrderNo',
       orderNo: 'orderNo',
       orderType: 'orderType',
-      outerUid: 'outerUid',
       outerUserId: 'outerUserId',
       payId: 'payId',
       payLogonId: 'payLogonId',
@@ -7678,7 +7673,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       merchantOrderNo: 'string',
       orderNo: 'string',
       orderType: 'string',
-      outerUid: 'string',
       outerUserId: 'string',
       payId: 'string',
       payLogonId: 'string',

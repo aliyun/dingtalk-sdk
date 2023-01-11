@@ -2514,6 +2514,7 @@ export class ListActivateDevicesResponseBodyResult extends $tea.Model {
 export class ListInspectInfoResponseBodyResult extends $tea.Model {
   deviceCode?: string;
   deviceName?: string;
+  gmtCreate?: string;
   handleTime?: string;
   maintenanceStaff?: string[];
   name?: string;
@@ -2525,6 +2526,7 @@ export class ListInspectInfoResponseBodyResult extends $tea.Model {
     return {
       deviceCode: 'deviceCode',
       deviceName: 'deviceName',
+      gmtCreate: 'gmtCreate',
       handleTime: 'handleTime',
       maintenanceStaff: 'maintenanceStaff',
       name: 'name',
@@ -2539,6 +2541,7 @@ export class ListInspectInfoResponseBodyResult extends $tea.Model {
     return {
       deviceCode: 'string',
       deviceName: 'string',
+      gmtCreate: 'string',
       handleTime: 'string',
       maintenanceStaff: { 'type': 'array', 'itemType': 'string' },
       name: 'string',
