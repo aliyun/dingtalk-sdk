@@ -31,6 +31,13 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
             public string DeviceName { get; set; }
 
             /// <summary>
+            /// 创建时间
+            /// </summary>
+            [NameInMap("gmtCreate")]
+            [Validation(Required=false)]
+            public string GmtCreate { get; set; }
+
+            /// <summary>
             /// 处理时间
             /// </summary>
             [NameInMap("handleTime")]
