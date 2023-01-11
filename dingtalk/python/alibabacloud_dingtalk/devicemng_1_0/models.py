@@ -2002,6 +2002,7 @@ class ListInspectInfoResponseBodyResult(TeaModel):
         self,
         device_code: str = None,
         device_name: str = None,
+        gmt_create: str = None,
         handle_time: str = None,
         maintenance_staff: List[str] = None,
         name: str = None,
@@ -2014,6 +2015,8 @@ class ListInspectInfoResponseBodyResult(TeaModel):
         self.device_code = device_code
         # 设备名称
         self.device_name = device_name
+        # 创建时间
+        self.gmt_create = gmt_create
         # 处理时间
         self.handle_time = handle_time
         # 维修人员
@@ -2042,6 +2045,8 @@ class ListInspectInfoResponseBodyResult(TeaModel):
             result['deviceCode'] = self.device_code
         if self.device_name is not None:
             result['deviceName'] = self.device_name
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
         if self.handle_time is not None:
             result['handleTime'] = self.handle_time
         if self.maintenance_staff is not None:
@@ -2064,6 +2069,8 @@ class ListInspectInfoResponseBodyResult(TeaModel):
             self.device_code = m.get('deviceCode')
         if m.get('deviceName') is not None:
             self.device_name = m.get('deviceName')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
         if m.get('handleTime') is not None:
             self.handle_time = m.get('handleTime')
         if m.get('maintenanceStaff') is not None:
