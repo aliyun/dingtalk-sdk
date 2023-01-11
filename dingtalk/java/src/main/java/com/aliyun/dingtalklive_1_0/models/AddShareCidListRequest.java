@@ -4,15 +4,21 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddShareCidListRequest extends TeaModel {
-    // 传入的群id类型（1 chatId / 2 openConversationId ）
+    /**
+     * <p>传入的群id类型（1 chatId / 2 openConversationId ）</p>
+     */
     @NameInMap("groupIdType")
     public Long groupIdType;
 
-    // 添加的联播群列表
+    /**
+     * <p>添加的联播群列表</p>
+     */
     @NameInMap("groupIds")
     public java.util.List<String> groupIds;
 
-    // 操作的的组织内id(staffId)
+    /**
+     * <p>操作的的组织内id(staffId)</p>
+     */
     @NameInMap("userId")
     public String userId;
 

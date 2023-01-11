@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveResidentUserResponseBody extends TeaModel {
-    // 是否移除成功
+    /**
+     * <p>是否移除成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInstanceResponseBody extends TeaModel {
-    // 数据实例ID
+    /**
+     * <p>数据实例ID</p>
+     */
     @NameInMap("openDataInstanceId")
     public String openDataInstanceId;
 

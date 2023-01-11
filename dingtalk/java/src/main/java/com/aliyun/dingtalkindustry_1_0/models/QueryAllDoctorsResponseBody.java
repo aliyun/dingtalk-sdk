@@ -4,19 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllDoctorsResponseBody extends TeaModel {
-    // 人员列表
+    /**
+     * <p>人员列表</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryAllDoctorsResponseBodyContent> content;
 
-    // 当前页码
+    /**
+     * <p>当前页码</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
-    // 数据总量
+    /**
+     * <p>数据总量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 总页数
+    /**
+     * <p>总页数</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -58,51 +66,75 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
     }
 
     public static class QueryAllDoctorsResponseBodyContent extends TeaModel {
-        // 考核医疗组id
+        /**
+         * <p>考核医疗组id</p>
+         */
         @NameInMap("assessGroupId")
         public String assessGroupId;
 
-        // 考核医疗组名称
+        /**
+         * <p>考核医疗组名称</p>
+         */
         @NameInMap("assessGroupName")
         public String assessGroupName;
 
-        // 关联的部门id
+        /**
+         * <p>关联的部门id</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        // 科室医疗组标识
+        /**
+         * <p>科室医疗组标识</p>
+         */
         @NameInMap("deptType")
         public String deptType;
 
-        // 用户创建时间
+        /**
+         * <p>用户创建时间</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        // 用户最后修改时间
+        /**
+         * <p>用户最后修改时间</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 工号
+        /**
+         * <p>工号</p>
+         */
         @NameInMap("jobNum")
         public String jobNum;
 
-        // 状态0-有效，1-删除
+        /**
+         * <p>状态0-有效，1-删除</p>
+         */
         @NameInMap("status")
         public Integer status;
 
-        // 租户下staffId
+        /**
+         * <p>租户下staffId</p>
+         */
         @NameInMap("uid")
         public String uid;
 
-        // 租户内staffId
+        /**
+         * <p>租户内staffId</p>
+         */
         @NameInMap("userCode")
         public String userCode;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("userName")
         public String userName;
 

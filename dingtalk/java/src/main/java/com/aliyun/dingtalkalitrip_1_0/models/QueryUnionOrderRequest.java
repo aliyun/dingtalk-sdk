@@ -4,15 +4,21 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUnionOrderRequest extends TeaModel {
-    // 第三方企业id
+    /**
+     * <p>第三方企业id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 第三方申请单id
+    /**
+     * <p>第三方申请单id</p>
+     */
     @NameInMap("thirdPartApplyId")
     public String thirdPartApplyId;
 
-    // 关联单号
+    /**
+     * <p>关联单号</p>
+     */
     @NameInMap("unionNo")
     public String unionNo;
 

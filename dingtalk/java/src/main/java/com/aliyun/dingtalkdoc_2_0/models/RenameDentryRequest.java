@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class RenameDentryRequest extends TeaModel {
-    // 重命名之后的节点名称，长度不能超过50。
+    /**
+     * <p>重命名之后的节点名称，长度不能超过50。</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 操作人unionId。
+    /**
+     * <p>操作人unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

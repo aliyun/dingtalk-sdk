@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteFileRequest extends TeaModel {
-    // 删除策略
+    /**
+     * <p>删除策略</p>
+     */
     @NameInMap("deletePolicy")
     public String deletePolicy;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

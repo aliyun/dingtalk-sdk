@@ -4,15 +4,21 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBatchTradeOrderResponseBody extends TeaModel {
-    // 钉钉批次单号
+    /**
+     * <p>钉钉批次单号</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 批次订单状态
+    /**
+     * <p>批次订单状态</p>
+     */
     @NameInMap("orderStatus")
     public String orderStatus;
 
-    // 商户批次号
+    /**
+     * <p>商户批次号</p>
+     */
     @NameInMap("outBatchNo")
     public String outBatchNo;
 

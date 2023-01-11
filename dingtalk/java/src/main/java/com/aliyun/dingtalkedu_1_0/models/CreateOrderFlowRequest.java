@@ -4,55 +4,81 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrderFlowRequest extends TeaModel {
-    // 实付金额，单位分（优惠计算后）
+    /**
+     * <p>实付金额，单位分（优惠计算后）</p>
+     */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    // 支付宝用户id
+    /**
+     * <p>支付宝用户id</p>
+     */
     @NameInMap("alipayUid")
     public String alipayUid;
 
-    // 开单时间
+    /**
+     * <p>开单时间</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
-    // 订单明细信息，来源于商户系统或APP的商品信息。
+    /**
+     * <p>订单明细信息，来源于商户系统或APP的商品信息。</p>
+     */
     @NameInMap("detailList")
     public java.util.List<CreateOrderFlowRequestDetailList> detailList;
 
-    // 人脸id
+    /**
+     * <p>人脸id</p>
+     */
     @NameInMap("faceId")
     public String faceId;
 
-    // 家长员工id
+    /**
+     * <p>家长员工id</p>
+     */
     @NameInMap("guardianUserId")
     public String guardianUserId;
 
-    // 商户id
+    /**
+     * <p>商户id</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    // 订单号
+    /**
+     * <p>订单号</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 签名
+    /**
+     * <p>签名</p>
+     */
     @NameInMap("signature")
     public String signature;
 
-    // 设备号
+    /**
+     * <p>设备号</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // utc时间戳
+    /**
+     * <p>utc时间戳</p>
+     */
     @NameInMap("timestamp")
     public Long timestamp;
 
-    // 应付价格，单位分
+    /**
+     * <p>应付价格，单位分</p>
+     */
     @NameInMap("totalAmount")
     public Long totalAmount;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -166,23 +192,33 @@ public class CreateOrderFlowRequest extends TeaModel {
     }
 
     public static class CreateOrderFlowRequestDetailList extends TeaModel {
-        // 计算优惠后的实付金额，单位为分
+        /**
+         * <p>计算优惠后的实付金额，单位为分</p>
+         */
         @NameInMap("actualAmount")
         public Long actualAmount;
 
-        // 应付金额，单位为分
+        /**
+         * <p>应付金额，单位为分</p>
+         */
         @NameInMap("itemAmount")
         public Long itemAmount;
 
-        // 商品id
+        /**
+         * <p>商品id</p>
+         */
         @NameInMap("itemId")
         public Long itemId;
 
-        // 商品名
+        /**
+         * <p>商品名</p>
+         */
         @NameInMap("itemName")
         public String itemName;
 
-        // 场景
+        /**
+         * <p>场景</p>
+         */
         @NameInMap("scene")
         public Long scene;
 

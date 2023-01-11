@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserManagementResourcesResponseBody extends TeaModel {
-    // 资源列表
+    /**
+     * <p>资源列表</p>
+     */
     @NameInMap("resourceIds")
     public java.util.List<String> resourceIds;
 

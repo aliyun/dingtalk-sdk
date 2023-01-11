@@ -10,7 +10,9 @@ public class WikiWordsParseResponseBody extends TeaModel {
     @NameInMap("errMsg")
     public String errMsg;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

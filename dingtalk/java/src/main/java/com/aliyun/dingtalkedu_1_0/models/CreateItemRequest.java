@@ -34,7 +34,9 @@ public class CreateItemRequest extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("status")
     public Integer status;
 

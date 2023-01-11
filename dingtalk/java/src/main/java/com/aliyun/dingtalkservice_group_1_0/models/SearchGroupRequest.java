@@ -4,31 +4,45 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchGroupRequest extends TeaModel {
-    // 群名称
+    /**
+     * <p>群名称</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
-    // 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
+    /**
+     * <p>本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 用来标记当前开始读取的位置，置空表示从头开始。
+    /**
+     * <p>用来标记当前开始读取的位置，置空表示从头开始。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 开放群ID
+    /**
+     * <p>开放群ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 开群组ID
+    /**
+     * <p>开群组ID</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 搜索类型
+    /**
+     * <p>搜索类型</p>
+     */
     @NameInMap("searchType")
     public String searchType;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetJobAuthResponseBody extends TeaModel {
-    // 职位ID
+    /**
+     * <p>职位ID</p>
+     */
     @NameInMap("jobId")
     public String jobId;
 
-    // 职位负责人
+    /**
+     * <p>职位负责人</p>
+     */
     @NameInMap("jobOwners")
     public java.util.List<GetJobAuthResponseBodyJobOwners> jobOwners;
 
@@ -34,11 +38,15 @@ public class GetJobAuthResponseBody extends TeaModel {
     }
 
     public static class GetJobAuthResponseBodyJobOwners extends TeaModel {
-        // 员工姓名
+        /**
+         * <p>员工姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 员工标识
+        /**
+         * <p>员工标识</p>
+         */
         @NameInMap("userId")
         public String userId;
 

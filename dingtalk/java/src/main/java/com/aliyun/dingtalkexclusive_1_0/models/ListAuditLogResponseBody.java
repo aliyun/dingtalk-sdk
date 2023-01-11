@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListAuditLogResponseBody extends TeaModel {
-    // 记录列表
+    /**
+     * <p>记录列表</p>
+     */
     @NameInMap("list")
     public java.util.List<ListAuditLogResponseBodyList> list;
 
@@ -22,23 +24,33 @@ public class ListAuditLogResponseBody extends TeaModel {
     }
 
     public static class ListAuditLogResponseBodyListDocMemberList extends TeaModel {
-        // 成员名称
+        /**
+         * <p>成员名称</p>
+         */
         @NameInMap("memberName")
         public String memberName;
 
-        // 成员类型
+        /**
+         * <p>成员类型</p>
+         */
         @NameInMap("memberType")
         public Integer memberType;
 
-        // 成员类型翻译值
+        /**
+         * <p>成员类型翻译值</p>
+         */
         @NameInMap("memberTypeView")
         public String memberTypeView;
 
-        // 权限类型
+        /**
+         * <p>权限类型</p>
+         */
         @NameInMap("permissionRole")
         public Long permissionRole;
 
-        // 权限类型翻译值
+        /**
+         * <p>权限类型翻译值</p>
+         */
         @NameInMap("permissionRoleView")
         public String permissionRoleView;
 
@@ -90,15 +102,21 @@ public class ListAuditLogResponseBody extends TeaModel {
     }
 
     public static class ListAuditLogResponseBodyListDocReceiverList extends TeaModel {
-        // 成员名称
+        /**
+         * <p>成员名称</p>
+         */
         @NameInMap("receiverName")
         public String receiverName;
 
-        // 成员类型
+        /**
+         * <p>成员类型</p>
+         */
         @NameInMap("receiverType")
         public Integer receiverType;
 
-        // 成员类型翻译值
+        /**
+         * <p>成员类型翻译值</p>
+         */
         @NameInMap("receiverTypeView")
         public String receiverTypeView;
 
@@ -134,99 +152,147 @@ public class ListAuditLogResponseBody extends TeaModel {
     }
 
     public static class ListAuditLogResponseBodyList extends TeaModel {
-        // 操作类型
+        /**
+         * <p>操作类型</p>
+         */
         @NameInMap("action")
         public Integer action;
 
-        // 操作类型翻译值
+        /**
+         * <p>操作类型翻译值</p>
+         */
         @NameInMap("actionView")
         public String actionView;
 
-        // 文件id
+        /**
+         * <p>文件id</p>
+         */
         @NameInMap("bizId")
         public String bizId;
 
-        // 接收成员列表，仅分享文档返回
+        /**
+         * <p>接收成员列表，仅分享文档返回</p>
+         */
         @NameInMap("docMemberList")
         public java.util.List<ListAuditLogResponseBodyListDocMemberList> docMemberList;
 
-        // 成员授权列表，仅文档授权返回
+        /**
+         * <p>成员授权列表，仅文档授权返回</p>
+         */
         @NameInMap("docReceiverList")
         public java.util.List<ListAuditLogResponseBodyListDocReceiverList> docReceiverList;
 
-        // 记录生成时间，unix时间戳，单位ms
+        /**
+         * <p>记录生成时间，unix时间戳，单位ms</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        // 记录修改时间，unix时间戳，单位ms
+        /**
+         * <p>记录修改时间，unix时间戳，单位ms</p>
+         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
-        // 操作机器ip
+        /**
+         * <p>操作机器ip</p>
+         */
         @NameInMap("ipAddress")
         public String ipAddress;
 
-        // 操作来源空间
+        /**
+         * <p>操作来源空间</p>
+         */
         @NameInMap("operateModule")
         public Long operateModule;
 
-        // 操作来源翻译值
+        /**
+         * <p>操作来源翻译值</p>
+         */
         @NameInMap("operateModuleView")
         public String operateModuleView;
 
-        // 用户昵称
+        /**
+         * <p>用户昵称</p>
+         */
         @NameInMap("operatorName")
         public String operatorName;
 
-        // 文件所属组织名称
+        /**
+         * <p>文件所属组织名称</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
-        // 操作端
+        /**
+         * <p>操作端</p>
+         */
         @NameInMap("platform")
         public Integer platform;
 
-        // 操作端翻译值
+        /**
+         * <p>操作端翻译值</p>
+         */
         @NameInMap("platformView")
         public String platformView;
 
-        // 用户姓名
+        /**
+         * <p>用户姓名</p>
+         */
         @NameInMap("realName")
         public String realName;
 
-        // 文件接收方名称
+        /**
+         * <p>文件接收方名称</p>
+         */
         @NameInMap("receiverName")
         public String receiverName;
 
-        // 文件接收方类型
+        /**
+         * <p>文件接收方类型</p>
+         */
         @NameInMap("receiverType")
         public Integer receiverType;
 
-        // 文件接收方类型翻译值
+        /**
+         * <p>文件接收方类型翻译值</p>
+         */
         @NameInMap("receiverTypeView")
         public String receiverTypeView;
 
-        // test.docx
+        /**
+         * <p>test.docx</p>
+         */
         @NameInMap("resource")
         public String resource;
 
-        // 文件类型
+        /**
+         * <p>文件类型</p>
+         */
         @NameInMap("resourceExtension")
         public String resourceExtension;
 
-        // 文件大小
+        /**
+         * <p>文件大小</p>
+         */
         @NameInMap("resourceSize")
         public Long resourceSize;
 
-        // 记录状态
+        /**
+         * <p>记录状态</p>
+         */
         @NameInMap("status")
         public Integer status;
 
-        // 空间id
+        /**
+         * <p>空间id</p>
+         */
         @NameInMap("targetSpaceId")
         public Long targetSpaceId;
 
-        // 员工的userId
+        /**
+         * <p>员工的userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -24,7 +24,9 @@ public class RegisterAndActivateDeviceBatchRequest extends TeaModel {
         @NameInMap("deviceCallbackUrl")
         public String deviceCallbackUrl;
 
-        // 设备分类（0：设备，1 : 助手）
+        /**
+         * <p>设备分类（0：设备，1 : 助手）</p>
+         */
         @NameInMap("deviceCategory")
         public Integer deviceCategory;
 

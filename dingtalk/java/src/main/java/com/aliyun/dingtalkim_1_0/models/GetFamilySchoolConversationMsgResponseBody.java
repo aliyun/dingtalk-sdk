@@ -4,23 +4,33 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
-    // 企业名称，corp123
+    /**
+     * <p>企业名称，corp123</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 是否有更多数据
+    /**
+     * <p>是否有更多数据</p>
+     */
     @NameInMap("hasMore")
     public String hasMore;
 
-    // 消息数据
+    /**
+     * <p>消息数据</p>
+     */
     @NameInMap("messages")
     public java.util.List<GetFamilySchoolConversationMsgResponseBodyMessages> messages;
 
-    // 查询下次消息的游标,时间毫秒值
+    /**
+     * <p>查询下次消息的游标,时间毫秒值</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 开放群Id
+    /**
+     * <p>开放群Id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -70,27 +80,39 @@ public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
     }
 
     public static class GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels extends TeaModel {
-        // 消息mediaId文件名称
+        /**
+         * <p>消息mediaId文件名称</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 消息mediaId文件类型
+        /**
+         * <p>消息mediaId文件类型</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
-        // 消息mediaId
+        /**
+         * <p>消息mediaId</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
-        // 消息mediaId文件大小
+        /**
+         * <p>消息mediaId文件大小</p>
+         */
         @NameInMap("size")
         public String size;
 
-        // 消息mediaId对应的下载地址
+        /**
+         * <p>消息mediaId对应的下载地址</p>
+         */
         @NameInMap("url")
         public String url;
 
-        // 视频文件缩略图mediaId
+        /**
+         * <p>视频文件缩略图mediaId</p>
+         */
         @NameInMap("videoPicMediaId")
         public String videoPicMediaId;
 
@@ -150,19 +172,27 @@ public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
     }
 
     public static class GetFamilySchoolConversationMsgResponseBodyMessages extends TeaModel {
-        // 消息类型，2-图片、202视频、3100富文本消息
+        /**
+         * <p>消息类型，2-图片、202视频、3100富文本消息</p>
+         */
         @NameInMap("contentType")
         public Integer contentType;
 
-        // 消息的创建时间
+        /**
+         * <p>消息的创建时间</p>
+         */
         @NameInMap("createAt")
         public Long createAt;
 
-        // media文件对象列表
+        /**
+         * <p>media文件对象列表</p>
+         */
         @NameInMap("mediaModels")
         public java.util.List<GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels> mediaModels;
 
-        // 消息的唯一标识
+        /**
+         * <p>消息的唯一标识</p>
+         */
         @NameInMap("openMsgId")
         public String openMsgId;
 

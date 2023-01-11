@@ -4,27 +4,39 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCoupleGroupConversationRequest extends TeaModel {
-    // 钉外用户在业务系统内的唯一标识。
+    /**
+     * <p>钉外用户在业务系统内的唯一标识。</p>
+     */
     @NameInMap("appUserId")
     public String appUserId;
 
-    // 群头像。
+    /**
+     * <p>群头像。</p>
+     */
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
-    // 群名称。
+    /**
+     * <p>群名称。</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
-    // 群主(钉外用户)userId。
+    /**
+     * <p>群主(钉外用户)userId。</p>
+     */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
-    // 群模板Id。
+    /**
+     * <p>群模板Id。</p>
+     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
-    // 操作者在业务系统内的唯一标识。
+    /**
+     * <p>操作者在业务系统内的唯一标识。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

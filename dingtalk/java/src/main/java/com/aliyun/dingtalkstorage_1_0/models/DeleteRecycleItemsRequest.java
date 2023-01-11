@@ -4,13 +4,17 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteRecycleItemsRequest extends TeaModel {
-    // 回收项id列表
-    // 最大size:
-    // 	50
+    /**
+     * <p>回收项id列表</p>
+     * <p>最大size:</p>
+     * <p>	50</p>
+     */
     @NameInMap("recycleItemIds")
     public java.util.List<String> recycleItemIds;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddProcessInstanceCommentResponseBody extends TeaModel {
-    // 评论是否成功。
+    /**
+     * <p>评论是否成功。</p>
+     */
     @NameInMap("result")
     public Boolean result;
 
-    // 接口调用是否成功。
+    /**
+     * <p>接口调用是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

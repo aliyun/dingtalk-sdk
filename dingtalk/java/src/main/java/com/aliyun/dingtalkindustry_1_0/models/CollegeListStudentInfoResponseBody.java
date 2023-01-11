@@ -4,11 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeListStudentInfoResponseBody extends TeaModel {
-    // 学生信息列表
+    /**
+     * <p>学生信息列表</p>
+     */
     @NameInMap("studentInfoSimpleList")
     public java.util.List<CollegeListStudentInfoResponseBodyStudentInfoSimpleList> studentInfoSimpleList;
 
-    // 条目总数
+    /**
+     * <p>条目总数</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -34,27 +38,39 @@ public class CollegeListStudentInfoResponseBody extends TeaModel {
     }
 
     public static class CollegeListStudentInfoResponseBodyStudentInfoSimpleList extends TeaModel {
-        // 人员在组织的状态
+        /**
+         * <p>人员在组织的状态</p>
+         */
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
-        // 账号是否激活
+        /**
+         * <p>账号是否激活</p>
+         */
         @NameInMap("isActive")
         public Boolean isActive;
 
-        // 学生id
+        /**
+         * <p>学生id</p>
+         */
         @NameInMap("studentId")
         public Long studentId;
 
-        // 学生姓名
+        /**
+         * <p>学生姓名</p>
+         */
         @NameInMap("studentName")
         public String studentName;
 
-        // unionId
+        /**
+         * <p>unionId</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

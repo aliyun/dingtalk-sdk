@@ -4,11 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDocCreatedDeptSummaryRequest extends TeaModel {
-    // 每页包含的数据条数
+    /**
+     * <p>每页包含的数据条数</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 启始数据游标
+    /**
+     * <p>启始数据游标</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

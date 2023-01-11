@@ -4,11 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactDeptDeleteRequest extends TeaModel {
-    // 自定义通讯录Code
+    /**
+     * <p>自定义通讯录Code</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 部门Id
+    /**
+     * <p>部门Id</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
-    // 表单实例数据
+    /**
+     * <p>表单实例数据</p>
+     */
     @NameInMap("data")
     public java.util.List<SearchFormDataSecondGenerationResponseBodyData> data;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,11 +52,15 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataSecondGenerationResponseBodyDataModifyUserName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -78,11 +88,15 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataSecondGenerationResponseBodyDataModifyUser extends TeaModel {
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public SearchFormDataSecondGenerationResponseBodyDataModifyUserName name;
 
-        // 钉钉userId
+        /**
+         * <p>钉钉userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -110,11 +124,15 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataSecondGenerationResponseBodyDataOriginatorName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -142,11 +160,15 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataSecondGenerationResponseBodyDataOriginator extends TeaModel {
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public SearchFormDataSecondGenerationResponseBodyDataOriginatorName name;
 
-        // 钉钉userId
+        /**
+         * <p>钉钉userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -174,63 +196,93 @@ public class SearchFormDataSecondGenerationResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataSecondGenerationResponseBodyData extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // 创建者的userId
+        /**
+         * <p>创建者的userId</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 表单实例数据以Map结构展示。结构说明参考  https://www.yuque.com/yida/support/agb8im#jksEx
+        /**
+         * <p>表单实例数据以Map结构展示。结构说明参考  https://www.yuque.com/yida/support/agb8im#jksEx</p>
+         */
         @NameInMap("formData")
         public java.util.Map<String, ?> formData;
 
-        // 表单实例id
+        /**
+         * <p>表单实例id</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        // 表单编码
+        /**
+         * <p>表单编码</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        // 数据库表记录主键id
+        /**
+         * <p>数据库表记录主键id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 表单实例数据以宜搭组件值格式展示
+        /**
+         * <p>表单实例数据以宜搭组件值格式展示</p>
+         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        // 修改者的钉钉userId
+        /**
+         * <p>修改者的钉钉userId</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
-        // 修改者
+        /**
+         * <p>修改者</p>
+         */
         @NameInMap("modifyUser")
         public SearchFormDataSecondGenerationResponseBodyDataModifyUser modifyUser;
 
-        // 发起人
+        /**
+         * <p>发起人</p>
+         */
         @NameInMap("originator")
         public SearchFormDataSecondGenerationResponseBodyDataOriginator originator;
 
-        // 此表单实例所对应的批量导入批次号(如果该表单实例是通过批量导入创建的)
+        /**
+         * <p>此表单实例所对应的批量导入批次号(如果该表单实例是通过批量导入创建的)</p>
+         */
         @NameInMap("sequence")
         public String sequence;
 
-        // 流水号
+        /**
+         * <p>流水号</p>
+         */
         @NameInMap("serialNumber")
         public String serialNumber;
 
-        // 标题
+        /**
+         * <p>标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 表单实例对应的表单schema版本
+        /**
+         * <p>表单实例对应的表单schema版本</p>
+         */
         @NameInMap("version")
         public Long version;
 

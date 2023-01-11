@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOfficialAccountContactsRequest extends TeaModel {
-    // 分页大小，最大不超过10
+    /**
+     * <p>分页大小，最大不超过10</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 取数游标，第一次传0
+    /**
+     * <p>取数游标，第一次传0</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

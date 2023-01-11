@@ -21,15 +21,21 @@ public class GetUserCreateLiveListResponseBody extends TeaModel {
     }
 
     public static class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListHasSubscribed extends TeaModel {
-        // 是否关注
+        /**
+         * <p>是否关注</p>
+         */
         @NameInMap("hasSubscribed")
         public Boolean hasSubscribed;
 
-        // 预告是否过期
+        /**
+         * <p>预告是否过期</p>
+         */
         @NameInMap("isForecastExpired")
         public Boolean isForecastExpired;
 
-        // 回放观看进度
+        /**
+         * <p>回放观看进度</p>
+         */
         @NameInMap("watchProgressMs")
         public Long watchProgressMs;
 
@@ -65,51 +71,75 @@ public class GetUserCreateLiveListResponseBody extends TeaModel {
     }
 
     public static class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo extends TeaModel {
-        // 直播封面
+        /**
+         * <p>直播封面</p>
+         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
-        // 直播时长
+        /**
+         * <p>直播时长</p>
+         */
         @NameInMap("duration")
         public Long duration;
 
-        // 直播真实结束时间
+        /**
+         * <p>直播真实结束时间</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
-        // 直播简介
+        /**
+         * <p>直播简介</p>
+         */
         @NameInMap("introduction")
         public String introduction;
 
-        // 直播id
+        /**
+         * <p>直播id</p>
+         */
         @NameInMap("liveId")
         public String liveId;
 
-        // 直播观看地址
+        /**
+         * <p>直播观看地址</p>
+         */
         @NameInMap("livePlayUrl")
         public String livePlayUrl;
 
-        // 直播状态
+        /**
+         * <p>直播状态</p>
+         */
         @NameInMap("liveStatus")
         public Integer liveStatus;
 
-        // 直播真实开始时间
+        /**
+         * <p>直播真实开始时间</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
-        // 预约人数
+        /**
+         * <p>预约人数</p>
+         */
         @NameInMap("subscribeCount")
         public Integer subscribeCount;
 
-        // 直播标题
+        /**
+         * <p>直播标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 主播id
+        /**
+         * <p>主播id</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 观看人数
+        /**
+         * <p>观看人数</p>
+         */
         @NameInMap("uv")
         public Integer uv;
 
@@ -217,11 +247,15 @@ public class GetUserCreateLiveListResponseBody extends TeaModel {
     }
 
     public static class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList extends TeaModel {
-        // 直播额外信息
+        /**
+         * <p>直播额外信息</p>
+         */
         @NameInMap("hasSubscribed")
         public GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListHasSubscribed hasSubscribed;
 
-        // 直播基础信息
+        /**
+         * <p>直播基础信息</p>
+         */
         @NameInMap("liveBasicInfo")
         public GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo liveBasicInfo;
 
@@ -249,19 +283,27 @@ public class GetUserCreateLiveListResponseBody extends TeaModel {
     }
 
     public static class GetUserCreateLiveListResponseBodyResult extends TeaModel {
-        // 是否拉取完成
+        /**
+         * <p>是否拉取完成</p>
+         */
         @NameInMap("hasFinish")
         public Boolean hasFinish;
 
-        // 直播详情
+        /**
+         * <p>直播详情</p>
+         */
         @NameInMap("liveInfoPopModelList")
         public java.util.List<GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList> liveInfoPopModelList;
 
-        // 分页游标 分页时填到请求中
+        /**
+         * <p>分页游标 分页时填到请求中</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
-        // 总数
+        /**
+         * <p>总数</p>
+         */
         @NameInMap("total")
         public Integer total;
 

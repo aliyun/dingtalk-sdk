@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetIntelligentRobotInfoResponseBody extends TeaModel {
-    // 机器人id
+    /**
+     * <p>机器人id</p>
+     */
     @NameInMap("result")
     public String result;
 

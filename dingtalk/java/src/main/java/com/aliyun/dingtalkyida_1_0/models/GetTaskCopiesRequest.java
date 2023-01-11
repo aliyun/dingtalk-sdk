@@ -4,43 +4,63 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskCopiesRequest extends TeaModel {
-    // 应用ID
+    /**
+     * <p>应用ID</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 创建时间开始; 时间戳
+    /**
+     * <p>创建时间开始; 时间戳</p>
+     */
     @NameInMap("createFromTimeGMT")
     public Long createFromTimeGMT;
 
-    // 创建时间结束; 时间戳
+    /**
+     * <p>创建时间结束; 时间戳</p>
+     */
     @NameInMap("createToTimeGMT")
     public Long createToTimeGMT;
 
-    // 关键词
+    /**
+     * <p>关键词</p>
+     */
     @NameInMap("keyword")
     public String keyword;
 
-    // 语言环境; 可选值：zh_CN/en_US
+    /**
+     * <p>语言环境; 可选值：zh_CN/en_US</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 当前页; 必须大于0 默认1
+    /**
+     * <p>当前页; 必须大于0 默认1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 每页记录数; 必须大于0 默认10 最大值：100
+    /**
+     * <p>每页记录数; 必须大于0 默认10 最大值：100</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 流程code列表
+    /**
+     * <p>流程code列表</p>
+     */
     @NameInMap("processCodes")
     public String processCodes;
 
-    // 验权token
+    /**
+     * <p>验权token</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 钉钉的userId
+    /**
+     * <p>钉钉的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

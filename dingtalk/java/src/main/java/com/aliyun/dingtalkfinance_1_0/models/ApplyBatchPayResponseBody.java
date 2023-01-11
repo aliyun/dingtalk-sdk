@@ -4,11 +4,15 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApplyBatchPayResponseBody extends TeaModel {
-    // 钉钉支付的批次号
+    /**
+     * <p>钉钉支付的批次号</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 支付确认页数据
+    /**
+     * <p>支付确认页数据</p>
+     */
     @NameInMap("payData")
     public String payData;
 

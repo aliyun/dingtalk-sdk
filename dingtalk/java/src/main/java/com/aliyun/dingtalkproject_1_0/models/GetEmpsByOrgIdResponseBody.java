@@ -4,11 +4,15 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEmpsByOrgIdResponseBody extends TeaModel {
-    // empList
+    /**
+     * <p>empList</p>
+     */
     @NameInMap("empList")
     public java.util.List<GetEmpsByOrgIdResponseBodyEmpList> empList;
 
-    // hasMore
+    /**
+     * <p>hasMore</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -45,38 +49,54 @@ public class GetEmpsByOrgIdResponseBody extends TeaModel {
     }
 
     public static class GetEmpsByOrgIdResponseBodyEmpList extends TeaModel {
-        // avatar
+        /**
+         * <p>avatar</p>
+         */
         @NameInMap("avatar")
         public String avatar;
 
-        // deptIdList
+        /**
+         * <p>deptIdList</p>
+         */
         @NameInMap("dept_id_list")
         public java.util.List<Long> deptIdList;
 
-        // dingId
+        /**
+         * <p>dingId</p>
+         */
         @NameInMap("dingId")
         public String dingId;
 
-        // name
+        /**
+         * <p>name</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // nick
+        /**
+         * <p>nick</p>
+         */
         @NameInMap("nick")
         public String nick;
 
-        // orgId
+        /**
+         * <p>orgId</p>
+         */
         @NameInMap("orgId")
         public Long orgId;
 
         @NameInMap("position")
         public String position;
 
-        // unionId
+        /**
+         * <p>unionId</p>
+         */
         @NameInMap("unionid")
         public String unionid;
 
-        // userid
+        /**
+         * <p>userid</p>
+         */
         @NameInMap("userid")
         public String userid;
 

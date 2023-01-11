@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RenewTenantOrderRequest extends TeaModel {
-    // 访问秘钥
+    /**
+     * <p>访问秘钥</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
-    // 调用者unionId
+    /**
+     * <p>调用者unionId</p>
+     */
     @NameInMap("callerUnionId")
     public String callerUnionId;
 
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endTimeGMT")
     public Long endTimeGMT;
 

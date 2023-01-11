@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateWorkspaceRequest extends TeaModel {
-    // 知识库描述。
+    /**
+     * <p>知识库描述。</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 知识库名称。
+    /**
+     * <p>知识库名称。</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 用户id。
+    /**
+     * <p>用户id。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

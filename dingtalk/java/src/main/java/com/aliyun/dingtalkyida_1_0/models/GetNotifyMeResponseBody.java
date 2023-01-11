@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNotifyMeResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public java.util.List<GetNotifyMeResponseBodyData> data;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,55 +52,81 @@ public class GetNotifyMeResponseBody extends TeaModel {
     }
 
     public static class GetNotifyMeResponseBodyData extends TeaModel {
-        // activityId
+        /**
+         * <p>activityId</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
-        // appType
+        /**
+         * <p>appType</p>
+         */
         @NameInMap("appType")
         public String appType;
 
-        // corpId
+        /**
+         * <p>corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // 创建者的userId
+        /**
+         * <p>创建者的userId</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 流程实例id
+        /**
+         * <p>流程实例id</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        // instStatus
+        /**
+         * <p>instStatus</p>
+         */
         @NameInMap("instStatus")
         public String instStatus;
 
-        // mobileUrl
+        /**
+         * <p>mobileUrl</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        // processCode
+        /**
+         * <p>processCode</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
-        // title
+        /**
+         * <p>title</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // titleEn
+        /**
+         * <p>titleEn</p>
+         */
         @NameInMap("titleInEnglish")
         public String titleInEnglish;
 
-        // url
+        /**
+         * <p>url</p>
+         */
         @NameInMap("url")
         public String url;
 

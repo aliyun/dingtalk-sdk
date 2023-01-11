@@ -4,71 +4,105 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstancesRequest extends TeaModel {
-    // 应用编码
+    /**
+     * <p>应用编码</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 审批结果。可选值为：agree, disagree。 分别表示：同意， 拒绝。
+    /**
+     * <p>审批结果。可选值为：agree, disagree。 分别表示：同意， 拒绝。</p>
+     */
     @NameInMap("approvedResult")
     public String approvedResult;
 
-    // createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表, 字符串格式，且为yyyy-MM-DD格式
+    /**
+     * <p>createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表, 字符串格式，且为yyyy-MM-DD格式</p>
+     */
     @NameInMap("createFromTimeGMT")
     public String createFromTimeGMT;
 
-    // createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。字符串格式，且为yyyy-MM-DD格式。 和createFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)创建的数据。
+    /**
+     * <p>createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。字符串格式，且为yyyy-MM-DD格式。 和createFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)创建的数据。</p>
+     */
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
-    // 表单ID
+    /**
+     * <p>表单ID</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 实例状态, 可选值为：RUNNING,TERMINATED,COMPLETED,ERROR。 分别代表：运行中，已终止，已完成，异常。
+    /**
+     * <p>实例状态, 可选值为：RUNNING,TERMINATED,COMPLETED,ERROR。 分别代表：运行中，已终止，已完成，异常。</p>
+     */
     @NameInMap("instanceStatus")
     public String instanceStatus;
 
-    // 语言。可选值：zh_CN/en_US 默认：zh_CN
+    /**
+     * <p>语言。可选值：zh_CN/en_US 默认：zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式
+    /**
+     * <p>modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式</p>
+     */
     @NameInMap("modifiedFromTimeGMT")
     public String modifiedFromTimeGMT;
 
-    // modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式。 和modifiedFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)被修改的数据。
+    /**
+     * <p>modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式。 和modifiedFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)被修改的数据。</p>
+     */
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
-    // 排序规则
+    /**
+     * <p>排序规则</p>
+     */
     @NameInMap("orderConfigJson")
     public String orderConfigJson;
 
-    // 数据提交人的钉钉userId
+    /**
+     * <p>数据提交人的钉钉userId</p>
+     */
     @NameInMap("originatorId")
     public String originatorId;
 
-    // 查询过滤条件，支持2种模式的过滤规则
+    /**
+     * <p>查询过滤条件，支持2种模式的过滤规则</p>
+     */
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
-    // 应用秘钥。在应用数据中获取。
+    /**
+     * <p>应用秘钥。在应用数据中获取。</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 任务ID。一般用不到。
+    /**
+     * <p>任务ID。一般用不到。</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 
-    // 钉钉userId
+    /**
+     * <p>钉钉userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 每页多少条数据
+    /**
+     * <p>每页多少条数据</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

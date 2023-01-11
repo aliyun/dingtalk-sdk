@@ -4,23 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class EndCourseRequest extends TeaModel {
-    // 课程编码
+    /**
+     * <p>课程编码</p>
+     */
     @NameInMap("courseCode")
     public String courseCode;
 
-    // 拓展字段
+    /**
+     * <p>拓展字段</p>
+     */
     @NameInMap("ext")
     public String ext;
 
-    // isv编码
+    /**
+     * <p>isv编码</p>
+     */
     @NameInMap("isvCode")
     public String isvCode;
 
-    // 直播流信息
+    /**
+     * <p>直播流信息</p>
+     */
     @NameInMap("livePlayInfoList")
     public java.util.List<EndCourseRequestLivePlayInfoList> livePlayInfoList;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -70,23 +80,33 @@ public class EndCourseRequest extends TeaModel {
     }
 
     public static class EndCourseRequestLivePlayInfoList extends TeaModel {
-        // 直播推流地址
+        /**
+         * <p>直播推流地址</p>
+         */
         @NameInMap("liveInputUrl")
         public String liveInputUrl;
 
-        // Flv直播拉回地址
+        /**
+         * <p>Flv直播拉回地址</p>
+         */
         @NameInMap("liveOutputFlvUrl")
         public String liveOutputFlvUrl;
 
-        // Hls直播拉流地址
+        /**
+         * <p>Hls直播拉流地址</p>
+         */
         @NameInMap("liveOutputHlsUrl")
         public String liveOutputHlsUrl;
 
-        // 直播流类型
+        /**
+         * <p>直播流类型</p>
+         */
         @NameInMap("liveType")
         public Integer liveType;
 
-        // 回放视频地址
+        /**
+         * <p>回放视频地址</p>
+         */
         @NameInMap("replayUrl")
         public String replayUrl;
 

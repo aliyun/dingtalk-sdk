@@ -4,7 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollectResumeDetailResponseBody extends TeaModel {
-    // 简历标识
+    /**
+     * <p>简历标识</p>
+     */
     @NameInMap("resumeId")
     public String resumeId;
 

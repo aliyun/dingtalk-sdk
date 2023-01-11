@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetATManageScopeResponseBody extends TeaModel {
-    // 管理范围。
+    /**
+     * <p>管理范围。</p>
+     */
     @NameInMap("result")
     public java.util.List<GetATManageScopeResponseBodyResult> result;
 
@@ -22,15 +24,21 @@ public class GetATManageScopeResponseBody extends TeaModel {
     }
 
     public static class GetATManageScopeResponseBodyResult extends TeaModel {
-        // 是否有更多数据。  true：有  false：没有
+        /**
+         * <p>是否有更多数据。  true：有  false：没有</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        // 可见范围。boss/主管理员/管理范围包含根部门的管理员：all ，管理员/考勤组负责人：partial，无权限：none
+        /**
+         * <p>可见范围。boss/主管理员/管理范围包含根部门的管理员：all ，管理员/考勤组负责人：partial，无权限：none</p>
+         */
         @NameInMap("manageScope")
         public String manageScope;
 
-        // 员工userid。只有manageScope为partial返回数据。
+        /**
+         * <p>员工userid。只有manageScope为partial返回数据。</p>
+         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 

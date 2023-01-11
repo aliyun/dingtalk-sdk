@@ -4,13 +4,17 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDentryAppPropertiesRequest extends TeaModel {
-    // 文件上App属性名称
-    // 最大size:
-    // 	3
+    /**
+     * <p>文件上App属性名称</p>
+     * <p>最大size:</p>
+     * <p>	3</p>
+     */
     @NameInMap("propertyNames")
     public java.util.List<String> propertyNames;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

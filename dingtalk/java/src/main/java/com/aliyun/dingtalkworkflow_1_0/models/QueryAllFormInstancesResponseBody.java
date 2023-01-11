@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllFormInstancesResponseBody extends TeaModel {
-    // 分页结果
+    /**
+     * <p>分页结果</p>
+     */
     @NameInMap("result")
     public QueryAllFormInstancesResponseBodyResult result;
 
@@ -22,27 +24,39 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllFormInstancesResponseBodyResultValuesFormInstDataList extends TeaModel {
-        // 控件别名
+        /**
+         * <p>控件别名</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        // 控件类型
+        /**
+         * <p>控件类型</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
-        // 表单控件扩展数据
+        /**
+         * <p>表单控件扩展数据</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
-        // 控件唯一id
+        /**
+         * <p>控件唯一id</p>
+         */
         @NameInMap("key")
         public String key;
 
-        // 控件名称
+        /**
+         * <p>控件名称</p>
+         */
         @NameInMap("label")
         public String label;
 
-        // 控件填写的数据
+        /**
+         * <p>控件填写的数据</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -102,51 +116,75 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllFormInstancesResponseBodyResultValues extends TeaModel {
-        // 应用搭建id
+        /**
+         * <p>应用搭建id</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
-        // 扩展信息
+        /**
+         * <p>扩展信息</p>
+         */
         @NameInMap("attributes")
         public java.util.Map<String, ?> attributes;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTimestamp")
         public Long createTimestamp;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("creator")
         public String creator;
 
-        // 表单模板code
+        /**
+         * <p>表单模板code</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
-        // 表单实例数据
+        /**
+         * <p>表单实例数据</p>
+         */
         @NameInMap("formInstDataList")
         public java.util.List<QueryAllFormInstancesResponseBodyResultValuesFormInstDataList> formInstDataList;
 
-        // 表单实例id
+        /**
+         * <p>表单实例id</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        // 修改人
+        /**
+         * <p>修改人</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifyTimestamp")
         public Long modifyTimestamp;
 
-        // 外部业务编码
+        /**
+         * <p>外部业务编码</p>
+         */
         @NameInMap("outBizCode")
         public String outBizCode;
 
-        // 外部实例编码
+        /**
+         * <p>外部实例编码</p>
+         */
         @NameInMap("outInstanceId")
         public String outInstanceId;
 
-        // 标题
+        /**
+         * <p>标题</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -254,19 +292,27 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllFormInstancesResponseBodyResult extends TeaModel {
-        // 是否有更多数据
+        /**
+         * <p>是否有更多数据</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        // 分页大小
+        /**
+         * <p>分页大小</p>
+         */
         @NameInMap("maxResults")
         public Long maxResults;
 
-        // 下一页的游标
+        /**
+         * <p>下一页的游标</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
-        // 表单列表
+        /**
+         * <p>表单列表</p>
+         */
         @NameInMap("values")
         public java.util.List<QueryAllFormInstancesResponseBodyResultValues> values;
 

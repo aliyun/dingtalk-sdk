@@ -4,35 +4,51 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateEduAssetSpaceResponseBody extends TeaModel {
-    // 创建时间戳
+    /**
+     * <p>创建时间戳</p>
+     */
     @NameInMap("createTimeMillis")
     public Long createTimeMillis;
 
-    // 修改时间戳
+    /**
+     * <p>修改时间戳</p>
+     */
     @NameInMap("modifyTimeMillis")
     public Long modifyTimeMillis;
 
-    // 权限模型
+    /**
+     * <p>权限模型</p>
+     */
     @NameInMap("permissionMode")
     public String permissionMode;
 
-    // 总容量
+    /**
+     * <p>总容量</p>
+     */
     @NameInMap("quota")
     public Long quota;
 
-    // 空间id
+    /**
+     * <p>空间id</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
-    // 空间名称
+    /**
+     * <p>空间名称</p>
+     */
     @NameInMap("spaceName")
     public String spaceName;
 
-    // 空间类型
+    /**
+     * <p>空间类型</p>
+     */
     @NameInMap("spaceType")
     public String spaceType;
 
-    // 已使用容量
+    /**
+     * <p>已使用容量</p>
+     */
     @NameInMap("usedQuota")
     public Long usedQuota;
 

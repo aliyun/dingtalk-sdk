@@ -4,11 +4,15 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class HUploadPackageRequest extends TeaModel {
-    // 离线包ID
+    /**
+     * <p>离线包ID</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    // 离线包资源OSS Key
+    /**
+     * <p>离线包资源OSS Key</p>
+     */
     @NameInMap("ossObjectKey")
     public String ossObjectKey;
 

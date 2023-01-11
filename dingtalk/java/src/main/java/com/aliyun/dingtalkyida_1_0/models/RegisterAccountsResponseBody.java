@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterAccountsResponseBody extends TeaModel {
-    // 实例id
+    /**
+     * <p>实例id</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 

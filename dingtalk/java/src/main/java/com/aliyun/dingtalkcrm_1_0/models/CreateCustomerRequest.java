@@ -4,35 +4,51 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomerRequest extends TeaModel {
-    // 关联联系人数据
+    /**
+     * <p>关联联系人数据</p>
+     */
     @NameInMap("contacts")
     public java.util.List<CreateCustomerRequestContacts> contacts;
 
-    // 创建人的userId
+    /**
+     * <p>创建人的userId</p>
+     */
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
-    // 客户实例数据（表单数据）
+    /**
+     * <p>客户实例数据（表单数据）</p>
+     */
     @NameInMap("data")
     public java.util.Map<String, ?> data;
 
-    // 客户实例扩展数据
+    /**
+     * <p>客户实例扩展数据</p>
+     */
     @NameInMap("extendData")
     public java.util.Map<String, ?> extendData;
 
-    // 已存在客户时，添加联系人，可以传入客户的instanceId用作关联绑定
+    /**
+     * <p>已存在客户时，添加联系人，可以传入客户的instanceId用作关联绑定</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
-    // 写入客户类型：个人客户crm_customer_personal; 企业客户crm_customer
+    /**
+     * <p>写入客户类型：个人客户crm_customer_personal; 企业客户crm_customer</p>
+     */
     @NameInMap("objectType")
     public String objectType;
 
-    // 权限
+    /**
+     * <p>权限</p>
+     */
     @NameInMap("permission")
     public CreateCustomerRequestPermission permission;
 
-    // 保存配置项
+    /**
+     * <p>保存配置项</p>
+     */
     @NameInMap("saveOption")
     public CreateCustomerRequestSaveOption saveOption;
 
@@ -106,11 +122,15 @@ public class CreateCustomerRequest extends TeaModel {
     }
 
     public static class CreateCustomerRequestContacts extends TeaModel {
-        // 联系人表单数据
+        /**
+         * <p>联系人表单数据</p>
+         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 
-        // 联系人扩展数据
+        /**
+         * <p>联系人扩展数据</p>
+         */
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
@@ -138,11 +158,15 @@ public class CreateCustomerRequest extends TeaModel {
     }
 
     public static class CreateCustomerRequestPermission extends TeaModel {
-        // 负责人
+        /**
+         * <p>负责人</p>
+         */
         @NameInMap("ownerStaffIds")
         public java.util.List<String> ownerStaffIds;
 
-        // 协同人
+        /**
+         * <p>协同人</p>
+         */
         @NameInMap("participantStaffIds")
         public java.util.List<String> participantStaffIds;
 
@@ -170,19 +194,27 @@ public class CreateCustomerRequest extends TeaModel {
     }
 
     public static class CreateCustomerRequestSaveOption extends TeaModel {
-        // 客户已存在时的处理策略：APPEND_CONTACT_FORCE 直接追加联系人； REJECT 返回失败
+        /**
+         * <p>客户已存在时的处理策略：APPEND_CONTACT_FORCE 直接追加联系人； REJECT 返回失败</p>
+         */
         @NameInMap("customerExistedPolicy")
         public String customerExistedPolicy;
 
-        // 跳过uk查重
+        /**
+         * <p>跳过uk查重</p>
+         */
         @NameInMap("skipDuplicateCheck")
         public Boolean skipDuplicateCheck;
 
-        // 关注配置：0 不处理， 1 自动关注（需要单独申请白名单）
+        /**
+         * <p>关注配置：0 不处理， 1 自动关注（需要单独申请白名单）</p>
+         */
         @NameInMap("subscribePolicy")
         public Long subscribePolicy;
 
-        // 保存联系人失败时是否阻断
+        /**
+         * <p>保存联系人失败时是否阻断</p>
+         */
         @NameInMap("throwExceptionWhileSavingContactFailed")
         public Boolean throwExceptionWhileSavingContactFailed;
 

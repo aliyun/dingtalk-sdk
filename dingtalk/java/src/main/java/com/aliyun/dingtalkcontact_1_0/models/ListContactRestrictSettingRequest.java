@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListContactRestrictSettingRequest extends TeaModel {
-    // 最大返回结果数
+    /**
+     * <p>最大返回结果数</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页token
+    /**
+     * <p>分页token</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeListDeptManagerResponseBody extends TeaModel {
-    // 负责人信息列表
+    /**
+     * <p>负责人信息列表</p>
+     */
     @NameInMap("managerInfoSimpleList")
     public java.util.List<CollegeListDeptManagerResponseBodyManagerInfoSimpleList> managerInfoSimpleList;
 
-    // 数据总条目数
+    /**
+     * <p>数据总条目数</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -34,15 +38,21 @@ public class CollegeListDeptManagerResponseBody extends TeaModel {
     }
 
     public static class CollegeListDeptManagerResponseBodyManagerInfoSimpleList extends TeaModel {
-        // 账号是否激活
+        /**
+         * <p>账号是否激活</p>
+         */
         @NameInMap("isActive")
         public Boolean isActive;
 
-        // 负责人姓名
+        /**
+         * <p>负责人姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

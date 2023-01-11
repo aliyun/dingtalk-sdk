@@ -4,59 +4,87 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMarketOrderResponseBody extends TeaModel {
-    // 订单ID
+    /**
+     * <p>订单ID</p>
+     */
     @NameInMap("bizOrderId")
     public Long bizOrderId;
 
-    // 组织ID
+    /**
+     * <p>组织ID</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 创建时间戳
+    /**
+     * <p>创建时间戳</p>
+     */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
-    // 生效结束时间
+    /**
+     * <p>生效结束时间</p>
+     */
     @NameInMap("endTimestamp")
     public Long endTimestamp;
 
-    // 商品Code
+    /**
+     * <p>商品Code</p>
+     */
     @NameInMap("goodsCode")
     public String goodsCode;
 
-    // 商品名称
+    /**
+     * <p>商品名称</p>
+     */
     @NameInMap("goodsName")
     public String goodsName;
 
-    // 是否内购订单
+    /**
+     * <p>是否内购订单</p>
+     */
     @NameInMap("inAppOrder")
     public Boolean inAppOrder;
 
-    // 规格编码
+    /**
+     * <p>规格编码</p>
+     */
     @NameInMap("itemCode")
     public String itemCode;
 
-    // 规格名称
+    /**
+     * <p>规格名称</p>
+     */
     @NameInMap("itemName")
     public String itemName;
 
-    // 支付时间戳
+    /**
+     * <p>支付时间戳</p>
+     */
     @NameInMap("paidTimestamp")
     public Long paidTimestamp;
 
-    // 购买数量
+    /**
+     * <p>购买数量</p>
+     */
     @NameInMap("quantity")
     public Long quantity;
 
-    // 开始生效时间
+    /**
+     * <p>开始生效时间</p>
+     */
     @NameInMap("startTimestamp")
     public Long startTimestamp;
 
-    // 订单状态(0:订单关闭； 3：订单支付；4：订单创建)
+    /**
+     * <p>订单状态(0:订单关闭； 3：订单支付；4：订单创建)</p>
+     */
     @NameInMap("status")
     public Long status;
 
-    // 订单实付金额(单位分)
+    /**
+     * <p>订单实付金额(单位分)</p>
+     */
     @NameInMap("totalActualPayFee")
     public Long totalActualPayFee;
 

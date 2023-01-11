@@ -4,11 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenCategoryResponseBody extends TeaModel {
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("result")
     public AddOpenCategoryResponseBodyResult result;
 
-    // 请求是否成功
+    /**
+     * <p>请求是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,15 +38,21 @@ public class AddOpenCategoryResponseBody extends TeaModel {
     }
 
     public static class AddOpenCategoryResponseBodyResult extends TeaModel {
-        // 添加成类目ID
+        /**
+         * <p>添加成类目ID</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 失败时的错误消息
+        /**
+         * <p>失败时的错误消息</p>
+         */
         @NameInMap("message")
         public String message;
 
-        // 操作是否成功
+        /**
+         * <p>操作是否成功</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

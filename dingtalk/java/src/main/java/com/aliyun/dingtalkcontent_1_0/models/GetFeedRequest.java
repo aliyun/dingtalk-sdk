@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFeedRequest extends TeaModel {
-    // 入驻账号Id(请联系钉钉接口同学获取)
+    /**
+     * <p>入驻账号Id(请联系钉钉接口同学获取)</p>
+     */
     @NameInMap("mcnId")
     public String mcnId;
 

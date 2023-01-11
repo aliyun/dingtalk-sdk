@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUniversityCourseGroupResponseBody extends TeaModel {
-    // 课程组信息
+    /**
+     * <p>课程组信息</p>
+     */
     @NameInMap("universityCourseGroupInfo")
     public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfo universityCourseGroupInfo;
 
@@ -22,15 +24,21 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
-        // 日
+        /**
+         * <p>日</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -66,15 +74,21 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
-        // 日
+        /**
+         * <p>日</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -110,31 +124,45 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels extends TeaModel {
-        // 上课周期
+        /**
+         * <p>上课周期</p>
+         */
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
-        // 教室主键
+        /**
+         * <p>教室主键</p>
+         */
         @NameInMap("classroomId")
         public Long classroomId;
 
-        // 课程类型
+        /**
+         * <p>课程类型</p>
+         */
         @NameInMap("courseType")
         public Integer courseType;
 
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("courserGroupItemEndDate")
         public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate courserGroupItemEndDate;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("courserGroupItemStartDate")
         public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate courserGroupItemStartDate;
 
-        // 一周的第几天
+        /**
+         * <p>一周的第几天</p>
+         */
         @NameInMap("dayOfWeek")
         public Integer dayOfWeek;
 
-        // 课节
+        /**
+         * <p>课节</p>
+         */
         @NameInMap("sectionIndex")
         public java.util.List<Integer> sectionIndex;
 
@@ -202,39 +230,57 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfo extends TeaModel {
-        // 课程组编码
+        /**
+         * <p>课程组编码</p>
+         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
-        // 课程组介绍
+        /**
+         * <p>课程组介绍</p>
+         */
         @NameInMap("courseGroupIntroduce")
         public String courseGroupIntroduce;
 
-        // 课程组名称
+        /**
+         * <p>课程组名称</p>
+         */
         @NameInMap("courseGroupName")
         public String courseGroupName;
 
-        // 课程组详细
+        /**
+         * <p>课程组详细</p>
+         */
         @NameInMap("courserGroupItemModels")
         public java.util.List<QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels> courserGroupItemModels;
 
-        // 合作方课程组code
+        /**
+         * <p>合作方课程组code</p>
+         */
         @NameInMap("isvCourseGroupCode")
         public String isvCourseGroupCode;
 
-        // 学段编码
+        /**
+         * <p>学段编码</p>
+         */
         @NameInMap("periodCode")
         public String periodCode;
 
-        // 学年
+        /**
+         * <p>学年</p>
+         */
         @NameInMap("schoolYear")
         public String schoolYear;
 
-        // 学期
+        /**
+         * <p>学期</p>
+         */
         @NameInMap("semester")
         public Integer semester;
 
-        // 学科名称
+        /**
+         * <p>学科名称</p>
+         */
         @NameInMap("subjectName")
         public String subjectName;
 

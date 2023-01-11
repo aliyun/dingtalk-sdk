@@ -4,27 +4,39 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenCategoryRequest extends TeaModel {
-    // 所属知识库ID
+    /**
+     * <p>所属知识库ID</p>
+     */
     @NameInMap("libraryId")
     public Long libraryId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 父类目ID(为0代表顶层id)
+    /**
+     * <p>父类目ID(为0代表顶层id)</p>
+     */
     @NameInMap("parentId")
     public Long parentId;
 
-    // 类目标题
+    /**
+     * <p>类目标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 员工/用户ID
+    /**
+     * <p>员工/用户ID</p>
+     */
     @NameInMap("userId")
     public String userId;
 
-    // 用户昵称或姓名
+    /**
+     * <p>用户昵称或姓名</p>
+     */
     @NameInMap("userName")
     public String userName;
 

@@ -7,7 +7,9 @@ public class RegisterAndActivateDeviceResponseBody extends TeaModel {
     @NameInMap("result")
     public RegisterAndActivateDeviceResponseBodyResult result;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

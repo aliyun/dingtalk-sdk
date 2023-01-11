@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPointRulesResponseBody extends TeaModel {
-    // 查询所得积分规则集合
+    /**
+     * <p>查询所得积分规则集合</p>
+     */
     @NameInMap("pointRuleList")
     public java.util.List<ListPointRulesResponseBodyPointRuleList> pointRuleList;
 
@@ -22,35 +24,51 @@ public class ListPointRulesResponseBody extends TeaModel {
     }
 
     public static class ListPointRulesResponseBodyPointRuleList extends TeaModel {
-        // 单日计次上限，0表示无上限
+        /**
+         * <p>单日计次上限，0表示无上限</p>
+         */
         @NameInMap("dayLimitTimes")
         public Integer dayLimitTimes;
 
-        // 扩展字段
+        /**
+         * <p>扩展字段</p>
+         */
         @NameInMap("extension")
         public String extension;
 
-        // 分组ID, 默认写入为0
+        /**
+         * <p>分组ID, 默认写入为0</p>
+         */
         @NameInMap("groupId")
         public Integer groupId;
 
-        // 排序ID
+        /**
+         * <p>排序ID</p>
+         */
         @NameInMap("orderId")
         public Integer orderId;
 
-        // 对应的行为代码（可空）
+        /**
+         * <p>对应的行为代码（可空）</p>
+         */
         @NameInMap("ruleCode")
         public String ruleCode;
 
-        // 对应的行为名字
+        /**
+         * <p>对应的行为名字</p>
+         */
         @NameInMap("ruleName")
         public String ruleName;
 
-        // 增加或减少的分数（增加为正数，减少为负数）
+        /**
+         * <p>增加或减少的分数（增加为正数，减少为负数）</p>
+         */
         @NameInMap("score")
         public Integer score;
 
-        // 生效状态 0：不生效，1：生效
+        /**
+         * <p>生效状态 0：不生效，1：生效</p>
+         */
         @NameInMap("status")
         public Integer status;
 

@@ -4,25 +4,33 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCheckInSchemaTemplateRequest extends TeaModel {
-    // 业务码：
-    // - water_mark_checkin 水印签到
-    // 
-    // 
+    /**
+     * <p>业务码：</p>
+     * <p>- water_mark_checkin 水印签到</p>
+     * <br>
+     * <br>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 群会话ID。
+    /**
+     * <p>群会话ID。</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 场景码：
-    // - water_mark_checkin_h3yun 开放场景码
-    // 
-    // 
+    /**
+     * <p>场景码：</p>
+     * <p>- water_mark_checkin_h3yun 开放场景码</p>
+     * <br>
+     * <br>
+     */
     @NameInMap("sceneCode")
     public String sceneCode;
 
-    // 用户的userid。
+    /**
+     * <p>用户的userid。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

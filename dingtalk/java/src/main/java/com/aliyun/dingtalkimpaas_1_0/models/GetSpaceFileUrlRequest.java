@@ -4,15 +4,21 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceFileUrlRequest extends TeaModel {
-    // 钉盘文件id
+    /**
+     * <p>钉盘文件id</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
-    // 发送人互通账号
+    /**
+     * <p>发送人互通账号</p>
+     */
     @NameInMap("senderUid")
     public String senderUid;
 
-    // 钉盘spaceId
+    /**
+     * <p>钉盘spaceId</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 

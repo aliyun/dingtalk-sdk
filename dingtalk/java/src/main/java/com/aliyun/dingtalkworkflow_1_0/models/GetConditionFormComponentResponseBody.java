@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConditionFormComponentResponseBody extends TeaModel {
-    // 返回结果。
+    /**
+     * <p>返回结果。</p>
+     */
     @NameInMap("result")
     public java.util.List<GetConditionFormComponentResponseBodyResult> result;
 
@@ -22,11 +24,15 @@ public class GetConditionFormComponentResponseBody extends TeaModel {
     }
 
     public static class GetConditionFormComponentResponseBodyResult extends TeaModel {
-        // 表单ID。
+        /**
+         * <p>表单ID。</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 表单名称。
+        /**
+         * <p>表单名称。</p>
+         */
         @NameInMap("label")
         public String label;
 

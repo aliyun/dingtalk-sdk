@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormCreateResponseBody extends TeaModel {
-    // 表单模板信息
+    /**
+     * <p>表单模板信息</p>
+     */
     @NameInMap("result")
     public FormCreateResponseBodyResult result;
 
@@ -22,7 +24,9 @@ public class FormCreateResponseBody extends TeaModel {
     }
 
     public static class FormCreateResponseBodyResult extends TeaModel {
-        // 保存或更新的表单code
+        /**
+         * <p>保存或更新的表单code</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 

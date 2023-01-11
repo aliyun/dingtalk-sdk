@@ -4,19 +4,27 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
-    // 数据
+    /**
+     * <p>数据</p>
+     */
     @NameInMap("data")
     public java.util.List<SearchFormDataRemovalTableDataResponseBodyData> data;
 
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMoreData")
     public Boolean hasMoreData;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -58,11 +66,15 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyDataModifyUserName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -90,19 +102,27 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyDataModifyUser extends TeaModel {
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 电子邮箱
+        /**
+         * <p>电子邮箱</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public SearchFormDataRemovalTableDataResponseBodyDataModifyUserName name;
 
-        // 钉钉userId
+        /**
+         * <p>钉钉userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -146,11 +166,15 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyDataOriginatorName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -178,19 +202,27 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyDataOriginator extends TeaModel {
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 电子邮箱
+        /**
+         * <p>电子邮箱</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public SearchFormDataRemovalTableDataResponseBodyDataOriginatorName name;
 
-        // 钉钉userId
+        /**
+         * <p>钉钉userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -234,63 +266,93 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyData extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // 创建者的userId
+        /**
+         * <p>创建者的userId</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 表单实例数据。结构说明参考  https://www.yuque.com/yida/support/agb8im#jksEx
+        /**
+         * <p>表单实例数据。结构说明参考  https://www.yuque.com/yida/support/agb8im#jksEx</p>
+         */
         @NameInMap("formData")
         public java.util.Map<String, ?> formData;
 
-        // 表单实例id
+        /**
+         * <p>表单实例id</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        // 表单编码
+        /**
+         * <p>表单编码</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        // 数据库表记录的主键id
+        /**
+         * <p>数据库表记录的主键id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 实例数据
+        /**
+         * <p>实例数据</p>
+         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        // 修改者的钉钉userId
+        /**
+         * <p>修改者的钉钉userId</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
-        // 修改者
+        /**
+         * <p>修改者</p>
+         */
         @NameInMap("modifyUser")
         public SearchFormDataRemovalTableDataResponseBodyDataModifyUser modifyUser;
 
-        // 发起人
+        /**
+         * <p>发起人</p>
+         */
         @NameInMap("originator")
         public SearchFormDataRemovalTableDataResponseBodyDataOriginator originator;
 
-        // 一次批量导入对应的批次号
+        /**
+         * <p>一次批量导入对应的批次号</p>
+         */
         @NameInMap("sequence")
         public String sequence;
 
-        // 流水号
+        /**
+         * <p>流水号</p>
+         */
         @NameInMap("serialNumber")
         public String serialNumber;
 
-        // 标题
+        /**
+         * <p>标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 该实例对应的表单schema版本
+        /**
+         * <p>该实例对应的表单schema版本</p>
+         */
         @NameInMap("version")
         public Long version;
 

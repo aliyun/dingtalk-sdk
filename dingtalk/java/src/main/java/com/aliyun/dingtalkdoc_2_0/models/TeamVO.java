@@ -4,59 +4,87 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class TeamVO extends TeaModel {
-    // 封面
+    /**
+     * <p>封面</p>
+     */
     @NameInMap("cover")
     public String cover;
 
-    // 创建时间
+    /**
+     * <p>创建时间</p>
+     */
     @NameInMap("createdTime")
     public Long createdTime;
 
-    // 创建人
+    /**
+     * <p>创建人</p>
+     */
     @NameInMap("creator")
     public TeamVOCreator creator;
 
-    // 团队描述
+    /**
+     * <p>团队描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 图标
+    /**
+     * <p>图标</p>
+     */
     @NameInMap("icon")
     public String icon;
 
-    // 团队ID
+    /**
+     * <p>团队ID</p>
+     */
     @NameInMap("id")
     public String id;
 
-    // 团队名称
+    /**
+     * <p>团队名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 关联部门信息
+    /**
+     * <p>关联部门信息</p>
+     */
     @NameInMap("relatedDeptInfo")
     public TeamVORelatedDeptInfo relatedDeptInfo;
 
-    // 团队状态
+    /**
+     * <p>团队状态</p>
+     */
     @NameInMap("status")
     public Integer status;
 
-    // 团队类型
+    /**
+     * <p>团队类型</p>
+     */
     @NameInMap("type")
     public Integer type;
 
-    // 更新时间
+    /**
+     * <p>更新时间</p>
+     */
     @NameInMap("updatedTime")
     public Long updatedTime;
 
-    // 更新人
+    /**
+     * <p>更新人</p>
+     */
     @NameInMap("updater")
     public TeamVOUpdater updater;
 
-    // 团队链接
+    /**
+     * <p>团队链接</p>
+     */
     @NameInMap("url")
     public String url;
 
-    // 用户对这个团队的访问情况
+    /**
+     * <p>用户对这个团队的访问情况</p>
+     */
     @NameInMap("visitInfo")
     public TeamVOVisitInfo visitInfo;
 
@@ -178,11 +206,15 @@ public class TeamVO extends TeaModel {
     }
 
     public static class TeamVOCreator extends TeaModel {
-        // 名字
+        /**
+         * <p>名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // unionId
+        /**
+         * <p>unionId</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -210,11 +242,15 @@ public class TeamVO extends TeaModel {
     }
 
     public static class TeamVORelatedDeptInfo extends TeaModel {
-        // 部门id
+        /**
+         * <p>部门id</p>
+         */
         @NameInMap("deptId")
         public String deptId;
 
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
@@ -242,11 +278,15 @@ public class TeamVO extends TeaModel {
     }
 
     public static class TeamVOUpdater extends TeaModel {
-        // 名字
+        /**
+         * <p>名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // unionId
+        /**
+         * <p>unionId</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -274,7 +314,9 @@ public class TeamVO extends TeaModel {
     }
 
     public static class TeamVOVisitInfo extends TeaModel {
-        // 用户对这个团队的访问情况
+        /**
+         * <p>用户对这个团队的访问情况</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

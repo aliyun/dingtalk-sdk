@@ -4,31 +4,45 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListApplicationRequest extends TeaModel {
-    // 应用过滤条件, 不填则获取发布到了宜搭应用中心的宜搭应用, 填createdByMe获取我创建的宜搭应用, 填managedByMe获取我管理的宜搭应用
+    /**
+     * <p>应用过滤条件, 不填则获取发布到了宜搭应用中心的宜搭应用, 填createdByMe获取我创建的宜搭应用, 填managedByMe获取我管理的宜搭应用</p>
+     */
     @NameInMap("appFilter")
     public String appFilter;
 
-    // 应用名称检索关键词
+    /**
+     * <p>应用名称检索关键词</p>
+     */
     @NameInMap("appNameSearchKeyword")
     public String appNameSearchKeyword;
 
-    // 钉钉组织id
+    /**
+     * <p>钉钉组织id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 第几页
+    /**
+     * <p>第几页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // corpId+userId+CorpToken做md5加密计算生成的字符串(每个企业有自己的唯一corpToken), 获取具体计算详情请联系宜搭 dingtalk://dingtalkclient/action/sendmsg?dingtalk_id=somjffs
+    /**
+     * <p>corpId+userId+CorpToken做md5加密计算生成的字符串(每个企业有自己的唯一corpToken), 获取具体计算详情请联系宜搭 dingtalk://dingtalkclient/action/sendmsg?dingtalk_id=somjffs</p>
+     */
     @NameInMap("token")
     public String token;
 
-    // 钉钉userId
+    /**
+     * <p>钉钉userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,35 +4,51 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class HospitalDataCheckRequest extends TeaModel {
-    // 所有状态的科室数量
+    /**
+     * <p>所有状态的科室数量</p>
+     */
     @NameInMap("allDeptCount")
     public Long allDeptCount;
 
-    // 正常状态的科室人员数量
+    /**
+     * <p>正常状态的科室人员数量</p>
+     */
     @NameInMap("allDeptUserCount")
     public Long allDeptUserCount;
 
-    // 所有状态的医疗组数量
+    /**
+     * <p>所有状态的医疗组数量</p>
+     */
     @NameInMap("allGroupCount")
     public Long allGroupCount;
 
-    // 所有状态的医疗组人员数量
+    /**
+     * <p>所有状态的医疗组人员数量</p>
+     */
     @NameInMap("allGroupUserCount")
     public Long allGroupUserCount;
 
-    // 状态为0的科室数量
+    /**
+     * <p>状态为0的科室数量</p>
+     */
     @NameInMap("deptCount")
     public Long deptCount;
 
-    // 正常状态的科室人员数量
+    /**
+     * <p>正常状态的科室人员数量</p>
+     */
     @NameInMap("deptUserCount")
     public Long deptUserCount;
 
-    // 正常状态的医疗组数量
+    /**
+     * <p>正常状态的医疗组数量</p>
+     */
     @NameInMap("groupCount")
     public Long groupCount;
 
-    // 正常状态的医疗组人员数量
+    /**
+     * <p>正常状态的医疗组人员数量</p>
+     */
     @NameInMap("groupUserCount")
     public Long groupUserCount;
 

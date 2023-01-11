@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetExclusiveAccountAllOrgListResponseBody extends TeaModel {
-    // 组织信息列表
+    /**
+     * <p>组织信息列表</p>
+     */
     @NameInMap("orgInfoList")
     public java.util.List<GetExclusiveAccountAllOrgListResponseBodyOrgInfoList> orgInfoList;
 
@@ -22,23 +24,33 @@ public class GetExclusiveAccountAllOrgListResponseBody extends TeaModel {
     }
 
     public static class GetExclusiveAccountAllOrgListResponseBodyOrgInfoList extends TeaModel {
-        // 组织ID
+        /**
+         * <p>组织ID</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 是否是主组织
+        /**
+         * <p>是否是主组织</p>
+         */
         @NameInMap("isMainOrg")
         public Boolean isMainOrg;
 
-        // 组织图标地址
+        /**
+         * <p>组织图标地址</p>
+         */
         @NameInMap("logoUrl")
         public String logoUrl;
 
-        // 组织全称
+        /**
+         * <p>组织全称</p>
+         */
         @NameInMap("orgFullName")
         public String orgFullName;
 
-        // 组织名称
+        /**
+         * <p>组织名称</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 

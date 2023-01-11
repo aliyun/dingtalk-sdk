@@ -4,39 +4,57 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class DecodeBadgeCodeResponseBody extends TeaModel {
-    // 支付宝付款码
+    /**
+     * <p>支付宝付款码</p>
+     */
     @NameInMap("alipayCode")
     public String alipayCode;
 
-    // 码ID，对于访客或会展码等静态码值返回
+    /**
+     * <p>码ID，对于访客或会展码等静态码值返回</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 
-    // 码标识，工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE
+    /**
+     * <p>码标识，工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE</p>
+     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
-    // 码类型
+    /**
+     * <p>码类型</p>
+     */
     @NameInMap("codeType")
     public String codeType;
 
-    // 企业id
+    /**
+     * <p>企业id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
-    // 外部业务ID，值为调用创建工牌码接口传入的requestId
+    /**
+     * <p>外部业务ID，值为调用创建工牌码接口传入的requestId</p>
+     */
     @NameInMap("outBizId")
     public String outBizId;
 
-    // 用户和企业关系
+    /**
+     * <p>用户和企业关系</p>
+     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

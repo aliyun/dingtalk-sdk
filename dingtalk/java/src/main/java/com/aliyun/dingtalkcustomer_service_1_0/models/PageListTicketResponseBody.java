@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListTicketResponseBody extends TeaModel {
-    // list
+    /**
+     * <p>list</p>
+     */
     @NameInMap("list")
     public java.util.List<PageListTicketResponseBodyList> list;
 
-    // nextCursor
+    /**
+     * <p>nextCursor</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
-    // total
+    /**
+     * <p>total</p>
+     */
     @NameInMap("total")
     public Long total;
 
@@ -46,51 +52,75 @@ public class PageListTicketResponseBody extends TeaModel {
     }
 
     public static class PageListTicketResponseBodyList extends TeaModel {
-        // bizDataMap
+        /**
+         * <p>bizDataMap</p>
+         */
         @NameInMap("bizDataMap")
         public java.util.Map<String, ?> bizDataMap;
 
-        // foreignId
+        /**
+         * <p>foreignId</p>
+         */
         @NameInMap("foreignId")
         public String foreignId;
 
-        // foreignName
+        /**
+         * <p>foreignName</p>
+         */
         @NameInMap("foreignName")
         public String foreignName;
 
-        // gmtCreate
+        /**
+         * <p>gmtCreate</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // gmtModified
+        /**
+         * <p>gmtModified</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // openInstanceId
+        /**
+         * <p>openInstanceId</p>
+         */
         @NameInMap("openInstanceId")
         public String openInstanceId;
 
-        // productionType
+        /**
+         * <p>productionType</p>
+         */
         @NameInMap("productionType")
         public Integer productionType;
 
-        // sourceId
+        /**
+         * <p>sourceId</p>
+         */
         @NameInMap("sourceId")
         public String sourceId;
 
-        // templateId
+        /**
+         * <p>templateId</p>
+         */
         @NameInMap("templateId")
         public String templateId;
 
-        // ticketId
+        /**
+         * <p>ticketId</p>
+         */
         @NameInMap("ticketId")
         public String ticketId;
 
-        // ticketStatus
+        /**
+         * <p>ticketStatus</p>
+         */
         @NameInMap("ticketStatus")
         public String ticketStatus;
 
-        // title
+        /**
+         * <p>title</p>
+         */
         @NameInMap("title")
         public String title;
 

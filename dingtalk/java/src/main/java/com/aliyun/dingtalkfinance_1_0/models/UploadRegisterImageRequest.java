@@ -4,23 +4,33 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UploadRegisterImageRequest extends TeaModel {
-    // 图片内容
+    /**
+     * <p>图片内容</p>
+     */
     @NameInMap("imageContent")
     public String imageContent;
 
-    // 图片名称
+    /**
+     * <p>图片名称</p>
+     */
     @NameInMap("imageName")
     public String imageName;
 
-    // 图片类型
+    /**
+     * <p>图片类型</p>
+     */
     @NameInMap("imageType")
     public String imageType;
 
-    // 主机构id
+    /**
+     * <p>主机构id</p>
+     */
     @NameInMap("instId")
     public String instId;
 
-    // 进件渠道
+    /**
+     * <p>进件渠道</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 

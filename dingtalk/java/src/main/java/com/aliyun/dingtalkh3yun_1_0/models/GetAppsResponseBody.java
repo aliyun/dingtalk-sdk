@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAppsResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public java.util.List<GetAppsResponseBodyData> data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,23 +52,33 @@ public class GetAppsResponseBody extends TeaModel {
     }
 
     public static class GetAppsResponseBodyData extends TeaModel {
-        // 应用编码
+        /**
+         * <p>应用编码</p>
+         */
         @NameInMap("appCode")
         public String appCode;
 
-        // 应用的来源类型。Custom=自开发的、Installed=安装的
+        /**
+         * <p>应用的来源类型。Custom=自开发的、Installed=安装的</p>
+         */
         @NameInMap("appSource")
         public String appSource;
 
-        // 应用状态。Enable=启用、Forbidden=禁用、Warring=预警
+        /**
+         * <p>应用状态。Enable=启用、Forbidden=禁用、Warring=预警</p>
+         */
         @NameInMap("appState")
         public String appState;
 
-        // 应用显示名称
+        /**
+         * <p>应用显示名称</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // 应用所属的解决方案名称
+        /**
+         * <p>应用所属的解决方案名称</p>
+         */
         @NameInMap("solution")
         public String solution;
 

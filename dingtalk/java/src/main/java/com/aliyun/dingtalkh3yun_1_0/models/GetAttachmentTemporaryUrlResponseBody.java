@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAttachmentTemporaryUrlResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 业务响应结果
+    /**
+     * <p>业务响应结果</p>
+     */
     @NameInMap("data")
     public GetAttachmentTemporaryUrlResponseBodyData data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,7 +52,9 @@ public class GetAttachmentTemporaryUrlResponseBody extends TeaModel {
     }
 
     public static class GetAttachmentTemporaryUrlResponseBodyData extends TeaModel {
-        // 附件临时免登地址。有效期为30分钟
+        /**
+         * <p>附件临时免登地址。有效期为30分钟</p>
+         */
         @NameInMap("attachmentUrl")
         public String attachmentUrl;
 

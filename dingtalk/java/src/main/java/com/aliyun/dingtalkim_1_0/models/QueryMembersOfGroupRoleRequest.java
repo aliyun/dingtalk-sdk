@@ -4,15 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMembersOfGroupRoleRequest extends TeaModel {
-    // 开放群ID
+    /**
+     * <p>开放群ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 开放群角色id
+    /**
+     * <p>开放群角色id</p>
+     */
     @NameInMap("openRoleId")
     public String openRoleId;
 
-    // 时间戳
+    /**
+     * <p>时间戳</p>
+     */
     @NameInMap("timestamp")
     public Long timestamp;
 

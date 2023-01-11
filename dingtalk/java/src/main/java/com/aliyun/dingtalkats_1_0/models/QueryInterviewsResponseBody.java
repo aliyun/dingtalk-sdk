@@ -4,19 +4,27 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryInterviewsResponseBody extends TeaModel {
-    // 是否有更多数据
+    /**
+     * <p>是否有更多数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 数据列表
+    /**
+     * <p>数据列表</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryInterviewsResponseBodyList> list;
 
-    // 下次查询的分页游标
+    /**
+     * <p>下次查询的分页游标</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -58,7 +66,9 @@ public class QueryInterviewsResponseBody extends TeaModel {
     }
 
     public static class QueryInterviewsResponseBodyListInterviewers extends TeaModel {
-        // 面试官员工标识
+        /**
+         * <p>面试官员工标识</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -78,31 +88,45 @@ public class QueryInterviewsResponseBody extends TeaModel {
     }
 
     public static class QueryInterviewsResponseBodyList extends TeaModel {
-        // 面试是否已取消
+        /**
+         * <p>面试是否已取消</p>
+         */
         @NameInMap("cancelled")
         public Boolean cancelled;
 
-        // 面试创建人员工标识
+        /**
+         * <p>面试创建人员工标识</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 面试结束时间（单位：毫秒）
+        /**
+         * <p>面试结束时间（单位：毫秒）</p>
+         */
         @NameInMap("endTimeMillis")
         public Long endTimeMillis;
 
-        // 面试标识
+        /**
+         * <p>面试标识</p>
+         */
         @NameInMap("interviewId")
         public String interviewId;
 
-        // 面试官列表
+        /**
+         * <p>面试官列表</p>
+         */
         @NameInMap("interviewers")
         public java.util.List<QueryInterviewsResponseBodyListInterviewers> interviewers;
 
-        // 职位标识
+        /**
+         * <p>职位标识</p>
+         */
         @NameInMap("jobId")
         public String jobId;
 
-        // 面试开始时间（单位：毫秒）
+        /**
+         * <p>面试开始时间（单位：毫秒）</p>
+         */
         @NameInMap("startTimeMillis")
         public Long startTimeMillis;
 

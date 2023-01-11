@@ -4,30 +4,42 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptForInvoiceRequest extends TeaModel {
-    // 发票状态筛选列表 applied 已生成、unapplied 未生成 、 ignore 已忽略
+    /**
+     * <p>发票状态筛选列表 applied 已生成、unapplied 未生成 、 ignore 已忽略</p>
+     */
     @NameInMap("applyStatusList")
     public java.util.List<String> applyStatusList;
 
     @NameInMap("endTime")
     public Long endTime;
 
-    // 分页参数，从1 开始
+    /**
+     * <p>分页参数，从1 开始</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 分页参数，每页查询个数
+    /**
+     * <p>分页参数，每页查询个数</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 单据状态筛选条件列表，审批中、已通过 RUNNGIN、COMPLETED
+    /**
+     * <p>单据状态筛选条件列表，审批中、已通过 RUNNGIN、COMPLETED</p>
+     */
     @NameInMap("receiptStatusList")
     public java.util.List<String> receiptStatusList;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 单据标题
+    /**
+     * <p>单据标题</p>
+     */
     @NameInMap("title")
     public String title;
 

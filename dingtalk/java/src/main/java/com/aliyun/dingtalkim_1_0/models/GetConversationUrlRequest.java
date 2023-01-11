@@ -4,23 +4,33 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConversationUrlRequest extends TeaModel {
-    // 钉外用户在业务系统内的唯一标志。
+    /**
+     * <p>钉外用户在业务系统内的唯一标志。</p>
+     */
     @NameInMap("appUserId")
     public String appUserId;
 
-    // 渠道code。
+    /**
+     * <p>渠道code。</p>
+     */
     @NameInMap("channelCode")
     public String channelCode;
 
-    // 群会话Id。
+    /**
+     * <p>群会话Id。</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 钉外用户标识。
+    /**
+     * <p>钉外用户标识。</p>
+     */
     @NameInMap("sourceCode")
     public String sourceCode;
 
-    // 钉内用户userId。
+    /**
+     * <p>钉内用户userId。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListOperationLogsResponseBody extends TeaModel {
-    // 操作记录对象
+    /**
+     * <p>操作记录对象</p>
+     */
     @NameInMap("operationLogMap")
     public java.util.Map<String, ?> operationLogMap;
 

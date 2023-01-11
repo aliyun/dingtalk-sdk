@@ -4,14 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupTagRequest extends TeaModel {
-    // 群会话ID集合
+    /**
+     * <p>群会话ID集合</p>
+     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
     @NameInMap("tagNames")
     public java.util.List<String> tagNames;
 
-    // 更新类型，APPEND、NOTAPPEND、DELETE三种类型
+    /**
+     * <p>更新类型，APPEND、NOTAPPEND、DELETE三种类型</p>
+     */
     @NameInMap("updateType")
     public String updateType;
 

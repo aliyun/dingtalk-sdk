@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFormByBizTypeRequest extends TeaModel {
-    // 应用搭建id
+    /**
+     * <p>应用搭建id</p>
+     */
     @NameInMap("appUuid")
     public String appUuid;
 
-    // 表单业务标识
+    /**
+     * <p>表单业务标识</p>
+     */
     @NameInMap("bizTypes")
     public java.util.List<String> bizTypes;
 

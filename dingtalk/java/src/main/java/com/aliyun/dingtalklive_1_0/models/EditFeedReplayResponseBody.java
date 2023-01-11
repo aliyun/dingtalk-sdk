@@ -4,7 +4,9 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditFeedReplayResponseBody extends TeaModel {
-    // 剪辑后的视频地址（含authkey）
+    /**
+     * <p>剪辑后的视频地址（含authkey）</p>
+     */
     @NameInMap("result")
     public String result;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskStatusResponseBody extends TeaModel {
-    // 返回对象
+    /**
+     * <p>返回对象</p>
+     */
     @NameInMap("result")
     public UpdateOrganizationTaskStatusResponseBodyResult result;
 
@@ -22,11 +24,15 @@ public class UpdateOrganizationTaskStatusResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskStatusResponseBodyResult extends TeaModel {
-        // 是否已完成
+        /**
+         * <p>是否已完成</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updateTime")
         public String updateTime;
 

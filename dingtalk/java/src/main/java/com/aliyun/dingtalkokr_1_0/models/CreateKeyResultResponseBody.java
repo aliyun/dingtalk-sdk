@@ -7,7 +7,9 @@ public class CreateKeyResultResponseBody extends TeaModel {
     @NameInMap("data")
     public CreateKeyResultResponseBodyData data;
 
-    // 请求成功的标识。
+    /**
+     * <p>请求成功的标识。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -33,15 +35,21 @@ public class CreateKeyResultResponseBody extends TeaModel {
     }
 
     public static class CreateKeyResultResponseBodyData extends TeaModel {
-        // 创建成功的 KR ID。
+        /**
+         * <p>创建成功的 KR ID。</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
-        // KR的位置。
+        /**
+         * <p>KR的位置。</p>
+         */
         @NameInMap("position")
         public Long position;
 
-        // KR 的权重。
+        /**
+         * <p>KR 的权重。</p>
+         */
         @NameInMap("weight")
         public Long weight;
 

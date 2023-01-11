@@ -4,33 +4,45 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSceneGroupConversationRequest extends TeaModel {
-    // 功能增强
+    /**
+     * <p>功能增强</p>
+     */
     @NameInMap("features")
     public java.util.Map<String, String> features;
 
-    // 群名称。
+    /**
+     * <p>群名称。</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
-    // 群主(钉外用户)userId。
+    /**
+     * <p>群主(钉外用户)userId。</p>
+     */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
-    // 群头像。
+    /**
+     * <p>群头像。</p>
+     */
     @NameInMap("icon")
     public String icon;
 
     @NameInMap("managementOptions")
     public CreateSceneGroupConversationRequestManagementOptions managementOptions;
 
-    // 群模板Id。
+    /**
+     * <p>群模板Id。</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 
-    // 建群去重的业务ID。
+    /**
+     * <p>建群去重的业务ID。</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 
@@ -104,27 +116,39 @@ public class CreateSceneGroupConversationRequest extends TeaModel {
     }
 
     public static class CreateSceneGroupConversationRequestManagementOptions extends TeaModel {
-        // 群禁言，0-默认，不禁言，1-全员禁言
+        /**
+         * <p>群禁言，0-默认，不禁言，1-全员禁言</p>
+         */
         @NameInMap("chatBannedType")
         public Integer chatBannedType;
 
-        // 管理类型，0-默认，所有人可管理，1-仅群主可管理
+        /**
+         * <p>管理类型，0-默认，所有人可管理，1-仅群主可管理</p>
+         */
         @NameInMap("managementType")
         public Integer managementType;
 
-        // @ all 权限，0-默认，所有人，1-仅群主可@all
+        /**
+         * <p>@ all 权限，0-默认，所有人，1-仅群主可@all</p>
+         */
         @NameInMap("mentionAllAuthority")
         public Integer mentionAllAuthority;
 
-        // 群可搜索，0-默认，不可搜索，1-可搜索
+        /**
+         * <p>群可搜索，0-默认，不可搜索，1-可搜索</p>
+         */
         @NameInMap("searchable")
         public Integer searchable;
 
-        // 新成员是否可查看聊天历史消息，0-默认，否，1-是
+        /**
+         * <p>新成员是否可查看聊天历史消息，0-默认，否，1-是</p>
+         */
         @NameInMap("showHistoryType")
         public Integer showHistoryType;
 
-        // 入群验证，0：不入群验证（默认） 1：入群验证
+        /**
+         * <p>入群验证，0：不入群验证（默认） 1：入群验证</p>
+         */
         @NameInMap("validationType")
         public Integer validationType;
 

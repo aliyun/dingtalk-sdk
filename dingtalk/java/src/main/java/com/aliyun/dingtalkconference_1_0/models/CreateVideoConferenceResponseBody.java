@@ -4,23 +4,33 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateVideoConferenceResponseBody extends TeaModel {
-    // conferenceId
+    /**
+     * <p>conferenceId</p>
+     */
     @NameInMap("conferenceId")
     public String conferenceId;
 
-    // 会议密码
+    /**
+     * <p>会议密码</p>
+     */
     @NameInMap("conferencePassword")
     public String conferencePassword;
 
-    // 入会链接
+    /**
+     * <p>入会链接</p>
+     */
     @NameInMap("externalLinkUrl")
     public String externalLinkUrl;
 
-    // 主持人密码
+    /**
+     * <p>主持人密码</p>
+     */
     @NameInMap("hostPassword")
     public String hostPassword;
 
-    // 电话入会号码
+    /**
+     * <p>电话入会号码</p>
+     */
     @NameInMap("phoneNumbers")
     public java.util.List<String> phoneNumbers;
 

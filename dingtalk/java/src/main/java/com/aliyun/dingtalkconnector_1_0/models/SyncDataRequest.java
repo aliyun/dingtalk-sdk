@@ -4,7 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncDataRequest extends TeaModel {
-    // 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+    /**
+     * <p>同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。</p>
+     */
     @NameInMap("appId")
     public String appId;
 

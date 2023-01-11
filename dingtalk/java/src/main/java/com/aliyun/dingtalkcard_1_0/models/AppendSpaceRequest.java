@@ -4,31 +4,45 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class AppendSpaceRequest extends TeaModel {
-    // 协作场域信息
+    /**
+     * <p>协作场域信息</p>
+     */
     @NameInMap("coFeedOpenSpaceModel")
     public AppendSpaceRequestCoFeedOpenSpaceModel coFeedOpenSpaceModel;
 
-    // IM群聊场域信息
+    /**
+     * <p>IM群聊场域信息</p>
+     */
     @NameInMap("imGroupOpenSpaceModel")
     public AppendSpaceRequestImGroupOpenSpaceModel imGroupOpenSpaceModel;
 
-    // IM群聊场域信息
+    /**
+     * <p>IM群聊场域信息</p>
+     */
     @NameInMap("imRobotOpenSpaceModel")
     public AppendSpaceRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
-    // IM单聊场域信息
+    /**
+     * <p>IM单聊场域信息</p>
+     */
     @NameInMap("imSingleOpenSpaceModel")
     public AppendSpaceRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
 
-    // 唯一标识一张卡片的外部Id
+    /**
+     * <p>唯一标识一张卡片的外部Id</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    // 吊顶场域信息
+    /**
+     * <p>吊顶场域信息</p>
+     */
     @NameInMap("topOpenSpaceModel")
     public AppendSpaceRequestTopOpenSpaceModel topOpenSpaceModel;
 
-    // 工作台场域信息
+    /**
+     * <p>工作台场域信息</p>
+     */
     @NameInMap("workBenchOpenSpaceModel")
     public AppendSpaceRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel;
 
@@ -94,7 +108,9 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestCoFeedOpenSpaceModel extends TeaModel {
-        // 【必填】标题
+        /**
+         * <p>【必填】标题</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -185,19 +201,27 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImGroupOpenSpaceModel extends TeaModel {
-        // 支持国际化的LastMessage
+        /**
+         * <p>支持国际化的LastMessage</p>
+         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        // xpn信息
+        /**
+         * <p>xpn信息</p>
+         */
         @NameInMap("notification")
         public AppendSpaceRequestImGroupOpenSpaceModelNotification notification;
 
-        // 支持卡片消息可被搜索字段
+        /**
+         * <p>支持卡片消息可被搜索字段</p>
+         */
         @NameInMap("searchSupport")
         public AppendSpaceRequestImGroupOpenSpaceModelSearchSupport searchSupport;
 
-        // 是否支持转发, 默认false
+        /**
+         * <p>是否支持转发, 默认false</p>
+         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -312,19 +336,27 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImRobotOpenSpaceModel extends TeaModel {
-        // 支持国际化的LastMessage
+        /**
+         * <p>支持国际化的LastMessage</p>
+         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        // xpn信息
+        /**
+         * <p>xpn信息</p>
+         */
         @NameInMap("notification")
         public AppendSpaceRequestImRobotOpenSpaceModelNotification notification;
 
-        // 支持卡片消息可被搜索字段
+        /**
+         * <p>支持卡片消息可被搜索字段</p>
+         */
         @NameInMap("searchSupport")
         public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport searchSupport;
 
-        // 是否支持转发, 默认false
+        /**
+         * <p>是否支持转发, 默认false</p>
+         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -439,19 +471,27 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImSingleOpenSpaceModel extends TeaModel {
-        // 支持国际化的LastMessage
+        /**
+         * <p>支持国际化的LastMessage</p>
+         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        // xpn信息
+        /**
+         * <p>xpn信息</p>
+         */
         @NameInMap("notification")
         public AppendSpaceRequestImSingleOpenSpaceModelNotification notification;
 
-        // 支持卡片消息可被搜索字段
+        /**
+         * <p>支持卡片消息可被搜索字段</p>
+         */
         @NameInMap("searchSupport")
         public AppendSpaceRequestImSingleOpenSpaceModelSearchSupport searchSupport;
 
-        // 是否支持转发, 默认false
+        /**
+         * <p>是否支持转发, 默认false</p>
+         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -495,7 +535,9 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestTopOpenSpaceModel extends TeaModel {
-        // 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
+        /**
+         * <p>【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 
@@ -515,7 +557,9 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestWorkBenchOpenSpaceModel extends TeaModel {
-        // 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
+        /**
+         * <p>【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 

@@ -4,40 +4,54 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListProcessInstanceIdsRequest extends TeaModel {
-    // 审批实例结束时间，Unix时间戳，单位毫秒。  例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.14 23:59:59对应的时间戳1586879999000。
+    /**
+     * <p>审批实例结束时间，Unix时间戳，单位毫秒。  例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.14 23:59:59对应的时间戳1586879999000。</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 分页参数，每页大小，最多传20。
+    /**
+     * <p>分页参数，每页大小，最多传20。</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 分页查询的游标，最开始传0，后续传返回参数中的nextToken值。
+    /**
+     * <p>分页查询的游标，最开始传0，后续传返回参数中的nextToken值。</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 审批流的唯一码。
-    // 
-    // processCode在审批模板编辑页面的URL中获取。
+    /**
+     * <p>审批流的唯一码。</p>
+     * <br>
+     * <p>processCode在审批模板编辑页面的URL中获取。</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
-    // 审批实例开始时间。Unix时间戳，单位毫秒。
-    // 
-    // 例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.10 00:00:00对应的时间戳1586448000000。
+    /**
+     * <p>审批实例开始时间。Unix时间戳，单位毫秒。</p>
+     * <br>
+     * <p>例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.10 00:00:00对应的时间戳1586448000000。</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 流程实例状态，未传值代表查询所有状态的实例ID列表。
-    // NEW：新创建  
-    // RUNNING：审批中  
-    // TERMINATED：被终止  
-    // COMPLETED：完成  
-    // CANCELED：取消
+    /**
+     * <p>流程实例状态，未传值代表查询所有状态的实例ID列表。</p>
+     * <p>NEW：新创建  </p>
+     * <p>RUNNING：审批中  </p>
+     * <p>TERMINATED：被终止  </p>
+     * <p>COMPLETED：完成  </p>
+     * <p>CANCELED：取消</p>
+     */
     @NameInMap("statuses")
     public java.util.List<String> statuses;
 
-    // 发起userid列表，最大列表长度为10。
+    /**
+     * <p>发起userid列表，最大列表长度为10。</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

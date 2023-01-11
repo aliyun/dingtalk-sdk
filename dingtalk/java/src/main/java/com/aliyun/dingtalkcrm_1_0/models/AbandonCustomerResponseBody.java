@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AbandonCustomerResponseBody extends TeaModel {
-    // 成功退回公海的客户实例 id 数组
+    /**
+     * <p>成功退回公海的客户实例 id 数组</p>
+     */
     @NameInMap("instanceIdList")
     public java.util.List<String> instanceIdList;
 

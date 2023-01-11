@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPermissionsResponseBody extends TeaModel {
-    // 企业内成员权限列表
+    /**
+     * <p>企业内成员权限列表</p>
+     */
     @NameInMap("members")
     public java.util.List<ListPermissionsResponseBodyMembers> members;
 
-    // 企业外成员权限列表
+    /**
+     * <p>企业外成员权限列表</p>
+     */
     @NameInMap("outMembers")
     public java.util.List<ListPermissionsResponseBodyOutMembers> outMembers;
 
@@ -34,19 +38,27 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyMembersMember extends TeaModel {
-        // 企业corpId
+        /**
+         * <p>企业corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 成员id
+        /**
+         * <p>成员id</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 成员名称
+        /**
+         * <p>成员名称</p>
+         */
         @NameInMap("memberName")
         public String memberName;
 
-        // 成员类型
+        /**
+         * <p>成员类型</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -90,15 +102,21 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyMembers extends TeaModel {
-        // 是否是继承的权限
+        /**
+         * <p>是否是继承的权限</p>
+         */
         @NameInMap("extend")
         public Boolean extend;
 
-        // 成员信息
+        /**
+         * <p>成员信息</p>
+         */
         @NameInMap("member")
         public ListPermissionsResponseBodyMembersMember member;
 
-        // 权限角色
+        /**
+         * <p>权限角色</p>
+         */
         @NameInMap("role")
         public String role;
 
@@ -134,19 +152,27 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyOutMembersMember extends TeaModel {
-        // 企业corpId
+        /**
+         * <p>企业corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 成员id
+        /**
+         * <p>成员id</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 成员名称
+        /**
+         * <p>成员名称</p>
+         */
         @NameInMap("memberName")
         public String memberName;
 
-        // 成员类型
+        /**
+         * <p>成员类型</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -190,15 +216,21 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyOutMembers extends TeaModel {
-        // 是否是继承的权限
+        /**
+         * <p>是否是继承的权限</p>
+         */
         @NameInMap("extend")
         public Boolean extend;
 
-        // 成员信息
+        /**
+         * <p>成员信息</p>
+         */
         @NameInMap("member")
         public ListPermissionsResponseBodyOutMembersMember member;
 
-        // 权限角色
+        /**
+         * <p>权限角色</p>
+         */
         @NameInMap("role")
         public String role;
 

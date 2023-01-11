@@ -4,7 +4,9 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListResidentUserInfosResponseBody extends TeaModel {
-    // 员工信息列表
+    /**
+     * <p>员工信息列表</p>
+     */
     @NameInMap("userList")
     public java.util.List<ListResidentUserInfosResponseBodyUserList> userList;
 
@@ -22,15 +24,21 @@ public class ListResidentUserInfosResponseBody extends TeaModel {
     }
 
     public static class ListResidentUserInfosResponseBodyUserListRoles extends TeaModel {
-        // 标签名称 tagCode
+        /**
+         * <p>标签名称 tagCode</p>
+         */
         @NameInMap("tagCode")
         public String tagCode;
 
-        // 标签id
+        /**
+         * <p>标签id</p>
+         */
         @NameInMap("tagId")
         public Long tagId;
 
-        // 标签名称
+        /**
+         * <p>标签名称</p>
+         */
         @NameInMap("tagName")
         public String tagName;
 
@@ -66,23 +74,33 @@ public class ListResidentUserInfosResponseBody extends TeaModel {
     }
 
     public static class ListResidentUserInfosResponseBodyUserList extends TeaModel {
-        // 员工特征
+        /**
+         * <p>员工特征</p>
+         */
         @NameInMap("feature")
         public String feature;
 
-        // 标签列表
+        /**
+         * <p>标签列表</p>
+         */
         @NameInMap("roles")
         public java.util.List<ListResidentUserInfosResponseBodyUserListRoles> roles;
 
-        // 钉钉唯一标识
+        /**
+         * <p>钉钉唯一标识</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 员工 ID
+        /**
+         * <p>员工 ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 员工名字
+        /**
+         * <p>员工名字</p>
+         */
         @NameInMap("userName")
         public String userName;
 

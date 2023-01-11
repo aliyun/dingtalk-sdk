@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDeviceRequest extends TeaModel {
-    // 设备sn码
+    /**
+     * <p>设备sn码</p>
+     */
     @NameInMap("sn")
     public String sn;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetScheduleResponseBody extends TeaModel {
-    // 闲忙信息
+    /**
+     * <p>闲忙信息</p>
+     */
     @NameInMap("scheduleInformation")
     public java.util.List<GetScheduleResponseBodyScheduleInformation> scheduleInformation;
 
@@ -22,15 +24,21 @@ public class GetScheduleResponseBody extends TeaModel {
     }
 
     public static class GetScheduleResponseBodyScheduleInformationScheduleItemsEnd extends TeaModel {
-        // 结束日期
+        /**
+         * <p>结束日期</p>
+         */
         @NameInMap("date")
         public String date;
 
-        // 结束时间戳，按照ISO 8601格式
+        /**
+         * <p>结束时间戳，按照ISO 8601格式</p>
+         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        // 时间戳所属时区
+        /**
+         * <p>时间戳所属时区</p>
+         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -66,15 +74,21 @@ public class GetScheduleResponseBody extends TeaModel {
     }
 
     public static class GetScheduleResponseBodyScheduleInformationScheduleItemsStart extends TeaModel {
-        // 开始日期
+        /**
+         * <p>开始日期</p>
+         */
         @NameInMap("date")
         public String date;
 
-        // 开始时间戳，按照ISO 8601格式
+        /**
+         * <p>开始时间戳，按照ISO 8601格式</p>
+         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        // 所属时区
+        /**
+         * <p>所属时区</p>
+         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -110,15 +124,21 @@ public class GetScheduleResponseBody extends TeaModel {
     }
 
     public static class GetScheduleResponseBodyScheduleInformationScheduleItems extends TeaModel {
-        // 结束时间，表示一个日期，或者一个带时区的时间戳
+        /**
+         * <p>结束时间，表示一个日期，或者一个带时区的时间戳</p>
+         */
         @NameInMap("end")
         public GetScheduleResponseBodyScheduleInformationScheduleItemsEnd end;
 
-        // 开始时间，表示一个日期，或者一个带时区的时间戳
+        /**
+         * <p>开始时间，表示一个日期，或者一个带时区的时间戳</p>
+         */
         @NameInMap("start")
         public GetScheduleResponseBodyScheduleInformationScheduleItemsStart start;
 
-        // 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
+        /**
+         * <p>状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙</p>
+         */
         @NameInMap("status")
         public String status;
 
@@ -154,14 +174,18 @@ public class GetScheduleResponseBody extends TeaModel {
     }
 
     public static class GetScheduleResponseBodyScheduleInformation extends TeaModel {
-        // 异常描述
+        /**
+         * <p>异常描述</p>
+         */
         @NameInMap("error")
         public String error;
 
         @NameInMap("scheduleItems")
         public java.util.List<GetScheduleResponseBodyScheduleInformationScheduleItems> scheduleItems;
 
-        // 用户userId
+        /**
+         * <p>用户userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOperationRecordsResponseBody extends TeaModel {
-    // 流程实例操作记录数组
+    /**
+     * <p>流程实例操作记录数组</p>
+     */
     @NameInMap("result")
     public java.util.List<GetOperationRecordsResponseBodyResult> result;
 
@@ -22,99 +24,147 @@ public class GetOperationRecordsResponseBody extends TeaModel {
     }
 
     public static class GetOperationRecordsResponseBodyResult extends TeaModel {
-        // action
+        /**
+         * <p>action</p>
+         */
         @NameInMap("action")
         public String action;
 
-        // actionExt
+        /**
+         * <p>actionExt</p>
+         */
         @NameInMap("actionExit")
         public String actionExit;
 
-        // activeTime
+        /**
+         * <p>activeTime</p>
+         */
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
 
-        // activityId
+        /**
+         * <p>activityId</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("dataId")
         public Long dataId;
 
-        // digitalSign
+        /**
+         * <p>digitalSign</p>
+         */
         @NameInMap("digitalSign")
         public String digitalSign;
 
-        // files
+        /**
+         * <p>files</p>
+         */
         @NameInMap("files")
         public String files;
 
-        // operateTime
+        /**
+         * <p>operateTime</p>
+         */
         @NameInMap("operateTimeGMT")
         public String operateTimeGMT;
 
-        // operateType
+        /**
+         * <p>operateType</p>
+         */
         @NameInMap("operateType")
         public String operateType;
 
-        // operatorDisplayName
+        /**
+         * <p>operatorDisplayName</p>
+         */
         @NameInMap("operatorDisplayName")
         public String operatorDisplayName;
 
-        // operatorName
+        /**
+         * <p>operatorName</p>
+         */
         @NameInMap("operatorName")
         public String operatorName;
 
-        // operatorNick
+        /**
+         * <p>operatorNick</p>
+         */
         @NameInMap("operatorNickName")
         public String operatorNickName;
 
-        // operatorPhotoUrl
+        /**
+         * <p>operatorPhotoUrl</p>
+         */
         @NameInMap("operatorPhotoUrl")
         public String operatorPhotoUrl;
 
-        // operatorStatus
+        /**
+         * <p>operatorStatus</p>
+         */
         @NameInMap("operatorStatus")
         public String operatorStatus;
 
-        // operator
+        /**
+         * <p>operator</p>
+         */
         @NameInMap("operatorUserId")
         public String operatorUserId;
 
-        // processInstanceId
+        /**
+         * <p>processInstanceId</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // remark
+        /**
+         * <p>remark</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // showName
+        /**
+         * <p>showName</p>
+         */
         @NameInMap("showName")
         public String showName;
 
-        // size
+        /**
+         * <p>size</p>
+         */
         @NameInMap("size")
         public Integer size;
 
-        // taskExecuteType
+        /**
+         * <p>taskExecuteType</p>
+         */
         @NameInMap("taskExecuteType")
         public String taskExecuteType;
 
-        // taskHoldTime
+        /**
+         * <p>taskHoldTime</p>
+         */
         @NameInMap("taskHoldTimeGMT")
         public Long taskHoldTimeGMT;
 
-        // taskId
+        /**
+         * <p>taskId</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
-        // taskType
+        /**
+         * <p>taskType</p>
+         */
         @NameInMap("taskType")
         public String taskType;
 
-        // type
+        /**
+         * <p>type</p>
+         */
         @NameInMap("type")
         public String type;
 

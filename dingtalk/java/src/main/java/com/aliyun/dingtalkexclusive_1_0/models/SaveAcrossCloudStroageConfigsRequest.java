@@ -4,27 +4,39 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveAcrossCloudStroageConfigsRequest extends TeaModel {
-    // 密匙id
+    /**
+     * <p>密匙id</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
-    // 密匙密码
+    /**
+     * <p>密匙密码</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
-    // bucket名称
+    /**
+     * <p>bucket名称</p>
+     */
     @NameInMap("bucketName")
     public String bucketName;
 
-    // 云厂商类型
+    /**
+     * <p>云厂商类型</p>
+     */
     @NameInMap("cloudType")
     public Integer cloudType;
 
-    // 存储域名地址
+    /**
+     * <p>存储域名地址</p>
+     */
     @NameInMap("endpoint")
     public String endpoint;
 
-    // 企业id
+    /**
+     * <p>企业id</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

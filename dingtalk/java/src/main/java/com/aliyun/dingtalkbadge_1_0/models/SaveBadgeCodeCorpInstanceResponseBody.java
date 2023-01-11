@@ -4,19 +4,27 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveBadgeCodeCorpInstanceResponseBody extends TeaModel {
-    // 码标识
+    /**
+     * <p>码标识</p>
+     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
-    // 开通的企业ID
+    /**
+     * <p>开通的企业ID</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 扩展参数
+    /**
+     * <p>扩展参数</p>
+     */
     @NameInMap("extInfo")
     public java.util.Map<String, String> extInfo;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("status")
     public String status;
 

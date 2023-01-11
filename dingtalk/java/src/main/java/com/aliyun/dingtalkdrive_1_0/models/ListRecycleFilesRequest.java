@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecycleFilesRequest extends TeaModel {
-    // 分页长度
+    /**
+     * <p>分页长度</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页加载更多锚点
+    /**
+     * <p>分页加载更多锚点</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 文件排序类型
+    /**
+     * <p>文件排序类型</p>
+     */
     @NameInMap("orderType")
     public String orderType;
 
-    // 回收站类型
+    /**
+     * <p>回收站类型</p>
+     */
     @NameInMap("recycleType")
     public String recycleType;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

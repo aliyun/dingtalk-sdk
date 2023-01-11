@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMigrationDingIdByDingIdResponseBody extends TeaModel {
-    // migrationDingIdList
+    /**
+     * <p>migrationDingIdList</p>
+     */
     @NameInMap("migrationDingIdList")
     public java.util.Map<String, ?> migrationDingIdList;
 

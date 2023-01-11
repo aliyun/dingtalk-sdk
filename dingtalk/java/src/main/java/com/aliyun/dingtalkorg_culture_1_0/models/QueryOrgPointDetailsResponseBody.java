@@ -21,16 +21,22 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource extends TeaModel {
-        // 积分账号的类型
-        // 企业账号：ORG, 员工账号：EMP
+        /**
+         * <p>积分账号的类型</p>
+         * <p>企业账号：ORG, 员工账号：EMP</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
-        // 企业内名字
+        /**
+         * <p>企业内名字</p>
+         */
         @NameInMap("empName")
         public String empName;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -66,16 +72,22 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget extends TeaModel {
-        // 积分账号的类型
-        // 企业账号：ORG, 员工账号：EMP
+        /**
+         * <p>积分账号的类型</p>
+         * <p>企业账号：ORG, 员工账号：EMP</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
-        // 企业内名字
+        /**
+         * <p>企业内名字</p>
+         */
         @NameInMap("empName")
         public String empName;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -111,23 +123,31 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO extends TeaModel {
-        // 如果是扣减操作明细，为被扣减账户
-        // 如果是发放操作明细，为操作发放账户
-        // 如果是个人积分明细，为来源账户
+        /**
+         * <p>如果是扣减操作明细，为被扣减账户</p>
+         * <p>如果是发放操作明细，为操作发放账户</p>
+         * <p>如果是个人积分明细，为来源账户</p>
+         */
         @NameInMap("accountSource")
         public QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource accountSource;
 
-        // 如果是扣减操作明细，为操作扣减账户
-        // 如果是发放操作明细，为被发放账户
-        // 如果是个人积分明细，为目标账户
+        /**
+         * <p>如果是扣减操作明细，为操作扣减账户</p>
+         * <p>如果是发放操作明细，为被发放账户</p>
+         * <p>如果是个人积分明细，为目标账户</p>
+         */
         @NameInMap("accountTarget")
         public QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget accountTarget;
 
-        // 备注信息，在明细中展示
+        /**
+         * <p>备注信息，在明细中展示</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 来源/用途 一般是系统固定的场景
+        /**
+         * <p>来源/用途 一般是系统固定的场景</p>
+         */
         @NameInMap("usage")
         public String usage;
 
@@ -171,25 +191,35 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgPointDetailsResponseBodyResultDetails extends TeaModel {
-        // 积分数量 发放时为负。 扣减时为正
+        /**
+         * <p>积分数量 发放时为负。 扣减时为正</p>
+         */
         @NameInMap("amount")
         public Long amount;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        // 积分交易单号
+        /**
+         * <p>积分交易单号</p>
+         */
         @NameInMap("outId")
         public String outId;
 
-        // 账户信息
+        /**
+         * <p>账户信息</p>
+         */
         @NameInMap("pointOperateFeatureResponseDTO")
         public QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO pointOperateFeatureResponseDTO;
 
-        // 源账户积分bizCode。
-        // 个人可用积分:personal
-        // 额度:credit
+        /**
+         * <p>源账户积分bizCode。</p>
+         * <p>个人可用积分:personal</p>
+         * <p>额度:credit</p>
+         */
         @NameInMap("sourceBizCode")
         public String sourceBizCode;
 
@@ -241,15 +271,21 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgPointDetailsResponseBodyResult extends TeaModel {
-        // 积分明细列表
+        /**
+         * <p>积分明细列表</p>
+         */
         @NameInMap("details")
         public java.util.List<QueryOrgPointDetailsResponseBodyResultDetails> details;
 
-        // 分页使用，表示是否还有下一页
+        /**
+         * <p>分页使用，表示是否还有下一页</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        // 调用是否成功
+        /**
+         * <p>调用是否成功</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

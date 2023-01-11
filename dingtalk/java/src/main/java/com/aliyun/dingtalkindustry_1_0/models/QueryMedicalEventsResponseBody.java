@@ -4,15 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMedicalEventsResponseBody extends TeaModel {
-    // 事件详情列表
+    /**
+     * <p>事件详情列表</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryMedicalEventsResponseBodyContent> content;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
-    // 数据总量
+    /**
+     * <p>数据总量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,15 +52,21 @@ public class QueryMedicalEventsResponseBody extends TeaModel {
     }
 
     public static class QueryMedicalEventsResponseBodyContent extends TeaModel {
-        // 事件code
+        /**
+         * <p>事件code</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 事件内容
+        /**
+         * <p>事件内容</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 事件id
+        /**
+         * <p>事件id</p>
+         */
         @NameInMap("eventId")
         public Long eventId;
 

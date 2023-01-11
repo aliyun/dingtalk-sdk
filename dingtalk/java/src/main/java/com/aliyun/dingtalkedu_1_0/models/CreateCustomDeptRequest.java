@@ -7,11 +7,15 @@ public class CreateCustomDeptRequest extends TeaModel {
     @NameInMap("customDept")
     public CreateCustomDeptRequestCustomDept customDept;
 
-    // 钉钉管理员员工ID
+    /**
+     * <p>钉钉管理员员工ID</p>
+     */
     @NameInMap("operator")
     public String operator;
 
-    // 上级部门ID（type为custom_campus时，必须为-7）
+    /**
+     * <p>上级部门ID（type为custom_campus时，必须为-7）</p>
+     */
     @NameInMap("superId")
     public Long superId;
 
@@ -45,11 +49,15 @@ public class CreateCustomDeptRequest extends TeaModel {
     }
 
     public static class CreateCustomDeptRequestCustomDept extends TeaModel {
-        // 自定义校区或部门名称
+        /**
+         * <p>自定义校区或部门名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 部门类型：custom_campus: 自定义校区；custom_dept: 自定义部门
+        /**
+         * <p>部门类型：custom_campus: 自定义校区；custom_dept: 自定义部门</p>
+         */
         @NameInMap("type")
         public String type;
 

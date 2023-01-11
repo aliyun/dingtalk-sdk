@@ -4,11 +4,15 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInterviewSignInInfoRequest extends TeaModel {
-    // 业务标识
+    /**
+     * <p>业务标识</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 面试签到时间（单位：毫秒）
+    /**
+     * <p>面试签到时间（单位：毫秒）</p>
+     */
     @NameInMap("signInTimeMillis")
     public Long signInTimeMillis;
 

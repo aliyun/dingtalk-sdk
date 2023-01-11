@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllSubjectsFromClassScheduleRequest extends TeaModel {
-    // 班级ID。
+    /**
+     * <p>班级ID。</p>
+     */
     @NameInMap("classIds")
     public java.util.List<Long> classIds;
 
-    // 操作者的userid。
+    /**
+     * <p>操作者的userid。</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 学段编码：KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
+    /**
+     * <p>学段编码：KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段</p>
+     */
     @NameInMap("periodCode")
     public String periodCode;
 

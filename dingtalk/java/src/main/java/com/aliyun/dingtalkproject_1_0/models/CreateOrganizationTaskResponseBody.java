@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrganizationTaskResponseBody extends TeaModel {
-    // 返回结果对象
+    /**
+     * <p>返回结果对象</p>
+     */
     @NameInMap("result")
     public CreateOrganizationTaskResponseBodyResult result;
 
@@ -22,15 +24,21 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
     }
 
     public static class CreateOrganizationTaskResponseBodyResultCreator extends TeaModel {
-        // 创建者头像地址
+        /**
+         * <p>创建者头像地址</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        // 创建者姓名
+        /**
+         * <p>创建者姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 创建者id
+        /**
+         * <p>创建者id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -66,15 +74,21 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
     }
 
     public static class CreateOrganizationTaskResponseBodyResultExecutor extends TeaModel {
-        // 头像地址
+        /**
+         * <p>头像地址</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        // 姓名
+        /**
+         * <p>姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 执行者id
+        /**
+         * <p>执行者id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -110,15 +124,21 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
     }
 
     public static class CreateOrganizationTaskResponseBodyResultInvolvers extends TeaModel {
-        // 头像
+        /**
+         * <p>头像</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 名字
+        /**
+         * <p>名字</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -154,79 +174,117 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
     }
 
     public static class CreateOrganizationTaskResponseBodyResult extends TeaModel {
-        // 父任务Id
+        /**
+         * <p>父任务Id</p>
+         */
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
-        // 附件数量
+        /**
+         * <p>附件数量</p>
+         */
         @NameInMap("attachmentsCount")
         public Integer attachmentsCount;
 
-        // 任务标题
+        /**
+         * <p>任务标题</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("created")
         public String created;
 
-        // 创建者
+        /**
+         * <p>创建者</p>
+         */
         @NameInMap("creator")
         public CreateOrganizationTaskResponseBodyResultCreator creator;
 
-        // 创建者id
+        /**
+         * <p>创建者id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        // 任务截止日期
+        /**
+         * <p>任务截止日期</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
-        // 执行者
+        /**
+         * <p>执行者</p>
+         */
         @NameInMap("executor")
         public CreateOrganizationTaskResponseBodyResultExecutor executor;
 
-        // 执行者id
+        /**
+         * <p>执行者id</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
-        // 是否有提醒
+        /**
+         * <p>是否有提醒</p>
+         */
         @NameInMap("hasReminder")
         public Boolean hasReminder;
 
-        // 任务id
+        /**
+         * <p>任务id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 参与者id列表
+        /**
+         * <p>参与者id列表</p>
+         */
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
-        // 参与者列表
+        /**
+         * <p>参与者列表</p>
+         */
         @NameInMap("involvers")
         public java.util.List<CreateOrganizationTaskResponseBodyResultInvolvers> involvers;
 
-        // 是否删除
+        /**
+         * <p>是否删除</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        // 是否完成
+        /**
+         * <p>是否完成</p>
+         */
         @NameInMap("isDone")
         public String isDone;
 
-        // 任务备注
+        /**
+         * <p>任务备注</p>
+         */
         @NameInMap("note")
         public String note;
 
-        // 优先级【-10,0,1,2】中选一个
+        /**
+         * <p>优先级【-10,0,1,2】中选一个</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updated")
         public String updated;
 
-        // 任务可见性。involves：仅参与者可见。members:所有人可见
+        /**
+         * <p>任务可见性。involves：仅参与者可见。members:所有人可见</p>
+         */
         @NameInMap("visible")
         public String visible;
 

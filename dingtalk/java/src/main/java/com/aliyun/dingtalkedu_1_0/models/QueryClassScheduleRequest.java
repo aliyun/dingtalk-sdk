@@ -4,27 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleRequest extends TeaModel {
-    // 查询课程的节次。
+    /**
+     * <p>查询课程的节次。</p>
+     */
     @NameInMap("sectionIndexList")
     public java.util.List<Long> sectionIndexList;
 
-    // 订阅者的Id。
+    /**
+     * <p>订阅者的Id。</p>
+     */
     @NameInMap("subscriberIds")
     public java.util.List<String> subscriberIds;
 
-    // 结束时间（unix时间戳）
+    /**
+     * <p>结束时间（unix时间戳）</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 操作者UserId
+    /**
+     * <p>操作者UserId</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 开始时间（unix时间戳）
+    /**
+     * <p>开始时间（unix时间戳）</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 订阅者类型：  DEPARTMENT：班级订阅 USER：老师订阅
+    /**
+     * <p>订阅者类型：  DEPARTMENT：班级订阅 USER：老师订阅</p>
+     */
     @NameInMap("subscriberType")
     public String subscriberType;
 

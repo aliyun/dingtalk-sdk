@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteSpaceRequest extends TeaModel {
-    // 部门id
+    /**
+     * <p>部门id</p>
+     */
     @NameInMap("deptIds")
     public java.util.List<Long> deptIds;
 

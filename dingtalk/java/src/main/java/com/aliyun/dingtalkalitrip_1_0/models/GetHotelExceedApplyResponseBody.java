@@ -4,47 +4,69 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetHotelExceedApplyResponseBody extends TeaModel {
-    // 商旅超标审批单id
+    /**
+     * <p>商旅超标审批单id</p>
+     */
     @NameInMap("applyId")
     public Long applyId;
 
-    // 意向出行信息
+    /**
+     * <p>意向出行信息</p>
+     */
     @NameInMap("applyIntentionInfoDO")
     public GetHotelExceedApplyResponseBodyApplyIntentionInfoDO applyIntentionInfoDO;
 
-    // 出差原因
+    /**
+     * <p>出差原因</p>
+     */
     @NameInMap("btripCause")
     public String btripCause;
 
-    // 第三方企业id
+    /**
+     * <p>第三方企业id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 超标原因
+    /**
+     * <p>超标原因</p>
+     */
     @NameInMap("exceedReason")
     public String exceedReason;
 
-    // 超标类型，32：金额超标
+    /**
+     * <p>超标类型，32：金额超标</p>
+     */
     @NameInMap("exceedType")
     public Integer exceedType;
 
-    // 原差旅标准
+    /**
+     * <p>原差旅标准</p>
+     */
     @NameInMap("originStandard")
     public String originStandard;
 
-    // 审批单状态 0:审批中 1:已同意 2:已拒绝
+    /**
+     * <p>审批单状态 0:审批中 1:已同意 2:已拒绝</p>
+     */
     @NameInMap("status")
     public Integer status;
 
-    // 审批单提交时间
+    /**
+     * <p>审批单提交时间</p>
+     */
     @NameInMap("submitTime")
     public String submitTime;
 
-    // 第三方出差审批单号
+    /**
+     * <p>第三方出差审批单号</p>
+     */
     @NameInMap("thirdpartApplyId")
     public String thirdpartApplyId;
 
-    // 第三方用户id
+    /**
+     * <p>第三方用户id</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -142,31 +164,45 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
     }
 
     public static class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends TeaModel {
-        // 入住日期
+        /**
+         * <p>入住日期</p>
+         */
         @NameInMap("checkIn")
         public String checkIn;
 
-        // 离店日期
+        /**
+         * <p>离店日期</p>
+         */
         @NameInMap("checkOut")
         public String checkOut;
 
-        // 入住城市三字码
+        /**
+         * <p>入住城市三字码</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
-        // 入住城市名称
+        /**
+         * <p>入住城市名称</p>
+         */
         @NameInMap("cityName")
         public String cityName;
 
-        // 意向酒店金额（分）
+        /**
+         * <p>意向酒店金额（分）</p>
+         */
         @NameInMap("price")
         public Long price;
 
-        // 是否合住
+        /**
+         * <p>是否合住</p>
+         */
         @NameInMap("together")
         public Boolean together;
 
-        // 超标类型，32：金额超标
+        /**
+         * <p>超标类型，32：金额超标</p>
+         */
         @NameInMap("type")
         public Integer type;
 

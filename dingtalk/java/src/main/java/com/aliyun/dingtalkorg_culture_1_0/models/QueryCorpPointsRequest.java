@@ -4,7 +4,9 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCorpPointsRequest extends TeaModel {
-    // 操作用户ID
+    /**
+     * <p>操作用户ID</p>
+     */
     @NameInMap("optUserId")
     public String optUserId;
 

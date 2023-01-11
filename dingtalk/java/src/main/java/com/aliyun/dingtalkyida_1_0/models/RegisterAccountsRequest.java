@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterAccountsRequest extends TeaModel {
-    // 访问秘钥
+    /**
+     * <p>访问秘钥</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
-    // 激活码
+    /**
+     * <p>激活码</p>
+     */
     @NameInMap("activeCode")
     public String activeCode;
 
-    // 组织id
+    /**
+     * <p>组织id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

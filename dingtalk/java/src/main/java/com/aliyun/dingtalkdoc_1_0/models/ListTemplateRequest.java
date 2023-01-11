@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTemplateRequest extends TeaModel {
-    // 查询模版数量
+    /**
+     * <p>查询模版数量</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 翻页token
+    /**
+     * <p>翻页token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 操作用户unionId
+    /**
+     * <p>操作用户unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 模版类型
+    /**
+     * <p>模版类型</p>
+     */
     @NameInMap("templateType")
     public String templateType;
 
-    // 知识库id。
+    /**
+     * <p>知识库id。</p>
+     */
     @NameInMap("workspaceId")
     public String workspaceId;
 

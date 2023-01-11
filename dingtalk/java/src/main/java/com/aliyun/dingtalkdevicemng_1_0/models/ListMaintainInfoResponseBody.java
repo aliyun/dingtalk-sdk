@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListMaintainInfoResponseBody extends TeaModel {
-    // 结果集
+    /**
+     * <p>结果集</p>
+     */
     @NameInMap("result")
     public java.util.List<ListMaintainInfoResponseBodyResult> result;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
-    // 总共的数量
+    /**
+     * <p>总共的数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,31 +52,45 @@ public class ListMaintainInfoResponseBody extends TeaModel {
     }
 
     public static class ListMaintainInfoResponseBodyResult extends TeaModel {
-        // 报修设备码
+        /**
+         * <p>报修设备码</p>
+         */
         @NameInMap("deviceCode")
         public String deviceCode;
 
-        // 设备名称
+        /**
+         * <p>设备名称</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        // 报修时间
+        /**
+         * <p>报修时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 处理时间
+        /**
+         * <p>处理时间</p>
+         */
         @NameInMap("handleTime")
         public String handleTime;
 
-        // 报修人
+        /**
+         * <p>报修人</p>
+         */
         @NameInMap("maintenanceStaff")
         public java.util.List<String> maintenanceStaff;
 
-        // 处理结果，0:同意，1:拒绝，2:终止，3:删除，4:进行中
+        /**
+         * <p>处理结果，0:同意，1:拒绝，2:终止，3:删除，4:进行中</p>
+         */
         @NameInMap("processState")
         public Integer processState;
 
-        // 异常描述
+        /**
+         * <p>异常描述</p>
+         */
         @NameInMap("remark")
         public String remark;
 

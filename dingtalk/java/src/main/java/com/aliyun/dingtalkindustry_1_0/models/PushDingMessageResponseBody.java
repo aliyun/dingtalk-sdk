@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushDingMessageResponseBody extends TeaModel {
-    // 返回1表示当前批次成功
+    /**
+     * <p>返回1表示当前批次成功</p>
+     */
     @NameInMap("content")
     public Long content;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCooperateOrgResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("cooperateCorpId")
     public String cooperateCorpId;
 

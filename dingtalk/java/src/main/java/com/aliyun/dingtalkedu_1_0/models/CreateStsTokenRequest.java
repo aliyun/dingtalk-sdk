@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateStsTokenRequest extends TeaModel {
-    // 设备sn码
+    /**
+     * <p>设备sn码</p>
+     */
     @NameInMap("deviceSn")
     public String deviceSn;
 
-    // sts类型: oss/sls
+    /**
+     * <p>sts类型: oss/sls</p>
+     */
     @NameInMap("stsType")
     public String stsType;
 

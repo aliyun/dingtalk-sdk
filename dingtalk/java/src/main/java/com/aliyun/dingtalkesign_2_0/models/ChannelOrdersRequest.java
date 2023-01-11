@@ -4,27 +4,39 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class ChannelOrdersRequest extends TeaModel {
-    // 商品id
+    /**
+     * <p>商品id</p>
+     */
     @NameInMap("itemCode")
     public String itemCode;
 
-    // 商品名称
+    /**
+     * <p>商品名称</p>
+     */
     @NameInMap("itemName")
     public String itemName;
 
-    // 下单时间
+    /**
+     * <p>下单时间</p>
+     */
     @NameInMap("orderCreateTime")
     public Float orderCreateTime;
 
-    // isv方的订单Id（用于幂等，请保证唯一性）
+    /**
+     * <p>isv方的订单Id（用于幂等，请保证唯一性）</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 
-    // 支付金额（以分为单位，仅作记录，不作为凭证）
+    /**
+     * <p>支付金额（以分为单位，仅作记录，不作为凭证）</p>
+     */
     @NameInMap("payFee")
     public Float payFee;
 
-    // 购买数量
+    /**
+     * <p>购买数量</p>
+     */
     @NameInMap("quantity")
     public Float quantity;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserPayInfoResponseBody extends TeaModel {
-    // 签约单号
+    /**
+     * <p>签约单号</p>
+     */
     @NameInMap("signNo")
     public String signNo;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveGroupMemberResponseBody extends TeaModel {
-    // 操作结果
+    /**
+     * <p>操作结果</p>
+     */
     @NameInMap("message")
     public String message;
 

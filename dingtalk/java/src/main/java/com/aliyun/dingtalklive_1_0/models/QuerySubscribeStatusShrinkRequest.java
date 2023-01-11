@@ -4,11 +4,15 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySubscribeStatusShrinkRequest extends TeaModel {
-    // post请求体, 开放平台建议以对象形式存储
+    /**
+     * <p>post请求体, 开放平台建议以对象形式存储</p>
+     */
     @NameInMap("body")
     public String bodyShrink;
 
-    // 用户id（主播id）
+    /**
+     * <p>用户id（主播id）</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

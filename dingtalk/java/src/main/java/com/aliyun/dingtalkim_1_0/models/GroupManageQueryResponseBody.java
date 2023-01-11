@@ -4,15 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupManageQueryResponseBody extends TeaModel {
-    // 群信息列表
+    /**
+     * <p>群信息列表</p>
+     */
     @NameInMap("groupInfoList")
     public java.util.List<GroupManageQueryResponseBodyGroupInfoList> groupInfoList;
 
-    // 分页拉取时, 是否还有更多
+    /**
+     * <p>分页拉取时, 是否还有更多</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 分页拉取游标, 请求下一页时回传
+    /**
+     * <p>分页拉取游标, 请求下一页时回传</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -46,42 +52,60 @@ public class GroupManageQueryResponseBody extends TeaModel {
     }
 
     public static class GroupManageQueryResponseBodyGroupInfoList extends TeaModel {
-        // 禁言模式
+        /**
+         * <p>禁言模式</p>
+         */
         @NameInMap("banWordsMode")
         public Integer banWordsMode;
 
-        // 群容量
+        /**
+         * <p>群容量</p>
+         */
         @NameInMap("capacity")
         public Integer capacity;
 
-        // 群创建时间
+        /**
+         * <p>群创建时间</p>
+         */
         @NameInMap("createdAt")
         public Long createdAt;
 
-        // 扩展信息
+        /**
+         * <p>扩展信息</p>
+         */
         @NameInMap("extInfo")
         public java.util.Map<String, ?> extInfo;
 
         @NameInMap("groupAdminList")
         public java.util.List<String> groupAdminList;
 
-        // 群主userid
+        /**
+         * <p>群主userid</p>
+         */
         @NameInMap("groupOwner")
         public String groupOwner;
 
-        // 群标题
+        /**
+         * <p>群标题</p>
+         */
         @NameInMap("groupTitle")
         public String groupTitle;
 
-        // 当前群人数
+        /**
+         * <p>当前群人数</p>
+         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
-        // 开放的群id
+        /**
+         * <p>开放的群id</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        // 群类型
+        /**
+         * <p>群类型</p>
+         */
         @NameInMap("type")
         public String type;
 

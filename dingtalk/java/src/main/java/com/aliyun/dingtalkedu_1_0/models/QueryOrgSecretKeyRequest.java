@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOrgSecretKeyRequest extends TeaModel {
-    // 合作方编码
+    /**
+     * <p>合作方编码</p>
+     */
     @NameInMap("isvCode")
     public String isvCode;
 
-    // 操作人
+    /**
+     * <p>操作人</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

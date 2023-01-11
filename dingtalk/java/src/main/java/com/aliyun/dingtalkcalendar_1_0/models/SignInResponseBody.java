@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class SignInResponseBody extends TeaModel {
-    // 签到时间戳
+    /**
+     * <p>签到时间戳</p>
+     */
     @NameInMap("checkInTime")
     public Long checkInTime;
 

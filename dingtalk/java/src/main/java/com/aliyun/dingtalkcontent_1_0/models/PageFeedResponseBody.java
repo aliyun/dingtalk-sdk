@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageFeedResponseBody extends TeaModel {
-    // 课程列表
+    /**
+     * <p>课程列表</p>
+     */
     @NameInMap("feedList")
     public java.util.List<PageFeedResponseBodyFeedList> feedList;
 
-    // 分页参数：是否还有下一页，false表示没有下一页
+    /**
+     * <p>分页参数：是否还有下一页，false表示没有下一页</p>
+     */
     @NameInMap("hasNext")
     public Boolean hasNext;
 
-    // 分页参数：下一页的起始位置
+    /**
+     * <p>分页参数：下一页的起始位置</p>
+     */
     @NameInMap("nextCursor")
     public Integer nextCursor;
 
@@ -46,27 +52,39 @@ public class PageFeedResponseBody extends TeaModel {
     }
 
     public static class PageFeedResponseBodyFeedList extends TeaModel {
-        // 内容分类，请见https://developers.dingtalk.com/document/app/appendix-content
+        /**
+         * <p>内容分类，请见https://developers.dingtalk.com/document/app/appendix-content</p>
+         */
         @NameInMap("feedCategory")
         public String feedCategory;
 
-        // 内容Id
+        /**
+         * <p>内容Id</p>
+         */
         @NameInMap("feedId")
         public String feedId;
 
-        // 内容类型，0：免费内容 4：平价内容 5：专栏内容 6：训练营内容
+        /**
+         * <p>内容类型，0：免费内容 4：平价内容 5：专栏内容 6：训练营内容</p>
+         */
         @NameInMap("feedType")
         public Integer feedType;
 
-        // 内容名称
+        /**
+         * <p>内容名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 封面URL
+        /**
+         * <p>封面URL</p>
+         */
         @NameInMap("thumbUrl")
         public String thumbUrl;
 
-        // 跳转Url，跳转到职场学堂后台页面
+        /**
+         * <p>跳转Url，跳转到职场学堂后台页面</p>
+         */
         @NameInMap("url")
         public String url;
 

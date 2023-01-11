@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddLibraryResponseBody extends TeaModel {
-    // success
+    /**
+     * <p>success</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

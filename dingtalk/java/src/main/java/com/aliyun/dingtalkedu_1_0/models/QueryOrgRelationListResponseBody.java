@@ -7,7 +7,9 @@ public class QueryOrgRelationListResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<QueryOrgRelationListResponseBodyResult> result;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

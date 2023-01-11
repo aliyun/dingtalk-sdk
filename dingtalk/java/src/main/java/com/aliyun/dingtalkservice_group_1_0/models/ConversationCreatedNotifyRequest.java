@@ -4,42 +4,60 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConversationCreatedNotifyRequest extends TeaModel {
-    // 小二客服2088
+    /**
+     * <p>小二客服2088</p>
+     */
     @NameInMap("alipayUserId")
     public String alipayUserId;
 
-    // DT端会话ID
+    /**
+     * <p>DT端会话ID</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
-    // 小二客服昵称
+    /**
+     * <p>小二客服昵称</p>
+     */
     @NameInMap("nickName")
     public String nickName;
 
-    // 开放团队id
+    /**
+     * <p>开放团队id</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 客服名称
+    /**
+     * <p>客服名称</p>
+     */
     @NameInMap("serverName")
     public String serverName;
 
-    // 客服服务提示
+    /**
+     * <p>客服服务提示</p>
+     */
     @NameInMap("serverTips")
     public String serverTips;
 
     @NameInMap("serviceToken")
     public String serviceToken;
 
-    // 超时规则提示
+    /**
+     * <p>超时规则提示</p>
+     */
     @NameInMap("timeoutRemindTips")
     public String timeoutRemindTips;
 
-    // 小二客服id
+    /**
+     * <p>小二客服id</p>
+     */
     @NameInMap("userId")
     public String userId;
 
-    // DT端定义的，标识唯一的访客
+    /**
+     * <p>DT端定义的，标识唯一的访客</p>
+     */
     @NameInMap("visitorToken")
     public String visitorToken;
 

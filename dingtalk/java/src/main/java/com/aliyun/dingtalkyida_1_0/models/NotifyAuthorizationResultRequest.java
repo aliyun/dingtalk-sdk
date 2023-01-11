@@ -34,7 +34,9 @@ public class NotifyAuthorizationResultRequest extends TeaModel {
     @NameInMap("instanceName")
     public String instanceName;
 
-    // 阿里云产品code
+    /**
+     * <p>阿里云产品code</p>
+     */
     @NameInMap("produceCode")
     public String produceCode;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTriggerResponseBody extends TeaModel {
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("item")
     public java.util.List<UpdateTriggerResponseBodyItem> item;
 
@@ -22,31 +24,45 @@ public class UpdateTriggerResponseBody extends TeaModel {
     }
 
     public static class UpdateTriggerResponseBodyItem extends TeaModel {
-        // 连接平台连接器id
+        /**
+         * <p>连接平台连接器id</p>
+         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
-        // 连接平台触发事件id
+        /**
+         * <p>连接平台触发事件id</p>
+         */
         @NameInMap("dingTriggerId")
         public String dingTriggerId;
 
-        // 服务商的连接器Id
+        /**
+         * <p>服务商的连接器Id</p>
+         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
-        // 服务商的触发事件id
+        /**
+         * <p>服务商的触发事件id</p>
+         */
         @NameInMap("integratorTriggerId")
         public String integratorTriggerId;
 
-        // 错误码
+        /**
+         * <p>错误码</p>
+         */
         @NameInMap("subErrCode")
         public String subErrCode;
 
-        // 错误信息
+        /**
+         * <p>错误信息</p>
+         */
         @NameInMap("subErrMsg")
         public String subErrMsg;
 
-        // 是否成功
+        /**
+         * <p>是否成功</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

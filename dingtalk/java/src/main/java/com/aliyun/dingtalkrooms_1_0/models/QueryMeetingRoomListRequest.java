@@ -4,15 +4,21 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomListRequest extends TeaModel {
-    // 请求分页大小
+    /**
+     * <p>请求分页大小</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 请求分页token
+    /**
+     * <p>请求分页token</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

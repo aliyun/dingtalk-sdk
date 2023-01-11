@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplyInviteInfoRequest extends TeaModel {
-    // 获取部门邀请链接的部门ID
+    /**
+     * <p>获取部门邀请链接的部门ID</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
-    // 邀请者userId
+    /**
+     * <p>邀请者userId</p>
+     */
     @NameInMap("inviterUserId")
     public String inviterUserId;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListCrmPersonalCustomersRequest extends TeaModel {
-    // 数据客户列表
+    /**
+     * <p>数据客户列表</p>
+     */
     @NameInMap("body")
     public java.util.List<String> body;
 
-    // 操作人用户ID
+    /**
+     * <p>操作人用户ID</p>
+     */
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserStayLengthRequest extends TeaModel {
-    // 分页页数
+    /**
+     * <p>分页页数</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 统计日期（只保留当前日期的前30天）
+    /**
+     * <p>统计日期（只保留当前日期的前30天）</p>
+     */
     @NameInMap("statDate")
     public String statDate;
 

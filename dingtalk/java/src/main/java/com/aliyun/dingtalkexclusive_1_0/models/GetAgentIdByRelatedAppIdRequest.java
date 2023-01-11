@@ -4,11 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAgentIdByRelatedAppIdRequest extends TeaModel {
-    // 应用的appId。
+    /**
+     * <p>应用的appId。</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
-    // 被查询的组织id。
+    /**
+     * <p>被查询的组织id。</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

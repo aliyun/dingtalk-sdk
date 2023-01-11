@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ManagementModifySpaceResponseBody extends TeaModel {
-    // 空间列表
+    /**
+     * <p>空间列表</p>
+     */
     @NameInMap("spaces")
     public java.util.List<ManagementModifySpaceResponseBodySpaces> spaces;
 
@@ -22,35 +24,51 @@ public class ManagementModifySpaceResponseBody extends TeaModel {
     }
 
     public static class ManagementModifySpaceResponseBodySpaces extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
-        // 授权模式
+        /**
+         * <p>授权模式</p>
+         */
         @NameInMap("permissionMode")
         public String permissionMode;
 
-        // 空间总额度
+        /**
+         * <p>空间总额度</p>
+         */
         @NameInMap("quota")
         public Long quota;
 
-        // 空间id
+        /**
+         * <p>空间id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 空间名称
+        /**
+         * <p>空间名称</p>
+         */
         @NameInMap("spaceName")
         public String spaceName;
 
-        // 空间类型
+        /**
+         * <p>空间类型</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 
-        // 空间已使用额度
+        /**
+         * <p>空间已使用额度</p>
+         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 

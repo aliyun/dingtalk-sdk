@@ -4,19 +4,27 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageFeedRequest extends TeaModel {
-    // 内容Id，如果传入该参数，表示仅筛选内容Id出现在本列表中的内容
+    /**
+     * <p>内容Id，如果传入该参数，表示仅筛选内容Id出现在本列表中的内容</p>
+     */
     @NameInMap("body")
     public java.util.List<String> body;
 
-    // 分页参数：页面展示数量
+    /**
+     * <p>分页参数：页面展示数量</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 入驻账号Id(请联系钉钉接口同学获取)
+    /**
+     * <p>入驻账号Id(请联系钉钉接口同学获取)</p>
+     */
     @NameInMap("mcnId")
     public String mcnId;
 
-    // 分页参数：起始位置，初始值应为0，后续传入返回值中的nextCursor字段中的值
+    /**
+     * <p>分页参数：起始位置，初始值应为0，后续传入返回值中的nextCursor字段中的值</p>
+     */
     @NameInMap("nextToken")
     public Integer nextToken;
 

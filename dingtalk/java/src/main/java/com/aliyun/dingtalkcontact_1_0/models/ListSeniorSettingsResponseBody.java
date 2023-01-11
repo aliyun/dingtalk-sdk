@@ -7,7 +7,9 @@ public class ListSeniorSettingsResponseBody extends TeaModel {
     @NameInMap("protectScenes")
     public java.util.List<String> protectScenes;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("seniorStaffId")
     public String seniorStaffId;
 

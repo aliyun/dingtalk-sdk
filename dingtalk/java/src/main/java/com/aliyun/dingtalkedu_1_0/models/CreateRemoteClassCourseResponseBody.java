@@ -32,7 +32,9 @@ public class CreateRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class CreateRemoteClassCourseResponseBodyResult extends TeaModel {
-        // 课程码
+        /**
+         * <p>课程码</p>
+         */
         @NameInMap("courseCode")
         public String courseCode;
 

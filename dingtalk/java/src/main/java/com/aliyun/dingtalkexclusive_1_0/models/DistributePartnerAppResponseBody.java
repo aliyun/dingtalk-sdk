@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DistributePartnerAppResponseBody extends TeaModel {
-    // 安装邀请链接
+    /**
+     * <p>安装邀请链接</p>
+     */
     @NameInMap("inviteUrl")
     public String inviteUrl;
 

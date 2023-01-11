@@ -4,7 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StopStreamOutResponseBody extends TeaModel {
-    // conferenceId
+    /**
+     * <p>conferenceId</p>
+     */
     @NameInMap("code")
     public String code;
 

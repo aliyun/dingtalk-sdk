@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupInfoResponseBody extends TeaModel {
-    // 医疗组详情
+    /**
+     * <p>医疗组详情</p>
+     */
     @NameInMap("content")
     public QueryGroupInfoResponseBodyContent content;
 
@@ -22,35 +24,51 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentExtendInfos extends TeaModel {
-        // 医疗组code
+        /**
+         * <p>医疗组code</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        // 扩展属性显示名称
+        /**
+         * <p>扩展属性显示名称</p>
+         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
-        // 扩展属性key
+        /**
+         * <p>扩展属性key</p>
+         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
-        // 扩展属性value
+        /**
+         * <p>扩展属性value</p>
+         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 状态
+        /**
+         * <p>状态</p>
+         */
         @NameInMap("status")
         public Integer status;
 
@@ -126,15 +144,21 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentGroupLeader extends TeaModel {
-        // 工号
+        /**
+         * <p>工号</p>
+         */
         @NameInMap("jobNumber")
         public String jobNumber;
 
-        // 组长名称
+        /**
+         * <p>组长名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -170,39 +194,57 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentGroup extends TeaModel {
-        // 医疗组id
+        /**
+         * <p>医疗组id</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 医疗组状态
+        /**
+         * <p>医疗组状态</p>
+         */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 组长
+        /**
+         * <p>组长</p>
+         */
         @NameInMap("leader")
         public QueryGroupInfoResponseBodyContentGroupLeader leader;
 
-        // 医疗组名称
+        /**
+         * <p>医疗组名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 父code
+        /**
+         * <p>父code</p>
+         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
@@ -286,11 +328,15 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContent extends TeaModel {
-        // 扩展信息
+        /**
+         * <p>扩展信息</p>
+         */
         @NameInMap("extendInfos")
         public java.util.List<QueryGroupInfoResponseBodyContentExtendInfos> extendInfos;
 
-        // 医疗组
+        /**
+         * <p>医疗组</p>
+         */
         @NameInMap("group")
         public QueryGroupInfoResponseBodyContentGroup group;
 

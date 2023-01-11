@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTranslateFileJobResultRequest extends TeaModel {
-    // 异步转译任务id
+    /**
+     * <p>异步转译任务id</p>
+     */
     @NameInMap("jobId")
     public String jobId;
 

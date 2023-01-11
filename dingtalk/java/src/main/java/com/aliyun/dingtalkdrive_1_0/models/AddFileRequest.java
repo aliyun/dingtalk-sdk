@@ -4,27 +4,39 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddFileRequest extends TeaModel {
-    // 文件名冲突策略
+    /**
+     * <p>文件名冲突策略</p>
+     */
     @NameInMap("addConflictPolicy")
     public String addConflictPolicy;
 
-    // 文件名
+    /**
+     * <p>文件名</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
-    // 文件类型
+    /**
+     * <p>文件类型</p>
+     */
     @NameInMap("fileType")
     public String fileType;
 
-    // mediaId
+    /**
+     * <p>mediaId</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 
-    // 父目录id
+    /**
+     * <p>父目录id</p>
+     */
     @NameInMap("parentId")
     public String parentId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteUniversityStudentRequest extends TeaModel {
-    // 班级ID
+    /**
+     * <p>班级ID</p>
+     */
     @NameInMap("classId")
     public Long classId;
 
-    // 操作人用户ID
+    /**
+     * <p>操作人用户ID</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 学生用户ID
+    /**
+     * <p>学生用户ID</p>
+     */
     @NameInMap("studentUserId")
     public String studentUserId;
 

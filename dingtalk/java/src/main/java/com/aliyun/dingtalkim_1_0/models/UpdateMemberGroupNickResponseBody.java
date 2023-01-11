@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMemberGroupNickResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,47 +4,69 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BuyAuthorizationOrderRequest extends TeaModel {
-    // 访问秘钥
+    /**
+     * <p>访问秘钥</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
-    // 账户号
+    /**
+     * <p>账户号</p>
+     */
     @NameInMap("accountNumber")
     public String accountNumber;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("beginTimeGMT")
     public Long beginTimeGMT;
 
-    // 调用者unionId
+    /**
+     * <p>调用者unionId</p>
+     */
     @NameInMap("callerUnionId")
     public String callerUnionId;
 
-    // 收费类型
+    /**
+     * <p>收费类型</p>
+     */
     @NameInMap("chargeType")
     public String chargeType;
 
-    // 商业类型
+    /**
+     * <p>商业类型</p>
+     */
     @NameInMap("commerceType")
     public String commerceType;
 
-    // 商品类型
+    /**
+     * <p>商品类型</p>
+     */
     @NameInMap("commodityType")
     public String commodityType;
 
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endTimeGMT")
     public Long endTimeGMT;
 
-    // 实例id
+    /**
+     * <p>实例id</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
-    // 实例名称
+    /**
+     * <p>实例名称</p>
+     */
     @NameInMap("instanceName")
     public String instanceName;
 
-    // 阿里云产品码
+    /**
+     * <p>阿里云产品码</p>
+     */
     @NameInMap("produceCode")
     public String produceCode;
 

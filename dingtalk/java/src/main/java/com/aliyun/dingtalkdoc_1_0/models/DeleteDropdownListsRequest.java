@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDropdownListsRequest extends TeaModel {
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOfficialAccountOTOMessageResultResponseBody extends TeaModel {
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
-    // 查询结果
+    /**
+     * <p>查询结果</p>
+     */
     @NameInMap("result")
     public GetOfficialAccountOTOMessageResultResponseBodyResult result;
 
@@ -34,11 +38,15 @@ public class GetOfficialAccountOTOMessageResultResponseBody extends TeaModel {
     }
 
     public static class GetOfficialAccountOTOMessageResultResponseBodyResult extends TeaModel {
-        // 已读消息的userid列表
+        /**
+         * <p>已读消息的userid列表</p>
+         */
         @NameInMap("readUserIdList")
         public java.util.List<String> readUserIdList;
 
-        // 执行状态： 0：未开始  1：处理中  2：处理完毕
+        /**
+         * <p>执行状态： 0：未开始  1：处理中  2：处理完毕</p>
+         */
         @NameInMap("status")
         public Long status;
 

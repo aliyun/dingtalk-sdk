@@ -7,11 +7,15 @@ public class GetDataViewResponseBody extends TeaModel {
     @NameInMap("data")
     public GetDataViewResponseBodyData data;
 
-    // 字段明细
+    /**
+     * <p>字段明细</p>
+     */
     @NameInMap("dataname")
     public java.util.Map<String, java.util.Map<String, ?>> dataname;
 
-    // 响应时间
+    /**
+     * <p>响应时间</p>
+     */
     @NameInMap("time")
     public String time;
 
@@ -45,7 +49,9 @@ public class GetDataViewResponseBody extends TeaModel {
     }
 
     public static class GetDataViewResponseBodyData extends TeaModel {
-        // 数据详情
+        /**
+         * <p>数据详情</p>
+         */
         @NameInMap("detail")
         public java.util.Map<String, String> detail;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceVoucherStatusResponseBody extends TeaModel {
-    // 业务返回结果
+    /**
+     * <p>业务返回结果</p>
+     */
     @NameInMap("result")
     public Boolean result;
 
-    // 系统调用结果
+    /**
+     * <p>系统调用结果</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceIdByTypeRequest extends TeaModel {
-    // 部门类型
+    /**
+     * <p>部门类型</p>
+     */
     @NameInMap("departmentType")
     public String departmentType;
 

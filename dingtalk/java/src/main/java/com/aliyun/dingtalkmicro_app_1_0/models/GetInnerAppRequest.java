@@ -4,11 +4,15 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInnerAppRequest extends TeaModel {
-    // 关联组织corpId
+    /**
+     * <p>关联组织corpId</p>
+     */
     @NameInMap("ecologicalCorpId")
     public String ecologicalCorpId;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

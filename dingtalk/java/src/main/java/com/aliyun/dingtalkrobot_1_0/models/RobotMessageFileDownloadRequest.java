@@ -4,11 +4,15 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class RobotMessageFileDownloadRequest extends TeaModel {
-    // 机器人收到消息中的下载码，换取临时下载文件的链接使用。
+    /**
+     * <p>机器人收到消息中的下载码，换取临时下载文件的链接使用。</p>
+     */
     @NameInMap("downloadCode")
     public String downloadCode;
 
-    // 机器人的robotCode。
+    /**
+     * <p>机器人的robotCode。</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

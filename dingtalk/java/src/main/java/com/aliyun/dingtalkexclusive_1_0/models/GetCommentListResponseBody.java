@@ -32,19 +32,27 @@ public class GetCommentListResponseBody extends TeaModel {
     }
 
     public static class GetCommentListResponseBodyData extends TeaModel {
-        // 评论ID
+        /**
+         * <p>评论ID</p>
+         */
         @NameInMap("commentId")
         public String commentId;
 
-        // 评论时间
+        /**
+         * <p>评论时间</p>
+         */
         @NameInMap("commentTime")
         public Float commentTime;
 
-        // 评论者姓名
+        /**
+         * <p>评论者姓名</p>
+         */
         @NameInMap("commentUserName")
         public String commentUserName;
 
-        // 评论内容
+        /**
+         * <p>评论内容</p>
+         */
         @NameInMap("content")
         public String content;
 

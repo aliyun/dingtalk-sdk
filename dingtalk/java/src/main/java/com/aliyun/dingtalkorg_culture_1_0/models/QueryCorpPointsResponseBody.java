@@ -4,11 +4,15 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCorpPointsResponseBody extends TeaModel {
-    // 响应数据
+    /**
+     * <p>响应数据</p>
+     */
     @NameInMap("result")
     public QueryCorpPointsResponseBodyResult result;
 
-    // 请求响应状态
+    /**
+     * <p>请求响应状态</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,7 +38,9 @@ public class QueryCorpPointsResponseBody extends TeaModel {
     }
 
     public static class QueryCorpPointsResponseBodyResult extends TeaModel {
-        // 企业员工可用于兑换积分总额
+        /**
+         * <p>企业员工可用于兑换积分总额</p>
+         */
         @NameInMap("amount")
         public Long amount;
 

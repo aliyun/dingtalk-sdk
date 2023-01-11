@@ -4,15 +4,21 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupRequest extends TeaModel {
-    // 业务关联ID，和开放群ID二选一传
+    /**
+     * <p>业务关联ID，和开放群ID二选一传</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
-    // 开放群ID
+    /**
+     * <p>开放群ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

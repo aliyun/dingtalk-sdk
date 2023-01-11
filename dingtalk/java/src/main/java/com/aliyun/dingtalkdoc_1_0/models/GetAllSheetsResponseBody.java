@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAllSheetsResponseBody extends TeaModel {
-    // 所有工作表信息
+    /**
+     * <p>所有工作表信息</p>
+     */
     @NameInMap("value")
     public java.util.List<GetAllSheetsResponseBodyValue> value;
 
@@ -22,11 +24,15 @@ public class GetAllSheetsResponseBody extends TeaModel {
     }
 
     public static class GetAllSheetsResponseBodyValue extends TeaModel {
-        // 工作表ID
+        /**
+         * <p>工作表ID</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 工作表名称
+        /**
+         * <p>工作表名称</p>
+         */
         @NameInMap("name")
         public String name;
 

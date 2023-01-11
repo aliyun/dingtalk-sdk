@@ -4,31 +4,45 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserCreateLiveListRequest extends TeaModel {
-    // 筛选直播截止时间
+    /**
+     * <p>筛选直播截止时间</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 筛选直播开始时间
+    /**
+     * <p>筛选直播开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 直播状态列表
+    /**
+     * <p>直播状态列表</p>
+     */
     @NameInMap("statuses")
     public java.util.List<Long> statuses;
 
-    // 筛选的直播标题
+    /**
+     * <p>筛选的直播标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 单次拉去上限，默认40个
+    /**
+     * <p>单次拉去上限，默认40个</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页游标 第一次可不填， 后面填回包的值
+    /**
+     * <p>分页游标 第一次可不填， 后面填回包的值</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 用户uid
+    /**
+     * <p>用户uid</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

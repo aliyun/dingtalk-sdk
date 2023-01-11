@@ -4,15 +4,21 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSimpleUsersByRoleResponseBody extends TeaModel {
-    // 是否还有记录
+    /**
+     * <p>是否还有记录</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 下一条记录
+    /**
+     * <p>下一条记录</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
-    // 用户列表
+    /**
+     * <p>用户列表</p>
+     */
     @NameInMap("userList")
     public java.util.List<ListSimpleUsersByRoleResponseBodyUserList> userList;
 
@@ -46,19 +52,27 @@ public class ListSimpleUsersByRoleResponseBody extends TeaModel {
     }
 
     public static class ListSimpleUsersByRoleResponseBodyUserList extends TeaModel {
-        // 工号
+        /**
+         * <p>工号</p>
+         */
         @NameInMap("jobNumber")
         public String jobNumber;
 
-        // 姓名
+        /**
+         * <p>姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // unionId
+        /**
+         * <p>unionId</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 用户ID
+        /**
+         * <p>用户ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 

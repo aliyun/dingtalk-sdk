@@ -4,47 +4,69 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFlightExceedApplyResponseBody extends TeaModel {
-    // 商旅超标审批单id
+    /**
+     * <p>商旅超标审批单id</p>
+     */
     @NameInMap("applyId")
     public Long applyId;
 
-    // 意向出行信息
+    /**
+     * <p>意向出行信息</p>
+     */
     @NameInMap("applyIntentionInfoDO")
     public GetFlightExceedApplyResponseBodyApplyIntentionInfoDO applyIntentionInfoDO;
 
-    // 出差原因
+    /**
+     * <p>出差原因</p>
+     */
     @NameInMap("btripCause")
     public String btripCause;
 
-    // 第三方企业id
+    /**
+     * <p>第三方企业id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 超标原因
+    /**
+     * <p>超标原因</p>
+     */
     @NameInMap("exceedReason")
     public String exceedReason;
 
-    // 超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间
+    /**
+     * <p>超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间</p>
+     */
     @NameInMap("exceedType")
     public Integer exceedType;
 
-    // 原差旅标准
+    /**
+     * <p>原差旅标准</p>
+     */
     @NameInMap("originStandard")
     public String originStandard;
 
-    // 审批单状态 0:审批中 1:已同意 2:已拒绝
+    /**
+     * <p>审批单状态 0:审批中 1:已同意 2:已拒绝</p>
+     */
     @NameInMap("status")
     public Integer status;
 
-    // 审批单提交时间
+    /**
+     * <p>审批单提交时间</p>
+     */
     @NameInMap("submitTime")
     public String submitTime;
 
-    // 第三方出差审批单号
+    /**
+     * <p>第三方出差审批单号</p>
+     */
     @NameInMap("thirdpartApplyId")
     public String thirdpartApplyId;
 
-    // 第三方用户id
+    /**
+     * <p>第三方用户id</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -142,55 +164,81 @@ public class GetFlightExceedApplyResponseBody extends TeaModel {
     }
 
     public static class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO extends TeaModel {
-        // 到达城市三字码
+        /**
+         * <p>到达城市三字码</p>
+         */
         @NameInMap("arrCity")
         public String arrCity;
 
-        // 到达城市名称
+        /**
+         * <p>到达城市名称</p>
+         */
         @NameInMap("arrCityName")
         public String arrCityName;
 
-        // 到达时间
+        /**
+         * <p>到达时间</p>
+         */
         @NameInMap("arrTime")
         public String arrTime;
 
-        // 超标的舱位，F：头等舱 C：商务舱 Y：经济舱 P：超值经济舱
+        /**
+         * <p>超标的舱位，F：头等舱 C：商务舱 Y：经济舱 P：超值经济舱</p>
+         */
         @NameInMap("cabin")
         public String cabin;
 
-        // 申请超标的舱等 0：头等舱 1：商务舱 2：经济舱 3：超值经济舱
+        /**
+         * <p>申请超标的舱等 0：头等舱 1：商务舱 2：经济舱 3：超值经济舱</p>
+         */
         @NameInMap("cabinClass")
         public Integer cabinClass;
 
-        // 舱等描述，头等舱，商务舱，经济舱，超值经济舱
+        /**
+         * <p>舱等描述，头等舱，商务舱，经济舱，超值经济舱</p>
+         */
         @NameInMap("cabinClassStr")
         public String cabinClassStr;
 
-        // 出发城市三字码
+        /**
+         * <p>出发城市三字码</p>
+         */
         @NameInMap("depCity")
         public String depCity;
 
-        // 出发城市名称
+        /**
+         * <p>出发城市名称</p>
+         */
         @NameInMap("depCityName")
         public String depCityName;
 
-        // 出发时间
+        /**
+         * <p>出发时间</p>
+         */
         @NameInMap("depTime")
         public String depTime;
 
-        // 折扣
+        /**
+         * <p>折扣</p>
+         */
         @NameInMap("discount")
         public Double discount;
 
-        // 航班号
+        /**
+         * <p>航班号</p>
+         */
         @NameInMap("flightNo")
         public String flightNo;
 
-        // 意向航班价格（元）
+        /**
+         * <p>意向航班价格（元）</p>
+         */
         @NameInMap("price")
         public Long price;
 
-        // 超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间
+        /**
+         * <p>超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间</p>
+         */
         @NameInMap("type")
         public Integer type;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSuiteAccessTokenRequest extends TeaModel {
-    // 应用id
+    /**
+     * <p>应用id</p>
+     */
     @NameInMap("suiteKey")
     public String suiteKey;
 
-    // 应用密码
+    /**
+     * <p>应用密码</p>
+     */
     @NameInMap("suiteSecret")
     public String suiteSecret;
 
-    // suiteTicket
+    /**
+     * <p>suiteTicket</p>
+     */
     @NameInMap("suiteTicket")
     public String suiteTicket;
 

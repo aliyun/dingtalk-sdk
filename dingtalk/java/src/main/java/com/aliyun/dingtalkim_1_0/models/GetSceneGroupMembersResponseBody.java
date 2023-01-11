@@ -4,19 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSceneGroupMembersResponseBody extends TeaModel {
-    // 是否还有更多数据
+    /**
+     * <p>是否还有更多数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 群成员员工号
+    /**
+     * <p>群成员员工号</p>
+     */
     @NameInMap("memberUserIds")
     public java.util.List<String> memberUserIds;
 
-    // 下一次请求的游标
+    /**
+     * <p>下一次请求的游标</p>
+     */
     @NameInMap("nextCursor")
     public String nextCursor;
 
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SolutionTaskInitResponseBody extends TeaModel {
-    // 数据是否初始化成功
+    /**
+     * <p>数据是否初始化成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

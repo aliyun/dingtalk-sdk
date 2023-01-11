@@ -4,7 +4,9 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReleaseGrayOrgGetResponseBody extends TeaModel {
-    // 灰度组织corpId列表
+    /**
+     * <p>灰度组织corpId列表</p>
+     */
     @NameInMap("value")
     public java.util.List<String> value;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddFileResponseBody extends TeaModel {
-    // 文件标识
+    /**
+     * <p>文件标识</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
-    // 文件名
+    /**
+     * <p>文件名</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
-    // 空间标识
+    /**
+     * <p>空间标识</p>
+     */
     @NameInMap("spaceId")
     public Long spaceId;
 

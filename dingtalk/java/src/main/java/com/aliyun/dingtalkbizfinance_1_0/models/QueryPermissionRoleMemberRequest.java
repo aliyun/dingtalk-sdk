@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPermissionRoleMemberRequest extends TeaModel {
-    // 角色的唯一标识列表
+    /**
+     * <p>角色的唯一标识列表</p>
+     */
     @NameInMap("roleCodeList")
     public java.util.List<String> roleCodeList;
 

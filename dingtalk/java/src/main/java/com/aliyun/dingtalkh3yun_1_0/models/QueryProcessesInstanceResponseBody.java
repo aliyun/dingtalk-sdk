@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryProcessesInstanceResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public java.util.List<QueryProcessesInstanceResponseBodyData> data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,19 +52,27 @@ public class QueryProcessesInstanceResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesInstanceResponseBodyDataOriginator extends TeaModel {
-        // 所属组织id
+        /**
+         * <p>所属组织id</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        // 所属组织名称
+        /**
+         * <p>所属组织名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -102,51 +116,75 @@ public class QueryProcessesInstanceResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesInstanceResponseBodyData extends TeaModel {
-        // 流程所属的应用编码
+        /**
+         * <p>流程所属的应用编码</p>
+         */
         @NameInMap("appCode")
         public String appCode;
 
-        // 流程关联的业务对象id
+        /**
+         * <p>流程关联的业务对象id</p>
+         */
         @NameInMap("bizObjectId")
         public String bizObjectId;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createdTimeGMT")
         public String createdTimeGMT;
 
-        // 钉钉流程Id
+        /**
+         * <p>钉钉流程Id</p>
+         */
         @NameInMap("dingTalkProcessId")
         public String dingTalkProcessId;
 
-        // 完成时间
+        /**
+         * <p>完成时间</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        // 流程发起人信息
+        /**
+         * <p>流程发起人信息</p>
+         */
         @NameInMap("originator")
         public QueryProcessesInstanceResponseBodyDataOriginator originator;
 
-        // 流程名称
+        /**
+         * <p>流程名称</p>
+         */
         @NameInMap("processDisplayName")
         public String processDisplayName;
 
-        // 流程实例ID
+        /**
+         * <p>流程实例ID</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // 工作流模板的版本
+        /**
+         * <p>工作流模板的版本</p>
+         */
         @NameInMap("processVersion")
         public Integer processVersion;
 
-        // 流程所属的表单编码
+        /**
+         * <p>流程所属的表单编码</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("startTimeGMT")
         public String startTimeGMT;
 
-        // 状态。Initiated=初始化完成，Starting=正在启动，Running=正在运行，Finishing=正在结束，Finished=已完成，Canceled=已取
+        /**
+         * <p>状态。Initiated=初始化完成，Starting=正在启动，Running=正在运行，Finishing=正在结束，Finished=已完成，Canceled=已取</p>
+         */
         @NameInMap("state")
         public String state;
 

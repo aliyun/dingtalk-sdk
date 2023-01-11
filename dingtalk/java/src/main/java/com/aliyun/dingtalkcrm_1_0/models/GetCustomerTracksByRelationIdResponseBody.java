@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
-    // 是否还有下一页。
+    /**
+     * <p>是否还有下一页。</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 下一页的游标。
+    /**
+     * <p>下一页的游标。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 数据列表。
+    /**
+     * <p>数据列表。</p>
+     */
     @NameInMap("resultList")
     public java.util.List<GetCustomerTracksByRelationIdResponseBodyResultList> resultList;
 
@@ -46,11 +52,15 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
     }
 
     public static class GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo extends TeaModel {
-        // 写入动态的三方应用所属应用名。
+        /**
+         * <p>写入动态的三方应用所属应用名。</p>
+         */
         @NameInMap("appName")
         public String appName;
 
-        // 写入动态的三方应用所属组织名。
+        /**
+         * <p>写入动态的三方应用所属组织名。</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
@@ -78,39 +88,57 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
     }
 
     public static class GetCustomerTracksByRelationIdResponseBodyResultList extends TeaModel {
-        // 动态内容。
+        /**
+         * <p>动态内容。</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 操作人姓名。
+        /**
+         * <p>操作人姓名。</p>
+         */
         @NameInMap("creatorName")
         public String creatorName;
 
-        // 动态详情。
+        /**
+         * <p>动态详情。</p>
+         */
         @NameInMap("detail")
         public java.util.Map<String, String> detail;
 
-        // 动态格式：markdown表示markdown格式，为空表示老格式
+        /**
+         * <p>动态格式：markdown表示markdown格式，为空表示老格式</p>
+         */
         @NameInMap("format")
         public String format;
 
-        // 创建时间。
+        /**
+         * <p>创建时间。</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 写入动态的三方应用身份信息。
+        /**
+         * <p>写入动态的三方应用身份信息。</p>
+         */
         @NameInMap("isvInfo")
         public GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo isvInfo;
 
-        // 动态标题。
+        /**
+         * <p>动态标题。</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 动态类型。
+        /**
+         * <p>动态类型。</p>
+         */
         @NameInMap("type")
         public Integer type;
 
-        // 动态类型分组。
+        /**
+         * <p>动态类型分组。</p>
+         */
         @NameInMap("typeGroup")
         public Integer typeGroup;
 

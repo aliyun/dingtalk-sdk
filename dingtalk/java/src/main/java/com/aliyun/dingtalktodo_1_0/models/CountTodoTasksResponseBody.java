@@ -4,7 +4,9 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class CountTodoTasksResponseBody extends TeaModel {
-    // 待办数量
+    /**
+     * <p>待办数量</p>
+     */
     @NameInMap("result")
     public Integer result;
 

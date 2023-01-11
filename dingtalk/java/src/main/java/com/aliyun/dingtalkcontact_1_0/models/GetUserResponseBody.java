@@ -4,31 +4,45 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserResponseBody extends TeaModel {
-    // 头像url
+    /**
+     * <p>头像url</p>
+     */
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
-    // 个人邮箱
+    /**
+     * <p>个人邮箱</p>
+     */
     @NameInMap("email")
     public String email;
 
-    // 手机号
+    /**
+     * <p>手机号</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
-    // 昵称
+    /**
+     * <p>昵称</p>
+     */
     @NameInMap("nick")
     public String nick;
 
-    // openId
+    /**
+     * <p>openId</p>
+     */
     @NameInMap("openId")
     public String openId;
 
-    // 手机号对应的国家号
+    /**
+     * <p>手机号对应的国家号</p>
+     */
     @NameInMap("stateCode")
     public String stateCode;
 
-    // unionId
+    /**
+     * <p>unionId</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

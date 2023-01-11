@@ -4,19 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllDepartmentResponseBody extends TeaModel {
-    // 科室列表
+    /**
+     * <p>科室列表</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryAllDepartmentResponseBodyContent> content;
 
-    // 当前页码
+    /**
+     * <p>当前页码</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
-    // 数据总量
+    /**
+     * <p>数据总量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 总页数
+    /**
+     * <p>总页数</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -58,51 +66,75 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends TeaModel {
-        // 部门code
+        /**
+         * <p>部门code</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        // 科室名称，同name
+        /**
+         * <p>科室名称，同name</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // 排序
+        /**
+         * <p>排序</p>
+         */
         @NameInMap("deptOrder")
         public Long deptOrder;
 
-        // 部门状态：0-正常，1-删除
+        /**
+         * <p>部门状态：0-正常，1-删除</p>
+         */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
-        // 部门类型：1-科室，2-医疗组
+        /**
+         * <p>部门类型：1-科室，2-医疗组</p>
+         */
         @NameInMap("deptType")
         public Integer deptType;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // 科室ID
+        /**
+         * <p>科室ID</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 科室名称，同deptName
+        /**
+         * <p>科室名称，同deptName</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 父部门code（与dept_code来源保持一致）
+        /**
+         * <p>父部门code（与dept_code来源保持一致）</p>
+         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 病区id列表
+        /**
+         * <p>病区id列表</p>
+         */
         @NameInMap("wardIdList")
         public java.util.List<Long> wardIdList;
 
@@ -210,35 +242,51 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos extends TeaModel {
-        // 部门code
+        /**
+         * <p>部门code</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        // 科室扩展字段描述
+        /**
+         * <p>科室扩展字段描述</p>
+         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
-        // 科室扩展字段key
+        /**
+         * <p>科室扩展字段key</p>
+         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
-        // 科室扩展字段value
+        /**
+         * <p>科室扩展字段value</p>
+         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // 扩展信息id
+        /**
+         * <p>扩展信息id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 0-有效 ，1-无效
+        /**
+         * <p>0-有效 ，1-无效</p>
+         */
         @NameInMap("status")
         public Integer status;
 
@@ -314,11 +362,15 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentDeptAndExt extends TeaModel {
-        // 科室详情
+        /**
+         * <p>科室详情</p>
+         */
         @NameInMap("department")
         public QueryAllDepartmentResponseBodyContentDeptAndExtDepartment department;
 
-        // 科室扩展信息列表
+        /**
+         * <p>科室扩展信息列表</p>
+         */
         @NameInMap("extendInfos")
         public java.util.List<QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos> extendInfos;
 
@@ -346,35 +398,51 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos extends TeaModel {
-        // 部门code
+        /**
+         * <p>部门code</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        // 医疗组扩展字段描述
+        /**
+         * <p>医疗组扩展字段描述</p>
+         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
-        // 医疗组扩展字段key
+        /**
+         * <p>医疗组扩展字段key</p>
+         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
-        // 医疗组扩展字段value
+        /**
+         * <p>医疗组扩展字段value</p>
+         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // 扩展信息id
+        /**
+         * <p>扩展信息id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 0-有效 ，1-无效
+        /**
+         * <p>0-有效 ，1-无效</p>
+         */
         @NameInMap("status")
         public Integer status;
 
@@ -450,15 +518,21 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader extends TeaModel {
-        // 用户工号
+        /**
+         * <p>用户工号</p>
+         */
         @NameInMap("jobNumber")
         public String jobNumber;
 
-        // 姓名
+        /**
+         * <p>姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户ID
+        /**
+         * <p>用户ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -494,39 +568,57 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup extends TeaModel {
-        // 科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了
+        /**
+         * <p>科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 部门状态：0-正常，1-删除
+        /**
+         * <p>部门状态：0-正常，1-删除</p>
+         */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // 医疗组ID
+        /**
+         * <p>医疗组ID</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 医疗组组长信息
+        /**
+         * <p>医疗组组长信息</p>
+         */
         @NameInMap("leader")
         public QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader leader;
 
-        // 医疗组名称
+        /**
+         * <p>医疗组名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 父级组织id，这里医疗组的父级就是科室
+        /**
+         * <p>父级组织id，这里医疗组的父级就是科室</p>
+         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
@@ -610,11 +702,15 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtList extends TeaModel {
-        // 医疗组扩展信息列表
+        /**
+         * <p>医疗组扩展信息列表</p>
+         */
         @NameInMap("extendInfos")
         public java.util.List<QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos> extendInfos;
 
-        // 医疗组详细信息
+        /**
+         * <p>医疗组详细信息</p>
+         */
         @NameInMap("group")
         public QueryAllDepartmentResponseBodyContentGroupAndExtListGroup group;
 
@@ -642,19 +738,27 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContent extends TeaModel {
-        // 科室详情
+        /**
+         * <p>科室详情</p>
+         */
         @NameInMap("deptAndExt")
         public QueryAllDepartmentResponseBodyContentDeptAndExt deptAndExt;
 
-        // 医疗组列表
+        /**
+         * <p>医疗组列表</p>
+         */
         @NameInMap("groupAndExtList")
         public java.util.List<QueryAllDepartmentResponseBodyContentGroupAndExtList> groupAndExtList;
 
-        // 科室ID
+        /**
+         * <p>科室ID</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 科室名称
+        /**
+         * <p>科室名称</p>
+         */
         @NameInMap("name")
         public String name;
 

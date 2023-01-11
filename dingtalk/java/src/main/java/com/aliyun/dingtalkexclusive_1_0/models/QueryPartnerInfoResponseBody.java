@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPartnerInfoResponseBody extends TeaModel {
-    // 部门列表
+    /**
+     * <p>部门列表</p>
+     */
     @NameInMap("partnerDeptList")
     public java.util.List<QueryPartnerInfoResponseBodyPartnerDeptList> partnerDeptList;
 
-    // 伙伴标签
+    /**
+     * <p>伙伴标签</p>
+     */
     @NameInMap("partnerLabelList")
     public java.util.List<QueryPartnerInfoResponseBodyPartnerLabelList> partnerLabelList;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -46,11 +52,15 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 extends TeaModel {
-        // 标签id
+        /**
+         * <p>标签id</p>
+         */
         @NameInMap("labelId")
         public Long labelId;
 
-        // 标签名称
+        /**
+         * <p>标签名称</p>
+         */
         @NameInMap("labelname")
         public String labelname;
 
@@ -78,23 +88,33 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryPartnerInfoResponseBodyPartnerDeptList extends TeaModel {
-        // 部门人数
+        /**
+         * <p>部门人数</p>
+         */
         @NameInMap("memberCount")
         public Long memberCount;
 
-        // 一级伙伴类型
+        /**
+         * <p>一级伙伴类型</p>
+         */
         @NameInMap("partnerLabelModelLevel1")
         public QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 partnerLabelModelLevel1;
 
-        // 伙伴编码
+        /**
+         * <p>伙伴编码</p>
+         */
         @NameInMap("partnerNum")
         public String partnerNum;
 
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 部门id
+        /**
+         * <p>部门id</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -146,11 +166,15 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryPartnerInfoResponseBodyPartnerLabelList extends TeaModel {
-        // label id
+        /**
+         * <p>label id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // label value
+        /**
+         * <p>label value</p>
+         */
         @NameInMap("name")
         public String name;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTemplateResponseBody extends TeaModel {
-    // 是否还有更多模版
+    /**
+     * <p>是否还有更多模版</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 后续结果的偏移
+    /**
+     * <p>后续结果的偏移</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 模版信息列表
+    /**
+     * <p>模版信息列表</p>
+     */
     @NameInMap("templateList")
     public java.util.List<ListTemplateResponseBodyTemplateList> templateList;
 
@@ -46,35 +52,51 @@ public class ListTemplateResponseBody extends TeaModel {
     }
 
     public static class ListTemplateResponseBodyTemplateList extends TeaModel {
-        // 模版预览url
+        /**
+         * <p>模版预览url</p>
+         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
-        // 模版创建时间
+        /**
+         * <p>模版创建时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 模版对应文档类型
+        /**
+         * <p>模版对应文档类型</p>
+         */
         @NameInMap("docType")
         public String docType;
 
-        // 模版Id
+        /**
+         * <p>模版Id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 模版类型
+        /**
+         * <p>模版类型</p>
+         */
         @NameInMap("templateType")
         public String templateType;
 
-        // 模版标题
+        /**
+         * <p>模版标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 模版修改时间
+        /**
+         * <p>模版修改时间</p>
+         */
         @NameInMap("updateTime")
         public Long updateTime;
 
-        // 模版归属知识库id。
+        /**
+         * <p>模版归属知识库id。</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

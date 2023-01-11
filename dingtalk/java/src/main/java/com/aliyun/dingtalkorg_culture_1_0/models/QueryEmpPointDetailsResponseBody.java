@@ -7,7 +7,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     @NameInMap("result")
     public QueryEmpPointDetailsResponseBodyResult result;
 
-    // 调用是否成功
+    /**
+     * <p>调用是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -33,17 +35,23 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource extends TeaModel {
-        // 积分账号的类型
-        // 企业账号：ORG, 员工账号：EMP
+        /**
+         * <p>积分账号的类型</p>
+         * <p>企业账号：ORG, 员工账号：EMP</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
-        // 企业内名字
+        /**
+         * <p>企业内名字</p>
+         */
         @NameInMap("empName")
         public String empName;
 
-        // 用户userId
-        // 
+        /**
+         * <p>用户userId</p>
+         * <br>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -79,16 +87,22 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget extends TeaModel {
-        // 积分账号的类型
-        // 企业账号：ORG, 员工账号：EMP
+        /**
+         * <p>积分账号的类型</p>
+         * <p>企业账号：ORG, 员工账号：EMP</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
-        // 企业内名字
+        /**
+         * <p>企业内名字</p>
+         */
         @NameInMap("empName")
         public String empName;
 
-        // 用户useId
+        /**
+         * <p>用户useId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -124,20 +138,28 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO extends TeaModel {
-        // 来源账户
+        /**
+         * <p>来源账户</p>
+         */
         @NameInMap("accountSource")
         public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource accountSource;
 
-        // 目标账户
-        // 
+        /**
+         * <p>目标账户</p>
+         * <br>
+         */
         @NameInMap("accountTarget")
         public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget accountTarget;
 
-        // 备注信息，在明细中展示
+        /**
+         * <p>备注信息，在明细中展示</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 来源/用途，一般是系统固定的场景
+        /**
+         * <p>来源/用途，一般是系统固定的场景</p>
+         */
         @NameInMap("usage")
         public String usage;
 
@@ -181,25 +203,33 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetails extends TeaModel {
-        // 积分数量 发放时为负。 扣减时为正
+        /**
+         * <p>积分数量 发放时为负。 扣减时为正</p>
+         */
         @NameInMap("amount")
         public Long amount;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        // 积分交易单号
-        // 
+        /**
+         * <p>积分交易单号</p>
+         * <br>
+         */
         @NameInMap("outId")
         public String outId;
 
         @NameInMap("pointOperateFeatureResponseDTO")
         public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO pointOperateFeatureResponseDTO;
 
-        // 源账户积分bizCode.
-        // 个人可用积分:personal
-        // 额度:credit
+        /**
+         * <p>源账户积分bizCode.</p>
+         * <p>个人可用积分:personal</p>
+         * <p>额度:credit</p>
+         */
         @NameInMap("sourceBizCode")
         public String sourceBizCode;
 
@@ -251,11 +281,15 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResult extends TeaModel {
-        // 个人积分明细列表
+        /**
+         * <p>个人积分明细列表</p>
+         */
         @NameInMap("details")
         public java.util.List<QueryEmpPointDetailsResponseBodyResultDetails> details;
 
-        // 是否有下一页
+        /**
+         * <p>是否有下一页</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 

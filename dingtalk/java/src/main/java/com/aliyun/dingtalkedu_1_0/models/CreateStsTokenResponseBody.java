@@ -4,27 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateStsTokenResponseBody extends TeaModel {
-    // keyId
+    /**
+     * <p>keyId</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
-    // KeySecret
+    /**
+     * <p>KeySecret</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
-    // 过期时间，默认1小时过期
+    /**
+     * <p>过期时间，默认1小时过期</p>
+     */
     @NameInMap("expiration")
     public String expiration;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
-    // 授权的token
+    /**
+     * <p>授权的token</p>
+     */
     @NameInMap("securityToken")
     public String securityToken;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("status")
     public String status;
 

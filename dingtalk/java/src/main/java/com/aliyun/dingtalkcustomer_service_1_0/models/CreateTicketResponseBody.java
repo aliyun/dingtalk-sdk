@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTicketResponseBody extends TeaModel {
-    // 新创建工单ID
+    /**
+     * <p>新创建工单ID</p>
+     */
     @NameInMap("ticketId")
     public String ticketId;
 

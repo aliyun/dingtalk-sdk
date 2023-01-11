@@ -32,23 +32,33 @@ public class QueryOrgHonorsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgHonorsResponseBodyResultOpenHonors extends TeaModel {
-        // 荣誉含义
+        /**
+         * <p>荣誉含义</p>
+         */
         @NameInMap("honorDesc")
         public String honorDesc;
 
-        // 荣誉id
+        /**
+         * <p>荣誉id</p>
+         */
         @NameInMap("honorId")
         public Long honorId;
 
-        // 荣誉图片url
+        /**
+         * <p>荣誉图片url</p>
+         */
         @NameInMap("honorImgUrl")
         public String honorImgUrl;
 
-        // 荣誉名字
+        /**
+         * <p>荣誉名字</p>
+         */
         @NameInMap("honorName")
         public String honorName;
 
-        // 荣誉附赠的挂件图url
+        /**
+         * <p>荣誉附赠的挂件图url</p>
+         */
         @NameInMap("honorPendantImgUrl")
         public String honorPendantImgUrl;
 
@@ -100,7 +110,9 @@ public class QueryOrgHonorsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgHonorsResponseBodyResult extends TeaModel {
-        // 下次获取数据的游标
+        /**
+         * <p>下次获取数据的游标</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

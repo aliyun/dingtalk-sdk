@@ -4,27 +4,39 @@ package com.aliyun.dingtalksmart_device_1_0.models;
 import com.aliyun.tea.*;
 
 public class MachineUsersUpdateRequest extends TeaModel {
-    // 新增的部门id列表
+    /**
+     * <p>新增的部门id列表</p>
+     */
     @NameInMap("addDeptIds")
     public java.util.List<Long> addDeptIds;
 
-    // 新增的员工id列表
+    /**
+     * <p>新增的员工id列表</p>
+     */
     @NameInMap("addUserIds")
     public java.util.List<String> addUserIds;
 
-    // 移除的部门id列表
+    /**
+     * <p>移除的部门id列表</p>
+     */
     @NameInMap("delDeptIds")
     public java.util.List<Long> delDeptIds;
 
-    // 移除的员工id列表
+    /**
+     * <p>移除的员工id列表</p>
+     */
     @NameInMap("delUserIds")
     public java.util.List<String> delUserIds;
 
-    // 设备唯一标识id列表，Long数组
+    /**
+     * <p>设备唯一标识id列表，Long数组</p>
+     */
     @NameInMap("devIds")
     public java.util.List<Long> devIds;
 
-    // 设备唯一标识id列表，字符串数组
+    /**
+     * <p>设备唯一标识id列表，字符串数组</p>
+     */
     @NameInMap("deviceIds")
     public java.util.List<String> deviceIds;
 

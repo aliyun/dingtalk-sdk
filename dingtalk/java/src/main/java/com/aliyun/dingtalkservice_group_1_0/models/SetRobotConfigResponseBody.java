@@ -21,11 +21,15 @@ public class SetRobotConfigResponseBody extends TeaModel {
     }
 
     public static class SetRobotConfigResponseBodyResult extends TeaModel {
-        // 业务Key
+        /**
+         * <p>业务Key</p>
+         */
         @NameInMap("configKey")
         public String configKey;
 
-        // 业务value
+        /**
+         * <p>业务value</p>
+         */
         @NameInMap("configValue")
         public String configValue;
 

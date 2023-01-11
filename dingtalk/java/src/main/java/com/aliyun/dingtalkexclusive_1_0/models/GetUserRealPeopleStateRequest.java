@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserRealPeopleStateRequest extends TeaModel {
-    // userIds
+    /**
+     * <p>userIds</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReplyRobotResponseBody extends TeaModel {
-    // 回复是否成功结果
+    /**
+     * <p>回复是否成功结果</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

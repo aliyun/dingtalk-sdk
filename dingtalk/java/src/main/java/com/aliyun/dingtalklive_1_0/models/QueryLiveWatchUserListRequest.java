@@ -4,19 +4,27 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryLiveWatchUserListRequest extends TeaModel {
-    // 直播id
+    /**
+     * <p>直播id</p>
+     */
     @NameInMap("liveId")
     public String liveId;
 
-    // 分页起始位置
+    /**
+     * <p>分页起始位置</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

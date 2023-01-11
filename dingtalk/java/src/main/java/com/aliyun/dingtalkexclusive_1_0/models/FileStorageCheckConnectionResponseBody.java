@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class FileStorageCheckConnectionResponseBody extends TeaModel {
-    // 密匙ID
+    /**
+     * <p>密匙ID</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
-    // 检测oss状态 0正常1异常
+    /**
+     * <p>检测oss状态 0正常1异常</p>
+     */
     @NameInMap("checkState")
     public Integer checkState;
 
-    // OSS链接
+    /**
+     * <p>OSS链接</p>
+     */
     @NameInMap("oss")
     public String oss;
 

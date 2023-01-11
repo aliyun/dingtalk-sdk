@@ -4,19 +4,27 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class FileStorageGetQuotaDataRequest extends TeaModel {
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endTime")
     public String endTime;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public String startTime;
 
-    // 企业的corpId
+    /**
+     * <p>企业的corpId</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
-    // 查询类型 0按天查询；1按月查询
+    /**
+     * <p>查询类型 0按天查询；1按月查询</p>
+     */
     @NameInMap("type")
     public String type;
 

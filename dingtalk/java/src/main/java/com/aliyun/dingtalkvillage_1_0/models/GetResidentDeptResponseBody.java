@@ -4,23 +4,33 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetResidentDeptResponseBody extends TeaModel {
-    // 通讯录架构类型
+    /**
+     * <p>通讯录架构类型</p>
+     */
     @NameInMap("contactType")
     public String contactType;
 
-    // 下属组织的部门ID
+    /**
+     * <p>下属组织的部门ID</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    // 部门名称
+    /**
+     * <p>部门名称</p>
+     */
     @NameInMap("departmentName")
     public String departmentName;
 
-    // 部门类型
+    /**
+     * <p>部门类型</p>
+     */
     @NameInMap("deptType")
     public String deptType;
 
-    // 部门属性
+    /**
+     * <p>部门属性</p>
+     */
     @NameInMap("feature")
     public String feature;
 

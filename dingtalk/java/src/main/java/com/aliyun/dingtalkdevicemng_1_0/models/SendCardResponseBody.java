@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendCardResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("result")
     public String result;
 
-    // success
+    /**
+     * <p>success</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

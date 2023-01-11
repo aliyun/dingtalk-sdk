@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddSpaceRequest extends TeaModel {
-    // 空间名称
+    /**
+     * <p>空间名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

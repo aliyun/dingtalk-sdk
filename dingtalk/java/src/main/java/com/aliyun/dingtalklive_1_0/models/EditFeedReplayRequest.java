@@ -4,15 +4,21 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditFeedReplayRequest extends TeaModel {
-    // 剪辑的结束位置的时间戳（在原开始结束的时间戳之内）
+    /**
+     * <p>剪辑的结束位置的时间戳（在原开始结束的时间戳之内）</p>
+     */
     @NameInMap("editEndTime")
     public Long editEndTime;
 
-    // 剪辑的起始位置的时间戳（在原开始结束的时间戳之内）
+    /**
+     * <p>剪辑的起始位置的时间戳（在原开始结束的时间戳之内）</p>
+     */
     @NameInMap("editStartTime")
     public Long editStartTime;
 
-    // 用户id(剪辑者的组织内id)
+    /**
+     * <p>用户id(剪辑者的组织内id)</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,67 +4,99 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusUpdateCampusRequest extends TeaModel {
-    // 所在具体地址
+    /**
+     * <p>所在具体地址</p>
+     */
     @NameInMap("address")
     public String address;
 
-    // 面积
+    /**
+     * <p>面积</p>
+     */
     @NameInMap("area")
     public Double area;
 
-    // 归属项目组
+    /**
+     * <p>归属项目组</p>
+     */
     @NameInMap("belongProjectGroupId")
     public Long belongProjectGroupId;
 
-    // 项目部门id
+    /**
+     * <p>项目部门id</p>
+     */
     @NameInMap("campusDeptId")
     public Long campusDeptId;
 
-    // 园区项目名
+    /**
+     * <p>园区项目名</p>
+     */
     @NameInMap("campusName")
     public String campusName;
 
-    // 容量
+    /**
+     * <p>容量</p>
+     */
     @NameInMap("capacity")
     public Integer capacity;
 
-    // 所在市行政编码
+    /**
+     * <p>所在市行政编码</p>
+     */
     @NameInMap("cityId")
     public Integer cityId;
 
-    // 国家
+    /**
+     * <p>国家</p>
+     */
     @NameInMap("country")
     public String country;
 
-    // 所在区行政编码
+    /**
+     * <p>所在区行政编码</p>
+     */
     @NameInMap("countyId")
     public Integer countyId;
 
-    // 园区项目描述
+    /**
+     * <p>园区项目描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extend")
     public String extend;
 
-    // 项目订阅到期时间
+    /**
+     * <p>项目订阅到期时间</p>
+     */
     @NameInMap("orderEndTime")
     public Long orderEndTime;
 
-    // 购买信息
+    /**
+     * <p>购买信息</p>
+     */
     @NameInMap("orderInfo")
     public Long orderInfo;
 
-    // 项目订阅开始时间
+    /**
+     * <p>项目订阅开始时间</p>
+     */
     @NameInMap("orderStartTime")
     public Long orderStartTime;
 
-    // 所在省行政编码
+    /**
+     * <p>所在省行政编码</p>
+     */
     @NameInMap("provId")
     public Integer provId;
 
-    // 联系电话
+    /**
+     * <p>联系电话</p>
+     */
     @NameInMap("telephone")
     public String telephone;
 

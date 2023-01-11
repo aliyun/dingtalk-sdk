@@ -4,11 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFormListInAppResponseBody extends TeaModel {
-    // 接口返回的结果
+    /**
+     * <p>接口返回的结果</p>
+     */
     @NameInMap("result")
     public GetFormListInAppResponseBodyResult result;
 
-    // 是否成功，true代表成功
+    /**
+     * <p>是否成功，true代表成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -127,15 +131,21 @@ public class GetFormListInAppResponseBody extends TeaModel {
     }
 
     public static class GetFormListInAppResponseBodyResult extends TeaModel {
-        // 分页参数，当前页码
+        /**
+         * <p>分页参数，当前页码</p>
+         */
         @NameInMap("currentPage")
         public Integer currentPage;
 
-        // 返回的表单列表
+        /**
+         * <p>返回的表单列表</p>
+         */
         @NameInMap("data")
         public java.util.List<GetFormListInAppResponseBodyResultData> data;
 
-        // 符合条件的总数目
+        /**
+         * <p>符合条件的总数目</p>
+         */
         @NameInMap("totalCount")
         public Integer totalCount;
 

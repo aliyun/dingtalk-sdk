@@ -4,11 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusGetCampusGroupResponseBody extends TeaModel {
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extend")
     public String extend;
 
-    // 项目名
+    /**
+     * <p>项目名</p>
+     */
     @NameInMap("projectGroupName")
     public String projectGroupName;
 

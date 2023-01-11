@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPropertyInfoRequest extends TeaModel {
-    // dingCropId
+    /**
+     * <p>dingCropId</p>
+     */
     @NameInMap("propertyCorpId")
     public String propertyCorpId;
 

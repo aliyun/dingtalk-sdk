@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrganizationPriorityListResponseBody extends TeaModel {
-    // 优先级列表
+    /**
+     * <p>优先级列表</p>
+     */
     @NameInMap("result")
     public java.util.List<GetOrganizationPriorityListResponseBodyResult> result;
 
@@ -22,19 +24,27 @@ public class GetOrganizationPriorityListResponseBody extends TeaModel {
     }
 
     public static class GetOrganizationPriorityListResponseBodyResult extends TeaModel {
-        // 颜色
+        /**
+         * <p>颜色</p>
+         */
         @NameInMap("color")
         public String color;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 优先级值
+        /**
+         * <p>优先级值</p>
+         */
         @NameInMap("priority")
         public String priority;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("priorityId")
         public String priorityId;
 

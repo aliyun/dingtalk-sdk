@@ -4,27 +4,39 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
-    // 已授权的字段
+    /**
+     * <p>已授权的字段</p>
+     */
     @NameInMap("authItems")
     public java.util.List<String> authItems;
 
-    // 联系人主企业名称
+    /**
+     * <p>联系人主企业名称</p>
+     */
     @NameInMap("corpName")
     public String corpName;
 
-    // 手机号
+    /**
+     * <p>手机号</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
-    // 手机号国家码
+    /**
+     * <p>手机号国家码</p>
+     */
     @NameInMap("stateCode")
     public String stateCode;
 
-    // 联系人的unionId
+    /**
+     * <p>联系人的unionId</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // 已授权的字段
+    /**
+     * <p>已授权的字段</p>
+     */
     @NameInMap("userInfos")
     public java.util.List<String> userInfos;
 

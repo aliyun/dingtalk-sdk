@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMsgRequest extends TeaModel {
-    // 消息内容
+    /**
+     * <p>消息内容</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 设备业务标识
+    /**
+     * <p>设备业务标识</p>
+     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
-    // 设备唯一系统标识
+    /**
+     * <p>设备唯一系统标识</p>
+     */
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
-    // 开放群唯一标识
+    /**
+     * <p>开放群唯一标识</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 用户列表，群聊时为被@的人，单聊时为目标对象
+    /**
+     * <p>用户列表，群聊时为被@的人，单聊时为目标对象</p>
+     */
     @NameInMap("userList")
     public java.util.List<String> userList;
 

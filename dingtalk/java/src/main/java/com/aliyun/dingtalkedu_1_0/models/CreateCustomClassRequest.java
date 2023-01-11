@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomClassRequest extends TeaModel {
-    // 班级信息
+    /**
+     * <p>班级信息</p>
+     */
     @NameInMap("customClass")
     public CreateCustomClassRequestCustomClass customClass;
 
-    // 钉钉企业管理员工ID
+    /**
+     * <p>钉钉企业管理员工ID</p>
+     */
     @NameInMap("operator")
     public String operator;
 
-    // 上级部门ID
+    /**
+     * <p>上级部门ID</p>
+     */
     @NameInMap("superId")
     public Long superId;
 
@@ -46,7 +52,9 @@ public class CreateCustomClassRequest extends TeaModel {
     }
 
     public static class CreateCustomClassRequestCustomClass extends TeaModel {
-        // 班级名称
+        /**
+         * <p>班级名称</p>
+         */
         @NameInMap("name")
         public String name;
 

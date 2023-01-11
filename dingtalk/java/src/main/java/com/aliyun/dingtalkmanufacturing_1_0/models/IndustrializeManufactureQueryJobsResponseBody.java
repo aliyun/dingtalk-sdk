@@ -4,11 +4,15 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureQueryJobsResponseBody extends TeaModel {
-    // 查询的数据结果
+    /**
+     * <p>查询的数据结果</p>
+     */
     @NameInMap("content")
     public IndustrializeManufactureQueryJobsResponseBodyContent content;
 
-    // httpCode
+    /**
+     * <p>httpCode</p>
+     */
     @NameInMap("httpCode")
     public String httpCode;
 
@@ -34,71 +38,105 @@ public class IndustrializeManufactureQueryJobsResponseBody extends TeaModel {
     }
 
     public static class IndustrializeManufactureQueryJobsResponseBodyContent extends TeaModel {
-        // 组织id
+        /**
+         * <p>组织id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 数据库id
+        /**
+         * <p>数据库id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 工单id
+        /**
+         * <p>工单id</p>
+         */
         @NameInMap("instNo")
         public String instNo;
 
-        // 是否是批量报工，即一次报工由多个工人一起分担，取值[n,y],y表示是批量，批量时多个人名以英文逗号分隔
+        /**
+         * <p>是否是批量报工，即一次报工由多个工人一起分担，取值[n,y],y表示是批量，批量时多个人名以英文逗号分隔</p>
+         */
         @NameInMap("isBatchJob")
         public String isBatchJob;
 
-        // 生产日期时间(到时分秒),格式:2021-07-05 08:00:21
+        /**
+         * <p>生产日期时间(到时分秒),格式:2021-07-05 08:00:21</p>
+         */
         @NameInMap("manufactureDate")
         public String manufactureDate;
 
-        // 生产日期(到天)
+        /**
+         * <p>生产日期(到天)</p>
+         */
         @NameInMap("manufactureDay")
         public String manufactureDay;
 
-        // 分配给mes系统的appkey
+        /**
+         * <p>分配给mes系统的appkey</p>
+         */
         @NameInMap("mesAppKey")
         public String mesAppKey;
 
-        // 工序名称
+        /**
+         * <p>工序名称</p>
+         */
         @NameInMap("processName")
         public String processName;
 
-        // 合格数
+        /**
+         * <p>合格数</p>
+         */
         @NameInMap("qualifiedQuantity")
         public String qualifiedQuantity;
 
-        // 不合格数
+        /**
+         * <p>不合格数</p>
+         */
         @NameInMap("scrappedQuantity")
         public String scrappedQuantity;
 
-        // 计件单价，单位：分
+        /**
+         * <p>计件单价，单位：分</p>
+         */
         @NameInMap("unitPrice")
         public String unitPrice;
 
-        // 工人工号(isBatchJob=='n'时)
+        /**
+         * <p>工人工号(isBatchJob=='n'时)</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 批量报工时多个人钉钉工号以英文逗号分隔
+        /**
+         * <p>批量报工时多个人钉钉工号以英文逗号分隔</p>
+         */
         @NameInMap("userIdList")
         public String userIdList;
 
-        // 批量报工时多个人名以英文逗号分隔
+        /**
+         * <p>批量报工时多个人名以英文逗号分隔</p>
+         */
         @NameInMap("userNameList")
         public String userNameList;
 
-        // 报工记录的唯一标识
+        /**
+         * <p>报工记录的唯一标识</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

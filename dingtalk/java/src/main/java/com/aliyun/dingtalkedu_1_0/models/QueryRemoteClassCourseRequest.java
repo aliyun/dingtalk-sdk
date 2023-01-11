@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRemoteClassCourseRequest extends TeaModel {
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 操作者用户ID
+    /**
+     * <p>操作者用户ID</p>
+     */
     @NameInMap("operator")
     public String operator;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 

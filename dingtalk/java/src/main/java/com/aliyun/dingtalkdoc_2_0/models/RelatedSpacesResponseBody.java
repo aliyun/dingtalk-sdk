@@ -4,14 +4,18 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class RelatedSpacesResponseBody extends TeaModel {
-    // 是否还有更多数据。
+    /**
+     * <p>是否还有更多数据。</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("items")
     public java.util.List<SpaceModel> items;
 
-    // 分页游标。
+    /**
+     * <p>分页游标。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

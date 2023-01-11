@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class UninstallDeviceRobotRequest extends TeaModel {
-    // 设备编码，客户侧生成的设备标识，能够唯一标识一个设备，该字段与deviceUuid字段需要二选一，并且不能都填充。
+    /**
+     * <p>设备编码，客户侧生成的设备标识，能够唯一标识一个设备，该字段与deviceUuid字段需要二选一，并且不能都填充。</p>
+     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
-    // 设备唯一标识，钉钉侧生成的设备标识，能够唯一标识一个设备，该字段与deviceCode字段需要二选一，并且不能都填充。
+    /**
+     * <p>设备唯一标识，钉钉侧生成的设备标识，能够唯一标识一个设备，该字段与deviceCode字段需要二选一，并且不能都填充。</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

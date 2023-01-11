@@ -7,11 +7,15 @@ public class QueryAllDoctorsRequest extends TeaModel {
     @NameInMap("monthMark")
     public String monthMark;
 
-    // 分页查询页码
+    /**
+     * <p>分页查询页码</p>
+     */
     @NameInMap("pageNum")
     public Integer pageNum;
 
-    // 分页查询页容量
+    /**
+     * <p>分页查询页容量</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

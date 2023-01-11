@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class WriteIsvStateResponseBody extends TeaModel {
-    // 数据写入标识
+    /**
+     * <p>数据写入标识</p>
+     */
     @NameInMap("result")
     public Long result;
 

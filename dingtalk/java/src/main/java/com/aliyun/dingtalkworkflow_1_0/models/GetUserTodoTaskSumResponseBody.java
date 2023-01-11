@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserTodoTaskSumResponseBody extends TeaModel {
-    // 待处理的审批数量。
+    /**
+     * <p>待处理的审批数量。</p>
+     */
     @NameInMap("result")
     public Integer result;
 

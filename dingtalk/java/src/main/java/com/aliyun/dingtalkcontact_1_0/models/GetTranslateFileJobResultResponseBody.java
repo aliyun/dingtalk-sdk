@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTranslateFileJobResultResponseBody extends TeaModel {
-    // 0 任务进行中 1 任务处理成功 2 任务处理失败
+    /**
+     * <p>0 任务进行中 1 任务处理成功 2 任务处理失败</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 文件内容转译成功后的url，需要用户通过oauth2授权登录在用户侧打开
+    /**
+     * <p>文件内容转译成功后的url，需要用户通过oauth2授权登录在用户侧打开</p>
+     */
     @NameInMap("url")
     public String url;
 

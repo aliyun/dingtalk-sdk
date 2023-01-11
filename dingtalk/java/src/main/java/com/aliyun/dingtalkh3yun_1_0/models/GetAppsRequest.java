@@ -4,11 +4,15 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAppsRequest extends TeaModel {
-    // 查询类型。All=全部，Solution=以解决方案编码为条件来查询应用，AppCode=以应用编码为条件来查询
+    /**
+     * <p>查询类型。All=全部，Solution=以解决方案编码为条件来查询应用，AppCode=以应用编码为条件来查询</p>
+     */
     @NameInMap("queryType")
     public String queryType;
 
-    // 待查询的编码数组。queryType参数为All时，此值可为空
+    /**
+     * <p>待查询的编码数组。queryType参数为All时，此值可为空</p>
+     */
     @NameInMap("values")
     public java.util.List<String> values;
 

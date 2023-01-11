@@ -4,7 +4,9 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmProcessTransferResponseBody extends TeaModel {
-    // 是否转岗成功
+    /**
+     * <p>是否转岗成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

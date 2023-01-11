@@ -4,31 +4,45 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddDeviceRequest extends TeaModel {
-    // 商户id
+    /**
+     * <p>商户id</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    // 设备型号
+    /**
+     * <p>设备型号</p>
+     */
     @NameInMap("model")
     public String model;
 
-    // 设备名称
+    /**
+     * <p>设备名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 消费场景
+    /**
+     * <p>消费场景</p>
+     */
     @NameInMap("scene")
     public Long scene;
 
-    // sn码
+    /**
+     * <p>sn码</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 设备状态
+    /**
+     * <p>设备状态</p>
+     */
     @NameInMap("status")
     public Long status;
 
-    // 设备类型
+    /**
+     * <p>设备类型</p>
+     */
     @NameInMap("type")
     public Long type;
 

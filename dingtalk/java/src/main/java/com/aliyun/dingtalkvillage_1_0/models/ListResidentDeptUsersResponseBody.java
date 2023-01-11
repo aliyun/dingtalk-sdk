@@ -4,15 +4,21 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListResidentDeptUsersResponseBody extends TeaModel {
-    // 是否还有更多数据
+    /**
+     * <p>是否还有更多数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 下一个游标
+    /**
+     * <p>下一个游标</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
-    // 用户列表
+    /**
+     * <p>用户列表</p>
+     */
     @NameInMap("userList")
     public java.util.List<ListResidentDeptUsersResponseBodyUserList> userList;
 
@@ -46,15 +52,21 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
     }
 
     public static class ListResidentDeptUsersResponseBodyUserListRoles extends TeaModel {
-        // 标签名称 tagCode
+        /**
+         * <p>标签名称 tagCode</p>
+         */
         @NameInMap("tagCode")
         public String tagCode;
 
-        // 标签id
+        /**
+         * <p>标签id</p>
+         */
         @NameInMap("tagId")
         public Long tagId;
 
-        // 标签名称
+        /**
+         * <p>标签名称</p>
+         */
         @NameInMap("tagName")
         public String tagName;
 
@@ -90,23 +102,33 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
     }
 
     public static class ListResidentDeptUsersResponseBodyUserList extends TeaModel {
-        // 员工特征
+        /**
+         * <p>员工特征</p>
+         */
         @NameInMap("feature")
         public String feature;
 
-        // 员工名字
+        /**
+         * <p>员工名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 标签列表
+        /**
+         * <p>标签列表</p>
+         */
         @NameInMap("roles")
         public java.util.List<ListResidentDeptUsersResponseBodyUserListRoles> roles;
 
-        // 钉钉唯一标识
+        /**
+         * <p>钉钉唯一标识</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 员工id
+        /**
+         * <p>员工id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

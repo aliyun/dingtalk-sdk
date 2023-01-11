@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListTeamMembersResponseBody extends TeaModel {
-    // 小组成员列表。
+    /**
+     * <p>小组成员列表。</p>
+     */
     @NameInMap("members")
     public java.util.List<ListTeamMembersResponseBodyMembers> members;
 
-    // 小组名称。
+    /**
+     * <p>小组名称。</p>
+     */
     @NameInMap("teamName")
     public String teamName;
 
@@ -34,21 +38,29 @@ public class ListTeamMembersResponseBody extends TeaModel {
     }
 
     public static class ListTeamMembersResponseBodyMembers extends TeaModel {
-        // 成员id。
+        /**
+         * <p>成员id。</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 成员类型。
-        // 1-群；2-用户；3-组织；4-部门；5-虚拟组。
+        /**
+         * <p>成员类型。</p>
+         * <p>1-群；2-用户；3-组织；4-部门；5-虚拟组。</p>
+         */
         @NameInMap("memberType")
         public Integer memberType;
 
-        // 成员名称。
+        /**
+         * <p>成员名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 成员角色。
-        // 0-无权限；1-只读；2-只读/下载；3-编辑；4-管理员；5-所有者。
+        /**
+         * <p>成员角色。</p>
+         * <p>0-无权限；1-只读；2-只读/下载；3-编辑；4-管理员；5-所有者。</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

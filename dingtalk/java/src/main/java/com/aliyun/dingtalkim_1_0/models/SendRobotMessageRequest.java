@@ -4,31 +4,45 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotMessageRequest extends TeaModel {
-    // @群所有人为true， 默认false。
+    /**
+     * <p>@群所有人为true， 默认false。</p>
+     */
     @NameInMap("atAll")
     public Boolean atAll;
 
-    // @钉外在业务系统内的唯一标志。
+    /**
+     * <p>@钉外在业务系统内的唯一标志。</p>
+     */
     @NameInMap("atAppUserId")
     public String atAppUserId;
 
-    // @钉内用户userId。
+    /**
+     * <p>@钉内用户userId。</p>
+     */
     @NameInMap("atDingUserId")
     public String atDingUserId;
 
-    // 消息体内容，按照下面参考示例格式上传。
+    /**
+     * <p>消息体内容，按照下面参考示例格式上传。</p>
+     */
     @NameInMap("msgContent")
     public String msgContent;
 
-    // 消息类型 文本：text，图片：photo，markdown：markdown，actionCard：actionCard。
+    /**
+     * <p>消息类型 文本：text，图片：photo，markdown：markdown，actionCard：actionCard。</p>
+     */
     @NameInMap("msgType")
     public String msgType;
 
-    // 群会话列表。
+    /**
+     * <p>群会话列表。</p>
+     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
-    // 机器人robotId（robotCode），指定哪个机器人发送消息
+    /**
+     * <p>机器人robotId（robotCode），指定哪个机器人发送消息</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

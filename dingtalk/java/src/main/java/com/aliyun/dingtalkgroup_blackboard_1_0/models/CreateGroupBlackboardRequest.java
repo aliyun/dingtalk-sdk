@@ -4,27 +4,39 @@ package com.aliyun.dingtalkgroup_blackboard_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupBlackboardRequest extends TeaModel {
-    // 文本内容
+    /**
+     * <p>文本内容</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 群会话的 Id
+    /**
+     * <p>群会话的 Id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 是否发DING
+    /**
+     * <p>是否发DING</p>
+     */
     @NameInMap("sendDing")
     public Boolean sendDing;
 
-    // 是否设为置顶
+    /**
+     * <p>是否设为置顶</p>
+     */
     @NameInMap("sticky")
     public Boolean sticky;
 
-    // 业务唯一键
+    /**
+     * <p>业务唯一键</p>
+     */
     @NameInMap("uniqueId")
     public String uniqueId;
 
-    // 操作用户的 userId
+    /**
+     * <p>操作用户的 userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

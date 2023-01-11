@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateSpaceRequest extends TeaModel {
-    // 修改后空间信息
+    /**
+     * <p>修改后空间信息</p>
+     */
     @NameInMap("spaceInfoVOList")
     public java.util.List<UpdateSpaceRequestSpaceInfoVOList> spaceInfoVOList;
 
@@ -22,42 +24,60 @@ public class UpdateSpaceRequest extends TeaModel {
     }
 
     public static class UpdateSpaceRequestSpaceInfoVOList extends TeaModel {
-        // 计费面积
+        /**
+         * <p>计费面积</p>
+         */
         @NameInMap("billingArea")
         public Float billingArea;
 
-        // 建筑面积
+        /**
+         * <p>建筑面积</p>
+         */
         @NameInMap("buildingArea")
         public Float buildingArea;
 
-        // 楼栋类型
+        /**
+         * <p>楼栋类型</p>
+         */
         @NameInMap("buildingType")
         public Long buildingType;
 
-        // 修改的空间的唯一标识
+        /**
+         * <p>修改的空间的唯一标识</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 房屋所在楼层，当tagCode为House时选填
+        /**
+         * <p>房屋所在楼层，当tagCode为House时选填</p>
+         */
         @NameInMap("floor")
         public String floor;
 
-        // 房屋状态，tagcode为house时选填，0空置/1未领/2入住/3空关/4装修
+        /**
+         * <p>房屋状态，tagcode为house时选填，0空置/1未领/2入住/3空关/4装修</p>
+         */
         @NameInMap("houseState")
         public Long houseState;
 
-        // 房屋类型，当tagcode为House时必填
+        /**
+         * <p>房屋类型，当tagcode为House时必填</p>
+         */
         @NameInMap("houseType")
         public Long houseType;
 
-        // 修改后名称
+        /**
+         * <p>修改后名称</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("parentDeptId")
         public Long parentDeptId;
 
-        // 空间类型
+        /**
+         * <p>空间类型</p>
+         */
         @NameInMap("tagCode")
         public String tagCode;
 

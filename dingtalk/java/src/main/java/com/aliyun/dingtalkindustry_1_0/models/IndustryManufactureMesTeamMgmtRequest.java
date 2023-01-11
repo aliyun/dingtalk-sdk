@@ -4,63 +4,93 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
-    // 本次操作的行为，取值： ● add：增加   -- 创建群 ● update：更新 -- 群成员变更
+    /**
+     * <p>本次操作的行为，取值： ● add：增加   -- 创建群 ● update：更新 -- 群成员变更</p>
+     */
     @NameInMap("action")
     public String action;
 
-    // ISV的唯一标识,由BPaaS分配
+    /**
+     * <p>ISV的唯一标识,由BPaaS分配</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
-    // 基础数据名称。比如班组
+    /**
+     * <p>基础数据名称。比如班组</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
-    // 事件配置列表(启用卡片列表),所有枚举值： 任务分配提醒: TASK_ASSIGN_REMINDER 任务逾期提醒: TASK_OVERDUE_REMINDER 置顶加急任务: STICK_URGET_TASK 报工审批提醒: OUTPUT_APPROVE_REMINDER 报工审批反馈: OUTPUT_APPROVE_RESULT 班组概览 :TEAM_OVERVIEW 我的任务:MYTASK_OVERVIEW     例如： ["STICK_URGET_TASK","OUTPUT_APPROVE_REMINDER"]
+    /**
+     * <p>事件配置列表(启用卡片列表),所有枚举值： 任务分配提醒: TASK_ASSIGN_REMINDER 任务逾期提醒: TASK_OVERDUE_REMINDER 置顶加急任务: STICK_URGET_TASK 报工审批提醒: OUTPUT_APPROVE_REMINDER 报工审批反馈: OUTPUT_APPROVE_RESULT 班组概览 :TEAM_OVERVIEW 我的任务:MYTASK_OVERVIEW     例如： ["STICK_URGET_TASK","OUTPUT_APPROVE_REMINDER"]</p>
+     */
     @NameInMap("events")
     public java.util.List<String> events;
 
-    // 扩展字段
+    /**
+     * <p>扩展字段</p>
+     */
     @NameInMap("extendData")
     public java.util.List<IndustryManufactureMesTeamMgmtRequestExtendData> extendData;
 
-    // 群配置
+    /**
+     * <p>群配置</p>
+     */
     @NameInMap("groupConfig")
     public java.util.Map<String, ?> groupConfig;
 
-    // 群插件列表
+    /**
+     * <p>群插件列表</p>
+     */
     @NameInMap("groupPlugins")
     public java.util.List<IndustryManufactureMesTeamMgmtRequestGroupPlugins> groupPlugins;
 
-    // 群类型，枚举
+    /**
+     * <p>群类型，枚举</p>
+     */
     @NameInMap("groupType")
     public String groupType;
 
-    // 班组模型实例的唯一Id， 由业务方传递
+    /**
+     * <p>班组模型实例的唯一Id， 由业务方传递</p>
+     */
     @NameInMap("id")
     public String id;
 
-    // 班组长(支持多个)
+    /**
+     * <p>班组长(支持多个)</p>
+     */
     @NameInMap("leaders")
     public java.util.List<IndustryManufactureMesTeamMgmtRequestLeaders> leaders;
 
-    // 班组成员(群成员)
+    /**
+     * <p>班组成员(群成员)</p>
+     */
     @NameInMap("members")
     public java.util.List<IndustryManufactureMesTeamMgmtRequestMembers> members;
 
-    // 班组群名称
+    /**
+     * <p>班组群名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 关联的工序
+    /**
+     * <p>关联的工序</p>
+     */
     @NameInMap("processIds")
     public java.util.List<String> processIds;
 
-    // 业务tagKey
+    /**
+     * <p>业务tagKey</p>
+     */
     @NameInMap("tagKey")
     public String tagKey;
 
-    // 业务tagValues
+    /**
+     * <p>业务tagValues</p>
+     */
     @NameInMap("tagValues")
     public java.util.List<String> tagValues;
 
@@ -190,19 +220,27 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesTeamMgmtRequestExtendData extends TeaModel {
-        // 字段唯一标识
+        /**
+         * <p>字段唯一标识</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 字段中文描述
+        /**
+         * <p>字段中文描述</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 字段的取值
+        /**
+         * <p>字段的取值</p>
+         */
         @NameInMap("value")
         public String value;
 
-        // 字段的类型(string,number,boolean)
+        /**
+         * <p>字段的类型(string,number,boolean)</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -276,11 +314,15 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesTeamMgmtRequestLeaders extends TeaModel {
-        // 工人姓名
+        /**
+         * <p>工人姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 工人staffNo
+        /**
+         * <p>工人staffNo</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -308,11 +350,15 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesTeamMgmtRequestMembers extends TeaModel {
-        // 工人姓名
+        /**
+         * <p>工人姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 工人staffNo
+        /**
+         * <p>工人staffNo</p>
+         */
         @NameInMap("userId")
         public String userId;
 

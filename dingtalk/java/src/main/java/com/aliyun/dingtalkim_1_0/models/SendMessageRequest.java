@@ -4,27 +4,39 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMessageRequest extends TeaModel {
-    // 消息内容
+    /**
+     * <p>消息内容</p>
+     */
     @NameInMap("message")
     public String message;
 
-    // 消息类型
+    /**
+     * <p>消息类型</p>
+     */
     @NameInMap("messageType")
     public String messageType;
 
-    // 群会话Id
+    /**
+     * <p>群会话Id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // B端客服钉钉Id
+    /**
+     * <p>B端客服钉钉Id</p>
+     */
     @NameInMap("receiverId")
     public String receiverId;
 
-    // C端客户appUserId
+    /**
+     * <p>C端客户appUserId</p>
+     */
     @NameInMap("senderId")
     public String senderId;
 
-    // 渠道按钮跳转信息
+    /**
+     * <p>渠道按钮跳转信息</p>
+     */
     @NameInMap("sourceInfos")
     public java.util.Map<String, ?> sourceInfos;
 

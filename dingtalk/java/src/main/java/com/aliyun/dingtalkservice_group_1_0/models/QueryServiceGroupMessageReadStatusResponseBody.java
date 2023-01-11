@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryServiceGroupMessageReadStatusResponseBody extends TeaModel {
-    // 本次请求所返回的最大记录条数。
+    /**
+     * <p>本次请求所返回的最大记录条数。</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+    /**
+     * <p>表示当前调用返回读取到的位置，空代表数据已经读取完毕</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 已读未读信息列表
+    /**
+     * <p>已读未读信息列表</p>
+     */
     @NameInMap("records")
     public java.util.List<QueryServiceGroupMessageReadStatusResponseBodyRecords> records;
 
-    // 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+    /**
+     * <p>本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -58,31 +66,45 @@ public class QueryServiceGroupMessageReadStatusResponseBody extends TeaModel {
     }
 
     public static class QueryServiceGroupMessageReadStatusResponseBodyRecords extends TeaModel {
-        // 状态：已读1/未读0
+        /**
+         * <p>状态：已读1/未读0</p>
+         */
         @NameInMap("readStatus")
         public Integer readStatus;
 
-        // 已读时间
+        /**
+         * <p>已读时间</p>
+         */
         @NameInMap("readTimeStr")
         public String readTimeStr;
 
-        // 接收者dingtalkId
+        /**
+         * <p>接收者dingtalkId</p>
+         */
         @NameInMap("receiverDingTalkId")
         public String receiverDingTalkId;
 
-        // 接收者昵称
+        /**
+         * <p>接收者昵称</p>
+         */
         @NameInMap("receiverName")
         public String receiverName;
 
-        // 已读人员为非企业员工则有值
+        /**
+         * <p>已读人员为非企业员工则有值</p>
+         */
         @NameInMap("receiverUnionId")
         public String receiverUnionId;
 
-        // 已读人员为企业员工则有值
+        /**
+         * <p>已读人员为企业员工则有值</p>
+         */
         @NameInMap("receiverUserId")
         public String receiverUserId;
 
-        // 发送时间
+        /**
+         * <p>发送时间</p>
+         */
         @NameInMap("sendTimeStr")
         public String sendTimeStr;
 

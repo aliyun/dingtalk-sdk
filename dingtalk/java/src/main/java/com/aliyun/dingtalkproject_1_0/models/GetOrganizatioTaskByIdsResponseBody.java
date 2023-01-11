@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrganizatioTaskByIdsResponseBody extends TeaModel {
-    // 返回结构体
+    /**
+     * <p>返回结构体</p>
+     */
     @NameInMap("result")
     public java.util.List<GetOrganizatioTaskByIdsResponseBodyResult> result;
 
@@ -22,67 +24,99 @@ public class GetOrganizatioTaskByIdsResponseBody extends TeaModel {
     }
 
     public static class GetOrganizatioTaskByIdsResponseBodyResult extends TeaModel {
-        // 父任务id
+        /**
+         * <p>父任务id</p>
+         */
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
-        // 任务标题
+        /**
+         * <p>任务标题</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("created")
         public String created;
 
-        // 创建者id
+        /**
+         * <p>创建者id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        // 任务截止时间
+        /**
+         * <p>任务截止时间</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
-        // 执行者id
+        /**
+         * <p>执行者id</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
-        // 参与者列表
+        /**
+         * <p>参与者列表</p>
+         */
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
-        // 任务是否已删除
+        /**
+         * <p>任务是否已删除</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        // 任务是否已完成
+        /**
+         * <p>任务是否已完成</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        // 任务自定义标记
+        /**
+         * <p>任务自定义标记</p>
+         */
         @NameInMap("labels")
         public java.util.List<String> labels;
 
-        // 任务备注
+        /**
+         * <p>任务备注</p>
+         */
         @NameInMap("note")
         public String note;
 
-        // 优先级【-10,0,1,2】中选一个
+        /**
+         * <p>优先级【-10,0,1,2】中选一个</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
-        // 任务开始时间
+        /**
+         * <p>任务开始时间</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
-        // 任务id
+        /**
+         * <p>任务id</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updated")
         public String updated;
 
-        // 任务可见性。involves：仅参与者可见。members:所有人可见
+        /**
+         * <p>任务可见性。involves：仅参与者可见。members:所有人可见</p>
+         */
         @NameInMap("visible")
         public String visible;
 

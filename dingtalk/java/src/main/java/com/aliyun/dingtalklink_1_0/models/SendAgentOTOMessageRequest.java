@@ -4,7 +4,9 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendAgentOTOMessageRequest extends TeaModel {
-    // 消息详情
+    /**
+     * <p>消息详情</p>
+     */
     @NameInMap("detail")
     public SendAgentOTOMessageRequestDetail detail;
 
@@ -22,11 +24,15 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyActionCardButtonList extends TeaModel {
-        // 使用独立跳转ActionCard样式时的跳转链接。
+        /**
+         * <p>使用独立跳转ActionCard样式时的跳转链接。</p>
+         */
         @NameInMap("actionUrl")
         public String actionUrl;
 
-        // 使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
+        /**
+         * <p>使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -54,27 +60,39 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyActionCard extends TeaModel {
-        // 使用独立跳转ActionCard样式时的按钮列表；必须与buttonOrientation同时设置，且长度不超过1000字符。
+        /**
+         * <p>使用独立跳转ActionCard样式时的按钮列表；必须与buttonOrientation同时设置，且长度不超过1000字符。</p>
+         */
         @NameInMap("buttonList")
         public java.util.List<SendAgentOTOMessageRequestDetailMessageBodyActionCardButtonList> buttonList;
 
-        // 按钮排列方式： 0：竖直排列 1：横向排列 必须与buttonList同时设置。
+        /**
+         * <p>按钮排列方式： 0：竖直排列 1：横向排列 必须与buttonList同时设置。</p>
+         */
         @NameInMap("buttonOrientation")
         public String buttonOrientation;
 
-        // 消息内容，支持markdown，语法参考标准markdown语法。1000个字符以内。
+        /**
+         * <p>消息内容，支持markdown，语法参考标准markdown语法。1000个字符以内。</p>
+         */
         @NameInMap("markdown")
         public String markdown;
 
-        // 使用整体跳转ActionCard样式时的标题。必须与singleUrl同时设置，最长20个字符。
+        /**
+         * <p>使用整体跳转ActionCard样式时的标题。必须与singleUrl同时设置，最长20个字符。</p>
+         */
         @NameInMap("singleTitle")
         public String singleTitle;
 
-        // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。
+        /**
+         * <p>消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。</p>
+         */
         @NameInMap("singleUrl")
         public String singleUrl;
 
-        // 透出到会话列表和通知的文案
+        /**
+         * <p>透出到会话列表和通知的文案</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -134,7 +152,9 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyImage extends TeaModel {
-        // 图片mediaId信息
+        /**
+         * <p>图片mediaId信息</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
@@ -154,19 +174,27 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage extends TeaModel {
-        // 需要回调的互动卡片可通过此参数定义回调地址
+        /**
+         * <p>需要回调的互动卡片可通过此参数定义回调地址</p>
+         */
         @NameInMap("callbackUrl")
         public String callbackUrl;
 
-        // 卡片ID，由开发者自定义，同一卡片此ID需要保持一致。
+        /**
+         * <p>卡片ID，由开发者自定义，同一卡片此ID需要保持一致。</p>
+         */
         @NameInMap("cardBizId")
         public String cardBizId;
 
-        // 互动卡片数据，必须是json object 格式
+        /**
+         * <p>互动卡片数据，必须是json object 格式</p>
+         */
         @NameInMap("cardData")
         public String cardData;
 
-        // 卡片模板ID，可通过互动卡片搭建后台获取。
+        /**
+         * <p>卡片模板ID，可通过互动卡片搭建后台获取。</p>
+         */
         @NameInMap("cardTemplateId")
         public String cardTemplateId;
 
@@ -210,19 +238,27 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyLink extends TeaModel {
-        // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
+        /**
+         * <p>消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。</p>
+         */
         @NameInMap("messageUrl")
         public String messageUrl;
 
-        // 图片地址
+        /**
+         * <p>图片地址</p>
+         */
         @NameInMap("picUrl")
         public String picUrl;
 
-        // 消息描述，建议500字符以内。
+        /**
+         * <p>消息描述，建议500字符以内。</p>
+         */
         @NameInMap("text")
         public String text;
 
-        // 消息标题，建议100字符以内。
+        /**
+         * <p>消息标题，建议100字符以内。</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -266,11 +302,15 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyMarkdown extends TeaModel {
-        // markdown格式的消息，建议500字符以内。
+        /**
+         * <p>markdown格式的消息，建议500字符以内。</p>
+         */
         @NameInMap("text")
         public String text;
 
-        // 首屏会话透出的展示内容。
+        /**
+         * <p>首屏会话透出的展示内容。</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -298,7 +338,9 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyText extends TeaModel {
-        // 消息内容，建议500字符以内。
+        /**
+         * <p>消息内容，建议500字符以内。</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -318,26 +360,36 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBody extends TeaModel {
-        // 卡片消息
+        /**
+         * <p>卡片消息</p>
+         */
         @NameInMap("actionCard")
         public SendAgentOTOMessageRequestDetailMessageBodyActionCard actionCard;
 
-        // 图片类型的消息场景使用
+        /**
+         * <p>图片类型的消息场景使用</p>
+         */
         @NameInMap("image")
         public SendAgentOTOMessageRequestDetailMessageBodyImage image;
 
         @NameInMap("interactiveMessage")
         public SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage interactiveMessage;
 
-        // 链接消息类型
+        /**
+         * <p>链接消息类型</p>
+         */
         @NameInMap("link")
         public SendAgentOTOMessageRequestDetailMessageBodyLink link;
 
-        // markdown消息，仅对消息类型为markdown时有效
+        /**
+         * <p>markdown消息，仅对消息类型为markdown时有效</p>
+         */
         @NameInMap("markdown")
         public SendAgentOTOMessageRequestDetailMessageBodyMarkdown markdown;
 
-        // 文本消息体  对于文本类型消息时必填
+        /**
+         * <p>文本消息体  对于文本类型消息时必填</p>
+         */
         @NameInMap("text")
         public SendAgentOTOMessageRequestDetailMessageBodyText text;
 
@@ -397,22 +449,30 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetail extends TeaModel {
-        // 消息体
+        /**
+         * <p>消息体</p>
+         */
         @NameInMap("messageBody")
         public SendAgentOTOMessageRequestDetailMessageBody messageBody;
 
-        // 消息类型
+        /**
+         * <p>消息类型</p>
+         */
         @NameInMap("msgType")
         public String msgType;
 
         @NameInMap("sessionId")
         public String sessionId;
 
-        // 消息接收人id
+        /**
+         * <p>消息接收人id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 请求唯一 ID
+        /**
+         * <p>请求唯一 ID</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

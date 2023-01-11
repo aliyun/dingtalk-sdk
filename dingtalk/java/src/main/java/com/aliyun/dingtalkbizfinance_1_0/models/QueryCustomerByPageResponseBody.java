@@ -4,11 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCustomerByPageResponseBody extends TeaModel {
-    // 是否还有更多数据
+    /**
+     * <p>是否还有更多数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // resultList
+    /**
+     * <p>resultList</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryCustomerByPageResponseBodyList> list;
 
@@ -34,27 +38,39 @@ public class QueryCustomerByPageResponseBody extends TeaModel {
     }
 
     public static class QueryCustomerByPageResponseBodyList extends TeaModel {
-        // 客户Code
+        /**
+         * <p>客户Code</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 创建时间(单位MS)
+        /**
+         * <p>创建时间(单位MS)</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 客户描述
+        /**
+         * <p>客户描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 客户名称
+        /**
+         * <p>客户名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 状态：启用(valid), 停用(invalid), 删除(deleted)
+        /**
+         * <p>状态：启用(valid), 停用(invalid), 删除(deleted)</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 用户自定义code
+        /**
+         * <p>用户自定义code</p>
+         */
         @NameInMap("userDefineCode")
         public String userDefineCode;
 

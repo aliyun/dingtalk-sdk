@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFormRemarksResponseBody extends TeaModel {
-    // formRemarkVoMap
+    /**
+     * <p>formRemarkVoMap</p>
+     */
     @NameInMap("formRemarkVoMap")
     public java.util.Map<String, ?> formRemarkVoMap;
 

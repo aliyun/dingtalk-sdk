@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDeviceGroupInfoRequest extends TeaModel {
-    // 开放群唯一标识
+    /**
+     * <p>开放群唯一标识</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

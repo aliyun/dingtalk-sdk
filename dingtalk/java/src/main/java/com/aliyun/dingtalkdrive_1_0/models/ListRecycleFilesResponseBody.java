@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecycleFilesResponseBody extends TeaModel {
-    // 加载更多锚点, nextToken不为空表示有更多数据
+    /**
+     * <p>加载更多锚点, nextToken不为空表示有更多数据</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 回收站文件列表
+    /**
+     * <p>回收站文件列表</p>
+     */
     @NameInMap("recycleItems")
     public java.util.List<ListRecycleFilesResponseBodyRecycleItems> recycleItems;
 
@@ -34,35 +38,51 @@ public class ListRecycleFilesResponseBody extends TeaModel {
     }
 
     public static class ListRecycleFilesResponseBodyRecycleItems extends TeaModel {
-        // 文件内容类型
+        /**
+         * <p>文件内容类型</p>
+         */
         @NameInMap("contentType")
         public String contentType;
 
-        // 删除员工工号
+        /**
+         * <p>删除员工工号</p>
+         */
         @NameInMap("deleteStaffId")
         public String deleteStaffId;
 
-        // 删除时间
+        /**
+         * <p>删除时间</p>
+         */
         @NameInMap("deleteTime")
         public String deleteTime;
 
-        // 文件名称
+        /**
+         * <p>文件名称</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 文件路径
+        /**
+         * <p>文件路径</p>
+         */
         @NameInMap("filePath")
         public String filePath;
 
-        // 文件大小
+        /**
+         * <p>文件大小</p>
+         */
         @NameInMap("fileSize")
         public Long fileSize;
 
-        // 文件类型
+        /**
+         * <p>文件类型</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
-        // 回收站item id
+        /**
+         * <p>回收站item id</p>
+         */
         @NameInMap("recycleItemId")
         public String recycleItemId;
 

@@ -4,27 +4,39 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConfBaseInfoByLogicalIdResponseBody extends TeaModel {
-    // 会议ID（仅在会议正式开始后才返回该字段）
+    /**
+     * <p>会议ID（仅在会议正式开始后才返回该字段）</p>
+     */
     @NameInMap("conferenceId")
     public String conferenceId;
 
-    // 会议逻辑id
+    /**
+     * <p>会议逻辑id</p>
+     */
     @NameInMap("logicalConferenceId")
     public String logicalConferenceId;
 
-    // 会议创建用户昵称
+    /**
+     * <p>会议创建用户昵称</p>
+     */
     @NameInMap("nickname")
     public String nickname;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 会议标题
+    /**
+     * <p>会议标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 会议创建用户id
+    /**
+     * <p>会议创建用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

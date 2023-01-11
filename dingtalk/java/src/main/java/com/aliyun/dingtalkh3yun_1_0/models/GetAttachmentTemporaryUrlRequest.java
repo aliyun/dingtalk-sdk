@@ -4,7 +4,9 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAttachmentTemporaryUrlRequest extends TeaModel {
-    // 附件id
+    /**
+     * <p>附件id</p>
+     */
     @NameInMap("attachmentId")
     public String attachmentId;
 

@@ -21,15 +21,21 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultCommentConf extends TeaModel {
-        // 提示内容
+        /**
+         * <p>提示内容</p>
+         */
         @NameInMap("commentDescription")
         public String commentDescription;
 
-        // 评论对发起人不可见
+        /**
+         * <p>评论对发起人不可见</p>
+         */
         @NameInMap("commentHiddenForProposer")
         public Boolean commentHiddenForProposer;
 
-        // 评论必填
+        /**
+         * <p>评论必填</p>
+         */
         @NameInMap("commentRequired")
         public Boolean commentRequired;
 
@@ -65,11 +71,15 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultHandSignConf extends TeaModel {
-        // 开启手写签名
+        /**
+         * <p>开启手写签名</p>
+         */
         @NameInMap("handSignEnable")
         public Boolean handSignEnable;
 
-        // 是否使用上次签名
+        /**
+         * <p>是否使用上次签名</p>
+         */
         @NameInMap("resignEnable")
         public Boolean resignEnable;
 
@@ -97,15 +107,21 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList extends TeaModel {
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 类型
+        /**
+         * <p>类型</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // 员工staffId/部门id
+        /**
+         * <p>员工staffId/部门id</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -141,11 +157,15 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultSubstituteSubmitConf extends TeaModel {
-        // 是否允许代提交
+        /**
+         * <p>是否允许代提交</p>
+         */
         @NameInMap("enable")
         public Boolean enable;
 
-        // 代提交人
+        /**
+         * <p>代提交人</p>
+         */
         @NameInMap("submitterList")
         public java.util.List<GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList> submitterList;
 
@@ -173,11 +193,15 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultTitleGenRule extends TeaModel {
-        // 规则表达式
+        /**
+         * <p>规则表达式</p>
+         */
         @NameInMap("express")
         public String express;
 
-        // 规则类型
+        /**
+         * <p>规则类型</p>
+         */
         @NameInMap("type")
         public Integer type;
 
@@ -205,11 +229,15 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultVisibility extends TeaModel {
-        // 类型
+        /**
+         * <p>类型</p>
+         */
         @NameInMap("type")
         public Integer type;
 
-        // 员工staffId/部门id
+        /**
+         * <p>员工staffId/部门id</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -237,79 +265,117 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResult extends TeaModel {
-        // 自定义摘要信息
+        /**
+         * <p>自定义摘要信息</p>
+         */
         @NameInMap("abstractGenRule")
         public java.util.List<String> abstractGenRule;
 
-        // 表单节点权限
+        /**
+         * <p>表单节点权限</p>
+         */
         @NameInMap("activityAuth")
         public String activityAuth;
 
-        // 是否允许撤销
+        /**
+         * <p>是否允许撤销</p>
+         */
         @NameInMap("allowRevoke")
         public Boolean allowRevoke;
 
-        // 是否允许加签
+        /**
+         * <p>是否允许加签</p>
+         */
         @NameInMap("appendEnable")
         public Boolean appendEnable;
 
-        // 如果审批人和发起人是同一个人，则去重
+        /**
+         * <p>如果审批人和发起人是同一个人，则去重</p>
+         */
         @NameInMap("autoExecuteOriginatorTasks")
         public Boolean autoExecuteOriginatorTasks;
 
-        // 流程表单业务标识
+        /**
+         * <p>流程表单业务标识</p>
+         */
         @NameInMap("bizCategoryId")
         public String bizCategoryId;
 
-        // 纯表单业务标识
+        /**
+         * <p>纯表单业务标识</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
-        // 评论配置
+        /**
+         * <p>评论配置</p>
+         */
         @NameInMap("commentConf")
         public GetProcessConfigResponseBodyResultCommentConf commentConf;
 
-        // 审批人自动去重
+        /**
+         * <p>审批人自动去重</p>
+         */
         @NameInMap("duplicateRemoval")
         public String duplicateRemoval;
 
-        // 表单配置
+        /**
+         * <p>表单配置</p>
+         */
         @NameInMap("formSchema")
         public String formSchema;
 
-        // 手写签名配置
+        /**
+         * <p>手写签名配置</p>
+         */
         @NameInMap("handSignConf")
         public GetProcessConfigResponseBodyResultHandSignConf handSignConf;
 
-        // 表单管理员
+        /**
+         * <p>表单管理员</p>
+         */
         @NameInMap("managers")
         public java.util.List<String> managers;
 
-        // 表单名称
+        /**
+         * <p>表单名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 是否流程表单
+        /**
+         * <p>是否流程表单</p>
+         */
         @NameInMap("processAppType")
         public Boolean processAppType;
 
-        // 流程配置
+        /**
+         * <p>流程配置</p>
+         */
         @NameInMap("processConfig")
         public String processConfig;
 
-        // 是否静态流程
+        /**
+         * <p>是否静态流程</p>
+         */
         @NameInMap("staticProc")
         public Boolean staticProc;
 
-        // 代提交配置
+        /**
+         * <p>代提交配置</p>
+         */
         @NameInMap("substituteSubmitConf")
         public GetProcessConfigResponseBodyResultSubstituteSubmitConf substituteSubmitConf;
 
-        // 自定义标题规则
+        /**
+         * <p>自定义标题规则</p>
+         */
         @NameInMap("titleGenRule")
         public GetProcessConfigResponseBodyResultTitleGenRule titleGenRule;
 
-        // 模板可见性
+        /**
+         * <p>模板可见性</p>
+         */
         @NameInMap("visibility")
         public java.util.List<GetProcessConfigResponseBodyResultVisibility> visibility;
 

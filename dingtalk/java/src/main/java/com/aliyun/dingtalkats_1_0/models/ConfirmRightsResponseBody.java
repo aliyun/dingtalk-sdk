@@ -4,7 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConfirmRightsResponseBody extends TeaModel {
-    // 结果
+    /**
+     * <p>结果</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

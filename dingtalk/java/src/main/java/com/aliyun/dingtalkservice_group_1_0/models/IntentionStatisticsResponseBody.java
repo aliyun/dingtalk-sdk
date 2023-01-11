@@ -4,11 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class IntentionStatisticsResponseBody extends TeaModel {
-    // 意图统计
+    /**
+     * <p>意图统计</p>
+     */
     @NameInMap("intentionStatisticsRecords")
     public java.util.List<IntentionStatisticsResponseBodyIntentionStatisticsRecords> intentionStatisticsRecords;
 
-    // 意图趋势
+    /**
+     * <p>意图趋势</p>
+     */
     @NameInMap("intentionTrend")
     public java.util.List<IntentionStatisticsResponseBodyIntentionTrend> intentionTrend;
 
@@ -34,15 +38,21 @@ public class IntentionStatisticsResponseBody extends TeaModel {
     }
 
     public static class IntentionStatisticsResponseBodyIntentionStatisticsRecords extends TeaModel {
-        // 心声数量
+        /**
+         * <p>心声数量</p>
+         */
         @NameInMap("count")
         public Long count;
 
-        // 意图
+        /**
+         * <p>意图</p>
+         */
         @NameInMap("intention")
         public String intention;
 
-        // 上期心声数量
+        /**
+         * <p>上期心声数量</p>
+         */
         @NameInMap("lastCount")
         public Long lastCount;
 
@@ -78,15 +88,21 @@ public class IntentionStatisticsResponseBody extends TeaModel {
     }
 
     public static class IntentionStatisticsResponseBodyIntentionTrend extends TeaModel {
-        // 心声数量
+        /**
+         * <p>心声数量</p>
+         */
         @NameInMap("count")
         public Long count;
 
-        // 日期
+        /**
+         * <p>日期</p>
+         */
         @NameInMap("dt")
         public String dt;
 
-        // 意图
+        /**
+         * <p>意图</p>
+         */
         @NameInMap("intention")
         public String intention;
 

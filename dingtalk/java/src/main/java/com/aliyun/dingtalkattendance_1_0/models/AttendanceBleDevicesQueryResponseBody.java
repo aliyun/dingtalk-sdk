@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttendanceBleDevicesQueryResponseBody extends TeaModel {
-    // 蓝牙列表
+    /**
+     * <p>蓝牙列表</p>
+     */
     @NameInMap("result")
     public java.util.List<AttendanceBleDevicesQueryResponseBodyResult> result;
 
@@ -22,15 +24,21 @@ public class AttendanceBleDevicesQueryResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesQueryResponseBodyResult extends TeaModel {
-        // 蓝牙设备Id
+        /**
+         * <p>蓝牙设备Id</p>
+         */
         @NameInMap("deviceId")
         public Long deviceId;
 
-        // 蓝牙设备名称
+        /**
+         * <p>蓝牙设备名称</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        // sn
+        /**
+         * <p>sn</p>
+         */
         @NameInMap("sn")
         public String sn;
 

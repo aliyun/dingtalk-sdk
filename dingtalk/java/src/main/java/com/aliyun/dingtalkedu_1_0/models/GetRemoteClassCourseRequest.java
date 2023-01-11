@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRemoteClassCourseRequest extends TeaModel {
-    // 操作者用户ID
+    /**
+     * <p>操作者用户ID</p>
+     */
     @NameInMap("operator")
     public String operator;
 

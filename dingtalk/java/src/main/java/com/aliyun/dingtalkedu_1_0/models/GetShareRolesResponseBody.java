@@ -21,11 +21,15 @@ public class GetShareRolesResponseBody extends TeaModel {
     }
 
     public static class GetShareRolesResponseBodyResult extends TeaModel {
-        // 角色code
+        /**
+         * <p>角色code</p>
+         */
         @NameInMap("shareRoleCode")
         public String shareRoleCode;
 
-        // 角色名称
+        /**
+         * <p>角色名称</p>
+         */
         @NameInMap("shareRoleName")
         public String shareRoleName;
 

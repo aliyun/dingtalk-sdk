@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class RobotMessageRecallResponseBody extends TeaModel {
-    // 撤回成功的消息ID，失败时为空
+    /**
+     * <p>撤回成功的消息ID，失败时为空</p>
+     */
     @NameInMap("result")
     public String result;
 

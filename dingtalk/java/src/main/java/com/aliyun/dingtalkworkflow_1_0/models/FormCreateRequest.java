@@ -4,22 +4,30 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormCreateRequest extends TeaModel {
-    // 表单模板描述
+    /**
+     * <p>表单模板描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 表单控件列表
+    /**
+     * <p>表单控件列表</p>
+     */
     @NameInMap("formComponents")
     public java.util.List<FormComponent> formComponents;
 
-    // 表单模板名称
+    /**
+     * <p>表单模板名称</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("processCode")
     public String processCode;
 
-    // 模板配置信息
+    /**
+     * <p>模板配置信息</p>
+     */
     @NameInMap("templateConfig")
     public FormCreateRequestTemplateConfig templateConfig;
 
@@ -69,35 +77,51 @@ public class FormCreateRequest extends TeaModel {
     }
 
     public static class FormCreateRequestTemplateConfig extends TeaModel {
-        // 更新后模板目录id
+        /**
+         * <p>更新后模板目录id</p>
+         */
         @NameInMap("dirId")
         public String dirId;
 
-        // 禁用模板删除按钮
+        /**
+         * <p>禁用模板删除按钮</p>
+         */
         @NameInMap("disableDeleteProcess")
         public Boolean disableDeleteProcess;
 
-        // 禁用表单编辑
+        /**
+         * <p>禁用表单编辑</p>
+         */
         @NameInMap("disableFormEdit")
         public Boolean disableFormEdit;
 
-        // 首页工作台是否可见
+        /**
+         * <p>首页工作台是否可见</p>
+         */
         @NameInMap("disableHomepage")
         public Boolean disableHomepage;
 
-        // 禁用再次提交
+        /**
+         * <p>禁用再次提交</p>
+         */
         @NameInMap("disableResubmit")
         public Boolean disableResubmit;
 
-        // 禁用停止按钮
+        /**
+         * <p>禁用停止按钮</p>
+         */
         @NameInMap("disableStopProcessButton")
         public Boolean disableStopProcessButton;
 
-        // 审批场景内隐藏模板
+        /**
+         * <p>审批场景内隐藏模板</p>
+         */
         @NameInMap("hidden")
         public Boolean hidden;
 
-        // 源模板目录id
+        /**
+         * <p>源模板目录id</p>
+         */
         @NameInMap("originDirId")
         public String originDirId;
 

@@ -4,23 +4,33 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeductionPointBatchRequest extends TeaModel {
-    // 扣减数量 范围：1—100000
+    /**
+     * <p>扣减数量 范围：1—100000</p>
+     */
     @NameInMap("deductionAmount")
     public Long deductionAmount;
 
-    // 扣减积分原因
+    /**
+     * <p>扣减积分原因</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 是否发送组织文化通知
+    /**
+     * <p>是否发送组织文化通知</p>
+     */
     @NameInMap("sendOrgCultureInform")
     public Boolean sendOrgCultureInform;
 
-    // 批量扣减积分用户
+    /**
+     * <p>批量扣减积分用户</p>
+     */
     @NameInMap("targetUserList")
     public java.util.List<DeductionPointBatchRequestTargetUserList> targetUserList;
 
-    // 操作人userId
+    /**
+     * <p>操作人userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -70,11 +80,15 @@ public class DeductionPointBatchRequest extends TeaModel {
     }
 
     public static class DeductionPointBatchRequestTargetUserList extends TeaModel {
-        // 积分交易单号
+        /**
+         * <p>积分交易单号</p>
+         */
         @NameInMap("outId")
         public String outId;
 
-        // 扣减目标用户userId
+        /**
+         * <p>扣减目标用户userId</p>
+         */
         @NameInMap("targetUserId")
         public String targetUserId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFlowIdByRelationEntityIdRequest extends TeaModel {
-    // 业务标识
+    /**
+     * <p>业务标识</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 招聘流程关联实体
+    /**
+     * <p>招聘流程关联实体</p>
+     */
     @NameInMap("relationEntity")
     public String relationEntity;
 
-    // 招聘流程关联实体标识
+    /**
+     * <p>招聘流程关联实体标识</p>
+     */
     @NameInMap("relationEntityId")
     public String relationEntityId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOfficialAccountContactsResponseBody extends TeaModel {
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 下一页的游标，为null则表示无数据
+    /**
+     * <p>下一页的游标，为null则表示无数据</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 客户数据节点
+    /**
+     * <p>客户数据节点</p>
+     */
     @NameInMap("values")
     public java.util.List<GetOfficialAccountContactsResponseBodyValues> values;
 
@@ -46,11 +52,15 @@ public class GetOfficialAccountContactsResponseBody extends TeaModel {
     }
 
     public static class GetOfficialAccountContactsResponseBodyValuesContactsPermission extends TeaModel {
-        // 负责人用户ID列表
+        /**
+         * <p>负责人用户ID列表</p>
+         */
         @NameInMap("ownerStaffIds")
         public java.util.List<String> ownerStaffIds;
 
-        // 协同人用户ID列表
+        /**
+         * <p>协同人用户ID列表</p>
+         */
         @NameInMap("participantStaffIds")
         public java.util.List<String> participantStaffIds;
 
@@ -78,35 +88,51 @@ public class GetOfficialAccountContactsResponseBody extends TeaModel {
     }
 
     public static class GetOfficialAccountContactsResponseBodyValuesContacts extends TeaModel {
-        // 记录创建时间
+        /**
+         * <p>记录创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建记录的用户昵称
+        /**
+         * <p>创建记录的用户昵称</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
-        // 创建记录的用户ID
+        /**
+         * <p>创建记录的用户ID</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 数据内容
+        /**
+         * <p>数据内容</p>
+         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 
-        // 扩展数据内容
+        /**
+         * <p>扩展数据内容</p>
+         */
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
-        // 数据ID
+        /**
+         * <p>数据ID</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
-        // 记录修改时间
+        /**
+         * <p>记录修改时间</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
-        // 数据权限信息
+        /**
+         * <p>数据权限信息</p>
+         */
         @NameInMap("permission")
         public GetOfficialAccountContactsResponseBodyValuesContactsPermission permission;
 
@@ -182,11 +208,15 @@ public class GetOfficialAccountContactsResponseBody extends TeaModel {
     }
 
     public static class GetOfficialAccountContactsResponseBodyValues extends TeaModel {
-        // 用户的联系人数据
+        /**
+         * <p>用户的联系人数据</p>
+         */
         @NameInMap("contacts")
         public java.util.List<GetOfficialAccountContactsResponseBodyValuesContacts> contacts;
 
-        // 用户userId
+        /**
+         * <p>用户userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

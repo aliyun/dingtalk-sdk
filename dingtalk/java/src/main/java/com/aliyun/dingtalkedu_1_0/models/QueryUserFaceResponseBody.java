@@ -4,19 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserFaceResponseBody extends TeaModel {
-    // 组织id
+    /**
+     * <p>组织id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 人脸id
+    /**
+     * <p>人脸id</p>
+     */
     @NameInMap("faceId")
     public String faceId;
 
-    // 员工姓名
+    /**
+     * <p>员工姓名</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

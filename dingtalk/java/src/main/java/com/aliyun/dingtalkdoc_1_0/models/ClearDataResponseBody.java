@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class ClearDataResponseBody extends TeaModel {
-    // 单元格地址
+    /**
+     * <p>单元格地址</p>
+     */
     @NameInMap("a1Notation")
     public String a1Notation;
 

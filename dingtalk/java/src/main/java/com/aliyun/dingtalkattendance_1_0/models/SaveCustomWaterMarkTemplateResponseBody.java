@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveCustomWaterMarkTemplateResponseBody extends TeaModel {
-    // 返回对象。
+    /**
+     * <p>返回对象。</p>
+     */
     @NameInMap("result")
     public SaveCustomWaterMarkTemplateResponseBodyResult result;
 
@@ -22,11 +24,15 @@ public class SaveCustomWaterMarkTemplateResponseBody extends TeaModel {
     }
 
     public static class SaveCustomWaterMarkTemplateResponseBodyResult extends TeaModel {
-        // 模板的表单Code。
+        /**
+         * <p>模板的表单Code。</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
-        // 模板的水印ID。
+        /**
+         * <p>模板的水印ID。</p>
+         */
         @NameInMap("waterMarkId")
         public String waterMarkId;
 

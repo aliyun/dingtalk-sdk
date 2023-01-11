@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteRowsResponseBody extends TeaModel {
-    // 工作表ID
+    /**
+     * <p>工作表ID</p>
+     */
     @NameInMap("id")
     public String id;
 

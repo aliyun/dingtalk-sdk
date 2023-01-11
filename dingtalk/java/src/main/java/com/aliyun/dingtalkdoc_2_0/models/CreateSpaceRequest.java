@@ -4,33 +4,47 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSpaceRequest extends TeaModel {
-    // 知识库简介。
-    // 最大长度50。
+    /**
+     * <p>知识库简介。</p>
+     * <p>最大长度50。</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 知识库图标。
+    /**
+     * <p>知识库图标。</p>
+     */
     @NameInMap("icon")
     public String icon;
 
-    // 知识库名称。
-    // 最大长度50。
+    /**
+     * <p>知识库名称。</p>
+     * <p>最大长度50。</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 操作人unionId。
+    /**
+     * <p>操作人unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 知识库分组id。只有选择了所属小组的情况下，才需要设置知识库分组。
+    /**
+     * <p>知识库分组id。只有选择了所属小组的情况下，才需要设置知识库分组。</p>
+     */
     @NameInMap("sectionId")
     public String sectionId;
 
-    // 公开范围。
+    /**
+     * <p>公开范围。</p>
+     */
     @NameInMap("shareScope")
     public CreateSpaceRequestShareScope shareScope;
 
-    // 所属小组id。
+    /**
+     * <p>所属小组id。</p>
+     */
     @NameInMap("teamId")
     public String teamId;
 
@@ -96,9 +110,11 @@ public class CreateSpaceRequest extends TeaModel {
     }
 
     public static class CreateSpaceRequestShareScope extends TeaModel {
-        // 公开范围。
-        // 0-仅知识库成员可见；
-        // 1-当前组织所有人可见。
+        /**
+         * <p>公开范围。</p>
+         * <p>0-仅知识库成员可见；</p>
+         * <p>1-当前组织所有人可见。</p>
+         */
         @NameInMap("scope")
         public Integer scope;
 

@@ -21,27 +21,39 @@ public class QueryDoctorDetailsByJobNumberResponseBody extends TeaModel {
     }
 
     public static class QueryDoctorDetailsByJobNumberResponseBodyContentDeptList extends TeaModel {
-        // 科室大类名称
+        /**
+         * <p>科室大类名称</p>
+         */
         @NameInMap("categoryName")
         public String categoryName;
 
-        // 科室id
+        /**
+         * <p>科室id</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 科室名称
+        /**
+         * <p>科室名称</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 人科关系关联id
+        /**
+         * <p>人科关系关联id</p>
+         */
         @NameInMap("relationId")
         public Long relationId;
 
@@ -101,31 +113,45 @@ public class QueryDoctorDetailsByJobNumberResponseBody extends TeaModel {
     }
 
     public static class QueryDoctorDetailsByJobNumberResponseBodyContentGroupList extends TeaModel {
-        // 科室id
+        /**
+         * <p>科室id</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 科室名称
+        /**
+         * <p>科室名称</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // 医疗组id
+        /**
+         * <p>医疗组id</p>
+         */
         @NameInMap("groupId")
         public Long groupId;
 
-        // 医疗组名称
+        /**
+         * <p>医疗组名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 用户在该医疗组是否为考核医疗组
+        /**
+         * <p>用户在该医疗组是否为考核医疗组</p>
+         */
         @NameInMap("isAssessGroup")
         public String isAssessGroup;
 
-        // 用户在该医疗组是否为组长
+        /**
+         * <p>用户在该医疗组是否为组长</p>
+         */
         @NameInMap("isLeader")
         public Boolean isLeader;
 
-        // 人组关系关联id
+        /**
+         * <p>人组关系关联id</p>
+         */
         @NameInMap("relationId")
         public Long relationId;
 
@@ -193,11 +219,15 @@ public class QueryDoctorDetailsByJobNumberResponseBody extends TeaModel {
     }
 
     public static class QueryDoctorDetailsByJobNumberResponseBodyContentJobStatus extends TeaModel {
-        // 状态编码
+        /**
+         * <p>状态编码</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 状态名称
+        /**
+         * <p>状态名称</p>
+         */
         @NameInMap("statusName")
         public String statusName;
 
@@ -225,15 +255,21 @@ public class QueryDoctorDetailsByJobNumberResponseBody extends TeaModel {
     }
 
     public static class QueryDoctorDetailsByJobNumberResponseBodyContentProfessionalTitle extends TeaModel {
-        // 职称编码
+        /**
+         * <p>职称编码</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 职称大类
+        /**
+         * <p>职称大类</p>
+         */
         @NameInMap("professionalTitleCategory")
         public String professionalTitleCategory;
 
-        // 职称明细
+        /**
+         * <p>职称明细</p>
+         */
         @NameInMap("professionalTitleDetail")
         public String professionalTitleDetail;
 
@@ -269,11 +305,15 @@ public class QueryDoctorDetailsByJobNumberResponseBody extends TeaModel {
     }
 
     public static class QueryDoctorDetailsByJobNumberResponseBodyContentUserProbList extends TeaModel {
-        // 身份属性编码
+        /**
+         * <p>身份属性编码</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 身份属性名称
+        /**
+         * <p>身份属性名称</p>
+         */
         @NameInMap("userPropertyName")
         public String userPropertyName;
 
@@ -301,35 +341,51 @@ public class QueryDoctorDetailsByJobNumberResponseBody extends TeaModel {
     }
 
     public static class QueryDoctorDetailsByJobNumberResponseBodyContent extends TeaModel {
-        // 科室列表
+        /**
+         * <p>科室列表</p>
+         */
         @NameInMap("deptList")
         public java.util.List<QueryDoctorDetailsByJobNumberResponseBodyContentDeptList> deptList;
 
-        // 医疗组列表
+        /**
+         * <p>医疗组列表</p>
+         */
         @NameInMap("groupList")
         public java.util.List<QueryDoctorDetailsByJobNumberResponseBodyContentGroupList> groupList;
 
-        // 工号
+        /**
+         * <p>工号</p>
+         */
         @NameInMap("jobNumber")
         public String jobNumber;
 
-        // 状态列表
+        /**
+         * <p>状态列表</p>
+         */
         @NameInMap("jobStatus")
         public java.util.List<QueryDoctorDetailsByJobNumberResponseBodyContentJobStatus> jobStatus;
 
-        // 职称
+        /**
+         * <p>职称</p>
+         */
         @NameInMap("professionalTitle")
         public QueryDoctorDetailsByJobNumberResponseBodyContentProfessionalTitle professionalTitle;
 
-        // 医生的userId
+        /**
+         * <p>医生的userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("userName")
         public String userName;
 
-        // 身份属性
+        /**
+         * <p>身份属性</p>
+         */
         @NameInMap("userProbList")
         public java.util.List<QueryDoctorDetailsByJobNumberResponseBodyContentUserProbList> userProbList;
 

@@ -4,39 +4,57 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResidentUserRequest extends TeaModel {
-    // 家庭住址
+    /**
+     * <p>家庭住址</p>
+     */
     @NameInMap("address")
     public String address;
 
-    // 所在新的户/租户部门id
+    /**
+     * <p>所在新的户/租户部门id</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    // 扩展字段（包括身份证/性别/民族）
+    /**
+     * <p>扩展字段（包括身份证/性别/民族）</p>
+     */
     @NameInMap("extField")
     public java.util.List<UpdateResidentUserRequestExtField> extField;
 
-    // 是否保留原部门
+    /**
+     * <p>是否保留原部门</p>
+     */
     @NameInMap("isRetainOldDept")
     public Boolean isRetainOldDept;
 
-    // 手机号码
+    /**
+     * <p>手机号码</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
-    // 原所在部门id
+    /**
+     * <p>原所在部门id</p>
+     */
     @NameInMap("oldDepartmentId")
     public Long oldDepartmentId;
 
-    // 与户主的关系
+    /**
+     * <p>与户主的关系</p>
+     */
     @NameInMap("relateType")
     public String relateType;
 
-    // 人员userId
+    /**
+     * <p>人员userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
-    // 居民名字
+    /**
+     * <p>居民名字</p>
+     */
     @NameInMap("userName")
     public String userName;
 
@@ -118,11 +136,15 @@ public class UpdateResidentUserRequest extends TeaModel {
     }
 
     public static class UpdateResidentUserRequestExtField extends TeaModel {
-        // 扩展字段名字
+        /**
+         * <p>扩展字段名字</p>
+         */
         @NameInMap("itemName")
         public String itemName;
 
-        // 扩展字段值
+        /**
+         * <p>扩展字段值</p>
+         */
         @NameInMap("itemValue")
         public String itemValue;
 

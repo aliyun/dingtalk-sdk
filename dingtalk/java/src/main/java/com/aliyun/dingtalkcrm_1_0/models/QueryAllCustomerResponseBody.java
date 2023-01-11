@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllCustomerResponseBody extends TeaModel {
-    // 分页结果
+    /**
+     * <p>分页结果</p>
+     */
     @NameInMap("result")
     public QueryAllCustomerResponseBodyResult result;
 
@@ -22,11 +24,15 @@ public class QueryAllCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryAllCustomerResponseBodyResultValuesPermission extends TeaModel {
-        // 负责人用户ID列表
+        /**
+         * <p>负责人用户ID列表</p>
+         */
         @NameInMap("ownerStaffIds")
         public java.util.List<String> ownerStaffIds;
 
-        // 协同人用户ID列表
+        /**
+         * <p>协同人用户ID列表</p>
+         */
         @NameInMap("participantStaffIds")
         public java.util.List<String> participantStaffIds;
 
@@ -54,47 +60,69 @@ public class QueryAllCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryAllCustomerResponseBodyResultValues extends TeaModel {
-        // 记录创建时间
+        /**
+         * <p>记录创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建记录的用户昵称
+        /**
+         * <p>创建记录的用户昵称</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
-        // 创建记录的用户ID
+        /**
+         * <p>创建记录的用户ID</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 数据内容
+        /**
+         * <p>数据内容</p>
+         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 
-        // 扩展数据内容
+        /**
+         * <p>扩展数据内容</p>
+         */
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
-        // 数据ID
+        /**
+         * <p>数据ID</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
-        // 记录修改时间
+        /**
+         * <p>记录修改时间</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
-        // 数据类型
+        /**
+         * <p>数据类型</p>
+         */
         @NameInMap("objectType")
         public String objectType;
 
-        // 数据权限信息
+        /**
+         * <p>数据权限信息</p>
+         */
         @NameInMap("permission")
         public QueryAllCustomerResponseBodyResultValuesPermission permission;
 
-        // 审批状态
+        /**
+         * <p>审批状态</p>
+         */
         @NameInMap("processInstanceStatus")
         public String processInstanceStatus;
 
-        // 审批结果
+        /**
+         * <p>审批结果</p>
+         */
         @NameInMap("processOutResult")
         public String processOutResult;
 
@@ -194,15 +222,21 @@ public class QueryAllCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryAllCustomerResponseBodyResult extends TeaModel {
-        // 分页大小
+        /**
+         * <p>分页大小</p>
+         */
         @NameInMap("maxResults")
         public Long maxResults;
 
-        // 下一页的游标，为null则表示无数据
+        /**
+         * <p>下一页的游标，为null则表示无数据</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
-        // 客户数据节点
+        /**
+         * <p>客户数据节点</p>
+         */
         @NameInMap("values")
         public java.util.List<QueryAllCustomerResponseBodyResultValues> values;
 

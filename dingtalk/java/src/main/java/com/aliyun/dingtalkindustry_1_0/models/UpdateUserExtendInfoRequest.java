@@ -4,19 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateUserExtendInfoRequest extends TeaModel {
-    // comments
+    /**
+     * <p>comments</p>
+     */
     @NameInMap("comments")
     public String comments;
 
-    // 职称code
+    /**
+     * <p>职称code</p>
+     */
     @NameInMap("jobCode")
     public String jobCode;
 
-    // 工作状态code
+    /**
+     * <p>工作状态code</p>
+     */
     @NameInMap("jobStatusCode")
     public java.util.List<String> jobStatusCode;
 
-    // 用户属性code
+    /**
+     * <p>用户属性code</p>
+     */
     @NameInMap("userProbCode")
     public String userProbCode;
 

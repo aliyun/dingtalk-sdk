@@ -4,31 +4,45 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteActivityRequest extends TeaModel {
-    // 动作编码
+    /**
+     * <p>动作编码</p>
+     */
     @NameInMap("activityCode")
     public String activityCode;
 
-    // 会员ID
+    /**
+     * <p>会员ID</p>
+     */
     @NameInMap("foreignId")
     public String foreignId;
 
-    // 会员名称
+    /**
+     * <p>会员名称</p>
+     */
     @NameInMap("foreignName")
     public String foreignName;
 
-    // 实例id
+    /**
+     * <p>实例id</p>
+     */
     @NameInMap("openInstanceId")
     public String openInstanceId;
 
-    // 产品类型
+    /**
+     * <p>产品类型</p>
+     */
     @NameInMap("productionType")
     public Integer productionType;
 
-    // 工单表单字段
+    /**
+     * <p>工单表单字段</p>
+     */
     @NameInMap("properties")
     public java.util.List<ExecuteActivityRequestProperties> properties;
 
-    // 来源ID
+    /**
+     * <p>来源ID</p>
+     */
     @NameInMap("sourceId")
     public String sourceId;
 
@@ -94,11 +108,15 @@ public class ExecuteActivityRequest extends TeaModel {
     }
 
     public static class ExecuteActivityRequestProperties extends TeaModel {
-        // 字段的key
+        /**
+         * <p>字段的key</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 字段的值
+        /**
+         * <p>字段的值</p>
+         */
         @NameInMap("value")
         public String value;
 

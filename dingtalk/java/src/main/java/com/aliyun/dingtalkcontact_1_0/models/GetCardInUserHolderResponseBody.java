@@ -4,47 +4,69 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCardInUserHolderResponseBody extends TeaModel {
-    // 头像
+    /**
+     * <p>头像</p>
+     */
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
-    // 名片收下状态
+    /**
+     * <p>名片收下状态</p>
+     */
     @NameInMap("cardAcceptStatus")
     public Integer cardAcceptStatus;
 
-    // 名片收下时间
+    /**
+     * <p>名片收下时间</p>
+     */
     @NameInMap("cardAcceptTime")
     public Object cardAcceptTime;
 
-    // 名片ID
+    /**
+     * <p>名片ID</p>
+     */
     @NameInMap("cardId")
     public String cardId;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extension")
     public java.util.Map<String, ?> extension;
 
-    // 行业
+    /**
+     * <p>行业</p>
+     */
     @NameInMap("industryName")
     public String industryName;
 
-    // 简介
+    /**
+     * <p>简介</p>
+     */
     @NameInMap("introduce")
     public String introduce;
 
-    // 名字
+    /**
+     * <p>名字</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 组织名称
+    /**
+     * <p>组织名称</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 
-    // 模板ID
+    /**
+     * <p>模板ID</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
-    // 职位
+    /**
+     * <p>职位</p>
+     */
     @NameInMap("title")
     public String title;
 

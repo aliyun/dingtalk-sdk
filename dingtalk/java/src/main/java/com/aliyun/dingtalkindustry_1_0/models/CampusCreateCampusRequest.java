@@ -4,51 +4,75 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusCreateCampusRequest extends TeaModel {
-    // 园区所在详细地址
+    /**
+     * <p>园区所在详细地址</p>
+     */
     @NameInMap("address")
     public String address;
 
-    // 园区面积，单位：平方千米
+    /**
+     * <p>园区面积，单位：平方千米</p>
+     */
     @NameInMap("area")
     public Double area;
 
-    // 归属项目组
+    /**
+     * <p>归属项目组</p>
+     */
     @NameInMap("belongProjectGroupId")
     public Long belongProjectGroupId;
 
-    // 园区项目名
+    /**
+     * <p>园区项目名</p>
+     */
     @NameInMap("campusName")
     public String campusName;
 
-    // 园区容量
+    /**
+     * <p>园区容量</p>
+     */
     @NameInMap("capacity")
     public Integer capacity;
 
-    // 园区所在市行政编码
+    /**
+     * <p>园区所在市行政编码</p>
+     */
     @NameInMap("cityId")
     public Integer cityId;
 
-    // 园区所在国家
+    /**
+     * <p>园区所在国家</p>
+     */
     @NameInMap("country")
     public String country;
 
-    // 园区所在区行政编码
+    /**
+     * <p>园区所在区行政编码</p>
+     */
     @NameInMap("countyId")
     public Integer countyId;
 
-    // 创建人的unionId
+    /**
+     * <p>创建人的unionId</p>
+     */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
-    // 园区项目描述
+    /**
+     * <p>园区项目描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 扩展字段
+    /**
+     * <p>扩展字段</p>
+     */
     @NameInMap("extend")
     public String extend;
 
-    // 园区经纬度,格式：经度,纬度
+    /**
+     * <p>园区经纬度,格式：经度,纬度</p>
+     */
     @NameInMap("location")
     public String location;
 
@@ -58,15 +82,21 @@ public class CampusCreateCampusRequest extends TeaModel {
     @NameInMap("orderInfo")
     public String orderInfo;
 
-    // 项目订购开始时间
+    /**
+     * <p>项目订购开始时间</p>
+     */
     @NameInMap("orderStartTime")
     public Long orderStartTime;
 
-    // 园区所在省行政编码
+    /**
+     * <p>园区所在省行政编码</p>
+     */
     @NameInMap("provId")
     public Integer provId;
 
-    // 联系电话
+    /**
+     * <p>联系电话</p>
+     */
     @NameInMap("telephone")
     public String telephone;
 

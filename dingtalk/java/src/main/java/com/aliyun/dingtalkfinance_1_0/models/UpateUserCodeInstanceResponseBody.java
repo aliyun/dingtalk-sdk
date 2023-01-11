@@ -4,7 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpateUserCodeInstanceResponseBody extends TeaModel {
-    // 码ID
+    /**
+     * <p>码ID</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 

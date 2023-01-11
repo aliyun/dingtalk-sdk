@@ -4,11 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataSaveRequest extends TeaModel {
-    // 主数据
+    /**
+     * <p>主数据</p>
+     */
     @NameInMap("body")
     public java.util.List<MasterDataSaveRequestBody> body;
 
-    // 租户id
+    /**
+     * <p>租户id</p>
+     */
     @NameInMap("tenantId")
     public Long tenantId;
 
@@ -34,11 +38,15 @@ public class MasterDataSaveRequest extends TeaModel {
     }
 
     public static class MasterDataSaveRequestBodyFieldList extends TeaModel {
-        // 字段名
+        /**
+         * <p>字段名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 字段string值
+        /**
+         * <p>字段string值</p>
+         */
         @NameInMap("valueStr")
         public String valueStr;
 
@@ -66,11 +74,15 @@ public class MasterDataSaveRequest extends TeaModel {
     }
 
     public static class MasterDataSaveRequestBodyScope extends TeaModel {
-        // 业务域code，如PERFORMANCE，系统分配
+        /**
+         * <p>业务域code，如PERFORMANCE，系统分配</p>
+         */
         @NameInMap("scopeCode")
         public String scopeCode;
 
-        // 业务域版本，接入时系统分配，默认传1
+        /**
+         * <p>业务域版本，接入时系统分配，默认传1</p>
+         */
         @NameInMap("version")
         public Integer version;
 
@@ -98,27 +110,39 @@ public class MasterDataSaveRequest extends TeaModel {
     }
 
     public static class MasterDataSaveRequestBody extends TeaModel {
-        // 数据变更时间戳，用以保证更新操作的顺序性
+        /**
+         * <p>数据变更时间戳，用以保证更新操作的顺序性</p>
+         */
         @NameInMap("bizTime")
         public Long bizTime;
 
-        // 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
+        /**
+         * <p>数据流水唯一标识，如流水号，用以唯一确认一条写入数据</p>
+         */
         @NameInMap("bizUk")
         public String bizUk;
 
-        // 业务域下的细分领域实体
+        /**
+         * <p>业务域下的细分领域实体</p>
+         */
         @NameInMap("entityCode")
         public String entityCode;
 
-        // 数据字段列表
+        /**
+         * <p>数据字段列表</p>
+         */
         @NameInMap("fieldList")
         public java.util.List<MasterDataSaveRequestBodyFieldList> fieldList;
 
-        // 业务域描述，系统分配
+        /**
+         * <p>业务域描述，系统分配</p>
+         */
         @NameInMap("scope")
         public MasterDataSaveRequestBodyScope scope;
 
-        // 员工id
+        /**
+         * <p>员工id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

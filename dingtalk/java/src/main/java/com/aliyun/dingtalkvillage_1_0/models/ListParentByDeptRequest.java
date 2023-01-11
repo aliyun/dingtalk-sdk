@@ -4,11 +4,15 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListParentByDeptRequest extends TeaModel {
-    // 下属组织的部门ID
+    /**
+     * <p>下属组织的部门ID</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    // 下属组织的组织ID，比如下属镇、村的corpId
+    /**
+     * <p>下属组织的组织ID，比如下属镇、村的corpId</p>
+     */
     @NameInMap("subCorpId")
     public String subCorpId;
 

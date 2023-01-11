@@ -4,31 +4,45 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPayResultRequest extends TeaModel {
-    // 人脸id
+    /**
+     * <p>人脸id</p>
+     */
     @NameInMap("faceId")
     public String faceId;
 
-    // 订单号
+    /**
+     * <p>订单号</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 签名
+    /**
+     * <p>签名</p>
+     */
     @NameInMap("signature")
     public String signature;
 
-    // 设备序列号
+    /**
+     * <p>设备序列号</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // utc时间戳
+    /**
+     * <p>utc时间戳</p>
+     */
     @NameInMap("timestamp")
     public Long timestamp;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("userId")
     public String userId;
 
-    // 版本号
+    /**
+     * <p>版本号</p>
+     */
     @NameInMap("version")
     public String version;
 

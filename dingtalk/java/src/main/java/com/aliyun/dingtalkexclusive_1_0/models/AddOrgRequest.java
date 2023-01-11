@@ -4,11 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOrgRequest extends TeaModel {
-    // 手机号
+    /**
+     * <p>手机号</p>
+     */
     @NameInMap("mobileNum")
     public String mobileNum;
 
-    // 组织名称
+    /**
+     * <p>组织名称</p>
+     */
     @NameInMap("name")
     public String name;
 

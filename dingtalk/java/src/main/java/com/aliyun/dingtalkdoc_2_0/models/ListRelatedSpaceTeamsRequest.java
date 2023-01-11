@@ -4,12 +4,16 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListRelatedSpaceTeamsRequest extends TeaModel {
-    // 操作用户unionId。
+    /**
+     * <p>操作用户unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 团队类型。
-    // 0-空白团队；1-部门；2-项目组；3-兴趣小组。
+    /**
+     * <p>团队类型。</p>
+     * <p>0-空白团队；1-部门；2-项目组；3-兴趣小组。</p>
+     */
     @NameInMap("type")
     public Integer type;
 

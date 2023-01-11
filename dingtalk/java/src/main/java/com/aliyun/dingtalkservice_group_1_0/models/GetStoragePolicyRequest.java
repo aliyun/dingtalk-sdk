@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetStoragePolicyRequest extends TeaModel {
-    // 业务类型
+    /**
+     * <p>业务类型</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
-    // 文件名称
+    /**
+     * <p>文件名称</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
-    // 文件大小，单位字节
+    /**
+     * <p>文件大小，单位字节</p>
+     */
     @NameInMap("fileSize")
     public Long fileSize;
 
-    // 团队ID
+    /**
+     * <p>团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

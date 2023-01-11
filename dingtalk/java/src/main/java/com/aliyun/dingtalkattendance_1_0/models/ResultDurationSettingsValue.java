@@ -10,43 +10,63 @@ public class ResultDurationSettingsValue extends TeaModel {
     @NameInMap("durationType")
     public Integer durationType;
 
-    // 加班时长计为调休或加班费开关
+    /**
+     * <p>加班时长计为调休或加班费开关</p>
+     */
     @NameInMap("overtimeRedress")
     public Boolean overtimeRedress;
 
-    // 加班开始时间 或 最小加班时间
+    /**
+     * <p>加班开始时间 或 最小加班时间</p>
+     */
     @NameInMap("settings")
     public java.util.Map<String, ?> settings;
 
-    // 加班时长计为方式
+    /**
+     * <p>加班时长计为方式</p>
+     */
     @NameInMap("overtimeRedressBy")
     public String overtimeRedressBy;
 
-    // 调休时长计算
+    /**
+     * <p>调休时长计算</p>
+     */
     @NameInMap("vacationRate")
     public Float vacationRate;
 
-    // 扣除休息时间
+    /**
+     * <p>扣除休息时间</p>
+     */
     @NameInMap("skipTime")
     public String skipTime;
 
-    // 休息时段
+    /**
+     * <p>休息时段</p>
+     */
     @NameInMap("skipTimeByFrames")
     public java.util.List<ResultDurationSettingsValueSkipTimeByFrames> skipTimeByFrames;
 
-    // 加班时长
+    /**
+     * <p>加班时长</p>
+     */
     @NameInMap("skipTimeByDurations")
     public java.util.List<ResultDurationSettingsValueSkipTimeByDurations> skipTimeByDurations;
 
-    // 休息日或节假日排班加班时长计为调休或加班费开关
+    /**
+     * <p>休息日或节假日排班加班时长计为调休或加班费开关</p>
+     */
     @NameInMap("holidayPlanOvertimeRedress")
     public Boolean holidayPlanOvertimeRedress;
 
-    // 休息日或节假日排班加班时长计为方式
+    /**
+     * <p>休息日或节假日排班加班时长计为方式</p>
+     */
     @NameInMap("holidayPlanOvertimeRedressBy")
     public String holidayPlanOvertimeRedressBy;
 
-    // 休息日或节假日排班调休时长计算
+    /**
+     * <p>休息日或节假日排班调休时长计算</p>
+     */
     @NameInMap("holidayPlanVacationRate")
     public Float holidayPlanVacationRate;
 
@@ -152,15 +172,21 @@ public class ResultDurationSettingsValue extends TeaModel {
     }
 
     public static class ResultDurationSettingsValueSkipTimeByFrames extends TeaModel {
-        // 开始时间，格式为"HH:mm"
+        /**
+         * <p>开始时间，格式为"HH:mm"</p>
+         */
         @NameInMap("startTime")
         public String startTime;
 
-        // 结束时间，格式为"HH:mm"
+        /**
+         * <p>结束时间，格式为"HH:mm"</p>
+         */
         @NameInMap("endTime")
         public String endTime;
 
-        // 是否生效
+        /**
+         * <p>是否生效</p>
+         */
         @NameInMap("valid")
         public Boolean valid;
 
@@ -196,11 +222,15 @@ public class ResultDurationSettingsValue extends TeaModel {
     }
 
     public static class ResultDurationSettingsValueSkipTimeByDurations extends TeaModel {
-        // 每天加班满 x小时，单位 秒
+        /**
+         * <p>每天加班满 x小时，单位 秒</p>
+         */
         @NameInMap("duration")
         public Long duration;
 
-        // 扣除 x小时，单位 秒
+        /**
+         * <p>扣除 x小时，单位 秒</p>
+         */
         @NameInMap("minus")
         public Long minus;
 

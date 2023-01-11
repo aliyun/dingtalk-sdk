@@ -13,7 +13,9 @@ public class GetRangeResponseBody extends TeaModel {
     @NameInMap("formulas")
     public java.util.List<java.util.List<String>> formulas;
 
-    // 值
+    /**
+     * <p>值</p>
+     */
     @NameInMap("values")
     public java.util.List<java.util.List<?>> values;
 
@@ -55,19 +57,27 @@ public class GetRangeResponseBody extends TeaModel {
     }
 
     public static class GetRangeResponseBodyBackgroundColors extends TeaModel {
-        // RGB值中的红色值
+        /**
+         * <p>RGB值中的红色值</p>
+         */
         @NameInMap("red")
         public Long red;
 
-        // RGB值中的绿色值
+        /**
+         * <p>RGB值中的绿色值</p>
+         */
         @NameInMap("green")
         public Long green;
 
-        // RGB值中的蓝色值
+        /**
+         * <p>RGB值中的蓝色值</p>
+         */
         @NameInMap("blue")
         public Long blue;
 
-        // 16进制表示的颜色
+        /**
+         * <p>16进制表示的颜色</p>
+         */
         @NameInMap("hexString")
         public String hexString;
 

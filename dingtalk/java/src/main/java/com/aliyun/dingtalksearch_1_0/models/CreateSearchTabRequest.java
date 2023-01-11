@@ -4,19 +4,27 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSearchTabRequest extends TeaModel {
-    // 数据源名称
+    /**
+     * <p>数据源名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 数据源优先级，数值越小优先级越高
+    /**
+     * <p>数据源优先级，数值越小优先级越高</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 
-    // 数据来源,非必填,默认来源为钉钉搜索内部引擎
+    /**
+     * <p>数据来源,非必填,默认来源为钉钉搜索内部引擎</p>
+     */
     @NameInMap("source")
     public String source;
 
-    // 数据源状态，1表示上线，0表示下线
+    /**
+     * <p>数据源状态，1表示上线，0表示下线</p>
+     */
     @NameInMap("status")
     public Integer status;
 

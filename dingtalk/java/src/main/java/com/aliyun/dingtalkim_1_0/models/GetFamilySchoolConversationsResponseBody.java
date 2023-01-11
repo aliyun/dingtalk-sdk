@@ -7,11 +7,15 @@ public class GetFamilySchoolConversationsResponseBody extends TeaModel {
     @NameInMap("groupInfoList")
     public java.util.List<GetFamilySchoolConversationsResponseBodyGroupInfoList> groupInfoList;
 
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMore")
     public String hasMore;
 
-    // 返回下一页游标
+    /**
+     * <p>返回下一页游标</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -45,27 +49,39 @@ public class GetFamilySchoolConversationsResponseBody extends TeaModel {
     }
 
     public static class GetFamilySchoolConversationsResponseBodyGroupInfoList extends TeaModel {
-        // 企业名称
+        /**
+         * <p>企业名称</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 部门名称链
+        /**
+         * <p>部门名称链</p>
+         */
         @NameInMap("deptNameChain")
         public java.util.List<String> deptNameChain;
 
-        // 群名称
+        /**
+         * <p>群名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 群类型
+        /**
+         * <p>群类型</p>
+         */
         @NameInMap("groupType")
         public String groupType;
 
-        // 进群时间
+        /**
+         * <p>进群时间</p>
+         */
         @NameInMap("joinGroupTime")
         public Long joinGroupTime;
 
-        // 群开放ID
+        /**
+         * <p>群开放ID</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 

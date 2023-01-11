@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleConfigRequest extends TeaModel {
-    // 课程id列表
+    /**
+     * <p>课程id列表</p>
+     */
     @NameInMap("classIds")
     public java.util.List<Long> classIds;
 
-    // 操作者的UserID
+    /**
+     * <p>操作者的UserID</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

@@ -32,47 +32,69 @@ public class GetGroupActiveInfoResponseBody extends TeaModel {
     }
 
     public static class GetGroupActiveInfoResponseBodyData extends TeaModel {
-        // 群组id
+        /**
+         * <p>群组id</p>
+         */
         @NameInMap("dingGroupId")
         public String dingGroupId;
 
-        // 群组创建时间
+        /**
+         * <p>群组创建时间</p>
+         */
         @NameInMap("groupCreateTime")
         public String groupCreateTime;
 
-        // 群组创建用户id
+        /**
+         * <p>群组创建用户id</p>
+         */
         @NameInMap("groupCreateUserId")
         public String groupCreateUserId;
 
-        // 群组创建用户姓名
+        /**
+         * <p>群组创建用户姓名</p>
+         */
         @NameInMap("groupCreateUserName")
         public String groupCreateUserName;
 
-        // 群名称
+        /**
+         * <p>群名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
+        /**
+         * <p>群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群</p>
+         */
         @NameInMap("groupType")
         public Long groupType;
 
-        // 最近1天群人数
+        /**
+         * <p>最近1天群人数</p>
+         */
         @NameInMap("groupUserCnt1d")
         public Integer groupUserCnt1d;
 
-        // 最近1天打开群人数
+        /**
+         * <p>最近1天打开群人数</p>
+         */
         @NameInMap("openConvUv1d")
         public Integer openConvUv1d;
 
-        // 最近1天发消息次数
+        /**
+         * <p>最近1天发消息次数</p>
+         */
         @NameInMap("sendMessageCnt1d")
         public Long sendMessageCnt1d;
 
-        // 最近1天发消息人数
+        /**
+         * <p>最近1天发消息人数</p>
+         */
         @NameInMap("sendMessageUserCnt1d")
         public Long sendMessageUserCnt1d;
 
-        // 统计时间
+        /**
+         * <p>统计时间</p>
+         */
         @NameInMap("statDate")
         public String statDate;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateRangeProtectionRequest extends TeaModel {
-    // 对于拥有「可编辑」权限的用户的细化权限配置。
+    /**
+     * <p>对于拥有「可编辑」权限的用户的细化权限配置。</p>
+     */
     @NameInMap("editableSetting")
     public CreateRangeProtectionRequestEditableSetting editableSetting;
 
-    // 其它用户的权限
+    /**
+     * <p>其它用户的权限</p>
+     */
     @NameInMap("otherUserPermission")
     public String otherUserPermission;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -46,27 +52,39 @@ public class CreateRangeProtectionRequest extends TeaModel {
     }
 
     public static class CreateRangeProtectionRequestEditableSetting extends TeaModel {
-        // 是否可删除列
+        /**
+         * <p>是否可删除列</p>
+         */
         @NameInMap("deleteColumns")
         public Boolean deleteColumns;
 
-        // 是否可删除行
+        /**
+         * <p>是否可删除行</p>
+         */
         @NameInMap("deleteRows")
         public Boolean deleteRows;
 
-        // 是否可修改单元格的值
+        /**
+         * <p>是否可修改单元格的值</p>
+         */
         @NameInMap("editCells")
         public Boolean editCells;
 
-        // 是否可修改单元格样式
+        /**
+         * <p>是否可修改单元格样式</p>
+         */
         @NameInMap("formatCells")
         public Boolean formatCells;
 
-        // 是否可插入列
+        /**
+         * <p>是否可插入列</p>
+         */
         @NameInMap("insertColumns")
         public Boolean insertColumns;
 
-        // 是否可插入行
+        /**
+         * <p>是否可插入行</p>
+         */
         @NameInMap("insertRows")
         public Boolean insertRows;
 

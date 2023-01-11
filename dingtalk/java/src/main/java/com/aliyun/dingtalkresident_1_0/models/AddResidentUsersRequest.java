@@ -4,31 +4,45 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddResidentUsersRequest extends TeaModel {
-    // 家庭住址
+    /**
+     * <p>家庭住址</p>
+     */
     @NameInMap("address")
     public String address;
 
-    // 户/租户部门id
+    /**
+     * <p>户/租户部门id</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    // 扩展字段（包括身份证/性别/民族）
+    /**
+     * <p>扩展字段（包括身份证/性别/民族）</p>
+     */
     @NameInMap("extField")
     public java.util.List<AddResidentUsersRequestExtField> extField;
 
-    // 是否是租客
+    /**
+     * <p>是否是租客</p>
+     */
     @NameInMap("isLeaseholder")
     public Boolean isLeaseholder;
 
-    // 手机号码
+    /**
+     * <p>手机号码</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
-    // 与户主的关系
+    /**
+     * <p>与户主的关系</p>
+     */
     @NameInMap("relateType")
     public String relateType;
 
-    // 居民名字
+    /**
+     * <p>居民名字</p>
+     */
     @NameInMap("userName")
     public String userName;
 
@@ -94,11 +108,15 @@ public class AddResidentUsersRequest extends TeaModel {
     }
 
     public static class AddResidentUsersRequestExtField extends TeaModel {
-        // 扩展字段名字
+        /**
+         * <p>扩展字段名字</p>
+         */
         @NameInMap("itemName")
         public String itemName;
 
-        // 扩展字段值
+        /**
+         * <p>扩展字段值</p>
+         */
         @NameInMap("itemValue")
         public String itemValue;
 

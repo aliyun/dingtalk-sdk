@@ -4,19 +4,27 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditSalesRequest extends TeaModel {
-    // 编辑数据
+    /**
+     * <p>编辑数据</p>
+     */
     @NameInMap("data")
     public EditSalesRequestData data;
 
-    // 数据类型，固定填写158
+    /**
+     * <p>数据类型，固定填写158</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
-    // 数据id，不填或者填0为新增数据
+    /**
+     * <p>数据id，不填或者填0为新增数据</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
-    // 时间戳
+    /**
+     * <p>时间戳</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -58,79 +66,117 @@ public class EditSalesRequest extends TeaModel {
     }
 
     public static class EditSalesRequestData extends TeaModel {
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        // 对应客户
+        /**
+         * <p>对应客户</p>
+         */
         @NameInMap("xsh_customerid")
         public String xshCustomerid;
 
-        // 发现时间
+        /**
+         * <p>发现时间</p>
+         */
         @NameInMap("xsh_date")
         public String xshDate;
 
-        // 预计签单日
+        /**
+         * <p>预计签单日</p>
+         */
         @NameInMap("xsh_expdate")
         public String xshExpdate;
 
-        // 预期金额
+        /**
+         * <p>预期金额</p>
+         */
         @NameInMap("xsh_expmoney")
         public String xshExpmoney;
 
-        // 来源
+        /**
+         * <p>来源</p>
+         */
         @NameInMap("xsh_from")
         public String xshFrom;
 
-        // 可能性
+        /**
+         * <p>可能性</p>
+         */
         @NameInMap("xsh_knx")
         public String xshKnx;
 
-        // 联系方式
+        /**
+         * <p>联系方式</p>
+         */
         @NameInMap("xsh_lianxi")
         public String xshLianxi;
 
-        // 联系人
+        /**
+         * <p>联系人</p>
+         */
         @NameInMap("xsh_lxrid")
         public String xshLxrid;
 
-        // 外币备注
+        /**
+         * <p>外币备注</p>
+         */
         @NameInMap("xsh_moneynote")
         public String xshMoneynote;
 
-        // 机会编号
+        /**
+         * <p>机会编号</p>
+         */
         @NameInMap("xsh_number")
         public String xshNumber;
 
-        // 阶段
+        /**
+         * <p>阶段</p>
+         */
         @NameInMap("xsh_phase")
         public String xshPhase;
 
-        // 阶段备注
+        /**
+         * <p>阶段备注</p>
+         */
         @NameInMap("xsh_phasenote")
         public String xshPhasenote;
 
-        // 所有者
+        /**
+         * <p>所有者</p>
+         */
         @NameInMap("xsh_preside")
         public String xshPreside;
 
-        // 提供人
+        /**
+         * <p>提供人</p>
+         */
         @NameInMap("xsh_provider")
         public String xshProvider;
 
-        // 客户需求
+        /**
+         * <p>客户需求</p>
+         */
         @NameInMap("xsh_require")
         public String xshRequire;
 
-        // 状态
+        /**
+         * <p>状态</p>
+         */
         @NameInMap("xsh_state")
         public String xshState;
 
-        // 主题
+        /**
+         * <p>主题</p>
+         */
         @NameInMap("xsh_title")
         public String xshTitle;
 
-        // 类型
+        /**
+         * <p>类型</p>
+         */
         @NameInMap("xsh_type")
         public String xshType;
 

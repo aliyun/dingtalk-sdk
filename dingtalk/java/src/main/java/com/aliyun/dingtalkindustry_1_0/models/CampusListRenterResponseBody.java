@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusListRenterResponseBody extends TeaModel {
-    // 租客列表
+    /**
+     * <p>租客列表</p>
+     */
     @NameInMap("result")
     public java.util.List<CampusListRenterResponseBodyResult> result;
 
@@ -22,39 +24,57 @@ public class CampusListRenterResponseBody extends TeaModel {
     }
 
     public static class CampusListRenterResponseBodyResult extends TeaModel {
-        // 绑定钉钉组织ID
+        /**
+         * <p>绑定钉钉组织ID</p>
+         */
         @NameInMap("bindRenterCorpId")
         public String bindRenterCorpId;
 
-        // 绑定时间
+        /**
+         * <p>绑定时间</p>
+         */
         @NameInMap("bindTime")
         public Long bindTime;
 
-        // 企业信用代码
+        /**
+         * <p>企业信用代码</p>
+         */
         @NameInMap("creditCode")
         public String creditCode;
 
-        // 到期时间
+        /**
+         * <p>到期时间</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
-        // 扩展信息
+        /**
+         * <p>扩展信息</p>
+         */
         @NameInMap("extend")
         public String extend;
 
-        // 租客名称
+        /**
+         * <p>租客名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 租客部门ID
+        /**
+         * <p>租客部门ID</p>
+         */
         @NameInMap("renterDeptId")
         public Long renterDeptId;
 
-        // 起始时间
+        /**
+         * <p>起始时间</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
-        // 状态
+        /**
+         * <p>状态</p>
+         */
         @NameInMap("state")
         public Integer state;
 

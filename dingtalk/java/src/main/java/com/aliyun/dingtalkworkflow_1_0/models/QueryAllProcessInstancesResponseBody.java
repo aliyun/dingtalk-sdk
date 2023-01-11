@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllProcessInstancesResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("result")
     public QueryAllProcessInstancesResponseBodyResult result;
 
@@ -22,19 +24,27 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllProcessInstancesResponseBodyResultListFormComponentValues extends TeaModel {
-        // 控件扩展数据
+        /**
+         * <p>控件扩展数据</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 控件id
+        /**
+         * <p>控件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 控件名称
+        /**
+         * <p>控件名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 控件数据
+        /**
+         * <p>控件数据</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -78,19 +88,27 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments extends TeaModel {
-        // 附件钉盘id
+        /**
+         * <p>附件钉盘id</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
-        // 附件名称
+        /**
+         * <p>附件名称</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 文件大小
+        /**
+         * <p>文件大小</p>
+         */
         @NameInMap("fileSize")
         public String fileSize;
 
-        // 文件类型
+        /**
+         * <p>文件类型</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
@@ -134,27 +152,39 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllProcessInstancesResponseBodyResultListOperationRecords extends TeaModel {
-        // 评论附件
+        /**
+         * <p>评论附件</p>
+         */
         @NameInMap("attachments")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments> attachments;
 
-        // 操作类型
+        /**
+         * <p>操作类型</p>
+         */
         @NameInMap("operationType")
         public String operationType;
 
-        // 评论
+        /**
+         * <p>评论</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 操作结果
+        /**
+         * <p>操作结果</p>
+         */
         @NameInMap("result")
         public String result;
 
-        // 操作时间戳
+        /**
+         * <p>操作时间戳</p>
+         */
         @NameInMap("timestamp")
         public Long timestamp;
 
-        // 操作人staffId
+        /**
+         * <p>操作人staffId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -214,31 +244,45 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllProcessInstancesResponseBodyResultListTasks extends TeaModel {
-        // 节点id
+        /**
+         * <p>节点id</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
-        // 任务创建时间戳
+        /**
+         * <p>任务创建时间戳</p>
+         */
         @NameInMap("createTimestamp")
         public Long createTimestamp;
 
-        // 任务结束时间戳
+        /**
+         * <p>任务结束时间戳</p>
+         */
         @NameInMap("finishTimestamp")
         public Long finishTimestamp;
 
-        // 任务结果
+        /**
+         * <p>任务结果</p>
+         */
         @NameInMap("result")
         public String result;
 
-        // 任务状态
+        /**
+         * <p>任务状态</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 任务Id
+        /**
+         * <p>任务Id</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 
-        // 任务处理人
+        /**
+         * <p>任务处理人</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -306,58 +350,84 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllProcessInstancesResponseBodyResultList extends TeaModel {
-        // 附属单信息
+        /**
+         * <p>附属单信息</p>
+         */
         @NameInMap("attachedProcessInstanceIds")
         public String attachedProcessInstanceIds;
 
-        // 审批单编号
+        /**
+         * <p>审批单编号</p>
+         */
         @NameInMap("businessId")
         public String businessId;
 
-        // 审批单创建时间
+        /**
+         * <p>审批单创建时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 审批结束时间
+        /**
+         * <p>审批结束时间</p>
+         */
         @NameInMap("finishTime")
         public Long finishTime;
 
         @NameInMap("formComponentValues")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultListFormComponentValues> formComponentValues;
 
-        // 主单实例Id
+        /**
+         * <p>主单实例Id</p>
+         */
         @NameInMap("mainProcessInstanceId")
         public String mainProcessInstanceId;
 
-        // 审批单操作记录
+        /**
+         * <p>审批单操作记录</p>
+         */
         @NameInMap("operationRecords")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecords> operationRecords;
 
-        // 发起人部门id
+        /**
+         * <p>发起人部门id</p>
+         */
         @NameInMap("originatorDeptId")
         public String originatorDeptId;
 
-        // 发起者userId
+        /**
+         * <p>发起者userId</p>
+         */
         @NameInMap("originatorUserid")
         public String originatorUserid;
 
-        // 流程实例ID
+        /**
+         * <p>流程实例ID</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // 审批结果
+        /**
+         * <p>审批结果</p>
+         */
         @NameInMap("result")
         public String result;
 
-        // 审批单状态
+        /**
+         * <p>审批单状态</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 任务列表
+        /**
+         * <p>任务列表</p>
+         */
         @NameInMap("tasks")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultListTasks> tasks;
 
-        // 审批单标题
+        /**
+         * <p>审批单标题</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -481,18 +551,24 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllProcessInstancesResponseBodyResult extends TeaModel {
-        // 是否有更多数据
+        /**
+         * <p>是否有更多数据</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("list")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultList> list;
 
-        // 总数
+        /**
+         * <p>总数</p>
+         */
         @NameInMap("maxResults")
         public Long maxResults;
 
-        // 下次获取数据的游标
+        /**
+         * <p>下次获取数据的游标</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPartnerTypeByParentIdResponseBody extends TeaModel {
-    // 子标签列表
+    /**
+     * <p>子标签列表</p>
+     */
     @NameInMap("data")
     public java.util.List<GetPartnerTypeByParentIdResponseBodyData> data;
 
@@ -22,15 +24,21 @@ public class GetPartnerTypeByParentIdResponseBody extends TeaModel {
     }
 
     public static class GetPartnerTypeByParentIdResponseBodyData extends TeaModel {
-        // 子标签id
+        /**
+         * <p>子标签id</p>
+         */
         @NameInMap("labelId")
         public String labelId;
 
-        // 目前无意义
+        /**
+         * <p>目前无意义</p>
+         */
         @NameInMap("typeId")
         public Float typeId;
 
-        // 子标签名
+        /**
+         * <p>子标签名</p>
+         */
         @NameInMap("typeName")
         public String typeName;
 

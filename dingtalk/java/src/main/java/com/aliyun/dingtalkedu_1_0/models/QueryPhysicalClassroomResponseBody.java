@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPhysicalClassroomResponseBody extends TeaModel {
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("result")
     public QueryPhysicalClassroomResponseBodyResult result;
 
-    // 请求是否成功
+    /**
+     * <p>请求是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,31 +38,45 @@ public class QueryPhysicalClassroomResponseBody extends TeaModel {
     }
 
     public static class QueryPhysicalClassroomResponseBodyResult extends TeaModel {
-        // 教室教学楼
+        /**
+         * <p>教室教学楼</p>
+         */
         @NameInMap("classroomBuilding")
         public String classroomBuilding;
 
-        // 教室校区
+        /**
+         * <p>教室校区</p>
+         */
         @NameInMap("classroomCampus")
         public String classroomCampus;
 
-        // 教室楼层
+        /**
+         * <p>教室楼层</p>
+         */
         @NameInMap("classroomFloor")
         public String classroomFloor;
 
-        // 教室ID
+        /**
+         * <p>教室ID</p>
+         */
         @NameInMap("classroomId")
         public Long classroomId;
 
-        // 教室名称
+        /**
+         * <p>教室名称</p>
+         */
         @NameInMap("classroomName")
         public String classroomName;
 
-        // 教室房间号
+        /**
+         * <p>教室房间号</p>
+         */
         @NameInMap("classroomNumber")
         public String classroomNumber;
 
-        // 是否支持直播
+        /**
+         * <p>是否支持直播</p>
+         */
         @NameInMap("directBroadcast")
         public String directBroadcast;
 

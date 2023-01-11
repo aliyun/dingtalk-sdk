@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterDeviceRequest extends TeaModel {
-    // 设备列表
+    /**
+     * <p>设备列表</p>
+     */
     @NameInMap("deviceList")
     public java.util.List<BatchRegisterDeviceRequestDeviceList> deviceList;
 
-    // 创建者userId
+    /**
+     * <p>创建者userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -34,27 +38,39 @@ public class BatchRegisterDeviceRequest extends TeaModel {
     }
 
     public static class BatchRegisterDeviceRequestDeviceList extends TeaModel {
-        // 协助者userId列表
+        /**
+         * <p>协助者userId列表</p>
+         */
         @NameInMap("collaborators")
         public String collaborators;
 
-        // 部门id
+        /**
+         * <p>部门id</p>
+         */
         @NameInMap("departmentId")
         public Long departmentId;
 
-        // 设备描述
+        /**
+         * <p>设备描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 设备标识
+        /**
+         * <p>设备标识</p>
+         */
         @NameInMap("deviceKey")
         public String deviceKey;
 
-        // 设备名称
+        /**
+         * <p>设备名称</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        // 管理员userId列表
+        /**
+         * <p>管理员userId列表</p>
+         */
         @NameInMap("managers")
         public String managers;
 

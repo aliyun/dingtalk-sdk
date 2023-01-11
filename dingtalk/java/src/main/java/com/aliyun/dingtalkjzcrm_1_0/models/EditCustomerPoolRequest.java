@@ -4,19 +4,27 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditCustomerPoolRequest extends TeaModel {
-    // 编辑数据
+    /**
+     * <p>编辑数据</p>
+     */
     @NameInMap("data")
     public EditCustomerPoolRequestData data;
 
-    // 数据类型，固定填写238
+    /**
+     * <p>数据类型，固定填写238</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
-    // 数据id，不填或者填0为新增数据
+    /**
+     * <p>数据id，不填或者填0为新增数据</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
-    // 时间戳
+    /**
+     * <p>时间戳</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -58,199 +66,297 @@ public class EditCustomerPoolRequest extends TeaModel {
     }
 
     public static class EditCustomerPoolRequestData extends TeaModel {
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        // 家庭地址
+        /**
+         * <p>家庭地址</p>
+         */
         @NameInMap("kh_address")
         public String khAddress;
 
-        // 称谓
+        /**
+         * <p>称谓</p>
+         */
         @NameInMap("kh_appellation")
         public String khAppellation;
 
-        // 爱好
+        /**
+         * <p>爱好</p>
+         */
         @NameInMap("kh_befontof")
         public String khBefontof;
 
-        // 开票资料
+        /**
+         * <p>开票资料</p>
+         */
         @NameInMap("kh_billinfo")
         public String khBillinfo;
 
-        // 城市
+        /**
+         * <p>城市</p>
+         */
         @NameInMap("kh_city")
         public String khCity;
 
-        // 类别（企业客户，个人客户，供应商，个人供应商）
+        /**
+         * <p>类别（企业客户，个人客户，供应商，个人供应商）</p>
+         */
         @NameInMap("kh_class")
         public String khClass;
 
-        // 单位地址
+        /**
+         * <p>单位地址</p>
+         */
         @NameInMap("kh_coaddress")
         public String khCoaddress;
 
-        // 联系人分类
+        /**
+         * <p>联系人分类</p>
+         */
         @NameInMap("kh_contype")
         public String khContype;
 
-        // 国家地区
+        /**
+         * <p>国家地区</p>
+         */
         @NameInMap("kh_country")
         public String khCountry;
 
-        // 信用等级（低，中，高）
+        /**
+         * <p>信用等级（低，中，高）</p>
+         */
         @NameInMap("kh_creditgrade")
         public String khCreditgrade;
 
-        // 证件号码
+        /**
+         * <p>证件号码</p>
+         */
         @NameInMap("kh_ctnumber")
         public String khCtnumber;
 
-        // 证件类型
+        /**
+         * <p>证件类型</p>
+         */
         @NameInMap("kh_cttype")
         public String khCttype;
 
-        // 部门
+        /**
+         * <p>部门</p>
+         */
         @NameInMap("kh_department")
         public String khDepartment;
 
-        // 钉钉号
+        /**
+         * <p>钉钉号</p>
+         */
         @NameInMap("kh_dingtalk")
         public String khDingtalk;
 
-        // 邮箱
+        /**
+         * <p>邮箱</p>
+         */
         @NameInMap("kh_email")
         public String khEmail;
 
-        // 人员规模
+        /**
+         * <p>人员规模</p>
+         */
         @NameInMap("kh_employees")
         public String khEmployees;
 
-        // 传真
+        /**
+         * <p>传真</p>
+         */
         @NameInMap("kh_fax")
         public String khFax;
 
-        // 来源
+        /**
+         * <p>来源</p>
+         */
         @NameInMap("kh_from")
         public String khFrom;
 
-        // 最后跟踪
+        /**
+         * <p>最后跟踪</p>
+         */
         @NameInMap("kh_genzongtime")
         public String khGenzongtime;
 
-        // 手机
+        /**
+         * <p>手机</p>
+         */
         @NameInMap("kh_handset")
         public String khHandset;
 
-        // 职务
+        /**
+         * <p>职务</p>
+         */
         @NameInMap("kh_headship")
         public String khHeadship;
 
-        // 热点分类
+        /**
+         * <p>热点分类</p>
+         */
         @NameInMap("kh_hotfl")
         public String khHotfl;
 
-        // 热度（无，低热，中热，高热）
+        /**
+         * <p>热度（无，低热，中热，高热）</p>
+         */
         @NameInMap("kh_hotlevel")
         public String khHotlevel;
 
-        // 热点说明
+        /**
+         * <p>热点说明</p>
+         */
         @NameInMap("kh_hotmemo")
         public String khHotmemo;
 
-        // 热点客户（是，否）
+        /**
+         * <p>热点客户（是，否）</p>
+         */
         @NameInMap("kh_hottype")
         public String khHottype;
 
-        // 行业
+        /**
+         * <p>行业</p>
+         */
         @NameInMap("kh_industry")
         public String khIndustry;
 
-        // 公司简介
+        /**
+         * <p>公司简介</p>
+         */
         @NameInMap("kh_info")
         public String khInfo;
 
-        // 客户级别
+        /**
+         * <p>客户级别</p>
+         */
         @NameInMap("kh_jibie")
         public String khJibie;
 
-        // 客户名称
+        /**
+         * <p>客户名称</p>
+         */
         @NameInMap("kh_name")
         public String khName;
 
-        // 上级客户
+        /**
+         * <p>上级客户</p>
+         */
         @NameInMap("kh_pkhid")
         public String khPkhid;
 
-        // 负责业务
+        /**
+         * <p>负责业务</p>
+         */
         @NameInMap("kh_preside")
         public String khPreside;
 
-        // 省份
+        /**
+         * <p>省份</p>
+         */
         @NameInMap("kh_province")
         public String khProvince;
 
-        // 邮编
+        /**
+         * <p>邮编</p>
+         */
         @NameInMap("kh_pst")
         public String khPst;
 
-        // QQ
+        /**
+         * <p>QQ</p>
+         */
         @NameInMap("kh_qq")
         public String khQq;
 
-        // 关系等级
+        /**
+         * <p>关系等级</p>
+         */
         @NameInMap("kh_ralagrade")
         public String khRalagrade;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("kh_remark")
         public String khRemark;
 
-        // 性别（男，女）
+        /**
+         * <p>性别（男，女）</p>
+         */
         @NameInMap("kh_sex")
         public String khSex;
 
-        // 助记简称
+        /**
+         * <p>助记简称</p>
+         */
         @NameInMap("kh_shortname")
         public String khShortname;
 
-        // Skype
+        /**
+         * <p>Skype</p>
+         */
         @NameInMap("kh_skype")
         public String khSkype;
 
-        // 编号
+        /**
+         * <p>编号</p>
+         */
         @NameInMap("kh_sn")
         public String khSn;
 
-        // 阶段
+        /**
+         * <p>阶段</p>
+         */
         @NameInMap("kh_status")
         public String khStatus;
 
-        // 家庭电话
+        /**
+         * <p>家庭电话</p>
+         */
         @NameInMap("kh_tel")
         public String khTel;
 
-        // 种类
+        /**
+         * <p>种类</p>
+         */
         @NameInMap("kh_type")
         public String khType;
 
-        // 价值评估（低，中，高）
+        /**
+         * <p>价值评估（低，中，高）</p>
+         */
         @NameInMap("kh_valrating")
         public String khValrating;
 
-        // 旺旺
+        /**
+         * <p>旺旺</p>
+         */
         @NameInMap("kh_wangwang")
         public String khWangwang;
 
-        // 网址
+        /**
+         * <p>网址</p>
+         */
         @NameInMap("kh_web")
         public String khWeb;
 
-        // 微信号
+        /**
+         * <p>微信号</p>
+         */
         @NameInMap("kh_weixin")
         public String khWeixin;
 
-        // 工作电话
+        /**
+         * <p>工作电话</p>
+         */
         @NameInMap("kh_worktel")
         public String khWorktel;
 

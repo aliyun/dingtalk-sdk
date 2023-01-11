@@ -4,7 +4,9 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSearchTabsByOrgIdResponseBody extends TeaModel {
-    // 该企业拥有的所有数据源信息
+    /**
+     * <p>该企业拥有的所有数据源信息</p>
+     */
     @NameInMap("searchTabResult")
     public java.util.List<ListSearchTabsByOrgIdResponseBodySearchTabResult> searchTabResult;
 
@@ -22,31 +24,45 @@ public class ListSearchTabsByOrgIdResponseBody extends TeaModel {
     }
 
     public static class ListSearchTabsByOrgIdResponseBodySearchTabResult extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 数据源名称
+        /**
+         * <p>数据源名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 数据源优先级，数值越小优先级越高
+        /**
+         * <p>数据源优先级，数值越小优先级越高</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
-        // 数据来源,非必填,默认来源为钉钉搜索内部引擎
+        /**
+         * <p>数据来源,非必填,默认来源为钉钉搜索内部引擎</p>
+         */
         @NameInMap("source")
         public String source;
 
-        // 数据源状态，1表示上线，0表示下线
+        /**
+         * <p>数据源状态，1表示上线，0表示下线</p>
+         */
         @NameInMap("status")
         public Integer status;
 
-        // 数据源的id,范围为3000-4000
+        /**
+         * <p>数据源的id,范围为3000-4000</p>
+         */
         @NameInMap("tabId")
         public Integer tabId;
 

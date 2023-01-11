@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAccountTransferListRequest extends TeaModel {
-    // 分页页数
+    /**
+     * <p>分页页数</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 迁移状态0-未迁移，1-已迁移，2-无需迁移
+    /**
+     * <p>迁移状态0-未迁移，1-已迁移，2-无需迁移</p>
+     */
     @NameInMap("status")
     public Long status;
 

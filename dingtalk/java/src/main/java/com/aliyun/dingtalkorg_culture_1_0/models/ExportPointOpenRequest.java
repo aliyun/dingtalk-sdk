@@ -4,15 +4,21 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExportPointOpenRequest extends TeaModel {
-    // exportType为1时不需要传此参数，目前仅exportType=3时必须传入此参数,必须为七日内某一天且不能选择当日，格式yyyyMmdd。
+    /**
+     * <p>exportType为1时不需要传此参数，目前仅exportType=3时必须传入此参数,必须为七日内某一天且不能选择当日，格式yyyyMmdd。</p>
+     */
     @NameInMap("exportDate")
     public String exportDate;
 
-    // 导出类型 1为七日内明细，3为七日内某一天榜单，且都不包含当日
+    /**
+     * <p>导出类型 1为七日内明细，3为七日内某一天榜单，且都不包含当日</p>
+     */
     @NameInMap("exportType")
     public Long exportType;
 
-    // 操作人userId 必须为管理员
+    /**
+     * <p>操作人userId 必须为管理员</p>
+     */
     @NameInMap("userId")
     public String userId;
 

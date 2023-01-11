@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactDeptUpdateResponseBody extends TeaModel {
-    // 部门Id
+    /**
+     * <p>部门Id</p>
+     */
     @NameInMap("content")
     public Long content;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class DetailUserIdPrivateDataMapValue extends TeaModel {
-    // 卡片模板的文本内容参数。
+    /**
+     * <p>卡片模板的文本内容参数。</p>
+     */
     @NameInMap("cardParamMap")
     public java.util.Map<String, ?> cardParamMap;
 
-    // 卡片模板的图片内容参数。
+    /**
+     * <p>卡片模板的图片内容参数。</p>
+     */
     @NameInMap("cardMediaIdParamMap")
     public java.util.Map<String, ?> cardMediaIdParamMap;
 

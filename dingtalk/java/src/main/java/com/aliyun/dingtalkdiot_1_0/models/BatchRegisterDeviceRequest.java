@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterDeviceRequest extends TeaModel {
-    // 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
+    /**
+     * <p>钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 设备列表。
+    /**
+     * <p>设备列表。</p>
+     */
     @NameInMap("devices")
     public java.util.List<BatchRegisterDeviceRequestDevices> devices;
 
@@ -34,15 +38,21 @@ public class BatchRegisterDeviceRequest extends TeaModel {
     }
 
     public static class BatchRegisterDeviceRequestDevicesLiveUrls extends TeaModel {
-        // flv格式视频流地址
+        /**
+         * <p>flv格式视频流地址</p>
+         */
         @NameInMap("flv")
         public String flv;
 
-        // hls格式视频流地址
+        /**
+         * <p>hls格式视频流地址</p>
+         */
         @NameInMap("hls")
         public String hls;
 
-        // rtmp格式视频流地址
+        /**
+         * <p>rtmp格式视频流地址</p>
+         */
         @NameInMap("rtmp")
         public String rtmp;
 
@@ -78,43 +88,63 @@ public class BatchRegisterDeviceRequest extends TeaModel {
     }
 
     public static class BatchRegisterDeviceRequestDevices extends TeaModel {
-        // 设备ID。
+        /**
+         * <p>设备ID。</p>
+         */
         @NameInMap("deviceId")
         public String deviceId;
 
-        // 设备名称。
+        /**
+         * <p>设备名称。</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        // 设备状态  0:在线  1:离线
+        /**
+         * <p>设备状态  0:在线  1:离线</p>
+         */
         @NameInMap("deviceStatus")
         public Integer deviceStatus;
 
-        // 设备类型，自定义传入，最多128个字节。
+        /**
+         * <p>设备类型，自定义传入，最多128个字节。</p>
+         */
         @NameInMap("deviceType")
         public String deviceType;
 
-        // 设备类型名称，自定义传入，最多128个字节，与deviceType一一对应。
+        /**
+         * <p>设备类型名称，自定义传入，最多128个字节，与deviceType一一对应。</p>
+         */
         @NameInMap("deviceTypeName")
         public String deviceTypeName;
 
-        // 第三方平台定制参数，企业内部系统忽略。
+        /**
+         * <p>第三方平台定制参数，企业内部系统忽略。</p>
+         */
         @NameInMap("extraData")
         public java.util.Map<String, ?> extraData;
 
-        // 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
+        /**
+         * <p>视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。</p>
+         */
         @NameInMap("liveUrls")
         public BatchRegisterDeviceRequestDevicesLiveUrls liveUrls;
 
-        // 设备地址。
+        /**
+         * <p>设备地址。</p>
+         */
         @NameInMap("location")
         public String location;
 
-        // 父设备ID。
+        /**
+         * <p>父设备ID。</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
-        // 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
+        /**
+         * <p>产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头</p>
+         */
         @NameInMap("productType")
         public String productType;
 

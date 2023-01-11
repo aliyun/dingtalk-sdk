@@ -32,15 +32,21 @@ public class DeliverCardResponseBody extends TeaModel {
     }
 
     public static class DeliverCardResponseBodyResult extends TeaModel {
-        // 场域Id
+        /**
+         * <p>场域Id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
+        /**
+         * <p>场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 
-        // 投放成功
+        /**
+         * <p>投放成功</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

@@ -4,13 +4,17 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GrantProcessInstanceForDownloadFileRequest extends TeaModel {
-    // 文件id，调用获取审批实例详情接口获取。
+    /**
+     * <p>文件id，调用获取审批实例详情接口获取。</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
-    // 实例ID。
-    // 
-    // 调用获取审批实例详情接口获取。
+    /**
+     * <p>实例ID。</p>
+     * <br>
+     * <p>调用获取审批实例详情接口获取。</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 

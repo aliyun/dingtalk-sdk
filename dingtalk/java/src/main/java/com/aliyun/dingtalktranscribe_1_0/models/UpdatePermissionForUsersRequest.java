@@ -4,15 +4,21 @@ package com.aliyun.dingtalktranscribe_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePermissionForUsersRequest extends TeaModel {
-    // 闪记任务的类型。枚举值，从任务详情中获取。
+    /**
+     * <p>闪记任务的类型。枚举值，从任务详情中获取。</p>
+     */
     @NameInMap("bizType")
     public Integer bizType;
 
-    // 被授权的用户信息列表
+    /**
+     * <p>被授权的用户信息列表</p>
+     */
     @NameInMap("members")
     public java.util.List<UpdatePermissionForUsersRequestMembers> members;
 
-    // 要操作的闪记任务的创建者userId。
+    /**
+     * <p>要操作的闪记任务的创建者userId。</p>
+     */
     @NameInMap("taskCreator")
     public Long taskCreator;
 
@@ -60,13 +66,15 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
         @NameInMap("memberId")
         public Long memberId;
 
-        // 要赋予用户的权限名称。该字段表示要授予特定用户的权限名称，由开发者填写。
-        // 
-        // EDITOR：可编辑权限
-        // 
-        // READ_DOWNLOAD：仅可查看、下载
-        // 
-        // READ：只读权限
+        /**
+         * <p>要赋予用户的权限名称。该字段表示要授予特定用户的权限名称，由开发者填写。</p>
+         * <br>
+         * <p>EDITOR：可编辑权限</p>
+         * <br>
+         * <p>READ_DOWNLOAD：仅可查看、下载</p>
+         * <br>
+         * <p>READ：只读权限</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 

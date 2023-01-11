@@ -4,11 +4,15 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class ManageSingleChatRobotStatusRequest extends TeaModel {
-    // 钉钉开放平台后台机器人的robotCode
+    /**
+     * <p>钉钉开放平台后台机器人的robotCode</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    // 机器人的可用状态，enable-启用、disable-停用
+    /**
+     * <p>机器人的可用状态，enable-启用、disable-停用</p>
+     */
     @NameInMap("status")
     public String status;
 

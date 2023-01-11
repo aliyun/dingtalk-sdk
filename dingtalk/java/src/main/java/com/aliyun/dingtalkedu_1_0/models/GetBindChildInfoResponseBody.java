@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBindChildInfoResponseBody extends TeaModel {
-    // 孩子id
+    /**
+     * <p>孩子id</p>
+     */
     @NameInMap("childUserId")
     public String childUserId;
 
-    // 当前用户id
+    /**
+     * <p>当前用户id</p>
+     */
     @NameInMap("currentUserId")
     public String currentUserId;
 
-    // 家庭id
+    /**
+     * <p>家庭id</p>
+     */
     @NameInMap("familyCorpId")
     public String familyCorpId;
 

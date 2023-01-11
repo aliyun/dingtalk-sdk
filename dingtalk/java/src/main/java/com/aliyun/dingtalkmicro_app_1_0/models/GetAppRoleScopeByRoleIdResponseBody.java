@@ -4,31 +4,45 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAppRoleScopeByRoleIdResponseBody extends TeaModel {
-    // 是否拥有角色管理权限，默认false
+    /**
+     * <p>是否拥有角色管理权限，默认false</p>
+     */
     @NameInMap("canManageRole")
     public Boolean canManageRole;
 
-    // 部门id列表
+    /**
+     * <p>部门id列表</p>
+     */
     @NameInMap("deptIdList")
     public java.util.List<Long> deptIdList;
 
-    // 角色id
+    /**
+     * <p>角色id</p>
+     */
     @NameInMap("roleId")
     public Long roleId;
 
-    // 角色名称
+    /**
+     * <p>角色名称</p>
+     */
     @NameInMap("roleName")
     public String roleName;
 
-    // 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
+    /**
+     * <p>角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分</p>
+     */
     @NameInMap("scopeType")
     public String scopeType;
 
-    // 角色范围版本号
+    /**
+     * <p>角色范围版本号</p>
+     */
     @NameInMap("scopeVersion")
     public String scopeVersion;
 
-    // 员工userId列表
+    /**
+     * <p>员工userId列表</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

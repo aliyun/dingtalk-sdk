@@ -4,47 +4,69 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUserCodeInstanceRequest extends TeaModel {
-    // 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
+    /**
+     * <p>有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间</p>
+     */
     @NameInMap("availableTimes")
     public java.util.List<CreateUserCodeInstanceRequestAvailableTimes> availableTimes;
 
-    // 码标识，由钉钉颁发
+    /**
+     * <p>码标识，由钉钉颁发</p>
+     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
-    // 码值
+    /**
+     * <p>码值</p>
+     */
     @NameInMap("codeValue")
     public String codeValue;
 
-    // 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
+    /**
+     * <p>码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入</p>
+     */
     @NameInMap("codeValueType")
     public String codeValueType;
 
-    // 企业ID
+    /**
+     * <p>企业ID</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 扩展参数
+    /**
+     * <p>扩展参数</p>
+     */
     @NameInMap("extInfo")
     public java.util.Map<String, ?> extInfo;
 
-    // 临时码，传入过期时间
+    /**
+     * <p>临时码，传入过期时间</p>
+     */
     @NameInMap("gmtExpired")
     public String gmtExpired;
 
-    // 业务幂等ID
+    /**
+     * <p>业务幂等ID</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
-    // 状态，传入关闭状态需要用户手动开启后才会渲染二维
+    /**
+     * <p>状态，传入关闭状态需要用户手动开启后才会渲染二维</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
+    /**
+     * <p>用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户</p>
+     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
-    // 用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号
+    /**
+     * <p>用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号</p>
+     */
     @NameInMap("userIdentity")
     public String userIdentity;
 
@@ -142,11 +164,15 @@ public class CreateUserCodeInstanceRequest extends TeaModel {
     }
 
     public static class CreateUserCodeInstanceRequestAvailableTimes extends TeaModel {
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("gmtEnd")
         public String gmtEnd;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("gmtStart")
         public String gmtStart;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelProcessInstanceRequest extends TeaModel {
-    // 流程实例id
+    /**
+     * <p>流程实例id</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 

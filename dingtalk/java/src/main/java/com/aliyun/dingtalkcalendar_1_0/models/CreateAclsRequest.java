@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAclsRequest extends TeaModel {
-    // 对日历的访问权限
+    /**
+     * <p>对日历的访问权限</p>
+     */
     @NameInMap("privilege")
     public String privilege;
 
-    // 权限范围
+    /**
+     * <p>权限范围</p>
+     */
     @NameInMap("scope")
     public CreateAclsRequestScope scope;
 
-    // 是否向授权人发消息
+    /**
+     * <p>是否向授权人发消息</p>
+     */
     @NameInMap("sendMsg")
     public Boolean sendMsg;
 
@@ -46,11 +52,15 @@ public class CreateAclsRequest extends TeaModel {
     }
 
     public static class CreateAclsRequestScope extends TeaModel {
-        // 权限类型
+        /**
+         * <p>权限类型</p>
+         */
         @NameInMap("scopeType")
         public String scopeType;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

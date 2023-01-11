@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTaskResponseBody extends TeaModel {
-    // 返回结果对象
+    /**
+     * <p>返回结果对象</p>
+     */
     @NameInMap("result")
     public CreateTaskResponseBodyResult result;
 
@@ -22,7 +24,9 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResultCustomfieldsValue extends TeaModel {
-        // 自定义字段显示值
+        /**
+         * <p>自定义字段显示值</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -42,11 +46,15 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResultCustomfields extends TeaModel {
-        // 自定义字段id
+        /**
+         * <p>自定义字段id</p>
+         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
-        // 自定义字段值
+        /**
+         * <p>自定义字段值</p>
+         */
         @NameInMap("value")
         public java.util.List<CreateTaskResponseBodyResultCustomfieldsValue> value;
 
@@ -74,51 +82,75 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResult extends TeaModel {
-        // 任务标题
+        /**
+         * <p>任务标题</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("created")
         public String created;
 
-        // 任务创建者userId
+        /**
+         * <p>任务创建者userId</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        // 自定义字段列表
+        /**
+         * <p>自定义字段列表</p>
+         */
         @NameInMap("customfields")
         public java.util.List<CreateTaskResponseBodyResultCustomfields> customfields;
 
-        // 任务截止时间
+        /**
+         * <p>任务截止时间</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
-        // 任务执行者userId
+        /**
+         * <p>任务执行者userId</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
-        // 任务参与者列表
+        /**
+         * <p>任务参与者列表</p>
+         */
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
-        // 任务备注
+        /**
+         * <p>任务备注</p>
+         */
         @NameInMap("note")
         public String note;
 
-        // 任务优先级
+        /**
+         * <p>任务优先级</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
-        // 项目id
+        /**
+         * <p>项目id</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
-        // 任务id
+        /**
+         * <p>任务id</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updated")
         public String updated;
 

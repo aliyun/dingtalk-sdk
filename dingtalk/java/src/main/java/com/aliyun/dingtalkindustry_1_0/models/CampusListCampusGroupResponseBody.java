@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusListCampusGroupResponseBody extends TeaModel {
-    // 返回项目组
+    /**
+     * <p>返回项目组</p>
+     */
     @NameInMap("result")
     public java.util.List<CampusListCampusGroupResponseBodyResult> result;
 
@@ -22,15 +24,21 @@ public class CampusListCampusGroupResponseBody extends TeaModel {
     }
 
     public static class CampusListCampusGroupResponseBodyResult extends TeaModel {
-        // 扩展信息
+        /**
+         * <p>扩展信息</p>
+         */
         @NameInMap("extend")
         public String extend;
 
-        // 项目组ID
+        /**
+         * <p>项目组ID</p>
+         */
         @NameInMap("groupDeptId")
         public Long groupDeptId;
 
-        // 项目组名称
+        /**
+         * <p>项目组名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 

@@ -4,63 +4,93 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTradeOrderResponseBody extends TeaModel {
-    // 商品编码
+    /**
+     * <p>商品编码</p>
+     */
     @NameInMap("articleCode")
     public String articleCode;
 
-    // 规格编码
+    /**
+     * <p>规格编码</p>
+     */
     @NameInMap("articleItemCode")
     public String articleItemCode;
 
-    // 规格名称
+    /**
+     * <p>规格名称</p>
+     */
     @NameInMap("articleItemName")
     public String articleItemName;
 
-    // 商品名称
+    /**
+     * <p>商品名称</p>
+     */
     @NameInMap("articleName")
     public String articleName;
 
-    // 订单关闭时间（单位：ms）
+    /**
+     * <p>订单关闭时间（单位：ms）</p>
+     */
     @NameInMap("closeTime")
     public Long closeTime;
 
-    // 订单创建时间（单位：ms）
+    /**
+     * <p>订单创建时间（单位：ms）</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
-    // 原价（单位：分）
+    /**
+     * <p>原价（单位：分）</p>
+     */
     @NameInMap("fee")
     public Long fee;
 
-    // ISV的组织ID
+    /**
+     * <p>ISV的组织ID</p>
+     */
     @NameInMap("isvCropId")
     public String isvCropId;
 
-    // 内部订单号
+    /**
+     * <p>内部订单号</p>
+     */
     @NameInMap("orderId")
     public Long orderId;
 
-    // 外部订单号
+    /**
+     * <p>外部订单号</p>
+     */
     @NameInMap("outerOrderId")
     public String outerOrderId;
 
-    // 实际支付的价格（单位：分）
+    /**
+     * <p>实际支付的价格（单位：分）</p>
+     */
     @NameInMap("payFee")
     public Long payFee;
 
-    // 订单支付时间（单位：ms）
+    /**
+     * <p>订单支付时间（单位：ms）</p>
+     */
     @NameInMap("payTime")
     public Long payTime;
 
-    // 商品数量
+    /**
+     * <p>商品数量</p>
+     */
     @NameInMap("quantity")
     public Long quantity;
 
-    // 订单退款时间（单位：ms）
+    /**
+     * <p>订单退款时间（单位：ms）</p>
+     */
     @NameInMap("refundTime")
     public Long refundTime;
 
-    // 订单状态：-1表示已关闭、0表示未支付、1表示已支付、2表示已退款
+    /**
+     * <p>订单状态：-1表示已关闭、0表示未支付、1表示已支付、2表示已退款</p>
+     */
     @NameInMap("status")
     public Integer status;
 

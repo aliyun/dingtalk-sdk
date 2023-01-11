@@ -4,75 +4,111 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusGetCampusResponseBody extends TeaModel {
-    // 详细地址
+    /**
+     * <p>详细地址</p>
+     */
     @NameInMap("address")
     public String address;
 
-    // 面积
+    /**
+     * <p>面积</p>
+     */
     @NameInMap("area")
     public Double area;
 
-    // 项目组ID
+    /**
+     * <p>项目组ID</p>
+     */
     @NameInMap("belongProjectGroupId")
     public String belongProjectGroupId;
 
-    // 园区组织ID
+    /**
+     * <p>园区组织ID</p>
+     */
     @NameInMap("campusCorpId")
     public String campusCorpId;
 
-    // 园区部门ID
+    /**
+     * <p>园区部门ID</p>
+     */
     @NameInMap("campusDeptId")
     public Long campusDeptId;
 
-    // 园区名称
+    /**
+     * <p>园区名称</p>
+     */
     @NameInMap("campusName")
     public String campusName;
 
-    // 容纳人数
+    /**
+     * <p>容纳人数</p>
+     */
     @NameInMap("capacity")
     public String capacity;
 
-    // 市
+    /**
+     * <p>市</p>
+     */
     @NameInMap("cityId")
     public Integer cityId;
 
-    // 国家
+    /**
+     * <p>国家</p>
+     */
     @NameInMap("country")
     public String country;
 
-    // 区
+    /**
+     * <p>区</p>
+     */
     @NameInMap("countyId")
     public Integer countyId;
 
-    // 描述
+    /**
+     * <p>描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 扩展属性
+    /**
+     * <p>扩展属性</p>
+     */
     @NameInMap("extend")
     public String extend;
 
-    // 经纬度
+    /**
+     * <p>经纬度</p>
+     */
     @NameInMap("location")
     public String location;
 
-    // 过期时间
+    /**
+     * <p>过期时间</p>
+     */
     @NameInMap("orderEndTime")
     public Long orderEndTime;
 
-    // 购买信息
+    /**
+     * <p>购买信息</p>
+     */
     @NameInMap("orderInfo")
     public String orderInfo;
 
-    // 订购时间
+    /**
+     * <p>订购时间</p>
+     */
     @NameInMap("orderStartTime")
     public Long orderStartTime;
 
-    // 省
+    /**
+     * <p>省</p>
+     */
     @NameInMap("provId")
     public Integer provId;
 
-    // 电话
+    /**
+     * <p>电话</p>
+     */
     @NameInMap("telephone")
     public String telephone;
 

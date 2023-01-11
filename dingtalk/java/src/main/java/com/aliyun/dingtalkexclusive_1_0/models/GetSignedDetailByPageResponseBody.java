@@ -4,19 +4,27 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSignedDetailByPageResponseBody extends TeaModel {
-    // 员工信息
+    /**
+     * <p>员工信息</p>
+     */
     @NameInMap("auditSignedDetailDTOList")
     public java.util.List<GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList> auditSignedDetailDTOList;
 
-    // 当前页
+    /**
+     * <p>当前页</p>
+     */
     @NameInMap("currentPage")
     public Long currentPage;
 
-    // 一页数据量
+    /**
+     * <p>一页数据量</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 总数据量
+    /**
+     * <p>总数据量</p>
+     */
     @NameInMap("total")
     public Long total;
 
@@ -58,31 +66,45 @@ public class GetSignedDetailByPageResponseBody extends TeaModel {
     }
 
     public static class GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList extends TeaModel {
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // 邮件
+        /**
+         * <p>邮件</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // 员工名称
+        /**
+         * <p>员工名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 手机号
+        /**
+         * <p>手机号</p>
+         */
         @NameInMap("phone")
         public String phone;
 
-        // 角色
+        /**
+         * <p>角色</p>
+         */
         @NameInMap("roles")
         public String roles;
 
-        // 工号
+        /**
+         * <p>工号</p>
+         */
         @NameInMap("staffId")
         public String staffId;
 
-        // 职位
+        /**
+         * <p>职位</p>
+         */
         @NameInMap("title")
         public String title;
 

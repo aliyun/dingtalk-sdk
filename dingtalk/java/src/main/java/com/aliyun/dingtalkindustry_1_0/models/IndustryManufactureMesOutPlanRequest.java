@@ -4,75 +4,111 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesOutPlanRequest extends TeaModel {
-    // 审批状态
+    /**
+     * <p>审批状态</p>
+     */
     @NameInMap("approvalStatus")
     public String approvalStatus;
 
-    // 审批人
+    /**
+     * <p>审批人</p>
+     */
     @NameInMap("approver")
     public String approver;
 
-    // 主数据名称
+    /**
+     * <p>主数据名称</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
-    // 委外计划单号
+    /**
+     * <p>委外计划单号</p>
+     */
     @NameInMap("outSourceProjectCode")
     public String outSourceProjectCode;
 
-    // 委外群
+    /**
+     * <p>委外群</p>
+     */
     @NameInMap("outSourceTeamId")
     public String outSourceTeamId;
 
-    // 单价（元）
+    /**
+     * <p>单价（元）</p>
+     */
     @NameInMap("price")
     public String price;
 
-    // 工序识别码
+    /**
+     * <p>工序识别码</p>
+     */
     @NameInMap("processIdentificationCode")
     public String processIdentificationCode;
 
-    // 委外的工序列表(多个)
+    /**
+     * <p>委外的工序列表(多个)</p>
+     */
     @NameInMap("processUuids")
     public String processUuids;
 
-    // 产品代码(物料编号)
+    /**
+     * <p>产品代码(物料编号)</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 
-    // 产品名称
+    /**
+     * <p>产品名称</p>
+     */
     @NameInMap("productName")
     public String productName;
 
-    // 规格型号
+    /**
+     * <p>规格型号</p>
+     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
-    // 工单编号(生产任务单)
+    /**
+     * <p>工单编号(生产任务单)</p>
+     */
     @NameInMap("projectCode")
     public String projectCode;
 
-    // 工单(生产计划单)ID
+    /**
+     * <p>工单(生产计划单)ID</p>
+     */
     @NameInMap("projectId")
     public String projectId;
 
-    // 委外计划数
+    /**
+     * <p>委外计划数</p>
+     */
     @NameInMap("sendPlanQuantity")
     public String sendPlanQuantity;
 
-    // 供应商代码
+    /**
+     * <p>供应商代码</p>
+     */
     @NameInMap("supplierCode")
     public String supplierCode;
 
-    // 供应商名称
+    /**
+     * <p>供应商名称</p>
+     */
     @NameInMap("supplierName")
     public String supplierName;
 
-    // 金额（元）
+    /**
+     * <p>金额（元）</p>
+     */
     @NameInMap("totalWage")
     public String totalWage;
 
-    // 记录唯一标识
+    /**
+     * <p>记录唯一标识</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

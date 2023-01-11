@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCrmPersonalCustomerResponseBody extends TeaModel {
-    // 客户数据id
+    /**
+     * <p>客户数据id</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateProjectGroupRequest extends TeaModel {
-    // 增加到项目分组的Id列表，最多5个
+    /**
+     * <p>增加到项目分组的Id列表，最多5个</p>
+     */
     @NameInMap("addProjectGroupIds")
     public java.util.List<String> addProjectGroupIds;
 
-    // 移除项目分组的Id列表，最多5个
+    /**
+     * <p>移除项目分组的Id列表，最多5个</p>
+     */
     @NameInMap("delProjectGroupIds")
     public java.util.List<String> delProjectGroupIds;
 

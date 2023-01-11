@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPermissionByUserIdRequest extends TeaModel {
-    // 用户ID
+    /**
+     * <p>用户ID</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,19 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPurchaseInfoRequest extends TeaModel {
-    // 商户id
+    /**
+     * <p>商户id</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    // 场景
+    /**
+     * <p>场景</p>
+     */
     @NameInMap("scene")
     public Integer scene;
 
-    // 设备序列号
+    /**
+     * <p>设备序列号</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

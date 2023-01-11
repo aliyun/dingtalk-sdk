@@ -4,7 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPayAccountListResponseBody extends TeaModel {
-    // 账号列表
+    /**
+     * <p>账号列表</p>
+     */
     @NameInMap("payAccountVOList")
     public java.util.List<QueryPayAccountListResponseBodyPayAccountVOList> payAccountVOList;
 
@@ -22,27 +24,39 @@ public class QueryPayAccountListResponseBody extends TeaModel {
     }
 
     public static class QueryPayAccountListResponseBodyPayAccountVOList extends TeaModel {
-        // 账户分类
+        /**
+         * <p>账户分类</p>
+         */
         @NameInMap("accountClass")
         public String accountClass;
 
-        // 账号唯一id
+        /**
+         * <p>账号唯一id</p>
+         */
         @NameInMap("accountId")
         public String accountId;
 
-        // 账号名称
+        /**
+         * <p>账号名称</p>
+         */
         @NameInMap("accountName")
         public String accountName;
 
-        // 付款账号（脱敏）
+        /**
+         * <p>付款账号（脱敏）</p>
+         */
         @NameInMap("accountNo")
         public String accountNo;
 
-        // 账户备注
+        /**
+         * <p>账户备注</p>
+         */
         @NameInMap("accountRemark")
         public String accountRemark;
 
-        // 账户类型
+        /**
+         * <p>账户类型</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 

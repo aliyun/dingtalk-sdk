@@ -4,46 +4,66 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ResubmitTicketRequest extends TeaModel {
-    // 工单创建人UnionId
+    /**
+     * <p>工单创建人UnionId</p>
+     */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
-    // 自定义组件字段值(JSON格式)
+    /**
+     * <p>自定义组件字段值(JSON格式)</p>
+     */
     @NameInMap("customFields")
     public String customFields;
 
     @NameInMap("notify")
     public ResubmitTicketRequestNotify notify;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 工单模板业务ID
+    /**
+     * <p>工单模板业务ID</p>
+     */
     @NameInMap("openTemplateBizId")
     public String openTemplateBizId;
 
-    // 工单开放ID
+    /**
+     * <p>工单开放ID</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    // 工单处理人UnionId列表
+    /**
+     * <p>工单处理人UnionId列表</p>
+     */
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 
-    // 工单场景 SG 或 VOC
+    /**
+     * <p>工单场景 SG 或 VOC</p>
+     */
     @NameInMap("scene")
     public String scene;
 
-    // 工单场景信息
+    /**
+     * <p>工单场景信息</p>
+     */
     @NameInMap("sceneContext")
     public ResubmitTicketRequestSceneContext sceneContext;
 
-    // 备注
+    /**
+     * <p>备注</p>
+     */
     @NameInMap("ticketMemo")
     public ResubmitTicketRequestTicketMemo ticketMemo;
 
-    // 工单标题
+    /**
+     * <p>工单标题</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -141,15 +161,21 @@ public class ResubmitTicketRequest extends TeaModel {
     }
 
     public static class ResubmitTicketRequestNotify extends TeaModel {
-        // 服务群通知接收人（钉钉UnionId）
+        /**
+         * <p>服务群通知接收人（钉钉UnionId）</p>
+         */
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
-        // 是否向群内推送一个全员可见工单通知卡片
+        /**
+         * <p>是否向群内推送一个全员可见工单通知卡片</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
-        // 企业工作通知接收人（钉钉UnionId）
+        /**
+         * <p>企业工作通知接收人（钉钉UnionId）</p>
+         */
         @NameInMap("workNoticeReceiverUnionIds")
         public java.util.List<String> workNoticeReceiverUnionIds;
 
@@ -188,7 +214,9 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("anchor")
         public Boolean anchor;
 
-        // 勾选消息openMsgId
+        /**
+         * <p>勾选消息openMsgId</p>
+         */
         @NameInMap("openMsgId")
         public String openMsgId;
 
@@ -230,11 +258,15 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("groupMsgs")
         public java.util.List<ResubmitTicketRequestSceneContextGroupMsgs> groupMsgs;
 
-        // 服务群openConversationId
+        /**
+         * <p>服务群openConversationId</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        // 工单相关人UnionId列表
+        /**
+         * <p>工单相关人UnionId列表</p>
+         */
         @NameInMap("relevantorUnionIds")
         public java.util.List<String> relevantorUnionIds;
 
@@ -270,11 +302,15 @@ public class ResubmitTicketRequest extends TeaModel {
     }
 
     public static class ResubmitTicketRequestTicketMemoAttachments extends TeaModel {
-        // 文件名
+        /**
+         * <p>文件名</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 文件key
+        /**
+         * <p>文件key</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -305,7 +341,9 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<ResubmitTicketRequestTicketMemoAttachments> attachments;
 
-        // 备注文字
+        /**
+         * <p>备注文字</p>
+         */
         @NameInMap("memo")
         public String memo;
 

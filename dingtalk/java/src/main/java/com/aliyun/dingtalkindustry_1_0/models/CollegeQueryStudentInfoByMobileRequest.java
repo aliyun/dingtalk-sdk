@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeQueryStudentInfoByMobileRequest extends TeaModel {
-    // 手机号
+    /**
+     * <p>手机号</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 

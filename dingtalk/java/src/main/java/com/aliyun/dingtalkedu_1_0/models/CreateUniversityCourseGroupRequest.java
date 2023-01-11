@@ -4,47 +4,69 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUniversityCourseGroupRequest extends TeaModel {
-    // 课程组介绍
+    /**
+     * <p>课程组介绍</p>
+     */
     @NameInMap("courseGroupIntroduce")
     public String courseGroupIntroduce;
 
-    // 课程组名称
+    /**
+     * <p>课程组名称</p>
+     */
     @NameInMap("courseGroupName")
     public String courseGroupName;
 
-    // 课程详细
+    /**
+     * <p>课程详细</p>
+     */
     @NameInMap("courserGroupItemModels")
     public java.util.List<CreateUniversityCourseGroupRequestCourserGroupItemModels> courserGroupItemModels;
 
-    // 扩展参数
+    /**
+     * <p>扩展参数</p>
+     */
     @NameInMap("ext")
     public String ext;
 
-    // 合作方课程组code
+    /**
+     * <p>合作方课程组code</p>
+     */
     @NameInMap("isvCourseGroupCode")
     public String isvCourseGroupCode;
 
-    // 学段code
+    /**
+     * <p>学段code</p>
+     */
     @NameInMap("periodCode")
     public String periodCode;
 
-    // 学年
+    /**
+     * <p>学年</p>
+     */
     @NameInMap("schoolYear")
     public String schoolYear;
 
-    // 学期
+    /**
+     * <p>学期</p>
+     */
     @NameInMap("semester")
     public Integer semester;
 
-    // 学科
+    /**
+     * <p>学科</p>
+     */
     @NameInMap("subjectName")
     public String subjectName;
 
-    // 教师信息
+    /**
+     * <p>教师信息</p>
+     */
     @NameInMap("teacherInfos")
     public java.util.List<CreateUniversityCourseGroupRequestTeacherInfos> teacherInfos;
 
-    // 操作人
+    /**
+     * <p>操作人</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -142,15 +164,21 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
-        // 一月的第几天
+        /**
+         * <p>一月的第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -186,15 +214,21 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
-        // 一月的第几天
+        /**
+         * <p>一月的第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -230,31 +264,45 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModels extends TeaModel {
-        // 上课周期
+        /**
+         * <p>上课周期</p>
+         */
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
-        // 教室id
+        /**
+         * <p>教室id</p>
+         */
         @NameInMap("classroomId")
         public Long classroomId;
 
-        // 课程类型
+        /**
+         * <p>课程类型</p>
+         */
         @NameInMap("courseType")
         public Integer courseType;
 
-        // 课程组详细结束时间
+        /**
+         * <p>课程组详细结束时间</p>
+         */
         @NameInMap("courserGroupItemEndDate")
         public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate courserGroupItemEndDate;
 
-        // 课程组详细开始时间
+        /**
+         * <p>课程组详细开始时间</p>
+         */
         @NameInMap("courserGroupItemStartDate")
         public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate courserGroupItemStartDate;
 
-        // 一周的第几天
+        /**
+         * <p>一周的第几天</p>
+         */
         @NameInMap("dayOfWeek")
         public Integer dayOfWeek;
 
-        // 课节
+        /**
+         * <p>课节</p>
+         */
         @NameInMap("sectionIndex")
         public java.util.List<Integer> sectionIndex;
 
@@ -322,11 +370,15 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestTeacherInfos extends TeaModel {
-        // 角色类型
+        /**
+         * <p>角色类型</p>
+         */
         @NameInMap("participantRole")
         public String participantRole;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class RedirectWorkflowTaskResponseBody extends TeaModel {
-    // 是否转交成功
+    /**
+     * <p>是否转交成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

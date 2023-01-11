@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPermissionRoleMemberResponseBody extends TeaModel {
-    // 角色下的成员MAP
+    /**
+     * <p>角色下的成员MAP</p>
+     */
     @NameInMap("roleMemberMap")
     public java.util.Map<String, RoleMemberMapValue> roleMemberMap;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserCredentialsResponseBody extends TeaModel {
-    // 人员证书
+    /**
+     * <p>人员证书</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryUserCredentialsResponseBodyContent> content;
 
@@ -22,15 +24,21 @@ public class QueryUserCredentialsResponseBody extends TeaModel {
     }
 
     public static class QueryUserCredentialsResponseBodyContentCredentialList extends TeaModel {
-        // 证书名称
+        /**
+         * <p>证书名称</p>
+         */
         @NameInMap("credentialName")
         public String credentialName;
 
-        // 证书类型
+        /**
+         * <p>证书类型</p>
+         */
         @NameInMap("credentialType")
         public Integer credentialType;
 
-        // 有效日期
+        /**
+         * <p>有效日期</p>
+         */
         @NameInMap("termOfValidity")
         public String termOfValidity;
 
@@ -66,11 +74,15 @@ public class QueryUserCredentialsResponseBody extends TeaModel {
     }
 
     public static class QueryUserCredentialsResponseBodyContent extends TeaModel {
-        // 证书列表
+        /**
+         * <p>证书列表</p>
+         */
         @NameInMap("credentialList")
         public java.util.List<QueryUserCredentialsResponseBodyContentCredentialList> credentialList;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

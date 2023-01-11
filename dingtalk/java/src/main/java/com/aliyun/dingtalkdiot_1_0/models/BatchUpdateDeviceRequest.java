@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateDeviceRequest extends TeaModel {
-    // 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
+    /**
+     * <p>钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 设备列表。
+    /**
+     * <p>设备列表。</p>
+     */
     @NameInMap("devices")
     public java.util.List<BatchUpdateDeviceRequestDevices> devices;
 
@@ -34,15 +38,21 @@ public class BatchUpdateDeviceRequest extends TeaModel {
     }
 
     public static class BatchUpdateDeviceRequestDevicesLiveUrls extends TeaModel {
-        // flv格式视频流地址
+        /**
+         * <p>flv格式视频流地址</p>
+         */
         @NameInMap("flv")
         public String flv;
 
-        // hls格式视频流地址
+        /**
+         * <p>hls格式视频流地址</p>
+         */
         @NameInMap("hls")
         public String hls;
 
-        // rtmp格式视频流地址
+        /**
+         * <p>rtmp格式视频流地址</p>
+         */
         @NameInMap("rtmp")
         public String rtmp;
 
@@ -78,27 +88,39 @@ public class BatchUpdateDeviceRequest extends TeaModel {
     }
 
     public static class BatchUpdateDeviceRequestDevices extends TeaModel {
-        // 设备ID。
+        /**
+         * <p>设备ID。</p>
+         */
         @NameInMap("deviceId")
         public String deviceId;
 
-        // 设备名称。
+        /**
+         * <p>设备名称。</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        // 设备状态 0:在线 1:离线
+        /**
+         * <p>设备状态 0:在线 1:离线</p>
+         */
         @NameInMap("deviceStatus")
         public Integer deviceStatus;
 
-        // 第三方平台定制参数，企业内部系统忽略。
+        /**
+         * <p>第三方平台定制参数，企业内部系统忽略。</p>
+         */
         @NameInMap("extraData")
         public java.util.Map<String, ?> extraData;
 
-        // 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
+        /**
+         * <p>视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。</p>
+         */
         @NameInMap("liveUrls")
         public BatchUpdateDeviceRequestDevicesLiveUrls liveUrls;
 
-        // 设备地址。
+        /**
+         * <p>设备地址。</p>
+         */
         @NameInMap("location")
         public String location;
 

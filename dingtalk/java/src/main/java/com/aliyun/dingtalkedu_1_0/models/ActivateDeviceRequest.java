@@ -4,23 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ActivateDeviceRequest extends TeaModel {
-    // 授权码
+    /**
+     * <p>授权码</p>
+     */
     @NameInMap("licenseKey")
     public String licenseKey;
 
-    // 设备型号
+    /**
+     * <p>设备型号</p>
+     */
     @NameInMap("model")
     public String model;
 
-    // 设备名称
+    /**
+     * <p>设备名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 设备sn码
+    /**
+     * <p>设备sn码</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 设备类型
+    /**
+     * <p>设备类型</p>
+     */
     @NameInMap("type")
     public String type;
 

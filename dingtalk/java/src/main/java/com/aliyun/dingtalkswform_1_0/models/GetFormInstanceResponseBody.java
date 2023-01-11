@@ -4,11 +4,15 @@ package com.aliyun.dingtalkswform_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFormInstanceResponseBody extends TeaModel {
-    // 返回结果对象。
+    /**
+     * <p>返回结果对象。</p>
+     */
     @NameInMap("result")
     public GetFormInstanceResponseBodyResult result;
 
-    // 是否成功。
+    /**
+     * <p>是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,15 +38,21 @@ public class GetFormInstanceResponseBody extends TeaModel {
     }
 
     public static class GetFormInstanceResponseBodyResultForms extends TeaModel {
-        // 表单控件key。
+        /**
+         * <p>表单控件key。</p>
+         */
         @NameInMap("key")
         public String key;
 
-        // 表单主题。  当label字段为空或不存在时，忽略这个label和value。
+        /**
+         * <p>表单主题。  当label字段为空或不存在时，忽略这个label和value。</p>
+         */
         @NameInMap("label")
         public String label;
 
-        // 表单的值。
+        /**
+         * <p>表单的值。</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -78,27 +88,39 @@ public class GetFormInstanceResponseBody extends TeaModel {
     }
 
     public static class GetFormInstanceResponseBodyResult extends TeaModel {
-        // 创建时间。iso8601格式。
+        /**
+         * <p>创建时间。iso8601格式。</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建者userid
+        /**
+         * <p>创建者userid</p>
+         */
         @NameInMap("creator")
         public String creator;
 
-        // 填表code，用此code可调接口获取填表实例列表。
+        /**
+         * <p>填表code，用此code可调接口获取填表实例列表。</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
-        // 表单内容列表。
+        /**
+         * <p>表单内容列表。</p>
+         */
         @NameInMap("forms")
         public java.util.List<GetFormInstanceResponseBodyResultForms> forms;
 
-        // 更新时间。iso8601格式。
+        /**
+         * <p>更新时间。iso8601格式。</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
-        // 填表名称。
+        /**
+         * <p>填表名称。</p>
+         */
         @NameInMap("title")
         public String title;
 

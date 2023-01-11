@@ -4,19 +4,27 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class ProcessForecastRequest extends TeaModel {
-    // 部门ID
+    /**
+     * <p>部门ID</p>
+     */
     @NameInMap("deptId")
     public Integer deptId;
 
-    // 表单数据内容，控件列表
+    /**
+     * <p>表单数据内容，控件列表</p>
+     */
     @NameInMap("formComponentValues")
     public java.util.List<ProcessForecastRequestFormComponentValues> formComponentValues;
 
-    // 审批流的唯一码
+    /**
+     * <p>审批流的唯一码</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
-    // 审批发起人的userId
+    /**
+     * <p>审批发起人的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -58,26 +66,36 @@ public class ProcessForecastRequest extends TeaModel {
     }
 
     public static class ProcessForecastRequestFormComponentValuesDetailsDetails extends TeaModel {
-        // 控件别名
+        /**
+         * <p>控件别名</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         @NameInMap("componentType")
         public String componentType;
 
-        // 控件扩展值
+        /**
+         * <p>控件扩展值</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 控件id
+        /**
+         * <p>控件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 控件名称
+        /**
+         * <p>控件名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 控件值
+        /**
+         * <p>控件值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -137,26 +155,36 @@ public class ProcessForecastRequest extends TeaModel {
     }
 
     public static class ProcessForecastRequestFormComponentValuesDetails extends TeaModel {
-        // 控件别名
+        /**
+         * <p>控件别名</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         @NameInMap("details")
         public java.util.List<ProcessForecastRequestFormComponentValuesDetailsDetails> details;
 
-        // 控件扩展值
+        /**
+         * <p>控件扩展值</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 控件id
+        /**
+         * <p>控件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 控件名称
+        /**
+         * <p>控件名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 控件值
+        /**
+         * <p>控件值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -216,30 +244,42 @@ public class ProcessForecastRequest extends TeaModel {
     }
 
     public static class ProcessForecastRequestFormComponentValues extends TeaModel {
-        // 控件别名
+        /**
+         * <p>控件别名</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        // 控件类型
+        /**
+         * <p>控件类型</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
         @NameInMap("details")
         public java.util.List<ProcessForecastRequestFormComponentValuesDetails> details;
 
-        // 控件扩展值
+        /**
+         * <p>控件扩展值</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 控件id
+        /**
+         * <p>控件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 控件名称
+        /**
+         * <p>控件名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 控件值
+        /**
+         * <p>控件值</p>
+         */
         @NameInMap("value")
         public String value;
 

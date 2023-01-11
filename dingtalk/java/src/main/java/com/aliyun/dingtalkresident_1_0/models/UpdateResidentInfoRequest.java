@@ -7,39 +7,57 @@ public class UpdateResidentInfoRequest extends TeaModel {
     @NameInMap("address")
     public String address;
 
-    // 建筑面积，组多支持2位小数，总长不超过8位
+    /**
+     * <p>建筑面积，组多支持2位小数，总长不超过8位</p>
+     */
     @NameInMap("buildingArea")
     public Float buildingArea;
 
-    // 市的名字，有值时provName必填
+    /**
+     * <p>市的名字，有值时provName必填</p>
+     */
     @NameInMap("cityName")
     public String cityName;
 
-    // 1纯住宅；2:商住混合；3:办公；4:办公商业混合；5:商业；6:公共场所；7:其他
+    /**
+     * <p>1纯住宅；2:商住混合；3:办公；4:办公商业混合；5:商业；6:公共场所；7:其他</p>
+     */
     @NameInMap("communityType")
     public Long communityType;
 
-    // 区/县名，有值是provName，cityName必填
+    /**
+     * <p>区/县名，有值是provName，cityName必填</p>
+     */
     @NameInMap("countyName")
     public String countyName;
 
-    // 经纬度，格式：经度,纬度
+    /**
+     * <p>经纬度，格式：经度,纬度</p>
+     */
     @NameInMap("location")
     public String location;
 
-    // 小区名
+    /**
+     * <p>小区名</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 省的名字
+    /**
+     * <p>省的名字</p>
+     */
     @NameInMap("provName")
     public String provName;
 
-    // 小区状态：0正常/1关闭/2作废
+    /**
+     * <p>小区状态：0正常/1关闭/2作废</p>
+     */
     @NameInMap("state")
     public Long state;
 
-    // 小区服务电话
+    /**
+     * <p>小区服务电话</p>
+     */
     @NameInMap("telephone")
     public String telephone;
 

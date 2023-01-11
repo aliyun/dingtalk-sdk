@@ -32,24 +32,34 @@ public class AssignOrgHoldingToEmpHoldingBatchResponseBody extends TeaModel {
     }
 
     public static class AssignOrgHoldingToEmpHoldingBatchResponseBodyResultOpenPointInvokeResultDTOS extends TeaModel {
-        // 错误码
+        /**
+         * <p>错误码</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 状态SUCCESS：成功。 FAIL：失败 UNKNOWN:结果未知
+        /**
+         * <p>状态SUCCESS：成功。 FAIL：失败 UNKNOWN:结果未知</p>
+         */
         @NameInMap("invokeStatus")
         public String invokeStatus;
 
-        // 错误信息
+        /**
+         * <p>错误信息</p>
+         */
         @NameInMap("msg")
         public String msg;
 
-        // 积分交易单号
-        // 
+        /**
+         * <p>积分交易单号</p>
+         * <br>
+         */
         @NameInMap("outId")
         public String outId;
 
-        // 发放用户userId
+        /**
+         * <p>发放用户userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -101,7 +111,9 @@ public class AssignOrgHoldingToEmpHoldingBatchResponseBody extends TeaModel {
     }
 
     public static class AssignOrgHoldingToEmpHoldingBatchResponseBodyResult extends TeaModel {
-        // 每个人发放的结果
+        /**
+         * <p>每个人发放的结果</p>
+         */
         @NameInMap("openPointInvokeResultDTOS")
         public java.util.List<AssignOrgHoldingToEmpHoldingBatchResponseBodyResultOpenPointInvokeResultDTOS> openPointInvokeResultDTOS;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditDeviceAdminResponseBody extends TeaModel {
-    // 接口处理返回结果。
+    /**
+     * <p>接口处理返回结果。</p>
+     */
     @NameInMap("result")
     public String result;
 
-    // 接口处理是否成功。
+    /**
+     * <p>接口处理是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

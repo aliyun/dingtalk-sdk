@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListManagementGroupsResponseBody extends TeaModel {
-    // 管理组列表
+    /**
+     * <p>管理组列表</p>
+     */
     @NameInMap("groups")
     public java.util.List<ListManagementGroupsResponseBodyGroups> groups;
 
-    // 是否有下一页
+    /**
+     * <p>是否有下一页</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 下一次读取的位置
+    /**
+     * <p>下一次读取的位置</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -46,11 +52,15 @@ public class ListManagementGroupsResponseBody extends TeaModel {
     }
 
     public static class ListManagementGroupsResponseBodyGroupsMembers extends TeaModel {
-        // 成员id
+        /**
+         * <p>成员id</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 成员类型
+        /**
+         * <p>成员类型</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -78,11 +88,15 @@ public class ListManagementGroupsResponseBody extends TeaModel {
     }
 
     public static class ListManagementGroupsResponseBodyGroupsScope extends TeaModel {
-        // 部门列表，只在scopeType=3 生效
+        /**
+         * <p>部门列表，只在scopeType=3 生效</p>
+         */
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
-        // 1
+        /**
+         * <p>1</p>
+         */
         @NameInMap("scopeType")
         public Integer scopeType;
 
@@ -110,23 +124,33 @@ public class ListManagementGroupsResponseBody extends TeaModel {
     }
 
     public static class ListManagementGroupsResponseBodyGroups extends TeaModel {
-        // 管理组id
+        /**
+         * <p>管理组id</p>
+         */
         @NameInMap("groupId")
         public String groupId;
 
-        // 管理组名
+        /**
+         * <p>管理组名</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 成员
+        /**
+         * <p>成员</p>
+         */
         @NameInMap("members")
         public java.util.List<ListManagementGroupsResponseBodyGroupsMembers> members;
 
-        // 资源列表
+        /**
+         * <p>资源列表</p>
+         */
         @NameInMap("resourceIds")
         public java.util.List<String> resourceIds;
 
-        // 管理范围
+        /**
+         * <p>管理范围</p>
+         */
         @NameInMap("scope")
         public ListManagementGroupsResponseBodyGroupsScope scope;
 

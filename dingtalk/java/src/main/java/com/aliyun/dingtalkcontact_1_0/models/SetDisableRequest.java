@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetDisableRequest extends TeaModel {
-    // reason
+    /**
+     * <p>reason</p>
+     */
     @NameInMap("reason")
     public String reason;
 
-    // userId
+    /**
+     * <p>userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

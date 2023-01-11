@@ -4,23 +4,33 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserAgreementRequest extends TeaModel {
-    // 业务编码
+    /**
+     * <p>业务编码</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 业务场景
+    /**
+     * <p>业务场景</p>
+     */
     @NameInMap("bizScene")
     public String bizScene;
 
-    // 主机构编号
+    /**
+     * <p>主机构编号</p>
+     */
     @NameInMap("instId")
     public String instId;
 
-    // 子机构编号
+    /**
+     * <p>子机构编号</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    // 付款人staffId
+    /**
+     * <p>付款人staffId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

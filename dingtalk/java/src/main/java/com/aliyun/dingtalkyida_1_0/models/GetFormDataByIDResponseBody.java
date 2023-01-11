@@ -4,23 +4,33 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFormDataByIDResponseBody extends TeaModel {
-    // 表单数据详情
+    /**
+     * <p>表单数据详情</p>
+     */
     @NameInMap("formData")
     public java.util.Map<String, ?> formData;
 
-    // 表单实例ID
+    /**
+     * <p>表单实例ID</p>
+     */
     @NameInMap("formInstId")
     public String formInstId;
 
-    // 表单ID
+    /**
+     * <p>表单ID</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 最后修改时间
+    /**
+     * <p>最后修改时间</p>
+     */
     @NameInMap("modifiedTimeGMT")
     public String modifiedTimeGMT;
 
-    // 发起人详情
+    /**
+     * <p>发起人详情</p>
+     */
     @NameInMap("originator")
     public GetFormDataByIDResponseBodyOriginator originator;
 
@@ -70,15 +80,21 @@ public class GetFormDataByIDResponseBody extends TeaModel {
     }
 
     public static class GetFormDataByIDResponseBodyOriginatorName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        // 国际化
+        /**
+         * <p>国际化</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -114,19 +130,27 @@ public class GetFormDataByIDResponseBody extends TeaModel {
     }
 
     public static class GetFormDataByIDResponseBodyOriginator extends TeaModel {
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 邮箱
+        /**
+         * <p>邮箱</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("name")
         public GetFormDataByIDResponseBodyOriginatorName name;
 
-        // 用户工号
+        /**
+         * <p>用户工号</p>
+         */
         @NameInMap("userId")
         public String userId;
 

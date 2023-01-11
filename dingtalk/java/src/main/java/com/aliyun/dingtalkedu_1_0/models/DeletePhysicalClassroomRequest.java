@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeletePhysicalClassroomRequest extends TeaModel {
-    // 教室主键
+    /**
+     * <p>教室主键</p>
+     */
     @NameInMap("classroomId")
     public Long classroomId;
 
-    // 操作人id
+    /**
+     * <p>操作人id</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

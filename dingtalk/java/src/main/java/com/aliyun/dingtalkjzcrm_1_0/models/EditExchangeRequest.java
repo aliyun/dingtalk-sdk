@@ -4,19 +4,27 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditExchangeRequest extends TeaModel {
-    // 编辑数据
+    /**
+     * <p>编辑数据</p>
+     */
     @NameInMap("data")
     public EditExchangeRequestData data;
 
-    // 数据类型，固定填写228
+    /**
+     * <p>数据类型，固定填写228</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
-    // 数据id，不填或者填0为新增数据
+    /**
+     * <p>数据id，不填或者填0为新增数据</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
-    // 时间戳
+    /**
+     * <p>时间戳</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -58,67 +66,99 @@ public class EditExchangeRequest extends TeaModel {
     }
 
     public static class EditExchangeRequestData extends TeaModel {
-        // 产品明细，json格式
+        /**
+         * <p>产品明细，json格式</p>
+         */
         @NameInMap("child_mx")
         public String childMx;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        // 对应客户
+        /**
+         * <p>对应客户</p>
+         */
         @NameInMap("hh_customerid")
         public String hhCustomerid;
 
-        // 换货日期
+        /**
+         * <p>换货日期</p>
+         */
         @NameInMap("hh_date")
         public String hhDate;
 
-        // 换入操作员
+        /**
+         * <p>换入操作员</p>
+         */
         @NameInMap("hh_inempid")
         public String hhInempid;
 
-        // 换入仓库
+        /**
+         * <p>换入仓库</p>
+         */
         @NameInMap("hh_inlibid")
         public String hhInlibid;
 
-        // 换入时间
+        /**
+         * <p>换入时间</p>
+         */
         @NameInMap("hh_intime")
         public String hhIntime;
 
-        // 换货单号
+        /**
+         * <p>换货单号</p>
+         */
         @NameInMap("hh_number")
         public String hhNumber;
 
-        // 合同/订单
+        /**
+         * <p>合同/订单</p>
+         */
         @NameInMap("hh_orderid")
         public String hhOrderid;
 
-        // 换出操作员
+        /**
+         * <p>换出操作员</p>
+         */
         @NameInMap("hh_outempid")
         public String hhOutempid;
 
-        // 换出仓库
+        /**
+         * <p>换出仓库</p>
+         */
         @NameInMap("hh_outlibid")
         public String hhOutlibid;
 
-        // 换出时间
+        /**
+         * <p>换出时间</p>
+         */
         @NameInMap("hh_outtime")
         public String hhOuttime;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("hh_remark")
         public String hhRemark;
 
-        // 状态（未执行，已入待出，已出待入，结束）
+        /**
+         * <p>状态（未执行，已入待出，已出待入，结束）</p>
+         */
         @NameInMap("hh_state")
         public String hhState;
 
-        // 主题
+        /**
+         * <p>主题</p>
+         */
         @NameInMap("hh_title")
         public String hhTitle;
 
-        // 分类
+        /**
+         * <p>分类</p>
+         */
         @NameInMap("hh_type")
         public String hhType;
 

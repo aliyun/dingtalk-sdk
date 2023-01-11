@@ -4,11 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserExtendValuesRequest extends TeaModel {
-    // 用户拓展key
+    /**
+     * <p>用户拓展key</p>
+     */
     @NameInMap("userExtendKey")
     public String userExtendKey;
 
-    // userId列表
+    /**
+     * <p>userId列表</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

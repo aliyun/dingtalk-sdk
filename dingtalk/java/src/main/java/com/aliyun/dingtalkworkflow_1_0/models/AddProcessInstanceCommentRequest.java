@@ -4,19 +4,27 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddProcessInstanceCommentRequest extends TeaModel {
-    // 评论人的userid。
+    /**
+     * <p>评论人的userid。</p>
+     */
     @NameInMap("commentUserId")
     public String commentUserId;
 
-    // 文件。
+    /**
+     * <p>文件。</p>
+     */
     @NameInMap("file")
     public AddProcessInstanceCommentRequestFile file;
 
-    // 审批实例ID，可通过调用获取审批实例ID列表接口获取。
+    /**
+     * <p>审批实例ID，可通过调用获取审批实例ID列表接口获取。</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // 评论的内容。
+    /**
+     * <p>评论的内容。</p>
+     */
     @NameInMap("text")
     public String text;
 
@@ -58,23 +66,33 @@ public class AddProcessInstanceCommentRequest extends TeaModel {
     }
 
     public static class AddProcessInstanceCommentRequestFileAttachments extends TeaModel {
-        // 文件ID。
+        /**
+         * <p>文件ID。</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
-        // 文件名称。
+        /**
+         * <p>文件名称。</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 文件大小。
+        /**
+         * <p>文件大小。</p>
+         */
         @NameInMap("fileSize")
         public String fileSize;
 
-        // 文件类型。
+        /**
+         * <p>文件类型。</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
-        // 钉盘空间ID。
+        /**
+         * <p>钉盘空间ID。</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
@@ -126,11 +144,15 @@ public class AddProcessInstanceCommentRequest extends TeaModel {
     }
 
     public static class AddProcessInstanceCommentRequestFile extends TeaModel {
-        // 附件列表。
+        /**
+         * <p>附件列表。</p>
+         */
         @NameInMap("attachments")
         public java.util.List<AddProcessInstanceCommentRequestFileAttachments> attachments;
 
-        // 图片URL地址。
+        /**
+         * <p>图片URL地址。</p>
+         */
         @NameInMap("photos")
         public java.util.List<String> photos;
 

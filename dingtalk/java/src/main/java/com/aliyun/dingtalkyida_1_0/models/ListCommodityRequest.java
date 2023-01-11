@@ -4,19 +4,27 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListCommodityRequest extends TeaModel {
-    // accessKey
+    /**
+     * <p>accessKey</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
-    // callerUid
+    /**
+     * <p>callerUid</p>
+     */
     @NameInMap("callerUid")
     public String callerUid;
 
-    // currentPage
+    /**
+     * <p>currentPage</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // pageSize
+    /**
+     * <p>pageSize</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

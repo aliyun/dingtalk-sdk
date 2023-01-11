@@ -4,15 +4,21 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceIgnoreStatusRequest extends TeaModel {
-    // 审批单id
+    /**
+     * <p>审批单id</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
-    // 操作员
+    /**
+     * <p>操作员</p>
+     */
     @NameInMap("operator")
     public String operator;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("status")
     public String status;
 

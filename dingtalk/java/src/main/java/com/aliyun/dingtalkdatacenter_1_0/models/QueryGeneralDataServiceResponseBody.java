@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGeneralDataServiceResponseBody extends TeaModel {
-    // 指标数据
+    /**
+     * <p>指标数据</p>
+     */
     @NameInMap("dataList")
     public java.util.List<java.util.Map<String, ?>> dataList;
 
-    // 指标元数据
+    /**
+     * <p>指标元数据</p>
+     */
     @NameInMap("metaList")
     public java.util.List<QueryGeneralDataServiceResponseBodyMetaList> metaList;
 
@@ -34,19 +38,27 @@ public class QueryGeneralDataServiceResponseBody extends TeaModel {
     }
 
     public static class QueryGeneralDataServiceResponseBodyMetaList extends TeaModel {
-        // 指标名称
+        /**
+         * <p>指标名称</p>
+         */
         @NameInMap("fieldDesc")
         public String fieldDesc;
 
-        // 指标口径
+        /**
+         * <p>指标口径</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
-        // 指标ID
+        /**
+         * <p>指标ID</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
-        // 指标单位
+        /**
+         * <p>指标单位</p>
+         */
         @NameInMap("fieldType")
         public String fieldType;
 

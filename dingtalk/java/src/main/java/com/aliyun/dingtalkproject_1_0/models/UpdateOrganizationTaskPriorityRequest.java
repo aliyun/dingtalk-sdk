@@ -4,15 +4,21 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskPriorityRequest extends TeaModel {
-    // 是否禁止动态
+    /**
+     * <p>是否禁止动态</p>
+     */
     @NameInMap("disableActivity")
     public Boolean disableActivity;
 
-    // 是否禁止通知
+    /**
+     * <p>是否禁止通知</p>
+     */
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 
-    // 优先级【-10,0,1,2】中的一个值
+    /**
+     * <p>优先级【-10,0,1,2】中的一个值</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 

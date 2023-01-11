@@ -4,11 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreSubNodesRequest extends TeaModel {
-    // 门店通通讯录Code
+    /**
+     * <p>门店通通讯录Code</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 节点Id
+    /**
+     * <p>节点Id</p>
+     */
     @NameInMap("nodeId")
     public Long nodeId;
 

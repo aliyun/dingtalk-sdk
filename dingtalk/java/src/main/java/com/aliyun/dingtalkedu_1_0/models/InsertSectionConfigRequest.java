@@ -4,23 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class InsertSectionConfigRequest extends TeaModel {
-    // 结束日期
+    /**
+     * <p>结束日期</p>
+     */
     @NameInMap("end")
     public InsertSectionConfigRequestEnd end;
 
-    // 课程表名称
+    /**
+     * <p>课程表名称</p>
+     */
     @NameInMap("scheduleName")
     public String scheduleName;
 
-    // 节次模型
+    /**
+     * <p>节次模型</p>
+     */
     @NameInMap("sectionModels")
     public java.util.List<InsertSectionConfigRequestSectionModels> sectionModels;
 
-    // 开始日期
+    /**
+     * <p>开始日期</p>
+     */
     @NameInMap("start")
     public InsertSectionConfigRequestStart start;
 
-    // 操作人的userid。
+    /**
+     * <p>操作人的userid。</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -70,15 +80,21 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestEnd extends TeaModel {
-        // 一月中的第几天
+        /**
+         * <p>一月中的第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月份
+        /**
+         * <p>月份</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年份
+        /**
+         * <p>年份</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -114,11 +130,15 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestSectionModelsEnd extends TeaModel {
-        // 小时
+        /**
+         * <p>小时</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
-        // 分钟
+        /**
+         * <p>分钟</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -146,11 +166,15 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestSectionModelsStart extends TeaModel {
-        // 小时
+        /**
+         * <p>小时</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
-        // 分钟
+        /**
+         * <p>分钟</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -178,23 +202,33 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestSectionModels extends TeaModel {
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("end")
         public InsertSectionConfigRequestSectionModelsEnd end;
 
-        // 节次序号
+        /**
+         * <p>节次序号</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        // 节次名称
+        /**
+         * <p>节次名称</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
-        // 节次类型
+        /**
+         * <p>节次类型</p>
+         */
         @NameInMap("sectionType")
         public String sectionType;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("start")
         public InsertSectionConfigRequestSectionModelsStart start;
 
@@ -246,15 +280,21 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestStart extends TeaModel {
-        // 一月中的第几天
+        /**
+         * <p>一月中的第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月份
+        /**
+         * <p>月份</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年份
+        /**
+         * <p>年份</p>
+         */
         @NameInMap("year")
         public Integer year;
 

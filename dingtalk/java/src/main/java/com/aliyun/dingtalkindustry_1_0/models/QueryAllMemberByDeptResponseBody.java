@@ -4,19 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllMemberByDeptResponseBody extends TeaModel {
-    // 人员列表
+    /**
+     * <p>人员列表</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryAllMemberByDeptResponseBodyContent> content;
 
-    // 当前页码
+    /**
+     * <p>当前页码</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
-    // 数据总量
+    /**
+     * <p>数据总量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 总页数
+    /**
+     * <p>总页数</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -58,15 +66,21 @@ public class QueryAllMemberByDeptResponseBody extends TeaModel {
     }
 
     public static class QueryAllMemberByDeptResponseBodyContent extends TeaModel {
-        // 工号
+        /**
+         * <p>工号</p>
+         */
         @NameInMap("jobNum")
         public String jobNum;
 
-        // 用户Id
+        /**
+         * <p>用户Id</p>
+         */
         @NameInMap("uid")
         public String uid;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("userName")
         public String userName;
 

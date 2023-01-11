@@ -4,11 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateStoreGroupConversationResponseBody extends TeaModel {
-    // 钉钉群会话id
+    /**
+     * <p>钉钉群会话id</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
-    // 群会话Id。
+    /**
+     * <p>群会话Id。</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

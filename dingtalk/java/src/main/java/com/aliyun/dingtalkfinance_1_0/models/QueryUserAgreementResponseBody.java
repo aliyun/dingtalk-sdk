@@ -4,51 +4,75 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserAgreementResponseBody extends TeaModel {
-    // 协议编号
+    /**
+     * <p>协议编号</p>
+     */
     @NameInMap("agreementNo")
     public String agreementNo;
 
-    // 组织id
+    /**
+     * <p>组织id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 实际过期日期
+    /**
+     * <p>实际过期日期</p>
+     */
     @NameInMap("gmtExpire")
     public String gmtExpire;
 
-    // 实际签约日期
+    /**
+     * <p>实际签约日期</p>
+     */
     @NameInMap("gmtSign")
     public String gmtSign;
 
-    // 实际生效日期
+    /**
+     * <p>实际生效日期</p>
+     */
     @NameInMap("gmtValid")
     public String gmtValid;
 
-    // 主机构id
+    /**
+     * <p>主机构id</p>
+     */
     @NameInMap("instId")
     public String instId;
 
-    // 支付渠道
+    /**
+     * <p>支付渠道</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    // 实际支付账户名（脱敏）
+    /**
+     * <p>实际支付账户名（脱敏）</p>
+     */
     @NameInMap("payChannelAccountName")
     public String payChannelAccountName;
 
-    // 实际支付账号（脱敏）
+    /**
+     * <p>实际支付账号（脱敏）</p>
+     */
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
-    // 签约状态
+    /**
+     * <p>签约状态</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 子机构id
+    /**
+     * <p>子机构id</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

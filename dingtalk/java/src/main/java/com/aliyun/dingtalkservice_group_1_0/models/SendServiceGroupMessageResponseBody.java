@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendServiceGroupMessageResponseBody extends TeaModel {
-    // 开放消息任务ID
+    /**
+     * <p>开放消息任务ID</p>
+     */
     @NameInMap("openMsgTaskId")
     public String openMsgTaskId;
 

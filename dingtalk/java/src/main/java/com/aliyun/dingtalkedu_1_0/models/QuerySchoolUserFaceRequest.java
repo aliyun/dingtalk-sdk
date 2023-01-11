@@ -4,19 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySchoolUserFaceRequest extends TeaModel {
-    // 页码
+    /**
+     * <p>页码</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 设备序列号
+    /**
+     * <p>设备序列号</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 类型
+    /**
+     * <p>类型</p>
+     */
     @NameInMap("type")
     public Integer type;
 

@@ -4,39 +4,57 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusGetRenterResponseBody extends TeaModel {
-    // 绑定组织
+    /**
+     * <p>绑定组织</p>
+     */
     @NameInMap("bindRenterCorpId")
     public String bindRenterCorpId;
 
-    // 绑定时间
+    /**
+     * <p>绑定时间</p>
+     */
     @NameInMap("bindTime")
     public Long bindTime;
 
-    // 企业信用代码
+    /**
+     * <p>企业信用代码</p>
+     */
     @NameInMap("creditCode")
     public String creditCode;
 
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extend")
     public String extend;
 
-    // 租客名称
+    /**
+     * <p>租客名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 部门iD
+    /**
+     * <p>部门iD</p>
+     */
     @NameInMap("renterDeptId")
     public Long renterDeptId;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("state")
     public Integer state;
 

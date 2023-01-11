@@ -7,7 +7,9 @@ public class BatchCreateCustomerRequest extends TeaModel {
     @NameInMap("createCustomerRequestList")
     public java.util.List<BatchCreateCustomerRequestCreateCustomerRequestList> createCustomerRequestList;
 
-    // 创建人userId
+    /**
+     * <p>创建人userId</p>
+     */
     @NameInMap("operator")
     public String operator;
 
@@ -33,35 +35,51 @@ public class BatchCreateCustomerRequest extends TeaModel {
     }
 
     public static class BatchCreateCustomerRequestCreateCustomerRequestList extends TeaModel {
-        // 客户描述
+        /**
+         * <p>客户描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 客户名字
+        /**
+         * <p>客户名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 购方账户
+        /**
+         * <p>购方账户</p>
+         */
         @NameInMap("purchaserAccount")
         public String purchaserAccount;
 
-        // 购房地址
+        /**
+         * <p>购房地址</p>
+         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        // 购方银行
+        /**
+         * <p>购方银行</p>
+         */
         @NameInMap("purchaserBankName")
         public String purchaserBankName;
 
-        // 购方名字
+        /**
+         * <p>购方名字</p>
+         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
-        // 购方税号
+        /**
+         * <p>购方税号</p>
+         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
-        // 购方电话
+        /**
+         * <p>购方电话</p>
+         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 

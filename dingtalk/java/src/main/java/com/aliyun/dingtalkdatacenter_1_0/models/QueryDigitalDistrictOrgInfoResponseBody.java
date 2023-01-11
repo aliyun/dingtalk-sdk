@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDigitalDistrictOrgInfoResponseBody extends TeaModel {
-    // arguments
+    /**
+     * <p>arguments</p>
+     */
     @NameInMap("arguments")
     public java.util.List<String> arguments;
 
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("result")
     public String result;
 

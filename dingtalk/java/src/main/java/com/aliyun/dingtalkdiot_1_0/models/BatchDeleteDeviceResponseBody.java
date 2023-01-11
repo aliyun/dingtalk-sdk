@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchDeleteDeviceResponseBody extends TeaModel {
-    // 成功删除设备ID列表。
+    /**
+     * <p>成功删除设备ID列表。</p>
+     */
     @NameInMap("deviceIds")
     public java.util.List<String> deviceIds;
 

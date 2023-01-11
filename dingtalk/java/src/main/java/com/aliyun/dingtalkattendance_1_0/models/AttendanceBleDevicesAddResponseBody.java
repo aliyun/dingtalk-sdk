@@ -4,11 +4,15 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttendanceBleDevicesAddResponseBody extends TeaModel {
-    // 添加错误列表
+    /**
+     * <p>添加错误列表</p>
+     */
     @NameInMap("errorList")
     public java.util.List<AttendanceBleDevicesAddResponseBodyErrorList> errorList;
 
-    // 添加成功蓝牙设备列表
+    /**
+     * <p>添加成功蓝牙设备列表</p>
+     */
     @NameInMap("successList")
     public java.util.List<AttendanceBleDevicesAddResponseBodySuccessList> successList;
 
@@ -34,15 +38,21 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodyErrorListFailureList extends TeaModel {
-        // 蓝牙设备Id
+        /**
+         * <p>蓝牙设备Id</p>
+         */
         @NameInMap("deviceId")
         public Long deviceId;
 
-        // 蓝牙设备名称
+        /**
+         * <p>蓝牙设备名称</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        // sn
+        /**
+         * <p>sn</p>
+         */
         @NameInMap("sn")
         public String sn;
 
@@ -78,15 +88,21 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodyErrorList extends TeaModel {
-        // 错误code
+        /**
+         * <p>错误code</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 失败蓝牙设备列表
+        /**
+         * <p>失败蓝牙设备列表</p>
+         */
         @NameInMap("failureList")
         public java.util.List<AttendanceBleDevicesAddResponseBodyErrorListFailureList> failureList;
 
-        // errorMsg
+        /**
+         * <p>errorMsg</p>
+         */
         @NameInMap("msg")
         public String msg;
 
@@ -122,15 +138,21 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodySuccessList extends TeaModel {
-        // 蓝牙设备Id
+        /**
+         * <p>蓝牙设备Id</p>
+         */
         @NameInMap("deviceId")
         public Long deviceId;
 
-        // 蓝牙设备名称
+        /**
+         * <p>蓝牙设备名称</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        // sn
+        /**
+         * <p>sn</p>
+         */
         @NameInMap("sn")
         public String sn;
 

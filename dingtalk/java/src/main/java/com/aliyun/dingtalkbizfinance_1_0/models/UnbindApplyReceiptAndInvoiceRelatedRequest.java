@@ -4,15 +4,21 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UnbindApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
-    // 审批单id
+    /**
+     * <p>审批单id</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
-    // 发票模型
+    /**
+     * <p>发票模型</p>
+     */
     @NameInMap("invoiceKeyVOList")
     public java.util.List<UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList> invoiceKeyVOList;
 
-    // 操作员
+    /**
+     * <p>操作员</p>
+     */
     @NameInMap("operator")
     public String operator;
 
@@ -46,11 +52,15 @@ public class UnbindApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
     }
 
     public static class UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList extends TeaModel {
-        // 发票代码
+        /**
+         * <p>发票代码</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        // 发票号码
+        /**
+         * <p>发票号码</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 

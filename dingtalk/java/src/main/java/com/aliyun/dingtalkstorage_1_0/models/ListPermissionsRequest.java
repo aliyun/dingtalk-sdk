@@ -4,11 +4,15 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPermissionsRequest extends TeaModel {
-    // 可选参数
+    /**
+     * <p>可选参数</p>
+     */
     @NameInMap("option")
     public ListPermissionsRequestOption option;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -34,19 +38,25 @@ public class ListPermissionsRequest extends TeaModel {
     }
 
     public static class ListPermissionsRequestOption extends TeaModel {
-        // 角色过滤列表
-        // 最大size:
-        // 	30
+        /**
+         * <p>角色过滤列表</p>
+         * <p>最大size:</p>
+         * <p>	30</p>
+         */
         @NameInMap("filterRoleIds")
         public java.util.List<String> filterRoleIds;
 
-        // 分页大小
-        // 默认值:
-        // 	50
+        /**
+         * <p>分页大小</p>
+         * <p>默认值:</p>
+         * <p>	50</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
-        // 分页游标
+        /**
+         * <p>分页游标</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

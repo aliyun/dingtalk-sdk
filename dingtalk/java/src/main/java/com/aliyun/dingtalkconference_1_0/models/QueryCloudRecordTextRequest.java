@@ -4,23 +4,33 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCloudRecordTextRequest extends TeaModel {
-    // 0-向前查询，1-向后查询 。 向前查询：此次查询按照时间由小到大的顺序进行。
+    /**
+     * <p>0-向前查询，1-向后查询 。 向前查询：此次查询按照时间由小到大的顺序进行。</p>
+     */
     @NameInMap("direction")
     public String direction;
 
-    // 单页查询的最大条目数，最多2000
+    /**
+     * <p>单页查询的最大条目数，最多2000</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 游标，第一次查询可为空，之后每次带上一次的游标
+    /**
+     * <p>游标，第一次查询可为空，之后每次带上一次的游标</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

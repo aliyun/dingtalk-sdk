@@ -4,26 +4,36 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartStreamOutRequest extends TeaModel {
-    // 布局
+    /**
+     * <p>布局</p>
+     */
     @NameInMap("mode")
     public String mode;
 
-    // 是否需要主持人加入后才允许推流
+    /**
+     * <p>是否需要主持人加入后才允许推流</p>
+     */
     @NameInMap("needHostJoin")
     public Boolean needHostJoin;
 
-    // 小窗位置
+    /**
+     * <p>小窗位置</p>
+     */
     @NameInMap("smallWindowPosition")
     public String smallWindowPosition;
 
     @NameInMap("streamName")
     public String streamName;
 
-    // 推流地址列表, 最多10个，需要以RTMP开头
+    /**
+     * <p>推流地址列表, 最多10个，需要以RTMP开头</p>
+     */
     @NameInMap("streamUrlList")
     public java.util.List<String> streamUrlList;
 
-    // 主持人UID
+    /**
+     * <p>主持人UID</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

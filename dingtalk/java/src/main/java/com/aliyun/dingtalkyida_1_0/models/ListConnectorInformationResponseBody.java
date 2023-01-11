@@ -4,19 +4,27 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListConnectorInformationResponseBody extends TeaModel {
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // pluginInfos
+    /**
+     * <p>pluginInfos</p>
+     */
     @NameInMap("pluginInfos")
     public java.util.List<ListConnectorInformationResponseBodyPluginInfos> pluginInfos;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -58,7 +66,9 @@ public class ListConnectorInformationResponseBody extends TeaModel {
     }
 
     public static class ListConnectorInformationResponseBodyPluginInfosApps extends TeaModel {
-        // appName
+        /**
+         * <p>appName</p>
+         */
         @NameInMap("appName")
         public String appName;
 
@@ -78,35 +88,51 @@ public class ListConnectorInformationResponseBody extends TeaModel {
     }
 
     public static class ListConnectorInformationResponseBodyPluginInfos extends TeaModel {
-        // apps
+        /**
+         * <p>apps</p>
+         */
         @NameInMap("apps")
         public java.util.List<ListConnectorInformationResponseBodyPluginInfosApps> apps;
 
-        // iconUrl
+        /**
+         * <p>iconUrl</p>
+         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
-        // pluginName
+        /**
+         * <p>pluginName</p>
+         */
         @NameInMap("pluginName")
         public String pluginName;
 
-        // pluginPayType
+        /**
+         * <p>pluginPayType</p>
+         */
         @NameInMap("pluginPayType")
         public Integer pluginPayType;
 
-        // pluginStatus
+        /**
+         * <p>pluginStatus</p>
+         */
         @NameInMap("pluginStatus")
         public Integer pluginStatus;
 
-        // pluginTotalAmount
+        /**
+         * <p>pluginTotalAmount</p>
+         */
         @NameInMap("pluginTotalAmount")
         public Long pluginTotalAmount;
 
-        // pluginUsageAmount
+        /**
+         * <p>pluginUsageAmount</p>
+         */
         @NameInMap("pluginUsageAmount")
         public Long pluginUsageAmount;
 
-        // pluginUuid
+        /**
+         * <p>pluginUuid</p>
+         */
         @NameInMap("pluginUuid")
         public String pluginUuid;
 

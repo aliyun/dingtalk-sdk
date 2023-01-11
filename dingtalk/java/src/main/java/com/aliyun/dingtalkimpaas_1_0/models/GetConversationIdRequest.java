@@ -4,11 +4,15 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConversationIdRequest extends TeaModel {
-    // 外部用户账号：outerId@channel
+    /**
+     * <p>外部用户账号：outerId@channel</p>
+     */
     @NameInMap("appUid")
     public String appUid;
 
-    // 员工企业账号：staffId#corpId@dingding
+    /**
+     * <p>员工企业账号：staffId#corpId@dingding</p>
+     */
     @NameInMap("userId")
     public String userId;
 

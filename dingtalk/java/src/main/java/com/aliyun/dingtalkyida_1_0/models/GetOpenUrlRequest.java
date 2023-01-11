@@ -4,23 +4,33 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOpenUrlRequest extends TeaModel {
-    // 宜搭附件地址
+    /**
+     * <p>宜搭附件地址</p>
+     */
     @NameInMap("fileUrl")
     public String fileUrl;
 
-    // 语言
+    /**
+     * <p>语言</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 应用秘钥
+    /**
+     * <p>应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 临时地址多久失效,单位毫秒
+    /**
+     * <p>临时地址多久失效,单位毫秒</p>
+     */
     @NameInMap("timeout")
     public Long timeout;
 
-    // 钉钉的userId
+    /**
+     * <p>钉钉的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteGuardianRequest extends TeaModel {
-    // 钉钉企业管理员员工ID
+    /**
+     * <p>钉钉企业管理员员工ID</p>
+     */
     @NameInMap("operator")
     public String operator;
 
-    // 学生ID
+    /**
+     * <p>学生ID</p>
+     */
     @NameInMap("stuId")
     public String stuId;
 

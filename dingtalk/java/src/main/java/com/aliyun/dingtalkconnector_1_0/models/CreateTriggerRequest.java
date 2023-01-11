@@ -32,27 +32,39 @@ public class CreateTriggerRequest extends TeaModel {
     }
 
     public static class CreateTriggerRequestTriggerInfo extends TeaModel {
-        // 描述
+        /**
+         * <p>描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 连接平台连接器id
+        /**
+         * <p>连接平台连接器id</p>
+         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
-        // 入参jsonSchema
+        /**
+         * <p>入参jsonSchema</p>
+         */
         @NameInMap("inputSchema")
         public String inputSchema;
 
-        // 服务商的连接器Id，优先使用dingConnectorId，其次使用integratorConnectorId
+        /**
+         * <p>服务商的连接器Id，优先使用dingConnectorId，其次使用integratorConnectorId</p>
+         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
-        // 服务商的触发事件Id
+        /**
+         * <p>服务商的触发事件Id</p>
+         */
         @NameInMap("integratorTriggerId")
         public String integratorTriggerId;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public String name;
 

@@ -4,14 +4,18 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTemplateByIdRequest extends TeaModel {
-    // 模版归属
-    // public_template //公共模板
-    // team_template //团队模板
-    // user_template //个人模板
+    /**
+     * <p>模版归属</p>
+     * <p>public_template //公共模板</p>
+     * <p>team_template //团队模板</p>
+     * <p>user_template //个人模板</p>
+     */
     @NameInMap("belong")
     public String belong;
 
-    // 操作用户unionId
+    /**
+     * <p>操作用户unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

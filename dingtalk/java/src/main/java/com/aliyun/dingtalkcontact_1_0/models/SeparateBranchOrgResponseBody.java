@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SeparateBranchOrgResponseBody extends TeaModel {
-    // 处理结果
+    /**
+     * <p>处理结果</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

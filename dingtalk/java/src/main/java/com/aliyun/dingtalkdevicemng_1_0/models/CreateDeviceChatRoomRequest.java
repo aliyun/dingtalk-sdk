@@ -4,27 +4,39 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateDeviceChatRoomRequest extends TeaModel {
-    // 场景群类型，不填，为默认普通设备群，示例值--维修群：REPAIR_GROUP，点检群:INSPECT_GROUP,保养群：MAINTAIN_GROUP。
+    /**
+     * <p>场景群类型，不填，为默认普通设备群，示例值--维修群：REPAIR_GROUP，点检群:INSPECT_GROUP,保养群：MAINTAIN_GROUP。</p>
+     */
     @NameInMap("chatType")
     public String chatType;
 
-    // 设备编码，客户侧生成的设备标识，能够唯一标识一个设备，该字段与deviceUuids字段需要二选一，并且不能都填充。
+    /**
+     * <p>设备编码，客户侧生成的设备标识，能够唯一标识一个设备，该字段与deviceUuids字段需要二选一，并且不能都填充。</p>
+     */
     @NameInMap("deviceCodes")
     public java.util.List<String> deviceCodes;
 
-    // 设备唯一标识，钉钉侧生成的设备标识，能够唯一标识一个设备，该字段与deviceCodes字段需要二选一，并且不能都填充。
+    /**
+     * <p>设备唯一标识，钉钉侧生成的设备标识，能够唯一标识一个设备，该字段与deviceCodes字段需要二选一，并且不能都填充。</p>
+     */
     @NameInMap("deviceUuids")
     public java.util.List<String> deviceUuids;
 
-    // 群主钉钉账户。
+    /**
+     * <p>群主钉钉账户。</p>
+     */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
-    // 设备场景群名称。
+    /**
+     * <p>设备场景群名称。</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 需要被拉入群聊的钉钉账号，可以传多个，通过英文逗号分隔。
+    /**
+     * <p>需要被拉入群聊的钉钉账号，可以传多个，通过英文逗号分隔。</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

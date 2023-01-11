@@ -4,11 +4,15 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelProcessInstanceResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 

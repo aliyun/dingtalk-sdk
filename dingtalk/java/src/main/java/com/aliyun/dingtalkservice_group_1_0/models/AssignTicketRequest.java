@@ -7,22 +7,30 @@ public class AssignTicketRequest extends TeaModel {
     @NameInMap("notify")
     public AssignTicketRequestNotify notify;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 工单开放ID
+    /**
+     * <p>工单开放ID</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    // 操作人unionId（管理员）
+    /**
+     * <p>操作人unionId（管理员）</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 
-    // 备注
+    /**
+     * <p>备注</p>
+     */
     @NameInMap("ticketMemo")
     public AssignTicketRequestTicketMemo ticketMemo;
 
@@ -83,7 +91,9 @@ public class AssignTicketRequest extends TeaModel {
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
-        // 是否向群内推送一个全员可见工单通知卡片
+        /**
+         * <p>是否向群内推送一个全员可见工单通知卡片</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
@@ -122,11 +132,15 @@ public class AssignTicketRequest extends TeaModel {
     }
 
     public static class AssignTicketRequestTicketMemoAttachments extends TeaModel {
-        // 文件名
+        /**
+         * <p>文件名</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 文件key
+        /**
+         * <p>文件key</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -154,11 +168,15 @@ public class AssignTicketRequest extends TeaModel {
     }
 
     public static class AssignTicketRequestTicketMemo extends TeaModel {
-        // 备注相关的附件
+        /**
+         * <p>备注相关的附件</p>
+         */
         @NameInMap("attachments")
         public java.util.List<AssignTicketRequestTicketMemoAttachments> attachments;
 
-        // 备注文字
+        /**
+         * <p>备注文字</p>
+         */
         @NameInMap("memo")
         public String memo;
 

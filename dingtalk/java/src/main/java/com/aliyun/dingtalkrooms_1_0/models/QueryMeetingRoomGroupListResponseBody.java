@@ -4,7 +4,9 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomGroupListResponseBody extends TeaModel {
-    // 结果列表
+    /**
+     * <p>结果列表</p>
+     */
     @NameInMap("result")
     public java.util.List<QueryMeetingRoomGroupListResponseBodyResult> result;
 
@@ -22,15 +24,21 @@ public class QueryMeetingRoomGroupListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomGroupListResponseBodyResult extends TeaModel {
-        // 分组id
+        /**
+         * <p>分组id</p>
+         */
         @NameInMap("groupId")
         public Long groupId;
 
-        // 分组名称
+        /**
+         * <p>分组名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 父分组id
+        /**
+         * <p>父分组id</p>
+         */
         @NameInMap("parentId")
         public Long parentId;
 

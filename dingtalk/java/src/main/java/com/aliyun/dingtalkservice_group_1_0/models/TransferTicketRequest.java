@@ -7,23 +7,33 @@ public class TransferTicketRequest extends TeaModel {
     @NameInMap("notify")
     public TransferTicketRequestNotify notify;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 工单开放ID
+    /**
+     * <p>工单开放ID</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    // 工单处理人
+    /**
+     * <p>工单处理人</p>
+     */
     @NameInMap("processorUnionId")
     public String processorUnionId;
 
-    // 被转单人UnionId列表
+    /**
+     * <p>被转单人UnionId列表</p>
+     */
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 
-    // 工单备注
+    /**
+     * <p>工单备注</p>
+     */
     @NameInMap("ticketMemo")
     public TransferTicketRequestTicketMemo ticketMemo;
 
@@ -81,15 +91,21 @@ public class TransferTicketRequest extends TeaModel {
     }
 
     public static class TransferTicketRequestNotify extends TeaModel {
-        // 群中通知接收人（钉钉UnionId）
+        /**
+         * <p>群中通知接收人（钉钉UnionId）</p>
+         */
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
-        // 是否向群内推送一个全员可见工单通知卡片
+        /**
+         * <p>是否向群内推送一个全员可见工单通知卡片</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
-        // 企业工作通知接收人（钉钉UnionId）
+        /**
+         * <p>企业工作通知接收人（钉钉UnionId）</p>
+         */
         @NameInMap("workNoticeReceiverUnionIds")
         public java.util.List<String> workNoticeReceiverUnionIds;
 
@@ -155,11 +171,15 @@ public class TransferTicketRequest extends TeaModel {
     }
 
     public static class TransferTicketRequestTicketMemo extends TeaModel {
-        // 备注相关的附件
+        /**
+         * <p>备注相关的附件</p>
+         */
         @NameInMap("attachments")
         public java.util.List<TransferTicketRequestTicketMemoAttachments> attachments;
 
-        // 文字备注
+        /**
+         * <p>文字备注</p>
+         */
         @NameInMap("memo")
         public String memo;
 

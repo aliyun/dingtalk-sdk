@@ -7,14 +7,18 @@ public class QueryCrmPersonalCustomerResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 当前分页条数
+    /**
+     * <p>当前分页条数</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 总条数
+    /**
+     * <p>总条数</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -67,11 +71,15 @@ public class QueryCrmPersonalCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryCrmPersonalCustomerResponseBodyValuesPermission extends TeaModel {
-        // 负责人用户ID列表
+        /**
+         * <p>负责人用户ID列表</p>
+         */
         @NameInMap("ownerStaffIds")
         public java.util.List<String> ownerStaffIds;
 
-        // 协同人用户ID列表
+        /**
+         * <p>协同人用户ID列表</p>
+         */
         @NameInMap("participantStaffIds")
         public java.util.List<String> participantStaffIds;
 
@@ -99,47 +107,69 @@ public class QueryCrmPersonalCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryCrmPersonalCustomerResponseBodyValues extends TeaModel {
-        // 创建记录的用户昵称
+        /**
+         * <p>创建记录的用户昵称</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
-        // 创建记录的用户ID
+        /**
+         * <p>创建记录的用户ID</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 数据内容
+        /**
+         * <p>数据内容</p>
+         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 
-        // 扩展数据内容
+        /**
+         * <p>扩展数据内容</p>
+         */
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
-        // 记录创建时间
+        /**
+         * <p>记录创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 记录修改时间
+        /**
+         * <p>记录修改时间</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 数据ID
+        /**
+         * <p>数据ID</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
-        // 数据类型
+        /**
+         * <p>数据类型</p>
+         */
         @NameInMap("objectType")
         public String objectType;
 
-        // 数据权限信息
+        /**
+         * <p>数据权限信息</p>
+         */
         @NameInMap("permission")
         public QueryCrmPersonalCustomerResponseBodyValuesPermission permission;
 
-        // 审批状态
+        /**
+         * <p>审批状态</p>
+         */
         @NameInMap("procInstStatus")
         public String procInstStatus;
 
-        // 审批结果
+        /**
+         * <p>审批结果</p>
+         */
         @NameInMap("procOutResult")
         public String procOutResult;
 

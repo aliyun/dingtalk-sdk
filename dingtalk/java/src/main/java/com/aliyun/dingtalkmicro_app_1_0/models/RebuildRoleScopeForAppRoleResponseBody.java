@@ -4,7 +4,9 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RebuildRoleScopeForAppRoleResponseBody extends TeaModel {
-    // 角色范围最新版本号
+    /**
+     * <p>角色范围最新版本号</p>
+     */
     @NameInMap("latestScopeVersion")
     public Long latestScopeVersion;
 

@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryGroupMemberResponseBody extends TeaModel {
-    // 是否还存在数据
+    /**
+     * <p>是否还存在数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 下一次游标
+    /**
+     * <p>下一次游标</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 会话ID
+    /**
+     * <p>会话ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 成员数据列表
+    /**
+     * <p>成员数据列表</p>
+     */
     @NameInMap("records")
     public java.util.List<BatchQueryGroupMemberResponseBodyRecords> records;
 
@@ -58,23 +66,33 @@ public class BatchQueryGroupMemberResponseBody extends TeaModel {
     }
 
     public static class BatchQueryGroupMemberResponseBodyRecords extends TeaModel {
-        // 是否内部员工
+        /**
+         * <p>是否内部员工</p>
+         */
         @NameInMap("innerStaff")
         public Boolean innerStaff;
 
-        // 群成员昵称
+        /**
+         * <p>群成员昵称</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
-        // 是否群主
+        /**
+         * <p>是否群主</p>
+         */
         @NameInMap("owner")
         public Boolean owner;
 
-        // 群成员uinionId
+        /**
+         * <p>群成员uinionId</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 员工ID
+        /**
+         * <p>员工ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 

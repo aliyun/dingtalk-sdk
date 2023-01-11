@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListContactRestrictSettingResponseBody extends TeaModel {
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 设置列表
+    /**
+     * <p>设置列表</p>
+     */
     @NameInMap("list")
     public java.util.List<ListContactRestrictSettingResponseBodyList> list;
 
-    // 下一次拉取数据时的token
+    /**
+     * <p>下一次拉取数据时的token</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -46,47 +52,69 @@ public class ListContactRestrictSettingResponseBody extends TeaModel {
     }
 
     public static class ListContactRestrictSettingResponseBodyList extends TeaModel {
-        // 是否生效
+        /**
+         * <p>是否生效</p>
+         */
         @NameInMap("active")
         public Boolean active;
 
-        // 规则描述
+        /**
+         * <p>规则描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 白名单用户deptId列表
+        /**
+         * <p>白名单用户deptId列表</p>
+         */
         @NameInMap("excludeDeptIds")
         public java.util.List<Long> excludeDeptIds;
 
-        // 白名单用户tagId列表
+        /**
+         * <p>白名单用户tagId列表</p>
+         */
         @NameInMap("excludeTagIds")
         public java.util.List<Long> excludeTagIds;
 
-        // 白名单用户userId列表
+        /**
+         * <p>白名单用户userId列表</p>
+         */
         @NameInMap("excludeUserIds")
         public java.util.List<String> excludeUserIds;
 
-        // 设置id
+        /**
+         * <p>设置id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 规则名称
+        /**
+         * <p>规则名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 主体用户deptId列表
+        /**
+         * <p>主体用户deptId列表</p>
+         */
         @NameInMap("subjectDeptIds")
         public java.util.List<Long> subjectDeptIds;
 
-        // 主体用户tagId列表
+        /**
+         * <p>主体用户tagId列表</p>
+         */
         @NameInMap("subjectTagIds")
         public java.util.List<Long> subjectTagIds;
 
-        // 主体用户userId列表
+        /**
+         * <p>主体用户userId列表</p>
+         */
         @NameInMap("subjectUserIds")
         public java.util.List<String> subjectUserIds;
 
-        // 限制类型
+        /**
+         * <p>限制类型</p>
+         */
         @NameInMap("type")
         public String type;
 

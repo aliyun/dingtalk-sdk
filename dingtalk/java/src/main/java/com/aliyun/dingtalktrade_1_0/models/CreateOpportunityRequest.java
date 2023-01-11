@@ -4,23 +4,33 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOpportunityRequest extends TeaModel {
-    // 归属人电话号码
+    /**
+     * <p>归属人电话号码</p>
+     */
     @NameInMap("belongToPhoneNum")
     public String belongToPhoneNum;
 
-    // 联系人电话
+    /**
+     * <p>联系人电话</p>
+     */
     @NameInMap("contactPhoneNum")
     public String contactPhoneNum;
 
-    // 企业CorpId
+    /**
+     * <p>企业CorpId</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 部门Id
+    /**
+     * <p>部门Id</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
-    // 商品码
+    /**
+     * <p>商品码</p>
+     */
     @NameInMap("marketCode")
     public String marketCode;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SortUserResponseBody extends TeaModel {
-    // userIdList
+    /**
+     * <p>userIdList</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class InsertBlocksRequest extends TeaModel {
-    // 元素数组
+    /**
+     * <p>元素数组</p>
+     */
     @NameInMap("blocks")
     public java.util.List<InsertBlocksRequestBlocks> blocks;
 
-    // 位置信息
+    /**
+     * <p>位置信息</p>
+     */
     @NameInMap("location")
     public InsertBlocksRequestLocation location;
 
-    // 操作用户unionId
+    /**
+     * <p>操作用户unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -46,19 +52,27 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocksParagraphChildrenTextTextStyle extends TeaModel {
-        // 是否加粗
+        /**
+         * <p>是否加粗</p>
+         */
         @NameInMap("bold")
         public Boolean bold;
 
-        // 数据类型
+        /**
+         * <p>数据类型</p>
+         */
         @NameInMap("dataType")
         public String dataType;
 
-        // 字体大小
+        /**
+         * <p>字体大小</p>
+         */
         @NameInMap("fontSize")
         public Integer fontSize;
 
-        // 字体大小单位
+        /**
+         * <p>字体大小单位</p>
+         */
         @NameInMap("sizeUnit")
         public String sizeUnit;
 
@@ -102,11 +116,15 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocksParagraphChildrenText extends TeaModel {
-        // 文本内容
+        /**
+         * <p>文本内容</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 文字样式
+        /**
+         * <p>文字样式</p>
+         */
         @NameInMap("textStyle")
         public InsertBlocksRequestBlocksParagraphChildrenTextTextStyle textStyle;
 
@@ -134,11 +152,15 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocksParagraphChildren extends TeaModel {
-        // 元素类型
+        /**
+         * <p>元素类型</p>
+         */
         @NameInMap("elementType")
         public String elementType;
 
-        // 文本元素
+        /**
+         * <p>文本元素</p>
+         */
         @NameInMap("text")
         public InsertBlocksRequestBlocksParagraphChildrenText text;
 
@@ -166,7 +188,9 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocksParagraphStyle extends TeaModel {
-        // 标题样式
+        /**
+         * <p>标题样式</p>
+         */
         @NameInMap("headingLevel")
         public String headingLevel;
 
@@ -186,11 +210,15 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocksParagraph extends TeaModel {
-        // 子节点
+        /**
+         * <p>子节点</p>
+         */
         @NameInMap("children")
         public java.util.List<InsertBlocksRequestBlocksParagraphChildren> children;
 
-        // 段落样式
+        /**
+         * <p>段落样式</p>
+         */
         @NameInMap("style")
         public InsertBlocksRequestBlocksParagraphStyle style;
 
@@ -218,11 +246,15 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocks extends TeaModel {
-        // 元素类型标识
+        /**
+         * <p>元素类型标识</p>
+         */
         @NameInMap("blockType")
         public String blockType;
 
-        // 段落元素
+        /**
+         * <p>段落元素</p>
+         */
         @NameInMap("paragraph")
         public InsertBlocksRequestBlocksParagraph paragraph;
 
@@ -250,7 +282,9 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestLocation extends TeaModel {
-        // 头部插入
+        /**
+         * <p>头部插入</p>
+         */
         @NameInMap("head")
         public Boolean head;
 

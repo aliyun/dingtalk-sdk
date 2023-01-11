@@ -4,27 +4,39 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFilesRequest extends TeaModel {
-    // 分页长度
+    /**
+     * <p>分页长度</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页查询锚点
+    /**
+     * <p>分页查询锚点</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 排序类型
+    /**
+     * <p>排序类型</p>
+     */
     @NameInMap("orderType")
     public String orderType;
 
-    // 父目录id
+    /**
+     * <p>父目录id</p>
+     */
     @NameInMap("parentId")
     public String parentId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // 是否返回文件图标
+    /**
+     * <p>是否返回文件图标</p>
+     */
     @NameInMap("withIcon")
     public Boolean withIcon;
 

@@ -7,7 +7,9 @@ public class SetRobotPluginRequest extends TeaModel {
     @NameInMap("pluginInfoList")
     public java.util.List<SetRobotPluginRequestPluginInfoList> pluginInfoList;
 
-    // 钉钉开放平台后台机器人的robotCode
+    /**
+     * <p>钉钉开放平台后台机器人的robotCode</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
@@ -33,19 +35,27 @@ public class SetRobotPluginRequest extends TeaModel {
     }
 
     public static class SetRobotPluginRequestPluginInfoList extends TeaModel {
-        // 快捷入口的图标id
+        /**
+         * <p>快捷入口的图标id</p>
+         */
         @NameInMap("icon")
         public String icon;
 
-        // 手机端快捷入口跳转链接
+        /**
+         * <p>手机端快捷入口跳转链接</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        // 快捷入口的名称
+        /**
+         * <p>快捷入口的名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // pc端会话快捷入口跳转链接
+        /**
+         * <p>pc端会话快捷入口跳转链接</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 

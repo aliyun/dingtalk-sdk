@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEduUserIdentityResponseBody extends TeaModel {
-    // 返回数据
+    /**
+     * <p>返回数据</p>
+     */
     @NameInMap("data")
     public GetEduUserIdentityResponseBodyData data;
 
-    // 是否查询成功
+    /**
+     * <p>是否查询成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,15 +38,21 @@ public class GetEduUserIdentityResponseBody extends TeaModel {
     }
 
     public static class GetEduUserIdentityResponseBodyData extends TeaModel {
-        // 是否符合家长活动规则
+        /**
+         * <p>是否符合家长活动规则</p>
+         */
         @NameInMap("matchGuardianRule")
         public Boolean matchGuardianRule;
 
-        // 是否符合教师活动规则
+        /**
+         * <p>是否符合教师活动规则</p>
+         */
         @NameInMap("matchTeacherRule")
         public Boolean matchTeacherRule;
 
-        // 用户unionId
+        /**
+         * <p>用户unionId</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

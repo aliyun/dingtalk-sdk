@@ -4,15 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMemberGroupNickRequest extends TeaModel {
-    // 群昵称
+    /**
+     * <p>群昵称</p>
+     */
     @NameInMap("groupNick")
     public String groupNick;
 
-    // 开放群ID
+    /**
+     * <p>开放群ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 用户ID
+    /**
+     * <p>用户ID</p>
+     */
     @NameInMap("userId")
     public String userId;
 

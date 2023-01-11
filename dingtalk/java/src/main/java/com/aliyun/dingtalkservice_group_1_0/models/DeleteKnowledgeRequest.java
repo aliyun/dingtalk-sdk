@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteKnowledgeRequest extends TeaModel {
-    // 知识库的唯一标识 比如:天工知识库ID
+    /**
+     * <p>知识库的唯一标识 比如:天工知识库ID</p>
+     */
     @NameInMap("libraryKey")
     public String libraryKey;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 知识点来源 CCM:天工知识库
+    /**
+     * <p>知识点来源 CCM:天工知识库</p>
+     */
     @NameInMap("source")
     public String source;
 
-    // 知识点唯一标识
+    /**
+     * <p>知识点唯一标识</p>
+     */
     @NameInMap("sourcePrimaryKey")
     public String sourcePrimaryKey;
 

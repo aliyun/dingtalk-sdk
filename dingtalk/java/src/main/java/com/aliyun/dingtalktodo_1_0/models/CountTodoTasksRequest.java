@@ -4,27 +4,39 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class CountTodoTasksRequest extends TeaModel {
-    // 所属分类
+    /**
+     * <p>所属分类</p>
+     */
     @NameInMap("category")
     public String category;
 
-    // 查询从计划完成时间开始
+    /**
+     * <p>查询从计划完成时间开始</p>
+     */
     @NameInMap("fromDueTime")
     public Long fromDueTime;
 
-    // 待办完成状态。
+    /**
+     * <p>待办完成状态。</p>
+     */
     @NameInMap("isDone")
     public Boolean isDone;
 
-    // 待办回收状态
+    /**
+     * <p>待办回收状态</p>
+     */
     @NameInMap("isRecycled")
     public Boolean isRecycled;
 
-    // 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
+    /**
+     * <p>查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]</p>
+     */
     @NameInMap("roleTypes")
     public java.util.List<java.util.List<String>> roleTypes;
 
-    // 查询到计划完成时间结束
+    /**
+     * <p>查询到计划完成时间结束</p>
+     */
     @NameInMap("toDueTime")
     public Long toDueTime;
 

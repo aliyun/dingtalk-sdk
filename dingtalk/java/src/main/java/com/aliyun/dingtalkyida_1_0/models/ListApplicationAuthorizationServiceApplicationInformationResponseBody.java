@@ -4,19 +4,27 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListApplicationAuthorizationServiceApplicationInformationResponseBody extends TeaModel {
-    // applicationInformation
+    /**
+     * <p>applicationInformation</p>
+     */
     @NameInMap("applicationInformation")
     public java.util.List<ListApplicationAuthorizationServiceApplicationInformationResponseBodyApplicationInformation> applicationInformation;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -58,11 +66,15 @@ public class ListApplicationAuthorizationServiceApplicationInformationResponseBo
     }
 
     public static class ListApplicationAuthorizationServiceApplicationInformationResponseBodyApplicationInformationUsagePlugins extends TeaModel {
-        // iconUrl
+        /**
+         * <p>iconUrl</p>
+         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
-        // pluginName
+        /**
+         * <p>pluginName</p>
+         */
         @NameInMap("pluginName")
         public String pluginName;
 
@@ -90,23 +102,33 @@ public class ListApplicationAuthorizationServiceApplicationInformationResponseBo
     }
 
     public static class ListApplicationAuthorizationServiceApplicationInformationResponseBodyApplicationInformation extends TeaModel {
-        // appName
+        /**
+         * <p>appName</p>
+         */
         @NameInMap("appName")
         public String appName;
 
-        // appType
+        /**
+         * <p>appType</p>
+         */
         @NameInMap("appType")
         public String appType;
 
-        // attachmentUsageAmount
+        /**
+         * <p>attachmentUsageAmount</p>
+         */
         @NameInMap("attachmentUsageAmount")
         public Long attachmentUsageAmount;
 
-        // instanceUsageAmount
+        /**
+         * <p>instanceUsageAmount</p>
+         */
         @NameInMap("instanceUsageAmount")
         public Long instanceUsageAmount;
 
-        // usagePlugins
+        /**
+         * <p>usagePlugins</p>
+         */
         @NameInMap("usagePlugins")
         public java.util.List<ListApplicationAuthorizationServiceApplicationInformationResponseBodyApplicationInformationUsagePlugins> usagePlugins;
 

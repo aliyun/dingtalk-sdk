@@ -4,19 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListGroupSetRequest extends TeaModel {
-    // 每页返回的结果集个数
+    /**
+     * <p>每页返回的结果集个数</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 第一页不传，下一页传入上一页返回的nextToken
+    /**
+     * <p>第一页不传，下一页传入上一页返回的nextToken</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 查询DSL
+    /**
+     * <p>查询DSL</p>
+     */
     @NameInMap("queryDsl")
     public String queryDsl;
 
-    // 关系类型
+    /**
+     * <p>关系类型</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 

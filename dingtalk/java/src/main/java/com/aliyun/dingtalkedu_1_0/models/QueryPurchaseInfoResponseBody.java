@@ -4,27 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPurchaseInfoResponseBody extends TeaModel {
-    // 组织id
+    /**
+     * <p>组织id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 商户id
+    /**
+     * <p>商户id</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    // 名字
+    /**
+     * <p>名字</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 场景id
+    /**
+     * <p>场景id</p>
+     */
     @NameInMap("scene")
     public Integer scene;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("status")
     public Integer status;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

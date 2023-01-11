@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GrantProcessInstanceForDownloadFileResponseBody extends TeaModel {
-    // 返回结果。
+    /**
+     * <p>返回结果。</p>
+     */
     @NameInMap("result")
     public GrantProcessInstanceForDownloadFileResponseBodyResult result;
 
-    // 接口调用是否成功。
+    /**
+     * <p>接口调用是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,15 +38,21 @@ public class GrantProcessInstanceForDownloadFileResponseBody extends TeaModel {
     }
 
     public static class GrantProcessInstanceForDownloadFileResponseBodyResult extends TeaModel {
-        // 文件下载地址。
+        /**
+         * <p>文件下载地址。</p>
+         */
         @NameInMap("downloadUri")
         public String downloadUri;
 
-        // 文件ID。
+        /**
+         * <p>文件ID。</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
-        // 钉盘空间ID。
+        /**
+         * <p>钉盘空间ID。</p>
+         */
         @NameInMap("spaceId")
         public Long spaceId;
 

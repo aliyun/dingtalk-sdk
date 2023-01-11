@@ -7,7 +7,9 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 查询结果
+    /**
+     * <p>查询结果</p>
+     */
     @NameInMap("recentList")
     public java.util.List<GetRecentEditDocsResponseBodyRecentList> recentList;
 
@@ -33,35 +35,51 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentEditDocsResponseBodyRecentListNodeBO extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 节点类型
+        /**
+         * <p>节点类型</p>
+         */
         @NameInMap("docType")
         public String docType;
 
-        // 是否被删除
+        /**
+         * <p>是否被删除</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        // 内容的最后编辑时间
+        /**
+         * <p>内容的最后编辑时间</p>
+         */
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
-        // 文档Id
+        /**
+         * <p>文档Id</p>
+         */
         @NameInMap("nodeId")
         public String nodeId;
 
-        // 文档名称
+        /**
+         * <p>文档名称</p>
+         */
         @NameInMap("nodeName")
         public String nodeName;
 
-        // 文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间
+        /**
+         * <p>文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间</p>
+         */
         @NameInMap("updateTime")
         public Long updateTime;
 
-        // 文档打开url
+        /**
+         * <p>文档打开url</p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -137,15 +155,21 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentEditDocsResponseBodyRecentListWorkspaceBO extends TeaModel {
-        // 知识库打开url。
+        /**
+         * <p>知识库打开url。</p>
+         */
         @NameInMap("url")
         public String url;
 
-        // 知识库id。
+        /**
+         * <p>知识库id。</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 
-        // 知识库名称。
+        /**
+         * <p>知识库名称。</p>
+         */
         @NameInMap("workspaceName")
         public String workspaceName;
 
@@ -181,11 +205,15 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentEditDocsResponseBodyRecentList extends TeaModel {
-        // 文档信息
+        /**
+         * <p>文档信息</p>
+         */
         @NameInMap("nodeBO")
         public GetRecentEditDocsResponseBodyRecentListNodeBO nodeBO;
 
-        // 知识库信息。
+        /**
+         * <p>知识库信息。</p>
+         */
         @NameInMap("workspaceBO")
         public GetRecentEditDocsResponseBodyRecentListWorkspaceBO workspaceBO;
 

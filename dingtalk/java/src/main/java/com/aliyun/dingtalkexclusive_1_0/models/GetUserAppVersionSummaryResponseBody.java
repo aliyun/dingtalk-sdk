@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserAppVersionSummaryResponseBody extends TeaModel {
-    // 用户版本分布情况列表
+    /**
+     * <p>用户版本分布情况列表</p>
+     */
     @NameInMap("data")
     public java.util.List<GetUserAppVersionSummaryResponseBodyData> data;
 
-    // 是否有更多数据
+    /**
+     * <p>是否有更多数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 下一次请求的分页游标
+    /**
+     * <p>下一次请求的分页游标</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -46,23 +52,33 @@ public class GetUserAppVersionSummaryResponseBody extends TeaModel {
     }
 
     public static class GetUserAppVersionSummaryResponseBodyData extends TeaModel {
-        // 版本信息
+        /**
+         * <p>版本信息</p>
+         */
         @NameInMap("appVersion")
         public String appVersion;
 
-        // 端信息
+        /**
+         * <p>端信息</p>
+         */
         @NameInMap("client")
         public String client;
 
-        // 组织名称
+        /**
+         * <p>组织名称</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
-        // 统计日期
+        /**
+         * <p>统计日期</p>
+         */
         @NameInMap("statDate")
         public String statDate;
 
-        // 用户数
+        /**
+         * <p>用户数</p>
+         */
         @NameInMap("userCnt")
         public Float userCnt;
 

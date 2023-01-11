@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchProjectTemplateResponseBody extends TeaModel {
-    // 返回结果对象
+    /**
+     * <p>返回结果对象</p>
+     */
     @NameInMap("result")
     public java.util.List<SearchProjectTemplateResponseBodyResult> result;
 
@@ -22,39 +24,57 @@ public class SearchProjectTemplateResponseBody extends TeaModel {
     }
 
     public static class SearchProjectTemplateResponseBodyResult extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("created")
         public String created;
 
-        // 模板描述
+        /**
+         * <p>模板描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 模板id
+        /**
+         * <p>模板id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 是否已删除
+        /**
+         * <p>是否已删除</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        // 是否demo模板
+        /**
+         * <p>是否demo模板</p>
+         */
         @NameInMap("isDemo")
         public Boolean isDemo;
 
-        // 模板log地址
+        /**
+         * <p>模板log地址</p>
+         */
         @NameInMap("logo")
         public String logo;
 
-        // 模板名字
+        /**
+         * <p>模板名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updated")
         public String updated;
 
-        // 模板可见性。organization 或者 involves
+        /**
+         * <p>模板可见性。organization 或者 involves</p>
+         */
         @NameInMap("visible")
         public String visible;
 

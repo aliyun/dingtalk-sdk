@@ -4,43 +4,63 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateWorkTimeRequest extends TeaModel {
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endDate")
     public String endDate;
 
-    // 执行者userid
+    /**
+     * <p>执行者userid</p>
+     */
     @NameInMap("executorId")
     public String executorId;
 
-    // 是否包含节假日
+    /**
+     * <p>是否包含节假日</p>
+     */
     @NameInMap("includesHolidays")
     public Boolean includesHolidays;
 
-    // 是否连续
+    /**
+     * <p>是否连续</p>
+     */
     @NameInMap("isDuration")
     public Boolean isDuration;
 
-    // 对象 ID，比如 任务 ID
+    /**
+     * <p>对象 ID，比如 任务 ID</p>
+     */
     @NameInMap("objectId")
     public String objectId;
 
-    // 对象类型，默认为 task
+    /**
+     * <p>对象类型，默认为 task</p>
+     */
     @NameInMap("objectType")
     public String objectType;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startDate")
     public String startDate;
 
-    // 工时所属人员userid
+    /**
+     * <p>工时所属人员userid</p>
+     */
     @NameInMap("submitterId")
     public String submitterId;
 
-    // 实际工时数（单位毫秒，1小时即为3600000）
+    /**
+     * <p>实际工时数（单位毫秒，1小时即为3600000）</p>
+     */
     @NameInMap("workTime")
     public Long workTime;
 
-    // 接口校验类型，当前默认organization
+    /**
+     * <p>接口校验类型，当前默认organization</p>
+     */
     @NameInMap("tenantType")
     public String tenantType;
 

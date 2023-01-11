@@ -4,7 +4,9 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRoleUsersRequest extends TeaModel {
-    // 角色id
+    /**
+     * <p>角色id</p>
+     */
     @NameInMap("roleId")
     public String roleId;
 

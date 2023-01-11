@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetClosingAccountsResponseBody extends TeaModel {
-    // 规则列表
+    /**
+     * <p>规则列表</p>
+     */
     @NameInMap("result")
     public java.util.List<GetClosingAccountsResponseBodyResult> result;
 
@@ -22,27 +24,39 @@ public class GetClosingAccountsResponseBody extends TeaModel {
     }
 
     public static class GetClosingAccountsResponseBodyResultClosingAccountModel extends TeaModel {
-        // 封账时间-日
+        /**
+         * <p>封账时间-日</p>
+         */
         @NameInMap("closingDay")
         public Integer closingDay;
 
-        // 封账时间-时分
+        /**
+         * <p>封账时间-时分</p>
+         */
         @NameInMap("closingHourMinutes")
         public Long closingHourMinutes;
 
-        // 封账范围-结束日
+        /**
+         * <p>封账范围-结束日</p>
+         */
         @NameInMap("endDay")
         public Integer endDay;
 
-        // 封账范围-结束月
+        /**
+         * <p>封账范围-结束月</p>
+         */
         @NameInMap("endMonth")
         public Integer endMonth;
 
-        // 封账范围-开始日
+        /**
+         * <p>封账范围-开始日</p>
+         */
         @NameInMap("startDay")
         public Integer startDay;
 
-        // 封账范围-开始月
+        /**
+         * <p>封账范围-开始月</p>
+         */
         @NameInMap("startMonth")
         public Integer startMonth;
 
@@ -102,7 +116,9 @@ public class GetClosingAccountsResponseBody extends TeaModel {
     }
 
     public static class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel extends TeaModel {
-        // 解封时间点
+        /**
+         * <p>解封时间点</p>
+         */
         @NameInMap("invalidTimeStamp")
         public Long invalidTimeStamp;
 
@@ -122,19 +138,27 @@ public class GetClosingAccountsResponseBody extends TeaModel {
     }
 
     public static class GetClosingAccountsResponseBodyResult extends TeaModel {
-        // 封账规则
+        /**
+         * <p>封账规则</p>
+         */
         @NameInMap("closingAccountModel")
         public GetClosingAccountsResponseBodyResultClosingAccountModel closingAccountModel;
 
-        // 开关
+        /**
+         * <p>开关</p>
+         */
         @NameInMap("switchOn")
         public Boolean switchOn;
 
-        // 解封规则
+        /**
+         * <p>解封规则</p>
+         */
         @NameInMap("unsealClosingAccountModel")
         public GetClosingAccountsResponseBodyResultUnsealClosingAccountModel unsealClosingAccountModel;
 
-        // 人员ID
+        /**
+         * <p>人员ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 

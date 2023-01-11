@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupStatisticsResponseBody extends TeaModel {
-    // (本期)群总数
+    /**
+     * <p>(本期)群总数</p>
+     */
     @NameInMap("groupCount")
     public Long groupCount;
 
-    // 群趋势
+    /**
+     * <p>群趋势</p>
+     */
     @NameInMap("groupTrend")
     public java.util.List<GroupStatisticsResponseBodyGroupTrend> groupTrend;
 
-    // 较上期增长数
+    /**
+     * <p>较上期增长数</p>
+     */
     @NameInMap("increaseGroupCount")
     public Long increaseGroupCount;
 
-    // 较上期增长率(已乘以100）
+    /**
+     * <p>较上期增长率(已乘以100）</p>
+     */
     @NameInMap("increaseRate")
     public String increaseRate;
 
@@ -58,11 +66,15 @@ public class GroupStatisticsResponseBody extends TeaModel {
     }
 
     public static class GroupStatisticsResponseBodyGroupTrend extends TeaModel {
-        // 群数量
+        /**
+         * <p>群数量</p>
+         */
         @NameInMap("count")
         public Long count;
 
-        // 日期
+        /**
+         * <p>日期</p>
+         */
         @NameInMap("dt")
         public String dt;
 

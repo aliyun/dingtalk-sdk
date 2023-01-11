@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySendMsgTaskStatisticsRequest extends TeaModel {
-    // 每页条数
+    /**
+     * <p>每页条数</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 游标，首页为空
+    /**
+     * <p>游标，首页为空</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 开放群发任务ID
+    /**
+     * <p>开放群发任务ID</p>
+     */
     @NameInMap("openBatchTaskId")
     public String openBatchTaskId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

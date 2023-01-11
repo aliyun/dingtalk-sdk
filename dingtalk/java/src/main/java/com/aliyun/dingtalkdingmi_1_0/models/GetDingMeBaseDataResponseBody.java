@@ -4,19 +4,27 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDingMeBaseDataResponseBody extends TeaModel {
-    // 是否缓存
+    /**
+     * <p>是否缓存</p>
+     */
     @NameInMap("fromCache")
     public Boolean fromCache;
 
-    // 结果集
+    /**
+     * <p>结果集</p>
+     */
     @NameInMap("rawset")
     public java.util.List<java.util.Map<String, String>> rawset;
 
-    // 运行时间
+    /**
+     * <p>运行时间</p>
+     */
     @NameInMap("runtime")
     public Long runtime;
 
-    // 字段解释
+    /**
+     * <p>字段解释</p>
+     */
     @NameInMap("tips")
     public java.util.Map<String, ?> tips;
 

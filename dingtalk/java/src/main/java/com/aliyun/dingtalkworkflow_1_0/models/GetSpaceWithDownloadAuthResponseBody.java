@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceWithDownloadAuthResponseBody extends TeaModel {
-    // 返回结果。
+    /**
+     * <p>返回结果。</p>
+     */
     @NameInMap("result")
     public GetSpaceWithDownloadAuthResponseBodyResult result;
 
-    // 接口调用是否成功。
+    /**
+     * <p>接口调用是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,7 +38,9 @@ public class GetSpaceWithDownloadAuthResponseBody extends TeaModel {
     }
 
     public static class GetSpaceWithDownloadAuthResponseBodyResult extends TeaModel {
-        // 钉盘空间ID。
+        /**
+         * <p>钉盘空间ID。</p>
+         */
         @NameInMap("spaceId")
         public Long spaceId;
 

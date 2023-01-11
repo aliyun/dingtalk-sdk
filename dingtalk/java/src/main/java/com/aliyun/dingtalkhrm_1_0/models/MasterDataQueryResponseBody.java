@@ -4,23 +4,33 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataQueryResponseBody extends TeaModel {
-    // 是否还有更多
+    /**
+     * <p>是否还有更多</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 分页游标
+    /**
+     * <p>分页游标</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 结果
+    /**
+     * <p>结果</p>
+     */
     @NameInMap("result")
     public java.util.List<MasterDataQueryResponseBodyResult> result;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
-    // 总条目数
+    /**
+     * <p>总条目数</p>
+     */
     @NameInMap("total")
     public Long total;
 
@@ -70,11 +80,15 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends TeaModel {
-        // 字段值的key
+        /**
+         * <p>字段值的key</p>
+         */
         @NameInMap("key")
         public String key;
 
-        // 字段值的文本
+        /**
+         * <p>字段值的文本</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -102,19 +116,27 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends TeaModel {
-        // 字段code
+        /**
+         * <p>字段code</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
-        // 字段值
+        /**
+         * <p>字段值</p>
+         */
         @NameInMap("fieldDataVO")
         public MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO fieldDataVO;
 
-        // 字段名称
+        /**
+         * <p>字段名称</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
-        // 字段类型
+        /**
+         * <p>字段类型</p>
+         */
         @NameInMap("fieldType")
         public String fieldType;
 
@@ -158,23 +180,33 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResult extends TeaModel {
-        // 唯一id
+        /**
+         * <p>唯一id</p>
+         */
         @NameInMap("outerId")
         public String outerId;
 
-        // 关联id列表，一般为userId
+        /**
+         * <p>关联id列表，一般为userId</p>
+         */
         @NameInMap("relationId")
         public String relationId;
 
-        // 领域
+        /**
+         * <p>领域</p>
+         */
         @NameInMap("scopeCode")
         public String scopeCode;
 
-        // 编码
+        /**
+         * <p>编码</p>
+         */
         @NameInMap("viewEntityCode")
         public String viewEntityCode;
 
-        // 字段列表
+        /**
+         * <p>字段列表</p>
+         */
         @NameInMap("viewEntityFieldVOList")
         public java.util.List<MasterDataQueryResponseBodyResultViewEntityFieldVOList> viewEntityFieldVOList;
 

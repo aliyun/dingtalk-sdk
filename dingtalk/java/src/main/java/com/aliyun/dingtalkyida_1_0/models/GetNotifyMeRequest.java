@@ -4,51 +4,75 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNotifyMeRequest extends TeaModel {
-    // 应用标识列表
+    /**
+     * <p>应用标识列表</p>
+     */
     @NameInMap("appTypes")
     public String appTypes;
 
-    // 企业ID
+    /**
+     * <p>企业ID</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 抄送到达时间开始
+    /**
+     * <p>抄送到达时间开始</p>
+     */
     @NameInMap("createFromTimeGMT")
     public Long createFromTimeGMT;
 
-    // 抄送到达时间结束
+    /**
+     * <p>抄送到达时间结束</p>
+     */
     @NameInMap("createToTimeGMT")
     public Long createToTimeGMT;
 
-    // 数据提交时间开始
+    /**
+     * <p>数据提交时间开始</p>
+     */
     @NameInMap("instanceCreateFromTimeGMT")
     public Long instanceCreateFromTimeGMT;
 
-    // 数据提交时间结束
+    /**
+     * <p>数据提交时间结束</p>
+     */
     @NameInMap("instanceCreateToTimeGMT")
     public Long instanceCreateToTimeGMT;
 
-    // 表单中组件数据模糊搜
+    /**
+     * <p>表单中组件数据模糊搜</p>
+     */
     @NameInMap("keyword")
     public String keyword;
 
-    // 语言环境
+    /**
+     * <p>语言环境</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 当前页
+    /**
+     * <p>当前页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 每页记录数
+    /**
+     * <p>每页记录数</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 流程code列表
+    /**
+     * <p>流程code列表</p>
+     */
     @NameInMap("processCodes")
     public String processCodes;
 
-    // 验权token
+    /**
+     * <p>验权token</p>
+     */
     @NameInMap("token")
     public String token;
 

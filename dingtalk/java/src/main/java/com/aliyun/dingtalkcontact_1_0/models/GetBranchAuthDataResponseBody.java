@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBranchAuthDataResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("result")
     public java.util.List<GetBranchAuthDataResponseBodyResult> result;
 
@@ -22,15 +24,21 @@ public class GetBranchAuthDataResponseBody extends TeaModel {
     }
 
     public static class GetBranchAuthDataResponseBodyResult extends TeaModel {
-        // 字段code
+        /**
+         * <p>字段code</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
-        // 字段名称
+        /**
+         * <p>字段名称</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
-        // 字段值
+        /**
+         * <p>字段值</p>
+         */
         @NameInMap("fieldValue")
         public String fieldValue;
 

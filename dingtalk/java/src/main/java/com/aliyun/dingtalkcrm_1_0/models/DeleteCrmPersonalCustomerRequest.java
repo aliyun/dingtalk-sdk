@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteCrmPersonalCustomerRequest extends TeaModel {
-    // 操作人用户ID
+    /**
+     * <p>操作人用户ID</p>
+     */
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 

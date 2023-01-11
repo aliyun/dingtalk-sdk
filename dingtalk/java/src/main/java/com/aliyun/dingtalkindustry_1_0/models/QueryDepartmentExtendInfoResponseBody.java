@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDepartmentExtendInfoResponseBody extends TeaModel {
-    // 扩展属性列表
+    /**
+     * <p>扩展属性列表</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryDepartmentExtendInfoResponseBodyContent> content;
 
@@ -22,35 +24,51 @@ public class QueryDepartmentExtendInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentExtendInfoResponseBodyContent extends TeaModel {
-        // 科室或医疗组code
+        /**
+         * <p>科室或医疗组code</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        // 扩展属性显示名称
+        /**
+         * <p>扩展属性显示名称</p>
+         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
-        // 扩展属性key
+        /**
+         * <p>扩展属性key</p>
+         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
-        // 扩展属性value
+        /**
+         * <p>扩展属性value</p>
+         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 删除标识
+        /**
+         * <p>删除标识</p>
+         */
         @NameInMap("status")
         public Integer status;
 

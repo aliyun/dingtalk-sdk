@@ -4,15 +4,21 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMore")
     public String hasMore;
 
-    // 分页数据
+    /**
+     * <p>分页数据</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryReceiptsBaseInfoResponseBodyList> list;
 
-    // 总数
+    /**
+     * <p>总数</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,15 +52,21 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptsBaseInfoResponseBodyListCreator extends TeaModel {
-        // 创建人头像
+        /**
+         * <p>创建人头像</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        // 创建人昵称
+        /**
+         * <p>创建人昵称</p>
+         */
         @NameInMap("nick")
         public String nick;
 
-        // 创建人工号
+        /**
+         * <p>创建人工号</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -90,11 +102,15 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptsBaseInfoResponseBodyListCustomer extends TeaModel {
-        // 客户code
+        /**
+         * <p>客户code</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 客户名字
+        /**
+         * <p>客户名字</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -223,23 +239,33 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptsBaseInfoResponseBodyList extends TeaModel {
-        // 金额
+        /**
+         * <p>金额</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("creator")
         public QueryReceiptsBaseInfoResponseBodyListCreator creator;
 
-        // 客户
+        /**
+         * <p>客户</p>
+         */
         @NameInMap("customer")
         public QueryReceiptsBaseInfoResponseBodyListCustomer customer;
 
-        // 主数据modelId
+        /**
+         * <p>主数据modelId</p>
+         */
         @NameInMap("modelId")
         public String modelId;
 
@@ -249,30 +275,42 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         @NameInMap("project")
         public QueryReceiptsBaseInfoResponseBodyListProject project;
 
-        // 单据ID
+        /**
+         * <p>单据ID</p>
+         */
         @NameInMap("receiptId")
         public String receiptId;
 
-        // 记录时间，默认为审批通过时间
+        /**
+         * <p>记录时间，默认为审批通过时间</p>
+         */
         @NameInMap("recordTime")
         public String recordTime;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 来源
+        /**
+         * <p>来源</p>
+         */
         @NameInMap("source")
         public String source;
 
-        // 状态 agree running
+        /**
+         * <p>状态 agree running</p>
+         */
         @NameInMap("status")
         public String status;
 
         @NameInMap("supplier")
         public QueryReceiptsBaseInfoResponseBodyListSupplier supplier;
 
-        // 单据标题
+        /**
+         * <p>单据标题</p>
+         */
         @NameInMap("title")
         public String title;
 

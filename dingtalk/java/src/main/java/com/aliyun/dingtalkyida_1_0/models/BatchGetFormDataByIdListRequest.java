@@ -4,27 +4,39 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetFormDataByIdListRequest extends TeaModel {
-    // 宜搭应用编码
+    /**
+     * <p>宜搭应用编码</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 表单实例id列表
+    /**
+     * <p>表单实例id列表</p>
+     */
     @NameInMap("formInstanceIdList")
     public java.util.List<String> formInstanceIdList;
 
-    // 表单编码
+    /**
+     * <p>表单编码</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 是否需要宜搭表单组件格式的实例数据
+    /**
+     * <p>是否需要宜搭表单组件格式的实例数据</p>
+     */
     @NameInMap("needFormInstanceValue")
     public Boolean needFormInstanceValue;
 
-    // 宜搭应用秘钥
+    /**
+     * <p>宜搭应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 钉钉userId
+    /**
+     * <p>钉钉userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

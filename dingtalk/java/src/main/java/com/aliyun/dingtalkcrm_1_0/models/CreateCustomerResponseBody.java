@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomerResponseBody extends TeaModel {
-    // 联系人保存结果
+    /**
+     * <p>联系人保存结果</p>
+     */
     @NameInMap("contacts")
     public java.util.List<CreateCustomerResponseBodyContacts> contacts;
 
-    // 客户实例id
+    /**
+     * <p>客户实例id</p>
+     */
     @NameInMap("customerInstanceId")
     public String customerInstanceId;
 
-    // 保存客户类型
+    /**
+     * <p>保存客户类型</p>
+     */
     @NameInMap("objectType")
     public String objectType;
 
@@ -46,7 +52,9 @@ public class CreateCustomerResponseBody extends TeaModel {
     }
 
     public static class CreateCustomerResponseBodyContacts extends TeaModel {
-        // 联系人实例id
+        /**
+         * <p>联系人实例id</p>
+         */
         @NameInMap("contactInstanceId")
         public String contactInstanceId;
 

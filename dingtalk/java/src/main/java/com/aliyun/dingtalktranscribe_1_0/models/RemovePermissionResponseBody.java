@@ -4,15 +4,21 @@ package com.aliyun.dingtalktranscribe_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemovePermissionResponseBody extends TeaModel {
-    // 当执行出错的时候，移除权限失败的用户昵称列表
+    /**
+     * <p>当执行出错的时候，移除权限失败的用户昵称列表</p>
+     */
     @NameInMap("data")
     public RemovePermissionResponseBodyData data;
 
-    // 服务端返回的错误代码
+    /**
+     * <p>服务端返回的错误代码</p>
+     */
     @NameInMap("statusCode")
     public Integer statusCode;
 
-    // 描述本次调用的业务层面是否成功
+    /**
+     * <p>描述本次调用的业务层面是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

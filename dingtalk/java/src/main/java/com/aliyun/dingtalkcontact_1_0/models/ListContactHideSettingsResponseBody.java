@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListContactHideSettingsResponseBody extends TeaModel {
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 设置列表
+    /**
+     * <p>设置列表</p>
+     */
     @NameInMap("list")
     public java.util.List<ListContactHideSettingsResponseBodyList> list;
 
-    // 下一次拉取数据时的offset
+    /**
+     * <p>下一次拉取数据时的offset</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -46,43 +52,63 @@ public class ListContactHideSettingsResponseBody extends TeaModel {
     }
 
     public static class ListContactHideSettingsResponseBodyList extends TeaModel {
-        // 规则是否生效
+        /**
+         * <p>规则是否生效</p>
+         */
         @NameInMap("active")
         public Boolean active;
 
-        // 设置描述
+        /**
+         * <p>设置描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 白名单部门列表
+        /**
+         * <p>白名单部门列表</p>
+         */
         @NameInMap("excludeDeptIds")
         public java.util.List<Long> excludeDeptIds;
 
-        // 白名单用户列表
+        /**
+         * <p>白名单用户列表</p>
+         */
         @NameInMap("excludeStaffIds")
         public java.util.List<String> excludeStaffIds;
 
-        // 白名单角色列表
+        /**
+         * <p>白名单角色列表</p>
+         */
         @NameInMap("excludeTagIds")
         public java.util.List<Long> excludeTagIds;
 
-        // settingId
+        /**
+         * <p>settingId</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 设置名称
+        /**
+         * <p>设置名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 要隐藏的部门列表
+        /**
+         * <p>要隐藏的部门列表</p>
+         */
         @NameInMap("objectDeptIds")
         public java.util.List<Long> objectDeptIds;
 
-        // 要隐藏的员工列表
+        /**
+         * <p>要隐藏的员工列表</p>
+         */
         @NameInMap("objectStaffIds")
         public java.util.List<String> objectStaffIds;
 
-        // 要影藏的角色列表
+        /**
+         * <p>要影藏的角色列表</p>
+         */
         @NameInMap("objectTagIds")
         public java.util.List<Long> objectTagIds;
 

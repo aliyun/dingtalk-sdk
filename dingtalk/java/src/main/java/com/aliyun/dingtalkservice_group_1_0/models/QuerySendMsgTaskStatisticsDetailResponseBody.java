@@ -13,7 +13,9 @@ public class QuerySendMsgTaskStatisticsDetailResponseBody extends TeaModel {
     @NameInMap("records")
     public java.util.List<QuerySendMsgTaskStatisticsDetailResponseBodyRecords> records;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 

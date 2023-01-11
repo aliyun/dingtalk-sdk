@@ -4,27 +4,39 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteBatchTaskRequest extends TeaModel {
-    // 宜搭应用编码
+    /**
+     * <p>宜搭应用编码</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 审批动作
+    /**
+     * <p>审批动作</p>
+     */
     @NameInMap("outResult")
     public String outResult;
 
-    // 审批意见
+    /**
+     * <p>审批意见</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 宜搭应用秘钥
+    /**
+     * <p>宜搭应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // taskInfoList
+    /**
+     * <p>taskInfoList</p>
+     */
     @NameInMap("taskInformationList")
     public String taskInformationList;
 
-    // 钉钉userId
+    /**
+     * <p>钉钉userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

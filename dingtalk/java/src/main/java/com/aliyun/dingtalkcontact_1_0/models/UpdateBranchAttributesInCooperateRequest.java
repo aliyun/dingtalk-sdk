@@ -21,15 +21,21 @@ public class UpdateBranchAttributesInCooperateRequest extends TeaModel {
     }
 
     public static class UpdateBranchAttributesInCooperateRequestBody extends TeaModel {
-        // 分支的企业ID
+        /**
+         * <p>分支的企业ID</p>
+         */
         @NameInMap("branchCorpId")
         public String branchCorpId;
 
-        // 挂载节点部门ID
+        /**
+         * <p>挂载节点部门ID</p>
+         */
         @NameInMap("linkDeptId")
         public Long linkDeptId;
 
-        // （分支/合作伙伴）在（集团/合作空间）的别名
+        /**
+         * <p>（分支/合作伙伴）在（集团/合作空间）的别名</p>
+         */
         @NameInMap("unionRootName")
         public String unionRootName;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceAccountPeriodResponseBody extends TeaModel {
-    // 错误信息
+    /**
+     * <p>错误信息</p>
+     */
     @NameInMap("errorResult")
     public java.util.List<UpdateInvoiceAccountPeriodResponseBodyErrorResult> errorResult;
 
-    // 成功信息
+    /**
+     * <p>成功信息</p>
+     */
     @NameInMap("successResult")
     public java.util.List<UpdateInvoiceAccountPeriodResponseBodySuccessResult> successResult;
 
@@ -34,11 +38,15 @@ public class UpdateInvoiceAccountPeriodResponseBody extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountPeriodResponseBodyErrorResult extends TeaModel {
-        // 错误数据的key
+        /**
+         * <p>错误数据的key</p>
+         */
         @NameInMap("errorKey")
         public String errorKey;
 
-        // 错误信息
+        /**
+         * <p>错误信息</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
@@ -66,11 +74,15 @@ public class UpdateInvoiceAccountPeriodResponseBody extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountPeriodResponseBodySuccessResult extends TeaModel {
-        // 发票代码
+        /**
+         * <p>发票代码</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        // 发票号码
+        /**
+         * <p>发票号码</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 

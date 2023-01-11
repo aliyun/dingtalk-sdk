@@ -4,35 +4,51 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreatePhysicalClassroomRequest extends TeaModel {
-    // 教室教学楼
+    /**
+     * <p>教室教学楼</p>
+     */
     @NameInMap("classroomBuilding")
     public String classroomBuilding;
 
-    // 教室校区
+    /**
+     * <p>教室校区</p>
+     */
     @NameInMap("classroomCampus")
     public String classroomCampus;
 
-    // 教室楼层
+    /**
+     * <p>教室楼层</p>
+     */
     @NameInMap("classroomFloor")
     public String classroomFloor;
 
-    // 教室名称
+    /**
+     * <p>教室名称</p>
+     */
     @NameInMap("classroomName")
     public String classroomName;
 
-    // 教室房间号
+    /**
+     * <p>教室房间号</p>
+     */
     @NameInMap("classroomNumber")
     public String classroomNumber;
 
-    // 是否支持直播
+    /**
+     * <p>是否支持直播</p>
+     */
     @NameInMap("directBroadcast")
     public String directBroadcast;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("ext")
     public String ext;
 
-    // opUserId
+    /**
+     * <p>opUserId</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

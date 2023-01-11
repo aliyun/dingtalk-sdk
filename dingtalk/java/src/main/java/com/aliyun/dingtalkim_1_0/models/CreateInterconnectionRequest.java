@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInterconnectionRequest extends TeaModel {
-    // 钉外钉内关系列表。
+    /**
+     * <p>钉外钉内关系列表。</p>
+     */
     @NameInMap("interconnections")
     public java.util.List<CreateInterconnectionRequestInterconnections> interconnections;
 
@@ -22,36 +24,52 @@ public class CreateInterconnectionRequest extends TeaModel {
     }
 
     public static class CreateInterconnectionRequestInterconnections extends TeaModel {
-        // 钉外用户头像链接。
+        /**
+         * <p>钉外用户头像链接。</p>
+         */
         @NameInMap("appUserAvatar")
         public String appUserAvatar;
 
-        // 钉外用户头像类型，取值：
-        // 1：http
+        /**
+         * <p>钉外用户头像类型，取值：</p>
+         * <p>1：http</p>
+         */
         @NameInMap("appUserAvatarMediaType")
         public Integer appUserAvatarMediaType;
 
-        // 钉外用户动态。
+        /**
+         * <p>钉外用户动态。</p>
+         */
         @NameInMap("appUserDynamics")
         public String appUserDynamics;
 
-        // 钉外用户在业务系统内的唯一标识。
+        /**
+         * <p>钉外用户在业务系统内的唯一标识。</p>
+         */
         @NameInMap("appUserId")
         public String appUserId;
 
-        // 钉外用户手机号。
+        /**
+         * <p>钉外用户手机号。</p>
+         */
         @NameInMap("appUserMobile")
         public String appUserMobile;
 
-        // 钉外用户名称。
+        /**
+         * <p>钉外用户名称。</p>
+         */
         @NameInMap("appUserName")
         public String appUserName;
 
-        // 渠道code。
+        /**
+         * <p>渠道code。</p>
+         */
         @NameInMap("channelCode")
         public String channelCode;
 
-        // 钉内用户userId。
+        /**
+         * <p>钉内用户userId。</p>
+         */
         @NameInMap("userId")
         public String userId;
 

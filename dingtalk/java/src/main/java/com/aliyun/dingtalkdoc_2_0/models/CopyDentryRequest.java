@@ -4,27 +4,39 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class CopyDentryRequest extends TeaModel {
-    // 拷贝后的文档名称，长度不能超过50。
+    /**
+     * <p>拷贝后的文档名称，长度不能超过50。</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 操作人unionId。
+    /**
+     * <p>操作人unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 需要移动到的知识库id。
+    /**
+     * <p>需要移动到的知识库id。</p>
+     */
     @NameInMap("targetSpaceId")
     public String targetSpaceId;
 
-    // 移动到目标位置的后置节点id。不为空时，需要是归属于 toParentDentryId 的子节点。
+    /**
+     * <p>移动到目标位置的后置节点id。不为空时，需要是归属于 toParentDentryId 的子节点。</p>
+     */
     @NameInMap("toNextDentryId")
     public String toNextDentryId;
 
-    // 需要移动到目标位置的父节点id。如果为根目录，则不传；如果为非根目录，则需要传对应的id。
+    /**
+     * <p>需要移动到目标位置的父节点id。如果为根目录，则不传；如果为非根目录，则需要传对应的id。</p>
+     */
     @NameInMap("toParentDentryId")
     public String toParentDentryId;
 
-    // 移动到目标位置的前置节点id。不为空时，需要是归属于 toParentDentryId 的子节点。
+    /**
+     * <p>移动到目标位置的前置节点id。不为空时，需要是归属于 toParentDentryId 的子节点。</p>
+     */
     @NameInMap("toPrevDentryId")
     public String toPrevDentryId;
 

@@ -7,7 +7,9 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<PatchEventResponseBodyAttendees> attendees;
 
-    // 创建时间
+    /**
+     * <p>创建时间</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
@@ -35,14 +37,18 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("reminders")
     public java.util.List<PatchEventResponseBodyReminders> reminders;
 
-    // 日程开始时间
+    /**
+     * <p>日程开始时间</p>
+     */
     @NameInMap("start")
     public PatchEventResponseBodyStart start;
 
     @NameInMap("summary")
     public String summary;
 
-    // 更新时间
+    /**
+     * <p>更新时间</p>
+     */
     @NameInMap("updateTime")
     public String updateTime;
 
@@ -156,7 +162,9 @@ public class PatchEventResponseBody extends TeaModel {
     }
 
     public static class PatchEventResponseBodyAttendees extends TeaModel {
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -166,11 +174,15 @@ public class PatchEventResponseBody extends TeaModel {
         @NameInMap("isOptional")
         public Boolean isOptional;
 
-        // 回复状态
+        /**
+         * <p>回复状态</p>
+         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        // 是否是当前登陆用户
+        /**
+         * <p>是否是当前登陆用户</p>
+         */
         @NameInMap("self")
         public Boolean self;
 
@@ -293,18 +305,24 @@ public class PatchEventResponseBody extends TeaModel {
     }
 
     public static class PatchEventResponseBodyOrganizer extends TeaModel {
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
         @NameInMap("id")
         public String id;
 
-        // 回复状态
+        /**
+         * <p>回复状态</p>
+         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        // 是否是当前登陆用户
+        /**
+         * <p>是否是当前登陆用户</p>
+         */
         @NameInMap("self")
         public Boolean self;
 

@@ -4,31 +4,45 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEventsRequest extends TeaModel {
-    // 每个日程的参与者查询个数，默认100，最大100
+    /**
+     * <p>每个日程的参与者查询个数，默认100，最大100</p>
+     */
     @NameInMap("maxAttendees")
     public Integer maxAttendees;
 
-    // 返回的最大日程数，最大100个，默认100个
+    /**
+     * <p>返回的最大日程数，最大100个，默认100个</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 查询翻页token
+    /**
+     * <p>查询翻页token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 是否返回删除事件
+    /**
+     * <p>是否返回删除事件</p>
+     */
     @NameInMap("showDeleted")
     public Boolean showDeleted;
 
-    // 增量查询token
+    /**
+     * <p>增量查询token</p>
+     */
     @NameInMap("syncToken")
     public String syncToken;
 
-    // 查询截止时间
+    /**
+     * <p>查询截止时间</p>
+     */
     @NameInMap("timeMax")
     public String timeMax;
 
-    // 查询开始时间
+    /**
+     * <p>查询开始时间</p>
+     */
     @NameInMap("timeMin")
     public String timeMin;
 

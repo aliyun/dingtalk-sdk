@@ -4,15 +4,21 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCustomerInfoResponseBody extends TeaModel {
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 客户分页数据
+    /**
+     * <p>客户分页数据</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryCustomerInfoResponseBodyList> list;
 
-    // 总数
+    /**
+     * <p>总数</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,7 +52,9 @@ public class QueryCustomerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryCustomerInfoResponseBodyList extends TeaModel {
-        // 客户code
+        /**
+         * <p>客户code</p>
+         */
         @NameInMap("code")
         public String code;
 
@@ -65,43 +73,63 @@ public class QueryCustomerInfoResponseBody extends TeaModel {
         @NameInMap("contactTelephone")
         public String contactTelephone;
 
-        // 客户描述
+        /**
+         * <p>客户描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 客户名字
+        /**
+         * <p>客户名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 购方账户
+        /**
+         * <p>购方账户</p>
+         */
         @NameInMap("purchaserAccount")
         public String purchaserAccount;
 
-        // 购方地址
+        /**
+         * <p>购方地址</p>
+         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        // 购方姓名
+        /**
+         * <p>购方姓名</p>
+         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
-        // 购方税号
+        /**
+         * <p>购方税号</p>
+         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
-        // 购方电话
+        /**
+         * <p>购方电话</p>
+         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
-        // 购方银行
+        /**
+         * <p>购方银行</p>
+         */
         @NameInMap("purchaserrBankName")
         public String purchaserrBankName;
 
-        // 状态
+        /**
+         * <p>状态</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 用户自定义code
+        /**
+         * <p>用户自定义code</p>
+         */
         @NameInMap("userDefineCode")
         public String userDefineCode;
 

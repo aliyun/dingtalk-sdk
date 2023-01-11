@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryGroupMemberRequest extends TeaModel {
-    // 每页条数
+    /**
+     * <p>每页条数</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 游标
+    /**
+     * <p>游标</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 群会话ID
+    /**
+     * <p>群会话ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

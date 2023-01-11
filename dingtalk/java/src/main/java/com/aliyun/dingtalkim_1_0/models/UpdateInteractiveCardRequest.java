@@ -4,23 +4,33 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInteractiveCardRequest extends TeaModel {
-    // 卡片公共主体部分数据
+    /**
+     * <p>卡片公共主体部分数据</p>
+     */
     @NameInMap("cardData")
     public UpdateInteractiveCardRequestCardData cardData;
 
-    // 发送可交互卡片的一些功能选项
+    /**
+     * <p>发送可交互卡片的一些功能选项</p>
+     */
     @NameInMap("cardOptions")
     public UpdateInteractiveCardRequestCardOptions cardOptions;
 
-    // 唯一标识一张卡片的外部ID
+    /**
+     * <p>唯一标识一张卡片的外部ID</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    // 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
+    /**
+     * <p>卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）</p>
+     */
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
-    // 用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+    /**
+     * <p>用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式</p>
+     */
     @NameInMap("userIdType")
     public Integer userIdType;
 
@@ -70,11 +80,15 @@ public class UpdateInteractiveCardRequest extends TeaModel {
     }
 
     public static class UpdateInteractiveCardRequestCardData extends TeaModel {
-        // 卡片模板内容替换参数-多媒体类型
+        /**
+         * <p>卡片模板内容替换参数-多媒体类型</p>
+         */
         @NameInMap("cardMediaIdParamMap")
         public java.util.Map<String, String> cardMediaIdParamMap;
 
-        // 卡片模板内容替换参数-普通文本类型
+        /**
+         * <p>卡片模板内容替换参数-普通文本类型</p>
+         */
         @NameInMap("cardParamMap")
         public java.util.Map<String, String> cardParamMap;
 
@@ -102,11 +116,15 @@ public class UpdateInteractiveCardRequest extends TeaModel {
     }
 
     public static class UpdateInteractiveCardRequestCardOptions extends TeaModel {
-        // 按key更新cardData数据(不填默认覆盖更新)
+        /**
+         * <p>按key更新cardData数据(不填默认覆盖更新)</p>
+         */
         @NameInMap("updateCardDataByKey")
         public Boolean updateCardDataByKey;
 
-        // 按key更新privateData用户数据(不填默认覆盖更新)
+        /**
+         * <p>按key更新privateData用户数据(不填默认覆盖更新)</p>
+         */
         @NameInMap("updatePrivateDataByKey")
         public Boolean updatePrivateDataByKey;
 

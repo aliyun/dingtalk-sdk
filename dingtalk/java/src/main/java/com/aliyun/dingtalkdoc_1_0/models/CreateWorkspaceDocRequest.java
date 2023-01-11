@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateWorkspaceDocRequest extends TeaModel {
-    // 文档类型
+    /**
+     * <p>文档类型</p>
+     */
     @NameInMap("docType")
     public String docType;
 
-    // 文档名
+    /**
+     * <p>文档名</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 父节点nodeId
+    /**
+     * <p>父节点nodeId</p>
+     */
     @NameInMap("parentNodeId")
     public String parentNodeId;
 
-    // 文档模板id
+    /**
+     * <p>文档模板id</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

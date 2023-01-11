@@ -19,7 +19,9 @@ public class CreateTokenResponseBody extends TeaModel {
     @NameInMap("securityToken")
     public String securityToken;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("status")
     public String status;
 

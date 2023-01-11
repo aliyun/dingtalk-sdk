@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteWaterMarkTemplateResponseBody extends TeaModel {
-    // 模板的表单Code。
+    /**
+     * <p>模板的表单Code。</p>
+     */
     @NameInMap("result")
     public String result;
 

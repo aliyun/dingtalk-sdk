@@ -4,23 +4,33 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupCapacityInquiryRequest extends TeaModel {
-    // 有效生命周期
+    /**
+     * <p>有效生命周期</p>
+     */
     @NameInMap("effectiveDuration")
     public String effectiveDuration;
 
-    // 开放的群id
+    /**
+     * <p>开放的群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 当前操作人工号
+    /**
+     * <p>当前操作人工号</p>
+     */
     @NameInMap("operator")
     public String operator;
 
-    // 扩展参数
+    /**
+     * <p>扩展参数</p>
+     */
     @NameInMap("options")
     public java.util.Map<String, ?> options;
 
-    // 目标容量
+    /**
+     * <p>目标容量</p>
+     */
     @NameInMap("targetCapacity")
     public Integer targetCapacity;
 

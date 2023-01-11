@@ -4,23 +4,33 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RebuildRoleScopeForAppRoleRequest extends TeaModel {
-    // 部门id列表
+    /**
+     * <p>部门id列表</p>
+     */
     @NameInMap("deptIdList")
     public java.util.List<Long> deptIdList;
 
-    // 执行用户userId
+    /**
+     * <p>执行用户userId</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
+    /**
+     * <p>角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分</p>
+     */
     @NameInMap("scopeType")
     public String scopeType;
 
-    // 角色范围最新版本号
+    /**
+     * <p>角色范围最新版本号</p>
+     */
     @NameInMap("scopeVersion")
     public Long scopeVersion;
 
-    // 员工userId列表
+    /**
+     * <p>员工userId列表</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

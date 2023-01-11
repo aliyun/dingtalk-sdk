@@ -4,15 +4,21 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobsRequest extends TeaModel {
-    // 职务名称
+    /**
+     * <p>职务名称</p>
+     */
     @NameInMap("jobName")
     public String jobName;
 
-    // 最大值
+    /**
+     * <p>最大值</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 偏移量
+    /**
+     * <p>偏移量</p>
+     */
     @NameInMap("nextToken")
     public Integer nextToken;
 

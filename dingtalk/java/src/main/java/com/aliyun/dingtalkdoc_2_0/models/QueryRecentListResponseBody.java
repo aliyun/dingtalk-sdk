@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRecentListResponseBody extends TeaModel {
-    // 是否还有更多数据。
+    /**
+     * <p>是否还有更多数据。</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 分页游标。
+    /**
+     * <p>分页游标。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 子节点列表。
+    /**
+     * <p>子节点列表。</p>
+     */
     @NameInMap("recentList")
     public java.util.List<QueryRecentListResponseBodyRecentList> recentList;
 
@@ -46,15 +52,21 @@ public class QueryRecentListResponseBody extends TeaModel {
     }
 
     public static class QueryRecentListResponseBodyRecentList extends TeaModel {
-        // 是否被删除。
+        /**
+         * <p>是否被删除。</p>
+         */
         @NameInMap("deleted")
         public Boolean deleted;
 
-        // 节点信息。
+        /**
+         * <p>节点信息。</p>
+         */
         @NameInMap("dentry")
         public DentryModel dentry;
 
-        // 如果查询的是访问，那么这里是访问时间；否则就是编辑时间。
+        /**
+         * <p>如果查询的是访问，那么这里是访问时间；否则就是编辑时间。</p>
+         */
         @NameInMap("recentTime")
         public Long recentTime;
 

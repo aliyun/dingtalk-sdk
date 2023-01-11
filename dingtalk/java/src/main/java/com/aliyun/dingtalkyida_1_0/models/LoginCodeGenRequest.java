@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class LoginCodeGenRequest extends TeaModel {
-    // userId
+    /**
+     * <p>userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

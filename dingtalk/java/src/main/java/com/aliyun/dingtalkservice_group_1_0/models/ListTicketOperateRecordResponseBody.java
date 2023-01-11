@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTicketOperateRecordResponseBody extends TeaModel {
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("records")
     public java.util.List<ListTicketOperateRecordResponseBodyRecords> records;
 
@@ -112,22 +114,30 @@ public class ListTicketOperateRecordResponseBody extends TeaModel {
     }
 
     public static class ListTicketOperateRecordResponseBodyRecords extends TeaModel {
-        // 工单开放ID
+        /**
+         * <p>工单开放ID</p>
+         */
         @NameInMap("openTicketId")
         public String openTicketId;
 
         @NameInMap("operateData")
         public String operateData;
 
-        // 操作时间
+        /**
+         * <p>操作时间</p>
+         */
         @NameInMap("operateTime")
         public String operateTime;
 
-        // 动作
+        /**
+         * <p>动作</p>
+         */
         @NameInMap("operation")
         public String operation;
 
-        // 动作展示名
+        /**
+         * <p>动作展示名</p>
+         */
         @NameInMap("operationDisplayName")
         public String operationDisplayName;
 

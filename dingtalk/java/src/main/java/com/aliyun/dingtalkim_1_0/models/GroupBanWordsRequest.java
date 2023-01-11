@@ -4,15 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupBanWordsRequest extends TeaModel {
-    // 禁言模式
+    /**
+     * <p>禁言模式</p>
+     */
     @NameInMap("banWordsMode")
     public Integer banWordsMode;
 
-    // 开放群id
+    /**
+     * <p>开放群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 扩展参数
+    /**
+     * <p>扩展参数</p>
+     */
     @NameInMap("options")
     public java.util.Map<String, ?> options;
 

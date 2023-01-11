@@ -4,15 +4,21 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfScoreRequest extends TeaModel {
-    // 分数值。
+    /**
+     * <p>分数值。</p>
+     */
     @NameInMap("score")
     public Long score;
 
-    // 当前 KR ID。
+    /**
+     * <p>当前 KR ID。</p>
+     */
     @NameInMap("krId")
     public String krId;
 
-    // 当前用户的userId。
+    /**
+     * <p>当前用户的userId。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

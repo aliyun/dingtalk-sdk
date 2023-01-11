@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChangeMainAdminRequest extends TeaModel {
-    // effectCorpId
+    /**
+     * <p>effectCorpId</p>
+     */
     @NameInMap("effectCorpId")
     public String effectCorpId;
 
-    // sourceUserId
+    /**
+     * <p>sourceUserId</p>
+     */
     @NameInMap("sourceUserId")
     public String sourceUserId;
 
-    // targetUserId
+    /**
+     * <p>targetUserId</p>
+     */
     @NameInMap("targetUserId")
     public String targetUserId;
 

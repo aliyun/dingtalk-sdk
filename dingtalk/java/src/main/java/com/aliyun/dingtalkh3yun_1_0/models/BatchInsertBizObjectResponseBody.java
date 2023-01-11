@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchInsertBizObjectResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public BatchInsertBizObjectResponseBodyData data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,19 +52,27 @@ public class BatchInsertBizObjectResponseBody extends TeaModel {
     }
 
     public static class BatchInsertBizObjectResponseBodyData extends TeaModel {
-        // 成功新增的业务对象id数组
+        /**
+         * <p>成功新增的业务对象id数组</p>
+         */
         @NameInMap("bizObjectIds")
         public java.util.List<String> bizObjectIds;
 
-        // 新增失败的数据数组
+        /**
+         * <p>新增失败的数据数组</p>
+         */
         @NameInMap("failedDatas")
         public java.util.List<String> failedDatas;
 
-        // 失败的提示信息数组
+        /**
+         * <p>失败的提示信息数组</p>
+         */
         @NameInMap("failedMessages")
         public java.util.List<String> failedMessages;
 
-        // 新增成功的流程实例id数组
+        /**
+         * <p>新增成功的流程实例id数组</p>
+         */
         @NameInMap("processIds")
         public java.util.List<String> processIds;
 

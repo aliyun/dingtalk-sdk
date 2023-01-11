@@ -4,15 +4,21 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetATManageScopeRequest extends TeaModel {
-    // 单次查询条数，最大200。
+    /**
+     * <p>单次查询条数，最大200。</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页游标。
+    /**
+     * <p>分页游标。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 查询用户userId。
+    /**
+     * <p>查询用户userId。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

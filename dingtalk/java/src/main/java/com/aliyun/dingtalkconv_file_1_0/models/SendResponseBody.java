@@ -4,7 +4,9 @@ package com.aliyun.dingtalkconv_file_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendResponseBody extends TeaModel {
-    // 发送到目标会话的文件信息
+    /**
+     * <p>发送到目标会话的文件信息</p>
+     */
     @NameInMap("file")
     public SendResponseBodyFile file;
 
@@ -22,74 +24,106 @@ public class SendResponseBody extends TeaModel {
     }
 
     public static class SendResponseBodyFile extends TeaModel {
-        // 文件所在会话id
+        /**
+         * <p>文件所在会话id</p>
+         */
         @NameInMap("conversationId")
         public String conversationId;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建者id
+        /**
+         * <p>创建者id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        // 文件后缀
+        /**
+         * <p>文件后缀</p>
+         */
         @NameInMap("extension")
         public String extension;
 
-        // 文件id
+        /**
+         * <p>文件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        // 修改者id
+        /**
+         * <p>修改者id</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
-        // 文件(夹)名称
+        /**
+         * <p>文件(夹)名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 文件所在的父目录id, 根目录id值为0
+        /**
+         * <p>文件所在的父目录id, 根目录id值为0</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
-        // 文件路径
+        /**
+         * <p>文件路径</p>
+         */
         @NameInMap("path")
         public String path;
 
-        // 文件大小, 单位:Byte
+        /**
+         * <p>文件大小, 单位:Byte</p>
+         */
         @NameInMap("size")
         public Long size;
 
-        // 文件所在空间id
+        /**
+         * <p>文件所在空间id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 文件状态
-        // 枚举值:
-        // 	NORMAL: 正常
-        // 	DELETED: 已删除
-        // 	EXPIRED: 已过期
+        /**
+         * <p>文件状态</p>
+         * <p>枚举值:</p>
+         * <p>	NORMAL: 正常</p>
+         * <p>	DELETED: 已删除</p>
+         * <p>	EXPIRED: 已过期</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 文件类型：文件、文件夹
-        // 枚举值:
-        // 	FILE: 文件
-        // 	FOLDER: 文件夹
+        /**
+         * <p>文件类型：文件、文件夹</p>
+         * <p>枚举值:</p>
+         * <p>	FILE: 文件</p>
+         * <p>	FOLDER: 文件夹</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // uuid，如移动文件，此字段不变
+        /**
+         * <p>uuid，如移动文件，此字段不变</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 
-        // 文件版本
+        /**
+         * <p>文件版本</p>
+         */
         @NameInMap("version")
         public Long version;
 

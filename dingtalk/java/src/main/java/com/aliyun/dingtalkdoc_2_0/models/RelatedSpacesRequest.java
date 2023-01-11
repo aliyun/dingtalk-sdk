@@ -4,19 +4,27 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class RelatedSpacesRequest extends TeaModel {
-    // 每页最大条目数，最大值100。
+    /**
+     * <p>每页最大条目数，最大值100。</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页游标，第一页可不传。
+    /**
+     * <p>分页游标，第一页可不传。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 操作用户unionId。
+    /**
+     * <p>操作用户unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 小组id。
+    /**
+     * <p>小组id。</p>
+     */
     @NameInMap("teamId")
     public String teamId;
 

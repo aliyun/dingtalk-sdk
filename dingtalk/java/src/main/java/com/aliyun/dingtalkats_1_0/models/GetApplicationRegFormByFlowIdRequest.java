@@ -4,7 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplicationRegFormByFlowIdRequest extends TeaModel {
-    // 业务标识
+    /**
+     * <p>业务标识</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 

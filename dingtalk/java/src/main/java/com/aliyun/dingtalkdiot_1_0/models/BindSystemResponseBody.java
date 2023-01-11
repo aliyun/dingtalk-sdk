@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BindSystemResponseBody extends TeaModel {
-    // 三方平台的用户ID。
+    /**
+     * <p>三方平台的用户ID。</p>
+     */
     @NameInMap("clientId")
     public String clientId;
 
-    // 钉钉物联组织ID。
+    /**
+     * <p>钉钉物联组织ID。</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

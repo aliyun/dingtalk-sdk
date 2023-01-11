@@ -4,23 +4,33 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileUploadInfoRequest extends TeaModel {
-    // 业务标识
+    /**
+     * <p>业务标识</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 文件名称
+    /**
+     * <p>文件名称</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
-    // 文件大小（单位：字节）
+    /**
+     * <p>文件大小（单位：字节）</p>
+     */
     @NameInMap("fileSize")
     public Long fileSize;
 
-    // 文件MD5摘要
+    /**
+     * <p>文件MD5摘要</p>
+     */
     @NameInMap("md5")
     public String md5;
 
-    // 操作人员工标识，为空时默认以企业管理员身份进行操作
+    /**
+     * <p>操作人员工标识，为空时默认以企业管理员身份进行操作</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

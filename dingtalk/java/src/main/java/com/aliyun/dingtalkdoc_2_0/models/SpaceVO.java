@@ -4,39 +4,57 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class SpaceVO extends TeaModel {
-    // 封面
+    /**
+     * <p>封面</p>
+     */
     @NameInMap("cover")
     public String cover;
 
-    // 访问者对当前知识库的权限等信息
+    /**
+     * <p>访问者对当前知识库的权限等信息</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 知识库图标
+    /**
+     * <p>知识库图标</p>
+     */
     @NameInMap("iconVO")
     public SpaceVOIconVO iconVO;
 
-    // 知识库id。
+    /**
+     * <p>知识库id。</p>
+     */
     @NameInMap("id")
     public String id;
 
-    // 知识库名称。
+    /**
+     * <p>知识库名称。</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 知识库所有者。
+    /**
+     * <p>知识库所有者。</p>
+     */
     @NameInMap("owner")
     public SpaceVOOwner owner;
 
-    // 知识库类型。
+    /**
+     * <p>知识库类型。</p>
+     */
     @NameInMap("type")
     public Integer type;
 
-    // 知识库访问url。
+    /**
+     * <p>知识库访问url。</p>
+     */
     @NameInMap("url")
     public String url;
 
-    // 访问者对当前知识库的权限等信息。
+    /**
+     * <p>访问者对当前知识库的权限等信息。</p>
+     */
     @NameInMap("visitorInfo")
     public SpaceVOVisitorInfo visitorInfo;
 
@@ -118,11 +136,15 @@ public class SpaceVO extends TeaModel {
     }
 
     public static class SpaceVOIconVO extends TeaModel {
-        // 图标
+        /**
+         * <p>图标</p>
+         */
         @NameInMap("icon")
         public String icon;
 
-        // 图标类型
+        /**
+         * <p>图标类型</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -150,11 +172,15 @@ public class SpaceVO extends TeaModel {
     }
 
     public static class SpaceVOOwner extends TeaModel {
-        // 用户名称。
+        /**
+         * <p>用户名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户unionId。
+        /**
+         * <p>用户unionId。</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -182,15 +208,21 @@ public class SpaceVO extends TeaModel {
     }
 
     public static class SpaceVOVisitorInfo extends TeaModel {
-        // 节点的操作列表。
+        /**
+         * <p>节点的操作列表。</p>
+         */
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
 
-        // 权限
+        /**
+         * <p>权限</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        // 空间的操作列表。
+        /**
+         * <p>空间的操作列表。</p>
+         */
         @NameInMap("spaceActions")
         public java.util.List<String> spaceActions;
 

@@ -7,7 +7,9 @@ public class UploadInvoiceRequest extends TeaModel {
     @NameInMap("extension")
     public UploadInvoiceRequestExtension extension;
 
-    // 上传发票列表
+    /**
+     * <p>上传发票列表</p>
+     */
     @NameInMap("invoices")
     public java.util.List<UploadInvoiceRequestInvoices> invoices;
 
@@ -50,7 +52,9 @@ public class UploadInvoiceRequest extends TeaModel {
         @NameInMap("orderNo")
         public String orderNo;
 
-        // 订单号列表
+        /**
+         * <p>订单号列表</p>
+         */
         @NameInMap("orderNoList")
         public java.util.List<String> orderNoList;
 
@@ -97,59 +101,87 @@ public class UploadInvoiceRequest extends TeaModel {
     }
 
     public static class UploadInvoiceRequestInvoices extends TeaModel {
-        // 发票总金额
+        /**
+         * <p>发票总金额</p>
+         */
         @NameInMap("invoiceAmount")
         public String invoiceAmount;
 
-        // 发票代码
+        /**
+         * <p>发票代码</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        // 开票时间
+        /**
+         * <p>开票时间</p>
+         */
         @NameInMap("invoiceDate")
         public String invoiceDate;
 
-        // 发票号码
+        /**
+         * <p>发票号码</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
-        // 发票类型
+        /**
+         * <p>发票类型</p>
+         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
-        // 发票logo地址
+        /**
+         * <p>发票logo地址</p>
+         */
         @NameInMap("logoUrl")
         public String logoUrl;
 
-        // 收款方名称
+        /**
+         * <p>收款方名称</p>
+         */
         @NameInMap("payeeName")
         public String payeeName;
 
-        // 收款方税号
+        /**
+         * <p>收款方税号</p>
+         */
         @NameInMap("payeeTaxNo")
         public String payeeTaxNo;
 
-        // 付款方名称
+        /**
+         * <p>付款方名称</p>
+         */
         @NameInMap("payerName")
         public String payerName;
 
-        // 付款方税号
+        /**
+         * <p>付款方税号</p>
+         */
         @NameInMap("payerTaxNo")
         public String payerTaxNo;
 
-        // 发票pdf原件下载链接
+        /**
+         * <p>发票pdf原件下载链接</p>
+         */
         @NameInMap("pdfUrl")
         public String pdfUrl;
 
-        // 税金额
+        /**
+         * <p>税金额</p>
+         */
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        // 发票校验码
+        /**
+         * <p>发票校验码</p>
+         */
         @NameInMap("verifyCode")
         public String verifyCode;
 
-        // 不含税金额
+        /**
+         * <p>不含税金额</p>
+         */
         @NameInMap("withoutTaxAmount")
         public String withoutTaxAmount;
 

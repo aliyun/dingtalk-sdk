@@ -4,27 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFulfilRecordRequest extends TeaModel {
-    // 业务发生时间
+    /**
+     * <p>业务发生时间</p>
+     */
     @NameInMap("bizTime")
     public Long bizTime;
 
-    // 扩展信息，json格式
+    /**
+     * <p>扩展信息，json格式</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
-    // 人脸id
+    /**
+     * <p>人脸id</p>
+     */
     @NameInMap("faceId")
     public String faceId;
 
-    // 场景
+    /**
+     * <p>场景</p>
+     */
     @NameInMap("scene")
     public Long scene;
 
-    // 设备sn号
+    /**
+     * <p>设备sn号</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

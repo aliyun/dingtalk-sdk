@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListManagementGroupsRequest extends TeaModel {
-    // 本次读取的最大数据记录数量
+    /**
+     * <p>本次读取的最大数据记录数量</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 开始读取的位置
+    /**
+     * <p>开始读取的位置</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

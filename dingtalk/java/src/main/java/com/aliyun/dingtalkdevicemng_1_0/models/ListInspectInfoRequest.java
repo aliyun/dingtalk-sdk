@@ -7,15 +7,21 @@ public class ListInspectInfoRequest extends TeaModel {
     @NameInMap("deviceUuid")
     public java.util.List<String> deviceUuid;
 
-    // 页码
+    /**
+     * <p>页码</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 当页大小
+    /**
+     * <p>当页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 类型（inspect：巡检，protect：保养）
+    /**
+     * <p>类型（inspect：巡检，protect：保养）</p>
+     */
     @NameInMap("type")
     public String type;
 

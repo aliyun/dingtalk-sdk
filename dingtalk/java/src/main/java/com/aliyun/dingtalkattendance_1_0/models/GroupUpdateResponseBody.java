@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupUpdateResponseBody extends TeaModel {
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("result")
     public java.util.List<GroupUpdateResponseBodyResult> result;
 
@@ -22,11 +24,15 @@ public class GroupUpdateResponseBody extends TeaModel {
     }
 
     public static class GroupUpdateResponseBodyResult extends TeaModel {
-        // 考勤组id
+        /**
+         * <p>考勤组id</p>
+         */
         @NameInMap("groupId")
         public Long groupId;
 
-        // 考勤组名
+        /**
+         * <p>考勤组名</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 

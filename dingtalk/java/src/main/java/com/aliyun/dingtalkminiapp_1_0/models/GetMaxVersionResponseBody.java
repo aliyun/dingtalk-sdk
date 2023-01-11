@@ -4,7 +4,9 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMaxVersionResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("result")
     public String result;
 

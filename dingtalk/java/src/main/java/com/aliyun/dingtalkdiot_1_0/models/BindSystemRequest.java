@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BindSystemRequest extends TeaModel {
-    // 与三方平台绑定验证的临时授权码。
+    /**
+     * <p>与三方平台绑定验证的临时授权码。</p>
+     */
     @NameInMap("authCode")
     public String authCode;
 
-    // 三方平台的用户ID。
+    /**
+     * <p>三方平台的用户ID。</p>
+     */
     @NameInMap("clientId")
     public String clientId;
 
-    // 三方平台的用户名。
+    /**
+     * <p>三方平台的用户名。</p>
+     */
     @NameInMap("clientName")
     public String clientName;
 
-    // 三方平台的用户的钉钉物联组织ID。
+    /**
+     * <p>三方平台的用户的钉钉物联组织ID。</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 三方平台协定的其它参数。
+    /**
+     * <p>三方平台协定的其它参数。</p>
+     */
     @NameInMap("extraData")
     public java.util.Map<String, ?> extraData;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAccountTransferListResponseBody extends TeaModel {
-    // 迁移详情数据
+    /**
+     * <p>迁移详情数据</p>
+     */
     @NameInMap("itemList")
     public java.util.List<GetAccountTransferListResponseBodyItemList> itemList;
 
-    // 总数据量
+    /**
+     * <p>总数据量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -34,15 +38,21 @@ public class GetAccountTransferListResponseBody extends TeaModel {
     }
 
     public static class GetAccountTransferListResponseBodyItemList extends TeaModel {
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("deptName")
         public Long deptName;
 
-        // 员工名称
+        /**
+         * <p>员工名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 工号
+        /**
+         * <p>工号</p>
+         */
         @NameInMap("userId")
         public String userId;
 

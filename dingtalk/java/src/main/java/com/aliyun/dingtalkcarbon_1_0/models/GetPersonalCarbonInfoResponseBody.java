@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPersonalCarbonInfoResponseBody extends TeaModel {
-    // 文案
+    /**
+     * <p>文案</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 减碳数据
+    /**
+     * <p>减碳数据</p>
+     */
     @NameInMap("personalCarbonAmount")
     public Double personalCarbonAmount;
 

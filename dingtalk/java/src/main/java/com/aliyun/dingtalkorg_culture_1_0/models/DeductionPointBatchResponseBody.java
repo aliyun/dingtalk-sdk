@@ -7,7 +7,9 @@ public class DeductionPointBatchResponseBody extends TeaModel {
     @NameInMap("result")
     public DeductionPointBatchResponseBodyResult result;
 
-    // 调用是否成功
+    /**
+     * <p>调用是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -33,23 +35,33 @@ public class DeductionPointBatchResponseBody extends TeaModel {
     }
 
     public static class DeductionPointBatchResponseBodyResultOpenPointInvokeResultDTOS extends TeaModel {
-        // 错误码
+        /**
+         * <p>错误码</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 状态 success：成功。 Fail：失败 UNKNOWN:结果未知
+        /**
+         * <p>状态 success：成功。 Fail：失败 UNKNOWN:结果未知</p>
+         */
         @NameInMap("invokeStatus")
         public String invokeStatus;
 
-        // 错误信息
+        /**
+         * <p>错误信息</p>
+         */
         @NameInMap("msg")
         public String msg;
 
-        // 积分交易单号
+        /**
+         * <p>积分交易单号</p>
+         */
         @NameInMap("outId")
         public String outId;
 
-        // 扣减用户userId
+        /**
+         * <p>扣减用户userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -101,7 +113,9 @@ public class DeductionPointBatchResponseBody extends TeaModel {
     }
 
     public static class DeductionPointBatchResponseBodyResult extends TeaModel {
-        // 每个人发放的结果
+        /**
+         * <p>每个人发放的结果</p>
+         */
         @NameInMap("openPointInvokeResultDTOS")
         public java.util.List<DeductionPointBatchResponseBodyResultOpenPointInvokeResultDTOS> openPointInvokeResultDTOS;
 

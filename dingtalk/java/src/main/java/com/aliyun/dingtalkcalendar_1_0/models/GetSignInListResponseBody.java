@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSignInListResponseBody extends TeaModel {
-    // 翻页token
+    /**
+     * <p>翻页token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 签到信息
+    /**
+     * <p>签到信息</p>
+     */
     @NameInMap("users")
     public java.util.List<GetSignInListResponseBodyUsers> users;
 
@@ -34,11 +38,15 @@ public class GetSignInListResponseBody extends TeaModel {
     }
 
     public static class GetSignInListResponseBodyUsers extends TeaModel {
-        // 签到时间
+        /**
+         * <p>签到时间</p>
+         */
         @NameInMap("checkInTime")
         public Long checkInTime;
 
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 

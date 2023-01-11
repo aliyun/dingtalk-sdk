@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMessageResponseBody extends TeaModel {
-    // 成功信息
+    /**
+     * <p>成功信息</p>
+     */
     @NameInMap("successInfo")
     public String successInfo;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartCloudRecordResponseBody extends TeaModel {
-    // 返回码
+    /**
+     * <p>返回码</p>
+     */
     @NameInMap("code")
     public String code;
 

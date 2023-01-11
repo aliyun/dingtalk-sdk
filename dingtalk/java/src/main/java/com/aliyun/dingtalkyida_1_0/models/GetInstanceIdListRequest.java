@@ -4,59 +4,87 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstanceIdListRequest extends TeaModel {
-    // 应用ID
+    /**
+     * <p>应用ID</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 流程审批结果
+    /**
+     * <p>流程审批结果</p>
+     */
     @NameInMap("approvedResult")
     public String approvedResult;
 
-    // createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表
+    /**
+     * <p>createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表</p>
+     */
     @NameInMap("createFromTimeGMT")
     public String createFromTimeGMT;
 
-    // createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。
+    /**
+     * <p>createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。</p>
+     */
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
-    // 表单ID
+    /**
+     * <p>表单ID</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 实例状态
+    /**
+     * <p>实例状态</p>
+     */
     @NameInMap("instanceStatus")
     public String instanceStatus;
 
-    // 语言
+    /**
+     * <p>语言</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表
+    /**
+     * <p>modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表</p>
+     */
     @NameInMap("modifiedFromTimeGMT")
     public String modifiedFromTimeGMT;
 
-    // modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。
+    /**
+     * <p>modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。</p>
+     */
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
-    // 根据流程发起人工号查询
+    /**
+     * <p>根据流程发起人工号查询</p>
+     */
     @NameInMap("originatorId")
     public String originatorId;
 
-    // 根据表单内组件值查询
+    /**
+     * <p>根据表单内组件值查询</p>
+     */
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
-    // 应用秘钥
+    /**
+     * <p>应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 任务ID
+    /**
+     * <p>任务ID</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 
-    // 钉钉的userId
+    /**
+     * <p>钉钉的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

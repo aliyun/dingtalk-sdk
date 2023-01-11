@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class DissolveGroupRequest extends TeaModel {
-    // 场景群唯一标识，调用创建场景群接口时，会返回该标识。
+    /**
+     * <p>场景群唯一标识，调用创建场景群接口时，会返回该标识。</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

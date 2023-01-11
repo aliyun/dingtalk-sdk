@@ -4,14 +4,18 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecycleItemsResponseBody extends TeaModel {
-    // 分页游标
-    // 不为空表示有更多数据
+    /**
+     * <p>分页游标</p>
+     * <p>不为空表示有更多数据</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 回收项列表
-    // 最大size:
-    // 	50
+    /**
+     * <p>回收项列表</p>
+     * <p>最大size:</p>
+     * <p>	50</p>
+     */
     @NameInMap("recycleItems")
     public java.util.List<ListRecycleItemsResponseBodyRecycleItems> recycleItems;
 
@@ -37,42 +41,60 @@ public class ListRecycleItemsResponseBody extends TeaModel {
     }
 
     public static class ListRecycleItemsResponseBodyRecycleItems extends TeaModel {
-        // 原文件(夹)id
+        /**
+         * <p>原文件(夹)id</p>
+         */
         @NameInMap("dentryId")
         public String dentryId;
 
-        // 回收项id
+        /**
+         * <p>回收项id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 操作人id
+        /**
+         * <p>操作人id</p>
+         */
         @NameInMap("operatorId")
         public String operatorId;
 
-        // 删除时间
+        /**
+         * <p>删除时间</p>
+         */
         @NameInMap("operatorTime")
         public String operatorTime;
 
-        // 原文件(夹)名称
+        /**
+         * <p>原文件(夹)名称</p>
+         */
         @NameInMap("originalName")
         public String originalName;
 
-        // 原文件(夹)路径
+        /**
+         * <p>原文件(夹)路径</p>
+         */
         @NameInMap("originalPath")
         public String originalPath;
 
-        // 原文件(夹)大小
+        /**
+         * <p>原文件(夹)大小</p>
+         */
         @NameInMap("size")
         public Long size;
 
-        // 原文件(夹)所在空间id
+        /**
+         * <p>原文件(夹)所在空间id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 类型，目录或文件
-        // 枚举值:
-        // 	FILE: 文件
-        // 	FOLDER: 文件夹
+        /**
+         * <p>类型，目录或文件</p>
+         * <p>枚举值:</p>
+         * <p>	FILE: 文件</p>
+         * <p>	FOLDER: 文件夹</p>
+         */
         @NameInMap("type")
         public String type;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTaskObjectLinkResponseBody extends TeaModel {
-    // 返回结果对象
+    /**
+     * <p>返回结果对象</p>
+     */
     @NameInMap("result")
     public CreateTaskObjectLinkResponseBodyResult result;
 
@@ -22,11 +24,15 @@ public class CreateTaskObjectLinkResponseBody extends TeaModel {
     }
 
     public static class CreateTaskObjectLinkResponseBodyResult extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("created")
         public String created;
 
-        // 关联对象id
+        /**
+         * <p>关联对象id</p>
+         */
         @NameInMap("objectLinkId")
         public String objectLinkId;
 

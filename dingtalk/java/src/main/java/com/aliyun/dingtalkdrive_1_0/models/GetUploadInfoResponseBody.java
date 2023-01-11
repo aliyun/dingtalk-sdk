@@ -7,7 +7,9 @@ public class GetUploadInfoResponseBody extends TeaModel {
     @NameInMap("headerSignatureUploadInfo")
     public GetUploadInfoResponseBodyHeaderSignatureUploadInfo headerSignatureUploadInfo;
 
-    // 文件所存储的区域
+    /**
+     * <p>文件所存储的区域</p>
+     */
     @NameInMap("region")
     public String region;
 
@@ -44,23 +46,33 @@ public class GetUploadInfoResponseBody extends TeaModel {
     }
 
     public static class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends TeaModel {
-        // 过期秒数
+        /**
+         * <p>过期秒数</p>
+         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
-        // header加签信息
+        /**
+         * <p>header加签信息</p>
+         */
         @NameInMap("headers")
         public java.util.Map<String, ?> headers;
 
-        // 内网上传地址
+        /**
+         * <p>内网上传地址</p>
+         */
         @NameInMap("internalResourceUrl")
         public String internalResourceUrl;
 
-        // mediaId
+        /**
+         * <p>mediaId</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
-        // 上传地址
+        /**
+         * <p>上传地址</p>
+         */
         @NameInMap("resourceUrl")
         public String resourceUrl;
 
@@ -112,35 +124,51 @@ public class GetUploadInfoResponseBody extends TeaModel {
     }
 
     public static class GetUploadInfoResponseBodyStsUploadInfo extends TeaModel {
-        // accessKeyId
+        /**
+         * <p>accessKeyId</p>
+         */
         @NameInMap("accessKeyId")
         public String accessKeyId;
 
-        // accessKeySecret
+        /**
+         * <p>accessKeySecret</p>
+         */
         @NameInMap("accessKeySecret")
         public String accessKeySecret;
 
-        // accessToken
+        /**
+         * <p>accessToken</p>
+         */
         @NameInMap("accessToken")
         public String accessToken;
 
-        // accessTokenExpiration
+        /**
+         * <p>accessTokenExpiration</p>
+         */
         @NameInMap("accessTokenExpirationMillis")
         public Long accessTokenExpirationMillis;
 
-        // bucket
+        /**
+         * <p>bucket</p>
+         */
         @NameInMap("bucket")
         public String bucket;
 
-        // endPoint
+        /**
+         * <p>endPoint</p>
+         */
         @NameInMap("endPoint")
         public String endPoint;
 
-        // 内网endPoint
+        /**
+         * <p>内网endPoint</p>
+         */
         @NameInMap("internalEndPoint")
         public String internalEndPoint;
 
-        // mediaId
+        /**
+         * <p>mediaId</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 

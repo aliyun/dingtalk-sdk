@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecognizeRecordsResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public java.util.List<GetRecognizeRecordsResponseBodyData> data;
 
-    // 下一次拉取启始值
+    /**
+     * <p>下一次拉取启始值</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 总数据数
+    /**
+     * <p>总数据数</p>
+     */
     @NameInMap("total")
     public Integer total;
 
@@ -46,23 +52,33 @@ public class GetRecognizeRecordsResponseBody extends TeaModel {
     }
 
     public static class GetRecognizeRecordsResponseBodyData extends TeaModel {
-        // agentId
+        /**
+         * <p>agentId</p>
+         */
         @NameInMap("agentId")
         public Long agentId;
 
-        // 人脸对比结果 1-成功 2-失败
+        /**
+         * <p>人脸对比结果 1-成功 2-失败</p>
+         */
         @NameInMap("faceCompareResult")
         public Integer faceCompareResult;
 
-        // 接口调用时间(毫秒时间戳)
+        /**
+         * <p>接口调用时间(毫秒时间戳)</p>
+         */
         @NameInMap("invokeTime")
         public Long invokeTime;
 
-        // 平台 0-Android 或 1-iOS
+        /**
+         * <p>平台 0-Android 或 1-iOS</p>
+         */
         @NameInMap("platform")
         public Integer platform;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -4,31 +4,45 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCityCarApplyRequest extends TeaModel {
-    // 第三方企业ID
+    /**
+     * <p>第三方企业ID</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 审批单创建时间小于值
+    /**
+     * <p>审批单创建时间小于值</p>
+     */
     @NameInMap("createdEndAt")
     public String createdEndAt;
 
-    // 审批单创建时间大于等于值
+    /**
+     * <p>审批单创建时间大于等于值</p>
+     */
     @NameInMap("createdStartAt")
     public String createdStartAt;
 
-    // 页码，要求大于等于1，默认1
+    /**
+     * <p>页码，要求大于等于1，默认1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 每页数据量，要求大于等于1，默认20
+    /**
+     * <p>每页数据量，要求大于等于1，默认20</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 三方审批单ID
+    /**
+     * <p>三方审批单ID</p>
+     */
     @NameInMap("thirdPartApplyId")
     public String thirdPartApplyId;
 
-    // 第三方员工ID
+    /**
+     * <p>第三方员工ID</p>
+     */
     @NameInMap("userId")
     public String userId;
 

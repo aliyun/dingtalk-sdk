@@ -4,19 +4,27 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceResponseBody extends TeaModel {
-    // 结果数据
+    /**
+     * <p>结果数据</p>
+     */
     @NameInMap("data")
     public java.util.List<QueryDeviceResponseBodyData> data;
 
-    // 当前页码
+    /**
+     * <p>当前页码</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 页面大小
+    /**
+     * <p>页面大小</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 总数
+    /**
+     * <p>总数</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -58,15 +66,21 @@ public class QueryDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceResponseBodyDataLiveUrls extends TeaModel {
-        // flv格式直播地址
+        /**
+         * <p>flv格式直播地址</p>
+         */
         @NameInMap("flv")
         public String flv;
 
-        // hls格式直播地址
+        /**
+         * <p>hls格式直播地址</p>
+         */
         @NameInMap("hls")
         public String hls;
 
-        // rtmp格式直播地址
+        /**
+         * <p>rtmp格式直播地址</p>
+         */
         @NameInMap("rtmp")
         public String rtmp;
 
@@ -102,39 +116,57 @@ public class QueryDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceResponseBodyData extends TeaModel {
-        // 设备id
+        /**
+         * <p>设备id</p>
+         */
         @NameInMap("deviceId")
         public String deviceId;
 
-        // 设备昵称
+        /**
+         * <p>设备昵称</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        // 设备状态 0:在线 1:离线
+        /**
+         * <p>设备状态 0:在线 1:离线</p>
+         */
         @NameInMap("deviceStatus")
         public Long deviceStatus;
 
-        // 设备类型
+        /**
+         * <p>设备类型</p>
+         */
         @NameInMap("deviceType")
         public String deviceType;
 
-        // 设备类型名称
+        /**
+         * <p>设备类型名称</p>
+         */
         @NameInMap("deviceTypeName")
         public String deviceTypeName;
 
-        // 直播地址
+        /**
+         * <p>直播地址</p>
+         */
         @NameInMap("liveUrls")
         public QueryDeviceResponseBodyDataLiveUrls liveUrls;
 
-        // 设备地址
+        /**
+         * <p>设备地址</p>
+         */
         @NameInMap("location")
         public String location;
 
-        // 设备父节点id
+        /**
+         * <p>设备父节点id</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
-        // 产品类型 摄像头:CAMERA 其它:OTHERS
+        /**
+         * <p>产品类型 摄像头:CAMERA 其它:OTHERS</p>
+         */
         @NameInMap("productType")
         public String productType;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartCloudFeedRequest extends TeaModel {
-    // 操作者的组织内id（staffId）
+    /**
+     * <p>操作者的组织内id（staffId）</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class CreateDentryRequest extends TeaModel {
-    // 节点类型，file-文档，folder-文件夹。
+    /**
+     * <p>节点类型，file-文档，folder-文件夹。</p>
+     */
     @NameInMap("dentryType")
     public String dentryType;
 
-    // 节点类型为文档才有，0-文字，1-表格，2-PPT，3-白板，6-脑图，7-多维表。
+    /**
+     * <p>节点类型为文档才有，0-文字，1-表格，2-PPT，3-白板，6-脑图，7-多维表。</p>
+     */
     @NameInMap("documentType")
     public Long documentType;
 
-    // 节点名称。
+    /**
+     * <p>节点名称。</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 操作人unionId。
+    /**
+     * <p>操作人unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 父节点id，可为空。
+    /**
+     * <p>父节点id，可为空。</p>
+     */
     @NameInMap("parentDentryId")
     public String parentDentryId;
 

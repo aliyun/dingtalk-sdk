@@ -4,39 +4,57 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplicationAuthorizationServicePlatformResourceResponseBody extends TeaModel {
-    // accountTotalAmount
+    /**
+     * <p>accountTotalAmount</p>
+     */
     @NameInMap("accountTotalAmount")
     public Integer accountTotalAmount;
 
-    // accountUsageAmount
+    /**
+     * <p>accountUsageAmount</p>
+     */
     @NameInMap("accountUsageAmount")
     public Integer accountUsageAmount;
 
-    // appTotalAmount
+    /**
+     * <p>appTotalAmount</p>
+     */
     @NameInMap("appTotalAmount")
     public Integer appTotalAmount;
 
-    // attachmentTotalAmount
+    /**
+     * <p>attachmentTotalAmount</p>
+     */
     @NameInMap("attachmentTotalAmount")
     public Long attachmentTotalAmount;
 
-    // attachmentUsageAmount
+    /**
+     * <p>attachmentUsageAmount</p>
+     */
     @NameInMap("attachmentUsageAmount")
     public Long attachmentUsageAmount;
 
-    // instanceId
+    /**
+     * <p>instanceId</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
-    // instanceTotalAmount
+    /**
+     * <p>instanceTotalAmount</p>
+     */
     @NameInMap("instanceTotalAmount")
     public Long instanceTotalAmount;
 
-    // instanceUsageAmount
+    /**
+     * <p>instanceUsageAmount</p>
+     */
     @NameInMap("instanceUsageAmount")
     public Long instanceUsageAmount;
 
-    // pluginUsageAmount
+    /**
+     * <p>pluginUsageAmount</p>
+     */
     @NameInMap("pluginUsageAmount")
     public Long pluginUsageAmount;
 

@@ -10,7 +10,9 @@ public class ListDeptUsersResponseBody extends TeaModel {
     @NameInMap("nextCursor")
     public Long nextCursor;
 
-    // 用户列表
+    /**
+     * <p>用户列表</p>
+     */
     @NameInMap("userList")
     public java.util.List<ListDeptUsersResponseBodyUserList> userList;
 
@@ -47,7 +49,9 @@ public class ListDeptUsersResponseBody extends TeaModel {
         @NameInMap("active")
         public Boolean active;
 
-        // 部门ID列表
+        /**
+         * <p>部门ID列表</p>
+         */
         @NameInMap("departmentList")
         public java.util.List<Long> departmentList;
 
@@ -57,11 +61,15 @@ public class ListDeptUsersResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        // unionId
+        /**
+         * <p>unionId</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 用户ID
+        /**
+         * <p>用户ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 

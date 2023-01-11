@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ManagementBuyQuotaRequest extends TeaModel {
-    // 订单
+    /**
+     * <p>订单</p>
+     */
     @NameInMap("order")
     public ManagementBuyQuotaRequestOrder order;
 
-    // token
+    /**
+     * <p>token</p>
+     */
     @NameInMap("token")
     public String token;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -46,27 +52,39 @@ public class ManagementBuyQuotaRequest extends TeaModel {
     }
 
     public static class ManagementBuyQuotaRequestOrder extends TeaModel {
-        // 业务类型
+        /**
+         * <p>业务类型</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
-        // 待扩容的容量
+        /**
+         * <p>待扩容的容量</p>
+         */
         @NameInMap("capacity")
         public Long capacity;
 
-        // 容量类型
+        /**
+         * <p>容量类型</p>
+         */
         @NameInMap("capacityType")
         public String capacityType;
 
-        // 时长
+        /**
+         * <p>时长</p>
+         */
         @NameInMap("day")
         public Integer day;
 
-        // 金额
+        /**
+         * <p>金额</p>
+         */
         @NameInMap("money")
         public Long money;
 
-        // 订单id
+        /**
+         * <p>订单id</p>
+         */
         @NameInMap("orderId")
         public Long orderId;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class WriteIsvStateRequest extends TeaModel {
-    // ISV名称
+    /**
+     * <p>ISV名称</p>
+     */
     @NameInMap("isvName")
     public String isvName;
 
-    // 数据完成日期
+    /**
+     * <p>数据完成日期</p>
+     */
     @NameInMap("statDate")
     public String statDate;
 

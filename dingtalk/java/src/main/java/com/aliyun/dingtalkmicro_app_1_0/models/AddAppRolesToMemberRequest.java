@@ -4,19 +4,27 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddAppRolesToMemberRequest extends TeaModel {
-    // 人员id
+    /**
+     * <p>人员id</p>
+     */
     @NameInMap("memberId")
     public String memberId;
 
-    // 人员类型，“DEPT”表示部门，“USER”表示员工
+    /**
+     * <p>人员类型，“DEPT”表示部门，“USER”表示员工</p>
+     */
     @NameInMap("memberType")
     public String memberType;
 
-    // 执行用户userId
+    /**
+     * <p>执行用户userId</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 角色Id列表
+    /**
+     * <p>角色Id列表</p>
+     */
     @NameInMap("roleList")
     public java.util.List<AddAppRolesToMemberRequestRoleList> roleList;
 
@@ -58,11 +66,15 @@ public class AddAppRolesToMemberRequest extends TeaModel {
     }
 
     public static class AddAppRolesToMemberRequestRoleList extends TeaModel {
-        // 角色ID
+        /**
+         * <p>角色ID</p>
+         */
         @NameInMap("roleId")
         public Long roleId;
 
-        // 角色范围版本号
+        /**
+         * <p>角色范围版本号</p>
+         */
         @NameInMap("scopeVersion")
         public Long scopeVersion;
 

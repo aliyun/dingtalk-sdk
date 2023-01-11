@@ -4,39 +4,57 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadInfoRequest extends TeaModel {
-    // 文件名称冲突策略
+    /**
+     * <p>文件名称冲突策略</p>
+     */
     @NameInMap("addConflictPolicy")
     public String addConflictPolicy;
 
-    // 调用方所处区域
+    /**
+     * <p>调用方所处区域</p>
+     */
     @NameInMap("callerRegion")
     public String callerRegion;
 
-    // 文件名
+    /**
+     * <p>文件名</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
-    // 文件大小
+    /**
+     * <p>文件大小</p>
+     */
     @NameInMap("fileSize")
     public Long fileSize;
 
-    // 文件md5
+    /**
+     * <p>文件md5</p>
+     */
     @NameInMap("md5")
     public String md5;
 
-    // mediaId
+    /**
+     * <p>mediaId</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // 是否返回OSS内网访问域名
+    /**
+     * <p>是否返回OSS内网访问域名</p>
+     */
     @NameInMap("withInternalEndPoint")
     public Boolean withInternalEndPoint;
 
-    // 是否返回区域
+    /**
+     * <p>是否返回区域</p>
+     */
     @NameInMap("withRegion")
     public Boolean withRegion;
 

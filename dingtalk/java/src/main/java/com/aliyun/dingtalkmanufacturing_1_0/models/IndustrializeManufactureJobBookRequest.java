@@ -4,83 +4,123 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureJobBookRequest extends TeaModel {
-    // 钉钉组织id
+    /**
+     * <p>钉钉组织id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 扩展字段，用于增加自定义字段
+    /**
+     * <p>扩展字段，用于增加自定义字段</p>
+     */
     @NameInMap("extend")
     public String extend;
 
-    // 工单编号
+    /**
+     * <p>工单编号</p>
+     */
     @NameInMap("instNo")
     public String instNo;
 
-    // 是否是批量报工(取值[n,y])
+    /**
+     * <p>是否是批量报工(取值[n,y])</p>
+     */
     @NameInMap("isBatchJob")
     public String isBatchJob;
 
-    // 生产日期时间(到时分秒)
+    /**
+     * <p>生产日期时间(到时分秒)</p>
+     */
     @NameInMap("manufactureDate")
     public String manufactureDate;
 
-    // mes 系统唯一标识
+    /**
+     * <p>mes 系统唯一标识</p>
+     */
     @NameInMap("mesAppKey")
     public String mesAppKey;
 
-    // 制程英文名称
+    /**
+     * <p>制程英文名称</p>
+     */
     @NameInMap("processEnName")
     public String processEnName;
 
-    // 制程名称
+    /**
+     * <p>制程名称</p>
+     */
     @NameInMap("processName")
     public String processName;
 
-    // 产品唯一标识
+    /**
+     * <p>产品唯一标识</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 
-    // 产品英文名称
+    /**
+     * <p>产品英文名称</p>
+     */
     @NameInMap("productEnName")
     public String productEnName;
 
-    // 产品名称，例如"双头螺柱001"
+    /**
+     * <p>产品名称，例如"双头螺柱001"</p>
+     */
     @NameInMap("productName")
     public String productName;
 
-    // 产品规格
+    /**
+     * <p>产品规格</p>
+     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
-    // 合格数量
+    /**
+     * <p>合格数量</p>
+     */
     @NameInMap("qualifiedQuantity")
     public String qualifiedQuantity;
 
-    // 可重工数量
+    /**
+     * <p>可重工数量</p>
+     */
     @NameInMap("reworkableQuantity")
     public String reworkableQuantity;
 
-    // 报废数量
+    /**
+     * <p>报废数量</p>
+     */
     @NameInMap("scrappedQuantity")
     public String scrappedQuantity;
 
-    // 计件单价，单位：分
+    /**
+     * <p>计件单价，单位：分</p>
+     */
     @NameInMap("unitPrice")
     public String unitPrice;
 
-    // 批量报工时多个工人userId以英文逗号分隔
+    /**
+     * <p>批量报工时多个工人userId以英文逗号分隔</p>
+     */
     @NameInMap("userIdList")
     public String userIdList;
 
-    // 员工姓名
+    /**
+     * <p>员工姓名</p>
+     */
     @NameInMap("userName")
     public String userName;
 
-    // 批量报工时多个人名以英文逗号分隔
+    /**
+     * <p>批量报工时多个人名以英文逗号分隔</p>
+     */
     @NameInMap("userNameList")
     public String userNameList;
 
-    // 随机串，唯一标识(用于幂等及更新)
+    /**
+     * <p>随机串，唯一标识(用于幂等及更新)</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

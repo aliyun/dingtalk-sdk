@@ -4,9 +4,11 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class MoveDentriesResponseBody extends TeaModel {
-    // 批量移动文件(夹)结果列表
-    // 最大size:
-    // 	30
+    /**
+     * <p>批量移动文件(夹)结果列表</p>
+     * <p>最大size:</p>
+     * <p>	30</p>
+     */
     @NameInMap("resultItems")
     public java.util.List<MoveDentriesResponseBodyResultItems> resultItems;
 
@@ -24,38 +26,54 @@ public class MoveDentriesResponseBody extends TeaModel {
     }
 
     public static class MoveDentriesResponseBodyResultItems extends TeaModel {
-        // 是否是异步任务
-        // 如果操作对象有子节点，则会异步处理
+        /**
+         * <p>是否是异步任务</p>
+         * <p>如果操作对象有子节点，则会异步处理</p>
+         */
         @NameInMap("async")
         public Boolean async;
 
-        // 源文件(夹)id
+        /**
+         * <p>源文件(夹)id</p>
+         */
         @NameInMap("dentryId")
         public String dentryId;
 
-        // 错误原因, 异步任务该字段不返回
+        /**
+         * <p>错误原因, 异步任务该字段不返回</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        // 源文件(夹)空间id
+        /**
+         * <p>源文件(夹)空间id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 是否成功, 异步任务该字段不返回
+        /**
+         * <p>是否成功, 异步任务该字段不返回</p>
+         */
         @NameInMap("success")
         public Boolean success;
 
-        // 操作对应根节点移动之后的文件id
-        // 非失败的情况下同步或者异步都会返回
+        /**
+         * <p>操作对应根节点移动之后的文件id</p>
+         * <p>非失败的情况下同步或者异步都会返回</p>
+         */
         @NameInMap("targetDentryId")
         public String targetDentryId;
 
-        // 操作对应根节点移动之后的空间id
-        // 非失败的情况下同步或者异步都会返回
+        /**
+         * <p>操作对应根节点移动之后的空间id</p>
+         * <p>非失败的情况下同步或者异步都会返回</p>
+         */
         @NameInMap("targetSpaceId")
         public String targetSpaceId;
 
-        // 异步任务id，用于查询任务执行状态
+        /**
+         * <p>异步任务id，用于查询任务执行状态</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 

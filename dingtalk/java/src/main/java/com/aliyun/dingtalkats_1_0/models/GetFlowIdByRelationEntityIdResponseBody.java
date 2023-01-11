@@ -4,7 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFlowIdByRelationEntityIdResponseBody extends TeaModel {
-    // 招聘流程标识
+    /**
+     * <p>招聘流程标识</p>
+     */
     @NameInMap("flowId")
     public String flowId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryProcessesWorkItemsResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public java.util.List<QueryProcessesWorkItemsResponseBodyData> data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,19 +52,27 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesWorkItemsResponseBodyDataFinisher extends TeaModel {
-        // 用户直属的部门id
+        /**
+         * <p>用户直属的部门id</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        // 用户直属的部门名称
+        /**
+         * <p>用户直属的部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -102,19 +116,27 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesWorkItemsResponseBodyDataParticipant extends TeaModel {
-        // 用户直属的部门id
+        /**
+         * <p>用户直属的部门id</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        // 用户直属的部门名称
+        /**
+         * <p>用户直属的部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -158,19 +180,27 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesWorkItemsResponseBodyDataReceiptor extends TeaModel {
-        // 用户直属的部门id
+        /**
+         * <p>用户直属的部门id</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        // 用户直属的部门名称
+        /**
+         * <p>用户直属的部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -214,83 +244,123 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesWorkItemsResponseBodyData extends TeaModel {
-        // 活动编码
+        /**
+         * <p>活动编码</p>
+         */
         @NameInMap("activityCode")
         public String activityCode;
 
-        // 当前活动名称
+        /**
+         * <p>当前活动名称</p>
+         */
         @NameInMap("activityName")
         public String activityName;
 
-        // 应用编码
+        /**
+         * <p>应用编码</p>
+         */
         @NameInMap("appCode")
         public String appCode;
 
-        // 工作项所关联的业务对象id
+        /**
+         * <p>工作项所关联的业务对象id</p>
+         */
         @NameInMap("bizObjectId")
         public String bizObjectId;
 
-        // 对该工作项的意见
+        /**
+         * <p>对该工作项的意见</p>
+         */
         @NameInMap("comment")
         public String comment;
 
-        // 显示名称
+        /**
+         * <p>显示名称</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // 完成时间
+        /**
+         * <p>完成时间</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        // 完成者
+        /**
+         * <p>完成者</p>
+         */
         @NameInMap("finisher")
         public QueryProcessesWorkItemsResponseBodyDataFinisher finisher;
 
-        // 对该工作项是否同意
+        /**
+         * <p>对该工作项是否同意</p>
+         */
         @NameInMap("isApproval")
         public Boolean isApproval;
 
-        // 是否已完成
+        /**
+         * <p>是否已完成</p>
+         */
         @NameInMap("isFinish")
         public Boolean isFinish;
 
-        // 参与者
+        /**
+         * <p>参与者</p>
+         */
         @NameInMap("participant")
         public QueryProcessesWorkItemsResponseBodyDataParticipant participant;
 
-        // 流程实例ID
+        /**
+         * <p>流程实例ID</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // 工作流版本
+        /**
+         * <p>工作流版本</p>
+         */
         @NameInMap("processVersion")
         public String processVersion;
 
-        // 转交工作的接收人。如无转接人，则为空
+        /**
+         * <p>转交工作的接收人。如无转接人，则为空</p>
+         */
         @NameInMap("receiptor")
         public QueryProcessesWorkItemsResponseBodyDataReceiptor receiptor;
 
-        // 接收时间
+        /**
+         * <p>接收时间</p>
+         */
         @NameInMap("receiveTimeGMT")
         public String receiveTimeGMT;
 
-        // 表单编码
+        /**
+         * <p>表单编码</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 
-        // 开始这个任务的时间
+        /**
+         * <p>开始这个任务的时间</p>
+         */
         @NameInMap("startTimeGMT")
         public String startTimeGMT;
 
-        // 状态。Waiting=等待的状态，Working=正在工作中的状态，Finished=处于完成状态，Canceled=已经被取消，Forwarded=已转交状态，Revoked=撤回
+        /**
+         * <p>状态。Waiting=等待的状态，Working=正在工作中的状态，Finished=处于完成状态，Canceled=已经被取消，Forwarded=已转交状态，Revoked=撤回</p>
+         */
         @NameInMap("state")
         public String state;
 
-        // 工作任务Id
+        /**
+         * <p>工作任务Id</p>
+         */
         @NameInMap("workItemId")
         public String workItemId;
 
-        // 工作项类型。Fill=普通工作项，Approve=审批类型工作项，Circulate=传阅
+        /**
+         * <p>工作项类型。Fill=普通工作项，Approve=审批类型工作项，Circulate=传阅</p>
+         */
         @NameInMap("workItemType")
         public String workItemType;
 

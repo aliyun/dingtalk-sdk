@@ -4,22 +4,30 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class FinishTicketRequest extends TeaModel {
-    // 工单通知
+    /**
+     * <p>工单通知</p>
+     */
     @NameInMap("notify")
     public FinishTicketRequestNotify notify;
 
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 工单开放id
+    /**
+     * <p>工单开放id</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    // 当前工单处理人
+    /**
+     * <p>当前工单处理人</p>
+     */
     @NameInMap("processorUnionId")
     public String processorUnionId;
 
-    // 备注
+    /**
+     * <p>备注</p>
+     */
     @NameInMap("ticketMemo")
     public FinishTicketRequestTicketMemo ticketMemo;
 
@@ -69,15 +77,21 @@ public class FinishTicketRequest extends TeaModel {
     }
 
     public static class FinishTicketRequestNotify extends TeaModel {
-        // 群中通知接收人（钉钉UnionId）
+        /**
+         * <p>群中通知接收人（钉钉UnionId）</p>
+         */
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
-        // 是否向群内推送一个全员可见工单通知卡片
+        /**
+         * <p>是否向群内推送一个全员可见工单通知卡片</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
-        // 企业工作通知接收人（钉钉UnionId）
+        /**
+         * <p>企业工作通知接收人（钉钉UnionId）</p>
+         */
         @NameInMap("workNoticeReceiverUnionIds")
         public java.util.List<String> workNoticeReceiverUnionIds;
 
@@ -113,11 +127,15 @@ public class FinishTicketRequest extends TeaModel {
     }
 
     public static class FinishTicketRequestTicketMemoAttachments extends TeaModel {
-        // 文件名
+        /**
+         * <p>文件名</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 文件key
+        /**
+         * <p>文件key</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -145,11 +163,15 @@ public class FinishTicketRequest extends TeaModel {
     }
 
     public static class FinishTicketRequestTicketMemo extends TeaModel {
-        // 备注相关的附件
+        /**
+         * <p>备注相关的附件</p>
+         */
         @NameInMap("attachments")
         public java.util.List<FinishTicketRequestTicketMemoAttachments> attachments;
 
-        // 备注文字
+        /**
+         * <p>备注文字</p>
+         */
         @NameInMap("memo")
         public String memo;
 

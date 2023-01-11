@@ -21,15 +21,21 @@ public class ListRoleInfoByUserResponseBody extends TeaModel {
     }
 
     public static class ListRoleInfoByUserResponseBodyResult extends TeaModel {
-        // 是否拥有角色管理权限，默认false
+        /**
+         * <p>是否拥有角色管理权限，默认false</p>
+         */
         @NameInMap("canManageRole")
         public Boolean canManageRole;
 
-        // 角色id
+        /**
+         * <p>角色id</p>
+         */
         @NameInMap("roleId")
         public Long roleId;
 
-        // 角色名称
+        /**
+         * <p>角色名称</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 

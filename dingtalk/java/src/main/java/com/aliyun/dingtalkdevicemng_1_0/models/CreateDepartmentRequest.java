@@ -4,35 +4,51 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateDepartmentRequest extends TeaModel {
-    // 认证信息
+    /**
+     * <p>认证信息</p>
+     */
     @NameInMap("authInfo")
     public String authInfo;
 
-    // 认证方式
+    /**
+     * <p>认证方式</p>
+     */
     @NameInMap("authType")
     public String authType;
 
-    // 业务扩展
+    /**
+     * <p>业务扩展</p>
+     */
     @NameInMap("bizExt")
     public String bizExt;
 
-    // 部门名称
+    /**
+     * <p>部门名称</p>
+     */
     @NameInMap("departmentName")
     public String departmentName;
 
-    // 部门类型
+    /**
+     * <p>部门类型</p>
+     */
     @NameInMap("departmentType")
     public String departmentType;
 
-    // 部门描述
+    /**
+     * <p>部门描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 业务系统地址
+    /**
+     * <p>业务系统地址</p>
+     */
     @NameInMap("systemUrl")
     public String systemUrl;
 
-    // 创建人工号
+    /**
+     * <p>创建人工号</p>
+     */
     @NameInMap("userId")
     public String userId;
 

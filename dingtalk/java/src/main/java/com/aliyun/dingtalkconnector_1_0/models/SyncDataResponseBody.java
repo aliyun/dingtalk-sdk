@@ -4,7 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncDataResponseBody extends TeaModel {
-    // resultList
+    /**
+     * <p>resultList</p>
+     */
     @NameInMap("list")
     public java.util.List<SyncDataResponseBodyList> list;
 

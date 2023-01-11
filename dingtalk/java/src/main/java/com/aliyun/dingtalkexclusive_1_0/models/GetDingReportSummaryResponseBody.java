@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDingReportSummaryResponseBody extends TeaModel {
-    // 最近1天日志评论用户数
+    /**
+     * <p>最近1天日志评论用户数</p>
+     */
     @NameInMap("reportCommentUserCnt1d")
     public String reportCommentUserCnt1d;
 

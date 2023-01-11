@@ -4,7 +4,9 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceResponseBody extends TeaModel {
-    // 空间详情
+    /**
+     * <p>空间详情</p>
+     */
     @NameInMap("space")
     public GetSpaceResponseBodySpace space;
 
@@ -22,21 +24,27 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpaceCapabilities extends TeaModel {
-        // 是否进最近使用, 默认不支持
-        // 默认值:
-        // 	false
+        /**
+         * <p>是否进最近使用, 默认不支持</p>
+         * <p>默认值:</p>
+         * <p>	false</p>
+         */
         @NameInMap("canRecordRecentFile")
         public Boolean canRecordRecentFile;
 
-        // 是否支持重命名空间名称, 默认不支持
-        // 默认值:
-        // 	false
+        /**
+         * <p>是否支持重命名空间名称, 默认不支持</p>
+         * <p>默认值:</p>
+         * <p>	false</p>
+         */
         @NameInMap("canRename")
         public Boolean canRename;
 
-        // 是否支持搜索, 默认不支持
-        // 默认值:
-        // 	false
+        /**
+         * <p>是否支持搜索, 默认不支持</p>
+         * <p>默认值:</p>
+         * <p>	false</p>
+         */
         @NameInMap("canSearch")
         public Boolean canSearch;
 
@@ -72,34 +80,42 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpacePartitionsQuota extends TeaModel {
-        // 最大容量, 单位: Byte
-        // 当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max
-        // 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
+        /**
+         * <p>最大容量, 单位: Byte</p>
+         * <p>当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max</p>
+         * <p>当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量</p>
+         */
         @NameInMap("max")
         public Long max;
 
-        // 预分配剩余容量, 单位: Byte
-        // 背景：
-        //    管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分
-        // 如果没有设置预分配容，此字段是空
+        /**
+         * <p>预分配剩余容量, 单位: Byte</p>
+         * <p>背景：</p>
+         * <p>   管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分</p>
+         * <p>如果没有设置预分配容，此字段是空</p>
+         */
         @NameInMap("reserved")
         public Long reserved;
 
-        // 容量类型
-        // 如果是企业维度容量，此值是PRIVATE, 表示企业独占
-        // 枚举值:
-        // 	SHARE: 共享容量
-        // 此模式下，Quota.max为空，表示共享企业容量
-        // 	PRIVATE: 预分配容量（专享容量）
-        // 当Quota.max设置值后，表示容量独占
-        // 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
+        /**
+         * <p>容量类型</p>
+         * <p>如果是企业维度容量，此值是PRIVATE, 表示企业独占</p>
+         * <p>枚举值:</p>
+         * <p>	SHARE: 共享容量</p>
+         * <p>此模式下，Quota.max为空，表示共享企业容量</p>
+         * <p>	PRIVATE: 预分配容量（专享容量）</p>
+         * <p>当Quota.max设置值后，表示容量独占</p>
+         * <p>使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // 实际已使用容量, 单位: Byte
-        // 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
-        // 最小值:
-        // 	0
+        /**
+         * <p>实际已使用容量, 单位: Byte</p>
+         * <p>表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更</p>
+         * <p>最小值:</p>
+         * <p>	0</p>
+         */
         @NameInMap("used")
         public Long used;
 
@@ -143,14 +159,18 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpacePartitions extends TeaModel {
-        // 分区类型
-        // 枚举值:
-        // 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
-        // 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+        /**
+         * <p>分区类型</p>
+         * <p>枚举值:</p>
+         * <p>	PUBLIC_OSS_PARTITION: 公有云OSS存储分区</p>
+         * <p>	MINI_OSS_PARTITION: 专属Mini OSS存储分区</p>
+         */
         @NameInMap("partitionType")
         public String partitionType;
 
-        // 容量信息
+        /**
+         * <p>容量信息</p>
+         */
         @NameInMap("quota")
         public GetSpaceResponseBodySpacePartitionsQuota quota;
 
@@ -178,87 +198,121 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpace extends TeaModel {
-        // 开放平台应用appId
+        /**
+         * <p>开放平台应用appId</p>
+         */
         @NameInMap("appId")
         public String appId;
 
-        // 空间能力项
+        /**
+         * <p>空间能力项</p>
+         */
         @NameInMap("capabilities")
         public GetSpaceResponseBodySpaceCapabilities capabilities;
 
-        // 空间归属企业的id
+        /**
+         * <p>空间归属企业的id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建者id
+        /**
+         * <p>创建者id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        // 空间id
+        /**
+         * <p>空间id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        // 修改者id
+        /**
+         * <p>修改者id</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
-        // 空间名称
+        /**
+         * <p>空间名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 所有者id, 根据ownerType定义, 确定值的所属类型
+        /**
+         * <p>所有者id, 根据ownerType定义, 确定值的所属类型</p>
+         */
         @NameInMap("ownerId")
         public String ownerId;
 
-        // owner类型
-        // 枚举值:
-        // 	USER: 用户类型
-        // 	APP: App类型
+        /**
+         * <p>owner类型</p>
+         * <p>枚举值:</p>
+         * <p>	USER: 用户类型</p>
+         * <p>	APP: App类型</p>
+         */
         @NameInMap("ownerType")
         public String ownerType;
 
-        // 分区容量信息
-        // 最大size:
-        // 	2
+        /**
+         * <p>分区容量信息</p>
+         * <p>最大size:</p>
+         * <p>	2</p>
+         */
         @NameInMap("partitions")
         public java.util.List<GetSpaceResponseBodySpacePartitions> partitions;
 
-        // 容量上限
-        // 管理后台设置的容量上限
-        // 建议使用分区上容量信息字段
+        /**
+         * <p>容量上限</p>
+         * <p>管理后台设置的容量上限</p>
+         * <p>建议使用分区上容量信息字段</p>
+         */
         @NameInMap("quota")
         public Long quota;
 
-        // 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。
-        // 创建空间时，不指定scene, 默认值是default
-        // 默认值:
-        // 	default
+        /**
+         * <p>业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。</p>
+         * <p>创建空间时，不指定scene, 默认值是default</p>
+         * <p>默认值:</p>
+         * <p>	default</p>
+         */
         @NameInMap("scene")
         public String scene;
 
-        // 关联业务id, 配合scene一起使用。创建空间时，不指定sceneId， 默认值是0
-        // 默认值:
-        // 	0
+        /**
+         * <p>关联业务id, 配合scene一起使用。创建空间时，不指定sceneId， 默认值是0</p>
+         * <p>默认值:</p>
+         * <p>	0</p>
+         */
         @NameInMap("sceneId")
         public String sceneId;
 
-        // 空间状态
-        // 枚举值:
-        // 	NORMAL: 正常
-        // 	DELETE: 已删除
+        /**
+         * <p>空间状态</p>
+         * <p>枚举值:</p>
+         * <p>	NORMAL: 正常</p>
+         * <p>	DELETE: 已删除</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 已使用容量, 包含各分区已使用容量和
-        // 建议使用分区上容量信息字段
+        /**
+         * <p>已使用容量, 包含各分区已使用容量和</p>
+         * <p>建议使用分区上容量信息字段</p>
+         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 

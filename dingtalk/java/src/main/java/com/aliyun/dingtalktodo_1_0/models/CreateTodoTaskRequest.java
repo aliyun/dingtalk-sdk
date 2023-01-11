@@ -7,59 +7,87 @@ public class CreateTodoTaskRequest extends TeaModel {
     @NameInMap("actionList")
     public java.util.List<CreateTodoTaskRequestActionList> actionList;
 
-    // 二级分类
+    /**
+     * <p>二级分类</p>
+     */
     @NameInMap("bizCategoryId")
     public String bizCategoryId;
 
-    // 待办卡片内容区表单自定义字段列表
+    /**
+     * <p>待办卡片内容区表单自定义字段列表</p>
+     */
     @NameInMap("contentFieldList")
     public java.util.List<CreateTodoTaskRequestContentFieldList> contentFieldList;
 
-    // 创建者id，需传用户的unionId
+    /**
+     * <p>创建者id，需传用户的unionId</p>
+     */
     @NameInMap("creatorId")
     public String creatorId;
 
-    // 待办备注描述
+    /**
+     * <p>待办备注描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 详情页url跳转地址
+    /**
+     * <p>详情页url跳转地址</p>
+     */
     @NameInMap("detailUrl")
     public CreateTodoTaskRequestDetailUrl detailUrl;
 
-    // 截止时间
+    /**
+     * <p>截止时间</p>
+     */
     @NameInMap("dueTime")
     public Long dueTime;
 
-    // 执行者列表，需传用户的unionId
+    /**
+     * <p>执行者列表，需传用户的unionId</p>
+     */
     @NameInMap("executorIds")
     public java.util.List<String> executorIds;
 
-    // 生成的待办是否仅展示在执行者的待办列表中
+    /**
+     * <p>生成的待办是否仅展示在执行者的待办列表中</p>
+     */
     @NameInMap("isOnlyShowExecutor")
     public Boolean isOnlyShowExecutor;
 
-    // 通知提醒配置
+    /**
+     * <p>通知提醒配置</p>
+     */
     @NameInMap("notifyConfigs")
     public CreateTodoTaskRequestNotifyConfigs notifyConfigs;
 
-    // 参与者列表，需传用户的unionId
+    /**
+     * <p>参与者列表，需传用户的unionId</p>
+     */
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
-    // 优先级
+    /**
+     * <p>优先级</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 
-    // 来源id，接入业务系统侧的唯一标识id
+    /**
+     * <p>来源id，接入业务系统侧的唯一标识id</p>
+     */
     @NameInMap("sourceId")
     public String sourceId;
 
-    // 待办标题
+    /**
+     * <p>待办标题</p>
+     */
     @NameInMap("subject")
     public String subject;
 
-    // 当前操作者id，需传用户的unionId
+    /**
+     * <p>当前操作者id，需传用户的unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -304,11 +332,15 @@ public class CreateTodoTaskRequest extends TeaModel {
     }
 
     public static class CreateTodoTaskRequestContentFieldList extends TeaModel {
-        // 字段唯一标识
+        /**
+         * <p>字段唯一标识</p>
+         */
         @NameInMap("fieldKey")
         public String fieldKey;
 
-        // 字段值
+        /**
+         * <p>字段值</p>
+         */
         @NameInMap("fieldValue")
         public String fieldValue;
 
@@ -336,11 +368,15 @@ public class CreateTodoTaskRequest extends TeaModel {
     }
 
     public static class CreateTodoTaskRequestDetailUrl extends TeaModel {
-        // app端详情页url
+        /**
+         * <p>app端详情页url</p>
+         */
         @NameInMap("appUrl")
         public String appUrl;
 
-        // pc端详情页url
+        /**
+         * <p>pc端详情页url</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
@@ -368,7 +404,9 @@ public class CreateTodoTaskRequest extends TeaModel {
     }
 
     public static class CreateTodoTaskRequestNotifyConfigs extends TeaModel {
-        // ding通知配置：1钉弹框通知
+        /**
+         * <p>ding通知配置：1钉弹框通知</p>
+         */
         @NameInMap("dingNotify")
         public String dingNotify;
 

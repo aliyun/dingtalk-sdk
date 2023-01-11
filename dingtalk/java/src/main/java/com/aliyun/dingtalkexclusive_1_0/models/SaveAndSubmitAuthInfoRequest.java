@@ -4,75 +4,111 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveAndSubmitAuthInfoRequest extends TeaModel {
-    // 申请说明
+    /**
+     * <p>申请说明</p>
+     */
     @NameInMap("applyRemark")
     public String applyRemark;
 
-    // 认证书图片mediaId
+    /**
+     * <p>认证书图片mediaId</p>
+     */
     @NameInMap("authorizeMediaId")
     public String authorizeMediaId;
 
-    // 行业
+    /**
+     * <p>行业</p>
+     */
     @NameInMap("industry")
     public String industry;
 
-    // 企业法人
+    /**
+     * <p>企业法人</p>
+     */
     @NameInMap("legalPerson")
     public String legalPerson;
 
-    // 企业法人身份证
+    /**
+     * <p>企业法人身份证</p>
+     */
     @NameInMap("legalPersonIdCard")
     public String legalPersonIdCard;
 
-    // 营业执照图片mediaId
+    /**
+     * <p>营业执照图片mediaId</p>
+     */
     @NameInMap("licenseMediaId")
     public String licenseMediaId;
 
-    // 城市编码
+    /**
+     * <p>城市编码</p>
+     */
     @NameInMap("locCity")
     public Long locCity;
 
-    // 城市名字
+    /**
+     * <p>城市名字</p>
+     */
     @NameInMap("locCityName")
     public String locCityName;
 
-    // 省份编码
+    /**
+     * <p>省份编码</p>
+     */
     @NameInMap("locProvince")
     public Long locProvince;
 
-    // 省份名字
+    /**
+     * <p>省份名字</p>
+     */
     @NameInMap("locProvinceName")
     public String locProvinceName;
 
-    // 申请人手机号（需要实名认证）
+    /**
+     * <p>申请人手机号（需要实名认证）</p>
+     */
     @NameInMap("mobileNum")
     public String mobileNum;
 
-    // 组织名，提交认证的时候可以修改
+    /**
+     * <p>组织名，提交认证的时候可以修改</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 
-    // 组织机构代码证号（格式11111111-1）
+    /**
+     * <p>组织机构代码证号（格式11111111-1）</p>
+     */
     @NameInMap("organizationCode")
     public String organizationCode;
 
-    // 组织机构代码证图片mediaId
+    /**
+     * <p>组织机构代码证图片mediaId</p>
+     */
     @NameInMap("organizationCodeMediaId")
     public String organizationCodeMediaId;
 
-    // 认证企业详细地址
+    /**
+     * <p>认证企业详细地址</p>
+     */
     @NameInMap("registLocation")
     public String registLocation;
 
-    // 营业执照注册号（一般15位）
+    /**
+     * <p>营业执照注册号（一般15位）</p>
+     */
     @NameInMap("registNum")
     public String registNum;
 
-    // 企业id
+    /**
+     * <p>企业id</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
-    // 社会统一信用代码（固定18位）
+    /**
+     * <p>社会统一信用代码（固定18位）</p>
+     */
     @NameInMap("unifiedSocialCredit")
     public String unifiedSocialCredit;
 

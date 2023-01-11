@@ -4,23 +4,33 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddContactMemberToGroupRequest extends TeaModel {
-    // 裂变方式
+    /**
+     * <p>裂变方式</p>
+     */
     @NameInMap("fissionType")
     public String fissionType;
 
-    // 员工unionId
+    /**
+     * <p>员工unionId</p>
+     */
     @NameInMap("memberUnionId")
     public String memberUnionId;
 
-    // 员工成员ID
+    /**
+     * <p>员工成员ID</p>
+     */
     @NameInMap("memberUserId")
     public String memberUserId;
 
-    // 群会话ID
+    /**
+     * <p>群会话ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

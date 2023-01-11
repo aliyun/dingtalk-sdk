@@ -4,35 +4,51 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAccessTokenResponseBody extends TeaModel {
-    // 阿里云OSS SDK初始化配置项
+    /**
+     * <p>阿里云OSS SDK初始化配置项</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
-    // 阿里云OSS SDK初始化配置项
+    /**
+     * <p>阿里云OSS SDK初始化配置项</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
-    // 阿里云OSS SDK初始化配置项
+    /**
+     * <p>阿里云OSS SDK初始化配置项</p>
+     */
     @NameInMap("bucket")
     public String bucket;
 
-    // 阿里云OSS SDK初始化配置项
+    /**
+     * <p>阿里云OSS SDK初始化配置项</p>
+     */
     @NameInMap("endpoint")
     public String endpoint;
 
-    // 阿里云OSS SDK初始化配置项
+    /**
+     * <p>阿里云OSS SDK初始化配置项</p>
+     */
     @NameInMap("expiration")
     public String expiration;
 
-    // 可上传的阿里云OSS文件地址
+    /**
+     * <p>可上传的阿里云OSS文件地址</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 阿里云OSS SDK初始化配置项
+    /**
+     * <p>阿里云OSS SDK初始化配置项</p>
+     */
     @NameInMap("region")
     public String region;
 
-    // 阿里云OSS SDK初始化配置项
+    /**
+     * <p>阿里云OSS SDK初始化配置项</p>
+     */
     @NameInMap("stsToken")
     public String stsToken;
 

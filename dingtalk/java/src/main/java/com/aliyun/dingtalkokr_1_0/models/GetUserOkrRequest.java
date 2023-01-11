@@ -4,19 +4,27 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserOkrRequest extends TeaModel {
-    // 页码，默认 为 1。
+    /**
+     * <p>页码，默认 为 1。</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 每页的个数，默认100。
+    /**
+     * <p>每页的个数，默认100。</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 周期 ID。
+    /**
+     * <p>周期 ID。</p>
+     */
     @NameInMap("periodId")
     public String periodId;
 
-    // 当前用户的user ID。
+    /**
+     * <p>当前用户的user ID。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

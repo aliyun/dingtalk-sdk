@@ -4,35 +4,51 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeliverCardRequest extends TeaModel {
-    // 协作投放参数
+    /**
+     * <p>协作投放参数</p>
+     */
     @NameInMap("coFeedOpenDeliverModel")
     public DeliverCardRequestCoFeedOpenDeliverModel coFeedOpenDeliverModel;
 
-    // 群聊投放参数
+    /**
+     * <p>群聊投放参数</p>
+     */
     @NameInMap("imGroupOpenDeliverModel")
     public DeliverCardRequestImGroupOpenDeliverModel imGroupOpenDeliverModel;
 
-    // 单聊场域投放参数
+    /**
+     * <p>单聊场域投放参数</p>
+     */
     @NameInMap("imRobotOpenDeliverModel")
     public DeliverCardRequestImRobotOpenDeliverModel imRobotOpenDeliverModel;
 
-    // 单聊场域投放参数
+    /**
+     * <p>单聊场域投放参数</p>
+     */
     @NameInMap("imSingleOpenDeliverModel")
     public DeliverCardRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
 
-    // dt.card//spaceType.spaceId;spaceType.spaceId
+    /**
+     * <p>dt.card//spaceType.spaceId;spaceType.spaceId</p>
+     */
     @NameInMap("openSpaceId")
     public String openSpaceId;
 
-    // 外部卡片实例Id
+    /**
+     * <p>外部卡片实例Id</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    // 吊顶投放参数
+    /**
+     * <p>吊顶投放参数</p>
+     */
     @NameInMap("topOpenDeliverModel")
     public DeliverCardRequestTopOpenDeliverModel topOpenDeliverModel;
 
-    // 工作台投放参数
+    /**
+     * <p>工作台投放参数</p>
+     */
     @NameInMap("workBenchOpenDeliverModel")
     public DeliverCardRequestWorkBenchOpenDeliverModel workBenchOpenDeliverModel;
 
@@ -106,11 +122,15 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestCoFeedOpenDeliverModel extends TeaModel {
-        // 【必填】业务标识
+        /**
+         * <p>【必填】业务标识</p>
+         */
         @NameInMap("bizTag")
         public String bizTag;
 
-        // 【必填】协作场域下的排序时间
+        /**
+         * <p>【必填】协作场域下的排序时间</p>
+         */
         @NameInMap("gmtTimeLine")
         public Long gmtTimeLine;
 
@@ -138,15 +158,21 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestImGroupOpenDeliverModel extends TeaModel {
-        // 消息@人，
+        /**
+         * <p>消息@人，</p>
+         */
         @NameInMap("atUserIds")
         public java.util.Map<String, String> atUserIds;
 
-        // 指定接收者
+        /**
+         * <p>指定接收者</p>
+         */
         @NameInMap("recipients")
         public java.util.List<String> recipients;
 
-        // 机器人的code
+        /**
+         * <p>机器人的code</p>
+         */
         @NameInMap("robotCode")
         public String robotCode;
 
@@ -201,7 +227,9 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestImSingleOpenDeliverModel extends TeaModel {
-        // 消息@人，
+        /**
+         * <p>消息@人，</p>
+         */
         @NameInMap("atUserIds")
         public java.util.Map<String, String> atUserIds;
 
@@ -221,15 +249,21 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestTopOpenDeliverModel extends TeaModel {
-        // 【必填】过期时间戳
+        /**
+         * <p>【必填】过期时间戳</p>
+         */
         @NameInMap("expiredTimeMills")
         public Long expiredTimeMills;
 
-        // 可以查看该吊顶卡片的设备
+        /**
+         * <p>可以查看该吊顶卡片的设备</p>
+         */
         @NameInMap("platforms")
         public java.util.List<String> platforms;
 
-        // 可以查看该吊顶卡片的staffId
+        /**
+         * <p>可以查看该吊顶卡片的staffId</p>
+         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 
@@ -265,27 +299,39 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestWorkBenchOpenDeliverModel extends TeaModel {
-        // 【必填】组件icon对应组件左上角的图标
+        /**
+         * <p>【必填】组件icon对应组件左上角的图标</p>
+         */
         @NameInMap("icon")
         public String icon;
 
-        // 【必填】卡片名称
+        /**
+         * <p>【必填】卡片名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 【必填】卡片组件名
+        /**
+         * <p>【必填】卡片组件名</p>
+         */
         @NameInMap("pluginComponentName")
         public String pluginComponentName;
 
-        // 【必填】卡片预览图
+        /**
+         * <p>【必填】卡片预览图</p>
+         */
         @NameInMap("previewUrl")
         public String previewUrl;
 
-        // 【必填】保持和微应用名称相同
+        /**
+         * <p>【必填】保持和微应用名称相同</p>
+         */
         @NameInMap("projectName")
         public String projectName;
 
-        // 【必填】操作者Id
+        /**
+         * <p>【必填】操作者Id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

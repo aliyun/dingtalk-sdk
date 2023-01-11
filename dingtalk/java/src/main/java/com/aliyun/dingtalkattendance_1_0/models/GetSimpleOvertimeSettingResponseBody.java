@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSimpleOvertimeSettingResponseBody extends TeaModel {
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("result")
     public java.util.List<GetSimpleOvertimeSettingResponseBodyResult> result;
 
@@ -22,11 +24,15 @@ public class GetSimpleOvertimeSettingResponseBody extends TeaModel {
     }
 
     public static class GetSimpleOvertimeSettingResponseBodyResultItems extends TeaModel {
-        // 加班规则id
+        /**
+         * <p>加班规则id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 加班规则名称
+        /**
+         * <p>加班规则名称</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -65,15 +71,21 @@ public class GetSimpleOvertimeSettingResponseBody extends TeaModel {
     }
 
     public static class GetSimpleOvertimeSettingResponseBodyResult extends TeaModel {
-        // 加班规则集合
+        /**
+         * <p>加班规则集合</p>
+         */
         @NameInMap("items")
         public java.util.List<GetSimpleOvertimeSettingResponseBodyResultItems> items;
 
-        // 当前页码
+        /**
+         * <p>当前页码</p>
+         */
         @NameInMap("pageNumber")
         public Long pageNumber;
 
-        // 总页数
+        /**
+         * <p>总页数</p>
+         */
         @NameInMap("totalPage")
         public Long totalPage;
 

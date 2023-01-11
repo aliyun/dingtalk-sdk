@@ -4,15 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTheGroupRolesOfGroupMemberRequest extends TeaModel {
-    // 开放群ID
+    /**
+     * <p>开放群ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 群角色列表
+    /**
+     * <p>群角色列表</p>
+     */
     @NameInMap("openRoleIds")
     public java.util.List<String> openRoleIds;
 
-    // 用户ID
+    /**
+     * <p>用户ID</p>
+     */
     @NameInMap("userId")
     public String userId;
 

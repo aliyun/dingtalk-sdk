@@ -21,35 +21,51 @@ public class BatchInsertSearchItemRequest extends TeaModel {
     }
 
     public static class BatchInsertSearchItemRequestSearchItemModels extends TeaModel {
-        // 数据项的脚注，长度不能超过64
+        /**
+         * <p>数据项的脚注，长度不能超过64</p>
+         */
         @NameInMap("footer")
         public String footer;
 
-        // 数据项的头像，长度不能超过512
+        /**
+         * <p>数据项的头像，长度不能超过512</p>
+         */
         @NameInMap("icon")
         public String icon;
 
-        // 数据项的id，tabId和orgId相同的情况下，itemId唯一标识一条数据项，长度不能超过128
+        /**
+         * <p>数据项的id，tabId和orgId相同的情况下，itemId唯一标识一条数据项，长度不能超过128</p>
+         */
         @NameInMap("itemId")
         public String itemId;
 
-        // 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
+        /**
+         * <p>数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        // 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
+        /**
+         * <p>数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
-        // 数据项的摘要，长度不能超过64
+        /**
+         * <p>数据项的摘要，长度不能超过64</p>
+         */
         @NameInMap("summary")
         public String summary;
 
-        // 数据项的标题，长度不能超过16
+        /**
+         * <p>数据项的标题，长度不能超过16</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
+        /**
+         * <p>数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个</p>
+         */
         @NameInMap("url")
         public String url;
 

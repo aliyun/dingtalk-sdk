@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFeedResponseBody extends TeaModel {
-    // 内容Id
+    /**
+     * <p>内容Id</p>
+     */
     @NameInMap("feedId")
     public String feedId;
 
-    // 子内容
+    /**
+     * <p>子内容</p>
+     */
     @NameInMap("feedItem")
     public java.util.List<GetFeedResponseBodyFeedItem> feedItem;
 
@@ -34,23 +38,33 @@ public class GetFeedResponseBody extends TeaModel {
     }
 
     public static class GetFeedResponseBodyFeedItem extends TeaModel {
-        // 子内容的持续时长，单位为毫秒
+        /**
+         * <p>子内容的持续时长，单位为毫秒</p>
+         */
         @NameInMap("durationMillis")
         public Long durationMillis;
 
-        // 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
+        /**
+         * <p>内容类型，0表示直播，1表示图文，2表示视频，3表示音频</p>
+         */
         @NameInMap("feedContentType")
         public Integer feedContentType;
 
-        // 子内容Id
+        /**
+         * <p>子内容Id</p>
+         */
         @NameInMap("itemId")
         public String itemId;
 
-        // 子内容标题
+        /**
+         * <p>子内容标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 子内容的跳转链接
+        /**
+         * <p>子内容的跳转链接</p>
+         */
         @NameInMap("url")
         public String url;
 

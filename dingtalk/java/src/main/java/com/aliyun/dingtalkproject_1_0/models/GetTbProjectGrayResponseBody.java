@@ -7,7 +7,9 @@ public class GetTbProjectGrayResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
-    // 是否灰度
+    /**
+     * <p>是否灰度</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

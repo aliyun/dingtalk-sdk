@@ -4,19 +4,27 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBizObjectRequest extends TeaModel {
-    // json格式的业务数据
+    /**
+     * <p>json格式的业务数据</p>
+     */
     @NameInMap("bizObjectJson")
     public String bizObjectJson;
 
-    // 是否是草稿数据。true=草稿数据，false=生效数据
+    /**
+     * <p>是否是草稿数据。true=草稿数据，false=生效数据</p>
+     */
     @NameInMap("isDraft")
     public Boolean isDraft;
 
-    // 操作用户id。可从“获取用户信息”API获取
+    /**
+     * <p>操作用户id。可从“获取用户信息”API获取</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 表单编码
+    /**
+     * <p>表单编码</p>
+     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

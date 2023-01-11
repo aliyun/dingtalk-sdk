@@ -4,15 +4,21 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendOTOResponseBody extends TeaModel {
-    // 推送频繁，被限流的用户userId列表
+    /**
+     * <p>推送频繁，被限流的用户userId列表</p>
+     */
     @NameInMap("flowControlledStaffIdList")
     public java.util.List<String> flowControlledStaffIdList;
 
-    // 无效的用户userId列表
+    /**
+     * <p>无效的用户userId列表</p>
+     */
     @NameInMap("invalidStaffIdList")
     public java.util.List<String> invalidStaffIdList;
 
-    // 消息id
+    /**
+     * <p>消息id</p>
+     */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 

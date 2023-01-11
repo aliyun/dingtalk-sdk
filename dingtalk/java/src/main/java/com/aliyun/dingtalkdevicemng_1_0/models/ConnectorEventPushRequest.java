@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConnectorEventPushRequest extends TeaModel {
-    // 设备类型唯一标识
+    /**
+     * <p>设备类型唯一标识</p>
+     */
     @NameInMap("deviceTypeUuid")
     public String deviceTypeUuid;
 
-    // 事件名称
+    /**
+     * <p>事件名称</p>
+     */
     @NameInMap("eventName")
     public String eventName;
 
-    // 事件入参，json字符串
+    /**
+     * <p>事件入参，json字符串</p>
+     */
     @NameInMap("input")
     public String input;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTodoTaskExecutorStatusRequest extends TeaModel {
-    // 执行者状态列表，id需传用户的unionId
+    /**
+     * <p>执行者状态列表，id需传用户的unionId</p>
+     */
     @NameInMap("executorStatusList")
     public java.util.List<UpdateTodoTaskExecutorStatusRequestExecutorStatusList> executorStatusList;
 
-    // 当前操作者id，需传用户的unionId
+    /**
+     * <p>当前操作者id，需传用户的unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -34,11 +38,15 @@ public class UpdateTodoTaskExecutorStatusRequest extends TeaModel {
     }
 
     public static class UpdateTodoTaskExecutorStatusRequestExecutorStatusList extends TeaModel {
-        // 执行者id，需传用户的unionId
+        /**
+         * <p>执行者id，需传用户的unionId</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 执行者完成状态
+        /**
+         * <p>执行者完成状态</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 

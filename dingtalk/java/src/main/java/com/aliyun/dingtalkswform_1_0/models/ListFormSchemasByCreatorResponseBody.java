@@ -4,11 +4,15 @@ package com.aliyun.dingtalkswform_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFormSchemasByCreatorResponseBody extends TeaModel {
-    // 返回结果对象。
+    /**
+     * <p>返回结果对象。</p>
+     */
     @NameInMap("result")
     public ListFormSchemasByCreatorResponseBodyResult result;
 
-    // 是否成功。
+    /**
+     * <p>是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,31 +38,45 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResultListSetting extends TeaModel {
-        // 表单类型：  0：一次性填表  1：周期性填表
+        /**
+         * <p>表单类型：  0：一次性填表  1：周期性填表</p>
+         */
         @NameInMap("bizType")
         public Integer bizType;
 
-        // 创建时间。iso8601格式。
+        /**
+         * <p>创建时间。iso8601格式。</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 截止时间。iso8601格式。
+        /**
+         * <p>截止时间。iso8601格式。</p>
+         */
         @NameInMap("endTime")
         public String endTime;
 
-        // 表单类型：  0：一次性填表  1：周期性填表
+        /**
+         * <p>表单类型：  0：一次性填表  1：周期性填表</p>
+         */
         @NameInMap("formType")
         public Integer formType;
 
-        // 填表周期，周一到周日分别用1-7表示。
+        /**
+         * <p>填表周期，周一到周日分别用1-7表示。</p>
+         */
         @NameInMap("loopDays")
         public java.util.List<Integer> loopDays;
 
-        // 循环执行的时间点。
+        /**
+         * <p>循环执行的时间点。</p>
+         */
         @NameInMap("loopTime")
         public String loopTime;
 
-        // 填表是否终止的标记。
+        /**
+         * <p>填表是否终止的标记。</p>
+         */
         @NameInMap("stop")
         public Boolean stop;
 
@@ -126,23 +144,33 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResultList extends TeaModel {
-        // 创建人。
+        /**
+         * <p>创建人。</p>
+         */
         @NameInMap("creator")
         public String creator;
 
-        // 填表code，用此code可调接口获取填表列表。
+        /**
+         * <p>填表code，用此code可调接口获取填表列表。</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
-        // 填表提示。
+        /**
+         * <p>填表提示。</p>
+         */
         @NameInMap("memo")
         public String memo;
 
-        // 填表名称。
+        /**
+         * <p>填表名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 填表设置。
+        /**
+         * <p>填表设置。</p>
+         */
         @NameInMap("setting")
         public ListFormSchemasByCreatorResponseBodyResultListSetting setting;
 
@@ -194,15 +222,21 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResult extends TeaModel {
-        // 是否还有下一页数据。
+        /**
+         * <p>是否还有下一页数据。</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        // 创建的填表列表。
+        /**
+         * <p>创建的填表列表。</p>
+         */
         @NameInMap("list")
         public java.util.List<ListFormSchemasByCreatorResponseBodyResultList> list;
 
-        // 下一次分页offset的值。
+        /**
+         * <p>下一次分页offset的值。</p>
+         */
         @NameInMap("nextToken")
         public Long nextToken;
 

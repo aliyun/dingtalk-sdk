@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListSpaceSectionsResponseBody extends TeaModel {
-    // 空间分组列表。
+    /**
+     * <p>空间分组列表。</p>
+     */
     @NameInMap("items")
     public java.util.List<ListSpaceSectionsResponseBodyItems> items;
 
@@ -22,23 +24,33 @@ public class ListSpaceSectionsResponseBody extends TeaModel {
     }
 
     public static class ListSpaceSectionsResponseBodyItems extends TeaModel {
-        // 展示类型。
+        /**
+         * <p>展示类型。</p>
+         */
         @NameInMap("displayType")
         public String displayType;
 
-        // 分组id。
+        /**
+         * <p>分组id。</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 分组名称。
+        /**
+         * <p>分组名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 知识库数量。
+        /**
+         * <p>知识库数量。</p>
+         */
         @NameInMap("spaceNum")
         public Integer spaceNum;
 
-        // 知识库列表
+        /**
+         * <p>知识库列表</p>
+         */
         @NameInMap("spaces")
         public java.util.List<SpaceModel> spaces;
 

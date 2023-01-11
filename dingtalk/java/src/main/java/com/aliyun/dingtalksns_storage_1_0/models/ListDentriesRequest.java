@@ -4,50 +4,64 @@ package com.aliyun.dingtalksns_storage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDentriesRequest extends TeaModel {
-    // 分页大小
-    // 默认值:
-    // 	50
-    // 最大值:
-    // 	50
+    /**
+     * <p>分页大小</p>
+     * <p>默认值:</p>
+     * <p>	50</p>
+     * <p>最大值:</p>
+     * <p>	50</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页游标, 首次拉取不用传
+    /**
+     * <p>分页游标, 首次拉取不用传</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 排序规则, 升降或降序
-    // 枚举值:
-    // 	ASC: 升序
-    // 	DESC: 降序
-    // 默认值:
-    // 	DESC
+    /**
+     * <p>排序规则, 升降或降序</p>
+     * <p>枚举值:</p>
+     * <p>	ASC: 升序</p>
+     * <p>	DESC: 降序</p>
+     * <p>默认值:</p>
+     * <p>	DESC</p>
+     */
     @NameInMap("order")
     public String order;
 
-    // 排序字段
-    // 枚举值:
-    // 	NAME: 名称
-    // 	SIZE: 大小
-    // 	MODIFIED_TIME: 最后修改时间
-    // 	CREATE_TIME: 创建时间
-    // 默认值:
-    // 	MODIFIED_TIME
+    /**
+     * <p>排序字段</p>
+     * <p>枚举值:</p>
+     * <p>	NAME: 名称</p>
+     * <p>	SIZE: 大小</p>
+     * <p>	MODIFIED_TIME: 最后修改时间</p>
+     * <p>	CREATE_TIME: 创建时间</p>
+     * <p>默认值:</p>
+     * <p>	MODIFIED_TIME</p>
+     */
     @NameInMap("orderBy")
     public String orderBy;
 
-    // 父目录id, 根目录id值为0
+    /**
+     * <p>父目录id, 根目录id值为0</p>
+     */
     @NameInMap("parentId")
     public String parentId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // 是否获取文件缩略图临时链接
-    // 注: 按需获取, 会影响接口耗时
-    // 默认值:
-    // 	false
+    /**
+     * <p>是否获取文件缩略图临时链接</p>
+     * <p>注: 按需获取, 会影响接口耗时</p>
+     * <p>默认值:</p>
+     * <p>	false</p>
+     */
     @NameInMap("withThumbnail")
     public Boolean withThumbnail;
 

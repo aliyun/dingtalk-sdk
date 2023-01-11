@@ -4,7 +4,9 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class RobotMessageFileDownloadResponseBody extends TeaModel {
-    // 文件的临时下载链接。
+    /**
+     * <p>文件的临时下载链接。</p>
+     */
     @NameInMap("downloadUrl")
     public String downloadUrl;
 

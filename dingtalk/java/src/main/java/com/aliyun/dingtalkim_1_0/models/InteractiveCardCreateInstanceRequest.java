@@ -4,50 +4,72 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class InteractiveCardCreateInstanceRequest extends TeaModel {
-    // 可控制卡片回调时的路由Key，用于指定特定的callbackUrl【可空：不填写默认用企业的回调地址】
+    /**
+     * <p>可控制卡片回调时的路由Key，用于指定特定的callbackUrl【可空：不填写默认用企业的回调地址】</p>
+     */
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
     @NameInMap("cardData")
     public InteractiveCardCreateInstanceRequestCardData cardData;
 
-    // 卡片模板ID
+    /**
+     * <p>卡片模板ID</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
-    // 【robotCode & chatBotId二选一必填】机器人ID（企业机器人）
+    /**
+     * <p>【robotCode & chatBotId二选一必填】机器人ID（企业机器人）</p>
+     */
     @NameInMap("chatBotId")
     public String chatBotId;
 
-    // 发送的会话类型：单聊-0, 群聊-1（单聊时：openConversationId不用填写；receiverUserIdList填写有且一个员工号）
+    /**
+     * <p>发送的会话类型：单聊-0, 群聊-1（单聊时：openConversationId不用填写；receiverUserIdList填写有且一个员工号）</p>
+     */
     @NameInMap("conversationType")
     public Integer conversationType;
 
-    // 接收卡片的群的openConversationId
+    /**
+     * <p>接收卡片的群的openConversationId</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）
+    /**
+     * <p>唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    // 指定用户可见的按钮列表（key：用户userId；value：用户数据）
+    /**
+     * <p>指定用户可见的按钮列表（key：用户userId；value：用户数据）</p>
+     */
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
-    // 是否开启卡片纯拉模式
+    /**
+     * <p>是否开启卡片纯拉模式</p>
+     */
     @NameInMap("pullStrategy")
     public Boolean pullStrategy;
 
-    // 接收人userId列表
+    /**
+     * <p>接收人userId列表</p>
+     */
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
 
-    // 【robotCode & chatBotId二选一必填】机器人编码（群模板机器人）
+    /**
+     * <p>【robotCode & chatBotId二选一必填】机器人编码（群模板机器人）</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    // 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
+    /**
+     * <p>用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式</p>
+     */
     @NameInMap("userIdType")
     public Integer userIdType;
 
@@ -153,11 +175,15 @@ public class InteractiveCardCreateInstanceRequest extends TeaModel {
     }
 
     public static class InteractiveCardCreateInstanceRequestCardData extends TeaModel {
-        // 卡片模板内容替换参数-多媒体类型
+        /**
+         * <p>卡片模板内容替换参数-多媒体类型</p>
+         */
         @NameInMap("cardMediaIdParamMap")
         public java.util.Map<String, String> cardMediaIdParamMap;
 
-        // 卡片模板内容替换参数-普通文本类型
+        /**
+         * <p>卡片模板内容替换参数-普通文本类型</p>
+         */
         @NameInMap("cardParamMap")
         public java.util.Map<String, String> cardParamMap;
 

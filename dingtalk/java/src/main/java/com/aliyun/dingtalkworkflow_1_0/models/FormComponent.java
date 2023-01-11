@@ -4,15 +4,21 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormComponent extends TeaModel {
-    // 子控件集合
+    /**
+     * <p>子控件集合</p>
+     */
     @NameInMap("children")
     public java.util.List<FormComponent> children;
 
-    // 控件类型
+    /**
+     * <p>控件类型</p>
+     */
     @NameInMap("componentType")
     public String componentType;
 
-    // 控件属性
+    /**
+     * <p>控件属性</p>
+     */
     @NameInMap("props")
     public FormComponentProps props;
 

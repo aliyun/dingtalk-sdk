@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySchemaByProcessCodeRequest extends TeaModel {
-    // 应用搭建隔离信息
+    /**
+     * <p>应用搭建隔离信息</p>
+     */
     @NameInMap("appUuid")
     public String appUuid;
 
-    // 表单的唯一码
+    /**
+     * <p>表单的唯一码</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 

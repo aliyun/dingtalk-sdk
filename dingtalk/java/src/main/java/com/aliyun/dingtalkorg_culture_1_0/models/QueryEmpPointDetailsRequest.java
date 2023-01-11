@@ -4,15 +4,21 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryEmpPointDetailsRequest extends TeaModel {
-    // 第几页 第一页是1
+    /**
+     * <p>第几页 第一页是1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 每页大小最多50 默认值10
+    /**
+     * <p>每页大小最多50 默认值10</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 查询目标对象userId
+    /**
+     * <p>查询目标对象userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

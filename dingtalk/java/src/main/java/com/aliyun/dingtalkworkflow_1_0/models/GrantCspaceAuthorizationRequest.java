@@ -4,19 +4,27 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GrantCspaceAuthorizationRequest extends TeaModel {
-    // 权限有效时间，单位为秒。
+    /**
+     * <p>权限有效时间，单位为秒。</p>
+     */
     @NameInMap("durationSeconds")
     public Long durationSeconds;
 
-    // 审批控件 id。
+    /**
+     * <p>审批控件 id。</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
-    // 权限类型。
+    /**
+     * <p>权限类型。</p>
+     */
     @NameInMap("type")
     public String type;
 
-    // 用户 id。
+    /**
+     * <p>用户 id。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

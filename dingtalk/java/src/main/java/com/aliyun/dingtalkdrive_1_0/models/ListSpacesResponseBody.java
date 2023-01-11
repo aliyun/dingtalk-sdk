@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSpacesResponseBody extends TeaModel {
-    // 分页加载更多锚点, nextToken不为空表示有更多数据
+    /**
+     * <p>分页加载更多锚点, nextToken不为空表示有更多数据</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -33,35 +35,51 @@ public class ListSpacesResponseBody extends TeaModel {
     }
 
     public static class ListSpacesResponseBodySpaces extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
-        // 授权模式
+        /**
+         * <p>授权模式</p>
+         */
         @NameInMap("permissionMode")
         public String permissionMode;
 
-        // 空间总额度
+        /**
+         * <p>空间总额度</p>
+         */
         @NameInMap("quota")
         public Long quota;
 
-        // 空间id
+        /**
+         * <p>空间id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 空间名称
+        /**
+         * <p>空间名称</p>
+         */
         @NameInMap("spaceName")
         public String spaceName;
 
-        // 空间类型
+        /**
+         * <p>空间类型</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 
-        // 空间已使用额度
+        /**
+         * <p>空间已使用额度</p>
+         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 
@@ -127,110 +145,6 @@ public class ListSpacesResponseBody extends TeaModel {
         }
 
         public ListSpacesResponseBodySpaces setUsedQuota(Long usedQuota) {
-            this.usedQuota = usedQuota;
-            return this;
-        }
-        public Long getUsedQuota() {
-            return this.usedQuota;
-        }
-
-    }
-
-    public static class ManagementListSpacesResponseBodySpaces extends TeaModel {
-        // 创建时间
-        @NameInMap("createTime")
-        public String createTime;
-
-        // 修改时间
-        @NameInMap("modifyTime")
-        public String modifyTime;
-
-        // 授权模式
-        @NameInMap("permissionMode")
-        public String permissionMode;
-
-        // 空间总额度
-        @NameInMap("quota")
-        public Long quota;
-
-        // 空间id
-        @NameInMap("spaceId")
-        public String spaceId;
-
-        // 空间名称
-        @NameInMap("spaceName")
-        public String spaceName;
-
-        // 空间类型
-        @NameInMap("spaceType")
-        public String spaceType;
-
-        // 空间已使用额度
-        @NameInMap("usedQuota")
-        public Long usedQuota;
-
-        public static ManagementListSpacesResponseBodySpaces build(java.util.Map<String, ?> map) throws Exception {
-            ManagementListSpacesResponseBodySpaces self = new ManagementListSpacesResponseBodySpaces();
-            return TeaModel.build(map, self);
-        }
-
-        public ManagementListSpacesResponseBodySpaces setCreateTime(String createTime) {
-            this.createTime = createTime;
-            return this;
-        }
-        public String getCreateTime() {
-            return this.createTime;
-        }
-
-        public ManagementListSpacesResponseBodySpaces setModifyTime(String modifyTime) {
-            this.modifyTime = modifyTime;
-            return this;
-        }
-        public String getModifyTime() {
-            return this.modifyTime;
-        }
-
-        public ManagementListSpacesResponseBodySpaces setPermissionMode(String permissionMode) {
-            this.permissionMode = permissionMode;
-            return this;
-        }
-        public String getPermissionMode() {
-            return this.permissionMode;
-        }
-
-        public ManagementListSpacesResponseBodySpaces setQuota(Long quota) {
-            this.quota = quota;
-            return this;
-        }
-        public Long getQuota() {
-            return this.quota;
-        }
-
-        public ManagementListSpacesResponseBodySpaces setSpaceId(String spaceId) {
-            this.spaceId = spaceId;
-            return this;
-        }
-        public String getSpaceId() {
-            return this.spaceId;
-        }
-
-        public ManagementListSpacesResponseBodySpaces setSpaceName(String spaceName) {
-            this.spaceName = spaceName;
-            return this;
-        }
-        public String getSpaceName() {
-            return this.spaceName;
-        }
-
-        public ManagementListSpacesResponseBodySpaces setSpaceType(String spaceType) {
-            this.spaceType = spaceType;
-            return this;
-        }
-        public String getSpaceType() {
-            return this.spaceType;
-        }
-
-        public ManagementListSpacesResponseBodySpaces setUsedQuota(Long usedQuota) {
             this.usedQuota = usedQuota;
             return this;
         }

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserOkrResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public GetUserOkrResponseBodyData data;
 
-    // 请求成功的标识。
+    /**
+     * <p>请求成功的标识。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,7 +38,9 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListKrListProgress extends TeaModel {
-        // 百分比。
+        /**
+         * <p>百分比。</p>
+         */
         @NameInMap("percent")
         public Integer percent;
 
@@ -54,43 +60,63 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListKrList extends TeaModel {
-        // KR 内容。
+        /**
+         * <p>KR 内容。</p>
+         */
         @NameInMap("content")
         public java.io.InputStream content;
 
-        // 创建时间。时间戳
+        /**
+         * <p>创建时间。时间戳</p>
+         */
         @NameInMap("gmtCreate")
         public Float gmtCreate;
 
-        // 更新时间。时间戳
+        /**
+         * <p>更新时间。时间戳</p>
+         */
         @NameInMap("gmtModified")
         public Float gmtModified;
 
-        // KR 的 ID。
+        /**
+         * <p>KR 的 ID。</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
-        // 所属 Objective ID。
+        /**
+         * <p>所属 Objective ID。</p>
+         */
         @NameInMap("objectiveId")
         public java.io.InputStream objectiveId;
 
-        // KR 权限。
+        /**
+         * <p>KR 权限。</p>
+         */
         @NameInMap("permission")
         public java.util.List<Float> permission;
 
-        // 所处位置。
+        /**
+         * <p>所处位置。</p>
+         */
         @NameInMap("position")
         public Long position;
 
-        // KR 进度。
+        /**
+         * <p>KR 进度。</p>
+         */
         @NameInMap("progress")
         public GetUserOkrResponseBodyDataListKrListProgress progress;
 
-        // 所占分数。
+        /**
+         * <p>所占分数。</p>
+         */
         @NameInMap("score")
         public Float score;
 
-        // 所占权重。
+        /**
+         * <p>所占权重。</p>
+         */
         @NameInMap("weight")
         public Float weight;
 
@@ -182,23 +208,33 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListOwner extends TeaModel {
-        // 所属者头像。 ID
+        /**
+         * <p>所属者头像。 ID</p>
+         */
         @NameInMap("avatarMediaId")
         public java.io.InputStream avatarMediaId;
 
-        // 所属者组织 I。D
+        /**
+         * <p>所属者组织 I。D</p>
+         */
         @NameInMap("corpId")
         public java.io.InputStream corpId;
 
-        // 所属者 OKR 系统中的 ID。
+        /**
+         * <p>所属者 OKR 系统中的 ID。</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
-        // 所属者昵称。
+        /**
+         * <p>所属者昵称。</p>
+         */
         @NameInMap("nickname")
         public java.io.InputStream nickname;
 
-        // 所属者 userId。
+        /**
+         * <p>所属者 userId。</p>
+         */
         @NameInMap("userId")
         public java.io.InputStream userId;
 
@@ -250,7 +286,9 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListProgress extends TeaModel {
-        // 百分比。
+        /**
+         * <p>百分比。</p>
+         */
         @NameInMap("percent")
         public Integer percent;
 
@@ -270,75 +308,111 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataList extends TeaModel {
-        // 被对齐的 Objective。
+        /**
+         * <p>被对齐的 Objective。</p>
+         */
         @NameInMap("alignFromIds")
         public java.util.List<java.io.InputStream> alignFromIds;
 
-        // 对齐的 Objective。
+        /**
+         * <p>对齐的 Objective。</p>
+         */
         @NameInMap("alignToIds")
         public java.util.List<java.io.InputStream> alignToIds;
 
-        // Objective 内容。
+        /**
+         * <p>Objective 内容。</p>
+         */
         @NameInMap("content")
         public java.io.InputStream content;
 
-        // 创建时间。时间戳
+        /**
+         * <p>创建时间。时间戳</p>
+         */
         @NameInMap("gmtCreate")
         public Float gmtCreate;
 
-        // 更新时间。时间戳
+        /**
+         * <p>更新时间。时间戳</p>
+         */
         @NameInMap("gmtModified")
         public Float gmtModified;
 
-        // objective。
+        /**
+         * <p>objective。</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
-        // KR 详情列表。
+        /**
+         * <p>KR 详情列表。</p>
+         */
         @NameInMap("krList")
         public java.util.List<GetUserOkrResponseBodyDataListKrList> krList;
 
-        // 所属者信息。
+        /**
+         * <p>所属者信息。</p>
+         */
         @NameInMap("owner")
         public GetUserOkrResponseBodyDataListOwner owner;
 
-        // 周期 ID。
+        /**
+         * <p>周期 ID。</p>
+         */
         @NameInMap("periodId")
         public java.io.InputStream periodId;
 
-        // 权限值。
+        /**
+         * <p>权限值。</p>
+         */
         @NameInMap("permission")
         public java.util.List<Float> permission;
 
-        // 所在位置。
+        /**
+         * <p>所在位置。</p>
+         */
         @NameInMap("position")
         public Integer position;
 
-        // 进度值。
+        /**
+         * <p>进度值。</p>
+         */
         @NameInMap("progress")
         public GetUserOkrResponseBodyDataListProgress progress;
 
-        // 百分比值。
+        /**
+         * <p>百分比值。</p>
+         */
         @NameInMap("progressPercent")
         public Float progressPercent;
 
-        // 是否已发布。
+        /**
+         * <p>是否已发布。</p>
+         */
         @NameInMap("published")
         public Boolean published;
 
-        // 分数值。
+        /**
+         * <p>分数值。</p>
+         */
         @NameInMap("score")
         public Float score;
 
-        // 当前内容状态。
+        /**
+         * <p>当前内容状态。</p>
+         */
         @NameInMap("status")
         public Integer status;
 
-        // 用户 ID。
+        /**
+         * <p>用户 ID。</p>
+         */
         @NameInMap("userId")
         public java.io.InputStream userId;
 
-        // 权重值。
+        /**
+         * <p>权重值。</p>
+         */
         @NameInMap("weight")
         public Float weight;
 
@@ -494,19 +568,27 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyData extends TeaModel {
-        // OKR 列表详情。
+        /**
+         * <p>OKR 列表详情。</p>
+         */
         @NameInMap("list")
         public java.util.List<GetUserOkrResponseBodyDataList> list;
 
-        // 当前页码。
+        /**
+         * <p>当前页码。</p>
+         */
         @NameInMap("pageNumber")
         public Long pageNumber;
 
-        // 每一页的个数。
+        /**
+         * <p>每一页的个数。</p>
+         */
         @NameInMap("pageSize")
         public Long pageSize;
 
-        // 总数。
+        /**
+         * <p>总数。</p>
+         */
         @NameInMap("totalCount")
         public Long totalCount;
 

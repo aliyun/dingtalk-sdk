@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDeviceResponseBody extends TeaModel {
-    // 是否删除成功
+    /**
+     * <p>是否删除成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

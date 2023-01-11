@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddResidentUsersResponseBody extends TeaModel {
-    // 创建成功的userId
+    /**
+     * <p>创建成功的userId</p>
+     */
     @NameInMap("result")
     public String result;
 

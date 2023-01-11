@@ -21,11 +21,15 @@ public class GetActivityButtonListResponseBody extends TeaModel {
     }
 
     public static class GetActivityButtonListResponseBodyResult extends TeaModel {
-        // alias
+        /**
+         * <p>alias</p>
+         */
         @NameInMap("aliasInChinese")
         public String aliasInChinese;
 
-        // aliasEn
+        /**
+         * <p>aliasEn</p>
+         */
         @NameInMap("aliasInEnglish")
         public String aliasInEnglish;
 

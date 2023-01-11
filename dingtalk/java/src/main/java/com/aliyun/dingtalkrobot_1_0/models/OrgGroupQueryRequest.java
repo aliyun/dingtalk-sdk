@@ -4,27 +4,39 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class OrgGroupQueryRequest extends TeaModel {
-    // 分页查询每页的数量
+    /**
+     * <p>分页查询每页的数量</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 一次查询后返回的加密的分页凭证，首次查询不填
+    /**
+     * <p>一次查询后返回的加密的分页凭证，首次查询不填</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 开放的群id
+    /**
+     * <p>开放的群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 发送消息返回的加密消息id
+    /**
+     * <p>发送消息返回的加密消息id</p>
+     */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 
-    // 企业机器人的robotcode
+    /**
+     * <p>企业机器人的robotcode</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    // 群内机器人的webhook中的Token
+    /**
+     * <p>群内机器人的webhook中的Token</p>
+     */
     @NameInMap("token")
     public String token;
 

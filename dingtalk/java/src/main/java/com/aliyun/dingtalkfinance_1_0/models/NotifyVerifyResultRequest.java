@@ -4,43 +4,63 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyVerifyResultRequest extends TeaModel {
-    // 企业ID
+    /**
+     * <p>企业ID</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 码值
+    /**
+     * <p>码值</p>
+     */
     @NameInMap("payCode")
     public String payCode;
 
-    // 备注信息
+    /**
+     * <p>备注信息</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
+    /**
+     * <p>用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户</p>
+     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
-    // 用户身份标识
+    /**
+     * <p>用户身份标识</p>
+     */
     @NameInMap("userIdentity")
     public String userIdentity;
 
-    // 验证事件，长度不超过8个中文
+    /**
+     * <p>验证事件，长度不超过8个中文</p>
+     */
     @NameInMap("verifyEvent")
     public String verifyEvent;
 
-    // 验证地点，调用时请务必传入，以便生成工牌使用记录
+    /**
+     * <p>验证地点，调用时请务必传入，以便生成工牌使用记录</p>
+     */
     @NameInMap("verifyLocation")
     public String verifyLocation;
 
-    // 验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录
+    /**
+     * <p>验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录</p>
+     */
     @NameInMap("verifyNo")
     public String verifyNo;
 
-    // 验证结果
+    /**
+     * <p>验证结果</p>
+     */
     @NameInMap("verifyResult")
     public Boolean verifyResult;
 
-    // 验证时间
+    /**
+     * <p>验证时间</p>
+     */
     @NameInMap("verifyTime")
     public String verifyTime;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPluginPermissionPointResponseBody extends TeaModel {
-    // 插件权限点列表
+    /**
+     * <p>插件权限点列表</p>
+     */
     @NameInMap("permissionPointList")
     public java.util.List<String> permissionPointList;
 

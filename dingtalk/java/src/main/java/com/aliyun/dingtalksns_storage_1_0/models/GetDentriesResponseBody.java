@@ -4,9 +4,11 @@ package com.aliyun.dingtalksns_storage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDentriesResponseBody extends TeaModel {
-    // 批量获取文件(夹)信息结果列表
-    // 最大size:
-    // 	30
+    /**
+     * <p>批量获取文件(夹)信息结果列表</p>
+     * <p>最大size:</p>
+     * <p>	30</p>
+     */
     @NameInMap("resultItems")
     public java.util.List<GetDentriesResponseBodyResultItems> resultItems;
 
@@ -24,7 +26,9 @@ public class GetDentriesResponseBody extends TeaModel {
     }
 
     public static class GetDentriesResponseBodyResultItemsDentryProperties extends TeaModel {
-        // 文件是否只读
+        /**
+         * <p>文件是否只读</p>
+         */
         @NameInMap("readOnly")
         public Boolean readOnly;
 
@@ -44,15 +48,21 @@ public class GetDentriesResponseBody extends TeaModel {
     }
 
     public static class GetDentriesResponseBodyResultItemsDentryThumbnail extends TeaModel {
-        // 缩略图高度
+        /**
+         * <p>缩略图高度</p>
+         */
         @NameInMap("height")
         public Integer height;
 
-        // 缩略图url
+        /**
+         * <p>缩略图url</p>
+         */
         @NameInMap("url")
         public String url;
 
-        // 缩略图宽度
+        /**
+         * <p>缩略图宽度</p>
+         */
         @NameInMap("width")
         public Integer width;
 
@@ -88,102 +98,142 @@ public class GetDentriesResponseBody extends TeaModel {
     }
 
     public static class GetDentriesResponseBodyResultItemsDentry extends TeaModel {
-        // 在特定应用上的属性。key是微应用Id, value是属性列表。
-        // 可以通过修改DentryAppProperty里的scope来设置属性的可见性
-        // 最大size:
-        // 	10
+        /**
+         * <p>在特定应用上的属性。key是微应用Id, value是属性列表。</p>
+         * <p>可以通过修改DentryAppProperty里的scope来设置属性的可见性</p>
+         * <p>最大size:</p>
+         * <p>	10</p>
+         */
         @NameInMap("appProperties")
         public java.util.Map<String, java.util.List<ResultItemsDentryAppPropertiesValue>> appProperties;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建者id
+        /**
+         * <p>创建者id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        // 后缀
+        /**
+         * <p>后缀</p>
+         */
         @NameInMap("extension")
         public String extension;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        // 修改者id
+        /**
+         * <p>修改者id</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 父目录id, 根目录id值为0
-        // 空值代表根目录的parentId不存在
+        /**
+         * <p>父目录id, 根目录id值为0</p>
+         * <p>空值代表根目录的parentId不存在</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
-        // 存储分区，目前包括公有云OSS存储分区和专属Mini OSS存储分区
-        // 枚举值:
-        // 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
-        // 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+        /**
+         * <p>存储分区，目前包括公有云OSS存储分区和专属Mini OSS存储分区</p>
+         * <p>枚举值:</p>
+         * <p>	PUBLIC_OSS_PARTITION: 公有云OSS存储分区</p>
+         * <p>	MINI_OSS_PARTITION: 专属Mini OSS存储分区</p>
+         */
         @NameInMap("partitionType")
         public String partitionType;
 
-        // 路径
+        /**
+         * <p>路径</p>
+         */
         @NameInMap("path")
         public String path;
 
-        // 属性
+        /**
+         * <p>属性</p>
+         */
         @NameInMap("properties")
         public GetDentriesResponseBodyResultItemsDentryProperties properties;
 
-        // 大小, 单位:Byte
+        /**
+         * <p>大小, 单位:Byte</p>
+         */
         @NameInMap("size")
         public Long size;
 
-        // 所在空间id
+        /**
+         * <p>所在空间id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 状态
-        // 枚举值:
-        // 	NORMAL: 正常
-        // 	DELETED: 已删除
-        // 	EXPIRED: 已过期
+        /**
+         * <p>状态</p>
+         * <p>枚举值:</p>
+         * <p>	NORMAL: 正常</p>
+         * <p>	DELETED: 已删除</p>
+         * <p>	EXPIRED: 已过期</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 驱动类型
-        // 枚举值:
-        // 	DINGTALK: 钉钉统一存储驱动
-        // 	ALIDOC: 钉钉文档存储驱动
-        // 	SHANJI: 闪记存储驱动
-        // 	UNKNOWN: 未知驱动
+        /**
+         * <p>驱动类型</p>
+         * <p>枚举值:</p>
+         * <p>	DINGTALK: 钉钉统一存储驱动</p>
+         * <p>	ALIDOC: 钉钉文档存储驱动</p>
+         * <p>	SHANJI: 闪记存储驱动</p>
+         * <p>	UNKNOWN: 未知驱动</p>
+         */
         @NameInMap("storageDriver")
         public String storageDriver;
 
-        // 缩略图信息
+        /**
+         * <p>缩略图信息</p>
+         */
         @NameInMap("thumbnail")
         public GetDentriesResponseBodyResultItemsDentryThumbnail thumbnail;
 
-        // 类型，目录或文件
-        // 枚举值:
-        // 	FILE: 文件
-        // 	FOLDER: 文件夹
+        /**
+         * <p>类型，目录或文件</p>
+         * <p>枚举值:</p>
+         * <p>	FILE: 文件</p>
+         * <p>	FOLDER: 文件夹</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // uuid，如移动文件，此字段不变
+        /**
+         * <p>uuid，如移动文件，此字段不变</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 
-        // 版本
+        /**
+         * <p>版本</p>
+         */
         @NameInMap("version")
         public Long version;
 
@@ -355,23 +405,33 @@ public class GetDentriesResponseBody extends TeaModel {
     }
 
     public static class GetDentriesResponseBodyResultItems extends TeaModel {
-        // 文件(夹)信息
+        /**
+         * <p>文件(夹)信息</p>
+         */
         @NameInMap("dentry")
         public GetDentriesResponseBodyResultItemsDentry dentry;
 
-        // 文件(夹)id
+        /**
+         * <p>文件(夹)id</p>
+         */
         @NameInMap("dentryId")
         public String dentryId;
 
-        // 错误原因
+        /**
+         * <p>错误原因</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        // 文件(夹)空间id
+        /**
+         * <p>文件(夹)空间id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 是否成功
+        /**
+         * <p>是否成功</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

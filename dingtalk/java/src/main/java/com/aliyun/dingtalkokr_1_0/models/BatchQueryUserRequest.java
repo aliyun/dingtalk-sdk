@@ -4,11 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryUserRequest extends TeaModel {
-    // OKR 系统中的用户 ID 列表
+    /**
+     * <p>OKR 系统中的用户 ID 列表</p>
+     */
     @NameInMap("okrUserIds")
     public java.util.List<String> okrUserIds;
 
-    // 开放平台中用户 ID 列表
+    /**
+     * <p>开放平台中用户 ID 列表</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

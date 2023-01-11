@@ -4,11 +4,15 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class PullDataByPkRequest extends TeaModel {
-    // 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
+    /**
+     * <p>同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。</p>
+     */
     @NameInMap("appId")
     public String appId;
 
-    // 数据的主键字段值。
+    /**
+     * <p>数据的主键字段值。</p>
+     */
     @NameInMap("primaryKey")
     public String primaryKey;
 

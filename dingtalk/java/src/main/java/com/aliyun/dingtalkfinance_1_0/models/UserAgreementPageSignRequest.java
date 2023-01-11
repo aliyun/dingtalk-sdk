@@ -4,51 +4,75 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UserAgreementPageSignRequest extends TeaModel {
-    // 业务编码
+    /**
+     * <p>业务编码</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 业务场景
+    /**
+     * <p>业务场景</p>
+     */
     @NameInMap("bizScene")
     public String bizScene;
 
-    // 主机构编号
+    /**
+     * <p>主机构编号</p>
+     */
     @NameInMap("instId")
     public String instId;
 
-    // 支付渠道
+    /**
+     * <p>支付渠道</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    // 备注
+    /**
+     * <p>备注</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 签约后页面返回url
+    /**
+     * <p>签约后页面返回url</p>
+     */
     @NameInMap("returnUrl")
     public String returnUrl;
 
-    // 签约场景
+    /**
+     * <p>签约场景</p>
+     */
     @NameInMap("signScene")
     public String signScene;
 
-    // 子机构编号
+    /**
+     * <p>子机构编号</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    // 子商户商户名称
+    /**
+     * <p>子商户商户名称</p>
+     */
     @NameInMap("subMerchantName")
     public String subMerchantName;
 
-    // 子商户服务描述
+    /**
+     * <p>子商户服务描述</p>
+     */
     @NameInMap("subMerchantServiceDesc")
     public String subMerchantServiceDesc;
 
-    // 子商户服务名称
+    /**
+     * <p>子商户服务名称</p>
+     */
     @NameInMap("subMerchantServiceName")
     public String subMerchantServiceName;
 
-    // 付款人staffId
+    /**
+     * <p>付款人staffId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

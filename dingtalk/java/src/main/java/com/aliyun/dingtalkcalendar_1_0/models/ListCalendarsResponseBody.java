@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListCalendarsResponseBody extends TeaModel {
-    // 日历信息
+    /**
+     * <p>日历信息</p>
+     */
     @NameInMap("response")
     public ListCalendarsResponseBodyResponse response;
 
@@ -22,31 +24,45 @@ public class ListCalendarsResponseBody extends TeaModel {
     }
 
     public static class ListCalendarsResponseBodyResponseCalendars extends TeaModel {
-        // 日历描述
+        /**
+         * <p>日历描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // Calendar资源的ETag，用于检测该Calendar以及内部的Event是否有被更新
+        /**
+         * <p>Calendar资源的ETag，用于检测该Calendar以及内部的Event是否有被更新</p>
+         */
         @NameInMap("eTag")
         public String eTag;
 
-        // 日历id
+        /**
+         * <p>日历id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 权限信息
+        /**
+         * <p>权限信息</p>
+         */
         @NameInMap("privilege")
         public String privilege;
 
-        // 日历标题
+        /**
+         * <p>日历标题</p>
+         */
         @NameInMap("summary")
         public String summary;
 
-        // 时区
+        /**
+         * <p>时区</p>
+         */
         @NameInMap("timeZone")
         public String timeZone;
 
-        // 日历类型
+        /**
+         * <p>日历类型</p>
+         */
         @NameInMap("type")
         public String type;
 

@@ -4,31 +4,45 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
-    // content
+    /**
+     * <p>content</p>
+     */
     @NameInMap("content")
     public IndustrializeManufactureJobBookResponseBodyContent content;
 
-    // errorCode
+    /**
+     * <p>errorCode</p>
+     */
     @NameInMap("errorCode")
     public String errorCode;
 
-    // errorLevel
+    /**
+     * <p>errorLevel</p>
+     */
     @NameInMap("errorLevel")
     public Integer errorLevel;
 
-    // errorMsg
+    /**
+     * <p>errorMsg</p>
+     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    // httpCode
+    /**
+     * <p>httpCode</p>
+     */
     @NameInMap("httpCode")
     public String httpCode;
 
-    // success
+    /**
+     * <p>success</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
-    // 此次报工记录的唯一标识
+    /**
+     * <p>此次报工记录的唯一标识</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 
@@ -94,11 +108,15 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
     }
 
     public static class IndustrializeManufactureJobBookResponseBodyContent extends TeaModel {
-        // 影响行数
+        /**
+         * <p>影响行数</p>
+         */
         @NameInMap("count")
         public Integer count;
 
-        // 新增记录的数据库id
+        /**
+         * <p>新增记录的数据库id</p>
+         */
         @NameInMap("id")
         public Long id;
 

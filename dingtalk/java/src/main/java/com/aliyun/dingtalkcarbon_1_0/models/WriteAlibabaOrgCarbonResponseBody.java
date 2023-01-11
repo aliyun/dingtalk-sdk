@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class WriteAlibabaOrgCarbonResponseBody extends TeaModel {
-    // 返回请求成功的数量
+    /**
+     * <p>返回请求成功的数量</p>
+     */
     @NameInMap("result")
     public Integer result;
 
-    // 请求是否成功
+    /**
+     * <p>请求是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

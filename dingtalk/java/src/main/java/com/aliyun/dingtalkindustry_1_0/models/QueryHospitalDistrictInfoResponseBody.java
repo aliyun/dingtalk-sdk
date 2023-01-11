@@ -4,19 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryHospitalDistrictInfoResponseBody extends TeaModel {
-    // 院区病区详情
+    /**
+     * <p>院区病区详情</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryHospitalDistrictInfoResponseBodyContent> content;
 
-    // 当前页码
+    /**
+     * <p>当前页码</p>
+     */
     @NameInMap("currentPage")
     public Long currentPage;
 
-    // 数据总量
+    /**
+     * <p>数据总量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 总页数
+    /**
+     * <p>总页数</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -58,35 +66,51 @@ public class QueryHospitalDistrictInfoResponseBody extends TeaModel {
     }
 
     public static class QueryHospitalDistrictInfoResponseBodyContent extends TeaModel {
-        // 病区对应的物理地址
+        /**
+         * <p>病区对应的物理地址</p>
+         */
         @NameInMap("address")
         public String address;
 
-        // 删除，0:正常，其他：已删除
+        /**
+         * <p>删除，0:正常，其他：已删除</p>
+         */
         @NameInMap("deleted")
         public Integer deleted;
 
-        // 院区或病区名称
+        /**
+         * <p>院区或病区名称</p>
+         */
         @NameInMap("districtName")
         public String districtName;
 
-        // 类型，1：院区；2：病区
+        /**
+         * <p>类型，1：院区；2：病区</p>
+         */
         @NameInMap("districtType")
         public Integer districtType;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 主键
+        /**
+         * <p>主键</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 院区id
+        /**
+         * <p>院区id</p>
+         */
         @NameInMap("parentDistrictId")
         public Long parentDistrictId;
 

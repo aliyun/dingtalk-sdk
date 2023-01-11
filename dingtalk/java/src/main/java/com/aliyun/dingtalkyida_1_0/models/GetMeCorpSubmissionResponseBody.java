@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMeCorpSubmissionResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public java.util.List<GetMeCorpSubmissionResponseBodyData> data;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,75 +52,111 @@ public class GetMeCorpSubmissionResponseBody extends TeaModel {
     }
 
     public static class GetMeCorpSubmissionResponseBodyDataActioner extends TeaModel {
-        // buName
+        /**
+         * <p>buName</p>
+         */
         @NameInMap("buName")
         public String buName;
 
-        // email
+        /**
+         * <p>email</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // empType
+        /**
+         * <p>empType</p>
+         */
         @NameInMap("employeeType")
         public String employeeType;
 
-        // employeeTypeInformation
+        /**
+         * <p>employeeTypeInformation</p>
+         */
         @NameInMap("employeeTypeInformation")
         public String employeeTypeInformation;
 
-        // hrgWorkNo
+        /**
+         * <p>hrgWorkNo</p>
+         */
         @NameInMap("humanResourceGroupWorkNumber")
         public String humanResourceGroupWorkNumber;
 
-        // isSystemAdmin
+        /**
+         * <p>isSystemAdmin</p>
+         */
         @NameInMap("isSystemAdmin")
         public Boolean isSystemAdmin;
 
-        // level
+        /**
+         * <p>level</p>
+         */
         @NameInMap("level")
         public String level;
 
-        // name
+        /**
+         * <p>name</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // nickName
+        /**
+         * <p>nickName</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
-        // orderNum
+        /**
+         * <p>orderNum</p>
+         */
         @NameInMap("orderNumber")
         public String orderNumber;
 
-        // personalPhoto
+        /**
+         * <p>personalPhoto</p>
+         */
         @NameInMap("personalPhoto")
         public String personalPhoto;
 
-        // personalPhotoUrl
+        /**
+         * <p>personalPhotoUrl</p>
+         */
         @NameInMap("personalPhotoUrl")
         public String personalPhotoUrl;
 
-        // pinyinNameAll
+        /**
+         * <p>pinyinNameAll</p>
+         */
         @NameInMap("pinyinNameAll")
         public String pinyinNameAll;
 
-        // pinyinNick
+        /**
+         * <p>pinyinNick</p>
+         */
         @NameInMap("pinyinNickName")
         public String pinyinNickName;
 
-        // state
+        /**
+         * <p>state</p>
+         */
         @NameInMap("state")
         public String state;
 
-        // superUserId
+        /**
+         * <p>superUserId</p>
+         */
         @NameInMap("superUserId")
         public String superUserId;
 
-        // tbWang
+        /**
+         * <p>tbWang</p>
+         */
         @NameInMap("tbWang")
         public String tbWang;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -270,23 +312,33 @@ public class GetMeCorpSubmissionResponseBody extends TeaModel {
     }
 
     public static class GetMeCorpSubmissionResponseBodyDataCurrentActivityInstances extends TeaModel {
-        // activityId
+        /**
+         * <p>activityId</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
-        // activityInstanceStatus
+        /**
+         * <p>activityInstanceStatus</p>
+         */
         @NameInMap("activityInstanceStatus")
         public String activityInstanceStatus;
 
-        // activityName
+        /**
+         * <p>activityName</p>
+         */
         @NameInMap("activityName")
         public String activityName;
 
-        // activityNameEn
+        /**
+         * <p>activityNameEn</p>
+         */
         @NameInMap("activityNameEn")
         public String activityNameEn;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public Long id;
 
@@ -338,107 +390,159 @@ public class GetMeCorpSubmissionResponseBody extends TeaModel {
     }
 
     public static class GetMeCorpSubmissionResponseBodyData extends TeaModel {
-        // actioner
+        /**
+         * <p>actioner</p>
+         */
         @NameInMap("actioner")
         public java.util.List<GetMeCorpSubmissionResponseBodyDataActioner> actioner;
 
-        // actionerId
+        /**
+         * <p>actionerId</p>
+         */
         @NameInMap("actionerId")
         public java.util.List<String> actionerId;
 
-        // actionerName
+        /**
+         * <p>actionerName</p>
+         */
         @NameInMap("actionerName")
         public java.util.List<String> actionerName;
 
-        // appType
+        /**
+         * <p>appType</p>
+         */
         @NameInMap("appType")
         public String appType;
 
-        // createTime
+        /**
+         * <p>createTime</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // currentActivityInstances
+        /**
+         * <p>currentActivityInstances</p>
+         */
         @NameInMap("currentActivityInstances")
         public java.util.List<GetMeCorpSubmissionResponseBodyDataCurrentActivityInstances> currentActivityInstances;
 
-        // dataMap
+        /**
+         * <p>dataMap</p>
+         */
         @NameInMap("dataMap")
         public java.util.Map<String, ?> dataMap;
 
-        // dataType
+        /**
+         * <p>dataType</p>
+         */
         @NameInMap("dataType")
         public String dataType;
 
-        // finishTime
+        /**
+         * <p>finishTime</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        // formInstanceId
+        /**
+         * <p>formInstanceId</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        // formUuid
+        /**
+         * <p>formUuid</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        // instValue
+        /**
+         * <p>instValue</p>
+         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
-        // modifiedTime
+        /**
+         * <p>modifiedTime</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        // originatorAvatar
+        /**
+         * <p>originatorAvatar</p>
+         */
         @NameInMap("originatorAvatar")
         public String originatorAvatar;
 
-        // originatorDisplayName
+        /**
+         * <p>originatorDisplayName</p>
+         */
         @NameInMap("originatorDisplayName")
         public String originatorDisplayName;
 
-        // originatorId
+        /**
+         * <p>originatorId</p>
+         */
         @NameInMap("originatorId")
         public String originatorId;
 
-        // processApprovedResult
+        /**
+         * <p>processApprovedResult</p>
+         */
         @NameInMap("processApprovedResult")
         public String processApprovedResult;
 
-        // processApprovedResultText
+        /**
+         * <p>processApprovedResultText</p>
+         */
         @NameInMap("processApprovedResultText")
         public String processApprovedResultText;
 
-        // processCode
+        /**
+         * <p>processCode</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
-        // processId
+        /**
+         * <p>processId</p>
+         */
         @NameInMap("processId")
         public Long processId;
 
-        // processInstanceId
+        /**
+         * <p>processInstanceId</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // processInstanceStatus
+        /**
+         * <p>processInstanceStatus</p>
+         */
         @NameInMap("processInstanceStatus")
         public String processInstanceStatus;
 
-        // processInstanceStatusText
+        /**
+         * <p>processInstanceStatusText</p>
+         */
         @NameInMap("processInstanceStatusText")
         public String processInstanceStatusText;
 
-        // processName
+        /**
+         * <p>processName</p>
+         */
         @NameInMap("processName")
         public String processName;
 
-        // title
+        /**
+         * <p>title</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // version
+        /**
+         * <p>version</p>
+         */
         @NameInMap("version")
         public Long version;
 

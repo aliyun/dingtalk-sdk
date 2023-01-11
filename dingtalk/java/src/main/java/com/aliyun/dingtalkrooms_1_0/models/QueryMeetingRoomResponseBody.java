@@ -21,15 +21,21 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomResponseBodyResultRoomGroup extends TeaModel {
-        // 分组id
+        /**
+         * <p>分组id</p>
+         */
         @NameInMap("groupId")
         public Long groupId;
 
-        // 分组名称
+        /**
+         * <p>分组名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 父分组id
+        /**
+         * <p>父分组id</p>
+         */
         @NameInMap("parentId")
         public Long parentId;
 
@@ -95,11 +101,15 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomResponseBodyResultRoomLocation extends TeaModel {
-        // 位置详细信息
+        /**
+         * <p>位置详细信息</p>
+         */
         @NameInMap("desc")
         public String desc;
 
-        // 位置名称
+        /**
+         * <p>位置名称</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -127,46 +137,66 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomResponseBodyResult extends TeaModel {
-        // 企业corpId
+        /**
+         * <p>企业corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // isv外部会议室id
+        /**
+         * <p>isv外部会议室id</p>
+         */
         @NameInMap("isvRoomId")
         public String isvRoomId;
 
-        // 会议室容量
+        /**
+         * <p>会议室容量</p>
+         */
         @NameInMap("roomCapacity")
         public Integer roomCapacity;
 
-        // 会议室分组
+        /**
+         * <p>会议室分组</p>
+         */
         @NameInMap("roomGroup")
         public QueryMeetingRoomResponseBodyResultRoomGroup roomGroup;
 
-        // 会议室id
+        /**
+         * <p>会议室id</p>
+         */
         @NameInMap("roomId")
         public String roomId;
 
         @NameInMap("roomLabels")
         public java.util.List<QueryMeetingRoomResponseBodyResultRoomLabels> roomLabels;
 
-        // 会议室位置
+        /**
+         * <p>会议室位置</p>
+         */
         @NameInMap("roomLocation")
         public QueryMeetingRoomResponseBodyResultRoomLocation roomLocation;
 
-        // 会议室名称
+        /**
+         * <p>会议室名称</p>
+         */
         @NameInMap("roomName")
         public String roomName;
 
-        // 会议室图片
+        /**
+         * <p>会议室图片</p>
+         */
         @NameInMap("roomPicture")
         public String roomPicture;
 
-        // 会议室staffId
+        /**
+         * <p>会议室staffId</p>
+         */
         @NameInMap("roomStaffId")
         public String roomStaffId;
 
-        // 会议室状态
+        /**
+         * <p>会议室状态</p>
+         */
         @NameInMap("roomStatus")
         public Integer roomStatus;
 

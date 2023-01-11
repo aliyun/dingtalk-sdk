@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteCrmCustomObjectDataRequest extends TeaModel {
-    // 自定义对象表单code。
+    /**
+     * <p>自定义对象表单code。</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 

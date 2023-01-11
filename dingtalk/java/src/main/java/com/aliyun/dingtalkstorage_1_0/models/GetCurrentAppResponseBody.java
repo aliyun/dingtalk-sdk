@@ -4,7 +4,9 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCurrentAppResponseBody extends TeaModel {
-    // 企业存储应用信息
+    /**
+     * <p>企业存储应用信息</p>
+     */
     @NameInMap("app")
     public GetCurrentAppResponseBodyApp app;
 
@@ -22,34 +24,42 @@ public class GetCurrentAppResponseBody extends TeaModel {
     }
 
     public static class GetCurrentAppResponseBodyAppPartitionsQuota extends TeaModel {
-        // 最大容量, 单位: Byte
-        // 当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max
-        // 当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量
+        /**
+         * <p>最大容量, 单位: Byte</p>
+         * <p>当前应用容量被设置为max时，代表当前应用容量设置了上限，used<=max</p>
+         * <p>当前应用容量未设置max时，返回空，此时应用共享该企业剩余可用容量</p>
+         */
         @NameInMap("max")
         public Long max;
 
-        // 预分配剩余容量, 单位: Byte
-        // 背景：
-        //    管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分
-        // 如果没有设置预分配容，此字段是空
+        /**
+         * <p>预分配剩余容量, 单位: Byte</p>
+         * <p>背景：</p>
+         * <p>   管理后台可以给应用或空间预分配容量，此字段表示预分剩余容量，即预分配容量中未使用部分</p>
+         * <p>如果没有设置预分配容，此字段是空</p>
+         */
         @NameInMap("reserved")
         public Long reserved;
 
-        // 容量类型
-        // 如果是企业维度容量，此值是PRIVATE, 表示企业独占
-        // 枚举值:
-        // 	SHARE: 共享容量
-        // 此模式下，Quota.max为空，表示共享企业容量
-        // 	PRIVATE: 预分配容量（专享容量）
-        // 当Quota.max设置值后，表示容量独占
-        // 使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）
+        /**
+         * <p>容量类型</p>
+         * <p>如果是企业维度容量，此值是PRIVATE, 表示企业独占</p>
+         * <p>枚举值:</p>
+         * <p>	SHARE: 共享容量</p>
+         * <p>此模式下，Quota.max为空，表示共享企业容量</p>
+         * <p>	PRIVATE: 预分配容量（专享容量）</p>
+         * <p>当Quota.max设置值后，表示容量独占</p>
+         * <p>使用场景：需要保证单个应用的可用容量不受其他应用影响时, 可使用预分配容量（专享容量）</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // 实际已使用容量, 单位: Byte
-        // 表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更
-        // 最小值:
-        // 	0
+        /**
+         * <p>实际已使用容量, 单位: Byte</p>
+         * <p>表示该应用下所用文件占用容量的总和，文件的上传、复制、删除相关操作会对used的值做相应变更</p>
+         * <p>最小值:</p>
+         * <p>	0</p>
+         */
         @NameInMap("used")
         public Long used;
 
@@ -93,14 +103,18 @@ public class GetCurrentAppResponseBody extends TeaModel {
     }
 
     public static class GetCurrentAppResponseBodyAppPartitions extends TeaModel {
-        // 分区类型
-        // 枚举值:
-        // 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
-        // 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
+        /**
+         * <p>分区类型</p>
+         * <p>枚举值:</p>
+         * <p>	PUBLIC_OSS_PARTITION: 公有云OSS存储分区</p>
+         * <p>	MINI_OSS_PARTITION: 专属Mini OSS存储分区</p>
+         */
         @NameInMap("partitionType")
         public String partitionType;
 
-        // 容量信息
+        /**
+         * <p>容量信息</p>
+         */
         @NameInMap("quota")
         public GetCurrentAppResponseBodyAppPartitionsQuota quota;
 
@@ -128,29 +142,41 @@ public class GetCurrentAppResponseBody extends TeaModel {
     }
 
     public static class GetCurrentAppResponseBodyApp extends TeaModel {
-        // 开放平台应用appId
+        /**
+         * <p>开放平台应用appId</p>
+         */
         @NameInMap("appId")
         public String appId;
 
-        // 应用归属企业的id
+        /**
+         * <p>应用归属企业的id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 应用创建时间
+        /**
+         * <p>应用创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 应用修改时间
+        /**
+         * <p>应用修改时间</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        // 应用名称，对应开放平台应用名称
+        /**
+         * <p>应用名称，对应开放平台应用名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 分区容量信息
-        // 最大size:
-        // 	3
+        /**
+         * <p>分区容量信息</p>
+         * <p>最大size:</p>
+         * <p>	3</p>
+         */
         @NameInMap("partitions")
         public java.util.List<GetCurrentAppResponseBodyAppPartitions> partitions;
 

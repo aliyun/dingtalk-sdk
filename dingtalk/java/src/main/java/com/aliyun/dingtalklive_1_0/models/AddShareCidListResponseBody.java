@@ -4,11 +4,15 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddShareCidListResponseBody extends TeaModel {
-    // 是否联播成功
+    /**
+     * <p>是否联播成功</p>
+     */
     @NameInMap("hasShareSuccess")
     public Boolean hasShareSuccess;
 
-    // 本次请求成功联播的群列表
+    /**
+     * <p>本次请求成功联播的群列表</p>
+     */
     @NameInMap("shareSuccessGroupList")
     public java.util.List<String> shareSuccessGroupList;
 

@@ -4,19 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupConversationResponseBody extends TeaModel {
-    // 添加成功的钉外成员列表。
+    /**
+     * <p>添加成功的钉外成员列表。</p>
+     */
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
-    // 钉钉群会话Id。
+    /**
+     * <p>钉钉群会话Id。</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
-    // 群会话Id。
+    /**
+     * <p>群会话Id。</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 添加成功的钉内成员列表。
+    /**
+     * <p>添加成功的钉内成员列表。</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

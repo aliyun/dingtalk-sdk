@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPrivilegeInfoResponseBody extends TeaModel {
-    // 类型列表
+    /**
+     * <p>类型列表</p>
+     */
     @NameInMap("types")
     public java.util.List<String> types;
 

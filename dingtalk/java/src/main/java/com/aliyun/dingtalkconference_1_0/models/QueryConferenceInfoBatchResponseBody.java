@@ -4,7 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryConferenceInfoBatchResponseBody extends TeaModel {
-    // 会议详情列表
+    /**
+     * <p>会议详情列表</p>
+     */
     @NameInMap("infos")
     public java.util.List<QueryConferenceInfoBatchResponseBodyInfos> infos;
 
@@ -22,27 +24,39 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
     }
 
     public static class QueryConferenceInfoBatchResponseBodyInfosUserList extends TeaModel {
-        // 在会状态
+        /**
+         * <p>在会状态</p>
+         */
         @NameInMap("attendStatus")
         public Long attendStatus;
 
-        // 摄像头状态
+        /**
+         * <p>摄像头状态</p>
+         */
         @NameInMap("cameraStatus")
         public Long cameraStatus;
 
-        // 麦克风状态
+        /**
+         * <p>麦克风状态</p>
+         */
         @NameInMap("micStatus")
         public Long micStatus;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("nick")
         public String nick;
 
-        // 拒绝原因
+        /**
+         * <p>拒绝原因</p>
+         */
         @NameInMap("rejectDescription")
         public String rejectDescription;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -102,27 +116,39 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
     }
 
     public static class QueryConferenceInfoBatchResponseBodyInfos extends TeaModel {
-        // 会议iD
+        /**
+         * <p>会议iD</p>
+         */
         @NameInMap("conferenceId")
         public String conferenceId;
 
-        // 媒体状态
+        /**
+         * <p>媒体状态</p>
+         */
         @NameInMap("mediaStatus")
         public Long mediaStatus;
 
-        // 会议开始时间
+        /**
+         * <p>会议开始时间</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
-        // 会议状态
+        /**
+         * <p>会议状态</p>
+         */
         @NameInMap("status")
         public Long status;
 
-        // 会议名称
+        /**
+         * <p>会议名称</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 参会用户列表
+        /**
+         * <p>参会用户列表</p>
+         */
         @NameInMap("userList")
         public java.util.List<QueryConferenceInfoBatchResponseBodyInfosUserList> userList;
 

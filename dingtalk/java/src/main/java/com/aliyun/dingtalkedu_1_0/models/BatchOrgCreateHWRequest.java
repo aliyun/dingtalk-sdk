@@ -4,79 +4,117 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchOrgCreateHWRequest extends TeaModel {
-    // 扩展属性
+    /**
+     * <p>扩展属性</p>
+     */
     @NameInMap("attributes")
     public String attributes;
 
-    // 业务编码
+    /**
+     * <p>业务编码</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 作业课程名称
+    /**
+     * <p>作业课程名称</p>
+     */
     @NameInMap("courseName")
     public String courseName;
 
-    // 作业内容
+    /**
+     * <p>作业内容</p>
+     */
     @NameInMap("hwContent")
     public String hwContent;
 
-    // 截止时间
+    /**
+     * <p>截止时间</p>
+     */
     @NameInMap("hwDeadline")
     public Long hwDeadline;
 
-    // 截止时间开启
+    /**
+     * <p>截止时间开启</p>
+     */
     @NameInMap("hwDeadlineOpen")
     public String hwDeadlineOpen;
 
-    // 作业视频
+    /**
+     * <p>作业视频</p>
+     */
     @NameInMap("hwMedia")
     public String hwMedia;
 
-    // 作业图片
+    /**
+     * <p>作业图片</p>
+     */
     @NameInMap("hwPhoto")
     public String hwPhoto;
 
-    // 作业标题
+    /**
+     * <p>作业标题</p>
+     */
     @NameInMap("hwTitle")
     public String hwTitle;
 
-    // 作业类型
+    /**
+     * <p>作业类型</p>
+     */
     @NameInMap("hwType")
     public String hwType;
 
-    // 作业音视频
+    /**
+     * <p>作业音视频</p>
+     */
     @NameInMap("hwVideo")
     public String hwVideo;
 
-    // 幂等ID字段
+    /**
+     * <p>幂等ID字段</p>
+     */
     @NameInMap("identifier")
     public String identifier;
 
-    // 选择跨组织班级
+    /**
+     * <p>选择跨组织班级</p>
+     */
     @NameInMap("openSelectItemList")
     public java.util.List<BatchOrgCreateHWRequestOpenSelectItemList> openSelectItemList;
 
-    // 定时调度
+    /**
+     * <p>定时调度</p>
+     */
     @NameInMap("scheduledRelease")
     public String scheduledRelease;
 
-    // 定时调度时间
+    /**
+     * <p>定时调度时间</p>
+     */
     @NameInMap("scheduledTime")
     public String scheduledTime;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 发送对象
+    /**
+     * <p>发送对象</p>
+     */
     @NameInMap("targetRole")
     public String targetRole;
 
-    // 老师名称
+    /**
+     * <p>老师名称</p>
+     */
     @NameInMap("teacherName")
     public String teacherName;
 
-    // 老师userid
+    /**
+     * <p>老师userid</p>
+     */
     @NameInMap("teacherUserId")
     public String teacherUserId;
 
@@ -238,15 +276,21 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     }
 
     public static class BatchOrgCreateHWRequestOpenSelectItemListClassListStudents extends TeaModel {
-        // 学生头像
+        /**
+         * <p>学生头像</p>
+         */
         @NameInMap("avatar")
         public String avatar;
 
-        // 学生姓名
+        /**
+         * <p>学生姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 学生userid
+        /**
+         * <p>学生userid</p>
+         */
         @NameInMap("staffId")
         public String staffId;
 
@@ -282,19 +326,27 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     }
 
     public static class BatchOrgCreateHWRequestOpenSelectItemListClassList extends TeaModel {
-        // 是否全选
+        /**
+         * <p>是否全选</p>
+         */
         @NameInMap("all")
         public Boolean all;
 
-        // 班级id
+        /**
+         * <p>班级id</p>
+         */
         @NameInMap("classId")
         public String classId;
 
-        // 班级名称
+        /**
+         * <p>班级名称</p>
+         */
         @NameInMap("className")
         public String className;
 
-        // 学生列表
+        /**
+         * <p>学生列表</p>
+         */
         @NameInMap("students")
         public java.util.List<BatchOrgCreateHWRequestOpenSelectItemListClassListStudents> students;
 
@@ -338,15 +390,21 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     }
 
     public static class BatchOrgCreateHWRequestOpenSelectItemList extends TeaModel {
-        // 班级列表
+        /**
+         * <p>班级列表</p>
+         */
         @NameInMap("classList")
         public java.util.List<BatchOrgCreateHWRequestOpenSelectItemListClassList> classList;
 
-        // 组织corpId
+        /**
+         * <p>组织corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 选择内容
+        /**
+         * <p>选择内容</p>
+         */
         @NameInMap("selectedClassesDesc")
         public String selectedClassesDesc;
 

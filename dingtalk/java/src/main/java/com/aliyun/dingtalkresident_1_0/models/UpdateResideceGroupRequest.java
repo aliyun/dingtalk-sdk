@@ -4,15 +4,21 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResideceGroupRequest extends TeaModel {
-    // 组id
+    /**
+     * <p>组id</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    // 组名字
+    /**
+     * <p>组名字</p>
+     */
     @NameInMap("departmentName")
     public String departmentName;
 
-    // 组长userid
+    /**
+     * <p>组长userid</p>
+     */
     @NameInMap("managerUserId")
     public String managerUserId;
 

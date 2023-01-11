@@ -4,7 +4,9 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class PublishPackageResponseBody extends TeaModel {
-    // 成功标记
+    /**
+     * <p>成功标记</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

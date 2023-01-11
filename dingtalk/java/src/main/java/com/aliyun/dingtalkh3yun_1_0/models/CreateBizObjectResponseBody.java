@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBizObjectResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public CreateBizObjectResponseBodyData data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,19 +52,27 @@ public class CreateBizObjectResponseBody extends TeaModel {
     }
 
     public static class CreateBizObjectResponseBodyData extends TeaModel {
-        // 表单业务数据id
+        /**
+         * <p>表单业务数据id</p>
+         */
         @NameInMap("bizObjectId")
         public String bizObjectId;
 
-        // 数据模型。DataList=本地存储的列表库，Workflow=工作流应用
+        /**
+         * <p>数据模型。DataList=本地存储的列表库，Workflow=工作流应用</p>
+         */
         @NameInMap("formUsageType")
         public String formUsageType;
 
-        // 流程实例id
+        /**
+         * <p>流程实例id</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // 表单编码
+        /**
+         * <p>表单编码</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProcessInstanceResponseBody extends TeaModel {
-    // 返回结果。
+    /**
+     * <p>返回结果。</p>
+     */
     @NameInMap("result")
     public GetProcessInstanceResponseBodyResult result;
 
-    // 调用是否成功。
+    /**
+     * <p>调用是否成功。</p>
+     */
     @NameInMap("success")
     public String success;
 
@@ -34,27 +38,39 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     }
 
     public static class GetProcessInstanceResponseBodyResultFormComponentValues extends TeaModel {
-        // 组件别名。
+        /**
+         * <p>组件别名。</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        // 组件类型。
+        /**
+         * <p>组件类型。</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
-        // 标签扩展值。
+        /**
+         * <p>标签扩展值。</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 组件ID。
+        /**
+         * <p>组件ID。</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 组件名称。
+        /**
+         * <p>组件名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 标签值。
+        /**
+         * <p>标签值。</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -114,19 +130,27 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     }
 
     public static class GetProcessInstanceResponseBodyResultOperationRecordsAttachments extends TeaModel {
-        // 附件ID。
+        /**
+         * <p>附件ID。</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
-        // 附件名称。
+        /**
+         * <p>附件名称。</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 附件大小。
+        /**
+         * <p>附件大小。</p>
+         */
         @NameInMap("fileSize")
         public String fileSize;
 
-        // 附件类型。
+        /**
+         * <p>附件类型。</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
@@ -170,31 +194,45 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     }
 
     public static class GetProcessInstanceResponseBodyResultOperationRecords extends TeaModel {
-        // 评论附件列表。
+        /**
+         * <p>评论附件列表。</p>
+         */
         @NameInMap("attachments")
         public java.util.List<GetProcessInstanceResponseBodyResultOperationRecordsAttachments> attachments;
 
-        // 抄送人userIds列表
+        /**
+         * <p>抄送人userIds列表</p>
+         */
         @NameInMap("ccUserIds")
         public java.util.List<String> ccUserIds;
 
-        // 操作时间。
+        /**
+         * <p>操作时间。</p>
+         */
         @NameInMap("date")
         public String date;
 
-        // 评论内容。  审批操作附带评论时才返回该字段。
+        /**
+         * <p>评论内容。  审批操作附带评论时才返回该字段。</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 操作结果：  AGREE：同意  REFUSE：拒绝  NONE
+        /**
+         * <p>操作结果：  AGREE：同意  REFUSE：拒绝  NONE</p>
+         */
         @NameInMap("result")
         public String result;
 
-        // 操作类型：  EXECUTE_TASK_NORMAL：正常执行任务  EXECUTE_TASK_AGENT：代理人执行任务  APPEND_TASK_BEFORE：前加签任务  APPEND_TASK_AFTER：后加签任务  REDIRECT_TASK：转交任务  START_PROCESS_INSTANCE：发起流程实例  TERMINATE_PROCESS_INSTANCE：终止(撤销)流程实例  FINISH_PROCESS_INSTANCE：结束流程实例  ADD_REMARK：添加评论  REDIRECT_PROCESS：审批退回  PROCESS_CC：抄送
+        /**
+         * <p>操作类型：  EXECUTE_TASK_NORMAL：正常执行任务  EXECUTE_TASK_AGENT：代理人执行任务  APPEND_TASK_BEFORE：前加签任务  APPEND_TASK_AFTER：后加签任务  REDIRECT_TASK：转交任务  START_PROCESS_INSTANCE：发起流程实例  TERMINATE_PROCESS_INSTANCE：终止(撤销)流程实例  FINISH_PROCESS_INSTANCE：结束流程实例  ADD_REMARK：添加评论  REDIRECT_PROCESS：审批退回  PROCESS_CC：抄送</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // 操作人userid。
+        /**
+         * <p>操作人userid。</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -262,43 +300,63 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     }
 
     public static class GetProcessInstanceResponseBodyResultTasks extends TeaModel {
-        // 任务节点ID。
+        /**
+         * <p>任务节点ID。</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
-        // 开始时间。
+        /**
+         * <p>开始时间。</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 结束时间。
+        /**
+         * <p>结束时间。</p>
+         */
         @NameInMap("finishTime")
         public String finishTime;
 
-        // 移动端任务URL。
+        /**
+         * <p>移动端任务URL。</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        // PC端任务URL。
+        /**
+         * <p>PC端任务URL。</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
-        // 实例ID。
+        /**
+         * <p>实例ID。</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // 结果：  AGREE：同意  REFUSE：拒绝  REDIRECTED：转交
+        /**
+         * <p>结果：  AGREE：同意  REFUSE：拒绝  REDIRECTED：转交</p>
+         */
         @NameInMap("result")
         public String result;
 
-        // 任务状态：  NEW：未启动  RUNNING：处理中  PAUSED：暂停  CANCELED：取消  COMPLETED：完成  TERMINATED：终止
+        /**
+         * <p>任务状态：  NEW：未启动  RUNNING：处理中  PAUSED：暂停  CANCELED：取消  COMPLETED：完成  TERMINATED：终止</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 任务ID。
+        /**
+         * <p>任务ID。</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 
-        // 任务处理人。
+        /**
+         * <p>任务处理人。</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -390,71 +448,105 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     }
 
     public static class GetProcessInstanceResponseBodyResult extends TeaModel {
-        // 审批人userid列表。
+        /**
+         * <p>审批人userid列表。</p>
+         */
         @NameInMap("approverUserIds")
         public java.util.List<String> approverUserIds;
 
-        // 审批附属实例列表，当已经通过的审批实例被修改或撤销，会生成一个新的实例，作为原有审批实例的附属。  如果想知道当前已经通过的审批实例的状态，可以依次遍历它的附属列表，查询里面每个实例的biz_action。
+        /**
+         * <p>审批附属实例列表，当已经通过的审批实例被修改或撤销，会生成一个新的实例，作为原有审批实例的附属。  如果想知道当前已经通过的审批实例的状态，可以依次遍历它的附属列表，查询里面每个实例的biz_action。</p>
+         */
         @NameInMap("attachedProcessInstanceIds")
         public java.util.List<String> attachedProcessInstanceIds;
 
-        // 审批实例业务动作：  MODIFY：表示该审批实例是基于原来的实例修改而来  REVOKE：表示该审批实例是由原来的实例撤销后重新发起的  NONE表示正常发起
+        /**
+         * <p>审批实例业务动作：  MODIFY：表示该审批实例是基于原来的实例修改而来  REVOKE：表示该审批实例是由原来的实例撤销后重新发起的  NONE表示正常发起</p>
+         */
         @NameInMap("bizAction")
         public String bizAction;
 
-        // 审批实例业务编号。
+        /**
+         * <p>审批实例业务编号。</p>
+         */
         @NameInMap("businessId")
         public String businessId;
 
-        // 抄送人userid列表。
+        /**
+         * <p>抄送人userid列表。</p>
+         */
         @NameInMap("ccUserIds")
         public java.util.List<String> ccUserIds;
 
-        // 创建时间。
+        /**
+         * <p>创建时间。</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 结束时间。
+        /**
+         * <p>结束时间。</p>
+         */
         @NameInMap("finishTime")
         public String finishTime;
 
-        // 表单详情列表。
+        /**
+         * <p>表单详情列表。</p>
+         */
         @NameInMap("formComponentValues")
         public java.util.List<GetProcessInstanceResponseBodyResultFormComponentValues> formComponentValues;
 
-        // 主流程实例标识。
+        /**
+         * <p>主流程实例标识。</p>
+         */
         @NameInMap("mainProcessInstanceId")
         public String mainProcessInstanceId;
 
-        // 操作记录列表。
+        /**
+         * <p>操作记录列表。</p>
+         */
         @NameInMap("operationRecords")
         public java.util.List<GetProcessInstanceResponseBodyResultOperationRecords> operationRecords;
 
-        // 发起人的部门。-1表示根部门。
+        /**
+         * <p>发起人的部门。-1表示根部门。</p>
+         */
         @NameInMap("originatorDeptId")
         public String originatorDeptId;
 
-        // 发起人的部门名。
+        /**
+         * <p>发起人的部门名。</p>
+         */
         @NameInMap("originatorDeptName")
         public String originatorDeptName;
 
-        // 发起人的userid。
+        /**
+         * <p>发起人的userid。</p>
+         */
         @NameInMap("originatorUserId")
         public String originatorUserId;
 
-        // 审批结果：  agree：同意  refuse：拒绝。 说明 status为COMPLETED且result为同意时，表示审批单完结并审批通过。
+        /**
+         * <p>审批结果：  agree：同意  refuse：拒绝。 说明 status为COMPLETED且result为同意时，表示审批单完结并审批通过。</p>
+         */
         @NameInMap("result")
         public String result;
 
-        // 审批状态：  NEW：新创建  RUNNING：审批中  TERMINATED：被终止  COMPLETED：完成  CANCELED：取消
+        /**
+         * <p>审批状态：  NEW：新创建  RUNNING：审批中  TERMINATED：被终止  COMPLETED：完成  CANCELED：取消</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 任务列表。
+        /**
+         * <p>任务列表。</p>
+         */
         @NameInMap("tasks")
         public java.util.List<GetProcessInstanceResponseBodyResultTasks> tasks;
 
-        // 审批实例标题。
+        /**
+         * <p>审批实例标题。</p>
+         */
         @NameInMap("title")
         public String title;
 

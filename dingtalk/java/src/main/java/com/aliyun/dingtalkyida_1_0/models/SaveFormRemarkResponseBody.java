@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveFormRemarkResponseBody extends TeaModel {
-    // 评论的ID
+    /**
+     * <p>评论的ID</p>
+     */
     @NameInMap("result")
     public Long result;
 

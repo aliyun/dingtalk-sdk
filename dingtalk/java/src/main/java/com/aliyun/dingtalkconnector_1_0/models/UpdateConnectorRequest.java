@@ -32,42 +32,60 @@ public class UpdateConnectorRequest extends TeaModel {
     }
 
     public static class UpdateConnectorRequestConnectorInfo extends TeaModel {
-        // 连接器中执行动作的接口路径域名。
+        /**
+         * <p>连接器中执行动作的接口路径域名。</p>
+         */
         @NameInMap("apiDomain")
         public String apiDomain;
 
-        // 连接器中执行动作接口的加密签名。
+        /**
+         * <p>连接器中执行动作接口的加密签名。</p>
+         */
         @NameInMap("apiSecret")
         public String apiSecret;
 
-        // 应用id。
+        /**
+         * <p>应用id。</p>
+         */
         @NameInMap("appId")
         public Long appId;
 
-        // 将执行动作鉴权值设为环境变量。
+        /**
+         * <p>将执行动作鉴权值设为环境变量。</p>
+         */
         @NameInMap("authValueEnv")
         public Boolean authValueEnv;
 
-        // 连接器描述。
+        /**
+         * <p>连接器描述。</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 连接平台连接器唯一标识。
+        /**
+         * <p>连接平台连接器唯一标识。</p>
+         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
-        // 将执行动作域名设为环境变量。
+        /**
+         * <p>将执行动作域名设为环境变量。</p>
+         */
         @NameInMap("domainEnv")
         public Boolean domainEnv;
 
         @NameInMap("iconMediaId")
         public String iconMediaId;
 
-        // 服务商的连接器唯一标识。
+        /**
+         * <p>服务商的连接器唯一标识。</p>
+         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
-        // 连接器名称。
+        /**
+         * <p>连接器名称。</p>
+         */
         @NameInMap("name")
         public String name;
 

@@ -4,23 +4,33 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteGroupMembersFromGroupRequest extends TeaModel {
-    // 删除类型
+    /**
+     * <p>删除类型</p>
+     */
     @NameInMap("deleteGroupType")
     public String deleteGroupType;
 
-    // 群成员unionId
+    /**
+     * <p>群成员unionId</p>
+     */
     @NameInMap("memberUnionId")
     public String memberUnionId;
 
-    // 会话ID
+    /**
+     * <p>会话ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 开放群组ID
+    /**
+     * <p>开放群组ID</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

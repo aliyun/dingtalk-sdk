@@ -4,11 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateObjectiveResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public CreateObjectiveResponseBodyData data;
 
-    // 请求成功的标识。
+    /**
+     * <p>请求成功的标识。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,11 +38,15 @@ public class CreateObjectiveResponseBody extends TeaModel {
     }
 
     public static class CreateObjectiveResponseBodyData extends TeaModel {
-        // 当前 Objective ID。
+        /**
+         * <p>当前 Objective ID。</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 当前 Objective 的位置。
+        /**
+         * <p>当前 Objective 的位置。</p>
+         */
         @NameInMap("position")
         public String position;
 

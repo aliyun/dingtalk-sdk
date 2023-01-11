@@ -4,83 +4,113 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class AnnualCertificationAuditRequest extends TeaModel {
-    // 申请人手机号。
+    /**
+     * <p>申请人手机号。</p>
+     */
     @NameInMap("applicantMobile")
     public String applicantMobile;
 
-    // 申请人姓名。
+    /**
+     * <p>申请人姓名。</p>
+     */
     @NameInMap("applicantName")
     public String applicantName;
 
-    // 认证/修改认证授权函
+    /**
+     * <p>认证/修改认证授权函</p>
+     */
     @NameInMap("applicationLetter")
     public String applicationLetter;
 
-    // 结果状态  
-    // 1: 认证中预警 和 认证中需要补充材料 合并，通过code区分 
-    // 2:认证失败 
-    // 3:审核通过
+    /**
+     * <p>结果状态  </p>
+     * <p>1: 认证中预警 和 认证中需要补充材料 合并，通过code区分 </p>
+     * <p>2:认证失败 </p>
+     * <p>3:审核通过</p>
+     */
     @NameInMap("authStatus")
     public Integer authStatus;
 
-    // 证书类型：
-    // 
-    // 0：社会统一信用代码
-    // 
-    // 1：其它
+    /**
+     * <p>证书类型：</p>
+     * <br>
+     * <p>0：社会统一信用代码</p>
+     * <br>
+     * <p>1：其它</p>
+     */
     @NameInMap("certificateType")
     public Integer certificateType;
 
-    // 用户提交的企业名称
+    /**
+     * <p>用户提交的企业名称</p>
+     */
     @NameInMap("corpName")
     public String corpName;
 
-    // 开户行。
+    /**
+     * <p>开户行。</p>
+     */
     @NameInMap("depositaryBank")
     public String depositaryBank;
 
-    // 扩展字段，json格式传递，传递上面字段的额外字段。
+    /**
+     * <p>扩展字段，json格式传递，传递上面字段的额外字段。</p>
+     */
     @NameInMap("extension")
     public String extension;
 
-    // 法人姓名。
+    /**
+     * <p>法人姓名。</p>
+     */
     @NameInMap("legalPerson")
     public String legalPerson;
 
-    // 证件号：
-    // 
-    // 营业执照注册号（一般15位）
-    // 
-    // 社会统一信用代码（固定18位）
-    // 
-    // 组织机构代码证号（格式11111111-1）
+    /**
+     * <p>证件号：</p>
+     * <br>
+     * <p>营业执照注册号（一般15位）</p>
+     * <br>
+     * <p>社会统一信用代码（固定18位）</p>
+     * <br>
+     * <p>组织机构代码证号（格式11111111-1）</p>
+     */
     @NameInMap("licenseNumber")
     public String licenseNumber;
 
-    // 企业证件照片url。
+    /**
+     * <p>企业证件照片url。</p>
+     */
     @NameInMap("licenseUrl")
     public String licenseUrl;
 
-    // 订单ID
+    /**
+     * <p>订单ID</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 
-    // 对公账号。
+    /**
+     * <p>对公账号。</p>
+     */
     @NameInMap("publicAccount")
     public String publicAccount;
 
-    // 失败原因，认证中预警 和 认证中需要补充材料以及认证失败时需要提供。
+    /**
+     * <p>失败原因，认证中预警 和 认证中需要补充材料以及认证失败时需要提供。</p>
+     */
     @NameInMap("reasonCode")
     public String reasonCode;
 
     @NameInMap("reasonMsg")
     public String reasonMsg;
 
-    // 送审打标类型：
-    // 
-    // "V":四要素通过
-    // 
-    // "AV"：四要素未通过
+    /**
+     * <p>送审打标类型：</p>
+     * <br>
+     * <p>"V":四要素通过</p>
+     * <br>
+     * <p>"AV"：四要素未通过</p>
+     */
     @NameInMap("tag")
     public String tag;
 

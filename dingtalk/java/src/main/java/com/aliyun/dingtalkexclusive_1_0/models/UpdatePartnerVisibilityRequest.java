@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePartnerVisibilityRequest extends TeaModel {
-    // 可见的部门id
+    /**
+     * <p>可见的部门id</p>
+     */
     @NameInMap("deptIds")
     public java.util.List<Long> deptIds;
 
-    // 标签id
+    /**
+     * <p>标签id</p>
+     */
     @NameInMap("labelId")
     public Long labelId;
 
-    // 可见的员工id
+    /**
+     * <p>可见的员工id</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

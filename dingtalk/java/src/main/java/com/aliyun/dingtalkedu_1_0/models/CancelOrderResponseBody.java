@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelOrderResponseBody extends TeaModel {
-    // 是否需要重试
+    /**
+     * <p>是否需要重试</p>
+     */
     @NameInMap("needRetry")
     public Boolean needRetry;
 
-    // 交易动作
+    /**
+     * <p>交易动作</p>
+     */
     @NameInMap("tradeAction")
     public String tradeAction;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttendanceBleDevicesRemoveResponseBody extends TeaModel {
-    // 移出错误列表
+    /**
+     * <p>移出错误列表</p>
+     */
     @NameInMap("errorList")
     public java.util.List<AttendanceBleDevicesRemoveResponseBodyErrorList> errorList;
 
-    // 移除成功蓝牙设备Id列表
+    /**
+     * <p>移除成功蓝牙设备Id列表</p>
+     */
     @NameInMap("successList")
     public java.util.List<Long> successList;
 
@@ -34,15 +38,21 @@ public class AttendanceBleDevicesRemoveResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesRemoveResponseBodyErrorList extends TeaModel {
-        // 错误code
+        /**
+         * <p>错误code</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 移除失败蓝牙设备Id列表
+        /**
+         * <p>移除失败蓝牙设备Id列表</p>
+         */
         @NameInMap("failureList")
         public java.util.List<Long> failureList;
 
-        // 错误信息
+        /**
+         * <p>错误信息</p>
+         */
         @NameInMap("msg")
         public String msg;
 

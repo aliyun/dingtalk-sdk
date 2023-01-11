@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddTicketMemoRequest extends TeaModel {
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 工单开放ID
+    /**
+     * <p>工单开放ID</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    // 当前工单处理人
+    /**
+     * <p>当前工单处理人</p>
+     */
     @NameInMap("processorUnionId")
     public String processorUnionId;
 
-    // 备注
+    /**
+     * <p>备注</p>
+     */
     @NameInMap("ticketMemo")
     public AddTicketMemoRequestTicketMemo ticketMemo;
 
@@ -58,11 +66,15 @@ public class AddTicketMemoRequest extends TeaModel {
     }
 
     public static class AddTicketMemoRequestTicketMemoAttachments extends TeaModel {
-        // 文件名
+        /**
+         * <p>文件名</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 文件key
+        /**
+         * <p>文件key</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -90,11 +102,15 @@ public class AddTicketMemoRequest extends TeaModel {
     }
 
     public static class AddTicketMemoRequestTicketMemo extends TeaModel {
-        // 备注相关的附件
+        /**
+         * <p>备注相关的附件</p>
+         */
         @NameInMap("attachments")
         public java.util.List<AddTicketMemoRequestTicketMemoAttachments> attachments;
 
-        // 文字备注
+        /**
+         * <p>文字备注</p>
+         */
         @NameInMap("memo")
         public String memo;
 

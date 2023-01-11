@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResidenceResponseBody extends TeaModel {
-    // 是否更新成功
+    /**
+     * <p>是否更新成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

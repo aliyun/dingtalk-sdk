@@ -4,16 +4,22 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class InstallAppRequest extends TeaModel {
-    // 业务分组
+    /**
+     * <p>业务分组</p>
+     */
     @NameInMap("bizGroup")
     public String bizGroup;
 
-    // 安装选项
-    // 
+    /**
+     * <p>安装选项</p>
+     * <br>
+     */
     @NameInMap("installOption")
     public InstallAppRequestInstallOption installOption;
 
-    // 安装的目录名称
+    /**
+     * <p>安装的目录名称</p>
+     */
     @NameInMap("sourceDirName")
     public String sourceDirName;
 
@@ -47,7 +53,9 @@ public class InstallAppRequest extends TeaModel {
     }
 
     public static class InstallAppRequestInstallOption extends TeaModel {
-        // 是否同步，目前只有同步
+        /**
+         * <p>是否同步，目前只有同步</p>
+         */
         @NameInMap("isSync")
         public Boolean isSync;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupAvatarResponseBody extends TeaModel {
-    // 新头像
+    /**
+     * <p>新头像</p>
+     */
     @NameInMap("newGroupAvatar")
     public String newGroupAvatar;
 

@@ -4,19 +4,27 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditOutstockRequest extends TeaModel {
-    // 编辑数据
+    /**
+     * <p>编辑数据</p>
+     */
     @NameInMap("data")
     public EditOutstockRequestData data;
 
-    // 数据类型，固定填写191
+    /**
+     * <p>数据类型，固定填写191</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
-    // 数据id，不填或者填0为新增数据
+    /**
+     * <p>数据id，不填或者填0为新增数据</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
-    // 时间戳
+    /**
+     * <p>时间戳</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -58,59 +66,87 @@ public class EditOutstockRequest extends TeaModel {
     }
 
     public static class EditOutstockRequestData extends TeaModel {
-        // 申请人
+        /**
+         * <p>申请人</p>
+         */
         @NameInMap("askempid")
         public String askempid;
 
-        // 出库备注
+        /**
+         * <p>出库备注</p>
+         */
         @NameInMap("auditreson")
         public String auditreson;
 
-        // 出库单号
+        /**
+         * <p>出库单号</p>
+         */
         @NameInMap("billno")
         public String billno;
 
-        // 产品明细，json格式
+        /**
+         * <p>产品明细，json格式</p>
+         */
         @NameInMap("child_mx")
         public String childMx;
 
-        // 对应客户
+        /**
+         * <p>对应客户</p>
+         */
         @NameInMap("customerid")
         public String customerid;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        // 经办人
+        /**
+         * <p>经办人</p>
+         */
         @NameInMap("empid")
         public String empid;
 
-        // 单据类型
+        /**
+         * <p>单据类型</p>
+         */
         @NameInMap("inorout")
         public String inorout;
 
-        // 出库日期
+        /**
+         * <p>出库日期</p>
+         */
         @NameInMap("libiodate")
         public String libiodate;
 
-        // 出库主题
+        /**
+         * <p>出库主题</p>
+         */
         @NameInMap("libioname")
         public String libioname;
 
-        // 出库状态
+        /**
+         * <p>出库状态</p>
+         */
         @NameInMap("libiostate")
         public String libiostate;
 
-        // 对应订单
+        /**
+         * <p>对应订单</p>
+         */
         @NameInMap("orderid")
         public String orderid;
 
-        // 申请备注
+        /**
+         * <p>申请备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 出库仓库
+        /**
+         * <p>出库仓库</p>
+         */
         @NameInMap("stocklibid")
         public String stocklibid;
 

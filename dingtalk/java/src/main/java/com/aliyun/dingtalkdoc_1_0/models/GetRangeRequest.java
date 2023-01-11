@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRangeRequest extends TeaModel {
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 限定要返回的字段
+    /**
+     * <p>限定要返回的字段</p>
+     */
     @NameInMap("select")
     public String select;
 

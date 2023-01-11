@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListHotDocsResponseBody extends TeaModel {
-    // 热门文档列表。
+    /**
+     * <p>热门文档列表。</p>
+     */
     @NameInMap("items")
     public java.util.List<DentryModel> items;
 

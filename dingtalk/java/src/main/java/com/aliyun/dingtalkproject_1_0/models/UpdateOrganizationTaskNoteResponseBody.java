@@ -21,11 +21,15 @@ public class UpdateOrganizationTaskNoteResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskNoteResponseBodyResult extends TeaModel {
-        // 任务备注
+        /**
+         * <p>任务备注</p>
+         */
         @NameInMap("note")
         public String note;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updated")
         public String updated;
 

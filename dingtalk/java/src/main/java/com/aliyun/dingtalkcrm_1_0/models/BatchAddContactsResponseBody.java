@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddContactsResponseBody extends TeaModel {
-    // 批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。
+    /**
+     * <p>批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。</p>
+     */
     @NameInMap("results")
     public java.util.List<BatchAddContactsResponseBodyResults> results;
 
@@ -22,19 +24,27 @@ public class BatchAddContactsResponseBody extends TeaModel {
     }
 
     public static class BatchAddContactsResponseBodyResults extends TeaModel {
-        // 如果保存失败，则表示失败的错误码。
+        /**
+         * <p>如果保存失败，则表示失败的错误码。</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        // 如果保存失败，则表示失败的错误原因。
+        /**
+         * <p>如果保存失败，则表示失败的错误原因。</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
-        // 保存成功的联系人id。
+        /**
+         * <p>保存成功的联系人id。</p>
+         */
         @NameInMap("relationId")
         public String relationId;
 
-        // 数据是否保存成功。
+        /**
+         * <p>数据是否保存成功。</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

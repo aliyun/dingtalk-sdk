@@ -4,23 +4,33 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteInstanceRequest extends TeaModel {
-    // 应用ID
+    /**
+     * <p>应用ID</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 语言
+    /**
+     * <p>语言</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 流程实例ID
+    /**
+     * <p>流程实例ID</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // 应用秘钥
+    /**
+     * <p>应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 钉钉的userId
+    /**
+     * <p>钉钉的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

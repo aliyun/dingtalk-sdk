@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserHolidaysResponseBody extends TeaModel {
-    // 员工假期列表
+    /**
+     * <p>员工假期列表</p>
+     */
     @NameInMap("result")
     public java.util.List<GetUserHolidaysResponseBodyResult> result;
 
@@ -22,19 +24,27 @@ public class GetUserHolidaysResponseBody extends TeaModel {
     }
 
     public static class GetUserHolidaysResponseBodyResultHolidays extends TeaModel {
-        // 假期名称
+        /**
+         * <p>假期名称</p>
+         */
         @NameInMap("holidayName")
         public String holidayName;
 
-        // 假期类型，festival：法定节假日；rest：调休日；overtime：加班日；
+        /**
+         * <p>假期类型，festival：法定节假日；rest：调休日；overtime：加班日；</p>
+         */
         @NameInMap("holidayType")
         public String holidayType;
 
-        // 补休日，只有假期类型为加班日时才有值
+        /**
+         * <p>补休日，只有假期类型为加班日时才有值</p>
+         */
         @NameInMap("realWorkDate")
         public Long realWorkDate;
 
-        // 日期
+        /**
+         * <p>日期</p>
+         */
         @NameInMap("workDate")
         public Long workDate;
 
@@ -78,11 +88,15 @@ public class GetUserHolidaysResponseBody extends TeaModel {
     }
 
     public static class GetUserHolidaysResponseBodyResult extends TeaModel {
-        // 假期列表
+        /**
+         * <p>假期列表</p>
+         */
         @NameInMap("holidays")
         public java.util.List<GetUserHolidaysResponseBodyResultHolidays> holidays;
 
-        // 员工id
+        /**
+         * <p>员工id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

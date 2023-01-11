@@ -4,19 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllTracksResponseBody extends TeaModel {
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 翻页size
+    /**
+     * <p>翻页size</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 下页翻页起始游标
+    /**
+     * <p>下页翻页起始游标</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 客户动态分页数据
+    /**
+     * <p>客户动态分页数据</p>
+     */
     @NameInMap("values")
     public java.util.List<QueryAllTracksResponseBodyValues> values;
 
@@ -58,31 +66,45 @@ public class QueryAllTracksResponseBody extends TeaModel {
     }
 
     public static class QueryAllTracksResponseBodyValues extends TeaModel {
-        // 动态外键
+        /**
+         * <p>动态外键</p>
+         */
         @NameInMap("bizId")
         public String bizId;
 
-        // 创建人userId
+        /**
+         * <p>创建人userId</p>
+         */
         @NameInMap("creator")
         public String creator;
 
-        // 客户id
+        /**
+         * <p>客户id</p>
+         */
         @NameInMap("customerId")
         public String customerId;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        // 动态加密主键
+        /**
+         * <p>动态加密主键</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 动态子类型
+        /**
+         * <p>动态子类型</p>
+         */
         @NameInMap("subType")
         public Integer subType;
 
-        // 动态类型
+        /**
+         * <p>动态类型</p>
+         */
         @NameInMap("type")
         public Integer type;
 

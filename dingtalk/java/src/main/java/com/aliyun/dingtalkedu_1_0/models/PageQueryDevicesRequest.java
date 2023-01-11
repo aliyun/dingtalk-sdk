@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageQueryDevicesRequest extends TeaModel {
-    // 分页参数-当页最大返回记录数
+    /**
+     * <p>分页参数-当页最大返回记录数</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 分页参数-页码 起始值:1
+    /**
+     * <p>分页参数-页码 起始值:1</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 设备类型
+    /**
+     * <p>设备类型</p>
+     */
     @NameInMap("type")
     public String type;
 

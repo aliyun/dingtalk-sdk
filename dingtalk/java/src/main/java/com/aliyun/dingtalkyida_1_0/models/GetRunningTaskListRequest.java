@@ -4,23 +4,33 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRunningTaskListRequest extends TeaModel {
-    // appType
+    /**
+     * <p>appType</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 流程实例id列表, 逗号分隔
+    /**
+     * <p>流程实例id列表, 逗号分隔</p>
+     */
     @NameInMap("processInstanceIdList")
     public String processInstanceIdList;
 
-    // systemToken
+    /**
+     * <p>systemToken</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 用户所属的企业id
+    /**
+     * <p>用户所属的企业id</p>
+     */
     @NameInMap("userCorpId")
     public String userCorpId;
 
-    // userId
+    /**
+     * <p>userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

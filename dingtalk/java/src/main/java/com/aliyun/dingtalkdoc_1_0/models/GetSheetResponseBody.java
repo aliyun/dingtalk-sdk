@@ -4,31 +4,45 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSheetResponseBody extends TeaModel {
-    // 工作表列数
+    /**
+     * <p>工作表列数</p>
+     */
     @NameInMap("columnCount")
     public Long columnCount;
 
-    // 工作表ID
+    /**
+     * <p>工作表ID</p>
+     */
     @NameInMap("id")
     public String id;
 
-    // 最后一列非空列的位置，从0开始。表为空时返回-1。
+    /**
+     * <p>最后一列非空列的位置，从0开始。表为空时返回-1。</p>
+     */
     @NameInMap("lastNonEmptyColumn")
     public Long lastNonEmptyColumn;
 
-    // 最后一行非空行的位置，从0开始。表为空时返回-1。
+    /**
+     * <p>最后一行非空行的位置，从0开始。表为空时返回-1。</p>
+     */
     @NameInMap("lastNonEmptyRow")
     public Long lastNonEmptyRow;
 
-    // 工作表名称
+    /**
+     * <p>工作表名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 工作表行数
+    /**
+     * <p>工作表行数</p>
+     */
     @NameInMap("rowCount")
     public Long rowCount;
 
-    // 工作表可见性
+    /**
+     * <p>工作表可见性</p>
+     */
     @NameInMap("visibility")
     public String visibility;
 

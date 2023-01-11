@@ -4,47 +4,69 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListTicketRequest extends TeaModel {
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 第三方用户id
+    /**
+     * <p>第三方用户id</p>
+     */
     @NameInMap("foreignId")
     public String foreignId;
 
-    // 本次读取的最大数据记录数量
+    /**
+     * <p>本次读取的最大数据记录数量</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 用来标记当前开始读取的位置，置空表示从头开始
+    /**
+     * <p>用来标记当前开始读取的位置，置空表示从头开始</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 实例id
+    /**
+     * <p>实例id</p>
+     */
     @NameInMap("openInstanceId")
     public String openInstanceId;
 
-    // 产品类型
+    /**
+     * <p>产品类型</p>
+     */
     @NameInMap("productionType")
     public Integer productionType;
 
-    // 来源
+    /**
+     * <p>来源</p>
+     */
     @NameInMap("sourceId")
     public String sourceId;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 工单模板
+    /**
+     * <p>工单模板</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
-    // 工单ID
+    /**
+     * <p>工单ID</p>
+     */
     @NameInMap("ticketId")
     public String ticketId;
 
-    // 工单状态
+    /**
+     * <p>工单状态</p>
+     */
     @NameInMap("ticketStatus")
     public String ticketStatus;
 

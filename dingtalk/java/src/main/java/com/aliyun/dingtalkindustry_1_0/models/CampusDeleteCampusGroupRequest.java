@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusDeleteCampusGroupRequest extends TeaModel {
-    // 园区项目组ID
+    /**
+     * <p>园区项目组ID</p>
+     */
     @NameInMap("campusProjectGroupId")
     public Long campusProjectGroupId;
 

@@ -4,39 +4,57 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAcquireRefundOrderRequest extends TeaModel {
-    // 主机构编号
+    /**
+     * <p>主机构编号</p>
+     */
     @NameInMap("instId")
     public String instId;
 
-    // 操作人userId
+    /**
+     * <p>操作人userId</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
-    // 原支付单外部流水号
+    /**
+     * <p>原支付单外部流水号</p>
+     */
     @NameInMap("originOutTradeNo")
     public String originOutTradeNo;
 
-    // 其他资金渠道退款明细
+    /**
+     * <p>其他资金渠道退款明细</p>
+     */
     @NameInMap("otherPayChannelDetailInfoList")
     public java.util.List<CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoList> otherPayChannelDetailInfoList;
 
-    // 外部退款订单号
+    /**
+     * <p>外部退款订单号</p>
+     */
     @NameInMap("outRefundNo")
     public String outRefundNo;
 
-    // 退款金额，支持部分退款
+    /**
+     * <p>退款金额，支持部分退款</p>
+     */
     @NameInMap("refundAmount")
     public String refundAmount;
 
-    // 退款备注
+    /**
+     * <p>退款备注</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 子机构编号
+    /**
+     * <p>子机构编号</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    // 代扣标题
+    /**
+     * <p>代扣标题</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -118,27 +136,39 @@ public class CreateAcquireRefundOrderRequest extends TeaModel {
     }
 
     public static class CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoListFundToolDetailInfoList extends TeaModel {
-        // 金额
+        /**
+         * <p>金额</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 扩展信息
+        /**
+         * <p>扩展信息</p>
+         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        // 资金工具名称
+        /**
+         * <p>资金工具名称</p>
+         */
         @NameInMap("fundToolName")
         public String fundToolName;
 
-        // 资金明细创建时间
+        /**
+         * <p>资金明细创建时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 资金明细完成时间
+        /**
+         * <p>资金明细完成时间</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        // 是否是优惠工具
+        /**
+         * <p>是否是优惠工具</p>
+         */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
@@ -198,27 +228,39 @@ public class CreateAcquireRefundOrderRequest extends TeaModel {
     }
 
     public static class CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoList extends TeaModel {
-        // 渠道金额
+        /**
+         * <p>渠道金额</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 资金明细列表
+        /**
+         * <p>资金明细列表</p>
+         */
         @NameInMap("fundToolDetailInfoList")
         public java.util.List<CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoListFundToolDetailInfoList> fundToolDetailInfoList;
 
-        // 渠道名称
+        /**
+         * <p>渠道名称</p>
+         */
         @NameInMap("payChannelName")
         public String payChannelName;
 
-        // 支付渠道单号
+        /**
+         * <p>支付渠道单号</p>
+         */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
-        // 渠道类型
+        /**
+         * <p>渠道类型</p>
+         */
         @NameInMap("payChannelType")
         public String payChannelType;
 
-        // 总优惠金额
+        /**
+         * <p>总优惠金额</p>
+         */
         @NameInMap("promotionAmount")
         public String promotionAmount;
 

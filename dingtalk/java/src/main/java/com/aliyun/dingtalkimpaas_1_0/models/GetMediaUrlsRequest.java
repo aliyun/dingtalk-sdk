@@ -4,11 +4,15 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMediaUrlsRequest extends TeaModel {
-    // 多媒体id列表
+    /**
+     * <p>多媒体id列表</p>
+     */
     @NameInMap("mediaIds")
     public java.util.List<String> mediaIds;
 
-    // 过期时间
+    /**
+     * <p>过期时间</p>
+     */
     @NameInMap("urlExpireTime")
     public Integer urlExpireTime;
 

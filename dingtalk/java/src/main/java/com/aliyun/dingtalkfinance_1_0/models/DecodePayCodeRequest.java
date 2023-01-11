@@ -4,11 +4,15 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DecodePayCodeRequest extends TeaModel {
-    // payCode
+    /**
+     * <p>payCode</p>
+     */
     @NameInMap("payCode")
     public String payCode;
 
-    // requestId
+    /**
+     * <p>requestId</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

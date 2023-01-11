@@ -4,7 +4,9 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFeedWhiteListRequest extends TeaModel {
-    // 用户组织内id（查询该用户是否在白名单列表中）
+    /**
+     * <p>用户组织内id（查询该用户是否在白名单列表中）</p>
+     */
     @NameInMap("userId")
     public String userId;
 

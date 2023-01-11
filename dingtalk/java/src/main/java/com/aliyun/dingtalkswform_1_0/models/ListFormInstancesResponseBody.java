@@ -4,7 +4,9 @@ package com.aliyun.dingtalkswform_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFormInstancesResponseBody extends TeaModel {
-    // 返回结果对象。
+    /**
+     * <p>返回结果对象。</p>
+     */
     @NameInMap("result")
     public ListFormInstancesResponseBodyResult result;
 
@@ -33,15 +35,21 @@ public class ListFormInstancesResponseBody extends TeaModel {
     }
 
     public static class ListFormInstancesResponseBodyResultListForms extends TeaModel {
-        // 表单控件key。
+        /**
+         * <p>表单控件key。</p>
+         */
         @NameInMap("key")
         public String key;
 
-        // 表单主题。  当label字段为空或不存在时，忽略这个label和value。
+        /**
+         * <p>表单主题。  当label字段为空或不存在时，忽略这个label和value。</p>
+         */
         @NameInMap("label")
         public String label;
 
-        // 表单的值。
+        /**
+         * <p>表单的值。</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -77,51 +85,75 @@ public class ListFormInstancesResponseBody extends TeaModel {
     }
 
     public static class ListFormInstancesResponseBodyResultList extends TeaModel {
-        // 创建时间。iso8601格式。
+        /**
+         * <p>创建时间。iso8601格式。</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 填表code，用此code可调接口获取填表列表。
+        /**
+         * <p>填表code，用此code可调接口获取填表列表。</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
-        // 实例ID。
+        /**
+         * <p>实例ID。</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        // 表单内容列表。
+        /**
+         * <p>表单内容列表。</p>
+         */
         @NameInMap("forms")
         public java.util.List<ListFormInstancesResponseBodyResultListForms> forms;
 
-        // 更新时间。iso8601格式。
+        /**
+         * <p>更新时间。iso8601格式。</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
-        // 学生班级ID。
+        /**
+         * <p>学生班级ID。</p>
+         */
         @NameInMap("studentClassId")
         public String studentClassId;
 
-        // 学生班级名称。
+        /**
+         * <p>学生班级名称。</p>
+         */
         @NameInMap("studentClassName")
         public String studentClassName;
 
-        // 学生名称。
+        /**
+         * <p>学生名称。</p>
+         */
         @NameInMap("studentName")
         public String studentName;
 
-        // 学生ID。
+        /**
+         * <p>学生ID。</p>
+         */
         @NameInMap("studentUserId")
         public String studentUserId;
 
-        // 提交人的userid。
+        /**
+         * <p>提交人的userid。</p>
+         */
         @NameInMap("submitterUserId")
         public String submitterUserId;
 
-        // 提交人姓名。
+        /**
+         * <p>提交人姓名。</p>
+         */
         @NameInMap("submitterUserName")
         public String submitterUserName;
 
-        // 填表名称。
+        /**
+         * <p>填表名称。</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -229,15 +261,21 @@ public class ListFormInstancesResponseBody extends TeaModel {
     }
 
     public static class ListFormInstancesResponseBodyResult extends TeaModel {
-        // 是否还有下一页数据。
+        /**
+         * <p>是否还有下一页数据。</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        // 填表实例列表。
+        /**
+         * <p>填表实例列表。</p>
+         */
         @NameInMap("list")
         public java.util.List<ListFormInstancesResponseBodyResultList> list;
 
-        // 下一次分页offset的值。
+        /**
+         * <p>下一次分页offset的值。</p>
+         */
         @NameInMap("nextToken")
         public Long nextToken;
 

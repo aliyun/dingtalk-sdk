@@ -10,7 +10,9 @@ public class GetPermissionRequest extends TeaModel {
     @NameInMap("targetType")
     public String targetType;
 
-    // A short description of struct
+    /**
+     * <p>A short description of struct</p>
+     */
     @NameInMap("userId")
     public String userId;
 

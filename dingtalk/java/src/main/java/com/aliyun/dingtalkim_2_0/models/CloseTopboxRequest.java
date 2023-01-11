@@ -4,35 +4,51 @@ package com.aliyun.dingtalkim_2_0.models;
 import com.aliyun.tea.*;
 
 public class CloseTopboxRequest extends TeaModel {
-    // 会话类型。
+    /**
+     * <p>会话类型。</p>
+     */
     @NameInMap("conversationType")
     public Integer conversationType;
 
-    // 酷应用编码。
+    /**
+     * <p>酷应用编码。</p>
+     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
-    // 群模板id。
+    /**
+     * <p>群模板id。</p>
+     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
-    // 会话id。
+    /**
+     * <p>会话id。</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 唯一标识一张卡片的外部ID。
+    /**
+     * <p>唯一标识一张卡片的外部ID。</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    // 单聊助手会话，机器人编码。
+    /**
+     * <p>单聊助手会话，机器人编码。</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    // 单聊助手会话，用户unionId。
+    /**
+     * <p>单聊助手会话，用户unionId。</p>
+     */
     @NameInMap("unoinId")
     public String unoinId;
 
-    // 单聊助手会话，用户userId。
+    /**
+     * <p>单聊助手会话，用户userId。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

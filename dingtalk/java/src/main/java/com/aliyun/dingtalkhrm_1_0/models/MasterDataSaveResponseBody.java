@@ -4,11 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataSaveResponseBody extends TeaModel {
-    // 是否全部保存成功
+    /**
+     * <p>是否全部保存成功</p>
+     */
     @NameInMap("allSuccess")
     public Boolean allSuccess;
 
-    // 保存失败的结果，全部保存成功时为空
+    /**
+     * <p>保存失败的结果，全部保存成功时为空</p>
+     */
     @NameInMap("failResult")
     public java.util.List<MasterDataSaveResponseBodyFailResult> failResult;
 
@@ -34,19 +38,27 @@ public class MasterDataSaveResponseBody extends TeaModel {
     }
 
     public static class MasterDataSaveResponseBodyFailResult extends TeaModel {
-        // 业务流水唯一标识，和入参一致
+        /**
+         * <p>业务流水唯一标识，和入参一致</p>
+         */
         @NameInMap("bizUk")
         public String bizUk;
 
-        // 错误码
+        /**
+         * <p>错误码</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        // 错误信息
+        /**
+         * <p>错误信息</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
-        // 是否成功
+        /**
+         * <p>是否成功</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

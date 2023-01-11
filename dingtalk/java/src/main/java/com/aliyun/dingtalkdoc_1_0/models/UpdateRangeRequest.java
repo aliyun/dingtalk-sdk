@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRangeRequest extends TeaModel {
-    // 背景色
+    /**
+     * <p>背景色</p>
+     */
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<String>> backgroundColors;
 
-    // 超链接
+    /**
+     * <p>超链接</p>
+     */
     @NameInMap("hyperlinks")
     public java.util.List<java.util.List<UpdateRangeRequestHyperlinks>> hyperlinks;
 
-    // 数字格式
+    /**
+     * <p>数字格式</p>
+     */
     @NameInMap("numberFormat")
     public String numberFormat;
 
-    // 值
+    /**
+     * <p>值</p>
+     */
     @NameInMap("values")
     public java.util.List<java.util.List<String>> values;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -70,15 +80,21 @@ public class UpdateRangeRequest extends TeaModel {
     }
 
     public static class UpdateRangeRequestHyperlinks extends TeaModel {
-        // 超链接类型，可选 "path", "sheet", "range"
+        /**
+         * <p>超链接类型，可选 "path", "sheet", "range"</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // 链接地址
+        /**
+         * <p>链接地址</p>
+         */
         @NameInMap("link")
         public String link;
 
-        // 链接文本
+        /**
+         * <p>链接文本</p>
+         */
         @NameInMap("text")
         public String text;
 

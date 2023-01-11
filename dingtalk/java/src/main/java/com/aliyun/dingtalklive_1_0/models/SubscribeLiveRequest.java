@@ -4,15 +4,21 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SubscribeLiveRequest extends TeaModel {
-    // 直播uuid
+    /**
+     * <p>直播uuid</p>
+     */
     @NameInMap("liveId")
     public String liveId;
 
-    // true:关注 false:取消关注
+    /**
+     * <p>true:关注 false:取消关注</p>
+     */
     @NameInMap("subscribe")
     public Boolean subscribe;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -7,7 +7,9 @@ public class BatchQuerySendMessageTaskResponseBody extends TeaModel {
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

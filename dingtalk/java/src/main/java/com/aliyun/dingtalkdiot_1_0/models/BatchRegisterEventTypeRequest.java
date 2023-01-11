@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterEventTypeRequest extends TeaModel {
-    // 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
+    /**
+     * <p>钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 事件类型列表，最多支持添加500个。
+    /**
+     * <p>事件类型列表，最多支持添加500个。</p>
+     */
     @NameInMap("eventTypes")
     public java.util.List<BatchRegisterEventTypeRequestEventTypes> eventTypes;
 
@@ -34,11 +38,15 @@ public class BatchRegisterEventTypeRequest extends TeaModel {
     }
 
     public static class BatchRegisterEventTypeRequestEventTypes extends TeaModel {
-        // 事件类型(唯一)，最长20个字符。
+        /**
+         * <p>事件类型(唯一)，最长20个字符。</p>
+         */
         @NameInMap("eventType")
         public String eventType;
 
-        // 事件类型名称，长度4-20个字符，一个中文汉字算2个字符。
+        /**
+         * <p>事件类型名称，长度4-20个字符，一个中文汉字算2个字符。</p>
+         */
         @NameInMap("eventTypeName")
         public String eventTypeName;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetClosingAccountsRequest extends TeaModel {
-    // 人员列表
+    /**
+     * <p>人员列表</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

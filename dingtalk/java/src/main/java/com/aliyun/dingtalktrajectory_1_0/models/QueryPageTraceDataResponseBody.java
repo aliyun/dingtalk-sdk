@@ -4,15 +4,21 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPageTraceDataResponseBody extends TeaModel {
-    // 是否结束
+    /**
+     * <p>是否结束</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 轨迹点列表
+    /**
+     * <p>轨迹点列表</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryPageTraceDataResponseBodyList> list;
 
-    // 下一个开始位置
+    /**
+     * <p>下一个开始位置</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -46,11 +52,15 @@ public class QueryPageTraceDataResponseBody extends TeaModel {
     }
 
     public static class QueryPageTraceDataResponseBodyListCoordinates extends TeaModel {
-        // 纬度
+        /**
+         * <p>纬度</p>
+         */
         @NameInMap("latitude")
         public Float latitude;
 
-        // 经度
+        /**
+         * <p>经度</p>
+         */
         @NameInMap("longitude")
         public Float longitude;
 
@@ -78,15 +88,21 @@ public class QueryPageTraceDataResponseBody extends TeaModel {
     }
 
     public static class QueryPageTraceDataResponseBodyList extends TeaModel {
-        // 经纬度
+        /**
+         * <p>经纬度</p>
+         */
         @NameInMap("coordinates")
         public QueryPageTraceDataResponseBodyListCoordinates coordinates;
 
-        // 定位时间
+        /**
+         * <p>定位时间</p>
+         */
         @NameInMap("gmtLocation")
         public Long gmtLocation;
 
-        // 上报时间
+        /**
+         * <p>上报时间</p>
+         */
         @NameInMap("gmtUpload")
         public Long gmtUpload;
 

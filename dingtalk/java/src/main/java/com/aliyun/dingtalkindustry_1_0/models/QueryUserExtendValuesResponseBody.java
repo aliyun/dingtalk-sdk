@@ -4,15 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserExtendValuesResponseBody extends TeaModel {
-    // 人员列表
+    /**
+     * <p>人员列表</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryUserExtendValuesResponseBodyContent> content;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
-    // 数据总量
+    /**
+     * <p>数据总量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,19 +52,27 @@ public class QueryUserExtendValuesResponseBody extends TeaModel {
     }
 
     public static class QueryUserExtendValuesResponseBodyContent extends TeaModel {
-        // 用户code
+        /**
+         * <p>用户code</p>
+         */
         @NameInMap("userCode")
         public String userCode;
 
-        // 扩展字段描述
+        /**
+         * <p>扩展字段描述</p>
+         */
         @NameInMap("userExtendDisplayName")
         public String userExtendDisplayName;
 
-        // 扩展字段key
+        /**
+         * <p>扩展字段key</p>
+         */
         @NameInMap("userExtendKey")
         public String userExtendKey;
 
-        // 扩展字段value
+        /**
+         * <p>扩展字段value</p>
+         */
         @NameInMap("userExtendValue")
         public String userExtendValue;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetFormDataByIdListResponseBody extends TeaModel {
-    // 表单实例数据
+    /**
+     * <p>表单实例数据</p>
+     */
     @NameInMap("result")
     public java.util.List<BatchGetFormDataByIdListResponseBodyResult> result;
 
@@ -22,11 +24,15 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultModifyUserName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -54,11 +60,15 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultModifyUser extends TeaModel {
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public BatchGetFormDataByIdListResponseBodyResultModifyUserName name;
 
-        // 钉钉userId
+        /**
+         * <p>钉钉userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -86,11 +96,15 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultOriginatorName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -118,11 +132,15 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultOriginator extends TeaModel {
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public BatchGetFormDataByIdListResponseBodyResultOriginatorName name;
 
-        // 钉钉userId
+        /**
+         * <p>钉钉userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -150,63 +168,93 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResult extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // 创建者的userId
+        /**
+         * <p>创建者的userId</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 表单实例数据
+        /**
+         * <p>表单实例数据</p>
+         */
         @NameInMap("formData")
         public java.util.Map<String, ?> formData;
 
-        // 表单实例id
+        /**
+         * <p>表单实例id</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        // 表单编码
+        /**
+         * <p>表单编码</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        // 数据库表记录主键id
+        /**
+         * <p>数据库表记录主键id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 实例数据
+        /**
+         * <p>实例数据</p>
+         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        // 修改者的钉钉userId
+        /**
+         * <p>修改者的钉钉userId</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
-        // 修改者
+        /**
+         * <p>修改者</p>
+         */
         @NameInMap("modifyUser")
         public BatchGetFormDataByIdListResponseBodyResultModifyUser modifyUser;
 
-        // 表单提交人
+        /**
+         * <p>表单提交人</p>
+         */
         @NameInMap("originator")
         public BatchGetFormDataByIdListResponseBodyResultOriginator originator;
 
-        // 该表单实例对应的批量导入的批次号(如果是通过批量导入创建的)
+        /**
+         * <p>该表单实例对应的批量导入的批次号(如果是通过批量导入创建的)</p>
+         */
         @NameInMap("sequence")
         public String sequence;
 
-        // 流水号
+        /**
+         * <p>流水号</p>
+         */
         @NameInMap("serialNumber")
         public String serialNumber;
 
-        // 标题
+        /**
+         * <p>标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 该表单实例对应的表单schema版本
+        /**
+         * <p>该表单实例对应的表单schema版本</p>
+         */
         @NameInMap("version")
         public Long version;
 

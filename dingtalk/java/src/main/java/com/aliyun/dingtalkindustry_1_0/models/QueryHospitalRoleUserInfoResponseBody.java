@@ -4,19 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
-    // 角色人员信息
+    /**
+     * <p>角色人员信息</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryHospitalRoleUserInfoResponseBodyContent> content;
 
-    // 当前页码
+    /**
+     * <p>当前页码</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 总页数
+    /**
+     * <p>总页数</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -58,34 +66,48 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryHospitalRoleUserInfoResponseBodyContent extends TeaModel {
-        // gmtCreate
+        /**
+         * <p>gmtCreate</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 用户工号
+        /**
+         * <p>用户工号</p>
+         */
         @NameInMap("jobNumber")
         public String jobNumber;
 
-        // 角色编码
+        /**
+         * <p>角色编码</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        // 角色名称
+        /**
+         * <p>角色名称</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
         @NameInMap("status")
         public Integer status;
 
-        // 用户编码
+        /**
+         * <p>用户编码</p>
+         */
         @NameInMap("userCode")
         public String userCode;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("userName")
         public String userName;
 

@@ -4,19 +4,27 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOrgPointDetailsRequest extends TeaModel {
-    // 查询企业账号明细，ORG,ORG_DEDUCTIONS两种。     ORG:企业账户明细 查询的是企业积分发放明细       ORG_DEDUCTIONS:扣除账户明细，查询的是企业扣减积分明细
+    /**
+     * <p>查询企业账号明细，ORG,ORG_DEDUCTIONS两种。     ORG:企业账户明细 查询的是企业积分发放明细       ORG_DEDUCTIONS:扣除账户明细，查询的是企业扣减积分明细</p>
+     */
     @NameInMap("accountType")
     public String accountType;
 
-    // 查询页数 第一页是1 非空必传
+    /**
+     * <p>查询页数 第一页是1 非空必传</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 每页大小最多50，默认10
+    /**
+     * <p>每页大小最多50，默认10</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 操作人userId 必须是管理员
+    /**
+     * <p>操作人userId 必须是管理员</p>
+     */
     @NameInMap("userId")
     public String userId;
 

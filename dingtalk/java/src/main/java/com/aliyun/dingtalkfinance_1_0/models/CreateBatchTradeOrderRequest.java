@@ -4,39 +4,57 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBatchTradeOrderRequest extends TeaModel {
-    // 付款账号唯一id
+    /**
+     * <p>付款账号唯一id</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
-    // 付款账号(注意：用户上送的是脱敏数据)
+    /**
+     * <p>付款账号(注意：用户上送的是脱敏数据)</p>
+     */
     @NameInMap("accountNo")
     public String accountNo;
 
-    // 批次备注
+    /**
+     * <p>批次备注</p>
+     */
     @NameInMap("batchRemark")
     public String batchRemark;
 
-    // 交易明细列表
+    /**
+     * <p>交易明细列表</p>
+     */
     @NameInMap("batchTradeDetails")
     public java.util.List<CreateBatchTradeOrderRequestBatchTradeDetails> batchTradeDetails;
 
-    // 外部商户批次号
+    /**
+     * <p>外部商户批次号</p>
+     */
     @NameInMap("outBatchNo")
     public String outBatchNo;
 
-    // 员工staffId
+    /**
+     * <p>员工staffId</p>
+     */
     @NameInMap("staffId")
     public String staffId;
 
-    // 总金额（必填，单位：元）
+    /**
+     * <p>总金额（必填，单位：元）</p>
+     */
     @NameInMap("totalAmount")
     public String totalAmount;
 
-    // 总笔数（必填）
+    /**
+     * <p>总笔数（必填）</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 交易抬头
+    /**
+     * <p>交易抬头</p>
+     */
     @NameInMap("tradeTitle")
     public String tradeTitle;
 
@@ -118,27 +136,39 @@ public class CreateBatchTradeOrderRequest extends TeaModel {
     }
 
     public static class CreateBatchTradeOrderRequestBatchTradeDetails extends TeaModel {
-        // 金额（必填，单位：元）
+        /**
+         * <p>金额（必填，单位：元）</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 备注（选填）
+        /**
+         * <p>备注（选填）</p>
+         */
         @NameInMap("memo")
         public String memo;
 
-        // 收款方户名（必填）
+        /**
+         * <p>收款方户名（必填）</p>
+         */
         @NameInMap("payeeAccountName")
         public String payeeAccountName;
 
-        // 收款方账号（必填）
+        /**
+         * <p>收款方账号（必填）</p>
+         */
         @NameInMap("payeeAccountNo")
         public String payeeAccountNo;
 
-        // 收款方账号类型（必填）
+        /**
+         * <p>收款方账号类型（必填）</p>
+         */
         @NameInMap("payeeAccountType")
         public String payeeAccountType;
 
-        // 序号（必填）
+        /**
+         * <p>序号（必填）</p>
+         */
         @NameInMap("serialNo")
         public Long serialNo;
 

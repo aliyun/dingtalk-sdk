@@ -21,15 +21,21 @@ public class GetOvertimeSettingResponseBody extends TeaModel {
     }
 
     public static class GetOvertimeSettingResponseBodyResultOvertimeDivisions extends TeaModel {
-        // 后一日类型
+        /**
+         * <p>后一日类型</p>
+         */
         @NameInMap("nextDayType")
         public String nextDayType;
 
-        // 前一日类型
+        /**
+         * <p>前一日类型</p>
+         */
         @NameInMap("previousDayType")
         public String previousDayType;
 
-        // 分割时间点
+        /**
+         * <p>分割时间点</p>
+         */
         @NameInMap("timeSplitPoint")
         public String timeSplitPoint;
 
@@ -65,15 +71,21 @@ public class GetOvertimeSettingResponseBody extends TeaModel {
     }
 
     public static class GetOvertimeSettingResponseBodyResultWarningSettings extends TeaModel {
-        // 风险预警 或 最大加班时间
+        /**
+         * <p>风险预警 或 最大加班时间</p>
+         */
         @NameInMap("action")
         public String action;
 
-        // 提醒阈值
+        /**
+         * <p>提醒阈值</p>
+         */
         @NameInMap("threshold")
         public Long threshold;
 
-        // 预警类型
+        /**
+         * <p>预警类型</p>
+         */
         @NameInMap("time")
         public String time;
 
@@ -109,41 +121,57 @@ public class GetOvertimeSettingResponseBody extends TeaModel {
     }
 
     public static class GetOvertimeSettingResponseBodyResult extends TeaModel {
-        // 是否默认
+        /**
+         * <p>是否默认</p>
+         */
         @NameInMap("default")
         public Boolean _default;
 
         @NameInMap("durationSettings")
         public java.util.Map<String, ResultDurationSettingsValue> durationSettings;
 
-        // 历史加班规则设置id
+        /**
+         * <p>历史加班规则设置id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 规则名称
+        /**
+         * <p>规则名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 时间分割规则
+        /**
+         * <p>时间分割规则</p>
+         */
         @NameInMap("overtimeDivisions")
         public java.util.List<GetOvertimeSettingResponseBodyResultOvertimeDivisions> overtimeDivisions;
 
-        // 设置id
+        /**
+         * <p>设置id</p>
+         */
         @NameInMap("settingId")
         public Long settingId;
 
-        // 加班时长单位
+        /**
+         * <p>加班时长单位</p>
+         */
         @NameInMap("stepType")
         public Integer stepType;
 
-        // 加班时长是否取整 单位 小时
+        /**
+         * <p>加班时长是否取整 单位 小时</p>
+         */
         @NameInMap("stepValue")
         public Float stepValue;
 
         @NameInMap("warningSettings")
         public java.util.List<GetOvertimeSettingResponseBodyResultWarningSettings> warningSettings;
 
-        // 日折算时长 单位：分钟
+        /**
+         * <p>日折算时长 单位：分钟</p>
+         */
         @NameInMap("workMinutesPerDay")
         public Integer workMinutesPerDay;
 

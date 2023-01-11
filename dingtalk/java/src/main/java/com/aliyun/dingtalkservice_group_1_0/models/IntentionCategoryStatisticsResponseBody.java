@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class IntentionCategoryStatisticsResponseBody extends TeaModel {
-    // 统计明细
+    /**
+     * <p>统计明细</p>
+     */
     @NameInMap("intentionCategoryRecords")
     public java.util.List<IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords> intentionCategoryRecords;
 
@@ -22,27 +24,39 @@ public class IntentionCategoryStatisticsResponseBody extends TeaModel {
     }
 
     public static class IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords extends TeaModel {
-        // 求助咨询量
+        /**
+         * <p>求助咨询量</p>
+         */
         @NameInMap("askCount")
         public Long askCount;
 
-        // 分类名
+        /**
+         * <p>分类名</p>
+         */
         @NameInMap("categoryName")
         public String categoryName;
 
-        // 不满辱骂量
+        /**
+         * <p>不满辱骂量</p>
+         */
         @NameInMap("dissatisfiedCount")
         public Long dissatisfiedCount;
 
-        // 产品异常量
+        /**
+         * <p>产品异常量</p>
+         */
         @NameInMap("errorCount")
         public Long errorCount;
 
-        // 赞扬量
+        /**
+         * <p>赞扬量</p>
+         */
         @NameInMap("praiseCount")
         public Long praiseCount;
 
-        // 产品建议量
+        /**
+         * <p>产品建议量</p>
+         */
         @NameInMap("suggestCount")
         public Long suggestCount;
 

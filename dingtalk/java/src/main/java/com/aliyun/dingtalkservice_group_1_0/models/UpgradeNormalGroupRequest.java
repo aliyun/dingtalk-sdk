@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpgradeNormalGroupRequest extends TeaModel {
-    // 群id
+    /**
+     * <p>群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 升级的目标群组id
+    /**
+     * <p>升级的目标群组id</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    // 升级的目标团队id
+    /**
+     * <p>升级的目标团队id</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 升级的目标模板id
+    /**
+     * <p>升级的目标模板id</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

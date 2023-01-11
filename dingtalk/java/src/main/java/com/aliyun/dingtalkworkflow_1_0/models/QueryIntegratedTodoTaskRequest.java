@@ -4,15 +4,21 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryIntegratedTodoTaskRequest extends TeaModel {
-    // 在此时间戳之前创建的
+    /**
+     * <p>在此时间戳之前创建的</p>
+     */
     @NameInMap("createBefore")
     public Long createBefore;
 
-    // 第几页，取值范围为 1 ≤ page ≤ 1000
+    /**
+     * <p>第几页，取值范围为 1 ≤ page ≤ 1000</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小，取值范围为 1 ≤ pageSize ≤ 40
+    /**
+     * <p>分页大小，取值范围为 1 ≤ pageSize ≤ 40</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

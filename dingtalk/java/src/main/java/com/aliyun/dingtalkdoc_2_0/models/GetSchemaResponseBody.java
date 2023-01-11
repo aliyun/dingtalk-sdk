@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetSchemaResponseBody extends TeaModel {
-    // 当前版本。
+    /**
+     * <p>当前版本。</p>
+     */
     @NameInMap("revision")
     public Integer revision;
 
-    // schema内容。
+    /**
+     * <p>schema内容。</p>
+     */
     @NameInMap("value")
     public String value;
 

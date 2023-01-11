@@ -4,71 +4,105 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyBadgeCodePayResultRequest extends TeaModel {
-    // 订单金额
+    /**
+     * <p>订单金额</p>
+     */
     @NameInMap("amount")
     public String amount;
 
-    // 收费金额
+    /**
+     * <p>收费金额</p>
+     */
     @NameInMap("chargeAmount")
     public String chargeAmount;
 
-    // 企业id
+    /**
+     * <p>企业id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
-    // 交易开始时间
+    /**
+     * <p>交易开始时间</p>
+     */
     @NameInMap("gmtTradeCreate")
     public String gmtTradeCreate;
 
-    // 交易结束时间
+    /**
+     * <p>交易结束时间</p>
+     */
     @NameInMap("gmtTradeFinish")
     public String gmtTradeFinish;
 
-    // merchantName
+    /**
+     * <p>merchantName</p>
+     */
     @NameInMap("merchantName")
     public String merchantName;
 
-    // 支付渠道明细信息
+    /**
+     * <p>支付渠道明细信息</p>
+     */
     @NameInMap("payChannelDetailList")
     public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailList> payChannelDetailList;
 
-    // 付款码值
+    /**
+     * <p>付款码值</p>
+     */
     @NameInMap("payCode")
     public String payCode;
 
-    // 订单优惠金额
+    /**
+     * <p>订单优惠金额</p>
+     */
     @NameInMap("promotionAmount")
     public String promotionAmount;
 
-    // 备注
+    /**
+     * <p>备注</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 订单标题
+    /**
+     * <p>订单标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 支付失败错误码
+    /**
+     * <p>支付失败错误码</p>
+     */
     @NameInMap("tradeErrorCode")
     public String tradeErrorCode;
 
-    // 支付失败信息
+    /**
+     * <p>支付失败信息</p>
+     */
     @NameInMap("tradeErrorMsg")
     public String tradeErrorMsg;
 
-    // 交易号
+    /**
+     * <p>交易号</p>
+     */
     @NameInMap("tradeNo")
     public String tradeNo;
 
-    // 交易状态
+    /**
+     * <p>交易状态</p>
+     */
     @NameInMap("tradeStatus")
     public String tradeStatus;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -214,27 +248,39 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
     }
 
     public static class NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList extends TeaModel {
-        // 1.00
+        /**
+         * <p>1.00</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 扩展信息
+        /**
+         * <p>扩展信息</p>
+         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        // 资金渠道名称
+        /**
+         * <p>资金渠道名称</p>
+         */
         @NameInMap("fundToolName")
         public String fundToolName;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        // 是否是优惠工具
+        /**
+         * <p>是否是优惠工具</p>
+         */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
@@ -294,35 +340,51 @@ public class NotifyBadgeCodePayResultRequest extends TeaModel {
     }
 
     public static class NotifyBadgeCodePayResultRequestPayChannelDetailList extends TeaModel {
-        // 支付金额
+        /**
+         * <p>支付金额</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 资金工具明细
+        /**
+         * <p>资金工具明细</p>
+         */
         @NameInMap("fundToolDetailList")
         public java.util.List<NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        // 支付渠道名称
+        /**
+         * <p>支付渠道名称</p>
+         */
         @NameInMap("payChannelName")
         public String payChannelName;
 
-        // 支付渠道单号
+        /**
+         * <p>支付渠道单号</p>
+         */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
-        // 支付渠道类型
+        /**
+         * <p>支付渠道类型</p>
+         */
         @NameInMap("payChannelType")
         public String payChannelType;
 
-        // 优惠金额
+        /**
+         * <p>优惠金额</p>
+         */
         @NameInMap("promotionAmount")
         public String promotionAmount;
 

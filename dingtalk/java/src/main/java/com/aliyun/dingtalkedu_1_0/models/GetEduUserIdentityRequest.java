@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEduUserIdentityRequest extends TeaModel {
-    // 用户unionId
+    /**
+     * <p>用户unionId</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

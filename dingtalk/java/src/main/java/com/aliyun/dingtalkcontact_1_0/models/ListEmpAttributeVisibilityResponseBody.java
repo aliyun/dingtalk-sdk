@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 设置列表
+    /**
+     * <p>设置列表</p>
+     */
     @NameInMap("list")
     public java.util.List<ListEmpAttributeVisibilityResponseBodyList> list;
 
-    // 下一次拉取时的offset
+    /**
+     * <p>下一次拉取时的offset</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
@@ -46,55 +52,81 @@ public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
     }
 
     public static class ListEmpAttributeVisibilityResponseBodyList extends TeaModel {
-        // 是否生效
+        /**
+         * <p>是否生效</p>
+         */
         @NameInMap("active")
         public Boolean active;
 
-        // 设置描述
+        /**
+         * <p>设置描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 白名单部门id列表
+        /**
+         * <p>白名单部门id列表</p>
+         */
         @NameInMap("excludeDeptIds")
         public java.util.List<Long> excludeDeptIds;
 
-        // 白名单用户id列表
+        /**
+         * <p>白名单用户id列表</p>
+         */
         @NameInMap("excludeStaffIds")
         public java.util.List<String> excludeStaffIds;
 
-        // 白名单角色id列表
+        /**
+         * <p>白名单角色id列表</p>
+         */
         @NameInMap("excludeTagIds")
         public java.util.List<Long> excludeTagIds;
 
-        // 设置时间
+        /**
+         * <p>设置时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 隐藏的字段id列表
+        /**
+         * <p>隐藏的字段id列表</p>
+         */
         @NameInMap("hideFields")
         public java.util.List<String> hideFields;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 被查看的部门id列表
+        /**
+         * <p>被查看的部门id列表</p>
+         */
         @NameInMap("objectDeptIds")
         public java.util.List<Long> objectDeptIds;
 
-        // 被查看的用户id列表
+        /**
+         * <p>被查看的用户id列表</p>
+         */
         @NameInMap("objectStaffIds")
         public java.util.List<String> objectStaffIds;
 
-        // 被查看的角色id列表
+        /**
+         * <p>被查看的角色id列表</p>
+         */
         @NameInMap("objectTagIds")
         public java.util.List<Long> objectTagIds;
 

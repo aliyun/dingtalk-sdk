@@ -16,7 +16,9 @@ public class GetTicketResponseBody extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
@@ -244,15 +246,21 @@ public class GetTicketResponseBody extends TeaModel {
     }
 
     public static class GetTicketResponseBodyTemplate extends TeaModel {
-        // 工单模版业务ID
+        /**
+         * <p>工单模版业务ID</p>
+         */
         @NameInMap("openTemplateBizId")
         public String openTemplateBizId;
 
-        // 工单模版ID
+        /**
+         * <p>工单模版ID</p>
+         */
         @NameInMap("openTemplateId")
         public String openTemplateId;
 
-        // 工单模版名称
+        /**
+         * <p>工单模版名称</p>
+         */
         @NameInMap("templateName")
         public String templateName;
 

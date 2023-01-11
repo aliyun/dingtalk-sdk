@@ -4,15 +4,21 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTaskOfProjectResponseBody extends TeaModel {
-    // 供分页使用，下一页token，从当前页结果中获取。
+    /**
+     * <p>供分页使用，下一页token，从当前页结果中获取。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 任务对象列表。
+    /**
+     * <p>任务对象列表。</p>
+     */
     @NameInMap("result")
     public java.util.List<QueryTaskOfProjectResponseBodyResult> result;
 
-    // 任务总数。
+    /**
+     * <p>任务总数。</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -46,111 +52,165 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
     }
 
     public static class QueryTaskOfProjectResponseBodyResult extends TeaModel {
-        // 任务完成时间。
+        /**
+         * <p>任务完成时间。</p>
+         */
         @NameInMap("accomplished")
         public String accomplished;
 
-        // 父任务id列表。
+        /**
+         * <p>父任务id列表。</p>
+         */
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
-        // 任务标题。
+        /**
+         * <p>任务标题。</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 创建时间。
+        /**
+         * <p>创建时间。</p>
+         */
         @NameInMap("created")
         public String created;
 
-        // 创建者id。
+        /**
+         * <p>创建者id。</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        // 自定义字段id列表。
+        /**
+         * <p>自定义字段id列表。</p>
+         */
         @NameInMap("customfields")
         public java.util.List<String> customfields;
 
-        // 任务截止时间。
+        /**
+         * <p>任务截止时间。</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
-        // 执行者id。
+        /**
+         * <p>执行者id。</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
-        // 参与者列表。
+        /**
+         * <p>参与者列表。</p>
+         */
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
-        // 是否归档。
+        /**
+         * <p>是否归档。</p>
+         */
         @NameInMap("isArchived")
         public Boolean isArchived;
 
-        // 是否已删除。
+        /**
+         * <p>是否已删除。</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        // 任务是否已完成。
+        /**
+         * <p>任务是否已完成。</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        // 任务自定义标识。
+        /**
+         * <p>任务自定义标识。</p>
+         */
         @NameInMap("labels")
         public String labels;
 
-        // 备注。
+        /**
+         * <p>备注。</p>
+         */
         @NameInMap("note")
         public String note;
 
-        // 任务优先级。
+        /**
+         * <p>任务优先级。</p>
+         */
         @NameInMap("priority")
         public Long priority;
 
-        // 任务进度。
+        /**
+         * <p>任务进度。</p>
+         */
         @NameInMap("progress")
         public Integer progress;
 
-        // 项目id。
+        /**
+         * <p>项目id。</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
-        // 任务类型id。
+        /**
+         * <p>任务类型id。</p>
+         */
         @NameInMap("scenariofieldconfigId")
         public String scenariofieldconfigId;
 
-        // 任务迭代id。
+        /**
+         * <p>任务迭代id。</p>
+         */
         @NameInMap("sprintId")
         public String sprintId;
 
-        // 任务列表Id。
+        /**
+         * <p>任务列表Id。</p>
+         */
         @NameInMap("stageId")
         public String stageId;
 
-        // 任务开始时间。
+        /**
+         * <p>任务开始时间。</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
-        // 故事点数。
+        /**
+         * <p>故事点数。</p>
+         */
         @NameInMap("storyPoint")
         public Integer storyPoint;
 
-        // 标签id集合。
+        /**
+         * <p>标签id集合。</p>
+         */
         @NameInMap("tagIds")
         public String tagIds;
 
-        // 任务id。
+        /**
+         * <p>任务id。</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
-        // 任务状态id。
+        /**
+         * <p>任务状态id。</p>
+         */
         @NameInMap("taskflowstatusId")
         public String taskflowstatusId;
 
-        // 更新时间。
+        /**
+         * <p>更新时间。</p>
+         */
         @NameInMap("updated")
         public String updated;
 
-        // 任务的可见性规则 involves | members。
+        /**
+         * <p>任务的可见性规则 involves | members。</p>
+         */
         @NameInMap("visible")
         public String visible;
 

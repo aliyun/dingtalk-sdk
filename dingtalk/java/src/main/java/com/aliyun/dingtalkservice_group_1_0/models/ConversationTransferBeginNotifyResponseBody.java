@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConversationTransferBeginNotifyResponseBody extends TeaModel {
-    // dingOpenErrcode
+    /**
+     * <p>dingOpenErrcode</p>
+     */
     @NameInMap("dingOpenErrcode")
     public Integer dingOpenErrcode;
 
-    // errorMsg
+    /**
+     * <p>errorMsg</p>
+     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("result")
     public Boolean result;
 
-    // success
+    /**
+     * <p>success</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

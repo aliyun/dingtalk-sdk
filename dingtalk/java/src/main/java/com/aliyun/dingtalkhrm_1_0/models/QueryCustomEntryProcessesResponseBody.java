@@ -4,15 +4,21 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCustomEntryProcessesResponseBody extends TeaModel {
-    // 是否有更多
+    /**
+     * <p>是否有更多</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 表单信息列表
+    /**
+     * <p>表单信息列表</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryCustomEntryProcessesResponseBodyList> list;
 
-    // 下次获取数据的起始游标
+    /**
+     * <p>下次获取数据的起始游标</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

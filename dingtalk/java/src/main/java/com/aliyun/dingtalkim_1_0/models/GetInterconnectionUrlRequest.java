@@ -4,47 +4,69 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInterconnectionUrlRequest extends TeaModel {
-    // appUserAvatar
+    /**
+     * <p>appUserAvatar</p>
+     */
     @NameInMap("appUserAvatar")
     public String appUserAvatar;
 
-    // appUserAvatarType
+    /**
+     * <p>appUserAvatarType</p>
+     */
     @NameInMap("appUserAvatarType")
     public Integer appUserAvatarType;
 
-    // appUserId
+    /**
+     * <p>appUserId</p>
+     */
     @NameInMap("appUserId")
     public String appUserId;
 
-    // appUserMobileNumber
+    /**
+     * <p>appUserMobileNumber</p>
+     */
     @NameInMap("appUserMobileNumber")
     public String appUserMobileNumber;
 
-    // appUserName
+    /**
+     * <p>appUserName</p>
+     */
     @NameInMap("appUserName")
     public String appUserName;
 
-    // msgPageType
+    /**
+     * <p>msgPageType</p>
+     */
     @NameInMap("msgPageType")
     public Integer msgPageType;
 
-    // qrCode
+    /**
+     * <p>qrCode</p>
+     */
     @NameInMap("qrCode")
     public String qrCode;
 
-    // signature
+    /**
+     * <p>signature</p>
+     */
     @NameInMap("signature")
     public String signature;
 
-    // sourceCode
+    /**
+     * <p>sourceCode</p>
+     */
     @NameInMap("sourceCode")
     public String sourceCode;
 
-    // sourceType
+    /**
+     * <p>sourceType</p>
+     */
     @NameInMap("sourceType")
     public Integer sourceType;
 
-    // userId
+    /**
+     * <p>userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

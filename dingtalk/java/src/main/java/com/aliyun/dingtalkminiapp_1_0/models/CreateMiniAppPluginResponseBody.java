@@ -4,7 +4,9 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateMiniAppPluginResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 

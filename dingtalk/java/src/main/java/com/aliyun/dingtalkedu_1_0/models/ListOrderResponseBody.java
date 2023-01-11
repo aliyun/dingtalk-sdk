@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListOrderResponseBody extends TeaModel {
-    // 列表
+    /**
+     * <p>列表</p>
+     */
     @NameInMap("list")
     public java.util.List<ListOrderResponseBodyList> list;
 
-    // 总数
+    /**
+     * <p>总数</p>
+     */
     @NameInMap("total")
     public Long total;
 

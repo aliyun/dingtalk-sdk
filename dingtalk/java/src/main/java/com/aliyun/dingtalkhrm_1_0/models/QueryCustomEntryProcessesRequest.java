@@ -4,15 +4,21 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCustomEntryProcessesRequest extends TeaModel {
-    // 最大值
+    /**
+     * <p>最大值</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 偏移量
+    /**
+     * <p>偏移量</p>
+     */
     @NameInMap("nextToken")
     public Integer nextToken;
 
-    // 操作人id
+    /**
+     * <p>操作人id</p>
+     */
     @NameInMap("operateUserId")
     public String operateUserId;
 

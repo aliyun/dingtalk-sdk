@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetTotalNumberOfDentriesRequest extends TeaModel {
-    // 是否包含文件夹。默认包含。
+    /**
+     * <p>是否包含文件夹。默认包含。</p>
+     */
     @NameInMap("includeFolder")
     public Boolean includeFolder;
 
-    // 操作用户unionId。
+    /**
+     * <p>操作用户unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 统计指定的知识库类型。0-我的文档；1-知识库。如果不传，则会统计全部数据。
+    /**
+     * <p>统计指定的知识库类型。0-我的文档；1-知识库。如果不传，则会统计全部数据。</p>
+     */
     @NameInMap("spaceTypes")
     public String spaceTypes;
 

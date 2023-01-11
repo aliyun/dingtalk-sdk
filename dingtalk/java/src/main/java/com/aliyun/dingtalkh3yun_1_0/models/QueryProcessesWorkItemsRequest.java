@@ -4,7 +4,9 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryProcessesWorkItemsRequest extends TeaModel {
-    // 流程实例ID
+    /**
+     * <p>流程实例ID</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 

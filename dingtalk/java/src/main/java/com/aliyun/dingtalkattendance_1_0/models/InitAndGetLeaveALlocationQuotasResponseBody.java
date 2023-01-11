@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitAndGetLeaveALlocationQuotasResponseBody extends TeaModel {
-    // 返回结果。
+    /**
+     * <p>返回结果。</p>
+     */
     @NameInMap("result")
     public java.util.List<InitAndGetLeaveALlocationQuotasResponseBodyResult> result;
 
@@ -22,43 +24,63 @@ public class InitAndGetLeaveALlocationQuotasResponseBody extends TeaModel {
     }
 
     public static class InitAndGetLeaveALlocationQuotasResponseBodyResult extends TeaModel {
-        // 额度有效期结束时间。
+        /**
+         * <p>额度有效期结束时间。</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
-        // 假期类型标识。
+        /**
+         * <p>假期类型标识。</p>
+         */
         @NameInMap("leaveCode")
         public String leaveCode;
 
-        // 年度。
+        /**
+         * <p>年度。</p>
+         */
         @NameInMap("quotaCycle")
         public String quotaCycle;
 
-        // 余额标识。
+        /**
+         * <p>余额标识。</p>
+         */
         @NameInMap("quotaId")
         public String quotaId;
 
-        // 以天计算额度总数。
+        /**
+         * <p>以天计算额度总数。</p>
+         */
         @NameInMap("quotaNumPerDay")
         public Long quotaNumPerDay;
 
-        // 以小时计算额度总数。
+        /**
+         * <p>以小时计算额度总数。</p>
+         */
         @NameInMap("quotaNumPerHour")
         public Long quotaNumPerHour;
 
-        // 额度有效期开始时间。
+        /**
+         * <p>额度有效期开始时间。</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
-        // 用过的配额天数。
+        /**
+         * <p>用过的配额天数。</p>
+         */
         @NameInMap("usedNumPerDay")
         public Long usedNumPerDay;
 
-        // 用过的配额小时数。
+        /**
+         * <p>用过的配额小时数。</p>
+         */
         @NameInMap("usedNumPerHour")
         public Long usedNumPerHour;
 
-        // 用户id。
+        /**
+         * <p>用户id。</p>
+         */
         @NameInMap("userId")
         public String userId;
 

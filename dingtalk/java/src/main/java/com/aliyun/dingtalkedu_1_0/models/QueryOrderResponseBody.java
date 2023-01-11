@@ -7,81 +7,111 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    // 支付宝应用id。
+    /**
+     * <p>支付宝应用id。</p>
+     */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
-    // 订单关闭时间
+    /**
+     * <p>订单关闭时间</p>
+     */
     @NameInMap("closeTime")
     public String closeTime;
 
-    // 订单关闭时间戳
+    /**
+     * <p>订单关闭时间戳</p>
+     */
     @NameInMap("closeTimestamp")
     public Long closeTimestamp;
 
-    // 订单创建时间
+    /**
+     * <p>订单创建时间</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
-    // 订单创建时间戳
+    /**
+     * <p>订单创建时间戳</p>
+     */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
-    // 扩展字段。
+    /**
+     * <p>扩展字段。</p>
+     */
     @NameInMap("feature")
     public String feature;
 
     @NameInMap("labelAmount")
     public Long labelAmount;
 
-    // 商户id。
+    /**
+     * <p>商户id。</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    // 商户聚合支付订单号。
+    /**
+     * <p>商户聚合支付订单号。</p>
+     */
     @NameInMap("merchantMergeOrderNo")
     public String merchantMergeOrderNo;
 
-    // 商户订单号。
+    /**
+     * <p>商户订单号。</p>
+     */
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
-    // 订单号。
+    /**
+     * <p>订单号。</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 订单类型。
+    /**
+     * <p>订单类型。</p>
+     */
     @NameInMap("orderType")
     public String orderType;
 
-    // 用户唯一id。
-    @NameInMap("outerUid")
-    public String outerUid;
-
-    // 用户唯一id。
+    /**
+     * <p>用户唯一id。</p>
+     */
     @NameInMap("outerUserId")
     public String outerUserId;
 
-    // 买家支付id。
+    /**
+     * <p>买家支付id。</p>
+     */
     @NameInMap("payId")
     public String payId;
 
-    // 买家支付登陆id。
+    /**
+     * <p>买家支付登陆id。</p>
+     */
     @NameInMap("payLogonId")
     public String payLogonId;
 
     @NameInMap("payStatus")
     public Integer payStatus;
 
-    // 订单支付时间
+    /**
+     * <p>订单支付时间</p>
+     */
     @NameInMap("payTime")
     public String payTime;
 
-    // 订单支付时间戳
+    /**
+     * <p>订单支付时间戳</p>
+     */
     @NameInMap("payTimestamp")
     public Long payTimestamp;
 
-    // 买家支付渠道类型。
+    /**
+     * <p>买家支付渠道类型。</p>
+     */
     @NameInMap("payType")
     public String payType;
 
@@ -91,19 +121,27 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("refundStatus")
     public Integer refundStatus;
 
-    // 订单退款时间
+    /**
+     * <p>订单退款时间</p>
+     */
     @NameInMap("refundTime")
     public String refundTime;
 
-    // 订单退款时间戳
+    /**
+     * <p>订单退款时间戳</p>
+     */
     @NameInMap("refundTimestamp")
     public Long refundTimestamp;
 
-    // 订单标题。
+    /**
+     * <p>订单标题。</p>
+     */
     @NameInMap("subject")
     public String subject;
 
-    // 交易流水号。
+    /**
+     * <p>交易流水号。</p>
+     */
     @NameInMap("tradeNo")
     public String tradeNo;
 
@@ -214,14 +252,6 @@ public class QueryOrderResponseBody extends TeaModel {
     }
     public String getOrderType() {
         return this.orderType;
-    }
-
-    public QueryOrderResponseBody setOuterUid(String outerUid) {
-        this.outerUid = outerUid;
-        return this;
-    }
-    public String getOuterUid() {
-        return this.outerUid;
     }
 
     public QueryOrderResponseBody setOuterUserId(String outerUserId) {

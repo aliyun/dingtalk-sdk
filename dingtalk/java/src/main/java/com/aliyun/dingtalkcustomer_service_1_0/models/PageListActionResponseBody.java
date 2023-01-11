@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListActionResponseBody extends TeaModel {
-    // list
+    /**
+     * <p>list</p>
+     */
     @NameInMap("list")
     public java.util.List<PageListActionResponseBodyList> list;
 
-    // nextCursor
+    /**
+     * <p>nextCursor</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
-    // total
+    /**
+     * <p>total</p>
+     */
     @NameInMap("total")
     public Long total;
 
@@ -46,23 +52,33 @@ public class PageListActionResponseBody extends TeaModel {
     }
 
     public static class PageListActionResponseBodyListActionContent extends TeaModel {
-        // displayName
+        /**
+         * <p>displayName</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // displayValue
+        /**
+         * <p>displayValue</p>
+         */
         @NameInMap("displayValue")
         public String displayValue;
 
-        // name
+        /**
+         * <p>name</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // value
+        /**
+         * <p>value</p>
+         */
         @NameInMap("value")
         public String value;
 
-        // valueType
+        /**
+         * <p>valueType</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -114,23 +130,33 @@ public class PageListActionResponseBody extends TeaModel {
     }
 
     public static class PageListActionResponseBodyList extends TeaModel {
-        // actionCode
+        /**
+         * <p>actionCode</p>
+         */
         @NameInMap("actionCode")
         public String actionCode;
 
-        // actionContent
+        /**
+         * <p>actionContent</p>
+         */
         @NameInMap("actionContent")
         public java.util.List<PageListActionResponseBodyListActionContent> actionContent;
 
-        // operator
+        /**
+         * <p>operator</p>
+         */
         @NameInMap("operator")
         public String operator;
 
-        // operatorId
+        /**
+         * <p>operatorId</p>
+         */
         @NameInMap("operatorId")
         public String operatorId;
 
-        // operatorRole
+        /**
+         * <p>operatorRole</p>
+         */
         @NameInMap("operatorRole")
         public String operatorRole;
 

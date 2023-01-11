@@ -4,27 +4,39 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncSecretKeyRequest extends TeaModel {
-    // 操作类型，ADD/QUERY/MODIFY/DEL
+    /**
+     * <p>操作类型，ADD/QUERY/MODIFY/DEL</p>
+     */
     @NameInMap("actionType")
     public String actionType;
 
-    // 验签加密串
+    /**
+     * <p>验签加密串</p>
+     */
     @NameInMap("secretString")
     public String secretString;
 
-    // 钉钉侧对应的组织ID
+    /**
+     * <p>钉钉侧对应的组织ID</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
-    // 商旅侧appkey
+    /**
+     * <p>商旅侧appkey</p>
+     */
     @NameInMap("tripAppKey")
     public String tripAppKey;
 
-    // 商旅对接密钥
+    /**
+     * <p>商旅对接密钥</p>
+     */
     @NameInMap("tripAppSecurity")
     public String tripAppSecurity;
 
-    // 商旅侧组织ID
+    /**
+     * <p>商旅侧组织ID</p>
+     */
     @NameInMap("tripCorpId")
     public String tripCorpId;
 

@@ -4,27 +4,39 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCategoryResponseBody extends TeaModel {
-    // 类别code
+    /**
+     * <p>类别code</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 是否为目录
+    /**
+     * <p>是否为目录</p>
+     */
     @NameInMap("isDir")
     public Boolean isDir;
 
-    // 名称
+    /**
+     * <p>名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 父类别code
+    /**
+     * <p>父类别code</p>
+     */
     @NameInMap("parentCode")
     public String parentCode;
 
-    // 状态:valid,invalid,deleted
+    /**
+     * <p>状态:valid,invalid,deleted</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 类型：income收入，expense支出
+    /**
+     * <p>类型：income收入，expense支出</p>
+     */
     @NameInMap("type")
     public String type;
 

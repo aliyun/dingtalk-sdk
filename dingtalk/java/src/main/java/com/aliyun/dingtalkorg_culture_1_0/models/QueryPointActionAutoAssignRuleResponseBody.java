@@ -32,23 +32,33 @@ public class QueryPointActionAutoAssignRuleResponseBody extends TeaModel {
     }
 
     public static class QueryPointActionAutoAssignRuleResponseBodyResultQueryPointRuleResponseDTOS extends TeaModel {
-        // 奖励积分
+        /**
+         * <p>奖励积分</p>
+         */
         @NameInMap("awardScore")
         public Long awardScore;
 
-        // 行为名称
+        /**
+         * <p>行为名称</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 单日计次上限
+        /**
+         * <p>单日计次上限</p>
+         */
         @NameInMap("dayLimitTimes")
         public Long dayLimitTimes;
 
-        // 行为描述
+        /**
+         * <p>行为描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 生效状态：0无效，1有效
+        /**
+         * <p>生效状态：0无效，1有效</p>
+         */
         @NameInMap("status")
         public Long status;
 
@@ -100,7 +110,9 @@ public class QueryPointActionAutoAssignRuleResponseBody extends TeaModel {
     }
 
     public static class QueryPointActionAutoAssignRuleResponseBodyResult extends TeaModel {
-        // 行为规则列表
+        /**
+         * <p>行为规则列表</p>
+         */
         @NameInMap("queryPointRuleResponseDTOS")
         public java.util.List<QueryPointActionAutoAssignRuleResponseBodyResultQueryPointRuleResponseDTOS> queryPointRuleResponseDTOS;
 

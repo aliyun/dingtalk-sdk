@@ -4,7 +4,9 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCollectingTraceTaskResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryCollectingTraceTaskResponseBodyList> list;
 
@@ -22,7 +24,9 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
     }
 
     public static class QueryCollectingTraceTaskResponseBodyList extends TeaModel {
-        // 应用轨迹ID
+        /**
+         * <p>应用轨迹ID</p>
+         */
         @NameInMap("appTraceId")
         public String appTraceId;
 
@@ -41,7 +45,9 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
         @NameInMap("reportStartTime")
         public Long reportStartTime;
 
-        // 组织下员工Id
+        /**
+         * <p>组织下员工Id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

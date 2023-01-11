@@ -4,23 +4,33 @@ package com.aliyun.dingtalkflashmeeting_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFlashMeetingResponseBody extends TeaModel {
-    // 闪会结束时间
+    /**
+     * <p>闪会结束时间</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 闪会的key
+    /**
+     * <p>闪会的key</p>
+     */
     @NameInMap("flashMeetingKey")
     public String flashMeetingKey;
 
-    // 闪会开始时间
+    /**
+     * <p>闪会开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 闪会标题
+    /**
+     * <p>闪会标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 闪会url
+    /**
+     * <p>闪会url</p>
+     */
     @NameInMap("url")
     public String url;
 

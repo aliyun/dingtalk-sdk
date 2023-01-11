@@ -4,23 +4,33 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class RedirectWorkflowTaskRequest extends TeaModel {
-    // 操作节点名
+    /**
+     * <p>操作节点名</p>
+     */
     @NameInMap("actionName")
     public String actionName;
 
-    // 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
+    /**
+     * <p>操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验</p>
+     */
     @NameInMap("operateUserId")
     public String operateUserId;
 
-    // 转交备注信息
+    /**
+     * <p>转交备注信息</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // OA审批任务ID
+    /**
+     * <p>OA审批任务ID</p>
+     */
     @NameInMap("taskId")
     public Long taskId;
 
-    // OA审批任务被转交对象的用户ID
+    /**
+     * <p>OA审批任务被转交对象的用户ID</p>
+     */
     @NameInMap("toUserId")
     public String toUserId;
 

@@ -4,22 +4,30 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class RestoreRecycleItemResponseBody extends TeaModel {
-    // 是否是异步任务
-    // 如果操作对象有子节点，则会异步处理
+    /**
+     * <p>是否是异步任务</p>
+     * <p>如果操作对象有子节点，则会异步处理</p>
+     */
     @NameInMap("async")
     public Boolean async;
 
-    // 操作对应根节点还原之后的文件id
-    // 非失败的情况下同步或者异步都会返回
+    /**
+     * <p>操作对应根节点还原之后的文件id</p>
+     * <p>非失败的情况下同步或者异步都会返回</p>
+     */
     @NameInMap("dentryId")
     public String dentryId;
 
-    // 操作对应根节点还原之后的空间id
-    // 非失败的情况下同步或者异步都会返回
+    /**
+     * <p>操作对应根节点还原之后的空间id</p>
+     * <p>非失败的情况下同步或者异步都会返回</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
-    // 异步任务id，用于查询任务执行状态
+    /**
+     * <p>异步任务id，用于查询任务执行状态</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

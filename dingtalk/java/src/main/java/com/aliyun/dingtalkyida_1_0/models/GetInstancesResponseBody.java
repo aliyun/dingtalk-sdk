@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstancesResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public java.util.List<GetInstancesResponseBodyData> data;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,15 +52,21 @@ public class GetInstancesResponseBody extends TeaModel {
     }
 
     public static class GetInstancesResponseBodyDataActionExecutorName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        // type
+        /**
+         * <p>type</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -90,19 +102,27 @@ public class GetInstancesResponseBody extends TeaModel {
     }
 
     public static class GetInstancesResponseBodyDataActionExecutor extends TeaModel {
-        // deptName
+        /**
+         * <p>deptName</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // email
+        /**
+         * <p>email</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // name
+        /**
+         * <p>name</p>
+         */
         @NameInMap("name")
         public GetInstancesResponseBodyDataActionExecutorName name;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -146,15 +166,21 @@ public class GetInstancesResponseBody extends TeaModel {
     }
 
     public static class GetInstancesResponseBodyDataOriginatorName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        // type
+        /**
+         * <p>type</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -190,19 +216,27 @@ public class GetInstancesResponseBody extends TeaModel {
     }
 
     public static class GetInstancesResponseBodyDataOriginator extends TeaModel {
-        // deptName
+        /**
+         * <p>deptName</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // email
+        /**
+         * <p>email</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // name
+        /**
+         * <p>name</p>
+         */
         @NameInMap("name")
         public GetInstancesResponseBodyDataOriginatorName name;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -246,51 +280,75 @@ public class GetInstancesResponseBody extends TeaModel {
     }
 
     public static class GetInstancesResponseBodyData extends TeaModel {
-        // actioners
+        /**
+         * <p>actioners</p>
+         */
         @NameInMap("actionExecutor")
         public java.util.List<GetInstancesResponseBodyDataActionExecutor> actionExecutor;
 
-        // approvedResult
+        /**
+         * <p>approvedResult</p>
+         */
         @NameInMap("approvedResult")
         public String approvedResult;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // data
+        /**
+         * <p>data</p>
+         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 
-        // formUuid
+        /**
+         * <p>formUuid</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        // instanceStatus
+        /**
+         * <p>instanceStatus</p>
+         */
         @NameInMap("instanceStatus")
         public String instanceStatus;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        // originator
+        /**
+         * <p>originator</p>
+         */
         @NameInMap("originator")
         public GetInstancesResponseBodyDataOriginator originator;
 
-        // processCode
+        /**
+         * <p>processCode</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
-        // processInstanceId
+        /**
+         * <p>processInstanceId</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // title
+        /**
+         * <p>title</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // version
+        /**
+         * <p>version</p>
+         */
         @NameInMap("version")
         public Long version;
 

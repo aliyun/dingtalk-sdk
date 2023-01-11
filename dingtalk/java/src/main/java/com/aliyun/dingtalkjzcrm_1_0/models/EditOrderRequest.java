@@ -4,19 +4,27 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditOrderRequest extends TeaModel {
-    // 编辑数据
+    /**
+     * <p>编辑数据</p>
+     */
     @NameInMap("data")
     public EditOrderRequestData data;
 
-    // 数据类型，固定填写150
+    /**
+     * <p>数据类型，固定填写150</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
-    // 数据id，不填或者填0为新增数据
+    /**
+     * <p>数据id，不填或者填0为新增数据</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
-    // 时间戳
+    /**
+     * <p>时间戳</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -58,123 +66,183 @@ public class EditOrderRequest extends TeaModel {
     }
 
     public static class EditOrderRequestData extends TeaModel {
-        // 产品明细，json格式
+        /**
+         * <p>产品明细，json格式</p>
+         */
         @NameInMap("child_mx")
         public String childMx;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        // 收货地址
+        /**
+         * <p>收货地址</p>
+         */
         @NameInMap("fahuoaddressid")
         public String fahuoaddressid;
 
-        // 开始日期
+        /**
+         * <p>开始日期</p>
+         */
         @NameInMap("ht_begindate")
         public String htBegindate;
 
-        // 合同正文
+        /**
+         * <p>合同正文</p>
+         */
         @NameInMap("ht_contract")
         public String htContract;
 
-        // 对应客户
+        /**
+         * <p>对应客户</p>
+         */
         @NameInMap("ht_customerid")
         public String htCustomerid;
 
-        // 客户签约人
+        /**
+         * <p>客户签约人</p>
+         */
         @NameInMap("ht_cusub")
         public String htCusub;
 
-        // 签单日期
+        /**
+         * <p>签单日期</p>
+         */
         @NameInMap("ht_date")
         public String htDate;
 
-        // 交付地点
+        /**
+         * <p>交付地点</p>
+         */
         @NameInMap("ht_deliplace")
         public String htDeliplace;
 
-        // 最晚发货日
+        /**
+         * <p>最晚发货日</p>
+         */
         @NameInMap("ht_enddate")
         public String htEnddate;
 
-        // 附加费用金额
+        /**
+         * <p>附加费用金额</p>
+         */
         @NameInMap("ht_fjmoney")
         public String htFjmoney;
 
-        // 附加费用分类
+        /**
+         * <p>附加费用分类</p>
+         */
         @NameInMap("ht_fjmoneylx")
         public String htFjmoneylx;
 
-        // 优惠抹零金额
+        /**
+         * <p>优惠抹零金额</p>
+         */
         @NameInMap("ht_kjmoney")
         public String htKjmoney;
 
-        // 对应联系人
+        /**
+         * <p>对应联系人</p>
+         */
         @NameInMap("ht_lxrid")
         public String htLxrid;
 
-        // 联系方式
+        /**
+         * <p>联系方式</p>
+         */
         @NameInMap("ht_lxrinfo")
         public String htLxrinfo;
 
-        // 优惠折扣率
+        /**
+         * <p>优惠折扣率</p>
+         */
         @NameInMap("ht_moneyzhekou")
         public String htMoneyzhekou;
 
-        // 合同单号
+        /**
+         * <p>合同单号</p>
+         */
         @NameInMap("ht_number")
         public String htNumber;
 
-        // 单据类型（合同，合同订单，店面单）
+        /**
+         * <p>单据类型（合同，合同订单，店面单）</p>
+         */
         @NameInMap("ht_order")
         public String htOrder;
 
-        // 付款方式
+        /**
+         * <p>付款方式</p>
+         */
         @NameInMap("ht_paymode")
         public String htPaymode;
 
-        // 所有者
+        /**
+         * <p>所有者</p>
+         */
         @NameInMap("ht_preside")
         public String htPreside;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("ht_remark")
         public String htRemark;
 
-        // 状态
+        /**
+         * <p>状态</p>
+         */
         @NameInMap("ht_state")
         public String htState;
 
-        // 外币备注
+        /**
+         * <p>外币备注</p>
+         */
         @NameInMap("ht_summemo")
         public String htSummemo;
 
-        // 总金额
+        /**
+         * <p>总金额</p>
+         */
         @NameInMap("ht_summoney")
         public String htSummoney;
 
-        // 主题
+        /**
+         * <p>主题</p>
+         */
         @NameInMap("ht_title")
         public String htTitle;
 
-        // 分类
+        /**
+         * <p>分类</p>
+         */
         @NameInMap("ht_type")
         public String htType;
 
-        // 我方签约人
+        /**
+         * <p>我方签约人</p>
+         */
         @NameInMap("ht_wesub")
         public String htWesub;
 
-        // 发货方式
+        /**
+         * <p>发货方式</p>
+         */
         @NameInMap("ht_wuliutype")
         public String htWuliutype;
 
-        // 对应机会
+        /**
+         * <p>对应机会</p>
+         */
         @NameInMap("ht_xshid")
         public String htXshid;
 
-        // 预计运费
+        /**
+         * <p>预计运费</p>
+         */
         @NameInMap("ht_yunfeimoney")
         public String htYunfeimoney;
 

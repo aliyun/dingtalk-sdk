@@ -4,7 +4,9 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApplyFollowerAuthInfoResponseBody extends TeaModel {
-    // 推送结果
+    /**
+     * <p>推送结果</p>
+     */
     @NameInMap("result")
     public ApplyFollowerAuthInfoResponseBodyResult result;
 
@@ -22,7 +24,9 @@ public class ApplyFollowerAuthInfoResponseBody extends TeaModel {
     }
 
     public static class ApplyFollowerAuthInfoResponseBodyResult extends TeaModel {
-        // 发送申请ID
+        /**
+         * <p>发送申请ID</p>
+         */
         @NameInMap("openApplyId")
         public String openApplyId;
 

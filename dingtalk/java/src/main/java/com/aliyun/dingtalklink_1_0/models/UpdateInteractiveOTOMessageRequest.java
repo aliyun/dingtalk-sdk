@@ -4,7 +4,9 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInteractiveOTOMessageRequest extends TeaModel {
-    // 消息详情
+    /**
+     * <p>消息详情</p>
+     */
     @NameInMap("detail")
     public UpdateInteractiveOTOMessageRequestDetail detail;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateVideoConferenceExtInfoResponseBody extends TeaModel {
-    // 失败原因
+    /**
+     * <p>失败原因</p>
+     */
     @NameInMap("case")
     public String _case;
 
-    // 返回编码
+    /**
+     * <p>返回编码</p>
+     */
     @NameInMap("code")
     public String code;
 

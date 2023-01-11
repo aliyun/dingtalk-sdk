@@ -4,23 +4,33 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateUserOwnnessRequest extends TeaModel {
-    // 删除标记
+    /**
+     * <p>删除标记</p>
+     */
     @NameInMap("deletedFlag")
     public Integer deletedFlag;
 
-    // 结束时间戳（毫秒）
+    /**
+     * <p>结束时间戳（毫秒）</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 业务标志id
+    /**
+     * <p>业务标志id</p>
+     */
     @NameInMap("id")
     public Long id;
 
-    // 状态类型
+    /**
+     * <p>状态类型</p>
+     */
     @NameInMap("ownenssType")
     public Integer ownenssType;
 
-    // 开始时间戳（毫秒）
+    /**
+     * <p>开始时间戳（毫秒）</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateReceiptRequest extends TeaModel {
-    // 单据列表，不超过10条数据
+    /**
+     * <p>单据列表，不超过10条数据</p>
+     */
     @NameInMap("receipts")
     public java.util.List<CreateReceiptRequestReceipts> receipts;
 
@@ -22,59 +24,87 @@ public class CreateReceiptRequest extends TeaModel {
     }
 
     public static class CreateReceiptRequestReceipts extends TeaModel {
-        // 单据金额
+        /**
+         * <p>单据金额</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 关联收支类别code
+        /**
+         * <p>关联收支类别code</p>
+         */
         @NameInMap("categoryCode")
         public String categoryCode;
 
-        // 单据唯一编号
+        /**
+         * <p>单据唯一编号</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 单据创建时间，默认当前时间
+        /**
+         * <p>单据创建时间，默认当前时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 创建人工号
+        /**
+         * <p>创建人工号</p>
+         */
         @NameInMap("createUserId")
         public String createUserId;
 
-        // 关联客户code
+        /**
+         * <p>关联客户code</p>
+         */
         @NameInMap("customerCode")
         public String customerCode;
 
-        // 关联企业账户code
+        /**
+         * <p>关联企业账户code</p>
+         */
         @NameInMap("enterpriseAcountCode")
         public String enterpriseAcountCode;
 
-        // 业务发生时间，默认当前时间
+        /**
+         * <p>业务发生时间，默认当前时间</p>
+         */
         @NameInMap("occurDate")
         public Long occurDate;
 
-        // 负责人工号，传空代表不修改
+        /**
+         * <p>负责人工号，传空代表不修改</p>
+         */
         @NameInMap("principalId")
         public String principalId;
 
-        // 关联项目code
+        /**
+         * <p>关联项目code</p>
+         */
         @NameInMap("projectCode")
         public String projectCode;
 
-        // 单据类型：1付款单，2收款单
+        /**
+         * <p>单据类型：1付款单，2收款单</p>
+         */
         @NameInMap("receiptType")
         public Long receiptType;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 关联供应商code
+        /**
+         * <p>关联供应商code</p>
+         */
         @NameInMap("supplierCode")
         public String supplierCode;
 
-        // 单据标题，不传由系统默认生成
+        /**
+         * <p>单据标题，不传由系统默认生成</p>
+         */
         @NameInMap("title")
         public String title;
 

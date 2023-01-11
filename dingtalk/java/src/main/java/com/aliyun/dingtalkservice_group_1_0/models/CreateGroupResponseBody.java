@@ -4,11 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupResponseBody extends TeaModel {
-    // 入群url
+    /**
+     * <p>入群url</p>
+     */
     @NameInMap("groupUrl")
     public String groupUrl;
 
-    // 开放群ID
+    /**
+     * <p>开放群ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

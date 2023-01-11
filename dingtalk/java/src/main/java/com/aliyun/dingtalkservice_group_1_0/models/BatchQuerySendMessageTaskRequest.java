@@ -4,35 +4,51 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQuerySendMessageTaskRequest extends TeaModel {
-    // 是否获取群发任务已读数量，默认false
+    /**
+     * <p>是否获取群发任务已读数量，默认false</p>
+     */
     @NameInMap("getReadCount")
     public Boolean getReadCount;
 
-    // 任务查询结束时间
+    /**
+     * <p>任务查询结束时间</p>
+     */
     @NameInMap("gmtCreateEnd")
     public String gmtCreateEnd;
 
-    // 任务查询开始时间
+    /**
+     * <p>任务查询开始时间</p>
+     */
     @NameInMap("gmtCreateStart")
     public String gmtCreateStart;
 
-    // 每页条数
+    /**
+     * <p>每页条数</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 游标
+    /**
+     * <p>游标</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 开放群组ID，在服务群-群组- ID信息中获取
+    /**
+     * <p>开放群组ID，在服务群-群组- ID信息中获取</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 任务名称
+    /**
+     * <p>任务名称</p>
+     */
     @NameInMap("taskName")
     public String taskName;
 

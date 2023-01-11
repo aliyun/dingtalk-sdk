@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRolesResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public GetRolesResponseBodyData data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,31 +52,45 @@ public class GetRolesResponseBody extends TeaModel {
     }
 
     public static class GetRolesResponseBodyDataRoleGroups extends TeaModel {
-        // 所属企业id
+        /**
+         * <p>所属企业id</p>
+         */
         @NameInMap("companyId")
         public String companyId;
 
-        // 描述
+        /**
+         * <p>描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 组编码
+        /**
+         * <p>组编码</p>
+         */
         @NameInMap("groupCode")
         public String groupCode;
 
-        // 组id
+        /**
+         * <p>组id</p>
+         */
         @NameInMap("groupId")
         public String groupId;
 
-        // 组名称
+        /**
+         * <p>组名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 状态。Active=激活、Inactive=未激活，Unspecified=未指定状态
+        /**
+         * <p>状态。Active=激活、Inactive=未激活，Unspecified=未指定状态</p>
+         */
         @NameInMap("state")
         public String state;
 
-        // 可见性。All=全部可见、Normal=普通可见、OnlyAdmin=只有管理的时候可见、OnlyOrganization=本组织范围可见
+        /**
+         * <p>可见性。All=全部可见、Normal=普通可见、OnlyAdmin=只有管理的时候可见、OnlyOrganization=本组织范围可见</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 
@@ -138,35 +158,51 @@ public class GetRolesResponseBody extends TeaModel {
     }
 
     public static class GetRolesResponseBodyDataRoles extends TeaModel {
-        // 所属企业id
+        /**
+         * <p>所属企业id</p>
+         */
         @NameInMap("companyId")
         public String companyId;
 
-        // 描述
+        /**
+         * <p>描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 所属的角色组id
+        /**
+         * <p>所属的角色组id</p>
+         */
         @NameInMap("groupId")
         public String groupId;
 
-        // 角色编码
+        /**
+         * <p>角色编码</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        // 角色id
+        /**
+         * <p>角色id</p>
+         */
         @NameInMap("roleId")
         public String roleId;
 
-        // 角色名称
+        /**
+         * <p>角色名称</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
-        // 状态。Active=激活、Inactive=未激活，Unspecified=未指定状态
+        /**
+         * <p>状态。Active=激活、Inactive=未激活，Unspecified=未指定状态</p>
+         */
         @NameInMap("state")
         public String state;
 
-        // 可见性。All=全部可见、Normal=普通可见、OnlyAdmin=只有管理的时候可见、OnlyOrganization=本组织范围可见
+        /**
+         * <p>可见性。All=全部可见、Normal=普通可见、OnlyAdmin=只有管理的时候可见、OnlyOrganization=本组织范围可见</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 
@@ -242,11 +278,15 @@ public class GetRolesResponseBody extends TeaModel {
     }
 
     public static class GetRolesResponseBodyData extends TeaModel {
-        // 角色组数组
+        /**
+         * <p>角色组数组</p>
+         */
         @NameInMap("roleGroups")
         public java.util.List<GetRolesResponseBodyDataRoleGroups> roleGroups;
 
-        // 角色数组
+        /**
+         * <p>角色数组</p>
+         */
         @NameInMap("roles")
         public java.util.List<GetRolesResponseBodyDataRoles> roles;
 

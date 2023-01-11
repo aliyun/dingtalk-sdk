@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportDeviceLogRequest extends TeaModel {
-    // 文件id
+    /**
+     * <p>文件id</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 
-    // 设备序列号
+    /**
+     * <p>设备序列号</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 文件类型
+    /**
+     * <p>文件类型</p>
+     */
     @NameInMap("type")
     public String type;
 

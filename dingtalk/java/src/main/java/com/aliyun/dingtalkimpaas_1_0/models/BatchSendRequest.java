@@ -4,19 +4,27 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendRequest extends TeaModel {
-    // 接受者列表，外部用户
+    /**
+     * <p>接受者列表，外部用户</p>
+     */
     @NameInMap("appUids")
     public java.util.List<String> appUids;
 
-    // 消息内容
+    /**
+     * <p>消息内容</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 接收消息的群聊列表
+    /**
+     * <p>接收消息的群聊列表</p>
+     */
     @NameInMap("conversationIds")
     public java.util.List<String> conversationIds;
 
-    // 发送者，企业员工账号
+    /**
+     * <p>发送者，企业员工账号</p>
+     */
     @NameInMap("userId")
     public String userId;
 

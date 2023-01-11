@@ -4,39 +4,57 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartProcessInstanceRequest extends TeaModel {
-    // 不使用审批流模板时，直接指定审批人列表
+    /**
+     * <p>不使用审批流模板时，直接指定审批人列表</p>
+     */
     @NameInMap("approvers")
     public java.util.List<StartProcessInstanceRequestApprovers> approvers;
 
-    // 抄送人userId列表
+    /**
+     * <p>抄送人userId列表</p>
+     */
     @NameInMap("ccList")
     public java.util.List<String> ccList;
 
-    // 抄送时间
+    /**
+     * <p>抄送时间</p>
+     */
     @NameInMap("ccPosition")
     public String ccPosition;
 
-    // 部门ID
+    /**
+     * <p>部门ID</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
-    // 表单数据内容，控件列表
+    /**
+     * <p>表单数据内容，控件列表</p>
+     */
     @NameInMap("formComponentValues")
     public java.util.List<StartProcessInstanceRequestFormComponentValues> formComponentValues;
 
-    // 企业微应用标识
+    /**
+     * <p>企业微应用标识</p>
+     */
     @NameInMap("microappAgentId")
     public Long microappAgentId;
 
-    // 审批发起人的userId
+    /**
+     * <p>审批发起人的userId</p>
+     */
     @NameInMap("originatorUserId")
     public String originatorUserId;
 
-    // 审批流的唯一码
+    /**
+     * <p>审批流的唯一码</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
-    // 使用审批流模板时，模板上的自选操作人列表
+    /**
+     * <p>使用审批流模板时，模板上的自选操作人列表</p>
+     */
     @NameInMap("targetSelectActioners")
     public java.util.List<StartProcessInstanceRequestTargetSelectActioners> targetSelectActioners;
 
@@ -118,11 +136,15 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestApprovers extends TeaModel {
-        // 审批类型
+        /**
+         * <p>审批类型</p>
+         */
         @NameInMap("actionType")
         public String actionType;
 
-        // 审批人列表
+        /**
+         * <p>审批人列表</p>
+         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 
@@ -150,27 +172,39 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestFormComponentValuesDetailsDetails extends TeaModel {
-        // 控件别名
+        /**
+         * <p>控件别名</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        // 控件类型
+        /**
+         * <p>控件类型</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
-        // 控件扩展值
+        /**
+         * <p>控件扩展值</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 控件id
+        /**
+         * <p>控件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 控件名称
+        /**
+         * <p>控件名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 控件值
+        /**
+         * <p>控件值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -230,26 +264,36 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestFormComponentValuesDetails extends TeaModel {
-        // 控件别名
+        /**
+         * <p>控件别名</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         @NameInMap("details")
         public java.util.List<StartProcessInstanceRequestFormComponentValuesDetailsDetails> details;
 
-        // 控件扩展值
+        /**
+         * <p>控件扩展值</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 控件id
+        /**
+         * <p>控件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 控件名称
+        /**
+         * <p>控件名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 控件值
+        /**
+         * <p>控件值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -309,30 +353,42 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestFormComponentValues extends TeaModel {
-        // 控件别名
+        /**
+         * <p>控件别名</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        // 控件类型
+        /**
+         * <p>控件类型</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
         @NameInMap("details")
         public java.util.List<StartProcessInstanceRequestFormComponentValuesDetails> details;
 
-        // 控件扩展值
+        /**
+         * <p>控件扩展值</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 控件id
+        /**
+         * <p>控件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 控件名称
+        /**
+         * <p>控件名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 控件值
+        /**
+         * <p>控件值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -400,11 +456,15 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestTargetSelectActioners extends TeaModel {
-        // 自选节点的规则key
+        /**
+         * <p>自选节点的规则key</p>
+         */
         @NameInMap("actionerKey")
         public String actionerKey;
 
-        // 操作人userId列表
+        /**
+         * <p>操作人userId列表</p>
+         */
         @NameInMap("actionerUserIds")
         public java.util.List<String> actionerUserIds;
 

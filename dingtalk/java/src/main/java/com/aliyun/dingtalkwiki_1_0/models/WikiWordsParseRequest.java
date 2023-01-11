@@ -4,7 +4,9 @@ package com.aliyun.dingtalkwiki_1_0.models;
 import com.aliyun.tea.*;
 
 public class WikiWordsParseRequest extends TeaModel {
-    // 消息体以及文章内容
+    /**
+     * <p>消息体以及文章内容</p>
+     */
     @NameInMap("content")
     public String content;
 

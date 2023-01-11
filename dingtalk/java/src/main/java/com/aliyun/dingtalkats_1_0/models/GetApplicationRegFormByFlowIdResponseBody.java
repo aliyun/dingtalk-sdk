@@ -4,43 +4,63 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
-    // 候选人标识
+    /**
+     * <p>候选人标识</p>
+     */
     @NameInMap("candidateId")
     public String candidateId;
 
-    // 邀填人员工标识
+    /**
+     * <p>邀填人员工标识</p>
+     */
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
-    // 招聘流程标识
+    /**
+     * <p>招聘流程标识</p>
+     */
     @NameInMap("flowId")
     public String flowId;
 
-    // 表单标识
+    /**
+     * <p>表单标识</p>
+     */
     @NameInMap("formId")
     public String formId;
 
-    // 创建时间（邀填时间，单位：毫秒）
+    /**
+     * <p>创建时间（邀填时间，单位：毫秒）</p>
+     */
     @NameInMap("gmtCreateMillis")
     public Long gmtCreateMillis;
 
-    // 更新时间（填写时间，单位：毫秒），仅当表单状态为已填写时有效
+    /**
+     * <p>更新时间（填写时间，单位：毫秒），仅当表单状态为已填写时有效</p>
+     */
     @NameInMap("gmtModifiedMillis")
     public Long gmtModifiedMillis;
 
-    // 职位标识
+    /**
+     * <p>职位标识</p>
+     */
     @NameInMap("jobId")
     public String jobId;
 
-    // 表单状态（0表示未填写，1表示已填写）
+    /**
+     * <p>表单状态（0表示未填写，1表示已填写）</p>
+     */
     @NameInMap("status")
     public Integer status;
 
-    // 模板标识
+    /**
+     * <p>模板标识</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
-    // 模板版本
+    /**
+     * <p>模板版本</p>
+     */
     @NameInMap("templateVersion")
     public Integer templateVersion;
 

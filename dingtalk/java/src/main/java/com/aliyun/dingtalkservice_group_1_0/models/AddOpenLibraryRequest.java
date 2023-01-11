@@ -4,31 +4,45 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenLibraryRequest extends TeaModel {
-    // 知识库描述
+    /**
+     * <p>知识库描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 知识库来源
+    /**
+     * <p>知识库来源</p>
+     */
     @NameInMap("source")
     public String source;
 
-    // 知识库名称
+    /**
+     * <p>知识库名称</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 知识库类型
+    /**
+     * <p>知识库类型</p>
+     */
     @NameInMap("type")
     public String type;
 
-    // 用户/员工ID
+    /**
+     * <p>用户/员工ID</p>
+     */
     @NameInMap("userId")
     public String userId;
 
-    // 用户昵称或姓名
+    /**
+     * <p>用户昵称或姓名</p>
+     */
     @NameInMap("userName")
     public String userName;
 

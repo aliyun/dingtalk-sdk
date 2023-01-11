@@ -4,51 +4,75 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTaskRequest extends TeaModel {
-    // 任务标题
+    /**
+     * <p>任务标题</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 自定义字段列表
+    /**
+     * <p>自定义字段列表</p>
+     */
     @NameInMap("customfields")
     public java.util.List<CreateTaskRequestCustomfields> customfields;
 
-    // 任务截止时间
+    /**
+     * <p>任务截止时间</p>
+     */
     @NameInMap("dueDate")
     public String dueDate;
 
-    // 执行者userId
+    /**
+     * <p>执行者userId</p>
+     */
     @NameInMap("executorId")
     public String executorId;
 
-    // 任务备注
+    /**
+     * <p>任务备注</p>
+     */
     @NameInMap("note")
     public String note;
 
-    // 父任务id。
+    /**
+     * <p>父任务id。</p>
+     */
     @NameInMap("parentTaskId")
     public String parentTaskId;
 
-    // 任务优先级
+    /**
+     * <p>任务优先级</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 
-    // 项目id
+    /**
+     * <p>项目id</p>
+     */
     @NameInMap("projectId")
     public String projectId;
 
-    // 任务类型id，任务类型比如：缺陷、需求。。
+    /**
+     * <p>任务类型id，任务类型比如：缺陷、需求。。</p>
+     */
     @NameInMap("scenariofieldconfigId")
     public String scenariofieldconfigId;
 
-    // 任务列id。
+    /**
+     * <p>任务列id。</p>
+     */
     @NameInMap("stageId")
     public String stageId;
 
-    // 任务开始时间。
+    /**
+     * <p>任务开始时间。</p>
+     */
     @NameInMap("startDate")
     public String startDate;
 
-    // 任务可见性,members,involves。
+    /**
+     * <p>任务可见性,members,involves。</p>
+     */
     @NameInMap("visible")
     public String visible;
 
@@ -154,7 +178,9 @@ public class CreateTaskRequest extends TeaModel {
     }
 
     public static class CreateTaskRequestCustomfieldsValue extends TeaModel {
-        // 自定义字段显示值
+        /**
+         * <p>自定义字段显示值</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -174,15 +200,21 @@ public class CreateTaskRequest extends TeaModel {
     }
 
     public static class CreateTaskRequestCustomfields extends TeaModel {
-        // 自定义字段id
+        /**
+         * <p>自定义字段id</p>
+         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
-        // 自定义字段名称
+        /**
+         * <p>自定义字段名称</p>
+         */
         @NameInMap("customfieldName")
         public String customfieldName;
 
-        // 自定义字段值
+        /**
+         * <p>自定义字段值</p>
+         */
         @NameInMap("value")
         public java.util.List<CreateTaskRequestCustomfieldsValue> value;
 

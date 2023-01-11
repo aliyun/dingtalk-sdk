@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListApplicationResponseBody extends TeaModel {
-    // 数据
+    /**
+     * <p>数据</p>
+     */
     @NameInMap("data")
     public java.util.List<ListApplicationResponseBodyData> data;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,43 +52,63 @@ public class ListApplicationResponseBody extends TeaModel {
     }
 
     public static class ListApplicationResponseBodyData extends TeaModel {
-        // 宜搭应用配置
+        /**
+         * <p>宜搭应用配置</p>
+         */
         @NameInMap("appConfig")
         public String appConfig;
 
-        // 宜搭应用编码
+        /**
+         * <p>宜搭应用编码</p>
+         */
         @NameInMap("appType")
         public String appType;
 
-        // 应用状态
+        /**
+         * <p>应用状态</p>
+         */
         @NameInMap("applicationStatus")
         public String applicationStatus;
 
-        // 钉钉组织id
+        /**
+         * <p>钉钉组织id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 创建者的userId
+        /**
+         * <p>创建者的userId</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 描述信息
+        /**
+         * <p>描述信息</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 宜搭图标编码
+        /**
+         * <p>宜搭图标编码</p>
+         */
         @NameInMap("icon")
         public String icon;
 
-        // 是否被删除了
+        /**
+         * <p>是否被删除了</p>
+         */
         @NameInMap("inexistence")
         public String inexistence;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 子组织的钉钉CorpId
+        /**
+         * <p>子组织的钉钉CorpId</p>
+         */
         @NameInMap("subCorpId")
         public String subCorpId;
 

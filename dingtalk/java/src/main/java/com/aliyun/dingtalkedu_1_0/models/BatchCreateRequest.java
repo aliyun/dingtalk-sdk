@@ -4,27 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchCreateRequest extends TeaModel {
-    // 卡片业务类型，打卡写死：industry_center
+    /**
+     * <p>卡片业务类型，打卡写死：industry_center</p>
+     */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
-    // 卡片详细数据
+    /**
+     * <p>卡片详细数据</p>
+     */
     @NameInMap("data")
     public BatchCreateRequestData data;
 
-    // 卡片幂等唯一键
+    /**
+     * <p>卡片幂等唯一键</p>
+     */
     @NameInMap("identifier")
     public String identifier;
 
-    // 小程序版本号
+    /**
+     * <p>小程序版本号</p>
+     */
     @NameInMap("jsVersion")
     public Integer jsVersion;
 
-    // isv业务类型
+    /**
+     * <p>isv业务类型</p>
+     */
     @NameInMap("sourceType")
     public String sourceType;
 
-    // 老师用户id
+    /**
+     * <p>老师用户id</p>
+     */
     @NameInMap("userid")
     public String userid;
 
@@ -82,27 +94,39 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataCardRuleItemParamList extends TeaModel {
-        // 扩展属性，存放配音难度、每日配音视频的url等
+        /**
+         * <p>扩展属性，存放配音难度、每日配音视频的url等</p>
+         */
         @NameInMap("cardRuleAttr")
         public String cardRuleAttr;
 
-        // 卡片taskCode
+        /**
+         * <p>卡片taskCode</p>
+         */
         @NameInMap("cardTaskCode")
         public String cardTaskCode;
 
-        // 每日配音数
+        /**
+         * <p>每日配音数</p>
+         */
         @NameInMap("dailyDubbing")
         public Integer dailyDubbing;
 
-        // 关联的外部Id
+        /**
+         * <p>关联的外部Id</p>
+         */
         @NameInMap("relationId")
         public String relationId;
 
-        // 关联内容标题（会在打卡详页页展示）
+        /**
+         * <p>关联内容标题（会在打卡详页页展示）</p>
+         */
         @NameInMap("relationTitle")
         public String relationTitle;
 
-        // relationUrl（点击打卡内容后跳转的链接）（点击卡片内容后跳转的链接）
+        /**
+         * <p>relationUrl（点击打卡内容后跳转的链接）（点击卡片内容后跳转的链接）</p>
+         */
         @NameInMap("relationUrl")
         public String relationUrl;
 
@@ -162,11 +186,15 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataOrgClassStudentGroupListClassListStudents extends TeaModel {
-        // 学生名称
+        /**
+         * <p>学生名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 学生id
+        /**
+         * <p>学生id</p>
+         */
         @NameInMap("staffId")
         public String staffId;
 
@@ -194,15 +222,21 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataOrgClassStudentGroupListClassList extends TeaModel {
-        // 班级id
+        /**
+         * <p>班级id</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
-        // 班级名称
+        /**
+         * <p>班级名称</p>
+         */
         @NameInMap("className")
         public String className;
 
-        // 班级学生
+        /**
+         * <p>班级学生</p>
+         */
         @NameInMap("students")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupListClassListStudents> students;
 
@@ -238,11 +272,15 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataOrgClassStudentGroupList extends TeaModel {
-        // 班级列表
+        /**
+         * <p>班级列表</p>
+         */
         @NameInMap("classList")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupListClassList> classList;
 
-        // 组织id
+        /**
+         * <p>组织id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
@@ -270,69 +308,99 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestData extends TeaModel {
-        // 是否可以补卡
+        /**
+         * <p>是否可以补卡</p>
+         */
         @NameInMap("canReissueCard")
         public Boolean canReissueCard;
 
-        // 打卡周期,单位为天
+        /**
+         * <p>打卡周期,单位为天</p>
+         */
         @NameInMap("cardCycle")
         public Integer cardCycle;
 
-        // 打卡的频次设置："cardFrequency":[             1,//周天             2,//周一             3,//周二             4,//周三             5,//周四             6,//周五             7//周六         ]
+        /**
+         * <p>打卡的频次设置："cardFrequency":[             1,//周天             2,//周一             3,//周二             4,//周三             5,//周四             6,//周五             7//周六         ]</p>
+         */
         @NameInMap("cardFrequency")
         public java.util.List<Integer> cardFrequency;
 
         @NameInMap("cardRuleItemParamList")
         public java.util.List<BatchCreateRequestDataCardRuleItemParamList> cardRuleItemParamList;
 
-        // 班级列表
+        /**
+         * <p>班级列表</p>
+         */
         @NameInMap("classIds")
         public java.util.List<String> classIds;
 
-        // 班级名称列表
+        /**
+         * <p>班级名称列表</p>
+         */
         @NameInMap("classNames")
         public java.util.List<String> classNames;
 
-        // 打卡的内容
+        /**
+         * <p>打卡的内容</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 卡片生效时间
+        /**
+         * <p>卡片生效时间</p>
+         */
         @NameInMap("effectDate")
         public Long effectDate;
 
-        // 上传相册，图片，录音，盯盘的信息
+        /**
+         * <p>上传相册，图片，录音，盯盘的信息</p>
+         */
         @NameInMap("medias")
         public String medias;
 
-        // 计量开启
+        /**
+         * <p>计量开启</p>
+         */
         @NameInMap("needMetering")
         public String needMetering;
 
         @NameInMap("orgClassStudentGroupList")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupList> orgClassStudentGroupList;
 
-        // 提醒时间（小时）
+        /**
+         * <p>提醒时间（小时）</p>
+         */
         @NameInMap("remindHour")
         public Integer remindHour;
 
-        // 提醒时间（分钟）
+        /**
+         * <p>提醒时间（分钟）</p>
+         */
         @NameInMap("remindMinute")
         public Integer remindMinute;
 
-        // 默认：student_guardian
+        /**
+         * <p>默认：student_guardian</p>
+         */
         @NameInMap("targetRole")
         public String targetRole;
 
-        // 打卡模板id
+        /**
+         * <p>打卡模板id</p>
+         */
         @NameInMap("templateId")
         public Long templateId;
 
-        // 卡片标题
+        /**
+         * <p>卡片标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 计量单位
+        /**
+         * <p>计量单位</p>
+         */
         @NameInMap("unitOfMeasurement")
         public String unitOfMeasurement;
 

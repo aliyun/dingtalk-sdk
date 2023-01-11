@@ -4,23 +4,33 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSecondaryManagementGroupRequest extends TeaModel {
-    // 管理组名称
+    /**
+     * <p>管理组名称</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
-    // 管理组成员列表
+    /**
+     * <p>管理组成员列表</p>
+     */
     @NameInMap("members")
     public java.util.List<CreateSecondaryManagementGroupRequestMembers> members;
 
-    // 资源id列表
+    /**
+     * <p>资源id列表</p>
+     */
     @NameInMap("resourceIds")
     public java.util.List<String> resourceIds;
 
-    // 管理组权限范围信息
+    /**
+     * <p>管理组权限范围信息</p>
+     */
     @NameInMap("scope")
     public CreateSecondaryManagementGroupRequestScope scope;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -70,11 +80,15 @@ public class CreateSecondaryManagementGroupRequest extends TeaModel {
     }
 
     public static class CreateSecondaryManagementGroupRequestMembers extends TeaModel {
-        // 员工id
+        /**
+         * <p>员工id</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 员工类型
+        /**
+         * <p>员工类型</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -102,11 +116,15 @@ public class CreateSecondaryManagementGroupRequest extends TeaModel {
     }
 
     public static class CreateSecondaryManagementGroupRequestScope extends TeaModel {
-        // 部门id列表
+        /**
+         * <p>部门id列表</p>
+         */
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
-        // 权限范围
+        /**
+         * <p>权限范围</p>
+         */
         @NameInMap("scopeType")
         public Integer scopeType;
 

@@ -4,19 +4,27 @@ package com.aliyun.dingtalkconv_file_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRequest extends TeaModel {
-    // 文件id
+    /**
+     * <p>文件id</p>
+     */
     @NameInMap("dentryId")
     public String dentryId;
 
-    // 目标会话id
+    /**
+     * <p>目标会话id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 文件所在空间id
+    /**
+     * <p>文件所在空间id</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteLiveFeedRequest extends TeaModel {
-    // 用户id（操作者的组织内id）
+    /**
+     * <p>用户id（操作者的组织内id）</p>
+     */
     @NameInMap("userId")
     public String userId;
 

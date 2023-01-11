@@ -4,19 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCrmPersonalCustomerRequest extends TeaModel {
-    // 用户ID
+    /**
+     * <p>用户ID</p>
+     */
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
-    // 分页条数
+    /**
+     * <p>分页条数</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页页码
+    /**
+     * <p>分页页码</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 查询条件
+    /**
+     * <p>查询条件</p>
+     */
     @NameInMap("queryDsl")
     public String queryDsl;
 

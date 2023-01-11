@@ -4,23 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckRestrictionRequest extends TeaModel {
-    // 实付金额，单位分
+    /**
+     * <p>实付金额，单位分</p>
+     */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    // 人脸id
+    /**
+     * <p>人脸id</p>
+     */
     @NameInMap("faceId")
     public String faceId;
 
-    // 场景
+    /**
+     * <p>场景</p>
+     */
     @NameInMap("scene")
     public Long scene;
 
-    // 设备号
+    /**
+     * <p>设备号</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

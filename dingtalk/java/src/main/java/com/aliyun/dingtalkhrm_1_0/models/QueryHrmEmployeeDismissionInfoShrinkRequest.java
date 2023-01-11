@@ -4,7 +4,9 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryHrmEmployeeDismissionInfoShrinkRequest extends TeaModel {
-    // 员工 ids
+    /**
+     * <p>员工 ids</p>
+     */
     @NameInMap("userIdList")
     public String userIdListShrink;
 

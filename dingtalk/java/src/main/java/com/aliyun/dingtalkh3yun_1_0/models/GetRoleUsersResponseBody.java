@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRoleUsersResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public java.util.List<GetRoleUsersResponseBodyData> data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,51 +52,75 @@ public class GetRoleUsersResponseBody extends TeaModel {
     }
 
     public static class GetRoleUsersResponseBodyData extends TeaModel {
-        // 用户编码
+        /**
+         * <p>用户编码</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 所属部门id
+        /**
+         * <p>所属部门id</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        // 所属部门名称
+        /**
+         * <p>所属部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 描述
+        /**
+         * <p>描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 所属范围。Internal=内部，External=外部
+        /**
+         * <p>所属范围。Internal=内部，External=外部</p>
+         */
         @NameInMap("domainType")
         public String domainType;
 
-        // 邮箱
+        /**
+         * <p>邮箱</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // 手机号码
+        /**
+         * <p>手机号码</p>
+         */
         @NameInMap("mobile")
         public String mobile;
 
-        // 用户名称
+        /**
+         * <p>用户名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 兼职部门id集合（含主部门id）
+        /**
+         * <p>兼职部门id集合（含主部门id）</p>
+         */
         @NameInMap("partDepartmentIds")
         public java.util.List<String> partDepartmentIds;
 
-        // 性别.None=未指定，Man=男性，Female=女性
+        /**
+         * <p>性别.None=未指定，Man=男性，Female=女性</p>
+         */
         @NameInMap("sex")
         public String sex;
 
-        // 排序值
+        /**
+         * <p>排序值</p>
+         */
         @NameInMap("sortKey")
         public Long sortKey;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

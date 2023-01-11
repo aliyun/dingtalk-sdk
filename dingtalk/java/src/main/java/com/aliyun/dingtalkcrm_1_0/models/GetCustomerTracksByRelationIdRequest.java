@@ -4,19 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCustomerTracksByRelationIdRequest extends TeaModel {
-    // 每页返回的结果集个数，默认10。
+    /**
+     * <p>每页返回的结果集个数，默认10。</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 第一页不传，下一页传入上一页返回的nextToken
+    /**
+     * <p>第一页不传，下一页传入上一页返回的nextToken</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 关系id。
+    /**
+     * <p>关系id。</p>
+     */
     @NameInMap("relationId")
     public String relationId;
 
-    // 动态类型分组。
+    /**
+     * <p>动态类型分组。</p>
+     */
     @NameInMap("typeGroup")
     public Integer typeGroup;
 

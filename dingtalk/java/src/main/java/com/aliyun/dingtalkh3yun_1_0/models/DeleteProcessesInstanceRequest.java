@@ -4,11 +4,15 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteProcessesInstanceRequest extends TeaModel {
-    // 删除成功后，是否需要更新业务表单关联的流程实例id
+    /**
+     * <p>删除成功后，是否需要更新业务表单关联的流程实例id</p>
+     */
     @NameInMap("isAutoUpdateBizObject")
     public Boolean isAutoUpdateBizObject;
 
-    // 流程实例id
+    /**
+     * <p>流程实例id</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 

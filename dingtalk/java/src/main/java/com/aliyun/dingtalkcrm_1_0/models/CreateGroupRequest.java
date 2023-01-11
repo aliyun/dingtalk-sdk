@@ -4,19 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupRequest extends TeaModel {
-    // 群名称
+    /**
+     * <p>群名称</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
-    // 群成员id
+    /**
+     * <p>群成员id</p>
+     */
     @NameInMap("memberUserIds")
     public String memberUserIds;
 
-    // 群主id
+    /**
+     * <p>群主id</p>
+     */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
-    // 关系类型
+    /**
+     * <p>关系类型</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupOwnerResponseBody extends TeaModel {
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

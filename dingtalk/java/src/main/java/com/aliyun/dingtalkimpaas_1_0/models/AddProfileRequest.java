@@ -4,19 +4,27 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddProfileRequest extends TeaModel {
-    // 外部app的账号，格式：xxx@channel格式
+    /**
+     * <p>外部app的账号，格式：xxx@channel格式</p>
+     */
     @NameInMap("appUid")
     public String appUid;
 
-    // 头像mediaId，调用Upload接口获得
+    /**
+     * <p>头像mediaId，调用Upload接口获得</p>
+     */
     @NameInMap("avatarMediaId")
     public String avatarMediaId;
 
-    // 手机号
+    /**
+     * <p>手机号</p>
+     */
     @NameInMap("mobileNumber")
     public String mobileNumber;
 
-    // 昵称
+    /**
+     * <p>昵称</p>
+     */
     @NameInMap("nick")
     public String nick;
 

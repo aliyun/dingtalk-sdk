@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListOwnedOrgByStaffIdResponseBody extends TeaModel {
-    // 组织列表
+    /**
+     * <p>组织列表</p>
+     */
     @NameInMap("orgList")
     public java.util.List<ListOwnedOrgByStaffIdResponseBodyOrgList> orgList;
 
@@ -22,11 +24,15 @@ public class ListOwnedOrgByStaffIdResponseBody extends TeaModel {
     }
 
     public static class ListOwnedOrgByStaffIdResponseBodyOrgList extends TeaModel {
-        // corpId
+        /**
+         * <p>corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // corpName
+        /**
+         * <p>corpName</p>
+         */
         @NameInMap("corpName")
         public String corpName;
 

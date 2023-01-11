@@ -4,19 +4,27 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class BillSettementFlightResponseBody extends TeaModel {
-    // module
+    /**
+     * <p>module</p>
+     */
     @NameInMap("module")
     public BillSettementFlightResponseBodyModule module;
 
-    // 结果code
+    /**
+     * <p>结果code</p>
+     */
     @NameInMap("resultCode")
     public Long resultCode;
 
-    // 结果msg
+    /**
+     * <p>结果msg</p>
+     */
     @NameInMap("resultMsg")
     public String resultMsg;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -58,287 +66,429 @@ public class BillSettementFlightResponseBody extends TeaModel {
     }
 
     public static class BillSettementFlightResponseBodyModuleDataList extends TeaModel {
-        // 提前预定天数
+        /**
+         * <p>提前预定天数</p>
+         */
         @NameInMap("advanceDay")
         public Long advanceDay;
 
-        // 航司三字码
+        /**
+         * <p>航司三字码</p>
+         */
         @NameInMap("airlineCorpCode")
         public String airlineCorpCode;
 
-        // 航司名称
+        /**
+         * <p>航司名称</p>
+         */
         @NameInMap("airlineCorpName")
         public String airlineCorpName;
 
-        // 交易流水号
+        /**
+         * <p>交易流水号</p>
+         */
         @NameInMap("alipayTradeNo")
         public String alipayTradeNo;
 
-        // 审批单号
+        /**
+         * <p>审批单号</p>
+         */
         @NameInMap("applyId")
         public String applyId;
 
-        // 到达机场二字码
+        /**
+         * <p>到达机场二字码</p>
+         */
         @NameInMap("arrAirportCode")
         public String arrAirportCode;
 
-        // 到达城市
+        /**
+         * <p>到达城市</p>
+         */
         @NameInMap("arrCity")
         public String arrCity;
 
-        // 到达日期
+        /**
+         * <p>到达日期</p>
+         */
         @NameInMap("arrDate")
         public String arrDate;
 
-        // 到达机场
+        /**
+         * <p>到达机场</p>
+         */
         @NameInMap("arrStation")
         public String arrStation;
 
-        // 到达时间
+        /**
+         * <p>到达时间</p>
+         */
         @NameInMap("arrTime")
         public String arrTime;
 
-        // 入账时间
+        /**
+         * <p>入账时间</p>
+         */
         @NameInMap("billRecordTime")
         public String billRecordTime;
 
-        // 预定时间
+        /**
+         * <p>预定时间</p>
+         */
         @NameInMap("bookTime")
         public String bookTime;
 
-        // 预订人use id
+        /**
+         * <p>预订人use id</p>
+         */
         @NameInMap("bookerId")
         public String bookerId;
 
-        // 预订人工号
+        /**
+         * <p>预订人工号</p>
+         */
         @NameInMap("bookerJobNo")
         public String bookerJobNo;
 
-        // 预订人名称
+        /**
+         * <p>预订人名称</p>
+         */
         @NameInMap("bookerName")
         public String bookerName;
 
-        // 商旅优惠金额
+        /**
+         * <p>商旅优惠金额</p>
+         */
         @NameInMap("btripCouponFee")
         public Double btripCouponFee;
 
-        // 基建费
+        /**
+         * <p>基建费</p>
+         */
         @NameInMap("buildFee")
         public Double buildFee;
 
-        // 舱位
+        /**
+         * <p>舱位</p>
+         */
         @NameInMap("cabin")
         public String cabin;
 
-        // 舱位码
+        /**
+         * <p>舱位码</p>
+         */
         @NameInMap("cabinClass")
         public String cabinClass;
 
-        // 资金方向
+        /**
+         * <p>资金方向</p>
+         */
         @NameInMap("capitalDirection")
         public String capitalDirection;
 
-        // 级联部门
+        /**
+         * <p>级联部门</p>
+         */
         @NameInMap("cascadeDepartment")
         public String cascadeDepartment;
 
-        // 改签费用
+        /**
+         * <p>改签费用</p>
+         */
         @NameInMap("changeFee")
         public Double changeFee;
 
-        // 订单金额
+        /**
+         * <p>订单金额</p>
+         */
         @NameInMap("corpPayOrderFee")
         public Double corpPayOrderFee;
 
-        // 成本中心名称
+        /**
+         * <p>成本中心名称</p>
+         */
         @NameInMap("costCenter")
         public String costCenter;
 
-        // 成本中心编号
+        /**
+         * <p>成本中心编号</p>
+         */
         @NameInMap("costCenterNumber")
         public String costCenterNumber;
 
-        // 优惠券
+        /**
+         * <p>优惠券</p>
+         */
         @NameInMap("coupon")
         public Double coupon;
 
-        // 起飞机场二字码
+        /**
+         * <p>起飞机场二字码</p>
+         */
         @NameInMap("depAirportCode")
         public String depAirportCode;
 
-        // 末级部门
+        /**
+         * <p>末级部门</p>
+         */
         @NameInMap("department")
         public String department;
 
-        // 部门id
+        /**
+         * <p>部门id</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        // 起飞城市
+        /**
+         * <p>起飞城市</p>
+         */
         @NameInMap("deptCity")
         public String deptCity;
 
-        // 起飞日期
+        /**
+         * <p>起飞日期</p>
+         */
         @NameInMap("deptDate")
         public String deptDate;
 
-        // 起飞机场
+        /**
+         * <p>起飞机场</p>
+         */
         @NameInMap("deptStation")
         public String deptStation;
 
-        // 起飞时间
+        /**
+         * <p>起飞时间</p>
+         */
         @NameInMap("deptTime")
         public String deptTime;
 
-        // 折扣率
+        /**
+         * <p>折扣率</p>
+         */
         @NameInMap("discount")
         public String discount;
 
-        // 费用类型
+        /**
+         * <p>费用类型</p>
+         */
         @NameInMap("feeType")
         public String feeType;
 
-        // 航班号
+        /**
+         * <p>航班号</p>
+         */
         @NameInMap("flightNo")
         public String flightNo;
 
-        // 序号
+        /**
+         * <p>序号</p>
+         */
         @NameInMap("index")
         public String index;
 
-        // 保险费
+        /**
+         * <p>保险费</p>
+         */
         @NameInMap("insuranceFee")
         public Double insuranceFee;
 
-        // 发票抬头
+        /**
+         * <p>发票抬头</p>
+         */
         @NameInMap("invoiceTitle")
         public String invoiceTitle;
 
-        // 行程单打印序号
+        /**
+         * <p>行程单打印序号</p>
+         */
         @NameInMap("itineraryNum")
         public String itineraryNum;
 
-        // 行程单金额
+        /**
+         * <p>行程单金额</p>
+         */
         @NameInMap("itineraryPrice")
         public Double itineraryPrice;
 
-        // 低价提醒（起飞时间）
+        /**
+         * <p>低价提醒（起飞时间）</p>
+         */
         @NameInMap("mostDifferenceDeptTime")
         public String mostDifferenceDeptTime;
 
-        // 低价提醒（折扣）
+        /**
+         * <p>低价提醒（折扣）</p>
+         */
         @NameInMap("mostDifferenceDiscount")
         public String mostDifferenceDiscount;
 
-        // 低价提醒(航班号)
+        /**
+         * <p>低价提醒(航班号)</p>
+         */
         @NameInMap("mostDifferenceFlightNo")
         public String mostDifferenceFlightNo;
 
-        // 低价提醒(与最低价差额)
+        /**
+         * <p>低价提醒(与最低价差额)</p>
+         */
         @NameInMap("mostDifferencePrice")
         public Double mostDifferencePrice;
 
-        // 不选低价原因
+        /**
+         * <p>不选低价原因</p>
+         */
         @NameInMap("mostDifferenceReason")
         public String mostDifferenceReason;
 
-        // 低价航班价格
+        /**
+         * <p>低价航班价格</p>
+         */
         @NameInMap("mostPrice")
         public Double mostPrice;
 
-        // 协议价优惠金额
+        /**
+         * <p>协议价优惠金额</p>
+         */
         @NameInMap("negotiationCouponFee")
         public Double negotiationCouponFee;
 
-        // 燃油费
+        /**
+         * <p>燃油费</p>
+         */
         @NameInMap("oilFee")
         public Double oilFee;
 
-        // 订单号
+        /**
+         * <p>订单号</p>
+         */
         @NameInMap("orderId")
         public String orderId;
 
-        // 超标审批单号
+        /**
+         * <p>超标审批单号</p>
+         */
         @NameInMap("overApplyId")
         public String overApplyId;
 
-        // 主键id
+        /**
+         * <p>主键id</p>
+         */
         @NameInMap("primaryId")
         public Long primaryId;
 
-        // 项目代码
+        /**
+         * <p>项目代码</p>
+         */
         @NameInMap("projectCode")
         public String projectCode;
 
-        // 项目名称
+        /**
+         * <p>项目名称</p>
+         */
         @NameInMap("projectName")
         public String projectName;
 
-        // 退款手续费
+        /**
+         * <p>退款手续费</p>
+         */
         @NameInMap("refundFee")
         public Double refundFee;
 
-        // 改签退票手续费
+        /**
+         * <p>改签退票手续费</p>
+         */
         @NameInMap("refundUpgradeCost")
         public Double refundUpgradeCost;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 是否重复退
+        /**
+         * <p>是否重复退</p>
+         */
         @NameInMap("repeatRefund")
         public String repeatRefund;
 
-        // 销售价
+        /**
+         * <p>销售价</p>
+         */
         @NameInMap("sealPrice")
         public Double sealPrice;
 
-        // 服务费，仅在feeType  11001、11002中展示
+        /**
+         * <p>服务费，仅在feeType  11001、11002中展示</p>
+         */
         @NameInMap("serviceFee")
         public Double serviceFee;
 
-        // 结算金额
+        /**
+         * <p>结算金额</p>
+         */
         @NameInMap("settlementFee")
         public Double settlementFee;
 
-        // 预存赠送金额消费
+        /**
+         * <p>预存赠送金额消费</p>
+         */
         @NameInMap("settlementGrantFee")
         public Double settlementGrantFee;
 
-        // 结算时间
+        /**
+         * <p>结算时间</p>
+         */
         @NameInMap("settlementTime")
         public String settlementTime;
 
-        // 结算类型
+        /**
+         * <p>结算类型</p>
+         */
         @NameInMap("settlementType")
         public String settlementType;
 
-        // 入账状态
+        /**
+         * <p>入账状态</p>
+         */
         @NameInMap("status")
         public Long status;
 
-        // 行程单号
+        /**
+         * <p>行程单号</p>
+         */
         @NameInMap("ticketId")
         public String ticketId;
 
-        // 出行人use id
+        /**
+         * <p>出行人use id</p>
+         */
         @NameInMap("travelerId")
         public String travelerId;
 
-        // 出行人工号
+        /**
+         * <p>出行人工号</p>
+         */
         @NameInMap("travelerJobNo")
         public String travelerJobNo;
 
-        // 出行人名称
+        /**
+         * <p>出行人名称</p>
+         */
         @NameInMap("travelerName")
         public String travelerName;
 
-        // 改签差价
+        /**
+         * <p>改签差价</p>
+         */
         @NameInMap("upgradeCost")
         public Double upgradeCost;
 
-        // 发票类型
+        /**
+         * <p>发票类型</p>
+         */
         @NameInMap("voucherType")
         public Long voucherType;
 
@@ -918,27 +1068,39 @@ public class BillSettementFlightResponseBody extends TeaModel {
     }
 
     public static class BillSettementFlightResponseBodyModule extends TeaModel {
-        // 类目
+        /**
+         * <p>类目</p>
+         */
         @NameInMap("category")
         public Long category;
 
-        // 企业id
+        /**
+         * <p>企业id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 数据集合
+        /**
+         * <p>数据集合</p>
+         */
         @NameInMap("dataList")
         public java.util.List<BillSettementFlightResponseBodyModuleDataList> dataList;
 
-        // 记账更新开始日期
+        /**
+         * <p>记账更新开始日期</p>
+         */
         @NameInMap("periodEnd")
         public String periodEnd;
 
-        // 记账更新结束日期
+        /**
+         * <p>记账更新结束日期</p>
+         */
         @NameInMap("periodStart")
         public String periodStart;
 
-        // 总数据量
+        /**
+         * <p>总数据量</p>
+         */
         @NameInMap("totalNum")
         public Long totalNum;
 

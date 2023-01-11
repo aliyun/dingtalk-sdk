@@ -4,11 +4,15 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFollowerAuthInfoRequest extends TeaModel {
-    // 服务窗帐号ID，用于非服务窗自建应用场景下指定服务窗帐号。
+    /**
+     * <p>服务窗帐号ID，用于非服务窗自建应用场景下指定服务窗帐号。</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
-    // 关注用户的userId
+    /**
+     * <p>关注用户的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

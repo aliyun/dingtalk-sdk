@@ -4,31 +4,45 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactDeptCreateRequest extends TeaModel {
-    // 自定义通讯录Code
+    /**
+     * <p>自定义通讯录Code</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 部门主管列表
+    /**
+     * <p>部门主管列表</p>
+     */
     @NameInMap("managerIdList")
     public java.util.List<String> managerIdList;
 
-    // 部门名称
+    /**
+     * <p>部门名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 部门排序
+    /**
+     * <p>部门排序</p>
+     */
     @NameInMap("order")
     public Long order;
 
-    // 上级部门Id
+    /**
+     * <p>上级部门Id</p>
+     */
     @NameInMap("parentDeptId")
     public Long parentDeptId;
 
-    // 引用的内部通讯录部门Id
+    /**
+     * <p>引用的内部通讯录部门Id</p>
+     */
     @NameInMap("refId")
     public Long refId;
 
-    // 部门类型 0:普通部门 1:引用部门
+    /**
+     * <p>部门类型 0:普通部门 1:引用部门</p>
+     */
     @NameInMap("type")
     public Long type;
 

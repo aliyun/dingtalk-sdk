@@ -4,55 +4,81 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchOrgInnerGroupInfoRequest extends TeaModel {
-    // createTimeEnd
+    /**
+     * <p>createTimeEnd</p>
+     */
     @NameInMap("createTimeEnd")
     public Long createTimeEnd;
 
-    // createTimeStart
+    /**
+     * <p>createTimeStart</p>
+     */
     @NameInMap("createTimeStart")
     public Long createTimeStart;
 
-    // groupMembersCntEnd
+    /**
+     * <p>groupMembersCntEnd</p>
+     */
     @NameInMap("groupMembersCountEnd")
     public Integer groupMembersCountEnd;
 
-    // groupMembersCntStart
+    /**
+     * <p>groupMembersCntStart</p>
+     */
     @NameInMap("groupMembersCountStart")
     public Integer groupMembersCountStart;
 
-    // groupName
+    /**
+     * <p>groupName</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
-    // groupOwner
+    /**
+     * <p>groupOwner</p>
+     */
     @NameInMap("groupOwner")
     public String groupOwner;
 
-    // lastActiveTimeEnd
+    /**
+     * <p>lastActiveTimeEnd</p>
+     */
     @NameInMap("lastActiveTimeEnd")
     public Long lastActiveTimeEnd;
 
-    // lastActiveTimeStart
+    /**
+     * <p>lastActiveTimeStart</p>
+     */
     @NameInMap("lastActiveTimeStart")
     public Long lastActiveTimeStart;
 
-    // operatorUserId
+    /**
+     * <p>operatorUserId</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
-    // pageSize
+    /**
+     * <p>pageSize</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // pageStart
+    /**
+     * <p>pageStart</p>
+     */
     @NameInMap("pageStart")
     public Integer pageStart;
 
-    // syncToDingpan
+    /**
+     * <p>syncToDingpan</p>
+     */
     @NameInMap("syncToDingpan")
     public Integer syncToDingpan;
 
-    // uuid
+    /**
+     * <p>uuid</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

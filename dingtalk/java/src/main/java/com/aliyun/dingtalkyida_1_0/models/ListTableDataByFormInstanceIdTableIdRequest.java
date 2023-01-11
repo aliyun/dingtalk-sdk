@@ -4,31 +4,45 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTableDataByFormInstanceIdTableIdRequest extends TeaModel {
-    // 应用编码
+    /**
+     * <p>应用编码</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 表单ID
+    /**
+     * <p>表单ID</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 当前页
+    /**
+     * <p>当前页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 每页记录数
+    /**
+     * <p>每页记录数</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 应用秘钥
+    /**
+     * <p>应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 需要查找的子表单组件的唯一标识
+    /**
+     * <p>需要查找的子表单组件的唯一标识</p>
+     */
     @NameInMap("tableFieldId")
     public String tableFieldId;
 
-    // 钉钉的userId
+    /**
+     * <p>钉钉的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

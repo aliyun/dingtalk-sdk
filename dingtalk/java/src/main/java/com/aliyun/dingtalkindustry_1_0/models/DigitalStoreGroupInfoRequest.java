@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreGroupInfoRequest extends TeaModel {
-    // 门店分组Id
+    /**
+     * <p>门店分组Id</p>
+     */
     @NameInMap("groupId")
     public Long groupId;
 

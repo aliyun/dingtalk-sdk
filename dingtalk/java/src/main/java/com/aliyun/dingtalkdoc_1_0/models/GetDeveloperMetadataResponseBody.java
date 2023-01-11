@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDeveloperMetadataResponseBody extends TeaModel {
-    // 元数据所关联到的列
+    /**
+     * <p>元数据所关联到的列</p>
+     */
     @NameInMap("associatedColumn")
     public GetDeveloperMetadataResponseBodyAssociatedColumn associatedColumn;
 
-    // 元数据所关联到的行
+    /**
+     * <p>元数据所关联到的行</p>
+     */
     @NameInMap("associatedRow")
     public GetDeveloperMetadataResponseBodyAssociatedRow associatedRow;
 
@@ -45,7 +49,9 @@ public class GetDeveloperMetadataResponseBody extends TeaModel {
     }
 
     public static class GetDeveloperMetadataResponseBodyAssociatedColumn extends TeaModel {
-        // 列号，从0开始
+        /**
+         * <p>列号，从0开始</p>
+         */
         @NameInMap("column")
         public Integer column;
 
@@ -76,11 +82,15 @@ public class GetDeveloperMetadataResponseBody extends TeaModel {
     }
 
     public static class GetDeveloperMetadataResponseBodyAssociatedRow extends TeaModel {
-        // 行号，从0开始
+        /**
+         * <p>行号，从0开始</p>
+         */
         @NameInMap("row")
         public Integer row;
 
-        // 工作表ID或名称
+        /**
+         * <p>工作表ID或名称</p>
+         */
         @NameInMap("sheetId")
         public String sheetId;
 

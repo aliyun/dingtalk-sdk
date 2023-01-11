@@ -7,15 +7,21 @@ public class SheetAutofitRowsRequest extends TeaModel {
     @NameInMap("fontWidth")
     public Long fontWidth;
 
-    // 行号，从0开始
+    /**
+     * <p>行号，从0开始</p>
+     */
     @NameInMap("row")
     public Long row;
 
-    // 行数
+    /**
+     * <p>行数</p>
+     */
     @NameInMap("rowCount")
     public Long rowCount;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

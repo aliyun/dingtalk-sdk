@@ -4,15 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFamilySchoolConversationsRequest extends TeaModel {
-    // 获取家校群数量
+    /**
+     * <p>获取家校群数量</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 时间的毫秒值，分页游标
+    /**
+     * <p>时间的毫秒值，分页游标</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 用户身份ID
+    /**
+     * <p>用户身份ID</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

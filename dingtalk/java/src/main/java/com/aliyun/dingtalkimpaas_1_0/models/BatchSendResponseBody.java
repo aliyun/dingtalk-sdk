@@ -4,7 +4,9 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendResponseBody extends TeaModel {
-    // 任务Id
+    /**
+     * <p>任务Id</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

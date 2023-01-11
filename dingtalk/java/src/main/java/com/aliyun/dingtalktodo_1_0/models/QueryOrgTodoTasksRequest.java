@@ -4,11 +4,15 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOrgTodoTasksRequest extends TeaModel {
-    // 待办完成状态。
+    /**
+     * <p>待办完成状态。</p>
+     */
     @NameInMap("isDone")
     public Boolean isDone;
 
-    // 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
+    /**
+     * <p>分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

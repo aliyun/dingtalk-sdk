@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteColumnsRequest extends TeaModel {
-    // 要删除的第一列的位置，从0开始
+    /**
+     * <p>要删除的第一列的位置，从0开始</p>
+     */
     @NameInMap("column")
     public Long column;
 
-    // 要删除的列的数量
+    /**
+     * <p>要删除的列的数量</p>
+     */
     @NameInMap("columnCount")
     public Long columnCount;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

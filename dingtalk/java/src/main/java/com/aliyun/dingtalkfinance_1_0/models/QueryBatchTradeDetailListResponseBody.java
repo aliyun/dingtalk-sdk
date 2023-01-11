@@ -4,23 +4,33 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBatchTradeDetailListResponseBody extends TeaModel {
-    // 明细列表
+    /**
+     * <p>明细列表</p>
+     */
     @NameInMap("batchTradeDetailList")
     public java.util.List<QueryBatchTradeDetailListResponseBodyBatchTradeDetailList> batchTradeDetailList;
 
-    // 当前页数
+    /**
+     * <p>当前页数</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 单页条数
+    /**
+     * <p>单页条数</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 总记录数
+    /**
+     * <p>总记录数</p>
+     */
     @NameInMap("total")
     public Integer total;
 
-    // 总页数
+    /**
+     * <p>总页数</p>
+     */
     @NameInMap("totalPageNumber")
     public Integer totalPageNumber;
 
@@ -70,43 +80,63 @@ public class QueryBatchTradeDetailListResponseBody extends TeaModel {
     }
 
     public static class QueryBatchTradeDetailListResponseBodyBatchTradeDetailList extends TeaModel {
-        // 金额
+        /**
+         * <p>金额</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 明细单号
+        /**
+         * <p>明细单号</p>
+         */
         @NameInMap("detailNo")
         public String detailNo;
 
-        // 订单时间时间
+        /**
+         * <p>订单时间时间</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        // 支付完成时间
+        /**
+         * <p>支付完成时间</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("memo")
         public String memo;
 
-        // 收款方电子钱包持有者姓名
+        /**
+         * <p>收款方电子钱包持有者姓名</p>
+         */
         @NameInMap("payeeAccountName")
         public String payeeAccountName;
 
-        // 收款人账号
+        /**
+         * <p>收款人账号</p>
+         */
         @NameInMap("payeeAccountNo")
         public String payeeAccountNo;
 
-        // 收款账号类型
+        /**
+         * <p>收款账号类型</p>
+         */
         @NameInMap("payeeAccountType")
         public String payeeAccountType;
 
-        // 序号
+        /**
+         * <p>序号</p>
+         */
         @NameInMap("serialNo")
         public Long serialNo;
 
-        // 状态
+        /**
+         * <p>状态</p>
+         */
         @NameInMap("status")
         public String status;
 

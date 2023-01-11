@@ -4,30 +4,42 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class AssignOrgHoldingToEmpHoldingBatchRequest extends TeaModel {
-    // 备注信息 长度小于40
+    /**
+     * <p>备注信息 长度小于40</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 是否发送组织文化通知
+    /**
+     * <p>是否发送组织文化通知</p>
+     */
     @NameInMap("sendOrgCultureInform")
     public Boolean sendOrgCultureInform;
 
-    // 发放积分或额度数量 1～100000
+    /**
+     * <p>发放积分或额度数量 1～100000</p>
+     */
     @NameInMap("singleAmount")
     public Long singleAmount;
 
-    // 发放人sourceUsage  发放人与接受人usage应一一对应
-    // 发放积分sourceUsage：OPEN_ORG_POINT_PERSONAL_ASSIGN 对应的targetUsage为OPEN_EMP_POINT_PERSONAL_RECEIVE；
-    // 发额度sourceUsage：OPEN_ORG_POINT_HOLDING_ASSIGN 对应的 targetUsage为OPEN_EMP_POINT_HOLDING_RECEIVE；
-    // 行为规则发积分 sourceUsage：OPEN_ACTION_RULE_PERSONAL_ASSIGN 对应的 targetUsage为OPEN_ACTION_RULE_PERSONAL_RECEIVE
+    /**
+     * <p>发放人sourceUsage  发放人与接受人usage应一一对应</p>
+     * <p>发放积分sourceUsage：OPEN_ORG_POINT_PERSONAL_ASSIGN 对应的targetUsage为OPEN_EMP_POINT_PERSONAL_RECEIVE；</p>
+     * <p>发额度sourceUsage：OPEN_ORG_POINT_HOLDING_ASSIGN 对应的 targetUsage为OPEN_EMP_POINT_HOLDING_RECEIVE；</p>
+     * <p>行为规则发积分 sourceUsage：OPEN_ACTION_RULE_PERSONAL_ASSIGN 对应的 targetUsage为OPEN_ACTION_RULE_PERSONAL_RECEIVE</p>
+     */
     @NameInMap("sourceUsage")
     public String sourceUsage;
 
-    // 接受人targetUsage  发放人与接受人usage应一一对应
+    /**
+     * <p>接受人targetUsage  发放人与接受人usage应一一对应</p>
+     */
     @NameInMap("targetUsage")
     public String targetUsage;
 
-    // 发放目标用户
+    /**
+     * <p>发放目标用户</p>
+     */
     @NameInMap("targetUserList")
     public java.util.List<AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList> targetUserList;
 
@@ -85,12 +97,16 @@ public class AssignOrgHoldingToEmpHoldingBatchRequest extends TeaModel {
     }
 
     public static class AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList extends TeaModel {
-        // 积分交易单号，长度1-32。
-        // 
+        /**
+         * <p>积分交易单号，长度1-32。</p>
+         * <br>
+         */
         @NameInMap("outId")
         public String outId;
 
-        // 操作目标对象userId
+        /**
+         * <p>操作目标对象userId</p>
+         */
         @NameInMap("targetUserId")
         public String targetUserId;
 

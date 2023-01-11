@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class TerminateCloudAuthorizationRequest extends TeaModel {
-    // 访问秘钥
+    /**
+     * <p>访问秘钥</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
-    // 调用者unionId
+    /**
+     * <p>调用者unionId</p>
+     */
     @NameInMap("callerUnionId")
     public String callerUnionId;
 
-    // 实例id
+    /**
+     * <p>实例id</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 

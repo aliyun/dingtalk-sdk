@@ -4,19 +4,27 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSpacesRequest extends TeaModel {
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页加载锚点
+    /**
+     * <p>分页加载锚点</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 空间类型
+    /**
+     * <p>空间类型</p>
+     */
     @NameInMap("spaceType")
     public String spaceType;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomGroupResponseBody extends TeaModel {
-    // 分组id
+    /**
+     * <p>分组id</p>
+     */
     @NameInMap("groupId")
     public Long groupId;
 
-    // 分组名称
+    /**
+     * <p>分组名称</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
-    // 父分组id
+    /**
+     * <p>父分组id</p>
+     */
     @NameInMap("parentId")
     public Long parentId;
 

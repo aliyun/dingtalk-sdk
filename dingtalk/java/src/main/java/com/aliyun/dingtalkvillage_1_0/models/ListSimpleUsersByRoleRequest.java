@@ -4,19 +4,27 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSimpleUsersByRoleRequest extends TeaModel {
-    // 起始位置
+    /**
+     * <p>起始位置</p>
+     */
     @NameInMap("offset")
     public Long offset;
 
-    // 角色ID
+    /**
+     * <p>角色ID</p>
+     */
     @NameInMap("roleId")
     public Long roleId;
 
-    // 查询数量
+    /**
+     * <p>查询数量</p>
+     */
     @NameInMap("size")
     public Integer size;
 
-    // 下属组织的组织ID，比如下属镇、村的corpId
+    /**
+     * <p>下属组织的组织ID，比如下属镇、村的corpId</p>
+     */
     @NameInMap("subCorpId")
     public String subCorpId;
 

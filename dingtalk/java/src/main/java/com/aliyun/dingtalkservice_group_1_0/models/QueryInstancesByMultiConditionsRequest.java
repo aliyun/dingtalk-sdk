@@ -4,27 +4,39 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryInstancesByMultiConditionsRequest extends TeaModel {
-    // 表单CODE
+    /**
+     * <p>表单CODE</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 游标位置
+    /**
+     * <p>游标位置</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 检索条件
+    /**
+     * <p>检索条件</p>
+     */
     @NameInMap("searchFields")
     public String searchFields;
 
-    // 排序条件
+    /**
+     * <p>排序条件</p>
+     */
     @NameInMap("sortFields")
     public java.util.List<QueryInstancesByMultiConditionsRequestSortFields> sortFields;
 
@@ -82,11 +94,15 @@ public class QueryInstancesByMultiConditionsRequest extends TeaModel {
     }
 
     public static class QueryInstancesByMultiConditionsRequestSortFields extends TeaModel {
-        // 排序字段
+        /**
+         * <p>排序字段</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
-        // 排序方式
+        /**
+         * <p>排序方式</p>
+         */
         @NameInMap("sortBy")
         public String sortBy;
 

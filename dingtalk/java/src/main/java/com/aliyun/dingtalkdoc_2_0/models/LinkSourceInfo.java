@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class LinkSourceInfo extends TeaModel {
-    // 快捷方式关联的源文件后缀。
+    /**
+     * <p>快捷方式关联的源文件后缀。</p>
+     */
     @NameInMap("extension")
     public String extension;
 
-    // 非通用快捷方式的图标信息。
+    /**
+     * <p>非通用快捷方式的图标信息。</p>
+     */
     @NameInMap("iconUrl")
     public LinkSourceInfoIconUrl iconUrl;
 
-    // 快捷方式关联的源文件ID（空间内唯一）。
+    /**
+     * <p>快捷方式关联的源文件ID（空间内唯一）。</p>
+     */
     @NameInMap("id")
     public String id;
 
-    // 快捷方式类型。0-通用快捷方式；1-闪会快捷方式；2-日志快捷方式；3-闪会2.0快捷方式。
+    /**
+     * <p>快捷方式类型。0-通用快捷方式；1-闪会快捷方式；2-日志快捷方式；3-闪会2.0快捷方式。</p>
+     */
     @NameInMap("linkType")
     public Long linkType;
 
-    // 快捷方式关联的源文件所属空间id。
+    /**
+     * <p>快捷方式关联的源文件所属空间id。</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
@@ -70,11 +80,15 @@ public class LinkSourceInfo extends TeaModel {
     }
 
     public static class LinkSourceInfoIconUrl extends TeaModel {
-        // 默认的目录树图标。
+        /**
+         * <p>默认的目录树图标。</p>
+         */
         @NameInMap("line")
         public String line;
 
-        // 被选中时的加深图标。
+        /**
+         * <p>被选中时的加深图标。</p>
+         */
         @NameInMap("small")
         public String small;
 

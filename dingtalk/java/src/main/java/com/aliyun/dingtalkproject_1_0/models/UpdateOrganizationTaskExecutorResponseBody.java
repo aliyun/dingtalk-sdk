@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
-    // 返回对象
+    /**
+     * <p>返回对象</p>
+     */
     @NameInMap("result")
     public UpdateOrganizationTaskExecutorResponseBodyResult result;
 
@@ -22,15 +24,21 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskExecutorResponseBodyResultExecutor extends TeaModel {
-        // 头像
+        /**
+         * <p>头像</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        // 名字
+        /**
+         * <p>名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户uid
+        /**
+         * <p>用户uid</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -66,15 +74,21 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskExecutorResponseBodyResultInvolvers extends TeaModel {
-        // 头像
+        /**
+         * <p>头像</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        // 名字
+        /**
+         * <p>名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户uid
+        /**
+         * <p>用户uid</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -110,19 +124,27 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskExecutorResponseBodyResult extends TeaModel {
-        // 执行者信息
+        /**
+         * <p>执行者信息</p>
+         */
         @NameInMap("executor")
         public UpdateOrganizationTaskExecutorResponseBodyResultExecutor executor;
 
-        // 执行者id
+        /**
+         * <p>执行者id</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
-        // 参与者列表
+        /**
+         * <p>参与者列表</p>
+         */
         @NameInMap("involvers")
         public java.util.List<UpdateOrganizationTaskExecutorResponseBodyResultInvolvers> involvers;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updated")
         public String updated;
 

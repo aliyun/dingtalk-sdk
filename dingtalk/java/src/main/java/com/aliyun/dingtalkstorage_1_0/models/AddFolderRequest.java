@@ -4,18 +4,24 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddFolderRequest extends TeaModel {
-    // 名称(文件名+后缀), 规则：
-    // 1. 头尾不能包含空格，否则会自动去除
-    // 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
-    // 3. 不能以"."结尾
+    /**
+     * <p>名称(文件名+后缀), 规则：</p>
+     * <p>1. 头尾不能包含空格，否则会自动去除</p>
+     * <p>2. 不能包含特殊字符，包括：制表符、*、"、<、>、|</p>
+     * <p>3. 不能以"."结尾</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 可选参数
+    /**
+     * <p>可选参数</p>
+     */
     @NameInMap("option")
     public AddFolderRequestOption option;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -49,18 +55,24 @@ public class AddFolderRequest extends TeaModel {
     }
 
     public static class AddFolderRequestOptionAppProperties extends TeaModel {
-        // 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
+        /**
+         * <p>属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 属性值
+        /**
+         * <p>属性值</p>
+         */
         @NameInMap("value")
         public String value;
 
-        // 属性可见范围
-        // 枚举值:
-        // 	PUBLIC: 该属性所有App可见
-        // 	PRIVATE: 该属性仅其归属App可见
+        /**
+         * <p>属性可见范围</p>
+         * <p>枚举值:</p>
+         * <p>	PUBLIC: 该属性所有App可见</p>
+         * <p>	PRIVATE: 该属性仅其归属App可见</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 
@@ -96,20 +108,24 @@ public class AddFolderRequest extends TeaModel {
     }
 
     public static class AddFolderRequestOption extends TeaModel {
-        // 文件夹在应用上的属性, 一个应用最多只能设置3个属性
-        // 最大size:
-        // 	3
+        /**
+         * <p>文件夹在应用上的属性, 一个应用最多只能设置3个属性</p>
+         * <p>最大size:</p>
+         * <p>	3</p>
+         */
         @NameInMap("appProperties")
         public java.util.List<AddFolderRequestOptionAppProperties> appProperties;
 
-        // 文件夹名称冲突策略
-        // 枚举值:
-        // 	AUTO_RENAME: 自动重命名
-        // 	OVERWRITE: 覆盖
-        // 	RETURN_DENTRY_IF_EXISTS: 返回已存在文件
-        // 	RETURN_ERROR_IF_EXISTS: 文件已存在时报错
-        // 默认值:
-        // 	AUTO_RENAME
+        /**
+         * <p>文件夹名称冲突策略</p>
+         * <p>枚举值:</p>
+         * <p>	AUTO_RENAME: 自动重命名</p>
+         * <p>	OVERWRITE: 覆盖</p>
+         * <p>	RETURN_DENTRY_IF_EXISTS: 返回已存在文件</p>
+         * <p>	RETURN_ERROR_IF_EXISTS: 文件已存在时报错</p>
+         * <p>默认值:</p>
+         * <p>	AUTO_RENAME</p>
+         */
         @NameInMap("conflictStrategy")
         public String conflictStrategy;
 

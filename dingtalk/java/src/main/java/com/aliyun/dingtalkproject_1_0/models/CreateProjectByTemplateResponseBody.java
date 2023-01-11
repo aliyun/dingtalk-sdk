@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProjectByTemplateResponseBody extends TeaModel {
-    // 返回结果对象
+    /**
+     * <p>返回结果对象</p>
+     */
     @NameInMap("result")
     public CreateProjectByTemplateResponseBodyResult result;
 
@@ -22,19 +24,27 @@ public class CreateProjectByTemplateResponseBody extends TeaModel {
     }
 
     public static class CreateProjectByTemplateResponseBodyResult extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("created")
         public String created;
 
-        // 项目ID
+        /**
+         * <p>项目ID</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 项目图标地址
+        /**
+         * <p>项目图标地址</p>
+         */
         @NameInMap("logo")
         public String logo;
 
-        // 项目名字
+        /**
+         * <p>项目名字</p>
+         */
         @NameInMap("name")
         public String name;
 

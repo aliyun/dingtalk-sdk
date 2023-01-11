@@ -4,11 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveRobotFromConversationRequest extends TeaModel {
-    // 机器人在会话里的id
+    /**
+     * <p>机器人在会话里的id</p>
+     */
     @NameInMap("chatBotUserId")
     public String chatBotUserId;
 
-    // 会话id
+    /**
+     * <p>会话id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterCustomAppRoleResponseBody extends TeaModel {
-    // 角色id
+    /**
+     * <p>角色id</p>
+     */
     @NameInMap("roleId")
     public Long roleId;
 
-    // 角色版本号
+    /**
+     * <p>角色版本号</p>
+     */
     @NameInMap("scopeVersion")
     public Long scopeVersion;
 

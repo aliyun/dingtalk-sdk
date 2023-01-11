@@ -21,11 +21,15 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListVisibleDepts extends TeaModel {
-        // 部门id
+        /**
+         * <p>部门id</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -53,11 +57,15 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListVisibleUsers extends TeaModel {
-        // 员工姓名
+        /**
+         * <p>员工姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 员工id
+        /**
+         * <p>员工id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -85,11 +93,15 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListWarningDepts extends TeaModel {
-        // 部门id
+        /**
+         * <p>部门id</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -117,11 +129,15 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListWarningUsers extends TeaModel {
-        // 员工姓名
+        /**
+         * <p>员工姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 员工id
+        /**
+         * <p>员工id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -149,31 +165,45 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyList extends TeaModel {
-        // 角色id
+        /**
+         * <p>角色id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 是否必邀角色
+        /**
+         * <p>是否必邀角色</p>
+         */
         @NameInMap("isNecessary")
         public Integer isNecessary;
 
-        // 角色名称
+        /**
+         * <p>角色名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 可见部门
+        /**
+         * <p>可见部门</p>
+         */
         @NameInMap("visibleDepts")
         public java.util.List<ListPartnerRolesResponseBodyListVisibleDepts> visibleDepts;
 
-        // 可见员工
+        /**
+         * <p>可见员工</p>
+         */
         @NameInMap("visibleUsers")
         public java.util.List<ListPartnerRolesResponseBodyListVisibleUsers> visibleUsers;
 
-        // 预警部门
+        /**
+         * <p>预警部门</p>
+         */
         @NameInMap("warningDepts")
         public java.util.List<ListPartnerRolesResponseBodyListWarningDepts> warningDepts;
 
-        // 预警成员
+        /**
+         * <p>预警成员</p>
+         */
         @NameInMap("warningUsers")
         public java.util.List<ListPartnerRolesResponseBodyListWarningUsers> warningUsers;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCustomerCardRequest extends TeaModel {
-    // 查询jsonString
+    /**
+     * <p>查询jsonString</p>
+     */
     @NameInMap("jsonParams")
     public String jsonParams;
 

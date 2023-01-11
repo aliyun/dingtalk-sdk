@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryItemByUrlRequest extends TeaModel {
-    // 操作用户unionId。
+    /**
+     * <p>操作用户unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 链接url。
+    /**
+     * <p>链接url。</p>
+     */
     @NameInMap("url")
     public String url;
 

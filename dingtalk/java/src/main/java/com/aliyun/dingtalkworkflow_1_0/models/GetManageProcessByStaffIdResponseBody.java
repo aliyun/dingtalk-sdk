@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetManageProcessByStaffIdResponseBody extends TeaModel {
-    // 返回结果列表。
+    /**
+     * <p>返回结果列表。</p>
+     */
     @NameInMap("result")
     public java.util.List<GetManageProcessByStaffIdResponseBodyResult> result;
 
-    // 接口调用是否成功。
+    /**
+     * <p>接口调用是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,35 +38,49 @@ public class GetManageProcessByStaffIdResponseBody extends TeaModel {
     }
 
     public static class GetManageProcessByStaffIdResponseBodyResult extends TeaModel {
-        // 关联考勤类型，取值。
-        // 
-        // 0：无
-        // 1：补卡申请
-        // 2：请假
+        /**
+         * <p>关联考勤类型，取值。</p>
+         * <br>
+         * <p>0：无</p>
+         * <p>1：补卡申请</p>
+         * <p>2：请假</p>
+         */
         @NameInMap("attendanceType")
         public Integer attendanceType;
 
-        // 模版名称。
+        /**
+         * <p>模版名称。</p>
+         */
         @NameInMap("flowTitle")
         public String flowTitle;
 
-        // 修改时间。
+        /**
+         * <p>修改时间。</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        // 模板图标名。
+        /**
+         * <p>模板图标名。</p>
+         */
         @NameInMap("iconName")
         public String iconName;
 
-        // 图标URL地址。
+        /**
+         * <p>图标URL地址。</p>
+         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
-        // 是否新模版。
+        /**
+         * <p>是否新模版。</p>
+         */
         @NameInMap("newProcess")
         public Boolean newProcess;
 
-        // 模版code。
+        /**
+         * <p>模版code。</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncTripOrderResponseBody extends TeaModel {
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

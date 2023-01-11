@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFeedRequest extends TeaModel {
-    // 课程相关信息
+    /**
+     * <p>课程相关信息</p>
+     */
     @NameInMap("courseInfo")
     public CreateFeedRequestCourseInfo courseInfo;
 
-    // 发布者的用户Id
+    /**
+     * <p>发布者的用户Id</p>
+     */
     @NameInMap("createUserId")
     public String createUserId;
 
-    // 内容相关信息
+    /**
+     * <p>内容相关信息</p>
+     */
     @NameInMap("feedInfo")
     public CreateFeedRequestFeedInfo feedInfo;
 
@@ -46,15 +52,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfoLectorUserInfo extends TeaModel {
-        // 讲师头像链接
+        /**
+         * <p>讲师头像链接</p>
+         */
         @NameInMap("avatar")
         public String avatar;
 
-        // 讲师用户名称
+        /**
+         * <p>讲师用户名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 讲师用户Id
+        /**
+         * <p>讲师用户Id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -90,15 +102,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfoPayInfoCsUserInfo extends TeaModel {
-        // 客服头像链接
+        /**
+         * <p>客服头像链接</p>
+         */
         @NameInMap("avatar")
         public String avatar;
 
-        // 客服用户名称
+        /**
+         * <p>客服用户名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 客服用户Id
+        /**
+         * <p>客服用户Id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -134,15 +152,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfoPayInfoDiscountInfo extends TeaModel {
-        // 打折结束的时间，时间戳精确到毫秒，时间为东八区时间
+        /**
+         * <p>打折结束的时间，时间戳精确到毫秒，时间为东八区时间</p>
+         */
         @NameInMap("endTimeMillis")
         public Long endTimeMillis;
 
-        // 打折时商品的价格，单位为分
+        /**
+         * <p>打折时商品的价格，单位为分</p>
+         */
         @NameInMap("price")
         public Long price;
 
-        // 打折开始的时间，时间戳精确到毫秒，时间为东八区时间
+        /**
+         * <p>打折开始的时间，时间戳精确到毫秒，时间为东八区时间</p>
+         */
         @NameInMap("startTimeMillis")
         public Long startTimeMillis;
 
@@ -178,15 +202,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfoPayInfo extends TeaModel {
-        // 客服身份信息
+        /**
+         * <p>客服身份信息</p>
+         */
         @NameInMap("csUserInfo")
         public CreateFeedRequestCourseInfoPayInfoCsUserInfo csUserInfo;
 
-        // 课程打折信息
+        /**
+         * <p>课程打折信息</p>
+         */
         @NameInMap("discountInfo")
         public CreateFeedRequestCourseInfoPayInfoDiscountInfo discountInfo;
 
-        // 商品的默认情况下非打折时的价格，单位为分
+        /**
+         * <p>商品的默认情况下非打折时的价格，单位为分</p>
+         */
         @NameInMap("price")
         public Long price;
 
@@ -222,15 +252,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfo extends TeaModel {
-        // 讲师身份信息
+        /**
+         * <p>讲师身份信息</p>
+         */
         @NameInMap("lectorUserInfo")
         public CreateFeedRequestCourseInfoLectorUserInfo lectorUserInfo;
 
-        // 支付信息
+        /**
+         * <p>支付信息</p>
+         */
         @NameInMap("payInfo")
         public CreateFeedRequestCourseInfoPayInfo payInfo;
 
-        // 创建一个和该课程绑定的学习群和圈子
+        /**
+         * <p>创建一个和该课程绑定的学习群和圈子</p>
+         */
         @NameInMap("studyGroupName")
         public String studyGroupName;
 
@@ -266,15 +302,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestFeedInfoMediaContents extends TeaModel {
-        // 媒体的mediaId，唯一对应oss中的一个视频或者音频
+        /**
+         * <p>媒体的mediaId，唯一对应oss中的一个视频或者音频</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
-        // 媒体的标题
+        /**
+         * <p>媒体的标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 媒体的类型，当前该接口只支持video和audio,2:视频,3:音频
+        /**
+         * <p>媒体的类型，当前该接口只支持video和audio,2:视频,3:音频</p>
+         */
         @NameInMap("type")
         public Integer type;
 
@@ -310,11 +352,15 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestFeedInfoRecommends extends TeaModel {
-        // 推荐物品的id，可以时feedId或者是微应用Id
+        /**
+         * <p>推荐物品的id，可以时feedId或者是微应用Id</p>
+         */
         @NameInMap("objectId")
         public String objectId;
 
-        // 推荐物品的类别,0:课程,1:微应用
+        /**
+         * <p>推荐物品的类别,0:课程,1:微应用</p>
+         */
         @NameInMap("type")
         public Integer type;
 
@@ -342,59 +388,87 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestFeedInfo extends TeaModel {
-        // 请求的行为，是保存还是发布,1为save，2为publish，是修改还是新建取决于feedId是否为空
+        /**
+         * <p>请求的行为，是保存还是发布,1为save，2为publish，是修改还是新建取决于feedId是否为空</p>
+         */
         @NameInMap("actionType")
         public Integer actionType;
 
-        // 版权所属:1：自有， 2.代理， 3.钉钉
+        /**
+         * <p>版权所属:1：自有， 2.代理， 3.钉钉</p>
+         */
         @NameInMap("belongsTo")
         public Integer belongsTo;
 
-        // 内容分类，课程分类列表详情请见附录中的列表
+        /**
+         * <p>内容分类，课程分类列表详情请见附录中的列表</p>
+         */
         @NameInMap("feedCategory")
         public Long feedCategory;
 
-        // 可选参数，当feedId不为null时，表示对当前课程进行修改，否则为新建一个课程
+        /**
+         * <p>可选参数，当feedId不为null时，表示对当前课程进行修改，否则为新建一个课程</p>
+         */
         @NameInMap("feedId")
         public String feedId;
 
-        // 课程的文字标签
+        /**
+         * <p>课程的文字标签</p>
+         */
         @NameInMap("feedTag")
         public String feedTag;
 
-        // 内容类别,限制只能使用4种类型：0：免费 4：平价 5：专栏 6：训练营
+        /**
+         * <p>内容类别,限制只能使用4种类型：0：免费 4：平价 5：专栏 6：训练营</p>
+         */
         @NameInMap("feedType")
         public Integer feedType;
 
-        // 行业划分，决定了展示的页面的不同，例如学习中心下的职场、教育、商学院的划分,目前支持的行业id有：10001：职场学堂，10008：K12教育，10023：新职业，10024：钉钉培训
+        /**
+         * <p>行业划分，决定了展示的页面的不同，例如学习中心下的职场、教育、商学院的划分,目前支持的行业id有：10001：职场学堂，10008：K12教育，10023：新职业，10024：钉钉培训</p>
+         */
         @NameInMap("industryId")
         public Long industryId;
 
-        // 课程的描述
+        /**
+         * <p>课程的描述</p>
+         */
         @NameInMap("introduction")
         public String introduction;
 
-        // 课程简介用的图片
+        /**
+         * <p>课程简介用的图片</p>
+         */
         @NameInMap("introductionPicUrl")
         public String introductionPicUrl;
 
-        // 入驻账号Id(请联系钉钉接口同学获取)
+        /**
+         * <p>入驻账号Id(请联系钉钉接口同学获取)</p>
+         */
         @NameInMap("mcnId")
         public String mcnId;
 
-        // 一个课程下可以有多个视频或音频教程
+        /**
+         * <p>一个课程下可以有多个视频或音频教程</p>
+         */
         @NameInMap("mediaContents")
         public java.util.List<CreateFeedRequestFeedInfoMediaContents> mediaContents;
 
-        // 推荐内容集合
+        /**
+         * <p>推荐内容集合</p>
+         */
         @NameInMap("recommends")
         public java.util.List<CreateFeedRequestFeedInfoRecommends> recommends;
 
-        // 课程的封面Url
+        /**
+         * <p>课程的封面Url</p>
+         */
         @NameInMap("thumbUrl")
         public String thumbUrl;
 
-        // 内容的标题（标题不能重复）
+        /**
+         * <p>内容的标题（标题不能重复）</p>
+         */
         @NameInMap("title")
         public String title;
 

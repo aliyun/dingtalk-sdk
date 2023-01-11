@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListIndustryRoleUsersResponseBody extends TeaModel {
-    // 用户id列表
+    /**
+     * <p>用户id列表</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

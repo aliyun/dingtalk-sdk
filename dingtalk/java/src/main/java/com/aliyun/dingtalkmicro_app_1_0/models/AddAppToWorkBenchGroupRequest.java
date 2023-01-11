@@ -4,15 +4,21 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddAppToWorkBenchGroupRequest extends TeaModel {
-    // 工作台分组id
+    /**
+     * <p>工作台分组id</p>
+     */
     @NameInMap("componentId")
     public String componentId;
 
-    // 关联组织corpId
+    /**
+     * <p>关联组织corpId</p>
+     */
     @NameInMap("ecologicalCorpId")
     public String ecologicalCorpId;
 
-    // 创建人unionId
+    /**
+     * <p>创建人unionId</p>
+     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

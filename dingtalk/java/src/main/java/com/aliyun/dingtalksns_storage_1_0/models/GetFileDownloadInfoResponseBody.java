@@ -4,13 +4,17 @@ package com.aliyun.dingtalksns_storage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileDownloadInfoResponseBody extends TeaModel {
-    // Header加签信息, 当protocol等于HEADER_SIGNATURE时，此字段生效
+    /**
+     * <p>Header加签信息, 当protocol等于HEADER_SIGNATURE时，此字段生效</p>
+     */
     @NameInMap("headerSignatureInfo")
     public GetFileDownloadInfoResponseBodyHeaderSignatureInfo headerSignatureInfo;
 
-    // 文件下载协议
-    // 枚举值:
-    // 	HEADER_SIGNATURE: Header加签
+    /**
+     * <p>文件下载协议</p>
+     * <p>枚举值:</p>
+     * <p>	HEADER_SIGNATURE: Header加签</p>
+     */
     @NameInMap("protocol")
     public String protocol;
 
@@ -36,35 +40,45 @@ public class GetFileDownloadInfoResponseBody extends TeaModel {
     }
 
     public static class GetFileDownloadInfoResponseBodyHeaderSignatureInfo extends TeaModel {
-        // 过期时间，单位秒
+        /**
+         * <p>过期时间，单位秒</p>
+         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
-        // 请求头
-        // 最大size:
-        // 	20
+        /**
+         * <p>请求头</p>
+         * <p>最大size:</p>
+         * <p>	20</p>
+         */
         @NameInMap("headers")
         public java.util.Map<String, String> headers;
 
-        // 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
-        // 最大size:
-        // 	10
+        /**
+         * <p>内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传</p>
+         * <p>最大size:</p>
+         * <p>	10</p>
+         */
         @NameInMap("internalResourceUrls")
         public java.util.List<String> internalResourceUrls;
 
-        // 地域
-        // 枚举值:
-        // 	ZHANGJIAKOU: 张家口
-        // 	SHENZHEN: 深圳
-        // 	SHANGHAI: 上海
-        // 	SINGAPORE: 新加坡
-        // 	UNKNOWN: 未知
+        /**
+         * <p>地域</p>
+         * <p>枚举值:</p>
+         * <p>	ZHANGJIAKOU: 张家口</p>
+         * <p>	SHENZHEN: 深圳</p>
+         * <p>	SHANGHAI: 上海</p>
+         * <p>	SINGAPORE: 新加坡</p>
+         * <p>	UNKNOWN: 未知</p>
+         */
         @NameInMap("region")
         public String region;
 
-        // 多个上传下载URL, 前面url优先
-        // 最大size:
-        // 	10
+        /**
+         * <p>多个上传下载URL, 前面url优先</p>
+         * <p>最大size:</p>
+         * <p>	10</p>
+         */
         @NameInMap("resourceUrls")
         public java.util.List<String> resourceUrls;
 

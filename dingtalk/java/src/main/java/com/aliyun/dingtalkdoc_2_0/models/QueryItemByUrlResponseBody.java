@@ -4,18 +4,24 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryItemByUrlResponseBody extends TeaModel {
-    // 业务类型。可选值：dingpan-云盘中的文档；mainsite-知识库中的文档。
+    /**
+     * <p>业务类型。可选值：dingpan-云盘中的文档；mainsite-知识库中的文档。</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
     @NameInMap("dentry")
     public DentryModel dentry;
 
-    // 资源类型。可选值有：space-知识库；file-文档；folder-文件夹。
+    /**
+     * <p>资源类型。可选值有：space-知识库；file-文档；folder-文件夹。</p>
+     */
     @NameInMap("resourceType")
     public String resourceType;
 
-    // 当resourceType为space时，这里会返回知识库信息。
+    /**
+     * <p>当resourceType为space时，这里会返回知识库信息。</p>
+     */
     @NameInMap("space")
     public QueryItemByUrlResponseBodySpace space;
 
@@ -57,11 +63,15 @@ public class QueryItemByUrlResponseBody extends TeaModel {
     }
 
     public static class QueryItemByUrlResponseBodySpaceOwner extends TeaModel {
-        // 知识库所有者名称。
+        /**
+         * <p>知识库所有者名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 知识库所有者的unionId。
+        /**
+         * <p>知识库所有者的unionId。</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -89,23 +99,33 @@ public class QueryItemByUrlResponseBody extends TeaModel {
     }
 
     public static class QueryItemByUrlResponseBodySpace extends TeaModel {
-        // 知识库简介。
+        /**
+         * <p>知识库简介。</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 知识库id。
+        /**
+         * <p>知识库id。</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 知识库名称。
+        /**
+         * <p>知识库名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 如果type=2，会返回其所有者。
+        /**
+         * <p>如果type=2，会返回其所有者。</p>
+         */
         @NameInMap("owner")
         public QueryItemByUrlResponseBodySpaceOwner owner;
 
-        // 知识库类型。1-知识库；2-我的文档。
+        /**
+         * <p>知识库类型。1-知识库；2-我的文档。</p>
+         */
         @NameInMap("type")
         public Integer type;
 

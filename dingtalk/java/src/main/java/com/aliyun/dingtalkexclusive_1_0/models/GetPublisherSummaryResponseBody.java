@@ -4,31 +4,45 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPublisherSummaryResponseBody extends TeaModel {
-    // 互动服务窗相关数据
+    /**
+     * <p>互动服务窗相关数据</p>
+     */
     @NameInMap("data")
     public java.util.List<GetPublisherSummaryResponseBodyData> data;
 
-    // 是否有更多数据
+    /**
+     * <p>是否有更多数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 下一次请求的分页游标
+    /**
+     * <p>下一次请求的分页游标</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 历史截至当日服务窗文章数
+    /**
+     * <p>历史截至当日服务窗文章数</p>
+     */
     @NameInMap("publisherArticleCntStd")
     public String publisherArticleCntStd;
 
-    // 历史截至当日服务窗文章阅读数
+    /**
+     * <p>历史截至当日服务窗文章阅读数</p>
+     */
     @NameInMap("publisherArticlePvCntStd")
     public String publisherArticlePvCntStd;
 
-    // 阅读量最高的5个文章
+    /**
+     * <p>阅读量最高的5个文章</p>
+     */
     @NameInMap("publisherArticlePvTop5")
     public java.util.List<GetPublisherSummaryResponseBodyPublisherArticlePvTop5> publisherArticlePvTop5;
 
-    // 历史截至当日服务窗数
+    /**
+     * <p>历史截至当日服务窗数</p>
+     */
     @NameInMap("publisherCntStd")
     public String publisherCntStd;
 
@@ -94,19 +108,27 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
     }
 
     public static class GetPublisherSummaryResponseBodyData extends TeaModel {
-        // 历史截至当日服务窗文章数
+        /**
+         * <p>历史截至当日服务窗文章数</p>
+         */
         @NameInMap("publisherArticleCntStd")
         public String publisherArticleCntStd;
 
-        // 历史截至当日服务窗文章阅读数
+        /**
+         * <p>历史截至当日服务窗文章阅读数</p>
+         */
         @NameInMap("publisherArticlePvCntStd")
         public String publisherArticlePvCntStd;
 
-        // 服务窗名称
+        /**
+         * <p>服务窗名称</p>
+         */
         @NameInMap("publisherName")
         public String publisherName;
 
-        // 服务窗unionId
+        /**
+         * <p>服务窗unionId</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -150,7 +172,9 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
     }
 
     public static class GetPublisherSummaryResponseBodyPublisherArticlePvTop5 extends TeaModel {
-        // 文章名称
+        /**
+         * <p>文章名称</p>
+         */
         @NameInMap("name")
         public String name;
 

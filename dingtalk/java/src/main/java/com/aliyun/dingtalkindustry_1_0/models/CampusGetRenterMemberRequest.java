@@ -4,11 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusGetRenterMemberRequest extends TeaModel {
-    // 租客id
+    /**
+     * <p>租客id</p>
+     */
     @NameInMap("renterId")
     public Long renterId;
 
-    // 用户ID
+    /**
+     * <p>用户ID</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

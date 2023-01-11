@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrderResponseBody extends TeaModel {
-    // 订单号
+    /**
+     * <p>订单号</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 

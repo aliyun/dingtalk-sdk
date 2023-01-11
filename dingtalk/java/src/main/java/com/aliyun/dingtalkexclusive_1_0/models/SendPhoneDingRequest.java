@@ -4,11 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendPhoneDingRequest extends TeaModel {
-    // 消息内容
+    /**
+     * <p>消息内容</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 接收DING消息的用户列表
+    /**
+     * <p>接收DING消息的用户列表</p>
+     */
     @NameInMap("userids")
     public java.util.List<String> userids;
 

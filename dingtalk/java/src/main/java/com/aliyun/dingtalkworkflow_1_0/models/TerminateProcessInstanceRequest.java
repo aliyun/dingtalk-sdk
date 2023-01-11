@@ -4,25 +4,33 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class TerminateProcessInstanceRequest extends TeaModel {
-    // 是否通过系统操作：
-    // 
-    // true：由系统直接终止
-    // 
-    // false：由指定的操作者终止
+    /**
+     * <p>是否通过系统操作：</p>
+     * <br>
+     * <p>true：由系统直接终止</p>
+     * <br>
+     * <p>false：由指定的操作者终止</p>
+     */
     @NameInMap("isSystem")
     public Boolean isSystem;
 
-    // 操作人的userid。
-    // 
-    // 当is_system为false时，该参数必传。
+    /**
+     * <p>操作人的userid。</p>
+     * <br>
+     * <p>当is_system为false时，该参数必传。</p>
+     */
     @NameInMap("operatingUserId")
     public String operatingUserId;
 
-    // 审批实例ID，可通过调用获取审批实例ID列表接口获取。
+    /**
+     * <p>审批实例ID，可通过调用获取审批实例ID列表接口获取。</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // 终止说明。
+    /**
+     * <p>终止说明。</p>
+     */
     @NameInMap("remark")
     public String remark;
 

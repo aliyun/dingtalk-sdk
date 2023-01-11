@@ -4,63 +4,93 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotMessageRequest extends TeaModel {
-    // 是否@全员
+    /**
+     * <p>是否@全员</p>
+     */
     @NameInMap("atAll")
     public Boolean atAll;
 
-    // @人的appuid列表
+    /**
+     * <p>@人的appuid列表</p>
+     */
     @NameInMap("atAppUids")
     public java.util.List<String> atAppUids;
 
-    // @人的手机号列表
+    /**
+     * <p>@人的手机号列表</p>
+     */
     @NameInMap("atMobiles")
     public java.util.List<String> atMobiles;
 
-    // @人的unionid列表
+    /**
+     * <p>@人的unionid列表</p>
+     */
     @NameInMap("atUnionIds")
     public java.util.List<String> atUnionIds;
 
-    // @人的userid列表
+    /**
+     * <p>@人的userid列表</p>
+     */
     @NameInMap("atUsers")
     public java.util.List<String> atUsers;
 
-    // 租户channel
+    /**
+     * <p>租户channel</p>
+     */
     @NameInMap("channel")
     public String channel;
 
-    // 消息模板内容替换参数，多媒体类型
+    /**
+     * <p>消息模板内容替换参数，多媒体类型</p>
+     */
     @NameInMap("msgMediaIdParamMap")
     public java.util.Map<String, ?> msgMediaIdParamMap;
 
-    // 消息模板内容替换参数，普通文本类型
+    /**
+     * <p>消息模板内容替换参数，普通文本类型</p>
+     */
     @NameInMap("msgParamMap")
     public java.util.Map<String, ?> msgParamMap;
 
-    // 消息模板id
+    /**
+     * <p>消息模板id</p>
+     */
     @NameInMap("msgTemplateId")
     public String msgTemplateId;
 
-    // 消息接收人appuid列表
+    /**
+     * <p>消息接收人appuid列表</p>
+     */
     @NameInMap("receiverAppUids")
     public java.util.List<String> receiverAppUids;
 
-    // 消息接收人手机号列表
+    /**
+     * <p>消息接收人手机号列表</p>
+     */
     @NameInMap("receiverMobiles")
     public java.util.List<String> receiverMobiles;
 
-    // 消息接收人unionId列表
+    /**
+     * <p>消息接收人unionId列表</p>
+     */
     @NameInMap("receiverUnionIds")
     public java.util.List<String> receiverUnionIds;
 
-    // 消息接收人userId列表
+    /**
+     * <p>消息接收人userId列表</p>
+     */
     @NameInMap("receiverUserIds")
     public java.util.List<String> receiverUserIds;
 
-    // 用于发送卡片的机器人编码，与场景群模板中的机器人编码保持一致
+    /**
+     * <p>用于发送卡片的机器人编码，与场景群模板中的机器人编码保持一致</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    // 会话id
+    /**
+     * <p>会话id</p>
+     */
     @NameInMap("targetOpenConversationId")
     public String targetOpenConversationId;
 

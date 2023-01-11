@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportCustomerDetailResponseBody extends TeaModel {
-    // 页码
+    /**
+     * <p>页码</p>
+     */
     @NameInMap("currentPage")
     public Long currentPage;
 
-    // 每页大小
+    /**
+     * <p>每页大小</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 数据列表
+    /**
+     * <p>数据列表</p>
+     */
     @NameInMap("records")
     public java.util.List<ReportCustomerDetailResponseBodyRecords> records;
 
-    // 总数目
+    /**
+     * <p>总数目</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -58,35 +66,51 @@ public class ReportCustomerDetailResponseBody extends TeaModel {
     }
 
     public static class ReportCustomerDetailResponseBodyRecords extends TeaModel {
-        // at机器人消息数
+        /**
+         * <p>at机器人消息数</p>
+         */
         @NameInMap("atRobotCnt")
         public Long atRobotCnt;
 
-        // 客户名称
+        /**
+         * <p>客户名称</p>
+         */
         @NameInMap("customerName")
         public String customerName;
 
-        // 群名称
+        /**
+         * <p>群名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 是否登录钉钉
+        /**
+         * <p>是否登录钉钉</p>
+         */
         @NameInMap("hasLogin")
         public Boolean hasLogin;
 
-        // 是否打开群
+        /**
+         * <p>是否打开群</p>
+         */
         @NameInMap("hasOpenConv")
         public Boolean hasOpenConv;
 
-        // 发送消息数
+        /**
+         * <p>发送消息数</p>
+         */
         @NameInMap("sendMsgCnt")
         public Long sendMsgCnt;
 
-        // 开放用户ID
+        /**
+         * <p>开放用户ID</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 用户ID
+        /**
+         * <p>用户ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -4,35 +4,51 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class InstallRobotToOrgRequest extends TeaModel {
-    // 简介
+    /**
+     * <p>简介</p>
+     */
     @NameInMap("brief")
     public String brief;
 
-    // 描述
+    /**
+     * <p>描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 机器人meidaId
+    /**
+     * <p>机器人meidaId</p>
+     */
     @NameInMap("icon")
     public String icon;
 
-    // 机器人名称
+    /**
+     * <p>机器人名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 消息回调验证token
+    /**
+     * <p>消息回调验证token</p>
+     */
     @NameInMap("outgoingToken")
     public String outgoingToken;
 
-    // 消息回调地址
+    /**
+     * <p>消息回调地址</p>
+     */
     @NameInMap("outgoingUrl")
     public String outgoingUrl;
 
-    // 预览图mediaId
+    /**
+     * <p>预览图mediaId</p>
+     */
     @NameInMap("previewMediaId")
     public String previewMediaId;
 
-    // 机器人编码
+    /**
+     * <p>机器人编码</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

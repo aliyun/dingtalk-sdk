@@ -4,46 +4,64 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RedirectTaskRequest extends TeaModel {
-    // 应用ID
+    /**
+     * <p>应用ID</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 是否应用管理员进行转交; ●
-    // 可选项 : y/n
-    // 
-    // ●
-    // y,则userId必须传应用管理员工号，或者yida_pub_account
-    // 
-    // ●
-    // n, userId必须传任务的当前执行人
+    /**
+     * <p>是否应用管理员进行转交; ●</p>
+     * <p>可选项 : y/n</p>
+     * <br>
+     * <p>●</p>
+     * <p>y,则userId必须传应用管理员工号，或者yida_pub_account</p>
+     * <br>
+     * <p>●</p>
+     * <p>n, userId必须传任务的当前执行人</p>
+     */
     @NameInMap("byManager")
     public String byManager;
 
-    // 语言环境; 可选值：zh_CN/en_US
+    /**
+     * <p>语言环境; 可选值：zh_CN/en_US</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 新的任务处理人工号
+    /**
+     * <p>新的任务处理人工号</p>
+     */
     @NameInMap("nowActionExecutorId")
     public String nowActionExecutorId;
 
-    // 实例ID
+    /**
+     * <p>实例ID</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // 转交备注
+    /**
+     * <p>转交备注</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 验权token; 在应用数据中获取。
+    /**
+     * <p>验权token; 在应用数据中获取。</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 任务ID
+    /**
+     * <p>任务ID</p>
+     */
     @NameInMap("taskId")
     public Long taskId;
 
-    // 钉钉的userId
+    /**
+     * <p>钉钉的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

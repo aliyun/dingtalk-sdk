@@ -4,11 +4,15 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResidentMemberRequest extends TeaModel {
-    // 人员更新信息
+    /**
+     * <p>人员更新信息</p>
+     */
     @NameInMap("residentUpdateInfo")
     public UpdateResidentMemberRequestResidentUpdateInfo residentUpdateInfo;
 
-    // unionId
+    /**
+     * <p>unionId</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -34,31 +38,45 @@ public class UpdateResidentMemberRequest extends TeaModel {
     }
 
     public static class UpdateResidentMemberRequestResidentUpdateInfo extends TeaModel {
-        // 部门id
+        /**
+         * <p>部门id</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 是否是产权人
+        /**
+         * <p>是否是产权人</p>
+         */
         @NameInMap("isPropertyOwner")
         public Boolean isPropertyOwner;
 
-        // 人员扩展信息，目前只有租客的起止时间
+        /**
+         * <p>人员扩展信息，目前只有租客的起止时间</p>
+         */
         @NameInMap("memberDeptExtension")
         public java.util.Map<String, String> memberDeptExtension;
 
-        // 姓名
+        /**
+         * <p>姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 旧部门id
+        /**
+         * <p>旧部门id</p>
+         */
         @NameInMap("oldDeptId")
         public Long oldDeptId;
 
-        // 身份，1：业主，2：租客，3：亲友
+        /**
+         * <p>身份，1：业主，2：租客，3：亲友</p>
+         */
         @NameInMap("relateType")
         public String relateType;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

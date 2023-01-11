@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushOfficialAccountMessageRequest extends TeaModel {
-    // 消息类型
+    /**
+     * <p>消息类型</p>
+     */
     @NameInMap("msgKey")
     public String msgKey;
 
-    // 消息模板替换参数
+    /**
+     * <p>消息模板替换参数</p>
+     */
     @NameInMap("msgParam")
     public String msgParam;
 
-    // 用户id(在服务窗对应虚拟企业中的用户id)
+    /**
+     * <p>用户id(在服务窗对应虚拟企业中的用户id)</p>
+     */
     @NameInMap("userId")
     public String userId;
 

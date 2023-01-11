@@ -4,17 +4,21 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAbnormalOperationResponseBody extends TeaModel {
-    // 返回结果
-    // DEPARTMENT:列入决定机关
-    // IN_REASON 列入原因
-    // OUT_DATE:移出日期
-    // OUT_DEPARTMENT:移出决定机关
-    // OUT_REASON:移出原因
-    // IN_DATE:列入日期
+    /**
+     * <p>返回结果</p>
+     * <p>DEPARTMENT:列入决定机关</p>
+     * <p>IN_REASON 列入原因</p>
+     * <p>OUT_DATE:移出日期</p>
+     * <p>OUT_DEPARTMENT:移出决定机关</p>
+     * <p>OUT_REASON:移出原因</p>
+     * <p>IN_DATE:列入日期</p>
+     */
     @NameInMap("data")
     public String data;
 
-    // 总条数
+    /**
+     * <p>总条数</p>
+     */
     @NameInMap("total")
     public Long total;
 

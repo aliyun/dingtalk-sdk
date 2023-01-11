@@ -4,31 +4,45 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOrgTodoByUserRequest extends TeaModel {
-    // 查询从计划完成时间开始
+    /**
+     * <p>查询从计划完成时间开始</p>
+     */
     @NameInMap("fromDueTime")
     public Long fromDueTime;
 
-    // 待办完成状态。
+    /**
+     * <p>待办完成状态。</p>
+     */
     @NameInMap("isDone")
     public Boolean isDone;
 
-    // 每页数量。
+    /**
+     * <p>每页数量。</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
+    /**
+     * <p>分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
+    /**
+     * <p>查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]</p>
+     */
     @NameInMap("roleTypes")
     public java.util.List<java.util.List<String>> roleTypes;
 
-    // 待办标题
+    /**
+     * <p>待办标题</p>
+     */
     @NameInMap("subject")
     public String subject;
 
-    // 查询到计划完成时间结束
+    /**
+     * <p>查询到计划完成时间结束</p>
+     */
     @NameInMap("toDueTime")
     public Long toDueTime;
 

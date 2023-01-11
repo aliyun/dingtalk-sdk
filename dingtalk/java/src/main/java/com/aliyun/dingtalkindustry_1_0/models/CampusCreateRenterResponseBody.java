@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusCreateRenterResponseBody extends TeaModel {
-    // 租客ID
+    /**
+     * <p>租客ID</p>
+     */
     @NameInMap("renterId")
     public String renterId;
 

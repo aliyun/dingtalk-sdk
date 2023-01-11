@@ -4,35 +4,49 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTeamRequest extends TeaModel {
-    // 小组封面。
+    /**
+     * <p>小组封面。</p>
+     */
     @NameInMap("cover")
     public String cover;
 
-    // 小组介绍。
+    /**
+     * <p>小组介绍。</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 小组图标。
+    /**
+     * <p>小组图标。</p>
+     */
     @NameInMap("icon")
     public String icon;
 
-    // 小组成员列表。
+    /**
+     * <p>小组成员列表。</p>
+     */
     @NameInMap("members")
     public java.util.List<CreateTeamRequestMembers> members;
 
-    // 小组名称。
+    /**
+     * <p>小组名称。</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 操作人unionId。
+    /**
+     * <p>操作人unionId。</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 小组类型。
-    // 0-默认；
-    // 1-部门；
-    // 2-项目组；
-    // 3-兴趣小组。
+    /**
+     * <p>小组类型。</p>
+     * <p>0-默认；</p>
+     * <p>1-部门；</p>
+     * <p>2-项目组；</p>
+     * <p>3-兴趣小组。</p>
+     */
     @NameInMap("teamType")
     public Integer teamType;
 
@@ -98,17 +112,23 @@ public class CreateTeamRequest extends TeaModel {
     }
 
     public static class CreateTeamRequestMembers extends TeaModel {
-        // 成员unionId。
+        /**
+         * <p>成员unionId。</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 成员类型。
-        // 1-群；2-用户；3-组织；4-部门；5-虚拟组织；6-通讯录角色组。
+        /**
+         * <p>成员类型。</p>
+         * <p>1-群；2-用户；3-组织；4-部门；5-虚拟组织；6-通讯录角色组。</p>
+         */
         @NameInMap("memberType")
         public Integer memberType;
 
-        // 成员角色。
-        // 0-无权限；1-只读；2-只读/下载；3-编辑；4-管理员；5-所有者。
+        /**
+         * <p>成员角色。</p>
+         * <p>0-无权限；1-只读；2-只读/下载；3-编辑；4-管理员；5-所有者。</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

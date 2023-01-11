@@ -4,11 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySingleGroupRequest extends TeaModel {
-    // 群成员列表。
+    /**
+     * <p>群成员列表。</p>
+     */
     @NameInMap("groupMembers")
     public java.util.List<QuerySingleGroupRequestGroupMembers> groupMembers;
 
-    // 群模版Id。
+    /**
+     * <p>群模版Id。</p>
+     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
@@ -34,11 +38,15 @@ public class QuerySingleGroupRequest extends TeaModel {
     }
 
     public static class QuerySingleGroupRequestGroupMembers extends TeaModel {
-        // 钉外用户在业务系统内的唯一标识。
+        /**
+         * <p>钉外用户在业务系统内的唯一标识。</p>
+         */
         @NameInMap("appUserId")
         public String appUserId;
 
-        // 钉内用户userId。
+        /**
+         * <p>钉内用户userId。</p>
+         */
         @NameInMap("userId")
         public String userId;
 

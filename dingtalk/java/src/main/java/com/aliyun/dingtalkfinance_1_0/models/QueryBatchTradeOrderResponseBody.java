@@ -4,7 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBatchTradeOrderResponseBody extends TeaModel {
-    // 批量交易订单VO
+    /**
+     * <p>批量交易订单VO</p>
+     */
     @NameInMap("batchTradeOrderVOs")
     public java.util.List<QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs> batchTradeOrderVOs;
 
@@ -22,59 +24,87 @@ public class QueryBatchTradeOrderResponseBody extends TeaModel {
     }
 
     public static class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs extends TeaModel {
-        // 支付宝批次订单号
+        /**
+         * <p>支付宝批次订单号</p>
+         */
         @NameInMap("alipayTransId")
         public String alipayTransId;
 
-        // 明细处理失败的支付汇总金额
+        /**
+         * <p>明细处理失败的支付汇总金额</p>
+         */
         @NameInMap("failAmount")
         public String failAmount;
 
-        // 失败笔数
+        /**
+         * <p>失败笔数</p>
+         */
         @NameInMap("failCount")
         public Long failCount;
 
-        // 失败原因
+        /**
+         * <p>失败原因</p>
+         */
         @NameInMap("failReason")
         public String failReason;
 
-        // 批次完成交易时间
+        /**
+         * <p>批次完成交易时间</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        // 批次受理交易时间
+        /**
+         * <p>批次受理交易时间</p>
+         */
         @NameInMap("gmtSubmit")
         public String gmtSubmit;
 
-        // 批次号
+        /**
+         * <p>批次号</p>
+         */
         @NameInMap("outBatchNo")
         public String outBatchNo;
 
-        // 付款人staffId
+        /**
+         * <p>付款人staffId</p>
+         */
         @NameInMap("payerStaffId")
         public String payerStaffId;
 
-        // 付款方需要支付的金额（元）
+        /**
+         * <p>付款方需要支付的金额（元）</p>
+         */
         @NameInMap("paymentAmount")
         public String paymentAmount;
 
-        // 支付币种
+        /**
+         * <p>支付币种</p>
+         */
         @NameInMap("paymentCurrency")
         public String paymentCurrency;
 
-        // 状态
+        /**
+         * <p>状态</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 成功金额（元）
+        /**
+         * <p>成功金额（元）</p>
+         */
         @NameInMap("successAmount")
         public String successAmount;
 
-        // 成功笔数
+        /**
+         * <p>成功笔数</p>
+         */
         @NameInMap("successCount")
         public Long successCount;
 
-        // 批次的总金额（元）
+        /**
+         * <p>批次的总金额（元）</p>
+         */
         @NameInMap("totalAmount")
         public String totalAmount;
 

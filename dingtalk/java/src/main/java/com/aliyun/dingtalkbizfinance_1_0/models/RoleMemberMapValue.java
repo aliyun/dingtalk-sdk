@@ -4,11 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class RoleMemberMapValue extends TeaModel {
-    // 角色唯一标识
+    /**
+     * <p>角色唯一标识</p>
+     */
     @NameInMap("roleCode")
     public String roleCode;
 
-    // 成员信息列表
+    /**
+     * <p>成员信息列表</p>
+     */
     @NameInMap("memberList")
     public java.util.List<RoleMemberMapValueMemberList> memberList;
 
@@ -34,15 +38,21 @@ public class RoleMemberMapValue extends TeaModel {
     }
 
     public static class RoleMemberMapValueMemberList extends TeaModel {
-        // 用户ID
+        /**
+         * <p>用户ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 昵称
+        /**
+         * <p>昵称</p>
+         */
         @NameInMap("nick")
         public String nick;
 
-        // 头像URL
+        /**
+         * <p>头像URL</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 

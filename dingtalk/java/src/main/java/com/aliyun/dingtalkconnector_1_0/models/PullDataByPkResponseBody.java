@@ -4,31 +4,45 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class PullDataByPkResponseBody extends TeaModel {
-    // 创建数据的应用id。
+    /**
+     * <p>创建数据的应用id。</p>
+     */
     @NameInMap("dataCreateAppId")
     public String dataCreateAppId;
 
-    // 创建数据的应用类型，isv应用为premium_microapp。
+    /**
+     * <p>创建数据的应用类型，isv应用为premium_microapp。</p>
+     */
     @NameInMap("dataCreateAppType")
     public String dataCreateAppType;
 
-    // 数据创建时间。
+    /**
+     * <p>数据创建时间。</p>
+     */
     @NameInMap("dataGmtCreate")
     public Long dataGmtCreate;
 
-    // 数据最后修改时间。
+    /**
+     * <p>数据最后修改时间。</p>
+     */
     @NameInMap("dataGmtModified")
     public Long dataGmtModified;
 
-    // 最后修改数据的应用id。
+    /**
+     * <p>最后修改数据的应用id。</p>
+     */
     @NameInMap("dataModifiedAppId")
     public String dataModifiedAppId;
 
-    // 最后修改数据的应用类型，取值同dataCreateAppType。
+    /**
+     * <p>最后修改数据的应用类型，取值同dataCreateAppType。</p>
+     */
     @NameInMap("dataModifiedAppType")
     public String dataModifiedAppType;
 
-    // 数据完整内容。
+    /**
+     * <p>数据完整内容。</p>
+     */
     @NameInMap("jsonData")
     public String jsonData;
 

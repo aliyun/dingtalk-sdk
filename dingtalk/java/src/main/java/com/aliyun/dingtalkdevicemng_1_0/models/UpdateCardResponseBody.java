@@ -7,7 +7,9 @@ public class UpdateCardResponseBody extends TeaModel {
     @NameInMap("result")
     public Boolean result;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

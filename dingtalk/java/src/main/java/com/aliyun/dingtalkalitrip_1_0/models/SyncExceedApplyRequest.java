@@ -4,27 +4,39 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncExceedApplyRequest extends TeaModel {
-    // 商旅超标审批单id
+    /**
+     * <p>商旅超标审批单id</p>
+     */
     @NameInMap("applyId")
     public String applyId;
 
-    // 企业id
+    /**
+     * <p>企业id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 审批意见
+    /**
+     * <p>审批意见</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 审批单状态 1同意2拒绝
+    /**
+     * <p>审批单状态 1同意2拒绝</p>
+     */
     @NameInMap("status")
     public Integer status;
 
-    // 第三方流程实例id
+    /**
+     * <p>第三方流程实例id</p>
+     */
     @NameInMap("thirdpartyFlowId")
     public String thirdpartyFlowId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

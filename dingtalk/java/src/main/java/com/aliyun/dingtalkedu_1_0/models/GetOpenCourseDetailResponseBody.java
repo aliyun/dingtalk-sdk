@@ -4,39 +4,57 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOpenCourseDetailResponseBody extends TeaModel {
-    // 课程id
+    /**
+     * <p>课程id</p>
+     */
     @NameInMap("courseId")
     public String courseId;
 
-    // 课程类型: 0-直播 2-视频内容
+    /**
+     * <p>课程类型: 0-直播 2-视频内容</p>
+     */
     @NameInMap("courseType")
     public Long courseType;
 
-    // 封面图片地址
+    /**
+     * <p>封面图片地址</p>
+     */
     @NameInMap("coverUrl")
     public String coverUrl;
 
-    // 课程介绍
+    /**
+     * <p>课程介绍</p>
+     */
     @NameInMap("introduction")
     public String introduction;
 
-    // 发布详情model
+    /**
+     * <p>发布详情model</p>
+     */
     @NameInMap("pushModel")
     public GetOpenCourseDetailResponseBodyPushModel pushModel;
 
-    // 课程开始时间
+    /**
+     * <p>课程开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 老师的userId
+    /**
+     * <p>老师的userId</p>
+     */
     @NameInMap("teacherId")
     public String teacherId;
 
-    // 老师名称
+    /**
+     * <p>老师名称</p>
+     */
     @NameInMap("teacherName")
     public String teacherName;
 
-    // 课程标题
+    /**
+     * <p>课程标题</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -118,11 +136,15 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
     }
 
     public static class GetOpenCourseDetailResponseBodyPushModel extends TeaModel {
-        // 参与学校的名称列表
+        /**
+         * <p>参与学校的名称列表</p>
+         */
         @NameInMap("pushOrgNameList")
         public java.util.List<String> pushOrgNameList;
 
-        // 参与角色的名称列表
+        /**
+         * <p>参与角色的名称列表</p>
+         */
         @NameInMap("pushRoleNameList")
         public java.util.List<String> pushRoleNameList;
 

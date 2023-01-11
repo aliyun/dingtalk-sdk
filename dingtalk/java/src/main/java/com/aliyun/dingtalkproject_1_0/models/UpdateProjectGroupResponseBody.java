@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateProjectGroupResponseBody extends TeaModel {
-    // 结果对象
+    /**
+     * <p>结果对象</p>
+     */
     @NameInMap("result")
     public UpdateProjectGroupResponseBodyResult result;
 
@@ -22,7 +24,9 @@ public class UpdateProjectGroupResponseBody extends TeaModel {
     }
 
     public static class UpdateProjectGroupResponseBodyResult extends TeaModel {
-        // 是否成功
+        /**
+         * <p>是否成功</p>
+         */
         @NameInMap("ok")
         public Boolean ok;
 

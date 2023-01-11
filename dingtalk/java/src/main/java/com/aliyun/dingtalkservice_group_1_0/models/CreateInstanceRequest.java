@@ -4,31 +4,45 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInstanceRequest extends TeaModel {
-    // 渠道
+    /**
+     * <p>渠道</p>
+     */
     @NameInMap("channel")
     public String channel;
 
-    // 外部业务ID，由英文、数字构成
+    /**
+     * <p>外部业务ID，由英文、数字构成</p>
+     */
     @NameInMap("externalBizId")
     public String externalBizId;
 
-    // 表单CODE,客户表单：DING_CUSTOMER；联系人表单：DING_CONTACT
+    /**
+     * <p>表单CODE,客户表单：DING_CUSTOMER；联系人表单：DING_CONTACT</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 
-    // 表单数据，JSON格式
+    /**
+     * <p>表单数据，JSON格式</p>
+     */
     @NameInMap("formDataList")
     public String formDataList;
 
-    // 开放团队ID，从服务群后台ID信息中获取
+    /**
+     * <p>开放团队ID，从服务群后台ID信息中获取</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
-    // 拥有人unionId
+    /**
+     * <p>拥有人unionId</p>
+     */
     @NameInMap("ownerUnionId")
     public String ownerUnionId;
 

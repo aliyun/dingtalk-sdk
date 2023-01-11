@@ -4,19 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateRelationDatasRequest extends TeaModel {
-    // 操作人userId
+    /**
+     * <p>操作人userId</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
-    // 关系数据列表。
+    /**
+     * <p>关系数据列表。</p>
+     */
     @NameInMap("relationList")
     public java.util.List<BatchUpdateRelationDatasRequestRelationList> relationList;
 
-    // 关系类型。
+    /**
+     * <p>关系类型。</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 
-    // 是否跳过查重，默认不跳过。
+    /**
+     * <p>是否跳过查重，默认不跳过。</p>
+     */
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 
@@ -58,15 +66,21 @@ public class BatchUpdateRelationDatasRequest extends TeaModel {
     }
 
     public static class BatchUpdateRelationDatasRequestRelationListBizDataList extends TeaModel {
-        // 模型字段extendValue。
+        /**
+         * <p>模型字段extendValue。</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
-        // 模型字段id。
+        /**
+         * <p>模型字段id。</p>
+         */
         @NameInMap("key")
         public String key;
 
-        // 模型字段value。
+        /**
+         * <p>模型字段value。</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -102,15 +116,21 @@ public class BatchUpdateRelationDatasRequest extends TeaModel {
     }
 
     public static class BatchUpdateRelationDatasRequestRelationList extends TeaModel {
-        // 关系模型数据。
+        /**
+         * <p>关系模型数据。</p>
+         */
         @NameInMap("bizDataList")
         public java.util.List<BatchUpdateRelationDatasRequestRelationListBizDataList> bizDataList;
 
-        // 扩展业务字段。
+        /**
+         * <p>扩展业务字段。</p>
+         */
         @NameInMap("bizExtMap")
         public java.util.Map<String, String> bizExtMap;
 
-        // 关系id
+        /**
+         * <p>关系id</p>
+         */
         @NameInMap("relationId")
         public String relationId;
 

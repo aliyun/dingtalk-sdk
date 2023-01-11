@@ -4,75 +4,111 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class DentryModel extends TeaModel {
-    // 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
+    /**
+     * <p>内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。</p>
+     */
     @NameInMap("contentType")
     public String contentType;
 
-    // 创建时间。
+    /**
+     * <p>创建时间。</p>
+     */
     @NameInMap("createdTime")
     public Long createdTime;
 
-    // 创建者。
+    /**
+     * <p>创建者。</p>
+     */
     @NameInMap("creator")
     public DentryModelCreator creator;
 
-    // 节点id。
+    /**
+     * <p>节点id。</p>
+     */
     @NameInMap("dentryId")
     public String dentryId;
 
-    // 节点类型。file-文件；folder-文件夹。
+    /**
+     * <p>节点类型。file-文件；folder-文件夹。</p>
+     */
     @NameInMap("dentryType")
     public String dentryType;
 
-    // 节点全局唯一标识id。
+    /**
+     * <p>节点全局唯一标识id。</p>
+     */
     @NameInMap("dentryUuid")
     public String dentryUuid;
 
-    // 文档docKey，用于标识一篇钉钉文档的key。只有内容类型为alidoc的才会有值。
+    /**
+     * <p>文档docKey，用于标识一篇钉钉文档的key。只有内容类型为alidoc的才会有值。</p>
+     */
     @NameInMap("docKey")
     public String docKey;
 
-    // 文件后缀名。
+    /**
+     * <p>文件后缀名。</p>
+     */
     @NameInMap("extension")
     public String extension;
 
-    // 是否有子节点。
+    /**
+     * <p>是否有子节点。</p>
+     */
     @NameInMap("hasChildren")
     public Boolean hasChildren;
 
-    // 快捷方式类型的节点，其指向的原始数据信息。
+    /**
+     * <p>快捷方式类型的节点，其指向的原始数据信息。</p>
+     */
     @NameInMap("linkSourceInfo")
     public LinkSourceInfo linkSourceInfo;
 
-    // 节点名称。
+    /**
+     * <p>节点名称。</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 节点的路径。
+    /**
+     * <p>节点的路径。</p>
+     */
     @NameInMap("path")
     public String path;
 
-    // 知识库信息。
+    /**
+     * <p>知识库信息。</p>
+     */
     @NameInMap("space")
     public SpaceModel space;
 
-    // 知识库id。
+    /**
+     * <p>知识库id。</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
-    // 更新时间。
+    /**
+     * <p>更新时间。</p>
+     */
     @NameInMap("updatedTime")
     public Long updatedTime;
 
-    // 更新人。
+    /**
+     * <p>更新人。</p>
+     */
     @NameInMap("updater")
     public DentryModelUpdater updater;
 
-    // 节点访问url。
+    /**
+     * <p>节点访问url。</p>
+     */
     @NameInMap("url")
     public String url;
 
-    // 访问者对当前节点的权限等信息。
+    /**
+     * <p>访问者对当前节点的权限等信息。</p>
+     */
     @NameInMap("visitorInfo")
     public DentryModelVisitorInfo visitorInfo;
 
@@ -226,11 +262,15 @@ public class DentryModel extends TeaModel {
     }
 
     public static class DentryModelCreator extends TeaModel {
-        // 用户名称。
+        /**
+         * <p>用户名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户unionId。
+        /**
+         * <p>用户unionId。</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -258,11 +298,15 @@ public class DentryModel extends TeaModel {
     }
 
     public static class DentryModelUpdater extends TeaModel {
-        // 用户名称。
+        /**
+         * <p>用户名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户unionId。
+        /**
+         * <p>用户unionId。</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -290,15 +334,21 @@ public class DentryModel extends TeaModel {
     }
 
     public static class DentryModelVisitorInfo extends TeaModel {
-        // 节点的操作列表。
+        /**
+         * <p>节点的操作列表。</p>
+         */
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
 
-        // 当前用户对这个空间的访问角色。
+        /**
+         * <p>当前用户对这个空间的访问角色。</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        // 空间的操作列表。
+        /**
+         * <p>空间的操作列表。</p>
+         */
         @NameInMap("spaceActions")
         public java.util.List<String> spaceActions;
 

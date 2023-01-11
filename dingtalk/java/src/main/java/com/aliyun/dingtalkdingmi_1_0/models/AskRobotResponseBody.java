@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class AskRobotResponseBody extends TeaModel {
-    // 答案的json string
+    /**
+     * <p>答案的json string</p>
+     */
     @NameInMap("result")
     public String result;
 

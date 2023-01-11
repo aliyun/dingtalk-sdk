@@ -4,19 +4,27 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditGoodsRequest extends TeaModel {
-    // 编辑数据
+    /**
+     * <p>编辑数据</p>
+     */
     @NameInMap("data")
     public EditGoodsRequestData data;
 
-    // 数据类型，固定填写154
+    /**
+     * <p>数据类型，固定填写154</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
-    // 数据id，不填或者填0为新增数据
+    /**
+     * <p>数据id，不填或者填0为新增数据</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
-    // 时间戳
+    /**
+     * <p>时间戳</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -58,119 +66,177 @@ public class EditGoodsRequest extends TeaModel {
     }
 
     public static class EditGoodsRequestData extends TeaModel {
-        // 上架时间
+        /**
+         * <p>上架时间</p>
+         */
         @NameInMap("addedtime")
         public String addedtime;
 
-        // 成本价格
+        /**
+         * <p>成本价格</p>
+         */
         @NameInMap("cbprice")
         public String cbprice;
 
-        // 基准产品
+        /**
+         * <p>基准产品</p>
+         */
         @NameInMap("cp_parentid")
         public String cpParentid;
 
-        // 产品产地
+        /**
+         * <p>产品产地</p>
+         */
         @NameInMap("cparea")
         public String cparea;
 
-        // 条形码
+        /**
+         * <p>条形码</p>
+         */
         @NameInMap("cpbarcode")
         public String cpbarcode;
 
-        // 产品品牌
+        /**
+         * <p>产品品牌</p>
+         */
         @NameInMap("cpbrand")
         public String cpbrand;
 
-        // 产品说明
+        /**
+         * <p>产品说明</p>
+         */
         @NameInMap("cpcontent")
         public String cpcontent;
 
-        // 产品规格
+        /**
+         * <p>产品规格</p>
+         */
         @NameInMap("cpguige")
         public String cpguige;
 
-        // 产品图片
+        /**
+         * <p>产品图片</p>
+         */
         @NameInMap("cpimg")
         public String cpimg;
 
-        // 产品名称
+        /**
+         * <p>产品名称</p>
+         */
         @NameInMap("cpname")
         public String cpname;
 
-        // 产品编号
+        /**
+         * <p>产品编号</p>
+         */
         @NameInMap("cpno")
         public String cpno;
 
-        // 产品备注
+        /**
+         * <p>产品备注</p>
+         */
         @NameInMap("cpremark")
         public String cpremark;
 
-        // 产品型号
+        /**
+         * <p>产品型号</p>
+         */
         @NameInMap("cptype")
         public String cptype;
 
-        // 产品单位
+        /**
+         * <p>产品单位</p>
+         */
         @NameInMap("cpunit")
         public String cpunit;
 
-        // 产品重量
+        /**
+         * <p>产品重量</p>
+         */
         @NameInMap("cpweight")
         public String cpweight;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        // 默认供应商
+        /**
+         * <p>默认供应商</p>
+         */
         @NameInMap("gysid")
         public String gysid;
 
-        // 批次号管理（是，否）
+        /**
+         * <p>批次号管理（是，否）</p>
+         */
         @NameInMap("ispicimanage")
         public String ispicimanage;
 
-        // 序列号管理（是，否）
+        /**
+         * <p>序列号管理（是，否）</p>
+         */
         @NameInMap("issnmanage")
         public String issnmanage;
 
-        // 是否算库存（计算，不计算，计算(按基准规格)）
+        /**
+         * <p>是否算库存（计算，不计算，计算(按基准规格)）</p>
+         */
         @NameInMap("isstock")
         public String isstock;
 
-        // 产品状态（正常，停售，下架）
+        /**
+         * <p>产品状态（正常，停售，下架）</p>
+         */
         @NameInMap("isstop")
         public String isstop;
 
-        // 零售价格
+        /**
+         * <p>零售价格</p>
+         */
         @NameInMap("preprice1")
         public String preprice1;
 
-        // 预设价格1
+        /**
+         * <p>预设价格1</p>
+         */
         @NameInMap("preprice2")
         public String preprice2;
 
-        // 预设价格2
+        /**
+         * <p>预设价格2</p>
+         */
         @NameInMap("preprice3")
         public String preprice3;
 
-        // 预设价格3
+        /**
+         * <p>预设价格3</p>
+         */
         @NameInMap("preprice4")
         public String preprice4;
 
-        // 库存下限
+        /**
+         * <p>库存下限</p>
+         */
         @NameInMap("stockdown")
         public String stockdown;
 
-        // 库存上限
+        /**
+         * <p>库存上限</p>
+         */
         @NameInMap("stockup")
         public String stockup;
 
-        // 产品类别
+        /**
+         * <p>产品类别</p>
+         */
         @NameInMap("typeid")
         public String typeid;
 
-        // 单位换算
+        /**
+         * <p>单位换算</p>
+         */
         @NameInMap("unitrate")
         public String unitrate;
 

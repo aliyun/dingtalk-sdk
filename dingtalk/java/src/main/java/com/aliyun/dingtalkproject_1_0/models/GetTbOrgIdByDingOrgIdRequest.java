@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTbOrgIdByDingOrgIdRequest extends TeaModel {
-    // 操作者userId
+    /**
+     * <p>操作者userId</p>
+     */
     @NameInMap("optUserId")
     public String optUserId;
 

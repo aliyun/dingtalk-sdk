@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class AppendRowsRequest extends TeaModel {
-    // 要追加的值
+    /**
+     * <p>要追加的值</p>
+     */
     @NameInMap("values")
     public java.util.List<java.util.List<String>> values;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

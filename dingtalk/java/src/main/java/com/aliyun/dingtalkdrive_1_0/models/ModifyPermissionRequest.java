@@ -7,11 +7,15 @@ public class ModifyPermissionRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<ModifyPermissionRequestMembers> members;
 
-    // 权限角色
+    /**
+     * <p>权限角色</p>
+     */
     @NameInMap("role")
     public String role;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -45,15 +49,21 @@ public class ModifyPermissionRequest extends TeaModel {
     }
 
     public static class ModifyPermissionRequestMembers extends TeaModel {
-        // 企业corpId
+        /**
+         * <p>企业corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 成员id
+        /**
+         * <p>成员id</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 成员类型
+        /**
+         * <p>成员类型</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 

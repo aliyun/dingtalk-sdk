@@ -4,31 +4,45 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetMicroAppScopeRequest extends TeaModel {
-    // 增加的可见部门
+    /**
+     * <p>增加的可见部门</p>
+     */
     @NameInMap("addDeptIds")
     public java.util.List<Long> addDeptIds;
 
-    // 增加的可见角色
+    /**
+     * <p>增加的可见角色</p>
+     */
     @NameInMap("addRoleIds")
     public java.util.List<Long> addRoleIds;
 
-    // 增加的可见用户
+    /**
+     * <p>增加的可见用户</p>
+     */
     @NameInMap("addUserIds")
     public java.util.List<String> addUserIds;
 
-    // 删除的可见部门
+    /**
+     * <p>删除的可见部门</p>
+     */
     @NameInMap("delDeptIds")
     public java.util.List<Long> delDeptIds;
 
-    // 删除的可见角色
+    /**
+     * <p>删除的可见角色</p>
+     */
     @NameInMap("delRoleIds")
     public java.util.List<Long> delRoleIds;
 
-    // 删除的可见用户
+    /**
+     * <p>删除的可见用户</p>
+     */
     @NameInMap("delUserIds")
     public java.util.List<String> delUserIds;
 
-    // 是否管理员可见
+    /**
+     * <p>是否管理员可见</p>
+     */
     @NameInMap("onlyAdminVisible")
     public Boolean onlyAdminVisible;
 

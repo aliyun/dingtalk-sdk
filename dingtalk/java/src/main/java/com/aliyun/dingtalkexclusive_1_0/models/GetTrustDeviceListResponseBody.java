@@ -21,31 +21,45 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
     }
 
     public static class GetTrustDeviceListResponseBodyData extends TeaModel {
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // mac地址
+        /**
+         * <p>mac地址</p>
+         */
         @NameInMap("macAddress")
         public String macAddress;
 
-        // 版本信息：Android端: Android,10，IOS端：iOS,12.0.1
+        /**
+         * <p>版本信息：Android端: Android,10，IOS端：iOS,12.0.1</p>
+         */
         @NameInMap("model")
         public String model;
 
-        // 平台类型
+        /**
+         * <p>平台类型</p>
+         */
         @NameInMap("platform")
         public String platform;
 
-        // 设备状态
+        /**
+         * <p>设备状态</p>
+         */
         @NameInMap("status")
         public Integer status;
 
-        // 设备名称
+        /**
+         * <p>设备名称</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 员工Id
+        /**
+         * <p>员工Id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

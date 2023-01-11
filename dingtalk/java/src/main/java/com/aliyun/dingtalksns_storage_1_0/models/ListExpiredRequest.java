@@ -4,15 +4,21 @@ package com.aliyun.dingtalksns_storage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListExpiredRequest extends TeaModel {
-    // 会话id
+    /**
+     * <p>会话id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 可选参数
+    /**
+     * <p>可选参数</p>
+     */
     @NameInMap("option")
     public ListExpiredRequestOption option;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -46,15 +52,19 @@ public class ListExpiredRequest extends TeaModel {
     }
 
     public static class ListExpiredRequestOption extends TeaModel {
-        // 分页大小
-        // 默认值:
-        // 	50
-        // 最大值:
-        // 	50
+        /**
+         * <p>分页大小</p>
+         * <p>默认值:</p>
+         * <p>	50</p>
+         * <p>最大值:</p>
+         * <p>	50</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
-        // 分页游标, 首次拉取不用传
+        /**
+         * <p>分页游标, 首次拉取不用传</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

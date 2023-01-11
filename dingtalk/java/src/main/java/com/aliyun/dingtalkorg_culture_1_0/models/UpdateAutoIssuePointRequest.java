@@ -4,19 +4,27 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateAutoIssuePointRequest extends TeaModel {
-    // 企业积分自动发放数量1-10000
+    /**
+     * <p>企业积分自动发放数量1-10000</p>
+     */
     @NameInMap("pointAutoNum")
     public Long pointAutoNum;
 
-    // 企业积分自动发放状态
+    /**
+     * <p>企业积分自动发放状态</p>
+     */
     @NameInMap("pointAutoState")
     public Boolean pointAutoState;
 
-    // 企业积分自动发放时间 必须为每月的1号或15号，传入1时为1号，传入15时为15号。
+    /**
+     * <p>企业积分自动发放时间 必须为每月的1号或15号，传入1时为1号，传入15时为15号。</p>
+     */
     @NameInMap("pointAutoTime")
     public Long pointAutoTime;
 
-    // 操作人userId
+    /**
+     * <p>操作人userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

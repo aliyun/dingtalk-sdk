@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOfficialAccountRobotInfoResponseBody extends TeaModel {
-    // 结果
+    /**
+     * <p>结果</p>
+     */
     @NameInMap("result")
     public String result;
 

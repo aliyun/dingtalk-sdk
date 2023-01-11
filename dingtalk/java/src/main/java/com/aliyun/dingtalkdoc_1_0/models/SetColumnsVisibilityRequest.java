@@ -4,19 +4,27 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetColumnsVisibilityRequest extends TeaModel {
-    // 要显示、隐藏的第一列的位置，从0开始
+    /**
+     * <p>要显示、隐藏的第一列的位置，从0开始</p>
+     */
     @NameInMap("column")
     public Long column;
 
-    // 要显示、隐藏的列的数量
+    /**
+     * <p>要显示、隐藏的列的数量</p>
+     */
     @NameInMap("columnCount")
     public Long columnCount;
 
-    // 可见性
+    /**
+     * <p>可见性</p>
+     */
     @NameInMap("visibility")
     public String visibility;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

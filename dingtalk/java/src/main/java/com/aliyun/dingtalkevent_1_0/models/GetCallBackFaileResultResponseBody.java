@@ -4,11 +4,15 @@ package com.aliyun.dingtalkevent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCallBackFaileResultResponseBody extends TeaModel {
-    // 推送失败的事件列表，一次最多200个。
+    /**
+     * <p>推送失败的事件列表，一次最多200个。</p>
+     */
     @NameInMap("failedList")
     public java.util.List<GetCallBackFaileResultResponseBodyFailedList> failedList;
 
-    // 是否还有推送失败的变更事件，若为true，则表示还有未回调的事件，或传入时间时范围内还有未回调的事件。
+    /**
+     * <p>是否还有推送失败的变更事件，若为true，则表示还有未回调的事件，或传入时间时范围内还有未回调的事件。</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -34,19 +38,27 @@ public class GetCallBackFaileResultResponseBody extends TeaModel {
     }
 
     public static class GetCallBackFaileResultResponseBodyFailedList extends TeaModel {
-        // 返回的事件内容
+        /**
+         * <p>返回的事件内容</p>
+         */
         @NameInMap("callBackData")
         public String callBackData;
 
-        // 事件类型
+        /**
+         * <p>事件类型</p>
+         */
         @NameInMap("callBackTag")
         public String callBackTag;
 
-        // 事件所属的corpId
+        /**
+         * <p>事件所属的corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 事件的时间戳。
+        /**
+         * <p>事件的时间戳。</p>
+         */
         @NameInMap("eventTime")
         public Long eventTime;
 

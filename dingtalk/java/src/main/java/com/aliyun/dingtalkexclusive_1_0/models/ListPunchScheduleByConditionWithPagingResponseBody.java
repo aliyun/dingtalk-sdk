@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPunchScheduleByConditionWithPagingResponseBody extends TeaModel {
-    // 是否有更多
+    /**
+     * <p>是否有更多</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 返回列表
+    /**
+     * <p>返回列表</p>
+     */
     @NameInMap("list")
     public java.util.List<ListPunchScheduleByConditionWithPagingResponseBodyList> list;
 
-    // 下一次游标位置
+    /**
+     * <p>下一次游标位置</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -46,23 +52,33 @@ public class ListPunchScheduleByConditionWithPagingResponseBody extends TeaModel
     }
 
     public static class ListPunchScheduleByConditionWithPagingResponseBodyList extends TeaModel {
-        // 巡点业务id，同个巡点id同一个用户最多会有两条记录，一条签到，一条签退
+        /**
+         * <p>巡点业务id，同个巡点id同一个用户最多会有两条记录，一条签到，一条签退</p>
+         */
         @NameInMap("bizOuterId")
         public String bizOuterId;
 
-        // 打卡巡点机名称
+        /**
+         * <p>打卡巡点机名称</p>
+         */
         @NameInMap("positionName")
         public String positionName;
 
-        // 巡点类型（checkIn-签到，checkOut-签退）
+        /**
+         * <p>巡点类型（checkIn-签到，checkOut-签退）</p>
+         */
         @NameInMap("punchSymbol")
         public String punchSymbol;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 用户巡点打卡时间
+        /**
+         * <p>用户巡点打卡时间</p>
+         */
         @NameInMap("userPunchTime")
         public Long userPunchTime;
 

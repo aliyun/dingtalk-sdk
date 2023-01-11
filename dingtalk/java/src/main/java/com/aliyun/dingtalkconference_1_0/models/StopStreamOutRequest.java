@@ -4,15 +4,21 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StopStreamOutRequest extends TeaModel {
-    // 是否停止所有流，为true时，则不理会streamId字段
+    /**
+     * <p>是否停止所有流，为true时，则不理会streamId字段</p>
+     */
     @NameInMap("stopAllStream")
     public Boolean stopAllStream;
 
-    // 流id
+    /**
+     * <p>流id</p>
+     */
     @NameInMap("streamId")
     public String streamId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

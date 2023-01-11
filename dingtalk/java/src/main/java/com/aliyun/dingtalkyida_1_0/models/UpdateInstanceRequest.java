@@ -4,27 +4,39 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInstanceRequest extends TeaModel {
-    // 应用ID
+    /**
+     * <p>应用ID</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 语言环境
+    /**
+     * <p>语言环境</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 实例ID
+    /**
+     * <p>实例ID</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // 应用秘钥
+    /**
+     * <p>应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 更新的表单数据
+    /**
+     * <p>更新的表单数据</p>
+     */
     @NameInMap("updateFormDataJson")
     public String updateFormDataJson;
 
-    // 钉钉的userId
+    /**
+     * <p>钉钉的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

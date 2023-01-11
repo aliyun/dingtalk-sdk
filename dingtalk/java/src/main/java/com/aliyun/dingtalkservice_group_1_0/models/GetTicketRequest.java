@@ -4,11 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTicketRequest extends TeaModel {
-    // eKWh3GBwsKEiE
+    /**
+     * <p>eKWh3GBwsKEiE</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // hNiPO2OVktNMiE
+    /**
+     * <p>hNiPO2OVktNMiE</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 

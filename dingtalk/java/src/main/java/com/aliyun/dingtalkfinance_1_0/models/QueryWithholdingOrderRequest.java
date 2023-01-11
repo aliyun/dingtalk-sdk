@@ -4,7 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryWithholdingOrderRequest extends TeaModel {
-    // 外部订单流水号
+    /**
+     * <p>外部订单流水号</p>
+     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 

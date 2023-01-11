@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteContactRestrictSettingResponseBody extends TeaModel {
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

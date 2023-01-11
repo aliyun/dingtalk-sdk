@@ -4,11 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryUserResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public java.util.List<BatchQueryUserResponseBodyData> data;
 
-    // 请求成功的标识。
+    /**
+     * <p>请求成功的标识。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,27 +38,39 @@ public class BatchQueryUserResponseBody extends TeaModel {
     }
 
     public static class BatchQueryUserResponseBodyData extends TeaModel {
-        // 所属者头像。 ID
+        /**
+         * <p>所属者头像。 ID</p>
+         */
         @NameInMap("avatarMediaId")
         public java.io.InputStream avatarMediaId;
 
-        // 所属者头像。 URL
+        /**
+         * <p>所属者头像。 URL</p>
+         */
         @NameInMap("avatarUrl")
         public java.io.InputStream avatarUrl;
 
-        // 所属者组织 I。D
+        /**
+         * <p>所属者组织 I。D</p>
+         */
         @NameInMap("corpId")
         public java.io.InputStream corpId;
 
-        // 所属者在 OKR 系统中的 ID。
+        /**
+         * <p>所属者在 OKR 系统中的 ID。</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
-        // 所属者昵称。
+        /**
+         * <p>所属者昵称。</p>
+         */
         @NameInMap("nickname")
         public java.io.InputStream nickname;
 
-        // 所属者 userId。
+        /**
+         * <p>所属者 userId。</p>
+         */
         @NameInMap("userId")
         public java.io.InputStream userId;
 

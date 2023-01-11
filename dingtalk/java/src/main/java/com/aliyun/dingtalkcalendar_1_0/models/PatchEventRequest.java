@@ -13,11 +13,15 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("end")
     public PatchEventRequestEnd end;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
 
-    // 日程id
+    /**
+     * <p>日程id</p>
+     */
     @NameInMap("id")
     public String id;
 
@@ -33,11 +37,15 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("reminders")
     public java.util.List<PatchEventRequestReminders> reminders;
 
-    // 日程开始时间
+    /**
+     * <p>日程开始时间</p>
+     */
     @NameInMap("start")
     public PatchEventRequestStart start;
 
-    // 日程标题
+    /**
+     * <p>日程标题</p>
+     */
     @NameInMap("summary")
     public String summary;
 

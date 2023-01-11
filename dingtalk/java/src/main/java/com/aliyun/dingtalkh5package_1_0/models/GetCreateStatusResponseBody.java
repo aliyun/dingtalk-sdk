@@ -4,27 +4,39 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCreateStatusResponseBody extends TeaModel {
-    // 创建时间
+    /**
+     * <p>创建时间</p>
+     */
     @NameInMap("buildTime")
     public Long buildTime;
 
-    // 任务是否已结束
+    /**
+     * <p>任务是否已结束</p>
+     */
     @NameInMap("finished")
     public Boolean finished;
 
-    // H5离线包体积，单位Byte
+    /**
+     * <p>H5离线包体积，单位Byte</p>
+     */
     @NameInMap("packageSize")
     public Long packageSize;
 
-    // 任务状态。1：构建中；2：成功；3：失败；5：超时。
+    /**
+     * <p>任务状态。1：构建中；2：成功；3：失败；5：超时。</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 创建离线包接口返回的taskId
+    /**
+     * <p>创建离线包接口返回的taskId</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 
-    // H5离线包版本号
+    /**
+     * <p>H5离线包版本号</p>
+     */
     @NameInMap("version")
     public String version;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRobotInteractiveCardResponseBody extends TeaModel {
-    // 用于业务方后续查看已读列表的查询key
+    /**
+     * <p>用于业务方后续查看已读列表的查询key</p>
+     */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 

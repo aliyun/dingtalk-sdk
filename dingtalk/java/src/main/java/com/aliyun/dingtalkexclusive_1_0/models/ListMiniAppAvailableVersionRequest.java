@@ -4,19 +4,27 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListMiniAppAvailableVersionRequest extends TeaModel {
-    // 小程序id
+    /**
+     * <p>小程序id</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    // 分页数1
+    /**
+     * <p>分页数1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 版本类型列表，0-开发版，1-灰度版，2-发布版，3-体验版
+    /**
+     * <p>版本类型列表，0-开发版，1-灰度版，2-发布版，3-体验版</p>
+     */
     @NameInMap("versionTypeSet")
     public java.util.List<Integer> versionTypeSet;
 

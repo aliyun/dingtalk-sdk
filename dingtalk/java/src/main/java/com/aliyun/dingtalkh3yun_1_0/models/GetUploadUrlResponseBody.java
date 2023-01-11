@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadUrlResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public GetUploadUrlResponseBodyData data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,7 +52,9 @@ public class GetUploadUrlResponseBody extends TeaModel {
     }
 
     public static class GetUploadUrlResponseBodyData extends TeaModel {
-        // 附件上传地址
+        /**
+         * <p>附件上传地址</p>
+         */
         @NameInMap("uploadUrl")
         public String uploadUrl;
 

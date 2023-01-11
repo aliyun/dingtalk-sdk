@@ -4,11 +4,15 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAppGoodsServiceConversationResponseBody extends TeaModel {
-    // 群名称
+    /**
+     * <p>群名称</p>
+     */
     @NameInMap("conversationName")
     public String conversationName;
 
-    // 是否新群
+    /**
+     * <p>是否新群</p>
+     */
     @NameInMap("newConversation")
     public Boolean newConversation;
 

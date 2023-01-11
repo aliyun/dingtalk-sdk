@@ -10,19 +10,27 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     @NameInMap("notifiers")
     public java.util.List<SaveIntegratedInstanceRequestNotifiers> notifiers;
 
-    // 审批实例接收人的userId。
+    /**
+     * <p>审批实例接收人的userId。</p>
+     */
     @NameInMap("originatorUserId")
     public String originatorUserId;
 
-    // 审批模板唯一码
+    /**
+     * <p>审批模板唯一码</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
-    // 实例标题
+    /**
+     * <p>实例标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 三方审批系统中审批单的详情页地址
+    /**
+     * <p>三方审批系统中审批单的详情页地址</p>
+     */
     @NameInMap("url")
     public String url;
 
@@ -80,65 +88,77 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     }
 
     public static class SaveIntegratedInstanceRequestFormComponentValueList extends TeaModel {
-        // 控件别名
+        /**
+         * <p>控件别名</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        // 控件类型，取值：
-        // 
-        // TextField：单行输入框
-        // 
-        // TextareaField：多行输入框
-        // 
-        // NumberField：数字输入框
-        // 
-        // DDSelectField：单选框
-        // 
-        // DDMultiSelectField：多选框
-        // 
-        // DDDateField：日期控件
-        // 
-        // DDDateRangeField：时间区间控件
-        // 
-        // TextNote：文字说明控件
-        // 
-        // PhoneField：电话控件
-        // 
-        // DDPhotoField：图片控件
-        // 
-        // MoneyField：金额控件
-        // 
-        // TableField：明细控件
-        // 
-        // DDAttachment：附件
-        // 
-        // InnerContactField：联系人控件
-        // 
-        // RelateField：关联审批单
-        // 
-        // FormRelateField：关联控件
-        // 
-        // AddressField：省市区控件
-        // 
-        // StarRatingField：评分控件
-        // 
-        // DepartmentField：部门控件
+        /**
+         * <p>控件类型，取值：</p>
+         * <br>
+         * <p>TextField：单行输入框</p>
+         * <br>
+         * <p>TextareaField：多行输入框</p>
+         * <br>
+         * <p>NumberField：数字输入框</p>
+         * <br>
+         * <p>DDSelectField：单选框</p>
+         * <br>
+         * <p>DDMultiSelectField：多选框</p>
+         * <br>
+         * <p>DDDateField：日期控件</p>
+         * <br>
+         * <p>DDDateRangeField：时间区间控件</p>
+         * <br>
+         * <p>TextNote：文字说明控件</p>
+         * <br>
+         * <p>PhoneField：电话控件</p>
+         * <br>
+         * <p>DDPhotoField：图片控件</p>
+         * <br>
+         * <p>MoneyField：金额控件</p>
+         * <br>
+         * <p>TableField：明细控件</p>
+         * <br>
+         * <p>DDAttachment：附件</p>
+         * <br>
+         * <p>InnerContactField：联系人控件</p>
+         * <br>
+         * <p>RelateField：关联审批单</p>
+         * <br>
+         * <p>FormRelateField：关联控件</p>
+         * <br>
+         * <p>AddressField：省市区控件</p>
+         * <br>
+         * <p>StarRatingField：评分控件</p>
+         * <br>
+         * <p>DepartmentField：部门控件</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
-        // 表单扩展值
+        /**
+         * <p>表单扩展值</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
-        // 控件id
+        /**
+         * <p>控件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 表单名称
+        /**
+         * <p>表单名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 表单值
+        /**
+         * <p>表单值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -198,14 +218,18 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     }
 
     public static class SaveIntegratedInstanceRequestNotifiers extends TeaModel {
-        // 抄送位置，可以值有：
-        // start - 审批发起时，通知抄送人
-        // finish - 审批通过后，通知抄送人
-        // start_finish - 审批发起时和审批通过后，都通知抄送人
+        /**
+         * <p>抄送位置，可以值有：</p>
+         * <p>start - 审批发起时，通知抄送人</p>
+         * <p>finish - 审批通过后，通知抄送人</p>
+         * <p>start_finish - 审批发起时和审批通过后，都通知抄送人</p>
+         */
         @NameInMap("position")
         public String position;
 
-        // 抄送接收人用户ID
+        /**
+         * <p>抄送接收人用户ID</p>
+         */
         @NameInMap("userid")
         public String userid;
 

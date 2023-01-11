@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class VPaasProxyResponseBody extends TeaModel {
-    // 结果密文
+    /**
+     * <p>结果密文</p>
+     */
     @NameInMap("result")
     public String result;
 
-    // 公钥加密的盐
+    /**
+     * <p>公钥加密的盐</p>
+     */
     @NameInMap("ticket")
     public String ticket;
 

@@ -4,27 +4,39 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryObjectiveRequest extends TeaModel {
-    // 需要查看的 Objective ID。
+    /**
+     * <p>需要查看的 Objective ID。</p>
+     */
     @NameInMap("objectiveIds")
     public java.util.List<String> objectiveIds;
 
-    // 周期 ID。
+    /**
+     * <p>周期 ID。</p>
+     */
     @NameInMap("periodId")
     public String periodId;
 
-    // 是否返回关联信息。
+    /**
+     * <p>是否返回关联信息。</p>
+     */
     @NameInMap("withAlign")
     public Boolean withAlign;
 
-    // 是否返回 KR 信息。
+    /**
+     * <p>是否返回 KR 信息。</p>
+     */
     @NameInMap("withKr")
     public Boolean withKr;
 
-    // 是否返回进度信息
+    /**
+     * <p>是否返回进度信息</p>
+     */
     @NameInMap("withProgress")
     public Boolean withProgress;
 
-    // 当前用户的 staff ID。
+    /**
+     * <p>当前用户的 staff ID。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

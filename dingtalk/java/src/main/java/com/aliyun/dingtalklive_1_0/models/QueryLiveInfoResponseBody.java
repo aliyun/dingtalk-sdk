@@ -21,51 +21,75 @@ public class QueryLiveInfoResponseBody extends TeaModel {
     }
 
     public static class QueryLiveInfoResponseBodyResultLiveInfo extends TeaModel {
-        // 直播封面
+        /**
+         * <p>直播封面</p>
+         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
-        // 直播时长
+        /**
+         * <p>直播时长</p>
+         */
         @NameInMap("duration")
         public Long duration;
 
-        // 直播真实结束时间
+        /**
+         * <p>直播真实结束时间</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
-        // 直播简介
+        /**
+         * <p>直播简介</p>
+         */
         @NameInMap("introduction")
         public String introduction;
 
-        // 直播id
+        /**
+         * <p>直播id</p>
+         */
         @NameInMap("liveId")
         public String liveId;
 
-        // 直播观看地址
+        /**
+         * <p>直播观看地址</p>
+         */
         @NameInMap("livePlayUrl")
         public String livePlayUrl;
 
-        // 直播状态
+        /**
+         * <p>直播状态</p>
+         */
         @NameInMap("liveStatus")
         public Integer liveStatus;
 
-        // 直播真实开始时间
+        /**
+         * <p>直播真实开始时间</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
-        // 预约人数
+        /**
+         * <p>预约人数</p>
+         */
         @NameInMap("subscribeCount")
         public Integer subscribeCount;
 
-        // 直播标题
+        /**
+         * <p>直播标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 主播id
+        /**
+         * <p>主播id</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 观看人数
+        /**
+         * <p>观看人数</p>
+         */
         @NameInMap("uv")
         public Integer uv;
 

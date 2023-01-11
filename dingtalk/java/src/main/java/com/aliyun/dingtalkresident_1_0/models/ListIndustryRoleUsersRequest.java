@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListIndustryRoleUsersRequest extends TeaModel {
-    // 行业角色编码
+    /**
+     * <p>行业角色编码</p>
+     */
     @NameInMap("tagCode")
     public String tagCode;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserRolesResponseBody extends TeaModel {
-    // 扩展属性
+    /**
+     * <p>扩展属性</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryUserRolesResponseBodyContent> content;
 
@@ -22,11 +24,15 @@ public class QueryUserRolesResponseBody extends TeaModel {
     }
 
     public static class QueryUserRolesResponseBodyContent extends TeaModel {
-        // 角色编码
+        /**
+         * <p>角色编码</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        // 角色名称
+        /**
+         * <p>角色名称</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 

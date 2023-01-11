@@ -4,27 +4,39 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllProcessInstancesRequest extends TeaModel {
-    // 应用编码
+    /**
+     * <p>应用编码</p>
+     */
     @NameInMap("appUuid")
     public String appUuid;
 
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endTimeInMills")
     public Long endTimeInMills;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    // 分页起始值
+    /**
+     * <p>分页起始值</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 模板编码
+    /**
+     * <p>模板编码</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTimeInMills")
     public Long startTimeInMills;
 

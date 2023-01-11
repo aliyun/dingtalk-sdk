@@ -4,11 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupConversationRequest extends TeaModel {
-    // 开放corpid
+    /**
+     * <p>开放corpid</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 钉群openID
+    /**
+     * <p>钉群openID</p>
+     */
     @NameInMap("dingGroupId")
     public String dingGroupId;
 
@@ -18,22 +22,30 @@ public class CreateGroupConversationRequest extends TeaModel {
     @NameInMap("dingTokenGrantType")
     public Long dingTokenGrantType;
 
-    // 钉群内发起人工服务的客户的ID
+    /**
+     * <p>钉群内发起人工服务的客户的ID</p>
+     */
     @NameInMap("dingUserId")
     public String dingUserId;
 
-    // 钉群内发起人工服务的客户的名称
+    /**
+     * <p>钉群内发起人工服务的客户的名称</p>
+     */
     @NameInMap("dingUserName")
     public String dingUserName;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extValues")
     public String extValues;
 
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 小二技能组ID
+    /**
+     * <p>小二技能组ID</p>
+     */
     @NameInMap("serverGroupId")
     public String serverGroupId;
 

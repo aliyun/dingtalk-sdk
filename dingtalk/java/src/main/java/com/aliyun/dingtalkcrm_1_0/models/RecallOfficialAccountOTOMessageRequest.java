@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class RecallOfficialAccountOTOMessageRequest extends TeaModel {
-    // 帐号ID 可空
+    /**
+     * <p>帐号ID 可空</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
-    // 消息推送时返回的ID
+    /**
+     * <p>消息推送时返回的ID</p>
+     */
     @NameInMap("openPushId")
     public String openPushId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
-    // 服务窗帐号ID
+    /**
+     * <p>服务窗帐号ID</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
-    // 服务窗授权的调用方标识，可空
+    /**
+     * <p>服务窗授权的调用方标识，可空</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
-    // 消息详情
+    /**
+     * <p>消息详情</p>
+     */
     @NameInMap("detail")
     public BatchSendOfficialAccountOTOMessageRequestDetail detail;
 
@@ -46,11 +52,15 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList extends TeaModel {
-        // 使用独立跳转ActionCard样式时的跳转链接。
+        /**
+         * <p>使用独立跳转ActionCard样式时的跳转链接。</p>
+         */
         @NameInMap("actionUrl")
         public String actionUrl;
 
-        // 使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
+        /**
+         * <p>使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -78,27 +88,39 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard extends TeaModel {
-        // 使用独立跳转ActionCard样式时的按钮列表；必须与buttonOrientation同时设置，且长度不超过1000字符。
+        /**
+         * <p>使用独立跳转ActionCard样式时的按钮列表；必须与buttonOrientation同时设置，且长度不超过1000字符。</p>
+         */
         @NameInMap("buttonList")
         public java.util.List<BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList> buttonList;
 
-        // 按钮排列方式： 0：竖直排列 1：横向排列 必须与buttonList同时设置。
+        /**
+         * <p>按钮排列方式： 0：竖直排列 1：横向排列 必须与buttonList同时设置。</p>
+         */
         @NameInMap("buttonOrientation")
         public String buttonOrientation;
 
-        // 消息内容，支持markdown，语法参考标准markdown语法。1000个字符以内。
+        /**
+         * <p>消息内容，支持markdown，语法参考标准markdown语法。1000个字符以内。</p>
+         */
         @NameInMap("markdown")
         public String markdown;
 
-        // 使用整体跳转ActionCard样式时的标题。必须与singleUrl同时设置，最长20个字符。
+        /**
+         * <p>使用整体跳转ActionCard样式时的标题。必须与singleUrl同时设置，最长20个字符。</p>
+         */
         @NameInMap("singleTitle")
         public String singleTitle;
 
-        // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。
+        /**
+         * <p>消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。</p>
+         */
         @NameInMap("singleUrl")
         public String singleUrl;
 
-        // 透出到会话列表和通知的文案
+        /**
+         * <p>透出到会话列表和通知的文案</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -158,19 +180,27 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyLink extends TeaModel {
-        // 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
+        /**
+         * <p>消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。</p>
+         */
         @NameInMap("messageUrl")
         public String messageUrl;
 
-        // 图片地址
+        /**
+         * <p>图片地址</p>
+         */
         @NameInMap("picUrl")
         public String picUrl;
 
-        // 消息描述，建议500字符以内。
+        /**
+         * <p>消息描述，建议500字符以内。</p>
+         */
         @NameInMap("text")
         public String text;
 
-        // 消息标题，建议100字符以内。
+        /**
+         * <p>消息标题，建议100字符以内。</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -214,11 +244,15 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown extends TeaModel {
-        // markdown格式的消息，建议500字符以内。
+        /**
+         * <p>markdown格式的消息，建议500字符以内。</p>
+         */
         @NameInMap("text")
         public String text;
 
-        // 首屏会话透出的展示内容。
+        /**
+         * <p>首屏会话透出的展示内容。</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -246,7 +280,9 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText extends TeaModel {
-        // 消息内容，建议500字符以内。
+        /**
+         * <p>消息内容，建议500字符以内。</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -266,19 +302,27 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBody extends TeaModel {
-        // 卡片消息
+        /**
+         * <p>卡片消息</p>
+         */
         @NameInMap("actionCard")
         public BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard actionCard;
 
-        // 链接消息类型
+        /**
+         * <p>链接消息类型</p>
+         */
         @NameInMap("link")
         public BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyLink link;
 
-        // markdown消息，仅对消息类型为markdown时有效
+        /**
+         * <p>markdown消息，仅对消息类型为markdown时有效</p>
+         */
         @NameInMap("markdown")
         public BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown markdown;
 
-        // 文本消息体  对于文本类型消息时必填
+        /**
+         * <p>文本消息体  对于文本类型消息时必填</p>
+         */
         @NameInMap("text")
         public BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText text;
 
@@ -322,27 +366,39 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetail extends TeaModel {
-        // 业务请求标识，当一次业务请求需要多次调用发送API时可以设置此参数，方便后续跟踪处理。
+        /**
+         * <p>业务请求标识，当一次业务请求需要多次调用发送API时可以设置此参数，方便后续跟踪处理。</p>
+         */
         @NameInMap("bizRequestId")
         public String bizRequestId;
 
-        // 消息体
+        /**
+         * <p>消息体</p>
+         */
         @NameInMap("messageBody")
         public BatchSendOfficialAccountOTOMessageRequestDetailMessageBody messageBody;
 
-        // 消息类型
+        /**
+         * <p>消息类型</p>
+         */
         @NameInMap("msgType")
         public String msgType;
 
-        // 全员群发
+        /**
+         * <p>全员群发</p>
+         */
         @NameInMap("sendToAll")
         public Boolean sendToAll;
 
-        // 消息接收人列表，最多支持1000人
+        /**
+         * <p>消息接收人列表，最多支持1000人</p>
+         */
         @NameInMap("userIdList")
         public java.util.List<String> userIdList;
 
-        // 消息请求唯一ID
+        /**
+         * <p>消息请求唯一ID</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

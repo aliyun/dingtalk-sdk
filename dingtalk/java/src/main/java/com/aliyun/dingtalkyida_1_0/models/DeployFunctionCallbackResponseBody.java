@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeployFunctionCallbackResponseBody extends TeaModel {
-    // 是否处理成功
+    /**
+     * <p>是否处理成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

@@ -4,63 +4,93 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryServiceRecordRequest extends TeaModel {
-    // 宜搭应用编码
+    /**
+     * <p>宜搭应用编码</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 表单编码
+    /**
+     * <p>表单编码</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 服务类型
+    /**
+     * <p>服务类型</p>
+     */
     @NameInMap("hookType")
     public String hookType;
 
-    // 本次服务调用的唯一ID
+    /**
+     * <p>本次服务调用的唯一ID</p>
+     */
     @NameInMap("hookUuid")
     public String hookUuid;
 
-    // 表单实例ID
+    /**
+     * <p>表单实例ID</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
-    // 服务在此时间之后调用的
+    /**
+     * <p>服务在此时间之后调用的</p>
+     */
     @NameInMap("invokeAfterDateGMT")
     public String invokeAfterDateGMT;
 
-    // 服务在此时间之前调用的
+    /**
+     * <p>服务在此时间之前调用的</p>
+     */
     @NameInMap("invokeBeforeDateGMT")
     public String invokeBeforeDateGMT;
 
-    // 服务调用状态
+    /**
+     * <p>服务调用状态</p>
+     */
     @NameInMap("invokeStatus")
     public String invokeStatus;
 
-    // 分页第几页
+    /**
+     * <p>分页第几页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 服务调用地址包含的部分字符串，用于模糊搜索
+    /**
+     * <p>服务调用地址包含的部分字符串，用于模糊搜索</p>
+     */
     @NameInMap("requestUrl")
     public String requestUrl;
 
-    // 被重试的服务调用唯一ID(此次服务调用是重试哪个执行失败的服务调用)
+    /**
+     * <p>被重试的服务调用唯一ID(此次服务调用是重试哪个执行失败的服务调用)</p>
+     */
     @NameInMap("sourceUuid")
     public String sourceUuid;
 
-    // 服务调用是否成功(不传此参数则查询全部的)
+    /**
+     * <p>服务调用是否成功(不传此参数则查询全部的)</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
-    // 宜搭应用秘钥
+    /**
+     * <p>宜搭应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 操作人的钉钉userId
+    /**
+     * <p>操作人的钉钉userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

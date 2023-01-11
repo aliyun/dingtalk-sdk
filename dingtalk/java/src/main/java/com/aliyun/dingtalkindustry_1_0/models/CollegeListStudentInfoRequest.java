@@ -4,19 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeListStudentInfoRequest extends TeaModel {
-    // 部门id
+    /**
+     * <p>部门id</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
-    // 人员状态
+    /**
+     * <p>人员状态</p>
+     */
     @NameInMap("dingStudentStatus")
     public String dingStudentStatus;
 
-    // 当前页数
+    /**
+     * <p>当前页数</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 单页的条目数
+    /**
+     * <p>单页的条目数</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 

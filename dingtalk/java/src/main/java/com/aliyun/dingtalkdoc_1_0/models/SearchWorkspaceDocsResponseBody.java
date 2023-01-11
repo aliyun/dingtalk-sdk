@@ -7,7 +7,9 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     @NameInMap("docs")
     public java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs;
 
-    // 是否还有可搜索内容
+    /**
+     * <p>是否还有可搜索内容</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -44,27 +46,39 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     }
 
     public static class SearchWorkspaceDocsResponseBodyDocsNodeBO extends TeaModel {
-        // 节点类型
+        /**
+         * <p>节点类型</p>
+         */
         @NameInMap("docType")
         public String docType;
 
-        // 最近编辑时间
+        /**
+         * <p>最近编辑时间</p>
+         */
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
-        // 节点名称，如果命中了搜索关键词会包含高亮标签
+        /**
+         * <p>节点名称，如果命中了搜索关键词会包含高亮标签</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 节点Id
+        /**
+         * <p>节点Id</p>
+         */
         @NameInMap("nodeId")
         public String nodeId;
 
-        // 节点原始名称
+        /**
+         * <p>节点原始名称</p>
+         */
         @NameInMap("originName")
         public String originName;
 
-        // 节点打开url
+        /**
+         * <p>节点打开url</p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -124,11 +138,15 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     }
 
     public static class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO extends TeaModel {
-        // 知识库名称。
+        /**
+         * <p>知识库名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 知识库id。
+        /**
+         * <p>知识库id。</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

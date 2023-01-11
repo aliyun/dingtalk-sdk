@@ -4,7 +4,9 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class ManageSingleChatRobotStatusResponseBody extends TeaModel {
-    // 是否成功更新机器人状态
+    /**
+     * <p>是否成功更新机器人状态</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class AlignObjectiveResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public AlignObjectiveResponseBodyData data;
 
-    // success
+    /**
+     * <p>success</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,11 +38,15 @@ public class AlignObjectiveResponseBody extends TeaModel {
     }
 
     public static class AlignObjectiveResponseBodyData extends TeaModel {
-        // 对齐目标的 ID。
+        /**
+         * <p>对齐目标的 ID。</p>
+         */
         @NameInMap("alignId")
         public java.io.InputStream alignId;
 
-        // 当前 Objective 的ID
+        /**
+         * <p>当前 Objective 的ID</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
@@ -56,38 +64,6 @@ public class AlignObjectiveResponseBody extends TeaModel {
         }
 
         public AlignObjectiveResponseBodyData setId(java.io.InputStream id) {
-            this.id = id;
-            return this;
-        }
-        public java.io.InputStream getId() {
-            return this.id;
-        }
-
-    }
-
-    public static class UnAlignObjectiveResponseBodyData extends TeaModel {
-        // 对齐的 Objective ID。
-        @NameInMap("alignId")
-        public java.io.InputStream alignId;
-
-        // 当前 Objective ID。
-        @NameInMap("id")
-        public java.io.InputStream id;
-
-        public static UnAlignObjectiveResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
-            UnAlignObjectiveResponseBodyData self = new UnAlignObjectiveResponseBodyData();
-            return TeaModel.build(map, self);
-        }
-
-        public UnAlignObjectiveResponseBodyData setAlignId(java.io.InputStream alignId) {
-            this.alignId = alignId;
-            return this;
-        }
-        public java.io.InputStream getAlignId() {
-            return this.alignId;
-        }
-
-        public UnAlignObjectiveResponseBodyData setId(java.io.InputStream id) {
             this.id = id;
             return this;
         }

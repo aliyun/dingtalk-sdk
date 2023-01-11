@@ -4,59 +4,87 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendServiceGroupMessageRequest extends TeaModel {
-    // at dingtalkId
+    /**
+     * <p>at dingtalkId</p>
+     */
     @NameInMap("atDingtalkIds")
     public java.util.List<String> atDingtalkIds;
 
-    // at 手机号
+    /**
+     * <p>at 手机号</p>
+     */
     @NameInMap("atMobiles")
     public java.util.List<String> atMobiles;
 
-    // at unionIds
+    /**
+     * <p>at unionIds</p>
+     */
     @NameInMap("atUnionIds")
     public java.util.List<String> atUnionIds;
 
-    // 排列方式：0-按钮竖直排列，1-按钮横向排列
+    /**
+     * <p>排列方式：0-按钮竖直排列，1-按钮横向排列</p>
+     */
     @NameInMap("btnOrientation")
     public String btnOrientation;
 
-    // actionCard按钮
+    /**
+     * <p>actionCard按钮</p>
+     */
     @NameInMap("btns")
     public java.util.List<SendServiceGroupMessageRequestBtns> btns;
 
-    // 内容
+    /**
+     * <p>内容</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 如果正文内容包含链接，并且按钮链接和文本链接分开跳转，则传递true; 否则传递false
+    /**
+     * <p>如果正文内容包含链接，并且按钮链接和文本链接分开跳转，则传递true; 否则传递false</p>
+     */
     @NameInMap("hasContentLinks")
     public Boolean hasContentLinks;
 
-    // 是否 at所有人
+    /**
+     * <p>是否 at所有人</p>
+     */
     @NameInMap("isAtAll")
     public Boolean isAtAll;
 
-    // 消息类型：MARKDOWN，ACTIONCARD
+    /**
+     * <p>消息类型：MARKDOWN，ACTIONCARD</p>
+     */
     @NameInMap("messageType")
     public String messageType;
 
-    // dingtalkId接收者
+    /**
+     * <p>dingtalkId接收者</p>
+     */
     @NameInMap("receiverDingtalkIds")
     public java.util.List<String> receiverDingtalkIds;
 
-    // 手机号接收者
+    /**
+     * <p>手机号接收者</p>
+     */
     @NameInMap("receiverMobiles")
     public java.util.List<String> receiverMobiles;
 
-    // unionId接收者
+    /**
+     * <p>unionId接收者</p>
+     */
     @NameInMap("receiverUnionIds")
     public java.util.List<String> receiverUnionIds;
 
-    // 开放群ID
+    /**
+     * <p>开放群ID</p>
+     */
     @NameInMap("targetOpenConversationId")
     public String targetOpenConversationId;
 
-    // 标题
+    /**
+     * <p>标题</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -178,11 +206,15 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     }
 
     public static class SendServiceGroupMessageRequestBtns extends TeaModel {
-        // 跳转地址
+        /**
+         * <p>跳转地址</p>
+         */
         @NameInMap("actionURL")
         public String actionURL;
 
-        // 按钮名称
+        /**
+         * <p>按钮名称</p>
+         */
         @NameInMap("title")
         public String title;
 

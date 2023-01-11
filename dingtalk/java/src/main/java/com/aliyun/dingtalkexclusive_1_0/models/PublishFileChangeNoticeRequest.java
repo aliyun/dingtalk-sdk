@@ -4,19 +4,27 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class PublishFileChangeNoticeRequest extends TeaModel {
-    // 钉盘文件id
+    /**
+     * <p>钉盘文件id</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
-    // 操作类型: 1-添加 2-修改
+    /**
+     * <p>操作类型: 1-添加 2-修改</p>
+     */
     @NameInMap("operateType")
     public String operateType;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
-    // 钉盘spaceId
+    /**
+     * <p>钉盘spaceId</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 

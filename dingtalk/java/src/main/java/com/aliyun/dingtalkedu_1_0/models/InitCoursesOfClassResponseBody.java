@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitCoursesOfClassResponseBody extends TeaModel {
-    // 初始化是否成功。
+    /**
+     * <p>初始化是否成功。</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

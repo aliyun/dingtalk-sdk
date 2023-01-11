@@ -4,47 +4,69 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCardInfoResponseBody extends TeaModel {
-    // 用户角色
+    /**
+     * <p>用户角色</p>
+     */
     @NameInMap("adminRole")
     public Long adminRole;
 
-    // 头像
+    /**
+     * <p>头像</p>
+     */
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
-    // 名片ID
+    /**
+     * <p>名片ID</p>
+     */
     @NameInMap("cardId")
     public String cardId;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extension")
     public GetCardInfoResponseBodyExtension extension;
 
-    // 行业
+    /**
+     * <p>行业</p>
+     */
     @NameInMap("industryName")
     public String industryName;
 
-    // 个人介绍
+    /**
+     * <p>个人介绍</p>
+     */
     @NameInMap("introduce")
     public java.util.Map<String, ?> introduce;
 
-    // 名字
+    /**
+     * <p>名字</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 组织名称
+    /**
+     * <p>组织名称</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 
-    // 用户名片信息设置
+    /**
+     * <p>用户名片信息设置</p>
+     */
     @NameInMap("settings")
     public java.util.Map<String, ?> settings;
 
-    // 模板ID
+    /**
+     * <p>模板ID</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
-    // 职位
+    /**
+     * <p>职位</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -142,11 +164,15 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
 
     public static class GetCardInfoResponseBodyExtensionCardContactInfoAddressArea extends TeaModel {
-        // 地区
+        /**
+         * <p>地区</p>
+         */
         @NameInMap("region")
         public String region;
 
-        // 地区详细数据
+        /**
+         * <p>地区详细数据</p>
+         */
         @NameInMap("regionFullName")
         public String regionFullName;
 
@@ -174,11 +200,15 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
 
     public static class GetCardInfoResponseBodyExtensionCardContactInfoAddress extends TeaModel {
-        // 区域
+        /**
+         * <p>区域</p>
+         */
         @NameInMap("area")
         public GetCardInfoResponseBodyExtensionCardContactInfoAddressArea area;
 
-        // 详细地址
+        /**
+         * <p>详细地址</p>
+         */
         @NameInMap("detail")
         public String detail;
 
@@ -296,19 +326,27 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
 
     public static class GetCardInfoResponseBodyExtensionCardContactInfo extends TeaModel {
-        // 地址
+        /**
+         * <p>地址</p>
+         */
         @NameInMap("address")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoAddress> address;
 
-        // 邮箱
+        /**
+         * <p>邮箱</p>
+         */
         @NameInMap("email")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> email;
 
-        // 电话
+        /**
+         * <p>电话</p>
+         */
         @NameInMap("telephone")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> telephone;
 
-        // 微信
+        /**
+         * <p>微信</p>
+         */
         @NameInMap("wechat")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoWechat> wechat;
 
@@ -352,51 +390,75 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
 
     public static class GetCardInfoResponseBodyExtension extends TeaModel {
-        // 联系信息
+        /**
+         * <p>联系信息</p>
+         */
         @NameInMap("cardContactInfo")
         public GetCardInfoResponseBodyExtensionCardContactInfo cardContactInfo;
 
-        // 企业corpId
+        /**
+         * <p>企业corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 拍名片部门
+        /**
+         * <p>拍名片部门</p>
+         */
         @NameInMap("department")
         public String department;
 
-        // 企业认证等级
+        /**
+         * <p>企业认证等级</p>
+         */
         @NameInMap("orgAuthLevel")
         public Long orgAuthLevel;
 
-        // 企业是否认证
+        /**
+         * <p>企业是否认证</p>
+         */
         @NameInMap("orgAuthed")
         public Boolean orgAuthed;
 
-        // 企业LOGO
+        /**
+         * <p>企业LOGO</p>
+         */
         @NameInMap("orgLogo")
         public String orgLogo;
 
-        // 拍名片图片链接
+        /**
+         * <p>拍名片图片链接</p>
+         */
         @NameInMap("originCardUrl")
         public String originCardUrl;
 
-        // 分享文案
+        /**
+         * <p>分享文案</p>
+         */
         @NameInMap("shareContent")
         public String shareContent;
 
-        // 视频缩略图
+        /**
+         * <p>视频缩略图</p>
+         */
         @NameInMap("thumbnailUrl")
         public String thumbnailUrl;
 
-        // 视频文件名称
+        /**
+         * <p>视频文件名称</p>
+         */
         @NameInMap("videoFileName")
         public String videoFileName;
 
-        // 视频标题
+        /**
+         * <p>视频标题</p>
+         */
         @NameInMap("videoTitle")
         public String videoTitle;
 
-        // 视频链接
+        /**
+         * <p>视频链接</p>
+         */
         @NameInMap("videoUrl")
         public String videoUrl;
 

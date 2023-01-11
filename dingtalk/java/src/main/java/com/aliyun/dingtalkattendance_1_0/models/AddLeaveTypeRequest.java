@@ -4,43 +4,63 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddLeaveTypeRequest extends TeaModel {
-    // 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
+    /**
+     * <p>假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
-    // 调休假有效期规则(validity_type:有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种 validity_value:延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数))
+    /**
+     * <p>调休假有效期规则(validity_type:有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种 validity_value:延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数))</p>
+     */
     @NameInMap("extras")
     public String extras;
 
-    // 每天折算的工作时长(百分之一 例如1天=10小时=1000)
+    /**
+     * <p>每天折算的工作时长(百分之一 例如1天=10小时=1000)</p>
+     */
     @NameInMap("hoursInPerDay")
     public Long hoursInPerDay;
 
-    // 请假证明
+    /**
+     * <p>请假证明</p>
+     */
     @NameInMap("leaveCertificate")
     public AddLeaveTypeRequestLeaveCertificate leaveCertificate;
 
-    // 假期名称
+    /**
+     * <p>假期名称</p>
+     */
     @NameInMap("leaveName")
     public String leaveName;
 
-    // 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
+    /**
+     * <p>请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)</p>
+     */
     @NameInMap("leaveViewUnit")
     public String leaveViewUnit;
 
-    // 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
+    /**
+     * <p>是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。</p>
+     */
     @NameInMap("naturalDayLeave")
     public Boolean naturalDayLeave;
 
-    // 限时提交规则
+    /**
+     * <p>限时提交规则</p>
+     */
     @NameInMap("submitTimeRule")
     public AddLeaveTypeRequestSubmitTimeRule submitTimeRule;
 
-    // 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
+    /**
+     * <p>适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司</p>
+     */
     @NameInMap("visibilityRules")
     public java.util.List<AddLeaveTypeRequestVisibilityRules> visibilityRules;
 
-    // 操作者ID
+    /**
+     * <p>操作者ID</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -130,19 +150,27 @@ public class AddLeaveTypeRequest extends TeaModel {
     }
 
     public static class AddLeaveTypeRequestLeaveCertificate extends TeaModel {
-        // 超过多长时间需提供请假证明
+        /**
+         * <p>超过多长时间需提供请假证明</p>
+         */
         @NameInMap("duration")
         public Double duration;
 
-        // 是否开启请假证明
+        /**
+         * <p>是否开启请假证明</p>
+         */
         @NameInMap("enable")
         public Boolean enable;
 
-        // 请假提示文案
+        /**
+         * <p>请假提示文案</p>
+         */
         @NameInMap("promptInformation")
         public String promptInformation;
 
-        // 请假证明单位hour，day
+        /**
+         * <p>请假证明单位hour，day</p>
+         */
         @NameInMap("unit")
         public String unit;
 
@@ -186,19 +214,27 @@ public class AddLeaveTypeRequest extends TeaModel {
     }
 
     public static class AddLeaveTypeRequestSubmitTimeRule extends TeaModel {
-        // 是否开启限时提交功能：仅且为true时开启
+        /**
+         * <p>是否开启限时提交功能：仅且为true时开启</p>
+         */
         @NameInMap("enableTimeLimit")
         public Boolean enableTimeLimit;
 
-        // 限制类型：before-提前；after-补交
+        /**
+         * <p>限制类型：before-提前；after-补交</p>
+         */
         @NameInMap("timeType")
         public String timeType;
 
-        // 时间单位：day-天；hour-小时
+        /**
+         * <p>时间单位：day-天；hour-小时</p>
+         */
         @NameInMap("timeUnit")
         public String timeUnit;
 
-        // 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
+        /**
+         * <p>限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时</p>
+         */
         @NameInMap("timeValue")
         public Long timeValue;
 
@@ -242,11 +278,15 @@ public class AddLeaveTypeRequest extends TeaModel {
     }
 
     public static class AddLeaveTypeRequestVisibilityRules extends TeaModel {
-        // 规则类型：dept-部门；staff-员工；label-角色
+        /**
+         * <p>规则类型：dept-部门；staff-员工；label-角色</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
+        /**
+         * <p>规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表</p>
+         */
         @NameInMap("visible")
         public java.util.List<String> visible;
 

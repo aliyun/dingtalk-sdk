@@ -4,27 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateUniversityCourseGroupRequest extends TeaModel {
-    // 课程组编码
+    /**
+     * <p>课程组编码</p>
+     */
     @NameInMap("courseGroupCode")
     public String courseGroupCode;
 
-    // 课程组介绍
+    /**
+     * <p>课程组介绍</p>
+     */
     @NameInMap("courseGroupIntroduce")
     public String courseGroupIntroduce;
 
-    // 课程组名称
+    /**
+     * <p>课程组名称</p>
+     */
     @NameInMap("courseGroupName")
     public String courseGroupName;
 
-    // 课程组详细
+    /**
+     * <p>课程组详细</p>
+     */
     @NameInMap("courserGroupItemModels")
     public java.util.List<UpdateUniversityCourseGroupRequestCourserGroupItemModels> courserGroupItemModels;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("ext")
     public String ext;
 
-    // opUserId
+    /**
+     * <p>opUserId</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -82,15 +94,21 @@ public class UpdateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
-        // 一月的第几天
+        /**
+         * <p>一月的第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -126,15 +144,21 @@ public class UpdateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
-        // 一月的第几天
+        /**
+         * <p>一月的第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -170,31 +194,45 @@ public class UpdateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class UpdateUniversityCourseGroupRequestCourserGroupItemModels extends TeaModel {
-        // 上课周期
+        /**
+         * <p>上课周期</p>
+         */
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
-        // classroomId
+        /**
+         * <p>classroomId</p>
+         */
         @NameInMap("classroomId")
         public Long classroomId;
 
-        // 课程类型
+        /**
+         * <p>课程类型</p>
+         */
         @NameInMap("courseType")
         public Integer courseType;
 
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("courserGroupItemEndDate")
         public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate courserGroupItemEndDate;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("courserGroupItemStartDate")
         public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate courserGroupItemStartDate;
 
-        // 一周的第几天
+        /**
+         * <p>一周的第几天</p>
+         */
         @NameInMap("dayOfWeek")
         public Integer dayOfWeek;
 
-        // 课节
+        /**
+         * <p>课节</p>
+         */
         @NameInMap("sectionIndex")
         public java.util.List<Integer> sectionIndex;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteReceiptRequest extends TeaModel {
-    // 单据列表，最长不超过10条
+    /**
+     * <p>单据列表，最长不超过10条</p>
+     */
     @NameInMap("receipts")
     public java.util.List<DeleteReceiptRequestReceipts> receipts;
 
@@ -22,15 +24,21 @@ public class DeleteReceiptRequest extends TeaModel {
     }
 
     public static class DeleteReceiptRequestReceipts extends TeaModel {
-        // 单据唯一编号
+        /**
+         * <p>单据唯一编号</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 修改者工号
+        /**
+         * <p>修改者工号</p>
+         */
         @NameInMap("deleteUserId")
         public String deleteUserId;
 
-        // 单据类型：1付款单，2收款单
+        /**
+         * <p>单据类型：1付款单，2收款单</p>
+         */
         @NameInMap("receiptType")
         public Long receiptType;
 

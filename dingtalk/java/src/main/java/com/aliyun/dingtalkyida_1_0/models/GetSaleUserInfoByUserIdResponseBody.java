@@ -4,19 +4,27 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSaleUserInfoByUserIdResponseBody extends TeaModel {
-    // accountId
+    /**
+     * <p>accountId</p>
+     */
     @NameInMap("accountId")
     public Long accountId;
 
-    // corpList
+    /**
+     * <p>corpList</p>
+     */
     @NameInMap("corpList")
     public java.util.List<GetSaleUserInfoByUserIdResponseBodyCorpList> corpList;
 
-    // userId
+    /**
+     * <p>userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
-    // userName
+    /**
+     * <p>userName</p>
+     */
     @NameInMap("userName")
     public String userName;
 
@@ -58,15 +66,21 @@ public class GetSaleUserInfoByUserIdResponseBody extends TeaModel {
     }
 
     public static class GetSaleUserInfoByUserIdResponseBodyCorpList extends TeaModel {
-        // corpId
+        /**
+         * <p>corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // corpName
+        /**
+         * <p>corpName</p>
+         */
         @NameInMap("corpName")
         public String corpName;
 
-        // namespace
+        /**
+         * <p>namespace</p>
+         */
         @NameInMap("namespace")
         public String namespace;
 

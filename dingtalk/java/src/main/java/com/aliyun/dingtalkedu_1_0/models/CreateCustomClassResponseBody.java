@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomClassResponseBody extends TeaModel {
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("result")
     public CreateCustomClassResponseBodyResult result;
 
-    // success
+    /**
+     * <p>success</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,7 +38,9 @@ public class CreateCustomClassResponseBody extends TeaModel {
     }
 
     public static class CreateCustomClassResponseBodyResult extends TeaModel {
-        // 班级ID
+        /**
+         * <p>班级ID</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 

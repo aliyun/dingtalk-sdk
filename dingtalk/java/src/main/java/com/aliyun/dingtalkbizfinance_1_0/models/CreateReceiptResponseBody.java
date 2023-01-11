@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateReceiptResponseBody extends TeaModel {
-    // 结果列表
+    /**
+     * <p>结果列表</p>
+     */
     @NameInMap("results")
     public java.util.List<CreateReceiptResponseBodyResults> results;
 
@@ -22,19 +24,27 @@ public class CreateReceiptResponseBody extends TeaModel {
     }
 
     public static class CreateReceiptResponseBodyResults extends TeaModel {
-        // 数据唯一编号
+        /**
+         * <p>数据唯一编号</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 错误码
+        /**
+         * <p>错误码</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        // 错误信息
+        /**
+         * <p>错误信息</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
-        // 是否成功
+        /**
+         * <p>是否成功</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

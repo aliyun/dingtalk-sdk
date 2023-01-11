@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ProcessApproveCreateResponseBody extends TeaModel {
-    // 审批单返回对象
+    /**
+     * <p>审批单返回对象</p>
+     */
     @NameInMap("result")
     public ProcessApproveCreateResponseBodyResult result;
 
@@ -22,7 +24,9 @@ public class ProcessApproveCreateResponseBody extends TeaModel {
     }
 
     public static class ProcessApproveCreateResponseBodyResult extends TeaModel {
-        // 钉钉侧生成的审批单id
+        /**
+         * <p>钉钉侧生成的审批单id</p>
+         */
         @NameInMap("dingtalkApproveId")
         public String dingtalkApproveId;
 

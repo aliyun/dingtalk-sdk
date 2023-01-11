@@ -21,11 +21,15 @@ public class QuerySubscribeStatusResponseBody extends TeaModel {
     }
 
     public static class QuerySubscribeStatusResponseBodyResultSubscribeStatusDTOS extends TeaModel {
-        // 直播uuid
+        /**
+         * <p>直播uuid</p>
+         */
         @NameInMap("liveId")
         public String liveId;
 
-        // 是否订阅 true:订阅 false:非订阅
+        /**
+         * <p>是否订阅 true:订阅 false:非订阅</p>
+         */
         @NameInMap("subscribe")
         public Boolean subscribe;
 
@@ -53,7 +57,9 @@ public class QuerySubscribeStatusResponseBody extends TeaModel {
     }
 
     public static class QuerySubscribeStatusResponseBodyResult extends TeaModel {
-        // 订阅详情列表
+        /**
+         * <p>订阅详情列表</p>
+         */
         @NameInMap("subscribeStatusDTOS")
         public java.util.List<QuerySubscribeStatusResponseBodyResultSubscribeStatusDTOS> subscribeStatusDTOS;
 

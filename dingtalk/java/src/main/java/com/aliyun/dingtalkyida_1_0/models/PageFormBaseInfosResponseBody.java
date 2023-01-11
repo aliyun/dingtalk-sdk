@@ -4,11 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageFormBaseInfosResponseBody extends TeaModel {
-    // 结果集
+    /**
+     * <p>结果集</p>
+     */
     @NameInMap("result")
     public PageFormBaseInfosResponseBodyResult result;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -127,14 +131,18 @@ public class PageFormBaseInfosResponseBody extends TeaModel {
     }
 
     public static class PageFormBaseInfosResponseBodyResult extends TeaModel {
-        // 当前页
+        /**
+         * <p>当前页</p>
+         */
         @NameInMap("currentPage")
         public Integer currentPage;
 
         @NameInMap("data")
         public java.util.List<PageFormBaseInfosResponseBodyResultData> data;
 
-        // 总行数
+        /**
+         * <p>总行数</p>
+         */
         @NameInMap("totalCount")
         public Integer totalCount;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ValidateApplicationAuthorizationOrderResponseBody extends TeaModel {
-    // message
+    /**
+     * <p>message</p>
+     */
     @NameInMap("message")
     public String message;
 
-    // status
+    /**
+     * <p>status</p>
+     */
     @NameInMap("status")
     public Integer status;
 

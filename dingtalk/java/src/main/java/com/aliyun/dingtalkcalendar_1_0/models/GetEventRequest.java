@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEventRequest extends TeaModel {
-    // 返回参与人，上限500人，默认为0
+    /**
+     * <p>返回参与人，上限500人，默认为0</p>
+     */
     @NameInMap("maxAttendees")
     public Long maxAttendees;
 

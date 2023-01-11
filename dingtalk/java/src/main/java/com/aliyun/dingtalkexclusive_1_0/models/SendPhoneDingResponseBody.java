@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendPhoneDingResponseBody extends TeaModel {
-    // 本次操作是否更新成功
+    /**
+     * <p>本次操作是否更新成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

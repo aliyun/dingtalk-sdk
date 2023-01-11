@@ -4,15 +4,21 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryHtmlBundleBuildRequest extends TeaModel {
-    // bundleId
+    /**
+     * <p>bundleId</p>
+     */
     @NameInMap("bundleId")
     public String bundleId;
 
-    // miniAppId
+    /**
+     * <p>miniAppId</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    // version
+    /**
+     * <p>version</p>
+     */
     @NameInMap("version")
     public String version;
 

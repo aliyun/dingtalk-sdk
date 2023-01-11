@@ -4,35 +4,51 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartInstanceRequest extends TeaModel {
-    // 应用编码
+    /**
+     * <p>应用编码</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 发起人所在部门编号
+    /**
+     * <p>发起人所在部门编号</p>
+     */
     @NameInMap("departmentId")
     public String departmentId;
 
-    // 表单数据
+    /**
+     * <p>表单数据</p>
+     */
     @NameInMap("formDataJson")
     public String formDataJson;
 
-    // 表单唯一编码
+    /**
+     * <p>表单唯一编码</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 语言。可选值：zh_CN/en_US 默认：zh_CN
+    /**
+     * <p>语言。可选值：zh_CN/en_US 默认：zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 流程编码
+    /**
+     * <p>流程编码</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
-    // 应用秘钥。在应用数据中获取。
+    /**
+     * <p>应用秘钥。在应用数据中获取。</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 钉钉userId
+    /**
+     * <p>钉钉userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

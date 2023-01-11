@@ -4,11 +4,15 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPictureDownloadUrlResponseBody extends TeaModel {
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
-    // 响应结果
+    /**
+     * <p>响应结果</p>
+     */
     @NameInMap("result")
     public GetPictureDownloadUrlResponseBodyResult result;
 
@@ -34,7 +38,9 @@ public class GetPictureDownloadUrlResponseBody extends TeaModel {
     }
 
     public static class GetPictureDownloadUrlResponseBodyResult extends TeaModel {
-        // 关注状态
+        /**
+         * <p>关注状态</p>
+         */
         @NameInMap("url")
         public String url;
 

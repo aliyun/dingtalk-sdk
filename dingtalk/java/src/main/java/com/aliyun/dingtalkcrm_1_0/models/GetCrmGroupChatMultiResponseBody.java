@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmGroupChatMultiResponseBody extends TeaModel {
-    // 客户群列表。
+    /**
+     * <p>客户群列表。</p>
+     */
     @NameInMap("result")
     public java.util.List<GetCrmGroupChatMultiResponseBodyResult> result;
 
@@ -22,35 +24,51 @@ public class GetCrmGroupChatMultiResponseBody extends TeaModel {
     }
 
     public static class GetCrmGroupChatMultiResponseBodyResult extends TeaModel {
-        // 创建时间(时间戳)。
+        /**
+         * <p>创建时间(时间戳)。</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        // 群头像地址。
+        /**
+         * <p>群头像地址。</p>
+         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
-        // 客户群成员数。
+        /**
+         * <p>客户群成员数。</p>
+         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
-        // 客户群名
+        /**
+         * <p>客户群名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 客户群openConversationId。
+        /**
+         * <p>客户群openConversationId。</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        // 群组openGroupSetId。
+        /**
+         * <p>群组openGroupSetId。</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
-        // 群主userId。
+        /**
+         * <p>群主userId。</p>
+         */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
-        // 群主userName。
+        /**
+         * <p>群主userName。</p>
+         */
         @NameInMap("ownerUserName")
         public String ownerUserName;
 

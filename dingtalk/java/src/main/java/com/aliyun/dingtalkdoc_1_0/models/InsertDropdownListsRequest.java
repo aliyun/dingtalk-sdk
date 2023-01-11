@@ -7,7 +7,9 @@ public class InsertDropdownListsRequest extends TeaModel {
     @NameInMap("options")
     public java.util.List<InsertDropdownListsRequestOptions> options;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

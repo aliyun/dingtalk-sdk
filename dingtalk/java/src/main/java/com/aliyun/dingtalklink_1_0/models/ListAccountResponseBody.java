@@ -21,11 +21,15 @@ public class ListAccountResponseBody extends TeaModel {
     }
 
     public static class ListAccountResponseBodyResult extends TeaModel {
-        // 服务窗帐号ID
+        /**
+         * <p>服务窗帐号ID</p>
+         */
         @NameInMap("accountId")
         public String accountId;
 
-        // 服务窗名称
+        /**
+         * <p>服务窗名称</p>
+         */
         @NameInMap("accountName")
         public String accountName;
 

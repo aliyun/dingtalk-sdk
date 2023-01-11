@@ -4,47 +4,69 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupCapacityOrderPlaceRequest extends TeaModel {
-    // 实际价格
+    /**
+     * <p>实际价格</p>
+     */
     @NameInMap("actualPrice")
     public Long actualPrice;
 
-    // 当前容量
+    /**
+     * <p>当前容量</p>
+     */
     @NameInMap("currentCapacity")
     public Integer currentCapacity;
 
-    // 当前操当前容量生效至何时
+    /**
+     * <p>当前操当前容量生效至何时</p>
+     */
     @NameInMap("currentEffectUntil")
     public Long currentEffectUntil;
 
-    // 折扣
+    /**
+     * <p>折扣</p>
+     */
     @NameInMap("discount")
     public Integer discount;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("extInfo")
     public java.util.Map<String, ?> extInfo;
 
-    // 标价
+    /**
+     * <p>标价</p>
+     */
     @NameInMap("markedPrice")
     public Long markedPrice;
 
-    // 开放的群id
+    /**
+     * <p>开放的群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 当前操作人工号
+    /**
+     * <p>当前操作人工号</p>
+     */
     @NameInMap("operator")
     public String operator;
 
-    // 目标容量
+    /**
+     * <p>目标容量</p>
+     */
     @NameInMap("targetCapacity")
     public Integer targetCapacity;
 
-    // 目标容量生效至何时
+    /**
+     * <p>目标容量生效至何时</p>
+     */
     @NameInMap("targetEffectUntil")
     public Long targetEffectUntil;
 
-    // 校验令牌
+    /**
+     * <p>校验令牌</p>
+     */
     @NameInMap("token")
     public String token;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteAppRoleResponseBody extends TeaModel {
-    // 删除结果
+    /**
+     * <p>删除结果</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

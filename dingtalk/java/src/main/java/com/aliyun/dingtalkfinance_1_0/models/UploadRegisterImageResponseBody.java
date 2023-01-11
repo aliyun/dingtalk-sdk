@@ -4,7 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UploadRegisterImageResponseBody extends TeaModel {
-    // 进件图片上传响应
+    /**
+     * <p>进件图片上传响应</p>
+     */
     @NameInMap("ossUrl")
     public String ossUrl;
 

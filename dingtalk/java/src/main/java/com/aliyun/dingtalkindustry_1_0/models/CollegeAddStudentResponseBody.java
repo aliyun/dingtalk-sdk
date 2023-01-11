@@ -4,23 +4,33 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeAddStudentResponseBody extends TeaModel {
-    // 人员状态
+    /**
+     * <p>人员状态</p>
+     */
     @NameInMap("dingMemberStatus")
     public String dingMemberStatus;
 
-    // 账号是否激活
+    /**
+     * <p>账号是否激活</p>
+     */
     @NameInMap("isActive")
     public Boolean isActive;
 
-    // 学生id
+    /**
+     * <p>学生id</p>
+     */
     @NameInMap("studentId")
     public Long studentId;
 
-    // unionId
+    /**
+     * <p>unionId</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // userId
+    /**
+     * <p>userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

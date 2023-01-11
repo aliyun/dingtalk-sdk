@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFilesResponseBody extends TeaModel {
-    // 文件列表
+    /**
+     * <p>文件列表</p>
+     */
     @NameInMap("files")
     public java.util.List<ListFilesResponseBodyFiles> files;
 
-    // 分页加载锚点, nextToken不为空表示有更多数据
+    /**
+     * <p>分页加载锚点, nextToken不为空表示有更多数据</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -34,63 +38,93 @@ public class ListFilesResponseBody extends TeaModel {
     }
 
     public static class ListFilesResponseBodyFiles extends TeaModel {
-        // 文件内容类型
+        /**
+         * <p>文件内容类型</p>
+         */
         @NameInMap("contentType")
         public String contentType;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建者
+        /**
+         * <p>创建者</p>
+         */
         @NameInMap("creator")
         public String creator;
 
-        // 文件后缀
+        /**
+         * <p>文件后缀</p>
+         */
         @NameInMap("fileExtension")
         public String fileExtension;
 
-        // 文件id
+        /**
+         * <p>文件id</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
-        // 文件名称
+        /**
+         * <p>文件名称</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
-        // 文件路径
+        /**
+         * <p>文件路径</p>
+         */
         @NameInMap("filePath")
         public String filePath;
 
-        // 文件大小
+        /**
+         * <p>文件大小</p>
+         */
         @NameInMap("fileSize")
         public Long fileSize;
 
-        // 文件类型
+        /**
+         * <p>文件类型</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
-        // 文件图标
+        /**
+         * <p>文件图标</p>
+         */
         @NameInMap("icon")
         public String icon;
 
-        // 修改者
+        /**
+         * <p>修改者</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
-        // 父目录id
+        /**
+         * <p>父目录id</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
-        // 空间id
+        /**
+         * <p>空间id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        // 文件缩略图
+        /**
+         * <p>文件缩略图</p>
+         */
         @NameInMap("thumbnail")
         public String thumbnail;
 

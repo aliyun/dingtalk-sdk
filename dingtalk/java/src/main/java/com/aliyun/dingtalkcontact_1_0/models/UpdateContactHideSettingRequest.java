@@ -4,51 +4,75 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateContactHideSettingRequest extends TeaModel {
-    // 是否激活
+    /**
+     * <p>是否激活</p>
+     */
     @NameInMap("active")
     public Boolean active;
 
-    // 设置描述信息
+    /**
+     * <p>设置描述信息</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 白名单部门列表
+    /**
+     * <p>白名单部门列表</p>
+     */
     @NameInMap("excludeDeptIds")
     public java.util.List<Long> excludeDeptIds;
 
-    // 白名单员工列表
+    /**
+     * <p>白名单员工列表</p>
+     */
     @NameInMap("excludeStaffIds")
     public java.util.List<String> excludeStaffIds;
 
-    // 白名单角色列表
+    /**
+     * <p>白名单角色列表</p>
+     */
     @NameInMap("excludeTagIds")
     public java.util.List<Long> excludeTagIds;
 
-    // 是否同时在被搜索时隐藏
+    /**
+     * <p>是否同时在被搜索时隐藏</p>
+     */
     @NameInMap("hideInSearch")
     public Boolean hideInSearch;
 
-    // 是否同时在被查看个人资料页时隐藏
+    /**
+     * <p>是否同时在被查看个人资料页时隐藏</p>
+     */
     @NameInMap("hideInUserProfile")
     public Boolean hideInUserProfile;
 
-    // settingId
+    /**
+     * <p>settingId</p>
+     */
     @NameInMap("id")
     public Long id;
 
-    // 设置名称
+    /**
+     * <p>设置名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 影藏部门列表
+    /**
+     * <p>影藏部门列表</p>
+     */
     @NameInMap("objectDeptIds")
     public java.util.List<Long> objectDeptIds;
 
-    // 隐藏员工列表
+    /**
+     * <p>隐藏员工列表</p>
+     */
     @NameInMap("objectStaffIds")
     public java.util.List<String> objectStaffIds;
 
-    // 影藏角色列表
+    /**
+     * <p>影藏角色列表</p>
+     */
     @NameInMap("objectTagIds")
     public java.util.List<Long> objectTagIds;
 

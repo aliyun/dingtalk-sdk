@@ -4,47 +4,69 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotInteractiveCardRequest extends TeaModel {
-    // 可交互卡片回调的url【可空：不填写无需回调】
+    /**
+     * <p>可交互卡片回调的url【可空：不填写无需回调】</p>
+     */
     @NameInMap("callbackUrl")
     public String callbackUrl;
 
-    // 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
+    /**
+     * <p>唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】</p>
+     */
     @NameInMap("cardBizId")
     public String cardBizId;
 
-    // 卡片模板-文本内容参数（卡片json结构体）
+    /**
+     * <p>卡片模板-文本内容参数（卡片json结构体）</p>
+     */
     @NameInMap("cardData")
     public String cardData;
 
-    // 卡片搭建平台模板ID
+    /**
+     * <p>卡片搭建平台模板ID</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
-    // 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）
+    /**
+     * <p>【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 是否开启卡片纯拉模式
+    /**
+     * <p>是否开启卡片纯拉模式</p>
+     */
     @NameInMap("pullStrategy")
     public Boolean pullStrategy;
 
-    // 机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode
+    /**
+     * <p>机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    // 互动卡片发送选项
+    /**
+     * <p>互动卡片发送选项</p>
+     */
     @NameInMap("sendOptions")
     public SendRobotInteractiveCardRequestSendOptions sendOptions;
 
-    // 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串
+    /**
+     * <p>【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串</p>
+     */
     @NameInMap("singleChatReceiver")
     public String singleChatReceiver;
 
-    // 卡片模板-userId差异用户参数（json结构体）
+    /**
+     * <p>卡片模板-userId差异用户参数（json结构体）</p>
+     */
     @NameInMap("unionIdPrivateDataMap")
     public String unionIdPrivateDataMap;
 
-    // 卡片模板-userId差异用户参数（json结构体）
+    /**
+     * <p>卡片模板-userId差异用户参数（json结构体）</p>
+     */
     @NameInMap("userIdPrivateDataMap")
     public String userIdPrivateDataMap;
 
@@ -142,19 +164,27 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     }
 
     public static class SendRobotInteractiveCardRequestSendOptions extends TeaModel {
-        // 是否@所有人
+        /**
+         * <p>是否@所有人</p>
+         */
         @NameInMap("atAll")
         public Boolean atAll;
 
-        // 消息@人，JSON格式：[{"nickName":"张三","userId":"userId0001"},{"nickName":"李四","unionId":"unionId001"}]
+        /**
+         * <p>消息@人，JSON格式：[{"nickName":"张三","userId":"userId0001"},{"nickName":"李四","unionId":"unionId001"}]</p>
+         */
         @NameInMap("atUserListJson")
         public String atUserListJson;
 
-        // 卡片特殊属性json串
+        /**
+         * <p>卡片特殊属性json串</p>
+         */
         @NameInMap("cardPropertyJson")
         public String cardPropertyJson;
 
-        // 消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]
+        /**
+         * <p>消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]</p>
+         */
         @NameInMap("receiverListJson")
         public String receiverListJson;
 

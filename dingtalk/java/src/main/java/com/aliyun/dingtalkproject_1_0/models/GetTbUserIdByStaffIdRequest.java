@@ -4,11 +4,15 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTbUserIdByStaffIdRequest extends TeaModel {
-    // 操作者userId
+    /**
+     * <p>操作者userId</p>
+     */
     @NameInMap("optUserId")
     public String optUserId;
 
-    // 用户userId
+    /**
+     * <p>用户userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

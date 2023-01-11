@@ -4,19 +4,27 @@ package com.aliyun.dingtalkrcs_call_1_0.models;
 import com.aliyun.tea.*;
 
 public class RunCallUserRequest extends TeaModel {
-    // 授权isv套件企业的corpid
+    /**
+     * <p>授权isv套件企业的corpid</p>
+     */
     @NameInMap("authorizeCorpId")
     public String authorizeCorpId;
 
-    // 授权isv套件企业的员工userid
+    /**
+     * <p>授权isv套件企业的员工userid</p>
+     */
     @NameInMap("authorizeUserId")
     public String authorizeUserId;
 
-    // 订单id
+    /**
+     * <p>订单id</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 
-    // isv套件所属企业下的员工userid
+    /**
+     * <p>isv套件所属企业下的员工userid</p>
+     */
     @NameInMap("userId")
     public String userId;
 

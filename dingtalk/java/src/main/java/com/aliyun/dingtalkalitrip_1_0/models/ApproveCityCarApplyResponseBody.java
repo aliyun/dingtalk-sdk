@@ -4,7 +4,9 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApproveCityCarApplyResponseBody extends TeaModel {
-    // 审批结果
+    /**
+     * <p>审批结果</p>
+     */
     @NameInMap("approveResult")
     public Boolean approveResult;
 

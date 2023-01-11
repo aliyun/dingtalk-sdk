@@ -4,15 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupManageReduceRequest extends TeaModel {
-    // 群容量限定值
+    /**
+     * <p>群容量限定值</p>
+     */
     @NameInMap("capacityLimit")
     public Integer capacityLimit;
 
-    // 开放群id
+    /**
+     * <p>开放群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 扩展参数
+    /**
+     * <p>扩展参数</p>
+     */
     @NameInMap("options")
     public java.util.Map<String, ?> options;
 

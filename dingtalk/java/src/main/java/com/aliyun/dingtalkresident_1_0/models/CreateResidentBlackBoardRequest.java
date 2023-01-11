@@ -10,7 +10,9 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
     @NameInMap("mediaId")
     public String mediaId;
 
-    // 格式yyyy-MM-dd HH:mm:ss
+    /**
+     * <p>格式yyyy-MM-dd HH:mm:ss</p>
+     */
     @NameInMap("sendTime")
     public String sendTime;
 

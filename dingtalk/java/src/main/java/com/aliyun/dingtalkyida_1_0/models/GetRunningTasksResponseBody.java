@@ -21,51 +21,75 @@ public class GetRunningTasksResponseBody extends TeaModel {
     }
 
     public static class GetRunningTasksResponseBodyResult extends TeaModel {
-        // activeTime
+        /**
+         * <p>activeTime</p>
+         */
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
 
-        // activityId
+        /**
+         * <p>activityId</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
-        // actualActionerId
+        /**
+         * <p>actualActionerId</p>
+         */
         @NameInMap("actualActionerId")
         public String actualActionerId;
 
-        // createTime
+        /**
+         * <p>createTime</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // finishTime
+        /**
+         * <p>finishTime</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        // originatorId
+        /**
+         * <p>originatorId</p>
+         */
         @NameInMap("originatorId")
         public String originatorId;
 
-        // processInstanceId
+        /**
+         * <p>processInstanceId</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // status
+        /**
+         * <p>status</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // taskId
+        /**
+         * <p>taskId</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
-        // taskType
+        /**
+         * <p>taskType</p>
+         */
         @NameInMap("taskType")
         public String taskType;
 
-        // title
+        /**
+         * <p>title</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // titleEn
+        /**
+         * <p>titleEn</p>
+         */
         @NameInMap("titleInEnglish")
         public String titleInEnglish;
 

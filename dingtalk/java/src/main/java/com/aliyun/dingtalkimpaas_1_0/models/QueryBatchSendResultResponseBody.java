@@ -7,7 +7,9 @@ public class QueryBatchSendResultResponseBody extends TeaModel {
     @NameInMap("results")
     public java.util.List<QueryBatchSendResultResponseBodyResults> results;
 
-    // status
+    /**
+     * <p>status</p>
+     */
     @NameInMap("status")
     public Integer status;
 

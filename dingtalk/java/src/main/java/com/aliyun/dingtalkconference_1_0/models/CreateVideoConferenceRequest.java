@@ -4,19 +4,27 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateVideoConferenceRequest extends TeaModel {
-    // 会议主题： 文字，不超过20中文
+    /**
+     * <p>会议主题： 文字，不超过20中文</p>
+     */
     @NameInMap("confTitle")
     public String confTitle;
 
-    // 是否邀请主叫
+    /**
+     * <p>是否邀请主叫</p>
+     */
     @NameInMap("inviteCaller")
     public Boolean inviteCaller;
 
-    // 邀请参会人员UID列表（必须好友或同事）
+    /**
+     * <p>邀请参会人员UID列表（必须好友或同事）</p>
+     */
     @NameInMap("inviteUserIds")
     public java.util.List<String> inviteUserIds;
 
-    // 会议发起人UID
+    /**
+     * <p>会议发起人UID</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMeetingRoomGroupResponseBody extends TeaModel {
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

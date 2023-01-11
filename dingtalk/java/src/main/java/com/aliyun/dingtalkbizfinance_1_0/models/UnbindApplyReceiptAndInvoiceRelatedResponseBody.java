@@ -4,12 +4,16 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
-    // 批量更新发票返回结果
-    // 
+    /**
+     * <p>批量更新发票返回结果</p>
+     * <br>
+     */
     @NameInMap("batchUpdateInvoiceResponse")
     public UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse batchUpdateInvoiceResponse;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,11 +39,15 @@ public class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
     }
 
     public static class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList extends TeaModel {
-        // 发票编码
+        /**
+         * <p>发票编码</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        // 发票号码
+        /**
+         * <p>发票号码</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
@@ -67,8 +75,10 @@ public class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
     }
 
     public static class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse extends TeaModel {
-        // 错误结果列表
-        // 
+        /**
+         * <p>错误结果列表</p>
+         * <br>
+         */
         @NameInMap("invoiceKeyVOList")
         public java.util.List<UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList> invoiceKeyVOList;
 

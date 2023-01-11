@@ -4,19 +4,27 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAppActiveUsersResponseBody extends TeaModel {
-    // 是否存在更多数据需要获取
+    /**
+     * <p>是否存在更多数据需要获取</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 数据集合
+    /**
+     * <p>数据集合</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryAppActiveUsersResponseBodyList> list;
 
-    // 下一次获取开始位置
+    /**
+     * <p>下一次获取开始位置</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 总数
+    /**
+     * <p>总数</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -58,27 +66,39 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
     }
 
     public static class QueryAppActiveUsersResponseBodyList extends TeaModel {
-        // 应用轨迹ID
+        /**
+         * <p>应用轨迹ID</p>
+         */
         @NameInMap("appTraceId")
         public String appTraceId;
 
-        // 纬度
+        /**
+         * <p>纬度</p>
+         */
         @NameInMap("latitude")
         public Float latitude;
 
-        // 经度
+        /**
+         * <p>经度</p>
+         */
         @NameInMap("longitude")
         public Float longitude;
 
-        // 该位置采集时间
+        /**
+         * <p>该位置采集时间</p>
+         */
         @NameInMap("reportTime")
         public Long reportTime;
 
-        // 轨迹采集开启时间
+        /**
+         * <p>轨迹采集开启时间</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
-        // 员工Id
+        /**
+         * <p>员工Id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

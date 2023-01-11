@@ -4,55 +4,81 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryWithholdingOrderResponseBody extends TeaModel {
-    // 代扣金额（元）
+    /**
+     * <p>代扣金额（元）</p>
+     */
     @NameInMap("amount")
     public String amount;
 
-    // 订单创建日期
+    /**
+     * <p>订单创建日期</p>
+     */
     @NameInMap("gmtCreate")
     public String gmtCreate;
 
-    // 付款完成日期
+    /**
+     * <p>付款完成日期</p>
+     */
     @NameInMap("gmtPay")
     public String gmtPay;
 
-    // 主机构编号
+    /**
+     * <p>主机构编号</p>
+     */
     @NameInMap("instId")
     public String instId;
 
-    // 钉钉订单号
+    /**
+     * <p>钉钉订单号</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 外部订单号
+    /**
+     * <p>外部订单号</p>
+     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
-    // 支付渠道
+    /**
+     * <p>支付渠道</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    // 支付渠道支付账号（脱敏后返回）
+    /**
+     * <p>支付渠道支付账号（脱敏后返回）</p>
+     */
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
-    // 付款人userId
+    /**
+     * <p>付款人userId</p>
+     */
     @NameInMap("payerUserId")
     public String payerUserId;
 
-    // 代扣备注
+    /**
+     * <p>代扣备注</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 子机构编号
+    /**
+     * <p>子机构编号</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    // 代扣标题
+    /**
+     * <p>代扣标题</p>
+     */
     @NameInMap("title")
     public String title;
 

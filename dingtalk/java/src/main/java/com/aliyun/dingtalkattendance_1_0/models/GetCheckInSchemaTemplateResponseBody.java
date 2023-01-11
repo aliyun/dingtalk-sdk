@@ -4,7 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCheckInSchemaTemplateResponseBody extends TeaModel {
-    // 返回对象。
+    /**
+     * <p>返回对象。</p>
+     */
     @NameInMap("result")
     public GetCheckInSchemaTemplateResponseBodyResult result;
 
@@ -22,43 +24,63 @@ public class GetCheckInSchemaTemplateResponseBody extends TeaModel {
     }
 
     public static class GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels extends TeaModel {
-        // 是否可以修改。
+        /**
+         * <p>是否可以修改。</p>
+         */
         @NameInMap("canModify")
         public Boolean canModify;
 
-        // 模板的表单Code。
+        /**
+         * <p>模板的表单Code。</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
-        // 模板的预览图片。
+        /**
+         * <p>模板的预览图片。</p>
+         */
         @NameInMap("icon")
         public String icon;
 
-        // 模板的布局信息。
+        /**
+         * <p>模板的布局信息。</p>
+         */
         @NameInMap("layoutDesign")
         public String layoutDesign;
 
-        // 模板的场景码。
+        /**
+         * <p>模板的场景码。</p>
+         */
         @NameInMap("sceneCode")
         public String sceneCode;
 
-        // 模板的内容。
+        /**
+         * <p>模板的内容。</p>
+         */
         @NameInMap("schemaContent")
         public String schemaContent;
 
-        // suiteKey。
+        /**
+         * <p>suiteKey。</p>
+         */
         @NameInMap("suiteKey")
         public String suiteKey;
 
-        // 是否系统模板。
+        /**
+         * <p>是否系统模板。</p>
+         */
         @NameInMap("systemTemplate")
         public Boolean systemTemplate;
 
-        // 模板的标题。
+        /**
+         * <p>模板的标题。</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 模板的水印ID。
+        /**
+         * <p>模板的水印ID。</p>
+         */
         @NameInMap("waterMarkId")
         public String waterMarkId;
 
@@ -150,35 +172,51 @@ public class GetCheckInSchemaTemplateResponseBody extends TeaModel {
     }
 
     public static class GetCheckInSchemaTemplateResponseBodyResult extends TeaModel {
-        // 业务码。
+        /**
+         * <p>业务码。</p>
+         */
         @NameInMap("bizCode")
         public String bizCode;
 
-        // 是否可以操作模板。
+        /**
+         * <p>是否可以操作模板。</p>
+         */
         @NameInMap("canModifyAndAddTemplate")
         public Boolean canModifyAndAddTemplate;
 
-        // 是否群管理员。
+        /**
+         * <p>是否群管理员。</p>
+         */
         @NameInMap("conversationAdmin")
         public Boolean conversationAdmin;
 
-        // 自定义模板的最大数量。
+        /**
+         * <p>自定义模板的最大数量。</p>
+         */
         @NameInMap("customTemplateMaxSize")
         public Integer customTemplateMaxSize;
 
-        // 群会话ID。
+        /**
+         * <p>群会话ID。</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        // 是否展示统计入口。
+        /**
+         * <p>是否展示统计入口。</p>
+         */
         @NameInMap("showStat")
         public Boolean showStat;
 
-        // 是否开启水印模板降级。
+        /**
+         * <p>是否开启水印模板降级。</p>
+         */
         @NameInMap("templateDegrade")
         public Boolean templateDegrade;
 
-        // 模板列表。
+        /**
+         * <p>模板列表。</p>
+         */
         @NameInMap("waterMarkTemplateModels")
         public java.util.List<GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels> waterMarkTemplateModels;
 

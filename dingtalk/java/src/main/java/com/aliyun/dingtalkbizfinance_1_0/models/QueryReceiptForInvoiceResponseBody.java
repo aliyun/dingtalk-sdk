@@ -4,15 +4,21 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptForInvoiceResponseBody extends TeaModel {
-    // 是否还有数据
+    /**
+     * <p>是否还有数据</p>
+     */
     @NameInMap("hasMore")
     public String hasMore;
 
-    // 分页数据
+    /**
+     * <p>分页数据</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryReceiptForInvoiceResponseBodyList> list;
 
-    // 总数
+    /**
+     * <p>总数</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,15 +52,21 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptForInvoiceResponseBodyListCreator extends TeaModel {
-        // 创建人头像
+        /**
+         * <p>创建人头像</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        // 创建人昵称
+        /**
+         * <p>创建人昵称</p>
+         */
         @NameInMap("nick")
         public String nick;
 
-        // 创建人工号
+        /**
+         * <p>创建人工号</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -90,11 +102,15 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptForInvoiceResponseBodyListCustomer extends TeaModel {
-        // 客户code
+        /**
+         * <p>客户code</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 客户名字
+        /**
+         * <p>客户名字</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -122,79 +138,117 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptForInvoiceResponseBodyList extends TeaModel {
-        // 金额
+        /**
+         * <p>金额</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 开票状态
+        /**
+         * <p>开票状态</p>
+         */
         @NameInMap("applyStatus")
         public String applyStatus;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("creator")
         public QueryReceiptForInvoiceResponseBodyListCreator creator;
 
-        // 客户
+        /**
+         * <p>客户</p>
+         */
         @NameInMap("customer")
         public QueryReceiptForInvoiceResponseBodyListCustomer customer;
 
-        // 发票种类
+        /**
+         * <p>发票种类</p>
+         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
-        // 主数据modelId
+        /**
+         * <p>主数据modelId</p>
+         */
         @NameInMap("modelId")
         public String modelId;
 
-        // 购方账户
+        /**
+         * <p>购方账户</p>
+         */
         @NameInMap("purchaserAccount")
         public String purchaserAccount;
 
-        // 购方地址
+        /**
+         * <p>购方地址</p>
+         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        // 购方银行
+        /**
+         * <p>购方银行</p>
+         */
         @NameInMap("purchaserBankName")
         public String purchaserBankName;
 
-        // 购方抬头
+        /**
+         * <p>购方抬头</p>
+         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
-        // 购方税号
+        /**
+         * <p>购方税号</p>
+         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
-        // 购方电话
+        /**
+         * <p>购方电话</p>
+         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
-        // 单据ID
+        /**
+         * <p>单据ID</p>
+         */
         @NameInMap("receiptId")
         public String receiptId;
 
-        // 记录时间，默认为审批通过时间
+        /**
+         * <p>记录时间，默认为审批通过时间</p>
+         */
         @NameInMap("recordTime")
         public String recordTime;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 来源
+        /**
+         * <p>来源</p>
+         */
         @NameInMap("source")
         public String source;
 
-        // 状态 agree running
+        /**
+         * <p>状态 agree running</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 单据标题
+        /**
+         * <p>单据标题</p>
+         */
         @NameInMap("title")
         public String title;
 

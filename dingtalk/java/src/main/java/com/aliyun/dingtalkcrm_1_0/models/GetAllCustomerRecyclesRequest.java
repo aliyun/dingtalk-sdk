@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAllCustomerRecyclesRequest extends TeaModel {
-    // 每页返回的结果集个数，默认10。
+    /**
+     * <p>每页返回的结果集个数，默认10。</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 

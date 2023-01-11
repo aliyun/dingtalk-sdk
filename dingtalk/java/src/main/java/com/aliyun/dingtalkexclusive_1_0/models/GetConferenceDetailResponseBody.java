@@ -4,43 +4,63 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConferenceDetailResponseBody extends TeaModel {
-    // 出席会议人数
+    /**
+     * <p>出席会议人数</p>
+     */
     @NameInMap("attendeeNum")
     public Long attendeeNum;
 
-    // 出席率
+    /**
+     * <p>出席率</p>
+     */
     @NameInMap("attendeePercentage")
     public String attendeePercentage;
 
-    // 发起人uid
+    /**
+     * <p>发起人uid</p>
+     */
     @NameInMap("callerId")
     public String callerId;
 
-    // 发起人昵称
+    /**
+     * <p>发起人昵称</p>
+     */
     @NameInMap("callerName")
     public String callerName;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("confStartTime")
     public Float confStartTime;
 
-    // 会议ID
+    /**
+     * <p>会议ID</p>
+     */
     @NameInMap("conferenceId")
     public String conferenceId;
 
-    // 持续时间
+    /**
+     * <p>持续时间</p>
+     */
     @NameInMap("duration")
     public Float duration;
 
-    // 参会人员列表
+    /**
+     * <p>参会人员列表</p>
+     */
     @NameInMap("memberList")
     public java.util.List<GetConferenceDetailResponseBodyMemberList> memberList;
 
-    // 会议标题
+    /**
+     * <p>会议标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 会议人数
+    /**
+     * <p>会议人数</p>
+     */
     @NameInMap("totalNum")
     public Long totalNum;
 
@@ -130,19 +150,27 @@ public class GetConferenceDetailResponseBody extends TeaModel {
     }
 
     public static class GetConferenceDetailResponseBodyMemberList extends TeaModel {
-        // 参会时长
+        /**
+         * <p>参会时长</p>
+         */
         @NameInMap("attendDuration")
         public Float attendDuration;
 
-        // 用户昵称
+        /**
+         * <p>用户昵称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 员工id
+        /**
+         * <p>员工id</p>
+         */
         @NameInMap("staffId")
         public String staffId;
 
-        // 用户uid
+        /**
+         * <p>用户uid</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

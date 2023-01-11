@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushBadgeRequest extends TeaModel {
-    // 微应用agentId
+    /**
+     * <p>微应用agentId</p>
+     */
     @NameInMap("agentId")
     public String agentId;
 
-    // 推送列表
+    /**
+     * <p>推送列表</p>
+     */
     @NameInMap("badgeItems")
     public java.util.List<PushBadgeRequestBadgeItems> badgeItems;
 
-    // 推送类型
+    /**
+     * <p>推送类型</p>
+     */
     @NameInMap("pushType")
     public String pushType;
 
@@ -46,11 +52,15 @@ public class PushBadgeRequest extends TeaModel {
     }
 
     public static class PushBadgeRequestBadgeItems extends TeaModel {
-        // 推送的内容（目前仅限数字）
+        /**
+         * <p>推送的内容（目前仅限数字）</p>
+         */
         @NameInMap("pushValue")
         public String pushValue;
 
-        // 员工ID。
+        /**
+         * <p>员工ID。</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -4,27 +4,39 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPositionsRequest extends TeaModel {
-    // 部门id
+    /**
+     * <p>部门id</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
-    // 职位类别列表
+    /**
+     * <p>职位类别列表</p>
+     */
     @NameInMap("inCategoryIds")
     public java.util.List<String> inCategoryIds;
 
-    // 职位id列表
+    /**
+     * <p>职位id列表</p>
+     */
     @NameInMap("inPositionIds")
     public java.util.List<String> inPositionIds;
 
-    // 职位名称
+    /**
+     * <p>职位名称</p>
+     */
     @NameInMap("positionName")
     public String positionName;
 
-    // 一次查询获取记录数
+    /**
+     * <p>一次查询获取记录数</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 偏移量
+    /**
+     * <p>偏移量</p>
+     */
     @NameInMap("nextToken")
     public Integer nextToken;
 

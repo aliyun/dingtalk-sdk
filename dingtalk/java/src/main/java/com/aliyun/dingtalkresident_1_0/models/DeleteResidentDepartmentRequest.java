@@ -4,7 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteResidentDepartmentRequest extends TeaModel {
-    // 组/户id
+    /**
+     * <p>组/户id</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetWorkspaceDocsRequest extends TeaModel {
-    // 查询节点Id
+    /**
+     * <p>查询节点Id</p>
+     */
     @NameInMap("nodeIds")
     public java.util.List<String> nodeIds;
 
-    // 操作用户unionId
+    /**
+     * <p>操作用户unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

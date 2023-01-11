@@ -4,35 +4,51 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCustomerTrackRequest extends TeaModel {
-    // 动态内容,markdown格式
+    /**
+     * <p>动态内容,markdown格式</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 客户ID
+    /**
+     * <p>客户ID</p>
+     */
     @NameInMap("customerId")
     public String customerId;
 
-    // 任意业务自定义的数据，可空
+    /**
+     * <p>任意业务自定义的数据，可空</p>
+     */
     @NameInMap("extraBizInfo")
     public String extraBizInfo;
 
-    // 幂等key，5分钟内避免重复写入，保证幂等，可空
+    /**
+     * <p>幂等key，5分钟内避免重复写入，保证幂等，可空</p>
+     */
     @NameInMap("idempotentKey")
     public String idempotentKey;
 
-    // 操作人userId
+    /**
+     * <p>操作人userId</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
-    // 关系类型
+    /**
+     * <p>关系类型</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 
-    // 动态标题
+    /**
+     * <p>动态标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 动态的类型
+    /**
+     * <p>动态的类型</p>
+     */
     @NameInMap("type")
     public Integer type;
 

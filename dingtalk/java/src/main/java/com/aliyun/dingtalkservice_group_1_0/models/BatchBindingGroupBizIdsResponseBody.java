@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchBindingGroupBizIdsResponseBody extends TeaModel {
-    // 是否执行成功
+    /**
+     * <p>是否执行成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFormByBizTypeResponseBody extends TeaModel {
-    // 模板列表
+    /**
+     * <p>模板列表</p>
+     */
     @NameInMap("result")
     public java.util.List<QueryFormByBizTypeResponseBodyResult> result;
 
@@ -22,55 +24,81 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
     }
 
     public static class QueryFormByBizTypeResponseBodyResult extends TeaModel {
-        // 表单类型，0为流程表单，1为数据表单
+        /**
+         * <p>表单类型，0为流程表单，1为数据表单</p>
+         */
         @NameInMap("appType")
         public Integer appType;
 
-        // 应用搭建id
+        /**
+         * <p>应用搭建id</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
-        // 业务标识
+        /**
+         * <p>业务标识</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
-        // 表单控件描述
+        /**
+         * <p>表单控件描述</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("creator")
         public String creator;
 
-        // 模板code
+        /**
+         * <p>模板code</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
-        // 表单uuid
+        /**
+         * <p>表单uuid</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        // 模板描述
+        /**
+         * <p>模板描述</p>
+         */
         @NameInMap("memo")
         public String memo;
 
-        // 修改时间
+        /**
+         * <p>修改时间</p>
+         */
         @NameInMap("modifedTime")
         public Long modifedTime;
 
-        // 模板名称
+        /**
+         * <p>模板名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 数据归属id
+        /**
+         * <p>数据归属id</p>
+         */
         @NameInMap("ownerId")
         public String ownerId;
 
-        // 模板状态
+        /**
+         * <p>模板状态</p>
+         */
         @NameInMap("status")
         public String status;
 

@@ -4,19 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class PreDialRequest extends TeaModel {
-    // 通话发起人的userId
+    /**
+     * <p>通话发起人的userId</p>
+     */
     @NameInMap("callerUserId")
     public String callerUserId;
 
-    // 通话接收人的userId
+    /**
+     * <p>通话接收人的userId</p>
+     */
     @NameInMap("receiverUserId")
     public String receiverUserId;
 
-    // 设备sn码
+    /**
+     * <p>设备sn码</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 设备类型
+    /**
+     * <p>设备类型</p>
+     */
     @NameInMap("type")
     public String type;
 

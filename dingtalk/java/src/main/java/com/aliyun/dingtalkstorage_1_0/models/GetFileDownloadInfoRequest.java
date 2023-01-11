@@ -4,11 +4,15 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileDownloadInfoRequest extends TeaModel {
-    // 可选参数
+    /**
+     * <p>可选参数</p>
+     */
     @NameInMap("option")
     public GetFileDownloadInfoRequestOption option;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -34,14 +38,18 @@ public class GetFileDownloadInfoRequest extends TeaModel {
     }
 
     public static class GetFileDownloadInfoRequestOption extends TeaModel {
-        // 优先使用内网传输
-        // 前提: 配置了专属存储内网传输
-        // 默认值:
-        // 	true
+        /**
+         * <p>优先使用内网传输</p>
+         * <p>前提: 配置了专属存储内网传输</p>
+         * <p>默认值:</p>
+         * <p>	true</p>
+         */
         @NameInMap("preferIntranet")
         public Boolean preferIntranet;
 
-        // 历史版本号
+        /**
+         * <p>历史版本号</p>
+         */
         @NameInMap("version")
         public Long version;
 

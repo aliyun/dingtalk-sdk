@@ -4,103 +4,153 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesProductionPlanRequest extends TeaModel {
-    // 本次操作的行为
+    /**
+     * <p>本次操作的行为</p>
+     */
     @NameInMap("action")
     public String action;
 
-    // actualEndTime
+    /**
+     * <p>actualEndTime</p>
+     */
     @NameInMap("actualEndTime")
     public String actualEndTime;
 
-    // actualStartTime
+    /**
+     * <p>actualStartTime</p>
+     */
     @NameInMap("actualStartTime")
     public String actualStartTime;
 
-    // 生态唯一标识,枚举:opsoft， 需要注册
+    /**
+     * <p>生态唯一标识,枚举:opsoft， 需要注册</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
-    // 主数据名称
+    /**
+     * <p>主数据名称</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
-    // BOM业务唯一标识
+    /**
+     * <p>BOM业务唯一标识</p>
+     */
     @NameInMap("bomUuid")
     public String bomUuid;
 
-    // 事件列表
+    /**
+     * <p>事件列表</p>
+     */
     @NameInMap("events")
     public java.util.List<String> events;
 
-    // 扩展字段
+    /**
+     * <p>扩展字段</p>
+     */
     @NameInMap("extendData")
     public java.util.List<IndustryManufactureMesProductionPlanRequestExtendData> extendData;
 
-    // 工单编号(生产订单号)
+    /**
+     * <p>工单编号(生产订单号)</p>
+     */
     @NameInMap("no")
     public String no;
 
-    // 任务逾期
+    /**
+     * <p>任务逾期</p>
+     */
     @NameInMap("overdue")
     public String overdue;
 
-    // 计划结束时间
+    /**
+     * <p>计划结束时间</p>
+     */
     @NameInMap("planEndTime")
     public String planEndTime;
 
-    // 工单计划数
+    /**
+     * <p>工单计划数</p>
+     */
     @NameInMap("planQuantity")
     public String planQuantity;
 
-    // 计划开始时间
+    /**
+     * <p>计划开始时间</p>
+     */
     @NameInMap("planStartTime")
     public String planStartTime;
 
-    // 工序列表(有序) 主体
+    /**
+     * <p>工序列表(有序) 主体</p>
+     */
     @NameInMap("processUuids")
     public String processUuids;
 
-    // 产品代码(物料编号)
+    /**
+     * <p>产品代码(物料编号)</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 
-    // 产品名称
+    /**
+     * <p>产品名称</p>
+     */
     @NameInMap("productName")
     public String productName;
 
-    // 规格型号
+    /**
+     * <p>规格型号</p>
+     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
-    // 最后一道工序完成数量
+    /**
+     * <p>最后一道工序完成数量</p>
+     */
     @NameInMap("qualifiedQuantity")
     public String qualifiedQuantity;
 
-    // 销售订单
+    /**
+     * <p>销售订单</p>
+     */
     @NameInMap("sellOrderNo")
     public String sellOrderNo;
 
-    // 工单状态
+    /**
+     * <p>工单状态</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 班组信息(有序)
+    /**
+     * <p>班组信息(有序)</p>
+     */
     @NameInMap("teamList")
     public String teamList;
 
-    // 工单标题
+    /**
+     * <p>工单标题</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // 工单类型,["NORMAL"(普通),"返工","样品"],默认"NORMAL"
+    /**
+     * <p>工单类型,["NORMAL"(普通),"返工","样品"],默认"NORMAL"</p>
+     */
     @NameInMap("type")
     public String type;
 
-    // 单位
+    /**
+     * <p>单位</p>
+     */
     @NameInMap("unit")
     public String unit;
 
-    // 工单实例的唯一Id
+    /**
+     * <p>工单实例的唯一Id</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 
@@ -310,19 +360,27 @@ public class IndustryManufactureMesProductionPlanRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesProductionPlanRequestExtendData extends TeaModel {
-        // 字段唯一标识(英文)
+        /**
+         * <p>字段唯一标识(英文)</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 字段中文描述
+        /**
+         * <p>字段中文描述</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 当时取值(活的)
+        /**
+         * <p>当时取值(活的)</p>
+         */
         @NameInMap("value")
         public String value;
 
-        // 字段类型
+        /**
+         * <p>字段类型</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 

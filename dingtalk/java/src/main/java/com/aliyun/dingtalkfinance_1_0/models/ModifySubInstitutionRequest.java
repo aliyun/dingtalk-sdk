@@ -4,66 +4,96 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifySubInstitutionRequest extends TeaModel {
-    // 签约支付宝账户，用于协议确认
+    /**
+     * <p>签约支付宝账户，用于协议确认</p>
+     */
     @NameInMap("bindingAlipayLogonId")
     public String bindingAlipayLogonId;
 
-    // 联系人
+    /**
+     * <p>联系人</p>
+     */
     @NameInMap("contactInfo")
     public ModifySubInstitutionRequestContactInfo contactInfo;
 
-    // 主机构编号
+    /**
+     * <p>主机构编号</p>
+     */
     @NameInMap("instId")
     public String instId;
 
     @NameInMap("legalPersonCertInfo")
     public ModifySubInstitutionRequestLegalPersonCertInfo legalPersonCertInfo;
 
-    // 进件创建外部流水号
+    /**
+     * <p>进件创建外部流水号</p>
+     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
-    // 进件渠道
+    /**
+     * <p>进件渠道</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    // 资质信息
+    /**
+     * <p>资质信息</p>
+     */
     @NameInMap("qualificationInfos")
     public java.util.List<ModifySubInstitutionRequestQualificationInfos> qualificationInfos;
 
-    // 开通的服务类型
+    /**
+     * <p>开通的服务类型</p>
+     */
     @NameInMap("services")
     public java.util.List<String> services;
 
-    // 资金账户信息
+    /**
+     * <p>资金账户信息</p>
+     */
     @NameInMap("settleInfo")
     public ModifySubInstitutionRequestSettleInfo settleInfo;
 
-    // 子机构地址信息
+    /**
+     * <p>子机构地址信息</p>
+     */
     @NameInMap("subInstAddressInfo")
     public ModifySubInstitutionRequestSubInstAddressInfo subInstAddressInfo;
 
-    // 授权信息
+    /**
+     * <p>授权信息</p>
+     */
     @NameInMap("subInstAuthInfo")
     public ModifySubInstitutionRequestSubInstAuthInfo subInstAuthInfo;
 
-    // 子机构基本信息
+    /**
+     * <p>子机构基本信息</p>
+     */
     @NameInMap("subInstBasicInfo")
     public ModifySubInstitutionRequestSubInstBasicInfo subInstBasicInfo;
 
-    // 子机构认证信息
+    /**
+     * <p>子机构认证信息</p>
+     */
     @NameInMap("subInstCertifyInfo")
     public ModifySubInstitutionRequestSubInstCertifyInfo subInstCertifyInfo;
 
-    // 子机构编号
+    /**
+     * <p>子机构编号</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    // 开票信息
+    /**
+     * <p>开票信息</p>
+     */
     @NameInMap("subInstInvoiceInfo")
     public ModifySubInstitutionRequestSubInstInvoiceInfo subInstInvoiceInfo;
 
-    // 子机构门店信息
+    /**
+     * <p>子机构门店信息</p>
+     */
     @NameInMap("subInstShopInfo")
     public ModifySubInstitutionRequestSubInstShopInfo subInstShopInfo;
 
@@ -201,11 +231,15 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestContactInfo extends TeaModel {
-        // 联系人姓名
+        /**
+         * <p>联系人姓名</p>
+         */
         @NameInMap("contactName")
         public String contactName;
 
-        // 联系人手机号
+        /**
+         * <p>联系人手机号</p>
+         */
         @NameInMap("mobile")
         public String mobile;
 
@@ -233,23 +267,33 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestLegalPersonCertInfo extends TeaModel {
-        // 法人证件反面url
+        /**
+         * <p>法人证件反面url</p>
+         */
         @NameInMap("certBackImage")
         public String certBackImage;
 
-        // 法人证件正面url
+        /**
+         * <p>法人证件正面url</p>
+         */
         @NameInMap("certFrontImage")
         public String certFrontImage;
 
-        // 法人姓名
+        /**
+         * <p>法人姓名</p>
+         */
         @NameInMap("certName")
         public String certName;
 
-        // 法人证件类型 不填默认为身份证
+        /**
+         * <p>法人证件类型 不填默认为身份证</p>
+         */
         @NameInMap("certType")
         public String certType;
 
-        // 法人证件号
+        /**
+         * <p>法人证件号</p>
+         */
         @NameInMap("idCardNo")
         public String idCardNo;
 
@@ -301,11 +345,15 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestQualificationInfos extends TeaModel {
-        // 子机构行业资质图片
+        /**
+         * <p>子机构行业资质图片</p>
+         */
         @NameInMap("qualificationImage")
         public String qualificationImage;
 
-        // 子机构行业资质类型
+        /**
+         * <p>子机构行业资质类型</p>
+         */
         @NameInMap("qualificationType")
         public String qualificationType;
 
@@ -333,47 +381,69 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSettleInfo extends TeaModel {
-        // 账户账号
+        /**
+         * <p>账户账号</p>
+         */
         @NameInMap("accountId")
         public String accountId;
 
-        // 账户名称 账号类型银行卡时为卡户名
+        /**
+         * <p>账户名称 账号类型银行卡时为卡户名</p>
+         */
         @NameInMap("accountName")
         public String accountName;
 
-        // 卡类型
+        /**
+         * <p>卡类型</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
-        // 支行名称
+        /**
+         * <p>支行名称</p>
+         */
         @NameInMap("bankBranchName")
         public String bankBranchName;
 
-        // 开户行所在地 市
+        /**
+         * <p>开户行所在地 市</p>
+         */
         @NameInMap("bankCity")
         public String bankCity;
 
-        // 联行号
+        /**
+         * <p>联行号</p>
+         */
         @NameInMap("bankCode")
         public String bankCode;
 
-        // 银行名称
+        /**
+         * <p>银行名称</p>
+         */
         @NameInMap("bankName")
         public String bankName;
 
-        // 开户行所在地 省
+        /**
+         * <p>开户行所在地 省</p>
+         */
         @NameInMap("bankProvince")
         public String bankProvince;
 
-        // 开户行简称缩写
+        /**
+         * <p>开户行简称缩写</p>
+         */
         @NameInMap("bankShortNameCode")
         public String bankShortNameCode;
 
-        // 账号类型
+        /**
+         * <p>账号类型</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // 账户使用类型
+        /**
+         * <p>账户使用类型</p>
+         */
         @NameInMap("usageType")
         public String usageType;
 
@@ -473,19 +543,27 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSubInstAddressInfo extends TeaModel {
-        // 详细地址
+        /**
+         * <p>详细地址</p>
+         */
         @NameInMap("address")
         public String address;
 
-        // 市码
+        /**
+         * <p>市码</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
-        // 区码
+        /**
+         * <p>区码</p>
+         */
         @NameInMap("districtCode")
         public String districtCode;
 
-        // 省码
+        /**
+         * <p>省码</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
@@ -529,7 +607,9 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSubInstAuthInfo extends TeaModel {
-        // 授权函图片url
+        /**
+         * <p>授权函图片url</p>
+         */
         @NameInMap("authorizationLetterUrl")
         public String authorizationLetterUrl;
 
@@ -549,19 +629,27 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSubInstBasicInfo extends TeaModel {
-        // 别名
+        /**
+         * <p>别名</p>
+         */
         @NameInMap("aliasName")
         public String aliasName;
 
-        // 机构识别码
+        /**
+         * <p>机构识别码</p>
+         */
         @NameInMap("mcc")
         public String mcc;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("subInstName")
         public String subInstName;
 
-        // 类型
+        /**
+         * <p>类型</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -605,15 +693,21 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSubInstCertifyInfo extends TeaModel {
-        // 证件图片, 如果是特殊行业必填
+        /**
+         * <p>证件图片, 如果是特殊行业必填</p>
+         */
         @NameInMap("certImage")
         public String certImage;
 
-        // 证件号码
+        /**
+         * <p>证件号码</p>
+         */
         @NameInMap("certNo")
         public String certNo;
 
-        // 证件类型
+        /**
+         * <p>证件类型</p>
+         */
         @NameInMap("certType")
         public String certType;
 
@@ -649,19 +743,27 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSubInstInvoiceInfoMailAddress extends TeaModel {
-        // 详细地址
+        /**
+         * <p>详细地址</p>
+         */
         @NameInMap("address")
         public String address;
 
-        // 市码
+        /**
+         * <p>市码</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
-        // 区码
+        /**
+         * <p>区码</p>
+         */
         @NameInMap("districtCode")
         public String districtCode;
 
-        // 省码
+        /**
+         * <p>省码</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
@@ -705,55 +807,81 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSubInstInvoiceInfo extends TeaModel {
-        // 是否接受电票
+        /**
+         * <p>是否接受电票</p>
+         */
         @NameInMap("acceptElectronic")
         public Boolean acceptElectronic;
 
-        // 开票地址
+        /**
+         * <p>开票地址</p>
+         */
         @NameInMap("address")
         public String address;
 
-        // 是否自动开票
+        /**
+         * <p>是否自动开票</p>
+         */
         @NameInMap("autoInvoice")
         public Boolean autoInvoice;
 
-        // 银行账户
+        /**
+         * <p>银行账户</p>
+         */
         @NameInMap("bankAccount")
         public String bankAccount;
 
-        // 银行名称
+        /**
+         * <p>银行名称</p>
+         */
         @NameInMap("bankName")
         public String bankName;
 
-        // 收件地址
+        /**
+         * <p>收件地址</p>
+         */
         @NameInMap("mailAddress")
         public ModifySubInstitutionRequestSubInstInvoiceInfoMailAddress mailAddress;
 
-        // 收件人名称
+        /**
+         * <p>收件人名称</p>
+         */
         @NameInMap("mailName")
         public String mailName;
 
-        // 收件人号码
+        /**
+         * <p>收件人号码</p>
+         */
         @NameInMap("mailPhone")
         public String mailPhone;
 
-        // 纳税人识别号
+        /**
+         * <p>纳税人识别号</p>
+         */
         @NameInMap("taxNo")
         public String taxNo;
 
-        // 纳税人资质
+        /**
+         * <p>纳税人资质</p>
+         */
         @NameInMap("taxPayerQualification")
         public String taxPayerQualification;
 
-        // 纳税人资格开始时间
+        /**
+         * <p>纳税人资格开始时间</p>
+         */
         @NameInMap("taxPayerValidDate")
         public String taxPayerValidDate;
 
-        // 开票电话
+        /**
+         * <p>开票电话</p>
+         */
         @NameInMap("telephone")
         public String telephone;
 
-        // 纳税人抬头
+        /**
+         * <p>纳税人抬头</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -869,11 +997,15 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSubInstShopInfo extends TeaModel {
-        // 内景照
+        /**
+         * <p>内景照</p>
+         */
         @NameInMap("inDoorImages")
         public java.util.List<String> inDoorImages;
 
-        // 外景照
+        /**
+         * <p>外景照</p>
+         */
         @NameInMap("outDoorImages")
         public java.util.List<String> outDoorImages;
 

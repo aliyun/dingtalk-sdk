@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushEventResponseBody extends TeaModel {
-    // 事件ID。
+    /**
+     * <p>事件ID。</p>
+     */
     @NameInMap("eventId")
     public String eventId;
 

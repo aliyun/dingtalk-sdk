@@ -4,27 +4,39 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptsByPageRequest extends TeaModel {
-    // 检索结束时间，默认当前时间，离开始时间最长不超过180天
+    /**
+     * <p>检索结束时间，默认当前时间，离开始时间最长不超过180天</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 数据模型id
+    /**
+     * <p>数据模型id</p>
+     */
     @NameInMap("modelId")
     public String modelId;
 
-    // 分页，从1开始
+    /**
+     * <p>分页，从1开始</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 分页大小，默认10，最大100
+    /**
+     * <p>分页大小，默认10，最大100</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 检索开始时间
+    /**
+     * <p>检索开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 检索排序时间类型：创建时间(gmt_create)，更新时间(gmt_modified)
+    /**
+     * <p>检索排序时间类型：创建时间(gmt_create)，更新时间(gmt_modified)</p>
+     */
     @NameInMap("timeFilterField")
     public String timeFilterField;
 

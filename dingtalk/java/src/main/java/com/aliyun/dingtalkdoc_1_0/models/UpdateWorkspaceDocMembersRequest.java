@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateWorkspaceDocMembersRequest extends TeaModel {
-    // 被操作用户组
+    /**
+     * <p>被操作用户组</p>
+     */
     @NameInMap("members")
     public java.util.List<UpdateWorkspaceDocMembersRequestMembers> members;
 
-    // 发起操作者unionId
+    /**
+     * <p>发起操作者unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -34,15 +38,21 @@ public class UpdateWorkspaceDocMembersRequest extends TeaModel {
     }
 
     public static class UpdateWorkspaceDocMembersRequestMembers extends TeaModel {
-        // 被操作用户unionId
+        /**
+         * <p>被操作用户unionId</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 用户类型
+        /**
+         * <p>用户类型</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
-        // 用户权限
+        /**
+         * <p>用户权限</p>
+         */
         @NameInMap("roleType")
         public String roleType;
 

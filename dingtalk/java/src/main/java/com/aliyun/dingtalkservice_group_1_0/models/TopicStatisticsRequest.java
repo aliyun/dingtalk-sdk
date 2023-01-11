@@ -4,23 +4,33 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class TopicStatisticsRequest extends TeaModel {
-    // 截止日期
+    /**
+     * <p>截止日期</p>
+     */
     @NameInMap("maxDt")
     public String maxDt;
 
-    // 起始日期
+    /**
+     * <p>起始日期</p>
+     */
     @NameInMap("minDt")
     public String minDt;
 
-    // 开放群ID列表（多个用逗号拼接）
+    /**
+     * <p>开放群ID列表（多个用逗号拼接）</p>
+     */
     @NameInMap("openConversationIds")
     public String openConversationIds;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 搜索内容
+    /**
+     * <p>搜索内容</p>
+     */
     @NameInMap("searchContent")
     public String searchContent;
 

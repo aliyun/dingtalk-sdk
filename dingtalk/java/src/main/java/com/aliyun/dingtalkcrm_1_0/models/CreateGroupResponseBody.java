@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupResponseBody extends TeaModel {
-    // 群id
+    /**
+     * <p>群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

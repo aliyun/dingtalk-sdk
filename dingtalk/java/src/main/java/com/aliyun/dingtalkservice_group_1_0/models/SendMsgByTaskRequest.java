@@ -4,22 +4,30 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMsgByTaskRequest extends TeaModel {
-    // 群发内容
+    /**
+     * <p>群发内容</p>
+     */
     @NameInMap("messageContent")
     public SendMsgByTaskRequestMessageContent messageContent;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     @NameInMap("queryGroup")
     public SendMsgByTaskRequestQueryGroup queryGroup;
 
-    // 发送配置
+    /**
+     * <p>发送配置</p>
+     */
     @NameInMap("sendConfig")
     public SendMsgByTaskRequestSendConfig sendConfig;
 
-    // 群发任务名称
+    /**
+     * <p>群发任务名称</p>
+     */
     @NameInMap("taskName")
     public String taskName;
 
@@ -99,42 +107,60 @@ public class SendMsgByTaskRequest extends TeaModel {
     }
 
     public static class SendMsgByTaskRequestMessageContent extends TeaModel {
-        // at活跃成员数量
+        /**
+         * <p>at活跃成员数量</p>
+         */
         @NameInMap("atActiveMemberNum")
         public Long atActiveMemberNum;
 
-        // 是否At活跃成员
+        /**
+         * <p>是否At活跃成员</p>
+         */
         @NameInMap("atActiveUser")
         public Boolean atActiveUser;
 
-        // 是否At全部人员
+        /**
+         * <p>是否At全部人员</p>
+         */
         @NameInMap("atAll")
         public Boolean atAll;
 
         @NameInMap("btns")
         public java.util.List<SendMsgByTaskRequestMessageContentBtns> btns;
 
-        // 内容
+        /**
+         * <p>内容</p>
+         */
         @NameInMap("content")
         public String content;
 
-        // 图片列表
+        /**
+         * <p>图片列表</p>
+         */
         @NameInMap("images")
         public java.util.List<String> images;
 
-        // 消息类型
+        /**
+         * <p>消息类型</p>
+         */
         @NameInMap("messageType")
         public String messageType;
 
-        // 是否提醒群成员
+        /**
+         * <p>是否提醒群成员</p>
+         */
         @NameInMap("remind")
         public Boolean remind;
 
-        // 标题
+        /**
+         * <p>标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 是否置顶
+        /**
+         * <p>是否置顶</p>
+         */
         @NameInMap("top")
         public Boolean top;
 
@@ -226,31 +252,45 @@ public class SendMsgByTaskRequest extends TeaModel {
     }
 
     public static class SendMsgByTaskRequestQueryGroup extends TeaModel {
-        // 群标签
+        /**
+         * <p>群标签</p>
+         */
         @NameInMap("groupTagNames")
         public java.util.List<String> groupTagNames;
 
-        // 活跃日期筛选类型，ACTIVE=活跃      NOTACTIVE=不活跃
+        /**
+         * <p>活跃日期筛选类型，ACTIVE=活跃      NOTACTIVE=不活跃</p>
+         */
         @NameInMap("lastActiveDateFilterType")
         public String lastActiveDateFilterType;
 
-        // 最近活跃时间的结束时间
+        /**
+         * <p>最近活跃时间的结束时间</p>
+         */
         @NameInMap("lastActiveTimeEnd")
         public String lastActiveTimeEnd;
 
-        // 最近活跃时间的开始时间
+        /**
+         * <p>最近活跃时间的开始时间</p>
+         */
         @NameInMap("lastActiveTimeStart")
         public String lastActiveTimeStart;
 
-        // 精准圈选-群ID集合
+        /**
+         * <p>精准圈选-群ID集合</p>
+         */
         @NameInMap("openConversationIds")
         public java.util.List<String> openConversationIds;
 
-        // 开放群组ID
+        /**
+         * <p>开放群组ID</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
-        // 群发圈选类型 1. AIMED 精准圈选 2. MULTI_CONDITIONS 多条件圈选
+        /**
+         * <p>群发圈选类型 1. AIMED 精准圈选 2. MULTI_CONDITIONS 多条件圈选</p>
+         */
         @NameInMap("queryType")
         public String queryType;
 
@@ -318,15 +358,21 @@ public class SendMsgByTaskRequest extends TeaModel {
     }
 
     public static class SendMsgByTaskRequestSendConfigUrlTrackConfig extends TeaModel {
-        // 跟踪链接的标题
+        /**
+         * <p>跟踪链接的标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 跟踪链接的坑位ID（sg开头）
+        /**
+         * <p>跟踪链接的坑位ID（sg开头）</p>
+         */
         @NameInMap("trackId")
         public String trackId;
 
-        // 跟踪链接URL
+        /**
+         * <p>跟踪链接URL</p>
+         */
         @NameInMap("trackUrl")
         public String trackUrl;
 
@@ -362,19 +408,27 @@ public class SendMsgByTaskRequest extends TeaModel {
     }
 
     public static class SendMsgByTaskRequestSendConfig extends TeaModel {
-        // 是否链接追踪
+        /**
+         * <p>是否链接追踪</p>
+         */
         @NameInMap("needUrlTrack")
         public Boolean needUrlTrack;
 
-        // 执行时间（sendType=TIMING时传入）
+        /**
+         * <p>执行时间（sendType=TIMING时传入）</p>
+         */
         @NameInMap("sendTime")
         public String sendTime;
 
-        // 发送类型      * TIMING=定时执行      * INSTANT=立即执行
+        /**
+         * <p>发送类型      * TIMING=定时执行      * INSTANT=立即执行</p>
+         */
         @NameInMap("sendType")
         public String sendType;
 
-        // 链接跟踪配置
+        /**
+         * <p>链接跟踪配置</p>
+         */
         @NameInMap("urlTrackConfig")
         public java.util.List<SendMsgByTaskRequestSendConfigUrlTrackConfig> urlTrackConfig;
 

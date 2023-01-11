@@ -4,39 +4,57 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecutePlatformTaskRequest extends TeaModel {
-    // 应用ID
+    /**
+     * <p>应用ID</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 更新的表单数据
+    /**
+     * <p>更新的表单数据</p>
+     */
     @NameInMap("formDataJson")
     public String formDataJson;
 
-    // 语言
+    /**
+     * <p>语言</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 是否不执行校验&关联操作
+    /**
+     * <p>是否不执行校验&关联操作</p>
+     */
     @NameInMap("noExecuteExpressions")
     public String noExecuteExpressions;
 
-    // 审批结果
+    /**
+     * <p>审批结果</p>
+     */
     @NameInMap("outResult")
     public String outResult;
 
-    // 流程实例ID
+    /**
+     * <p>流程实例ID</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // 审批意见
+    /**
+     * <p>审批意见</p>
+     */
     @NameInMap("remark")
     public String remark;
 
-    // 应用秘钥
+    /**
+     * <p>应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 钉钉的userId
+    /**
+     * <p>钉钉的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

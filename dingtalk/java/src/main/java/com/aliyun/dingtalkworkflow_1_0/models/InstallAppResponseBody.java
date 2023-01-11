@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class InstallAppResponseBody extends TeaModel {
-    // 返回对象列表
+    /**
+     * <p>返回对象列表</p>
+     */
     @NameInMap("result")
     public java.util.List<InstallAppResponseBodyResult> result;
 
@@ -22,15 +24,21 @@ public class InstallAppResponseBody extends TeaModel {
     }
 
     public static class InstallAppResponseBodyResult extends TeaModel {
-        // 套件业务类型
+        /**
+         * <p>套件业务类型</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
-        // 模版名称
+        /**
+         * <p>模版名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 模版processcode
+        /**
+         * <p>模版processcode</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddPermissionResponseBody extends TeaModel {
-    // 返回的数据。
+    /**
+     * <p>返回的数据。</p>
+     */
     @NameInMap("data")
     public BatchAddPermissionResponseBodyData data;
 
-    // 请求成功的标识。
+    /**
+     * <p>请求成功的标识。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -116,19 +120,27 @@ public class BatchAddPermissionResponseBody extends TeaModel {
     }
 
     public static class BatchAddPermissionResponseBodyDataPermissionTree extends TeaModel {
-        // 权限 ID。
+        /**
+         * <p>权限 ID。</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 权限列表
+        /**
+         * <p>权限列表</p>
+         */
         @NameInMap("policyList")
         public java.util.List<BatchAddPermissionResponseBodyDataPermissionTreePolicyList> policyList;
 
-        // 是否可见的标识。
+        /**
+         * <p>是否可见的标识。</p>
+         */
         @NameInMap("privacy")
         public String privacy;
 
-        // 哪种类型的权限。
+        /**
+         * <p>哪种类型的权限。</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -172,11 +184,15 @@ public class BatchAddPermissionResponseBody extends TeaModel {
     }
 
     public static class BatchAddPermissionResponseBodyData extends TeaModel {
-        // 是否有无效的成员。
+        /**
+         * <p>是否有无效的成员。</p>
+         */
         @NameInMap("hasInvalidUser")
         public Boolean hasInvalidUser;
 
-        // 权限信息。
+        /**
+         * <p>权限信息。</p>
+         */
         @NameInMap("permissionTree")
         public BatchAddPermissionResponseBodyDataPermissionTree permissionTree;
 

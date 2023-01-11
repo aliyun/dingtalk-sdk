@@ -4,11 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddGroupMemberResponseBody extends TeaModel {
-    // 添加成功的钉外用户列表。
+    /**
+     * <p>添加成功的钉外用户列表。</p>
+     */
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
-    // 添加成功的钉内用户列表。
+    /**
+     * <p>添加成功的钉内用户列表。</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

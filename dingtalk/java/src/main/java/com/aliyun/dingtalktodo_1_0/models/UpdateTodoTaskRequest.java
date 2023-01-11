@@ -4,31 +4,45 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTodoTaskRequest extends TeaModel {
-    // 待办描述备注
+    /**
+     * <p>待办描述备注</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 完成状态
+    /**
+     * <p>完成状态</p>
+     */
     @NameInMap("done")
     public Boolean done;
 
-    // 截止时间
+    /**
+     * <p>截止时间</p>
+     */
     @NameInMap("dueTime")
     public Long dueTime;
 
-    // 执行者列表，需传用户的unionId
+    /**
+     * <p>执行者列表，需传用户的unionId</p>
+     */
     @NameInMap("executorIds")
     public java.util.List<String> executorIds;
 
-    // 参与者列表，需传用户的unionId
+    /**
+     * <p>参与者列表，需传用户的unionId</p>
+     */
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
-    // 待办标题
+    /**
+     * <p>待办标题</p>
+     */
     @NameInMap("subject")
     public String subject;
 
-    // 当前操作者id，需传用户的unionId
+    /**
+     * <p>当前操作者id，需传用户的unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

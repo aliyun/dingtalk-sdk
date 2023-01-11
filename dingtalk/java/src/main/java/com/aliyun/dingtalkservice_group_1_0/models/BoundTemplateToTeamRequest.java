@@ -4,27 +4,39 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BoundTemplateToTeamRequest extends TeaModel {
-    // 目标团队id
+    /**
+     * <p>目标团队id</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 模板中的机器人配置信息
+    /**
+     * <p>模板中的机器人配置信息</p>
+     */
     @NameInMap("robotConfig")
     public String robotConfig;
 
-    // 模板描述信息
+    /**
+     * <p>模板描述信息</p>
+     */
     @NameInMap("templateDesc")
     public String templateDesc;
 
-    // 模板id
+    /**
+     * <p>模板id</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
-    // 模板名字
+    /**
+     * <p>模板名字</p>
+     */
     @NameInMap("templateName")
     public String templateName;
 
-    // 模板类型
+    /**
+     * <p>模板类型</p>
+     */
     @NameInMap("templateType")
     public String templateType;
 

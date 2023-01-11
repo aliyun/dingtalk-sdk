@@ -16,15 +16,21 @@ public class SetRobotConfigRequest extends TeaModel {
     @NameInMap("dingTokenGrantType")
     public Long dingTokenGrantType;
 
-    // 群组开放ID
+    /**
+     * <p>群组开放ID</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    // 开放团队ID
+    /**
+     * <p>开放团队ID</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 设置状态，0代表关闭,1代表开启
+    /**
+     * <p>设置状态，0代表关闭,1代表开启</p>
+     */
     @NameInMap("status")
     public String status;
 

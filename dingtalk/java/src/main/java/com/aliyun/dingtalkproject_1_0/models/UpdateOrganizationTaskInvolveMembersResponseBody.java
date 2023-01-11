@@ -4,7 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskInvolveMembersResponseBody extends TeaModel {
-    // 返回对象
+    /**
+     * <p>返回对象</p>
+     */
     @NameInMap("result")
     public UpdateOrganizationTaskInvolveMembersResponseBodyResult result;
 
@@ -22,15 +24,21 @@ public class UpdateOrganizationTaskInvolveMembersResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers extends TeaModel {
-        // 头像
+        /**
+         * <p>头像</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        // 名字
+        /**
+         * <p>名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户uid
+        /**
+         * <p>用户uid</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -66,11 +74,15 @@ public class UpdateOrganizationTaskInvolveMembersResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskInvolveMembersResponseBodyResult extends TeaModel {
-        // 参与者列表
+        /**
+         * <p>参与者列表</p>
+         */
         @NameInMap("involvers")
         public java.util.List<UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers> involvers;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updated")
         public String updated;
 

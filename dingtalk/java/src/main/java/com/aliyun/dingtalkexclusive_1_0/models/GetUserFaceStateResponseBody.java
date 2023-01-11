@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserFaceStateResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public java.util.List<GetUserFaceStateResponseBodyData> data;
 
@@ -22,11 +24,15 @@ public class GetUserFaceStateResponseBody extends TeaModel {
     }
 
     public static class GetUserFaceStateResponseBodyData extends TeaModel {
-        // 人脸录入状态 1-无人脸 2-有人脸
+        /**
+         * <p>人脸录入状态 1-无人脸 2-有人脸</p>
+         */
         @NameInMap("state")
         public Integer state;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

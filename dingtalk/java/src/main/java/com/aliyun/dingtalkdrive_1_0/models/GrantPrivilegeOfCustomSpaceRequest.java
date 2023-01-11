@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GrantPrivilegeOfCustomSpaceRequest extends TeaModel {
-    // 权限有效时间
+    /**
+     * <p>权限有效时间</p>
+     */
     @NameInMap("duration")
     public Long duration;
 
-    // 授权访问的文件id列表
+    /**
+     * <p>授权访问的文件id列表</p>
+     */
     @NameInMap("fileIds")
     public java.util.List<String> fileIds;
 
-    // 权限类型
+    /**
+     * <p>权限类型</p>
+     */
     @NameInMap("type")
     public String type;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // 被授予权限的员工id
+    /**
+     * <p>被授予权限的员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

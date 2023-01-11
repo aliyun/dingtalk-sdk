@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDownloadInfoRequest extends TeaModel {
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // 是否返回内网加签url
+    /**
+     * <p>是否返回内网加签url</p>
+     */
     @NameInMap("withInternalResourceUrl")
     public Boolean withInternalResourceUrl;
 
-    // 是否返回区域信息
+    /**
+     * <p>是否返回区域信息</p>
+     */
     @NameInMap("withRegion")
     public Boolean withRegion;
 

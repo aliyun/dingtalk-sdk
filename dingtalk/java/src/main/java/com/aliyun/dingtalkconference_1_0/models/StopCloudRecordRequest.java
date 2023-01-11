@@ -4,7 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StopCloudRecordRequest extends TeaModel {
-    // 主持人uid
+    /**
+     * <p>主持人uid</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,23 +4,33 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchActivationCodeResponseBody extends TeaModel {
-    // activationCode
+    /**
+     * <p>activationCode</p>
+     */
     @NameInMap("activationCode")
     public String activationCode;
 
-    // authType
+    /**
+     * <p>authType</p>
+     */
     @NameInMap("authType")
     public String authType;
 
-    // expireTime
+    /**
+     * <p>expireTime</p>
+     */
     @NameInMap("expireTimeGMT")
     public String expireTimeGMT;
 
-    // instanceId
+    /**
+     * <p>instanceId</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
-    // status
+    /**
+     * <p>status</p>
+     */
     @NameInMap("status")
     public Integer status;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ManagementListSpacesRequest extends TeaModel {
-    // 空间id列表
+    /**
+     * <p>空间id列表</p>
+     */
     @NameInMap("spaceIds")
     public java.util.List<String> spaceIds;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSectionConfigRequest extends TeaModel {
-    // 扩展参数
+    /**
+     * <p>扩展参数</p>
+     */
     @NameInMap("ext")
     public String ext;
 
-    // 课表模板信息
+    /**
+     * <p>课表模板信息</p>
+     */
     @NameInMap("sectionConfigs")
     public java.util.List<CreateSectionConfigRequestSectionConfigs> sectionConfigs;
 
-    // 操作人的userid。
+    /**
+     * <p>操作人的userid。</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -46,15 +52,21 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionEndDate extends TeaModel {
-        // 日
+        /**
+         * <p>日</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -90,11 +102,15 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime extends TeaModel {
-        // 小时
+        /**
+         * <p>小时</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
-        // 分
+        /**
+         * <p>分</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -122,11 +138,15 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime extends TeaModel {
-        // 小时
+        /**
+         * <p>小时</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
-        // 分
+        /**
+         * <p>分</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -154,23 +174,33 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionModels extends TeaModel {
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("sectionEndTime")
         public CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime sectionEndTime;
 
-        // 第几节。
+        /**
+         * <p>第几节。</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        // 节次名称
+        /**
+         * <p>节次名称</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("sectionStartTime")
         public CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime sectionStartTime;
 
-        // 节次类型枚举：COURSE/REST
+        /**
+         * <p>节次类型枚举：COURSE/REST</p>
+         */
         @NameInMap("sectionType")
         public String sectionType;
 
@@ -222,15 +252,21 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionStartDate extends TeaModel {
-        // 每个月的第几天。
+        /**
+         * <p>每个月的第几天。</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月份。
+        /**
+         * <p>月份。</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年份。
+        /**
+         * <p>年份。</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -266,15 +302,21 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSemesterEndDate extends TeaModel {
-        // 每月第几天
+        /**
+         * <p>每月第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -310,15 +352,21 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSemesterStartDate extends TeaModel {
-        // 日
+        /**
+         * <p>日</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月
+        /**
+         * <p>月</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年
+        /**
+         * <p>年</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -354,35 +402,51 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigs extends TeaModel {
-        // 课表名称
+        /**
+         * <p>课表名称</p>
+         */
         @NameInMap("scheduleName")
         public String scheduleName;
 
-        // 学年
+        /**
+         * <p>学年</p>
+         */
         @NameInMap("schoolYear")
         public String schoolYear;
 
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("sectionEndDate")
         public CreateSectionConfigRequestSectionConfigsSectionEndDate sectionEndDate;
 
-        // 节次模型
+        /**
+         * <p>节次模型</p>
+         */
         @NameInMap("sectionModels")
         public java.util.List<CreateSectionConfigRequestSectionConfigsSectionModels> sectionModels;
 
-        // 开始时间（精确到日）
+        /**
+         * <p>开始时间（精确到日）</p>
+         */
         @NameInMap("sectionStartDate")
         public CreateSectionConfigRequestSectionConfigsSectionStartDate sectionStartDate;
 
-        // 学期
+        /**
+         * <p>学期</p>
+         */
         @NameInMap("semester")
         public Integer semester;
 
-        // 学期结束时间
+        /**
+         * <p>学期结束时间</p>
+         */
         @NameInMap("semesterEndDate")
         public CreateSectionConfigRequestSectionConfigsSemesterEndDate semesterEndDate;
 
-        // 学期开始时间
+        /**
+         * <p>学期开始时间</p>
+         */
         @NameInMap("semesterStartDate")
         public CreateSectionConfigRequestSectionConfigsSemesterStartDate semesterStartDate;
 

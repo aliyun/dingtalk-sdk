@@ -4,39 +4,57 @@ package com.aliyun.dingtalkcontract_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendContractCardRequest extends TeaModel {
-    // 卡片类型
+    /**
+     * <p>卡片类型</p>
+     */
     @NameInMap("cardType")
     public String cardType;
 
-    // 合同信息
+    /**
+     * <p>合同信息</p>
+     */
     @NameInMap("contractInfo")
     public SendContractCardRequestContractInfo contractInfo;
 
-    // 合同的企业id
+    /**
+     * <p>合同的企业id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 额外信息
+    /**
+     * <p>额外信息</p>
+     */
     @NameInMap("extension")
     public java.util.Map<String, String> extension;
 
-    // 审批实例id
+    /**
+     * <p>审批实例id</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // 接收群id
+    /**
+     * <p>接收群id</p>
+     */
     @NameInMap("receiveGroups")
     public java.util.List<String> receiveGroups;
 
-    // 接收者
+    /**
+     * <p>接收者</p>
+     */
     @NameInMap("receivers")
     public java.util.List<SendContractCardRequestReceivers> receivers;
 
-    // 发送者
+    /**
+     * <p>发送者</p>
+     */
     @NameInMap("sender")
     public SendContractCardRequestSender sender;
 
-    // 是否同步单聊
+    /**
+     * <p>是否同步单聊</p>
+     */
     @NameInMap("syncSingleChat")
     public Boolean syncSingleChat;
 
@@ -118,19 +136,27 @@ public class SendContractCardRequest extends TeaModel {
     }
 
     public static class SendContractCardRequestContractInfo extends TeaModel {
-        // 合同编号
+        /**
+         * <p>合同编号</p>
+         */
         @NameInMap("contractCode")
         public String contractCode;
 
-        // 合同名称
+        /**
+         * <p>合同名称</p>
+         */
         @NameInMap("contractName")
         public String contractName;
 
-        // 签署时间
+        /**
+         * <p>签署时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 签署人名称
+        /**
+         * <p>签署人名称</p>
+         */
         @NameInMap("signUserName")
         public String signUserName;
 
@@ -174,15 +200,21 @@ public class SendContractCardRequest extends TeaModel {
     }
 
     public static class SendContractCardRequestReceivers extends TeaModel {
-        // 接收者所在组织
+        /**
+         * <p>接收者所在组织</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 用户类型
+        /**
+         * <p>用户类型</p>
+         */
         @NameInMap("userType")
         public String userType;
 
@@ -218,15 +250,21 @@ public class SendContractCardRequest extends TeaModel {
     }
 
     public static class SendContractCardRequestSender extends TeaModel {
-        // 发起人所在组织
+        /**
+         * <p>发起人所在组织</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 用户类型
+        /**
+         * <p>用户类型</p>
+         */
         @NameInMap("userType")
         public String userType;
 

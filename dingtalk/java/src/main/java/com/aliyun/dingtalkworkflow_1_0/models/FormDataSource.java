@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormDataSource extends TeaModel {
-    // 关联表单信息
+    /**
+     * <p>关联表单信息</p>
+     */
     @NameInMap("target")
     public FormDataSourceTarget target;
 
-    // 关联类型，form关联表单
+    /**
+     * <p>关联类型，form关联表单</p>
+     */
     @NameInMap("type")
     public String type;
 
@@ -34,19 +38,27 @@ public class FormDataSource extends TeaModel {
     }
 
     public static class FormDataSourceTarget extends TeaModel {
-        // 表单类型，0流程表单
+        /**
+         * <p>表单类型，0流程表单</p>
+         */
         @NameInMap("appType")
         public Integer appType;
 
-        // 应用appUuid
+        /**
+         * <p>应用appUuid</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
-        // 关联表单业务标识
+        /**
+         * <p>关联表单业务标识</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
-        // 关联表单的formCode
+        /**
+         * <p>关联表单的formCode</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 

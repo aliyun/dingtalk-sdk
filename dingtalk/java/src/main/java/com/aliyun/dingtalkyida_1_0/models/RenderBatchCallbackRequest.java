@@ -4,51 +4,75 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RenderBatchCallbackRequest extends TeaModel {
-    // appType
+    /**
+     * <p>appType</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 组织id
+    /**
+     * <p>组织id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 文件大小
+    /**
+     * <p>文件大小</p>
+     */
     @NameInMap("fileSize")
     public Long fileSize;
 
-    // language
+    /**
+     * <p>language</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 名称空间
+    /**
+     * <p>名称空间</p>
+     */
     @NameInMap("namespace")
     public String namespace;
 
-    // oss文件链接
+    /**
+     * <p>oss文件链接</p>
+     */
     @NameInMap("ossUrl")
     public String ossUrl;
 
-    // 流水号
+    /**
+     * <p>流水号</p>
+     */
     @NameInMap("sequenceId")
     public String sequenceId;
 
-    // 源
+    /**
+     * <p>源</p>
+     */
     @NameInMap("source")
     public String source;
 
-    // 状态
+    /**
+     * <p>状态</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // systemToken
+    /**
+     * <p>systemToken</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 时间区域
+    /**
+     * <p>时间区域</p>
+     */
     @NameInMap("timeZone")
     public String timeZone;
 
-    // userId
+    /**
+     * <p>userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

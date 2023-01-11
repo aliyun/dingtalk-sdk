@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserInfoRequest extends TeaModel {
-    // 按月标记。不填默认当月。填0为次月。
+    /**
+     * <p>按月标记。不填默认当月。填0为次月。</p>
+     */
     @NameInMap("monthMark")
     public String monthMark;
 

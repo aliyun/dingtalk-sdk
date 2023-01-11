@@ -4,47 +4,69 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeQueryStudentInfoByStudentIdResponseBody extends TeaModel {
-    // 部门拓展信息列表
+    /**
+     * <p>部门拓展信息列表</p>
+     */
     @NameInMap("deptStudentInfoList")
     public java.util.List<CollegeQueryStudentInfoByStudentIdResponseBodyDeptStudentInfoList> deptStudentInfoList;
 
-    // 学生在组织状态
+    /**
+     * <p>学生在组织状态</p>
+     */
     @NameInMap("dingMemberStatus")
     public String dingMemberStatus;
 
-    // 人员拓展信息
+    /**
+     * <p>人员拓展信息</p>
+     */
     @NameInMap("empExtension")
     public java.util.Map<String, ?> empExtension;
 
-    // 性别
+    /**
+     * <p>性别</p>
+     */
     @NameInMap("gender")
     public String gender;
 
-    // 身份证号
+    /**
+     * <p>身份证号</p>
+     */
     @NameInMap("identifyId")
     public String identifyId;
 
-    // 账号是否激活
+    /**
+     * <p>账号是否激活</p>
+     */
     @NameInMap("isActive")
     public Boolean isActive;
 
-    // 入学年月
+    /**
+     * <p>入学年月</p>
+     */
     @NameInMap("startYear")
     public String startYear;
 
-    // 学生id
+    /**
+     * <p>学生id</p>
+     */
     @NameInMap("studentId")
     public Long studentId;
 
-    // 学生姓名
+    /**
+     * <p>学生姓名</p>
+     */
     @NameInMap("studentName")
     public String studentName;
 
-    // unionId
+    /**
+     * <p>unionId</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // userId
+    /**
+     * <p>userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -142,15 +164,21 @@ public class CollegeQueryStudentInfoByStudentIdResponseBody extends TeaModel {
     }
 
     public static class CollegeQueryStudentInfoByStudentIdResponseBodyDeptStudentInfoList extends TeaModel {
-        // 部门id
+        /**
+         * <p>部门id</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 人员类别
+        /**
+         * <p>人员类别</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
-        // 学生学号
+        /**
+         * <p>学生学号</p>
+         */
         @NameInMap("studentNumber")
         public String studentNumber;
 

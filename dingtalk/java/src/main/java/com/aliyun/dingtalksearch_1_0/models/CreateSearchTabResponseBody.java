@@ -4,7 +4,9 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSearchTabResponseBody extends TeaModel {
-    // 数据源的id,范围为3000-4000
+    /**
+     * <p>数据源的id,范围为3000-4000</p>
+     */
     @NameInMap("tabId")
     public Integer tabId;
 

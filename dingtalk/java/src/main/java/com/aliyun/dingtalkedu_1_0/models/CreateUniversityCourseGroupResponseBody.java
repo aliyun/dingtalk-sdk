@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUniversityCourseGroupResponseBody extends TeaModel {
-    // 课程组信息
+    /**
+     * <p>课程组信息</p>
+     */
     @NameInMap("courseGroupInfo")
     public CreateUniversityCourseGroupResponseBodyCourseGroupInfo courseGroupInfo;
 
@@ -22,7 +24,9 @@ public class CreateUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupResponseBodyCourseGroupInfo extends TeaModel {
-        // 课程组编码
+        /**
+         * <p>课程组编码</p>
+         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 

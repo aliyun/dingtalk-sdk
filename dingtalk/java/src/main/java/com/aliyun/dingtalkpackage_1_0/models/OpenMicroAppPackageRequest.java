@@ -4,7 +4,9 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenMicroAppPackageRequest extends TeaModel {
-    // 企业自建应用agentId
+    /**
+     * <p>企业自建应用agentId</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 

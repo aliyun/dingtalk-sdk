@@ -21,19 +21,27 @@ public class DigitalStoreSubNodesResponseBody extends TeaModel {
     }
 
     public static class DigitalStoreSubNodesResponseBodyContent extends TeaModel {
-        // 节点Id
+        /**
+         * <p>节点Id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // 门店名称
+        /**
+         * <p>门店名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 上级节点id
+        /**
+         * <p>上级节点id</p>
+         */
         @NameInMap("parentId")
         public Long parentId;
 
-        // 节点类型
+        /**
+         * <p>节点类型</p>
+         */
         @NameInMap("type")
         public Long type;
 

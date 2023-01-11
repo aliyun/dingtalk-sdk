@@ -4,19 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSceneGroupMembersRequest extends TeaModel {
-    // 酷应用编码
+    /**
+     * <p>酷应用编码</p>
+     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
-    // 分页游标，首页传0
+    /**
+     * <p>分页游标，首页传0</p>
+     */
     @NameInMap("cursor")
     public String cursor;
 
-    // 开放群ID
+    /**
+     * <p>开放群ID</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 本次查询返回数量上限（该入参传入值小于钉钉阈值时不启用）
+    /**
+     * <p>本次查询返回数量上限（该入参传入值小于钉钉阈值时不启用）</p>
+     */
     @NameInMap("size")
     public Long size;
 

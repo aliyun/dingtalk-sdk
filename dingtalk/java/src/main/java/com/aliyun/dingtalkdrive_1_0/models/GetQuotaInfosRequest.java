@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetQuotaInfosRequest extends TeaModel {
-    // 容量标识符列表
+    /**
+     * <p>容量标识符列表</p>
+     */
     @NameInMap("identifiers")
     public java.util.List<String> identifiers;
 
-    // 容量类型
+    /**
+     * <p>容量类型</p>
+     */
     @NameInMap("type")
     public String type;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

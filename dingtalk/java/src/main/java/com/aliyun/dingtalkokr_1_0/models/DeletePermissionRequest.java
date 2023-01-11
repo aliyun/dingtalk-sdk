@@ -19,7 +19,9 @@ public class DeletePermissionRequest extends TeaModel {
     @NameInMap("type")
     public String type;
 
-    // 当前用户的userId。
+    /**
+     * <p>当前用户的userId。</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEventsResponseBody extends TeaModel {
-    // 日程
+    /**
+     * <p>日程</p>
+     */
     @NameInMap("events")
     public java.util.List<ListEventsResponseBodyEvents> events;
 
-    // 翻页token
+    /**
+     * <p>翻页token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 增量同步token
+    /**
+     * <p>增量同步token</p>
+     */
     @NameInMap("syncToken")
     public String syncToken;
 
@@ -46,22 +52,30 @@ public class ListEventsResponseBody extends TeaModel {
     }
 
     public static class ListEventsResponseBodyEventsAttendees extends TeaModel {
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("id")
         public String id;
 
         @NameInMap("isOptional")
         public Boolean isOptional;
 
-        // 回复状态
+        /**
+         * <p>回复状态</p>
+         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        // 是否是当前登陆用户
+        /**
+         * <p>是否是当前登陆用户</p>
+         */
         @NameInMap("self")
         public Boolean self;
 
@@ -203,7 +217,9 @@ public class ListEventsResponseBody extends TeaModel {
     }
 
     public static class ListEventsResponseBodyEventsLocation extends TeaModel {
-        // 展示名称
+        /**
+         * <p>展示名称</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -327,19 +343,27 @@ public class ListEventsResponseBody extends TeaModel {
     }
 
     public static class ListEventsResponseBodyEventsOrganizer extends TeaModel {
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 回复状态
+        /**
+         * <p>回复状态</p>
+         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        // 是否是当前登陆用户
+        /**
+         * <p>是否是当前登陆用户</p>
+         */
         @NameInMap("self")
         public Boolean self;
 
@@ -395,7 +419,9 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("interval")
         public Integer interval;
 
-        // 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
+        /**
+         * <p>循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -453,7 +479,9 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("numberOfOccurrences")
         public Integer numberOfOccurrences;
 
-        // 范围类型(endDate, noEnd, numbered)
+        /**
+         * <p>范围类型(endDate, noEnd, numbered)</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -489,11 +517,15 @@ public class ListEventsResponseBody extends TeaModel {
     }
 
     public static class ListEventsResponseBodyEventsRecurrence extends TeaModel {
-        // 重复模式
+        /**
+         * <p>重复模式</p>
+         */
         @NameInMap("pattern")
         public ListEventsResponseBodyEventsRecurrencePattern pattern;
 
-        // 重复范围
+        /**
+         * <p>重复范围</p>
+         */
         @NameInMap("range")
         public ListEventsResponseBodyEventsRecurrenceRange range;
 
@@ -551,15 +583,21 @@ public class ListEventsResponseBody extends TeaModel {
     }
 
     public static class ListEventsResponseBodyEventsStart extends TeaModel {
-        // 日期，格式：yyyyMMdd
+        /**
+         * <p>日期，格式：yyyyMMdd</p>
+         */
         @NameInMap("date")
         public String date;
 
-        // 时间戳，按照ISO 8601格式
+        /**
+         * <p>时间戳，按照ISO 8601格式</p>
+         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        // 时区
+        /**
+         * <p>时区</p>
+         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -595,34 +633,48 @@ public class ListEventsResponseBody extends TeaModel {
     }
 
     public static class ListEventsResponseBodyEvents extends TeaModel {
-        // 日程参与人
+        /**
+         * <p>日程参与人</p>
+         */
         @NameInMap("attendees")
         public java.util.List<ListEventsResponseBodyEventsAttendees> attendees;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
-        // 日程描述
+        /**
+         * <p>日程描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 日程结束时间
+        /**
+         * <p>日程结束时间</p>
+         */
         @NameInMap("end")
         public ListEventsResponseBodyEventsEnd end;
 
         @NameInMap("extendedProperties")
         public ListEventsResponseBodyEventsExtendedProperties extendedProperties;
 
-        // 日程事件id
+        /**
+         * <p>日程事件id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 是否为全天日程
+        /**
+         * <p>是否为全天日程</p>
+         */
         @NameInMap("isAllDay")
         public Boolean isAllDay;
 
-        // 日程地点
+        /**
+         * <p>日程地点</p>
+         */
         @NameInMap("location")
         public ListEventsResponseBodyEventsLocation location;
 
@@ -632,34 +684,48 @@ public class ListEventsResponseBody extends TeaModel {
         @NameInMap("onlineMeetingInfo")
         public ListEventsResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo;
 
-        // 日程组织人
+        /**
+         * <p>日程组织人</p>
+         */
         @NameInMap("organizer")
         public ListEventsResponseBodyEventsOrganizer organizer;
 
-        // 日程重复规则
+        /**
+         * <p>日程重复规则</p>
+         */
         @NameInMap("recurrence")
         public ListEventsResponseBodyEventsRecurrence recurrence;
 
         @NameInMap("reminders")
         public java.util.List<ListEventsResponseBodyEventsReminders> reminders;
 
-        // 重复日程的主日程id，非重复日程为空
+        /**
+         * <p>重复日程的主日程id，非重复日程为空</p>
+         */
         @NameInMap("seriesMasterId")
         public String seriesMasterId;
 
-        // 日程开始时间
+        /**
+         * <p>日程开始时间</p>
+         */
         @NameInMap("start")
         public ListEventsResponseBodyEventsStart start;
 
-        // 日程状态
+        /**
+         * <p>日程状态</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 日程标题
+        /**
+         * <p>日程标题</p>
+         */
         @NameInMap("summary")
         public String summary;
 
-        // 更新时间
+        /**
+         * <p>更新时间</p>
+         */
         @NameInMap("updateTime")
         public String updateTime;
 

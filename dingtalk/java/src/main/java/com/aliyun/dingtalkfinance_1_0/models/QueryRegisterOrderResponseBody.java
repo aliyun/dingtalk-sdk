@@ -4,35 +4,51 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRegisterOrderResponseBody extends TeaModel {
-    // 失败原因
+    /**
+     * <p>失败原因</p>
+     */
     @NameInMap("failReason")
     public String failReason;
 
-    // 审核时间
+    /**
+     * <p>审核时间</p>
+     */
     @NameInMap("gmtAudit")
     public String gmtAudit;
 
-    // 主机构编号
+    /**
+     * <p>主机构编号</p>
+     */
     @NameInMap("instId")
     public String instId;
 
-    // 申请单号
+    /**
+     * <p>申请单号</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 
-    // 外部流水号
+    /**
+     * <p>外部流水号</p>
+     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
-    // 申请单状态
+    /**
+     * <p>申请单状态</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // 子机构编号
+    /**
+     * <p>子机构编号</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    // 子机构名称
+    /**
+     * <p>子机构名称</p>
+     */
     @NameInMap("subInstName")
     public String subInstName;
 

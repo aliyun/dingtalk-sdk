@@ -4,27 +4,39 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryInterviewsRequest extends TeaModel {
-    // 业务标识
+    /**
+     * <p>业务标识</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 候选人标识
+    /**
+     * <p>候选人标识</p>
+     */
     @NameInMap("candidateId")
     public String candidateId;
 
-    // 面试开始时间的查询起始时间（单位：毫秒）
+    /**
+     * <p>面试开始时间的查询起始时间（单位：毫秒）</p>
+     */
     @NameInMap("startTimeBeginMillis")
     public Long startTimeBeginMillis;
 
-    // 面试开始时间的查询结束时间（单位：毫秒）
+    /**
+     * <p>面试开始时间的查询结束时间（单位：毫秒）</p>
+     */
     @NameInMap("startTimeEndMillis")
     public Long startTimeEndMillis;
 
-    // 分页游标，首次调用传空
+    /**
+     * <p>分页游标，首次调用传空</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("size")
     public Long size;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
-    // 闲忙信息
+    /**
+     * <p>闲忙信息</p>
+     */
     @NameInMap("scheduleInformation")
     public java.util.List<GetMeetingRoomsScheduleResponseBodyScheduleInformation> scheduleInformation;
 
@@ -22,11 +24,15 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
     }
 
     public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd extends TeaModel {
-        // 结束时间戳，按照ISO 8601格式
+        /**
+         * <p>结束时间戳，按照ISO 8601格式</p>
+         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        // 时间戳所属时区
+        /**
+         * <p>时间戳所属时区</p>
+         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -54,7 +60,9 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
     }
 
     public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer extends TeaModel {
-        // 组织者unionId。
+        /**
+         * <p>组织者unionId。</p>
+         */
         @NameInMap("id")
         public String id;
 
@@ -74,11 +82,15 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
     }
 
     public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart extends TeaModel {
-        // 开始时间戳，按照ISO 8601格式
+        /**
+         * <p>开始时间戳，按照ISO 8601格式</p>
+         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        // 所属时区
+        /**
+         * <p>所属时区</p>
+         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -106,23 +118,33 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
     }
 
     public static class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems extends TeaModel {
-        // 结束时间，表示一个日期，或者一个带时区的时间戳
+        /**
+         * <p>结束时间，表示一个日期，或者一个带时区的时间戳</p>
+         */
         @NameInMap("end")
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd end;
 
-        // 日程id。
+        /**
+         * <p>日程id。</p>
+         */
         @NameInMap("eventId")
         public String eventId;
 
-        // 日程组织者。
+        /**
+         * <p>日程组织者。</p>
+         */
         @NameInMap("organizer")
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer organizer;
 
-        // 开始时间，表示一个日期，或者一个带时区的时间戳
+        /**
+         * <p>开始时间，表示一个日期，或者一个带时区的时间戳</p>
+         */
         @NameInMap("start")
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart start;
 
-        // 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
+        /**
+         * <p>状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙</p>
+         */
         @NameInMap("status")
         public String status;
 
@@ -174,11 +196,15 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
     }
 
     public static class GetMeetingRoomsScheduleResponseBodyScheduleInformation extends TeaModel {
-        // 异常描述
+        /**
+         * <p>异常描述</p>
+         */
         @NameInMap("error")
         public String error;
 
-        // 用户userId
+        /**
+         * <p>用户userId</p>
+         */
         @NameInMap("roomId")
         public String roomId;
 

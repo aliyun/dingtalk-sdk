@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobCodeDictionaryResponseBody extends TeaModel {
-    // code列表
+    /**
+     * <p>code列表</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryJobCodeDictionaryResponseBodyContent> content;
 
@@ -22,19 +24,27 @@ public class QueryJobCodeDictionaryResponseBody extends TeaModel {
     }
 
     public static class QueryJobCodeDictionaryResponseBodyContent extends TeaModel {
-        // 分类
+        /**
+         * <p>分类</p>
+         */
         @NameInMap("category")
         public String category;
 
-        // 固定字段标识
+        /**
+         * <p>固定字段标识</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 展示名字
+        /**
+         * <p>展示名字</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // 1:医师,0:非医师,2:待补充
+        /**
+         * <p>1:医师,0:非医师,2:待补充</p>
+         */
         @NameInMap("doctorType")
         public String doctorType;
 

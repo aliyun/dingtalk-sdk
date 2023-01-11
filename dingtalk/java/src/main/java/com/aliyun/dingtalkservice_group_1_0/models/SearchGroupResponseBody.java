@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchGroupResponseBody extends TeaModel {
-    // 本次请求所返回的最大记录条数。
+    /**
+     * <p>本次请求所返回的最大记录条数。</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 表示当前调用返回读取到的位置，空代表数据已经读取完毕
+    /**
+     * <p>表示当前调用返回读取到的位置，空代表数据已经读取完毕</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 已读未读信息列表
+    /**
+     * <p>已读未读信息列表</p>
+     */
     @NameInMap("records")
     public java.util.List<SearchGroupResponseBodyRecords> records;
 
-    // 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
+    /**
+     * <p>本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -58,23 +66,33 @@ public class SearchGroupResponseBody extends TeaModel {
     }
 
     public static class SearchGroupResponseBodyRecords extends TeaModel {
-        // 群名称
+        /**
+         * <p>群名称</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
-        // 入群链接
+        /**
+         * <p>入群链接</p>
+         */
         @NameInMap("groupUrl")
         public String groupUrl;
 
-        // 开放群ID
+        /**
+         * <p>开放群ID</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        // 开放群组ID
+        /**
+         * <p>开放群组ID</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
-        // 开放团队ID
+        /**
+         * <p>开放团队ID</p>
+         */
         @NameInMap("openTeamId")
         public String openTeamId;
 

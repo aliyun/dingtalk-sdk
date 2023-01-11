@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenDynamicDataConfigDynamicDataMappingValue extends TeaModel {
-    // jsonPath
+    /**
+     * <p>jsonPath</p>
+     */
     @NameInMap("path")
     public String path;
 
-    // 值的类型 (STRING: String, ARRAY: 数组, OBJECT: 对象, CHART: 图表, TABLE: 表格, INDICATOR: 指标卡)
+    /**
+     * <p>值的类型 (STRING: String, ARRAY: 数组, OBJECT: 对象, CHART: 图表, TABLE: 表格, INDICATOR: 指标卡)</p>
+     */
     @NameInMap("dynamicDataValueType")
     public String dynamicDataValueType;
 

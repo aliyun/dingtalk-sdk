@@ -4,15 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCalenderSummaryResponseBody extends TeaModel {
-    // 最近1天创建日程人数
+    /**
+     * <p>最近1天创建日程人数</p>
+     */
     @NameInMap("calendarCreateUserCnt")
     public String calendarCreateUserCnt;
 
-    // 最近1天接收日程人数
+    /**
+     * <p>最近1天接收日程人数</p>
+     */
     @NameInMap("recvCalendarUserCnt1d")
     public String recvCalendarUserCnt1d;
 
-    // 最近1天使用日程人数
+    /**
+     * <p>最近1天使用日程人数</p>
+     */
     @NameInMap("useCalendarUserCnt1d")
     public String useCalendarUserCnt1d;
 

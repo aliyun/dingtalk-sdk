@@ -4,27 +4,39 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddUserAccountRequest extends TeaModel {
-    // 业务标识
+    /**
+     * <p>业务标识</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 渠道账号名
+    /**
+     * <p>渠道账号名</p>
+     */
     @NameInMap("channelAccountName")
     public String channelAccountName;
 
-    // 渠道用户标识
+    /**
+     * <p>渠道用户标识</p>
+     */
     @NameInMap("channelUserIdentify")
     public String channelUserIdentify;
 
-    // 手机号
+    /**
+     * <p>手机号</p>
+     */
     @NameInMap("phoneNumber")
     public String phoneNumber;
 
-    // 企业标识
+    /**
+     * <p>企业标识</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 用户标识
+    /**
+     * <p>用户标识</p>
+     */
     @NameInMap("userId")
     public String userId;
 

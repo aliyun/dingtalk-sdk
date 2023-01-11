@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAppFunctionNodesResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public java.util.List<QueryAppFunctionNodesResponseBodyData> data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,39 +52,57 @@ public class QueryAppFunctionNodesResponseBody extends TeaModel {
     }
 
     public static class QueryAppFunctionNodesResponseBodyData extends TeaModel {
-        // 节点所属的应用编码
+        /**
+         * <p>节点所属的应用编码</p>
+         */
         @NameInMap("appCode")
         public String appCode;
 
-        // 显示名称
+        /**
+         * <p>显示名称</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // 是否是系统节点，如果是则无法删除
+        /**
+         * <p>是否是系统节点，如果是则无法删除</p>
+         */
         @NameInMap("isSystem")
         public Boolean isSystem;
 
-        // 菜单节点类型。 AppPackage=应用程序 FormModule=列表模块(不能发起流程)、 WorkflowModule=流程列表模块(可以发起流程) ReportModule=报表模块 GroupModule=节点分组
+        /**
+         * <p>菜单节点类型。 AppPackage=应用程序 FormModule=列表模块(不能发起流程)、 WorkflowModule=流程列表模块(可以发起流程) ReportModule=报表模块 GroupModule=节点分组</p>
+         */
         @NameInMap("nodeType")
         public String nodeType;
 
-        // 菜单可见类型。 Inactive=未指定 AllVisible=全部可见 PcVisible=仅pc可见 MobileVisible=仅移动端可见 InVisible=全部不可见
+        /**
+         * <p>菜单可见类型。 Inactive=未指定 AllVisible=全部可见 PcVisible=仅pc可见 MobileVisible=仅移动端可见 InVisible=全部不可见</p>
+         */
         @NameInMap("nodeVisibleType")
         public String nodeVisibleType;
 
-        // 父节点的编码
+        /**
+         * <p>父节点的编码</p>
+         */
         @NameInMap("parentCode")
         public String parentCode;
 
-        // 节点编码。如果nodeType=FormModule,则为表单编码
+        /**
+         * <p>节点编码。如果nodeType=FormModule,则为表单编码</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 
-        // 排序编号
+        /**
+         * <p>排序编号</p>
+         */
         @NameInMap("sortKey")
         public Long sortKey;
 
-        // 菜单状态。 Inactive=未激活 Active=激活
+        /**
+         * <p>菜单状态。 Inactive=未激活 Active=激活</p>
+         */
         @NameInMap("state")
         public String state;
 

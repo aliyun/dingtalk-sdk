@@ -32,25 +32,33 @@ public class CreateConnectorRequest extends TeaModel {
     }
 
     public static class CreateConnectorRequestConnectorInfo extends TeaModel {
-        // 连接器中执行动作的接口路径域名。
+        /**
+         * <p>连接器中执行动作的接口路径域名。</p>
+         */
         @NameInMap("apiDomain")
         public String apiDomain;
 
-        // 连接器中执行动作接口的加密签名。
+        /**
+         * <p>连接器中执行动作接口的加密签名。</p>
+         */
         @NameInMap("apiSecret")
         public String apiSecret;
 
         @NameInMap("appId")
         public Long appId;
 
-        // 将apiSecret设置为模板变量。
+        /**
+         * <p>将apiSecret设置为模板变量。</p>
+         */
         @NameInMap("authValueEnv")
         public Boolean authValueEnv;
 
         @NameInMap("description")
         public String description;
 
-        // 将执行动作域名设为环境变量。
+        /**
+         * <p>将执行动作域名设为环境变量。</p>
+         */
         @NameInMap("domainEnv")
         public Boolean domainEnv;
 

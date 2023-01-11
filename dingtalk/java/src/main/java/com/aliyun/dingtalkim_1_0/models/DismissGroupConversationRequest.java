@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class DismissGroupConversationRequest extends TeaModel {
-    // 群id(客联系业务系统内的群id)
+    /**
+     * <p>群id(客联系业务系统内的群id)</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

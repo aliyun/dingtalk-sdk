@@ -7,19 +7,27 @@ public class RosterMetaFieldOptionsUpdateRequest extends TeaModel {
     @NameInMap("appAgentId")
     public Long appAgentId;
 
-    // 字段fieldCode
+    /**
+     * <p>字段fieldCode</p>
+     */
     @NameInMap("fieldCode")
     public String fieldCode;
 
-    // 花名册分组id
+    /**
+     * <p>花名册分组id</p>
+     */
     @NameInMap("groupId")
     public String groupId;
 
-    // 需要修改的选项值
+    /**
+     * <p>需要修改的选项值</p>
+     */
     @NameInMap("labels")
     public java.util.List<String> labels;
 
-    // 修改类型，OPTIONS_ADD选项添加，OPTIONS_DELETE选项删除
+    /**
+     * <p>修改类型，OPTIONS_ADD选项添加，OPTIONS_DELETE选项删除</p>
+     */
     @NameInMap("modifyType")
     public String modifyType;
 

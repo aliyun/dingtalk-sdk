@@ -4,15 +4,21 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCustomfieldValueRequest extends TeaModel {
-    // 自定义字段id
+    /**
+     * <p>自定义字段id</p>
+     */
     @NameInMap("customfieldId")
     public String customfieldId;
 
-    // 自定义字段名
+    /**
+     * <p>自定义字段名</p>
+     */
     @NameInMap("customfieldName")
     public String customfieldName;
 
-    // 自定义字段值列表，最多10个
+    /**
+     * <p>自定义字段值列表，最多10个</p>
+     */
     @NameInMap("value")
     public java.util.List<UpdateCustomfieldValueRequestValue> value;
 
@@ -46,7 +52,9 @@ public class UpdateCustomfieldValueRequest extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueRequestValue extends TeaModel {
-        // 自定义字段显示值
+        /**
+         * <p>自定义字段显示值</p>
+         */
         @NameInMap("title")
         public String title;
 

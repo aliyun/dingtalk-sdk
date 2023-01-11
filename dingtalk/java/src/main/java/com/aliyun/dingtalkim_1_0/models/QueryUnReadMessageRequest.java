@@ -4,11 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUnReadMessageRequest extends TeaModel {
-    // 钉外用户在业务系统内的唯一标志。
+    /**
+     * <p>钉外用户在业务系统内的唯一标志。</p>
+     */
     @NameInMap("appUserId")
     public String appUserId;
 
-    // 群会话列表。
+    /**
+     * <p>群会话列表。</p>
+     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 

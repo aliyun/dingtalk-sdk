@@ -4,11 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllGroupsInDeptRequest extends TeaModel {
-    // 分页查询页码
+    /**
+     * <p>分页查询页码</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页查询页容量
+    /**
+     * <p>分页查询页容量</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

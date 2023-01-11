@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeviceDingRequest extends TeaModel {
-    // 设备标识
+    /**
+     * <p>设备标识</p>
+     */
     @NameInMap("deviceKey")
     public String deviceKey;
 
-    // 消息体动态参数
+    /**
+     * <p>消息体动态参数</p>
+     */
     @NameInMap("paramsJson")
     public String paramsJson;
 
-    // staffId列表
+    /**
+     * <p>staffId列表</p>
+     */
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
 

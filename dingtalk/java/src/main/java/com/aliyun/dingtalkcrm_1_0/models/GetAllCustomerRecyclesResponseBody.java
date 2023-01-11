@@ -4,15 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAllCustomerRecyclesResponseBody extends TeaModel {
-    // 是否还有下一页。
+    /**
+     * <p>是否还有下一页。</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 下一页的游标。
+    /**
+     * <p>下一页的游标。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 数据列表。
+    /**
+     * <p>数据列表。</p>
+     */
     @NameInMap("resultList")
     public java.util.List<GetAllCustomerRecyclesResponseBodyResultList> resultList;
 
@@ -46,26 +52,36 @@ public class GetAllCustomerRecyclesResponseBody extends TeaModel {
     }
 
     public static class GetAllCustomerRecyclesResponseBodyResultList extends TeaModel {
-        // 客户ID
+        /**
+         * <p>客户ID</p>
+         */
         @NameInMap("customerId")
         public String customerId;
 
-        // 上次跟进时间
+        /**
+         * <p>上次跟进时间</p>
+         */
         @NameInMap("followUpActionTime")
         public String followUpActionTime;
 
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        // 掉保提醒时间
+        /**
+         * <p>掉保提醒时间</p>
+         */
         @NameInMap("notifyTime")
         public String notifyTime;
 
-        // 掉保规则ID
+        /**
+         * <p>掉保规则ID</p>
+         */
         @NameInMap("recycleRuleId")
         public Long recycleRuleId;
 
-        // 掉保时间
+        /**
+         * <p>掉保时间</p>
+         */
         @NameInMap("recycleTime")
         public String recycleTime;
 

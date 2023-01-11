@@ -4,7 +4,9 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMicroAppScopeResponseBody extends TeaModel {
-    // 可见范围结果
+    /**
+     * <p>可见范围结果</p>
+     */
     @NameInMap("result")
     public GetMicroAppScopeResponseBodyResult result;
 
@@ -22,19 +24,27 @@ public class GetMicroAppScopeResponseBody extends TeaModel {
     }
 
     public static class GetMicroAppScopeResponseBodyResult extends TeaModel {
-        // 部门可见列表
+        /**
+         * <p>部门可见列表</p>
+         */
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
-        // 是否管理员可见。如果为true，优先看这个字段
+        /**
+         * <p>是否管理员可见。如果为true，优先看这个字段</p>
+         */
         @NameInMap("onlyAdminVisible")
         public Boolean onlyAdminVisible;
 
-        // 角色可见列表
+        /**
+         * <p>角色可见列表</p>
+         */
         @NameInMap("roleIds")
         public java.util.List<Long> roleIds;
 
-        // 用户可见列表
+        /**
+         * <p>用户可见列表</p>
+         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 

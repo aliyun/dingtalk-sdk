@@ -4,7 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserAlipayAccountResponseBody extends TeaModel {
-    // 支付宝uid
+    /**
+     * <p>支付宝uid</p>
+     */
     @NameInMap("alipayUid")
     public String alipayUid;
 

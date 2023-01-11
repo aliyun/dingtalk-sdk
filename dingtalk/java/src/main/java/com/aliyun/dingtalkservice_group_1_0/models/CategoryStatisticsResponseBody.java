@@ -4,11 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CategoryStatisticsResponseBody extends TeaModel {
-    // 分类统计
+    /**
+     * <p>分类统计</p>
+     */
     @NameInMap("categoryStatisticsRecords")
     public java.util.List<CategoryStatisticsResponseBodyCategoryStatisticsRecords> categoryStatisticsRecords;
 
-    // 分类趋势
+    /**
+     * <p>分类趋势</p>
+     */
     @NameInMap("categoryTrend")
     public java.util.List<CategoryStatisticsResponseBodyCategoryTrend> categoryTrend;
 
@@ -34,15 +38,21 @@ public class CategoryStatisticsResponseBody extends TeaModel {
     }
 
     public static class CategoryStatisticsResponseBodyCategoryStatisticsRecords extends TeaModel {
-        // 心声数量
+        /**
+         * <p>心声数量</p>
+         */
         @NameInMap("count")
         public Long count;
 
-        // 上期心声数量
+        /**
+         * <p>上期心声数量</p>
+         */
         @NameInMap("lastCount")
         public Long lastCount;
 
-        // 分类名称
+        /**
+         * <p>分类名称</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -78,15 +88,21 @@ public class CategoryStatisticsResponseBody extends TeaModel {
     }
 
     public static class CategoryStatisticsResponseBodyCategoryTrend extends TeaModel {
-        // 心声数量
+        /**
+         * <p>心声数量</p>
+         */
         @NameInMap("count")
         public Long count;
 
-        // 日期
+        /**
+         * <p>日期</p>
+         */
         @NameInMap("dt")
         public String dt;
 
-        // 分类名称
+        /**
+         * <p>分类名称</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -117,86 +133,6 @@ public class CategoryStatisticsResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
-        }
-
-    }
-
-    public static class IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords extends TeaModel {
-        // 求助咨询量
-        @NameInMap("askCount")
-        public Long askCount;
-
-        // 分类名
-        @NameInMap("categoryName")
-        public String categoryName;
-
-        // 不满辱骂量
-        @NameInMap("dissatisfiedCount")
-        public Long dissatisfiedCount;
-
-        // 产品异常量
-        @NameInMap("errorCount")
-        public Long errorCount;
-
-        // 赞扬量
-        @NameInMap("praiseCount")
-        public Long praiseCount;
-
-        // 产品建议量
-        @NameInMap("suggestCount")
-        public Long suggestCount;
-
-        public static IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords build(java.util.Map<String, ?> map) throws Exception {
-            IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords self = new IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords();
-            return TeaModel.build(map, self);
-        }
-
-        public IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords setAskCount(Long askCount) {
-            this.askCount = askCount;
-            return this;
-        }
-        public Long getAskCount() {
-            return this.askCount;
-        }
-
-        public IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords setCategoryName(String categoryName) {
-            this.categoryName = categoryName;
-            return this;
-        }
-        public String getCategoryName() {
-            return this.categoryName;
-        }
-
-        public IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords setDissatisfiedCount(Long dissatisfiedCount) {
-            this.dissatisfiedCount = dissatisfiedCount;
-            return this;
-        }
-        public Long getDissatisfiedCount() {
-            return this.dissatisfiedCount;
-        }
-
-        public IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords setErrorCount(Long errorCount) {
-            this.errorCount = errorCount;
-            return this;
-        }
-        public Long getErrorCount() {
-            return this.errorCount;
-        }
-
-        public IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords setPraiseCount(Long praiseCount) {
-            this.praiseCount = praiseCount;
-            return this;
-        }
-        public Long getPraiseCount() {
-            return this.praiseCount;
-        }
-
-        public IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords setSuggestCount(Long suggestCount) {
-            this.suggestCount = suggestCount;
-            return this;
-        }
-        public Long getSuggestCount() {
-            return this.suggestCount;
         }
 
     }

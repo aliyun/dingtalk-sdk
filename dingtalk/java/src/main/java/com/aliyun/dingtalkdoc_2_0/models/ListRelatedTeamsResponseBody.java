@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListRelatedTeamsResponseBody extends TeaModel {
-    // 是否还有更多数据。
+    /**
+     * <p>是否还有更多数据。</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 小组列表。
+    /**
+     * <p>小组列表。</p>
+     */
     @NameInMap("items")
     public java.util.List<TeamModel> items;
 
-    // 分页游标。
+    /**
+     * <p>分页游标。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

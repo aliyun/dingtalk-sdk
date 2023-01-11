@@ -4,107 +4,159 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTodoTaskDetailResponseBody extends TeaModel {
-    // 接入业务应用标识
+    /**
+     * <p>接入业务应用标识</p>
+     */
     @NameInMap("bizTag")
     public String bizTag;
 
-    // 所属分类
+    /**
+     * <p>所属分类</p>
+     */
     @NameInMap("category")
     public String category;
 
-    // 创建时间
+    /**
+     * <p>创建时间</p>
+     */
     @NameInMap("createdTime")
     public Long createdTime;
 
-    // 创建者id（用户的unionId）
+    /**
+     * <p>创建者id（用户的unionId）</p>
+     */
     @NameInMap("creatorId")
     public String creatorId;
 
-    // 描述
+    /**
+     * <p>描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 自定义详情页跳转配置
+    /**
+     * <p>自定义详情页跳转配置</p>
+     */
     @NameInMap("detailUrl")
     public GetTodoTaskDetailResponseBodyDetailUrl detailUrl;
 
-    // 完成状态
+    /**
+     * <p>完成状态</p>
+     */
     @NameInMap("done")
     public Boolean done;
 
-    // 截止时间
+    /**
+     * <p>截止时间</p>
+     */
     @NameInMap("dueTime")
     public Long dueTime;
 
-    // 执行者列表（用户的unionId）
+    /**
+     * <p>执行者列表（用户的unionId）</p>
+     */
     @NameInMap("executorIds")
     public java.util.List<String> executorIds;
 
-    // 执行者待办完成状态列表
+    /**
+     * <p>执行者待办完成状态列表</p>
+     */
     @NameInMap("executorStatus")
     public java.util.List<GetTodoTaskDetailResponseBodyExecutorStatus> executorStatus;
 
-    // 完成时间
+    /**
+     * <p>完成时间</p>
+     */
     @NameInMap("finishTime")
     public Long finishTime;
 
-    // id
+    /**
+     * <p>id</p>
+     */
     @NameInMap("id")
     public String id;
 
-    // 待办是否仅展示在执行人的待办列表中
+    /**
+     * <p>待办是否仅展示在执行人的待办列表中</p>
+     */
     @NameInMap("isOnlyShowExecutor")
     public Boolean isOnlyShowExecutor;
 
-    // 更新时间
+    /**
+     * <p>更新时间</p>
+     */
     @NameInMap("modifiedTime")
     public Long modifiedTime;
 
-    // 更新者id（用户的unionId）
+    /**
+     * <p>更新者id（用户的unionId）</p>
+     */
     @NameInMap("modifierId")
     public String modifierId;
 
-    // 所属组织信息
+    /**
+     * <p>所属组织信息</p>
+     */
     @NameInMap("orgInfo")
     public GetTodoTaskDetailResponseBodyOrgInfo orgInfo;
 
-    // 参与者列表（用户的unionId）
+    /**
+     * <p>参与者列表（用户的unionId）</p>
+     */
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
-    // 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
+    /**
+     * <p>优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 
-    // requestId
+    /**
+     * <p>requestId</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
-    // 业务来源
+    /**
+     * <p>业务来源</p>
+     */
     @NameInMap("source")
     public String source;
 
-    // 业务来源id
+    /**
+     * <p>业务来源id</p>
+     */
     @NameInMap("sourceId")
     public String sourceId;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 标题
+    /**
+     * <p>标题</p>
+     */
     @NameInMap("subject")
     public String subject;
 
-    // 租户id(unionId/orgId/groupId)
+    /**
+     * <p>租户id(unionId/orgId/groupId)</p>
+     */
     @NameInMap("tenantId")
     public String tenantId;
 
-    // 租户类型（user/org/group）
+    /**
+     * <p>租户类型（user/org/group）</p>
+     */
     @NameInMap("tenantType")
     public String tenantType;
 
-    // 待办卡片视图模型
+    /**
+     * <p>待办卡片视图模型</p>
+     */
     @NameInMap("todoCardView")
     public GetTodoTaskDetailResponseBodyTodoCardView todoCardView;
 
@@ -322,11 +374,15 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     }
 
     public static class GetTodoTaskDetailResponseBodyDetailUrl extends TeaModel {
-        // app端详情页地址
+        /**
+         * <p>app端详情页地址</p>
+         */
         @NameInMap("appUrl")
         public String appUrl;
 
-        // pc端详情页地址
+        /**
+         * <p>pc端详情页地址</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
@@ -354,11 +410,15 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     }
 
     public static class GetTodoTaskDetailResponseBodyExecutorStatus extends TeaModel {
-        // 执行者完成状态
+        /**
+         * <p>执行者完成状态</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        // 执行者id（用户的unionId）
+        /**
+         * <p>执行者id（用户的unionId）</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -386,11 +446,15 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     }
 
     public static class GetTodoTaskDetailResponseBodyOrgInfo extends TeaModel {
-        // 组织corpId
+        /**
+         * <p>组织corpId</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 组织名称
+        /**
+         * <p>组织名称</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -418,11 +482,15 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     }
 
     public static class GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList extends TeaModel {
-        // 自定义表单内容名字
+        /**
+         * <p>自定义表单内容名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 自定义表单内容值
+        /**
+         * <p>自定义表单内容值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -450,30 +518,42 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     }
 
     public static class GetTodoTaskDetailResponseBodyTodoCardView extends TeaModel {
-        // link, button, 操作区类型，是链接类型，或者按钮类型
+        /**
+         * <p>link, button, 操作区类型，是链接类型，或者按钮类型</p>
+         */
         @NameInMap("actionType")
         public String actionType;
 
-        // 卡片类型
+        /**
+         * <p>卡片类型</p>
+         */
         @NameInMap("cardType")
         public String cardType;
 
-        // 卡片左上角 区域类型是 icon, 或者checkbox 类型的
+        /**
+         * <p>卡片左上角 区域类型是 icon, 或者checkbox 类型的</p>
+         */
         @NameInMap("circleELType")
         public String circleELType;
 
-        // icon, name ,内容区域类型是 icon+value, 或者name+value 类型的
+        /**
+         * <p>icon, name ,内容区域类型是 icon+value, 或者name+value 类型的</p>
+         */
         @NameInMap("contentType")
         public String contentType;
 
-        // 卡片icon
+        /**
+         * <p>卡片icon</p>
+         */
         @NameInMap("icon")
         public String icon;
 
         @NameInMap("todoCardContentList")
         public java.util.List<GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList> todoCardContentList;
 
-        // 卡片标题
+        /**
+         * <p>卡片标题</p>
+         */
         @NameInMap("todoCardTitle")
         public String todoCardTitle;
 

@@ -21,23 +21,33 @@ public class UpdateBranchVisibleSettingInCooperateRequest extends TeaModel {
     }
 
     public static class UpdateBranchVisibleSettingInCooperateRequestBody extends TeaModel {
-        // 分支的企业ID
+        /**
+         * <p>分支的企业ID</p>
+         */
         @NameInMap("branchCorpId")
         public String branchCorpId;
 
-        // 是否开启 true：开启，false：关闭
+        /**
+         * <p>是否开启 true：开启，false：关闭</p>
+         */
         @NameInMap("open")
         public Boolean open;
 
-        // 设置可见性类型 0 ：在主干通讯录隐藏分支(其它分支包含主组织都看不到,额外设置可以看到) 1 ： 仅可见分支所在部门(只能看到自己企业加入的成员，额外设置可以看到其它成员)
+        /**
+         * <p>设置可见性类型 0 ：在主干通讯录隐藏分支(其它分支包含主组织都看不到,额外设置可以看到) 1 ： 仅可见分支所在部门(只能看到自己企业加入的成员，额外设置可以看到其它成员)</p>
+         */
         @NameInMap("type")
         public Long type;
 
-        // 设置例外的加入合作空间/关联组织的分支企业CorpId列表
+        /**
+         * <p>设置例外的加入合作空间/关联组织的分支企业CorpId列表</p>
+         */
         @NameInMap("visibleBranchCorpIds")
         public java.util.List<String> visibleBranchCorpIds;
 
-        // 设置例外的部门ID列表
+        /**
+         * <p>设置例外的部门ID列表</p>
+         */
         @NameInMap("visibleDeptIds")
         public java.util.List<Long> visibleDeptIds;
 

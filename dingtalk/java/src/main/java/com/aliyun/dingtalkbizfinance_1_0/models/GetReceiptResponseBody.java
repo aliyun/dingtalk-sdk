@@ -4,19 +4,27 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetReceiptResponseBody extends TeaModel {
-    // 数据来源于开放时，对应的微应用id
+    /**
+     * <p>数据来源于开放时，对应的微应用id</p>
+     */
     @NameInMap("appId")
     public String appId;
 
-    // 单据数据体json
+    /**
+     * <p>单据数据体json</p>
+     */
     @NameInMap("data")
     public String data;
 
-    // 数据模型id
+    /**
+     * <p>数据模型id</p>
+     */
     @NameInMap("modelId")
     public String modelId;
 
-    // 数据来源：审批(approval)，开放接口(openapi)
+    /**
+     * <p>数据来源：审批(approval)，开放接口(openapi)</p>
+     */
     @NameInMap("source")
     public String source;
 

@@ -4,43 +4,63 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupManageQueryRequest extends TeaModel {
-    // 建群时间不早于（辅助性条件，结合非排他条件使用）
+    /**
+     * <p>建群时间不早于（辅助性条件，结合非排他条件使用）</p>
+     */
     @NameInMap("createdAfter")
     public Long createdAfter;
 
-    // 群号
+    /**
+     * <p>群号</p>
+     */
     @NameInMap("groupId")
     public String groupId;
 
-    // 群成员样例工号列表
+    /**
+     * <p>群成员样例工号列表</p>
+     */
     @NameInMap("groupMemberSamples")
     public java.util.List<String> groupMemberSamples;
 
-    // 群主工号
+    /**
+     * <p>群主工号</p>
+     */
     @NameInMap("groupOwner")
     public String groupOwner;
 
-    // 群标题关键词列表
+    /**
+     * <p>群标题关键词列表</p>
+     */
     @NameInMap("groupTitleKeywords")
     public java.util.List<String> groupTitleKeywords;
 
-    // 群链接
+    /**
+     * <p>群链接</p>
+     */
     @NameInMap("groupUrl")
     public String groupUrl;
 
-    // 分页拉取的页大小, 最大不可超过1000
+    /**
+     * <p>分页拉取的页大小, 最大不可超过1000</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 群成员数下限（辅助性条件，结合非排他条件使用）
+    /**
+     * <p>群成员数下限（辅助性条件，结合非排他条件使用）</p>
+     */
     @NameInMap("membersOver")
     public Integer membersOver;
 
-    // 分页拉取游标, 若不指定，则从头开始拉
+    /**
+     * <p>分页拉取游标, 若不指定，则从头开始拉</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 开放群id
+    /**
+     * <p>开放群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

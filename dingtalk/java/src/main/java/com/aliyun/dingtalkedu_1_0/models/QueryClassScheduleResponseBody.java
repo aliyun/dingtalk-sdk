@@ -4,11 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleResponseBody extends TeaModel {
-    // 课表时间节次配置。
+    /**
+     * <p>课表时间节次配置。</p>
+     */
     @NameInMap("config")
     public QueryClassScheduleResponseBodyConfig config;
 
-    // 课程列表
+    /**
+     * <p>课程列表</p>
+     */
     @NameInMap("courseDTOS")
     public java.util.List<QueryClassScheduleResponseBodyCourseDTOS> courseDTOS;
 
@@ -34,15 +38,21 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigEnd extends TeaModel {
-        // 一个月中第几天
+        /**
+         * <p>一个月中第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
-        // 月份。
+        /**
+         * <p>月份。</p>
+         */
         @NameInMap("month")
         public Long month;
 
-        // 年份。
+        /**
+         * <p>年份。</p>
+         */
         @NameInMap("year")
         public Long year;
 
@@ -78,11 +88,15 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModelsEnd extends TeaModel {
-        // 小时。
+        /**
+         * <p>小时。</p>
+         */
         @NameInMap("hour")
         public Long hour;
 
-        // 分钟。
+        /**
+         * <p>分钟。</p>
+         */
         @NameInMap("min")
         public Long min;
 
@@ -110,11 +124,15 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModelsStart extends TeaModel {
-        // 小时。
+        /**
+         * <p>小时。</p>
+         */
         @NameInMap("hour")
         public Long hour;
 
-        // 分钟
+        /**
+         * <p>分钟</p>
+         */
         @NameInMap("min")
         public Long min;
 
@@ -142,23 +160,33 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModels extends TeaModel {
-        // 结束时间（时分级别）
+        /**
+         * <p>结束时间（时分级别）</p>
+         */
         @NameInMap("end")
         public QueryClassScheduleResponseBodyConfigSectionModelsEnd end;
 
-        // 节次序列。
+        /**
+         * <p>节次序列。</p>
+         */
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
-        // 节次名称。
+        /**
+         * <p>节次名称。</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
-        // 节次类型：  COURSE：上课节次 REST：休息节次
+        /**
+         * <p>节次类型：  COURSE：上课节次 REST：休息节次</p>
+         */
         @NameInMap("sectionType")
         public String sectionType;
 
-        // 开始时间（时分级别）。
+        /**
+         * <p>开始时间（时分级别）。</p>
+         */
         @NameInMap("start")
         public QueryClassScheduleResponseBodyConfigSectionModelsStart start;
 
@@ -210,15 +238,21 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigStart extends TeaModel {
-        // 一个月中第几天
+        /**
+         * <p>一个月中第几天</p>
+         */
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
-        // 月份。
+        /**
+         * <p>月份。</p>
+         */
         @NameInMap("month")
         public Long month;
 
-        // 年份。
+        /**
+         * <p>年份。</p>
+         */
         @NameInMap("year")
         public Long year;
 
@@ -254,15 +288,21 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfig extends TeaModel {
-        // 开始时间（到日）。
+        /**
+         * <p>开始时间（到日）。</p>
+         */
         @NameInMap("end")
         public QueryClassScheduleResponseBodyConfigEnd end;
 
-        // 节次模型。
+        /**
+         * <p>节次模型。</p>
+         */
         @NameInMap("sectionModels")
         public java.util.List<QueryClassScheduleResponseBodyConfigSectionModels> sectionModels;
 
-        // 开始时间（到日）。
+        /**
+         * <p>开始时间（到日）。</p>
+         */
         @NameInMap("start")
         public QueryClassScheduleResponseBodyConfigStart start;
 
@@ -298,11 +338,15 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyCourseDTOSClassrooms extends TeaModel {
-        // 交互信息
+        /**
+         * <p>交互信息</p>
+         */
         @NameInMap("interactInfo")
         public String interactInfo;
 
-        // 课堂唯一标识
+        /**
+         * <p>课堂唯一标识</p>
+         */
         @NameInMap("targetId")
         public String targetId;
 
@@ -333,11 +377,15 @@ public class QueryClassScheduleResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        // 用户uid
+        /**
+         * <p>用户uid</p>
+         */
         @NameInMap("uid")
         public Long uid;
 
-        // 用户userid
+        /**
+         * <p>用户userid</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -373,87 +421,129 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyCourseDTOS extends TeaModel {
-        // 课程所在班级id
+        /**
+         * <p>课程所在班级id</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
-        // 课堂列表
+        /**
+         * <p>课堂列表</p>
+         */
         @NameInMap("classrooms")
         public java.util.List<QueryClassScheduleResponseBodyCourseDTOSClassrooms> classrooms;
 
-        // 课程编码
+        /**
+         * <p>课程编码</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 课程组编码
+        /**
+         * <p>课程组编码</p>
+         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
-        // 课程封面地址
+        /**
+         * <p>课程封面地址</p>
+         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
-        // 创建者组织id
+        /**
+         * <p>创建者组织id</p>
+         */
         @NameInMap("creatorCorpId")
         public String creatorCorpId;
 
-        // 创建者UserId
+        /**
+         * <p>创建者UserId</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 创建者UserName
+        /**
+         * <p>创建者UserName</p>
+         */
         @NameInMap("creatorUserName")
         public String creatorUserName;
 
-        // 课程参与人列表
+        /**
+         * <p>课程参与人列表</p>
+         */
         @NameInMap("eduUserModels")
         public java.util.List<QueryClassScheduleResponseBodyCourseDTOSEduUserModels> eduUserModels;
 
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
-        // 课程扩展信息
+        /**
+         * <p>课程扩展信息</p>
+         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        // 课程介绍
+        /**
+         * <p>课程介绍</p>
+         */
         @NameInMap("introduce")
         public String introduce;
 
-        // 课程名称
+        /**
+         * <p>课程名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 课程所在节次序列号
+        /**
+         * <p>课程所在节次序列号</p>
+         */
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
-        // 课程名称
+        /**
+         * <p>课程名称</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
-        // 课程状态
+        /**
+         * <p>课程状态</p>
+         */
         @NameInMap("status")
         public Long status;
 
-        // 学科编码
+        /**
+         * <p>学科编码</p>
+         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
-        // 老师CorpId
+        /**
+         * <p>老师CorpId</p>
+         */
         @NameInMap("teacherCorpId")
         public String teacherCorpId;
 
-        // 老师UserId
+        /**
+         * <p>老师UserId</p>
+         */
         @NameInMap("teacherUserId")
         public String teacherUserId;
 
-        // 老师UserName
+        /**
+         * <p>老师UserName</p>
+         */
         @NameInMap("teacherUserName")
         public String teacherUserName;
 

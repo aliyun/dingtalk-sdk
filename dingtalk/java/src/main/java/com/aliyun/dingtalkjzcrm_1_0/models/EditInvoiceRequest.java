@@ -4,19 +4,27 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditInvoiceRequest extends TeaModel {
-    // 编辑数据
+    /**
+     * <p>编辑数据</p>
+     */
     @NameInMap("data")
     public EditInvoiceRequestData data;
 
-    // 数据类型，固定填写169
+    /**
+     * <p>数据类型，固定填写169</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
-    // 数据id，不填或者填0为新增数据
+    /**
+     * <p>数据id，不填或者填0为新增数据</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
-    // 时间戳
+    /**
+     * <p>时间戳</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -58,95 +66,141 @@ public class EditInvoiceRequest extends TeaModel {
     }
 
     public static class EditInvoiceRequestData extends TeaModel {
-        // 产品明细，json格式
+        /**
+         * <p>产品明细，json格式</p>
+         */
         @NameInMap("child_mx")
         public String childMx;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        // 地址
+        /**
+         * <p>地址</p>
+         */
         @NameInMap("fh_address")
         public String fhAddress;
 
-        // 对应客户
+        /**
+         * <p>对应客户</p>
+         */
         @NameInMap("fh_customerid")
         public String fhCustomerid;
 
-        // 发货日期
+        /**
+         * <p>发货日期</p>
+         */
         @NameInMap("fh_date")
         public String fhDate;
 
-        // Email
+        /**
+         * <p>Email</p>
+         */
         @NameInMap("fh_email")
         public String fhEmail;
 
-        // 手机
+        /**
+         * <p>手机</p>
+         */
         @NameInMap("fh_handset")
         public String fhHandset;
 
-        // 对应订单
+        /**
+         * <p>对应订单</p>
+         */
         @NameInMap("fh_htorder")
         public String fhHtorder;
 
-        // 打包件数
+        /**
+         * <p>打包件数</p>
+         */
         @NameInMap("fh_jianshu")
         public String fhJianshu;
 
-        // 重量(Kg)
+        /**
+         * <p>重量(Kg)</p>
+         */
         @NameInMap("fh_kg")
         public String fhKg;
 
-        // 收货人
+        /**
+         * <p>收货人</p>
+         */
         @NameInMap("fh_linkman")
         public String fhLinkman;
 
-        // 联系人
+        /**
+         * <p>联系人</p>
+         */
         @NameInMap("fh_lxrid")
         public String fhLxrid;
 
-        // 发货方式
+        /**
+         * <p>发货方式</p>
+         */
         @NameInMap("fh_mode")
         public String fhMode;
 
-        // MSN
+        /**
+         * <p>MSN</p>
+         */
         @NameInMap("fh_msn")
         public String fhMsn;
 
-        // 发货单号
+        /**
+         * <p>发货单号</p>
+         */
         @NameInMap("fh_number")
         public String fhNumber;
 
-        // 邮编
+        /**
+         * <p>邮编</p>
+         */
         @NameInMap("fh_post")
         public String fhPost;
 
-        // 所有者
+        /**
+         * <p>所有者</p>
+         */
         @NameInMap("fh_preside")
         public String fhPreside;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("fh_remark")
         public String fhRemark;
 
-        // 发货人
+        /**
+         * <p>发货人</p>
+         */
         @NameInMap("fh_shipper")
         public String fhShipper;
 
-        // 发货状态
+        /**
+         * <p>发货状态</p>
+         */
         @NameInMap("fh_state")
         public String fhState;
 
-        // 电话
+        /**
+         * <p>电话</p>
+         */
         @NameInMap("fh_tel")
         public String fhTel;
 
-        // 发货主题
+        /**
+         * <p>发货主题</p>
+         */
         @NameInMap("fh_title")
         public String fhTitle;
 
-        // 运费
+        /**
+         * <p>运费</p>
+         */
         @NameInMap("fh_yunfei")
         public String fhYunfei;
 

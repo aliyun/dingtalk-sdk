@@ -4,19 +4,23 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAdministrativePenaltiesResponseBody extends TeaModel {
-    // 返回结果
-    // DATE_COL:处罚日期
-    // NUMBER:决定书文号
-    // ILLEGAL_TYPE:处罚类型
-    // DEPARTMENT:处罚机关
-    // PUBLIC_DATE 公示日期
-    // CONTENT:处罚内容
-    // BASED_ON:处罚依据
-    // DESCRIPTION:处罚判决书
+    /**
+     * <p>返回结果</p>
+     * <p>DATE_COL:处罚日期</p>
+     * <p>NUMBER:决定书文号</p>
+     * <p>ILLEGAL_TYPE:处罚类型</p>
+     * <p>DEPARTMENT:处罚机关</p>
+     * <p>PUBLIC_DATE 公示日期</p>
+     * <p>CONTENT:处罚内容</p>
+     * <p>BASED_ON:处罚依据</p>
+     * <p>DESCRIPTION:处罚判决书</p>
+     */
     @NameInMap("data")
     public String data;
 
-    // 总条数
+    /**
+     * <p>总条数</p>
+     */
     @NameInMap("total")
     public Long total;
 

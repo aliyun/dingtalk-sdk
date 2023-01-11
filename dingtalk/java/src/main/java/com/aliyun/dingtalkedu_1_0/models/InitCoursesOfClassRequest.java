@@ -4,15 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitCoursesOfClassRequest extends TeaModel {
-    // 课程设置。
+    /**
+     * <p>课程设置。</p>
+     */
     @NameInMap("courses")
     public java.util.List<InitCoursesOfClassRequestCourses> courses;
 
-    // 节次设置
+    /**
+     * <p>节次设置</p>
+     */
     @NameInMap("sectionConfig")
     public InitCoursesOfClassRequestSectionConfig sectionConfig;
 
-    // 操作人的userid。
+    /**
+     * <p>操作人的userid。</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -46,15 +52,21 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestCoursesDateModel extends TeaModel {
-        // 每个月的第几天。
+        /**
+         * <p>每个月的第几天。</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月份。
+        /**
+         * <p>月份。</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年份。
+        /**
+         * <p>年份。</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -90,11 +102,15 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestCoursesSectionModel extends TeaModel {
-        // 节次序列号。
+        /**
+         * <p>节次序列号。</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        // 节次名称。
+        /**
+         * <p>节次名称。</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
@@ -122,27 +138,39 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestCourses extends TeaModel {
-        // 课程名称。
+        /**
+         * <p>课程名称。</p>
+         */
         @NameInMap("courseName")
         public String courseName;
 
-        // 创建者名称。
+        /**
+         * <p>创建者名称。</p>
+         */
         @NameInMap("creatorName")
         public String creatorName;
 
-        // 上课时间。
+        /**
+         * <p>上课时间。</p>
+         */
         @NameInMap("dateModel")
         public InitCoursesOfClassRequestCoursesDateModel dateModel;
 
-        // 上课地点
+        /**
+         * <p>上课地点</p>
+         */
         @NameInMap("location")
         public String location;
 
-        // 课程节次。
+        /**
+         * <p>课程节次。</p>
+         */
         @NameInMap("sectionModel")
         public InitCoursesOfClassRequestCoursesSectionModel sectionModel;
 
-        // 老师的staffId。
+        /**
+         * <p>老师的staffId。</p>
+         */
         @NameInMap("teacherStaffIds")
         public java.util.List<String> teacherStaffIds;
 
@@ -202,15 +230,21 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestSectionConfigEnd extends TeaModel {
-        // 每个月的第几天。
+        /**
+         * <p>每个月的第几天。</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月份。
+        /**
+         * <p>月份。</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年份。
+        /**
+         * <p>年份。</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -246,11 +280,15 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
-        // 小时
+        /**
+         * <p>小时</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
-        // 分钟
+        /**
+         * <p>分钟</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -278,11 +316,15 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
-        // 小时
+        /**
+         * <p>小时</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
-        // 分钟
+        /**
+         * <p>分钟</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -310,19 +352,27 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestSectionConfigSectionModels extends TeaModel {
-        // 结束时间
+        /**
+         * <p>结束时间</p>
+         */
         @NameInMap("end")
         public InitCoursesOfClassRequestSectionConfigSectionModelsEnd end;
 
-        // 第几节。
+        /**
+         * <p>第几节。</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        // 节次类型枚举：COURSE/REST
+        /**
+         * <p>节次类型枚举：COURSE/REST</p>
+         */
         @NameInMap("sectionType")
         public String sectionType;
 
-        // 开始时间
+        /**
+         * <p>开始时间</p>
+         */
         @NameInMap("start")
         public InitCoursesOfClassRequestSectionConfigSectionModelsStart start;
 
@@ -366,15 +416,21 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestSectionConfigStart extends TeaModel {
-        // 每个月的第几天。
+        /**
+         * <p>每个月的第几天。</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        // 月份。
+        /**
+         * <p>月份。</p>
+         */
         @NameInMap("month")
         public Integer month;
 
-        // 年份。
+        /**
+         * <p>年份。</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -410,15 +466,21 @@ public class InitCoursesOfClassRequest extends TeaModel {
     }
 
     public static class InitCoursesOfClassRequestSectionConfig extends TeaModel {
-        // 课程表结束开始时间（精确到日）
+        /**
+         * <p>课程表结束开始时间（精确到日）</p>
+         */
         @NameInMap("end")
         public InitCoursesOfClassRequestSectionConfigEnd end;
 
-        // 节次模型
+        /**
+         * <p>节次模型</p>
+         */
         @NameInMap("sectionModels")
         public java.util.List<InitCoursesOfClassRequestSectionConfigSectionModels> sectionModels;
 
-        // 课程表开始时间（精确到日）
+        /**
+         * <p>课程表开始时间（精确到日）</p>
+         */
         @NameInMap("start")
         public InitCoursesOfClassRequestSectionConfigStart start;
 

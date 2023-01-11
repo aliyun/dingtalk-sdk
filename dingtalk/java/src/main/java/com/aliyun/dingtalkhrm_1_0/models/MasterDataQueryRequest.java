@@ -4,39 +4,57 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataQueryRequest extends TeaModel {
-    // 数据唯一键
+    /**
+     * <p>数据唯一键</p>
+     */
     @NameInMap("bizUK")
     public String bizUK;
 
-    // 分页查询每页数据条数
+    /**
+     * <p>分页查询每页数据条数</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页查询的游标
+    /**
+     * <p>分页查询的游标</p>
+     */
     @NameInMap("nextToken")
     public Integer nextToken;
 
-    // 当前操作人userId
+    /**
+     * <p>当前操作人userId</p>
+     */
     @NameInMap("optUserId")
     public String optUserId;
 
-    // 其他查询条件
+    /**
+     * <p>其他查询条件</p>
+     */
     @NameInMap("queryParams")
     public java.util.List<MasterDataQueryRequestQueryParams> queryParams;
 
-    // 关联id列表，一般为userId
+    /**
+     * <p>关联id列表，一般为userId</p>
+     */
     @NameInMap("relationIds")
     public java.util.List<String> relationIds;
 
-    // 领域code 由钉钉分配
+    /**
+     * <p>领域code 由钉钉分配</p>
+     */
     @NameInMap("scopeCode")
     public String scopeCode;
 
-    // 数据生产方的租户id，由钉钉分配
+    /**
+     * <p>数据生产方的租户id，由钉钉分配</p>
+     */
     @NameInMap("tenantId")
     public Long tenantId;
 
-    // 实体code
+    /**
+     * <p>实体code</p>
+     */
     @NameInMap("viewEntityCode")
     public String viewEntityCode;
 
@@ -118,11 +136,15 @@ public class MasterDataQueryRequest extends TeaModel {
     }
 
     public static class MasterDataQueryRequestQueryParamsConditionList extends TeaModel {
-        // 字段关系符
+        /**
+         * <p>字段关系符</p>
+         */
         @NameInMap("operate")
         public String operate;
 
-        // 操作值
+        /**
+         * <p>操作值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -150,15 +172,21 @@ public class MasterDataQueryRequest extends TeaModel {
     }
 
     public static class MasterDataQueryRequestQueryParams extends TeaModel {
-        // 筛选条件
+        /**
+         * <p>筛选条件</p>
+         */
         @NameInMap("conditionList")
         public java.util.List<MasterDataQueryRequestQueryParamsConditionList> conditionList;
 
-        // 需要筛选的字段
+        /**
+         * <p>需要筛选的字段</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
-        // 筛选条件连接类型
+        /**
+         * <p>筛选条件连接类型</p>
+         */
         @NameInMap("joinType")
         public String joinType;
 

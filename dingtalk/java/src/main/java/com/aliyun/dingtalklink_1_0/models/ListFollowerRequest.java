@@ -4,16 +4,22 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFollowerRequest extends TeaModel {
-    // 服务窗帐号ID，用于服务窗归属组织下应用AK(非服务窗自建应用)指定服务窗帐号。
-    // 帐号ID可以通过服务窗帐号查询接口获取。
+    /**
+     * <p>服务窗帐号ID，用于服务窗归属组织下应用AK(非服务窗自建应用)指定服务窗帐号。</p>
+     * <p>帐号ID可以通过服务窗帐号查询接口获取。</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
-    // 分页查询页大小。
+    /**
+     * <p>分页查询页大小。</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 分页查询下一页token,首页查询此字段可空，其它页查询时需要将此值设置炎上一次接口调用的token
+    /**
+     * <p>分页查询下一页token,首页查询此字段可空，其它页查询时需要将此值设置炎上一次接口调用的token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

@@ -4,31 +4,45 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResidenceRequest extends TeaModel {
-    // 组id
+    /**
+     * <p>组id</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    // 户名字
+    /**
+     * <p>户名字</p>
+     */
     @NameInMap("departmentName")
     public String departmentName;
 
-    // 是否是贫困户
+    /**
+     * <p>是否是贫困户</p>
+     */
     @NameInMap("destitute")
     public Boolean destitute;
 
-    // 所属网格
+    /**
+     * <p>所属网格</p>
+     */
     @NameInMap("grid")
     public String grid;
 
-    // 家庭电话
+    /**
+     * <p>家庭电话</p>
+     */
     @NameInMap("homeTel")
     public String homeTel;
 
-    // 家庭管理员用户id
+    /**
+     * <p>家庭管理员用户id</p>
+     */
     @NameInMap("managerUserId")
     public String managerUserId;
 
-    // 组id
+    /**
+     * <p>组id</p>
+     */
     @NameInMap("parentDepartmentId")
     public Long parentDepartmentId;
 

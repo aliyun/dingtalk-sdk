@@ -4,39 +4,57 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckVoucherStatusRequest extends TeaModel {
-    // 结束时间
+    /**
+     * <p>结束时间</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
-    // 进项发票/销项发票
+    /**
+     * <p>进项发票/销项发票</p>
+     */
     @NameInMap("financeType")
     public String financeType;
 
-    // 发票编码
+    /**
+     * <p>发票编码</p>
+     */
     @NameInMap("invoiceCode")
     public String invoiceCode;
 
-    // 发票号码
+    /**
+     * <p>发票号码</p>
+     */
     @NameInMap("invoiceNo")
     public String invoiceNo;
 
-    // 页号
+    /**
+     * <p>页号</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 当前页大小
+    /**
+     * <p>当前页大小</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    // 开始时间
+    /**
+     * <p>开始时间</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
-    // 税号
+    /**
+     * <p>税号</p>
+     */
     @NameInMap("taxNo")
     public String taxNo;
 
-    // 发票认证状态
+    /**
+     * <p>发票认证状态</p>
+     */
     @NameInMap("verifyStatus")
     public String verifyStatus;
 

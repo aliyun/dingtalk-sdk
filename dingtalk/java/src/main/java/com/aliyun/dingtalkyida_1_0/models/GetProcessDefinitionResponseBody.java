@@ -4,43 +4,63 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProcessDefinitionResponseBody extends TeaModel {
-    // formUuid
+    /**
+     * <p>formUuid</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // originator
+    /**
+     * <p>originator</p>
+     */
     @NameInMap("originator")
     public GetProcessDefinitionResponseBodyOriginator originator;
 
-    // outResult
+    /**
+     * <p>outResult</p>
+     */
     @NameInMap("outResult")
     public String outResult;
 
-    // owners
+    /**
+     * <p>owners</p>
+     */
     @NameInMap("owners")
     public java.util.List<GetProcessDefinitionResponseBodyOwners> owners;
 
-    // processId
+    /**
+     * <p>processId</p>
+     */
     @NameInMap("processId")
     public String processId;
 
-    // processInstanceId
+    /**
+     * <p>processInstanceId</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    // status
+    /**
+     * <p>status</p>
+     */
     @NameInMap("status")
     public String status;
 
-    // tasks
+    /**
+     * <p>tasks</p>
+     */
     @NameInMap("tasks")
     public java.util.List<GetProcessDefinitionResponseBodyTasks> tasks;
 
-    // title
+    /**
+     * <p>title</p>
+     */
     @NameInMap("title")
     public String title;
 
-    // variables
+    /**
+     * <p>variables</p>
+     */
     @NameInMap("variables")
     public java.util.Map<String, ?> variables;
 
@@ -130,35 +150,51 @@ public class GetProcessDefinitionResponseBody extends TeaModel {
     }
 
     public static class GetProcessDefinitionResponseBodyOriginatorMasterDataDepartments extends TeaModel {
-        // deptName
+        /**
+         * <p>deptName</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // deptNameEn
+        /**
+         * <p>deptNameEn</p>
+         */
         @NameInMap("deptNameInEnglish")
         public String deptNameInEnglish;
 
-        // deptNo
+        /**
+         * <p>deptNo</p>
+         */
         @NameInMap("deptNo")
         public String deptNo;
 
-        // deptPath
+        /**
+         * <p>deptPath</p>
+         */
         @NameInMap("deptPath")
         public String deptPath;
 
-        // humanSourceGroupOrderNum
+        /**
+         * <p>humanSourceGroupOrderNum</p>
+         */
         @NameInMap("humanSourceGroupOrderNumber")
         public String humanSourceGroupOrderNumber;
 
-        // humanSourceGroupWorkNo
+        /**
+         * <p>humanSourceGroupWorkNo</p>
+         */
         @NameInMap("humanSourceGroupWorkNo")
         public String humanSourceGroupWorkNo;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // masterWorkNo
+        /**
+         * <p>masterWorkNo</p>
+         */
         @NameInMap("masterWorkNo")
         public String masterWorkNo;
 
@@ -234,43 +270,63 @@ public class GetProcessDefinitionResponseBody extends TeaModel {
     }
 
     public static class GetProcessDefinitionResponseBodyOriginator extends TeaModel {
-        // departmentDescription
+        /**
+         * <p>departmentDescription</p>
+         */
         @NameInMap("departmentDescription")
         public String departmentDescription;
 
-        // displayEnName
+        /**
+         * <p>displayEnName</p>
+         */
         @NameInMap("displayEnName")
         public String displayEnName;
 
-        // displayName
+        /**
+         * <p>displayName</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // masterDataDepartments
+        /**
+         * <p>masterDataDepartments</p>
+         */
         @NameInMap("masterDataDepartments")
         public java.util.List<GetProcessDefinitionResponseBodyOriginatorMasterDataDepartments> masterDataDepartments;
 
-        // orderNum
+        /**
+         * <p>orderNum</p>
+         */
         @NameInMap("orderNumber")
         public String orderNumber;
 
-        // personalPhoto
+        /**
+         * <p>personalPhoto</p>
+         */
         @NameInMap("personalPhoto")
         public String personalPhoto;
 
-        // status
+        /**
+         * <p>status</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // tbWang
+        /**
+         * <p>tbWang</p>
+         */
         @NameInMap("tbWang")
         public String tbWang;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // userInfo
+        /**
+         * <p>userInfo</p>
+         */
         @NameInMap("userInfo")
         public String userInfo;
 
@@ -362,35 +418,51 @@ public class GetProcessDefinitionResponseBody extends TeaModel {
     }
 
     public static class GetProcessDefinitionResponseBodyOwnersMasterDataDepartments extends TeaModel {
-        // deptName
+        /**
+         * <p>deptName</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // deptNameEn
+        /**
+         * <p>deptNameEn</p>
+         */
         @NameInMap("deptNameInEnglish")
         public String deptNameInEnglish;
 
-        // deptNo
+        /**
+         * <p>deptNo</p>
+         */
         @NameInMap("deptNo")
         public String deptNo;
 
-        // deptPath
+        /**
+         * <p>deptPath</p>
+         */
         @NameInMap("deptPath")
         public String deptPath;
 
-        // humanSourceGroupOrderNum
+        /**
+         * <p>humanSourceGroupOrderNum</p>
+         */
         @NameInMap("humanSourceGroupOrderNumber")
         public String humanSourceGroupOrderNumber;
 
-        // humanSourceGroupWorkNo
+        /**
+         * <p>humanSourceGroupWorkNo</p>
+         */
         @NameInMap("humanSourceGroupWorkNo")
         public String humanSourceGroupWorkNo;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public Long id;
 
-        // masterWorkNo
+        /**
+         * <p>masterWorkNo</p>
+         */
         @NameInMap("masterWorkNo")
         public String masterWorkNo;
 
@@ -466,43 +538,63 @@ public class GetProcessDefinitionResponseBody extends TeaModel {
     }
 
     public static class GetProcessDefinitionResponseBodyOwners extends TeaModel {
-        // departmentDescription
+        /**
+         * <p>departmentDescription</p>
+         */
         @NameInMap("departmentDescription")
         public String departmentDescription;
 
-        // displayEnName
+        /**
+         * <p>displayEnName</p>
+         */
         @NameInMap("displayEnName")
         public String displayEnName;
 
-        // displayName
+        /**
+         * <p>displayName</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
-        // masterDataDepartments
+        /**
+         * <p>masterDataDepartments</p>
+         */
         @NameInMap("masterDataDepartments")
         public java.util.List<GetProcessDefinitionResponseBodyOwnersMasterDataDepartments> masterDataDepartments;
 
-        // orderNum
+        /**
+         * <p>orderNum</p>
+         */
         @NameInMap("orderNumber")
         public String orderNumber;
 
-        // personalPhoto
+        /**
+         * <p>personalPhoto</p>
+         */
         @NameInMap("personalPhoto")
         public String personalPhoto;
 
-        // status
+        /**
+         * <p>status</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // tbWang
+        /**
+         * <p>tbWang</p>
+         */
         @NameInMap("tbWang")
         public String tbWang;
 
-        // userId
+        /**
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // userInfo
+        /**
+         * <p>userInfo</p>
+         */
         @NameInMap("userInfo")
         public String userInfo;
 
@@ -594,23 +686,33 @@ public class GetProcessDefinitionResponseBody extends TeaModel {
     }
 
     public static class GetProcessDefinitionResponseBodyTasksActivity extends TeaModel {
-        // activityId
+        /**
+         * <p>activityId</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
-        // activityInstanceStatus
+        /**
+         * <p>activityInstanceStatus</p>
+         */
         @NameInMap("activityInstanceStatus")
         public String activityInstanceStatus;
 
-        // activityName
+        /**
+         * <p>activityName</p>
+         */
         @NameInMap("activityName")
         public String activityName;
 
-        // activityNameEn
+        /**
+         * <p>activityNameEn</p>
+         */
         @NameInMap("activityNameInEnglish")
         public String activityNameInEnglish;
 
-        // id
+        /**
+         * <p>id</p>
+         */
         @NameInMap("id")
         public Long id;
 
@@ -662,19 +764,27 @@ public class GetProcessDefinitionResponseBody extends TeaModel {
     }
 
     public static class GetProcessDefinitionResponseBodyTasks extends TeaModel {
-        // actioner
+        /**
+         * <p>actioner</p>
+         */
         @NameInMap("actionerId")
         public String actionerId;
 
-        // activity
+        /**
+         * <p>activity</p>
+         */
         @NameInMap("activity")
         public GetProcessDefinitionResponseBodyTasksActivity activity;
 
-        // status
+        /**
+         * <p>status</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // taskId
+        /**
+         * <p>taskId</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 

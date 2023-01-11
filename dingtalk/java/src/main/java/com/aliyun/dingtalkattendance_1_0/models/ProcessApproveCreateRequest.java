@@ -4,27 +4,39 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ProcessApproveCreateRequest extends TeaModel {
-    // 三方审批单id，全局唯一
+    /**
+     * <p>三方审批单id，全局唯一</p>
+     */
     @NameInMap("approveId")
     public String approveId;
 
-    // 审批人员工userId
+    /**
+     * <p>审批人员工userId</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    // 审批单关联的打卡信息
+    /**
+     * <p>审批单关联的打卡信息</p>
+     */
     @NameInMap("punchParam")
     public ProcessApproveCreateRequestPunchParam punchParam;
 
-    // 审批单子类型名称：调店:shiftGroup
+    /**
+     * <p>审批单子类型名称：调店:shiftGroup</p>
+     */
     @NameInMap("subType")
     public String subType;
 
-    // 审批单类型名称
+    /**
+     * <p>审批单类型名称</p>
+     */
     @NameInMap("tagName")
     public String tagName;
 
-    // 员工的userId
+    /**
+     * <p>员工的userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -82,19 +94,27 @@ public class ProcessApproveCreateRequest extends TeaModel {
     }
 
     public static class ProcessApproveCreateRequestPunchParam extends TeaModel {
-        // 地理位置标识：wifi:ssid_macAddress ble: deviceId gps:longitude_latitude
+        /**
+         * <p>地理位置标识：wifi:ssid_macAddress ble: deviceId gps:longitude_latitude</p>
+         */
         @NameInMap("positionId")
         public String positionId;
 
-        // 地理位置名称
+        /**
+         * <p>地理位置名称</p>
+         */
         @NameInMap("positionName")
         public String positionName;
 
-        // 地理位置类型：wifi/ble/gps
+        /**
+         * <p>地理位置类型：wifi/ble/gps</p>
+         */
         @NameInMap("positionType")
         public String positionType;
 
-        // 审批单关联的打卡时间，单位毫秒
+        /**
+         * <p>审批单关联的打卡时间，单位毫秒</p>
+         */
         @NameInMap("punchTime")
         public Long punchTime;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCommentListRequest extends TeaModel {
-    // 分页起始页
+    /**
+     * <p>分页起始页</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 

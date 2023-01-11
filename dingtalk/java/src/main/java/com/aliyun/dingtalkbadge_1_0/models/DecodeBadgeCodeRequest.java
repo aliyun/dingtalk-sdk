@@ -4,11 +4,15 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class DecodeBadgeCodeRequest extends TeaModel {
-    // 码值
+    /**
+     * <p>码值</p>
+     */
     @NameInMap("payCode")
     public String payCode;
 
-    // 请求ID
+    /**
+     * <p>请求ID</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

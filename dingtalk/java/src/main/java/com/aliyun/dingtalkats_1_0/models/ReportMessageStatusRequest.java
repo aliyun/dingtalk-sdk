@@ -7,19 +7,27 @@ public class ReportMessageStatusRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
-    // 渠道标识。
+    /**
+     * <p>渠道标识。</p>
+     */
     @NameInMap("channel")
     public String channel;
 
-    // 错误码。
+    /**
+     * <p>错误码。</p>
+     */
     @NameInMap("errorCode")
     public String errorCode;
 
-    // 错误信息描述。
+    /**
+     * <p>错误信息描述。</p>
+     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    // 消息ID。
+    /**
+     * <p>消息ID。</p>
+     */
     @NameInMap("messageId")
     public String messageId;
 

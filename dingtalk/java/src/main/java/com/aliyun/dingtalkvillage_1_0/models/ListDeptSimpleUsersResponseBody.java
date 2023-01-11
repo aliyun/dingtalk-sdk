@@ -13,7 +13,9 @@ public class ListDeptSimpleUsersResponseBody extends TeaModel {
     @NameInMap("totalCount")
     public Long totalCount;
 
-    // 用户列表
+    /**
+     * <p>用户列表</p>
+     */
     @NameInMap("userList")
     public java.util.List<ListDeptSimpleUsersResponseBodyUserList> userList;
 
@@ -55,11 +57,15 @@ public class ListDeptSimpleUsersResponseBody extends TeaModel {
     }
 
     public static class ListDeptSimpleUsersResponseBodyUserList extends TeaModel {
-        // 用户姓名
+        /**
+         * <p>用户姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户ID
+        /**
+         * <p>用户ID</p>
+         */
         @NameInMap("userId")
         public String userId;
 

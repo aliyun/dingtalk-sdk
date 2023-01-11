@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRelatedWorkspacesResponseBody extends TeaModel {
-    // 知识库结果集。
+    /**
+     * <p>知识库结果集。</p>
+     */
     @NameInMap("workspaces")
     public java.util.List<GetRelatedWorkspacesResponseBodyWorkspaces> workspaces;
 
@@ -22,19 +24,27 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
     }
 
     public static class GetRelatedWorkspacesResponseBodyWorkspacesRecentList extends TeaModel {
-        // 文档最后编辑时间
+        /**
+         * <p>文档最后编辑时间</p>
+         */
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
-        // 文档名称
+        /**
+         * <p>文档名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 文档id
+        /**
+         * <p>文档id</p>
+         */
         @NameInMap("nodeId")
         public String nodeId;
 
-        // 文档打开url
+        /**
+         * <p>文档打开url</p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -78,34 +88,48 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
     }
 
     public static class GetRelatedWorkspacesResponseBodyWorkspaces extends TeaModel {
-        // 知识库创建时间。
+        /**
+         * <p>知识库创建时间。</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 知识库是否被删除。
+        /**
+         * <p>知识库是否被删除。</p>
+         */
         @NameInMap("deleted")
         public Boolean deleted;
 
-        // 知识库名称。
+        /**
+         * <p>知识库名称。</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("owner")
         public String owner;
 
-        // 知识库最近访问文档列表。
+        /**
+         * <p>知识库最近访问文档列表。</p>
+         */
         @NameInMap("recentList")
         public java.util.List<GetRelatedWorkspacesResponseBodyWorkspacesRecentList> recentList;
 
-        // 用户的角色
+        /**
+         * <p>用户的角色</p>
+         */
         @NameInMap("role")
         public String role;
 
-        // 知识库打开url。
+        /**
+         * <p>知识库打开url。</p>
+         */
         @NameInMap("url")
         public String url;
 
-        // 知识库id。
+        /**
+         * <p>知识库id。</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

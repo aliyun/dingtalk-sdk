@@ -4,11 +4,15 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBadgeCodeUserInstanceResponseBody extends TeaModel {
-    // 码详情跳转地址
+    /**
+     * <p>码详情跳转地址</p>
+     */
     @NameInMap("codeDetailUrl")
     public String codeDetailUrl;
 
-    // 码ID
+    /**
+     * <p>码ID</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 

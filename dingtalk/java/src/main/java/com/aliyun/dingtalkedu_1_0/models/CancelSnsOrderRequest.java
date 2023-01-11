@@ -4,23 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelSnsOrderRequest extends TeaModel {
-    // 支付宝应用id。
+    /**
+     * <p>支付宝应用id。</p>
+     */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
-    // 商户id。
+    /**
+     * <p>商户id。</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    // 订单号。
+    /**
+     * <p>订单号。</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 签名。
+    /**
+     * <p>签名。</p>
+     */
     @NameInMap("signature")
     public String signature;
 
-    // 时间戳。
+    /**
+     * <p>时间戳。</p>
+     */
     @NameInMap("timestamp")
     public Long timestamp;
 

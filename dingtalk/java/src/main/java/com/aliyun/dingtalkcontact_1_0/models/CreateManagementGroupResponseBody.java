@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateManagementGroupResponseBody extends TeaModel {
-    // 返回管理组groupId
+    /**
+     * <p>返回管理组groupId</p>
+     */
     @NameInMap("groupId")
     public String groupId;
 

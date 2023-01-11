@@ -7,7 +7,9 @@ public class CreateEventResponseBody extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<CreateEventResponseBodyAttendees> attendees;
 
-    // 创建时间
+    /**
+     * <p>创建时间</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
@@ -38,14 +40,18 @@ public class CreateEventResponseBody extends TeaModel {
     @NameInMap("reminders")
     public java.util.List<CreateEventResponseBodyReminders> reminders;
 
-    // 日程开始时间
+    /**
+     * <p>日程开始时间</p>
+     */
     @NameInMap("start")
     public CreateEventResponseBodyStart start;
 
     @NameInMap("summary")
     public String summary;
 
-    // 更新时间
+    /**
+     * <p>更新时间</p>
+     */
     @NameInMap("updateTime")
     public String updateTime;
 
@@ -176,7 +182,9 @@ public class CreateEventResponseBody extends TeaModel {
         @NameInMap("isOptional")
         public Boolean isOptional;
 
-        // 回复状态
+        /**
+         * <p>回复状态</p>
+         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
@@ -343,14 +351,18 @@ public class CreateEventResponseBody extends TeaModel {
     }
 
     public static class CreateEventResponseBodyOrganizer extends TeaModel {
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
         @NameInMap("id")
         public String id;
 
-        // 回复状态
+        /**
+         * <p>回复状态</p>
+         */
         @NameInMap("responseStatus")
         public String responseStatus;
 

@@ -4,18 +4,22 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetQeneralTaxpayerInfoResponseBody extends TeaModel {
-    // 返回结果
-    // DEPARTMENT:主管机关
-    // END_DATE:有效日期止
-    // ENT_NAME:纳税人名称
-    // QUALIFICATION 纳税人资格
-    // START_DATE:有效日期起
-    // TAXPAYER_NUM:纳税人识别号
-    // JUDGE_DATE:认定时间
+    /**
+     * <p>返回结果</p>
+     * <p>DEPARTMENT:主管机关</p>
+     * <p>END_DATE:有效日期止</p>
+     * <p>ENT_NAME:纳税人名称</p>
+     * <p>QUALIFICATION 纳税人资格</p>
+     * <p>START_DATE:有效日期起</p>
+     * <p>TAXPAYER_NUM:纳税人识别号</p>
+     * <p>JUDGE_DATE:认定时间</p>
+     */
     @NameInMap("data")
     public String data;
 
-    // 总条数
+    /**
+     * <p>总条数</p>
+     */
     @NameInMap("total")
     public Long total;
 

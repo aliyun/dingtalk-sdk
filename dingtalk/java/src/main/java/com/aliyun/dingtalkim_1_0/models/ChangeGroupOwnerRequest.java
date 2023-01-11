@@ -4,15 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChangeGroupOwnerRequest extends TeaModel {
-    // 群主id
+    /**
+     * <p>群主id</p>
+     */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
-    // 群主类型<2.钉钉 3.C端>
+    /**
+     * <p>群主类型<2.钉钉 3.C端></p>
+     */
     @NameInMap("groupOwnerType")
     public Integer groupOwnerType;
 
-    // 群id(客联系业务系统内的群id)
+    /**
+     * <p>群id(客联系业务系统内的群id)</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

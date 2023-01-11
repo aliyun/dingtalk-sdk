@@ -4,39 +4,57 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateFormDataByInstanceMapRequest extends TeaModel {
-    // 宜搭应用编码
+    /**
+     * <p>宜搭应用编码</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 该任务是否需要服务端异步执行(选择异步执行那么OpenAPI调用会立即返回并且任务在宜搭服务端继续执行，可支持更大的单次更新数据量上限)
+    /**
+     * <p>该任务是否需要服务端异步执行(选择异步执行那么OpenAPI调用会立即返回并且任务在宜搭服务端继续执行，可支持更大的单次更新数据量上限)</p>
+     */
     @NameInMap("asynchronousExecution")
     public Boolean asynchronousExecution;
 
-    // 表单编码
+    /**
+     * <p>表单编码</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    // 是否忽略空值
+    /**
+     * <p>是否忽略空值</p>
+     */
     @NameInMap("ignoreEmpty")
     public Boolean ignoreEmpty;
 
-    // 是否不需要触发表单绑定的校验规则、关联业务规则和第三方服务回调（如果您的业务无必要执行这些，那么请填true以减小API的耗时以及更大的单次更新数据量上限）
+    /**
+     * <p>是否不需要触发表单绑定的校验规则、关联业务规则和第三方服务回调（如果您的业务无必要执行这些，那么请填true以减小API的耗时以及更大的单次更新数据量上限）</p>
+     */
     @NameInMap("noExecuteExpression")
     public Boolean noExecuteExpression;
 
-    // 宜搭应用秘钥
+    /**
+     * <p>宜搭应用秘钥</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 表单实例数据, json字符串, 可以解析成Map, 解析后得到的Map的键是表单实例id, 值是表单实例更新值json字符串。具体结构请参考 https://www.yuque.com/yida/support/agb8im#f26a51f429f9f19aa0b5b3ee847ac556_h3_31
+    /**
+     * <p>表单实例数据, json字符串, 可以解析成Map, 解析后得到的Map的键是表单实例id, 值是表单实例更新值json字符串。具体结构请参考 https://www.yuque.com/yida/support/agb8im#f26a51f429f9f19aa0b5b3ee847ac556_h3_31</p>
+     */
     @NameInMap("updateFormDataJsonMap")
     public java.util.Map<String, ?> updateFormDataJsonMap;
 
-    // 是否使用最新的表单schema版本, 默认false
+    /**
+     * <p>是否使用最新的表单schema版本, 默认false</p>
+     */
     @NameInMap("useLatestFormSchemaVersion")
     public Boolean useLatestFormSchemaVersion;
 
-    // 钉钉userId
+    /**
+     * <p>钉钉userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

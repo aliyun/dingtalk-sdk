@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteWorkspaceDocRequest extends TeaModel {
-    // 发起删除请求的用户用户的unionId
+    /**
+     * <p>发起删除请求的用户用户的unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

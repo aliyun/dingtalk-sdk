@@ -4,19 +4,27 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendOTORequest extends TeaModel {
-    // 消息的msgKey
+    /**
+     * <p>消息的msgKey</p>
+     */
     @NameInMap("msgKey")
     public String msgKey;
 
-    // 消息体
+    /**
+     * <p>消息体</p>
+     */
     @NameInMap("msgParam")
     public String msgParam;
 
-    // 机器人的robotCode
+    /**
+     * <p>机器人的robotCode</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    // 被推送会话人员的userId列表
+    /**
+     * <p>被推送会话人员的userId列表</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
-    // data
+    /**
+     * <p>data</p>
+     */
     @NameInMap("data")
     public java.util.List<GetCorpAccomplishmentTasksResponseBodyData> data;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,83 +52,123 @@ public class GetCorpAccomplishmentTasksResponseBody extends TeaModel {
     }
 
     public static class GetCorpAccomplishmentTasksResponseBodyData extends TeaModel {
-        // activeTime
+        /**
+         * <p>activeTime</p>
+         */
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
 
-        // actualActionerId
+        /**
+         * <p>actualActionerId</p>
+         */
         @NameInMap("actualActionerId")
         public String actualActionerId;
 
-        // appType
+        /**
+         * <p>appType</p>
+         */
         @NameInMap("appType")
         public String appType;
 
-        // createTime
+        /**
+         * <p>createTime</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        // finishTime
+        /**
+         * <p>finishTime</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        // originatorEmail
+        /**
+         * <p>originatorEmail</p>
+         */
         @NameInMap("originatorEmail")
         public String originatorEmail;
 
-        // originatorId
+        /**
+         * <p>originatorId</p>
+         */
         @NameInMap("originatorId")
         public String originatorId;
 
-        // originatorName
+        /**
+         * <p>originatorName</p>
+         */
         @NameInMap("originatorName")
         public String originatorName;
 
-        // originatorNameEn
+        /**
+         * <p>originatorNameEn</p>
+         */
         @NameInMap("originatorNameInEnglish")
         public String originatorNameInEnglish;
 
-        // originatorNickName
+        /**
+         * <p>originatorNickName</p>
+         */
         @NameInMap("originatorNickName")
         public String originatorNickName;
 
-        // originatorNickNameEn
+        /**
+         * <p>originatorNickNameEn</p>
+         */
         @NameInMap("originatorNickNameInEnglish")
         public String originatorNickNameInEnglish;
 
-        // originatorPhoto
+        /**
+         * <p>originatorPhoto</p>
+         */
         @NameInMap("originatorPhoto")
         public String originatorPhoto;
 
-        // outResult
+        /**
+         * <p>outResult</p>
+         */
         @NameInMap("outResult")
         public String outResult;
 
-        // outResultName
+        /**
+         * <p>outResultName</p>
+         */
         @NameInMap("outResultName")
         public String outResultName;
 
-        // processInstanceId
+        /**
+         * <p>processInstanceId</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        // status
+        /**
+         * <p>status</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // taskId
+        /**
+         * <p>taskId</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
-        // taskType
+        /**
+         * <p>taskType</p>
+         */
         @NameInMap("taskType")
         public String taskType;
 
-        // title
+        /**
+         * <p>title</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // titleEn
+        /**
+         * <p>titleEn</p>
+         */
         @NameInMap("titleInEnglish")
         public String titleInEnglish;
 

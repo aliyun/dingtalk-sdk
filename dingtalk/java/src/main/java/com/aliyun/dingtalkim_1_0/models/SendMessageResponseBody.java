@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMessageResponseBody extends TeaModel {
-    // 发送消息请求Id
+    /**
+     * <p>发送消息请求Id</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

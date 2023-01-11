@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactUpdateResponseBody extends TeaModel {
-    // 是否操作成功
+    /**
+     * <p>是否操作成功</p>
+     */
     @NameInMap("content")
     public Boolean content;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class TerminateProcessInstanceResponseBody extends TeaModel {
-    // 撤销结果。
+    /**
+     * <p>撤销结果。</p>
+     */
     @NameInMap("result")
     public Boolean result;
 
-    // 接口调用是否成功。
+    /**
+     * <p>接口调用是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

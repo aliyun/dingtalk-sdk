@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupMuteStatusResponseBody extends TeaModel {
-    // 群禁言状态
+    /**
+     * <p>群禁言状态</p>
+     */
     @NameInMap("groupMuteMode")
     public Boolean groupMuteMode;
 
@@ -33,15 +35,21 @@ public class QueryGroupMuteStatusResponseBody extends TeaModel {
     }
 
     public static class QueryGroupMuteStatusResponseBodyUserMuteResult extends TeaModel {
-        // 禁言结束时间
+        /**
+         * <p>禁言结束时间</p>
+         */
         @NameInMap("muteEndTime")
         public Long muteEndTime;
 
-        // 禁言开始时间
+        /**
+         * <p>禁言开始时间</p>
+         */
         @NameInMap("muteStartTime")
         public Long muteStartTime;
 
-        // 成员禁言状态
+        /**
+         * <p>成员禁言状态</p>
+         */
         @NameInMap("userMuteMode")
         public Boolean userMuteMode;
 

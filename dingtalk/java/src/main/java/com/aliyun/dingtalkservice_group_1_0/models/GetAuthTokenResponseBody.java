@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAuthTokenResponseBody extends TeaModel {
-    // 错误码
+    /**
+     * <p>错误码</p>
+     */
     @NameInMap("dingOpenErrcode")
     public Integer dingOpenErrcode;
 
-    // errorMsg
+    /**
+     * <p>errorMsg</p>
+     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    // 返回的对象
+    /**
+     * <p>返回的对象</p>
+     */
     @NameInMap("result")
     public GetAuthTokenResponseBodyResult result;
 
-    // 是否成功
+    /**
+     * <p>是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -58,23 +66,33 @@ public class GetAuthTokenResponseBody extends TeaModel {
     }
 
     public static class GetAuthTokenResponseBodyResult extends TeaModel {
-        // token
+        /**
+         * <p>token</p>
+         */
         @NameInMap("authToken")
         public String authToken;
 
-        // 小二渠道来源 DT/LINKS
+        /**
+         * <p>小二渠道来源 DT/LINKS</p>
+         */
         @NameInMap("channel")
         public String channel;
 
-        // token有效期秒
+        /**
+         * <p>token有效期秒</p>
+         */
         @NameInMap("effectiveTime")
         public Long effectiveTime;
 
-        // 小二id
+        /**
+         * <p>小二id</p>
+         */
         @NameInMap("serverId")
         public String serverId;
 
-        // 小二名称
+        /**
+         * <p>小二名称</p>
+         */
         @NameInMap("serverName")
         public String serverName;
 

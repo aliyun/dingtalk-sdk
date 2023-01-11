@@ -4,11 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteProcessRequest extends TeaModel {
-    // 是否清理正在运行的任务
+    /**
+     * <p>是否清理正在运行的任务</p>
+     */
     @NameInMap("cleanRunningTask")
     public Boolean cleanRunningTask;
 
-    // 模板code
+    /**
+     * <p>模板code</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 

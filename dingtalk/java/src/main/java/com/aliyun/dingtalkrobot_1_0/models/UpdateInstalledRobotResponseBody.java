@@ -4,7 +4,9 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInstalledRobotResponseBody extends TeaModel {
-    // 本次更新操作是否成功。
+    /**
+     * <p>本次更新操作是否成功。</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

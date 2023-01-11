@@ -4,15 +4,21 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateAppRoleInfoRequest extends TeaModel {
-    // 变更角色管理权限，可不传，不传则不变
+    /**
+     * <p>变更角色管理权限，可不传，不传则不变</p>
+     */
     @NameInMap("canManageRole")
     public Boolean canManageRole;
 
-    // 变更角色名称，可不传，不传则不变
+    /**
+     * <p>变更角色名称，可不传，不传则不变</p>
+     */
     @NameInMap("newRoleName")
     public String newRoleName;
 
-    // 执行用户userId
+    /**
+     * <p>执行用户userId</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

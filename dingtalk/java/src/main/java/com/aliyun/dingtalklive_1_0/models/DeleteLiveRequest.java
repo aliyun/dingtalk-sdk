@@ -4,11 +4,15 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteLiveRequest extends TeaModel {
-    // 直播id
+    /**
+     * <p>直播id</p>
+     */
     @NameInMap("liveId")
     public String liveId;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

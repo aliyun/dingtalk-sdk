@@ -4,31 +4,45 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSceneGroupInfoResponseBody extends TeaModel {
-    // 群url
+    /**
+     * <p>群url</p>
+     */
     @NameInMap("groupUrl")
     public String groupUrl;
 
-    // 群头像mediaId
+    /**
+     * <p>群头像mediaId</p>
+     */
     @NameInMap("icon")
     public String icon;
 
-    // 开放群id
+    /**
+     * <p>开放群id</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 群主员工id
+    /**
+     * <p>群主员工id</p>
+     */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
-    // result
+    /**
+     * <p>result</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
-    // 场景群模板ID
+    /**
+     * <p>场景群模板ID</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
-    // 群名称
+    /**
+     * <p>群名称</p>
+     */
     @NameInMap("title")
     public String title;
 

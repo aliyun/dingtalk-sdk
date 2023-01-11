@@ -4,19 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportDeviceUseLogRequest extends TeaModel {
-    // 操作
+    /**
+     * <p>操作</p>
+     */
     @NameInMap("action")
     public String action;
 
-    // 订单号
+    /**
+     * <p>订单号</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    // 设备序列号
+    /**
+     * <p>设备序列号</p>
+     */
     @NameInMap("sn")
     public String sn;
 
-    // 员工id
+    /**
+     * <p>员工id</p>
+     */
     @NameInMap("userId")
     public String userId;
 

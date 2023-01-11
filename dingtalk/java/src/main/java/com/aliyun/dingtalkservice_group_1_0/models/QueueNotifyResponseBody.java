@@ -4,19 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueueNotifyResponseBody extends TeaModel {
-    // dingOpenErrcode
+    /**
+     * <p>dingOpenErrcode</p>
+     */
     @NameInMap("dingOpenErrcode")
     public Integer dingOpenErrcode;
 
-    // errorMsg
+    /**
+     * <p>errorMsg</p>
+     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    // 执行是否成功
+    /**
+     * <p>执行是否成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 
-    // 回调是否成功
+    /**
+     * <p>回调是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

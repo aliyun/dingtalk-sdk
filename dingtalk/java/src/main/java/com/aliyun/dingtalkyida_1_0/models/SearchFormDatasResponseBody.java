@@ -4,15 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDatasResponseBody extends TeaModel {
-    // 当前页
+    /**
+     * <p>当前页</p>
+     */
     @NameInMap("currentPage")
     public Long currentPage;
 
-    // 实例详情列表
+    /**
+     * <p>实例详情列表</p>
+     */
     @NameInMap("data")
     public java.util.List<SearchFormDatasResponseBodyData> data;
 
-    // 符合条件的实例总数
+    /**
+     * <p>符合条件的实例总数</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -46,15 +52,21 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyDataModifyUserUserName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        // 国际化
+        /**
+         * <p>国际化</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -90,19 +102,27 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyDataModifyUser extends TeaModel {
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 邮箱
+        /**
+         * <p>邮箱</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // 用户工号
+        /**
+         * <p>用户工号</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("userName")
         public SearchFormDatasResponseBodyDataModifyUserUserName userName;
 
@@ -146,15 +166,21 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyDataOriginatorUserName extends TeaModel {
-        // 中文名称
+        /**
+         * <p>中文名称</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        // 英文名称
+        /**
+         * <p>英文名称</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        // 国际化
+        /**
+         * <p>国际化</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -190,19 +216,27 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyDataOriginator extends TeaModel {
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 邮箱
+        /**
+         * <p>邮箱</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // 用户工号
+        /**
+         * <p>用户工号</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 用户名
+        /**
+         * <p>用户名</p>
+         */
         @NameInMap("userName")
         public SearchFormDatasResponseBodyDataOriginatorUserName userName;
 
@@ -246,67 +280,99 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyData extends TeaModel {
-        // 数据创建时间
+        /**
+         * <p>数据创建时间</p>
+         */
         @NameInMap("createdTimeGMT")
         public String createdTimeGMT;
 
-        // 创建人
+        /**
+         * <p>创建人</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        // 实体主键id
+        /**
+         * <p>实体主键id</p>
+         */
         @NameInMap("dataId")
         public Long dataId;
 
-        // 表单数据
+        /**
+         * <p>表单数据</p>
+         */
         @NameInMap("formData")
         public java.util.Map<String, ?> formData;
 
-        // 表单实例ID
+        /**
+         * <p>表单实例ID</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        // 表单id
+        /**
+         * <p>表单id</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        // 表单实例原始格式值
+        /**
+         * <p>表单实例原始格式值</p>
+         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
-        // 模型id
+        /**
+         * <p>模型id</p>
+         */
         @NameInMap("modelUuid")
         public String modelUuid;
 
-        // 最近修改时间
+        /**
+         * <p>最近修改时间</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        // 修改人
+        /**
+         * <p>修改人</p>
+         */
         @NameInMap("modifierUserId")
         public String modifierUserId;
 
-        // 修改者
+        /**
+         * <p>修改者</p>
+         */
         @NameInMap("modifyUser")
         public SearchFormDatasResponseBodyDataModifyUser modifyUser;
 
-        // 发起人
+        /**
+         * <p>发起人</p>
+         */
         @NameInMap("originator")
         public SearchFormDatasResponseBodyDataOriginator originator;
 
-        // 批次号
+        /**
+         * <p>批次号</p>
+         */
         @NameInMap("sequence")
         public String sequence;
 
-        // 流水号
+        /**
+         * <p>流水号</p>
+         */
         @NameInMap("serialNo")
         public String serialNo;
 
-        // 标题
+        /**
+         * <p>标题</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 数据版本
+        /**
+         * <p>数据版本</p>
+         */
         @NameInMap("version")
         public Long version;
 

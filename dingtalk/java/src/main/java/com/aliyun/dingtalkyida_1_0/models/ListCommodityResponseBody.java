@@ -4,19 +4,27 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListCommodityResponseBody extends TeaModel {
-    // commodityVOList
+    /**
+     * <p>commodityVOList</p>
+     */
     @NameInMap("commodityVOList")
     public java.util.List<ListCommodityResponseBodyCommodityVOList> commodityVOList;
 
-    // 当前第几页
+    /**
+     * <p>当前第几页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 总数量
+    /**
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -58,35 +66,51 @@ public class ListCommodityResponseBody extends TeaModel {
     }
 
     public static class ListCommodityResponseBodyCommodityVOList extends TeaModel {
-        // accountDistributionNumber
+        /**
+         * <p>accountDistributionNumber</p>
+         */
         @NameInMap("accountDistributionNumber")
         public Integer accountDistributionNumber;
 
-        // accountNum
+        /**
+         * <p>accountNum</p>
+         */
         @NameInMap("accountNumber")
         public Integer accountNumber;
 
-        // activationCode
+        /**
+         * <p>activationCode</p>
+         */
         @NameInMap("activationCode")
         public String activationCode;
 
-        // buyDate
+        /**
+         * <p>buyDate</p>
+         */
         @NameInMap("buyDateGMT")
         public String buyDateGMT;
 
-        // expireDate
+        /**
+         * <p>expireDate</p>
+         */
         @NameInMap("expireDateGMT")
         public String expireDateGMT;
 
-        // instanceId
+        /**
+         * <p>instanceId</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
-        // status
+        /**
+         * <p>status</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // version
+        /**
+         * <p>version</p>
+         */
         @NameInMap("version")
         public Integer version;
 

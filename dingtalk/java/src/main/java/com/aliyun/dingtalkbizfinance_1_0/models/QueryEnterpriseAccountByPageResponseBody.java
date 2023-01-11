@@ -4,11 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
-    // 是否还有更多数据
+    /**
+     * <p>是否还有更多数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // resultList
+    /**
+     * <p>resultList</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryEnterpriseAccountByPageResponseBodyList> list;
 
@@ -34,43 +38,63 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
     }
 
     public static class QueryEnterpriseAccountByPageResponseBodyList extends TeaModel {
-        // 账户code
+        /**
+         * <p>账户code</p>
+         */
         @NameInMap("accountCode")
         public String accountCode;
 
-        // 关联资金账号id
+        /**
+         * <p>关联资金账号id</p>
+         */
         @NameInMap("accountId")
         public String accountId;
 
-        // 账户名称
+        /**
+         * <p>账户名称</p>
+         */
         @NameInMap("accountName")
         public String accountName;
 
-        // 备注
+        /**
+         * <p>备注</p>
+         */
         @NameInMap("accountRemark")
         public String accountRemark;
 
-        // 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
+        /**
+         * <p>账户类型:ALIPAY, BANKCARD, CASH, WECHAT</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
-        // 账户总额，保留2位小数
+        /**
+         * <p>账户总额，保留2位小数</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 银行代号，如果是银行卡类型，有值，其他类型时，为空
+        /**
+         * <p>银行代号，如果是银行卡类型，有值，其他类型时，为空</p>
+         */
         @NameInMap("bankCode")
         public String bankCode;
 
-        // 银行名字，如果是银行卡类型，有值，其他类型时，为空
+        /**
+         * <p>银行名字，如果是银行卡类型，有值，其他类型时，为空</p>
+         */
         @NameInMap("bankName")
         public String bankName;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 创建人工号
+        /**
+         * <p>创建人工号</p>
+         */
         @NameInMap("creator")
         public String creator;
 

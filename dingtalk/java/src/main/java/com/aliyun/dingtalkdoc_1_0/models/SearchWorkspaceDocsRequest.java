@@ -4,23 +4,33 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchWorkspaceDocsRequest extends TeaModel {
-    // 搜索关键字
+    /**
+     * <p>搜索关键字</p>
+     */
     @NameInMap("keyword")
     public String keyword;
 
-    // 搜索数量
+    /**
+     * <p>搜索数量</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 翻页Id
+    /**
+     * <p>翻页Id</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    // 发起操作用户unionId
+    /**
+     * <p>发起操作用户unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    // 知识库id。
+    /**
+     * <p>知识库id。</p>
+     */
     @NameInMap("workspaceId")
     public String workspaceId;
 

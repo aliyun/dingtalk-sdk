@@ -4,11 +4,15 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class RestoreRecycleItemRequest extends TeaModel {
-    // 可选参数
+    /**
+     * <p>可选参数</p>
+     */
     @NameInMap("option")
     public RestoreRecycleItemRequestOption option;
 
-    // 用户id
+    /**
+     * <p>用户id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -34,15 +38,17 @@ public class RestoreRecycleItemRequest extends TeaModel {
     }
 
     public static class RestoreRecycleItemRequestOption extends TeaModel {
-        // 文件名称冲突策略
-        // 还原时原路径可能已经存在同名的文件
-        // 枚举值:
-        // 	AUTO_RENAME: 自动重命名
-        // 	OVERWRITE: 覆盖
-        // 	RETURN_DENTRY_IF_EXISTS: 返回已存在文件
-        // 	RETURN_ERROR_IF_EXISTS: 文件已存在时报错
-        // 默认值:
-        // 	AUTO_RENAME
+        /**
+         * <p>文件名称冲突策略</p>
+         * <p>还原时原路径可能已经存在同名的文件</p>
+         * <p>枚举值:</p>
+         * <p>	AUTO_RENAME: 自动重命名</p>
+         * <p>	OVERWRITE: 覆盖</p>
+         * <p>	RETURN_DENTRY_IF_EXISTS: 返回已存在文件</p>
+         * <p>	RETURN_ERROR_IF_EXISTS: 文件已存在时报错</p>
+         * <p>默认值:</p>
+         * <p>	AUTO_RENAME</p>
+         */
         @NameInMap("conflictStrategy")
         public String conflictStrategy;
 

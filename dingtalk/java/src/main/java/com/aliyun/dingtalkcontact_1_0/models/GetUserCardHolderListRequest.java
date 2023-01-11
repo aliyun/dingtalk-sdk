@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserCardHolderListRequest extends TeaModel {
-    // 每页返回个数
+    /**
+     * <p>每页返回个数</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 标记当前开始读取的位置，置空表示从头开始
+    /**
+     * <p>标记当前开始读取的位置，置空表示从头开始</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

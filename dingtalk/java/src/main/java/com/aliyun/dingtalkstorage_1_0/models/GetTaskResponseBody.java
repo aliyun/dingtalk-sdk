@@ -4,7 +4,9 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskResponseBody extends TeaModel {
-    // 任务信息
+    /**
+     * <p>任务信息</p>
+     */
     @NameInMap("task")
     public GetTaskResponseBodyTask task;
 
@@ -22,40 +24,56 @@ public class GetTaskResponseBody extends TeaModel {
     }
 
     public static class GetTaskResponseBodyTask extends TeaModel {
-        // 任务开始时间
+        /**
+         * <p>任务开始时间</p>
+         */
         @NameInMap("beginTime")
         public String beginTime;
 
-        // 任务结束时间
+        /**
+         * <p>任务结束时间</p>
+         */
         @NameInMap("endTime")
         public String endTime;
 
-        // 子任务失败总数
+        /**
+         * <p>子任务失败总数</p>
+         */
         @NameInMap("failCount")
         public Long failCount;
 
-        // 任务失败原因
+        /**
+         * <p>任务失败原因</p>
+         */
         @NameInMap("failMessage")
         public String failMessage;
 
-        // 任务id
+        /**
+         * <p>任务id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 任务状态
-        // 枚举值:
-        // 	INIT: 初始化
-        // 	IN_PROGRESS: 进行中
-        // 	SUCCESS: 成功
-        // 	FAIL: 失败
+        /**
+         * <p>任务状态</p>
+         * <p>枚举值:</p>
+         * <p>	INIT: 初始化</p>
+         * <p>	IN_PROGRESS: 进行中</p>
+         * <p>	SUCCESS: 成功</p>
+         * <p>	FAIL: 失败</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 子任务成功总数
+        /**
+         * <p>子任务成功总数</p>
+         */
         @NameInMap("successCount")
         public Long successCount;
 
-        // 子任务总数
+        /**
+         * <p>子任务总数</p>
+         */
         @NameInMap("totalCount")
         public Long totalCount;
 

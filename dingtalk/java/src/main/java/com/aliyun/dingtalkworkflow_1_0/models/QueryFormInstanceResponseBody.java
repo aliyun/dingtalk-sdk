@@ -4,51 +4,75 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFormInstanceResponseBody extends TeaModel {
-    // 应用搭建id
+    /**
+     * <p>应用搭建id</p>
+     */
     @NameInMap("appUuid")
     public String appUuid;
 
-    // 扩展信息
+    /**
+     * <p>扩展信息</p>
+     */
     @NameInMap("attributes")
     public java.util.Map<String, ?> attributes;
 
-    // 实例创建时间戳
+    /**
+     * <p>实例创建时间戳</p>
+     */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
-    // 创建人
+    /**
+     * <p>创建人</p>
+     */
     @NameInMap("creator")
     public String creator;
 
-    // 表单模板id
+    /**
+     * <p>表单模板id</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 
-    // 表单数据
+    /**
+     * <p>表单数据</p>
+     */
     @NameInMap("formInstDataList")
     public java.util.List<QueryFormInstanceResponseBodyFormInstDataList> formInstDataList;
 
-    // 实例id
+    /**
+     * <p>实例id</p>
+     */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 
-    // 修改人
+    /**
+     * <p>修改人</p>
+     */
     @NameInMap("modifier")
     public String modifier;
 
-    // 实例最近修改时间戳
+    /**
+     * <p>实例最近修改时间戳</p>
+     */
     @NameInMap("modifyTimestamp")
     public Long modifyTimestamp;
 
-    // 外联业务code
+    /**
+     * <p>外联业务code</p>
+     */
     @NameInMap("outBizCode")
     public String outBizCode;
 
-    // 外联业务实例id
+    /**
+     * <p>外联业务实例id</p>
+     */
     @NameInMap("outInstanceId")
     public String outInstanceId;
 
-    // 表单标题
+    /**
+     * <p>表单标题</p>
+     */
     @NameInMap("title")
     public String title;
 

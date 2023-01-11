@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmRolePermissionResponseBody extends TeaModel {
-    // CRM表单权限配置
+    /**
+     * <p>CRM表单权限配置</p>
+     */
     @NameInMap("permissions")
     public java.util.List<GetCrmRolePermissionResponseBodyPermissions> permissions;
 
@@ -22,11 +24,15 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsFieldScopes extends TeaModel {
-        // 字段权限点
+        /**
+         * <p>字段权限点</p>
+         */
         @NameInMap("fieldActions")
         public java.util.List<String> fieldActions;
 
-        // 字段id
+        /**
+         * <p>字段id</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
@@ -54,11 +60,15 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt extends TeaModel {
-        // 管理部门列表
+        /**
+         * <p>管理部门列表</p>
+         */
         @NameInMap("deptIdList")
         public java.util.List<Double> deptIdList;
 
-        // 管理员工列表
+        /**
+         * <p>管理员工列表</p>
+         */
         @NameInMap("userIdList")
         public java.util.List<String> userIdList;
 
@@ -86,15 +96,21 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsManagingScopeList extends TeaModel {
-        // 扩展信息
+        /**
+         * <p>扩展信息</p>
+         */
         @NameInMap("ext")
         public GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt ext;
 
-        // 是否是主管
+        /**
+         * <p>是否是主管</p>
+         */
         @NameInMap("manager")
         public Boolean manager;
 
-        // 管理范围类型
+        /**
+         * <p>管理范围类型</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -130,11 +146,15 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsOperateScopes extends TeaModel {
-        // 是否有权限
+        /**
+         * <p>是否有权限</p>
+         */
         @NameInMap("hasAuth")
         public Boolean hasAuth;
 
-        // 操作范围类型
+        /**
+         * <p>操作范围类型</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -162,19 +182,27 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList extends TeaModel {
-        // 角色值
+        /**
+         * <p>角色值</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 角色名
+        /**
+         * <p>角色名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 角色类型
+        /**
+         * <p>角色类型</p>
+         */
         @NameInMap("type")
         public String type;
 
-        // 角色的userId
+        /**
+         * <p>角色的userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -218,35 +246,51 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissions extends TeaModel {
-        // 是否是默认权限
+        /**
+         * <p>是否是默认权限</p>
+         */
         @NameInMap("defaultRole")
         public Boolean defaultRole;
 
-        // 字段权限
+        /**
+         * <p>字段权限</p>
+         */
         @NameInMap("fieldScopes")
         public java.util.List<GetCrmRolePermissionResponseBodyPermissionsFieldScopes> fieldScopes;
 
-        // 权限组适用范围配置
+        /**
+         * <p>权限组适用范围配置</p>
+         */
         @NameInMap("managingScopeList")
         public java.util.List<GetCrmRolePermissionResponseBodyPermissionsManagingScopeList> managingScopeList;
 
-        // 操作范围
+        /**
+         * <p>操作范围</p>
+         */
         @NameInMap("operateScopes")
         public java.util.List<GetCrmRolePermissionResponseBodyPermissionsOperateScopes> operateScopes;
 
-        // 资源id
+        /**
+         * <p>资源id</p>
+         */
         @NameInMap("resourceId")
         public String resourceId;
 
-        // 权限组id
+        /**
+         * <p>权限组id</p>
+         */
         @NameInMap("roleId")
         public Double roleId;
 
-        // 权限组配置
+        /**
+         * <p>权限组配置</p>
+         */
         @NameInMap("roleMemberList")
         public java.util.List<GetCrmRolePermissionResponseBodyPermissionsRoleMemberList> roleMemberList;
 
-        // 权限组名称
+        /**
+         * <p>权限组名称</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 

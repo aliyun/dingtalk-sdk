@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterDeviceResponseBody extends TeaModel {
-    // 注册成功的设备ID列表。
+    /**
+     * <p>注册成功的设备ID列表。</p>
+     */
     @NameInMap("deviceIds")
     public java.util.List<String> deviceIds;
 

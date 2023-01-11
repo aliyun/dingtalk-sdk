@@ -4,11 +4,15 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTradeOrderRequest extends TeaModel {
-    // 内部订单号
+    /**
+     * <p>内部订单号</p>
+     */
     @NameInMap("orderId")
     public Long orderId;
 
-    // 外部订单号
+    /**
+     * <p>外部订单号</p>
+     */
     @NameInMap("outerOrderId")
     public String outerOrderId;
 

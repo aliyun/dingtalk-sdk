@@ -4,43 +4,63 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrganizationTaskRequest extends TeaModel {
-    // 任务标题
+    /**
+     * <p>任务标题</p>
+     */
     @NameInMap("content")
     public String content;
 
-    // 任务创建日期
+    /**
+     * <p>任务创建日期</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
-    // 是否禁止动态
+    /**
+     * <p>是否禁止动态</p>
+     */
     @NameInMap("disableActivity")
     public Boolean disableActivity;
 
-    // 是否禁止通知
+    /**
+     * <p>是否禁止通知</p>
+     */
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 
-    // 任务截止日期
+    /**
+     * <p>任务截止日期</p>
+     */
     @NameInMap("dueDate")
     public String dueDate;
 
-    // 执行者id
+    /**
+     * <p>执行者id</p>
+     */
     @NameInMap("executorId")
     public String executorId;
 
-    // 参与者id
+    /**
+     * <p>参与者id</p>
+     */
     @NameInMap("involveMembers")
     public java.util.List<String> involveMembers;
 
-    // 任务备注
+    /**
+     * <p>任务备注</p>
+     */
     @NameInMap("note")
     public String note;
 
-    // 优先级【-10,0,1,2】中选一个
+    /**
+     * <p>优先级【-10,0,1,2】中选一个</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 
-    // 任务可见性。involves：仅参与者可见。members:所有人可见
+    /**
+     * <p>任务可见性。involves：仅参与者可见。members:所有人可见</p>
+     */
     @NameInMap("visible")
     public String visible;
 

@@ -4,11 +4,15 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFlightExceedApplyRequest extends TeaModel {
-    // 商旅超标审批单id
+    /**
+     * <p>商旅超标审批单id</p>
+     */
     @NameInMap("applyId")
     public String applyId;
 
-    // 第三方企业id
+    /**
+     * <p>第三方企业id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

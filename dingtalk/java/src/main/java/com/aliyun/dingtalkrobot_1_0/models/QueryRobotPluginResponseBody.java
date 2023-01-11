@@ -21,19 +21,27 @@ public class QueryRobotPluginResponseBody extends TeaModel {
     }
 
     public static class QueryRobotPluginResponseBodyPluginInfoList extends TeaModel {
-        // 快捷入口的图标id
+        /**
+         * <p>快捷入口的图标id</p>
+         */
         @NameInMap("icon")
         public String icon;
 
-        // 手机端快捷入口跳转链接
+        /**
+         * <p>手机端快捷入口跳转链接</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        // 快捷入口的名称
+        /**
+         * <p>快捷入口的名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // pc端会话快捷入口跳转链接
+        /**
+         * <p>pc端会话快捷入口跳转链接</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 

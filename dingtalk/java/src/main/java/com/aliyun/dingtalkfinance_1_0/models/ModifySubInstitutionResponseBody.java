@@ -4,7 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifySubInstitutionResponseBody extends TeaModel {
-    // 修改申请单号
+    /**
+     * <p>修改申请单号</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 

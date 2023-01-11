@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOfficialAccountRobotInfoRequest extends TeaModel {
-    // 机器人类型参数
+    /**
+     * <p>机器人类型参数</p>
+     */
     @NameInMap("type")
     public String type;
 

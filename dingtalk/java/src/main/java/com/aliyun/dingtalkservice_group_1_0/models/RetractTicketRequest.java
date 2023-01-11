@@ -10,11 +10,15 @@ public class RetractTicketRequest extends TeaModel {
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    // 工单开放ID
+    /**
+     * <p>工单开放ID</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    // 操作人ID
+    /**
+     * <p>操作人ID</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
@@ -70,7 +74,9 @@ public class RetractTicketRequest extends TeaModel {
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
-        // 是否向群内推送一个全员可见工单通知卡片
+        /**
+         * <p>是否向群内推送一个全员可见工单通知卡片</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 

@@ -4,43 +4,63 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendCardRequest extends TeaModel {
-    // 卡片实例唯一标识
+    /**
+     * <p>卡片实例唯一标识</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
-    // 卡片变量赋值，json结构
+    /**
+     * <p>卡片变量赋值，json结构</p>
+     */
     @NameInMap("cardData")
     public String cardData;
 
-    // 设备业务标识
+    /**
+     * <p>设备业务标识</p>
+     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
-    // 设备uuid，唯一标识
+    /**
+     * <p>设备uuid，唯一标识</p>
+     */
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
-    // 群id，群的唯一标识
+    /**
+     * <p>群id，群的唯一标识</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 卡片是否群内部分人员可见
+    /**
+     * <p>卡片是否群内部分人员可见</p>
+     */
     @NameInMap("partVisible")
     public Boolean partVisible;
 
-    // 群内指定人员可见
+    /**
+     * <p>群内指定人员可见</p>
+     */
     @NameInMap("receivers")
     public java.util.List<String> receivers;
 
-    // 卡片模板唯一标识，开放平台获取
+    /**
+     * <p>卡片模板唯一标识，开放平台获取</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
-    // 是否为吊顶卡片
+    /**
+     * <p>是否为吊顶卡片</p>
+     */
     @NameInMap("topbox")
     public Boolean topbox;
 
-    // 用户通讯录唯一标识
+    /**
+     * <p>用户通讯录唯一标识</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GenerateDarkWaterMarkResponseBody extends TeaModel {
-    // 返回码
+    /**
+     * <p>返回码</p>
+     */
     @NameInMap("darkWatermarkVOList")
     public java.util.List<GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList> darkWatermarkVOList;
 
@@ -22,11 +24,15 @@ public class GenerateDarkWaterMarkResponseBody extends TeaModel {
     }
 
     public static class GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList extends TeaModel {
-        // 暗水印链接
+        /**
+         * <p>暗水印链接</p>
+         */
         @NameInMap("darkWatermark")
         public String darkWatermark;
 
-        // 员工工号
+        /**
+         * <p>员工工号</p>
+         */
         @NameInMap("userId")
         public String userId;
 

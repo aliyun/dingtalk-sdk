@@ -4,11 +4,15 @@ package com.aliyun.dingtalkgroup_blackboard_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteGroupBlackboardResponseBody extends TeaModel {
-    // 是否成功删除
+    /**
+     * <p>是否成功删除</p>
+     */
     @NameInMap("isDeleted")
     public Boolean isDeleted;
 
-    // 请求是否成功
+    /**
+     * <p>请求是否成功</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

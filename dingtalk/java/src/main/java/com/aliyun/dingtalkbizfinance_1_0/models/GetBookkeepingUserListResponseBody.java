@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBookkeepingUserListResponseBody extends TeaModel {
-    // staffId列表
+    /**
+     * <p>staffId列表</p>
+     */
     @NameInMap("result")
     public java.util.List<String> result;
 

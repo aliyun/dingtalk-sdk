@@ -4,35 +4,51 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCrmPersonalCustomerRequest extends TeaModel {
-    // 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+    /**
+     * <p>公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）</p>
+     */
     @NameInMap("action")
     public String action;
 
-    // 记录创建人的昵称
+    /**
+     * <p>记录创建人的昵称</p>
+     */
     @NameInMap("creatorNick")
     public String creatorNick;
 
-    // 记录创建人的用户ID
+    /**
+     * <p>记录创建人的用户ID</p>
+     */
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
-    // 数据内容
+    /**
+     * <p>数据内容</p>
+     */
     @NameInMap("data")
     public java.util.Map<String, ?> data;
 
-    // 扩展数据内容
+    /**
+     * <p>扩展数据内容</p>
+     */
     @NameInMap("extendData")
     public java.util.Map<String, ?> extendData;
 
-    // 权限
+    /**
+     * <p>权限</p>
+     */
     @NameInMap("permission")
     public AddCrmPersonalCustomerRequestPermission permission;
 
-    // 关系类型
+    /**
+     * <p>关系类型</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 
-    // 跳过uk查重
+    /**
+     * <p>跳过uk查重</p>
+     */
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 
@@ -106,11 +122,15 @@ public class AddCrmPersonalCustomerRequest extends TeaModel {
     }
 
     public static class AddCrmPersonalCustomerRequestPermission extends TeaModel {
-        // 负责人的用户ID
+        /**
+         * <p>负责人的用户ID</p>
+         */
         @NameInMap("ownerStaffIds")
         public java.util.List<String> ownerStaffIds;
 
-        // 协同人的用户ID
+        /**
+         * <p>协同人的用户ID</p>
+         */
         @NameInMap("participantStaffIds")
         public java.util.List<String> participantStaffIds;
 

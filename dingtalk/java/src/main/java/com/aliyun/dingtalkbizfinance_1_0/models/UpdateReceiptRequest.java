@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateReceiptRequest extends TeaModel {
-    // 单据列表 ，最长10
+    /**
+     * <p>单据列表 ，最长10</p>
+     */
     @NameInMap("receipts")
     public java.util.List<UpdateReceiptRequestReceipts> receipts;
 
@@ -22,59 +24,87 @@ public class UpdateReceiptRequest extends TeaModel {
     }
 
     public static class UpdateReceiptRequestReceipts extends TeaModel {
-        // 总金额，传空代表不修改
+        /**
+         * <p>总金额，传空代表不修改</p>
+         */
         @NameInMap("amount")
         public String amount;
 
-        // 关联收支类别，传空代表不修改
+        /**
+         * <p>关联收支类别，传空代表不修改</p>
+         */
         @NameInMap("categoryCode")
         public String categoryCode;
 
-        // 单据唯一编号
+        /**
+         * <p>单据唯一编号</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 关联客户code，传空代表不修改
+        /**
+         * <p>关联客户code，传空代表不修改</p>
+         */
         @NameInMap("customerCode")
         public String customerCode;
 
-        // 关联企业账户code，传空代表不修改
+        /**
+         * <p>关联企业账户code，传空代表不修改</p>
+         */
         @NameInMap("enterpriseAcountCode")
         public String enterpriseAcountCode;
 
-        // 业务发生时间，传空代表不修改
+        /**
+         * <p>业务发生时间，传空代表不修改</p>
+         */
         @NameInMap("occurDate")
         public Long occurDate;
 
-        // 负责人工号，传空代表不修改
+        /**
+         * <p>负责人工号，传空代表不修改</p>
+         */
         @NameInMap("principalId")
         public String principalId;
 
-        // 关联项目code，传空代表不修改
+        /**
+         * <p>关联项目code，传空代表不修改</p>
+         */
         @NameInMap("projectCode")
         public String projectCode;
 
-        // 单据类型：1付款单，2收款单
+        /**
+         * <p>单据类型：1付款单，2收款单</p>
+         */
         @NameInMap("receiptType")
         public Long receiptType;
 
-        // 备注，传空代表不修改
+        /**
+         * <p>备注，传空代表不修改</p>
+         */
         @NameInMap("remark")
         public String remark;
 
-        // 关联供应商code，传空代表不修改
+        /**
+         * <p>关联供应商code，传空代表不修改</p>
+         */
         @NameInMap("supplierCode")
         public String supplierCode;
 
-        // 单据标题，传空代表不修改
+        /**
+         * <p>单据标题，传空代表不修改</p>
+         */
         @NameInMap("title")
         public String title;
 
-        // 单据更新时间
+        /**
+         * <p>单据更新时间</p>
+         */
         @NameInMap("updateTime")
         public Long updateTime;
 
-        // 修改者工号
+        /**
+         * <p>修改者工号</p>
+         */
         @NameInMap("updateUserId")
         public String updateUserId;
 

@@ -7,7 +7,9 @@ public class GetOfficialAccountOTOMessageResultRequest extends TeaModel {
     @NameInMap("accountId")
     public String accountId;
 
-    // 推送ID
+    /**
+     * <p>推送ID</p>
+     */
     @NameInMap("openPushId")
     public String openPushId;
 

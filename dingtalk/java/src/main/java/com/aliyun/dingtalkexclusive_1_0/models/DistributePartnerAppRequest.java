@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DistributePartnerAppRequest extends TeaModel {
-    // 应用id
+    /**
+     * <p>应用id</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
@@ -14,7 +16,9 @@ public class DistributePartnerAppRequest extends TeaModel {
     @NameInMap("subCorpId")
     public String subCorpId;
 
-    // 分发对象类型
+    /**
+     * <p>分发对象类型</p>
+     */
     @NameInMap("type")
     public Long type;
 

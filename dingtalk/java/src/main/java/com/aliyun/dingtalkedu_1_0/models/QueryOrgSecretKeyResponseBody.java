@@ -4,7 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOrgSecretKeyResponseBody extends TeaModel {
-    // 秘钥信息
+    /**
+     * <p>秘钥信息</p>
+     */
     @NameInMap("universitySecretKeyInfo")
     public QueryOrgSecretKeyResponseBodyUniversitySecretKeyInfo universitySecretKeyInfo;
 
@@ -22,7 +24,9 @@ public class QueryOrgSecretKeyResponseBody extends TeaModel {
     }
 
     public static class QueryOrgSecretKeyResponseBodyUniversitySecretKeyInfo extends TeaModel {
-        // 秘钥key
+        /**
+         * <p>秘钥key</p>
+         */
         @NameInMap("secretKey")
         public String secretKey;
 

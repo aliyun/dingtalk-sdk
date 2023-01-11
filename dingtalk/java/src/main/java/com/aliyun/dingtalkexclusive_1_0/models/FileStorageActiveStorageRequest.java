@@ -4,19 +4,27 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class FileStorageActiveStorageRequest extends TeaModel {
-    // 密匙id
+    /**
+     * <p>密匙id</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
-    // 密匙密码
+    /**
+     * <p>密匙密码</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
-    // 带bucket的oss域名
+    /**
+     * <p>带bucket的oss域名</p>
+     */
     @NameInMap("oss")
     public String oss;
 
-    // 企业id
+    /**
+     * <p>企业id</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

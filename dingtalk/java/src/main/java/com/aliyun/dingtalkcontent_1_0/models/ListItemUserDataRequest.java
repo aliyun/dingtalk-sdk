@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListItemUserDataRequest extends TeaModel {
-    // 希望查询的用户的id列表
+    /**
+     * <p>希望查询的用户的id列表</p>
+     */
     @NameInMap("body")
     public java.util.List<String> body;
 

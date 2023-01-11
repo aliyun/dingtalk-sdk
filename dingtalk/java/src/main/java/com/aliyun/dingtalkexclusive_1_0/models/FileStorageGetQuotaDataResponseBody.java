@@ -4,7 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class FileStorageGetQuotaDataResponseBody extends TeaModel {
-    // 文件存储使用容量列表
+    /**
+     * <p>文件存储使用容量列表</p>
+     */
     @NameInMap("quotaModelList")
     public java.util.List<FileStorageGetQuotaDataResponseBodyQuotaModelList> quotaModelList;
 
@@ -22,11 +24,15 @@ public class FileStorageGetQuotaDataResponseBody extends TeaModel {
     }
 
     public static class FileStorageGetQuotaDataResponseBodyQuotaModelList extends TeaModel {
-        // 统计时间点
+        /**
+         * <p>统计时间点</p>
+         */
         @NameInMap("statisticTime")
         public String statisticTime;
 
-        // 使用的容量（byte）
+        /**
+         * <p>使用的容量（byte）</p>
+         */
         @NameInMap("usedStorage")
         public Long usedStorage;
 

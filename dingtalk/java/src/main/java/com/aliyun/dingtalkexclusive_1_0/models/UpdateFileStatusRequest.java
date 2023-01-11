@@ -4,11 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateFileStatusRequest extends TeaModel {
-    // 请求id列表
+    /**
+     * <p>请求id列表</p>
+     */
     @NameInMap("requestIds")
     public java.util.List<String> requestIds;
 
-    // 更新的状态
+    /**
+     * <p>更新的状态</p>
+     */
     @NameInMap("status")
     public Integer status;
 

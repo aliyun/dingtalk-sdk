@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddRobotInstanceToGroupResponseBody extends TeaModel {
-    // 是否成功拉入群
+    /**
+     * <p>是否成功拉入群</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

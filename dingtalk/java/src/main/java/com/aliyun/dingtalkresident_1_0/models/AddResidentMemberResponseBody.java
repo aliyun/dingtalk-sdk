@@ -4,15 +4,21 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddResidentMemberResponseBody extends TeaModel {
-    // 用户状态
+    /**
+     * <p>用户状态</p>
+     */
     @NameInMap("status")
     public Integer status;
 
-    // 用户ID
+    /**
+     * <p>用户ID</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
-    // 用户员工ID
+    /**
+     * <p>用户员工ID</p>
+     */
     @NameInMap("userId")
     public String userId;
 

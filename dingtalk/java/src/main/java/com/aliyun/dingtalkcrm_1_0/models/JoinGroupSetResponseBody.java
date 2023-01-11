@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class JoinGroupSetResponseBody extends TeaModel {
-    // chatId
+    /**
+     * <p>chatId</p>
+     */
     @NameInMap("chatId")
     public String chatId;
 
-    // 加密群ID。
+    /**
+     * <p>加密群ID。</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

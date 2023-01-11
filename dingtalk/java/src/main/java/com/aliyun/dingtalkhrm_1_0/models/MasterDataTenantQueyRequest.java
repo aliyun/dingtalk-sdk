@@ -4,11 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataTenantQueyRequest extends TeaModel {
-    // 实体 code
+    /**
+     * <p>实体 code</p>
+     */
     @NameInMap("entityCode")
     public String entityCode;
 
-    // isv的业务领域
+    /**
+     * <p>isv的业务领域</p>
+     */
     @NameInMap("scopeCode")
     public String scopeCode;
 

@@ -7,11 +7,15 @@ public class ListMaintainInfoRequest extends TeaModel {
     @NameInMap("deviceUuid")
     public java.util.List<String> deviceUuid;
 
-    // 页码
+    /**
+     * <p>页码</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 页面大小
+    /**
+     * <p>页面大小</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

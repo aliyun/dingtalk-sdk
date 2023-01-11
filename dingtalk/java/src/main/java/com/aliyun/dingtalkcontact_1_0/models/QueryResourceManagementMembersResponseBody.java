@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryResourceManagementMembersResponseBody extends TeaModel {
-    // 可管理资源的成员
+    /**
+     * <p>可管理资源的成员</p>
+     */
     @NameInMap("members")
     public java.util.List<QueryResourceManagementMembersResponseBodyMembers> members;
 
@@ -22,11 +24,15 @@ public class QueryResourceManagementMembersResponseBody extends TeaModel {
     }
 
     public static class QueryResourceManagementMembersResponseBodyMembers extends TeaModel {
-        // 成员id
+        /**
+         * <p>成员id</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
-        // 成员类型
+        /**
+         * <p>成员类型</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 

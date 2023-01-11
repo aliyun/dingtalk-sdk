@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateRangeProtectionResponseBody extends TeaModel {
-    // 单元格锁定ID
+    /**
+     * <p>单元格锁定ID</p>
+     */
     @NameInMap("id")
     public String id;
 

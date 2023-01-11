@@ -4,43 +4,63 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInnerAppResponseBody extends TeaModel {
-    // 应用id
+    /**
+     * <p>应用id</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 
-    // 应用的appkey
+    /**
+     * <p>应用的appkey</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
-    // 应用的secret
+    /**
+     * <p>应用的secret</p>
+     */
     @NameInMap("appSecret")
     public String appSecret;
 
-    // 应用描述
+    /**
+     * <p>应用描述</p>
+     */
     @NameInMap("desc")
     public String desc;
 
-    // 应用移动端首页地址
+    /**
+     * <p>应用移动端首页地址</p>
+     */
     @NameInMap("homepageLink")
     public String homepageLink;
 
-    // 应用图标
+    /**
+     * <p>应用图标</p>
+     */
     @NameInMap("icon")
     public String icon;
 
-    // 服务器出口ip
+    /**
+     * <p>服务器出口ip</p>
+     */
     @NameInMap("ipWhiteList")
     public java.util.List<String> ipWhiteList;
 
-    // 应用名称
+    /**
+     * <p>应用名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 应用管理后台地址
+    /**
+     * <p>应用管理后台地址</p>
+     */
     @NameInMap("ompLink")
     public String ompLink;
 
-    // 应用PC端首页地址
+    /**
+     * <p>应用PC端首页地址</p>
+     */
     @NameInMap("pcHomepageLink")
     public String pcHomepageLink;
 

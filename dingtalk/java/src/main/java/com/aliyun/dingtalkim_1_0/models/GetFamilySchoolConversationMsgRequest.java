@@ -4,23 +4,33 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFamilySchoolConversationMsgRequest extends TeaModel {
-    // 查询最大消息数
+    /**
+     * <p>查询最大消息数</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 要查询的消息类型
+    /**
+     * <p>要查询的消息类型</p>
+     */
     @NameInMap("msgTypes")
     public java.util.List<Integer> msgTypes;
 
-    // 下一次查询的游标，毫秒值
+    /**
+     * <p>下一次查询的游标，毫秒值</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 接收卡片的群的openConversationId
+    /**
+     * <p>接收卡片的群的openConversationId</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    // 用户唯一标识
+    /**
+     * <p>用户唯一标识</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

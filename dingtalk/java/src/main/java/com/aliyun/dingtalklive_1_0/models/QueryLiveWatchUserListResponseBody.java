@@ -21,31 +21,45 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResultOrgUsesList extends TeaModel {
-        // 部门名称
+        /**
+         * <p>部门名称</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
-        // 姓名
+        /**
+         * <p>姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
-        // 员工id
+        /**
+         * <p>员工id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
-        // 观看直播时长
+        /**
+         * <p>观看直播时长</p>
+         */
         @NameInMap("watchLiveTime")
         public Long watchLiveTime;
 
-        // 观看回放时长
+        /**
+         * <p>观看回放时长</p>
+         */
         @NameInMap("watchPlaybackTime")
         public Long watchPlaybackTime;
 
-        // 回放观看进度
+        /**
+         * <p>回放观看进度</p>
+         */
         @NameInMap("watchProgressMs")
         public Long watchProgressMs;
 
@@ -113,19 +127,27 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResultOutOrgUserList extends TeaModel {
-        // 姓名
+        /**
+         * <p>姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 观看直播时长
+        /**
+         * <p>观看直播时长</p>
+         */
         @NameInMap("watchLiveTime")
         public Long watchLiveTime;
 
-        // 观看回放时长
+        /**
+         * <p>观看回放时长</p>
+         */
         @NameInMap("watchPlaybackTime")
         public Long watchPlaybackTime;
 
-        // 回放观看进度
+        /**
+         * <p>回放观看进度</p>
+         */
         @NameInMap("watchProgressMs")
         public Long watchProgressMs;
 
@@ -169,11 +191,15 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResult extends TeaModel {
-        // 组织内的观看用户列表
+        /**
+         * <p>组织内的观看用户列表</p>
+         */
         @NameInMap("orgUsesList")
         public java.util.List<QueryLiveWatchUserListResponseBodyResultOrgUsesList> orgUsesList;
 
-        // 组织外的观看用户列表
+        /**
+         * <p>组织外的观看用户列表</p>
+         */
         @NameInMap("outOrgUserList")
         public java.util.List<QueryLiveWatchUserListResponseBodyResultOutOrgUserList> outOrgUserList;
 

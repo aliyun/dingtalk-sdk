@@ -4,7 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAcquireRefundOrderRequest extends TeaModel {
-    // 外部退款订单流水号
+    /**
+     * <p>外部退款订单流水号</p>
+     */
     @NameInMap("outRefundNo")
     public String outRefundNo;
 

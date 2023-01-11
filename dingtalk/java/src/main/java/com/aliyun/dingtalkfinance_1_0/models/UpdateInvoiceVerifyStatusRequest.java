@@ -4,47 +4,69 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
-    // 查验流水号
+    /**
+     * <p>查验流水号</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
-    // 查验结果
+    /**
+     * <p>查验结果</p>
+     */
     @NameInMap("checkingResult")
     public Integer checkingResult;
 
-    // 查验状态
+    /**
+     * <p>查验状态</p>
+     */
     @NameInMap("checkingStatus")
     public Integer checkingStatus;
 
-    // 业务响应码
+    /**
+     * <p>业务响应码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 企业Id
+    /**
+     * <p>企业Id</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
-    // 发票代码
+    /**
+     * <p>发票代码</p>
+     */
     @NameInMap("invoiceCode")
     public String invoiceCode;
 
-    // 发票号码
+    /**
+     * <p>发票号码</p>
+     */
     @NameInMap("invoiceNo")
     public String invoiceNo;
 
-    // 发票状态
+    /**
+     * <p>发票状态</p>
+     */
     @NameInMap("invoiceStatus")
     public Integer invoiceStatus;
 
-    // 发票验真编号
+    /**
+     * <p>发票验真编号</p>
+     */
     @NameInMap("invoiceVerifyId")
     public String invoiceVerifyId;
 
-    // 响应信息
+    /**
+     * <p>响应信息</p>
+     */
     @NameInMap("msg")
     public String msg;
 
-    // 用户Id
+    /**
+     * <p>用户Id</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

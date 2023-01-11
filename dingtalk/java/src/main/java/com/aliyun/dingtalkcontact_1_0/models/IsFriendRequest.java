@@ -4,11 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class IsFriendRequest extends TeaModel {
-    // 手机号码
+    /**
+     * <p>手机号码</p>
+     */
     @NameInMap("mobileNo")
     public String mobileNo;
 
-    // 工号
+    /**
+     * <p>工号</p>
+     */
     @NameInMap("userId")
     public String userId;
 

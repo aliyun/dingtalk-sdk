@@ -4,7 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactEmpListRequest extends TeaModel {
-    // 部门Id
+    /**
+     * <p>部门Id</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 

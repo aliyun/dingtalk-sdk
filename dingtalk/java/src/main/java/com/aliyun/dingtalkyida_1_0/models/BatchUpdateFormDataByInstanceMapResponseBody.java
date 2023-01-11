@@ -4,7 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateFormDataByInstanceMapResponseBody extends TeaModel {
-    // 更新成功的表单实例ID
+    /**
+     * <p>更新成功的表单实例ID</p>
+     */
     @NameInMap("result")
     public java.util.List<String> result;
 

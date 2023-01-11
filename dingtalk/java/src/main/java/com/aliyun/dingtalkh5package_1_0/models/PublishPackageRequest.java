@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class PublishPackageRequest extends TeaModel {
-    // 企业内部微应用agentId
+    /**
+     * <p>企业内部微应用agentId</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 
-    // 第三方企业应用appId
+    /**
+     * <p>第三方企业应用appId</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
-    // H5离线包版本号
+    /**
+     * <p>H5离线包版本号</p>
+     */
     @NameInMap("version")
     public String version;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateUserOwnnessResponseBody extends TeaModel {
-    // 业务标识id
+    /**
+     * <p>业务标识id</p>
+     */
     @NameInMap("result")
     public String result;
 

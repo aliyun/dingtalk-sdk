@@ -10,7 +10,9 @@ public class GetStoragePolicyResponseBody extends TeaModel {
     @NameInMap("endpoint")
     public String endpoint;
 
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("key")
     public String key;
 

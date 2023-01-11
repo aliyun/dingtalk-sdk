@@ -4,7 +4,9 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SolutionTaskSaveResponseBody extends TeaModel {
-    // 数据是否保存成功
+    /**
+     * <p>数据是否保存成功</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

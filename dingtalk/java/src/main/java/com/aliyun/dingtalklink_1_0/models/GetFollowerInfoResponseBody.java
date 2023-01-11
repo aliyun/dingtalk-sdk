@@ -4,11 +4,15 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFollowerInfoResponseBody extends TeaModel {
-    // Id of the request
+    /**
+     * <p>Id of the request</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
-    // 响应结果
+    /**
+     * <p>响应结果</p>
+     */
     @NameInMap("result")
     public GetFollowerInfoResponseBodyResult result;
 

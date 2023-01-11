@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class InsertRowsBeforeRequest extends TeaModel {
-    // 插入行的位置，从0开始
+    /**
+     * <p>插入行的位置，从0开始</p>
+     */
     @NameInMap("row")
     public Long row;
 
-    // 插入行的数量
+    /**
+     * <p>插入行的数量</p>
+     */
     @NameInMap("rowCount")
     public Long rowCount;
 
-    // 操作人unionId
+    /**
+     * <p>操作人unionId</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

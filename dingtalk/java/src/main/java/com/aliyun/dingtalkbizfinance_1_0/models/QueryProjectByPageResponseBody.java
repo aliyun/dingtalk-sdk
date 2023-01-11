@@ -4,11 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryProjectByPageResponseBody extends TeaModel {
-    // 是否还有更多数据
+    /**
+     * <p>是否还有更多数据</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // resultList
+    /**
+     * <p>resultList</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryProjectByPageResponseBodyList> list;
 
@@ -34,39 +38,57 @@ public class QueryProjectByPageResponseBody extends TeaModel {
     }
 
     public static class QueryProjectByPageResponseBodyList extends TeaModel {
-        // 项目code
+        /**
+         * <p>项目code</p>
+         */
         @NameInMap("caode")
         public String caode;
 
-        // 创建时间
+        /**
+         * <p>创建时间</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
-        // 创建人工号
+        /**
+         * <p>创建人工号</p>
+         */
         @NameInMap("creator")
         public String creator;
 
-        // 描述
+        /**
+         * <p>描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 项目名字
+        /**
+         * <p>项目名字</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 项目code，废弃，请使用code
+        /**
+         * <p>项目code，废弃，请使用code</p>
+         */
         @NameInMap("projectCode")
         public String projectCode;
 
-        // 项目名称，废弃，请使用name
+        /**
+         * <p>项目名称，废弃，请使用name</p>
+         */
         @NameInMap("projectName")
         public String projectName;
 
-        // 状态: valid, invalid, deleted
+        /**
+         * <p>状态: valid, invalid, deleted</p>
+         */
         @NameInMap("status")
         public String status;
 
-        // 用户自定义code
+        /**
+         * <p>用户自定义code</p>
+         */
         @NameInMap("userDefineCode")
         public String userDefineCode;
 

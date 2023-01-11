@@ -4,7 +4,9 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListWorkBenchGroupResponseBody extends TeaModel {
-    // 应用列表
+    /**
+     * <p>应用列表</p>
+     */
     @NameInMap("groupList")
     public java.util.List<ListWorkBenchGroupResponseBodyGroupList> groupList;
 
@@ -22,11 +24,15 @@ public class ListWorkBenchGroupResponseBody extends TeaModel {
     }
 
     public static class ListWorkBenchGroupResponseBodyGroupList extends TeaModel {
-        // 分组id
+        /**
+         * <p>分组id</p>
+         */
         @NameInMap("componentId")
         public String componentId;
 
-        // 分组名称
+        /**
+         * <p>分组名称</p>
+         */
         @NameInMap("name")
         public String name;
 

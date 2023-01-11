@@ -4,23 +4,33 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveProcessRequest extends TeaModel {
-    // 表单模板描述
+    /**
+     * <p>表单模板描述</p>
+     */
     @NameInMap("description")
     public String description;
 
-    // 表单控件列表
+    /**
+     * <p>表单控件列表</p>
+     */
     @NameInMap("formComponents")
     public java.util.List<FormComponent> formComponents;
 
-    // 表单模板名称
+    /**
+     * <p>表单模板名称</p>
+     */
     @NameInMap("name")
     public String name;
 
-    // 模板code
+    /**
+     * <p>模板code</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
-    // 流程中心集成配置
+    /**
+     * <p>流程中心集成配置</p>
+     */
     @NameInMap("processFeatureConfig")
     public SaveProcessRequestProcessFeatureConfig processFeatureConfig;
 
@@ -70,15 +80,21 @@ public class SaveProcessRequest extends TeaModel {
     }
 
     public static class SaveProcessRequestProcessFeatureConfigFeaturesCallback extends TeaModel {
-        // 网关接口标识
+        /**
+         * <p>网关接口标识</p>
+         */
         @NameInMap("apiKey")
         public String apiKey;
 
-        // 网关接口对应应用的uuid
+        /**
+         * <p>网关接口对应应用的uuid</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
-        // 网关接口版本
+        /**
+         * <p>网关接口版本</p>
+         */
         @NameInMap("version")
         public String version;
 
@@ -117,21 +133,29 @@ public class SaveProcessRequest extends TeaModel {
         @NameInMap("callback")
         public SaveProcessRequestProcessFeatureConfigFeaturesCallback callback;
 
-        // 手机端链接
+        /**
+         * <p>手机端链接</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        // 名称
+        /**
+         * <p>名称</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // pc端链接
+        /**
+         * <p>pc端链接</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
-        // 运行方式：
-        // ORIGIN：原生运行，即在官方审批内运行对应功能；
-        // REDIRECT：外部跳转运行，需要跳转到三方地址运行对应功能
+        /**
+         * <p>运行方式：</p>
+         * <p>ORIGIN：原生运行，即在官方审批内运行对应功能；</p>
+         * <p>REDIRECT：外部跳转运行，需要跳转到三方地址运行对应功能</p>
+         */
         @NameInMap("runType")
         public String runType;
 
@@ -183,7 +207,9 @@ public class SaveProcessRequest extends TeaModel {
     }
 
     public static class SaveProcessRequestProcessFeatureConfig extends TeaModel {
-        // 配置列表
+        /**
+         * <p>配置列表</p>
+         */
         @NameInMap("features")
         public java.util.List<SaveProcessRequestProcessFeatureConfigFeatures> features;
 

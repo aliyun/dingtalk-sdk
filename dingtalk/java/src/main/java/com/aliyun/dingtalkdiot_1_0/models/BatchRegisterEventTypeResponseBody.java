@@ -4,7 +4,9 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterEventTypeResponseBody extends TeaModel {
-    // 注册成功的事件类型列表。
+    /**
+     * <p>注册成功的事件类型列表。</p>
+     */
     @NameInMap("eventTypes")
     public java.util.List<String> eventTypes;
 

@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class TranslateFileResponseBody extends TeaModel {
-    // 异步转译任务id，最大长度为64字符
+    /**
+     * <p>异步转译任务id，最大长度为64字符</p>
+     */
     @NameInMap("jobId")
     public String jobId;
 

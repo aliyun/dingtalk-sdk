@@ -4,7 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInterconnectionResponseBody extends TeaModel {
-    // 创建失败的钉外钉内关系列表。
+    /**
+     * <p>创建失败的钉外钉内关系列表。</p>
+     */
     @NameInMap("results")
     public java.util.List<CreateInterconnectionResponseBodyResults> results;
 
@@ -22,11 +24,15 @@ public class CreateInterconnectionResponseBody extends TeaModel {
     }
 
     public static class CreateInterconnectionResponseBodyResults extends TeaModel {
-        // 钉外用户在业务系统内的唯一标识。
+        /**
+         * <p>钉外用户在业务系统内的唯一标识。</p>
+         */
         @NameInMap("appUserId")
         public String appUserId;
 
-        // 钉内用户userId。
+        /**
+         * <p>钉内用户userId。</p>
+         */
         @NameInMap("userId")
         public String userId;
 

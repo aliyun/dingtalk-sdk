@@ -4,7 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupSetResponseBody extends TeaModel {
-    // 群分组id
+    /**
+     * <p>群分组id</p>
+     */
     @NameInMap("result")
     public String result;
 

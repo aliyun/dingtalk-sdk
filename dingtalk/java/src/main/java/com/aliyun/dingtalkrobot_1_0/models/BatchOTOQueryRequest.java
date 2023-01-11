@@ -4,11 +4,15 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchOTOQueryRequest extends TeaModel {
-    // 消息已读查询标志
+    /**
+     * <p>消息已读查询标志</p>
+     */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 
-    // 机器人robotCode
+    /**
+     * <p>机器人robotCode</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

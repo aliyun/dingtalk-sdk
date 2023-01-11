@@ -4,7 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFinanceAccountRequest extends TeaModel {
-    // 账户code
+    /**
+     * <p>账户code</p>
+     */
     @NameInMap("accountCode")
     public String accountCode;
 

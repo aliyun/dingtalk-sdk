@@ -4,15 +4,21 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetVillageOrgInfoResponseBody extends TeaModel {
-    // 行政区ID
+    /**
+     * <p>行政区ID</p>
+     */
     @NameInMap("regionId")
     public String regionId;
 
-    // 具体的企业区域位置信息
+    /**
+     * <p>具体的企业区域位置信息</p>
+     */
     @NameInMap("regionLocation")
     public String regionLocation;
 
-    // 区域类型
+    /**
+     * <p>区域类型</p>
+     */
     @NameInMap("regionType")
     public String regionType;
 

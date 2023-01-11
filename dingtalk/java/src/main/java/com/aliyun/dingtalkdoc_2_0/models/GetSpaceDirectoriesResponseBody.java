@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceDirectoriesResponseBody extends TeaModel {
-    // 子节点列表。
+    /**
+     * <p>子节点列表。</p>
+     */
     @NameInMap("children")
     public java.util.List<DentryModel> children;
 
-    // 是否还有后续可查询子节点。
+    /**
+     * <p>是否还有后续可查询子节点。</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    // 分页token。
+    /**
+     * <p>分页token。</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

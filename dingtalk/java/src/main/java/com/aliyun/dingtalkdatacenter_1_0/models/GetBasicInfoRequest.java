@@ -4,15 +4,21 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBasicInfoRequest extends TeaModel {
-    // 页数,第几页
+    /**
+     * <p>页数,第几页</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    // 每页条数
+    /**
+     * <p>每页条数</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    // 关键词
+    /**
+     * <p>关键词</p>
+     */
     @NameInMap("searchKey")
     public String searchKey;
 

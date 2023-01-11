@@ -4,27 +4,39 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPunchScheduleByConditionWithPagingRequest extends TeaModel {
-    // 业务实例id，在该接口中表示打卡机实例id
+    /**
+     * <p>业务实例id，在该接口中表示打卡机实例id</p>
+     */
     @NameInMap("bizInstanceId")
     public String bizInstanceId;
 
-    // 分页大小
+    /**
+     * <p>分页大小</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    // 游标位置
+    /**
+     * <p>游标位置</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    // 查询日期结束时间（yyyy-MM-dd)
+    /**
+     * <p>查询日期结束时间（yyyy-MM-dd)</p>
+     */
     @NameInMap("scheduleDateEnd")
     public String scheduleDateEnd;
 
-    // 查询日期开始时间（yyyy-MM-dd)）
+    /**
+     * <p>查询日期开始时间（yyyy-MM-dd)）</p>
+     */
     @NameInMap("scheduleDateStart")
     public String scheduleDateStart;
 
-    // 用户id列表
+    /**
+     * <p>用户id列表</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

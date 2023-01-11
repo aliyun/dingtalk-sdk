@@ -4,31 +4,45 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateFormDataRequest extends TeaModel {
-    // 应用编码
+    /**
+     * <p>应用编码</p>
+     */
     @NameInMap("appType")
     public String appType;
 
-    // 要更新的表单数据ID
+    /**
+     * <p>要更新的表单数据ID</p>
+     */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 
-    // 语言。可选值：zh_CN/en_US 默认：zh_CN
+    /**
+     * <p>语言。可选值：zh_CN/en_US 默认：zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
-    // 应用秘钥。在应用数据中获取。
+    /**
+     * <p>应用秘钥。在应用数据中获取。</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    // 要更新的表单组件值。参数有的组件更新，没有的组件保持不变。 明细的值只能统一更新，无法只更新明细下某个组件的值
+    /**
+     * <p>要更新的表单组件值。参数有的组件更新，没有的组件保持不变。 明细的值只能统一更新，无法只更新明细下某个组件的值</p>
+     */
     @NameInMap("updateFormDataJson")
     public String updateFormDataJson;
 
-    // 使用最新的表单版本进行更新。默认为false
+    /**
+     * <p>使用最新的表单版本进行更新。默认为false</p>
+     */
     @NameInMap("useLatestVersion")
     public Boolean useLatestVersion;
 
-    // 钉钉userId
+    /**
+     * <p>钉钉userId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

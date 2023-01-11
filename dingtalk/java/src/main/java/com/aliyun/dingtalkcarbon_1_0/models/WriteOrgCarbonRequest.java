@@ -4,7 +4,9 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class WriteOrgCarbonRequest extends TeaModel {
-    // 入参集
+    /**
+     * <p>入参集</p>
+     */
     @NameInMap("orgDetailsList")
     public java.util.List<WriteOrgCarbonRequestOrgDetailsList> orgDetailsList;
 
@@ -22,31 +24,45 @@ public class WriteOrgCarbonRequest extends TeaModel {
     }
 
     public static class WriteOrgCarbonRequestOrgDetailsList extends TeaModel {
-        // 系统唯一id，生成格式：userId+日期20211126
+        /**
+         * <p>系统唯一id，生成格式：userId+日期20211126</p>
+         */
         @NameInMap("actionId")
         public String actionId;
 
-        // 行为发生时间
+        /**
+         * <p>行为发生时间</p>
+         */
         @NameInMap("actionTime")
         public String actionTime;
 
-        // 碳能量行为类型，需要联系管理员添加
+        /**
+         * <p>碳能量行为类型，需要联系管理员添加</p>
+         */
         @NameInMap("actionType")
         public String actionType;
 
-        // 碳能量数据
+        /**
+         * <p>碳能量数据</p>
+         */
         @NameInMap("carbonAmount")
         public String carbonAmount;
 
-        // 钉钉组织id
+        /**
+         * <p>钉钉组织id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
-        // 钉钉部门id
+        /**
+         * <p>钉钉部门id</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
-        // 版本，默认为1
+        /**
+         * <p>版本，默认为1</p>
+         */
         @NameInMap("version")
         public Integer version;
 

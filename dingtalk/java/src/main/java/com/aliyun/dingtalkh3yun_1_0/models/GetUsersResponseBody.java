@@ -4,15 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUsersResponseBody extends TeaModel {
-    // 状态码
+    /**
+     * <p>状态码</p>
+     */
     @NameInMap("code")
     public String code;
 
-    // 返回结果
+    /**
+     * <p>返回结果</p>
+     */
     @NameInMap("data")
     public java.util.List<GetUsersResponseBodyData> data;
 
-    // 提示信息
+    /**
+     * <p>提示信息</p>
+     */
     @NameInMap("message")
     public String message;
 
@@ -46,51 +52,75 @@ public class GetUsersResponseBody extends TeaModel {
     }
 
     public static class GetUsersResponseBodyData extends TeaModel {
-        // 用户编码
+        /**
+         * <p>用户编码</p>
+         */
         @NameInMap("code")
         public String code;
 
-        // 直属组织id
+        /**
+         * <p>直属组织id</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        // 直属组织名称
+        /**
+         * <p>直属组织名称</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        // 描述
+        /**
+         * <p>描述</p>
+         */
         @NameInMap("description")
         public String description;
 
-        // 作用域类型。Unspecified=未指定、Internal=内部组织机构、External=外部组织机构
+        /**
+         * <p>作用域类型。Unspecified=未指定、Internal=内部组织机构、External=外部组织机构</p>
+         */
         @NameInMap("domainType")
         public String domainType;
 
-        // 邮箱
+        /**
+         * <p>邮箱</p>
+         */
         @NameInMap("email")
         public String email;
 
-        // 用户id
+        /**
+         * <p>用户id</p>
+         */
         @NameInMap("id")
         public String id;
 
-        // 电话
+        /**
+         * <p>电话</p>
+         */
         @NameInMap("mobile")
         public String mobile;
 
-        // 用户姓名
+        /**
+         * <p>用户姓名</p>
+         */
         @NameInMap("name")
         public String name;
 
-        // 兼职部门id
+        /**
+         * <p>兼职部门id</p>
+         */
         @NameInMap("partDepartmentIds")
         public java.util.List<String> partDepartmentIds;
 
-        // 性别.None=未指定，Man=男性，Female=女性
+        /**
+         * <p>性别.None=未指定，Man=男性，Female=女性</p>
+         */
         @NameInMap("sex")
         public String sex;
 
-        // 排序号
+        /**
+         * <p>排序号</p>
+         */
         @NameInMap("sortKey")
         public Long sortKey;
 

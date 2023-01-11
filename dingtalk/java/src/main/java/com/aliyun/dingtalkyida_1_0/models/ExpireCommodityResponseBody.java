@@ -4,11 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExpireCommodityResponseBody extends TeaModel {
-    // message
+    /**
+     * <p>message</p>
+     */
     @NameInMap("message")
     public String message;
 
-    // success
+    /**
+     * <p>success</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

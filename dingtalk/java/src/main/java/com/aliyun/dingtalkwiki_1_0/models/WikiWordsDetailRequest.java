@@ -4,7 +4,9 @@ package com.aliyun.dingtalkwiki_1_0.models;
 import com.aliyun.tea.*;
 
 public class WikiWordsDetailRequest extends TeaModel {
-    // 传递的词条名称
+    /**
+     * <p>传递的词条名称</p>
+     */
     @NameInMap("wordName")
     public String wordName;
 
