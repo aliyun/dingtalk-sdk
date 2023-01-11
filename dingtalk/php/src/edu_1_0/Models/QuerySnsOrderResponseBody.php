@@ -100,13 +100,6 @@ class QuerySnsOrderResponseBody extends Model
      *
      * @var string
      */
-    public $outerUid;
-
-    /**
-     * @description 用户唯一id。
-     *
-     * @var string
-     */
     public $outerUserId;
 
     /**
@@ -200,7 +193,6 @@ class QuerySnsOrderResponseBody extends Model
         'merchantOrderNo'      => 'merchantOrderNo',
         'orderNo'              => 'orderNo',
         'orderType'            => 'orderType',
-        'outerUid'             => 'outerUid',
         'outerUserId'          => 'outerUserId',
         'payId'                => 'payId',
         'payLogonId'           => 'payLogonId',
@@ -261,9 +253,6 @@ class QuerySnsOrderResponseBody extends Model
         }
         if (null !== $this->orderType) {
             $res['orderType'] = $this->orderType;
-        }
-        if (null !== $this->outerUid) {
-            $res['outerUid'] = $this->outerUid;
         }
         if (null !== $this->outerUserId) {
             $res['outerUserId'] = $this->outerUserId;
@@ -354,9 +343,6 @@ class QuerySnsOrderResponseBody extends Model
         }
         if (isset($map['orderType'])) {
             $model->orderType = $map['orderType'];
-        }
-        if (isset($map['outerUid'])) {
-            $model->outerUid = $map['outerUid'];
         }
         if (isset($map['outerUserId'])) {
             $model->outerUserId = $map['outerUserId'];

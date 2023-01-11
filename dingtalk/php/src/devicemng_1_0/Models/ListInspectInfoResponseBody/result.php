@@ -23,6 +23,13 @@ class result extends Model
     public $deviceName;
 
     /**
+     * @description 创建时间
+     *
+     * @var string
+     */
+    public $gmtCreate;
+
+    /**
      * @description 处理时间
      *
      * @var string
@@ -73,6 +80,7 @@ class result extends Model
     protected $_name = [
         'deviceCode'       => 'deviceCode',
         'deviceName'       => 'deviceName',
+        'gmtCreate'        => 'gmtCreate',
         'handleTime'       => 'handleTime',
         'maintenanceStaff' => 'maintenanceStaff',
         'name'             => 'name',
@@ -94,6 +102,9 @@ class result extends Model
         }
         if (null !== $this->deviceName) {
             $res['deviceName'] = $this->deviceName;
+        }
+        if (null !== $this->gmtCreate) {
+            $res['gmtCreate'] = $this->gmtCreate;
         }
         if (null !== $this->handleTime) {
             $res['handleTime'] = $this->handleTime;
@@ -133,6 +144,9 @@ class result extends Model
         }
         if (isset($map['deviceName'])) {
             $model->deviceName = $map['deviceName'];
+        }
+        if (isset($map['gmtCreate'])) {
+            $model->gmtCreate = $map['gmtCreate'];
         }
         if (isset($map['handleTime'])) {
             $model->handleTime = $map['handleTime'];
