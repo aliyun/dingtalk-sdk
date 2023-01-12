@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class ClearResponseBody : TeaModel {
         /// <summary>
-        /// 单元格地址
+        /// 使用A1表示法的Range地址
         /// </summary>
         [NameInMap("a1Notation")]
         [Validation(Required=false)]

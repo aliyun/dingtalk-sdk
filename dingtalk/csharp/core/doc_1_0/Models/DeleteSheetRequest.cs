@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class DeleteSheetRequest : TeaModel {
         /// <summary>
-        /// 操作人unionId
+        /// 操作人id
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

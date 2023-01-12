@@ -24,6 +24,29 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         public string IconMediaId { get; set; }
 
         /// <summary>
+        /// 群成员列表
+        /// </summary>
+        [NameInMap("members")]
+        [Validation(Required=false)]
+        public List<CreateTrustGroupRequestMembers> Members { get; set; }
+        public class CreateTrustGroupRequestMembers : TeaModel {
+            /// <summary>
+            /// 昵称
+            /// </summary>
+            [NameInMap("nick")]
+            [Validation(Required=false)]
+            public string Nick { get; set; }
+
+            /// <summary>
+            /// 互通账号ID
+            /// </summary>
+            [NameInMap("uid")]
+            [Validation(Required=false)]
+            public string Uid { get; set; }
+
+        }
+
+        /// <summary>
         /// 群名称
         /// </summary>
         [NameInMap("name")]

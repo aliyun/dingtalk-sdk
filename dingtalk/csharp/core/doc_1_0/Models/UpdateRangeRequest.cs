@@ -11,6 +11,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
     public class UpdateRangeRequest : TeaModel {
         /// <summary>
         /// 背景色
+        /// 最大size:
+        /// 	1000
         /// </summary>
         [NameInMap("backgroundColors")]
         [Validation(Required=false)]
@@ -18,27 +20,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         /// <summary>
         /// 超链接
+        /// 最大size:
+        /// 	1000
         /// </summary>
         [NameInMap("hyperlinks")]
         [Validation(Required=false)]
         public List<List<UpdateRangeRequestHyperlinks>> Hyperlinks { get; set; }
         public class UpdateRangeRequestHyperlinks : TeaModel {
             /// <summary>
-            /// 超链接类型，可选 "path", "sheet", "range"
+            /// 超链接类型，可选path、sheet、range
             /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
 
             /// <summary>
-            /// 链接地址
+            /// 超链接地址
             /// </summary>
             [NameInMap("link")]
             [Validation(Required=false)]
             public string Link { get; set; }
 
             /// <summary>
-            /// 链接文本
+            /// 超链接文本
             /// </summary>
             [NameInMap("text")]
             [Validation(Required=false)]
@@ -55,13 +59,15 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         /// <summary>
         /// 值
+        /// 最大size:
+        /// 	1000
         /// </summary>
         [NameInMap("values")]
         [Validation(Required=false)]
         public List<List<string>> Values { get; set; }
 
         /// <summary>
-        /// 操作人unionId
+        /// 操作人id
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

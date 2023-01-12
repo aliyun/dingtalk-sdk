@@ -10,14 +10,16 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetAllSheetsResponseBody : TeaModel {
         /// <summary>
-        /// 所有工作表信息
+        /// 工作表列表
+        /// 最大size:
+        /// 	1000
         /// </summary>
         [NameInMap("value")]
         [Validation(Required=false)]
         public List<GetAllSheetsResponseBodyValue> Value { get; set; }
         public class GetAllSheetsResponseBodyValue : TeaModel {
             /// <summary>
-            /// 工作表ID
+            /// 工作表id
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]

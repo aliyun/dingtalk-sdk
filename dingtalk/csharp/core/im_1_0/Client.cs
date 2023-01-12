@@ -26,6 +26,94 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
 
+        public AddOrgTextEmotionResponse AddOrgTextEmotion(AddOrgTextEmotionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddOrgTextEmotionHeaders headers = new AddOrgTextEmotionHeaders();
+            return AddOrgTextEmotionWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddOrgTextEmotionResponse> AddOrgTextEmotionAsync(AddOrgTextEmotionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddOrgTextEmotionHeaders headers = new AddOrgTextEmotionHeaders();
+            return await AddOrgTextEmotionWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AddOrgTextEmotionResponse AddOrgTextEmotionWithOptions(AddOrgTextEmotionRequest request, AddOrgTextEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundMediaId))
+            {
+                body["backgroundMediaId"] = request.BackgroundMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundMediaIdForPanel))
+            {
+                body["backgroundMediaIdForPanel"] = request.BackgroundMediaIdForPanel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionName))
+            {
+                body["emotionName"] = request.EmotionName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddOrgTextEmotionResponse>(DoROARequest("AddOrgTextEmotion", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/textEmotions", "json", req, runtime));
+        }
+
+        public async Task<AddOrgTextEmotionResponse> AddOrgTextEmotionWithOptionsAsync(AddOrgTextEmotionRequest request, AddOrgTextEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundMediaId))
+            {
+                body["backgroundMediaId"] = request.BackgroundMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundMediaIdForPanel))
+            {
+                body["backgroundMediaIdForPanel"] = request.BackgroundMediaIdForPanel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionName))
+            {
+                body["emotionName"] = request.EmotionName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddOrgTextEmotionResponse>(await DoROARequestAsync("AddOrgTextEmotion", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/textEmotions", "json", req, runtime));
+        }
+
         public AddRobotToConversationResponse AddRobotToConversation(AddRobotToConversationRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1054,6 +1142,78 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<CreateStoreGroupConversationResponse>(await DoROARequestAsync("CreateStoreGroupConversation", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interconnections/storeGroups", "json", req, runtime));
+        }
+
+        public DeleteOrgTextEmotionResponse DeleteOrgTextEmotion(DeleteOrgTextEmotionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteOrgTextEmotionHeaders headers = new DeleteOrgTextEmotionHeaders();
+            return DeleteOrgTextEmotionWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeleteOrgTextEmotionResponse> DeleteOrgTextEmotionAsync(DeleteOrgTextEmotionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteOrgTextEmotionHeaders headers = new DeleteOrgTextEmotionHeaders();
+            return await DeleteOrgTextEmotionWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DeleteOrgTextEmotionResponse DeleteOrgTextEmotionWithOptions(DeleteOrgTextEmotionRequest request, DeleteOrgTextEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionIds))
+            {
+                body["emotionIds"] = request.EmotionIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeleteOrgTextEmotionResponse>(DoROARequest("DeleteOrgTextEmotion", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/textEmotions/remove", "json", req, runtime));
+        }
+
+        public async Task<DeleteOrgTextEmotionResponse> DeleteOrgTextEmotionWithOptionsAsync(DeleteOrgTextEmotionRequest request, DeleteOrgTextEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionIds))
+            {
+                body["emotionIds"] = request.EmotionIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<DeleteOrgTextEmotionResponse>(await DoROARequestAsync("DeleteOrgTextEmotion", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/organizations/textEmotions/remove", "json", req, runtime));
         }
 
         public DismissGroupConversationResponse DismissGroupConversation(DismissGroupConversationRequest request)
@@ -2576,6 +2736,56 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             return TeaModel.ToObject<InteractiveCardCreateInstanceResponse>(await DoROARequestAsync("InteractiveCardCreateInstance", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interactiveCards/instances", "json", req, runtime));
         }
 
+        public ListOrgTextEmotionResponse ListOrgTextEmotion()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListOrgTextEmotionHeaders headers = new ListOrgTextEmotionHeaders();
+            return ListOrgTextEmotionWithOptions(headers, runtime);
+        }
+
+        public async Task<ListOrgTextEmotionResponse> ListOrgTextEmotionAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListOrgTextEmotionHeaders headers = new ListOrgTextEmotionHeaders();
+            return await ListOrgTextEmotionWithOptionsAsync(headers, runtime);
+        }
+
+        public ListOrgTextEmotionResponse ListOrgTextEmotionWithOptions(ListOrgTextEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<ListOrgTextEmotionResponse>(DoROARequest("ListOrgTextEmotion", "im_1.0", "HTTP", "GET", "AK", "/v1.0/im/organizations/textEmotions", "json", req, runtime));
+        }
+
+        public async Task<ListOrgTextEmotionResponse> ListOrgTextEmotionWithOptionsAsync(ListOrgTextEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<ListOrgTextEmotionResponse>(await DoROARequestAsync("ListOrgTextEmotion", "im_1.0", "HTTP", "GET", "AK", "/v1.0/im/organizations/textEmotions", "json", req, runtime));
+        }
+
         public QueryGroupInfoByMemberAuthResponse QueryGroupInfoByMemberAuth(QueryGroupInfoByMemberAuthRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3918,6 +4128,110 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<SendTemplateInteractiveCardResponse>(await DoROARequestAsync("SendTemplateInteractiveCard", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/interactiveCards/templates/send", "json", req, runtime));
+        }
+
+        public SetRightPanelResponse SetRightPanel(SetRightPanelRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetRightPanelHeaders headers = new SetRightPanelHeaders();
+            return SetRightPanelWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SetRightPanelResponse> SetRightPanelAsync(SetRightPanelRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetRightPanelHeaders headers = new SetRightPanelHeaders();
+            return await SetRightPanelWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SetRightPanelResponse SetRightPanelWithOptions(SetRightPanelRequest request, SetRightPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RightPanelClosePermitted))
+            {
+                body["rightPanelClosePermitted"] = request.RightPanelClosePermitted;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RightPanelOpenStatus))
+            {
+                body["rightPanelOpenStatus"] = request.RightPanelOpenStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WebWndParams))
+            {
+                body["webWndParams"] = request.WebWndParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Width))
+            {
+                body["width"] = request.Width;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SetRightPanelResponse>(DoROARequest("SetRightPanel", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/rightPanels/set", "json", req, runtime));
+        }
+
+        public async Task<SetRightPanelResponse> SetRightPanelWithOptionsAsync(SetRightPanelRequest request, SetRightPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RightPanelClosePermitted))
+            {
+                body["rightPanelClosePermitted"] = request.RightPanelClosePermitted;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RightPanelOpenStatus))
+            {
+                body["rightPanelOpenStatus"] = request.RightPanelOpenStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WebWndParams))
+            {
+                body["webWndParams"] = request.WebWndParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Width))
+            {
+                body["width"] = request.Width;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<SetRightPanelResponse>(await DoROARequestAsync("SetRightPanel", "im_1.0", "HTTP", "POST", "AK", "/v1.0/im/rightPanels/set", "json", req, runtime));
         }
 
         public TopboxCloseResponse TopboxClose(TopboxCloseRequest request)

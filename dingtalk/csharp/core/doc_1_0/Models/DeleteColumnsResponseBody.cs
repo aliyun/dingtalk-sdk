@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class DeleteColumnsResponseBody : TeaModel {
         /// <summary>
-        /// 工作表ID
+        /// 工作表id
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]

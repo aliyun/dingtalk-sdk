@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class DeleteColumnsRequest : TeaModel {
         /// <summary>
-        /// 要删除的第一列的位置，从0开始
+        /// 要删除的第一列的位置，从0开始。
         /// </summary>
         [NameInMap("column")]
         [Validation(Required=false)]
         public long? Column { get; set; }
 
         /// <summary>
-        /// 要删除的列的数量
+        /// 要删除的列的数量。
         /// </summary>
         [NameInMap("columnCount")]
         [Validation(Required=false)]
         public long? ColumnCount { get; set; }
 
         /// <summary>
-        /// 操作人unionId
+        /// 操作人id
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

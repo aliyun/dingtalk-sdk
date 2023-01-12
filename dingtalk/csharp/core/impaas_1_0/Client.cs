@@ -428,6 +428,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 body["iconMediaId"] = request.IconMediaId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
@@ -472,6 +476,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IconMediaId))
             {
                 body["iconMediaId"] = request.IconMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
