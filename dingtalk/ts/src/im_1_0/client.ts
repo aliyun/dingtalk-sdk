@@ -7,6 +7,100 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddOrgTextEmotionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgTextEmotionRequest extends $tea.Model {
+  backgroundMediaId?: string;
+  backgroundMediaIdForPanel?: string;
+  deptId?: number;
+  emotionName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      backgroundMediaId: 'backgroundMediaId',
+      backgroundMediaIdForPanel: 'backgroundMediaIdForPanel',
+      deptId: 'deptId',
+      emotionName: 'emotionName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      backgroundMediaId: 'string',
+      backgroundMediaIdForPanel: 'string',
+      deptId: 'number',
+      emotionName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgTextEmotionResponseBody extends $tea.Model {
+  result?: AddOrgTextEmotionResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: AddOrgTextEmotionResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgTextEmotionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddOrgTextEmotionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddOrgTextEmotionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddRobotToConversationHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1080,6 +1174,91 @@ export class CreateStoreGroupConversationResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateStoreGroupConversationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteOrgTextEmotionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteOrgTextEmotionRequest extends $tea.Model {
+  deptId?: number;
+  emotionIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      emotionIds: 'emotionIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      emotionIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteOrgTextEmotionResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteOrgTextEmotionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteOrgTextEmotionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteOrgTextEmotionResponseBody,
     };
   }
 
@@ -2610,6 +2789,72 @@ export class InteractiveCardCreateInstanceResponse extends $tea.Model {
   }
 }
 
+export class ListOrgTextEmotionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOrgTextEmotionResponseBody extends $tea.Model {
+  result?: ListOrgTextEmotionResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: ListOrgTextEmotionResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOrgTextEmotionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListOrgTextEmotionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListOrgTextEmotionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupInfoByMemberAuthHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3936,6 +4181,103 @@ export class SendTemplateInteractiveCardResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: SendTemplateInteractiveCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRightPanelHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRightPanelRequest extends $tea.Model {
+  openConversationId?: string;
+  rightPanelClosePermitted?: boolean;
+  rightPanelOpenStatus?: number;
+  title?: string;
+  webWndParams?: SetRightPanelRequestWebWndParams;
+  width?: number;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      rightPanelClosePermitted: 'rightPanelClosePermitted',
+      rightPanelOpenStatus: 'rightPanelOpenStatus',
+      title: 'title',
+      webWndParams: 'webWndParams',
+      width: 'width',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      rightPanelClosePermitted: 'boolean',
+      rightPanelOpenStatus: 'number',
+      title: 'string',
+      webWndParams: SetRightPanelRequestWebWndParams,
+      width: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRightPanelResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRightPanelResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SetRightPanelResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SetRightPanelResponseBody,
     };
   }
 
@@ -5383,6 +5725,25 @@ export class PrivateDataValue extends $tea.Model {
   }
 }
 
+export class AddOrgTextEmotionResponseBodyResult extends $tea.Model {
+  emotionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      emotionId: 'emotionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      emotionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateInterconnectionRequestInterconnections extends $tea.Model {
   appUserAvatar?: string;
   appUserAvatarMediaType?: number;
@@ -5635,6 +5996,59 @@ export class InteractiveCardCreateInstanceRequestCardData extends $tea.Model {
     return {
       cardMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOrgTextEmotionResponseBodyResultEmotions extends $tea.Model {
+  backgroundMediaId?: string;
+  backgroundMediaIdForPanel?: string;
+  deptId?: number;
+  emotionId?: string;
+  emotionName?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      backgroundMediaId: 'backgroundMediaId',
+      backgroundMediaIdForPanel: 'backgroundMediaIdForPanel',
+      deptId: 'deptId',
+      emotionId: 'emotionId',
+      emotionName: 'emotionName',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      backgroundMediaId: 'string',
+      backgroundMediaIdForPanel: 'string',
+      deptId: 'number',
+      emotionId: 'string',
+      emotionName: 'string',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListOrgTextEmotionResponseBodyResult extends $tea.Model {
+  emotions?: ListOrgTextEmotionResponseBodyResultEmotions[];
+  static names(): { [key: string]: string } {
+    return {
+      emotions: 'emotions',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      emotions: { 'type': 'array', 'itemType': ListOrgTextEmotionResponseBodyResultEmotions },
     };
   }
 
@@ -5991,6 +6405,25 @@ export class SendTemplateInteractiveCardRequestSendOptions extends $tea.Model {
   }
 }
 
+export class SetRightPanelRequestWebWndParams extends $tea.Model {
+  targetURL?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targetURL: 'targetURL',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetURL: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInteractiveCardRequestCardData extends $tea.Model {
   cardMediaIdParamMap?: { [key: string]: string };
   cardParamMap?: { [key: string]: string };
@@ -6069,6 +6502,47 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async addOrgTextEmotion(request: AddOrgTextEmotionRequest): Promise<AddOrgTextEmotionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddOrgTextEmotionHeaders({ });
+    return await this.addOrgTextEmotionWithOptions(request, headers, runtime);
+  }
+
+  async addOrgTextEmotionWithOptions(request: AddOrgTextEmotionRequest, headers: AddOrgTextEmotionHeaders, runtime: $Util.RuntimeOptions): Promise<AddOrgTextEmotionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.backgroundMediaId)) {
+      body["backgroundMediaId"] = request.backgroundMediaId;
+    }
+
+    if (!Util.isUnset(request.backgroundMediaIdForPanel)) {
+      body["backgroundMediaIdForPanel"] = request.backgroundMediaIdForPanel;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.emotionName)) {
+      body["emotionName"] = request.emotionName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddOrgTextEmotionResponse>(await this.doROARequest("AddOrgTextEmotion", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/textEmotions`, "json", req, runtime), new AddOrgTextEmotionResponse({}));
+  }
 
   async addRobotToConversation(request: AddRobotToConversationRequest): Promise<AddRobotToConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6547,6 +7021,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateStoreGroupConversationResponse>(await this.doROARequest("CreateStoreGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/storeGroups`, "json", req, runtime), new CreateStoreGroupConversationResponse({}));
+  }
+
+  async deleteOrgTextEmotion(request: DeleteOrgTextEmotionRequest): Promise<DeleteOrgTextEmotionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteOrgTextEmotionHeaders({ });
+    return await this.deleteOrgTextEmotionWithOptions(request, headers, runtime);
+  }
+
+  async deleteOrgTextEmotionWithOptions(request: DeleteOrgTextEmotionRequest, headers: DeleteOrgTextEmotionHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteOrgTextEmotionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.emotionIds)) {
+      body["emotionIds"] = request.emotionIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DeleteOrgTextEmotionResponse>(await this.doROARequest("DeleteOrgTextEmotion", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/textEmotions/remove`, "json", req, runtime), new DeleteOrgTextEmotionResponse({}));
   }
 
   async dismissGroupConversation(request: DismissGroupConversationRequest): Promise<DismissGroupConversationResponse> {
@@ -7264,6 +7771,28 @@ export default class Client extends OpenApi {
     return $tea.cast<InteractiveCardCreateInstanceResponse>(await this.doROARequest("InteractiveCardCreateInstance", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/instances`, "json", req, runtime), new InteractiveCardCreateInstanceResponse({}));
   }
 
+  async listOrgTextEmotion(): Promise<ListOrgTextEmotionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListOrgTextEmotionHeaders({ });
+    return await this.listOrgTextEmotionWithOptions(headers, runtime);
+  }
+
+  async listOrgTextEmotionWithOptions(headers: ListOrgTextEmotionHeaders, runtime: $Util.RuntimeOptions): Promise<ListOrgTextEmotionResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListOrgTextEmotionResponse>(await this.doROARequest("ListOrgTextEmotion", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/organizations/textEmotions`, "json", req, runtime), new ListOrgTextEmotionResponse({}));
+  }
+
   async queryGroupInfoByMemberAuth(request: QueryGroupInfoByMemberAuthRequest): Promise<QueryGroupInfoByMemberAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGroupInfoByMemberAuthHeaders({ });
@@ -7892,6 +8421,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SendTemplateInteractiveCardResponse>(await this.doROARequest("SendTemplateInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/templates/send`, "json", req, runtime), new SendTemplateInteractiveCardResponse({}));
+  }
+
+  async setRightPanel(request: SetRightPanelRequest): Promise<SetRightPanelResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetRightPanelHeaders({ });
+    return await this.setRightPanelWithOptions(request, headers, runtime);
+  }
+
+  async setRightPanelWithOptions(request: SetRightPanelRequest, headers: SetRightPanelHeaders, runtime: $Util.RuntimeOptions): Promise<SetRightPanelResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.rightPanelClosePermitted)) {
+      body["rightPanelClosePermitted"] = request.rightPanelClosePermitted;
+    }
+
+    if (!Util.isUnset(request.rightPanelOpenStatus)) {
+      body["rightPanelOpenStatus"] = request.rightPanelOpenStatus;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.webWndParams)) {
+      body["webWndParams"] = request.webWndParams;
+    }
+
+    if (!Util.isUnset(request.width)) {
+      body["width"] = request.width;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SetRightPanelResponse>(await this.doROARequest("SetRightPanel", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/rightPanels/set`, "json", req, runtime), new SetRightPanelResponse({}));
   }
 
   async topboxClose(request: TopboxCloseRequest): Promise<TopboxCloseResponse> {

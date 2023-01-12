@@ -3026,6 +3026,112 @@ export class GetPartnerTypeByParentIdResponse extends $tea.Model {
   }
 }
 
+export class GetPublicDevicesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublicDevicesRequest extends $tea.Model {
+  endTime?: number;
+  macAddress?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  platform?: string;
+  startTime?: number;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      macAddress: 'macAddress',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      platform: 'platform',
+      startTime: 'startTime',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      macAddress: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      platform: 'string',
+      startTime: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublicDevicesResponseBody extends $tea.Model {
+  data?: GetPublicDevicesResponseBodyData[];
+  dataCnt?: number;
+  totalCnt?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      dataCnt: 'dataCnt',
+      totalCnt: 'totalCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetPublicDevicesResponseBodyData },
+      dataCnt: 'number',
+      totalCnt: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublicDevicesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetPublicDevicesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetPublicDevicesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPublisherSummaryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6557,6 +6663,115 @@ export class GetPartnerTypeByParentIdResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetPublicDevicesResponseBodyDataDeviceDepts extends $tea.Model {
+  id?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublicDevicesResponseBodyDataDeviceRoles extends $tea.Model {
+  name?: string;
+  tagCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      tagCode: 'tagCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      tagCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublicDevicesResponseBodyDataDeviceStaffs extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPublicDevicesResponseBodyData extends $tea.Model {
+  deviceDepts?: GetPublicDevicesResponseBodyDataDeviceDepts[];
+  deviceRoles?: GetPublicDevicesResponseBodyDataDeviceRoles[];
+  deviceScopeType?: number;
+  deviceStaffs?: GetPublicDevicesResponseBodyDataDeviceStaffs[];
+  gmtCreate?: number;
+  gmtModified?: number;
+  macAddress?: string;
+  platform?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceDepts: 'deviceDepts',
+      deviceRoles: 'deviceRoles',
+      deviceScopeType: 'deviceScopeType',
+      deviceStaffs: 'deviceStaffs',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      macAddress: 'macAddress',
+      platform: 'platform',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceDepts: { 'type': 'array', 'itemType': GetPublicDevicesResponseBodyDataDeviceDepts },
+      deviceRoles: { 'type': 'array', 'itemType': GetPublicDevicesResponseBodyDataDeviceRoles },
+      deviceScopeType: 'number',
+      deviceStaffs: { 'type': 'array', 'itemType': GetPublicDevicesResponseBodyDataDeviceStaffs },
+      gmtCreate: 'number',
+      gmtModified: 'number',
+      macAddress: 'string',
+      platform: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPublisherSummaryResponseBodyData extends $tea.Model {
   publisherArticleCntStd?: string;
   publisherArticlePvCntStd?: string;
@@ -8572,6 +8787,59 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<GetPartnerTypeByParentIdResponse>(await this.doROARequest("GetPartnerTypeByParentId", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partnerLabels/${parentId}`, "json", req, runtime), new GetPartnerTypeByParentIdResponse({}));
+  }
+
+  async getPublicDevices(request: GetPublicDevicesRequest): Promise<GetPublicDevicesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPublicDevicesHeaders({ });
+    return await this.getPublicDevicesWithOptions(request, headers, runtime);
+  }
+
+  async getPublicDevicesWithOptions(request: GetPublicDevicesRequest, headers: GetPublicDevicesHeaders, runtime: $Util.RuntimeOptions): Promise<GetPublicDevicesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.macAddress)) {
+      query["macAddress"] = request.macAddress;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.platform)) {
+      query["platform"] = request.platform;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      query["title"] = request.title;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetPublicDevicesResponse>(await this.doROARequest("GetPublicDevices", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/trusts/publicDevices`, "json", req, runtime), new GetPublicDevicesResponse({}));
   }
 
   async getPublisherSummary(dataId: string, request: GetPublisherSummaryRequest): Promise<GetPublisherSummaryResponse> {

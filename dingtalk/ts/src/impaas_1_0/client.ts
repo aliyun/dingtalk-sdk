@@ -392,6 +392,7 @@ export class CreateTrustGroupHeaders extends $tea.Model {
 export class CreateTrustGroupRequest extends $tea.Model {
   channel?: string;
   iconMediaId?: string;
+  members?: CreateTrustGroupRequestMembers[];
   name?: string;
   properties?: { [key: string]: string };
   uuid?: string;
@@ -399,6 +400,7 @@ export class CreateTrustGroupRequest extends $tea.Model {
     return {
       channel: 'channel',
       iconMediaId: 'iconMediaId',
+      members: 'members',
       name: 'name',
       properties: 'properties',
       uuid: 'uuid',
@@ -409,6 +411,7 @@ export class CreateTrustGroupRequest extends $tea.Model {
     return {
       channel: 'string',
       iconMediaId: 'string',
+      members: { 'type': 'array', 'itemType': CreateTrustGroupRequestMembers },
       name: 'string',
       properties: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       uuid: 'string',
@@ -1665,6 +1668,28 @@ export class AddGroupMembersRequestMembers extends $tea.Model {
   }
 }
 
+export class CreateTrustGroupRequestMembers extends $tea.Model {
+  nick?: string;
+  uid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nick: 'nick',
+      uid: 'uid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nick: 'string',
+      uid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListGroupStaffMembersResponseBodyMembers extends $tea.Model {
   nick?: string;
   uid?: string;
@@ -1922,6 +1947,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.iconMediaId)) {
       body["iconMediaId"] = request.iconMediaId;
+    }
+
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
     }
 
     if (!Util.isUnset(request.name)) {

@@ -9,6 +9,7 @@ import * as bizfinance_1_0 from './bizfinance_1_0/client';
 import * as calendar_1_0 from './calendar_1_0/client';
 import * as carbon_1_0 from './carbon_1_0/client';
 import * as card_1_0 from './card_1_0/client';
+import * as chengfeng_1_0 from './chengfeng_1_0/client';
 import * as conference_1_0 from './conference_1_0/client';
 import * as connector_1_0 from './connector_1_0/client';
 import * as contact_1_0 from './contact_1_0/client';
@@ -89,6 +90,7 @@ export = {
   calendar_1_0,
   carbon_1_0,
   card_1_0,
+  chengfeng_1_0,
   conference_1_0,
   connector_1_0,
   contact_1_0,
