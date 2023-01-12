@@ -226,7 +226,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.AppendRowsResponse(),
-            self.do_roarequest('AppendRows', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/appendRows', 'none', req, runtime)
+            self.do_roarequest('AppendRows', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/appendRows', 'json', req, runtime)
         )
 
     async def append_rows_with_options_async(
@@ -258,7 +258,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.AppendRowsResponse(),
-            await self.do_roarequest_async('AppendRows', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/appendRows', 'none', req, runtime)
+            await self.do_roarequest_async('AppendRows', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/appendRows', 'json', req, runtime)
         )
 
     def batch_get_workspace_docs(
@@ -3652,7 +3652,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.UpdateSheetResponse(),
-            self.do_roarequest('UpdateSheet', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'none', req, runtime)
+            self.do_roarequest('UpdateSheet', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'json', req, runtime)
         )
 
     async def update_sheet_with_options_async(
@@ -3686,7 +3686,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.UpdateSheetResponse(),
-            await self.do_roarequest_async('UpdateSheet', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'none', req, runtime)
+            await self.do_roarequest_async('UpdateSheet', 'doc_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}', 'json', req, runtime)
         )
 
     def update_workspace_doc_members(

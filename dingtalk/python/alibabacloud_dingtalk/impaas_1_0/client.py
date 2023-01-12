@@ -367,6 +367,8 @@ class Client(OpenApiClient):
             body['channel'] = request.channel
         if not UtilClient.is_unset(request.icon_media_id):
             body['iconMediaId'] = request.icon_media_id
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.properties):
@@ -401,6 +403,8 @@ class Client(OpenApiClient):
             body['channel'] = request.channel
         if not UtilClient.is_unset(request.icon_media_id):
             body['iconMediaId'] = request.icon_media_id
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.properties):

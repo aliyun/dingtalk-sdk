@@ -2455,6 +2455,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetPartnerTypeByParentId', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partnerLabels/{parent_id}', 'json', req, runtime)
         )
 
+    def get_public_devices(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPublicDevicesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPublicDevicesHeaders()
+        return self.get_public_devices_with_options(request, headers, runtime)
+
+    async def get_public_devices_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPublicDevicesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPublicDevicesHeaders()
+        return await self.get_public_devices_with_options_async(request, headers, runtime)
+
+    def get_public_devices_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
+        headers: dingtalkexclusive__1__0_models.GetPublicDevicesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPublicDevicesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.mac_address):
+            query['macAddress'] = request.mac_address
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.platform):
+            query['platform'] = request.platform
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.title):
+            query['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPublicDevicesResponse(),
+            self.do_roarequest('GetPublicDevices', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/trusts/publicDevices', 'json', req, runtime)
+        )
+
+    async def get_public_devices_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
+        headers: dingtalkexclusive__1__0_models.GetPublicDevicesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPublicDevicesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.mac_address):
+            query['macAddress'] = request.mac_address
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.platform):
+            query['platform'] = request.platform
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.title):
+            query['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPublicDevicesResponse(),
+            await self.do_roarequest_async('GetPublicDevices', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/trusts/publicDevices', 'json', req, runtime)
+        )
+
     def get_publisher_summary(
         self,
         data_id: str,

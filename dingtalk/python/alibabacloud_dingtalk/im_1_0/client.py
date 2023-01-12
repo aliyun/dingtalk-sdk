@@ -23,6 +23,82 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_org_text_emotion(
+        self,
+        request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
+    ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddOrgTextEmotionHeaders()
+        return self.add_org_text_emotion_with_options(request, headers, runtime)
+
+    async def add_org_text_emotion_async(
+        self,
+        request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
+    ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddOrgTextEmotionHeaders()
+        return await self.add_org_text_emotion_with_options_async(request, headers, runtime)
+
+    def add_org_text_emotion_with_options(
+        self,
+        request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
+        headers: dingtalkim__1__0_models.AddOrgTextEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.background_media_id):
+            body['backgroundMediaId'] = request.background_media_id
+        if not UtilClient.is_unset(request.background_media_id_for_panel):
+            body['backgroundMediaIdForPanel'] = request.background_media_id_for_panel
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.emotion_name):
+            body['emotionName'] = request.emotion_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddOrgTextEmotionResponse(),
+            self.do_roarequest('AddOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/textEmotions', 'json', req, runtime)
+        )
+
+    async def add_org_text_emotion_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
+        headers: dingtalkim__1__0_models.AddOrgTextEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.background_media_id):
+            body['backgroundMediaId'] = request.background_media_id
+        if not UtilClient.is_unset(request.background_media_id_for_panel):
+            body['backgroundMediaIdForPanel'] = request.background_media_id_for_panel
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.emotion_name):
+            body['emotionName'] = request.emotion_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddOrgTextEmotionResponse(),
+            await self.do_roarequest_async('AddOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/textEmotions', 'json', req, runtime)
+        )
+
     def add_robot_to_conversation(
         self,
         request: dingtalkim__1__0_models.AddRobotToConversationRequest,
@@ -907,6 +983,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateStoreGroupConversationResponse(),
             await self.do_roarequest_async('CreateStoreGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/storeGroups', 'json', req, runtime)
+        )
+
+    def delete_org_text_emotion(
+        self,
+        request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
+    ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders()
+        return self.delete_org_text_emotion_with_options(request, headers, runtime)
+
+    async def delete_org_text_emotion_async(
+        self,
+        request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
+    ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders()
+        return await self.delete_org_text_emotion_with_options_async(request, headers, runtime)
+
+    def delete_org_text_emotion_with_options(
+        self,
+        request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
+        headers: dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.emotion_ids):
+            body['emotionIds'] = request.emotion_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.DeleteOrgTextEmotionResponse(),
+            self.do_roarequest('DeleteOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/textEmotions/remove', 'json', req, runtime)
+        )
+
+    async def delete_org_text_emotion_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
+        headers: dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.emotion_ids):
+            body['emotionIds'] = request.emotion_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.DeleteOrgTextEmotionResponse(),
+            await self.do_roarequest_async('DeleteOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/textEmotions/remove', 'json', req, runtime)
         )
 
     def dismiss_group_conversation(
@@ -2149,6 +2293,52 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('InteractiveCardCreateInstance', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/instances', 'json', req, runtime)
         )
 
+    def list_org_text_emotion(self) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
+        return self.list_org_text_emotion_with_options(headers, runtime)
+
+    async def list_org_text_emotion_async(self) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
+        return await self.list_org_text_emotion_with_options_async(headers, runtime)
+
+    def list_org_text_emotion_with_options(
+        self,
+        headers: dingtalkim__1__0_models.ListOrgTextEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ListOrgTextEmotionResponse(),
+            self.do_roarequest('ListOrgTextEmotion', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/organizations/textEmotions', 'json', req, runtime)
+        )
+
+    async def list_org_text_emotion_with_options_async(
+        self,
+        headers: dingtalkim__1__0_models.ListOrgTextEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ListOrgTextEmotionResponse(),
+            await self.do_roarequest_async('ListOrgTextEmotion', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/organizations/textEmotions', 'json', req, runtime)
+        )
+
     def query_group_info_by_member_auth(
         self,
         request: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthRequest,
@@ -3267,6 +3457,90 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendTemplateInteractiveCardResponse(),
             await self.do_roarequest_async('SendTemplateInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/templates/send', 'json', req, runtime)
+        )
+
+    def set_right_panel(
+        self,
+        request: dingtalkim__1__0_models.SetRightPanelRequest,
+    ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SetRightPanelHeaders()
+        return self.set_right_panel_with_options(request, headers, runtime)
+
+    async def set_right_panel_async(
+        self,
+        request: dingtalkim__1__0_models.SetRightPanelRequest,
+    ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SetRightPanelHeaders()
+        return await self.set_right_panel_with_options_async(request, headers, runtime)
+
+    def set_right_panel_with_options(
+        self,
+        request: dingtalkim__1__0_models.SetRightPanelRequest,
+        headers: dingtalkim__1__0_models.SetRightPanelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.right_panel_close_permitted):
+            body['rightPanelClosePermitted'] = request.right_panel_close_permitted
+        if not UtilClient.is_unset(request.right_panel_open_status):
+            body['rightPanelOpenStatus'] = request.right_panel_open_status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.web_wnd_params):
+            body['webWndParams'] = request.web_wnd_params
+        if not UtilClient.is_unset(request.width):
+            body['width'] = request.width
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SetRightPanelResponse(),
+            self.do_roarequest('SetRightPanel', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/rightPanels/set', 'json', req, runtime)
+        )
+
+    async def set_right_panel_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SetRightPanelRequest,
+        headers: dingtalkim__1__0_models.SetRightPanelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.right_panel_close_permitted):
+            body['rightPanelClosePermitted'] = request.right_panel_close_permitted
+        if not UtilClient.is_unset(request.right_panel_open_status):
+            body['rightPanelOpenStatus'] = request.right_panel_open_status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.web_wnd_params):
+            body['webWndParams'] = request.web_wnd_params
+        if not UtilClient.is_unset(request.width):
+            body['width'] = request.width
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SetRightPanelResponse(),
+            await self.do_roarequest_async('SetRightPanel', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/rightPanels/set', 'json', req, runtime)
         )
 
     def topbox_close(

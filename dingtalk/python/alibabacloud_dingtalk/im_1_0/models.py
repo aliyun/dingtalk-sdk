@@ -4,6 +4,198 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AddOrgTextEmotionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddOrgTextEmotionRequest(TeaModel):
+    def __init__(
+        self,
+        background_media_id: str = None,
+        background_media_id_for_panel: str = None,
+        dept_id: int = None,
+        emotion_name: str = None,
+    ):
+        # 展示在消息气泡上的表情的mediaId，mediaId可以通过使用文件上传接口上传表情图片得到，图片上限为500KB。
+        # 
+        # 请严格按照表情设计规范设计表情，服务端会检查图片的大小、宽度、高度是否符合规范。
+        self.background_media_id = background_media_id
+        # 展示在消息长按菜单的表情的mediaId，mediaId可以通过使用文件上传接口上传表情图片得到，图片上限为500KB。
+        # 
+        # 请严格按照表情设计规范设计表情，服务端会检查图片的大小、宽度、高度是否符合规范。
+        self.background_media_id_for_panel = background_media_id_for_panel
+        # 部门Id，设置规则：
+        # 
+        # -1：当添加企业层面的文字表情时使用-1，此时表情对企业内所有员工可见
+        # 
+        # 一级部门Id：当添加一级部门层面的文字表情时使用一级部门Id，此时表情对该一级部门及该一级部门下的所有子部门的员工可见
+        self.dept_id = dept_id
+        # 表情名称，对用户不可见
+        self.emotion_name = emotion_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.background_media_id is not None:
+            result['backgroundMediaId'] = self.background_media_id
+        if self.background_media_id_for_panel is not None:
+            result['backgroundMediaIdForPanel'] = self.background_media_id_for_panel
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.emotion_name is not None:
+            result['emotionName'] = self.emotion_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('backgroundMediaId') is not None:
+            self.background_media_id = m.get('backgroundMediaId')
+        if m.get('backgroundMediaIdForPanel') is not None:
+            self.background_media_id_for_panel = m.get('backgroundMediaIdForPanel')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('emotionName') is not None:
+            self.emotion_name = m.get('emotionName')
+        return self
+
+
+class AddOrgTextEmotionResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        emotion_id: str = None,
+    ):
+        # 表情Id，用于唯一标识每个企业文字表情
+        self.emotion_id = emotion_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.emotion_id is not None:
+            result['emotionId'] = self.emotion_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('emotionId') is not None:
+            self.emotion_id = m.get('emotionId')
+        return self
+
+
+class AddOrgTextEmotionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AddOrgTextEmotionResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 添加企业文字表情结果
+        self.result = result
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AddOrgTextEmotionResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddOrgTextEmotionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddOrgTextEmotionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddOrgTextEmotionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddRobotToConversationHeaders(TeaModel):
     def __init__(
         self,
@@ -1961,6 +2153,141 @@ class CreateStoreGroupConversationResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateStoreGroupConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteOrgTextEmotionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteOrgTextEmotionRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        emotion_ids: List[str] = None,
+    ):
+        # 表情所属部门Id：
+        # -1：当文字表情属于企业层面时使用-1
+        # 一级部门Id：当文字表情属于一级部门层面时使用一级部门Id
+        self.dept_id = dept_id
+        # 要删除的表情Id列表。请注意，该列表中的所有表情Id一定要同属于deptId
+        self.emotion_ids = emotion_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.emotion_ids is not None:
+            result['emotionIds'] = self.emotion_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('emotionIds') is not None:
+            self.emotion_ids = m.get('emotionIds')
+        return self
+
+
+class DeleteOrgTextEmotionResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteOrgTextEmotionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteOrgTextEmotionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteOrgTextEmotionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4939,6 +5266,217 @@ class InteractiveCardCreateInstanceResponse(TeaModel):
         return self
 
 
+class ListOrgTextEmotionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListOrgTextEmotionResponseBodyResultEmotions(TeaModel):
+    def __init__(
+        self,
+        background_media_id: str = None,
+        background_media_id_for_panel: str = None,
+        dept_id: int = None,
+        emotion_id: str = None,
+        emotion_name: str = None,
+        status: int = None,
+    ):
+        # 展示在消息气泡中的文字表情的mediaId
+        self.background_media_id = background_media_id
+        # 展示在消息长按菜单中的文字表情的mediaId
+        self.background_media_id_for_panel = background_media_id_for_panel
+        # 表情所属部门Id：
+        # -1：该表情为企业层面的文字表情
+        # 一级部门Id：该表情为一级部门层面的文字表情
+        self.dept_id = dept_id
+        # 表情Id
+        self.emotion_id = emotion_id
+        # 表情名称，对用户不可见
+        self.emotion_name = emotion_name
+        # 表情状态
+        # 0：已删除
+        # 1：可用
+        # 2：安全审核不通过
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.background_media_id is not None:
+            result['backgroundMediaId'] = self.background_media_id
+        if self.background_media_id_for_panel is not None:
+            result['backgroundMediaIdForPanel'] = self.background_media_id_for_panel
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.emotion_id is not None:
+            result['emotionId'] = self.emotion_id
+        if self.emotion_name is not None:
+            result['emotionName'] = self.emotion_name
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('backgroundMediaId') is not None:
+            self.background_media_id = m.get('backgroundMediaId')
+        if m.get('backgroundMediaIdForPanel') is not None:
+            self.background_media_id_for_panel = m.get('backgroundMediaIdForPanel')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('emotionId') is not None:
+            self.emotion_id = m.get('emotionId')
+        if m.get('emotionName') is not None:
+            self.emotion_name = m.get('emotionName')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class ListOrgTextEmotionResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        emotions: List[ListOrgTextEmotionResponseBodyResultEmotions] = None,
+    ):
+        # 企业文字表情列表
+        self.emotions = emotions
+
+    def validate(self):
+        if self.emotions:
+            for k in self.emotions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['emotions'] = []
+        if self.emotions is not None:
+            for k in self.emotions:
+                result['emotions'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.emotions = []
+        if m.get('emotions') is not None:
+            for k in m.get('emotions'):
+                temp_model = ListOrgTextEmotionResponseBodyResultEmotions()
+                self.emotions.append(temp_model.from_map(k))
+        return self
+
+
+class ListOrgTextEmotionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ListOrgTextEmotionResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 拉取企业文字表情结果
+        self.result = result
+        # 返回结果
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ListOrgTextEmotionResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ListOrgTextEmotionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListOrgTextEmotionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListOrgTextEmotionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryGroupInfoByMemberAuthHeaders(TeaModel):
     def __init__(
         self,
@@ -7774,6 +8312,196 @@ class SendTemplateInteractiveCardResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SendTemplateInteractiveCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SetRightPanelHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetRightPanelRequestWebWndParams(TeaModel):
+    def __init__(
+        self,
+        target_url: str = None,
+    ):
+        # 侧边栏URL
+        self.target_url = target_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.target_url is not None:
+            result['targetURL'] = self.target_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('targetURL') is not None:
+            self.target_url = m.get('targetURL')
+        return self
+
+
+class SetRightPanelRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        right_panel_close_permitted: bool = None,
+        right_panel_open_status: int = None,
+        title: str = None,
+        web_wnd_params: SetRightPanelRequestWebWndParams = None,
+        width: int = None,
+    ):
+        # 场景群的openConversationId
+        self.open_conversation_id = open_conversation_id
+        # 是否允许群成员关闭侧边栏 true-允许 false-不允许
+        self.right_panel_close_permitted = right_panel_close_permitted
+        # 侧边栏打开状态 1-开启 0-关闭
+        self.right_panel_open_status = right_panel_open_status
+        # 标题栏文案
+        self.title = title
+        # 网页侧边栏属性配置
+        self.web_wnd_params = web_wnd_params
+        # 侧边栏
+        self.width = width
+
+    def validate(self):
+        if self.web_wnd_params:
+            self.web_wnd_params.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.right_panel_close_permitted is not None:
+            result['rightPanelClosePermitted'] = self.right_panel_close_permitted
+        if self.right_panel_open_status is not None:
+            result['rightPanelOpenStatus'] = self.right_panel_open_status
+        if self.title is not None:
+            result['title'] = self.title
+        if self.web_wnd_params is not None:
+            result['webWndParams'] = self.web_wnd_params.to_map()
+        if self.width is not None:
+            result['width'] = self.width
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('rightPanelClosePermitted') is not None:
+            self.right_panel_close_permitted = m.get('rightPanelClosePermitted')
+        if m.get('rightPanelOpenStatus') is not None:
+            self.right_panel_open_status = m.get('rightPanelOpenStatus')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('webWndParams') is not None:
+            temp_model = SetRightPanelRequestWebWndParams()
+            self.web_wnd_params = temp_model.from_map(m['webWndParams'])
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        return self
+
+
+class SetRightPanelResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SetRightPanelResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SetRightPanelResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SetRightPanelResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

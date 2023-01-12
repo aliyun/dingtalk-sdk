@@ -370,9 +370,11 @@ class AppendRowsRequest(TeaModel):
         values: List[List[str]] = None,
         operator_id: str = None,
     ):
-        # 要追加的值
+        # 要追加的值(二维数组)
+        # 最大size:
+        # 	1000
         self.values = values
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -399,15 +401,48 @@ class AppendRowsRequest(TeaModel):
         return self
 
 
+class AppendRowsResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 本次操作是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
 class AppendRowsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: AppendRowsResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -417,12 +452,17 @@ class AppendRowsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AppendRowsResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -1045,7 +1085,7 @@ class ClearRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -1073,7 +1113,7 @@ class ClearResponseBody(TeaModel):
         self,
         a_1notation: str = None,
     ):
-        # 单元格地址
+        # 使用A1表示法的Range地址
         self.a_1notation = a_1notation
 
     def validate(self):
@@ -1171,7 +1211,7 @@ class ClearDataRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -1199,7 +1239,7 @@ class ClearDataResponseBody(TeaModel):
         self,
         a_1notation: str = None,
     ):
-        # 单元格地址
+        # 使用A1表示法的Range地址
         self.a_1notation = a_1notation
 
     def validate(self):
@@ -1932,7 +1972,7 @@ class CreateSheetRequest(TeaModel):
     ):
         # 工作表名称
         self.name = name
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -1966,10 +2006,11 @@ class CreateSheetResponseBody(TeaModel):
         name: str = None,
         visibility: str = None,
     ):
+        # 工作表id
         self.id = id
-        # 创建的工作表的名称。当输入参数中的工作表名称在表格中已存在时，可能与输入参数指定的工作表名称不同。
+        # 工作表名称
         self.name = name
-        # 工作表可见性
+        # 工作表可见性, 创建之后默认为visible
         self.visibility = visibility
 
     def validate(self):
@@ -2419,11 +2460,11 @@ class DeleteColumnsRequest(TeaModel):
         column_count: int = None,
         operator_id: str = None,
     ):
-        # 要删除的第一列的位置，从0开始
+        # 要删除的第一列的位置，从0开始。
         self.column = column
-        # 要删除的列的数量
+        # 要删除的列的数量。
         self.column_count = column_count
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -2459,7 +2500,7 @@ class DeleteColumnsResponseBody(TeaModel):
         self,
         id: str = None,
     ):
-        # 工作表ID
+        # 工作表id
         self.id = id
 
     def validate(self):
@@ -2810,11 +2851,11 @@ class DeleteRowsRequest(TeaModel):
         row_count: int = None,
         operator_id: str = None,
     ):
-        # 要删除的第一行的位置，从0开始
+        # 要删除的第一行的位置，从0开始。
         self.row = row
-        # 要删除的行的数量
+        # 要删除的行的数量。
         self.row_count = row_count
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -2850,7 +2891,7 @@ class DeleteRowsResponseBody(TeaModel):
         self,
         id: str = None,
     ):
-        # 工作表ID
+        # 工作表id
         self.id = id
 
     def validate(self):
@@ -2948,7 +2989,7 @@ class DeleteSheetRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -2976,6 +3017,7 @@ class DeleteSheetResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
+        # 本次操作是否成功
         self.success = success
 
     def validate(self):
@@ -3437,7 +3479,7 @@ class GetAllSheetsRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -3466,7 +3508,7 @@ class GetAllSheetsResponseBodyValue(TeaModel):
         id: str = None,
         name: str = None,
     ):
-        # 工作表ID
+        # 工作表id
         self.id = id
         # 工作表名称
         self.name = name
@@ -3500,7 +3542,9 @@ class GetAllSheetsResponseBody(TeaModel):
         self,
         value: List[GetAllSheetsResponseBodyValue] = None,
     ):
-        # 所有工作表信息
+        # 工作表列表
+        # 最大size:
+        # 	1000
         self.value = value
 
     def validate(self):
@@ -3820,7 +3864,7 @@ class GetRangeRequest(TeaModel):
         operator_id: str = None,
         select: str = None,
     ):
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
         # 限定要返回的字段
         self.select = select
@@ -3906,10 +3950,21 @@ class GetRangeResponseBody(TeaModel):
         formulas: List[List[str]] = None,
         values: List[List[Any]] = None,
     ):
+        # 背景颜色
+        # 最大size:
+        # 	1000
         self.background_colors = background_colors
+        # 展示值
+        # 最大size:
+        # 	1000
         self.display_values = display_values
+        # 公式
+        # 最大size:
+        # 	1000
         self.formulas = formulas
         # 值
+        # 最大size:
+        # 	1000
         self.values = values
 
     def validate(self):
@@ -4932,7 +4987,7 @@ class GetSheetRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -4966,19 +5021,22 @@ class GetSheetResponseBody(TeaModel):
         row_count: int = None,
         visibility: str = None,
     ):
-        # 工作表列数
+        # 工作表列数。
         self.column_count = column_count
-        # 工作表ID
+        # 工作表id
         self.id = id
-        # 最后一列非空列的位置，从0开始。表为空时返回-1。
+        # 最后一列非空列的位置，从0开始，表为空时返回-1。
         self.last_non_empty_column = last_non_empty_column
-        # 最后一行非空行的位置，从0开始。表为空时返回-1。
+        # 最后一行非空行的位置，从0开始，表为空时返回-1。
         self.last_non_empty_row = last_non_empty_row
         # 工作表名称
         self.name = name
-        # 工作表行数
+        # 工作表行数。
         self.row_count = row_count
         # 工作表可见性
+        # 枚举值:
+        #    visible: 可见
+        #    hidden: 隐藏
         self.visibility = visibility
 
     def validate(self):
@@ -6007,11 +6065,11 @@ class InsertColumnsBeforeRequest(TeaModel):
         column_count: int = None,
         operator_id: str = None,
     ):
-        # 插入列的位置，从0开始
+        # 要插入列的位置，从0开始。
         self.column = column
-        # 插入列的数量
+        # 要插入列的数量。
         self.column_count = column_count
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -6047,7 +6105,7 @@ class InsertColumnsBeforeResponseBody(TeaModel):
         self,
         id: str = None,
     ):
-        # 工作表ID
+        # 工作表id
         self.id = id
 
     def validate(self):
@@ -6319,11 +6377,11 @@ class InsertRowsBeforeRequest(TeaModel):
         row_count: int = None,
         operator_id: str = None,
     ):
-        # 插入行的位置，从0开始
+        # 要插入行的位置，从0开始。
         self.row = row
-        # 插入行的数量
+        # 要插入行的数量。
         self.row_count = row_count
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -6359,7 +6417,7 @@ class InsertRowsBeforeResponseBody(TeaModel):
         self,
         id: str = None,
     ):
-        # 工作表ID
+        # 工作表id
         self.id = id
 
     def validate(self):
@@ -7352,13 +7410,16 @@ class SetColumnsVisibilityRequest(TeaModel):
         visibility: str = None,
         operator_id: str = None,
     ):
-        # 要显示、隐藏的第一列的位置，从0开始
+        # 要显示、隐藏的第一列的位置，从0开始。
         self.column = column
-        # 要显示、隐藏的列的数量
+        # 要显示、隐藏的列的数量。
         self.column_count = column_count
-        # 可见性
+        # 列可见性
+        # 枚举值:
+        #    visible: 可见
+        #    hidden: 隐藏
         self.visibility = visibility
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -7398,7 +7459,7 @@ class SetColumnsVisibilityResponseBody(TeaModel):
         self,
         id: str = None,
     ):
-        # 工作表ID
+        # 工作表id
         self.id = id
 
     def validate(self):
@@ -7499,13 +7560,16 @@ class SetRowsVisibilityRequest(TeaModel):
         visibility: str = None,
         operator_id: str = None,
     ):
-        # 要显示、隐藏的第一行的位置，从0开始
+        # 要显示、隐藏的第一行的位置，从0开始。
         self.row = row
-        # 要显示、隐藏的行的数量
+        # 要显示、隐藏的行的数量。
         self.row_count = row_count
-        # 可见性
+        # 行可见性
+        # 枚举值:
+        #    visible: 可见
+        #    hidden: 隐藏
         self.visibility = visibility
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -7545,7 +7609,7 @@ class SetRowsVisibilityResponseBody(TeaModel):
         self,
         id: str = None,
     ):
-        # 工作表ID
+        # 工作表id
         self.id = id
 
     def validate(self):
@@ -8034,11 +8098,11 @@ class UpdateRangeRequestHyperlinks(TeaModel):
         link: str = None,
         text: str = None,
     ):
-        # 超链接类型，可选 "path", "sheet", "range"
+        # 超链接类型，可选path、sheet、range
         self.type = type
-        # 链接地址
+        # 超链接地址
         self.link = link
-        # 链接文本
+        # 超链接文本
         self.text = text
 
     def validate(self):
@@ -8079,14 +8143,20 @@ class UpdateRangeRequest(TeaModel):
         operator_id: str = None,
     ):
         # 背景色
+        # 最大size:
+        # 	1000
         self.background_colors = background_colors
         # 超链接
+        # 最大size:
+        # 	1000
         self.hyperlinks = hyperlinks
         # 数字格式
         self.number_format = number_format
         # 值
+        # 最大size:
+        # 	1000
         self.values = values
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -8248,8 +8318,11 @@ class UpdateSheetRequest(TeaModel):
         # 工作表名称
         self.name = name
         # 工作表可见性
+        # 枚举值:
+        #    visible: 可见
+        #    hidden: 隐藏
         self.visibility = visibility
-        # 操作人unionId
+        # 操作人id
         self.operator_id = operator_id
 
     def validate(self):
@@ -8280,15 +8353,48 @@ class UpdateSheetRequest(TeaModel):
         return self
 
 
+class UpdateSheetResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 本次操作是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
 class UpdateSheetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        body: UpdateSheetResponseBody = None,
     ):
         self.headers = headers
+        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -8298,12 +8404,17 @@ class UpdateSheetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateSheetResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

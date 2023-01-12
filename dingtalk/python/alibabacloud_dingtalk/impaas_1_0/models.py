@@ -654,11 +654,47 @@ class CreateTrustGroupHeaders(TeaModel):
         return self
 
 
+class CreateTrustGroupRequestMembers(TeaModel):
+    def __init__(
+        self,
+        nick: str = None,
+        uid: str = None,
+    ):
+        # 昵称
+        self.nick = nick
+        # 互通账号ID
+        self.uid = uid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.uid is not None:
+            result['uid'] = self.uid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('uid') is not None:
+            self.uid = m.get('uid')
+        return self
+
+
 class CreateTrustGroupRequest(TeaModel):
     def __init__(
         self,
         channel: str = None,
         icon_media_id: str = None,
+        members: List[CreateTrustGroupRequestMembers] = None,
         name: str = None,
         properties: Dict[str, str] = None,
         uuid: str = None,
@@ -667,6 +703,8 @@ class CreateTrustGroupRequest(TeaModel):
         self.channel = channel
         # 素材ID
         self.icon_media_id = icon_media_id
+        # 群成员列表
+        self.members = members
         # 群名称
         self.name = name
         # 其他扩展参数
@@ -675,7 +713,10 @@ class CreateTrustGroupRequest(TeaModel):
         self.uuid = uuid
 
     def validate(self):
-        pass
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -687,6 +728,10 @@ class CreateTrustGroupRequest(TeaModel):
             result['channel'] = self.channel
         if self.icon_media_id is not None:
             result['iconMediaId'] = self.icon_media_id
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
         if self.name is not None:
             result['name'] = self.name
         if self.properties is not None:
@@ -701,6 +746,11 @@ class CreateTrustGroupRequest(TeaModel):
             self.channel = m.get('channel')
         if m.get('iconMediaId') is not None:
             self.icon_media_id = m.get('iconMediaId')
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = CreateTrustGroupRequestMembers()
+                self.members.append(temp_model.from_map(k))
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('properties') is not None:

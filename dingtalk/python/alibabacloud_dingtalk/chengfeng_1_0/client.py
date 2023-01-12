@@ -1,0 +1,88 @@
+# -*- coding: utf-8 -*-
+# This file is auto-generated, don't edit it. Thanks.
+from Tea.core import TeaCore
+
+from alibabacloud_tea_openapi.client import Client as OpenApiClient
+from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_tea_util.client import Client as UtilClient
+from alibabacloud_dingtalk.chengfeng_1_0 import models as dingtalkchengfeng__1__0_models
+from alibabacloud_tea_util import models as util_models
+from alibabacloud_openapi_util.client import Client as OpenApiUtilClient
+
+
+class Client(OpenApiClient):
+    """
+    *\
+    """
+    def __init__(
+        self, 
+        config: open_api_models.Config,
+    ):
+        super().__init__(config)
+        self._endpoint_rule = ''
+        if UtilClient.empty(self._endpoint):
+            self._endpoint = 'api.dingtalk.com'
+
+    def get_employee_info_by_work_no(
+        self,
+        request: dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoRequest,
+    ) -> dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoHeaders()
+        return self.get_employee_info_by_work_no_with_options(request, headers, runtime)
+
+    async def get_employee_info_by_work_no_async(
+        self,
+        request: dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoRequest,
+    ) -> dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoHeaders()
+        return await self.get_employee_info_by_work_no_with_options_async(request, headers, runtime)
+
+    def get_employee_info_by_work_no_with_options(
+        self,
+        request: dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoRequest,
+        headers: dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.work_no):
+            query['workNo'] = request.work_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoResponse(),
+            self.do_roarequest('GetEmployeeInfoByWorkNo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/chengfeng/workNumbers/employees', 'json', req, runtime)
+        )
+
+    async def get_employee_info_by_work_no_with_options_async(
+        self,
+        request: dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoRequest,
+        headers: dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.work_no):
+            query['workNo'] = request.work_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkchengfeng__1__0_models.GetEmployeeInfoByWorkNoResponse(),
+            await self.do_roarequest_async('GetEmployeeInfoByWorkNo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/chengfeng/workNumbers/employees', 'json', req, runtime)
+        )

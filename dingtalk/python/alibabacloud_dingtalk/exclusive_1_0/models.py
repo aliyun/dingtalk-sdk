@@ -6282,6 +6282,410 @@ class GetPartnerTypeByParentIdResponse(TeaModel):
         return self
 
 
+class GetPublicDevicesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPublicDevicesRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        mac_address: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        platform: str = None,
+        start_time: int = None,
+        title: str = None,
+    ):
+        # 注册/申请时间止
+        self.end_time = end_time
+        # 设备mac地址
+        self.mac_address = mac_address
+        # 页码
+        self.page_number = page_number
+        # 单页条目数
+        self.page_size = page_size
+        # 系统
+        self.platform = platform
+        # 注册/申请时间起
+        self.start_time = start_time
+        # 设备标题
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.mac_address is not None:
+            result['macAddress'] = self.mac_address
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('macAddress') is not None:
+            self.mac_address = m.get('macAddress')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetPublicDevicesResponseBodyDataDeviceDepts(TeaModel):
+    def __init__(
+        self,
+        id: int = None,
+        name: str = None,
+    ):
+        # 部门id
+        self.id = id
+        # 部门名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetPublicDevicesResponseBodyDataDeviceRoles(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        tag_code: str = None,
+    ):
+        # 角色名称
+        self.name = name
+        # 角色code
+        self.tag_code = tag_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        return self
+
+
+class GetPublicDevicesResponseBodyDataDeviceStaffs(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        # 员工姓名
+        self.name = name
+        # 员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetPublicDevicesResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        device_depts: List[GetPublicDevicesResponseBodyDataDeviceDepts] = None,
+        device_roles: List[GetPublicDevicesResponseBodyDataDeviceRoles] = None,
+        device_scope_type: int = None,
+        device_staffs: List[GetPublicDevicesResponseBodyDataDeviceStaffs] = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        mac_address: str = None,
+        platform: str = None,
+        title: str = None,
+    ):
+        # 部门列表，仅生效范围是部分生效时有效
+        self.device_depts = device_depts
+        # 角色列表，仅生效范围是部分生效时有效
+        self.device_roles = device_roles
+        # 生效范围
+        self.device_scope_type = device_scope_type
+        # 员工列表，仅生效范围是部分生效时有效
+        self.device_staffs = device_staffs
+        # 创建时间时间戳
+        self.gmt_create = gmt_create
+        # 修改时间时间戳
+        self.gmt_modified = gmt_modified
+        # 设备mac地址
+        self.mac_address = mac_address
+        # 系统
+        self.platform = platform
+        # 设备标题
+        self.title = title
+
+    def validate(self):
+        if self.device_depts:
+            for k in self.device_depts:
+                if k:
+                    k.validate()
+        if self.device_roles:
+            for k in self.device_roles:
+                if k:
+                    k.validate()
+        if self.device_staffs:
+            for k in self.device_staffs:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['deviceDepts'] = []
+        if self.device_depts is not None:
+            for k in self.device_depts:
+                result['deviceDepts'].append(k.to_map() if k else None)
+        result['deviceRoles'] = []
+        if self.device_roles is not None:
+            for k in self.device_roles:
+                result['deviceRoles'].append(k.to_map() if k else None)
+        if self.device_scope_type is not None:
+            result['deviceScopeType'] = self.device_scope_type
+        result['deviceStaffs'] = []
+        if self.device_staffs is not None:
+            for k in self.device_staffs:
+                result['deviceStaffs'].append(k.to_map() if k else None)
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.mac_address is not None:
+            result['macAddress'] = self.mac_address
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.device_depts = []
+        if m.get('deviceDepts') is not None:
+            for k in m.get('deviceDepts'):
+                temp_model = GetPublicDevicesResponseBodyDataDeviceDepts()
+                self.device_depts.append(temp_model.from_map(k))
+        self.device_roles = []
+        if m.get('deviceRoles') is not None:
+            for k in m.get('deviceRoles'):
+                temp_model = GetPublicDevicesResponseBodyDataDeviceRoles()
+                self.device_roles.append(temp_model.from_map(k))
+        if m.get('deviceScopeType') is not None:
+            self.device_scope_type = m.get('deviceScopeType')
+        self.device_staffs = []
+        if m.get('deviceStaffs') is not None:
+            for k in m.get('deviceStaffs'):
+                temp_model = GetPublicDevicesResponseBodyDataDeviceStaffs()
+                self.device_staffs.append(temp_model.from_map(k))
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('macAddress') is not None:
+            self.mac_address = m.get('macAddress')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetPublicDevicesResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetPublicDevicesResponseBodyData] = None,
+        data_cnt: int = None,
+        total_cnt: int = None,
+    ):
+        self.data = data
+        # 当前页条目数
+        self.data_cnt = data_cnt
+        # 总条目数
+        self.total_cnt = total_cnt
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.data_cnt is not None:
+            result['dataCnt'] = self.data_cnt
+        if self.total_cnt is not None:
+            result['totalCnt'] = self.total_cnt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetPublicDevicesResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('dataCnt') is not None:
+            self.data_cnt = m.get('dataCnt')
+        if m.get('totalCnt') is not None:
+            self.total_cnt = m.get('totalCnt')
+        return self
+
+
+class GetPublicDevicesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetPublicDevicesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetPublicDevicesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetPublisherSummaryHeaders(TeaModel):
     def __init__(
         self,
