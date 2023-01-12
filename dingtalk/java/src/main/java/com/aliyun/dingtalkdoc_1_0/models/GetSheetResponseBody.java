@@ -5,25 +5,25 @@ import com.aliyun.tea.*;
 
 public class GetSheetResponseBody extends TeaModel {
     /**
-     * <p>工作表列数</p>
+     * <p>工作表列数。</p>
      */
     @NameInMap("columnCount")
     public Long columnCount;
 
     /**
-     * <p>工作表ID</p>
+     * <p>工作表id</p>
      */
     @NameInMap("id")
     public String id;
 
     /**
-     * <p>最后一列非空列的位置，从0开始。表为空时返回-1。</p>
+     * <p>最后一列非空列的位置，从0开始，表为空时返回-1。</p>
      */
     @NameInMap("lastNonEmptyColumn")
     public Long lastNonEmptyColumn;
 
     /**
-     * <p>最后一行非空行的位置，从0开始。表为空时返回-1。</p>
+     * <p>最后一行非空行的位置，从0开始，表为空时返回-1。</p>
      */
     @NameInMap("lastNonEmptyRow")
     public Long lastNonEmptyRow;
@@ -35,13 +35,16 @@ public class GetSheetResponseBody extends TeaModel {
     public String name;
 
     /**
-     * <p>工作表行数</p>
+     * <p>工作表行数。</p>
      */
     @NameInMap("rowCount")
     public Long rowCount;
 
     /**
      * <p>工作表可见性</p>
+     * <p>枚举值:</p>
+     * <p>   visible: 可见</p>
+     * <p>   hidden: 隐藏</p>
      */
     @NameInMap("visibility")
     public String visibility;

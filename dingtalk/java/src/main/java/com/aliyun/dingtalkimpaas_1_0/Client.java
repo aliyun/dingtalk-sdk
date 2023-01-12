@@ -209,6 +209,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("iconMediaId", request.iconMediaId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.members)) {
+            body.put("members", request.members);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }

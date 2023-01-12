@@ -6,12 +6,16 @@ import com.aliyun.tea.*;
 public class UpdateRangeRequest extends TeaModel {
     /**
      * <p>背景色</p>
+     * <p>最大size:</p>
+     * <p>	1000</p>
      */
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<String>> backgroundColors;
 
     /**
      * <p>超链接</p>
+     * <p>最大size:</p>
+     * <p>	1000</p>
      */
     @NameInMap("hyperlinks")
     public java.util.List<java.util.List<UpdateRangeRequestHyperlinks>> hyperlinks;
@@ -24,12 +28,14 @@ public class UpdateRangeRequest extends TeaModel {
 
     /**
      * <p>值</p>
+     * <p>最大size:</p>
+     * <p>	1000</p>
      */
     @NameInMap("values")
     public java.util.List<java.util.List<String>> values;
 
     /**
-     * <p>操作人unionId</p>
+     * <p>操作人id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -81,19 +87,19 @@ public class UpdateRangeRequest extends TeaModel {
 
     public static class UpdateRangeRequestHyperlinks extends TeaModel {
         /**
-         * <p>超链接类型，可选 "path", "sheet", "range"</p>
+         * <p>超链接类型，可选path、sheet、range</p>
          */
         @NameInMap("type")
         public String type;
 
         /**
-         * <p>链接地址</p>
+         * <p>超链接地址</p>
          */
         @NameInMap("link")
         public String link;
 
         /**
-         * <p>链接文本</p>
+         * <p>超链接文本</p>
          */
         @NameInMap("text")
         public String text;

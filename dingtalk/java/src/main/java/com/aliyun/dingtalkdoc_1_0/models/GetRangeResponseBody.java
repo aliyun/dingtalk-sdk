@@ -4,17 +4,34 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRangeResponseBody extends TeaModel {
+    /**
+     * <p>背景颜色</p>
+     * <p>最大size:</p>
+     * <p>	1000</p>
+     */
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<GetRangeResponseBodyBackgroundColors>> backgroundColors;
 
+    /**
+     * <p>展示值</p>
+     * <p>最大size:</p>
+     * <p>	1000</p>
+     */
     @NameInMap("displayValues")
     public java.util.List<java.util.List<String>> displayValues;
 
+    /**
+     * <p>公式</p>
+     * <p>最大size:</p>
+     * <p>	1000</p>
+     */
     @NameInMap("formulas")
     public java.util.List<java.util.List<String>> formulas;
 
     /**
      * <p>值</p>
+     * <p>最大size:</p>
+     * <p>	1000</p>
      */
     @NameInMap("values")
     public java.util.List<java.util.List<?>> values;
@@ -61,19 +78,19 @@ public class GetRangeResponseBody extends TeaModel {
          * <p>RGB值中的红色值</p>
          */
         @NameInMap("red")
-        public Long red;
+        public Integer red;
 
         /**
          * <p>RGB值中的绿色值</p>
          */
         @NameInMap("green")
-        public Long green;
+        public Integer green;
 
         /**
          * <p>RGB值中的蓝色值</p>
          */
         @NameInMap("blue")
-        public Long blue;
+        public Integer blue;
 
         /**
          * <p>16进制表示的颜色</p>
@@ -86,27 +103,27 @@ public class GetRangeResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public GetRangeResponseBodyBackgroundColors setRed(Long red) {
+        public GetRangeResponseBodyBackgroundColors setRed(Integer red) {
             this.red = red;
             return this;
         }
-        public Long getRed() {
+        public Integer getRed() {
             return this.red;
         }
 
-        public GetRangeResponseBodyBackgroundColors setGreen(Long green) {
+        public GetRangeResponseBodyBackgroundColors setGreen(Integer green) {
             this.green = green;
             return this;
         }
-        public Long getGreen() {
+        public Integer getGreen() {
             return this.green;
         }
 
-        public GetRangeResponseBodyBackgroundColors setBlue(Long blue) {
+        public GetRangeResponseBodyBackgroundColors setBlue(Integer blue) {
             this.blue = blue;
             return this;
         }
-        public Long getBlue() {
+        public Integer getBlue() {
             return this.blue;
         }
 

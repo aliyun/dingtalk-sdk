@@ -11,7 +11,7 @@ public class CreateSheetRequest extends TeaModel {
     public String name;
 
     /**
-     * <p>操作人unionId</p>
+     * <p>操作人id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

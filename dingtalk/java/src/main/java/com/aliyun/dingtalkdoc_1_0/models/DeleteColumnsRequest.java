@@ -5,19 +5,19 @@ import com.aliyun.tea.*;
 
 public class DeleteColumnsRequest extends TeaModel {
     /**
-     * <p>要删除的第一列的位置，从0开始</p>
+     * <p>要删除的第一列的位置，从0开始。</p>
      */
     @NameInMap("column")
     public Long column;
 
     /**
-     * <p>要删除的列的数量</p>
+     * <p>要删除的列的数量。</p>
      */
     @NameInMap("columnCount")
     public Long columnCount;
 
     /**
-     * <p>操作人unionId</p>
+     * <p>操作人id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

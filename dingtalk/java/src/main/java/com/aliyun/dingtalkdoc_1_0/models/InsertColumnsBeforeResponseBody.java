@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class InsertColumnsBeforeResponseBody extends TeaModel {
     /**
-     * <p>工作表ID</p>
+     * <p>工作表id</p>
      */
     @NameInMap("id")
     public String id;

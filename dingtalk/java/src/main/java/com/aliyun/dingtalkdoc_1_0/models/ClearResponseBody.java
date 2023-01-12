@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class ClearResponseBody extends TeaModel {
     /**
-     * <p>单元格地址</p>
+     * <p>使用A1表示法的Range地址</p>
      */
     @NameInMap("a1Notation")
     public String a1Notation;

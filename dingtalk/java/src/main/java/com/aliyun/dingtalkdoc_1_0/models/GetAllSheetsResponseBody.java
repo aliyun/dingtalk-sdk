@@ -5,7 +5,9 @@ import com.aliyun.tea.*;
 
 public class GetAllSheetsResponseBody extends TeaModel {
     /**
-     * <p>所有工作表信息</p>
+     * <p>工作表列表</p>
+     * <p>最大size:</p>
+     * <p>	1000</p>
      */
     @NameInMap("value")
     public java.util.List<GetAllSheetsResponseBodyValue> value;
@@ -25,7 +27,7 @@ public class GetAllSheetsResponseBody extends TeaModel {
 
     public static class GetAllSheetsResponseBodyValue extends TeaModel {
         /**
-         * <p>工作表ID</p>
+         * <p>工作表id</p>
          */
         @NameInMap("id")
         public String id;

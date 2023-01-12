@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class GetSheetRequest extends TeaModel {
     /**
-     * <p>操作人unionId</p>
+     * <p>操作人id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
