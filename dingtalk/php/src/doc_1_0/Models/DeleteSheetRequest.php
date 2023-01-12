@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteSheetRequest extends Model
 {
     /**
-     * @description 操作人unionId
+     * @description 操作人id
      *
      * @var string
      */

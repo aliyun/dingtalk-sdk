@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class AppendRowsRequest extends Model
 {
     /**
-     * @description 要追加的值
-     *
+     * @description 要追加的值(二维数组)
+     * 1000
      * @var string[][]
      */
     public $values;
 
     /**
-     * @description 操作人unionId
+     * @description 操作人id
      *
      * @var string
      */

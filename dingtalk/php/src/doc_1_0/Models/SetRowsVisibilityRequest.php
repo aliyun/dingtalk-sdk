@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class SetRowsVisibilityRequest extends Model
 {
     /**
-     * @description 要显示、隐藏的第一行的位置，从0开始
+     * @description 要显示、隐藏的第一行的位置，从0开始。
      *
      * @var int
      */
     public $row;
 
     /**
-     * @description 要显示、隐藏的行的数量
+     * @description 要显示、隐藏的行的数量。
      *
      * @var int
      */
     public $rowCount;
 
     /**
-     * @description 可见性
-     *
+     * @description 行可见性
+     * hidden: 隐藏
      * @var string
      */
     public $visibility;
 
     /**
-     * @description 操作人unionId
+     * @description 操作人id
      *
      * @var string
      */

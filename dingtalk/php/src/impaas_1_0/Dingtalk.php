@@ -321,6 +321,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->iconMediaId)) {
             @$body['iconMediaId'] = $request->iconMediaId;
         }
+        if (!Utils::isUnset($request->members)) {
+            @$body['members'] = $request->members;
+        }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }

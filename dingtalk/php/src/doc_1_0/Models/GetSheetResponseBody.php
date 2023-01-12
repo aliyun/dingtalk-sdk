@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetSheetResponseBody extends Model
 {
     /**
-     * @description 工作表列数
+     * @description 工作表列数。
      *
      * @var int
      */
     public $columnCount;
 
     /**
-     * @description 工作表ID
+     * @description 工作表id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 最后一列非空列的位置，从0开始。表为空时返回-1。
+     * @description 最后一列非空列的位置，从0开始，表为空时返回-1。
      *
      * @var int
      */
     public $lastNonEmptyColumn;
 
     /**
-     * @description 最后一行非空行的位置，从0开始。表为空时返回-1。
+     * @description 最后一行非空行的位置，从0开始，表为空时返回-1。
      *
      * @var int
      */
@@ -44,7 +44,7 @@ class GetSheetResponseBody extends Model
     public $name;
 
     /**
-     * @description 工作表行数
+     * @description 工作表行数。
      *
      * @var int
      */
@@ -52,7 +52,7 @@ class GetSheetResponseBody extends Model
 
     /**
      * @description 工作表可见性
-     *
+     * hidden: 隐藏
      * @var string
      */
     public $visibility;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class InsertColumnsBeforeResponseBody extends Model
 {
     /**
-     * @description 工作表ID
+     * @description 工作表id
      *
      * @var string
      */

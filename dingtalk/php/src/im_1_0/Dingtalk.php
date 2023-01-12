@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddOrgTextEmotionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddOrgTextEmotionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddOrgTextEmotionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationResponse;
@@ -42,6 +45,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupConversationRespons
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationResponse;
@@ -87,6 +93,8 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthResponse;
@@ -138,6 +146,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxCloseResponse;
@@ -188,6 +199,57 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddOrgTextEmotionRequest $request
+     *
+     * @return AddOrgTextEmotionResponse
+     */
+    public function addOrgTextEmotion($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddOrgTextEmotionHeaders([]);
+
+        return $this->addOrgTextEmotionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddOrgTextEmotionRequest $request
+     * @param AddOrgTextEmotionHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return AddOrgTextEmotionResponse
+     */
+    public function addOrgTextEmotionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->backgroundMediaId)) {
+            @$body['backgroundMediaId'] = $request->backgroundMediaId;
+        }
+        if (!Utils::isUnset($request->backgroundMediaIdForPanel)) {
+            @$body['backgroundMediaIdForPanel'] = $request->backgroundMediaIdForPanel;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->emotionName)) {
+            @$body['emotionName'] = $request->emotionName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddOrgTextEmotionResponse::fromMap($this->doROARequest('AddOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/organizations/textEmotions', 'json', $req, $runtime));
     }
 
     /**
@@ -786,6 +848,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateStoreGroupConversationResponse::fromMap($this->doROARequest('CreateStoreGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/storeGroups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DeleteOrgTextEmotionRequest $request
+     *
+     * @return DeleteOrgTextEmotionResponse
+     */
+    public function deleteOrgTextEmotion($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteOrgTextEmotionHeaders([]);
+
+        return $this->deleteOrgTextEmotionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DeleteOrgTextEmotionRequest $request
+     * @param DeleteOrgTextEmotionHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return DeleteOrgTextEmotionResponse
+     */
+    public function deleteOrgTextEmotionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            @$body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->emotionIds)) {
+            @$body['emotionIds'] = $request->emotionIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DeleteOrgTextEmotionResponse::fromMap($this->doROARequest('DeleteOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/organizations/textEmotions/remove', 'json', $req, $runtime));
     }
 
     /**
@@ -1629,6 +1736,39 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @return ListOrgTextEmotionResponse
+     */
+    public function listOrgTextEmotion()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListOrgTextEmotionHeaders([]);
+
+        return $this->listOrgTextEmotionWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param ListOrgTextEmotionHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return ListOrgTextEmotionResponse
+     */
+    public function listOrgTextEmotionWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListOrgTextEmotionResponse::fromMap($this->doROARequest('ListOrgTextEmotion', 'im_1.0', 'HTTP', 'GET', 'AK', '/v1.0/im/organizations/textEmotions', 'json', $req, $runtime));
+    }
+
+    /**
      * @param QueryGroupInfoByMemberAuthRequest $request
      *
      * @return QueryGroupInfoByMemberAuthResponse
@@ -2382,6 +2522,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SendTemplateInteractiveCardResponse::fromMap($this->doROARequest('SendTemplateInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interactiveCards/templates/send', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SetRightPanelRequest $request
+     *
+     * @return SetRightPanelResponse
+     */
+    public function setRightPanel($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetRightPanelHeaders([]);
+
+        return $this->setRightPanelWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SetRightPanelRequest $request
+     * @param SetRightPanelHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return SetRightPanelResponse
+     */
+    public function setRightPanelWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->rightPanelClosePermitted)) {
+            @$body['rightPanelClosePermitted'] = $request->rightPanelClosePermitted;
+        }
+        if (!Utils::isUnset($request->rightPanelOpenStatus)) {
+            @$body['rightPanelOpenStatus'] = $request->rightPanelOpenStatus;
+        }
+        if (!Utils::isUnset($request->title)) {
+            @$body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->webWndParams)) {
+            @$body['webWndParams'] = $request->webWndParams;
+        }
+        if (!Utils::isUnset($request->width)) {
+            @$body['width'] = $request->width;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SetRightPanelResponse::fromMap($this->doROARequest('SetRightPanel', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/rightPanels/set', 'json', $req, $runtime));
     }
 
     /**

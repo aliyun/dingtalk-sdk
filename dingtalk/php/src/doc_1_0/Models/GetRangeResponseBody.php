@@ -9,23 +9,29 @@ use AlibabaCloud\Tea\Model;
 class GetRangeResponseBody extends Model
 {
     /**
+     * @description 背景颜色
+     * 1000
      * @var undefined[][]
      */
     public $backgroundColors;
 
     /**
+     * @description 展示值
+     * 1000
      * @var string[][]
      */
     public $displayValues;
 
     /**
+     * @description 公式
+     * 1000
      * @var string[][]
      */
     public $formulas;
 
     /**
      * @description 值
-     *
+     * 1000
      * @var mixed[][]
      */
     public $values;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class DeleteColumnsRequest extends Model
 {
     /**
-     * @description 要删除的第一列的位置，从0开始
+     * @description 要删除的第一列的位置，从0开始。
      *
      * @var int
      */
     public $column;
 
     /**
-     * @description 要删除的列的数量
+     * @description 要删除的列的数量。
      *
      * @var int
      */
     public $columnCount;
 
     /**
-     * @description 操作人unionId
+     * @description 操作人id
      *
      * @var string
      */

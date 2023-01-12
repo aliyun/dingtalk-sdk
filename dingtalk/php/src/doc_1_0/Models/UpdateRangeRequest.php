@@ -10,14 +10,14 @@ class UpdateRangeRequest extends Model
 {
     /**
      * @description 背景色
-     *
+     * 1000
      * @var string[][]
      */
     public $backgroundColors;
 
     /**
      * @description 超链接
-     *
+     * 1000
      * @var undefined[][]
      */
     public $hyperlinks;
@@ -31,13 +31,13 @@ class UpdateRangeRequest extends Model
 
     /**
      * @description 值
-     *
+     * 1000
      * @var string[][]
      */
     public $values;
 
     /**
-     * @description 操作人unionId
+     * @description 操作人id
      *
      * @var string
      */

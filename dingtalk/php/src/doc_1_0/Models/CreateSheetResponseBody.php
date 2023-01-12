@@ -9,19 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateSheetResponseBody extends Model
 {
     /**
+     * @description 工作表id
+     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 创建的工作表的名称。当输入参数中的工作表名称在表格中已存在时，可能与输入参数指定的工作表名称不同。
+     * @description 工作表名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 工作表可见性
+     * @description 工作表可见性, 创建之后默认为visible
      *
      * @var string
      */

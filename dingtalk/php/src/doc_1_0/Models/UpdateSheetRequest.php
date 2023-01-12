@@ -17,13 +17,13 @@ class UpdateSheetRequest extends Model
 
     /**
      * @description 工作表可见性
-     *
+     * hidden: 隐藏
      * @var string
      */
     public $visibility;
 
     /**
-     * @description 操作人unionId
+     * @description 操作人id
      *
      * @var string
      */

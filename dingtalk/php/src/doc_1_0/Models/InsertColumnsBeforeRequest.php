@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class InsertColumnsBeforeRequest extends Model
 {
     /**
-     * @description 插入列的位置，从0开始
+     * @description 要插入列的位置，从0开始。
      *
      * @var int
      */
     public $column;
 
     /**
-     * @description 插入列的数量
+     * @description 要插入列的数量。
      *
      * @var int
      */
     public $columnCount;
 
     /**
-     * @description 操作人unionId
+     * @description 操作人id
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ClearResponseBody extends Model
 {
     /**
-     * @description 单元格地址
+     * @description 使用A1表示法的Range地址
      *
      * @var string
      */

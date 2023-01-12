@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class hyperlinks extends Model
 {
     /**
-     * @description 超链接类型，可选 "path", "sheet", "range"
+     * @description 超链接类型，可选path、sheet、range
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 链接地址
+     * @description 超链接地址
      *
      * @var string
      */
     public $link;
 
     /**
-     * @description 链接文本
+     * @description 超链接文本
      *
      * @var string
      */
