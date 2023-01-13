@@ -409,12 +409,6 @@ public class GetCardInfoResponseBody extends TeaModel {
         public String department;
 
         /**
-         * <p>企业认证等级</p>
-         */
-        @NameInMap("orgAuthLevel")
-        public Long orgAuthLevel;
-
-        /**
          * <p>企业是否认证</p>
          */
         @NameInMap("orgAuthed")
@@ -489,14 +483,6 @@ public class GetCardInfoResponseBody extends TeaModel {
         }
         public String getDepartment() {
             return this.department;
-        }
-
-        public GetCardInfoResponseBodyExtension setOrgAuthLevel(Long orgAuthLevel) {
-            this.orgAuthLevel = orgAuthLevel;
-            return this;
-        }
-        public Long getOrgAuthLevel() {
-            return this.orgAuthLevel;
         }
 
         public GetCardInfoResponseBodyExtension setOrgAuthed(Boolean orgAuthed) {

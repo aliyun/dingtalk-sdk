@@ -78,8 +78,8 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
         @NameInMap("cardAcceptStatus")
         public Integer cardAcceptStatus;
 
-        @NameInMap("cardAcceptTime")
-        public Object cardAcceptTime;
+        @NameInMap("cardAcceptTimeLong")
+        public Long cardAcceptTimeLong;
 
         /**
          * <p>名片ID</p>
@@ -150,12 +150,12 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
             return this.cardAcceptStatus;
         }
 
-        public GetUserCardHolderListResponseBodyList setCardAcceptTime(Object cardAcceptTime) {
-            this.cardAcceptTime = cardAcceptTime;
+        public GetUserCardHolderListResponseBodyList setCardAcceptTimeLong(Long cardAcceptTimeLong) {
+            this.cardAcceptTimeLong = cardAcceptTimeLong;
             return this;
         }
-        public Object getCardAcceptTime() {
-            return this.cardAcceptTime;
+        public Long getCardAcceptTimeLong() {
+            return this.cardAcceptTimeLong;
         }
 
         public GetUserCardHolderListResponseBodyList setCardId(String cardId) {
