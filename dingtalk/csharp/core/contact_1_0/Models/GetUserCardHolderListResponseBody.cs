@@ -37,9 +37,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             [Validation(Required=false)]
             public int? CardAcceptStatus { get; set; }
 
-            [NameInMap("cardAcceptTime")]
+            [NameInMap("cardAcceptTimeLong")]
             [Validation(Required=false)]
-            public object CardAcceptTime { get; set; }
+            public long? CardAcceptTimeLong { get; set; }
 
             /// <summary>
             /// 名片ID

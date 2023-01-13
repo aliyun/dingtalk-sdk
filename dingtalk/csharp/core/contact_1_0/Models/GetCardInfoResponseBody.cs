@@ -151,13 +151,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public string Department { get; set; }
 
             /// <summary>
-            /// 企业认证等级
-            /// </summary>
-            [NameInMap("orgAuthLevel")]
-            [Validation(Required=false)]
-            public long? OrgAuthLevel { get; set; }
-
-            /// <summary>
             /// 企业是否认证
             /// </summary>
             [NameInMap("orgAuthed")]
