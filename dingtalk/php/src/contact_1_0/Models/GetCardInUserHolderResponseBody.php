@@ -23,11 +23,9 @@ class GetCardInUserHolderResponseBody extends Model
     public $cardAcceptStatus;
 
     /**
-     * @description 名片收下时间
-     *
-     * @var mixed
+     * @var int
      */
-    public $cardAcceptTime;
+    public $cardAcceptTimeLong;
 
     /**
      * @description 名片ID
@@ -85,17 +83,17 @@ class GetCardInUserHolderResponseBody extends Model
      */
     public $title;
     protected $_name = [
-        'avatarUrl'        => 'avatarUrl',
-        'cardAcceptStatus' => 'cardAcceptStatus',
-        'cardAcceptTime'   => 'cardAcceptTime',
-        'cardId'           => 'cardId',
-        'extension'        => 'extension',
-        'industryName'     => 'industryName',
-        'introduce'        => 'introduce',
-        'name'             => 'name',
-        'orgName'          => 'orgName',
-        'templateId'       => 'templateId',
-        'title'            => 'title',
+        'avatarUrl'          => 'avatarUrl',
+        'cardAcceptStatus'   => 'cardAcceptStatus',
+        'cardAcceptTimeLong' => 'cardAcceptTimeLong',
+        'cardId'             => 'cardId',
+        'extension'          => 'extension',
+        'industryName'       => 'industryName',
+        'introduce'          => 'introduce',
+        'name'               => 'name',
+        'orgName'            => 'orgName',
+        'templateId'         => 'templateId',
+        'title'              => 'title',
     ];
 
     public function validate()
@@ -111,8 +109,8 @@ class GetCardInUserHolderResponseBody extends Model
         if (null !== $this->cardAcceptStatus) {
             $res['cardAcceptStatus'] = $this->cardAcceptStatus;
         }
-        if (null !== $this->cardAcceptTime) {
-            $res['cardAcceptTime'] = $this->cardAcceptTime;
+        if (null !== $this->cardAcceptTimeLong) {
+            $res['cardAcceptTimeLong'] = $this->cardAcceptTimeLong;
         }
         if (null !== $this->cardId) {
             $res['cardId'] = $this->cardId;
@@ -156,8 +154,8 @@ class GetCardInUserHolderResponseBody extends Model
         if (isset($map['cardAcceptStatus'])) {
             $model->cardAcceptStatus = $map['cardAcceptStatus'];
         }
-        if (isset($map['cardAcceptTime'])) {
-            $model->cardAcceptTime = $map['cardAcceptTime'];
+        if (isset($map['cardAcceptTimeLong'])) {
+            $model->cardAcceptTimeLong = $map['cardAcceptTimeLong'];
         }
         if (isset($map['cardId'])) {
             $model->cardId = $map['cardId'];

@@ -31,13 +31,6 @@ class extension extends Model
     public $department;
 
     /**
-     * @description 企业认证等级
-     *
-     * @var int
-     */
-    public $orgAuthLevel;
-
-    /**
      * @description 企业是否认证
      *
      * @var bool
@@ -96,7 +89,6 @@ class extension extends Model
         'cardContactInfo' => 'cardContactInfo',
         'corpId'          => 'corpId',
         'department'      => 'department',
-        'orgAuthLevel'    => 'orgAuthLevel',
         'orgAuthed'       => 'orgAuthed',
         'orgLogo'         => 'orgLogo',
         'originCardUrl'   => 'originCardUrl',
@@ -122,9 +114,6 @@ class extension extends Model
         }
         if (null !== $this->department) {
             $res['department'] = $this->department;
-        }
-        if (null !== $this->orgAuthLevel) {
-            $res['orgAuthLevel'] = $this->orgAuthLevel;
         }
         if (null !== $this->orgAuthed) {
             $res['orgAuthed'] = $this->orgAuthed;
@@ -170,9 +159,6 @@ class extension extends Model
         }
         if (isset($map['department'])) {
             $model->department = $map['department'];
-        }
-        if (isset($map['orgAuthLevel'])) {
-            $model->orgAuthLevel = $map['orgAuthLevel'];
         }
         if (isset($map['orgAuthed'])) {
             $model->orgAuthed = $map['orgAuthed'];
