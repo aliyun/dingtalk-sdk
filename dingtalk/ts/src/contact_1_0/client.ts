@@ -957,7 +957,7 @@ export class GetCardInUserHolderHeaders extends $tea.Model {
 export class GetCardInUserHolderResponseBody extends $tea.Model {
   avatarUrl?: string;
   cardAcceptStatus?: number;
-  cardAcceptTime?: any;
+  cardAcceptTimeLong?: number;
   cardId?: string;
   extension?: { [key: string]: any };
   industryName?: string;
@@ -970,7 +970,7 @@ export class GetCardInUserHolderResponseBody extends $tea.Model {
     return {
       avatarUrl: 'avatarUrl',
       cardAcceptStatus: 'cardAcceptStatus',
-      cardAcceptTime: 'cardAcceptTime',
+      cardAcceptTimeLong: 'cardAcceptTimeLong',
       cardId: 'cardId',
       extension: 'extension',
       industryName: 'industryName',
@@ -986,7 +986,7 @@ export class GetCardInUserHolderResponseBody extends $tea.Model {
     return {
       avatarUrl: 'string',
       cardAcceptStatus: 'number',
-      cardAcceptTime: 'any',
+      cardAcceptTimeLong: 'number',
       cardId: 'string',
       extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       industryName: 'string',
@@ -5210,7 +5210,6 @@ export class GetCardInfoResponseBodyExtension extends $tea.Model {
   cardContactInfo?: GetCardInfoResponseBodyExtensionCardContactInfo;
   corpId?: string;
   department?: string;
-  orgAuthLevel?: number;
   orgAuthed?: boolean;
   orgLogo?: string;
   originCardUrl?: string;
@@ -5224,7 +5223,6 @@ export class GetCardInfoResponseBodyExtension extends $tea.Model {
       cardContactInfo: 'cardContactInfo',
       corpId: 'corpId',
       department: 'department',
-      orgAuthLevel: 'orgAuthLevel',
       orgAuthed: 'orgAuthed',
       orgLogo: 'orgLogo',
       originCardUrl: 'originCardUrl',
@@ -5241,7 +5239,6 @@ export class GetCardInfoResponseBodyExtension extends $tea.Model {
       cardContactInfo: GetCardInfoResponseBodyExtensionCardContactInfo,
       corpId: 'string',
       department: 'string',
-      orgAuthLevel: 'number',
       orgAuthed: 'boolean',
       orgLogo: 'string',
       originCardUrl: 'string',
@@ -5261,7 +5258,7 @@ export class GetCardInfoResponseBodyExtension extends $tea.Model {
 export class GetUserCardHolderListResponseBodyList extends $tea.Model {
   avatarUrl?: string;
   cardAcceptStatus?: number;
-  cardAcceptTime?: any;
+  cardAcceptTimeLong?: number;
   cardId?: string;
   extension?: { [key: string]: any };
   industryName?: string;
@@ -5274,7 +5271,7 @@ export class GetUserCardHolderListResponseBodyList extends $tea.Model {
     return {
       avatarUrl: 'avatarUrl',
       cardAcceptStatus: 'cardAcceptStatus',
-      cardAcceptTime: 'cardAcceptTime',
+      cardAcceptTimeLong: 'cardAcceptTimeLong',
       cardId: 'cardId',
       extension: 'extension',
       industryName: 'industryName',
@@ -5290,7 +5287,7 @@ export class GetUserCardHolderListResponseBodyList extends $tea.Model {
     return {
       avatarUrl: 'string',
       cardAcceptStatus: 'number',
-      cardAcceptTime: 'any',
+      cardAcceptTimeLong: 'number',
       cardId: 'string',
       extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       industryName: 'string',
