@@ -63,31 +63,20 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// 单聊场域投放参数
+        /// 单聊机器人场域投放参数
+        /// 
+        /// 【注意】 机器人与人的单聊，直接用支持机器人单聊的应用来发送
         /// </summary>
         [NameInMap("imRobotOpenDeliverModel")]
         [Validation(Required=false)]
         public DeliverCardRequestImRobotOpenDeliverModel ImRobotOpenDeliverModel { get; set; }
         public class DeliverCardRequestImRobotOpenDeliverModel : TeaModel {
+            /// <summary>
+            /// 【条件必填】IM机器人单聊暂无其他投放属性，仅需设置spaeType为IM_ROBOT
+            /// </summary>
             [NameInMap("spaceType")]
             [Validation(Required=false)]
             public string SpaceType { get; set; }
-
-        }
-
-        /// <summary>
-        /// 单聊场域投放参数
-        /// </summary>
-        [NameInMap("imSingleOpenDeliverModel")]
-        [Validation(Required=false)]
-        public DeliverCardRequestImSingleOpenDeliverModel ImSingleOpenDeliverModel { get; set; }
-        public class DeliverCardRequestImSingleOpenDeliverModel : TeaModel {
-            /// <summary>
-            /// 消息@人，
-            /// </summary>
-            [NameInMap("atUserIds")]
-            [Validation(Required=false)]
-            public Dictionary<string, string> AtUserIds { get; set; }
 
         }
 
@@ -115,9 +104,9 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             /// <summary>
             /// 【必填】过期时间戳
             /// </summary>
-            [NameInMap("expiredTimeMills")]
+            [NameInMap("expiredTimeMillis")]
             [Validation(Required=false)]
-            public long? ExpiredTimeMills { get; set; }
+            public long? ExpiredTimeMillis { get; set; }
 
             /// <summary>
             /// 可以查看该吊顶卡片的设备
@@ -136,55 +125,15 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// 工作台投放参数
+        /// 用户id类型：
+        /// 
+        /// 1（默认）：userid模式
+        /// 
+        /// 2：unionId模式
         /// </summary>
-        [NameInMap("workBenchOpenDeliverModel")]
+        [NameInMap("userIdType")]
         [Validation(Required=false)]
-        public DeliverCardRequestWorkBenchOpenDeliverModel WorkBenchOpenDeliverModel { get; set; }
-        public class DeliverCardRequestWorkBenchOpenDeliverModel : TeaModel {
-            /// <summary>
-            /// 【必填】组件icon对应组件左上角的图标
-            /// </summary>
-            [NameInMap("icon")]
-            [Validation(Required=false)]
-            public string Icon { get; set; }
-
-            /// <summary>
-            /// 【必填】卡片名称
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
-            /// 【必填】卡片组件名
-            /// </summary>
-            [NameInMap("pluginComponentName")]
-            [Validation(Required=false)]
-            public string PluginComponentName { get; set; }
-
-            /// <summary>
-            /// 【必填】卡片预览图
-            /// </summary>
-            [NameInMap("previewUrl")]
-            [Validation(Required=false)]
-            public string PreviewUrl { get; set; }
-
-            /// <summary>
-            /// 【必填】保持和微应用名称相同
-            /// </summary>
-            [NameInMap("projectName")]
-            [Validation(Required=false)]
-            public string ProjectName { get; set; }
-
-            /// <summary>
-            /// 【必填】操作者Id
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-        }
+        public int? UserIdType { get; set; }
 
     }
 

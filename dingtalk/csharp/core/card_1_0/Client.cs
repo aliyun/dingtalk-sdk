@@ -56,10 +56,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
-            {
-                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
             {
                 body["outTrackId"] = request.OutTrackId;
@@ -67,10 +63,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenSpaceModel))
             {
                 body["topOpenSpaceModel"] = request.TopOpenSpaceModel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenSpaceModel))
-            {
-                body["workBenchOpenSpaceModel"] = request.WorkBenchOpenSpaceModel;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -105,10 +97,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
-            {
-                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
             {
                 body["outTrackId"] = request.OutTrackId;
@@ -116,10 +104,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenSpaceModel))
             {
                 body["topOpenSpaceModel"] = request.TopOpenSpaceModel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenSpaceModel))
-            {
-                body["workBenchOpenSpaceModel"] = request.WorkBenchOpenSpaceModel;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -160,10 +144,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardAtUserIds))
-            {
-                body["cardAtUserIds"] = request.CardAtUserIds;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
             {
                 body["cardData"] = request.CardData;
@@ -196,14 +176,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
-            {
-                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
-            {
-                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
                 body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
@@ -235,14 +207,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
             {
                 body["userIdType"] = request.UserIdType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenDeliverModel))
-            {
-                body["workBenchOpenDeliverModel"] = request.WorkBenchOpenDeliverModel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenSpaceModel))
-            {
-                body["workBenchOpenSpaceModel"] = request.WorkBenchOpenSpaceModel;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -269,10 +233,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardAtUserIds))
-            {
-                body["cardAtUserIds"] = request.CardAtUserIds;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
             {
                 body["cardData"] = request.CardData;
@@ -305,14 +265,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
-            {
-                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
-            {
-                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
                 body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
@@ -344,14 +296,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
             {
                 body["userIdType"] = request.UserIdType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenDeliverModel))
-            {
-                body["workBenchOpenDeliverModel"] = request.WorkBenchOpenDeliverModel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenSpaceModel))
-            {
-                body["workBenchOpenSpaceModel"] = request.WorkBenchOpenSpaceModel;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -392,10 +336,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardAtUserIds))
-            {
-                body["cardAtUserIds"] = request.CardAtUserIds;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
             {
                 body["cardData"] = request.CardData;
@@ -415,10 +355,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
-            {
-                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
@@ -443,10 +379,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
             {
                 body["userIdType"] = request.UserIdType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenSpaceModel))
-            {
-                body["workBenchOpenSpaceModel"] = request.WorkBenchOpenSpaceModel;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -473,10 +405,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["callbackRouteKey"] = request.CallbackRouteKey;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardAtUserIds))
-            {
-                body["cardAtUserIds"] = request.CardAtUserIds;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
             {
                 body["cardData"] = request.CardData;
@@ -496,10 +424,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
-            {
-                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
@@ -524,10 +448,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
             {
                 body["userIdType"] = request.UserIdType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenSpaceModel))
-            {
-                body["workBenchOpenSpaceModel"] = request.WorkBenchOpenSpaceModel;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -576,10 +496,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
-            {
-                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
             {
                 body["openSpaceId"] = request.OpenSpaceId;
@@ -592,9 +508,9 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["topOpenDeliverModel"] = request.TopOpenDeliverModel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenDeliverModel))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
             {
-                body["workBenchOpenDeliverModel"] = request.WorkBenchOpenDeliverModel;
+                body["userIdType"] = request.UserIdType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -629,10 +545,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
-            {
-                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
             {
                 body["openSpaceId"] = request.OpenSpaceId;
@@ -645,9 +557,9 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["topOpenDeliverModel"] = request.TopOpenDeliverModel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkBenchOpenDeliverModel))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
             {
-                body["workBenchOpenDeliverModel"] = request.WorkBenchOpenDeliverModel;
+                body["userIdType"] = request.UserIdType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

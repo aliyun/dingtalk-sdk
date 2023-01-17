@@ -16,10 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public string CallbackRouteKey { get; set; }
 
-        [NameInMap("cardAtUserIds")]
-        [Validation(Required=false)]
-        public List<string> CardAtUserIds { get; set; }
-
         /// <summary>
         /// 卡片数据
         /// </summary>
@@ -232,116 +228,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// IM 单聊场域信息
-        /// </summary>
-        [NameInMap("imSingleOpenSpaceModel")]
-        [Validation(Required=false)]
-        public CreateCardRequestImSingleOpenSpaceModel ImSingleOpenSpaceModel { get; set; }
-        public class CreateCardRequestImSingleOpenSpaceModel : TeaModel {
-            /// <summary>
-            /// 支持国际化的LastMessage
-            /// key为语言枚举值，value为lastMessage内容
-            /// 目前支持的语言枚举值：
-            /// 简体中文: ZH_CN
-            /// 繁体中文: ZH_TW
-            /// 英文： EN_US
-            /// 日语: JA_JP
-            /// 越南语: VI_VN
-            /// </summary>
-            [NameInMap("lastMessageI18n")]
-            [Validation(Required=false)]
-            public Dictionary<string, string> LastMessageI18n { get; set; }
-
-            /// <summary>
-            /// 卡片的通知属性信息
-            /// </summary>
-            [NameInMap("notification")]
-            [Validation(Required=false)]
-            public CreateCardRequestImSingleOpenSpaceModelNotification Notification { get; set; }
-            public class CreateCardRequestImSingleOpenSpaceModelNotification : TeaModel {
-                /// <summary>
-                /// 【条件必填】通知内容
-                /// 若不填写则使用默认文案：如你收到1条新消息
-                /// </summary>
-                [NameInMap("alertContent")]
-                [Validation(Required=false)]
-                public string AlertContent { get; set; }
-
-                /// <summary>
-                /// 是否推送通知，默认为 false
-                /// </summary>
-                [NameInMap("notificationOff")]
-                [Validation(Required=false)]
-                public bool? NotificationOff { get; set; }
-
-            }
-
-            /// <summary>
-            /// 支持卡片消息可被搜索字段
-            /// </summary>
-            [NameInMap("searchSupport")]
-            [Validation(Required=false)]
-            public CreateCardRequestImSingleOpenSpaceModelSearchSupport SearchSupport { get; set; }
-            public class CreateCardRequestImSingleOpenSpaceModelSearchSupport : TeaModel {
-                /// <summary>
-                /// 【条件必填】供消息展示与搜索的字段
-                ///  【注意】最大限制200个字符，超过存储截断200
-                /// </summary>
-                [NameInMap("searchDesc")]
-                [Validation(Required=false)]
-                public string SearchDesc { get; set; }
-
-                /// <summary>
-                /// 类型的icon，供搜索展示使用
-                /// </summary>
-                [NameInMap("searchIcon")]
-                [Validation(Required=false)]
-                public string SearchIcon { get; set; }
-
-                /// <summary>
-                /// 卡片类型名
-                /// </summary>
-                [NameInMap("searchTypeName")]
-                [Validation(Required=false)]
-                public string SearchTypeName { get; set; }
-
-            }
-
-            /// <summary>
-            /// 是否支持转发, 默认 false
-            /// </summary>
-            [NameInMap("supportForward")]
-            [Validation(Required=false)]
-            public bool? SupportForward { get; set; }
-
-        }
-
-        /// <summary>
         /// 动态数据源配置
         /// </summary>
         [NameInMap("openDynamicDataConfig")]
         [Validation(Required=false)]
         public CreateCardRequestOpenDynamicDataConfig OpenDynamicDataConfig { get; set; }
         public class CreateCardRequestOpenDynamicDataConfig : TeaModel {
-            /// <summary>
-            /// 动态数据替换关系
-            /// ● key：变量名
-            /// ● value：数据映射的配置
-            /// </summary>
-            [NameInMap("dynamicDataMapping")]
-            [Validation(Required=false)]
-            public Dictionary<string, OpenDynamicDataConfigDynamicDataMappingValue> DynamicDataMapping { get; set; }
-
-            /// <summary>
-            /// 动态数据映射方法，可选值
-            /// ● REPLACE_WITHOUT_MAPPING：直接返回动态数据
-            /// ● MAPPING_BY_KEY：根据指定的规则，将返回数据映射到卡片数据上
-            /// 默认值：REPLACE_WITHOUT_MAPPING
-            /// </summary>
-            [NameInMap("dynamicDataMappingMethod")]
-            [Validation(Required=false)]
-            public string DynamicDataMappingMethod { get; set; }
-
             /// <summary>
             /// 动态数据源配置列表
             /// </summary>
@@ -446,22 +338,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [NameInMap("userIdType")]
         [Validation(Required=false)]
         public int? UserIdType { get; set; }
-
-        /// <summary>
-        /// 工作台场域信息
-        /// </summary>
-        [NameInMap("workBenchOpenSpaceModel")]
-        [Validation(Required=false)]
-        public CreateCardRequestWorkBenchOpenSpaceModel WorkBenchOpenSpaceModel { get; set; }
-        public class CreateCardRequestWorkBenchOpenSpaceModel : TeaModel {
-            /// <summary>
-            /// 工作台无其他场域属性，通过增加spaeType使卡片支持工作台场域;工作台对应spaceType为: WORK_BENCH
-            /// </summary>
-            [NameInMap("spaceType")]
-            [Validation(Required=false)]
-            public string SpaceType { get; set; }
-
-        }
 
     }
 

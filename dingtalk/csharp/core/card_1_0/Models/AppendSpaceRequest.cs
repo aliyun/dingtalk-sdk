@@ -40,16 +40,24 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             public Dictionary<string, string> LastMessageI18n { get; set; }
 
             /// <summary>
-            /// xpn信息
+            /// 通知信息
             /// </summary>
             [NameInMap("notification")]
             [Validation(Required=false)]
             public AppendSpaceRequestImGroupOpenSpaceModelNotification Notification { get; set; }
             public class AppendSpaceRequestImGroupOpenSpaceModelNotification : TeaModel {
+                /// <summary>
+                /// 【条件必填】通知内容
+                /// 
+                /// 【注意】若不填写则使用默认文案：如你收到1条新消息
+                /// </summary>
                 [NameInMap("alertContent")]
                 [Validation(Required=false)]
                 public string AlertContent { get; set; }
 
+                /// <summary>
+                /// 是否关闭推送通知，默认为false
+                /// </summary>
                 [NameInMap("notificationOff")]
                 [Validation(Required=false)]
                 public bool? NotificationOff { get; set; }
@@ -63,14 +71,23 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public AppendSpaceRequestImGroupOpenSpaceModelSearchSupport SearchSupport { get; set; }
             public class AppendSpaceRequestImGroupOpenSpaceModelSearchSupport : TeaModel {
+                /// <summary>
+                /// 卡片的具体描述
+                /// </summary>
                 [NameInMap("searchDesc")]
                 [Validation(Required=false)]
                 public string SearchDesc { get; set; }
 
+                /// <summary>
+                /// 类型的icon，供搜索展示使用
+                /// </summary>
                 [NameInMap("searchIcon")]
                 [Validation(Required=false)]
                 public string SearchIcon { get; set; }
 
+                /// <summary>
+                /// 卡片类型名
+                /// </summary>
                 [NameInMap("searchTypeName")]
                 [Validation(Required=false)]
                 public string SearchTypeName { get; set; }
@@ -101,16 +118,24 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             public Dictionary<string, string> LastMessageI18n { get; set; }
 
             /// <summary>
-            /// xpn信息
+            /// 通知信息
             /// </summary>
             [NameInMap("notification")]
             [Validation(Required=false)]
             public AppendSpaceRequestImRobotOpenSpaceModelNotification Notification { get; set; }
             public class AppendSpaceRequestImRobotOpenSpaceModelNotification : TeaModel {
+                /// <summary>
+                /// 【条件必填】通知内容
+                /// 
+                /// 【注意】若不填写则使用默认文案：如你收到1条新消息
+                /// </summary>
                 [NameInMap("alertContent")]
                 [Validation(Required=false)]
                 public string AlertContent { get; set; }
 
+                /// <summary>
+                /// 是否关闭推送通知，默认为false
+                /// </summary>
                 [NameInMap("notificationOff")]
                 [Validation(Required=false)]
                 public bool? NotificationOff { get; set; }
@@ -124,75 +149,23 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport SearchSupport { get; set; }
             public class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport : TeaModel {
+                /// <summary>
+                /// 卡片的具体描述
+                /// </summary>
                 [NameInMap("searchDesc")]
                 [Validation(Required=false)]
                 public string SearchDesc { get; set; }
 
+                /// <summary>
+                /// 类型的icon，供搜索展示使用
+                /// </summary>
                 [NameInMap("searchIcon")]
                 [Validation(Required=false)]
                 public string SearchIcon { get; set; }
 
-                [NameInMap("searchTypeName")]
-                [Validation(Required=false)]
-                public string SearchTypeName { get; set; }
-
-            }
-
-            /// <summary>
-            /// 是否支持转发, 默认false
-            /// </summary>
-            [NameInMap("supportForward")]
-            [Validation(Required=false)]
-            public bool? SupportForward { get; set; }
-
-        }
-
-        /// <summary>
-        /// IM单聊场域信息
-        /// </summary>
-        [NameInMap("imSingleOpenSpaceModel")]
-        [Validation(Required=false)]
-        public AppendSpaceRequestImSingleOpenSpaceModel ImSingleOpenSpaceModel { get; set; }
-        public class AppendSpaceRequestImSingleOpenSpaceModel : TeaModel {
-            /// <summary>
-            /// 支持国际化的LastMessage
-            /// </summary>
-            [NameInMap("lastMessageI18n")]
-            [Validation(Required=false)]
-            public Dictionary<string, string> LastMessageI18n { get; set; }
-
-            /// <summary>
-            /// xpn信息
-            /// </summary>
-            [NameInMap("notification")]
-            [Validation(Required=false)]
-            public AppendSpaceRequestImSingleOpenSpaceModelNotification Notification { get; set; }
-            public class AppendSpaceRequestImSingleOpenSpaceModelNotification : TeaModel {
-                [NameInMap("alertContent")]
-                [Validation(Required=false)]
-                public string AlertContent { get; set; }
-
-                [NameInMap("notificationOff")]
-                [Validation(Required=false)]
-                public bool? NotificationOff { get; set; }
-
-            }
-
-            /// <summary>
-            /// 支持卡片消息可被搜索字段
-            /// </summary>
-            [NameInMap("searchSupport")]
-            [Validation(Required=false)]
-            public AppendSpaceRequestImSingleOpenSpaceModelSearchSupport SearchSupport { get; set; }
-            public class AppendSpaceRequestImSingleOpenSpaceModelSearchSupport : TeaModel {
-                [NameInMap("searchDesc")]
-                [Validation(Required=false)]
-                public string SearchDesc { get; set; }
-
-                [NameInMap("searchIcon")]
-                [Validation(Required=false)]
-                public string SearchIcon { get; set; }
-
+                /// <summary>
+                /// 卡片类型名
+                /// </summary>
                 [NameInMap("searchTypeName")]
                 [Validation(Required=false)]
                 public string SearchTypeName { get; set; }
@@ -223,23 +196,9 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         public AppendSpaceRequestTopOpenSpaceModel TopOpenSpaceModel { get; set; }
         public class AppendSpaceRequestTopOpenSpaceModel : TeaModel {
             /// <summary>
-            /// 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
-            /// </summary>
-            [NameInMap("spaceType")]
-            [Validation(Required=false)]
-            public string SpaceType { get; set; }
-
-        }
-
-        /// <summary>
-        /// 工作台场域信息
-        /// </summary>
-        [NameInMap("workBenchOpenSpaceModel")]
-        [Validation(Required=false)]
-        public AppendSpaceRequestWorkBenchOpenSpaceModel WorkBenchOpenSpaceModel { get; set; }
-        public class AppendSpaceRequestWorkBenchOpenSpaceModel : TeaModel {
-            /// <summary>
-            /// 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
+            /// 【必填】场域类型
+            /// 
+            /// 吊顶无其他场域属性，通过设置spaeType为ONE_BOX使卡片支持吊顶场域
             /// </summary>
             [NameInMap("spaceType")]
             [Validation(Required=false)]

@@ -16,10 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public string CallbackRouteKey { get; set; }
 
-        [NameInMap("cardAtUserIds")]
-        [Validation(Required=false)]
-        public List<string> CardAtUserIds { get; set; }
-
         /// <summary>
         /// 卡片数据
         /// </summary>
@@ -73,6 +69,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public CreateAndDeliverRequestCoFeedOpenSpaceModel CoFeedOpenSpaceModel { get; set; }
         public class CreateAndDeliverRequestCoFeedOpenSpaceModel : TeaModel {
+            [NameInMap("coolAppCode")]
+            [Validation(Required=false)]
+            public string CoolAppCode { get; set; }
+
             /// <summary>
             /// 【必填】标题
             /// </summary>
@@ -248,103 +248,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// 单聊场域投放参数
-        /// </summary>
-        [NameInMap("imSingleOpenDeliverModel")]
-        [Validation(Required=false)]
-        public CreateAndDeliverRequestImSingleOpenDeliverModel ImSingleOpenDeliverModel { get; set; }
-        public class CreateAndDeliverRequestImSingleOpenDeliverModel : TeaModel {
-            /// <summary>
-            /// 消息@人，
-            /// </summary>
-            [NameInMap("atUserIds")]
-            [Validation(Required=false)]
-            public Dictionary<string, string> AtUserIds { get; set; }
-
-        }
-
-        /// <summary>
-        /// IM单聊场域信息
-        /// </summary>
-        [NameInMap("imSingleOpenSpaceModel")]
-        [Validation(Required=false)]
-        public CreateAndDeliverRequestImSingleOpenSpaceModel ImSingleOpenSpaceModel { get; set; }
-        public class CreateAndDeliverRequestImSingleOpenSpaceModel : TeaModel {
-            /// <summary>
-            /// 支持国际化的LastMessage
-            /// </summary>
-            [NameInMap("lastMessageI18n")]
-            [Validation(Required=false)]
-            public Dictionary<string, string> LastMessageI18n { get; set; }
-
-            /// <summary>
-            /// 通知信息
-            /// </summary>
-            [NameInMap("notification")]
-            [Validation(Required=false)]
-            public CreateAndDeliverRequestImSingleOpenSpaceModelNotification Notification { get; set; }
-            public class CreateAndDeliverRequestImSingleOpenSpaceModelNotification : TeaModel {
-                [NameInMap("alertContent")]
-                [Validation(Required=false)]
-                public string AlertContent { get; set; }
-
-                [NameInMap("notificationOff")]
-                [Validation(Required=false)]
-                public bool? NotificationOff { get; set; }
-
-            }
-
-            /// <summary>
-            /// 支持卡片消息可被搜索字段
-            /// </summary>
-            [NameInMap("searchSupport")]
-            [Validation(Required=false)]
-            public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport SearchSupport { get; set; }
-            public class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport : TeaModel {
-                [NameInMap("searchDesc")]
-                [Validation(Required=false)]
-                public string SearchDesc { get; set; }
-
-                [NameInMap("searchIcon")]
-                [Validation(Required=false)]
-                public string SearchIcon { get; set; }
-
-                [NameInMap("searchTypeName")]
-                [Validation(Required=false)]
-                public string SearchTypeName { get; set; }
-
-            }
-
-            /// <summary>
-            /// 是否支持转发, 默认false
-            /// </summary>
-            [NameInMap("supportForward")]
-            [Validation(Required=false)]
-            public bool? SupportForward { get; set; }
-
-        }
-
-        /// <summary>
         /// 动态数据源配置
         /// </summary>
         [NameInMap("openDynamicDataConfig")]
         [Validation(Required=false)]
         public CreateAndDeliverRequestOpenDynamicDataConfig OpenDynamicDataConfig { get; set; }
         public class CreateAndDeliverRequestOpenDynamicDataConfig : TeaModel {
-            /// <summary>
-            /// 动态数据替换关系,key是变量名, value是数据源的jsonPath相关配置
-            /// </summary>
-            [NameInMap("dynamicDataMapping")]
-            [Validation(Required=false)]
-            public Dictionary<string, OpenDynamicDataConfigDynamicDataMappingValue> DynamicDataMapping { get; set; }
-
-            /// <summary>
-            /// 动态数据映射类型 (REPLACE_WITHOUT_MAPPING: 直接将动态数据返回，无需根据 key mapping, MAPPING_BY_KEY: 根据创建时的 key 进行 mapping)
-            /// </summary>
-            [NameInMap("dynamicDataMappingMethod")]
-            [Validation(Required=false)]
-            public string DynamicDataMappingMethod { get; set; }
-
             /// <summary>
             /// 动态数据源配置列表
             /// </summary>
@@ -474,73 +383,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [NameInMap("userIdType")]
         [Validation(Required=false)]
         public int? UserIdType { get; set; }
-
-        /// <summary>
-        /// 工作台投放参数
-        /// </summary>
-        [NameInMap("workBenchOpenDeliverModel")]
-        [Validation(Required=false)]
-        public CreateAndDeliverRequestWorkBenchOpenDeliverModel WorkBenchOpenDeliverModel { get; set; }
-        public class CreateAndDeliverRequestWorkBenchOpenDeliverModel : TeaModel {
-            /// <summary>
-            /// 【必填】组件icon对应组件左上角的图标
-            /// </summary>
-            [NameInMap("icon")]
-            [Validation(Required=false)]
-            public string Icon { get; set; }
-
-            /// <summary>
-            /// 【必填】卡片名称
-            /// </summary>
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            /// <summary>
-            /// 【必填】卡片组件名
-            /// </summary>
-            [NameInMap("pluginComponentName")]
-            [Validation(Required=false)]
-            public string PluginComponentName { get; set; }
-
-            /// <summary>
-            /// 【必填】卡片预览图
-            /// </summary>
-            [NameInMap("previewUrl")]
-            [Validation(Required=false)]
-            public string PreviewUrl { get; set; }
-
-            /// <summary>
-            /// 【必填】保持和微应用名称相同
-            /// </summary>
-            [NameInMap("projectName")]
-            [Validation(Required=false)]
-            public string ProjectName { get; set; }
-
-            /// <summary>
-            /// 【必填】操作者Id
-            /// </summary>
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
-        }
-
-        /// <summary>
-        /// 工作台场域信息
-        /// </summary>
-        [NameInMap("workBenchOpenSpaceModel")]
-        [Validation(Required=false)]
-        public CreateAndDeliverRequestWorkBenchOpenSpaceModel WorkBenchOpenSpaceModel { get; set; }
-        public class CreateAndDeliverRequestWorkBenchOpenSpaceModel : TeaModel {
-            /// <summary>
-            /// 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
-            /// </summary>
-            [NameInMap("spaceType")]
-            [Validation(Required=false)]
-            public string SpaceType { get; set; }
-
-        }
 
     }
 
