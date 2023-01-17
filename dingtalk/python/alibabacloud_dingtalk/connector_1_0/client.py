@@ -159,6 +159,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateConnector', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/connectors', 'json', req, runtime)
         )
 
+    def create_invocable_instance(
+        self,
+        request: dingtalkconnector__1__0_models.CreateInvocableInstanceRequest,
+    ) -> dingtalkconnector__1__0_models.CreateInvocableInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.CreateInvocableInstanceHeaders()
+        return self.create_invocable_instance_with_options(request, headers, runtime)
+
+    async def create_invocable_instance_async(
+        self,
+        request: dingtalkconnector__1__0_models.CreateInvocableInstanceRequest,
+    ) -> dingtalkconnector__1__0_models.CreateInvocableInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.CreateInvocableInstanceHeaders()
+        return await self.create_invocable_instance_with_options_async(request, headers, runtime)
+
+    def create_invocable_instance_with_options(
+        self,
+        request: dingtalkconnector__1__0_models.CreateInvocableInstanceRequest,
+        headers: dingtalkconnector__1__0_models.CreateInvocableInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.CreateInvocableInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.connect_asset_uri):
+            body['connectAssetUri'] = request.connect_asset_uri
+        if not UtilClient.is_unset(request.instance_key):
+            body['instanceKey'] = request.instance_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.CreateInvocableInstanceResponse(),
+            self.do_roarequest('CreateInvocableInstance', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/instances', 'json', req, runtime)
+        )
+
+    async def create_invocable_instance_with_options_async(
+        self,
+        request: dingtalkconnector__1__0_models.CreateInvocableInstanceRequest,
+        headers: dingtalkconnector__1__0_models.CreateInvocableInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.CreateInvocableInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.connect_asset_uri):
+            body['connectAssetUri'] = request.connect_asset_uri
+        if not UtilClient.is_unset(request.instance_key):
+            body['instanceKey'] = request.instance_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.CreateInvocableInstanceResponse(),
+            await self.do_roarequest_async('CreateInvocableInstance', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/instances', 'json', req, runtime)
+        )
+
     def create_trigger(
         self,
         request: dingtalkconnector__1__0_models.CreateTriggerRequest,
@@ -225,6 +293,142 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkconnector__1__0_models.CreateTriggerResponse(),
             await self.do_roarequest_async('CreateTrigger', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/triggers', 'json', req, runtime)
+        )
+
+    def get_action_detail(
+        self,
+        request: dingtalkconnector__1__0_models.GetActionDetailRequest,
+    ) -> dingtalkconnector__1__0_models.GetActionDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.GetActionDetailHeaders()
+        return self.get_action_detail_with_options(request, headers, runtime)
+
+    async def get_action_detail_async(
+        self,
+        request: dingtalkconnector__1__0_models.GetActionDetailRequest,
+    ) -> dingtalkconnector__1__0_models.GetActionDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.GetActionDetailHeaders()
+        return await self.get_action_detail_with_options_async(request, headers, runtime)
+
+    def get_action_detail_with_options(
+        self,
+        request: dingtalkconnector__1__0_models.GetActionDetailRequest,
+        headers: dingtalkconnector__1__0_models.GetActionDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.GetActionDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.connect_asset_uri):
+            body['connectAssetUri'] = request.connect_asset_uri
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.GetActionDetailResponse(),
+            self.do_roarequest('GetActionDetail', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/assets/actions/details/query', 'json', req, runtime)
+        )
+
+    async def get_action_detail_with_options_async(
+        self,
+        request: dingtalkconnector__1__0_models.GetActionDetailRequest,
+        headers: dingtalkconnector__1__0_models.GetActionDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.GetActionDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.connect_asset_uri):
+            body['connectAssetUri'] = request.connect_asset_uri
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.GetActionDetailResponse(),
+            await self.do_roarequest_async('GetActionDetail', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/assets/actions/details/query', 'json', req, runtime)
+        )
+
+    def invoke_instance(
+        self,
+        request: dingtalkconnector__1__0_models.InvokeInstanceRequest,
+    ) -> dingtalkconnector__1__0_models.InvokeInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.InvokeInstanceHeaders()
+        return self.invoke_instance_with_options(request, headers, runtime)
+
+    async def invoke_instance_async(
+        self,
+        request: dingtalkconnector__1__0_models.InvokeInstanceRequest,
+    ) -> dingtalkconnector__1__0_models.InvokeInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.InvokeInstanceHeaders()
+        return await self.invoke_instance_with_options_async(request, headers, runtime)
+
+    def invoke_instance_with_options(
+        self,
+        request: dingtalkconnector__1__0_models.InvokeInstanceRequest,
+        headers: dingtalkconnector__1__0_models.InvokeInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.InvokeInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.connect_asset_uri):
+            body['connectAssetUri'] = request.connect_asset_uri
+        if not UtilClient.is_unset(request.input_json_string):
+            body['inputJsonString'] = request.input_json_string
+        if not UtilClient.is_unset(request.instance_key):
+            body['instanceKey'] = request.instance_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.InvokeInstanceResponse(),
+            self.do_roarequest('InvokeInstance', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/instances/invoke', 'json', req, runtime)
+        )
+
+    async def invoke_instance_with_options_async(
+        self,
+        request: dingtalkconnector__1__0_models.InvokeInstanceRequest,
+        headers: dingtalkconnector__1__0_models.InvokeInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.InvokeInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.connect_asset_uri):
+            body['connectAssetUri'] = request.connect_asset_uri
+        if not UtilClient.is_unset(request.input_json_string):
+            body['inputJsonString'] = request.input_json_string
+        if not UtilClient.is_unset(request.instance_key):
+            body['instanceKey'] = request.instance_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.InvokeInstanceResponse(),
+            await self.do_roarequest_async('InvokeInstance', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/instances/invoke', 'json', req, runtime)
         )
 
     def pull_data_by_page(
@@ -387,6 +591,158 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkconnector__1__0_models.PullDataByPkResponse(),
             await self.do_roarequest_async('PullDataByPk', 'connector_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/connector/data/{data_model_id}', 'json', req, runtime)
+        )
+
+    def search_actions(
+        self,
+        request: dingtalkconnector__1__0_models.SearchActionsRequest,
+    ) -> dingtalkconnector__1__0_models.SearchActionsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.SearchActionsHeaders()
+        return self.search_actions_with_options(request, headers, runtime)
+
+    async def search_actions_async(
+        self,
+        request: dingtalkconnector__1__0_models.SearchActionsRequest,
+    ) -> dingtalkconnector__1__0_models.SearchActionsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.SearchActionsHeaders()
+        return await self.search_actions_with_options_async(request, headers, runtime)
+
+    def search_actions_with_options(
+        self,
+        request: dingtalkconnector__1__0_models.SearchActionsRequest,
+        headers: dingtalkconnector__1__0_models.SearchActionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.SearchActionsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.connector_id):
+            body['connectorId'] = request.connector_id
+        if not UtilClient.is_unset(request.connector_provider_corp_id):
+            body['connectorProviderCorpId'] = request.connector_provider_corp_id
+        if not UtilClient.is_unset(request.integration_types):
+            body['integrationTypes'] = request.integration_types
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.SearchActionsResponse(),
+            self.do_roarequest('SearchActions', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/assets/actions/search', 'json', req, runtime)
+        )
+
+    async def search_actions_with_options_async(
+        self,
+        request: dingtalkconnector__1__0_models.SearchActionsRequest,
+        headers: dingtalkconnector__1__0_models.SearchActionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.SearchActionsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.connector_id):
+            body['connectorId'] = request.connector_id
+        if not UtilClient.is_unset(request.connector_provider_corp_id):
+            body['connectorProviderCorpId'] = request.connector_provider_corp_id
+        if not UtilClient.is_unset(request.integration_types):
+            body['integrationTypes'] = request.integration_types
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.SearchActionsResponse(),
+            await self.do_roarequest_async('SearchActions', 'connector_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/connector/assets/actions/search', 'json', req, runtime)
+        )
+
+    def search_connectors(
+        self,
+        request: dingtalkconnector__1__0_models.SearchConnectorsRequest,
+    ) -> dingtalkconnector__1__0_models.SearchConnectorsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.SearchConnectorsHeaders()
+        return self.search_connectors_with_options(request, headers, runtime)
+
+    async def search_connectors_async(
+        self,
+        request: dingtalkconnector__1__0_models.SearchConnectorsRequest,
+    ) -> dingtalkconnector__1__0_models.SearchConnectorsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconnector__1__0_models.SearchConnectorsHeaders()
+        return await self.search_connectors_with_options_async(request, headers, runtime)
+
+    def search_connectors_with_options(
+        self,
+        request: dingtalkconnector__1__0_models.SearchConnectorsRequest,
+        headers: dingtalkconnector__1__0_models.SearchConnectorsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.SearchConnectorsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.SearchConnectorsResponse(),
+            self.do_roarequest('SearchConnectors', 'connector_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/connector/assets/connectors', 'json', req, runtime)
+        )
+
+    async def search_connectors_with_options_async(
+        self,
+        request: dingtalkconnector__1__0_models.SearchConnectorsRequest,
+        headers: dingtalkconnector__1__0_models.SearchConnectorsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconnector__1__0_models.SearchConnectorsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkconnector__1__0_models.SearchConnectorsResponse(),
+            await self.do_roarequest_async('SearchConnectors', 'connector_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/connector/assets/connectors', 'json', req, runtime)
         )
 
     def sync_data(

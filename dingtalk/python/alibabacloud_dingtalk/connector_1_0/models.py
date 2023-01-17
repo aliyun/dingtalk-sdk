@@ -721,6 +721,146 @@ class CreateConnectorResponse(TeaModel):
         return self
 
 
+class CreateInvocableInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateInvocableInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        connect_asset_uri: str = None,
+        instance_key: str = None,
+    ):
+        # 连接资产标识
+        self.connect_asset_uri = connect_asset_uri
+        # 关联实例标识
+        self.instance_key = instance_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.connect_asset_uri is not None:
+            result['connectAssetUri'] = self.connect_asset_uri
+        if self.instance_key is not None:
+            result['instanceKey'] = self.instance_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('connectAssetUri') is not None:
+            self.connect_asset_uri = m.get('connectAssetUri')
+        if m.get('instanceKey') is not None:
+            self.instance_key = m.get('instanceKey')
+        return self
+
+
+class CreateInvocableInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        connect_asset_uri: str = None,
+        version_id: str = None,
+    ):
+        # 资产标识
+        self.connect_asset_uri = connect_asset_uri
+        # 连接实例版本ID
+        self.version_id = version_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.connect_asset_uri is not None:
+            result['connectAssetUri'] = self.connect_asset_uri
+        if self.version_id is not None:
+            result['versionId'] = self.version_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('connectAssetUri') is not None:
+            self.connect_asset_uri = m.get('connectAssetUri')
+        if m.get('versionId') is not None:
+            self.version_id = m.get('versionId')
+        return self
+
+
+class CreateInvocableInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateInvocableInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateInvocableInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateTriggerHeaders(TeaModel):
     def __init__(
         self,
@@ -997,6 +1137,473 @@ class CreateTriggerResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateTriggerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetActionDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetActionDetailRequest(TeaModel):
+    def __init__(
+        self,
+        connect_asset_uri: str = None,
+    ):
+        # 连接资产标识
+        self.connect_asset_uri = connect_asset_uri
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.connect_asset_uri is not None:
+            result['connectAssetUri'] = self.connect_asset_uri
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('connectAssetUri') is not None:
+            self.connect_asset_uri = m.get('connectAssetUri')
+        return self
+
+
+class GetActionDetailResponseBodyIntegrationConfigCategoryNames(TeaModel):
+    def __init__(
+        self,
+        value: str = None,
+    ):
+        # 类目名称
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetActionDetailResponseBodyIntegrationConfigProps(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        # 配置的KEY值
+        self.key = key
+        # 配置的属性值
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetActionDetailResponseBodyIntegrationConfig(TeaModel):
+    def __init__(
+        self,
+        category_names: List[GetActionDetailResponseBodyIntegrationConfigCategoryNames] = None,
+        entity_name: str = None,
+        props: List[GetActionDetailResponseBodyIntegrationConfigProps] = None,
+    ):
+        # 类目配置
+        self.category_names = category_names
+        # 集成对象的名称
+        self.entity_name = entity_name
+        # 其它额外属性
+        self.props = props
+
+    def validate(self):
+        if self.category_names:
+            for k in self.category_names:
+                if k:
+                    k.validate()
+        if self.props:
+            for k in self.props:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['categoryNames'] = []
+        if self.category_names is not None:
+            for k in self.category_names:
+                result['categoryNames'].append(k.to_map() if k else None)
+        if self.entity_name is not None:
+            result['entityName'] = self.entity_name
+        result['props'] = []
+        if self.props is not None:
+            for k in self.props:
+                result['props'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.category_names = []
+        if m.get('categoryNames') is not None:
+            for k in m.get('categoryNames'):
+                temp_model = GetActionDetailResponseBodyIntegrationConfigCategoryNames()
+                self.category_names.append(temp_model.from_map(k))
+        if m.get('entityName') is not None:
+            self.entity_name = m.get('entityName')
+        self.props = []
+        if m.get('props') is not None:
+            for k in m.get('props'):
+                temp_model = GetActionDetailResponseBodyIntegrationConfigProps()
+                self.props.append(temp_model.from_map(k))
+        return self
+
+
+class GetActionDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        connect_asset_uri: str = None,
+        input_schema: str = None,
+        integration_config: GetActionDetailResponseBodyIntegrationConfig = None,
+        name: str = None,
+        output_schema: str = None,
+        ref_id: str = None,
+        ref_provider_corp_id: str = None,
+        ref_type: str = None,
+    ):
+        # 连接资产标识
+        self.connect_asset_uri = connect_asset_uri
+        # 调用时以JsonSchema描述的入参格式
+        self.input_schema = input_schema
+        # 执行动作集成配置信息
+        self.integration_config = integration_config
+        # 执行动作的名称
+        self.name = name
+        # 调用时以JsonSchema描述的出参格式
+        self.output_schema = output_schema
+        # 执行动作的ID
+        self.ref_id = ref_id
+        # 执行动作提供组织
+        self.ref_provider_corp_id = ref_provider_corp_id
+        # 连接资产类型
+        self.ref_type = ref_type
+
+    def validate(self):
+        if self.integration_config:
+            self.integration_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.connect_asset_uri is not None:
+            result['connectAssetUri'] = self.connect_asset_uri
+        if self.input_schema is not None:
+            result['inputSchema'] = self.input_schema
+        if self.integration_config is not None:
+            result['integrationConfig'] = self.integration_config.to_map()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.output_schema is not None:
+            result['outputSchema'] = self.output_schema
+        if self.ref_id is not None:
+            result['refId'] = self.ref_id
+        if self.ref_provider_corp_id is not None:
+            result['refProviderCorpId'] = self.ref_provider_corp_id
+        if self.ref_type is not None:
+            result['refType'] = self.ref_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('connectAssetUri') is not None:
+            self.connect_asset_uri = m.get('connectAssetUri')
+        if m.get('inputSchema') is not None:
+            self.input_schema = m.get('inputSchema')
+        if m.get('integrationConfig') is not None:
+            temp_model = GetActionDetailResponseBodyIntegrationConfig()
+            self.integration_config = temp_model.from_map(m['integrationConfig'])
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('outputSchema') is not None:
+            self.output_schema = m.get('outputSchema')
+        if m.get('refId') is not None:
+            self.ref_id = m.get('refId')
+        if m.get('refProviderCorpId') is not None:
+            self.ref_provider_corp_id = m.get('refProviderCorpId')
+        if m.get('refType') is not None:
+            self.ref_type = m.get('refType')
+        return self
+
+
+class GetActionDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetActionDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetActionDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InvokeInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InvokeInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        connect_asset_uri: str = None,
+        input_json_string: str = None,
+        instance_key: str = None,
+    ):
+        # 连接资产标识
+        self.connect_asset_uri = connect_asset_uri
+        # 入参JSON文本
+        self.input_json_string = input_json_string
+        # 外部实例唯一标识
+        self.instance_key = instance_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.connect_asset_uri is not None:
+            result['connectAssetUri'] = self.connect_asset_uri
+        if self.input_json_string is not None:
+            result['inputJsonString'] = self.input_json_string
+        if self.instance_key is not None:
+            result['instanceKey'] = self.instance_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('connectAssetUri') is not None:
+            self.connect_asset_uri = m.get('connectAssetUri')
+        if m.get('inputJsonString') is not None:
+            self.input_json_string = m.get('inputJsonString')
+        if m.get('instanceKey') is not None:
+            self.instance_key = m.get('instanceKey')
+        return self
+
+
+class InvokeInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        cost: int = None,
+        error_code: str = None,
+        error_message: str = None,
+        instance_id: str = None,
+        output_json: str = None,
+    ):
+        # 本次执行耗时
+        self.cost = cost
+        # 连接器错误码
+        self.error_code = error_code
+        # 连接器错误信息
+        self.error_message = error_message
+        # 调用记录的ID
+        self.instance_id = instance_id
+        # Id of the request
+        self.output_json = output_json
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cost is not None:
+            result['cost'] = self.cost
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_message is not None:
+            result['errorMessage'] = self.error_message
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.output_json is not None:
+            result['outputJson'] = self.output_json
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cost') is not None:
+            self.cost = m.get('cost')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMessage') is not None:
+            self.error_message = m.get('errorMessage')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('outputJson') is not None:
+            self.output_json = m.get('outputJson')
+        return self
+
+
+class InvokeInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: InvokeInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = InvokeInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1432,6 +2039,505 @@ class PullDataByPkResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = PullDataByPkResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchActionsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchActionsRequest(TeaModel):
+    def __init__(
+        self,
+        connector_id: str = None,
+        connector_provider_corp_id: str = None,
+        integration_types: List[str] = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # 连接器的ID
+        self.connector_id = connector_id
+        # 连接器提供组织ID
+        self.connector_provider_corp_id = connector_provider_corp_id
+        # 集成类型，默认只有basic-基础类型
+        self.integration_types = integration_types
+        # 最大返回记录数
+        self.max_results = max_results
+        # 查询位置，为空表示从头开始
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.connector_id is not None:
+            result['connectorId'] = self.connector_id
+        if self.connector_provider_corp_id is not None:
+            result['connectorProviderCorpId'] = self.connector_provider_corp_id
+        if self.integration_types is not None:
+            result['integrationTypes'] = self.integration_types
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('connectorId') is not None:
+            self.connector_id = m.get('connectorId')
+        if m.get('connectorProviderCorpId') is not None:
+            self.connector_provider_corp_id = m.get('connectorProviderCorpId')
+        if m.get('integrationTypes') is not None:
+            self.integration_types = m.get('integrationTypes')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class SearchActionsResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        authority_url: str = None,
+        authorized: bool = None,
+        connect_asset_uri: str = None,
+        connector_id: str = None,
+        description: str = None,
+        icon: str = None,
+        id: str = None,
+        integration_type: str = None,
+        name: str = None,
+        provider_corp_id: str = None,
+    ):
+        # 授权页地址
+        self.authority_url = authority_url
+        # 是否已授权
+        self.authorized = authorized
+        # 连接资产唯一标识
+        self.connect_asset_uri = connect_asset_uri
+        # 执行动作所属连接器ID
+        self.connector_id = connector_id
+        # 描述
+        self.description = description
+        # 图标
+        self.icon = icon
+        # 执行动作的ID
+        self.id = id
+        # 集成类型
+        self.integration_type = integration_type
+        # 名称
+        self.name = name
+        # 提供组织
+        self.provider_corp_id = provider_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.authority_url is not None:
+            result['authorityUrl'] = self.authority_url
+        if self.authorized is not None:
+            result['authorized'] = self.authorized
+        if self.connect_asset_uri is not None:
+            result['connectAssetUri'] = self.connect_asset_uri
+        if self.connector_id is not None:
+            result['connectorId'] = self.connector_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.id is not None:
+            result['id'] = self.id
+        if self.integration_type is not None:
+            result['integrationType'] = self.integration_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.provider_corp_id is not None:
+            result['providerCorpId'] = self.provider_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorityUrl') is not None:
+            self.authority_url = m.get('authorityUrl')
+        if m.get('authorized') is not None:
+            self.authorized = m.get('authorized')
+        if m.get('connectAssetUri') is not None:
+            self.connect_asset_uri = m.get('connectAssetUri')
+        if m.get('connectorId') is not None:
+            self.connector_id = m.get('connectorId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('integrationType') is not None:
+            self.integration_type = m.get('integrationType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('providerCorpId') is not None:
+            self.provider_corp_id = m.get('providerCorpId')
+        return self
+
+
+class SearchActionsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[SearchActionsResponseBodyList] = None,
+        next_token: str = None,
+        total_count: int = None,
+    ):
+        # 是否有更多记录
+        self.has_more = has_more
+        # 执行动作列表
+        self.list = list
+        # 下一页位置
+        self.next_token = next_token
+        # 总记录数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = SearchActionsResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchActionsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchActionsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchActionsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchConnectorsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchConnectorsRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        type: str = None,
+    ):
+        # 最大返回记录数，最多50
+        self.max_results = max_results
+        # 查询指定位置的记录，为空则从头开始
+        self.next_token = next_token
+        # 查询连接器的类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class SearchConnectorsResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        icon: str = None,
+        id: str = None,
+        name: str = None,
+        provider_corp_id: str = None,
+    ):
+        # 连接器的描述信息
+        self.description = description
+        # 连接器的图标
+        self.icon = icon
+        # 连接器的ID
+        self.id = id
+        # 连接器的名称
+        self.name = name
+        # 连接器的提供组织
+        self.provider_corp_id = provider_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.provider_corp_id is not None:
+            result['providerCorpId'] = self.provider_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('providerCorpId') is not None:
+            self.provider_corp_id = m.get('providerCorpId')
+        return self
+
+
+class SearchConnectorsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[SearchConnectorsResponseBodyList] = None,
+        next_token: str = None,
+        total_count: str = None,
+    ):
+        # 是否有更多记录
+        self.has_more = has_more
+        # 连接器信息列表
+        self.list = list
+        # 下一页记录的查询位置
+        self.next_token = next_token
+        # 总记录数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = SearchConnectorsResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchConnectorsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchConnectorsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchConnectorsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

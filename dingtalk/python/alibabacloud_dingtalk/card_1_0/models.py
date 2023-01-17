@@ -71,7 +71,11 @@ class AppendSpaceRequestImGroupOpenSpaceModelNotification(TeaModel):
         alert_content: str = None,
         notification_off: bool = None,
     ):
+        # 【条件必填】通知内容
+        # 
+        # 【注意】若不填写则使用默认文案：如你收到1条新消息
         self.alert_content = alert_content
+        # 是否关闭推送通知，默认为false
         self.notification_off = notification_off
 
     def validate(self):
@@ -105,8 +109,11 @@ class AppendSpaceRequestImGroupOpenSpaceModelSearchSupport(TeaModel):
         search_icon: str = None,
         search_type_name: str = None,
     ):
+        # 卡片的具体描述
         self.search_desc = search_desc
+        # 类型的icon，供搜索展示使用
         self.search_icon = search_icon
+        # 卡片类型名
         self.search_type_name = search_type_name
 
     def validate(self):
@@ -147,7 +154,7 @@ class AppendSpaceRequestImGroupOpenSpaceModel(TeaModel):
     ):
         # 支持国际化的LastMessage
         self.last_message_i18n = last_message_i18n
-        # xpn信息
+        # 通知信息
         self.notification = notification
         # 支持卡片消息可被搜索字段
         self.search_support = search_support
@@ -197,7 +204,11 @@ class AppendSpaceRequestImRobotOpenSpaceModelNotification(TeaModel):
         alert_content: str = None,
         notification_off: bool = None,
     ):
+        # 【条件必填】通知内容
+        # 
+        # 【注意】若不填写则使用默认文案：如你收到1条新消息
         self.alert_content = alert_content
+        # 是否关闭推送通知，默认为false
         self.notification_off = notification_off
 
     def validate(self):
@@ -231,8 +242,11 @@ class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport(TeaModel):
         search_icon: str = None,
         search_type_name: str = None,
     ):
+        # 卡片的具体描述
         self.search_desc = search_desc
+        # 类型的icon，供搜索展示使用
         self.search_icon = search_icon
+        # 卡片类型名
         self.search_type_name = search_type_name
 
     def validate(self):
@@ -273,7 +287,7 @@ class AppendSpaceRequestImRobotOpenSpaceModel(TeaModel):
     ):
         # 支持国际化的LastMessage
         self.last_message_i18n = last_message_i18n
-        # xpn信息
+        # 通知信息
         self.notification = notification
         # 支持卡片消息可被搜索字段
         self.search_support = search_support
@@ -317,166 +331,14 @@ class AppendSpaceRequestImRobotOpenSpaceModel(TeaModel):
         return self
 
 
-class AppendSpaceRequestImSingleOpenSpaceModelNotification(TeaModel):
-    def __init__(
-        self,
-        alert_content: str = None,
-        notification_off: bool = None,
-    ):
-        self.alert_content = alert_content
-        self.notification_off = notification_off
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.alert_content is not None:
-            result['alertContent'] = self.alert_content
-        if self.notification_off is not None:
-            result['notificationOff'] = self.notification_off
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('alertContent') is not None:
-            self.alert_content = m.get('alertContent')
-        if m.get('notificationOff') is not None:
-            self.notification_off = m.get('notificationOff')
-        return self
-
-
-class AppendSpaceRequestImSingleOpenSpaceModelSearchSupport(TeaModel):
-    def __init__(
-        self,
-        search_desc: str = None,
-        search_icon: str = None,
-        search_type_name: str = None,
-    ):
-        self.search_desc = search_desc
-        self.search_icon = search_icon
-        self.search_type_name = search_type_name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.search_desc is not None:
-            result['searchDesc'] = self.search_desc
-        if self.search_icon is not None:
-            result['searchIcon'] = self.search_icon
-        if self.search_type_name is not None:
-            result['searchTypeName'] = self.search_type_name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('searchDesc') is not None:
-            self.search_desc = m.get('searchDesc')
-        if m.get('searchIcon') is not None:
-            self.search_icon = m.get('searchIcon')
-        if m.get('searchTypeName') is not None:
-            self.search_type_name = m.get('searchTypeName')
-        return self
-
-
-class AppendSpaceRequestImSingleOpenSpaceModel(TeaModel):
-    def __init__(
-        self,
-        last_message_i18n: Dict[str, str] = None,
-        notification: AppendSpaceRequestImSingleOpenSpaceModelNotification = None,
-        search_support: AppendSpaceRequestImSingleOpenSpaceModelSearchSupport = None,
-        support_forward: bool = None,
-    ):
-        # 支持国际化的LastMessage
-        self.last_message_i18n = last_message_i18n
-        # xpn信息
-        self.notification = notification
-        # 支持卡片消息可被搜索字段
-        self.search_support = search_support
-        # 是否支持转发, 默认false
-        self.support_forward = support_forward
-
-    def validate(self):
-        if self.notification:
-            self.notification.validate()
-        if self.search_support:
-            self.search_support.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.last_message_i18n is not None:
-            result['lastMessageI18n'] = self.last_message_i18n
-        if self.notification is not None:
-            result['notification'] = self.notification.to_map()
-        if self.search_support is not None:
-            result['searchSupport'] = self.search_support.to_map()
-        if self.support_forward is not None:
-            result['supportForward'] = self.support_forward
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('lastMessageI18n') is not None:
-            self.last_message_i18n = m.get('lastMessageI18n')
-        if m.get('notification') is not None:
-            temp_model = AppendSpaceRequestImSingleOpenSpaceModelNotification()
-            self.notification = temp_model.from_map(m['notification'])
-        if m.get('searchSupport') is not None:
-            temp_model = AppendSpaceRequestImSingleOpenSpaceModelSearchSupport()
-            self.search_support = temp_model.from_map(m['searchSupport'])
-        if m.get('supportForward') is not None:
-            self.support_forward = m.get('supportForward')
-        return self
-
-
 class AppendSpaceRequestTopOpenSpaceModel(TeaModel):
     def __init__(
         self,
         space_type: str = None,
     ):
-        # 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
-        self.space_type = space_type
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.space_type is not None:
-            result['spaceType'] = self.space_type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('spaceType') is not None:
-            self.space_type = m.get('spaceType')
-        return self
-
-
-class AppendSpaceRequestWorkBenchOpenSpaceModel(TeaModel):
-    def __init__(
-        self,
-        space_type: str = None,
-    ):
-        # 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
+        # 【必填】场域类型
+        # 
+        # 吊顶无其他场域属性，通过设置spaeType为ONE_BOX使卡片支持吊顶场域
         self.space_type = space_type
 
     def validate(self):
@@ -505,10 +367,8 @@ class AppendSpaceRequest(TeaModel):
         co_feed_open_space_model: AppendSpaceRequestCoFeedOpenSpaceModel = None,
         im_group_open_space_model: AppendSpaceRequestImGroupOpenSpaceModel = None,
         im_robot_open_space_model: AppendSpaceRequestImRobotOpenSpaceModel = None,
-        im_single_open_space_model: AppendSpaceRequestImSingleOpenSpaceModel = None,
         out_track_id: str = None,
         top_open_space_model: AppendSpaceRequestTopOpenSpaceModel = None,
-        work_bench_open_space_model: AppendSpaceRequestWorkBenchOpenSpaceModel = None,
     ):
         # 协作场域信息
         self.co_feed_open_space_model = co_feed_open_space_model
@@ -516,14 +376,10 @@ class AppendSpaceRequest(TeaModel):
         self.im_group_open_space_model = im_group_open_space_model
         # IM群聊场域信息
         self.im_robot_open_space_model = im_robot_open_space_model
-        # IM单聊场域信息
-        self.im_single_open_space_model = im_single_open_space_model
         # 唯一标识一张卡片的外部Id
         self.out_track_id = out_track_id
         # 吊顶场域信息
         self.top_open_space_model = top_open_space_model
-        # 工作台场域信息
-        self.work_bench_open_space_model = work_bench_open_space_model
 
     def validate(self):
         if self.co_feed_open_space_model:
@@ -532,12 +388,8 @@ class AppendSpaceRequest(TeaModel):
             self.im_group_open_space_model.validate()
         if self.im_robot_open_space_model:
             self.im_robot_open_space_model.validate()
-        if self.im_single_open_space_model:
-            self.im_single_open_space_model.validate()
         if self.top_open_space_model:
             self.top_open_space_model.validate()
-        if self.work_bench_open_space_model:
-            self.work_bench_open_space_model.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -551,14 +403,10 @@ class AppendSpaceRequest(TeaModel):
             result['imGroupOpenSpaceModel'] = self.im_group_open_space_model.to_map()
         if self.im_robot_open_space_model is not None:
             result['imRobotOpenSpaceModel'] = self.im_robot_open_space_model.to_map()
-        if self.im_single_open_space_model is not None:
-            result['imSingleOpenSpaceModel'] = self.im_single_open_space_model.to_map()
         if self.out_track_id is not None:
             result['outTrackId'] = self.out_track_id
         if self.top_open_space_model is not None:
             result['topOpenSpaceModel'] = self.top_open_space_model.to_map()
-        if self.work_bench_open_space_model is not None:
-            result['workBenchOpenSpaceModel'] = self.work_bench_open_space_model.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -572,17 +420,11 @@ class AppendSpaceRequest(TeaModel):
         if m.get('imRobotOpenSpaceModel') is not None:
             temp_model = AppendSpaceRequestImRobotOpenSpaceModel()
             self.im_robot_open_space_model = temp_model.from_map(m['imRobotOpenSpaceModel'])
-        if m.get('imSingleOpenSpaceModel') is not None:
-            temp_model = AppendSpaceRequestImSingleOpenSpaceModel()
-            self.im_single_open_space_model = temp_model.from_map(m['imSingleOpenSpaceModel'])
         if m.get('outTrackId') is not None:
             self.out_track_id = m.get('outTrackId')
         if m.get('topOpenSpaceModel') is not None:
             temp_model = AppendSpaceRequestTopOpenSpaceModel()
             self.top_open_space_model = temp_model.from_map(m['topOpenSpaceModel'])
-        if m.get('workBenchOpenSpaceModel') is not None:
-            temp_model = AppendSpaceRequestWorkBenchOpenSpaceModel()
-            self.work_bench_open_space_model = temp_model.from_map(m['workBenchOpenSpaceModel'])
         return self
 
 
@@ -755,8 +597,10 @@ class CreateAndDeliverRequestCoFeedOpenDeliverModel(TeaModel):
 class CreateAndDeliverRequestCoFeedOpenSpaceModel(TeaModel):
     def __init__(
         self,
+        cool_app_code: str = None,
         title: str = None,
     ):
+        self.cool_app_code = cool_app_code
         # 【必填】标题
         self.title = title
 
@@ -769,12 +613,16 @@ class CreateAndDeliverRequestCoFeedOpenSpaceModel(TeaModel):
             return _map
 
         result = dict()
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
         if self.title is not None:
             result['title'] = self.title
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
         if m.get('title') is not None:
             self.title = m.get('title')
         return self
@@ -1101,160 +949,6 @@ class CreateAndDeliverRequestImRobotOpenSpaceModel(TeaModel):
         return self
 
 
-class CreateAndDeliverRequestImSingleOpenDeliverModel(TeaModel):
-    def __init__(
-        self,
-        at_user_ids: Dict[str, str] = None,
-    ):
-        # 消息@人，
-        self.at_user_ids = at_user_ids
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.at_user_ids is not None:
-            result['atUserIds'] = self.at_user_ids
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('atUserIds') is not None:
-            self.at_user_ids = m.get('atUserIds')
-        return self
-
-
-class CreateAndDeliverRequestImSingleOpenSpaceModelNotification(TeaModel):
-    def __init__(
-        self,
-        alert_content: str = None,
-        notification_off: bool = None,
-    ):
-        self.alert_content = alert_content
-        self.notification_off = notification_off
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.alert_content is not None:
-            result['alertContent'] = self.alert_content
-        if self.notification_off is not None:
-            result['notificationOff'] = self.notification_off
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('alertContent') is not None:
-            self.alert_content = m.get('alertContent')
-        if m.get('notificationOff') is not None:
-            self.notification_off = m.get('notificationOff')
-        return self
-
-
-class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport(TeaModel):
-    def __init__(
-        self,
-        search_desc: str = None,
-        search_icon: str = None,
-        search_type_name: str = None,
-    ):
-        self.search_desc = search_desc
-        self.search_icon = search_icon
-        self.search_type_name = search_type_name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.search_desc is not None:
-            result['searchDesc'] = self.search_desc
-        if self.search_icon is not None:
-            result['searchIcon'] = self.search_icon
-        if self.search_type_name is not None:
-            result['searchTypeName'] = self.search_type_name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('searchDesc') is not None:
-            self.search_desc = m.get('searchDesc')
-        if m.get('searchIcon') is not None:
-            self.search_icon = m.get('searchIcon')
-        if m.get('searchTypeName') is not None:
-            self.search_type_name = m.get('searchTypeName')
-        return self
-
-
-class CreateAndDeliverRequestImSingleOpenSpaceModel(TeaModel):
-    def __init__(
-        self,
-        last_message_i18n: Dict[str, str] = None,
-        notification: CreateAndDeliverRequestImSingleOpenSpaceModelNotification = None,
-        search_support: CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport = None,
-        support_forward: bool = None,
-    ):
-        # 支持国际化的LastMessage
-        self.last_message_i18n = last_message_i18n
-        # 通知信息
-        self.notification = notification
-        # 支持卡片消息可被搜索字段
-        self.search_support = search_support
-        # 是否支持转发, 默认false
-        self.support_forward = support_forward
-
-    def validate(self):
-        if self.notification:
-            self.notification.validate()
-        if self.search_support:
-            self.search_support.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.last_message_i18n is not None:
-            result['lastMessageI18n'] = self.last_message_i18n
-        if self.notification is not None:
-            result['notification'] = self.notification.to_map()
-        if self.search_support is not None:
-            result['searchSupport'] = self.search_support.to_map()
-        if self.support_forward is not None:
-            result['supportForward'] = self.support_forward
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('lastMessageI18n') is not None:
-            self.last_message_i18n = m.get('lastMessageI18n')
-        if m.get('notification') is not None:
-            temp_model = CreateAndDeliverRequestImSingleOpenSpaceModelNotification()
-            self.notification = temp_model.from_map(m['notification'])
-        if m.get('searchSupport') is not None:
-            temp_model = CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport()
-            self.search_support = temp_model.from_map(m['searchSupport'])
-        if m.get('supportForward') is not None:
-            self.support_forward = m.get('supportForward')
-        return self
-
-
 class CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig(TeaModel):
     def __init__(
         self,
@@ -1341,60 +1035,15 @@ class CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigs(TeaMo
         return self
 
 
-class OpenDynamicDataConfigDynamicDataMappingValue(TeaModel):
-    def __init__(
-        self,
-        path: str = None,
-        dynamic_data_value_type: str = None,
-    ):
-        # jsonPath
-        self.path = path
-        # 值的类型 (STRING: String, ARRAY: 数组, OBJECT: 对象, CHART: 图表, TABLE: 表格, INDICATOR: 指标卡)
-        self.dynamic_data_value_type = dynamic_data_value_type
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.path is not None:
-            result['path'] = self.path
-        if self.dynamic_data_value_type is not None:
-            result['dynamicDataValueType'] = self.dynamic_data_value_type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('path') is not None:
-            self.path = m.get('path')
-        if m.get('dynamicDataValueType') is not None:
-            self.dynamic_data_value_type = m.get('dynamicDataValueType')
-        return self
-
-
 class CreateAndDeliverRequestOpenDynamicDataConfig(TeaModel):
     def __init__(
         self,
-        dynamic_data_mapping: Dict[str, OpenDynamicDataConfigDynamicDataMappingValue] = None,
-        dynamic_data_mapping_method: str = None,
         dynamic_data_source_configs: List[CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigs] = None,
     ):
-        # 动态数据替换关系,key是变量名, value是数据源的jsonPath相关配置
-        self.dynamic_data_mapping = dynamic_data_mapping
-        # 动态数据映射类型 (REPLACE_WITHOUT_MAPPING: 直接将动态数据返回，无需根据 key mapping, MAPPING_BY_KEY: 根据创建时的 key 进行 mapping)
-        self.dynamic_data_mapping_method = dynamic_data_mapping_method
         # 动态数据源配置列表
         self.dynamic_data_source_configs = dynamic_data_source_configs
 
     def validate(self):
-        if self.dynamic_data_mapping:
-            for v in self.dynamic_data_mapping.values():
-                if v:
-                    v.validate()
         if self.dynamic_data_source_configs:
             for k in self.dynamic_data_source_configs:
                 if k:
@@ -1406,12 +1055,6 @@ class CreateAndDeliverRequestOpenDynamicDataConfig(TeaModel):
             return _map
 
         result = dict()
-        result['dynamicDataMapping'] = {}
-        if self.dynamic_data_mapping is not None:
-            for k, v in self.dynamic_data_mapping.items():
-                result['dynamicDataMapping'][k] = v.to_map()
-        if self.dynamic_data_mapping_method is not None:
-            result['dynamicDataMappingMethod'] = self.dynamic_data_mapping_method
         result['dynamicDataSourceConfigs'] = []
         if self.dynamic_data_source_configs is not None:
             for k in self.dynamic_data_source_configs:
@@ -1420,13 +1063,6 @@ class CreateAndDeliverRequestOpenDynamicDataConfig(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.dynamic_data_mapping = {}
-        if m.get('dynamicDataMapping') is not None:
-            for k, v in m.get('dynamicDataMapping').items():
-                temp_model = OpenDynamicDataConfigDynamicDataMappingValue()
-                self.dynamic_data_mapping[k] = temp_model.from_map(v)
-        if m.get('dynamicDataMappingMethod') is not None:
-            self.dynamic_data_mapping_method = m.get('dynamicDataMappingMethod')
         self.dynamic_data_source_configs = []
         if m.get('dynamicDataSourceConfigs') is not None:
             for k in m.get('dynamicDataSourceConfigs'):
@@ -1505,97 +1141,6 @@ class CreateAndDeliverRequestTopOpenSpaceModel(TeaModel):
         return self
 
 
-class CreateAndDeliverRequestWorkBenchOpenDeliverModel(TeaModel):
-    def __init__(
-        self,
-        icon: str = None,
-        name: str = None,
-        plugin_component_name: str = None,
-        preview_url: str = None,
-        project_name: str = None,
-        user_id: str = None,
-    ):
-        # 【必填】组件icon对应组件左上角的图标
-        self.icon = icon
-        # 【必填】卡片名称
-        self.name = name
-        # 【必填】卡片组件名
-        self.plugin_component_name = plugin_component_name
-        # 【必填】卡片预览图
-        self.preview_url = preview_url
-        # 【必填】保持和微应用名称相同
-        self.project_name = project_name
-        # 【必填】操作者Id
-        self.user_id = user_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.icon is not None:
-            result['icon'] = self.icon
-        if self.name is not None:
-            result['name'] = self.name
-        if self.plugin_component_name is not None:
-            result['pluginComponentName'] = self.plugin_component_name
-        if self.preview_url is not None:
-            result['previewUrl'] = self.preview_url
-        if self.project_name is not None:
-            result['projectName'] = self.project_name
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('icon') is not None:
-            self.icon = m.get('icon')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('pluginComponentName') is not None:
-            self.plugin_component_name = m.get('pluginComponentName')
-        if m.get('previewUrl') is not None:
-            self.preview_url = m.get('previewUrl')
-        if m.get('projectName') is not None:
-            self.project_name = m.get('projectName')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
-        return self
-
-
-class CreateAndDeliverRequestWorkBenchOpenSpaceModel(TeaModel):
-    def __init__(
-        self,
-        space_type: str = None,
-    ):
-        # 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
-        self.space_type = space_type
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.space_type is not None:
-            result['spaceType'] = self.space_type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('spaceType') is not None:
-            self.space_type = m.get('spaceType')
-        return self
-
-
 class PrivateDataValue(TeaModel):
     def __init__(
         self,
@@ -1628,7 +1173,6 @@ class CreateAndDeliverRequest(TeaModel):
     def __init__(
         self,
         callback_route_key: str = None,
-        card_at_user_ids: List[str] = None,
         card_data: CreateAndDeliverRequestCardData = None,
         card_template_id: str = None,
         co_feed_open_deliver_model: CreateAndDeliverRequestCoFeedOpenDeliverModel = None,
@@ -1637,8 +1181,6 @@ class CreateAndDeliverRequest(TeaModel):
         im_group_open_space_model: CreateAndDeliverRequestImGroupOpenSpaceModel = None,
         im_robot_open_deliver_model: CreateAndDeliverRequestImRobotOpenDeliverModel = None,
         im_robot_open_space_model: CreateAndDeliverRequestImRobotOpenSpaceModel = None,
-        im_single_open_deliver_model: CreateAndDeliverRequestImSingleOpenDeliverModel = None,
-        im_single_open_space_model: CreateAndDeliverRequestImSingleOpenSpaceModel = None,
         open_dynamic_data_config: CreateAndDeliverRequestOpenDynamicDataConfig = None,
         open_space_id: str = None,
         out_track_id: str = None,
@@ -1647,12 +1189,9 @@ class CreateAndDeliverRequest(TeaModel):
         top_open_space_model: CreateAndDeliverRequestTopOpenSpaceModel = None,
         user_id: str = None,
         user_id_type: int = None,
-        work_bench_open_deliver_model: CreateAndDeliverRequestWorkBenchOpenDeliverModel = None,
-        work_bench_open_space_model: CreateAndDeliverRequestWorkBenchOpenSpaceModel = None,
     ):
         # 卡片回调时的路由 key
         self.callback_route_key = callback_route_key
-        self.card_at_user_ids = card_at_user_ids
         # 卡片数据
         self.card_data = card_data
         # 卡片内容模板ID
@@ -1669,10 +1208,6 @@ class CreateAndDeliverRequest(TeaModel):
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
         # IM单聊场域信息
         self.im_robot_open_space_model = im_robot_open_space_model
-        # 单聊场域投放参数
-        self.im_single_open_deliver_model = im_single_open_deliver_model
-        # IM单聊场域信息
-        self.im_single_open_space_model = im_single_open_space_model
         # 动态数据源配置
         self.open_dynamic_data_config = open_dynamic_data_config
         # dt.card//spaceType.spaceId;spaceType.spaceId
@@ -1687,10 +1222,6 @@ class CreateAndDeliverRequest(TeaModel):
         # 卡片创建者 id
         self.user_id = user_id
         self.user_id_type = user_id_type
-        # 工作台投放参数
-        self.work_bench_open_deliver_model = work_bench_open_deliver_model
-        # 工作台场域信息
-        self.work_bench_open_space_model = work_bench_open_space_model
 
     def validate(self):
         if self.card_data:
@@ -1707,10 +1238,6 @@ class CreateAndDeliverRequest(TeaModel):
             self.im_robot_open_deliver_model.validate()
         if self.im_robot_open_space_model:
             self.im_robot_open_space_model.validate()
-        if self.im_single_open_deliver_model:
-            self.im_single_open_deliver_model.validate()
-        if self.im_single_open_space_model:
-            self.im_single_open_space_model.validate()
         if self.open_dynamic_data_config:
             self.open_dynamic_data_config.validate()
         if self.private_data:
@@ -1721,10 +1248,6 @@ class CreateAndDeliverRequest(TeaModel):
             self.top_open_deliver_model.validate()
         if self.top_open_space_model:
             self.top_open_space_model.validate()
-        if self.work_bench_open_deliver_model:
-            self.work_bench_open_deliver_model.validate()
-        if self.work_bench_open_space_model:
-            self.work_bench_open_space_model.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1734,8 +1257,6 @@ class CreateAndDeliverRequest(TeaModel):
         result = dict()
         if self.callback_route_key is not None:
             result['callbackRouteKey'] = self.callback_route_key
-        if self.card_at_user_ids is not None:
-            result['cardAtUserIds'] = self.card_at_user_ids
         if self.card_data is not None:
             result['cardData'] = self.card_data.to_map()
         if self.card_template_id is not None:
@@ -1752,10 +1273,6 @@ class CreateAndDeliverRequest(TeaModel):
             result['imRobotOpenDeliverModel'] = self.im_robot_open_deliver_model.to_map()
         if self.im_robot_open_space_model is not None:
             result['imRobotOpenSpaceModel'] = self.im_robot_open_space_model.to_map()
-        if self.im_single_open_deliver_model is not None:
-            result['imSingleOpenDeliverModel'] = self.im_single_open_deliver_model.to_map()
-        if self.im_single_open_space_model is not None:
-            result['imSingleOpenSpaceModel'] = self.im_single_open_space_model.to_map()
         if self.open_dynamic_data_config is not None:
             result['openDynamicDataConfig'] = self.open_dynamic_data_config.to_map()
         if self.open_space_id is not None:
@@ -1774,18 +1291,12 @@ class CreateAndDeliverRequest(TeaModel):
             result['userId'] = self.user_id
         if self.user_id_type is not None:
             result['userIdType'] = self.user_id_type
-        if self.work_bench_open_deliver_model is not None:
-            result['workBenchOpenDeliverModel'] = self.work_bench_open_deliver_model.to_map()
-        if self.work_bench_open_space_model is not None:
-            result['workBenchOpenSpaceModel'] = self.work_bench_open_space_model.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('callbackRouteKey') is not None:
             self.callback_route_key = m.get('callbackRouteKey')
-        if m.get('cardAtUserIds') is not None:
-            self.card_at_user_ids = m.get('cardAtUserIds')
         if m.get('cardData') is not None:
             temp_model = CreateAndDeliverRequestCardData()
             self.card_data = temp_model.from_map(m['cardData'])
@@ -1809,12 +1320,6 @@ class CreateAndDeliverRequest(TeaModel):
         if m.get('imRobotOpenSpaceModel') is not None:
             temp_model = CreateAndDeliverRequestImRobotOpenSpaceModel()
             self.im_robot_open_space_model = temp_model.from_map(m['imRobotOpenSpaceModel'])
-        if m.get('imSingleOpenDeliverModel') is not None:
-            temp_model = CreateAndDeliverRequestImSingleOpenDeliverModel()
-            self.im_single_open_deliver_model = temp_model.from_map(m['imSingleOpenDeliverModel'])
-        if m.get('imSingleOpenSpaceModel') is not None:
-            temp_model = CreateAndDeliverRequestImSingleOpenSpaceModel()
-            self.im_single_open_space_model = temp_model.from_map(m['imSingleOpenSpaceModel'])
         if m.get('openDynamicDataConfig') is not None:
             temp_model = CreateAndDeliverRequestOpenDynamicDataConfig()
             self.open_dynamic_data_config = temp_model.from_map(m['openDynamicDataConfig'])
@@ -1837,12 +1342,6 @@ class CreateAndDeliverRequest(TeaModel):
             self.user_id = m.get('userId')
         if m.get('userIdType') is not None:
             self.user_id_type = m.get('userIdType')
-        if m.get('workBenchOpenDeliverModel') is not None:
-            temp_model = CreateAndDeliverRequestWorkBenchOpenDeliverModel()
-            self.work_bench_open_deliver_model = temp_model.from_map(m['workBenchOpenDeliverModel'])
-        if m.get('workBenchOpenSpaceModel') is not None:
-            temp_model = CreateAndDeliverRequestWorkBenchOpenSpaceModel()
-            self.work_bench_open_space_model = temp_model.from_map(m['workBenchOpenSpaceModel'])
         return self
 
 
@@ -2381,146 +1880,6 @@ class CreateCardRequestImRobotOpenSpaceModel(TeaModel):
         return self
 
 
-class CreateCardRequestImSingleOpenSpaceModelNotification(TeaModel):
-    def __init__(
-        self,
-        alert_content: str = None,
-        notification_off: bool = None,
-    ):
-        # 【条件必填】通知内容
-        # 若不填写则使用默认文案：如你收到1条新消息
-        self.alert_content = alert_content
-        # 是否推送通知，默认为 false
-        self.notification_off = notification_off
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.alert_content is not None:
-            result['alertContent'] = self.alert_content
-        if self.notification_off is not None:
-            result['notificationOff'] = self.notification_off
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('alertContent') is not None:
-            self.alert_content = m.get('alertContent')
-        if m.get('notificationOff') is not None:
-            self.notification_off = m.get('notificationOff')
-        return self
-
-
-class CreateCardRequestImSingleOpenSpaceModelSearchSupport(TeaModel):
-    def __init__(
-        self,
-        search_desc: str = None,
-        search_icon: str = None,
-        search_type_name: str = None,
-    ):
-        # 【条件必填】供消息展示与搜索的字段
-        #  【注意】最大限制200个字符，超过存储截断200
-        self.search_desc = search_desc
-        # 类型的icon，供搜索展示使用
-        self.search_icon = search_icon
-        # 卡片类型名
-        self.search_type_name = search_type_name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.search_desc is not None:
-            result['searchDesc'] = self.search_desc
-        if self.search_icon is not None:
-            result['searchIcon'] = self.search_icon
-        if self.search_type_name is not None:
-            result['searchTypeName'] = self.search_type_name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('searchDesc') is not None:
-            self.search_desc = m.get('searchDesc')
-        if m.get('searchIcon') is not None:
-            self.search_icon = m.get('searchIcon')
-        if m.get('searchTypeName') is not None:
-            self.search_type_name = m.get('searchTypeName')
-        return self
-
-
-class CreateCardRequestImSingleOpenSpaceModel(TeaModel):
-    def __init__(
-        self,
-        last_message_i18n: Dict[str, str] = None,
-        notification: CreateCardRequestImSingleOpenSpaceModelNotification = None,
-        search_support: CreateCardRequestImSingleOpenSpaceModelSearchSupport = None,
-        support_forward: bool = None,
-    ):
-        # 支持国际化的LastMessage
-        # key为语言枚举值，value为lastMessage内容
-        # 目前支持的语言枚举值：
-        # 简体中文: ZH_CN
-        # 繁体中文: ZH_TW
-        # 英文： EN_US
-        # 日语: JA_JP
-        # 越南语: VI_VN
-        self.last_message_i18n = last_message_i18n
-        # 卡片的通知属性信息
-        self.notification = notification
-        # 支持卡片消息可被搜索字段
-        self.search_support = search_support
-        # 是否支持转发, 默认 false
-        self.support_forward = support_forward
-
-    def validate(self):
-        if self.notification:
-            self.notification.validate()
-        if self.search_support:
-            self.search_support.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.last_message_i18n is not None:
-            result['lastMessageI18n'] = self.last_message_i18n
-        if self.notification is not None:
-            result['notification'] = self.notification.to_map()
-        if self.search_support is not None:
-            result['searchSupport'] = self.search_support.to_map()
-        if self.support_forward is not None:
-            result['supportForward'] = self.support_forward
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('lastMessageI18n') is not None:
-            self.last_message_i18n = m.get('lastMessageI18n')
-        if m.get('notification') is not None:
-            temp_model = CreateCardRequestImSingleOpenSpaceModelNotification()
-            self.notification = temp_model.from_map(m['notification'])
-        if m.get('searchSupport') is not None:
-            temp_model = CreateCardRequestImSingleOpenSpaceModelSearchSupport()
-            self.search_support = temp_model.from_map(m['searchSupport'])
-        if m.get('supportForward') is not None:
-            self.support_forward = m.get('supportForward')
-        return self
-
-
 class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig(TeaModel):
     def __init__(
         self,
@@ -2617,27 +1976,12 @@ class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigs(TeaModel):
 class CreateCardRequestOpenDynamicDataConfig(TeaModel):
     def __init__(
         self,
-        dynamic_data_mapping: Dict[str, OpenDynamicDataConfigDynamicDataMappingValue] = None,
-        dynamic_data_mapping_method: str = None,
         dynamic_data_source_configs: List[CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigs] = None,
     ):
-        # 动态数据替换关系
-        # ● key：变量名
-        # ● value：数据映射的配置
-        self.dynamic_data_mapping = dynamic_data_mapping
-        # 动态数据映射方法，可选值
-        # ● REPLACE_WITHOUT_MAPPING：直接返回动态数据
-        # ● MAPPING_BY_KEY：根据指定的规则，将返回数据映射到卡片数据上
-        # 默认值：REPLACE_WITHOUT_MAPPING
-        self.dynamic_data_mapping_method = dynamic_data_mapping_method
         # 动态数据源配置列表
         self.dynamic_data_source_configs = dynamic_data_source_configs
 
     def validate(self):
-        if self.dynamic_data_mapping:
-            for v in self.dynamic_data_mapping.values():
-                if v:
-                    v.validate()
         if self.dynamic_data_source_configs:
             for k in self.dynamic_data_source_configs:
                 if k:
@@ -2649,12 +1993,6 @@ class CreateCardRequestOpenDynamicDataConfig(TeaModel):
             return _map
 
         result = dict()
-        result['dynamicDataMapping'] = {}
-        if self.dynamic_data_mapping is not None:
-            for k, v in self.dynamic_data_mapping.items():
-                result['dynamicDataMapping'][k] = v.to_map()
-        if self.dynamic_data_mapping_method is not None:
-            result['dynamicDataMappingMethod'] = self.dynamic_data_mapping_method
         result['dynamicDataSourceConfigs'] = []
         if self.dynamic_data_source_configs is not None:
             for k in self.dynamic_data_source_configs:
@@ -2663,13 +2001,6 @@ class CreateCardRequestOpenDynamicDataConfig(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.dynamic_data_mapping = {}
-        if m.get('dynamicDataMapping') is not None:
-            for k, v in m.get('dynamicDataMapping').items():
-                temp_model = OpenDynamicDataConfigDynamicDataMappingValue()
-                self.dynamic_data_mapping[k] = temp_model.from_map(v)
-        if m.get('dynamicDataMappingMethod') is not None:
-            self.dynamic_data_mapping_method = m.get('dynamicDataMappingMethod')
         self.dynamic_data_source_configs = []
         if m.get('dynamicDataSourceConfigs') is not None:
             for k in m.get('dynamicDataSourceConfigs'):
@@ -2706,56 +2037,24 @@ class CreateCardRequestTopOpenSpaceModel(TeaModel):
         return self
 
 
-class CreateCardRequestWorkBenchOpenSpaceModel(TeaModel):
-    def __init__(
-        self,
-        space_type: str = None,
-    ):
-        # 工作台无其他场域属性，通过增加spaeType使卡片支持工作台场域;工作台对应spaceType为: WORK_BENCH
-        self.space_type = space_type
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.space_type is not None:
-            result['spaceType'] = self.space_type
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('spaceType') is not None:
-            self.space_type = m.get('spaceType')
-        return self
-
-
 class CreateCardRequest(TeaModel):
     def __init__(
         self,
         callback_route_key: str = None,
-        card_at_user_ids: List[str] = None,
         card_data: CreateCardRequestCardData = None,
         card_template_id: str = None,
         co_feed_open_space_model: CreateCardRequestCoFeedOpenSpaceModel = None,
         im_group_open_space_model: CreateCardRequestImGroupOpenSpaceModel = None,
         im_robot_open_space_model: CreateCardRequestImRobotOpenSpaceModel = None,
-        im_single_open_space_model: CreateCardRequestImSingleOpenSpaceModel = None,
         open_dynamic_data_config: CreateCardRequestOpenDynamicDataConfig = None,
         out_track_id: str = None,
         private_data: Dict[str, PrivateDataValue] = None,
         top_open_space_model: CreateCardRequestTopOpenSpaceModel = None,
         user_id: str = None,
         user_id_type: int = None,
-        work_bench_open_space_model: CreateCardRequestWorkBenchOpenSpaceModel = None,
     ):
         # 卡片回调时的路由 Key，用于查询注册的 callbackUrl
         self.callback_route_key = callback_route_key
-        self.card_at_user_ids = card_at_user_ids
         # 卡片数据
         self.card_data = card_data
         # 卡片的模版 Id
@@ -2766,8 +2065,6 @@ class CreateCardRequest(TeaModel):
         self.im_group_open_space_model = im_group_open_space_model
         # IM 单聊场域信息
         self.im_robot_open_space_model = im_robot_open_space_model
-        # IM 单聊场域信息
-        self.im_single_open_space_model = im_single_open_space_model
         # 动态数据源配置
         self.open_dynamic_data_config = open_dynamic_data_config
         # 唯一标示卡片的外部编码
@@ -2781,8 +2078,6 @@ class CreateCardRequest(TeaModel):
         # 卡片创建者的 userId
         self.user_id = user_id
         self.user_id_type = user_id_type
-        # 工作台场域信息
-        self.work_bench_open_space_model = work_bench_open_space_model
 
     def validate(self):
         if self.card_data:
@@ -2793,8 +2088,6 @@ class CreateCardRequest(TeaModel):
             self.im_group_open_space_model.validate()
         if self.im_robot_open_space_model:
             self.im_robot_open_space_model.validate()
-        if self.im_single_open_space_model:
-            self.im_single_open_space_model.validate()
         if self.open_dynamic_data_config:
             self.open_dynamic_data_config.validate()
         if self.private_data:
@@ -2803,8 +2096,6 @@ class CreateCardRequest(TeaModel):
                     v.validate()
         if self.top_open_space_model:
             self.top_open_space_model.validate()
-        if self.work_bench_open_space_model:
-            self.work_bench_open_space_model.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2814,8 +2105,6 @@ class CreateCardRequest(TeaModel):
         result = dict()
         if self.callback_route_key is not None:
             result['callbackRouteKey'] = self.callback_route_key
-        if self.card_at_user_ids is not None:
-            result['cardAtUserIds'] = self.card_at_user_ids
         if self.card_data is not None:
             result['cardData'] = self.card_data.to_map()
         if self.card_template_id is not None:
@@ -2826,8 +2115,6 @@ class CreateCardRequest(TeaModel):
             result['imGroupOpenSpaceModel'] = self.im_group_open_space_model.to_map()
         if self.im_robot_open_space_model is not None:
             result['imRobotOpenSpaceModel'] = self.im_robot_open_space_model.to_map()
-        if self.im_single_open_space_model is not None:
-            result['imSingleOpenSpaceModel'] = self.im_single_open_space_model.to_map()
         if self.open_dynamic_data_config is not None:
             result['openDynamicDataConfig'] = self.open_dynamic_data_config.to_map()
         if self.out_track_id is not None:
@@ -2842,16 +2129,12 @@ class CreateCardRequest(TeaModel):
             result['userId'] = self.user_id
         if self.user_id_type is not None:
             result['userIdType'] = self.user_id_type
-        if self.work_bench_open_space_model is not None:
-            result['workBenchOpenSpaceModel'] = self.work_bench_open_space_model.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('callbackRouteKey') is not None:
             self.callback_route_key = m.get('callbackRouteKey')
-        if m.get('cardAtUserIds') is not None:
-            self.card_at_user_ids = m.get('cardAtUserIds')
         if m.get('cardData') is not None:
             temp_model = CreateCardRequestCardData()
             self.card_data = temp_model.from_map(m['cardData'])
@@ -2866,9 +2149,6 @@ class CreateCardRequest(TeaModel):
         if m.get('imRobotOpenSpaceModel') is not None:
             temp_model = CreateCardRequestImRobotOpenSpaceModel()
             self.im_robot_open_space_model = temp_model.from_map(m['imRobotOpenSpaceModel'])
-        if m.get('imSingleOpenSpaceModel') is not None:
-            temp_model = CreateCardRequestImSingleOpenSpaceModel()
-            self.im_single_open_space_model = temp_model.from_map(m['imSingleOpenSpaceModel'])
         if m.get('openDynamicDataConfig') is not None:
             temp_model = CreateCardRequestOpenDynamicDataConfig()
             self.open_dynamic_data_config = temp_model.from_map(m['openDynamicDataConfig'])
@@ -2886,9 +2166,6 @@ class CreateCardRequest(TeaModel):
             self.user_id = m.get('userId')
         if m.get('userIdType') is not None:
             self.user_id_type = m.get('userIdType')
-        if m.get('workBenchOpenSpaceModel') is not None:
-            temp_model = CreateCardRequestWorkBenchOpenSpaceModel()
-            self.work_bench_open_space_model = temp_model.from_map(m['workBenchOpenSpaceModel'])
         return self
 
 
@@ -3077,6 +2354,7 @@ class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
         self,
         space_type: str = None,
     ):
+        # 【条件必填】IM机器人单聊暂无其他投放属性，仅需设置spaeType为IM_ROBOT
         self.space_type = space_type
 
     def validate(self):
@@ -3099,43 +2377,15 @@ class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
         return self
 
 
-class DeliverCardRequestImSingleOpenDeliverModel(TeaModel):
-    def __init__(
-        self,
-        at_user_ids: Dict[str, str] = None,
-    ):
-        # 消息@人，
-        self.at_user_ids = at_user_ids
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.at_user_ids is not None:
-            result['atUserIds'] = self.at_user_ids
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('atUserIds') is not None:
-            self.at_user_ids = m.get('atUserIds')
-        return self
-
-
 class DeliverCardRequestTopOpenDeliverModel(TeaModel):
     def __init__(
         self,
-        expired_time_mills: int = None,
+        expired_time_millis: int = None,
         platforms: List[str] = None,
         user_ids: List[str] = None,
     ):
         # 【必填】过期时间戳
-        self.expired_time_mills = expired_time_mills
+        self.expired_time_millis = expired_time_millis
         # 可以查看该吊顶卡片的设备
         self.platforms = platforms
         # 可以查看该吊顶卡片的staffId
@@ -3150,8 +2400,8 @@ class DeliverCardRequestTopOpenDeliverModel(TeaModel):
             return _map
 
         result = dict()
-        if self.expired_time_mills is not None:
-            result['expiredTimeMills'] = self.expired_time_mills
+        if self.expired_time_millis is not None:
+            result['expiredTimeMillis'] = self.expired_time_millis
         if self.platforms is not None:
             result['platforms'] = self.platforms
         if self.user_ids is not None:
@@ -3160,75 +2410,12 @@ class DeliverCardRequestTopOpenDeliverModel(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('expiredTimeMills') is not None:
-            self.expired_time_mills = m.get('expiredTimeMills')
+        if m.get('expiredTimeMillis') is not None:
+            self.expired_time_millis = m.get('expiredTimeMillis')
         if m.get('platforms') is not None:
             self.platforms = m.get('platforms')
         if m.get('userIds') is not None:
             self.user_ids = m.get('userIds')
-        return self
-
-
-class DeliverCardRequestWorkBenchOpenDeliverModel(TeaModel):
-    def __init__(
-        self,
-        icon: str = None,
-        name: str = None,
-        plugin_component_name: str = None,
-        preview_url: str = None,
-        project_name: str = None,
-        user_id: str = None,
-    ):
-        # 【必填】组件icon对应组件左上角的图标
-        self.icon = icon
-        # 【必填】卡片名称
-        self.name = name
-        # 【必填】卡片组件名
-        self.plugin_component_name = plugin_component_name
-        # 【必填】卡片预览图
-        self.preview_url = preview_url
-        # 【必填】保持和微应用名称相同
-        self.project_name = project_name
-        # 【必填】操作者Id
-        self.user_id = user_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.icon is not None:
-            result['icon'] = self.icon
-        if self.name is not None:
-            result['name'] = self.name
-        if self.plugin_component_name is not None:
-            result['pluginComponentName'] = self.plugin_component_name
-        if self.preview_url is not None:
-            result['previewUrl'] = self.preview_url
-        if self.project_name is not None:
-            result['projectName'] = self.project_name
-        if self.user_id is not None:
-            result['userId'] = self.user_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('icon') is not None:
-            self.icon = m.get('icon')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('pluginComponentName') is not None:
-            self.plugin_component_name = m.get('pluginComponentName')
-        if m.get('previewUrl') is not None:
-            self.preview_url = m.get('previewUrl')
-        if m.get('projectName') is not None:
-            self.project_name = m.get('projectName')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
         return self
 
 
@@ -3238,28 +2425,31 @@ class DeliverCardRequest(TeaModel):
         co_feed_open_deliver_model: DeliverCardRequestCoFeedOpenDeliverModel = None,
         im_group_open_deliver_model: DeliverCardRequestImGroupOpenDeliverModel = None,
         im_robot_open_deliver_model: DeliverCardRequestImRobotOpenDeliverModel = None,
-        im_single_open_deliver_model: DeliverCardRequestImSingleOpenDeliverModel = None,
         open_space_id: str = None,
         out_track_id: str = None,
         top_open_deliver_model: DeliverCardRequestTopOpenDeliverModel = None,
-        work_bench_open_deliver_model: DeliverCardRequestWorkBenchOpenDeliverModel = None,
+        user_id_type: int = None,
     ):
         # 协作投放参数
         self.co_feed_open_deliver_model = co_feed_open_deliver_model
         # 群聊投放参数
         self.im_group_open_deliver_model = im_group_open_deliver_model
-        # 单聊场域投放参数
+        # 单聊机器人场域投放参数
+        # 
+        # 【注意】 机器人与人的单聊，直接用支持机器人单聊的应用来发送
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
-        # 单聊场域投放参数
-        self.im_single_open_deliver_model = im_single_open_deliver_model
         # dt.card//spaceType.spaceId;spaceType.spaceId
         self.open_space_id = open_space_id
         # 外部卡片实例Id
         self.out_track_id = out_track_id
         # 吊顶投放参数
         self.top_open_deliver_model = top_open_deliver_model
-        # 工作台投放参数
-        self.work_bench_open_deliver_model = work_bench_open_deliver_model
+        # 用户id类型：
+        # 
+        # 1（默认）：userid模式
+        # 
+        # 2：unionId模式
+        self.user_id_type = user_id_type
 
     def validate(self):
         if self.co_feed_open_deliver_model:
@@ -3268,12 +2458,8 @@ class DeliverCardRequest(TeaModel):
             self.im_group_open_deliver_model.validate()
         if self.im_robot_open_deliver_model:
             self.im_robot_open_deliver_model.validate()
-        if self.im_single_open_deliver_model:
-            self.im_single_open_deliver_model.validate()
         if self.top_open_deliver_model:
             self.top_open_deliver_model.validate()
-        if self.work_bench_open_deliver_model:
-            self.work_bench_open_deliver_model.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3287,16 +2473,14 @@ class DeliverCardRequest(TeaModel):
             result['imGroupOpenDeliverModel'] = self.im_group_open_deliver_model.to_map()
         if self.im_robot_open_deliver_model is not None:
             result['imRobotOpenDeliverModel'] = self.im_robot_open_deliver_model.to_map()
-        if self.im_single_open_deliver_model is not None:
-            result['imSingleOpenDeliverModel'] = self.im_single_open_deliver_model.to_map()
         if self.open_space_id is not None:
             result['openSpaceId'] = self.open_space_id
         if self.out_track_id is not None:
             result['outTrackId'] = self.out_track_id
         if self.top_open_deliver_model is not None:
             result['topOpenDeliverModel'] = self.top_open_deliver_model.to_map()
-        if self.work_bench_open_deliver_model is not None:
-            result['workBenchOpenDeliverModel'] = self.work_bench_open_deliver_model.to_map()
+        if self.user_id_type is not None:
+            result['userIdType'] = self.user_id_type
         return result
 
     def from_map(self, m: dict = None):
@@ -3310,9 +2494,6 @@ class DeliverCardRequest(TeaModel):
         if m.get('imRobotOpenDeliverModel') is not None:
             temp_model = DeliverCardRequestImRobotOpenDeliverModel()
             self.im_robot_open_deliver_model = temp_model.from_map(m['imRobotOpenDeliverModel'])
-        if m.get('imSingleOpenDeliverModel') is not None:
-            temp_model = DeliverCardRequestImSingleOpenDeliverModel()
-            self.im_single_open_deliver_model = temp_model.from_map(m['imSingleOpenDeliverModel'])
         if m.get('openSpaceId') is not None:
             self.open_space_id = m.get('openSpaceId')
         if m.get('outTrackId') is not None:
@@ -3320,9 +2501,8 @@ class DeliverCardRequest(TeaModel):
         if m.get('topOpenDeliverModel') is not None:
             temp_model = DeliverCardRequestTopOpenDeliverModel()
             self.top_open_deliver_model = temp_model.from_map(m['topOpenDeliverModel'])
-        if m.get('workBenchOpenDeliverModel') is not None:
-            temp_model = DeliverCardRequestWorkBenchOpenDeliverModel()
-            self.work_bench_open_deliver_model = temp_model.from_map(m['workBenchOpenDeliverModel'])
+        if m.get('userIdType') is not None:
+            self.user_id_type = m.get('userIdType')
         return self
 
 

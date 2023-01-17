@@ -53,14 +53,10 @@ class Client(OpenApiClient):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
         if not UtilClient.is_unset(request.im_robot_open_space_model):
             body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
-        if not UtilClient.is_unset(request.im_single_open_space_model):
-            body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.out_track_id):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.top_open_space_model):
             body['topOpenSpaceModel'] = request.top_open_space_model
-        if not UtilClient.is_unset(request.work_bench_open_space_model):
-            body['workBenchOpenSpaceModel'] = request.work_bench_open_space_model
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -89,14 +85,10 @@ class Client(OpenApiClient):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
         if not UtilClient.is_unset(request.im_robot_open_space_model):
             body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
-        if not UtilClient.is_unset(request.im_single_open_space_model):
-            body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.out_track_id):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.top_open_space_model):
             body['topOpenSpaceModel'] = request.top_open_space_model
-        if not UtilClient.is_unset(request.work_bench_open_space_model):
-            body['workBenchOpenSpaceModel'] = request.work_bench_open_space_model
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -137,8 +129,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
-        if not UtilClient.is_unset(request.card_at_user_ids):
-            body['cardAtUserIds'] = request.card_at_user_ids
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -155,10 +145,6 @@ class Client(OpenApiClient):
             body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
         if not UtilClient.is_unset(request.im_robot_open_space_model):
             body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
-        if not UtilClient.is_unset(request.im_single_open_deliver_model):
-            body['imSingleOpenDeliverModel'] = request.im_single_open_deliver_model
-        if not UtilClient.is_unset(request.im_single_open_space_model):
-            body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.open_dynamic_data_config):
             body['openDynamicDataConfig'] = request.open_dynamic_data_config
         if not UtilClient.is_unset(request.open_space_id):
@@ -175,10 +161,6 @@ class Client(OpenApiClient):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.user_id_type):
             body['userIdType'] = request.user_id_type
-        if not UtilClient.is_unset(request.work_bench_open_deliver_model):
-            body['workBenchOpenDeliverModel'] = request.work_bench_open_deliver_model
-        if not UtilClient.is_unset(request.work_bench_open_space_model):
-            body['workBenchOpenSpaceModel'] = request.work_bench_open_space_model
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -203,8 +185,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
-        if not UtilClient.is_unset(request.card_at_user_ids):
-            body['cardAtUserIds'] = request.card_at_user_ids
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -221,10 +201,6 @@ class Client(OpenApiClient):
             body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
         if not UtilClient.is_unset(request.im_robot_open_space_model):
             body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
-        if not UtilClient.is_unset(request.im_single_open_deliver_model):
-            body['imSingleOpenDeliverModel'] = request.im_single_open_deliver_model
-        if not UtilClient.is_unset(request.im_single_open_space_model):
-            body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.open_dynamic_data_config):
             body['openDynamicDataConfig'] = request.open_dynamic_data_config
         if not UtilClient.is_unset(request.open_space_id):
@@ -241,10 +217,6 @@ class Client(OpenApiClient):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.user_id_type):
             body['userIdType'] = request.user_id_type
-        if not UtilClient.is_unset(request.work_bench_open_deliver_model):
-            body['workBenchOpenDeliverModel'] = request.work_bench_open_deliver_model
-        if not UtilClient.is_unset(request.work_bench_open_space_model):
-            body['workBenchOpenSpaceModel'] = request.work_bench_open_space_model
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -285,8 +257,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
-        if not UtilClient.is_unset(request.card_at_user_ids):
-            body['cardAtUserIds'] = request.card_at_user_ids
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -297,8 +267,6 @@ class Client(OpenApiClient):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
         if not UtilClient.is_unset(request.im_robot_open_space_model):
             body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
-        if not UtilClient.is_unset(request.im_single_open_space_model):
-            body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.open_dynamic_data_config):
             body['openDynamicDataConfig'] = request.open_dynamic_data_config
         if not UtilClient.is_unset(request.out_track_id):
@@ -311,8 +279,6 @@ class Client(OpenApiClient):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.user_id_type):
             body['userIdType'] = request.user_id_type
-        if not UtilClient.is_unset(request.work_bench_open_space_model):
-            body['workBenchOpenSpaceModel'] = request.work_bench_open_space_model
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -337,8 +303,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
-        if not UtilClient.is_unset(request.card_at_user_ids):
-            body['cardAtUserIds'] = request.card_at_user_ids
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -349,8 +313,6 @@ class Client(OpenApiClient):
             body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
         if not UtilClient.is_unset(request.im_robot_open_space_model):
             body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
-        if not UtilClient.is_unset(request.im_single_open_space_model):
-            body['imSingleOpenSpaceModel'] = request.im_single_open_space_model
         if not UtilClient.is_unset(request.open_dynamic_data_config):
             body['openDynamicDataConfig'] = request.open_dynamic_data_config
         if not UtilClient.is_unset(request.out_track_id):
@@ -363,8 +325,6 @@ class Client(OpenApiClient):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.user_id_type):
             body['userIdType'] = request.user_id_type
-        if not UtilClient.is_unset(request.work_bench_open_space_model):
-            body['workBenchOpenSpaceModel'] = request.work_bench_open_space_model
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -409,16 +369,14 @@ class Client(OpenApiClient):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
         if not UtilClient.is_unset(request.im_robot_open_deliver_model):
             body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
-        if not UtilClient.is_unset(request.im_single_open_deliver_model):
-            body['imSingleOpenDeliverModel'] = request.im_single_open_deliver_model
         if not UtilClient.is_unset(request.open_space_id):
             body['openSpaceId'] = request.open_space_id
         if not UtilClient.is_unset(request.out_track_id):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.top_open_deliver_model):
             body['topOpenDeliverModel'] = request.top_open_deliver_model
-        if not UtilClient.is_unset(request.work_bench_open_deliver_model):
-            body['workBenchOpenDeliverModel'] = request.work_bench_open_deliver_model
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -447,16 +405,14 @@ class Client(OpenApiClient):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
         if not UtilClient.is_unset(request.im_robot_open_deliver_model):
             body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
-        if not UtilClient.is_unset(request.im_single_open_deliver_model):
-            body['imSingleOpenDeliverModel'] = request.im_single_open_deliver_model
         if not UtilClient.is_unset(request.open_space_id):
             body['openSpaceId'] = request.open_space_id
         if not UtilClient.is_unset(request.out_track_id):
             body['outTrackId'] = request.out_track_id
         if not UtilClient.is_unset(request.top_open_deliver_model):
             body['topOpenDeliverModel'] = request.top_open_deliver_model
-        if not UtilClient.is_unset(request.work_bench_open_deliver_model):
-            body['workBenchOpenDeliverModel'] = request.work_bench_open_deliver_model
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
