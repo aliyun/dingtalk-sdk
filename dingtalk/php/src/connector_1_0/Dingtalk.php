@@ -11,15 +11,30 @@ use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateActionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateConnectorHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateConnectorRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateConnectorResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateInvocableInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateInvocableInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateInvocableInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateTriggerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateTriggerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\CreateTriggerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\GetActionDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\GetActionDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\GetActionDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\InvokeInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\InvokeInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\InvokeInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\PullDataByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\PullDataByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\PullDataByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\PullDataByPkHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\PullDataByPkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\PullDataByPkResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SearchActionsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SearchActionsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SearchActionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SearchConnectorsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SearchConnectorsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SearchConnectorsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SyncDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SyncDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\SyncDataResponse;
@@ -139,6 +154,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateInvocableInstanceRequest $request
+     *
+     * @return CreateInvocableInstanceResponse
+     */
+    public function createInvocableInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateInvocableInstanceHeaders([]);
+
+        return $this->createInvocableInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateInvocableInstanceRequest $request
+     * @param CreateInvocableInstanceHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CreateInvocableInstanceResponse
+     */
+    public function createInvocableInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->connectAssetUri)) {
+            @$body['connectAssetUri'] = $request->connectAssetUri;
+        }
+        if (!Utils::isUnset($request->instanceKey)) {
+            @$body['instanceKey'] = $request->instanceKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateInvocableInstanceResponse::fromMap($this->doROARequest('CreateInvocableInstance', 'connector_1.0', 'HTTP', 'POST', 'AK', '/v1.0/connector/instances', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CreateTriggerRequest $request
      *
      * @return CreateTriggerResponse
@@ -181,6 +241,96 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CreateTriggerResponse::fromMap($this->doROARequest('CreateTrigger', 'connector_1.0', 'HTTP', 'POST', 'AK', '/v1.0/connector/triggers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetActionDetailRequest $request
+     *
+     * @return GetActionDetailResponse
+     */
+    public function getActionDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetActionDetailHeaders([]);
+
+        return $this->getActionDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetActionDetailRequest $request
+     * @param GetActionDetailHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetActionDetailResponse
+     */
+    public function getActionDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->connectAssetUri)) {
+            @$body['connectAssetUri'] = $request->connectAssetUri;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetActionDetailResponse::fromMap($this->doROARequest('GetActionDetail', 'connector_1.0', 'HTTP', 'POST', 'AK', '/v1.0/connector/assets/actions/details/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param InvokeInstanceRequest $request
+     *
+     * @return InvokeInstanceResponse
+     */
+    public function invokeInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InvokeInstanceHeaders([]);
+
+        return $this->invokeInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param InvokeInstanceRequest $request
+     * @param InvokeInstanceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return InvokeInstanceResponse
+     */
+    public function invokeInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->connectAssetUri)) {
+            @$body['connectAssetUri'] = $request->connectAssetUri;
+        }
+        if (!Utils::isUnset($request->inputJsonString)) {
+            @$body['inputJsonString'] = $request->inputJsonString;
+        }
+        if (!Utils::isUnset($request->instanceKey)) {
+            @$body['instanceKey'] = $request->instanceKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return InvokeInstanceResponse::fromMap($this->doROARequest('InvokeInstance', 'connector_1.0', 'HTTP', 'POST', 'AK', '/v1.0/connector/instances/invoke', 'json', $req, $runtime));
     }
 
     /**
@@ -289,6 +439,108 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return PullDataByPkResponse::fromMap($this->doROARequest('PullDataByPk', 'connector_1.0', 'HTTP', 'GET', 'AK', '/v1.0/connector/data/' . $dataModelId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SearchActionsRequest $request
+     *
+     * @return SearchActionsResponse
+     */
+    public function searchActions($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchActionsHeaders([]);
+
+        return $this->searchActionsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchActionsRequest $request
+     * @param SearchActionsHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return SearchActionsResponse
+     */
+    public function searchActionsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->connectorId)) {
+            @$body['connectorId'] = $request->connectorId;
+        }
+        if (!Utils::isUnset($request->connectorProviderCorpId)) {
+            @$body['connectorProviderCorpId'] = $request->connectorProviderCorpId;
+        }
+        if (!Utils::isUnset($request->integrationTypes)) {
+            @$body['integrationTypes'] = $request->integrationTypes;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SearchActionsResponse::fromMap($this->doROARequest('SearchActions', 'connector_1.0', 'HTTP', 'POST', 'AK', '/v1.0/connector/assets/actions/search', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SearchConnectorsRequest $request
+     *
+     * @return SearchConnectorsResponse
+     */
+    public function searchConnectors($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchConnectorsHeaders([]);
+
+        return $this->searchConnectorsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchConnectorsRequest $request
+     * @param SearchConnectorsHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SearchConnectorsResponse
+     */
+    public function searchConnectorsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$query['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SearchConnectorsResponse::fromMap($this->doROARequest('SearchConnectors', 'connector_1.0', 'HTTP', 'GET', 'AK', '/v1.0/connector/assets/connectors', 'json', $req, $runtime));
     }
 
     /**

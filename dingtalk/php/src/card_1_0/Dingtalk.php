@@ -72,17 +72,11 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
             @$body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
         }
-        if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
-            @$body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
-        }
         if (!Utils::isUnset($request->outTrackId)) {
             @$body['outTrackId'] = $request->outTrackId;
         }
         if (!Utils::isUnset($request->topOpenSpaceModel)) {
             @$body['topOpenSpaceModel'] = $request->topOpenSpaceModel;
-        }
-        if (!Utils::isUnset($request->workBenchOpenSpaceModel)) {
-            @$body['workBenchOpenSpaceModel'] = $request->workBenchOpenSpaceModel;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -126,9 +120,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->callbackRouteKey)) {
             @$body['callbackRouteKey'] = $request->callbackRouteKey;
         }
-        if (!Utils::isUnset($request->cardAtUserIds)) {
-            @$body['cardAtUserIds'] = $request->cardAtUserIds;
-        }
         if (!Utils::isUnset($request->cardData)) {
             @$body['cardData'] = $request->cardData;
         }
@@ -153,12 +144,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
             @$body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
         }
-        if (!Utils::isUnset($request->imSingleOpenDeliverModel)) {
-            @$body['imSingleOpenDeliverModel'] = $request->imSingleOpenDeliverModel;
-        }
-        if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
-            @$body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
-        }
         if (!Utils::isUnset($request->openDynamicDataConfig)) {
             @$body['openDynamicDataConfig'] = $request->openDynamicDataConfig;
         }
@@ -182,12 +167,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->userIdType)) {
             @$body['userIdType'] = $request->userIdType;
-        }
-        if (!Utils::isUnset($request->workBenchOpenDeliverModel)) {
-            @$body['workBenchOpenDeliverModel'] = $request->workBenchOpenDeliverModel;
-        }
-        if (!Utils::isUnset($request->workBenchOpenSpaceModel)) {
-            @$body['workBenchOpenSpaceModel'] = $request->workBenchOpenSpaceModel;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -231,9 +210,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->callbackRouteKey)) {
             @$body['callbackRouteKey'] = $request->callbackRouteKey;
         }
-        if (!Utils::isUnset($request->cardAtUserIds)) {
-            @$body['cardAtUserIds'] = $request->cardAtUserIds;
-        }
         if (!Utils::isUnset($request->cardData)) {
             @$body['cardData'] = $request->cardData;
         }
@@ -248,9 +224,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
             @$body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
-        }
-        if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
-            @$body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
         }
         if (!Utils::isUnset($request->openDynamicDataConfig)) {
             @$body['openDynamicDataConfig'] = $request->openDynamicDataConfig;
@@ -269,9 +242,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->userIdType)) {
             @$body['userIdType'] = $request->userIdType;
-        }
-        if (!Utils::isUnset($request->workBenchOpenSpaceModel)) {
-            @$body['workBenchOpenSpaceModel'] = $request->workBenchOpenSpaceModel;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -321,9 +291,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imRobotOpenDeliverModel)) {
             @$body['imRobotOpenDeliverModel'] = $request->imRobotOpenDeliverModel;
         }
-        if (!Utils::isUnset($request->imSingleOpenDeliverModel)) {
-            @$body['imSingleOpenDeliverModel'] = $request->imSingleOpenDeliverModel;
-        }
         if (!Utils::isUnset($request->openSpaceId)) {
             @$body['openSpaceId'] = $request->openSpaceId;
         }
@@ -333,8 +300,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->topOpenDeliverModel)) {
             @$body['topOpenDeliverModel'] = $request->topOpenDeliverModel;
         }
-        if (!Utils::isUnset($request->workBenchOpenDeliverModel)) {
-            @$body['workBenchOpenDeliverModel'] = $request->workBenchOpenDeliverModel;
+        if (!Utils::isUnset($request->userIdType)) {
+            @$body['userIdType'] = $request->userIdType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

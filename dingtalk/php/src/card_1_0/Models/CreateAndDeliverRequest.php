@@ -11,13 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imGroupOp
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imGroupOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imRobotOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imRobotOpenSpaceModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imSingleOpenDeliverModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imSingleOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\openDynamicDataConfig;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\topOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\topOpenSpaceModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\workBenchOpenDeliverModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\workBenchOpenSpaceModel;
 use AlibabaCloud\Tea\Model;
 
 class CreateAndDeliverRequest extends Model
@@ -28,11 +24,6 @@ class CreateAndDeliverRequest extends Model
      * @var string
      */
     public $callbackRouteKey;
-
-    /**
-     * @var string[]
-     */
-    public $cardAtUserIds;
 
     /**
      * @description 卡片数据
@@ -91,20 +82,6 @@ class CreateAndDeliverRequest extends Model
     public $imRobotOpenSpaceModel;
 
     /**
-     * @description 单聊场域投放参数
-     *
-     * @var imSingleOpenDeliverModel
-     */
-    public $imSingleOpenDeliverModel;
-
-    /**
-     * @description IM单聊场域信息
-     *
-     * @var imSingleOpenSpaceModel
-     */
-    public $imSingleOpenSpaceModel;
-
-    /**
      * @description 动态数据源配置
      *
      * @var openDynamicDataConfig
@@ -155,43 +132,24 @@ class CreateAndDeliverRequest extends Model
      * @var int
      */
     public $userIdType;
-
-    /**
-     * @description 工作台投放参数
-     *
-     * @var workBenchOpenDeliverModel
-     */
-    public $workBenchOpenDeliverModel;
-
-    /**
-     * @description 工作台场域信息
-     *
-     * @var workBenchOpenSpaceModel
-     */
-    public $workBenchOpenSpaceModel;
     protected $_name = [
-        'callbackRouteKey'          => 'callbackRouteKey',
-        'cardAtUserIds'             => 'cardAtUserIds',
-        'cardData'                  => 'cardData',
-        'cardTemplateId'            => 'cardTemplateId',
-        'coFeedOpenDeliverModel'    => 'coFeedOpenDeliverModel',
-        'coFeedOpenSpaceModel'      => 'coFeedOpenSpaceModel',
-        'imGroupOpenDeliverModel'   => 'imGroupOpenDeliverModel',
-        'imGroupOpenSpaceModel'     => 'imGroupOpenSpaceModel',
-        'imRobotOpenDeliverModel'   => 'imRobotOpenDeliverModel',
-        'imRobotOpenSpaceModel'     => 'imRobotOpenSpaceModel',
-        'imSingleOpenDeliverModel'  => 'imSingleOpenDeliverModel',
-        'imSingleOpenSpaceModel'    => 'imSingleOpenSpaceModel',
-        'openDynamicDataConfig'     => 'openDynamicDataConfig',
-        'openSpaceId'               => 'openSpaceId',
-        'outTrackId'                => 'outTrackId',
-        'privateData'               => 'privateData',
-        'topOpenDeliverModel'       => 'topOpenDeliverModel',
-        'topOpenSpaceModel'         => 'topOpenSpaceModel',
-        'userId'                    => 'userId',
-        'userIdType'                => 'userIdType',
-        'workBenchOpenDeliverModel' => 'workBenchOpenDeliverModel',
-        'workBenchOpenSpaceModel'   => 'workBenchOpenSpaceModel',
+        'callbackRouteKey'        => 'callbackRouteKey',
+        'cardData'                => 'cardData',
+        'cardTemplateId'          => 'cardTemplateId',
+        'coFeedOpenDeliverModel'  => 'coFeedOpenDeliverModel',
+        'coFeedOpenSpaceModel'    => 'coFeedOpenSpaceModel',
+        'imGroupOpenDeliverModel' => 'imGroupOpenDeliverModel',
+        'imGroupOpenSpaceModel'   => 'imGroupOpenSpaceModel',
+        'imRobotOpenDeliverModel' => 'imRobotOpenDeliverModel',
+        'imRobotOpenSpaceModel'   => 'imRobotOpenSpaceModel',
+        'openDynamicDataConfig'   => 'openDynamicDataConfig',
+        'openSpaceId'             => 'openSpaceId',
+        'outTrackId'              => 'outTrackId',
+        'privateData'             => 'privateData',
+        'topOpenDeliverModel'     => 'topOpenDeliverModel',
+        'topOpenSpaceModel'       => 'topOpenSpaceModel',
+        'userId'                  => 'userId',
+        'userIdType'              => 'userIdType',
     ];
 
     public function validate()
@@ -203,9 +161,6 @@ class CreateAndDeliverRequest extends Model
         $res = [];
         if (null !== $this->callbackRouteKey) {
             $res['callbackRouteKey'] = $this->callbackRouteKey;
-        }
-        if (null !== $this->cardAtUserIds) {
-            $res['cardAtUserIds'] = $this->cardAtUserIds;
         }
         if (null !== $this->cardData) {
             $res['cardData'] = null !== $this->cardData ? $this->cardData->toMap() : null;
@@ -230,12 +185,6 @@ class CreateAndDeliverRequest extends Model
         }
         if (null !== $this->imRobotOpenSpaceModel) {
             $res['imRobotOpenSpaceModel'] = null !== $this->imRobotOpenSpaceModel ? $this->imRobotOpenSpaceModel->toMap() : null;
-        }
-        if (null !== $this->imSingleOpenDeliverModel) {
-            $res['imSingleOpenDeliverModel'] = null !== $this->imSingleOpenDeliverModel ? $this->imSingleOpenDeliverModel->toMap() : null;
-        }
-        if (null !== $this->imSingleOpenSpaceModel) {
-            $res['imSingleOpenSpaceModel'] = null !== $this->imSingleOpenSpaceModel ? $this->imSingleOpenSpaceModel->toMap() : null;
         }
         if (null !== $this->openDynamicDataConfig) {
             $res['openDynamicDataConfig'] = null !== $this->openDynamicDataConfig ? $this->openDynamicDataConfig->toMap() : null;
@@ -266,12 +215,6 @@ class CreateAndDeliverRequest extends Model
         if (null !== $this->userIdType) {
             $res['userIdType'] = $this->userIdType;
         }
-        if (null !== $this->workBenchOpenDeliverModel) {
-            $res['workBenchOpenDeliverModel'] = null !== $this->workBenchOpenDeliverModel ? $this->workBenchOpenDeliverModel->toMap() : null;
-        }
-        if (null !== $this->workBenchOpenSpaceModel) {
-            $res['workBenchOpenSpaceModel'] = null !== $this->workBenchOpenSpaceModel ? $this->workBenchOpenSpaceModel->toMap() : null;
-        }
 
         return $res;
     }
@@ -286,11 +229,6 @@ class CreateAndDeliverRequest extends Model
         $model = new self();
         if (isset($map['callbackRouteKey'])) {
             $model->callbackRouteKey = $map['callbackRouteKey'];
-        }
-        if (isset($map['cardAtUserIds'])) {
-            if (!empty($map['cardAtUserIds'])) {
-                $model->cardAtUserIds = $map['cardAtUserIds'];
-            }
         }
         if (isset($map['cardData'])) {
             $model->cardData = cardData::fromMap($map['cardData']);
@@ -316,12 +254,6 @@ class CreateAndDeliverRequest extends Model
         if (isset($map['imRobotOpenSpaceModel'])) {
             $model->imRobotOpenSpaceModel = imRobotOpenSpaceModel::fromMap($map['imRobotOpenSpaceModel']);
         }
-        if (isset($map['imSingleOpenDeliverModel'])) {
-            $model->imSingleOpenDeliverModel = imSingleOpenDeliverModel::fromMap($map['imSingleOpenDeliverModel']);
-        }
-        if (isset($map['imSingleOpenSpaceModel'])) {
-            $model->imSingleOpenSpaceModel = imSingleOpenSpaceModel::fromMap($map['imSingleOpenSpaceModel']);
-        }
         if (isset($map['openDynamicDataConfig'])) {
             $model->openDynamicDataConfig = openDynamicDataConfig::fromMap($map['openDynamicDataConfig']);
         }
@@ -345,12 +277,6 @@ class CreateAndDeliverRequest extends Model
         }
         if (isset($map['userIdType'])) {
             $model->userIdType = $map['userIdType'];
-        }
-        if (isset($map['workBenchOpenDeliverModel'])) {
-            $model->workBenchOpenDeliverModel = workBenchOpenDeliverModel::fromMap($map['workBenchOpenDeliverModel']);
-        }
-        if (isset($map['workBenchOpenSpaceModel'])) {
-            $model->workBenchOpenSpaceModel = workBenchOpenSpaceModel::fromMap($map['workBenchOpenSpaceModel']);
         }
 
         return $model;

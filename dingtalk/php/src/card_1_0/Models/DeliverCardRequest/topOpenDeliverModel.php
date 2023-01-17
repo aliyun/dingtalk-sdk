@@ -13,7 +13,7 @@ class topOpenDeliverModel extends Model
      *
      * @var int
      */
-    public $expiredTimeMills;
+    public $expiredTimeMillis;
 
     /**
      * @description 可以查看该吊顶卡片的设备
@@ -29,9 +29,9 @@ class topOpenDeliverModel extends Model
      */
     public $userIds;
     protected $_name = [
-        'expiredTimeMills' => 'expiredTimeMills',
-        'platforms'        => 'platforms',
-        'userIds'          => 'userIds',
+        'expiredTimeMillis' => 'expiredTimeMillis',
+        'platforms'         => 'platforms',
+        'userIds'           => 'userIds',
     ];
 
     public function validate()
@@ -41,8 +41,8 @@ class topOpenDeliverModel extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->expiredTimeMills) {
-            $res['expiredTimeMills'] = $this->expiredTimeMills;
+        if (null !== $this->expiredTimeMillis) {
+            $res['expiredTimeMillis'] = $this->expiredTimeMillis;
         }
         if (null !== $this->platforms) {
             $res['platforms'] = $this->platforms;
@@ -62,8 +62,8 @@ class topOpenDeliverModel extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['expiredTimeMills'])) {
-            $model->expiredTimeMills = $map['expiredTimeMills'];
+        if (isset($map['expiredTimeMillis'])) {
+            $model->expiredTimeMillis = $map['expiredTimeMillis'];
         }
         if (isset($map['platforms'])) {
             if (!empty($map['platforms'])) {

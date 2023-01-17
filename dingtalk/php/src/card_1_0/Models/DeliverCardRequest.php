@@ -7,9 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\coFeedOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imGroupOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imRobotOpenDeliverModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imSingleOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\topOpenDeliverModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\workBenchOpenDeliverModel;
 use AlibabaCloud\Tea\Model;
 
 class DeliverCardRequest extends Model
@@ -29,18 +27,12 @@ class DeliverCardRequest extends Model
     public $imGroupOpenDeliverModel;
 
     /**
-     * @description 单聊场域投放参数
+     * @description 单聊机器人场域投放参数
      *
+     * 【注意】 机器人与人的单聊，直接用支持机器人单聊的应用来发送
      * @var imRobotOpenDeliverModel
      */
     public $imRobotOpenDeliverModel;
-
-    /**
-     * @description 单聊场域投放参数
-     *
-     * @var imSingleOpenDeliverModel
-     */
-    public $imSingleOpenDeliverModel;
 
     /**
      * @description dt.card//spaceType.spaceId;spaceType.spaceId
@@ -64,20 +56,20 @@ class DeliverCardRequest extends Model
     public $topOpenDeliverModel;
 
     /**
-     * @description 工作台投放参数
+     * @description 用户id类型：
      *
-     * @var workBenchOpenDeliverModel
+     * 2：unionId模式
+     * @var int
      */
-    public $workBenchOpenDeliverModel;
+    public $userIdType;
     protected $_name = [
-        'coFeedOpenDeliverModel'    => 'coFeedOpenDeliverModel',
-        'imGroupOpenDeliverModel'   => 'imGroupOpenDeliverModel',
-        'imRobotOpenDeliverModel'   => 'imRobotOpenDeliverModel',
-        'imSingleOpenDeliverModel'  => 'imSingleOpenDeliverModel',
-        'openSpaceId'               => 'openSpaceId',
-        'outTrackId'                => 'outTrackId',
-        'topOpenDeliverModel'       => 'topOpenDeliverModel',
-        'workBenchOpenDeliverModel' => 'workBenchOpenDeliverModel',
+        'coFeedOpenDeliverModel'  => 'coFeedOpenDeliverModel',
+        'imGroupOpenDeliverModel' => 'imGroupOpenDeliverModel',
+        'imRobotOpenDeliverModel' => 'imRobotOpenDeliverModel',
+        'openSpaceId'             => 'openSpaceId',
+        'outTrackId'              => 'outTrackId',
+        'topOpenDeliverModel'     => 'topOpenDeliverModel',
+        'userIdType'              => 'userIdType',
     ];
 
     public function validate()
@@ -96,9 +88,6 @@ class DeliverCardRequest extends Model
         if (null !== $this->imRobotOpenDeliverModel) {
             $res['imRobotOpenDeliverModel'] = null !== $this->imRobotOpenDeliverModel ? $this->imRobotOpenDeliverModel->toMap() : null;
         }
-        if (null !== $this->imSingleOpenDeliverModel) {
-            $res['imSingleOpenDeliverModel'] = null !== $this->imSingleOpenDeliverModel ? $this->imSingleOpenDeliverModel->toMap() : null;
-        }
         if (null !== $this->openSpaceId) {
             $res['openSpaceId'] = $this->openSpaceId;
         }
@@ -108,8 +97,8 @@ class DeliverCardRequest extends Model
         if (null !== $this->topOpenDeliverModel) {
             $res['topOpenDeliverModel'] = null !== $this->topOpenDeliverModel ? $this->topOpenDeliverModel->toMap() : null;
         }
-        if (null !== $this->workBenchOpenDeliverModel) {
-            $res['workBenchOpenDeliverModel'] = null !== $this->workBenchOpenDeliverModel ? $this->workBenchOpenDeliverModel->toMap() : null;
+        if (null !== $this->userIdType) {
+            $res['userIdType'] = $this->userIdType;
         }
 
         return $res;
@@ -132,9 +121,6 @@ class DeliverCardRequest extends Model
         if (isset($map['imRobotOpenDeliverModel'])) {
             $model->imRobotOpenDeliverModel = imRobotOpenDeliverModel::fromMap($map['imRobotOpenDeliverModel']);
         }
-        if (isset($map['imSingleOpenDeliverModel'])) {
-            $model->imSingleOpenDeliverModel = imSingleOpenDeliverModel::fromMap($map['imSingleOpenDeliverModel']);
-        }
         if (isset($map['openSpaceId'])) {
             $model->openSpaceId = $map['openSpaceId'];
         }
@@ -144,8 +130,8 @@ class DeliverCardRequest extends Model
         if (isset($map['topOpenDeliverModel'])) {
             $model->topOpenDeliverModel = topOpenDeliverModel::fromMap($map['topOpenDeliverModel']);
         }
-        if (isset($map['workBenchOpenDeliverModel'])) {
-            $model->workBenchOpenDeliverModel = workBenchOpenDeliverModel::fromMap($map['workBenchOpenDeliverModel']);
+        if (isset($map['userIdType'])) {
+            $model->userIdType = $map['userIdType'];
         }
 
         return $model;

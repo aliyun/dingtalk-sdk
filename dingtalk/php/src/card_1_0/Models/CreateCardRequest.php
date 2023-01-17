@@ -8,10 +8,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\cardData;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\coFeedOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imGroupOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imRobotOpenSpaceModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imSingleOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\openDynamicDataConfig;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\topOpenSpaceModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\workBenchOpenSpaceModel;
 use AlibabaCloud\Tea\Model;
 
 class CreateCardRequest extends Model
@@ -22,11 +20,6 @@ class CreateCardRequest extends Model
      * @var string
      */
     public $callbackRouteKey;
-
-    /**
-     * @var string[]
-     */
-    public $cardAtUserIds;
 
     /**
      * @description 卡片数据
@@ -62,13 +55,6 @@ class CreateCardRequest extends Model
      * @var imRobotOpenSpaceModel
      */
     public $imRobotOpenSpaceModel;
-
-    /**
-     * @description IM 单聊场域信息
-     *
-     * @var imSingleOpenSpaceModel
-     */
-    public $imSingleOpenSpaceModel;
 
     /**
      * @description 动态数据源配置
@@ -109,29 +95,19 @@ class CreateCardRequest extends Model
      * @var int
      */
     public $userIdType;
-
-    /**
-     * @description 工作台场域信息
-     *
-     * @var workBenchOpenSpaceModel
-     */
-    public $workBenchOpenSpaceModel;
     protected $_name = [
-        'callbackRouteKey'        => 'callbackRouteKey',
-        'cardAtUserIds'           => 'cardAtUserIds',
-        'cardData'                => 'cardData',
-        'cardTemplateId'          => 'cardTemplateId',
-        'coFeedOpenSpaceModel'    => 'coFeedOpenSpaceModel',
-        'imGroupOpenSpaceModel'   => 'imGroupOpenSpaceModel',
-        'imRobotOpenSpaceModel'   => 'imRobotOpenSpaceModel',
-        'imSingleOpenSpaceModel'  => 'imSingleOpenSpaceModel',
-        'openDynamicDataConfig'   => 'openDynamicDataConfig',
-        'outTrackId'              => 'outTrackId',
-        'privateData'             => 'privateData',
-        'topOpenSpaceModel'       => 'topOpenSpaceModel',
-        'userId'                  => 'userId',
-        'userIdType'              => 'userIdType',
-        'workBenchOpenSpaceModel' => 'workBenchOpenSpaceModel',
+        'callbackRouteKey'      => 'callbackRouteKey',
+        'cardData'              => 'cardData',
+        'cardTemplateId'        => 'cardTemplateId',
+        'coFeedOpenSpaceModel'  => 'coFeedOpenSpaceModel',
+        'imGroupOpenSpaceModel' => 'imGroupOpenSpaceModel',
+        'imRobotOpenSpaceModel' => 'imRobotOpenSpaceModel',
+        'openDynamicDataConfig' => 'openDynamicDataConfig',
+        'outTrackId'            => 'outTrackId',
+        'privateData'           => 'privateData',
+        'topOpenSpaceModel'     => 'topOpenSpaceModel',
+        'userId'                => 'userId',
+        'userIdType'            => 'userIdType',
     ];
 
     public function validate()
@@ -143,9 +119,6 @@ class CreateCardRequest extends Model
         $res = [];
         if (null !== $this->callbackRouteKey) {
             $res['callbackRouteKey'] = $this->callbackRouteKey;
-        }
-        if (null !== $this->cardAtUserIds) {
-            $res['cardAtUserIds'] = $this->cardAtUserIds;
         }
         if (null !== $this->cardData) {
             $res['cardData'] = null !== $this->cardData ? $this->cardData->toMap() : null;
@@ -161,9 +134,6 @@ class CreateCardRequest extends Model
         }
         if (null !== $this->imRobotOpenSpaceModel) {
             $res['imRobotOpenSpaceModel'] = null !== $this->imRobotOpenSpaceModel ? $this->imRobotOpenSpaceModel->toMap() : null;
-        }
-        if (null !== $this->imSingleOpenSpaceModel) {
-            $res['imSingleOpenSpaceModel'] = null !== $this->imSingleOpenSpaceModel ? $this->imSingleOpenSpaceModel->toMap() : null;
         }
         if (null !== $this->openDynamicDataConfig) {
             $res['openDynamicDataConfig'] = null !== $this->openDynamicDataConfig ? $this->openDynamicDataConfig->toMap() : null;
@@ -188,9 +158,6 @@ class CreateCardRequest extends Model
         if (null !== $this->userIdType) {
             $res['userIdType'] = $this->userIdType;
         }
-        if (null !== $this->workBenchOpenSpaceModel) {
-            $res['workBenchOpenSpaceModel'] = null !== $this->workBenchOpenSpaceModel ? $this->workBenchOpenSpaceModel->toMap() : null;
-        }
 
         return $res;
     }
@@ -206,11 +173,6 @@ class CreateCardRequest extends Model
         if (isset($map['callbackRouteKey'])) {
             $model->callbackRouteKey = $map['callbackRouteKey'];
         }
-        if (isset($map['cardAtUserIds'])) {
-            if (!empty($map['cardAtUserIds'])) {
-                $model->cardAtUserIds = $map['cardAtUserIds'];
-            }
-        }
         if (isset($map['cardData'])) {
             $model->cardData = cardData::fromMap($map['cardData']);
         }
@@ -225,9 +187,6 @@ class CreateCardRequest extends Model
         }
         if (isset($map['imRobotOpenSpaceModel'])) {
             $model->imRobotOpenSpaceModel = imRobotOpenSpaceModel::fromMap($map['imRobotOpenSpaceModel']);
-        }
-        if (isset($map['imSingleOpenSpaceModel'])) {
-            $model->imSingleOpenSpaceModel = imSingleOpenSpaceModel::fromMap($map['imSingleOpenSpaceModel']);
         }
         if (isset($map['openDynamicDataConfig'])) {
             $model->openDynamicDataConfig = openDynamicDataConfig::fromMap($map['openDynamicDataConfig']);
@@ -246,9 +205,6 @@ class CreateCardRequest extends Model
         }
         if (isset($map['userIdType'])) {
             $model->userIdType = $map['userIdType'];
-        }
-        if (isset($map['workBenchOpenSpaceModel'])) {
-            $model->workBenchOpenSpaceModel = workBenchOpenSpaceModel::fromMap($map['workBenchOpenSpaceModel']);
         }
 
         return $model;

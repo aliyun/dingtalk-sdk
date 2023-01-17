@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest;
+namespace AlibabaCloud\SDK\Dingtalk\Vconnector_1_0\Models\GetActionDetailResponseBody\integrationConfig;
 
 use AlibabaCloud\Tea\Model;
 
-class imSingleOpenDeliverModel extends Model
+class categoryNames extends Model
 {
     /**
-     * @description 消息@人，
+     * @description 类目名称
      *
-     * @var string[]
+     * @var string
      */
-    public $atUserIds;
+    public $value;
     protected $_name = [
-        'atUserIds' => 'atUserIds',
+        'value' => 'value',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class imSingleOpenDeliverModel extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->atUserIds) {
-            $res['atUserIds'] = $this->atUserIds;
+        if (null !== $this->value) {
+            $res['value'] = $this->value;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class imSingleOpenDeliverModel extends Model
     /**
      * @param array $map
      *
-     * @return imSingleOpenDeliverModel
+     * @return categoryNames
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['atUserIds'])) {
-            $model->atUserIds = $map['atUserIds'];
+        if (isset($map['value'])) {
+            $model->value = $map['value'];
         }
 
         return $model;

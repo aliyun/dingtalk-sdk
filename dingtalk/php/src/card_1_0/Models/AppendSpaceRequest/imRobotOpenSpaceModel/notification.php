@@ -9,11 +9,16 @@ use AlibabaCloud\Tea\Model;
 class notification extends Model
 {
     /**
+     * @description 【条件必填】通知内容
+     *
+     * 【注意】若不填写则使用默认文案：如你收到1条新消息
      * @var string
      */
     public $alertContent;
 
     /**
+     * @description 是否关闭推送通知，默认为false
+     *
      * @var bool
      */
     public $notificationOff;

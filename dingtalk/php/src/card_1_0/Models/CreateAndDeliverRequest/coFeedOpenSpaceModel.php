@@ -9,13 +9,19 @@ use AlibabaCloud\Tea\Model;
 class coFeedOpenSpaceModel extends Model
 {
     /**
+     * @var string
+     */
+    public $coolAppCode;
+
+    /**
      * @description 【必填】标题
      *
      * @var string
      */
     public $title;
     protected $_name = [
-        'title' => 'title',
+        'coolAppCode' => 'coolAppCode',
+        'title'       => 'title',
     ];
 
     public function validate()
@@ -25,6 +31,9 @@ class coFeedOpenSpaceModel extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->coolAppCode) {
+            $res['coolAppCode'] = $this->coolAppCode;
+        }
         if (null !== $this->title) {
             $res['title'] = $this->title;
         }
@@ -40,6 +49,9 @@ class coFeedOpenSpaceModel extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['coolAppCode'])) {
+            $model->coolAppCode = $map['coolAppCode'];
+        }
         if (isset($map['title'])) {
             $model->title = $map['title'];
         }

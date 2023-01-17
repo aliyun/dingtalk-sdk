@@ -7,9 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\coFeedOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\imGroupOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\imRobotOpenSpaceModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\imSingleOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\topOpenSpaceModel;
-use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest\workBenchOpenSpaceModel;
 use AlibabaCloud\Tea\Model;
 
 class AppendSpaceRequest extends Model
@@ -36,13 +34,6 @@ class AppendSpaceRequest extends Model
     public $imRobotOpenSpaceModel;
 
     /**
-     * @description IM单聊场域信息
-     *
-     * @var imSingleOpenSpaceModel
-     */
-    public $imSingleOpenSpaceModel;
-
-    /**
      * @description 唯一标识一张卡片的外部Id
      *
      * @var string
@@ -55,21 +46,12 @@ class AppendSpaceRequest extends Model
      * @var topOpenSpaceModel
      */
     public $topOpenSpaceModel;
-
-    /**
-     * @description 工作台场域信息
-     *
-     * @var workBenchOpenSpaceModel
-     */
-    public $workBenchOpenSpaceModel;
     protected $_name = [
-        'coFeedOpenSpaceModel'    => 'coFeedOpenSpaceModel',
-        'imGroupOpenSpaceModel'   => 'imGroupOpenSpaceModel',
-        'imRobotOpenSpaceModel'   => 'imRobotOpenSpaceModel',
-        'imSingleOpenSpaceModel'  => 'imSingleOpenSpaceModel',
-        'outTrackId'              => 'outTrackId',
-        'topOpenSpaceModel'       => 'topOpenSpaceModel',
-        'workBenchOpenSpaceModel' => 'workBenchOpenSpaceModel',
+        'coFeedOpenSpaceModel'  => 'coFeedOpenSpaceModel',
+        'imGroupOpenSpaceModel' => 'imGroupOpenSpaceModel',
+        'imRobotOpenSpaceModel' => 'imRobotOpenSpaceModel',
+        'outTrackId'            => 'outTrackId',
+        'topOpenSpaceModel'     => 'topOpenSpaceModel',
     ];
 
     public function validate()
@@ -88,17 +70,11 @@ class AppendSpaceRequest extends Model
         if (null !== $this->imRobotOpenSpaceModel) {
             $res['imRobotOpenSpaceModel'] = null !== $this->imRobotOpenSpaceModel ? $this->imRobotOpenSpaceModel->toMap() : null;
         }
-        if (null !== $this->imSingleOpenSpaceModel) {
-            $res['imSingleOpenSpaceModel'] = null !== $this->imSingleOpenSpaceModel ? $this->imSingleOpenSpaceModel->toMap() : null;
-        }
         if (null !== $this->outTrackId) {
             $res['outTrackId'] = $this->outTrackId;
         }
         if (null !== $this->topOpenSpaceModel) {
             $res['topOpenSpaceModel'] = null !== $this->topOpenSpaceModel ? $this->topOpenSpaceModel->toMap() : null;
-        }
-        if (null !== $this->workBenchOpenSpaceModel) {
-            $res['workBenchOpenSpaceModel'] = null !== $this->workBenchOpenSpaceModel ? $this->workBenchOpenSpaceModel->toMap() : null;
         }
 
         return $res;
@@ -121,17 +97,11 @@ class AppendSpaceRequest extends Model
         if (isset($map['imRobotOpenSpaceModel'])) {
             $model->imRobotOpenSpaceModel = imRobotOpenSpaceModel::fromMap($map['imRobotOpenSpaceModel']);
         }
-        if (isset($map['imSingleOpenSpaceModel'])) {
-            $model->imSingleOpenSpaceModel = imSingleOpenSpaceModel::fromMap($map['imSingleOpenSpaceModel']);
-        }
         if (isset($map['outTrackId'])) {
             $model->outTrackId = $map['outTrackId'];
         }
         if (isset($map['topOpenSpaceModel'])) {
             $model->topOpenSpaceModel = topOpenSpaceModel::fromMap($map['topOpenSpaceModel']);
-        }
-        if (isset($map['workBenchOpenSpaceModel'])) {
-            $model->workBenchOpenSpaceModel = workBenchOpenSpaceModel::fromMap($map['workBenchOpenSpaceModel']);
         }
 
         return $model;

@@ -18,7 +18,7 @@ class imRobotOpenSpaceModel extends Model
     public $lastMessageI18n;
 
     /**
-     * @description xpn信息
+     * @description 通知信息
      *
      * @var notification
      */
