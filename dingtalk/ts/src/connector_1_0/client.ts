@@ -177,6 +177,94 @@ export class CreateConnectorResponse extends $tea.Model {
   }
 }
 
+export class CreateInvocableInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateInvocableInstanceRequest extends $tea.Model {
+  connectAssetUri?: string;
+  instanceKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      connectAssetUri: 'connectAssetUri',
+      instanceKey: 'instanceKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      connectAssetUri: 'string',
+      instanceKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateInvocableInstanceResponseBody extends $tea.Model {
+  connectAssetUri?: string;
+  versionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      connectAssetUri: 'connectAssetUri',
+      versionId: 'versionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      connectAssetUri: 'string',
+      versionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateInvocableInstanceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateInvocableInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateInvocableInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTriggerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -254,6 +342,209 @@ export class CreateTriggerResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: CreateTriggerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetActionDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetActionDetailRequest extends $tea.Model {
+  connectAssetUri?: string;
+  static names(): { [key: string]: string } {
+    return {
+      connectAssetUri: 'connectAssetUri',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      connectAssetUri: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetActionDetailResponseBody extends $tea.Model {
+  connectAssetUri?: string;
+  inputSchema?: string;
+  integrationConfig?: GetActionDetailResponseBodyIntegrationConfig;
+  name?: string;
+  outputSchema?: string;
+  refId?: string;
+  refProviderCorpId?: string;
+  refType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      connectAssetUri: 'connectAssetUri',
+      inputSchema: 'inputSchema',
+      integrationConfig: 'integrationConfig',
+      name: 'name',
+      outputSchema: 'outputSchema',
+      refId: 'refId',
+      refProviderCorpId: 'refProviderCorpId',
+      refType: 'refType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      connectAssetUri: 'string',
+      inputSchema: 'string',
+      integrationConfig: GetActionDetailResponseBodyIntegrationConfig,
+      name: 'string',
+      outputSchema: 'string',
+      refId: 'string',
+      refProviderCorpId: 'string',
+      refType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetActionDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetActionDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetActionDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvokeInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvokeInstanceRequest extends $tea.Model {
+  connectAssetUri?: string;
+  inputJsonString?: string;
+  instanceKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      connectAssetUri: 'connectAssetUri',
+      inputJsonString: 'inputJsonString',
+      instanceKey: 'instanceKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      connectAssetUri: 'string',
+      inputJsonString: 'string',
+      instanceKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvokeInstanceResponseBody extends $tea.Model {
+  cost?: number;
+  errorCode?: string;
+  errorMessage?: string;
+  instanceId?: string;
+  outputJson?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cost: 'cost',
+      errorCode: 'errorCode',
+      errorMessage: 'errorMessage',
+      instanceId: 'instanceId',
+      outputJson: 'outputJson',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cost: 'number',
+      errorCode: 'string',
+      errorMessage: 'string',
+      instanceId: 'string',
+      outputJson: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvokeInstanceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: InvokeInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: InvokeInstanceResponseBody,
     };
   }
 
@@ -463,6 +754,206 @@ export class PullDataByPkResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: PullDataByPkResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchActionsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchActionsRequest extends $tea.Model {
+  connectorId?: string;
+  connectorProviderCorpId?: string;
+  integrationTypes?: string[];
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      connectorId: 'connectorId',
+      connectorProviderCorpId: 'connectorProviderCorpId',
+      integrationTypes: 'integrationTypes',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      connectorId: 'string',
+      connectorProviderCorpId: 'string',
+      integrationTypes: { 'type': 'array', 'itemType': 'string' },
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchActionsResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: SearchActionsResponseBodyList[];
+  nextToken?: string;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': SearchActionsResponseBodyList },
+      nextToken: 'string',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchActionsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchActionsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchActionsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchConnectorsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchConnectorsRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchConnectorsResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: SearchConnectorsResponseBodyList[];
+  nextToken?: string;
+  totalCount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': SearchConnectorsResponseBodyList },
+      nextToken: 'string',
+      totalCount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchConnectorsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchConnectorsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchConnectorsResponseBody,
     };
   }
 
@@ -1111,6 +1602,72 @@ export class CreateTriggerResponseBodyItem extends $tea.Model {
   }
 }
 
+export class GetActionDetailResponseBodyIntegrationConfigCategoryNames extends $tea.Model {
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetActionDetailResponseBodyIntegrationConfigProps extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetActionDetailResponseBodyIntegrationConfig extends $tea.Model {
+  categoryNames?: GetActionDetailResponseBodyIntegrationConfigCategoryNames[];
+  entityName?: string;
+  props?: GetActionDetailResponseBodyIntegrationConfigProps[];
+  static names(): { [key: string]: string } {
+    return {
+      categoryNames: 'categoryNames',
+      entityName: 'entityName',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryNames: { 'type': 'array', 'itemType': GetActionDetailResponseBodyIntegrationConfigCategoryNames },
+      entityName: 'string',
+      props: { 'type': 'array', 'itemType': GetActionDetailResponseBodyIntegrationConfigProps },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PullDataByPageResponseBodyList extends $tea.Model {
   dataCreateAppId?: string;
   dataCreateAppType?: string;
@@ -1140,6 +1697,83 @@ export class PullDataByPageResponseBodyList extends $tea.Model {
       dataModifiedAppId: 'string',
       dataModifiedAppType: 'string',
       jsonData: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchActionsResponseBodyList extends $tea.Model {
+  authorityUrl?: string;
+  authorized?: boolean;
+  connectAssetUri?: string;
+  connectorId?: string;
+  description?: string;
+  icon?: string;
+  id?: string;
+  integrationType?: string;
+  name?: string;
+  providerCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorityUrl: 'authorityUrl',
+      authorized: 'authorized',
+      connectAssetUri: 'connectAssetUri',
+      connectorId: 'connectorId',
+      description: 'description',
+      icon: 'icon',
+      id: 'id',
+      integrationType: 'integrationType',
+      name: 'name',
+      providerCorpId: 'providerCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorityUrl: 'string',
+      authorized: 'boolean',
+      connectAssetUri: 'string',
+      connectorId: 'string',
+      description: 'string',
+      icon: 'string',
+      id: 'string',
+      integrationType: 'string',
+      name: 'string',
+      providerCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchConnectorsResponseBodyList extends $tea.Model {
+  description?: string;
+  icon?: string;
+  id?: string;
+  name?: string;
+  providerCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      icon: 'icon',
+      id: 'id',
+      name: 'name',
+      providerCorpId: 'providerCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      icon: 'string',
+      id: 'string',
+      name: 'string',
+      providerCorpId: 'string',
     };
   }
 
@@ -1604,6 +2238,39 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateConnectorResponse>(await this.doROARequest("CreateConnector", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/connectors`, "json", req, runtime), new CreateConnectorResponse({}));
   }
 
+  async createInvocableInstance(request: CreateInvocableInstanceRequest): Promise<CreateInvocableInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateInvocableInstanceHeaders({ });
+    return await this.createInvocableInstanceWithOptions(request, headers, runtime);
+  }
+
+  async createInvocableInstanceWithOptions(request: CreateInvocableInstanceRequest, headers: CreateInvocableInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateInvocableInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.connectAssetUri)) {
+      body["connectAssetUri"] = request.connectAssetUri;
+    }
+
+    if (!Util.isUnset(request.instanceKey)) {
+      body["instanceKey"] = request.instanceKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateInvocableInstanceResponse>(await this.doROARequest("CreateInvocableInstance", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/instances`, "json", req, runtime), new CreateInvocableInstanceResponse({}));
+  }
+
   async createTrigger(request: CreateTriggerRequest): Promise<CreateTriggerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTriggerHeaders({ });
@@ -1635,6 +2302,72 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CreateTriggerResponse>(await this.doROARequest("CreateTrigger", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/triggers`, "json", req, runtime), new CreateTriggerResponse({}));
+  }
+
+  async getActionDetail(request: GetActionDetailRequest): Promise<GetActionDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetActionDetailHeaders({ });
+    return await this.getActionDetailWithOptions(request, headers, runtime);
+  }
+
+  async getActionDetailWithOptions(request: GetActionDetailRequest, headers: GetActionDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetActionDetailResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.connectAssetUri)) {
+      body["connectAssetUri"] = request.connectAssetUri;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetActionDetailResponse>(await this.doROARequest("GetActionDetail", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/assets/actions/details/query`, "json", req, runtime), new GetActionDetailResponse({}));
+  }
+
+  async invokeInstance(request: InvokeInstanceRequest): Promise<InvokeInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InvokeInstanceHeaders({ });
+    return await this.invokeInstanceWithOptions(request, headers, runtime);
+  }
+
+  async invokeInstanceWithOptions(request: InvokeInstanceRequest, headers: InvokeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<InvokeInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.connectAssetUri)) {
+      body["connectAssetUri"] = request.connectAssetUri;
+    }
+
+    if (!Util.isUnset(request.inputJsonString)) {
+      body["inputJsonString"] = request.inputJsonString;
+    }
+
+    if (!Util.isUnset(request.instanceKey)) {
+      body["instanceKey"] = request.instanceKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<InvokeInstanceResponse>(await this.doROARequest("InvokeInstance", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/instances/invoke`, "json", req, runtime), new InvokeInstanceResponse({}));
   }
 
   async pullDataByPage(request: PullDataByPageRequest): Promise<PullDataByPageResponse> {
@@ -1722,6 +2455,88 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<PullDataByPkResponse>(await this.doROARequest("PullDataByPk", "connector_1.0", "HTTP", "GET", "AK", `/v1.0/connector/data/${dataModelId}`, "json", req, runtime), new PullDataByPkResponse({}));
+  }
+
+  async searchActions(request: SearchActionsRequest): Promise<SearchActionsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchActionsHeaders({ });
+    return await this.searchActionsWithOptions(request, headers, runtime);
+  }
+
+  async searchActionsWithOptions(request: SearchActionsRequest, headers: SearchActionsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchActionsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.connectorId)) {
+      body["connectorId"] = request.connectorId;
+    }
+
+    if (!Util.isUnset(request.connectorProviderCorpId)) {
+      body["connectorProviderCorpId"] = request.connectorProviderCorpId;
+    }
+
+    if (!Util.isUnset(request.integrationTypes)) {
+      body["integrationTypes"] = request.integrationTypes;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SearchActionsResponse>(await this.doROARequest("SearchActions", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/assets/actions/search`, "json", req, runtime), new SearchActionsResponse({}));
+  }
+
+  async searchConnectors(request: SearchConnectorsRequest): Promise<SearchConnectorsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchConnectorsHeaders({ });
+    return await this.searchConnectorsWithOptions(request, headers, runtime);
+  }
+
+  async searchConnectorsWithOptions(request: SearchConnectorsRequest, headers: SearchConnectorsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchConnectorsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SearchConnectorsResponse>(await this.doROARequest("SearchConnectors", "connector_1.0", "HTTP", "GET", "AK", `/v1.0/connector/assets/connectors`, "json", req, runtime), new SearchConnectorsResponse({}));
   }
 
   async syncData(request: SyncDataRequest): Promise<SyncDataResponse> {
