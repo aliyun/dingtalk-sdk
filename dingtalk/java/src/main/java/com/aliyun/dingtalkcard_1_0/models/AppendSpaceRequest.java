@@ -23,12 +23,6 @@ public class AppendSpaceRequest extends TeaModel {
     public AppendSpaceRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
     /**
-     * <p>IM单聊场域信息</p>
-     */
-    @NameInMap("imSingleOpenSpaceModel")
-    public AppendSpaceRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
-
-    /**
      * <p>唯一标识一张卡片的外部Id</p>
      */
     @NameInMap("outTrackId")
@@ -39,12 +33,6 @@ public class AppendSpaceRequest extends TeaModel {
      */
     @NameInMap("topOpenSpaceModel")
     public AppendSpaceRequestTopOpenSpaceModel topOpenSpaceModel;
-
-    /**
-     * <p>工作台场域信息</p>
-     */
-    @NameInMap("workBenchOpenSpaceModel")
-    public AppendSpaceRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel;
 
     public static AppendSpaceRequest build(java.util.Map<String, ?> map) throws Exception {
         AppendSpaceRequest self = new AppendSpaceRequest();
@@ -75,14 +63,6 @@ public class AppendSpaceRequest extends TeaModel {
         return this.imRobotOpenSpaceModel;
     }
 
-    public AppendSpaceRequest setImSingleOpenSpaceModel(AppendSpaceRequestImSingleOpenSpaceModel imSingleOpenSpaceModel) {
-        this.imSingleOpenSpaceModel = imSingleOpenSpaceModel;
-        return this;
-    }
-    public AppendSpaceRequestImSingleOpenSpaceModel getImSingleOpenSpaceModel() {
-        return this.imSingleOpenSpaceModel;
-    }
-
     public AppendSpaceRequest setOutTrackId(String outTrackId) {
         this.outTrackId = outTrackId;
         return this;
@@ -97,14 +77,6 @@ public class AppendSpaceRequest extends TeaModel {
     }
     public AppendSpaceRequestTopOpenSpaceModel getTopOpenSpaceModel() {
         return this.topOpenSpaceModel;
-    }
-
-    public AppendSpaceRequest setWorkBenchOpenSpaceModel(AppendSpaceRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel) {
-        this.workBenchOpenSpaceModel = workBenchOpenSpaceModel;
-        return this;
-    }
-    public AppendSpaceRequestWorkBenchOpenSpaceModel getWorkBenchOpenSpaceModel() {
-        return this.workBenchOpenSpaceModel;
     }
 
     public static class AppendSpaceRequestCoFeedOpenSpaceModel extends TeaModel {
@@ -130,9 +102,17 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImGroupOpenSpaceModelNotification extends TeaModel {
+        /**
+         * <p>【条件必填】通知内容</p>
+         * <br>
+         * <p>【注意】若不填写则使用默认文案：如你收到1条新消息</p>
+         */
         @NameInMap("alertContent")
         public String alertContent;
 
+        /**
+         * <p>是否关闭推送通知，默认为false</p>
+         */
         @NameInMap("notificationOff")
         public Boolean notificationOff;
 
@@ -160,12 +140,21 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImGroupOpenSpaceModelSearchSupport extends TeaModel {
+        /**
+         * <p>卡片的具体描述</p>
+         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <p>类型的icon，供搜索展示使用</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <p>卡片类型名</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -208,7 +197,7 @@ public class AppendSpaceRequest extends TeaModel {
         public java.util.Map<String, String> lastMessageI18n;
 
         /**
-         * <p>xpn信息</p>
+         * <p>通知信息</p>
          */
         @NameInMap("notification")
         public AppendSpaceRequestImGroupOpenSpaceModelNotification notification;
@@ -265,9 +254,17 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImRobotOpenSpaceModelNotification extends TeaModel {
+        /**
+         * <p>【条件必填】通知内容</p>
+         * <br>
+         * <p>【注意】若不填写则使用默认文案：如你收到1条新消息</p>
+         */
         @NameInMap("alertContent")
         public String alertContent;
 
+        /**
+         * <p>是否关闭推送通知，默认为false</p>
+         */
         @NameInMap("notificationOff")
         public Boolean notificationOff;
 
@@ -295,12 +292,21 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport extends TeaModel {
+        /**
+         * <p>卡片的具体描述</p>
+         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <p>类型的icon，供搜索展示使用</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <p>卡片类型名</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -343,7 +349,7 @@ public class AppendSpaceRequest extends TeaModel {
         public java.util.Map<String, String> lastMessageI18n;
 
         /**
-         * <p>xpn信息</p>
+         * <p>通知信息</p>
          */
         @NameInMap("notification")
         public AppendSpaceRequestImRobotOpenSpaceModelNotification notification;
@@ -399,144 +405,11 @@ public class AppendSpaceRequest extends TeaModel {
 
     }
 
-    public static class AppendSpaceRequestImSingleOpenSpaceModelNotification extends TeaModel {
-        @NameInMap("alertContent")
-        public String alertContent;
-
-        @NameInMap("notificationOff")
-        public Boolean notificationOff;
-
-        public static AppendSpaceRequestImSingleOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
-            AppendSpaceRequestImSingleOpenSpaceModelNotification self = new AppendSpaceRequestImSingleOpenSpaceModelNotification();
-            return TeaModel.build(map, self);
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModelNotification setAlertContent(String alertContent) {
-            this.alertContent = alertContent;
-            return this;
-        }
-        public String getAlertContent() {
-            return this.alertContent;
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
-            this.notificationOff = notificationOff;
-            return this;
-        }
-        public Boolean getNotificationOff() {
-            return this.notificationOff;
-        }
-
-    }
-
-    public static class AppendSpaceRequestImSingleOpenSpaceModelSearchSupport extends TeaModel {
-        @NameInMap("searchDesc")
-        public String searchDesc;
-
-        @NameInMap("searchIcon")
-        public String searchIcon;
-
-        @NameInMap("searchTypeName")
-        public String searchTypeName;
-
-        public static AppendSpaceRequestImSingleOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
-            AppendSpaceRequestImSingleOpenSpaceModelSearchSupport self = new AppendSpaceRequestImSingleOpenSpaceModelSearchSupport();
-            return TeaModel.build(map, self);
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
-            this.searchDesc = searchDesc;
-            return this;
-        }
-        public String getSearchDesc() {
-            return this.searchDesc;
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
-            this.searchIcon = searchIcon;
-            return this;
-        }
-        public String getSearchIcon() {
-            return this.searchIcon;
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
-            this.searchTypeName = searchTypeName;
-            return this;
-        }
-        public String getSearchTypeName() {
-            return this.searchTypeName;
-        }
-
-    }
-
-    public static class AppendSpaceRequestImSingleOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         */
-        @NameInMap("lastMessageI18n")
-        public java.util.Map<String, String> lastMessageI18n;
-
-        /**
-         * <p>xpn信息</p>
-         */
-        @NameInMap("notification")
-        public AppendSpaceRequestImSingleOpenSpaceModelNotification notification;
-
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
-        @NameInMap("searchSupport")
-        public AppendSpaceRequestImSingleOpenSpaceModelSearchSupport searchSupport;
-
-        /**
-         * <p>是否支持转发, 默认false</p>
-         */
-        @NameInMap("supportForward")
-        public Boolean supportForward;
-
-        public static AppendSpaceRequestImSingleOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
-            AppendSpaceRequestImSingleOpenSpaceModel self = new AppendSpaceRequestImSingleOpenSpaceModel();
-            return TeaModel.build(map, self);
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
-            this.lastMessageI18n = lastMessageI18n;
-            return this;
-        }
-        public java.util.Map<String, String> getLastMessageI18n() {
-            return this.lastMessageI18n;
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModel setNotification(AppendSpaceRequestImSingleOpenSpaceModelNotification notification) {
-            this.notification = notification;
-            return this;
-        }
-        public AppendSpaceRequestImSingleOpenSpaceModelNotification getNotification() {
-            return this.notification;
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModel setSearchSupport(AppendSpaceRequestImSingleOpenSpaceModelSearchSupport searchSupport) {
-            this.searchSupport = searchSupport;
-            return this;
-        }
-        public AppendSpaceRequestImSingleOpenSpaceModelSearchSupport getSearchSupport() {
-            return this.searchSupport;
-        }
-
-        public AppendSpaceRequestImSingleOpenSpaceModel setSupportForward(Boolean supportForward) {
-            this.supportForward = supportForward;
-            return this;
-        }
-        public Boolean getSupportForward() {
-            return this.supportForward;
-        }
-
-    }
-
     public static class AppendSpaceRequestTopOpenSpaceModel extends TeaModel {
         /**
-         * <p>【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)</p>
+         * <p>【必填】场域类型</p>
+         * <br>
+         * <p>吊顶无其他场域属性，通过设置spaeType为ONE_BOX使卡片支持吊顶场域</p>
          */
         @NameInMap("spaceType")
         public String spaceType;
@@ -547,28 +420,6 @@ public class AppendSpaceRequest extends TeaModel {
         }
 
         public AppendSpaceRequestTopOpenSpaceModel setSpaceType(String spaceType) {
-            this.spaceType = spaceType;
-            return this;
-        }
-        public String getSpaceType() {
-            return this.spaceType;
-        }
-
-    }
-
-    public static class AppendSpaceRequestWorkBenchOpenSpaceModel extends TeaModel {
-        /**
-         * <p>【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)</p>
-         */
-        @NameInMap("spaceType")
-        public String spaceType;
-
-        public static AppendSpaceRequestWorkBenchOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
-            AppendSpaceRequestWorkBenchOpenSpaceModel self = new AppendSpaceRequestWorkBenchOpenSpaceModel();
-            return TeaModel.build(map, self);
-        }
-
-        public AppendSpaceRequestWorkBenchOpenSpaceModel setSpaceType(String spaceType) {
             this.spaceType = spaceType;
             return this;
         }

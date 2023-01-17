@@ -10,9 +10,6 @@ public class CreateCardRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
-    @NameInMap("cardAtUserIds")
-    public java.util.List<String> cardAtUserIds;
-
     /**
      * <p>卡片数据</p>
      */
@@ -42,12 +39,6 @@ public class CreateCardRequest extends TeaModel {
      */
     @NameInMap("imRobotOpenSpaceModel")
     public CreateCardRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
-
-    /**
-     * <p>IM 单聊场域信息</p>
-     */
-    @NameInMap("imSingleOpenSpaceModel")
-    public CreateCardRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
 
     /**
      * <p>动态数据源配置</p>
@@ -84,12 +75,6 @@ public class CreateCardRequest extends TeaModel {
     @NameInMap("userIdType")
     public Integer userIdType;
 
-    /**
-     * <p>工作台场域信息</p>
-     */
-    @NameInMap("workBenchOpenSpaceModel")
-    public CreateCardRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel;
-
     public static CreateCardRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateCardRequest self = new CreateCardRequest();
         return TeaModel.build(map, self);
@@ -101,14 +86,6 @@ public class CreateCardRequest extends TeaModel {
     }
     public String getCallbackRouteKey() {
         return this.callbackRouteKey;
-    }
-
-    public CreateCardRequest setCardAtUserIds(java.util.List<String> cardAtUserIds) {
-        this.cardAtUserIds = cardAtUserIds;
-        return this;
-    }
-    public java.util.List<String> getCardAtUserIds() {
-        return this.cardAtUserIds;
     }
 
     public CreateCardRequest setCardData(CreateCardRequestCardData cardData) {
@@ -149,14 +126,6 @@ public class CreateCardRequest extends TeaModel {
     }
     public CreateCardRequestImRobotOpenSpaceModel getImRobotOpenSpaceModel() {
         return this.imRobotOpenSpaceModel;
-    }
-
-    public CreateCardRequest setImSingleOpenSpaceModel(CreateCardRequestImSingleOpenSpaceModel imSingleOpenSpaceModel) {
-        this.imSingleOpenSpaceModel = imSingleOpenSpaceModel;
-        return this;
-    }
-    public CreateCardRequestImSingleOpenSpaceModel getImSingleOpenSpaceModel() {
-        return this.imSingleOpenSpaceModel;
     }
 
     public CreateCardRequest setOpenDynamicDataConfig(CreateCardRequestOpenDynamicDataConfig openDynamicDataConfig) {
@@ -205,14 +174,6 @@ public class CreateCardRequest extends TeaModel {
     }
     public Integer getUserIdType() {
         return this.userIdType;
-    }
-
-    public CreateCardRequest setWorkBenchOpenSpaceModel(CreateCardRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel) {
-        this.workBenchOpenSpaceModel = workBenchOpenSpaceModel;
-        return this;
-    }
-    public CreateCardRequestWorkBenchOpenSpaceModel getWorkBenchOpenSpaceModel() {
-        return this.workBenchOpenSpaceModel;
     }
 
     public static class CreateCardRequestCardData extends TeaModel {
@@ -579,165 +540,6 @@ public class CreateCardRequest extends TeaModel {
 
     }
 
-    public static class CreateCardRequestImSingleOpenSpaceModelNotification extends TeaModel {
-        /**
-         * <p>【条件必填】通知内容</p>
-         * <p>若不填写则使用默认文案：如你收到1条新消息</p>
-         */
-        @NameInMap("alertContent")
-        public String alertContent;
-
-        /**
-         * <p>是否推送通知，默认为 false</p>
-         */
-        @NameInMap("notificationOff")
-        public Boolean notificationOff;
-
-        public static CreateCardRequestImSingleOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
-            CreateCardRequestImSingleOpenSpaceModelNotification self = new CreateCardRequestImSingleOpenSpaceModelNotification();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModelNotification setAlertContent(String alertContent) {
-            this.alertContent = alertContent;
-            return this;
-        }
-        public String getAlertContent() {
-            return this.alertContent;
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
-            this.notificationOff = notificationOff;
-            return this;
-        }
-        public Boolean getNotificationOff() {
-            return this.notificationOff;
-        }
-
-    }
-
-    public static class CreateCardRequestImSingleOpenSpaceModelSearchSupport extends TeaModel {
-        /**
-         * <p>【条件必填】供消息展示与搜索的字段</p>
-         * <p> 【注意】最大限制200个字符，超过存储截断200</p>
-         */
-        @NameInMap("searchDesc")
-        public String searchDesc;
-
-        /**
-         * <p>类型的icon，供搜索展示使用</p>
-         */
-        @NameInMap("searchIcon")
-        public String searchIcon;
-
-        /**
-         * <p>卡片类型名</p>
-         */
-        @NameInMap("searchTypeName")
-        public String searchTypeName;
-
-        public static CreateCardRequestImSingleOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
-            CreateCardRequestImSingleOpenSpaceModelSearchSupport self = new CreateCardRequestImSingleOpenSpaceModelSearchSupport();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
-            this.searchDesc = searchDesc;
-            return this;
-        }
-        public String getSearchDesc() {
-            return this.searchDesc;
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
-            this.searchIcon = searchIcon;
-            return this;
-        }
-        public String getSearchIcon() {
-            return this.searchIcon;
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
-            this.searchTypeName = searchTypeName;
-            return this;
-        }
-        public String getSearchTypeName() {
-            return this.searchTypeName;
-        }
-
-    }
-
-    public static class CreateCardRequestImSingleOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         * <p>key为语言枚举值，value为lastMessage内容</p>
-         * <p>目前支持的语言枚举值：</p>
-         * <p>简体中文: ZH_CN</p>
-         * <p>繁体中文: ZH_TW</p>
-         * <p>英文： EN_US</p>
-         * <p>日语: JA_JP</p>
-         * <p>越南语: VI_VN</p>
-         */
-        @NameInMap("lastMessageI18n")
-        public java.util.Map<String, String> lastMessageI18n;
-
-        /**
-         * <p>卡片的通知属性信息</p>
-         */
-        @NameInMap("notification")
-        public CreateCardRequestImSingleOpenSpaceModelNotification notification;
-
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
-        @NameInMap("searchSupport")
-        public CreateCardRequestImSingleOpenSpaceModelSearchSupport searchSupport;
-
-        /**
-         * <p>是否支持转发, 默认 false</p>
-         */
-        @NameInMap("supportForward")
-        public Boolean supportForward;
-
-        public static CreateCardRequestImSingleOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
-            CreateCardRequestImSingleOpenSpaceModel self = new CreateCardRequestImSingleOpenSpaceModel();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
-            this.lastMessageI18n = lastMessageI18n;
-            return this;
-        }
-        public java.util.Map<String, String> getLastMessageI18n() {
-            return this.lastMessageI18n;
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModel setNotification(CreateCardRequestImSingleOpenSpaceModelNotification notification) {
-            this.notification = notification;
-            return this;
-        }
-        public CreateCardRequestImSingleOpenSpaceModelNotification getNotification() {
-            return this.notification;
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModel setSearchSupport(CreateCardRequestImSingleOpenSpaceModelSearchSupport searchSupport) {
-            this.searchSupport = searchSupport;
-            return this;
-        }
-        public CreateCardRequestImSingleOpenSpaceModelSearchSupport getSearchSupport() {
-            return this.searchSupport;
-        }
-
-        public CreateCardRequestImSingleOpenSpaceModel setSupportForward(Boolean supportForward) {
-            this.supportForward = supportForward;
-            return this;
-        }
-        public Boolean getSupportForward() {
-            return this.supportForward;
-        }
-
-    }
-
     public static class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig extends TeaModel {
         /**
          * <p>拉取的间隔时间，只在将 pullStrategy 设置为 INTERVAL 的时候生效</p>
@@ -847,23 +649,6 @@ public class CreateCardRequest extends TeaModel {
 
     public static class CreateCardRequestOpenDynamicDataConfig extends TeaModel {
         /**
-         * <p>动态数据替换关系</p>
-         * <p>● key：变量名</p>
-         * <p>● value：数据映射的配置</p>
-         */
-        @NameInMap("dynamicDataMapping")
-        public java.util.Map<String, OpenDynamicDataConfigDynamicDataMappingValue> dynamicDataMapping;
-
-        /**
-         * <p>动态数据映射方法，可选值</p>
-         * <p>● REPLACE_WITHOUT_MAPPING：直接返回动态数据</p>
-         * <p>● MAPPING_BY_KEY：根据指定的规则，将返回数据映射到卡片数据上</p>
-         * <p>默认值：REPLACE_WITHOUT_MAPPING</p>
-         */
-        @NameInMap("dynamicDataMappingMethod")
-        public String dynamicDataMappingMethod;
-
-        /**
          * <p>动态数据源配置列表</p>
          */
         @NameInMap("dynamicDataSourceConfigs")
@@ -872,22 +657,6 @@ public class CreateCardRequest extends TeaModel {
         public static CreateCardRequestOpenDynamicDataConfig build(java.util.Map<String, ?> map) throws Exception {
             CreateCardRequestOpenDynamicDataConfig self = new CreateCardRequestOpenDynamicDataConfig();
             return TeaModel.build(map, self);
-        }
-
-        public CreateCardRequestOpenDynamicDataConfig setDynamicDataMapping(java.util.Map<String, OpenDynamicDataConfigDynamicDataMappingValue> dynamicDataMapping) {
-            this.dynamicDataMapping = dynamicDataMapping;
-            return this;
-        }
-        public java.util.Map<String, OpenDynamicDataConfigDynamicDataMappingValue> getDynamicDataMapping() {
-            return this.dynamicDataMapping;
-        }
-
-        public CreateCardRequestOpenDynamicDataConfig setDynamicDataMappingMethod(String dynamicDataMappingMethod) {
-            this.dynamicDataMappingMethod = dynamicDataMappingMethod;
-            return this;
-        }
-        public String getDynamicDataMappingMethod() {
-            return this.dynamicDataMappingMethod;
         }
 
         public CreateCardRequestOpenDynamicDataConfig setDynamicDataSourceConfigs(java.util.List<CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigs> dynamicDataSourceConfigs) {
@@ -913,28 +682,6 @@ public class CreateCardRequest extends TeaModel {
         }
 
         public CreateCardRequestTopOpenSpaceModel setSpaceType(String spaceType) {
-            this.spaceType = spaceType;
-            return this;
-        }
-        public String getSpaceType() {
-            return this.spaceType;
-        }
-
-    }
-
-    public static class CreateCardRequestWorkBenchOpenSpaceModel extends TeaModel {
-        /**
-         * <p>工作台无其他场域属性，通过增加spaeType使卡片支持工作台场域;工作台对应spaceType为: WORK_BENCH</p>
-         */
-        @NameInMap("spaceType")
-        public String spaceType;
-
-        public static CreateCardRequestWorkBenchOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
-            CreateCardRequestWorkBenchOpenSpaceModel self = new CreateCardRequestWorkBenchOpenSpaceModel();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateCardRequestWorkBenchOpenSpaceModel setSpaceType(String spaceType) {
             this.spaceType = spaceType;
             return this;
         }

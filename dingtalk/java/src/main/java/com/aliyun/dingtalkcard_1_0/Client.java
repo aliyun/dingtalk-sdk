@@ -37,20 +37,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
-            body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.outTrackId)) {
             body.put("outTrackId", request.outTrackId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.topOpenSpaceModel)) {
             body.put("topOpenSpaceModel", request.topOpenSpaceModel);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenSpaceModel)) {
-            body.put("workBenchOpenSpaceModel", request.workBenchOpenSpaceModel);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -80,10 +72,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.callbackRouteKey)) {
             body.put("callbackRouteKey", request.callbackRouteKey);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.cardAtUserIds)) {
-            body.put("cardAtUserIds", request.cardAtUserIds);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
@@ -118,14 +106,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
-            body.put("imSingleOpenDeliverModel", request.imSingleOpenDeliverModel);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
-            body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.openDynamicDataConfig)) {
             body.put("openDynamicDataConfig", request.openDynamicDataConfig);
         }
@@ -158,14 +138,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("userIdType", request.userIdType);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenDeliverModel)) {
-            body.put("workBenchOpenDeliverModel", request.workBenchOpenDeliverModel);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenSpaceModel)) {
-            body.put("workBenchOpenSpaceModel", request.workBenchOpenSpaceModel);
-        }
-
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -195,10 +167,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("callbackRouteKey", request.callbackRouteKey);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.cardAtUserIds)) {
-            body.put("cardAtUserIds", request.cardAtUserIds);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
@@ -217,10 +185,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.imRobotOpenSpaceModel)) {
             body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
-            body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.openDynamicDataConfig)) {
@@ -245,10 +209,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.userIdType)) {
             body.put("userIdType", request.userIdType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenSpaceModel)) {
-            body.put("workBenchOpenSpaceModel", request.workBenchOpenSpaceModel);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -288,10 +248,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imRobotOpenDeliverModel", request.imRobotOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
-            body.put("imSingleOpenDeliverModel", request.imSingleOpenDeliverModel);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.openSpaceId)) {
             body.put("openSpaceId", request.openSpaceId);
         }
@@ -304,8 +260,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("topOpenDeliverModel", request.topOpenDeliverModel);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.workBenchOpenDeliverModel)) {
-            body.put("workBenchOpenDeliverModel", request.workBenchOpenDeliverModel);
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdType)) {
+            body.put("userIdType", request.userIdType);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

@@ -10,9 +10,6 @@ public class CreateAndDeliverRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
-    @NameInMap("cardAtUserIds")
-    public java.util.List<String> cardAtUserIds;
-
     /**
      * <p>卡片数据</p>
      */
@@ -62,18 +59,6 @@ public class CreateAndDeliverRequest extends TeaModel {
     public CreateAndDeliverRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
     /**
-     * <p>单聊场域投放参数</p>
-     */
-    @NameInMap("imSingleOpenDeliverModel")
-    public CreateAndDeliverRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
-
-    /**
-     * <p>IM单聊场域信息</p>
-     */
-    @NameInMap("imSingleOpenSpaceModel")
-    public CreateAndDeliverRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
-
-    /**
      * <p>动态数据源配置</p>
      */
     @NameInMap("openDynamicDataConfig")
@@ -115,18 +100,6 @@ public class CreateAndDeliverRequest extends TeaModel {
     @NameInMap("userIdType")
     public Integer userIdType;
 
-    /**
-     * <p>工作台投放参数</p>
-     */
-    @NameInMap("workBenchOpenDeliverModel")
-    public CreateAndDeliverRequestWorkBenchOpenDeliverModel workBenchOpenDeliverModel;
-
-    /**
-     * <p>工作台场域信息</p>
-     */
-    @NameInMap("workBenchOpenSpaceModel")
-    public CreateAndDeliverRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel;
-
     public static CreateAndDeliverRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateAndDeliverRequest self = new CreateAndDeliverRequest();
         return TeaModel.build(map, self);
@@ -138,14 +111,6 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
     public String getCallbackRouteKey() {
         return this.callbackRouteKey;
-    }
-
-    public CreateAndDeliverRequest setCardAtUserIds(java.util.List<String> cardAtUserIds) {
-        this.cardAtUserIds = cardAtUserIds;
-        return this;
-    }
-    public java.util.List<String> getCardAtUserIds() {
-        return this.cardAtUserIds;
     }
 
     public CreateAndDeliverRequest setCardData(CreateAndDeliverRequestCardData cardData) {
@@ -212,22 +177,6 @@ public class CreateAndDeliverRequest extends TeaModel {
         return this.imRobotOpenSpaceModel;
     }
 
-    public CreateAndDeliverRequest setImSingleOpenDeliverModel(CreateAndDeliverRequestImSingleOpenDeliverModel imSingleOpenDeliverModel) {
-        this.imSingleOpenDeliverModel = imSingleOpenDeliverModel;
-        return this;
-    }
-    public CreateAndDeliverRequestImSingleOpenDeliverModel getImSingleOpenDeliverModel() {
-        return this.imSingleOpenDeliverModel;
-    }
-
-    public CreateAndDeliverRequest setImSingleOpenSpaceModel(CreateAndDeliverRequestImSingleOpenSpaceModel imSingleOpenSpaceModel) {
-        this.imSingleOpenSpaceModel = imSingleOpenSpaceModel;
-        return this;
-    }
-    public CreateAndDeliverRequestImSingleOpenSpaceModel getImSingleOpenSpaceModel() {
-        return this.imSingleOpenSpaceModel;
-    }
-
     public CreateAndDeliverRequest setOpenDynamicDataConfig(CreateAndDeliverRequestOpenDynamicDataConfig openDynamicDataConfig) {
         this.openDynamicDataConfig = openDynamicDataConfig;
         return this;
@@ -292,22 +241,6 @@ public class CreateAndDeliverRequest extends TeaModel {
         return this.userIdType;
     }
 
-    public CreateAndDeliverRequest setWorkBenchOpenDeliverModel(CreateAndDeliverRequestWorkBenchOpenDeliverModel workBenchOpenDeliverModel) {
-        this.workBenchOpenDeliverModel = workBenchOpenDeliverModel;
-        return this;
-    }
-    public CreateAndDeliverRequestWorkBenchOpenDeliverModel getWorkBenchOpenDeliverModel() {
-        return this.workBenchOpenDeliverModel;
-    }
-
-    public CreateAndDeliverRequest setWorkBenchOpenSpaceModel(CreateAndDeliverRequestWorkBenchOpenSpaceModel workBenchOpenSpaceModel) {
-        this.workBenchOpenSpaceModel = workBenchOpenSpaceModel;
-        return this;
-    }
-    public CreateAndDeliverRequestWorkBenchOpenSpaceModel getWorkBenchOpenSpaceModel() {
-        return this.workBenchOpenSpaceModel;
-    }
-
     public static class CreateAndDeliverRequestCardData extends TeaModel {
         /**
          * <p>卡片模板-文本内容参数</p>
@@ -367,6 +300,9 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestCoFeedOpenSpaceModel extends TeaModel {
+        @NameInMap("coolAppCode")
+        public String coolAppCode;
+
         /**
          * <p>【必填】标题</p>
          */
@@ -376,6 +312,14 @@ public class CreateAndDeliverRequest extends TeaModel {
         public static CreateAndDeliverRequestCoFeedOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
             CreateAndDeliverRequestCoFeedOpenSpaceModel self = new CreateAndDeliverRequestCoFeedOpenSpaceModel();
             return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestCoFeedOpenSpaceModel setCoolAppCode(String coolAppCode) {
+            this.coolAppCode = coolAppCode;
+            return this;
+        }
+        public String getCoolAppCode() {
+            return this.coolAppCode;
         }
 
         public CreateAndDeliverRequestCoFeedOpenSpaceModel setTitle(String title) {
@@ -727,163 +671,6 @@ public class CreateAndDeliverRequest extends TeaModel {
 
     }
 
-    public static class CreateAndDeliverRequestImSingleOpenDeliverModel extends TeaModel {
-        /**
-         * <p>消息@人，</p>
-         */
-        @NameInMap("atUserIds")
-        public java.util.Map<String, String> atUserIds;
-
-        public static CreateAndDeliverRequestImSingleOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
-            CreateAndDeliverRequestImSingleOpenDeliverModel self = new CreateAndDeliverRequestImSingleOpenDeliverModel();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateAndDeliverRequestImSingleOpenDeliverModel setAtUserIds(java.util.Map<String, String> atUserIds) {
-            this.atUserIds = atUserIds;
-            return this;
-        }
-        public java.util.Map<String, String> getAtUserIds() {
-            return this.atUserIds;
-        }
-
-    }
-
-    public static class CreateAndDeliverRequestImSingleOpenSpaceModelNotification extends TeaModel {
-        @NameInMap("alertContent")
-        public String alertContent;
-
-        @NameInMap("notificationOff")
-        public Boolean notificationOff;
-
-        public static CreateAndDeliverRequestImSingleOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
-            CreateAndDeliverRequestImSingleOpenSpaceModelNotification self = new CreateAndDeliverRequestImSingleOpenSpaceModelNotification();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModelNotification setAlertContent(String alertContent) {
-            this.alertContent = alertContent;
-            return this;
-        }
-        public String getAlertContent() {
-            return this.alertContent;
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
-            this.notificationOff = notificationOff;
-            return this;
-        }
-        public Boolean getNotificationOff() {
-            return this.notificationOff;
-        }
-
-    }
-
-    public static class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport extends TeaModel {
-        @NameInMap("searchDesc")
-        public String searchDesc;
-
-        @NameInMap("searchIcon")
-        public String searchIcon;
-
-        @NameInMap("searchTypeName")
-        public String searchTypeName;
-
-        public static CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
-            CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport self = new CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
-            this.searchDesc = searchDesc;
-            return this;
-        }
-        public String getSearchDesc() {
-            return this.searchDesc;
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
-            this.searchIcon = searchIcon;
-            return this;
-        }
-        public String getSearchIcon() {
-            return this.searchIcon;
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
-            this.searchTypeName = searchTypeName;
-            return this;
-        }
-        public String getSearchTypeName() {
-            return this.searchTypeName;
-        }
-
-    }
-
-    public static class CreateAndDeliverRequestImSingleOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         */
-        @NameInMap("lastMessageI18n")
-        public java.util.Map<String, String> lastMessageI18n;
-
-        /**
-         * <p>通知信息</p>
-         */
-        @NameInMap("notification")
-        public CreateAndDeliverRequestImSingleOpenSpaceModelNotification notification;
-
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
-        @NameInMap("searchSupport")
-        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport searchSupport;
-
-        /**
-         * <p>是否支持转发, 默认false</p>
-         */
-        @NameInMap("supportForward")
-        public Boolean supportForward;
-
-        public static CreateAndDeliverRequestImSingleOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
-            CreateAndDeliverRequestImSingleOpenSpaceModel self = new CreateAndDeliverRequestImSingleOpenSpaceModel();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
-            this.lastMessageI18n = lastMessageI18n;
-            return this;
-        }
-        public java.util.Map<String, String> getLastMessageI18n() {
-            return this.lastMessageI18n;
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModel setNotification(CreateAndDeliverRequestImSingleOpenSpaceModelNotification notification) {
-            this.notification = notification;
-            return this;
-        }
-        public CreateAndDeliverRequestImSingleOpenSpaceModelNotification getNotification() {
-            return this.notification;
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModel setSearchSupport(CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport searchSupport) {
-            this.searchSupport = searchSupport;
-            return this;
-        }
-        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport getSearchSupport() {
-            return this.searchSupport;
-        }
-
-        public CreateAndDeliverRequestImSingleOpenSpaceModel setSupportForward(Boolean supportForward) {
-            this.supportForward = supportForward;
-            return this;
-        }
-        public Boolean getSupportForward() {
-            return this.supportForward;
-        }
-
-    }
-
     public static class CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig extends TeaModel {
         /**
          * <p>间隔</p>
@@ -986,18 +773,6 @@ public class CreateAndDeliverRequest extends TeaModel {
 
     public static class CreateAndDeliverRequestOpenDynamicDataConfig extends TeaModel {
         /**
-         * <p>动态数据替换关系,key是变量名, value是数据源的jsonPath相关配置</p>
-         */
-        @NameInMap("dynamicDataMapping")
-        public java.util.Map<String, OpenDynamicDataConfigDynamicDataMappingValue> dynamicDataMapping;
-
-        /**
-         * <p>动态数据映射类型 (REPLACE_WITHOUT_MAPPING: 直接将动态数据返回，无需根据 key mapping, MAPPING_BY_KEY: 根据创建时的 key 进行 mapping)</p>
-         */
-        @NameInMap("dynamicDataMappingMethod")
-        public String dynamicDataMappingMethod;
-
-        /**
          * <p>动态数据源配置列表</p>
          */
         @NameInMap("dynamicDataSourceConfigs")
@@ -1006,22 +781,6 @@ public class CreateAndDeliverRequest extends TeaModel {
         public static CreateAndDeliverRequestOpenDynamicDataConfig build(java.util.Map<String, ?> map) throws Exception {
             CreateAndDeliverRequestOpenDynamicDataConfig self = new CreateAndDeliverRequestOpenDynamicDataConfig();
             return TeaModel.build(map, self);
-        }
-
-        public CreateAndDeliverRequestOpenDynamicDataConfig setDynamicDataMapping(java.util.Map<String, OpenDynamicDataConfigDynamicDataMappingValue> dynamicDataMapping) {
-            this.dynamicDataMapping = dynamicDataMapping;
-            return this;
-        }
-        public java.util.Map<String, OpenDynamicDataConfigDynamicDataMappingValue> getDynamicDataMapping() {
-            return this.dynamicDataMapping;
-        }
-
-        public CreateAndDeliverRequestOpenDynamicDataConfig setDynamicDataMappingMethod(String dynamicDataMappingMethod) {
-            this.dynamicDataMappingMethod = dynamicDataMappingMethod;
-            return this;
-        }
-        public String getDynamicDataMappingMethod() {
-            return this.dynamicDataMappingMethod;
         }
 
         public CreateAndDeliverRequestOpenDynamicDataConfig setDynamicDataSourceConfigs(java.util.List<CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigs> dynamicDataSourceConfigs) {
@@ -1097,120 +856,6 @@ public class CreateAndDeliverRequest extends TeaModel {
         }
 
         public CreateAndDeliverRequestTopOpenSpaceModel setSpaceType(String spaceType) {
-            this.spaceType = spaceType;
-            return this;
-        }
-        public String getSpaceType() {
-            return this.spaceType;
-        }
-
-    }
-
-    public static class CreateAndDeliverRequestWorkBenchOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【必填】组件icon对应组件左上角的图标</p>
-         */
-        @NameInMap("icon")
-        public String icon;
-
-        /**
-         * <p>【必填】卡片名称</p>
-         */
-        @NameInMap("name")
-        public String name;
-
-        /**
-         * <p>【必填】卡片组件名</p>
-         */
-        @NameInMap("pluginComponentName")
-        public String pluginComponentName;
-
-        /**
-         * <p>【必填】卡片预览图</p>
-         */
-        @NameInMap("previewUrl")
-        public String previewUrl;
-
-        /**
-         * <p>【必填】保持和微应用名称相同</p>
-         */
-        @NameInMap("projectName")
-        public String projectName;
-
-        /**
-         * <p>【必填】操作者Id</p>
-         */
-        @NameInMap("userId")
-        public String userId;
-
-        public static CreateAndDeliverRequestWorkBenchOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
-            CreateAndDeliverRequestWorkBenchOpenDeliverModel self = new CreateAndDeliverRequestWorkBenchOpenDeliverModel();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateAndDeliverRequestWorkBenchOpenDeliverModel setIcon(String icon) {
-            this.icon = icon;
-            return this;
-        }
-        public String getIcon() {
-            return this.icon;
-        }
-
-        public CreateAndDeliverRequestWorkBenchOpenDeliverModel setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public CreateAndDeliverRequestWorkBenchOpenDeliverModel setPluginComponentName(String pluginComponentName) {
-            this.pluginComponentName = pluginComponentName;
-            return this;
-        }
-        public String getPluginComponentName() {
-            return this.pluginComponentName;
-        }
-
-        public CreateAndDeliverRequestWorkBenchOpenDeliverModel setPreviewUrl(String previewUrl) {
-            this.previewUrl = previewUrl;
-            return this;
-        }
-        public String getPreviewUrl() {
-            return this.previewUrl;
-        }
-
-        public CreateAndDeliverRequestWorkBenchOpenDeliverModel setProjectName(String projectName) {
-            this.projectName = projectName;
-            return this;
-        }
-        public String getProjectName() {
-            return this.projectName;
-        }
-
-        public CreateAndDeliverRequestWorkBenchOpenDeliverModel setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
-        }
-
-    }
-
-    public static class CreateAndDeliverRequestWorkBenchOpenSpaceModel extends TeaModel {
-        /**
-         * <p>【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)</p>
-         */
-        @NameInMap("spaceType")
-        public String spaceType;
-
-        public static CreateAndDeliverRequestWorkBenchOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
-            CreateAndDeliverRequestWorkBenchOpenSpaceModel self = new CreateAndDeliverRequestWorkBenchOpenSpaceModel();
-            return TeaModel.build(map, self);
-        }
-
-        public CreateAndDeliverRequestWorkBenchOpenSpaceModel setSpaceType(String spaceType) {
             this.spaceType = spaceType;
             return this;
         }

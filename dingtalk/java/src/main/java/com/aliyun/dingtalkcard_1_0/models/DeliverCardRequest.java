@@ -17,16 +17,12 @@ public class DeliverCardRequest extends TeaModel {
     public DeliverCardRequestImGroupOpenDeliverModel imGroupOpenDeliverModel;
 
     /**
-     * <p>单聊场域投放参数</p>
+     * <p>单聊机器人场域投放参数</p>
+     * <br>
+     * <p>【注意】 机器人与人的单聊，直接用支持机器人单聊的应用来发送</p>
      */
     @NameInMap("imRobotOpenDeliverModel")
     public DeliverCardRequestImRobotOpenDeliverModel imRobotOpenDeliverModel;
-
-    /**
-     * <p>单聊场域投放参数</p>
-     */
-    @NameInMap("imSingleOpenDeliverModel")
-    public DeliverCardRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
 
     /**
      * <p>dt.card//spaceType.spaceId;spaceType.spaceId</p>
@@ -47,10 +43,14 @@ public class DeliverCardRequest extends TeaModel {
     public DeliverCardRequestTopOpenDeliverModel topOpenDeliverModel;
 
     /**
-     * <p>工作台投放参数</p>
+     * <p>用户id类型：</p>
+     * <br>
+     * <p>1（默认）：userid模式</p>
+     * <br>
+     * <p>2：unionId模式</p>
      */
-    @NameInMap("workBenchOpenDeliverModel")
-    public DeliverCardRequestWorkBenchOpenDeliverModel workBenchOpenDeliverModel;
+    @NameInMap("userIdType")
+    public Integer userIdType;
 
     public static DeliverCardRequest build(java.util.Map<String, ?> map) throws Exception {
         DeliverCardRequest self = new DeliverCardRequest();
@@ -81,14 +81,6 @@ public class DeliverCardRequest extends TeaModel {
         return this.imRobotOpenDeliverModel;
     }
 
-    public DeliverCardRequest setImSingleOpenDeliverModel(DeliverCardRequestImSingleOpenDeliverModel imSingleOpenDeliverModel) {
-        this.imSingleOpenDeliverModel = imSingleOpenDeliverModel;
-        return this;
-    }
-    public DeliverCardRequestImSingleOpenDeliverModel getImSingleOpenDeliverModel() {
-        return this.imSingleOpenDeliverModel;
-    }
-
     public DeliverCardRequest setOpenSpaceId(String openSpaceId) {
         this.openSpaceId = openSpaceId;
         return this;
@@ -113,12 +105,12 @@ public class DeliverCardRequest extends TeaModel {
         return this.topOpenDeliverModel;
     }
 
-    public DeliverCardRequest setWorkBenchOpenDeliverModel(DeliverCardRequestWorkBenchOpenDeliverModel workBenchOpenDeliverModel) {
-        this.workBenchOpenDeliverModel = workBenchOpenDeliverModel;
+    public DeliverCardRequest setUserIdType(Integer userIdType) {
+        this.userIdType = userIdType;
         return this;
     }
-    public DeliverCardRequestWorkBenchOpenDeliverModel getWorkBenchOpenDeliverModel() {
-        return this.workBenchOpenDeliverModel;
+    public Integer getUserIdType() {
+        return this.userIdType;
     }
 
     public static class DeliverCardRequestCoFeedOpenDeliverModel extends TeaModel {
@@ -208,6 +200,9 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestImRobotOpenDeliverModel extends TeaModel {
+        /**
+         * <p>【条件必填】IM机器人单聊暂无其他投放属性，仅需设置spaeType为IM_ROBOT</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 
@@ -226,34 +221,12 @@ public class DeliverCardRequest extends TeaModel {
 
     }
 
-    public static class DeliverCardRequestImSingleOpenDeliverModel extends TeaModel {
-        /**
-         * <p>消息@人，</p>
-         */
-        @NameInMap("atUserIds")
-        public java.util.Map<String, String> atUserIds;
-
-        public static DeliverCardRequestImSingleOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
-            DeliverCardRequestImSingleOpenDeliverModel self = new DeliverCardRequestImSingleOpenDeliverModel();
-            return TeaModel.build(map, self);
-        }
-
-        public DeliverCardRequestImSingleOpenDeliverModel setAtUserIds(java.util.Map<String, String> atUserIds) {
-            this.atUserIds = atUserIds;
-            return this;
-        }
-        public java.util.Map<String, String> getAtUserIds() {
-            return this.atUserIds;
-        }
-
-    }
-
     public static class DeliverCardRequestTopOpenDeliverModel extends TeaModel {
         /**
          * <p>【必填】过期时间戳</p>
          */
-        @NameInMap("expiredTimeMills")
-        public Long expiredTimeMills;
+        @NameInMap("expiredTimeMillis")
+        public Long expiredTimeMillis;
 
         /**
          * <p>可以查看该吊顶卡片的设备</p>
@@ -272,12 +245,12 @@ public class DeliverCardRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public DeliverCardRequestTopOpenDeliverModel setExpiredTimeMills(Long expiredTimeMills) {
-            this.expiredTimeMills = expiredTimeMills;
+        public DeliverCardRequestTopOpenDeliverModel setExpiredTimeMillis(Long expiredTimeMillis) {
+            this.expiredTimeMillis = expiredTimeMillis;
             return this;
         }
-        public Long getExpiredTimeMills() {
-            return this.expiredTimeMills;
+        public Long getExpiredTimeMillis() {
+            return this.expiredTimeMillis;
         }
 
         public DeliverCardRequestTopOpenDeliverModel setPlatforms(java.util.List<String> platforms) {
@@ -294,98 +267,6 @@ public class DeliverCardRequest extends TeaModel {
         }
         public java.util.List<String> getUserIds() {
             return this.userIds;
-        }
-
-    }
-
-    public static class DeliverCardRequestWorkBenchOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【必填】组件icon对应组件左上角的图标</p>
-         */
-        @NameInMap("icon")
-        public String icon;
-
-        /**
-         * <p>【必填】卡片名称</p>
-         */
-        @NameInMap("name")
-        public String name;
-
-        /**
-         * <p>【必填】卡片组件名</p>
-         */
-        @NameInMap("pluginComponentName")
-        public String pluginComponentName;
-
-        /**
-         * <p>【必填】卡片预览图</p>
-         */
-        @NameInMap("previewUrl")
-        public String previewUrl;
-
-        /**
-         * <p>【必填】保持和微应用名称相同</p>
-         */
-        @NameInMap("projectName")
-        public String projectName;
-
-        /**
-         * <p>【必填】操作者Id</p>
-         */
-        @NameInMap("userId")
-        public String userId;
-
-        public static DeliverCardRequestWorkBenchOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
-            DeliverCardRequestWorkBenchOpenDeliverModel self = new DeliverCardRequestWorkBenchOpenDeliverModel();
-            return TeaModel.build(map, self);
-        }
-
-        public DeliverCardRequestWorkBenchOpenDeliverModel setIcon(String icon) {
-            this.icon = icon;
-            return this;
-        }
-        public String getIcon() {
-            return this.icon;
-        }
-
-        public DeliverCardRequestWorkBenchOpenDeliverModel setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public DeliverCardRequestWorkBenchOpenDeliverModel setPluginComponentName(String pluginComponentName) {
-            this.pluginComponentName = pluginComponentName;
-            return this;
-        }
-        public String getPluginComponentName() {
-            return this.pluginComponentName;
-        }
-
-        public DeliverCardRequestWorkBenchOpenDeliverModel setPreviewUrl(String previewUrl) {
-            this.previewUrl = previewUrl;
-            return this;
-        }
-        public String getPreviewUrl() {
-            return this.previewUrl;
-        }
-
-        public DeliverCardRequestWorkBenchOpenDeliverModel setProjectName(String projectName) {
-            this.projectName = projectName;
-            return this;
-        }
-        public String getProjectName() {
-            return this.projectName;
-        }
-
-        public DeliverCardRequestWorkBenchOpenDeliverModel setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
     }
