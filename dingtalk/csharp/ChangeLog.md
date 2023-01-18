@@ -1,3 +1,6 @@
+2023-01-18 Version: 1.5.28
+- Update sync interface.
+
 2023-01-17 Version: 1.5.27
 - Update sync interface.
 
