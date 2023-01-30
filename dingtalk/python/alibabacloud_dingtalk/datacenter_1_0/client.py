@@ -95,6 +95,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetAbnormalOperation', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/abnormalOperations', 'json', req, runtime)
         )
 
+    def get_administrative_licensing(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetAdministrativeLicensingHeaders()
+        return self.get_administrative_licensing_with_options(request, headers, runtime)
+
+    async def get_administrative_licensing_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetAdministrativeLicensingHeaders()
+        return await self.get_administrative_licensing_with_options_async(request, headers, runtime)
+
+    def get_administrative_licensing_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingRequest,
+        headers: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse(),
+            self.do_roarequest('GetAdministrativeLicensing', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/administrativeLicenses', 'json', req, runtime)
+        )
+
+    async def get_administrative_licensing_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingRequest,
+        headers: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse(),
+            await self.do_roarequest_async('GetAdministrativeLicensing', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/administrativeLicenses', 'json', req, runtime)
+        )
+
     def get_administrative_penalties(
         self,
         request: dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesRequest,
@@ -237,6 +309,366 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetBasicInfoResponse(),
             await self.do_roarequest_async('GetBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/businessBasicInfos', 'json', req, runtime)
+        )
+
+    def get_bidding_info(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetBiddingInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBiddingInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetBiddingInfoHeaders()
+        return self.get_bidding_info_with_options(request, headers, runtime)
+
+    async def get_bidding_info_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetBiddingInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBiddingInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetBiddingInfoHeaders()
+        return await self.get_bidding_info_with_options_async(request, headers, runtime)
+
+    def get_bidding_info_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetBiddingInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetBiddingInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetBiddingInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetBiddingInfoResponse(),
+            self.do_roarequest('GetBiddingInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/biddingInfos', 'json', req, runtime)
+        )
+
+    async def get_bidding_info_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetBiddingInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetBiddingInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetBiddingInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetBiddingInfoResponse(),
+            await self.do_roarequest_async('GetBiddingInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/biddingInfos', 'json', req, runtime)
+        )
+
+    def get_branch_info(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetBranchInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBranchInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetBranchInfoHeaders()
+        return self.get_branch_info_with_options(request, headers, runtime)
+
+    async def get_branch_info_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetBranchInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBranchInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetBranchInfoHeaders()
+        return await self.get_branch_info_with_options_async(request, headers, runtime)
+
+    def get_branch_info_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetBranchInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetBranchInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetBranchInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetBranchInfoResponse(),
+            self.do_roarequest('GetBranchInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/branchInfos', 'json', req, runtime)
+        )
+
+    async def get_branch_info_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetBranchInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetBranchInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetBranchInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetBranchInfoResponse(),
+            await self.do_roarequest_async('GetBranchInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/branchInfos', 'json', req, runtime)
+        )
+
+    def get_change_record(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetChangeRecordRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetChangeRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetChangeRecordHeaders()
+        return self.get_change_record_with_options(request, headers, runtime)
+
+    async def get_change_record_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetChangeRecordRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetChangeRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetChangeRecordHeaders()
+        return await self.get_change_record_with_options_async(request, headers, runtime)
+
+    def get_change_record_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetChangeRecordRequest,
+        headers: dingtalkdatacenter__1__0_models.GetChangeRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetChangeRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetChangeRecordResponse(),
+            self.do_roarequest('GetChangeRecord', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/changeRecords', 'json', req, runtime)
+        )
+
+    async def get_change_record_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetChangeRecordRequest,
+        headers: dingtalkdatacenter__1__0_models.GetChangeRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetChangeRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetChangeRecordResponse(),
+            await self.do_roarequest_async('GetChangeRecord', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/changeRecords', 'json', req, runtime)
+        )
+
+    def get_domain_info(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDomainInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDomainInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetDomainInfoHeaders()
+        return self.get_domain_info_with_options(request, headers, runtime)
+
+    async def get_domain_info_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDomainInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDomainInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetDomainInfoHeaders()
+        return await self.get_domain_info_with_options_async(request, headers, runtime)
+
+    def get_domain_info_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDomainInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetDomainInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetDomainInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetDomainInfoResponse(),
+            self.do_roarequest('GetDomainInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/domainInfos', 'json', req, runtime)
+        )
+
+    async def get_domain_info_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDomainInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetDomainInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetDomainInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetDomainInfoResponse(),
+            await self.do_roarequest_async('GetDomainInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/domainInfos', 'json', req, runtime)
+        )
+
+    def get_double_random(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDoubleRandomRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDoubleRandomResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetDoubleRandomHeaders()
+        return self.get_double_random_with_options(request, headers, runtime)
+
+    async def get_double_random_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDoubleRandomRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDoubleRandomResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetDoubleRandomHeaders()
+        return await self.get_double_random_with_options_async(request, headers, runtime)
+
+    def get_double_random_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDoubleRandomRequest,
+        headers: dingtalkdatacenter__1__0_models.GetDoubleRandomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetDoubleRandomResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetDoubleRandomResponse(),
+            self.do_roarequest('GetDoubleRandom', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/doubleRandomness', 'json', req, runtime)
+        )
+
+    async def get_double_random_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDoubleRandomRequest,
+        headers: dingtalkdatacenter__1__0_models.GetDoubleRandomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetDoubleRandomResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetDoubleRandomResponse(),
+            await self.do_roarequest_async('GetDoubleRandom', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/doubleRandomness', 'json', req, runtime)
         )
 
     def get_environmental_penalties(
@@ -383,6 +815,366 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetHolderInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/shareholderInfos', 'json', req, runtime)
         )
 
+    def get_intellectual_property(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetIntellectualPropertyRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetIntellectualPropertyHeaders()
+        return self.get_intellectual_property_with_options(request, headers, runtime)
+
+    async def get_intellectual_property_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetIntellectualPropertyRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetIntellectualPropertyHeaders()
+        return await self.get_intellectual_property_with_options_async(request, headers, runtime)
+
+    def get_intellectual_property_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetIntellectualPropertyRequest,
+        headers: dingtalkdatacenter__1__0_models.GetIntellectualPropertyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse(),
+            self.do_roarequest('GetIntellectualProperty', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/intellectualProperties', 'json', req, runtime)
+        )
+
+    async def get_intellectual_property_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetIntellectualPropertyRequest,
+        headers: dingtalkdatacenter__1__0_models.GetIntellectualPropertyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse(),
+            await self.do_roarequest_async('GetIntellectualProperty', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/intellectualProperties', 'json', req, runtime)
+        )
+
+    def get_investment_abroad(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetInvestmentAbroadRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetInvestmentAbroadHeaders()
+        return self.get_investment_abroad_with_options(request, headers, runtime)
+
+    async def get_investment_abroad_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetInvestmentAbroadRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetInvestmentAbroadHeaders()
+        return await self.get_investment_abroad_with_options_async(request, headers, runtime)
+
+    def get_investment_abroad_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetInvestmentAbroadRequest,
+        headers: dingtalkdatacenter__1__0_models.GetInvestmentAbroadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse(),
+            self.do_roarequest('GetInvestmentAbroad', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/abroadInvestments', 'json', req, runtime)
+        )
+
+    async def get_investment_abroad_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetInvestmentAbroadRequest,
+        headers: dingtalkdatacenter__1__0_models.GetInvestmentAbroadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse(),
+            await self.do_roarequest_async('GetInvestmentAbroad', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/abroadInvestments', 'json', req, runtime)
+        )
+
+    def get_job_info(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetJobInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetJobInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetJobInfoHeaders()
+        return self.get_job_info_with_options(request, headers, runtime)
+
+    async def get_job_info_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetJobInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetJobInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetJobInfoHeaders()
+        return await self.get_job_info_with_options_async(request, headers, runtime)
+
+    def get_job_info_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetJobInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetJobInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetJobInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetJobInfoResponse(),
+            self.do_roarequest('GetJobInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/jobInfos', 'json', req, runtime)
+        )
+
+    async def get_job_info_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetJobInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetJobInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetJobInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetJobInfoResponse(),
+            await self.do_roarequest_async('GetJobInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/jobInfos', 'json', req, runtime)
+        )
+
+    def get_patent_info(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetPatentInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetPatentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetPatentInfoHeaders()
+        return self.get_patent_info_with_options(request, headers, runtime)
+
+    async def get_patent_info_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetPatentInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetPatentInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetPatentInfoHeaders()
+        return await self.get_patent_info_with_options_async(request, headers, runtime)
+
+    def get_patent_info_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetPatentInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetPatentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetPatentInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetPatentInfoResponse(),
+            self.do_roarequest('GetPatentInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/patentInfos', 'json', req, runtime)
+        )
+
+    async def get_patent_info_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetPatentInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetPatentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetPatentInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetPatentInfoResponse(),
+            await self.do_roarequest_async('GetPatentInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/patentInfos', 'json', req, runtime)
+        )
+
+    def get_principal_employee(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetPrincipalEmployeeHeaders()
+        return self.get_principal_employee_with_options(request, headers, runtime)
+
+    async def get_principal_employee_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetPrincipalEmployeeHeaders()
+        return await self.get_principal_employee_with_options_async(request, headers, runtime)
+
+    def get_principal_employee_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeRequest,
+        headers: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse(),
+            self.do_roarequest('GetPrincipalEmployee', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/principalEmployees', 'json', req, runtime)
+        )
+
+    async def get_principal_employee_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeRequest,
+        headers: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse(),
+            await self.do_roarequest_async('GetPrincipalEmployee', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/principalEmployees', 'json', req, runtime)
+        )
+
     def get_qeneral_taxpayer_info(
         self,
         request: dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoRequest,
@@ -455,6 +1247,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetQeneralTaxpayerInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/generalTaxpayerInfos', 'json', req, runtime)
         )
 
+    def get_qualification_cert(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetQualificationCertRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetQualificationCertResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetQualificationCertHeaders()
+        return self.get_qualification_cert_with_options(request, headers, runtime)
+
+    async def get_qualification_cert_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetQualificationCertRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetQualificationCertResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetQualificationCertHeaders()
+        return await self.get_qualification_cert_with_options_async(request, headers, runtime)
+
+    def get_qualification_cert_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetQualificationCertRequest,
+        headers: dingtalkdatacenter__1__0_models.GetQualificationCertHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetQualificationCertResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetQualificationCertResponse(),
+            self.do_roarequest('GetQualificationCert', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/qualificationCerts', 'json', req, runtime)
+        )
+
+    async def get_qualification_cert_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetQualificationCertRequest,
+        headers: dingtalkdatacenter__1__0_models.GetQualificationCertHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetQualificationCertResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetQualificationCertResponse(),
+            await self.do_roarequest_async('GetQualificationCert', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/qualificationCerts', 'json', req, runtime)
+        )
+
     def get_serious_violation(
         self,
         request: dingtalkdatacenter__1__0_models.GetSeriousViolationRequest,
@@ -525,6 +1389,222 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetSeriousViolationResponse(),
             await self.do_roarequest_async('GetSeriousViolation', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/seriousViolations', 'json', req, runtime)
+        )
+
+    def get_software_copyright(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetSoftwareCopyrightHeaders()
+        return self.get_software_copyright_with_options(request, headers, runtime)
+
+    async def get_software_copyright_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetSoftwareCopyrightHeaders()
+        return await self.get_software_copyright_with_options_async(request, headers, runtime)
+
+    def get_software_copyright_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightRequest,
+        headers: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse(),
+            self.do_roarequest('GetSoftwareCopyright', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/softwareCopyrights', 'json', req, runtime)
+        )
+
+    async def get_software_copyright_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightRequest,
+        headers: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse(),
+            await self.do_roarequest_async('GetSoftwareCopyright', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/softwareCopyrights', 'json', req, runtime)
+        )
+
+    def get_trademark_info(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetTrademarkInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetTrademarkInfoHeaders()
+        return self.get_trademark_info_with_options(request, headers, runtime)
+
+    async def get_trademark_info_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetTrademarkInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetTrademarkInfoHeaders()
+        return await self.get_trademark_info_with_options_async(request, headers, runtime)
+
+    def get_trademark_info_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetTrademarkInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetTrademarkInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse(),
+            self.do_roarequest('GetTrademarkInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/trademarkInfos', 'json', req, runtime)
+        )
+
+    async def get_trademark_info_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetTrademarkInfoRequest,
+        headers: dingtalkdatacenter__1__0_models.GetTrademarkInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse(),
+            await self.do_roarequest_async('GetTrademarkInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/trademarkInfos', 'json', req, runtime)
+        )
+
+    def get_work_copyright(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetWorkCopyrightRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders()
+        return self.get_work_copyright_with_options(request, headers, runtime)
+
+    async def get_work_copyright_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetWorkCopyrightRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders()
+        return await self.get_work_copyright_with_options_async(request, headers, runtime)
+
+    def get_work_copyright_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetWorkCopyrightRequest,
+        headers: dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse(),
+            self.do_roarequest('GetWorkCopyright', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/workCopyrights', 'json', req, runtime)
+        )
+
+    async def get_work_copyright_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetWorkCopyrightRequest,
+        headers: dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.search_key):
+            query['searchKey'] = request.search_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse(),
+            await self.do_roarequest_async('GetWorkCopyright', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/workCopyrights', 'json', req, runtime)
         )
 
     def post_corp_auth_info(self) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
