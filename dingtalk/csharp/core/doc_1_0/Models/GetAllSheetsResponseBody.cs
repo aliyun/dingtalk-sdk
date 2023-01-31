@@ -11,8 +11,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
     public class GetAllSheetsResponseBody : TeaModel {
         /// <summary>
         /// 工作表列表
-        /// 最大size:
-        /// 	1000
         /// </summary>
         [NameInMap("value")]
         [Validation(Required=false)]

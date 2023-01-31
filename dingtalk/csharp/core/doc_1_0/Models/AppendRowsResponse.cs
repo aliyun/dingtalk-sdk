@@ -13,10 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=true)]
         public Dictionary<string, string> Headers { get; set; }
 
-        [NameInMap("body")]
-        [Validation(Required=true)]
-        public AppendRowsResponseBody Body { get; set; }
-
     }
 
 }

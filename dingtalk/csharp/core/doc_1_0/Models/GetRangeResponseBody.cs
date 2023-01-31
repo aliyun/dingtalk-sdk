@@ -11,8 +11,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
     public class GetRangeResponseBody : TeaModel {
         /// <summary>
         /// 背景颜色
-        /// 最大size:
-        /// 	1000
         /// </summary>
         [NameInMap("backgroundColors")]
         [Validation(Required=false)]
@@ -50,8 +48,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         /// <summary>
         /// 展示值
-        /// 最大size:
-        /// 	1000
         /// </summary>
         [NameInMap("displayValues")]
         [Validation(Required=false)]
@@ -59,8 +55,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         /// <summary>
         /// 公式
-        /// 最大size:
-        /// 	1000
         /// </summary>
         [NameInMap("formulas")]
         [Validation(Required=false)]
@@ -68,8 +62,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         /// <summary>
         /// 值
-        /// 最大size:
-        /// 	1000
         /// </summary>
         [NameInMap("values")]
         [Validation(Required=false)]

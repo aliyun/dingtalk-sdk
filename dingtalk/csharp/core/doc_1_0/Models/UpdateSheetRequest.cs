@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         /// <summary>
         /// 工作表可见性
         /// 枚举值:
-        ///    visible: 可见
-        ///    hidden: 隐藏
+        /// 	visible: 可见
+        /// 	hidden: 隐藏
         /// </summary>
         [NameInMap("visibility")]
         [Validation(Required=false)]
