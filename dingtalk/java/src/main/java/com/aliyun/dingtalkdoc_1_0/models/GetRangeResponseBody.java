@@ -6,32 +6,24 @@ import com.aliyun.tea.*;
 public class GetRangeResponseBody extends TeaModel {
     /**
      * <p>背景颜色</p>
-     * <p>最大size:</p>
-     * <p>	1000</p>
      */
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<GetRangeResponseBodyBackgroundColors>> backgroundColors;
 
     /**
      * <p>展示值</p>
-     * <p>最大size:</p>
-     * <p>	1000</p>
      */
     @NameInMap("displayValues")
     public java.util.List<java.util.List<String>> displayValues;
 
     /**
      * <p>公式</p>
-     * <p>最大size:</p>
-     * <p>	1000</p>
      */
     @NameInMap("formulas")
     public java.util.List<java.util.List<String>> formulas;
 
     /**
      * <p>值</p>
-     * <p>最大size:</p>
-     * <p>	1000</p>
      */
     @NameInMap("values")
     public java.util.List<java.util.List<?>> values;

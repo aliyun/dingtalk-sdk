@@ -6,8 +6,6 @@ import com.aliyun.tea.*;
 public class GetAllSheetsResponseBody extends TeaModel {
     /**
      * <p>工作表列表</p>
-     * <p>最大size:</p>
-     * <p>	1000</p>
      */
     @NameInMap("value")
     public java.util.List<GetAllSheetsResponseBodyValue> value;

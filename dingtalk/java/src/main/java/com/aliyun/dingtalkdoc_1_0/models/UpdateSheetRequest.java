@@ -13,8 +13,8 @@ public class UpdateSheetRequest extends TeaModel {
     /**
      * <p>工作表可见性</p>
      * <p>枚举值:</p>
-     * <p>   visible: 可见</p>
-     * <p>   hidden: 隐藏</p>
+     * <p>	visible: 可见</p>
+     * <p>	hidden: 隐藏</p>
      */
     @NameInMap("visibility")
     public String visibility;
