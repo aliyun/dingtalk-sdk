@@ -401,48 +401,15 @@ class AppendRowsRequest(TeaModel):
         return self
 
 
-class AppendRowsResponseBody(TeaModel):
-    def __init__(
-        self,
-        success: bool = None,
-    ):
-        # 本次操作是否成功
-        self.success = success
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.success is not None:
-            result['success'] = self.success
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('success') is not None:
-            self.success = m.get('success')
-        return self
-
-
 class AppendRowsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: AppendRowsResponseBody = None,
     ):
         self.headers = headers
-        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -452,17 +419,12 @@ class AppendRowsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = AppendRowsResponseBody()
-            self.body = temp_model.from_map(m['body'])
         return self
 
 
@@ -3543,8 +3505,6 @@ class GetAllSheetsResponseBody(TeaModel):
         value: List[GetAllSheetsResponseBodyValue] = None,
     ):
         # 工作表列表
-        # 最大size:
-        # 	1000
         self.value = value
 
     def validate(self):
@@ -3951,20 +3911,12 @@ class GetRangeResponseBody(TeaModel):
         values: List[List[Any]] = None,
     ):
         # 背景颜色
-        # 最大size:
-        # 	1000
         self.background_colors = background_colors
         # 展示值
-        # 最大size:
-        # 	1000
         self.display_values = display_values
         # 公式
-        # 最大size:
-        # 	1000
         self.formulas = formulas
         # 值
-        # 最大size:
-        # 	1000
         self.values = values
 
     def validate(self):
@@ -7416,8 +7368,8 @@ class SetColumnsVisibilityRequest(TeaModel):
         self.column_count = column_count
         # 列可见性
         # 枚举值:
-        #    visible: 可见
-        #    hidden: 隐藏
+        # 	visible: 可见
+        # 	hidden: 隐藏
         self.visibility = visibility
         # 操作人id
         self.operator_id = operator_id
@@ -7566,8 +7518,8 @@ class SetRowsVisibilityRequest(TeaModel):
         self.row_count = row_count
         # 行可见性
         # 枚举值:
-        #    visible: 可见
-        #    hidden: 隐藏
+        # 	visible: 可见
+        # 	hidden: 隐藏
         self.visibility = visibility
         # 操作人id
         self.operator_id = operator_id
@@ -8319,8 +8271,8 @@ class UpdateSheetRequest(TeaModel):
         self.name = name
         # 工作表可见性
         # 枚举值:
-        #    visible: 可见
-        #    hidden: 隐藏
+        # 	visible: 可见
+        # 	hidden: 隐藏
         self.visibility = visibility
         # 操作人id
         self.operator_id = operator_id
@@ -8353,48 +8305,15 @@ class UpdateSheetRequest(TeaModel):
         return self
 
 
-class UpdateSheetResponseBody(TeaModel):
-    def __init__(
-        self,
-        success: bool = None,
-    ):
-        # 本次操作是否成功
-        self.success = success
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.success is not None:
-            result['success'] = self.success
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('success') is not None:
-            self.success = m.get('success')
-        return self
-
-
 class UpdateSheetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
-        body: UpdateSheetResponseBody = None,
     ):
         self.headers = headers
-        self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
-        self.validate_required(self.body, 'body')
-        if self.body:
-            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -8404,17 +8323,12 @@ class UpdateSheetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
-        if self.body is not None:
-            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
-        if m.get('body') is not None:
-            temp_model = UpdateSheetResponseBody()
-            self.body = temp_model.from_map(m['body'])
         return self
 
 
