@@ -199,39 +199,17 @@ export class AppendRowsRequest extends $tea.Model {
   }
 }
 
-export class AppendRowsResponseBody extends $tea.Model {
-  success?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      success: 'success',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      success: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class AppendRowsResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: AppendRowsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
-      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: AppendRowsResponseBody,
     };
   }
 
@@ -3842,39 +3820,17 @@ export class UpdateSheetRequest extends $tea.Model {
   }
 }
 
-export class UpdateSheetResponseBody extends $tea.Model {
-  success?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      success: 'success',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      success: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class UpdateSheetResponse extends $tea.Model {
   headers: { [key: string]: string };
-  body: UpdateSheetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
-      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      body: UpdateSheetResponseBody,
     };
   }
 
@@ -5348,7 +5304,7 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AppendRowsResponse>(await this.doROARequest("AppendRows", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/appendRows`, "json", req, runtime), new AppendRowsResponse({}));
+    return $tea.cast<AppendRowsResponse>(await this.doROARequest("AppendRows", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/appendRows`, "none", req, runtime), new AppendRowsResponse({}));
   }
 
   async batchGetWorkspaceDocs(request: BatchGetWorkspaceDocsRequest): Promise<BatchGetWorkspaceDocsResponse> {
@@ -6926,7 +6882,7 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateSheetResponse>(await this.doROARequest("UpdateSheet", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "json", req, runtime), new UpdateSheetResponse({}));
+    return $tea.cast<UpdateSheetResponse>(await this.doROARequest("UpdateSheet", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "none", req, runtime), new UpdateSheetResponse({}));
   }
 
   async updateWorkspaceDocMembers(workspaceId: string, nodeId: string, request: UpdateWorkspaceDocMembersRequest): Promise<UpdateWorkspaceDocMembersResponse> {
