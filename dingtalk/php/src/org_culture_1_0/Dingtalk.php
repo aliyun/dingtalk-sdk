@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\AssignOrgHoldingToEmpHoldi
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ConsumeUserPointsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ConsumeUserPointsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\ConsumeUserPointsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\CreateOrgHonorHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\CreateOrgHonorRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\CreateOrgHonorResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\DeductionPointBatchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\DeductionPointBatchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\DeductionPointBatchResponse;
@@ -41,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserHonorsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserHonorsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserPointsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\QueryUserPointsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\RecallHonorHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\RecallHonorRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\RecallHonorResponse;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdateAutoIssuePointHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdateAutoIssuePointRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdateAutoIssuePointResponse;
@@ -172,6 +178,63 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ConsumeUserPointsResponse::fromMap($this->doROARequest('ConsumeUserPoints', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/' . $userId . '/points/deduct', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CreateOrgHonorRequest $request
+     *
+     * @return CreateOrgHonorResponse
+     */
+    public function createOrgHonor($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateOrgHonorHeaders([]);
+
+        return $this->createOrgHonorWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateOrgHonorRequest $request
+     * @param CreateOrgHonorHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CreateOrgHonorResponse
+     */
+    public function createOrgHonorWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->avatarFrameMediaId)) {
+            @$body['avatarFrameMediaId'] = $request->avatarFrameMediaId;
+        }
+        if (!Utils::isUnset($request->defaultBgColor)) {
+            @$body['defaultBgColor'] = $request->defaultBgColor;
+        }
+        if (!Utils::isUnset($request->medalDesc)) {
+            @$body['medalDesc'] = $request->medalDesc;
+        }
+        if (!Utils::isUnset($request->medalMediaId)) {
+            @$body['medalMediaId'] = $request->medalMediaId;
+        }
+        if (!Utils::isUnset($request->medalName)) {
+            @$body['medalName'] = $request->medalName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CreateOrgHonorResponse::fromMap($this->doROARequest('CreateOrgHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/honors/templates', 'json', $req, $runtime));
     }
 
     /**
@@ -677,6 +740,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryUserPointsResponse::fromMap($this->doROARequest('QueryUserPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/users/' . $userId . '/points', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string             $honorId
+     * @param RecallHonorRequest $request
+     *
+     * @return RecallHonorResponse
+     */
+    public function recallHonor($honorId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RecallHonorHeaders([]);
+
+        return $this->recallHonorWithOptions($honorId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $honorId
+     * @param RecallHonorRequest $request
+     * @param RecallHonorHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return RecallHonorResponse
+     */
+    public function recallHonorWithOptions($honorId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $honorId = OpenApiUtilClient::getEncodeParam($honorId);
+        $body    = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return RecallHonorResponse::fromMap($this->doROARequest('RecallHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/honors/' . $honorId . '/recall', 'json', $req, $runtime));
     }
 
     /**
