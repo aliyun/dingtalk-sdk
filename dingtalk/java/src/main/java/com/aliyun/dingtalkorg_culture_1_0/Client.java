@@ -107,6 +107,55 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ConsumeUserPoints", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/" + userId + "/points/deduct", "json", req, runtime), new ConsumeUserPointsResponse());
     }
 
+    public CreateOrgHonorResponse createOrgHonor(CreateOrgHonorRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateOrgHonorHeaders headers = new CreateOrgHonorHeaders();
+        return this.createOrgHonorWithOptions(request, headers, runtime);
+    }
+
+    public CreateOrgHonorResponse createOrgHonorWithOptions(CreateOrgHonorRequest request, CreateOrgHonorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.avatarFrameMediaId)) {
+            body.put("avatarFrameMediaId", request.avatarFrameMediaId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.defaultBgColor)) {
+            body.put("defaultBgColor", request.defaultBgColor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.medalDesc)) {
+            body.put("medalDesc", request.medalDesc);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.medalMediaId)) {
+            body.put("medalMediaId", request.medalMediaId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.medalName)) {
+            body.put("medalName", request.medalName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CreateOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/templates", "json", req, runtime), new CreateOrgHonorResponse());
+    }
+
     public DeductionPointBatchResponse deductionPointBatch(DeductionPointBatchRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeductionPointBatchHeaders headers = new DeductionPointBatchHeaders();
@@ -486,6 +535,36 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("QueryUserPoints", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/users/" + userId + "/points", "json", req, runtime), new QueryUserPointsResponse());
+    }
+
+    public RecallHonorResponse recallHonor(String honorId, RecallHonorRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RecallHonorHeaders headers = new RecallHonorHeaders();
+        return this.recallHonorWithOptions(honorId, request, headers, runtime);
+    }
+
+    public RecallHonorResponse recallHonorWithOptions(String honorId, RecallHonorRequest request, RecallHonorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        honorId = com.aliyun.openapiutil.Client.getEncodeParam(honorId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("RecallHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/" + honorId + "/recall", "json", req, runtime), new RecallHonorResponse());
     }
 
     public UpdateAutoIssuePointResponse updateAutoIssuePoint(UpdateAutoIssuePointRequest request) throws Exception {
