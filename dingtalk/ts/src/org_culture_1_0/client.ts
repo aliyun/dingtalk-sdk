@@ -201,6 +201,106 @@ export class ConsumeUserPointsResponse extends $tea.Model {
   }
 }
 
+export class CreateOrgHonorHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrgHonorRequest extends $tea.Model {
+  avatarFrameMediaId?: string;
+  defaultBgColor?: string;
+  medalDesc?: string;
+  medalMediaId?: string;
+  medalName?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarFrameMediaId: 'avatarFrameMediaId',
+      defaultBgColor: 'defaultBgColor',
+      medalDesc: 'medalDesc',
+      medalMediaId: 'medalMediaId',
+      medalName: 'medalName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarFrameMediaId: 'string',
+      defaultBgColor: 'string',
+      medalDesc: 'string',
+      medalMediaId: 'string',
+      medalName: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrgHonorResponseBody extends $tea.Model {
+  result?: CreateOrgHonorResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateOrgHonorResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrgHonorResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CreateOrgHonorResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CreateOrgHonorResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeductionPointBatchHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1136,6 +1236,91 @@ export class QueryUserPointsResponse extends $tea.Model {
   }
 }
 
+export class RecallHonorHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RecallHonorRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RecallHonorResponseBody extends $tea.Model {
+  result?: RecallHonorResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: RecallHonorResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RecallHonorResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RecallHonorResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RecallHonorResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateAutoIssuePointHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1398,6 +1583,25 @@ export class ConsumeUserPointsResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       amount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateOrgHonorResponseBodyResult extends $tea.Model {
+  honorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      honorId: 'honorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      honorId: 'string',
     };
   }
 
@@ -2006,6 +2210,25 @@ export class QueryUserPointsResponseBodyResult extends $tea.Model {
   }
 }
 
+export class RecallHonorResponseBodyResult extends $tea.Model {
+  honorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      honorId: 'honorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      honorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateAutoIssuePointResponseBodyResult extends $tea.Model {
   nextAutoIssuePointTime?: number;
   static names(): { [key: string]: string } {
@@ -2155,6 +2378,55 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ConsumeUserPointsResponse>(await this.doROARequest("ConsumeUserPoints", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/users/${userId}/points/deduct`, "json", req, runtime), new ConsumeUserPointsResponse({}));
+  }
+
+  async createOrgHonor(request: CreateOrgHonorRequest): Promise<CreateOrgHonorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateOrgHonorHeaders({ });
+    return await this.createOrgHonorWithOptions(request, headers, runtime);
+  }
+
+  async createOrgHonorWithOptions(request: CreateOrgHonorRequest, headers: CreateOrgHonorHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrgHonorResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.avatarFrameMediaId)) {
+      body["avatarFrameMediaId"] = request.avatarFrameMediaId;
+    }
+
+    if (!Util.isUnset(request.defaultBgColor)) {
+      body["defaultBgColor"] = request.defaultBgColor;
+    }
+
+    if (!Util.isUnset(request.medalDesc)) {
+      body["medalDesc"] = request.medalDesc;
+    }
+
+    if (!Util.isUnset(request.medalMediaId)) {
+      body["medalMediaId"] = request.medalMediaId;
+    }
+
+    if (!Util.isUnset(request.medalName)) {
+      body["medalName"] = request.medalName;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CreateOrgHonorResponse>(await this.doROARequest("CreateOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/honors/templates`, "json", req, runtime), new CreateOrgHonorResponse({}));
   }
 
   async deductionPointBatch(request: DeductionPointBatchRequest): Promise<DeductionPointBatchResponse> {
@@ -2536,6 +2808,36 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryUserPointsResponse>(await this.doROARequest("QueryUserPoints", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/users/${userId}/points`, "json", req, runtime), new QueryUserPointsResponse({}));
+  }
+
+  async recallHonor(honorId: string, request: RecallHonorRequest): Promise<RecallHonorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RecallHonorHeaders({ });
+    return await this.recallHonorWithOptions(honorId, request, headers, runtime);
+  }
+
+  async recallHonorWithOptions(honorId: string, request: RecallHonorRequest, headers: RecallHonorHeaders, runtime: $Util.RuntimeOptions): Promise<RecallHonorResponse> {
+    Util.validateModel(request);
+    honorId = OpenApiUtil.getEncodeParam(honorId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RecallHonorResponse>(await this.doROARequest("RecallHonor", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/honors/${honorId}/recall`, "json", req, runtime), new RecallHonorResponse({}));
   }
 
   async updateAutoIssuePoint(request: UpdateAutoIssuePointRequest): Promise<UpdateAutoIssuePointResponse> {
