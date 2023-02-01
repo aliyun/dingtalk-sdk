@@ -496,6 +496,201 @@ class ConsumeUserPointsResponse(TeaModel):
         return self
 
 
+class CreateOrgHonorHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateOrgHonorRequest(TeaModel):
+    def __init__(
+        self,
+        avatar_frame_media_id: str = None,
+        default_bg_color: str = None,
+        medal_desc: str = None,
+        medal_media_id: str = None,
+        medal_name: str = None,
+        user_id: str = None,
+    ):
+        # 头像挂件   图片尺寸 240*240，不超过1M，支持PNG。图片请使用钉钉媒体资源标识符media_id，参考文档：https://open.dingtalk.com/document/isvapp-server/upload-media-files
+        self.avatar_frame_media_id = avatar_frame_media_id
+        # 背景颜色，如下可选：#FFFBB4 #FFE7BC #FFDAF4 #DAF6A8 #E4D7FF #BFDFFF #B9F2D6
+        self.default_bg_color = default_bg_color
+        # 描述 长度30字符 不支持表情图标等
+        self.medal_desc = medal_desc
+        # 荣誉图片  图片尺寸 900*900，不超过1M，支持PNG 。图片请使用钉钉媒体资源标识符media_id，参考文档：https://open.dingtalk.com/document/isvapp-server/upload-media-files
+        self.medal_media_id = medal_media_id
+        # 组织的勋章名称 长度10字符 不支持表情图标等
+        self.medal_name = medal_name
+        # 创建荣誉勋章模板人在组织内的userid，需要主/子管理员角色
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_frame_media_id is not None:
+            result['avatarFrameMediaId'] = self.avatar_frame_media_id
+        if self.default_bg_color is not None:
+            result['defaultBgColor'] = self.default_bg_color
+        if self.medal_desc is not None:
+            result['medalDesc'] = self.medal_desc
+        if self.medal_media_id is not None:
+            result['medalMediaId'] = self.medal_media_id
+        if self.medal_name is not None:
+            result['medalName'] = self.medal_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarFrameMediaId') is not None:
+            self.avatar_frame_media_id = m.get('avatarFrameMediaId')
+        if m.get('defaultBgColor') is not None:
+            self.default_bg_color = m.get('defaultBgColor')
+        if m.get('medalDesc') is not None:
+            self.medal_desc = m.get('medalDesc')
+        if m.get('medalMediaId') is not None:
+            self.medal_media_id = m.get('medalMediaId')
+        if m.get('medalName') is not None:
+            self.medal_name = m.get('medalName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateOrgHonorResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        honor_id: str = None,
+    ):
+        self.honor_id = honor_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.honor_id is not None:
+            result['honorId'] = self.honor_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('honorId') is not None:
+            self.honor_id = m.get('honorId')
+        return self
+
+
+class CreateOrgHonorResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateOrgHonorResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateOrgHonorResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateOrgHonorResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateOrgHonorResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateOrgHonorResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeductionPointBatchHeaders(TeaModel):
     def __init__(
         self,
@@ -3106,6 +3301,166 @@ class QueryUserPointsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryUserPointsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RecallHonorHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RecallHonorRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 要取消荣誉的员工userid 必填
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class RecallHonorResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        honor_id: str = None,
+    ):
+        self.honor_id = honor_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.honor_id is not None:
+            result['honorId'] = self.honor_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('honorId') is not None:
+            self.honor_id = m.get('honorId')
+        return self
+
+
+class RecallHonorResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: RecallHonorResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = RecallHonorResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RecallHonorResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RecallHonorResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RecallHonorResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

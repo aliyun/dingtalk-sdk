@@ -189,6 +189,90 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ConsumeUserPoints', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/users/{user_id}/points/deduct', 'json', req, runtime)
         )
 
+    def create_org_honor(
+        self,
+        request: dingtalkorg_culture__1__0_models.CreateOrgHonorRequest,
+    ) -> dingtalkorg_culture__1__0_models.CreateOrgHonorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.CreateOrgHonorHeaders()
+        return self.create_org_honor_with_options(request, headers, runtime)
+
+    async def create_org_honor_async(
+        self,
+        request: dingtalkorg_culture__1__0_models.CreateOrgHonorRequest,
+    ) -> dingtalkorg_culture__1__0_models.CreateOrgHonorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.CreateOrgHonorHeaders()
+        return await self.create_org_honor_with_options_async(request, headers, runtime)
+
+    def create_org_honor_with_options(
+        self,
+        request: dingtalkorg_culture__1__0_models.CreateOrgHonorRequest,
+        headers: dingtalkorg_culture__1__0_models.CreateOrgHonorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.CreateOrgHonorResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.avatar_frame_media_id):
+            body['avatarFrameMediaId'] = request.avatar_frame_media_id
+        if not UtilClient.is_unset(request.default_bg_color):
+            body['defaultBgColor'] = request.default_bg_color
+        if not UtilClient.is_unset(request.medal_desc):
+            body['medalDesc'] = request.medal_desc
+        if not UtilClient.is_unset(request.medal_media_id):
+            body['medalMediaId'] = request.medal_media_id
+        if not UtilClient.is_unset(request.medal_name):
+            body['medalName'] = request.medal_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.CreateOrgHonorResponse(),
+            self.do_roarequest('CreateOrgHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/honors/templates', 'json', req, runtime)
+        )
+
+    async def create_org_honor_with_options_async(
+        self,
+        request: dingtalkorg_culture__1__0_models.CreateOrgHonorRequest,
+        headers: dingtalkorg_culture__1__0_models.CreateOrgHonorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.CreateOrgHonorResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.avatar_frame_media_id):
+            body['avatarFrameMediaId'] = request.avatar_frame_media_id
+        if not UtilClient.is_unset(request.default_bg_color):
+            body['defaultBgColor'] = request.default_bg_color
+        if not UtilClient.is_unset(request.medal_desc):
+            body['medalDesc'] = request.medal_desc
+        if not UtilClient.is_unset(request.medal_media_id):
+            body['medalMediaId'] = request.medal_media_id
+        if not UtilClient.is_unset(request.medal_name):
+            body['medalName'] = request.medal_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.CreateOrgHonorResponse(),
+            await self.do_roarequest_async('CreateOrgHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/honors/templates', 'json', req, runtime)
+        )
+
     def deduction_point_batch(
         self,
         request: dingtalkorg_culture__1__0_models.DeductionPointBatchRequest,
@@ -939,6 +1023,76 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkorg_culture__1__0_models.QueryUserPointsResponse(),
             await self.do_roarequest_async('QueryUserPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/orgCulture/users/{user_id}/points', 'json', req, runtime)
+        )
+
+    def recall_honor(
+        self,
+        honor_id: str,
+        request: dingtalkorg_culture__1__0_models.RecallHonorRequest,
+    ) -> dingtalkorg_culture__1__0_models.RecallHonorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.RecallHonorHeaders()
+        return self.recall_honor_with_options(honor_id, request, headers, runtime)
+
+    async def recall_honor_async(
+        self,
+        honor_id: str,
+        request: dingtalkorg_culture__1__0_models.RecallHonorRequest,
+    ) -> dingtalkorg_culture__1__0_models.RecallHonorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.RecallHonorHeaders()
+        return await self.recall_honor_with_options_async(honor_id, request, headers, runtime)
+
+    def recall_honor_with_options(
+        self,
+        honor_id: str,
+        request: dingtalkorg_culture__1__0_models.RecallHonorRequest,
+        headers: dingtalkorg_culture__1__0_models.RecallHonorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.RecallHonorResponse:
+        UtilClient.validate_model(request)
+        honor_id = OpenApiUtilClient.get_encode_param(honor_id)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.RecallHonorResponse(),
+            self.do_roarequest('RecallHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/honors/{honor_id}/recall', 'json', req, runtime)
+        )
+
+    async def recall_honor_with_options_async(
+        self,
+        honor_id: str,
+        request: dingtalkorg_culture__1__0_models.RecallHonorRequest,
+        headers: dingtalkorg_culture__1__0_models.RecallHonorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.RecallHonorResponse:
+        UtilClient.validate_model(request)
+        honor_id = OpenApiUtilClient.get_encode_param(honor_id)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.RecallHonorResponse(),
+            await self.do_roarequest_async('RecallHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/honors/{honor_id}/recall', 'json', req, runtime)
         )
 
     def update_auto_issue_point(
