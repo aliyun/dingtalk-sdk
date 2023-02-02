@@ -419,6 +419,7 @@ export class CreateInnerAppHeaders extends $tea.Model {
 
 export class CreateInnerAppRequest extends $tea.Model {
   desc?: string;
+  developType?: number;
   homepageLink?: string;
   icon?: string;
   ipWhiteList?: string[];
@@ -430,6 +431,7 @@ export class CreateInnerAppRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       desc: 'desc',
+      developType: 'developType',
       homepageLink: 'homepageLink',
       icon: 'icon',
       ipWhiteList: 'ipWhiteList',
@@ -444,6 +446,7 @@ export class CreateInnerAppRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       desc: 'string',
+      developType: 'number',
       homepageLink: 'string',
       icon: 'string',
       ipWhiteList: { 'type': 'array', 'itemType': 'string' },
@@ -2662,6 +2665,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.desc)) {
       body["desc"] = request.desc;
+    }
+
+    if (!Util.isUnset(request.developType)) {
+      body["developType"] = request.developType;
     }
 
     if (!Util.isUnset(request.homepageLink)) {

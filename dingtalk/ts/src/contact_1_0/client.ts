@@ -959,6 +959,7 @@ export class GetCardInUserHolderResponseBody extends $tea.Model {
   cardAcceptStatus?: number;
   cardAcceptTimeLong?: number;
   cardId?: string;
+  cardSource?: number;
   extension?: { [key: string]: any };
   industryName?: string;
   introduce?: string;
@@ -972,6 +973,7 @@ export class GetCardInUserHolderResponseBody extends $tea.Model {
       cardAcceptStatus: 'cardAcceptStatus',
       cardAcceptTimeLong: 'cardAcceptTimeLong',
       cardId: 'cardId',
+      cardSource: 'cardSource',
       extension: 'extension',
       industryName: 'industryName',
       introduce: 'introduce',
@@ -988,6 +990,7 @@ export class GetCardInUserHolderResponseBody extends $tea.Model {
       cardAcceptStatus: 'number',
       cardAcceptTimeLong: 'number',
       cardId: 'string',
+      cardSource: 'number',
       extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       industryName: 'string',
       introduce: 'string',
@@ -5260,6 +5263,7 @@ export class GetUserCardHolderListResponseBodyList extends $tea.Model {
   cardAcceptStatus?: number;
   cardAcceptTimeLong?: number;
   cardId?: string;
+  cardSource?: number;
   extension?: { [key: string]: any };
   industryName?: string;
   introduce?: string;
@@ -5273,6 +5277,7 @@ export class GetUserCardHolderListResponseBodyList extends $tea.Model {
       cardAcceptStatus: 'cardAcceptStatus',
       cardAcceptTimeLong: 'cardAcceptTimeLong',
       cardId: 'cardId',
+      cardSource: 'cardSource',
       extension: 'extension',
       industryName: 'industryName',
       introduce: 'introduce',
@@ -5289,6 +5294,7 @@ export class GetUserCardHolderListResponseBodyList extends $tea.Model {
       cardAcceptStatus: 'number',
       cardAcceptTimeLong: 'number',
       cardId: 'string',
+      cardSource: 'number',
       extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       industryName: 'string',
       introduce: 'string',
