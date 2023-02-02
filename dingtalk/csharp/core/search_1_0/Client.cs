@@ -110,6 +110,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DarkIcon))
+            {
+                body["darkIcon"] = request.DarkIcon;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
+            {
+                body["icon"] = request.Icon;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
@@ -147,6 +155,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DarkIcon))
+            {
+                body["darkIcon"] = request.DarkIcon;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
+            {
+                body["icon"] = request.Icon;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
@@ -665,6 +681,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             tabId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(tabId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DarkIcon))
+            {
+                body["darkIcon"] = request.DarkIcon;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
+            {
+                body["icon"] = request.Icon;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
@@ -703,6 +727,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             tabId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(tabId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DarkIcon))
+            {
+                body["darkIcon"] = request.DarkIcon;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Icon))
+            {
+                body["icon"] = request.Icon;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;

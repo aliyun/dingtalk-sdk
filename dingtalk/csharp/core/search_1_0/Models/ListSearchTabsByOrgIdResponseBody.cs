@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         public List<ListSearchTabsByOrgIdResponseBodySearchTabResult> SearchTabResult { get; set; }
         public class ListSearchTabsByOrgIdResponseBodySearchTabResult : TeaModel {
             /// <summary>
+            /// 暗黑模式下，数据源图标，非必填，不填则使用默认图标
+            /// </summary>
+            [NameInMap("darkIcon")]
+            [Validation(Required=false)]
+            public string DarkIcon { get; set; }
+
+            /// <summary>
             /// 创建时间
             /// </summary>
             [NameInMap("gmtCreate")]
@@ -29,6 +36,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             [NameInMap("gmtModified")]
             [Validation(Required=false)]
             public string GmtModified { get; set; }
+
+            /// <summary>
+            /// 数据源图标，非必填，不填则使用默认图标
+            /// </summary>
+            [NameInMap("icon")]
+            [Validation(Required=false)]
+            public string Icon { get; set; }
 
             /// <summary>
             /// 数据源名称

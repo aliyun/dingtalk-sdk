@@ -44,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public string JsonData { get; set; }
 
+            [NameInMap("triggerCondition")]
+            [Validation(Required=false)]
+            public string TriggerCondition { get; set; }
+
             [NameInMap("triggerId")]
             [Validation(Required=false)]
             public string TriggerId { get; set; }
