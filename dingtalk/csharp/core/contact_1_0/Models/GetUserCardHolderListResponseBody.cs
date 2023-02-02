@@ -49,6 +49,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public string CardId { get; set; }
 
             /// <summary>
+            /// 名片来源
+            /// </summary>
+            [NameInMap("cardSource")]
+            [Validation(Required=false)]
+            public int? CardSource { get; set; }
+
+            /// <summary>
             /// 扩展信息
             /// </summary>
             [NameInMap("extension")]

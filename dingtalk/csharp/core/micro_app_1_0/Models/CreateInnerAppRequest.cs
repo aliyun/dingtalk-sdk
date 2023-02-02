@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public string Desc { get; set; }
 
+        [NameInMap("developType")]
+        [Validation(Required=false)]
+        public int? DevelopType { get; set; }
+
         /// <summary>
         /// 应用首页地址
         /// </summary>
