@@ -88,6 +88,12 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
         public String cardId;
 
         /**
+         * <p>名片来源</p>
+         */
+        @NameInMap("cardSource")
+        public Integer cardSource;
+
+        /**
          * <p>扩展信息</p>
          */
         @NameInMap("extension")
@@ -164,6 +170,14 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
         }
         public String getCardId() {
             return this.cardId;
+        }
+
+        public GetUserCardHolderListResponseBodyList setCardSource(Integer cardSource) {
+            this.cardSource = cardSource;
+            return this;
+        }
+        public Integer getCardSource() {
+            return this.cardSource;
         }
 
         public GetUserCardHolderListResponseBodyList setExtension(java.util.Map<String, ?> extension) {

@@ -10,6 +10,9 @@ public class CreateInnerAppRequest extends TeaModel {
     @NameInMap("desc")
     public String desc;
 
+    @NameInMap("developType")
+    public Integer developType;
+
     /**
      * <p>应用首页地址</p>
      */
@@ -69,6 +72,14 @@ public class CreateInnerAppRequest extends TeaModel {
     }
     public String getDesc() {
         return this.desc;
+    }
+
+    public CreateInnerAppRequest setDevelopType(Integer developType) {
+        this.developType = developType;
+        return this;
+    }
+    public Integer getDevelopType() {
+        return this.developType;
     }
 
     public CreateInnerAppRequest setHomepageLink(String homepageLink) {

@@ -225,6 +225,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("desc", request.desc);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.developType)) {
+            body.put("developType", request.developType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.homepageLink)) {
             body.put("homepageLink", request.homepageLink);
         }
