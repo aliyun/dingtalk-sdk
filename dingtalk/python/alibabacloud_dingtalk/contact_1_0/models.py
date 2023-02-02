@@ -1811,6 +1811,7 @@ class GetCardInUserHolderResponseBody(TeaModel):
         card_accept_status: int = None,
         card_accept_time_long: int = None,
         card_id: str = None,
+        card_source: int = None,
         extension: Dict[str, Any] = None,
         industry_name: str = None,
         introduce: str = None,
@@ -1826,6 +1827,8 @@ class GetCardInUserHolderResponseBody(TeaModel):
         self.card_accept_time_long = card_accept_time_long
         # 名片ID
         self.card_id = card_id
+        # 名片来源
+        self.card_source = card_source
         # 扩展信息
         self.extension = extension
         # 行业
@@ -1858,6 +1861,8 @@ class GetCardInUserHolderResponseBody(TeaModel):
             result['cardAcceptTimeLong'] = self.card_accept_time_long
         if self.card_id is not None:
             result['cardId'] = self.card_id
+        if self.card_source is not None:
+            result['cardSource'] = self.card_source
         if self.extension is not None:
             result['extension'] = self.extension
         if self.industry_name is not None:
@@ -1884,6 +1889,8 @@ class GetCardInUserHolderResponseBody(TeaModel):
             self.card_accept_time_long = m.get('cardAcceptTimeLong')
         if m.get('cardId') is not None:
             self.card_id = m.get('cardId')
+        if m.get('cardSource') is not None:
+            self.card_source = m.get('cardSource')
         if m.get('extension') is not None:
             self.extension = m.get('extension')
         if m.get('industryName') is not None:
@@ -3811,6 +3818,7 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
         card_accept_status: int = None,
         card_accept_time_long: int = None,
         card_id: str = None,
+        card_source: int = None,
         extension: Dict[str, Any] = None,
         industry_name: str = None,
         introduce: str = None,
@@ -3826,6 +3834,8 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
         self.card_accept_time_long = card_accept_time_long
         # 名片ID
         self.card_id = card_id
+        # 名片来源
+        self.card_source = card_source
         # 扩展信息
         self.extension = extension
         # 行业名称
@@ -3858,6 +3868,8 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
             result['cardAcceptTimeLong'] = self.card_accept_time_long
         if self.card_id is not None:
             result['cardId'] = self.card_id
+        if self.card_source is not None:
+            result['cardSource'] = self.card_source
         if self.extension is not None:
             result['extension'] = self.extension
         if self.industry_name is not None:
@@ -3884,6 +3896,8 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
             self.card_accept_time_long = m.get('cardAcceptTimeLong')
         if m.get('cardId') is not None:
             self.card_id = m.get('cardId')
+        if m.get('cardSource') is not None:
+            self.card_source = m.get('cardSource')
         if m.get('extension') is not None:
             self.extension = m.get('extension')
         if m.get('industryName') is not None:

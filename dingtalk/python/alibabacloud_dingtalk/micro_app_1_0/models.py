@@ -777,6 +777,7 @@ class CreateInnerAppRequest(TeaModel):
     def __init__(
         self,
         desc: str = None,
+        develop_type: int = None,
         homepage_link: str = None,
         icon: str = None,
         ip_white_list: List[str] = None,
@@ -788,6 +789,7 @@ class CreateInnerAppRequest(TeaModel):
     ):
         # 应用描述
         self.desc = desc
+        self.develop_type = develop_type
         # 应用首页地址
         self.homepage_link = homepage_link
         # 应用图标
@@ -816,6 +818,8 @@ class CreateInnerAppRequest(TeaModel):
         result = dict()
         if self.desc is not None:
             result['desc'] = self.desc
+        if self.develop_type is not None:
+            result['developType'] = self.develop_type
         if self.homepage_link is not None:
             result['homepageLink'] = self.homepage_link
         if self.icon is not None:
@@ -838,6 +842,8 @@ class CreateInnerAppRequest(TeaModel):
         m = m or dict()
         if m.get('desc') is not None:
             self.desc = m.get('desc')
+        if m.get('developType') is not None:
+            self.develop_type = m.get('developType')
         if m.get('homepageLink') is not None:
             self.homepage_link = m.get('homepageLink')
         if m.get('icon') is not None:

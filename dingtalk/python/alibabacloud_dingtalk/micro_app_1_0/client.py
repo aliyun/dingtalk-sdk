@@ -405,6 +405,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.desc):
             body['desc'] = request.desc
+        if not UtilClient.is_unset(request.develop_type):
+            body['developType'] = request.develop_type
         if not UtilClient.is_unset(request.homepage_link):
             body['homepageLink'] = request.homepage_link
         if not UtilClient.is_unset(request.icon):
@@ -445,6 +447,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.desc):
             body['desc'] = request.desc
+        if not UtilClient.is_unset(request.develop_type):
+            body['developType'] = request.develop_type
         if not UtilClient.is_unset(request.homepage_link):
             body['homepageLink'] = request.homepage_link
         if not UtilClient.is_unset(request.icon):
