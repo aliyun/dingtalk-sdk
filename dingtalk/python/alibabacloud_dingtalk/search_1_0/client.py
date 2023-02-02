@@ -117,6 +117,10 @@ class Client(OpenApiClient):
     ) -> dingtalksearch__1__0_models.CreateSearchTabResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.dark_icon):
+            body['darkIcon'] = request.dark_icon
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.priority):
@@ -147,6 +151,10 @@ class Client(OpenApiClient):
     ) -> dingtalksearch__1__0_models.CreateSearchTabResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.dark_icon):
+            body['darkIcon'] = request.dark_icon
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.priority):
@@ -655,6 +663,10 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         body = {}
+        if not UtilClient.is_unset(request.dark_icon):
+            body['darkIcon'] = request.dark_icon
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.priority):
@@ -687,6 +699,10 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         tab_id = OpenApiUtilClient.get_encode_param(tab_id)
         body = {}
+        if not UtilClient.is_unset(request.dark_icon):
+            body['darkIcon'] = request.dark_icon
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.priority):

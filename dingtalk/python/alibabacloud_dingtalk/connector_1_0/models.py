@@ -2584,6 +2584,7 @@ class SyncDataRequestTriggerDataList(TeaModel):
         data_gmt_modified: int = None,
         integration_object: str = None,
         json_data: str = None,
+        trigger_condition: str = None,
         trigger_id: str = None,
     ):
         self.action = action
@@ -2592,6 +2593,7 @@ class SyncDataRequestTriggerDataList(TeaModel):
         self.data_gmt_modified = data_gmt_modified
         self.integration_object = integration_object
         self.json_data = json_data
+        self.trigger_condition = trigger_condition
         self.trigger_id = trigger_id
 
     def validate(self):
@@ -2615,6 +2617,8 @@ class SyncDataRequestTriggerDataList(TeaModel):
             result['integrationObject'] = self.integration_object
         if self.json_data is not None:
             result['jsonData'] = self.json_data
+        if self.trigger_condition is not None:
+            result['triggerCondition'] = self.trigger_condition
         if self.trigger_id is not None:
             result['triggerId'] = self.trigger_id
         return result
@@ -2633,6 +2637,8 @@ class SyncDataRequestTriggerDataList(TeaModel):
             self.integration_object = m.get('integrationObject')
         if m.get('jsonData') is not None:
             self.json_data = m.get('jsonData')
+        if m.get('triggerCondition') is not None:
+            self.trigger_condition = m.get('triggerCondition')
         if m.get('triggerId') is not None:
             self.trigger_id = m.get('triggerId')
         return self

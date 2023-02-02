@@ -212,11 +212,17 @@ class CreateSearchTabHeaders(TeaModel):
 class CreateSearchTabRequest(TeaModel):
     def __init__(
         self,
+        dark_icon: str = None,
+        icon: str = None,
         name: str = None,
         priority: int = None,
         source: str = None,
         status: int = None,
     ):
+        # 暗黑模式下，数据源图标，非必填，不填则使用默认图标
+        self.dark_icon = dark_icon
+        # 数据源图标，非必填，不填则使用默认图标
+        self.icon = icon
         # 数据源名称
         self.name = name
         # 数据源优先级，数值越小优先级越高
@@ -235,6 +241,10 @@ class CreateSearchTabRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.dark_icon is not None:
+            result['darkIcon'] = self.dark_icon
+        if self.icon is not None:
+            result['icon'] = self.icon
         if self.name is not None:
             result['name'] = self.name
         if self.priority is not None:
@@ -247,6 +257,10 @@ class CreateSearchTabRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('darkIcon') is not None:
+            self.dark_icon = m.get('darkIcon')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('priority') is not None:
@@ -906,18 +920,24 @@ class GetSearchTabHeaders(TeaModel):
 class GetSearchTabResponseBody(TeaModel):
     def __init__(
         self,
+        dark_icon: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
+        icon: str = None,
         name: str = None,
         priority: int = None,
         source: str = None,
         status: int = None,
         tab_id: int = None,
     ):
+        # 暗黑模式下，数据源图标，非必填，不填则使用默认图标
+        self.dark_icon = dark_icon
         # 创建时间
         self.gmt_create = gmt_create
         # 修改时间
         self.gmt_modified = gmt_modified
+        # 数据源图标，非必填，不填则使用默认图标
+        self.icon = icon
         # 数据源名称
         self.name = name
         # 数据源优先级，数值越小优先级越高
@@ -938,10 +958,14 @@ class GetSearchTabResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.dark_icon is not None:
+            result['darkIcon'] = self.dark_icon
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
             result['gmtModified'] = self.gmt_modified
+        if self.icon is not None:
+            result['icon'] = self.icon
         if self.name is not None:
             result['name'] = self.name
         if self.priority is not None:
@@ -956,10 +980,14 @@ class GetSearchTabResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('darkIcon') is not None:
+            self.dark_icon = m.get('darkIcon')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
             self.gmt_modified = m.get('gmtModified')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('priority') is not None:
@@ -1183,18 +1211,24 @@ class ListSearchTabsByOrgIdHeaders(TeaModel):
 class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
     def __init__(
         self,
+        dark_icon: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
+        icon: str = None,
         name: str = None,
         priority: int = None,
         source: str = None,
         status: int = None,
         tab_id: int = None,
     ):
+        # 暗黑模式下，数据源图标，非必填，不填则使用默认图标
+        self.dark_icon = dark_icon
         # 创建时间
         self.gmt_create = gmt_create
         # 修改时间
         self.gmt_modified = gmt_modified
+        # 数据源图标，非必填，不填则使用默认图标
+        self.icon = icon
         # 数据源名称
         self.name = name
         # 数据源优先级，数值越小优先级越高
@@ -1215,10 +1249,14 @@ class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
             return _map
 
         result = dict()
+        if self.dark_icon is not None:
+            result['darkIcon'] = self.dark_icon
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
             result['gmtModified'] = self.gmt_modified
+        if self.icon is not None:
+            result['icon'] = self.icon
         if self.name is not None:
             result['name'] = self.name
         if self.priority is not None:
@@ -1233,10 +1271,14 @@ class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('darkIcon') is not None:
+            self.dark_icon = m.get('darkIcon')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
             self.gmt_modified = m.get('gmtModified')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('priority') is not None:
@@ -1359,11 +1401,17 @@ class UpdateSearchTabHeaders(TeaModel):
 class UpdateSearchTabRequest(TeaModel):
     def __init__(
         self,
+        dark_icon: str = None,
+        icon: str = None,
         name: str = None,
         priority: int = None,
         source: str = None,
         status: int = None,
     ):
+        # 暗黑模式下，数据源图标，非必填，不填则使用默认图标
+        self.dark_icon = dark_icon
+        # 数据源图标，非必填，不填则使用默认图标
+        self.icon = icon
         # 数据源名称
         self.name = name
         # 数据源优先级，数值越小优先级越高
@@ -1382,6 +1430,10 @@ class UpdateSearchTabRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.dark_icon is not None:
+            result['darkIcon'] = self.dark_icon
+        if self.icon is not None:
+            result['icon'] = self.icon
         if self.name is not None:
             result['name'] = self.name
         if self.priority is not None:
@@ -1394,6 +1446,10 @@ class UpdateSearchTabRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('darkIcon') is not None:
+            self.dark_icon = m.get('darkIcon')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('priority') is not None:
