@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class searchTabResult extends Model
 {
     /**
+     * @description 暗黑模式下，数据源图标，非必填，不填则使用默认图标
+     *
+     * @var string
+     */
+    public $darkIcon;
+
+    /**
      * @description 创建时间
      *
      * @var string
@@ -21,6 +28,13 @@ class searchTabResult extends Model
      * @var string
      */
     public $gmtModified;
+
+    /**
+     * @description 数据源图标，非必填，不填则使用默认图标
+     *
+     * @var string
+     */
+    public $icon;
 
     /**
      * @description 数据源名称
@@ -57,8 +71,10 @@ class searchTabResult extends Model
      */
     public $tabId;
     protected $_name = [
+        'darkIcon'    => 'darkIcon',
         'gmtCreate'   => 'gmtCreate',
         'gmtModified' => 'gmtModified',
+        'icon'        => 'icon',
         'name'        => 'name',
         'priority'    => 'priority',
         'source'      => 'source',
@@ -73,11 +89,17 @@ class searchTabResult extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->darkIcon) {
+            $res['darkIcon'] = $this->darkIcon;
+        }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
         }
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
+        }
+        if (null !== $this->icon) {
+            $res['icon'] = $this->icon;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -106,11 +128,17 @@ class searchTabResult extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['darkIcon'])) {
+            $model->darkIcon = $map['darkIcon'];
+        }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
         }
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
+        }
+        if (isset($map['icon'])) {
+            $model->icon = $map['icon'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

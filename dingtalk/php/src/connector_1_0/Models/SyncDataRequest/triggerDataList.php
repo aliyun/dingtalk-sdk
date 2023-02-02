@@ -41,6 +41,11 @@ class triggerDataList extends Model
     /**
      * @var string
      */
+    public $triggerCondition;
+
+    /**
+     * @var string
+     */
     public $triggerId;
     protected $_name = [
         'action'            => 'action',
@@ -49,6 +54,7 @@ class triggerDataList extends Model
         'dataGmtModified'   => 'dataGmtModified',
         'integrationObject' => 'integrationObject',
         'jsonData'          => 'jsonData',
+        'triggerCondition'  => 'triggerCondition',
         'triggerId'         => 'triggerId',
     ];
 
@@ -76,6 +82,9 @@ class triggerDataList extends Model
         }
         if (null !== $this->jsonData) {
             $res['jsonData'] = $this->jsonData;
+        }
+        if (null !== $this->triggerCondition) {
+            $res['triggerCondition'] = $this->triggerCondition;
         }
         if (null !== $this->triggerId) {
             $res['triggerId'] = $this->triggerId;
@@ -109,6 +118,9 @@ class triggerDataList extends Model
         }
         if (isset($map['jsonData'])) {
             $model->jsonData = $map['jsonData'];
+        }
+        if (isset($map['triggerCondition'])) {
+            $model->triggerCondition = $map['triggerCondition'];
         }
         if (isset($map['triggerId'])) {
             $model->triggerId = $map['triggerId'];

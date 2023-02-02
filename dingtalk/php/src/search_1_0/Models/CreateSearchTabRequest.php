@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class CreateSearchTabRequest extends Model
 {
     /**
+     * @description 暗黑模式下，数据源图标，非必填，不填则使用默认图标
+     *
+     * @var string
+     */
+    public $darkIcon;
+
+    /**
+     * @description 数据源图标，非必填，不填则使用默认图标
+     *
+     * @var string
+     */
+    public $icon;
+
+    /**
      * @description 数据源名称
      *
      * @var string
@@ -36,6 +50,8 @@ class CreateSearchTabRequest extends Model
      */
     public $status;
     protected $_name = [
+        'darkIcon' => 'darkIcon',
+        'icon'     => 'icon',
         'name'     => 'name',
         'priority' => 'priority',
         'source'   => 'source',
@@ -49,6 +65,12 @@ class CreateSearchTabRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->darkIcon) {
+            $res['darkIcon'] = $this->darkIcon;
+        }
+        if (null !== $this->icon) {
+            $res['icon'] = $this->icon;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -73,6 +95,12 @@ class CreateSearchTabRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['darkIcon'])) {
+            $model->darkIcon = $map['darkIcon'];
+        }
+        if (isset($map['icon'])) {
+            $model->icon = $map['icon'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }

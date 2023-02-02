@@ -115,6 +115,12 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->darkIcon)) {
+            @$body['darkIcon'] = $request->darkIcon;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            @$body['icon'] = $request->icon;
+        }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }
@@ -473,6 +479,12 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $tabId = OpenApiUtilClient::getEncodeParam($tabId);
         $body  = [];
+        if (!Utils::isUnset($request->darkIcon)) {
+            @$body['darkIcon'] = $request->darkIcon;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            @$body['icon'] = $request->icon;
+        }
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }
