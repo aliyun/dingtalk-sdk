@@ -353,6 +353,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->desc)) {
             @$body['desc'] = $request->desc;
         }
+        if (!Utils::isUnset($request->developType)) {
+            @$body['developType'] = $request->developType;
+        }
         if (!Utils::isUnset($request->homepageLink)) {
             @$body['homepageLink'] = $request->homepageLink;
         }

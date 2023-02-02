@@ -35,6 +35,13 @@ class list_ extends Model
     public $cardId;
 
     /**
+     * @description 名片来源
+     *
+     * @var int
+     */
+    public $cardSource;
+
+    /**
      * @description 扩展信息
      *
      * @var mixed[]
@@ -87,6 +94,7 @@ class list_ extends Model
         'cardAcceptStatus'   => 'cardAcceptStatus',
         'cardAcceptTimeLong' => 'cardAcceptTimeLong',
         'cardId'             => 'cardId',
+        'cardSource'         => 'cardSource',
         'extension'          => 'extension',
         'industryName'       => 'industryName',
         'introduce'          => 'introduce',
@@ -114,6 +122,9 @@ class list_ extends Model
         }
         if (null !== $this->cardId) {
             $res['cardId'] = $this->cardId;
+        }
+        if (null !== $this->cardSource) {
+            $res['cardSource'] = $this->cardSource;
         }
         if (null !== $this->extension) {
             $res['extension'] = $this->extension;
@@ -159,6 +170,9 @@ class list_ extends Model
         }
         if (isset($map['cardId'])) {
             $model->cardId = $map['cardId'];
+        }
+        if (isset($map['cardSource'])) {
+            $model->cardSource = $map['cardSource'];
         }
         if (isset($map['extension'])) {
             $model->extension = $map['extension'];

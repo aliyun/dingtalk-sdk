@@ -16,6 +16,11 @@ class CreateInnerAppRequest extends Model
     public $desc;
 
     /**
+     * @var int
+     */
+    public $developType;
+
+    /**
      * @description 应用首页地址
      *
      * @var string
@@ -72,6 +77,7 @@ class CreateInnerAppRequest extends Model
     public $scopeType;
     protected $_name = [
         'desc'           => 'desc',
+        'developType'    => 'developType',
         'homepageLink'   => 'homepageLink',
         'icon'           => 'icon',
         'ipWhiteList'    => 'ipWhiteList',
@@ -91,6 +97,9 @@ class CreateInnerAppRequest extends Model
         $res = [];
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
+        }
+        if (null !== $this->developType) {
+            $res['developType'] = $this->developType;
         }
         if (null !== $this->homepageLink) {
             $res['homepageLink'] = $this->homepageLink;
@@ -130,6 +139,9 @@ class CreateInnerAppRequest extends Model
         $model = new self();
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
+        }
+        if (isset($map['developType'])) {
+            $model->developType = $map['developType'];
         }
         if (isset($map['homepageLink'])) {
             $model->homepageLink = $map['homepageLink'];
