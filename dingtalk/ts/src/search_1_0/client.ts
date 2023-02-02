@@ -90,12 +90,16 @@ export class CreateSearchTabHeaders extends $tea.Model {
 }
 
 export class CreateSearchTabRequest extends $tea.Model {
+  darkIcon?: string;
+  icon?: string;
   name?: string;
   priority?: number;
   source?: string;
   status?: number;
   static names(): { [key: string]: string } {
     return {
+      darkIcon: 'darkIcon',
+      icon: 'icon',
       name: 'name',
       priority: 'priority',
       source: 'source',
@@ -105,6 +109,8 @@ export class CreateSearchTabRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      darkIcon: 'string',
+      icon: 'string',
       name: 'string',
       priority: 'number',
       source: 'string',
@@ -450,8 +456,10 @@ export class GetSearchTabHeaders extends $tea.Model {
 }
 
 export class GetSearchTabResponseBody extends $tea.Model {
+  darkIcon?: string;
   gmtCreate?: string;
   gmtModified?: string;
+  icon?: string;
   name?: string;
   priority?: number;
   source?: string;
@@ -459,8 +467,10 @@ export class GetSearchTabResponseBody extends $tea.Model {
   tabId?: number;
   static names(): { [key: string]: string } {
     return {
+      darkIcon: 'darkIcon',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
+      icon: 'icon',
       name: 'name',
       priority: 'priority',
       source: 'source',
@@ -471,8 +481,10 @@ export class GetSearchTabResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      darkIcon: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
+      icon: 'string',
       name: 'string',
       priority: 'number',
       source: 'string',
@@ -675,12 +687,16 @@ export class UpdateSearchTabHeaders extends $tea.Model {
 }
 
 export class UpdateSearchTabRequest extends $tea.Model {
+  darkIcon?: string;
+  icon?: string;
   name?: string;
   priority?: number;
   source?: string;
   status?: number;
   static names(): { [key: string]: string } {
     return {
+      darkIcon: 'darkIcon',
+      icon: 'icon',
       name: 'name',
       priority: 'priority',
       source: 'source',
@@ -690,6 +706,8 @@ export class UpdateSearchTabRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      darkIcon: 'string',
+      icon: 'string',
       name: 'string',
       priority: 'number',
       source: 'string',
@@ -811,8 +829,10 @@ export class GetSearchItemsByKeyWordResponseBodyValue extends $tea.Model {
 }
 
 export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model {
+  darkIcon?: string;
   gmtCreate?: string;
   gmtModified?: string;
+  icon?: string;
   name?: string;
   priority?: number;
   source?: string;
@@ -820,8 +840,10 @@ export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model
   tabId?: number;
   static names(): { [key: string]: string } {
     return {
+      darkIcon: 'darkIcon',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
+      icon: 'icon',
       name: 'name',
       priority: 'priority',
       source: 'source',
@@ -832,8 +854,10 @@ export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model
 
   static types(): { [key: string]: any } {
     return {
+      darkIcon: 'string',
       gmtCreate: 'string',
       gmtModified: 'string',
+      icon: 'string',
       name: 'string',
       priority: 'number',
       source: 'string',
@@ -899,6 +923,14 @@ export default class Client extends OpenApi {
   async createSearchTabWithOptions(request: CreateSearchTabRequest, headers: CreateSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSearchTabResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.darkIcon)) {
+      body["darkIcon"] = request.darkIcon;
+    }
+
+    if (!Util.isUnset(request.icon)) {
+      body["icon"] = request.icon;
+    }
+
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
     }
@@ -1153,6 +1185,14 @@ export default class Client extends OpenApi {
     Util.validateModel(request);
     tabId = OpenApiUtil.getEncodeParam(tabId);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.darkIcon)) {
+      body["darkIcon"] = request.darkIcon;
+    }
+
+    if (!Util.isUnset(request.icon)) {
+      body["icon"] = request.icon;
+    }
+
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
     }

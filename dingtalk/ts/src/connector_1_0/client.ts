@@ -1789,6 +1789,7 @@ export class SyncDataRequestTriggerDataList extends $tea.Model {
   dataGmtModified?: number;
   integrationObject?: string;
   jsonData?: string;
+  triggerCondition?: string;
   triggerId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1798,6 +1799,7 @@ export class SyncDataRequestTriggerDataList extends $tea.Model {
       dataGmtModified: 'dataGmtModified',
       integrationObject: 'integrationObject',
       jsonData: 'jsonData',
+      triggerCondition: 'triggerCondition',
       triggerId: 'triggerId',
     };
   }
@@ -1810,6 +1812,7 @@ export class SyncDataRequestTriggerDataList extends $tea.Model {
       dataGmtModified: 'number',
       integrationObject: 'string',
       jsonData: 'string',
+      triggerCondition: 'string',
       triggerId: 'string',
     };
   }
