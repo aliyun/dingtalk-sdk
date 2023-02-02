@@ -25,6 +25,12 @@ public class ListSearchTabsByOrgIdResponseBody extends TeaModel {
 
     public static class ListSearchTabsByOrgIdResponseBodySearchTabResult extends TeaModel {
         /**
+         * <p>暗黑模式下，数据源图标，非必填，不填则使用默认图标</p>
+         */
+        @NameInMap("darkIcon")
+        public String darkIcon;
+
+        /**
          * <p>创建时间</p>
          */
         @NameInMap("gmtCreate")
@@ -35,6 +41,12 @@ public class ListSearchTabsByOrgIdResponseBody extends TeaModel {
          */
         @NameInMap("gmtModified")
         public String gmtModified;
+
+        /**
+         * <p>数据源图标，非必填，不填则使用默认图标</p>
+         */
+        @NameInMap("icon")
+        public String icon;
 
         /**
          * <p>数据源名称</p>
@@ -71,6 +83,14 @@ public class ListSearchTabsByOrgIdResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public ListSearchTabsByOrgIdResponseBodySearchTabResult setDarkIcon(String darkIcon) {
+            this.darkIcon = darkIcon;
+            return this;
+        }
+        public String getDarkIcon() {
+            return this.darkIcon;
+        }
+
         public ListSearchTabsByOrgIdResponseBodySearchTabResult setGmtCreate(String gmtCreate) {
             this.gmtCreate = gmtCreate;
             return this;
@@ -85,6 +105,14 @@ public class ListSearchTabsByOrgIdResponseBody extends TeaModel {
         }
         public String getGmtModified() {
             return this.gmtModified;
+        }
+
+        public ListSearchTabsByOrgIdResponseBodySearchTabResult setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
         }
 
         public ListSearchTabsByOrgIdResponseBodySearchTabResult setName(String name) {

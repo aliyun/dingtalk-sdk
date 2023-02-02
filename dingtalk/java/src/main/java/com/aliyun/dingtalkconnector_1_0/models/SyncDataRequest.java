@@ -53,6 +53,9 @@ public class SyncDataRequest extends TeaModel {
         @NameInMap("jsonData")
         public String jsonData;
 
+        @NameInMap("triggerCondition")
+        public String triggerCondition;
+
         @NameInMap("triggerId")
         public String triggerId;
 
@@ -107,6 +110,14 @@ public class SyncDataRequest extends TeaModel {
         }
         public String getJsonData() {
             return this.jsonData;
+        }
+
+        public SyncDataRequestTriggerDataList setTriggerCondition(String triggerCondition) {
+            this.triggerCondition = triggerCondition;
+            return this;
+        }
+        public String getTriggerCondition() {
+            return this.triggerCondition;
         }
 
         public SyncDataRequestTriggerDataList setTriggerId(String triggerId) {

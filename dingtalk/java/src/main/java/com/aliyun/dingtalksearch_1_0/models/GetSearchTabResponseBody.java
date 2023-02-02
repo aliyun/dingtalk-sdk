@@ -5,6 +5,12 @@ import com.aliyun.tea.*;
 
 public class GetSearchTabResponseBody extends TeaModel {
     /**
+     * <p>暗黑模式下，数据源图标，非必填，不填则使用默认图标</p>
+     */
+    @NameInMap("darkIcon")
+    public String darkIcon;
+
+    /**
      * <p>创建时间</p>
      */
     @NameInMap("gmtCreate")
@@ -15,6 +21,12 @@ public class GetSearchTabResponseBody extends TeaModel {
      */
     @NameInMap("gmtModified")
     public String gmtModified;
+
+    /**
+     * <p>数据源图标，非必填，不填则使用默认图标</p>
+     */
+    @NameInMap("icon")
+    public String icon;
 
     /**
      * <p>数据源名称</p>
@@ -51,6 +63,14 @@ public class GetSearchTabResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public GetSearchTabResponseBody setDarkIcon(String darkIcon) {
+        this.darkIcon = darkIcon;
+        return this;
+    }
+    public String getDarkIcon() {
+        return this.darkIcon;
+    }
+
     public GetSearchTabResponseBody setGmtCreate(String gmtCreate) {
         this.gmtCreate = gmtCreate;
         return this;
@@ -65,6 +85,14 @@ public class GetSearchTabResponseBody extends TeaModel {
     }
     public String getGmtModified() {
         return this.gmtModified;
+    }
+
+    public GetSearchTabResponseBody setIcon(String icon) {
+        this.icon = icon;
+        return this;
+    }
+    public String getIcon() {
+        return this.icon;
     }
 
     public GetSearchTabResponseBody setName(String name) {

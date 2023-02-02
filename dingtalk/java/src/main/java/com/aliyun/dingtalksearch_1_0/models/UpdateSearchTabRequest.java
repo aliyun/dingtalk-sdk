@@ -5,6 +5,18 @@ import com.aliyun.tea.*;
 
 public class UpdateSearchTabRequest extends TeaModel {
     /**
+     * <p>暗黑模式下，数据源图标，非必填，不填则使用默认图标</p>
+     */
+    @NameInMap("darkIcon")
+    public String darkIcon;
+
+    /**
+     * <p>数据源图标，非必填，不填则使用默认图标</p>
+     */
+    @NameInMap("icon")
+    public String icon;
+
+    /**
      * <p>数据源名称</p>
      */
     @NameInMap("name")
@@ -31,6 +43,22 @@ public class UpdateSearchTabRequest extends TeaModel {
     public static UpdateSearchTabRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateSearchTabRequest self = new UpdateSearchTabRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateSearchTabRequest setDarkIcon(String darkIcon) {
+        this.darkIcon = darkIcon;
+        return this;
+    }
+    public String getDarkIcon() {
+        return this.darkIcon;
+    }
+
+    public UpdateSearchTabRequest setIcon(String icon) {
+        this.icon = icon;
+        return this;
+    }
+    public String getIcon() {
+        return this.icon;
     }
 
     public UpdateSearchTabRequest setName(String name) {
