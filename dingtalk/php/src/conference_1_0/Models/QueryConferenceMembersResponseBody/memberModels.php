@@ -76,7 +76,7 @@ class memberModels extends Model
      *
      * @var string
      */
-    public $userId;
+    public $unionId;
 
     /**
      * @description 成员昵称
@@ -94,7 +94,7 @@ class memberModels extends Model
         'leaveTime'      => 'leaveTime',
         'outerOrgMember' => 'outerOrgMember',
         'pstnJoin'       => 'pstnJoin',
-        'userId'         => 'userId',
+        'unionId'        => 'unionId',
         'userNick'       => 'userNick',
     ];
 
@@ -132,8 +132,8 @@ class memberModels extends Model
         if (null !== $this->pstnJoin) {
             $res['pstnJoin'] = $this->pstnJoin;
         }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
         if (null !== $this->userNick) {
             $res['userNick'] = $this->userNick;
@@ -177,8 +177,8 @@ class memberModels extends Model
         if (isset($map['pstnJoin'])) {
             $model->pstnJoin = $map['pstnJoin'];
         }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
         if (isset($map['userNick'])) {
             $model->userNick = $map['userNick'];
