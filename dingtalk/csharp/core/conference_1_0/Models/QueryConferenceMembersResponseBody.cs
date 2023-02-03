@@ -88,9 +88,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             /// <summary>
             /// 用户unionId
             /// </summary>
-            [NameInMap("userId")]
+            [NameInMap("unionId")]
             [Validation(Required=false)]
-            public string UserId { get; set; }
+            public string UnionId { get; set; }
 
             /// <summary>
             /// 成员昵称
