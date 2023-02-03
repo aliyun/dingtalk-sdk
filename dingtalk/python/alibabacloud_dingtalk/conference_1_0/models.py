@@ -1638,7 +1638,7 @@ class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
         leave_time: int = None,
         outer_org_member: bool = None,
         pstn_join: bool = None,
-        user_id: str = None,
+        union_id: str = None,
         user_nick: str = None,
     ):
         # 成员状态 
@@ -1666,7 +1666,7 @@ class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
         # 是否为pstn入会
         self.pstn_join = pstn_join
         # 用户unionId
-        self.user_id = user_id
+        self.union_id = union_id
         # 成员昵称
         self.user_nick = user_nick
 
@@ -1697,8 +1697,8 @@ class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
             result['outerOrgMember'] = self.outer_org_member
         if self.pstn_join is not None:
             result['pstnJoin'] = self.pstn_join
-        if self.user_id is not None:
-            result['userId'] = self.user_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         if self.user_nick is not None:
             result['userNick'] = self.user_nick
         return result
@@ -1723,8 +1723,8 @@ class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
             self.outer_org_member = m.get('outerOrgMember')
         if m.get('pstnJoin') is not None:
             self.pstn_join = m.get('pstnJoin')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
         if m.get('userNick') is not None:
             self.user_nick = m.get('userNick')
         return self
