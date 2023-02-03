@@ -115,8 +115,8 @@ public class QueryConferenceMembersResponseBody extends TeaModel {
         /**
          * <p>用户unionId</p>
          */
-        @NameInMap("userId")
-        public String userId;
+        @NameInMap("unionId")
+        public String unionId;
 
         /**
          * <p>成员昵称</p>
@@ -201,12 +201,12 @@ public class QueryConferenceMembersResponseBody extends TeaModel {
             return this.pstnJoin;
         }
 
-        public QueryConferenceMembersResponseBodyMemberModels setUserId(String userId) {
-            this.userId = userId;
+        public QueryConferenceMembersResponseBodyMemberModels setUnionId(String unionId) {
+            this.unionId = unionId;
             return this;
         }
-        public String getUserId() {
-            return this.userId;
+        public String getUnionId() {
+            return this.unionId;
         }
 
         public QueryConferenceMembersResponseBodyMemberModels setUserNick(String userNick) {
