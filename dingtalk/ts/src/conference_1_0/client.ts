@@ -1515,7 +1515,7 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
   leaveTime?: number;
   outerOrgMember?: boolean;
   pstnJoin?: boolean;
-  userId?: string;
+  unionId?: string;
   userNick?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1528,7 +1528,7 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
       leaveTime: 'leaveTime',
       outerOrgMember: 'outerOrgMember',
       pstnJoin: 'pstnJoin',
-      userId: 'userId',
+      unionId: 'unionId',
       userNick: 'userNick',
     };
   }
@@ -1544,7 +1544,7 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
       leaveTime: 'number',
       outerOrgMember: 'boolean',
       pstnJoin: 'boolean',
-      userId: 'string',
+      unionId: 'string',
       userNick: 'string',
     };
   }
