@@ -679,6 +679,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('OrgGroupSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/send', 'json', req, runtime)
         )
 
+    def query_bot_instance_in_group_info(
+        self,
+        request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,
+    ) -> dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders()
+        return self.query_bot_instance_in_group_info_with_options(request, headers, runtime)
+
+    async def query_bot_instance_in_group_info_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,
+    ) -> dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders()
+        return await self.query_bot_instance_in_group_info_with_options_async(request, headers, runtime)
+
+    def query_bot_instance_in_group_info_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,
+        headers: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse(),
+            self.do_roarequest('QueryBotInstanceInGroupInfo', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groups/query', 'json', req, runtime)
+        )
+
+    async def query_bot_instance_in_group_info_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,
+        headers: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse(),
+            await self.do_roarequest_async('QueryBotInstanceInGroupInfo', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groups/query', 'json', req, runtime)
+        )
+
     def query_robot_plugin(
         self,
         request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,

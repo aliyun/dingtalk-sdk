@@ -3445,6 +3445,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.select):
+            query['select'] = request.select
         body = {}
         if not UtilClient.is_unset(request.find_options):
             body['findOptions'] = request.find_options
@@ -3479,6 +3481,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.select):
+            query['select'] = request.select
         body = {}
         if not UtilClient.is_unset(request.find_options):
             body['findOptions'] = request.find_options

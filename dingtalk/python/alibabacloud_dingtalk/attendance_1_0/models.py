@@ -3181,6 +3181,339 @@ class GetClosingAccountsResponse(TeaModel):
         return self
 
 
+class GetLeaveRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetLeaveRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        leave_code: str = None,
+        op_user_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        user_ids: List[str] = None,
+    ):
+        # 假期类型唯一标识。
+        self.leave_code = leave_code
+        # 操作人userId。
+        self.op_user_id = op_user_id
+        # 分页页码。
+        self.page_number = page_number
+        # 分页大小。
+        self.page_size = page_size
+        # 查询员工userId列表。一次最多支持50个。
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetLeaveRecordsResponseBodyResultLeaveRecords(TeaModel):
+    def __init__(
+        self,
+        cal_type: str = None,
+        end_time: int = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        leave_code: str = None,
+        leave_reason: str = None,
+        leave_record_type: str = None,
+        leave_status: str = None,
+        leave_view_unit: str = None,
+        quota_id: str = None,
+        record_id: str = None,
+        record_num_per_day: int = None,
+        record_num_per_hour: int = None,
+        start_time: int = None,
+        user_id: str = None,
+    ):
+        # 计算类型。
+        self.cal_type = cal_type
+        # 额度有效期结束时间或请假结束时间，毫秒级时间戳。
+        self.end_time = end_time
+        # 记录创建时间。
+        self.gmt_create = gmt_create
+        # 记录修改时间。
+        self.gmt_modified = gmt_modified
+        # 假期类型唯一标识。
+        self.leave_code = leave_code
+        # 原因。
+        self.leave_reason = leave_reason
+        # 假期记录类型。
+        self.leave_record_type = leave_record_type
+        # 请假状态。
+        self.leave_status = leave_status
+        # 显示单位。
+        self.leave_view_unit = leave_view_unit
+        # 额度唯一标识。
+        self.quota_id = quota_id
+        # 假期记录唯一标识。
+        self.record_id = record_id
+        # 以天计算的消费额度。
+        self.record_num_per_day = record_num_per_day
+        # 以小时计算的消费额度。
+        self.record_num_per_hour = record_num_per_hour
+        # 额度有效期开始时间或请假开始时间，毫秒级时间戳。
+        self.start_time = start_time
+        # 员工userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cal_type is not None:
+            result['calType'] = self.cal_type
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.leave_reason is not None:
+            result['leaveReason'] = self.leave_reason
+        if self.leave_record_type is not None:
+            result['leaveRecordType'] = self.leave_record_type
+        if self.leave_status is not None:
+            result['leaveStatus'] = self.leave_status
+        if self.leave_view_unit is not None:
+            result['leaveViewUnit'] = self.leave_view_unit
+        if self.quota_id is not None:
+            result['quotaId'] = self.quota_id
+        if self.record_id is not None:
+            result['recordId'] = self.record_id
+        if self.record_num_per_day is not None:
+            result['recordNumPerDay'] = self.record_num_per_day
+        if self.record_num_per_hour is not None:
+            result['recordNumPerHour'] = self.record_num_per_hour
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('calType') is not None:
+            self.cal_type = m.get('calType')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('leaveReason') is not None:
+            self.leave_reason = m.get('leaveReason')
+        if m.get('leaveRecordType') is not None:
+            self.leave_record_type = m.get('leaveRecordType')
+        if m.get('leaveStatus') is not None:
+            self.leave_status = m.get('leaveStatus')
+        if m.get('leaveViewUnit') is not None:
+            self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('quotaId') is not None:
+            self.quota_id = m.get('quotaId')
+        if m.get('recordId') is not None:
+            self.record_id = m.get('recordId')
+        if m.get('recordNumPerDay') is not None:
+            self.record_num_per_day = m.get('recordNumPerDay')
+        if m.get('recordNumPerHour') is not None:
+            self.record_num_per_hour = m.get('recordNumPerHour')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetLeaveRecordsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        leave_records: List[GetLeaveRecordsResponseBodyResultLeaveRecords] = None,
+    ):
+        # 是否有更多结果。
+        self.has_more = has_more
+        # 假期消费记录列表。
+        self.leave_records = leave_records
+
+    def validate(self):
+        if self.leave_records:
+            for k in self.leave_records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['leaveRecords'] = []
+        if self.leave_records is not None:
+            for k in self.leave_records:
+                result['leaveRecords'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.leave_records = []
+        if m.get('leaveRecords') is not None:
+            for k in m.get('leaveRecords'):
+                temp_model = GetLeaveRecordsResponseBodyResultLeaveRecords()
+                self.leave_records.append(temp_model.from_map(k))
+        return self
+
+
+class GetLeaveRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetLeaveRecordsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        # 返回结果。
+        # 
+        self.result = result
+        # 是否正确访问。
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetLeaveRecordsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetLeaveRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetLeaveRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetLeaveRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetLeaveTypeHeaders(TeaModel):
     def __init__(
         self,

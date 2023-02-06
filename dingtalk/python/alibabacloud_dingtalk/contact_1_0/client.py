@@ -23,6 +23,218 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_contact_hide_by_scene_setting(
+        self,
+        request: dingtalkcontact__1__0_models.AddContactHideBySceneSettingRequest,
+    ) -> dingtalkcontact__1__0_models.AddContactHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.AddContactHideBySceneSettingHeaders()
+        return self.add_contact_hide_by_scene_setting_with_options(request, headers, runtime)
+
+    async def add_contact_hide_by_scene_setting_async(
+        self,
+        request: dingtalkcontact__1__0_models.AddContactHideBySceneSettingRequest,
+    ) -> dingtalkcontact__1__0_models.AddContactHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.AddContactHideBySceneSettingHeaders()
+        return await self.add_contact_hide_by_scene_setting_with_options_async(request, headers, runtime)
+
+    def add_contact_hide_by_scene_setting_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.AddContactHideBySceneSettingRequest,
+        headers: dingtalkcontact__1__0_models.AddContactHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.AddContactHideBySceneSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.exclude_user_ids):
+            body['excludeUserIds'] = request.exclude_user_ids
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.node_list_scene_config):
+            body['nodeListSceneConfig'] = request.node_list_scene_config
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.object_user_ids):
+            body['objectUserIds'] = request.object_user_ids
+        if not UtilClient.is_unset(request.profile_scene_config):
+            body['profileSceneConfig'] = request.profile_scene_config
+        if not UtilClient.is_unset(request.search_scene_config):
+            body['searchSceneConfig'] = request.search_scene_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.AddContactHideBySceneSettingResponse(),
+            self.do_roarequest('AddContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/organizations/hides/settings', 'json', req, runtime)
+        )
+
+    async def add_contact_hide_by_scene_setting_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.AddContactHideBySceneSettingRequest,
+        headers: dingtalkcontact__1__0_models.AddContactHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.AddContactHideBySceneSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.exclude_user_ids):
+            body['excludeUserIds'] = request.exclude_user_ids
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.node_list_scene_config):
+            body['nodeListSceneConfig'] = request.node_list_scene_config
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.object_user_ids):
+            body['objectUserIds'] = request.object_user_ids
+        if not UtilClient.is_unset(request.profile_scene_config):
+            body['profileSceneConfig'] = request.profile_scene_config
+        if not UtilClient.is_unset(request.search_scene_config):
+            body['searchSceneConfig'] = request.search_scene_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.AddContactHideBySceneSettingResponse(),
+            await self.do_roarequest_async('AddContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/organizations/hides/settings', 'json', req, runtime)
+        )
+
+    def add_emp_attribute_hide_by_scene_setting(
+        self,
+        request: dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingRequest,
+    ) -> dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingHeaders()
+        return self.add_emp_attribute_hide_by_scene_setting_with_options(request, headers, runtime)
+
+    async def add_emp_attribute_hide_by_scene_setting_async(
+        self,
+        request: dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingRequest,
+    ) -> dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingHeaders()
+        return await self.add_emp_attribute_hide_by_scene_setting_with_options_async(request, headers, runtime)
+
+    def add_emp_attribute_hide_by_scene_setting_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingRequest,
+        headers: dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_subtitle_config):
+            body['chatSubtitleConfig'] = request.chat_subtitle_config
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.exclude_user_ids):
+            body['excludeUserIds'] = request.exclude_user_ids
+        if not UtilClient.is_unset(request.hide_fields):
+            body['hideFields'] = request.hide_fields
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.object_user_ids):
+            body['objectUserIds'] = request.object_user_ids
+        if not UtilClient.is_unset(request.profile_scene_config):
+            body['profileSceneConfig'] = request.profile_scene_config
+        if not UtilClient.is_unset(request.search_scene_config):
+            body['searchSceneConfig'] = request.search_scene_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingResponse(),
+            self.do_roarequest('AddEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/empAttributes/hides/settings', 'json', req, runtime)
+        )
+
+    async def add_emp_attribute_hide_by_scene_setting_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingRequest,
+        headers: dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_subtitle_config):
+            body['chatSubtitleConfig'] = request.chat_subtitle_config
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.exclude_user_ids):
+            body['excludeUserIds'] = request.exclude_user_ids
+        if not UtilClient.is_unset(request.hide_fields):
+            body['hideFields'] = request.hide_fields
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.object_user_ids):
+            body['objectUserIds'] = request.object_user_ids
+        if not UtilClient.is_unset(request.profile_scene_config):
+            body['profileSceneConfig'] = request.profile_scene_config
+        if not UtilClient.is_unset(request.search_scene_config):
+            body['searchSceneConfig'] = request.search_scene_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingResponse(),
+            await self.do_roarequest_async('AddEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/empAttributes/hides/settings', 'json', req, runtime)
+        )
+
     def annual_certification_audit(
         self,
         request: dingtalkcontact__1__0_models.AnnualCertificationAuditRequest,
@@ -509,6 +721,62 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreateSecondaryManagementGroup', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/secondaryAdministrators/managementGroups', 'json', req, runtime)
         )
 
+    def delete_contact_hide_by_scene_setting(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingHeaders()
+        return self.delete_contact_hide_by_scene_setting_with_options(setting_id, headers, runtime)
+
+    async def delete_contact_hide_by_scene_setting_async(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingHeaders()
+        return await self.delete_contact_hide_by_scene_setting_with_options_async(setting_id, headers, runtime)
+
+    def delete_contact_hide_by_scene_setting_with_options(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingResponse(),
+            self.do_roarequest('DeleteContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/organizations/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
+    async def delete_contact_hide_by_scene_setting_with_options_async(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DeleteContactHideBySceneSettingResponse(),
+            await self.do_roarequest_async('DeleteContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/organizations/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
     def delete_contact_hide_setting(
         self,
         setting_id: str,
@@ -619,6 +887,62 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.DeleteContactRestrictSettingResponse(),
             await self.do_roarequest_async('DeleteContactRestrictSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/restrictions/settings/{setting_id}', 'json', req, runtime)
+        )
+
+    def delete_emp_attribute_hide_by_scene_setting(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingHeaders()
+        return self.delete_emp_attribute_hide_by_scene_setting_with_options(setting_id, headers, runtime)
+
+    async def delete_emp_attribute_hide_by_scene_setting_async(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingHeaders()
+        return await self.delete_emp_attribute_hide_by_scene_setting_with_options_async(setting_id, headers, runtime)
+
+    def delete_emp_attribute_hide_by_scene_setting_with_options(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingResponse(),
+            self.do_roarequest('DeleteEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/empAttributes/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
+    async def delete_emp_attribute_hide_by_scene_setting_with_options_async(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DeleteEmpAttributeHideBySceneSettingResponse(),
+            await self.do_roarequest_async('DeleteEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/contact/empAttributes/hides/settings/{setting_id}', 'json', req, runtime)
         )
 
     def delete_emp_attribute_visibility(
@@ -989,6 +1313,62 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetCardInfo', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/infos/{card_id}', 'json', req, runtime)
         )
 
+    def get_contact_hide_by_scene_setting(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.GetContactHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetContactHideBySceneSettingHeaders()
+        return self.get_contact_hide_by_scene_setting_with_options(setting_id, headers, runtime)
+
+    async def get_contact_hide_by_scene_setting_async(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.GetContactHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetContactHideBySceneSettingHeaders()
+        return await self.get_contact_hide_by_scene_setting_with_options_async(setting_id, headers, runtime)
+
+    def get_contact_hide_by_scene_setting_with_options(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.GetContactHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetContactHideBySceneSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetContactHideBySceneSettingResponse(),
+            self.do_roarequest('GetContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/organizations/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
+    async def get_contact_hide_by_scene_setting_with_options_async(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.GetContactHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetContactHideBySceneSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetContactHideBySceneSettingResponse(),
+            await self.do_roarequest_async('GetContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/organizations/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
     def get_cooperate_org_invite_info(
         self,
         cooperate_corp_id: str,
@@ -1153,6 +1533,62 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.GetDingIdByMigrationDingIdResponse(),
             await self.do_roarequest_async('GetDingIdByMigrationDingId', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/orgAccount/getDingIdByMigrationDingIds', 'json', req, runtime)
+        )
+
+    def get_emp_attribute_hide_by_scene_setting(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingHeaders()
+        return self.get_emp_attribute_hide_by_scene_setting_with_options(setting_id, headers, runtime)
+
+    async def get_emp_attribute_hide_by_scene_setting_async(
+        self,
+        setting_id: str,
+    ) -> dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingHeaders()
+        return await self.get_emp_attribute_hide_by_scene_setting_with_options_async(setting_id, headers, runtime)
+
+    def get_emp_attribute_hide_by_scene_setting_with_options(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingResponse(),
+            self.do_roarequest('GetEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/empAttributes/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
+    async def get_emp_attribute_hide_by_scene_setting_with_options_async(
+        self,
+        setting_id: str,
+        headers: dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingResponse:
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetEmpAttributeHideBySceneSettingResponse(),
+            await self.do_roarequest_async('GetEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/empAttributes/hides/settings/{setting_id}', 'json', req, runtime)
         )
 
     def get_latest_ding_index(self) -> dingtalkcontact__1__0_models.GetLatestDingIndexResponse:
@@ -3469,6 +3905,116 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateBranchVisibleSettingInCooperate', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/cooperateCorps/branchVisibleSettings', 'none', req, runtime)
         )
 
+    def update_contact_hide_by_scene_setting(
+        self,
+        setting_id: str,
+        request: dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingHeaders()
+        return self.update_contact_hide_by_scene_setting_with_options(setting_id, request, headers, runtime)
+
+    async def update_contact_hide_by_scene_setting_async(
+        self,
+        setting_id: str,
+        request: dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingHeaders()
+        return await self.update_contact_hide_by_scene_setting_with_options_async(setting_id, request, headers, runtime)
+
+    def update_contact_hide_by_scene_setting_with_options(
+        self,
+        setting_id: str,
+        request: dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingRequest,
+        headers: dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingResponse:
+        UtilClient.validate_model(request)
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.exclude_user_ids):
+            body['excludeUserIds'] = request.exclude_user_ids
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.node_list_scene_config):
+            body['nodeListSceneConfig'] = request.node_list_scene_config
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.object_user_ids):
+            body['objectUserIds'] = request.object_user_ids
+        if not UtilClient.is_unset(request.profile_scene_config):
+            body['profileSceneConfig'] = request.profile_scene_config
+        if not UtilClient.is_unset(request.search_scene_config):
+            body['searchSceneConfig'] = request.search_scene_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingResponse(),
+            self.do_roarequest('UpdateContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/organizations/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
+    async def update_contact_hide_by_scene_setting_with_options_async(
+        self,
+        setting_id: str,
+        request: dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingRequest,
+        headers: dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingResponse:
+        UtilClient.validate_model(request)
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.exclude_user_ids):
+            body['excludeUserIds'] = request.exclude_user_ids
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.node_list_scene_config):
+            body['nodeListSceneConfig'] = request.node_list_scene_config
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.object_user_ids):
+            body['objectUserIds'] = request.object_user_ids
+        if not UtilClient.is_unset(request.profile_scene_config):
+            body['profileSceneConfig'] = request.profile_scene_config
+        if not UtilClient.is_unset(request.search_scene_config):
+            body['searchSceneConfig'] = request.search_scene_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateContactHideBySceneSettingResponse(),
+            await self.do_roarequest_async('UpdateContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/organizations/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
     def update_contact_hide_setting(
         self,
         request: dingtalkcontact__1__0_models.UpdateContactHideSettingRequest,
@@ -3855,6 +4401,120 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcontact__1__0_models.UpdateEmpAttrbuteVisibilitySettingResponse(),
             await self.do_roarequest_async('UpdateEmpAttrbuteVisibilitySetting', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/staffAttributes/visibilitySettings', 'json', req, runtime)
+        )
+
+    def update_emp_attribute_hide_by_scene_setting(
+        self,
+        setting_id: str,
+        request: dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingHeaders()
+        return self.update_emp_attribute_hide_by_scene_setting_with_options(setting_id, request, headers, runtime)
+
+    async def update_emp_attribute_hide_by_scene_setting_async(
+        self,
+        setting_id: str,
+        request: dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingHeaders()
+        return await self.update_emp_attribute_hide_by_scene_setting_with_options_async(setting_id, request, headers, runtime)
+
+    def update_emp_attribute_hide_by_scene_setting_with_options(
+        self,
+        setting_id: str,
+        request: dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingRequest,
+        headers: dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingResponse:
+        UtilClient.validate_model(request)
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        body = {}
+        if not UtilClient.is_unset(request.chat_subtitle_config):
+            body['chatSubtitleConfig'] = request.chat_subtitle_config
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.exclude_user_ids):
+            body['excludeUserIds'] = request.exclude_user_ids
+        if not UtilClient.is_unset(request.hide_fields):
+            body['hideFields'] = request.hide_fields
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.object_user_ids):
+            body['objectUserIds'] = request.object_user_ids
+        if not UtilClient.is_unset(request.profile_scene_config):
+            body['profileSceneConfig'] = request.profile_scene_config
+        if not UtilClient.is_unset(request.search_scene_config):
+            body['searchSceneConfig'] = request.search_scene_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingResponse(),
+            self.do_roarequest('UpdateEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/empAttributes/hides/settings/{setting_id}', 'json', req, runtime)
+        )
+
+    async def update_emp_attribute_hide_by_scene_setting_with_options_async(
+        self,
+        setting_id: str,
+        request: dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingRequest,
+        headers: dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingResponse:
+        UtilClient.validate_model(request)
+        setting_id = OpenApiUtilClient.get_encode_param(setting_id)
+        body = {}
+        if not UtilClient.is_unset(request.chat_subtitle_config):
+            body['chatSubtitleConfig'] = request.chat_subtitle_config
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.exclude_dept_ids):
+            body['excludeDeptIds'] = request.exclude_dept_ids
+        if not UtilClient.is_unset(request.exclude_tag_ids):
+            body['excludeTagIds'] = request.exclude_tag_ids
+        if not UtilClient.is_unset(request.exclude_user_ids):
+            body['excludeUserIds'] = request.exclude_user_ids
+        if not UtilClient.is_unset(request.hide_fields):
+            body['hideFields'] = request.hide_fields
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.object_dept_ids):
+            body['objectDeptIds'] = request.object_dept_ids
+        if not UtilClient.is_unset(request.object_tag_ids):
+            body['objectTagIds'] = request.object_tag_ids
+        if not UtilClient.is_unset(request.object_user_ids):
+            body['objectUserIds'] = request.object_user_ids
+        if not UtilClient.is_unset(request.profile_scene_config):
+            body['profileSceneConfig'] = request.profile_scene_config
+        if not UtilClient.is_unset(request.search_scene_config):
+            body['searchSceneConfig'] = request.search_scene_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateEmpAttributeHideBySceneSettingResponse(),
+            await self.do_roarequest_async('UpdateEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/contact/empAttributes/hides/settings/{setting_id}', 'json', req, runtime)
         )
 
     def update_management_group(

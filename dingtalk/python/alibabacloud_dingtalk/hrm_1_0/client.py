@@ -1021,6 +1021,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/positions/query', 'json', req, runtime)
         )
 
+    def roster_meta_available_field_list(
+        self,
+        request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
+    ) -> dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.RosterMetaAvailableFieldListHeaders()
+        return self.roster_meta_available_field_list_with_options(request, headers, runtime)
+
+    async def roster_meta_available_field_list_async(
+        self,
+        request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
+    ) -> dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.RosterMetaAvailableFieldListHeaders()
+        return await self.roster_meta_available_field_list_with_options_async(request, headers, runtime)
+
+    def roster_meta_available_field_list_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
+        headers: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_agent_id):
+            query['appAgentId'] = request.app_agent_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse(),
+            self.do_roarequest('RosterMetaAvailableFieldList', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/rosters/meta/authorities/fields', 'json', req, runtime)
+        )
+
+    async def roster_meta_available_field_list_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
+        headers: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_agent_id):
+            query['appAgentId'] = request.app_agent_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse(),
+            await self.do_roarequest_async('RosterMetaAvailableFieldList', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/rosters/meta/authorities/fields', 'json', req, runtime)
+        )
+
     def roster_meta_field_options_update(
         self,
         request: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,

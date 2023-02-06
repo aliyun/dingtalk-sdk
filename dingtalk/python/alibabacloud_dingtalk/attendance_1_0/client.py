@@ -1011,6 +1011,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetClosingAccounts', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/rules/query', 'json', req, runtime)
         )
 
+    def get_leave_records(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,
+    ) -> dingtalkattendance__1__0_models.GetLeaveRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetLeaveRecordsHeaders()
+        return self.get_leave_records_with_options(request, headers, runtime)
+
+    async def get_leave_records_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,
+    ) -> dingtalkattendance__1__0_models.GetLeaveRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetLeaveRecordsHeaders()
+        return await self.get_leave_records_with_options_async(request, headers, runtime)
+
+    def get_leave_records_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,
+        headers: dingtalkattendance__1__0_models.GetLeaveRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetLeaveRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetLeaveRecordsResponse(),
+            self.do_roarequest('GetLeaveRecords', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/vacations/records/query', 'json', req, runtime)
+        )
+
+    async def get_leave_records_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,
+        headers: dingtalkattendance__1__0_models.GetLeaveRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetLeaveRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetLeaveRecordsResponse(),
+            await self.do_roarequest_async('GetLeaveRecords', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/vacations/records/query', 'json', req, runtime)
+        )
+
     def get_leave_type(
         self,
         request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,

@@ -7873,6 +7873,7 @@ class SheetFindAllRequest(TeaModel):
         find_options: SheetFindAllRequestFindOptions = None,
         text: str = None,
         operator_id: str = None,
+        select: str = None,
     ):
         # 查找选项
         self.find_options = find_options
@@ -7880,6 +7881,7 @@ class SheetFindAllRequest(TeaModel):
         self.text = text
         # 操作人unionId
         self.operator_id = operator_id
+        self.select = select
 
     def validate(self):
         if self.find_options:
@@ -7897,6 +7899,8 @@ class SheetFindAllRequest(TeaModel):
             result['text'] = self.text
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
+        if self.select is not None:
+            result['select'] = self.select
         return result
 
     def from_map(self, m: dict = None):
@@ -7908,6 +7912,8 @@ class SheetFindAllRequest(TeaModel):
             self.text = m.get('text')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
+        if m.get('select') is not None:
+            self.select = m.get('select')
         return self
 
 
@@ -7915,8 +7921,10 @@ class SheetFindAllResponseBodyValue(TeaModel):
     def __init__(
         self,
         a_1notation: str = None,
+        values: List[List[Any]] = None,
     ):
         self.a_1notation = a_1notation
+        self.values = values
 
     def validate(self):
         pass
@@ -7929,12 +7937,16 @@ class SheetFindAllResponseBodyValue(TeaModel):
         result = dict()
         if self.a_1notation is not None:
             result['a1Notation'] = self.a_1notation
+        if self.values is not None:
+            result['values'] = self.values
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('a1Notation') is not None:
             self.a_1notation = m.get('a1Notation')
+        if m.get('values') is not None:
+            self.values = m.get('values')
         return self
 
 

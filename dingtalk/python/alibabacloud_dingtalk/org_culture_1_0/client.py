@@ -1238,3 +1238,77 @@ class Client(OpenApiClient):
             dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleResponse(),
             await self.do_roarequest_async('UpdatePointActionAutoAssignRule', 'orgCulture_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/orgCulture/users/points/actionRules', 'json', req, runtime)
         )
+
+    def wear_org_honor(
+        self,
+        honor_id: str,
+        request: dingtalkorg_culture__1__0_models.WearOrgHonorRequest,
+    ) -> dingtalkorg_culture__1__0_models.WearOrgHonorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.WearOrgHonorHeaders()
+        return self.wear_org_honor_with_options(honor_id, request, headers, runtime)
+
+    async def wear_org_honor_async(
+        self,
+        honor_id: str,
+        request: dingtalkorg_culture__1__0_models.WearOrgHonorRequest,
+    ) -> dingtalkorg_culture__1__0_models.WearOrgHonorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkorg_culture__1__0_models.WearOrgHonorHeaders()
+        return await self.wear_org_honor_with_options_async(honor_id, request, headers, runtime)
+
+    def wear_org_honor_with_options(
+        self,
+        honor_id: str,
+        request: dingtalkorg_culture__1__0_models.WearOrgHonorRequest,
+        headers: dingtalkorg_culture__1__0_models.WearOrgHonorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.WearOrgHonorResponse:
+        UtilClient.validate_model(request)
+        honor_id = OpenApiUtilClient.get_encode_param(honor_id)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.wear):
+            body['wear'] = request.wear
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.WearOrgHonorResponse(),
+            self.do_roarequest('WearOrgHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/honors/{honor_id}/wear', 'json', req, runtime)
+        )
+
+    async def wear_org_honor_with_options_async(
+        self,
+        honor_id: str,
+        request: dingtalkorg_culture__1__0_models.WearOrgHonorRequest,
+        headers: dingtalkorg_culture__1__0_models.WearOrgHonorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkorg_culture__1__0_models.WearOrgHonorResponse:
+        UtilClient.validate_model(request)
+        honor_id = OpenApiUtilClient.get_encode_param(honor_id)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.wear):
+            body['wear'] = request.wear
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkorg_culture__1__0_models.WearOrgHonorResponse(),
+            await self.do_roarequest_async('WearOrgHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/orgCulture/honors/{honor_id}/wear', 'json', req, runtime)
+        )

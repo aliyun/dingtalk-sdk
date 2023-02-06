@@ -4,6 +4,614 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AddContactHideBySceneSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddContactHideBySceneSettingRequestNodeListSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        dept_object_include_emp: bool = None,
+    ):
+        # 是否在浏览组织架构与选人组件中生效，默认为true
+        self.active = active
+        # 是否同时隐藏被隐藏部门下的员工，默认为true。如果为false，仅部门不可见，但是允许跳转到被隐藏部门查看部门下员工。
+        self.dept_object_include_emp = dept_object_include_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.dept_object_include_emp is not None:
+            result['deptObjectIncludeEmp'] = self.dept_object_include_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('deptObjectIncludeEmp') is not None:
+            self.dept_object_include_emp = m.get('deptObjectIncludeEmp')
+        return self
+
+
+class AddContactHideBySceneSettingRequestProfileSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否在用户详情页面生效，默认为true。如果为false，仍然允许查看个人资料页中的员工信息。
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class AddContactHideBySceneSettingRequestSearchSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        dept_object_include_emp: bool = None,
+    ):
+        # 是否在搜索场景生效，默认为true。如果为false，允许被搜索。
+        self.active = active
+        # 是否同时隐藏被隐藏的部门下的员工，默认为true。如果为false，objectDeptIds中的部门无法被搜索，但是员工仍然可以被搜索
+        self.dept_object_include_emp = dept_object_include_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.dept_object_include_emp is not None:
+            result['deptObjectIncludeEmp'] = self.dept_object_include_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('deptObjectIncludeEmp') is not None:
+            self.dept_object_include_emp = m.get('deptObjectIncludeEmp')
+        return self
+
+
+class AddContactHideBySceneSettingRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        exclude_user_ids: List[str] = None,
+        name: str = None,
+        node_list_scene_config: AddContactHideBySceneSettingRequestNodeListSceneConfig = None,
+        object_dept_ids: List[int] = None,
+        object_tag_ids: List[int] = None,
+        object_user_ids: List[str] = None,
+        profile_scene_config: AddContactHideBySceneSettingRequestProfileSceneConfig = None,
+        search_scene_config: AddContactHideBySceneSettingRequestSearchSceneConfig = None,
+    ):
+        # 设置描述信息
+        self.description = description
+        # 允许查看的部门列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 允许查看的角色列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 允许查看的员工列表
+        self.exclude_user_ids = exclude_user_ids
+        # 设置名称
+        self.name = name
+        # 浏览组织架构与选人组件场景下的配置
+        self.node_list_scene_config = node_list_scene_config
+        # 被隐藏的部门列表
+        self.object_dept_ids = object_dept_ids
+        # 被隐藏的角色列表
+        self.object_tag_ids = object_tag_ids
+        # 被隐藏的员工UserId列表
+        self.object_user_ids = object_user_ids
+        # 用户详情场景下的配置
+        self.profile_scene_config = profile_scene_config
+        # 搜索的场景配置（包括搜索部门、搜索员工）
+        self.search_scene_config = search_scene_config
+
+    def validate(self):
+        if self.node_list_scene_config:
+            self.node_list_scene_config.validate()
+        if self.profile_scene_config:
+            self.profile_scene_config.validate()
+        if self.search_scene_config:
+            self.search_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.exclude_user_ids is not None:
+            result['excludeUserIds'] = self.exclude_user_ids
+        if self.name is not None:
+            result['name'] = self.name
+        if self.node_list_scene_config is not None:
+            result['nodeListSceneConfig'] = self.node_list_scene_config.to_map()
+        if self.object_dept_ids is not None:
+            result['objectDeptIds'] = self.object_dept_ids
+        if self.object_tag_ids is not None:
+            result['objectTagIds'] = self.object_tag_ids
+        if self.object_user_ids is not None:
+            result['objectUserIds'] = self.object_user_ids
+        if self.profile_scene_config is not None:
+            result['profileSceneConfig'] = self.profile_scene_config.to_map()
+        if self.search_scene_config is not None:
+            result['searchSceneConfig'] = self.search_scene_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('excludeUserIds') is not None:
+            self.exclude_user_ids = m.get('excludeUserIds')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nodeListSceneConfig') is not None:
+            temp_model = AddContactHideBySceneSettingRequestNodeListSceneConfig()
+            self.node_list_scene_config = temp_model.from_map(m['nodeListSceneConfig'])
+        if m.get('objectDeptIds') is not None:
+            self.object_dept_ids = m.get('objectDeptIds')
+        if m.get('objectTagIds') is not None:
+            self.object_tag_ids = m.get('objectTagIds')
+        if m.get('objectUserIds') is not None:
+            self.object_user_ids = m.get('objectUserIds')
+        if m.get('profileSceneConfig') is not None:
+            temp_model = AddContactHideBySceneSettingRequestProfileSceneConfig()
+            self.profile_scene_config = temp_model.from_map(m['profileSceneConfig'])
+        if m.get('searchSceneConfig') is not None:
+            temp_model = AddContactHideBySceneSettingRequestSearchSceneConfig()
+            self.search_scene_config = temp_model.from_map(m['searchSceneConfig'])
+        return self
+
+
+class AddContactHideBySceneSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        setting_id: int = None,
+    ):
+        # settingId
+        self.setting_id = setting_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.setting_id is not None:
+            result['settingId'] = self.setting_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('settingId') is not None:
+            self.setting_id = m.get('settingId')
+        return self
+
+
+class AddContactHideBySceneSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddContactHideBySceneSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddContactHideBySceneSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddEmpAttributeHideBySceneSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddEmpAttributeHideBySceneSettingRequestChatSubtitleConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class AddEmpAttributeHideBySceneSettingRequestProfileSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class AddEmpAttributeHideBySceneSettingRequestSearchSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class AddEmpAttributeHideBySceneSettingRequest(TeaModel):
+    def __init__(
+        self,
+        chat_subtitle_config: AddEmpAttributeHideBySceneSettingRequestChatSubtitleConfig = None,
+        description: str = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        exclude_user_ids: List[str] = None,
+        hide_fields: List[str] = None,
+        name: str = None,
+        object_dept_ids: List[int] = None,
+        object_tag_ids: List[int] = None,
+        object_user_ids: List[str] = None,
+        profile_scene_config: AddEmpAttributeHideBySceneSettingRequestProfileSceneConfig = None,
+        search_scene_config: AddEmpAttributeHideBySceneSettingRequestSearchSceneConfig = None,
+    ):
+        # 单聊副标题场景配置，开启时单聊中相关的员工字段不显示
+        self.chat_subtitle_config = chat_subtitle_config
+        # 设置描述信息
+        self.description = description
+        # 允许查看的部门列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 允许查看的角色列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 允许查看的员工列表
+        self.exclude_user_ids = exclude_user_ids
+        # 隐藏字段id列表
+        # 枚举列表：
+        #         department：部门
+        #         email：邮箱
+        #         manager：直属主管
+        #         title：职位
+        #         mobile：手机号
+        #         ext_number：分机号
+        #         work_station：办公地点
+        #         remark：备注
+        #         hire_date：入职时间
+        #         job_number：工号
+        self.hide_fields = hide_fields
+        # 设置名称
+        self.name = name
+        # 被隐藏的部门列表
+        self.object_dept_ids = object_dept_ids
+        # 被隐藏的角色列表
+        self.object_tag_ids = object_tag_ids
+        # 被隐藏的员工UserId列表
+        self.object_user_ids = object_user_ids
+        # 用户资料页场景配置，开启时相关的员工字段不在资料页中显示
+        self.profile_scene_config = profile_scene_config
+        # 搜索场景配置，开启时隐藏的字段不在搜索结果中展示，并且不允许根据这些字段搜索到。
+        self.search_scene_config = search_scene_config
+
+    def validate(self):
+        if self.chat_subtitle_config:
+            self.chat_subtitle_config.validate()
+        if self.profile_scene_config:
+            self.profile_scene_config.validate()
+        if self.search_scene_config:
+            self.search_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_subtitle_config is not None:
+            result['chatSubtitleConfig'] = self.chat_subtitle_config.to_map()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.exclude_user_ids is not None:
+            result['excludeUserIds'] = self.exclude_user_ids
+        if self.hide_fields is not None:
+            result['hideFields'] = self.hide_fields
+        if self.name is not None:
+            result['name'] = self.name
+        if self.object_dept_ids is not None:
+            result['objectDeptIds'] = self.object_dept_ids
+        if self.object_tag_ids is not None:
+            result['objectTagIds'] = self.object_tag_ids
+        if self.object_user_ids is not None:
+            result['objectUserIds'] = self.object_user_ids
+        if self.profile_scene_config is not None:
+            result['profileSceneConfig'] = self.profile_scene_config.to_map()
+        if self.search_scene_config is not None:
+            result['searchSceneConfig'] = self.search_scene_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatSubtitleConfig') is not None:
+            temp_model = AddEmpAttributeHideBySceneSettingRequestChatSubtitleConfig()
+            self.chat_subtitle_config = temp_model.from_map(m['chatSubtitleConfig'])
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('excludeUserIds') is not None:
+            self.exclude_user_ids = m.get('excludeUserIds')
+        if m.get('hideFields') is not None:
+            self.hide_fields = m.get('hideFields')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('objectDeptIds') is not None:
+            self.object_dept_ids = m.get('objectDeptIds')
+        if m.get('objectTagIds') is not None:
+            self.object_tag_ids = m.get('objectTagIds')
+        if m.get('objectUserIds') is not None:
+            self.object_user_ids = m.get('objectUserIds')
+        if m.get('profileSceneConfig') is not None:
+            temp_model = AddEmpAttributeHideBySceneSettingRequestProfileSceneConfig()
+            self.profile_scene_config = temp_model.from_map(m['profileSceneConfig'])
+        if m.get('searchSceneConfig') is not None:
+            temp_model = AddEmpAttributeHideBySceneSettingRequestSearchSceneConfig()
+            self.search_scene_config = temp_model.from_map(m['searchSceneConfig'])
+        return self
+
+
+class AddEmpAttributeHideBySceneSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        setting_id: int = None,
+    ):
+        # settingId
+        self.setting_id = setting_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.setting_id is not None:
+            result['settingId'] = self.setting_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('settingId') is not None:
+            self.setting_id = m.get('settingId')
+        return self
+
+
+class AddEmpAttributeHideBySceneSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: AddEmpAttributeHideBySceneSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = AddEmpAttributeHideBySceneSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AnnualCertificationAuditHeaders(TeaModel):
     def __init__(
         self,
@@ -1128,6 +1736,104 @@ class CreateSecondaryManagementGroupResponse(TeaModel):
         return self
 
 
+class DeleteContactHideBySceneSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteContactHideBySceneSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteContactHideBySceneSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteContactHideBySceneSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteContactHideBySceneSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteContactHideSettingHeaders(TeaModel):
     def __init__(
         self,
@@ -1282,6 +1988,104 @@ class DeleteContactRestrictSettingResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = DeleteContactRestrictSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteEmpAttributeHideBySceneSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteEmpAttributeHideBySceneSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteEmpAttributeHideBySceneSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteEmpAttributeHideBySceneSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteEmpAttributeHideBySceneSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2470,6 +3274,287 @@ class GetCardInfoResponse(TeaModel):
         return self
 
 
+class GetContactHideBySceneSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetContactHideBySceneSettingResponseBodyNodeListSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        dept_object_include_emp: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+        # 是否同时隐藏被隐藏部门下的员工，默认为true。如果为false，仅部门不可见，但是允许跳转到被隐藏部门查看部门下员工。
+        self.dept_object_include_emp = dept_object_include_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.dept_object_include_emp is not None:
+            result['deptObjectIncludeEmp'] = self.dept_object_include_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('deptObjectIncludeEmp') is not None:
+            self.dept_object_include_emp = m.get('deptObjectIncludeEmp')
+        return self
+
+
+class GetContactHideBySceneSettingResponseBodyProfileSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class GetContactHideBySceneSettingResponseBodySearchSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        dept_object_include_emp: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+        # 是否同时隐藏被隐藏的部门下的员工，默认为true。如果为false，objectDeptIds中的部门无法被搜索，但是员工仍然可以被搜索
+        self.dept_object_include_emp = dept_object_include_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.dept_object_include_emp is not None:
+            result['deptObjectIncludeEmp'] = self.dept_object_include_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('deptObjectIncludeEmp') is not None:
+            self.dept_object_include_emp = m.get('deptObjectIncludeEmp')
+        return self
+
+
+class GetContactHideBySceneSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        exclude_user_ids: List[str] = None,
+        id: int = None,
+        name: str = None,
+        node_list_scene_config: GetContactHideBySceneSettingResponseBodyNodeListSceneConfig = None,
+        object_dept_ids: List[int] = None,
+        object_tag_ids: List[int] = None,
+        object_user_ids: List[str] = None,
+        profile_scene_config: GetContactHideBySceneSettingResponseBodyProfileSceneConfig = None,
+        search_scene_config: GetContactHideBySceneSettingResponseBodySearchSceneConfig = None,
+    ):
+        # 设置描述信息
+        self.description = description
+        # 允许查看的部门列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 允许查看的角色列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 允许查看的员工列表
+        self.exclude_user_ids = exclude_user_ids
+        # 设置id
+        self.id = id
+        # 设置名称
+        self.name = name
+        # 浏览组织架构与选人组件场景下的配置
+        self.node_list_scene_config = node_list_scene_config
+        # 被隐藏的部门列表
+        self.object_dept_ids = object_dept_ids
+        # 被隐藏的角色列表
+        self.object_tag_ids = object_tag_ids
+        # 被隐藏的员工UserId列表
+        self.object_user_ids = object_user_ids
+        # 用户详情场景下的配置
+        self.profile_scene_config = profile_scene_config
+        # 搜索的场景配置（包括搜索部门、搜索员工）
+        self.search_scene_config = search_scene_config
+
+    def validate(self):
+        if self.node_list_scene_config:
+            self.node_list_scene_config.validate()
+        if self.profile_scene_config:
+            self.profile_scene_config.validate()
+        if self.search_scene_config:
+            self.search_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.exclude_user_ids is not None:
+            result['excludeUserIds'] = self.exclude_user_ids
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.node_list_scene_config is not None:
+            result['nodeListSceneConfig'] = self.node_list_scene_config.to_map()
+        if self.object_dept_ids is not None:
+            result['objectDeptIds'] = self.object_dept_ids
+        if self.object_tag_ids is not None:
+            result['objectTagIds'] = self.object_tag_ids
+        if self.object_user_ids is not None:
+            result['objectUserIds'] = self.object_user_ids
+        if self.profile_scene_config is not None:
+            result['profileSceneConfig'] = self.profile_scene_config.to_map()
+        if self.search_scene_config is not None:
+            result['searchSceneConfig'] = self.search_scene_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('excludeUserIds') is not None:
+            self.exclude_user_ids = m.get('excludeUserIds')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nodeListSceneConfig') is not None:
+            temp_model = GetContactHideBySceneSettingResponseBodyNodeListSceneConfig()
+            self.node_list_scene_config = temp_model.from_map(m['nodeListSceneConfig'])
+        if m.get('objectDeptIds') is not None:
+            self.object_dept_ids = m.get('objectDeptIds')
+        if m.get('objectTagIds') is not None:
+            self.object_tag_ids = m.get('objectTagIds')
+        if m.get('objectUserIds') is not None:
+            self.object_user_ids = m.get('objectUserIds')
+        if m.get('profileSceneConfig') is not None:
+            temp_model = GetContactHideBySceneSettingResponseBodyProfileSceneConfig()
+            self.profile_scene_config = temp_model.from_map(m['profileSceneConfig'])
+        if m.get('searchSceneConfig') is not None:
+            temp_model = GetContactHideBySceneSettingResponseBodySearchSceneConfig()
+            self.search_scene_config = temp_model.from_map(m['searchSceneConfig'])
+        return self
+
+
+class GetContactHideBySceneSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetContactHideBySceneSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetContactHideBySceneSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCooperateOrgInviteInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -2787,6 +3872,291 @@ class GetDingIdByMigrationDingIdResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetDingIdByMigrationDingIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetEmpAttributeHideBySceneSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class GetEmpAttributeHideBySceneSettingResponseBodyProfileSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class GetEmpAttributeHideBySceneSettingResponseBodySearchSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class GetEmpAttributeHideBySceneSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        chat_subtitle_config: GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig = None,
+        description: str = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        exclude_user_ids: List[str] = None,
+        hide_fields: List[str] = None,
+        id: int = None,
+        name: str = None,
+        object_dept_ids: List[int] = None,
+        object_tag_ids: List[int] = None,
+        object_user_ids: List[str] = None,
+        profile_scene_config: GetEmpAttributeHideBySceneSettingResponseBodyProfileSceneConfig = None,
+        search_scene_config: GetEmpAttributeHideBySceneSettingResponseBodySearchSceneConfig = None,
+    ):
+        # 单聊副标题场景配置，开启时单聊中相关的员工字段不显示
+        self.chat_subtitle_config = chat_subtitle_config
+        # 设置描述信息
+        self.description = description
+        # 允许查看的部门列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 允许查看的角色列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 允许查看的员工列表
+        self.exclude_user_ids = exclude_user_ids
+        # 隐藏字段id列表
+        # 枚举列表：
+        #         department：部门
+        #         email：邮箱
+        #         manager：直属主管
+        #         title：职位
+        #         mobile：手机号
+        #         ext_number：分机号
+        #         work_station：办公地点
+        #         remark：备注
+        #         hire_date：入职时间
+        #         job_number：工号
+        self.hide_fields = hide_fields
+        # 设置id
+        self.id = id
+        # 设置名称
+        self.name = name
+        # 被隐藏的部门列表
+        self.object_dept_ids = object_dept_ids
+        # 被隐藏的角色列表
+        self.object_tag_ids = object_tag_ids
+        # 被隐藏的员工UserId列表
+        self.object_user_ids = object_user_ids
+        # 用户资料页场景配置，开启时相关的员工字段不在资料页中显示
+        self.profile_scene_config = profile_scene_config
+        # 搜索场景配置，开启时隐藏的字段不在搜索结果中展示，并且不允许根据这些字段搜索到。
+        self.search_scene_config = search_scene_config
+
+    def validate(self):
+        if self.chat_subtitle_config:
+            self.chat_subtitle_config.validate()
+        if self.profile_scene_config:
+            self.profile_scene_config.validate()
+        if self.search_scene_config:
+            self.search_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_subtitle_config is not None:
+            result['chatSubtitleConfig'] = self.chat_subtitle_config.to_map()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.exclude_user_ids is not None:
+            result['excludeUserIds'] = self.exclude_user_ids
+        if self.hide_fields is not None:
+            result['hideFields'] = self.hide_fields
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.object_dept_ids is not None:
+            result['objectDeptIds'] = self.object_dept_ids
+        if self.object_tag_ids is not None:
+            result['objectTagIds'] = self.object_tag_ids
+        if self.object_user_ids is not None:
+            result['objectUserIds'] = self.object_user_ids
+        if self.profile_scene_config is not None:
+            result['profileSceneConfig'] = self.profile_scene_config.to_map()
+        if self.search_scene_config is not None:
+            result['searchSceneConfig'] = self.search_scene_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatSubtitleConfig') is not None:
+            temp_model = GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig()
+            self.chat_subtitle_config = temp_model.from_map(m['chatSubtitleConfig'])
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('excludeUserIds') is not None:
+            self.exclude_user_ids = m.get('excludeUserIds')
+        if m.get('hideFields') is not None:
+            self.hide_fields = m.get('hideFields')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('objectDeptIds') is not None:
+            self.object_dept_ids = m.get('objectDeptIds')
+        if m.get('objectTagIds') is not None:
+            self.object_tag_ids = m.get('objectTagIds')
+        if m.get('objectUserIds') is not None:
+            self.object_user_ids = m.get('objectUserIds')
+        if m.get('profileSceneConfig') is not None:
+            temp_model = GetEmpAttributeHideBySceneSettingResponseBodyProfileSceneConfig()
+            self.profile_scene_config = temp_model.from_map(m['profileSceneConfig'])
+        if m.get('searchSceneConfig') is not None:
+            temp_model = GetEmpAttributeHideBySceneSettingResponseBodySearchSceneConfig()
+            self.search_scene_config = temp_model.from_map(m['searchSceneConfig'])
+        return self
+
+
+class GetEmpAttributeHideBySceneSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetEmpAttributeHideBySceneSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetEmpAttributeHideBySceneSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8633,6 +10003,307 @@ class UpdateBranchVisibleSettingInCooperateResponse(TeaModel):
         return self
 
 
+class UpdateContactHideBySceneSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateContactHideBySceneSettingRequestNodeListSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        dept_object_include_emp: bool = None,
+    ):
+        # 是否在浏览组织架构与选人组件中生效，默认为true
+        self.active = active
+        # 是否同时隐藏被隐藏部门下的员工，默认为true。如果为false，仅部门不可见，但是允许跳转到被隐藏部门查看部门下员工。
+        self.dept_object_include_emp = dept_object_include_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.dept_object_include_emp is not None:
+            result['deptObjectIncludeEmp'] = self.dept_object_include_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('deptObjectIncludeEmp') is not None:
+            self.dept_object_include_emp = m.get('deptObjectIncludeEmp')
+        return self
+
+
+class UpdateContactHideBySceneSettingRequestProfileSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否在用户详情页面生效，默认为true。如果为false，仍然允许查看个人资料页中的员工信息。
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class UpdateContactHideBySceneSettingRequestSearchSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        dept_object_include_emp: bool = None,
+    ):
+        # 是否在搜索场景生效，默认为true。如果为false，允许被搜索。
+        self.active = active
+        # 是否同时隐藏被隐藏的部门下的员工，默认为true。如果为false，objectDeptIds中的部门无法被搜索，但是员工仍然可以被搜索
+        self.dept_object_include_emp = dept_object_include_emp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.dept_object_include_emp is not None:
+            result['deptObjectIncludeEmp'] = self.dept_object_include_emp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('deptObjectIncludeEmp') is not None:
+            self.dept_object_include_emp = m.get('deptObjectIncludeEmp')
+        return self
+
+
+class UpdateContactHideBySceneSettingRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        exclude_user_ids: List[str] = None,
+        name: str = None,
+        node_list_scene_config: UpdateContactHideBySceneSettingRequestNodeListSceneConfig = None,
+        object_dept_ids: List[int] = None,
+        object_tag_ids: List[int] = None,
+        object_user_ids: List[str] = None,
+        profile_scene_config: UpdateContactHideBySceneSettingRequestProfileSceneConfig = None,
+        search_scene_config: UpdateContactHideBySceneSettingRequestSearchSceneConfig = None,
+    ):
+        # 设置描述信息
+        self.description = description
+        # 允许查看的部门列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 允许查看的角色列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 允许查看的员工列表
+        self.exclude_user_ids = exclude_user_ids
+        # 设置名称
+        self.name = name
+        # 浏览组织架构与选人组件场景下的配置
+        self.node_list_scene_config = node_list_scene_config
+        # 被隐藏的部门列表
+        self.object_dept_ids = object_dept_ids
+        # 被隐藏的角色列表
+        self.object_tag_ids = object_tag_ids
+        # 被隐藏的员工UserId列表
+        self.object_user_ids = object_user_ids
+        # 用户详情场景下的配置
+        self.profile_scene_config = profile_scene_config
+        # 搜索的场景配置（包括搜索部门、搜索员工）
+        self.search_scene_config = search_scene_config
+
+    def validate(self):
+        if self.node_list_scene_config:
+            self.node_list_scene_config.validate()
+        if self.profile_scene_config:
+            self.profile_scene_config.validate()
+        if self.search_scene_config:
+            self.search_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.exclude_user_ids is not None:
+            result['excludeUserIds'] = self.exclude_user_ids
+        if self.name is not None:
+            result['name'] = self.name
+        if self.node_list_scene_config is not None:
+            result['nodeListSceneConfig'] = self.node_list_scene_config.to_map()
+        if self.object_dept_ids is not None:
+            result['objectDeptIds'] = self.object_dept_ids
+        if self.object_tag_ids is not None:
+            result['objectTagIds'] = self.object_tag_ids
+        if self.object_user_ids is not None:
+            result['objectUserIds'] = self.object_user_ids
+        if self.profile_scene_config is not None:
+            result['profileSceneConfig'] = self.profile_scene_config.to_map()
+        if self.search_scene_config is not None:
+            result['searchSceneConfig'] = self.search_scene_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('excludeUserIds') is not None:
+            self.exclude_user_ids = m.get('excludeUserIds')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nodeListSceneConfig') is not None:
+            temp_model = UpdateContactHideBySceneSettingRequestNodeListSceneConfig()
+            self.node_list_scene_config = temp_model.from_map(m['nodeListSceneConfig'])
+        if m.get('objectDeptIds') is not None:
+            self.object_dept_ids = m.get('objectDeptIds')
+        if m.get('objectTagIds') is not None:
+            self.object_tag_ids = m.get('objectTagIds')
+        if m.get('objectUserIds') is not None:
+            self.object_user_ids = m.get('objectUserIds')
+        if m.get('profileSceneConfig') is not None:
+            temp_model = UpdateContactHideBySceneSettingRequestProfileSceneConfig()
+            self.profile_scene_config = temp_model.from_map(m['profileSceneConfig'])
+        if m.get('searchSceneConfig') is not None:
+            temp_model = UpdateContactHideBySceneSettingRequestSearchSceneConfig()
+            self.search_scene_config = temp_model.from_map(m['searchSceneConfig'])
+        return self
+
+
+class UpdateContactHideBySceneSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateContactHideBySceneSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateContactHideBySceneSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateContactHideBySceneSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateContactHideSettingHeaders(TeaModel):
     def __init__(
         self,
@@ -9325,6 +10996,312 @@ class UpdateEmpAttrbuteVisibilitySettingResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateEmpAttrbuteVisibilitySettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateEmpAttributeHideBySceneSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateEmpAttributeHideBySceneSettingRequestChatSubtitleConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class UpdateEmpAttributeHideBySceneSettingRequestProfileSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class UpdateEmpAttributeHideBySceneSettingRequestSearchSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+    ):
+        # 是否生效
+        self.active = active
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        return self
+
+
+class UpdateEmpAttributeHideBySceneSettingRequest(TeaModel):
+    def __init__(
+        self,
+        chat_subtitle_config: UpdateEmpAttributeHideBySceneSettingRequestChatSubtitleConfig = None,
+        description: str = None,
+        exclude_dept_ids: List[int] = None,
+        exclude_tag_ids: List[int] = None,
+        exclude_user_ids: List[str] = None,
+        hide_fields: List[str] = None,
+        name: str = None,
+        object_dept_ids: List[int] = None,
+        object_tag_ids: List[int] = None,
+        object_user_ids: List[str] = None,
+        profile_scene_config: UpdateEmpAttributeHideBySceneSettingRequestProfileSceneConfig = None,
+        search_scene_config: UpdateEmpAttributeHideBySceneSettingRequestSearchSceneConfig = None,
+    ):
+        # 单聊副标题场景配置，开启时单聊中相关的员工字段不显示
+        self.chat_subtitle_config = chat_subtitle_config
+        # 设置描述信息
+        self.description = description
+        # 允许查看的部门列表
+        self.exclude_dept_ids = exclude_dept_ids
+        # 允许查看的角色列表
+        self.exclude_tag_ids = exclude_tag_ids
+        # 允许查看的员工列表
+        self.exclude_user_ids = exclude_user_ids
+        # 隐藏字段id列表
+        # 枚举列表：
+        #         department：部门
+        #         email：邮箱
+        #         manager：直属主管
+        #         title：职位
+        #         mobile：手机号
+        #         ext_number：分机号
+        #         work_station：办公地点
+        #         remark：备注
+        #         hire_date：入职时间
+        #         job_number：工号
+        self.hide_fields = hide_fields
+        # 设置名称
+        self.name = name
+        # 被隐藏的部门列表
+        self.object_dept_ids = object_dept_ids
+        # 被隐藏的角色列表
+        self.object_tag_ids = object_tag_ids
+        # 被隐藏的员工UserId列表
+        self.object_user_ids = object_user_ids
+        # 用户资料页场景配置，开启时相关的员工字段不在资料页中显示
+        self.profile_scene_config = profile_scene_config
+        # 搜索场景配置，开启时隐藏的字段不在搜索结果中展示，并且不允许根据这些字段搜索到。
+        self.search_scene_config = search_scene_config
+
+    def validate(self):
+        if self.chat_subtitle_config:
+            self.chat_subtitle_config.validate()
+        if self.profile_scene_config:
+            self.profile_scene_config.validate()
+        if self.search_scene_config:
+            self.search_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_subtitle_config is not None:
+            result['chatSubtitleConfig'] = self.chat_subtitle_config.to_map()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.exclude_dept_ids is not None:
+            result['excludeDeptIds'] = self.exclude_dept_ids
+        if self.exclude_tag_ids is not None:
+            result['excludeTagIds'] = self.exclude_tag_ids
+        if self.exclude_user_ids is not None:
+            result['excludeUserIds'] = self.exclude_user_ids
+        if self.hide_fields is not None:
+            result['hideFields'] = self.hide_fields
+        if self.name is not None:
+            result['name'] = self.name
+        if self.object_dept_ids is not None:
+            result['objectDeptIds'] = self.object_dept_ids
+        if self.object_tag_ids is not None:
+            result['objectTagIds'] = self.object_tag_ids
+        if self.object_user_ids is not None:
+            result['objectUserIds'] = self.object_user_ids
+        if self.profile_scene_config is not None:
+            result['profileSceneConfig'] = self.profile_scene_config.to_map()
+        if self.search_scene_config is not None:
+            result['searchSceneConfig'] = self.search_scene_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatSubtitleConfig') is not None:
+            temp_model = UpdateEmpAttributeHideBySceneSettingRequestChatSubtitleConfig()
+            self.chat_subtitle_config = temp_model.from_map(m['chatSubtitleConfig'])
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('excludeDeptIds') is not None:
+            self.exclude_dept_ids = m.get('excludeDeptIds')
+        if m.get('excludeTagIds') is not None:
+            self.exclude_tag_ids = m.get('excludeTagIds')
+        if m.get('excludeUserIds') is not None:
+            self.exclude_user_ids = m.get('excludeUserIds')
+        if m.get('hideFields') is not None:
+            self.hide_fields = m.get('hideFields')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('objectDeptIds') is not None:
+            self.object_dept_ids = m.get('objectDeptIds')
+        if m.get('objectTagIds') is not None:
+            self.object_tag_ids = m.get('objectTagIds')
+        if m.get('objectUserIds') is not None:
+            self.object_user_ids = m.get('objectUserIds')
+        if m.get('profileSceneConfig') is not None:
+            temp_model = UpdateEmpAttributeHideBySceneSettingRequestProfileSceneConfig()
+            self.profile_scene_config = temp_model.from_map(m['profileSceneConfig'])
+        if m.get('searchSceneConfig') is not None:
+            temp_model = UpdateEmpAttributeHideBySceneSettingRequestSearchSceneConfig()
+            self.search_scene_config = temp_model.from_map(m['searchSceneConfig'])
+        return self
+
+
+class UpdateEmpAttributeHideBySceneSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # 是否成功
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateEmpAttributeHideBySceneSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateEmpAttributeHideBySceneSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateEmpAttributeHideBySceneSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
