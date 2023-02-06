@@ -16,6 +16,148 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public AddContactHideBySceneSettingResponse addContactHideBySceneSetting(AddContactHideBySceneSettingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddContactHideBySceneSettingHeaders headers = new AddContactHideBySceneSettingHeaders();
+        return this.addContactHideBySceneSettingWithOptions(request, headers, runtime);
+    }
+
+    public AddContactHideBySceneSettingResponse addContactHideBySceneSettingWithOptions(AddContactHideBySceneSettingRequest request, AddContactHideBySceneSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeDeptIds)) {
+            body.put("excludeDeptIds", request.excludeDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeTagIds)) {
+            body.put("excludeTagIds", request.excludeTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeUserIds)) {
+            body.put("excludeUserIds", request.excludeUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nodeListSceneConfig)) {
+            body.put("nodeListSceneConfig", request.nodeListSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectDeptIds)) {
+            body.put("objectDeptIds", request.objectDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectTagIds)) {
+            body.put("objectTagIds", request.objectTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectUserIds)) {
+            body.put("objectUserIds", request.objectUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.profileSceneConfig)) {
+            body.put("profileSceneConfig", request.profileSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.searchSceneConfig)) {
+            body.put("searchSceneConfig", request.searchSceneConfig);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddContactHideBySceneSetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/organizations/hides/settings", "json", req, runtime), new AddContactHideBySceneSettingResponse());
+    }
+
+    public AddEmpAttributeHideBySceneSettingResponse addEmpAttributeHideBySceneSetting(AddEmpAttributeHideBySceneSettingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddEmpAttributeHideBySceneSettingHeaders headers = new AddEmpAttributeHideBySceneSettingHeaders();
+        return this.addEmpAttributeHideBySceneSettingWithOptions(request, headers, runtime);
+    }
+
+    public AddEmpAttributeHideBySceneSettingResponse addEmpAttributeHideBySceneSettingWithOptions(AddEmpAttributeHideBySceneSettingRequest request, AddEmpAttributeHideBySceneSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.chatSubtitleConfig)) {
+            body.put("chatSubtitleConfig", request.chatSubtitleConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeDeptIds)) {
+            body.put("excludeDeptIds", request.excludeDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeTagIds)) {
+            body.put("excludeTagIds", request.excludeTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeUserIds)) {
+            body.put("excludeUserIds", request.excludeUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideFields)) {
+            body.put("hideFields", request.hideFields);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectDeptIds)) {
+            body.put("objectDeptIds", request.objectDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectTagIds)) {
+            body.put("objectTagIds", request.objectTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectUserIds)) {
+            body.put("objectUserIds", request.objectUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.profileSceneConfig)) {
+            body.put("profileSceneConfig", request.profileSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.searchSceneConfig)) {
+            body.put("searchSceneConfig", request.searchSceneConfig);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("AddEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/empAttributes/hides/settings", "json", req, runtime), new AddEmpAttributeHideBySceneSettingResponse());
+    }
+
     public AnnualCertificationAuditResponse annualCertificationAudit(AnnualCertificationAuditRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AnnualCertificationAuditHeaders headers = new AnnualCertificationAuditHeaders();
@@ -291,6 +433,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CreateSecondaryManagementGroup", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/secondaryAdministrators/managementGroups", "json", req, runtime), new CreateSecondaryManagementGroupResponse());
     }
 
+    public DeleteContactHideBySceneSettingResponse deleteContactHideBySceneSetting(String settingId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteContactHideBySceneSettingHeaders headers = new DeleteContactHideBySceneSettingHeaders();
+        return this.deleteContactHideBySceneSettingWithOptions(settingId, headers, runtime);
+    }
+
+    public DeleteContactHideBySceneSettingResponse deleteContactHideBySceneSettingWithOptions(String settingId, DeleteContactHideBySceneSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        settingId = com.aliyun.openapiutil.Client.getEncodeParam(settingId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("DeleteContactHideBySceneSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId + "", "json", req, runtime), new DeleteContactHideBySceneSettingResponse());
+    }
+
     public DeleteContactHideSettingResponse deleteContactHideSetting(String settingId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteContactHideSettingHeaders headers = new DeleteContactHideSettingHeaders();
@@ -335,6 +500,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders)
         ));
         return TeaModel.toModel(this.doROARequest("DeleteContactRestrictSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/restrictions/settings/" + settingId + "", "json", req, runtime), new DeleteContactRestrictSettingResponse());
+    }
+
+    public DeleteEmpAttributeHideBySceneSettingResponse deleteEmpAttributeHideBySceneSetting(String settingId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteEmpAttributeHideBySceneSettingHeaders headers = new DeleteEmpAttributeHideBySceneSettingHeaders();
+        return this.deleteEmpAttributeHideBySceneSettingWithOptions(settingId, headers, runtime);
+    }
+
+    public DeleteEmpAttributeHideBySceneSettingResponse deleteEmpAttributeHideBySceneSettingWithOptions(String settingId, DeleteEmpAttributeHideBySceneSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        settingId = com.aliyun.openapiutil.Client.getEncodeParam(settingId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("DeleteEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId + "", "json", req, runtime), new DeleteEmpAttributeHideBySceneSettingResponse());
     }
 
     public DeleteEmpAttributeVisibilityResponse deleteEmpAttributeVisibility(String settingId) throws Exception {
@@ -501,6 +689,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("GetCardInfo", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/infos/" + cardId + "", "json", req, runtime), new GetCardInfoResponse());
     }
 
+    public GetContactHideBySceneSettingResponse getContactHideBySceneSetting(String settingId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetContactHideBySceneSettingHeaders headers = new GetContactHideBySceneSettingHeaders();
+        return this.getContactHideBySceneSettingWithOptions(settingId, headers, runtime);
+    }
+
+    public GetContactHideBySceneSettingResponse getContactHideBySceneSettingWithOptions(String settingId, GetContactHideBySceneSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        settingId = com.aliyun.openapiutil.Client.getEncodeParam(settingId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetContactHideBySceneSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId + "", "json", req, runtime), new GetContactHideBySceneSettingResponse());
+    }
+
     public GetCooperateOrgInviteInfoResponse getCooperateOrgInviteInfo(String cooperateCorpId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetCooperateOrgInviteInfoHeaders headers = new GetCooperateOrgInviteInfoHeaders();
@@ -573,6 +784,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("GetDingIdByMigrationDingId", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/orgAccount/getDingIdByMigrationDingIds", "json", req, runtime), new GetDingIdByMigrationDingIdResponse());
+    }
+
+    public GetEmpAttributeHideBySceneSettingResponse getEmpAttributeHideBySceneSetting(String settingId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetEmpAttributeHideBySceneSettingHeaders headers = new GetEmpAttributeHideBySceneSettingHeaders();
+        return this.getEmpAttributeHideBySceneSettingWithOptions(settingId, headers, runtime);
+    }
+
+    public GetEmpAttributeHideBySceneSettingResponse getEmpAttributeHideBySceneSettingWithOptions(String settingId, GetEmpAttributeHideBySceneSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        settingId = com.aliyun.openapiutil.Client.getEncodeParam(settingId);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        return TeaModel.toModel(this.doROARequest("GetEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId + "", "json", req, runtime), new GetEmpAttributeHideBySceneSettingResponse());
     }
 
     public GetLatestDingIndexResponse getLatestDingIndex() throws Exception {
@@ -1681,6 +1915,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("UpdateBranchVisibleSettingInCooperate", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/cooperateCorps/branchVisibleSettings", "none", req, runtime), new UpdateBranchVisibleSettingInCooperateResponse());
     }
 
+    public UpdateContactHideBySceneSettingResponse updateContactHideBySceneSetting(String settingId, UpdateContactHideBySceneSettingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateContactHideBySceneSettingHeaders headers = new UpdateContactHideBySceneSettingHeaders();
+        return this.updateContactHideBySceneSettingWithOptions(settingId, request, headers, runtime);
+    }
+
+    public UpdateContactHideBySceneSettingResponse updateContactHideBySceneSettingWithOptions(String settingId, UpdateContactHideBySceneSettingRequest request, UpdateContactHideBySceneSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        settingId = com.aliyun.openapiutil.Client.getEncodeParam(settingId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeDeptIds)) {
+            body.put("excludeDeptIds", request.excludeDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeTagIds)) {
+            body.put("excludeTagIds", request.excludeTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeUserIds)) {
+            body.put("excludeUserIds", request.excludeUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nodeListSceneConfig)) {
+            body.put("nodeListSceneConfig", request.nodeListSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectDeptIds)) {
+            body.put("objectDeptIds", request.objectDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectTagIds)) {
+            body.put("objectTagIds", request.objectTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectUserIds)) {
+            body.put("objectUserIds", request.objectUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.profileSceneConfig)) {
+            body.put("profileSceneConfig", request.profileSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.searchSceneConfig)) {
+            body.put("searchSceneConfig", request.searchSceneConfig);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateContactHideBySceneSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId + "", "json", req, runtime), new UpdateContactHideBySceneSettingResponse());
+    }
+
     public UpdateContactHideSettingResponse updateContactHideSetting(UpdateContactHideSettingRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateContactHideSettingHeaders headers = new UpdateContactHideSettingHeaders();
@@ -1927,6 +2231,80 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateEmpAttrbuteVisibilitySetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/staffAttributes/visibilitySettings", "json", req, runtime), new UpdateEmpAttrbuteVisibilitySettingResponse());
+    }
+
+    public UpdateEmpAttributeHideBySceneSettingResponse updateEmpAttributeHideBySceneSetting(String settingId, UpdateEmpAttributeHideBySceneSettingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateEmpAttributeHideBySceneSettingHeaders headers = new UpdateEmpAttributeHideBySceneSettingHeaders();
+        return this.updateEmpAttributeHideBySceneSettingWithOptions(settingId, request, headers, runtime);
+    }
+
+    public UpdateEmpAttributeHideBySceneSettingResponse updateEmpAttributeHideBySceneSettingWithOptions(String settingId, UpdateEmpAttributeHideBySceneSettingRequest request, UpdateEmpAttributeHideBySceneSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        settingId = com.aliyun.openapiutil.Client.getEncodeParam(settingId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.chatSubtitleConfig)) {
+            body.put("chatSubtitleConfig", request.chatSubtitleConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeDeptIds)) {
+            body.put("excludeDeptIds", request.excludeDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeTagIds)) {
+            body.put("excludeTagIds", request.excludeTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeUserIds)) {
+            body.put("excludeUserIds", request.excludeUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideFields)) {
+            body.put("hideFields", request.hideFields);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectDeptIds)) {
+            body.put("objectDeptIds", request.objectDeptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectTagIds)) {
+            body.put("objectTagIds", request.objectTagIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectUserIds)) {
+            body.put("objectUserIds", request.objectUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.profileSceneConfig)) {
+            body.put("profileSceneConfig", request.profileSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.searchSceneConfig)) {
+            body.put("searchSceneConfig", request.searchSceneConfig);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId + "", "json", req, runtime), new UpdateEmpAttributeHideBySceneSettingResponse());
     }
 
     public UpdateManagementGroupResponse updateManagementGroup(String groupId, UpdateManagementGroupRequest request) throws Exception {

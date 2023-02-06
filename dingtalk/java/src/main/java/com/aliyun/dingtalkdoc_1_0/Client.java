@@ -1583,6 +1583,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("operatorId", request.operatorId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.select)) {
+            query.put("select", request.select);
+        }
+
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.findOptions)) {
             body.put("findOptions", request.findOptions);

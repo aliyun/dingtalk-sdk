@@ -24,6 +24,9 @@ public class SheetFindAllResponseBody extends TeaModel {
         @NameInMap("a1Notation")
         public String a1Notation;
 
+        @NameInMap("values")
+        public java.util.List<java.util.List<?>> values;
+
         public static SheetFindAllResponseBodyValue build(java.util.Map<String, ?> map) throws Exception {
             SheetFindAllResponseBodyValue self = new SheetFindAllResponseBodyValue();
             return TeaModel.build(map, self);
@@ -35,6 +38,14 @@ public class SheetFindAllResponseBody extends TeaModel {
         }
         public String getA1Notation() {
             return this.a1Notation;
+        }
+
+        public SheetFindAllResponseBodyValue setValues(java.util.List<java.util.List<?>> values) {
+            this.values = values;
+            return this;
+        }
+        public java.util.List<java.util.List<?>> getValues() {
+            return this.values;
         }
 
     }

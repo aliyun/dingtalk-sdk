@@ -22,6 +22,9 @@ public class SheetFindAllRequest extends TeaModel {
     @NameInMap("operatorId")
     public String operatorId;
 
+    @NameInMap("select")
+    public String select;
+
     public static SheetFindAllRequest build(java.util.Map<String, ?> map) throws Exception {
         SheetFindAllRequest self = new SheetFindAllRequest();
         return TeaModel.build(map, self);
@@ -49,6 +52,14 @@ public class SheetFindAllRequest extends TeaModel {
     }
     public String getOperatorId() {
         return this.operatorId;
+    }
+
+    public SheetFindAllRequest setSelect(String select) {
+        this.select = select;
+        return this;
+    }
+    public String getSelect() {
+        return this.select;
     }
 
     public static class SheetFindAllRequestFindOptions extends TeaModel {
