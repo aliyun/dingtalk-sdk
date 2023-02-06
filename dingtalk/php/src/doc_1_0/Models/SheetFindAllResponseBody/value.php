@@ -12,8 +12,14 @@ class value extends Model
      * @var string
      */
     public $a1Notation;
+
+    /**
+     * @var mixed[][]
+     */
+    public $values;
     protected $_name = [
         'a1Notation' => 'a1Notation',
+        'values'     => 'values',
     ];
 
     public function validate()
@@ -25,6 +31,9 @@ class value extends Model
         $res = [];
         if (null !== $this->a1Notation) {
             $res['a1Notation'] = $this->a1Notation;
+        }
+        if (null !== $this->values) {
+            $res['values'] = $this->values;
         }
 
         return $res;
@@ -40,6 +49,11 @@ class value extends Model
         $model = new self();
         if (isset($map['a1Notation'])) {
             $model->a1Notation = $map['a1Notation'];
+        }
+        if (isset($map['values'])) {
+            if (!empty($map['values'])) {
+                $model->values = $map['values'];
+            }
         }
 
         return $model;

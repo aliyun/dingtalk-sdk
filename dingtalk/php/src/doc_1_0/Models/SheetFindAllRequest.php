@@ -29,10 +29,16 @@ class SheetFindAllRequest extends Model
      * @var string
      */
     public $operatorId;
+
+    /**
+     * @var string
+     */
+    public $select;
     protected $_name = [
         'findOptions' => 'findOptions',
         'text'        => 'text',
         'operatorId'  => 'operatorId',
+        'select'      => 'select',
     ];
 
     public function validate()
@@ -50,6 +56,9 @@ class SheetFindAllRequest extends Model
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
+        }
+        if (null !== $this->select) {
+            $res['select'] = $this->select;
         }
 
         return $res;
@@ -71,6 +80,9 @@ class SheetFindAllRequest extends Model
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
+        }
+        if (isset($map['select'])) {
+            $model->select = $map['select'];
         }
 
         return $model;

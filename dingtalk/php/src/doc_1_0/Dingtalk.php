@@ -2368,6 +2368,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->operatorId)) {
             @$query['operatorId'] = $request->operatorId;
         }
+        if (!Utils::isUnset($request->select)) {
+            @$query['select'] = $request->select;
+        }
         $body = [];
         if (!Utils::isUnset($request->findOptions)) {
             @$body['findOptions'] = $request->findOptions;

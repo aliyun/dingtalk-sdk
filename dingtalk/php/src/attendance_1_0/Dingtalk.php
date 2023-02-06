@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetCheckInSchemaTemplateRes
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveTypeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveTypeResponse;
@@ -761,6 +764,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetClosingAccountsResponse::fromMap($this->doROARequest('GetClosingAccounts', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/closingAccounts/rules/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetLeaveRecordsRequest $request
+     *
+     * @return GetLeaveRecordsResponse
+     */
+    public function getLeaveRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetLeaveRecordsHeaders([]);
+
+        return $this->getLeaveRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetLeaveRecordsRequest $request
+     * @param GetLeaveRecordsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetLeaveRecordsResponse
+     */
+    public function getLeaveRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->leaveCode)) {
+            @$body['leaveCode'] = $request->leaveCode;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            @$body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetLeaveRecordsResponse::fromMap($this->doROARequest('GetLeaveRecords', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/vacations/records/query', 'json', $req, $runtime));
     }
 
     /**

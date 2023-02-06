@@ -53,6 +53,9 @@ use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdateAutoIssuePointRespon
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdatePointActionAutoAssignRuleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdatePointActionAutoAssignRuleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\UpdatePointActionAutoAssignRuleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\WearOrgHonorHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\WearOrgHonorRequest;
+use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\WearOrgHonorResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -881,5 +884,53 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdatePointActionAutoAssignRuleResponse::fromMap($this->doROARequest('UpdatePointActionAutoAssignRule', 'orgCulture_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/orgCulture/users/points/actionRules', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string              $honorId
+     * @param WearOrgHonorRequest $request
+     *
+     * @return WearOrgHonorResponse
+     */
+    public function wearOrgHonor($honorId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new WearOrgHonorHeaders([]);
+
+        return $this->wearOrgHonorWithOptions($honorId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string              $honorId
+     * @param WearOrgHonorRequest $request
+     * @param WearOrgHonorHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return WearOrgHonorResponse
+     */
+    public function wearOrgHonorWithOptions($honorId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $honorId = OpenApiUtilClient::getEncodeParam($honorId);
+        $body    = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->wear)) {
+            @$body['wear'] = $request->wear;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return WearOrgHonorResponse::fromMap($this->doROARequest('WearOrgHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/honors/' . $honorId . '/wear', 'json', $req, $runtime));
     }
 }

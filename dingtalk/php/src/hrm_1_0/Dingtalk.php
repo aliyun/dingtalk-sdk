@@ -45,6 +45,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateResponse;
@@ -739,6 +742,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryPositionsResponse::fromMap($this->doROARequest('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/positions/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param RosterMetaAvailableFieldListRequest $request
+     *
+     * @return RosterMetaAvailableFieldListResponse
+     */
+    public function rosterMetaAvailableFieldList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RosterMetaAvailableFieldListHeaders([]);
+
+        return $this->rosterMetaAvailableFieldListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RosterMetaAvailableFieldListRequest $request
+     * @param RosterMetaAvailableFieldListHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return RosterMetaAvailableFieldListResponse
+     */
+    public function rosterMetaAvailableFieldListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appAgentId)) {
+            @$query['appAgentId'] = $request->appAgentId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return RosterMetaAvailableFieldListResponse::fromMap($this->doROARequest('RosterMetaAvailableFieldList', 'hrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/hrm/rosters/meta/authorities/fields', 'json', $req, $runtime));
     }
 
     /**

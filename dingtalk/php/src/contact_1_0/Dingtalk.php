@@ -5,6 +5,12 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddContactHideBySceneSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddContactHideBySceneSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddContactHideBySceneSettingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddEmpAttributeHideBySceneSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddEmpAttributeHideBySceneSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddEmpAttributeHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditResponse;
@@ -23,10 +29,14 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideBySceneSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactRestrictSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactRestrictSettingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeHideBySceneSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteManagementGroupHeaders;
@@ -41,6 +51,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInUserHolderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInUserHolderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetContactHideBySceneSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetContactHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCooperateOrgInviteInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCooperateOrgInviteInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCorpCardStyleListHeaders;
@@ -48,6 +60,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCorpCardStyleListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetDingIdByMigrationDingIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetDingIdByMigrationDingIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetDingIdByMigrationDingIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetEmpAttributeHideBySceneSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetEmpAttributeHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetLatestDingIndexResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetMigrationDingIdByDingIdHeaders;
@@ -149,6 +163,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchAttributesInCooper
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchVisibleSettingInCooperateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchVisibleSettingInCooperateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateBranchVisibleSettingInCooperateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideBySceneSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideBySceneSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateContactHideSettingResponse;
@@ -161,6 +178,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateDeptSettngTailFirstRespo
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttrbuteVisibilitySettingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttributeHideBySceneSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttributeHideBySceneSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateEmpAttributeHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupResponse;
@@ -184,6 +204,153 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddContactHideBySceneSettingRequest $request
+     *
+     * @return AddContactHideBySceneSettingResponse
+     */
+    public function addContactHideBySceneSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddContactHideBySceneSettingHeaders([]);
+
+        return $this->addContactHideBySceneSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddContactHideBySceneSettingRequest $request
+     * @param AddContactHideBySceneSettingHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return AddContactHideBySceneSettingResponse
+     */
+    public function addContactHideBySceneSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->excludeDeptIds)) {
+            @$body['excludeDeptIds'] = $request->excludeDeptIds;
+        }
+        if (!Utils::isUnset($request->excludeTagIds)) {
+            @$body['excludeTagIds'] = $request->excludeTagIds;
+        }
+        if (!Utils::isUnset($request->excludeUserIds)) {
+            @$body['excludeUserIds'] = $request->excludeUserIds;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->nodeListSceneConfig)) {
+            @$body['nodeListSceneConfig'] = $request->nodeListSceneConfig;
+        }
+        if (!Utils::isUnset($request->objectDeptIds)) {
+            @$body['objectDeptIds'] = $request->objectDeptIds;
+        }
+        if (!Utils::isUnset($request->objectTagIds)) {
+            @$body['objectTagIds'] = $request->objectTagIds;
+        }
+        if (!Utils::isUnset($request->objectUserIds)) {
+            @$body['objectUserIds'] = $request->objectUserIds;
+        }
+        if (!Utils::isUnset($request->profileSceneConfig)) {
+            @$body['profileSceneConfig'] = $request->profileSceneConfig;
+        }
+        if (!Utils::isUnset($request->searchSceneConfig)) {
+            @$body['searchSceneConfig'] = $request->searchSceneConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddContactHideBySceneSettingResponse::fromMap($this->doROARequest('AddContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/organizations/hides/settings', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param AddEmpAttributeHideBySceneSettingRequest $request
+     *
+     * @return AddEmpAttributeHideBySceneSettingResponse
+     */
+    public function addEmpAttributeHideBySceneSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddEmpAttributeHideBySceneSettingHeaders([]);
+
+        return $this->addEmpAttributeHideBySceneSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddEmpAttributeHideBySceneSettingRequest $request
+     * @param AddEmpAttributeHideBySceneSettingHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return AddEmpAttributeHideBySceneSettingResponse
+     */
+    public function addEmpAttributeHideBySceneSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->chatSubtitleConfig)) {
+            @$body['chatSubtitleConfig'] = $request->chatSubtitleConfig;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->excludeDeptIds)) {
+            @$body['excludeDeptIds'] = $request->excludeDeptIds;
+        }
+        if (!Utils::isUnset($request->excludeTagIds)) {
+            @$body['excludeTagIds'] = $request->excludeTagIds;
+        }
+        if (!Utils::isUnset($request->excludeUserIds)) {
+            @$body['excludeUserIds'] = $request->excludeUserIds;
+        }
+        if (!Utils::isUnset($request->hideFields)) {
+            @$body['hideFields'] = $request->hideFields;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->objectDeptIds)) {
+            @$body['objectDeptIds'] = $request->objectDeptIds;
+        }
+        if (!Utils::isUnset($request->objectTagIds)) {
+            @$body['objectTagIds'] = $request->objectTagIds;
+        }
+        if (!Utils::isUnset($request->objectUserIds)) {
+            @$body['objectUserIds'] = $request->objectUserIds;
+        }
+        if (!Utils::isUnset($request->profileSceneConfig)) {
+            @$body['profileSceneConfig'] = $request->profileSceneConfig;
+        }
+        if (!Utils::isUnset($request->searchSceneConfig)) {
+            @$body['searchSceneConfig'] = $request->searchSceneConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return AddEmpAttributeHideBySceneSettingResponse::fromMap($this->doROARequest('AddEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/empAttributes/hides/settings', 'json', $req, $runtime));
     }
 
     /**
@@ -517,6 +684,43 @@ class Dingtalk extends OpenApiClient
     /**
      * @param string $settingId
      *
+     * @return DeleteContactHideBySceneSettingResponse
+     */
+    public function deleteContactHideBySceneSetting($settingId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteContactHideBySceneSettingHeaders([]);
+
+        return $this->deleteContactHideBySceneSettingWithOptions($settingId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                 $settingId
+     * @param DeleteContactHideBySceneSettingHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return DeleteContactHideBySceneSettingResponse
+     */
+    public function deleteContactHideBySceneSettingWithOptions($settingId, $headers, $runtime)
+    {
+        $settingId   = OpenApiUtilClient::getEncodeParam($settingId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DeleteContactHideBySceneSettingResponse::fromMap($this->doROARequest('DeleteContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/contact/organizations/hides/settings/' . $settingId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $settingId
+     *
      * @return DeleteContactHideSettingResponse
      */
     public function deleteContactHideSetting($settingId)
@@ -586,6 +790,43 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DeleteContactRestrictSettingResponse::fromMap($this->doROARequest('DeleteContactRestrictSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/contact/restrictions/settings/' . $settingId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $settingId
+     *
+     * @return DeleteEmpAttributeHideBySceneSettingResponse
+     */
+    public function deleteEmpAttributeHideBySceneSetting($settingId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteEmpAttributeHideBySceneSettingHeaders([]);
+
+        return $this->deleteEmpAttributeHideBySceneSettingWithOptions($settingId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                      $settingId
+     * @param DeleteEmpAttributeHideBySceneSettingHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return DeleteEmpAttributeHideBySceneSettingResponse
+     */
+    public function deleteEmpAttributeHideBySceneSettingWithOptions($settingId, $headers, $runtime)
+    {
+        $settingId   = OpenApiUtilClient::getEncodeParam($settingId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return DeleteEmpAttributeHideBySceneSettingResponse::fromMap($this->doROARequest('DeleteEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/contact/empAttributes/hides/settings/' . $settingId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -832,6 +1073,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string $settingId
+     *
+     * @return GetContactHideBySceneSettingResponse
+     */
+    public function getContactHideBySceneSetting($settingId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetContactHideBySceneSettingHeaders([]);
+
+        return $this->getContactHideBySceneSettingWithOptions($settingId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                              $settingId
+     * @param GetContactHideBySceneSettingHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return GetContactHideBySceneSettingResponse
+     */
+    public function getContactHideBySceneSettingWithOptions($settingId, $headers, $runtime)
+    {
+        $settingId   = OpenApiUtilClient::getEncodeParam($settingId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetContactHideBySceneSettingResponse::fromMap($this->doROARequest('GetContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/organizations/hides/settings/' . $settingId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string $cooperateCorpId
      *
      * @return GetCooperateOrgInviteInfoResponse
@@ -941,6 +1219,43 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetDingIdByMigrationDingIdResponse::fromMap($this->doROARequest('GetDingIdByMigrationDingId', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/orgAccount/getDingIdByMigrationDingIds', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $settingId
+     *
+     * @return GetEmpAttributeHideBySceneSettingResponse
+     */
+    public function getEmpAttributeHideBySceneSetting($settingId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetEmpAttributeHideBySceneSettingHeaders([]);
+
+        return $this->getEmpAttributeHideBySceneSettingWithOptions($settingId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                   $settingId
+     * @param GetEmpAttributeHideBySceneSettingHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return GetEmpAttributeHideBySceneSettingResponse
+     */
+    public function getEmpAttributeHideBySceneSettingWithOptions($settingId, $headers, $runtime)
+    {
+        $settingId   = OpenApiUtilClient::getEncodeParam($settingId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetEmpAttributeHideBySceneSettingResponse::fromMap($this->doROARequest('GetEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/empAttributes/hides/settings/' . $settingId . '', 'json', $req, $runtime));
     }
 
     /**
@@ -2477,6 +2792,81 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                                 $settingId
+     * @param UpdateContactHideBySceneSettingRequest $request
+     *
+     * @return UpdateContactHideBySceneSettingResponse
+     */
+    public function updateContactHideBySceneSetting($settingId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateContactHideBySceneSettingHeaders([]);
+
+        return $this->updateContactHideBySceneSettingWithOptions($settingId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                 $settingId
+     * @param UpdateContactHideBySceneSettingRequest $request
+     * @param UpdateContactHideBySceneSettingHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return UpdateContactHideBySceneSettingResponse
+     */
+    public function updateContactHideBySceneSettingWithOptions($settingId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $settingId = OpenApiUtilClient::getEncodeParam($settingId);
+        $body      = [];
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->excludeDeptIds)) {
+            @$body['excludeDeptIds'] = $request->excludeDeptIds;
+        }
+        if (!Utils::isUnset($request->excludeTagIds)) {
+            @$body['excludeTagIds'] = $request->excludeTagIds;
+        }
+        if (!Utils::isUnset($request->excludeUserIds)) {
+            @$body['excludeUserIds'] = $request->excludeUserIds;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->nodeListSceneConfig)) {
+            @$body['nodeListSceneConfig'] = $request->nodeListSceneConfig;
+        }
+        if (!Utils::isUnset($request->objectDeptIds)) {
+            @$body['objectDeptIds'] = $request->objectDeptIds;
+        }
+        if (!Utils::isUnset($request->objectTagIds)) {
+            @$body['objectTagIds'] = $request->objectTagIds;
+        }
+        if (!Utils::isUnset($request->objectUserIds)) {
+            @$body['objectUserIds'] = $request->objectUserIds;
+        }
+        if (!Utils::isUnset($request->profileSceneConfig)) {
+            @$body['profileSceneConfig'] = $request->profileSceneConfig;
+        }
+        if (!Utils::isUnset($request->searchSceneConfig)) {
+            @$body['searchSceneConfig'] = $request->searchSceneConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateContactHideBySceneSettingResponse::fromMap($this->doROARequest('UpdateContactHideBySceneSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/contact/organizations/hides/settings/' . $settingId . '', 'json', $req, $runtime));
+    }
+
+    /**
      * @param UpdateContactHideSettingRequest $request
      *
      * @return UpdateContactHideSettingResponse
@@ -2741,6 +3131,84 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateEmpAttrbuteVisibilitySettingResponse::fromMap($this->doROARequest('UpdateEmpAttrbuteVisibilitySetting', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/staffAttributes/visibilitySettings', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                                      $settingId
+     * @param UpdateEmpAttributeHideBySceneSettingRequest $request
+     *
+     * @return UpdateEmpAttributeHideBySceneSettingResponse
+     */
+    public function updateEmpAttributeHideBySceneSetting($settingId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateEmpAttributeHideBySceneSettingHeaders([]);
+
+        return $this->updateEmpAttributeHideBySceneSettingWithOptions($settingId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                                      $settingId
+     * @param UpdateEmpAttributeHideBySceneSettingRequest $request
+     * @param UpdateEmpAttributeHideBySceneSettingHeaders $headers
+     * @param RuntimeOptions                              $runtime
+     *
+     * @return UpdateEmpAttributeHideBySceneSettingResponse
+     */
+    public function updateEmpAttributeHideBySceneSettingWithOptions($settingId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $settingId = OpenApiUtilClient::getEncodeParam($settingId);
+        $body      = [];
+        if (!Utils::isUnset($request->chatSubtitleConfig)) {
+            @$body['chatSubtitleConfig'] = $request->chatSubtitleConfig;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->excludeDeptIds)) {
+            @$body['excludeDeptIds'] = $request->excludeDeptIds;
+        }
+        if (!Utils::isUnset($request->excludeTagIds)) {
+            @$body['excludeTagIds'] = $request->excludeTagIds;
+        }
+        if (!Utils::isUnset($request->excludeUserIds)) {
+            @$body['excludeUserIds'] = $request->excludeUserIds;
+        }
+        if (!Utils::isUnset($request->hideFields)) {
+            @$body['hideFields'] = $request->hideFields;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->objectDeptIds)) {
+            @$body['objectDeptIds'] = $request->objectDeptIds;
+        }
+        if (!Utils::isUnset($request->objectTagIds)) {
+            @$body['objectTagIds'] = $request->objectTagIds;
+        }
+        if (!Utils::isUnset($request->objectUserIds)) {
+            @$body['objectUserIds'] = $request->objectUserIds;
+        }
+        if (!Utils::isUnset($request->profileSceneConfig)) {
+            @$body['profileSceneConfig'] = $request->profileSceneConfig;
+        }
+        if (!Utils::isUnset($request->searchSceneConfig)) {
+            @$body['searchSceneConfig'] = $request->searchSceneConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateEmpAttributeHideBySceneSettingResponse::fromMap($this->doROARequest('UpdateEmpAttributeHideBySceneSetting', 'contact_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/contact/empAttributes/hides/settings/' . $settingId . '', 'json', $req, $runtime));
     }
 
     /**

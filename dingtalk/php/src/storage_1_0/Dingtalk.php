@@ -122,6 +122,12 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RestoreRecycleItemsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RevertDentryVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RevertDentryVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RevertDentryVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\SubscribeEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\SubscribeEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\SubscribeEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UnsubscribeEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UnsubscribeEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UnsubscribeEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdateDentryAppPropertiesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdateDentryAppPropertiesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\UpdateDentryAppPropertiesResponse;
@@ -2186,6 +2192,106 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RevertDentryVersionResponse::fromMap($this->doROARequest('RevertDentryVersion', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/versions/' . $version . '/revert', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SubscribeEventRequest $request
+     *
+     * @return SubscribeEventResponse
+     */
+    public function subscribeEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubscribeEventHeaders([]);
+
+        return $this->subscribeEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SubscribeEventRequest $request
+     * @param SubscribeEventHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return SubscribeEventResponse
+     */
+    public function subscribeEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->scope)) {
+            @$body['scope'] = $request->scope;
+        }
+        if (!Utils::isUnset($request->scopeId)) {
+            @$body['scopeId'] = $request->scopeId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SubscribeEventResponse::fromMap($this->doROARequest('SubscribeEvent', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/events/subscribe', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UnsubscribeEventRequest $request
+     *
+     * @return UnsubscribeEventResponse
+     */
+    public function unsubscribeEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnsubscribeEventHeaders([]);
+
+        return $this->unsubscribeEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UnsubscribeEventRequest $request
+     * @param UnsubscribeEventHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return UnsubscribeEventResponse
+     */
+    public function unsubscribeEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->scope)) {
+            @$body['scope'] = $request->scope;
+        }
+        if (!Utils::isUnset($request->scopeId)) {
+            @$body['scopeId'] = $request->scopeId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UnsubscribeEventResponse::fromMap($this->doROARequest('UnsubscribeEvent', 'storage_1.0', 'HTTP', 'POST', 'AK', '/v1.0/storage/events/unsubscribe', 'json', $req, $runtime));
     }
 
     /**
