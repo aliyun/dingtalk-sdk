@@ -1180,6 +1180,70 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             return TeaModel.ToObject<QueryPositionsResponse>(await DoROARequestAsync("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/positions/query", "json", req, runtime));
         }
 
+        public RosterMetaAvailableFieldListResponse RosterMetaAvailableFieldList(RosterMetaAvailableFieldListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RosterMetaAvailableFieldListHeaders headers = new RosterMetaAvailableFieldListHeaders();
+            return RosterMetaAvailableFieldListWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RosterMetaAvailableFieldListResponse> RosterMetaAvailableFieldListAsync(RosterMetaAvailableFieldListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RosterMetaAvailableFieldListHeaders headers = new RosterMetaAvailableFieldListHeaders();
+            return await RosterMetaAvailableFieldListWithOptionsAsync(request, headers, runtime);
+        }
+
+        public RosterMetaAvailableFieldListResponse RosterMetaAvailableFieldListWithOptions(RosterMetaAvailableFieldListRequest request, RosterMetaAvailableFieldListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppAgentId))
+            {
+                query["appAgentId"] = request.AppAgentId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<RosterMetaAvailableFieldListResponse>(DoROARequest("RosterMetaAvailableFieldList", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/rosters/meta/authorities/fields", "json", req, runtime));
+        }
+
+        public async Task<RosterMetaAvailableFieldListResponse> RosterMetaAvailableFieldListWithOptionsAsync(RosterMetaAvailableFieldListRequest request, RosterMetaAvailableFieldListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppAgentId))
+            {
+                query["appAgentId"] = request.AppAgentId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<RosterMetaAvailableFieldListResponse>(await DoROARequestAsync("RosterMetaAvailableFieldList", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/rosters/meta/authorities/fields", "json", req, runtime));
+        }
+
         public RosterMetaFieldOptionsUpdateResponse RosterMetaFieldOptionsUpdate(RosterMetaFieldOptionsUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

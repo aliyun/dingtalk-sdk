@@ -26,6 +26,302 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         }
 
 
+        public AddContactHideBySceneSettingResponse AddContactHideBySceneSetting(AddContactHideBySceneSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddContactHideBySceneSettingHeaders headers = new AddContactHideBySceneSettingHeaders();
+            return AddContactHideBySceneSettingWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddContactHideBySceneSettingResponse> AddContactHideBySceneSettingAsync(AddContactHideBySceneSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddContactHideBySceneSettingHeaders headers = new AddContactHideBySceneSettingHeaders();
+            return await AddContactHideBySceneSettingWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AddContactHideBySceneSettingResponse AddContactHideBySceneSettingWithOptions(AddContactHideBySceneSettingRequest request, AddContactHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeListSceneConfig))
+            {
+                body["nodeListSceneConfig"] = request.NodeListSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectDeptIds))
+            {
+                body["objectDeptIds"] = request.ObjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
+            {
+                body["objectTagIds"] = request.ObjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectUserIds))
+            {
+                body["objectUserIds"] = request.ObjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProfileSceneConfig))
+            {
+                body["profileSceneConfig"] = request.ProfileSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchSceneConfig))
+            {
+                body["searchSceneConfig"] = request.SearchSceneConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddContactHideBySceneSettingResponse>(DoROARequest("AddContactHideBySceneSetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/organizations/hides/settings", "json", req, runtime));
+        }
+
+        public async Task<AddContactHideBySceneSettingResponse> AddContactHideBySceneSettingWithOptionsAsync(AddContactHideBySceneSettingRequest request, AddContactHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeListSceneConfig))
+            {
+                body["nodeListSceneConfig"] = request.NodeListSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectDeptIds))
+            {
+                body["objectDeptIds"] = request.ObjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
+            {
+                body["objectTagIds"] = request.ObjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectUserIds))
+            {
+                body["objectUserIds"] = request.ObjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProfileSceneConfig))
+            {
+                body["profileSceneConfig"] = request.ProfileSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchSceneConfig))
+            {
+                body["searchSceneConfig"] = request.SearchSceneConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddContactHideBySceneSettingResponse>(await DoROARequestAsync("AddContactHideBySceneSetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/organizations/hides/settings", "json", req, runtime));
+        }
+
+        public AddEmpAttributeHideBySceneSettingResponse AddEmpAttributeHideBySceneSetting(AddEmpAttributeHideBySceneSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddEmpAttributeHideBySceneSettingHeaders headers = new AddEmpAttributeHideBySceneSettingHeaders();
+            return AddEmpAttributeHideBySceneSettingWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddEmpAttributeHideBySceneSettingResponse> AddEmpAttributeHideBySceneSettingAsync(AddEmpAttributeHideBySceneSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddEmpAttributeHideBySceneSettingHeaders headers = new AddEmpAttributeHideBySceneSettingHeaders();
+            return await AddEmpAttributeHideBySceneSettingWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AddEmpAttributeHideBySceneSettingResponse AddEmpAttributeHideBySceneSettingWithOptions(AddEmpAttributeHideBySceneSettingRequest request, AddEmpAttributeHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatSubtitleConfig))
+            {
+                body["chatSubtitleConfig"] = request.ChatSubtitleConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideFields))
+            {
+                body["hideFields"] = request.HideFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectDeptIds))
+            {
+                body["objectDeptIds"] = request.ObjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
+            {
+                body["objectTagIds"] = request.ObjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectUserIds))
+            {
+                body["objectUserIds"] = request.ObjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProfileSceneConfig))
+            {
+                body["profileSceneConfig"] = request.ProfileSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchSceneConfig))
+            {
+                body["searchSceneConfig"] = request.SearchSceneConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddEmpAttributeHideBySceneSettingResponse>(DoROARequest("AddEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/empAttributes/hides/settings", "json", req, runtime));
+        }
+
+        public async Task<AddEmpAttributeHideBySceneSettingResponse> AddEmpAttributeHideBySceneSettingWithOptionsAsync(AddEmpAttributeHideBySceneSettingRequest request, AddEmpAttributeHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatSubtitleConfig))
+            {
+                body["chatSubtitleConfig"] = request.ChatSubtitleConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideFields))
+            {
+                body["hideFields"] = request.HideFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectDeptIds))
+            {
+                body["objectDeptIds"] = request.ObjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
+            {
+                body["objectTagIds"] = request.ObjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectUserIds))
+            {
+                body["objectUserIds"] = request.ObjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProfileSceneConfig))
+            {
+                body["profileSceneConfig"] = request.ProfileSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchSceneConfig))
+            {
+                body["searchSceneConfig"] = request.SearchSceneConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<AddEmpAttributeHideBySceneSettingResponse>(await DoROARequestAsync("AddEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/empAttributes/hides/settings", "json", req, runtime));
+        }
+
         public AnnualCertificationAuditResponse AnnualCertificationAudit(AnnualCertificationAuditRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -612,6 +908,58 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<CreateSecondaryManagementGroupResponse>(await DoROARequestAsync("CreateSecondaryManagementGroup", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/secondaryAdministrators/managementGroups", "json", req, runtime));
         }
 
+        public DeleteContactHideBySceneSettingResponse DeleteContactHideBySceneSetting(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteContactHideBySceneSettingHeaders headers = new DeleteContactHideBySceneSettingHeaders();
+            return DeleteContactHideBySceneSettingWithOptions(settingId, headers, runtime);
+        }
+
+        public async Task<DeleteContactHideBySceneSettingResponse> DeleteContactHideBySceneSettingAsync(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteContactHideBySceneSettingHeaders headers = new DeleteContactHideBySceneSettingHeaders();
+            return await DeleteContactHideBySceneSettingWithOptionsAsync(settingId, headers, runtime);
+        }
+
+        public DeleteContactHideBySceneSettingResponse DeleteContactHideBySceneSettingWithOptions(string settingId, DeleteContactHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DeleteContactHideBySceneSettingResponse>(DoROARequest("DeleteContactHideBySceneSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId, "json", req, runtime));
+        }
+
+        public async Task<DeleteContactHideBySceneSettingResponse> DeleteContactHideBySceneSettingWithOptionsAsync(string settingId, DeleteContactHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DeleteContactHideBySceneSettingResponse>(await DoROARequestAsync("DeleteContactHideBySceneSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId, "json", req, runtime));
+        }
+
         public DeleteContactHideSettingResponse DeleteContactHideSetting(string settingId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -714,6 +1062,58 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Headers = realHeaders,
             };
             return TeaModel.ToObject<DeleteContactRestrictSettingResponse>(await DoROARequestAsync("DeleteContactRestrictSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/restrictions/settings/" + settingId, "json", req, runtime));
+        }
+
+        public DeleteEmpAttributeHideBySceneSettingResponse DeleteEmpAttributeHideBySceneSetting(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteEmpAttributeHideBySceneSettingHeaders headers = new DeleteEmpAttributeHideBySceneSettingHeaders();
+            return DeleteEmpAttributeHideBySceneSettingWithOptions(settingId, headers, runtime);
+        }
+
+        public async Task<DeleteEmpAttributeHideBySceneSettingResponse> DeleteEmpAttributeHideBySceneSettingAsync(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteEmpAttributeHideBySceneSettingHeaders headers = new DeleteEmpAttributeHideBySceneSettingHeaders();
+            return await DeleteEmpAttributeHideBySceneSettingWithOptionsAsync(settingId, headers, runtime);
+        }
+
+        public DeleteEmpAttributeHideBySceneSettingResponse DeleteEmpAttributeHideBySceneSettingWithOptions(string settingId, DeleteEmpAttributeHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DeleteEmpAttributeHideBySceneSettingResponse>(DoROARequest("DeleteEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId, "json", req, runtime));
+        }
+
+        public async Task<DeleteEmpAttributeHideBySceneSettingResponse> DeleteEmpAttributeHideBySceneSettingWithOptionsAsync(string settingId, DeleteEmpAttributeHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<DeleteEmpAttributeHideBySceneSettingResponse>(await DoROARequestAsync("DeleteEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "DELETE", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId, "json", req, runtime));
         }
 
         public DeleteEmpAttributeVisibilityResponse DeleteEmpAttributeVisibility(string settingId)
@@ -1080,6 +1480,58 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<GetCardInfoResponse>(await DoROARequestAsync("GetCardInfo", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/cards/infos/" + cardId, "json", req, runtime));
         }
 
+        public GetContactHideBySceneSettingResponse GetContactHideBySceneSetting(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContactHideBySceneSettingHeaders headers = new GetContactHideBySceneSettingHeaders();
+            return GetContactHideBySceneSettingWithOptions(settingId, headers, runtime);
+        }
+
+        public async Task<GetContactHideBySceneSettingResponse> GetContactHideBySceneSettingAsync(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContactHideBySceneSettingHeaders headers = new GetContactHideBySceneSettingHeaders();
+            return await GetContactHideBySceneSettingWithOptionsAsync(settingId, headers, runtime);
+        }
+
+        public GetContactHideBySceneSettingResponse GetContactHideBySceneSettingWithOptions(string settingId, GetContactHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetContactHideBySceneSettingResponse>(DoROARequest("GetContactHideBySceneSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId, "json", req, runtime));
+        }
+
+        public async Task<GetContactHideBySceneSettingResponse> GetContactHideBySceneSettingWithOptionsAsync(string settingId, GetContactHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetContactHideBySceneSettingResponse>(await DoROARequestAsync("GetContactHideBySceneSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId, "json", req, runtime));
+        }
+
         public GetCooperateOrgInviteInfoResponse GetCooperateOrgInviteInfo(string cooperateCorpId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1244,6 +1696,58 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<GetDingIdByMigrationDingIdResponse>(await DoROARequestAsync("GetDingIdByMigrationDingId", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/orgAccount/getDingIdByMigrationDingIds", "json", req, runtime));
+        }
+
+        public GetEmpAttributeHideBySceneSettingResponse GetEmpAttributeHideBySceneSetting(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetEmpAttributeHideBySceneSettingHeaders headers = new GetEmpAttributeHideBySceneSettingHeaders();
+            return GetEmpAttributeHideBySceneSettingWithOptions(settingId, headers, runtime);
+        }
+
+        public async Task<GetEmpAttributeHideBySceneSettingResponse> GetEmpAttributeHideBySceneSettingAsync(string settingId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetEmpAttributeHideBySceneSettingHeaders headers = new GetEmpAttributeHideBySceneSettingHeaders();
+            return await GetEmpAttributeHideBySceneSettingWithOptionsAsync(settingId, headers, runtime);
+        }
+
+        public GetEmpAttributeHideBySceneSettingResponse GetEmpAttributeHideBySceneSettingWithOptions(string settingId, GetEmpAttributeHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetEmpAttributeHideBySceneSettingResponse>(DoROARequest("GetEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId, "json", req, runtime));
+        }
+
+        public async Task<GetEmpAttributeHideBySceneSettingResponse> GetEmpAttributeHideBySceneSettingWithOptionsAsync(string settingId, GetEmpAttributeHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetEmpAttributeHideBySceneSettingResponse>(await DoROARequestAsync("GetEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "GET", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId, "json", req, runtime));
         }
 
         public GetLatestDingIndexResponse GetLatestDingIndex()
@@ -3668,6 +4172,152 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return TeaModel.ToObject<UpdateBranchVisibleSettingInCooperateResponse>(await DoROARequestAsync("UpdateBranchVisibleSettingInCooperate", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/cooperateCorps/branchVisibleSettings", "none", req, runtime));
         }
 
+        public UpdateContactHideBySceneSettingResponse UpdateContactHideBySceneSetting(string settingId, UpdateContactHideBySceneSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateContactHideBySceneSettingHeaders headers = new UpdateContactHideBySceneSettingHeaders();
+            return UpdateContactHideBySceneSettingWithOptions(settingId, request, headers, runtime);
+        }
+
+        public async Task<UpdateContactHideBySceneSettingResponse> UpdateContactHideBySceneSettingAsync(string settingId, UpdateContactHideBySceneSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateContactHideBySceneSettingHeaders headers = new UpdateContactHideBySceneSettingHeaders();
+            return await UpdateContactHideBySceneSettingWithOptionsAsync(settingId, request, headers, runtime);
+        }
+
+        public UpdateContactHideBySceneSettingResponse UpdateContactHideBySceneSettingWithOptions(string settingId, UpdateContactHideBySceneSettingRequest request, UpdateContactHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeListSceneConfig))
+            {
+                body["nodeListSceneConfig"] = request.NodeListSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectDeptIds))
+            {
+                body["objectDeptIds"] = request.ObjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
+            {
+                body["objectTagIds"] = request.ObjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectUserIds))
+            {
+                body["objectUserIds"] = request.ObjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProfileSceneConfig))
+            {
+                body["profileSceneConfig"] = request.ProfileSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchSceneConfig))
+            {
+                body["searchSceneConfig"] = request.SearchSceneConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateContactHideBySceneSettingResponse>(DoROARequest("UpdateContactHideBySceneSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId, "json", req, runtime));
+        }
+
+        public async Task<UpdateContactHideBySceneSettingResponse> UpdateContactHideBySceneSettingWithOptionsAsync(string settingId, UpdateContactHideBySceneSettingRequest request, UpdateContactHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeListSceneConfig))
+            {
+                body["nodeListSceneConfig"] = request.NodeListSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectDeptIds))
+            {
+                body["objectDeptIds"] = request.ObjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
+            {
+                body["objectTagIds"] = request.ObjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectUserIds))
+            {
+                body["objectUserIds"] = request.ObjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProfileSceneConfig))
+            {
+                body["profileSceneConfig"] = request.ProfileSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchSceneConfig))
+            {
+                body["searchSceneConfig"] = request.SearchSceneConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateContactHideBySceneSettingResponse>(await DoROARequestAsync("UpdateContactHideBySceneSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/organizations/hides/settings/" + settingId, "json", req, runtime));
+        }
+
         public UpdateContactHideSettingResponse UpdateContactHideSetting(UpdateContactHideSettingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4186,6 +4836,160 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<UpdateEmpAttrbuteVisibilitySettingResponse>(await DoROARequestAsync("UpdateEmpAttrbuteVisibilitySetting", "contact_1.0", "HTTP", "POST", "AK", "/v1.0/contact/staffAttributes/visibilitySettings", "json", req, runtime));
+        }
+
+        public UpdateEmpAttributeHideBySceneSettingResponse UpdateEmpAttributeHideBySceneSetting(string settingId, UpdateEmpAttributeHideBySceneSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateEmpAttributeHideBySceneSettingHeaders headers = new UpdateEmpAttributeHideBySceneSettingHeaders();
+            return UpdateEmpAttributeHideBySceneSettingWithOptions(settingId, request, headers, runtime);
+        }
+
+        public async Task<UpdateEmpAttributeHideBySceneSettingResponse> UpdateEmpAttributeHideBySceneSettingAsync(string settingId, UpdateEmpAttributeHideBySceneSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateEmpAttributeHideBySceneSettingHeaders headers = new UpdateEmpAttributeHideBySceneSettingHeaders();
+            return await UpdateEmpAttributeHideBySceneSettingWithOptionsAsync(settingId, request, headers, runtime);
+        }
+
+        public UpdateEmpAttributeHideBySceneSettingResponse UpdateEmpAttributeHideBySceneSettingWithOptions(string settingId, UpdateEmpAttributeHideBySceneSettingRequest request, UpdateEmpAttributeHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatSubtitleConfig))
+            {
+                body["chatSubtitleConfig"] = request.ChatSubtitleConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideFields))
+            {
+                body["hideFields"] = request.HideFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectDeptIds))
+            {
+                body["objectDeptIds"] = request.ObjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
+            {
+                body["objectTagIds"] = request.ObjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectUserIds))
+            {
+                body["objectUserIds"] = request.ObjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProfileSceneConfig))
+            {
+                body["profileSceneConfig"] = request.ProfileSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchSceneConfig))
+            {
+                body["searchSceneConfig"] = request.SearchSceneConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateEmpAttributeHideBySceneSettingResponse>(DoROARequest("UpdateEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId, "json", req, runtime));
+        }
+
+        public async Task<UpdateEmpAttributeHideBySceneSettingResponse> UpdateEmpAttributeHideBySceneSettingWithOptionsAsync(string settingId, UpdateEmpAttributeHideBySceneSettingRequest request, UpdateEmpAttributeHideBySceneSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            settingId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(settingId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatSubtitleConfig))
+            {
+                body["chatSubtitleConfig"] = request.ChatSubtitleConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeDeptIds))
+            {
+                body["excludeDeptIds"] = request.ExcludeDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeTagIds))
+            {
+                body["excludeTagIds"] = request.ExcludeTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExcludeUserIds))
+            {
+                body["excludeUserIds"] = request.ExcludeUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideFields))
+            {
+                body["hideFields"] = request.HideFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectDeptIds))
+            {
+                body["objectDeptIds"] = request.ObjectDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectTagIds))
+            {
+                body["objectTagIds"] = request.ObjectTagIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectUserIds))
+            {
+                body["objectUserIds"] = request.ObjectUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProfileSceneConfig))
+            {
+                body["profileSceneConfig"] = request.ProfileSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchSceneConfig))
+            {
+                body["searchSceneConfig"] = request.SearchSceneConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<UpdateEmpAttributeHideBySceneSettingResponse>(await DoROARequestAsync("UpdateEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "PUT", "AK", "/v1.0/contact/empAttributes/hides/settings/" + settingId, "json", req, runtime));
         }
 
         public UpdateManagementGroupResponse UpdateManagementGroup(string groupId, UpdateManagementGroupRequest request)

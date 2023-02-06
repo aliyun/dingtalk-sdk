@@ -72,6 +72,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public string OperatorId { get; set; }
 
+        [NameInMap("select")]
+        [Validation(Required=false)]
+        public string Select { get; set; }
+
     }
 
 }

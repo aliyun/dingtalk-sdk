@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public string A1Notation { get; set; }
 
+            [NameInMap("values")]
+            [Validation(Required=false)]
+            public List<List<object>> Values { get; set; }
+
         }
 
     }
