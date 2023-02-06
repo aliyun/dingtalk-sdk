@@ -1500,6 +1500,94 @@ export class UpdatePointActionAutoAssignRuleResponse extends $tea.Model {
   }
 }
 
+export class WearOrgHonorHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WearOrgHonorRequest extends $tea.Model {
+  userId?: string;
+  wear?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      wear: 'wear',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      wear: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WearOrgHonorResponseBody extends $tea.Model {
+  result?: WearOrgHonorResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: WearOrgHonorResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WearOrgHonorResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: WearOrgHonorResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: WearOrgHonorResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList extends $tea.Model {
   outId?: string;
   targetUserId?: string;
@@ -2276,6 +2364,25 @@ export class UpdatePointActionAutoAssignRuleRequestUpdatePointRuleRequestDTOList
   }
 }
 
+export class WearOrgHonorResponseBodyResult extends $tea.Model {
+  honorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      honorId: 'honorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      honorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -2912,6 +3019,40 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdatePointActionAutoAssignRuleResponse>(await this.doROARequest("UpdatePointActionAutoAssignRule", "orgCulture_1.0", "HTTP", "PUT", "AK", `/v1.0/orgCulture/users/points/actionRules`, "json", req, runtime), new UpdatePointActionAutoAssignRuleResponse({}));
+  }
+
+  async wearOrgHonor(honorId: string, request: WearOrgHonorRequest): Promise<WearOrgHonorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new WearOrgHonorHeaders({ });
+    return await this.wearOrgHonorWithOptions(honorId, request, headers, runtime);
+  }
+
+  async wearOrgHonorWithOptions(honorId: string, request: WearOrgHonorRequest, headers: WearOrgHonorHeaders, runtime: $Util.RuntimeOptions): Promise<WearOrgHonorResponse> {
+    Util.validateModel(request);
+    honorId = OpenApiUtil.getEncodeParam(honorId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.wear)) {
+      body["wear"] = request.wear;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<WearOrgHonorResponse>(await this.doROARequest("WearOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/honors/${honorId}/wear`, "json", req, runtime), new WearOrgHonorResponse({}));
   }
 
 }

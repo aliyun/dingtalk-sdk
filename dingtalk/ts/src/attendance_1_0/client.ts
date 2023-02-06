@@ -1199,6 +1199,103 @@ export class GetClosingAccountsResponse extends $tea.Model {
   }
 }
 
+export class GetLeaveRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveRecordsRequest extends $tea.Model {
+  leaveCode?: string;
+  opUserId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      leaveCode: 'leaveCode',
+      opUserId: 'opUserId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      leaveCode: 'string',
+      opUserId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveRecordsResponseBody extends $tea.Model {
+  result?: GetLeaveRecordsResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetLeaveRecordsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveRecordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetLeaveRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetLeaveRecordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetLeaveTypeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3320,6 +3417,89 @@ export class GetClosingAccountsResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetLeaveRecordsResponseBodyResultLeaveRecords extends $tea.Model {
+  calType?: string;
+  endTime?: number;
+  gmtCreate?: number;
+  gmtModified?: number;
+  leaveCode?: string;
+  leaveReason?: string;
+  leaveRecordType?: string;
+  leaveStatus?: string;
+  leaveViewUnit?: string;
+  quotaId?: string;
+  recordId?: string;
+  recordNumPerDay?: number;
+  recordNumPerHour?: number;
+  startTime?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      calType: 'calType',
+      endTime: 'endTime',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      leaveCode: 'leaveCode',
+      leaveReason: 'leaveReason',
+      leaveRecordType: 'leaveRecordType',
+      leaveStatus: 'leaveStatus',
+      leaveViewUnit: 'leaveViewUnit',
+      quotaId: 'quotaId',
+      recordId: 'recordId',
+      recordNumPerDay: 'recordNumPerDay',
+      recordNumPerHour: 'recordNumPerHour',
+      startTime: 'startTime',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      calType: 'string',
+      endTime: 'number',
+      gmtCreate: 'number',
+      gmtModified: 'number',
+      leaveCode: 'string',
+      leaveReason: 'string',
+      leaveRecordType: 'string',
+      leaveStatus: 'string',
+      leaveViewUnit: 'string',
+      quotaId: 'string',
+      recordId: 'string',
+      recordNumPerDay: 'number',
+      recordNumPerHour: 'number',
+      startTime: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLeaveRecordsResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  leaveRecords?: GetLeaveRecordsResponseBodyResultLeaveRecords[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      leaveRecords: 'leaveRecords',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      leaveRecords: { 'type': 'array', 'itemType': GetLeaveRecordsResponseBodyResultLeaveRecords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
   duration?: number;
   enable?: boolean;
@@ -5094,6 +5274,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetClosingAccountsResponse>(await this.doROARequest("GetClosingAccounts", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/rules/query`, "json", req, runtime), new GetClosingAccountsResponse({}));
+  }
+
+  async getLeaveRecords(request: GetLeaveRecordsRequest): Promise<GetLeaveRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetLeaveRecordsHeaders({ });
+    return await this.getLeaveRecordsWithOptions(request, headers, runtime);
+  }
+
+  async getLeaveRecordsWithOptions(request: GetLeaveRecordsRequest, headers: GetLeaveRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetLeaveRecordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.leaveCode)) {
+      body["leaveCode"] = request.leaveCode;
+    }
+
+    if (!Util.isUnset(request.opUserId)) {
+      body["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetLeaveRecordsResponse>(await this.doROARequest("GetLeaveRecords", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/vacations/records/query`, "json", req, runtime), new GetLeaveRecordsResponse({}));
   }
 
   async getLeaveType(request: GetLeaveTypeRequest): Promise<GetLeaveTypeResponse> {

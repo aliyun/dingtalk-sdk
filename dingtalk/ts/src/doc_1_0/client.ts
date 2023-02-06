@@ -3617,11 +3617,13 @@ export class SheetFindAllRequest extends $tea.Model {
   findOptions?: SheetFindAllRequestFindOptions;
   text?: string;
   operatorId?: string;
+  select?: string;
   static names(): { [key: string]: string } {
     return {
       findOptions: 'findOptions',
       text: 'text',
       operatorId: 'operatorId',
+      select: 'select',
     };
   }
 
@@ -3630,6 +3632,7 @@ export class SheetFindAllRequest extends $tea.Model {
       findOptions: SheetFindAllRequestFindOptions,
       text: 'string',
       operatorId: 'string',
+      select: 'string',
     };
   }
 
@@ -5096,15 +5099,18 @@ export class SheetFindAllRequestFindOptions extends $tea.Model {
 
 export class SheetFindAllResponseBodyValue extends $tea.Model {
   a1Notation?: string;
+  values?: any[][];
   static names(): { [key: string]: string } {
     return {
       a1Notation: 'a1Notation',
+      values: 'values',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       a1Notation: 'string',
+      values: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'any' } },
     };
   }
 
@@ -6766,6 +6772,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.select)) {
+      query["select"] = request.select;
     }
 
     let body : {[key: string ]: any} = { };

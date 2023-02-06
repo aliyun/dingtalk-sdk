@@ -7,6 +7,233 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddContactHideBySceneSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddContactHideBySceneSettingRequest extends $tea.Model {
+  description?: string;
+  excludeDeptIds?: number[];
+  excludeTagIds?: number[];
+  excludeUserIds?: string[];
+  name?: string;
+  nodeListSceneConfig?: AddContactHideBySceneSettingRequestNodeListSceneConfig;
+  objectDeptIds?: number[];
+  objectTagIds?: number[];
+  objectUserIds?: string[];
+  profileSceneConfig?: AddContactHideBySceneSettingRequestProfileSceneConfig;
+  searchSceneConfig?: AddContactHideBySceneSettingRequestSearchSceneConfig;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      excludeDeptIds: 'excludeDeptIds',
+      excludeTagIds: 'excludeTagIds',
+      excludeUserIds: 'excludeUserIds',
+      name: 'name',
+      nodeListSceneConfig: 'nodeListSceneConfig',
+      objectDeptIds: 'objectDeptIds',
+      objectTagIds: 'objectTagIds',
+      objectUserIds: 'objectUserIds',
+      profileSceneConfig: 'profileSceneConfig',
+      searchSceneConfig: 'searchSceneConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      excludeUserIds: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      nodeListSceneConfig: AddContactHideBySceneSettingRequestNodeListSceneConfig,
+      objectDeptIds: { 'type': 'array', 'itemType': 'number' },
+      objectTagIds: { 'type': 'array', 'itemType': 'number' },
+      objectUserIds: { 'type': 'array', 'itemType': 'string' },
+      profileSceneConfig: AddContactHideBySceneSettingRequestProfileSceneConfig,
+      searchSceneConfig: AddContactHideBySceneSettingRequestSearchSceneConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddContactHideBySceneSettingResponseBody extends $tea.Model {
+  settingId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      settingId: 'settingId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      settingId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddContactHideBySceneSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddContactHideBySceneSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddContactHideBySceneSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddEmpAttributeHideBySceneSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddEmpAttributeHideBySceneSettingRequest extends $tea.Model {
+  chatSubtitleConfig?: AddEmpAttributeHideBySceneSettingRequestChatSubtitleConfig;
+  description?: string;
+  excludeDeptIds?: number[];
+  excludeTagIds?: number[];
+  excludeUserIds?: string[];
+  hideFields?: string[];
+  name?: string;
+  objectDeptIds?: number[];
+  objectTagIds?: number[];
+  objectUserIds?: string[];
+  profileSceneConfig?: AddEmpAttributeHideBySceneSettingRequestProfileSceneConfig;
+  searchSceneConfig?: AddEmpAttributeHideBySceneSettingRequestSearchSceneConfig;
+  static names(): { [key: string]: string } {
+    return {
+      chatSubtitleConfig: 'chatSubtitleConfig',
+      description: 'description',
+      excludeDeptIds: 'excludeDeptIds',
+      excludeTagIds: 'excludeTagIds',
+      excludeUserIds: 'excludeUserIds',
+      hideFields: 'hideFields',
+      name: 'name',
+      objectDeptIds: 'objectDeptIds',
+      objectTagIds: 'objectTagIds',
+      objectUserIds: 'objectUserIds',
+      profileSceneConfig: 'profileSceneConfig',
+      searchSceneConfig: 'searchSceneConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatSubtitleConfig: AddEmpAttributeHideBySceneSettingRequestChatSubtitleConfig,
+      description: 'string',
+      excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      excludeUserIds: { 'type': 'array', 'itemType': 'string' },
+      hideFields: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      objectDeptIds: { 'type': 'array', 'itemType': 'number' },
+      objectTagIds: { 'type': 'array', 'itemType': 'number' },
+      objectUserIds: { 'type': 'array', 'itemType': 'string' },
+      profileSceneConfig: AddEmpAttributeHideBySceneSettingRequestProfileSceneConfig,
+      searchSceneConfig: AddEmpAttributeHideBySceneSettingRequestSearchSceneConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddEmpAttributeHideBySceneSettingResponseBody extends $tea.Model {
+  settingId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      settingId: 'settingId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      settingId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddEmpAttributeHideBySceneSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: AddEmpAttributeHideBySceneSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: AddEmpAttributeHideBySceneSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AnnualCertificationAuditHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -555,6 +782,69 @@ export class CreateSecondaryManagementGroupResponse extends $tea.Model {
   }
 }
 
+export class DeleteContactHideBySceneSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteContactHideBySceneSettingResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteContactHideBySceneSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteContactHideBySceneSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteContactHideBySceneSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteContactHideSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -651,6 +941,69 @@ export class DeleteContactRestrictSettingResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: DeleteContactRestrictSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteEmpAttributeHideBySceneSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteEmpAttributeHideBySceneSettingResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteEmpAttributeHideBySceneSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DeleteEmpAttributeHideBySceneSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DeleteEmpAttributeHideBySceneSettingResponseBody,
     };
   }
 
@@ -1121,6 +1474,102 @@ export class GetCardInfoResponse extends $tea.Model {
   }
 }
 
+export class GetContactHideBySceneSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactHideBySceneSettingResponseBody extends $tea.Model {
+  description?: string;
+  excludeDeptIds?: number[];
+  excludeTagIds?: number[];
+  excludeUserIds?: string[];
+  id?: number;
+  name?: string;
+  nodeListSceneConfig?: GetContactHideBySceneSettingResponseBodyNodeListSceneConfig;
+  objectDeptIds?: number[];
+  objectTagIds?: number[];
+  objectUserIds?: string[];
+  profileSceneConfig?: GetContactHideBySceneSettingResponseBodyProfileSceneConfig;
+  searchSceneConfig?: GetContactHideBySceneSettingResponseBodySearchSceneConfig;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      excludeDeptIds: 'excludeDeptIds',
+      excludeTagIds: 'excludeTagIds',
+      excludeUserIds: 'excludeUserIds',
+      id: 'id',
+      name: 'name',
+      nodeListSceneConfig: 'nodeListSceneConfig',
+      objectDeptIds: 'objectDeptIds',
+      objectTagIds: 'objectTagIds',
+      objectUserIds: 'objectUserIds',
+      profileSceneConfig: 'profileSceneConfig',
+      searchSceneConfig: 'searchSceneConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      excludeUserIds: { 'type': 'array', 'itemType': 'string' },
+      id: 'number',
+      name: 'string',
+      nodeListSceneConfig: GetContactHideBySceneSettingResponseBodyNodeListSceneConfig,
+      objectDeptIds: { 'type': 'array', 'itemType': 'number' },
+      objectTagIds: { 'type': 'array', 'itemType': 'number' },
+      objectUserIds: { 'type': 'array', 'itemType': 'string' },
+      profileSceneConfig: GetContactHideBySceneSettingResponseBodyProfileSceneConfig,
+      searchSceneConfig: GetContactHideBySceneSettingResponseBodySearchSceneConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactHideBySceneSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetContactHideBySceneSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetContactHideBySceneSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCooperateOrgInviteInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1321,6 +1770,105 @@ export class GetDingIdByMigrationDingIdResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetDingIdByMigrationDingIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmpAttributeHideBySceneSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmpAttributeHideBySceneSettingResponseBody extends $tea.Model {
+  chatSubtitleConfig?: GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig;
+  description?: string;
+  excludeDeptIds?: number[];
+  excludeTagIds?: number[];
+  excludeUserIds?: string[];
+  hideFields?: string[];
+  id?: number;
+  name?: string;
+  objectDeptIds?: number[];
+  objectTagIds?: number[];
+  objectUserIds?: string[];
+  profileSceneConfig?: GetEmpAttributeHideBySceneSettingResponseBodyProfileSceneConfig;
+  searchSceneConfig?: GetEmpAttributeHideBySceneSettingResponseBodySearchSceneConfig;
+  static names(): { [key: string]: string } {
+    return {
+      chatSubtitleConfig: 'chatSubtitleConfig',
+      description: 'description',
+      excludeDeptIds: 'excludeDeptIds',
+      excludeTagIds: 'excludeTagIds',
+      excludeUserIds: 'excludeUserIds',
+      hideFields: 'hideFields',
+      id: 'id',
+      name: 'name',
+      objectDeptIds: 'objectDeptIds',
+      objectTagIds: 'objectTagIds',
+      objectUserIds: 'objectUserIds',
+      profileSceneConfig: 'profileSceneConfig',
+      searchSceneConfig: 'searchSceneConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatSubtitleConfig: GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig,
+      description: 'string',
+      excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      excludeUserIds: { 'type': 'array', 'itemType': 'string' },
+      hideFields: { 'type': 'array', 'itemType': 'string' },
+      id: 'number',
+      name: 'string',
+      objectDeptIds: { 'type': 'array', 'itemType': 'number' },
+      objectTagIds: { 'type': 'array', 'itemType': 'number' },
+      objectUserIds: { 'type': 'array', 'itemType': 'string' },
+      profileSceneConfig: GetEmpAttributeHideBySceneSettingResponseBodyProfileSceneConfig,
+      searchSceneConfig: GetEmpAttributeHideBySceneSettingResponseBodySearchSceneConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmpAttributeHideBySceneSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetEmpAttributeHideBySceneSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetEmpAttributeHideBySceneSettingResponseBody,
     };
   }
 
@@ -4290,6 +4838,118 @@ export class UpdateBranchVisibleSettingInCooperateResponse extends $tea.Model {
   }
 }
 
+export class UpdateContactHideBySceneSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideBySceneSettingRequest extends $tea.Model {
+  description?: string;
+  excludeDeptIds?: number[];
+  excludeTagIds?: number[];
+  excludeUserIds?: string[];
+  name?: string;
+  nodeListSceneConfig?: UpdateContactHideBySceneSettingRequestNodeListSceneConfig;
+  objectDeptIds?: number[];
+  objectTagIds?: number[];
+  objectUserIds?: string[];
+  profileSceneConfig?: UpdateContactHideBySceneSettingRequestProfileSceneConfig;
+  searchSceneConfig?: UpdateContactHideBySceneSettingRequestSearchSceneConfig;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      excludeDeptIds: 'excludeDeptIds',
+      excludeTagIds: 'excludeTagIds',
+      excludeUserIds: 'excludeUserIds',
+      name: 'name',
+      nodeListSceneConfig: 'nodeListSceneConfig',
+      objectDeptIds: 'objectDeptIds',
+      objectTagIds: 'objectTagIds',
+      objectUserIds: 'objectUserIds',
+      profileSceneConfig: 'profileSceneConfig',
+      searchSceneConfig: 'searchSceneConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      excludeUserIds: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      nodeListSceneConfig: UpdateContactHideBySceneSettingRequestNodeListSceneConfig,
+      objectDeptIds: { 'type': 'array', 'itemType': 'number' },
+      objectTagIds: { 'type': 'array', 'itemType': 'number' },
+      objectUserIds: { 'type': 'array', 'itemType': 'string' },
+      profileSceneConfig: UpdateContactHideBySceneSettingRequestProfileSceneConfig,
+      searchSceneConfig: UpdateContactHideBySceneSettingRequestSearchSceneConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideBySceneSettingResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideBySceneSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateContactHideBySceneSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateContactHideBySceneSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateContactHideSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4695,6 +5355,121 @@ export class UpdateEmpAttrbuteVisibilitySettingResponse extends $tea.Model {
   }
 }
 
+export class UpdateEmpAttributeHideBySceneSettingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateEmpAttributeHideBySceneSettingRequest extends $tea.Model {
+  chatSubtitleConfig?: UpdateEmpAttributeHideBySceneSettingRequestChatSubtitleConfig;
+  description?: string;
+  excludeDeptIds?: number[];
+  excludeTagIds?: number[];
+  excludeUserIds?: string[];
+  hideFields?: string[];
+  name?: string;
+  objectDeptIds?: number[];
+  objectTagIds?: number[];
+  objectUserIds?: string[];
+  profileSceneConfig?: UpdateEmpAttributeHideBySceneSettingRequestProfileSceneConfig;
+  searchSceneConfig?: UpdateEmpAttributeHideBySceneSettingRequestSearchSceneConfig;
+  static names(): { [key: string]: string } {
+    return {
+      chatSubtitleConfig: 'chatSubtitleConfig',
+      description: 'description',
+      excludeDeptIds: 'excludeDeptIds',
+      excludeTagIds: 'excludeTagIds',
+      excludeUserIds: 'excludeUserIds',
+      hideFields: 'hideFields',
+      name: 'name',
+      objectDeptIds: 'objectDeptIds',
+      objectTagIds: 'objectTagIds',
+      objectUserIds: 'objectUserIds',
+      profileSceneConfig: 'profileSceneConfig',
+      searchSceneConfig: 'searchSceneConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatSubtitleConfig: UpdateEmpAttributeHideBySceneSettingRequestChatSubtitleConfig,
+      description: 'string',
+      excludeDeptIds: { 'type': 'array', 'itemType': 'number' },
+      excludeTagIds: { 'type': 'array', 'itemType': 'number' },
+      excludeUserIds: { 'type': 'array', 'itemType': 'string' },
+      hideFields: { 'type': 'array', 'itemType': 'string' },
+      name: 'string',
+      objectDeptIds: { 'type': 'array', 'itemType': 'number' },
+      objectTagIds: { 'type': 'array', 'itemType': 'number' },
+      objectUserIds: { 'type': 'array', 'itemType': 'string' },
+      profileSceneConfig: UpdateEmpAttributeHideBySceneSettingRequestProfileSceneConfig,
+      searchSceneConfig: UpdateEmpAttributeHideBySceneSettingRequestSearchSceneConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateEmpAttributeHideBySceneSettingResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateEmpAttributeHideBySceneSettingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateEmpAttributeHideBySceneSettingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateEmpAttributeHideBySceneSettingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateManagementGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4925,6 +5700,126 @@ export class UpdateUserOwnnessResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateUserOwnnessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddContactHideBySceneSettingRequestNodeListSceneConfig extends $tea.Model {
+  active?: boolean;
+  deptObjectIncludeEmp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      deptObjectIncludeEmp: 'deptObjectIncludeEmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      deptObjectIncludeEmp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddContactHideBySceneSettingRequestProfileSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddContactHideBySceneSettingRequestSearchSceneConfig extends $tea.Model {
+  active?: boolean;
+  deptObjectIncludeEmp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      deptObjectIncludeEmp: 'deptObjectIncludeEmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      deptObjectIncludeEmp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddEmpAttributeHideBySceneSettingRequestChatSubtitleConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddEmpAttributeHideBySceneSettingRequestProfileSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddEmpAttributeHideBySceneSettingRequestSearchSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
     };
   }
 
@@ -5250,6 +6145,126 @@ export class GetCardInfoResponseBodyExtension extends $tea.Model {
       videoFileName: 'string',
       videoTitle: 'string',
       videoUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactHideBySceneSettingResponseBodyNodeListSceneConfig extends $tea.Model {
+  active?: boolean;
+  deptObjectIncludeEmp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      deptObjectIncludeEmp: 'deptObjectIncludeEmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      deptObjectIncludeEmp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactHideBySceneSettingResponseBodyProfileSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactHideBySceneSettingResponseBodySearchSceneConfig extends $tea.Model {
+  active?: boolean;
+  deptObjectIncludeEmp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      deptObjectIncludeEmp: 'deptObjectIncludeEmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      deptObjectIncludeEmp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmpAttributeHideBySceneSettingResponseBodyProfileSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmpAttributeHideBySceneSettingResponseBodySearchSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
     };
   }
 
@@ -5822,6 +6837,126 @@ export class UpdateBranchVisibleSettingInCooperateRequestBody extends $tea.Model
   }
 }
 
+export class UpdateContactHideBySceneSettingRequestNodeListSceneConfig extends $tea.Model {
+  active?: boolean;
+  deptObjectIncludeEmp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      deptObjectIncludeEmp: 'deptObjectIncludeEmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      deptObjectIncludeEmp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideBySceneSettingRequestProfileSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateContactHideBySceneSettingRequestSearchSceneConfig extends $tea.Model {
+  active?: boolean;
+  deptObjectIncludeEmp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      deptObjectIncludeEmp: 'deptObjectIncludeEmp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      deptObjectIncludeEmp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateEmpAttributeHideBySceneSettingRequestChatSubtitleConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateEmpAttributeHideBySceneSettingRequestProfileSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateEmpAttributeHideBySceneSettingRequestSearchSceneConfig extends $tea.Model {
+  active?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateManagementGroupRequestMembers extends $tea.Model {
   memberId?: string;
   memberType?: string;
@@ -5878,6 +7013,148 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async addContactHideBySceneSetting(request: AddContactHideBySceneSettingRequest): Promise<AddContactHideBySceneSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddContactHideBySceneSettingHeaders({ });
+    return await this.addContactHideBySceneSettingWithOptions(request, headers, runtime);
+  }
+
+  async addContactHideBySceneSettingWithOptions(request: AddContactHideBySceneSettingRequest, headers: AddContactHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<AddContactHideBySceneSettingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.excludeDeptIds)) {
+      body["excludeDeptIds"] = request.excludeDeptIds;
+    }
+
+    if (!Util.isUnset(request.excludeTagIds)) {
+      body["excludeTagIds"] = request.excludeTagIds;
+    }
+
+    if (!Util.isUnset(request.excludeUserIds)) {
+      body["excludeUserIds"] = request.excludeUserIds;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.nodeListSceneConfig)) {
+      body["nodeListSceneConfig"] = request.nodeListSceneConfig;
+    }
+
+    if (!Util.isUnset(request.objectDeptIds)) {
+      body["objectDeptIds"] = request.objectDeptIds;
+    }
+
+    if (!Util.isUnset(request.objectTagIds)) {
+      body["objectTagIds"] = request.objectTagIds;
+    }
+
+    if (!Util.isUnset(request.objectUserIds)) {
+      body["objectUserIds"] = request.objectUserIds;
+    }
+
+    if (!Util.isUnset(request.profileSceneConfig)) {
+      body["profileSceneConfig"] = request.profileSceneConfig;
+    }
+
+    if (!Util.isUnset(request.searchSceneConfig)) {
+      body["searchSceneConfig"] = request.searchSceneConfig;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddContactHideBySceneSettingResponse>(await this.doROARequest("AddContactHideBySceneSetting", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/organizations/hides/settings`, "json", req, runtime), new AddContactHideBySceneSettingResponse({}));
+  }
+
+  async addEmpAttributeHideBySceneSetting(request: AddEmpAttributeHideBySceneSettingRequest): Promise<AddEmpAttributeHideBySceneSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddEmpAttributeHideBySceneSettingHeaders({ });
+    return await this.addEmpAttributeHideBySceneSettingWithOptions(request, headers, runtime);
+  }
+
+  async addEmpAttributeHideBySceneSettingWithOptions(request: AddEmpAttributeHideBySceneSettingRequest, headers: AddEmpAttributeHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<AddEmpAttributeHideBySceneSettingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.chatSubtitleConfig)) {
+      body["chatSubtitleConfig"] = request.chatSubtitleConfig;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.excludeDeptIds)) {
+      body["excludeDeptIds"] = request.excludeDeptIds;
+    }
+
+    if (!Util.isUnset(request.excludeTagIds)) {
+      body["excludeTagIds"] = request.excludeTagIds;
+    }
+
+    if (!Util.isUnset(request.excludeUserIds)) {
+      body["excludeUserIds"] = request.excludeUserIds;
+    }
+
+    if (!Util.isUnset(request.hideFields)) {
+      body["hideFields"] = request.hideFields;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.objectDeptIds)) {
+      body["objectDeptIds"] = request.objectDeptIds;
+    }
+
+    if (!Util.isUnset(request.objectTagIds)) {
+      body["objectTagIds"] = request.objectTagIds;
+    }
+
+    if (!Util.isUnset(request.objectUserIds)) {
+      body["objectUserIds"] = request.objectUserIds;
+    }
+
+    if (!Util.isUnset(request.profileSceneConfig)) {
+      body["profileSceneConfig"] = request.profileSceneConfig;
+    }
+
+    if (!Util.isUnset(request.searchSceneConfig)) {
+      body["searchSceneConfig"] = request.searchSceneConfig;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<AddEmpAttributeHideBySceneSettingResponse>(await this.doROARequest("AddEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/empAttributes/hides/settings`, "json", req, runtime), new AddEmpAttributeHideBySceneSettingResponse({}));
+  }
 
   async annualCertificationAudit(request: AnnualCertificationAuditRequest): Promise<AnnualCertificationAuditResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6154,6 +7431,29 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateSecondaryManagementGroupResponse>(await this.doROARequest("CreateSecondaryManagementGroup", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/secondaryAdministrators/managementGroups`, "json", req, runtime), new CreateSecondaryManagementGroupResponse({}));
   }
 
+  async deleteContactHideBySceneSetting(settingId: string): Promise<DeleteContactHideBySceneSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteContactHideBySceneSettingHeaders({ });
+    return await this.deleteContactHideBySceneSettingWithOptions(settingId, headers, runtime);
+  }
+
+  async deleteContactHideBySceneSettingWithOptions(settingId: string, headers: DeleteContactHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteContactHideBySceneSettingResponse> {
+    settingId = OpenApiUtil.getEncodeParam(settingId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DeleteContactHideBySceneSettingResponse>(await this.doROARequest("DeleteContactHideBySceneSetting", "contact_1.0", "HTTP", "DELETE", "AK", `/v1.0/contact/organizations/hides/settings/${settingId}`, "json", req, runtime), new DeleteContactHideBySceneSettingResponse({}));
+  }
+
   async deleteContactHideSetting(settingId: string): Promise<DeleteContactHideSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteContactHideSettingHeaders({ });
@@ -6198,6 +7498,29 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<DeleteContactRestrictSettingResponse>(await this.doROARequest("DeleteContactRestrictSetting", "contact_1.0", "HTTP", "DELETE", "AK", `/v1.0/contact/restrictions/settings/${settingId}`, "json", req, runtime), new DeleteContactRestrictSettingResponse({}));
+  }
+
+  async deleteEmpAttributeHideBySceneSetting(settingId: string): Promise<DeleteEmpAttributeHideBySceneSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteEmpAttributeHideBySceneSettingHeaders({ });
+    return await this.deleteEmpAttributeHideBySceneSettingWithOptions(settingId, headers, runtime);
+  }
+
+  async deleteEmpAttributeHideBySceneSettingWithOptions(settingId: string, headers: DeleteEmpAttributeHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEmpAttributeHideBySceneSettingResponse> {
+    settingId = OpenApiUtil.getEncodeParam(settingId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<DeleteEmpAttributeHideBySceneSettingResponse>(await this.doROARequest("DeleteEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "DELETE", "AK", `/v1.0/contact/empAttributes/hides/settings/${settingId}`, "json", req, runtime), new DeleteEmpAttributeHideBySceneSettingResponse({}));
   }
 
   async deleteEmpAttributeVisibility(settingId: string): Promise<DeleteEmpAttributeVisibilityResponse> {
@@ -6364,6 +7687,29 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCardInfoResponse>(await this.doROARequest("GetCardInfo", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cards/infos/${cardId}`, "json", req, runtime), new GetCardInfoResponse({}));
   }
 
+  async getContactHideBySceneSetting(settingId: string): Promise<GetContactHideBySceneSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetContactHideBySceneSettingHeaders({ });
+    return await this.getContactHideBySceneSettingWithOptions(settingId, headers, runtime);
+  }
+
+  async getContactHideBySceneSettingWithOptions(settingId: string, headers: GetContactHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetContactHideBySceneSettingResponse> {
+    settingId = OpenApiUtil.getEncodeParam(settingId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetContactHideBySceneSettingResponse>(await this.doROARequest("GetContactHideBySceneSetting", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/organizations/hides/settings/${settingId}`, "json", req, runtime), new GetContactHideBySceneSettingResponse({}));
+  }
+
   async getCooperateOrgInviteInfo(cooperateCorpId: string): Promise<GetCooperateOrgInviteInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCooperateOrgInviteInfoHeaders({ });
@@ -6436,6 +7782,29 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetDingIdByMigrationDingIdResponse>(await this.doROARequest("GetDingIdByMigrationDingId", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/orgAccount/getDingIdByMigrationDingIds`, "json", req, runtime), new GetDingIdByMigrationDingIdResponse({}));
+  }
+
+  async getEmpAttributeHideBySceneSetting(settingId: string): Promise<GetEmpAttributeHideBySceneSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetEmpAttributeHideBySceneSettingHeaders({ });
+    return await this.getEmpAttributeHideBySceneSettingWithOptions(settingId, headers, runtime);
+  }
+
+  async getEmpAttributeHideBySceneSettingWithOptions(settingId: string, headers: GetEmpAttributeHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmpAttributeHideBySceneSettingResponse> {
+    settingId = OpenApiUtil.getEncodeParam(settingId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetEmpAttributeHideBySceneSettingResponse>(await this.doROARequest("GetEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/empAttributes/hides/settings/${settingId}`, "json", req, runtime), new GetEmpAttributeHideBySceneSettingResponse({}));
   }
 
   async getLatestDingIndex(): Promise<GetLatestDingIndexResponse> {
@@ -7544,6 +8913,76 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateBranchVisibleSettingInCooperateResponse>(await this.doROARequest("UpdateBranchVisibleSettingInCooperate", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/cooperateCorps/branchVisibleSettings`, "none", req, runtime), new UpdateBranchVisibleSettingInCooperateResponse({}));
   }
 
+  async updateContactHideBySceneSetting(settingId: string, request: UpdateContactHideBySceneSettingRequest): Promise<UpdateContactHideBySceneSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateContactHideBySceneSettingHeaders({ });
+    return await this.updateContactHideBySceneSettingWithOptions(settingId, request, headers, runtime);
+  }
+
+  async updateContactHideBySceneSettingWithOptions(settingId: string, request: UpdateContactHideBySceneSettingRequest, headers: UpdateContactHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateContactHideBySceneSettingResponse> {
+    Util.validateModel(request);
+    settingId = OpenApiUtil.getEncodeParam(settingId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.excludeDeptIds)) {
+      body["excludeDeptIds"] = request.excludeDeptIds;
+    }
+
+    if (!Util.isUnset(request.excludeTagIds)) {
+      body["excludeTagIds"] = request.excludeTagIds;
+    }
+
+    if (!Util.isUnset(request.excludeUserIds)) {
+      body["excludeUserIds"] = request.excludeUserIds;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.nodeListSceneConfig)) {
+      body["nodeListSceneConfig"] = request.nodeListSceneConfig;
+    }
+
+    if (!Util.isUnset(request.objectDeptIds)) {
+      body["objectDeptIds"] = request.objectDeptIds;
+    }
+
+    if (!Util.isUnset(request.objectTagIds)) {
+      body["objectTagIds"] = request.objectTagIds;
+    }
+
+    if (!Util.isUnset(request.objectUserIds)) {
+      body["objectUserIds"] = request.objectUserIds;
+    }
+
+    if (!Util.isUnset(request.profileSceneConfig)) {
+      body["profileSceneConfig"] = request.profileSceneConfig;
+    }
+
+    if (!Util.isUnset(request.searchSceneConfig)) {
+      body["searchSceneConfig"] = request.searchSceneConfig;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateContactHideBySceneSettingResponse>(await this.doROARequest("UpdateContactHideBySceneSetting", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/organizations/hides/settings/${settingId}`, "json", req, runtime), new UpdateContactHideBySceneSettingResponse({}));
+  }
+
   async updateContactHideSetting(request: UpdateContactHideSettingRequest): Promise<UpdateContactHideSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateContactHideSettingHeaders({ });
@@ -7790,6 +9229,80 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateEmpAttrbuteVisibilitySettingResponse>(await this.doROARequest("UpdateEmpAttrbuteVisibilitySetting", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/staffAttributes/visibilitySettings`, "json", req, runtime), new UpdateEmpAttrbuteVisibilitySettingResponse({}));
+  }
+
+  async updateEmpAttributeHideBySceneSetting(settingId: string, request: UpdateEmpAttributeHideBySceneSettingRequest): Promise<UpdateEmpAttributeHideBySceneSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateEmpAttributeHideBySceneSettingHeaders({ });
+    return await this.updateEmpAttributeHideBySceneSettingWithOptions(settingId, request, headers, runtime);
+  }
+
+  async updateEmpAttributeHideBySceneSettingWithOptions(settingId: string, request: UpdateEmpAttributeHideBySceneSettingRequest, headers: UpdateEmpAttributeHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateEmpAttributeHideBySceneSettingResponse> {
+    Util.validateModel(request);
+    settingId = OpenApiUtil.getEncodeParam(settingId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.chatSubtitleConfig)) {
+      body["chatSubtitleConfig"] = request.chatSubtitleConfig;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.excludeDeptIds)) {
+      body["excludeDeptIds"] = request.excludeDeptIds;
+    }
+
+    if (!Util.isUnset(request.excludeTagIds)) {
+      body["excludeTagIds"] = request.excludeTagIds;
+    }
+
+    if (!Util.isUnset(request.excludeUserIds)) {
+      body["excludeUserIds"] = request.excludeUserIds;
+    }
+
+    if (!Util.isUnset(request.hideFields)) {
+      body["hideFields"] = request.hideFields;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.objectDeptIds)) {
+      body["objectDeptIds"] = request.objectDeptIds;
+    }
+
+    if (!Util.isUnset(request.objectTagIds)) {
+      body["objectTagIds"] = request.objectTagIds;
+    }
+
+    if (!Util.isUnset(request.objectUserIds)) {
+      body["objectUserIds"] = request.objectUserIds;
+    }
+
+    if (!Util.isUnset(request.profileSceneConfig)) {
+      body["profileSceneConfig"] = request.profileSceneConfig;
+    }
+
+    if (!Util.isUnset(request.searchSceneConfig)) {
+      body["searchSceneConfig"] = request.searchSceneConfig;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateEmpAttributeHideBySceneSettingResponse>(await this.doROARequest("UpdateEmpAttributeHideBySceneSetting", "contact_1.0", "HTTP", "PUT", "AK", `/v1.0/contact/empAttributes/hides/settings/${settingId}`, "json", req, runtime), new UpdateEmpAttributeHideBySceneSettingResponse({}));
   }
 
   async updateManagementGroup(groupId: string, request: UpdateManagementGroupRequest): Promise<UpdateManagementGroupResponse> {

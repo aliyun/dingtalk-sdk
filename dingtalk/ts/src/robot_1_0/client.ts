@@ -832,6 +832,97 @@ export class OrgGroupSendResponse extends $tea.Model {
   }
 }
 
+export class QueryBotInstanceInGroupInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBotInstanceInGroupInfoRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBotInstanceInGroupInfoResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  openConversationIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      openConversationIds: 'openConversationIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      openConversationIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBotInstanceInGroupInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryBotInstanceInGroupInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryBotInstanceInGroupInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryRobotPluginHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1711,6 +1802,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<OrgGroupSendResponse>(await this.doROARequest("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/send`, "json", req, runtime), new OrgGroupSendResponse({}));
+  }
+
+  async queryBotInstanceInGroupInfo(request: QueryBotInstanceInGroupInfoRequest): Promise<QueryBotInstanceInGroupInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryBotInstanceInGroupInfoHeaders({ });
+    return await this.queryBotInstanceInGroupInfoWithOptions(request, headers, runtime);
+  }
+
+  async queryBotInstanceInGroupInfoWithOptions(request: QueryBotInstanceInGroupInfoRequest, headers: QueryBotInstanceInGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBotInstanceInGroupInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryBotInstanceInGroupInfoResponse>(await this.doROARequest("QueryBotInstanceInGroupInfo", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groups/query`, "json", req, runtime), new QueryBotInstanceInGroupInfoResponse({}));
   }
 
   async queryRobotPlugin(request: QueryRobotPluginRequest): Promise<QueryRobotPluginResponse> {
