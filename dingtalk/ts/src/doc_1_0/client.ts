@@ -4272,6 +4272,8 @@ export class CreateRangeProtectionRequestEditableSetting extends $tea.Model {
   formatCells?: boolean;
   insertColumns?: boolean;
   insertRows?: boolean;
+  toggleColumnsVisibility?: boolean;
+  toggleRowsVisibility?: boolean;
   static names(): { [key: string]: string } {
     return {
       deleteColumns: 'deleteColumns',
@@ -4280,6 +4282,8 @@ export class CreateRangeProtectionRequestEditableSetting extends $tea.Model {
       formatCells: 'formatCells',
       insertColumns: 'insertColumns',
       insertRows: 'insertRows',
+      toggleColumnsVisibility: 'toggleColumnsVisibility',
+      toggleRowsVisibility: 'toggleRowsVisibility',
     };
   }
 
@@ -4291,6 +4295,8 @@ export class CreateRangeProtectionRequestEditableSetting extends $tea.Model {
       formatCells: 'boolean',
       insertColumns: 'boolean',
       insertRows: 'boolean',
+      toggleColumnsVisibility: 'boolean',
+      toggleRowsVisibility: 'boolean',
     };
   }
 
