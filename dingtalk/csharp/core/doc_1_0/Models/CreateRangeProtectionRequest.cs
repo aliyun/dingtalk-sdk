@@ -58,6 +58,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public bool? InsertRows { get; set; }
 
+            /// <summary>
+            /// 是否可显示、隐藏列
+            /// </summary>
+            [NameInMap("toggleColumnsVisibility")]
+            [Validation(Required=false)]
+            public bool? ToggleColumnsVisibility { get; set; }
+
+            /// <summary>
+            /// 是否可显示、隐藏行
+            /// </summary>
+            [NameInMap("toggleRowsVisibility")]
+            [Validation(Required=false)]
+            public bool? ToggleRowsVisibility { get; set; }
+
         }
 
         /// <summary>
