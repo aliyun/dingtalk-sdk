@@ -49,13 +49,29 @@ class editableSetting extends Model
      * @var bool
      */
     public $insertRows;
+
+    /**
+     * @description 是否可显示、隐藏列
+     *
+     * @var bool
+     */
+    public $toggleColumnsVisibility;
+
+    /**
+     * @description 是否可显示、隐藏行
+     *
+     * @var bool
+     */
+    public $toggleRowsVisibility;
     protected $_name = [
-        'deleteColumns' => 'deleteColumns',
-        'deleteRows'    => 'deleteRows',
-        'editCells'     => 'editCells',
-        'formatCells'   => 'formatCells',
-        'insertColumns' => 'insertColumns',
-        'insertRows'    => 'insertRows',
+        'deleteColumns'           => 'deleteColumns',
+        'deleteRows'              => 'deleteRows',
+        'editCells'               => 'editCells',
+        'formatCells'             => 'formatCells',
+        'insertColumns'           => 'insertColumns',
+        'insertRows'              => 'insertRows',
+        'toggleColumnsVisibility' => 'toggleColumnsVisibility',
+        'toggleRowsVisibility'    => 'toggleRowsVisibility',
     ];
 
     public function validate()
@@ -82,6 +98,12 @@ class editableSetting extends Model
         }
         if (null !== $this->insertRows) {
             $res['insertRows'] = $this->insertRows;
+        }
+        if (null !== $this->toggleColumnsVisibility) {
+            $res['toggleColumnsVisibility'] = $this->toggleColumnsVisibility;
+        }
+        if (null !== $this->toggleRowsVisibility) {
+            $res['toggleRowsVisibility'] = $this->toggleRowsVisibility;
         }
 
         return $res;
@@ -112,6 +134,12 @@ class editableSetting extends Model
         }
         if (isset($map['insertRows'])) {
             $model->insertRows = $map['insertRows'];
+        }
+        if (isset($map['toggleColumnsVisibility'])) {
+            $model->toggleColumnsVisibility = $map['toggleColumnsVisibility'];
+        }
+        if (isset($map['toggleRowsVisibility'])) {
+            $model->toggleRowsVisibility = $map['toggleRowsVisibility'];
         }
 
         return $model;

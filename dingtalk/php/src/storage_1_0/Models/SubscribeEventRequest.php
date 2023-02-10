@@ -17,7 +17,7 @@ class SubscribeEventRequest extends Model
 
     /**
      * @description 订阅范围对应的id
-     * SPACE时，对应的是空间id
+     * scope为SPACE时，scopeId对应的是空间id
      * @var string
      */
     public $scopeId;
