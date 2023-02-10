@@ -1730,6 +1730,8 @@ class CreateRangeProtectionRequestEditableSetting(TeaModel):
         format_cells: bool = None,
         insert_columns: bool = None,
         insert_rows: bool = None,
+        toggle_columns_visibility: bool = None,
+        toggle_rows_visibility: bool = None,
     ):
         # 是否可删除列
         self.delete_columns = delete_columns
@@ -1743,6 +1745,10 @@ class CreateRangeProtectionRequestEditableSetting(TeaModel):
         self.insert_columns = insert_columns
         # 是否可插入行
         self.insert_rows = insert_rows
+        # 是否可显示、隐藏列
+        self.toggle_columns_visibility = toggle_columns_visibility
+        # 是否可显示、隐藏行
+        self.toggle_rows_visibility = toggle_rows_visibility
 
     def validate(self):
         pass
@@ -1765,6 +1771,10 @@ class CreateRangeProtectionRequestEditableSetting(TeaModel):
             result['insertColumns'] = self.insert_columns
         if self.insert_rows is not None:
             result['insertRows'] = self.insert_rows
+        if self.toggle_columns_visibility is not None:
+            result['toggleColumnsVisibility'] = self.toggle_columns_visibility
+        if self.toggle_rows_visibility is not None:
+            result['toggleRowsVisibility'] = self.toggle_rows_visibility
         return result
 
     def from_map(self, m: dict = None):
@@ -1781,6 +1791,10 @@ class CreateRangeProtectionRequestEditableSetting(TeaModel):
             self.insert_columns = m.get('insertColumns')
         if m.get('insertRows') is not None:
             self.insert_rows = m.get('insertRows')
+        if m.get('toggleColumnsVisibility') is not None:
+            self.toggle_columns_visibility = m.get('toggleColumnsVisibility')
+        if m.get('toggleRowsVisibility') is not None:
+            self.toggle_rows_visibility = m.get('toggleRowsVisibility')
         return self
 
 

@@ -11842,12 +11842,12 @@ class SubscribeEventRequest(TeaModel):
     ):
         # 订阅范围
         # 枚举值:
+        # 	ORG: 企业
         # 	SPACE: 空间
         self.scope = scope
         # 订阅范围对应的id
-        # ORG时，对应的是企业id
-        # APP时，对应的是应用id
-        # SPACE时，对应的是空间id
+        # scope为ORG时，scopeId对应的是企业id
+        # scope为SPACE时，scopeId对应的是空间id
         self.scope_id = scope_id
         # 用户id
         self.union_id = union_id
@@ -11987,12 +11987,12 @@ class UnsubscribeEventRequest(TeaModel):
     ):
         # 订阅范围
         # 枚举值:
+        # 	ORG: 企业
         # 	SPACE: 空间
         self.scope = scope
         # 订阅范围对应的id
-        # ORG时，对应的是企业id
-        # APP时，对应的是应用id
-        # SPACE时，对应的是空间id
+        # scope为ORG时，scopeId对应的是企业id
+        # scope为SPACE时，scopeId对应的是空间id
         self.scope_id = scope_id
         # 用户id
         self.union_id = union_id
