@@ -88,6 +88,18 @@ public class CreateRangeProtectionRequest extends TeaModel {
         @NameInMap("insertRows")
         public Boolean insertRows;
 
+        /**
+         * <p>是否可显示、隐藏列</p>
+         */
+        @NameInMap("toggleColumnsVisibility")
+        public Boolean toggleColumnsVisibility;
+
+        /**
+         * <p>是否可显示、隐藏行</p>
+         */
+        @NameInMap("toggleRowsVisibility")
+        public Boolean toggleRowsVisibility;
+
         public static CreateRangeProtectionRequestEditableSetting build(java.util.Map<String, ?> map) throws Exception {
             CreateRangeProtectionRequestEditableSetting self = new CreateRangeProtectionRequestEditableSetting();
             return TeaModel.build(map, self);
@@ -139,6 +151,22 @@ public class CreateRangeProtectionRequest extends TeaModel {
         }
         public Boolean getInsertRows() {
             return this.insertRows;
+        }
+
+        public CreateRangeProtectionRequestEditableSetting setToggleColumnsVisibility(Boolean toggleColumnsVisibility) {
+            this.toggleColumnsVisibility = toggleColumnsVisibility;
+            return this;
+        }
+        public Boolean getToggleColumnsVisibility() {
+            return this.toggleColumnsVisibility;
+        }
+
+        public CreateRangeProtectionRequestEditableSetting setToggleRowsVisibility(Boolean toggleRowsVisibility) {
+            this.toggleRowsVisibility = toggleRowsVisibility;
+            return this;
+        }
+        public Boolean getToggleRowsVisibility() {
+            return this.toggleRowsVisibility;
         }
 
     }
