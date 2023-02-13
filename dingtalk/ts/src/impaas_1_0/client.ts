@@ -395,6 +395,7 @@ export class CreateTrustGroupRequest extends $tea.Model {
   members?: CreateTrustGroupRequestMembers[];
   name?: string;
   properties?: { [key: string]: string };
+  systemMsg?: string;
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -403,6 +404,7 @@ export class CreateTrustGroupRequest extends $tea.Model {
       members: 'members',
       name: 'name',
       properties: 'properties',
+      systemMsg: 'systemMsg',
       uuid: 'uuid',
     };
   }
@@ -414,6 +416,7 @@ export class CreateTrustGroupRequest extends $tea.Model {
       members: { 'type': 'array', 'itemType': CreateTrustGroupRequestMembers },
       name: 'string',
       properties: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      systemMsg: 'string',
       uuid: 'string',
     };
   }
@@ -1959,6 +1962,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.properties)) {
       body["properties"] = request.properties;
+    }
+
+    if (!Util.isUnset(request.systemMsg)) {
+      body["systemMsg"] = request.systemMsg;
     }
 
     if (!Util.isUnset(request.uuid)) {
