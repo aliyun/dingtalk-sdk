@@ -440,6 +440,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             {
                 body["properties"] = request.Properties;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemMsg))
+            {
+                body["systemMsg"] = request.SystemMsg;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
             {
                 body["uuid"] = request.Uuid;
@@ -488,6 +492,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Properties))
             {
                 body["properties"] = request.Properties;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemMsg))
+            {
+                body["systemMsg"] = request.SystemMsg;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
             {

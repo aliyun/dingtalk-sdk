@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class CreateTrustGroupRequest : TeaModel {
         /// <summary>
-        /// MPASS渠道编码
+        /// IMPASS渠道编码
         /// </summary>
         [NameInMap("channel")]
         [Validation(Required=false)]
@@ -59,6 +59,13 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [NameInMap("properties")]
         [Validation(Required=false)]
         public Dictionary<string, string> Properties { get; set; }
+
+        /// <summary>
+        /// 系统消息
+        /// </summary>
+        [NameInMap("systemMsg")]
+        [Validation(Required=false)]
+        public string SystemMsg { get; set; }
 
         /// <summary>
         /// 外部系统映射唯一标识
