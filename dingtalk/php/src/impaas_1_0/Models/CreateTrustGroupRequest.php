@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class CreateTrustGroupRequest extends Model
 {
     /**
-     * @description MPASS渠道编码
+     * @description IMPASS渠道编码
      *
      * @var string
      */
@@ -45,6 +45,13 @@ class CreateTrustGroupRequest extends Model
     public $properties;
 
     /**
+     * @description 系统消息
+     *
+     * @var string
+     */
+    public $systemMsg;
+
+    /**
      * @description 外部系统映射唯一标识
      *
      * @var string
@@ -56,6 +63,7 @@ class CreateTrustGroupRequest extends Model
         'members'     => 'members',
         'name'        => 'name',
         'properties'  => 'properties',
+        'systemMsg'   => 'systemMsg',
         'uuid'        => 'uuid',
     ];
 
@@ -86,6 +94,9 @@ class CreateTrustGroupRequest extends Model
         }
         if (null !== $this->properties) {
             $res['properties'] = $this->properties;
+        }
+        if (null !== $this->systemMsg) {
+            $res['systemMsg'] = $this->systemMsg;
         }
         if (null !== $this->uuid) {
             $res['uuid'] = $this->uuid;
@@ -122,6 +133,9 @@ class CreateTrustGroupRequest extends Model
         }
         if (isset($map['properties'])) {
             $model->properties = $map['properties'];
+        }
+        if (isset($map['systemMsg'])) {
+            $model->systemMsg = $map['systemMsg'];
         }
         if (isset($map['uuid'])) {
             $model->uuid = $map['uuid'];

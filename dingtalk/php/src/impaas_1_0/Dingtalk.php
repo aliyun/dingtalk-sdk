@@ -330,6 +330,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->properties)) {
             @$body['properties'] = $request->properties;
         }
+        if (!Utils::isUnset($request->systemMsg)) {
+            @$body['systemMsg'] = $request->systemMsg;
+        }
         if (!Utils::isUnset($request->uuid)) {
             @$body['uuid'] = $request->uuid;
         }
