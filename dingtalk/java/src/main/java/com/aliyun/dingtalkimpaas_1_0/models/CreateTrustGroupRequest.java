@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class CreateTrustGroupRequest extends TeaModel {
     /**
-     * <p>MPASS渠道编码</p>
+     * <p>IMPASS渠道编码</p>
      */
     @NameInMap("channel")
     public String channel;
@@ -33,6 +33,12 @@ public class CreateTrustGroupRequest extends TeaModel {
      */
     @NameInMap("properties")
     public java.util.Map<String, String> properties;
+
+    /**
+     * <p>系统消息</p>
+     */
+    @NameInMap("systemMsg")
+    public String systemMsg;
 
     /**
      * <p>外部系统映射唯一标识</p>
@@ -83,6 +89,14 @@ public class CreateTrustGroupRequest extends TeaModel {
     }
     public java.util.Map<String, String> getProperties() {
         return this.properties;
+    }
+
+    public CreateTrustGroupRequest setSystemMsg(String systemMsg) {
+        this.systemMsg = systemMsg;
+        return this;
+    }
+    public String getSystemMsg() {
+        return this.systemMsg;
     }
 
     public CreateTrustGroupRequest setUuid(String uuid) {

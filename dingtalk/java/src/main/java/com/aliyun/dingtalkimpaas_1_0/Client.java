@@ -221,6 +221,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("properties", request.properties);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.systemMsg)) {
+            body.put("systemMsg", request.systemMsg);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
             body.put("uuid", request.uuid);
         }
