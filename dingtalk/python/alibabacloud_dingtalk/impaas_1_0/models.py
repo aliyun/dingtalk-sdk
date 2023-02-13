@@ -697,9 +697,10 @@ class CreateTrustGroupRequest(TeaModel):
         members: List[CreateTrustGroupRequestMembers] = None,
         name: str = None,
         properties: Dict[str, str] = None,
+        system_msg: str = None,
         uuid: str = None,
     ):
-        # MPASS渠道编码
+        # IMPASS渠道编码
         self.channel = channel
         # 素材ID
         self.icon_media_id = icon_media_id
@@ -709,6 +710,8 @@ class CreateTrustGroupRequest(TeaModel):
         self.name = name
         # 其他扩展参数
         self.properties = properties
+        # 系统消息
+        self.system_msg = system_msg
         # 外部系统映射唯一标识
         self.uuid = uuid
 
@@ -736,6 +739,8 @@ class CreateTrustGroupRequest(TeaModel):
             result['name'] = self.name
         if self.properties is not None:
             result['properties'] = self.properties
+        if self.system_msg is not None:
+            result['systemMsg'] = self.system_msg
         if self.uuid is not None:
             result['uuid'] = self.uuid
         return result
@@ -755,6 +760,8 @@ class CreateTrustGroupRequest(TeaModel):
             self.name = m.get('name')
         if m.get('properties') is not None:
             self.properties = m.get('properties')
+        if m.get('systemMsg') is not None:
+            self.system_msg = m.get('systemMsg')
         if m.get('uuid') is not None:
             self.uuid = m.get('uuid')
         return self

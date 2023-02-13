@@ -373,6 +373,8 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.properties):
             body['properties'] = request.properties
+        if not UtilClient.is_unset(request.system_msg):
+            body['systemMsg'] = request.system_msg
         if not UtilClient.is_unset(request.uuid):
             body['uuid'] = request.uuid
         real_headers = {}
@@ -409,6 +411,8 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.properties):
             body['properties'] = request.properties
+        if not UtilClient.is_unset(request.system_msg):
+            body['systemMsg'] = request.system_msg
         if not UtilClient.is_unset(request.uuid):
             body['uuid'] = request.uuid
         real_headers = {}
