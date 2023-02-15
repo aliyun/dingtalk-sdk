@@ -115,6 +115,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ApplyBatchPay', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/pay', 'json', req, runtime)
         )
 
+    def close_loan_entrance(
+        self,
+        request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
+    ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.CloseLoanEntranceHeaders()
+        return self.close_loan_entrance_with_options(request, headers, runtime)
+
+    async def close_loan_entrance_async(
+        self,
+        request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
+    ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.CloseLoanEntranceHeaders()
+        return await self.close_loan_entrance_with_options_async(request, headers, runtime)
+
+    def close_loan_entrance_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
+        headers: dingtalkfinance__1__0_models.CloseLoanEntranceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.CloseLoanEntranceResponse(),
+            self.do_roarequest('CloseLoanEntrance', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/loans/entrances/close', 'json', req, runtime)
+        )
+
+    async def close_loan_entrance_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
+        headers: dingtalkfinance__1__0_models.CloseLoanEntranceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.CloseLoanEntranceResponse(),
+            await self.do_roarequest_async('CloseLoanEntrance', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/loans/entrances/close', 'json', req, runtime)
+        )
+
     def consult_create_sub_institution(
         self,
         request: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionRequest,

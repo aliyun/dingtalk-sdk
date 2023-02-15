@@ -507,6 +507,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchAddContacts', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
         )
 
+    def batch_add_follow_records(
+        self,
+        request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders()
+        return self.batch_add_follow_records_with_options(request, headers, runtime)
+
+    async def batch_add_follow_records_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders()
+        return await self.batch_add_follow_records_with_options_async(request, headers, runtime)
+
+    def batch_add_follow_records_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
+        headers: dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_list):
+            body['instanceList'] = request.instance_list
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse(),
+            self.do_roarequest('BatchAddFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/followRecords/batch', 'json', req, runtime)
+        )
+
+    async def batch_add_follow_records_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
+        headers: dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_list):
+            body['instanceList'] = request.instance_list
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse(),
+            await self.do_roarequest_async('BatchAddFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/followRecords/batch', 'json', req, runtime)
+        )
+
     def batch_add_relation_datas(
         self,
         request: dingtalkcrm__1__0_models.BatchAddRelationDatasRequest,
@@ -581,6 +649,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchAddRelationDatasResponse(),
             await self.do_roarequest_async('BatchAddRelationDatas', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relationDatas/batch', 'json', req, runtime)
+        )
+
+    def batch_remove_follow_records(
+        self,
+        request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders()
+        return self.batch_remove_follow_records_with_options(request, headers, runtime)
+
+    async def batch_remove_follow_records_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders()
+        return await self.batch_remove_follow_records_with_options_async(request, headers, runtime)
+
+    def batch_remove_follow_records_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
+        headers: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_ids):
+            body['instanceIds'] = request.instance_ids
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse(),
+            self.do_roarequest('BatchRemoveFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/followRecords/batchRemove', 'json', req, runtime)
+        )
+
+    async def batch_remove_follow_records_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
+        headers: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_ids):
+            body['instanceIds'] = request.instance_ids
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse(),
+            await self.do_roarequest_async('BatchRemoveFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/followRecords/batchRemove', 'json', req, runtime)
         )
 
     def batch_send_official_account_otomessage(
@@ -721,6 +857,74 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchUpdateContactsResponse(),
             await self.do_roarequest_async('BatchUpdateContacts', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
+        )
+
+    def batch_update_follow_records(
+        self,
+        request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders()
+        return self.batch_update_follow_records_with_options(request, headers, runtime)
+
+    async def batch_update_follow_records_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders()
+        return await self.batch_update_follow_records_with_options_async(request, headers, runtime)
+
+    def batch_update_follow_records_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
+        headers: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_list):
+            body['instanceList'] = request.instance_list
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse(),
+            self.do_roarequest('BatchUpdateFollowRecords', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/followRecords/batch', 'json', req, runtime)
+        )
+
+    async def batch_update_follow_records_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
+        headers: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.instance_list):
+            body['instanceList'] = request.instance_list
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse(),
+            await self.do_roarequest_async('BatchUpdateFollowRecords', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/followRecords/batch', 'json', req, runtime)
         )
 
     def batch_update_relation_datas(

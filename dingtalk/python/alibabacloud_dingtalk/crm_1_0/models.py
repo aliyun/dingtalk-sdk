@@ -1396,6 +1396,282 @@ class BatchAddContactsResponse(TeaModel):
         return self
 
 
+class BatchAddFollowRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchAddFollowRecordsRequestInstanceListDataArray(TeaModel):
+    def __init__(
+        self,
+        extend_value: str = None,
+        key: str = None,
+        value: str = None,
+    ):
+        # 模型字段extendValue。
+        self.extend_value = extend_value
+        # 模型字段id。
+        self.key = key
+        # 模型字段value。
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend_value is not None:
+            result['extendValue'] = self.extend_value
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extendValue') is not None:
+            self.extend_value = m.get('extendValue')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class BatchAddFollowRecordsRequestInstanceList(TeaModel):
+    def __init__(
+        self,
+        data_array: List[BatchAddFollowRecordsRequestInstanceListDataArray] = None,
+    ):
+        # 关系模型数据。
+        self.data_array = data_array
+
+    def validate(self):
+        if self.data_array:
+            for k in self.data_array:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['dataArray'] = []
+        if self.data_array is not None:
+            for k in self.data_array:
+                result['dataArray'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data_array = []
+        if m.get('dataArray') is not None:
+            for k in m.get('dataArray'):
+                temp_model = BatchAddFollowRecordsRequestInstanceListDataArray()
+                self.data_array.append(temp_model.from_map(k))
+        return self
+
+
+class BatchAddFollowRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        instance_list: List[BatchAddFollowRecordsRequestInstanceList] = None,
+        operator_user_id: str = None,
+    ):
+        # 关系数据列表。
+        self.instance_list = instance_list
+        # 操作人userId
+        self.operator_user_id = operator_user_id
+
+    def validate(self):
+        if self.instance_list:
+            for k in self.instance_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['instanceList'] = []
+        if self.instance_list is not None:
+            for k in self.instance_list:
+                result['instanceList'].append(k.to_map() if k else None)
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.instance_list = []
+        if m.get('instanceList') is not None:
+            for k in m.get('instanceList'):
+                temp_model = BatchAddFollowRecordsRequestInstanceList()
+                self.instance_list.append(temp_model.from_map(k))
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        return self
+
+
+class BatchAddFollowRecordsResponseBodyResults(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        instance_id: str = None,
+        success: bool = None,
+    ):
+        # 如果保存失败，则表示失败的错误码。
+        self.error_code = error_code
+        # 如果保存失败，则表示失败的错误原因。
+        self.error_msg = error_msg
+        # 保存成功的关系id。
+        self.instance_id = instance_id
+        # 数据是否保存成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchAddFollowRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        results: List[BatchAddFollowRecordsResponseBodyResults] = None,
+    ):
+        # 批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。
+        self.results = results
+
+    def validate(self):
+        if self.results:
+            for k in self.results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['results'] = []
+        if self.results is not None:
+            for k in self.results:
+                result['results'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.results = []
+        if m.get('results') is not None:
+            for k in m.get('results'):
+                temp_model = BatchAddFollowRecordsResponseBodyResults()
+                self.results.append(temp_model.from_map(k))
+        return self
+
+
+class BatchAddFollowRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchAddFollowRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchAddFollowRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchAddRelationDatasHeaders(TeaModel):
     def __init__(
         self,
@@ -1741,6 +2017,196 @@ class BatchAddRelationDatasResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = BatchAddRelationDatasResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchRemoveFollowRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchRemoveFollowRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        instance_ids: List[str] = None,
+        operator_user_id: str = None,
+    ):
+        # 关系数据列表。
+        self.instance_ids = instance_ids
+        # 操作人userId
+        self.operator_user_id = operator_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_ids is not None:
+            result['instanceIds'] = self.instance_ids
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceIds') is not None:
+            self.instance_ids = m.get('instanceIds')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        return self
+
+
+class BatchRemoveFollowRecordsResponseBodyResults(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        instance_id: str = None,
+        success: bool = None,
+    ):
+        # 如果保存失败，则表示失败的错误码。
+        self.error_code = error_code
+        # 如果保存失败，则表示失败的错误原因。
+        self.error_msg = error_msg
+        # 保存成功的关系id。
+        self.instance_id = instance_id
+        # 数据是否保存成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchRemoveFollowRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        results: List[BatchRemoveFollowRecordsResponseBodyResults] = None,
+    ):
+        # 批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。
+        self.results = results
+
+    def validate(self):
+        if self.results:
+            for k in self.results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['results'] = []
+        if self.results is not None:
+            for k in self.results:
+                result['results'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.results = []
+        if m.get('results') is not None:
+            for k in m.get('results'):
+                temp_model = BatchRemoveFollowRecordsResponseBodyResults()
+                self.results.append(temp_model.from_map(k))
+        return self
+
+
+class BatchRemoveFollowRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchRemoveFollowRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchRemoveFollowRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2552,6 +3018,288 @@ class BatchUpdateContactsResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = BatchUpdateContactsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchUpdateFollowRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchUpdateFollowRecordsRequestInstanceListDataArray(TeaModel):
+    def __init__(
+        self,
+        extend_value: str = None,
+        key: str = None,
+        value: str = None,
+    ):
+        # 模型字段extendValue。
+        self.extend_value = extend_value
+        # 模型字段id。
+        self.key = key
+        # 模型字段value。
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extend_value is not None:
+            result['extendValue'] = self.extend_value
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extendValue') is not None:
+            self.extend_value = m.get('extendValue')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class BatchUpdateFollowRecordsRequestInstanceList(TeaModel):
+    def __init__(
+        self,
+        data_array: List[BatchUpdateFollowRecordsRequestInstanceListDataArray] = None,
+        instance_id: str = None,
+    ):
+        # 关系模型数据。
+        self.data_array = data_array
+        self.instance_id = instance_id
+
+    def validate(self):
+        if self.data_array:
+            for k in self.data_array:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['dataArray'] = []
+        if self.data_array is not None:
+            for k in self.data_array:
+                result['dataArray'].append(k.to_map() if k else None)
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data_array = []
+        if m.get('dataArray') is not None:
+            for k in m.get('dataArray'):
+                temp_model = BatchUpdateFollowRecordsRequestInstanceListDataArray()
+                self.data_array.append(temp_model.from_map(k))
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        return self
+
+
+class BatchUpdateFollowRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        instance_list: List[BatchUpdateFollowRecordsRequestInstanceList] = None,
+        operator_user_id: str = None,
+    ):
+        # 关系数据列表。
+        self.instance_list = instance_list
+        # 操作人userId
+        self.operator_user_id = operator_user_id
+
+    def validate(self):
+        if self.instance_list:
+            for k in self.instance_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['instanceList'] = []
+        if self.instance_list is not None:
+            for k in self.instance_list:
+                result['instanceList'].append(k.to_map() if k else None)
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.instance_list = []
+        if m.get('instanceList') is not None:
+            for k in m.get('instanceList'):
+                temp_model = BatchUpdateFollowRecordsRequestInstanceList()
+                self.instance_list.append(temp_model.from_map(k))
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        return self
+
+
+class BatchUpdateFollowRecordsResponseBodyResults(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        instance_id: str = None,
+        success: bool = None,
+    ):
+        # 如果保存失败，则表示失败的错误码。
+        self.error_code = error_code
+        # 如果保存失败，则表示失败的错误原因。
+        self.error_msg = error_msg
+        # 保存成功的关系id。
+        self.instance_id = instance_id
+        # 数据是否保存成功。
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchUpdateFollowRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        results: List[BatchUpdateFollowRecordsResponseBodyResults] = None,
+    ):
+        # 批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。
+        self.results = results
+
+    def validate(self):
+        if self.results:
+            for k in self.results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['results'] = []
+        if self.results is not None:
+            for k in self.results:
+                result['results'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.results = []
+        if m.get('results') is not None:
+            for k in m.get('results'):
+                temp_model = BatchUpdateFollowRecordsResponseBodyResults()
+                self.results.append(temp_model.from_map(k))
+        return self
+
+
+class BatchUpdateFollowRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchUpdateFollowRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchUpdateFollowRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
