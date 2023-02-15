@@ -574,6 +574,91 @@ export class BatchAddContactsResponse extends $tea.Model {
   }
 }
 
+export class BatchAddFollowRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddFollowRecordsRequest extends $tea.Model {
+  instanceList?: BatchAddFollowRecordsRequestInstanceList[];
+  operatorUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instanceList: 'instanceList',
+      operatorUserId: 'operatorUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceList: { 'type': 'array', 'itemType': BatchAddFollowRecordsRequestInstanceList },
+      operatorUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddFollowRecordsResponseBody extends $tea.Model {
+  results?: BatchAddFollowRecordsResponseBodyResults[];
+  static names(): { [key: string]: string } {
+    return {
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      results: { 'type': 'array', 'itemType': BatchAddFollowRecordsResponseBodyResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddFollowRecordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchAddFollowRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchAddFollowRecordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchAddRelationDatasHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -657,6 +742,91 @@ export class BatchAddRelationDatasResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: BatchAddRelationDatasResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRemoveFollowRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRemoveFollowRecordsRequest extends $tea.Model {
+  instanceIds?: string[];
+  operatorUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instanceIds: 'instanceIds',
+      operatorUserId: 'operatorUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceIds: { 'type': 'array', 'itemType': 'string' },
+      operatorUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRemoveFollowRecordsResponseBody extends $tea.Model {
+  results?: BatchRemoveFollowRecordsResponseBodyResults[];
+  static names(): { [key: string]: string } {
+    return {
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      results: { 'type': 'array', 'itemType': BatchRemoveFollowRecordsResponseBodyResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRemoveFollowRecordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchRemoveFollowRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchRemoveFollowRecordsResponseBody,
     };
   }
 
@@ -833,6 +1003,91 @@ export class BatchUpdateContactsResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: BatchUpdateContactsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFollowRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFollowRecordsRequest extends $tea.Model {
+  instanceList?: BatchUpdateFollowRecordsRequestInstanceList[];
+  operatorUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instanceList: 'instanceList',
+      operatorUserId: 'operatorUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceList: { 'type': 'array', 'itemType': BatchUpdateFollowRecordsRequestInstanceList },
+      operatorUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFollowRecordsResponseBody extends $tea.Model {
+  results?: BatchUpdateFollowRecordsResponseBodyResults[];
+  static names(): { [key: string]: string } {
+    return {
+      results: 'results',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      results: { 'type': 'array', 'itemType': BatchUpdateFollowRecordsResponseBodyResults },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFollowRecordsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchUpdateFollowRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchUpdateFollowRecordsResponseBody,
     };
   }
 
@@ -4725,6 +4980,78 @@ export class BatchAddContactsResponseBodyResults extends $tea.Model {
   }
 }
 
+export class BatchAddFollowRecordsRequestInstanceListDataArray extends $tea.Model {
+  extendValue?: string;
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extendValue: 'extendValue',
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extendValue: 'string',
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddFollowRecordsRequestInstanceList extends $tea.Model {
+  dataArray?: BatchAddFollowRecordsRequestInstanceListDataArray[];
+  static names(): { [key: string]: string } {
+    return {
+      dataArray: 'dataArray',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataArray: { 'type': 'array', 'itemType': BatchAddFollowRecordsRequestInstanceListDataArray },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchAddFollowRecordsResponseBodyResults extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
+  instanceId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      instanceId: 'instanceId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorCode: 'string',
+      errorMsg: 'string',
+      instanceId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchAddRelationDatasRequestRelationListBizDataList extends $tea.Model {
   extendValue?: string;
   key?: string;
@@ -4819,6 +5146,34 @@ export class BatchAddRelationDatasResponseBodyResults extends $tea.Model {
       errorCode: 'string',
       errorMsg: 'string',
       relationId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRemoveFollowRecordsResponseBodyResults extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
+  instanceId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      instanceId: 'instanceId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorCode: 'string',
+      errorMsg: 'string',
+      instanceId: 'string',
       success: 'boolean',
     };
   }
@@ -5103,6 +5458,81 @@ export class BatchUpdateContactsResponseBodyResults extends $tea.Model {
       errorCode: 'string',
       errorMsg: 'string',
       relationId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFollowRecordsRequestInstanceListDataArray extends $tea.Model {
+  extendValue?: string;
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extendValue: 'extendValue',
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extendValue: 'string',
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFollowRecordsRequestInstanceList extends $tea.Model {
+  dataArray?: BatchUpdateFollowRecordsRequestInstanceListDataArray[];
+  instanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dataArray: 'dataArray',
+      instanceId: 'instanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataArray: { 'type': 'array', 'itemType': BatchUpdateFollowRecordsRequestInstanceListDataArray },
+      instanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchUpdateFollowRecordsResponseBodyResults extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
+  instanceId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      instanceId: 'instanceId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorCode: 'string',
+      errorMsg: 'string',
+      instanceId: 'string',
       success: 'boolean',
     };
   }
@@ -9470,6 +9900,39 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchAddContactsResponse>(await this.doROARequest("BatchAddContacts", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/contacts/batch`, "json", req, runtime), new BatchAddContactsResponse({}));
   }
 
+  async batchAddFollowRecords(request: BatchAddFollowRecordsRequest): Promise<BatchAddFollowRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchAddFollowRecordsHeaders({ });
+    return await this.batchAddFollowRecordsWithOptions(request, headers, runtime);
+  }
+
+  async batchAddFollowRecordsWithOptions(request: BatchAddFollowRecordsRequest, headers: BatchAddFollowRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddFollowRecordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instanceList)) {
+      body["instanceList"] = request.instanceList;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchAddFollowRecordsResponse>(await this.doROARequest("BatchAddFollowRecords", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/followRecords/batch`, "json", req, runtime), new BatchAddFollowRecordsResponse({}));
+  }
+
   async batchAddRelationDatas(request: BatchAddRelationDatasRequest): Promise<BatchAddRelationDatasResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchAddRelationDatasHeaders({ });
@@ -9509,6 +9972,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchAddRelationDatasResponse>(await this.doROARequest("BatchAddRelationDatas", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relationDatas/batch`, "json", req, runtime), new BatchAddRelationDatasResponse({}));
+  }
+
+  async batchRemoveFollowRecords(request: BatchRemoveFollowRecordsRequest): Promise<BatchRemoveFollowRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchRemoveFollowRecordsHeaders({ });
+    return await this.batchRemoveFollowRecordsWithOptions(request, headers, runtime);
+  }
+
+  async batchRemoveFollowRecordsWithOptions(request: BatchRemoveFollowRecordsRequest, headers: BatchRemoveFollowRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRemoveFollowRecordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instanceIds)) {
+      body["instanceIds"] = request.instanceIds;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRemoveFollowRecordsResponse>(await this.doROARequest("BatchRemoveFollowRecords", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/followRecords/batchRemove`, "json", req, runtime), new BatchRemoveFollowRecordsResponse({}));
   }
 
   async batchSendOfficialAccountOTOMessage(request: BatchSendOfficialAccountOTOMessageRequest): Promise<BatchSendOfficialAccountOTOMessageResponse> {
@@ -9579,6 +10075,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<BatchUpdateContactsResponse>(await this.doROARequest("BatchUpdateContacts", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/contacts/batch`, "json", req, runtime), new BatchUpdateContactsResponse({}));
+  }
+
+  async batchUpdateFollowRecords(request: BatchUpdateFollowRecordsRequest): Promise<BatchUpdateFollowRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchUpdateFollowRecordsHeaders({ });
+    return await this.batchUpdateFollowRecordsWithOptions(request, headers, runtime);
+  }
+
+  async batchUpdateFollowRecordsWithOptions(request: BatchUpdateFollowRecordsRequest, headers: BatchUpdateFollowRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateFollowRecordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instanceList)) {
+      body["instanceList"] = request.instanceList;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchUpdateFollowRecordsResponse>(await this.doROARequest("BatchUpdateFollowRecords", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/followRecords/batch`, "json", req, runtime), new BatchUpdateFollowRecordsResponse({}));
   }
 
   async batchUpdateRelationDatas(request: BatchUpdateRelationDatasRequest): Promise<BatchUpdateRelationDatasResponse> {

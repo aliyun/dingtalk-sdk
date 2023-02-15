@@ -113,6 +113,91 @@ export class ApplyBatchPayResponse extends $tea.Model {
   }
 }
 
+export class CloseLoanEntranceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseLoanEntranceRequest extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseLoanEntranceResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseLoanEntranceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CloseLoanEntranceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CloseLoanEntranceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ConsultCreateSubInstitutionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5056,6 +5141,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ApplyBatchPayResponse>(await this.doROARequest("ApplyBatchPay", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders/pay`, "json", req, runtime), new ApplyBatchPayResponse({}));
+  }
+
+  async closeLoanEntrance(request: CloseLoanEntranceRequest): Promise<CloseLoanEntranceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CloseLoanEntranceHeaders({ });
+    return await this.closeLoanEntranceWithOptions(request, headers, runtime);
+  }
+
+  async closeLoanEntranceWithOptions(request: CloseLoanEntranceRequest, headers: CloseLoanEntranceHeaders, runtime: $Util.RuntimeOptions): Promise<CloseLoanEntranceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.requestId)) {
+      body["requestId"] = request.requestId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CloseLoanEntranceResponse>(await this.doROARequest("CloseLoanEntrance", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/loans/entrances/close`, "json", req, runtime), new CloseLoanEntranceResponse({}));
   }
 
   async consultCreateSubInstitution(request: ConsultCreateSubInstitutionRequest): Promise<ConsultCreateSubInstitutionResponse> {
