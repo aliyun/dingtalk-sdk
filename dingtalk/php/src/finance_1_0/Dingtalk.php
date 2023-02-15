@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ApplyBatchPayHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ApplyBatchPayRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ApplyBatchPayResponse;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CloseLoanEntranceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CloseLoanEntranceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CloseLoanEntranceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ConsultCreateSubInstitutionResponse;
@@ -167,6 +170,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ApplyBatchPayResponse::fromMap($this->doROARequest('ApplyBatchPay', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/batchTrades/orders/pay', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CloseLoanEntranceRequest $request
+     *
+     * @return CloseLoanEntranceResponse
+     */
+    public function closeLoanEntrance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CloseLoanEntranceHeaders([]);
+
+        return $this->closeLoanEntranceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CloseLoanEntranceRequest $request
+     * @param CloseLoanEntranceHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CloseLoanEntranceResponse
+     */
+    public function closeLoanEntranceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->requestId)) {
+            @$body['requestId'] = $request->requestId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CloseLoanEntranceResponse::fromMap($this->doROARequest('CloseLoanEntrance', 'finance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/finance/loans/entrances/close', 'json', $req, $runtime));
     }
 
     /**

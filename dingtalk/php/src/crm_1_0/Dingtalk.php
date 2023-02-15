@@ -23,15 +23,24 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddFollowRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddFollowRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddFollowRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchRemoveFollowRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchRemoveFollowRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchRemoveFollowRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchSendOfficialAccountOTOMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateContactsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateContactsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateContactsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateFollowRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateFollowRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateFollowRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasResponse;
@@ -491,6 +500,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param BatchAddFollowRecordsRequest $request
+     *
+     * @return BatchAddFollowRecordsResponse
+     */
+    public function batchAddFollowRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchAddFollowRecordsHeaders([]);
+
+        return $this->batchAddFollowRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchAddFollowRecordsRequest $request
+     * @param BatchAddFollowRecordsHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return BatchAddFollowRecordsResponse
+     */
+    public function batchAddFollowRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceList)) {
+            @$body['instanceList'] = $request->instanceList;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchAddFollowRecordsResponse::fromMap($this->doROARequest('BatchAddFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/followRecords/batch', 'json', $req, $runtime));
+    }
+
+    /**
      * @param BatchAddRelationDatasRequest $request
      *
      * @return BatchAddRelationDatasResponse
@@ -539,6 +593,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchAddRelationDatasResponse::fromMap($this->doROARequest('BatchAddRelationDatas', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relationDatas/batch', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchRemoveFollowRecordsRequest $request
+     *
+     * @return BatchRemoveFollowRecordsResponse
+     */
+    public function batchRemoveFollowRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchRemoveFollowRecordsHeaders([]);
+
+        return $this->batchRemoveFollowRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchRemoveFollowRecordsRequest $request
+     * @param BatchRemoveFollowRecordsHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return BatchRemoveFollowRecordsResponse
+     */
+    public function batchRemoveFollowRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceIds)) {
+            @$body['instanceIds'] = $request->instanceIds;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchRemoveFollowRecordsResponse::fromMap($this->doROARequest('BatchRemoveFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/followRecords/batchRemove', 'json', $req, $runtime));
     }
 
     /**
@@ -632,6 +731,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return BatchUpdateContactsResponse::fromMap($this->doROARequest('BatchUpdateContacts', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/contacts/batch', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchUpdateFollowRecordsRequest $request
+     *
+     * @return BatchUpdateFollowRecordsResponse
+     */
+    public function batchUpdateFollowRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchUpdateFollowRecordsHeaders([]);
+
+        return $this->batchUpdateFollowRecordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchUpdateFollowRecordsRequest $request
+     * @param BatchUpdateFollowRecordsHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return BatchUpdateFollowRecordsResponse
+     */
+    public function batchUpdateFollowRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->instanceList)) {
+            @$body['instanceList'] = $request->instanceList;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            @$body['operatorUserId'] = $request->operatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchUpdateFollowRecordsResponse::fromMap($this->doROARequest('BatchUpdateFollowRecords', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/followRecords/batch', 'json', $req, $runtime));
     }
 
     /**
