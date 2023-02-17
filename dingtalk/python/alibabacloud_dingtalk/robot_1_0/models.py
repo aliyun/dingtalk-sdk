@@ -1899,6 +1899,160 @@ class PrivateChatQueryResponse(TeaModel):
         return self
 
 
+class PrivateChatSendHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PrivateChatSendRequest(TeaModel):
+    def __init__(
+        self,
+        cool_app_code: str = None,
+        msg_key: str = None,
+        msg_param: str = None,
+        open_conversation_id: str = None,
+        robot_code: str = None,
+    ):
+        # 酷应用的code
+        self.cool_app_code = cool_app_code
+        # 消息类型的key
+        self.msg_key = msg_key
+        # 消息体
+        self.msg_param = msg_param
+        # 开放会话ID
+        self.open_conversation_id = open_conversation_id
+        # 机器人robotCode
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.msg_key is not None:
+            result['msgKey'] = self.msg_key
+        if self.msg_param is not None:
+            result['msgParam'] = self.msg_param
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('msgKey') is not None:
+            self.msg_key = m.get('msgKey')
+        if m.get('msgParam') is not None:
+            self.msg_param = m.get('msgParam')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class PrivateChatSendResponseBody(TeaModel):
+    def __init__(
+        self,
+        process_query_key: str = None,
+    ):
+        # 加密消息id
+        self.process_query_key = process_query_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_query_key is not None:
+            result['processQueryKey'] = self.process_query_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processQueryKey') is not None:
+            self.process_query_key = m.get('processQueryKey')
+        return self
+
+
+class PrivateChatSendResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PrivateChatSendResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PrivateChatSendResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryBotInstanceInGroupInfoHeaders(TeaModel):
     def __init__(
         self,

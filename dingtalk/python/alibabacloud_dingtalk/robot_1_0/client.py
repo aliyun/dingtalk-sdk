@@ -895,6 +895,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('PrivateChatQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/query', 'json', req, runtime)
         )
 
+    def private_chat_send(
+        self,
+        request: dingtalkrobot__1__0_models.PrivateChatSendRequest,
+    ) -> dingtalkrobot__1__0_models.PrivateChatSendResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.PrivateChatSendHeaders()
+        return self.private_chat_send_with_options(request, headers, runtime)
+
+    async def private_chat_send_async(
+        self,
+        request: dingtalkrobot__1__0_models.PrivateChatSendRequest,
+    ) -> dingtalkrobot__1__0_models.PrivateChatSendResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.PrivateChatSendHeaders()
+        return await self.private_chat_send_with_options_async(request, headers, runtime)
+
+    def private_chat_send_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.PrivateChatSendRequest,
+        headers: dingtalkrobot__1__0_models.PrivateChatSendHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.PrivateChatSendResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.msg_key):
+            body['msgKey'] = request.msg_key
+        if not UtilClient.is_unset(request.msg_param):
+            body['msgParam'] = request.msg_param
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.PrivateChatSendResponse(),
+            self.do_roarequest('PrivateChatSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/send', 'json', req, runtime)
+        )
+
+    async def private_chat_send_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.PrivateChatSendRequest,
+        headers: dingtalkrobot__1__0_models.PrivateChatSendHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.PrivateChatSendResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.msg_key):
+            body['msgKey'] = request.msg_key
+        if not UtilClient.is_unset(request.msg_param):
+            body['msgParam'] = request.msg_param
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.PrivateChatSendResponse(),
+            await self.do_roarequest_async('PrivateChatSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/send', 'json', req, runtime)
+        )
+
     def query_bot_instance_in_group_info(
         self,
         request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,

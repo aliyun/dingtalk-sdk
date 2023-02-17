@@ -2913,6 +2913,166 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryCardVisitorStatisticData', 'contact_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/contact/cards/visitors/statistics', 'json', req, runtime)
         )
 
+    def query_corp_statistic_data(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCorpStatisticDataRequest,
+    ) -> dingtalkcontact__1__0_models.QueryCorpStatisticDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.QueryCorpStatisticDataHeaders()
+        return self.query_corp_statistic_data_with_options(request, headers, runtime)
+
+    async def query_corp_statistic_data_async(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCorpStatisticDataRequest,
+    ) -> dingtalkcontact__1__0_models.QueryCorpStatisticDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.QueryCorpStatisticDataHeaders()
+        return await self.query_corp_statistic_data_with_options_async(request, headers, runtime)
+
+    def query_corp_statistic_data_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCorpStatisticDataRequest,
+        headers: dingtalkcontact__1__0_models.QueryCorpStatisticDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.QueryCorpStatisticDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.template_ids):
+            body['templateIds'] = request.template_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.QueryCorpStatisticDataResponse(),
+            self.do_roarequest('QueryCorpStatisticData', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cards/templates/statistics/query', 'json', req, runtime)
+        )
+
+    async def query_corp_statistic_data_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCorpStatisticDataRequest,
+        headers: dingtalkcontact__1__0_models.QueryCorpStatisticDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.QueryCorpStatisticDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.template_ids):
+            body['templateIds'] = request.template_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.QueryCorpStatisticDataResponse(),
+            await self.do_roarequest_async('QueryCorpStatisticData', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cards/templates/statistics/query', 'json', req, runtime)
+        )
+
+    def query_corp_user_statistic(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCorpUserStatisticRequest,
+    ) -> dingtalkcontact__1__0_models.QueryCorpUserStatisticResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.QueryCorpUserStatisticHeaders()
+        return self.query_corp_user_statistic_with_options(request, headers, runtime)
+
+    async def query_corp_user_statistic_async(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCorpUserStatisticRequest,
+    ) -> dingtalkcontact__1__0_models.QueryCorpUserStatisticResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.QueryCorpUserStatisticHeaders()
+        return await self.query_corp_user_statistic_with_options_async(request, headers, runtime)
+
+    def query_corp_user_statistic_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCorpUserStatisticRequest,
+        headers: dingtalkcontact__1__0_models.QueryCorpUserStatisticHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.QueryCorpUserStatisticResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.template_ids):
+            body['templateIds'] = request.template_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.QueryCorpUserStatisticResponse(),
+            self.do_roarequest('QueryCorpUserStatistic', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cards/users/statistics/query', 'json', req, runtime)
+        )
+
+    async def query_corp_user_statistic_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.QueryCorpUserStatisticRequest,
+        headers: dingtalkcontact__1__0_models.QueryCorpUserStatisticHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.QueryCorpUserStatisticResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.template_ids):
+            body['templateIds'] = request.template_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.QueryCorpUserStatisticResponse(),
+            await self.do_roarequest_async('QueryCorpUserStatistic', 'contact_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/contact/cards/users/statistics/query', 'json', req, runtime)
+        )
+
     def query_resource_management_members(
         self,
         resource_id: str,

@@ -7950,6 +7950,441 @@ class QueryCardVisitorStatisticDataResponse(TeaModel):
         return self
 
 
+class QueryCorpStatisticDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCorpStatisticDataRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        start_time: str = None,
+        template_ids: List[str] = None,
+        union_id: str = None,
+    ):
+        # 结束时间（yyyymmdd）
+        self.end_time = end_time
+        # 开始时间（yyyymmdd）
+        self.start_time = start_time
+        # 模版id列表
+        self.template_ids = template_ids
+        # 操作者id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.template_ids is not None:
+            result['templateIds'] = self.template_ids
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('templateIds') is not None:
+            self.template_ids = m.get('templateIds')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryCorpStatisticDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        card_be_received_total_cnt: int = None,
+        card_receive_total_cnt: int = None,
+        card_total_be_visited_cnt: int = None,
+        data_date: str = None,
+        ding_total_share_cnt: int = None,
+        total_send_cnt: int = None,
+        wechat_total_share_cnt: int = None,
+    ):
+        # 被收下总数
+        self.card_be_received_total_cnt = card_be_received_total_cnt
+        # 收下总数
+        self.card_receive_total_cnt = card_receive_total_cnt
+        # 被查看总数
+        self.card_total_be_visited_cnt = card_total_be_visited_cnt
+        # 数据日期
+        self.data_date = data_date
+        # 钉钉发送数
+        self.ding_total_share_cnt = ding_total_share_cnt
+        # 总发送数
+        self.total_send_cnt = total_send_cnt
+        # 微信发送数
+        self.wechat_total_share_cnt = wechat_total_share_cnt
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_be_received_total_cnt is not None:
+            result['cardBeReceivedTotalCnt'] = self.card_be_received_total_cnt
+        if self.card_receive_total_cnt is not None:
+            result['cardReceiveTotalCnt'] = self.card_receive_total_cnt
+        if self.card_total_be_visited_cnt is not None:
+            result['cardTotalBeVisitedCnt'] = self.card_total_be_visited_cnt
+        if self.data_date is not None:
+            result['dataDate'] = self.data_date
+        if self.ding_total_share_cnt is not None:
+            result['dingTotalShareCnt'] = self.ding_total_share_cnt
+        if self.total_send_cnt is not None:
+            result['totalSendCnt'] = self.total_send_cnt
+        if self.wechat_total_share_cnt is not None:
+            result['wechatTotalShareCnt'] = self.wechat_total_share_cnt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBeReceivedTotalCnt') is not None:
+            self.card_be_received_total_cnt = m.get('cardBeReceivedTotalCnt')
+        if m.get('cardReceiveTotalCnt') is not None:
+            self.card_receive_total_cnt = m.get('cardReceiveTotalCnt')
+        if m.get('cardTotalBeVisitedCnt') is not None:
+            self.card_total_be_visited_cnt = m.get('cardTotalBeVisitedCnt')
+        if m.get('dataDate') is not None:
+            self.data_date = m.get('dataDate')
+        if m.get('dingTotalShareCnt') is not None:
+            self.ding_total_share_cnt = m.get('dingTotalShareCnt')
+        if m.get('totalSendCnt') is not None:
+            self.total_send_cnt = m.get('totalSendCnt')
+        if m.get('wechatTotalShareCnt') is not None:
+            self.wechat_total_share_cnt = m.get('wechatTotalShareCnt')
+        return self
+
+
+class QueryCorpStatisticDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCorpStatisticDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCorpStatisticDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCorpUserStatisticHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCorpUserStatisticRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        max_results: int = None,
+        next_token: int = None,
+        start_time: str = None,
+        template_ids: List[str] = None,
+        union_id: str = None,
+    ):
+        # 结束时间（yyyymmdd）
+        self.end_time = end_time
+        # 页大小
+        self.max_results = max_results
+        # 当前页
+        self.next_token = next_token
+        # 开始时间（yyyymmdd）
+        self.start_time = start_time
+        # 模版id列表
+        self.template_ids = template_ids
+        # 操作者id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.template_ids is not None:
+            result['templateIds'] = self.template_ids
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('templateIds') is not None:
+            self.template_ids = m.get('templateIds')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryCorpUserStatisticResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        avatar_url: str = None,
+        name: str = None,
+        receive_cnt: int = None,
+        send_cnt: int = None,
+        union_id: str = None,
+    ):
+        # 用户头像
+        self.avatar_url = avatar_url
+        # 用户名称
+        self.name = name
+        # 收下数
+        self.receive_cnt = receive_cnt
+        # 发送数
+        self.send_cnt = send_cnt
+        # 用户id
+        # 
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.name is not None:
+            result['name'] = self.name
+        if self.receive_cnt is not None:
+            result['receiveCnt'] = self.receive_cnt
+        if self.send_cnt is not None:
+            result['sendCnt'] = self.send_cnt
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('receiveCnt') is not None:
+            self.receive_cnt = m.get('receiveCnt')
+        if m.get('sendCnt') is not None:
+            self.send_cnt = m.get('sendCnt')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryCorpUserStatisticResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[QueryCorpUserStatisticResponseBodyList] = None,
+        next_token: int = None,
+        total_count: int = None,
+    ):
+        # 是否还有更多数据
+        self.has_more = has_more
+        self.list = list
+        # 下一游标
+        self.next_token = next_token
+        # 总数
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryCorpUserStatisticResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryCorpUserStatisticResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryCorpUserStatisticResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryCorpUserStatisticResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryResourceManagementMembersHeaders(TeaModel):
     def __init__(
         self,
