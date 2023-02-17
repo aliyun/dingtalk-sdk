@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveProcessRequest\processFeatureConfig;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveProcessRequest\templateConfig;
 use AlibabaCloud\Tea\Model;
 
 class SaveProcessRequest extends Model
@@ -43,12 +44,20 @@ class SaveProcessRequest extends Model
      * @var processFeatureConfig
      */
     public $processFeatureConfig;
+
+    /**
+     * @description 流程中心模板配置
+     *
+     * @var templateConfig
+     */
+    public $templateConfig;
     protected $_name = [
         'description'          => 'description',
         'formComponents'       => 'formComponents',
         'name'                 => 'name',
         'processCode'          => 'processCode',
         'processFeatureConfig' => 'processFeatureConfig',
+        'templateConfig'       => 'templateConfig',
     ];
 
     public function validate()
@@ -78,6 +87,9 @@ class SaveProcessRequest extends Model
         }
         if (null !== $this->processFeatureConfig) {
             $res['processFeatureConfig'] = null !== $this->processFeatureConfig ? $this->processFeatureConfig->toMap() : null;
+        }
+        if (null !== $this->templateConfig) {
+            $res['templateConfig'] = null !== $this->templateConfig ? $this->templateConfig->toMap() : null;
         }
 
         return $res;
@@ -111,6 +123,9 @@ class SaveProcessRequest extends Model
         }
         if (isset($map['processFeatureConfig'])) {
             $model->processFeatureConfig = processFeatureConfig::fromMap($map['processFeatureConfig']);
+        }
+        if (isset($map['templateConfig'])) {
+            $model->templateConfig = templateConfig::fromMap($map['templateConfig']);
         }
 
         return $model;

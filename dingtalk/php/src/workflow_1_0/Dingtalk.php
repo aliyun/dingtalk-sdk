@@ -1856,6 +1856,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->processFeatureConfig)) {
             @$body['processFeatureConfig'] = $request->processFeatureConfig;
         }
+        if (!Utils::isUnset($request->templateConfig)) {
+            @$body['templateConfig'] = $request->templateConfig;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
