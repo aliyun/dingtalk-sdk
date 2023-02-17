@@ -34,6 +34,12 @@ public class SaveProcessRequest extends TeaModel {
     @NameInMap("processFeatureConfig")
     public SaveProcessRequestProcessFeatureConfig processFeatureConfig;
 
+    /**
+     * <p>流程中心模板配置</p>
+     */
+    @NameInMap("templateConfig")
+    public SaveProcessRequestTemplateConfig templateConfig;
+
     public static SaveProcessRequest build(java.util.Map<String, ?> map) throws Exception {
         SaveProcessRequest self = new SaveProcessRequest();
         return TeaModel.build(map, self);
@@ -77,6 +83,14 @@ public class SaveProcessRequest extends TeaModel {
     }
     public SaveProcessRequestProcessFeatureConfig getProcessFeatureConfig() {
         return this.processFeatureConfig;
+    }
+
+    public SaveProcessRequest setTemplateConfig(SaveProcessRequestTemplateConfig templateConfig) {
+        this.templateConfig = templateConfig;
+        return this;
+    }
+    public SaveProcessRequestTemplateConfig getTemplateConfig() {
+        return this.templateConfig;
     }
 
     public static class SaveProcessRequestProcessFeatureConfigFeaturesCallback extends TeaModel {
@@ -224,6 +238,70 @@ public class SaveProcessRequest extends TeaModel {
         }
         public java.util.List<SaveProcessRequestProcessFeatureConfigFeatures> getFeatures() {
             return this.features;
+        }
+
+    }
+
+    public static class SaveProcessRequestTemplateConfig extends TeaModel {
+        /**
+         * <p>表单创建移动端地址</p>
+         */
+        @NameInMap("createInstanceMobileUrl")
+        public String createInstanceMobileUrl;
+
+        /**
+         * <p>表单创建PC端地址</p>
+         */
+        @NameInMap("createInstancePcUrl")
+        public String createInstancePcUrl;
+
+        /**
+         * <p>是否为隐藏模板</p>
+         */
+        @NameInMap("hidden")
+        public Boolean hidden;
+
+        /**
+         * <p>模板编辑地址</p>
+         */
+        @NameInMap("templateEditUrl")
+        public String templateEditUrl;
+
+        public static SaveProcessRequestTemplateConfig build(java.util.Map<String, ?> map) throws Exception {
+            SaveProcessRequestTemplateConfig self = new SaveProcessRequestTemplateConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public SaveProcessRequestTemplateConfig setCreateInstanceMobileUrl(String createInstanceMobileUrl) {
+            this.createInstanceMobileUrl = createInstanceMobileUrl;
+            return this;
+        }
+        public String getCreateInstanceMobileUrl() {
+            return this.createInstanceMobileUrl;
+        }
+
+        public SaveProcessRequestTemplateConfig setCreateInstancePcUrl(String createInstancePcUrl) {
+            this.createInstancePcUrl = createInstancePcUrl;
+            return this;
+        }
+        public String getCreateInstancePcUrl() {
+            return this.createInstancePcUrl;
+        }
+
+        public SaveProcessRequestTemplateConfig setHidden(Boolean hidden) {
+            this.hidden = hidden;
+            return this;
+        }
+        public Boolean getHidden() {
+            return this.hidden;
+        }
+
+        public SaveProcessRequestTemplateConfig setTemplateEditUrl(String templateEditUrl) {
+            this.templateEditUrl = templateEditUrl;
+            return this;
+        }
+        public String getTemplateEditUrl() {
+            return this.templateEditUrl;
         }
 
     }
