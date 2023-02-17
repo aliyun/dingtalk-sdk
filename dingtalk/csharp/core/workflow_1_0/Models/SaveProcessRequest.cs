@@ -112,6 +112,43 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
         }
 
+        /// <summary>
+        /// 流程中心模板配置
+        /// </summary>
+        [NameInMap("templateConfig")]
+        [Validation(Required=false)]
+        public SaveProcessRequestTemplateConfig TemplateConfig { get; set; }
+        public class SaveProcessRequestTemplateConfig : TeaModel {
+            /// <summary>
+            /// 表单创建移动端地址
+            /// </summary>
+            [NameInMap("createInstanceMobileUrl")]
+            [Validation(Required=false)]
+            public string CreateInstanceMobileUrl { get; set; }
+
+            /// <summary>
+            /// 表单创建PC端地址
+            /// </summary>
+            [NameInMap("createInstancePcUrl")]
+            [Validation(Required=false)]
+            public string CreateInstancePcUrl { get; set; }
+
+            /// <summary>
+            /// 是否为隐藏模板
+            /// </summary>
+            [NameInMap("hidden")]
+            [Validation(Required=false)]
+            public bool? Hidden { get; set; }
+
+            /// <summary>
+            /// 模板编辑地址
+            /// </summary>
+            [NameInMap("templateEditUrl")]
+            [Validation(Required=false)]
+            public string TemplateEditUrl { get; set; }
+
+        }
+
     }
 
 }
