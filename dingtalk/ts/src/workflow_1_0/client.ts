@@ -3346,6 +3346,7 @@ export class SaveProcessRequest extends $tea.Model {
   name?: string;
   processCode?: string;
   processFeatureConfig?: SaveProcessRequestProcessFeatureConfig;
+  templateConfig?: SaveProcessRequestTemplateConfig;
   static names(): { [key: string]: string } {
     return {
       description: 'description',
@@ -3353,6 +3354,7 @@ export class SaveProcessRequest extends $tea.Model {
       name: 'name',
       processCode: 'processCode',
       processFeatureConfig: 'processFeatureConfig',
+      templateConfig: 'templateConfig',
     };
   }
 
@@ -3363,6 +3365,7 @@ export class SaveProcessRequest extends $tea.Model {
       name: 'string',
       processCode: 'string',
       processFeatureConfig: SaveProcessRequestProcessFeatureConfig,
+      templateConfig: SaveProcessRequestTemplateConfig,
     };
   }
 
@@ -6368,6 +6371,34 @@ export class SaveProcessRequestProcessFeatureConfig extends $tea.Model {
   }
 }
 
+export class SaveProcessRequestTemplateConfig extends $tea.Model {
+  createInstanceMobileUrl?: string;
+  createInstancePcUrl?: string;
+  hidden?: boolean;
+  templateEditUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createInstanceMobileUrl: 'createInstanceMobileUrl',
+      createInstancePcUrl: 'createInstancePcUrl',
+      hidden: 'hidden',
+      templateEditUrl: 'templateEditUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createInstanceMobileUrl: 'string',
+      createInstancePcUrl: 'string',
+      hidden: 'boolean',
+      templateEditUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SaveProcessResponseBodyResult extends $tea.Model {
   processCode?: string;
   static names(): { [key: string]: string } {
@@ -7916,6 +7947,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.processFeatureConfig)) {
       body["processFeatureConfig"] = request.processFeatureConfig;
+    }
+
+    if (!Util.isUnset(request.templateConfig)) {
+      body["templateConfig"] = request.templateConfig;
     }
 
     let realHeaders : {[key: string ]: string} = { };

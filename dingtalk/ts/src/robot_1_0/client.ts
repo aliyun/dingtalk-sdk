@@ -274,6 +274,97 @@ export class BatchRecallOTOResponse extends $tea.Model {
   }
 }
 
+export class BatchRecallPrivateChatHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallPrivateChatRequest extends $tea.Model {
+  openConversationId?: string;
+  processQueryKeys?: string[];
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      processQueryKeys: 'processQueryKeys',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      processQueryKeys: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallPrivateChatResponseBody extends $tea.Model {
+  failedResult?: { [key: string]: string };
+  successResult?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      failedResult: 'failedResult',
+      successResult: 'successResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failedResult: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      successResult: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchRecallPrivateChatResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchRecallPrivateChatResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchRecallPrivateChatResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchSendOTOHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -445,6 +536,88 @@ export class ClearRobotPluginResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ClearRobotPluginResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBotListInGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBotListInGroupRequest extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBotListInGroupResponseBody extends $tea.Model {
+  chatbotInstanceVOList?: GetBotListInGroupResponseBodyChatbotInstanceVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      chatbotInstanceVOList: 'chatbotInstanceVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatbotInstanceVOList: { 'type': 'array', 'itemType': GetBotListInGroupResponseBodyChatbotInstanceVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetBotListInGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetBotListInGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetBotListInGroupResponseBody,
     };
   }
 
@@ -824,6 +997,109 @@ export class OrgGroupSendResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: OrgGroupSendResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrivateChatQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrivateChatQueryRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  openConversationId?: string;
+  processQueryKey?: string;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      openConversationId: 'openConversationId',
+      processQueryKey: 'processQueryKey',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      openConversationId: 'string',
+      processQueryKey: 'string',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrivateChatQueryResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  readUserIds?: string[];
+  sendStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      readUserIds: 'readUserIds',
+      sendStatus: 'sendStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      readUserIds: { 'type': 'array', 'itemType': 'string' },
+      sendStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrivateChatQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PrivateChatQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PrivateChatQueryResponseBody,
     };
   }
 
@@ -1394,6 +1670,34 @@ export class BatchOTOQueryResponseBodyMessageReadInfoList extends $tea.Model {
   }
 }
 
+export class GetBotListInGroupResponseBodyChatbotInstanceVOList extends $tea.Model {
+  downloadIconURL?: string;
+  name?: string;
+  openRobotType?: number;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      downloadIconURL: 'downloadIconURL',
+      name: 'name',
+      openRobotType: 'openRobotType',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      downloadIconURL: 'string',
+      name: 'string',
+      openRobotType: 'number',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryRobotPluginResponseBodyPluginInfoList extends $tea.Model {
   icon?: string;
   mobileUrl?: string;
@@ -1566,6 +1870,43 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchRecallOTOResponse>(await this.doROARequest("BatchRecallOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/otoMessages/batchRecall`, "json", req, runtime), new BatchRecallOTOResponse({}));
   }
 
+  async batchRecallPrivateChat(request: BatchRecallPrivateChatRequest): Promise<BatchRecallPrivateChatResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchRecallPrivateChatHeaders({ });
+    return await this.batchRecallPrivateChatWithOptions(request, headers, runtime);
+  }
+
+  async batchRecallPrivateChatWithOptions(request: BatchRecallPrivateChatRequest, headers: BatchRecallPrivateChatHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallPrivateChatResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.processQueryKeys)) {
+      body["processQueryKeys"] = request.processQueryKeys;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchRecallPrivateChatResponse>(await this.doROARequest("BatchRecallPrivateChat", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/privateChatMessages/batchRecall`, "json", req, runtime), new BatchRecallPrivateChatResponse({}));
+  }
+
   async batchSendOTO(request: BatchSendOTORequest): Promise<BatchSendOTOResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchSendOTOHeaders({ });
@@ -1634,6 +1975,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<ClearRobotPluginResponse>(await this.doROARequest("ClearRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/plugins/clear`, "json", req, runtime), new ClearRobotPluginResponse({}));
+  }
+
+  async getBotListInGroup(request: GetBotListInGroupRequest): Promise<GetBotListInGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetBotListInGroupHeaders({ });
+    return await this.getBotListInGroupWithOptions(request, headers, runtime);
+  }
+
+  async getBotListInGroupWithOptions(request: GetBotListInGroupRequest, headers: GetBotListInGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetBotListInGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetBotListInGroupResponse>(await this.doROARequest("GetBotListInGroup", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groups/robots/query`, "json", req, runtime), new GetBotListInGroupResponse({}));
   }
 
   async manageSingleChatRobotStatus(request: ManageSingleChatRobotStatusRequest): Promise<ManageSingleChatRobotStatusResponse> {
@@ -1802,6 +2172,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<OrgGroupSendResponse>(await this.doROARequest("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/send`, "json", req, runtime), new OrgGroupSendResponse({}));
+  }
+
+  async privateChatQuery(request: PrivateChatQueryRequest): Promise<PrivateChatQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PrivateChatQueryHeaders({ });
+    return await this.privateChatQueryWithOptions(request, headers, runtime);
+  }
+
+  async privateChatQueryWithOptions(request: PrivateChatQueryRequest, headers: PrivateChatQueryHeaders, runtime: $Util.RuntimeOptions): Promise<PrivateChatQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.processQueryKey)) {
+      body["processQueryKey"] = request.processQueryKey;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PrivateChatQueryResponse>(await this.doROARequest("PrivateChatQuery", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/privateChatMessages/query`, "json", req, runtime), new PrivateChatQueryResponse({}));
   }
 
   async queryBotInstanceInGroupInfo(request: QueryBotInstanceInGroupInfoRequest): Promise<QueryBotInstanceInGroupInfoResponse> {
