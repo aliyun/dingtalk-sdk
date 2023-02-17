@@ -468,6 +468,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("PrivateChatQuery", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/privateChatMessages/query", "json", req, runtime), new PrivateChatQueryResponse());
     }
 
+    public PrivateChatSendResponse privateChatSend(PrivateChatSendRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PrivateChatSendHeaders headers = new PrivateChatSendHeaders();
+        return this.privateChatSendWithOptions(request, headers, runtime);
+    }
+
+    public PrivateChatSendResponse privateChatSendWithOptions(PrivateChatSendRequest request, PrivateChatSendHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.coolAppCode)) {
+            body.put("coolAppCode", request.coolAppCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgKey)) {
+            body.put("msgKey", request.msgKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgParam)) {
+            body.put("msgParam", request.msgParam);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("PrivateChatSend", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/privateChatMessages/send", "json", req, runtime), new PrivateChatSendResponse());
+    }
+
     public QueryBotInstanceInGroupInfoResponse queryBotInstanceInGroupInfo(QueryBotInstanceInGroupInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryBotInstanceInGroupInfoHeaders headers = new QueryBotInstanceInGroupInfoHeaders();
