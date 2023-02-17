@@ -10660,6 +10660,55 @@ class SaveProcessRequestProcessFeatureConfig(TeaModel):
         return self
 
 
+class SaveProcessRequestTemplateConfig(TeaModel):
+    def __init__(
+        self,
+        create_instance_mobile_url: str = None,
+        create_instance_pc_url: str = None,
+        hidden: bool = None,
+        template_edit_url: str = None,
+    ):
+        # 表单创建移动端地址
+        self.create_instance_mobile_url = create_instance_mobile_url
+        # 表单创建PC端地址
+        self.create_instance_pc_url = create_instance_pc_url
+        # 是否为隐藏模板
+        self.hidden = hidden
+        # 模板编辑地址
+        self.template_edit_url = template_edit_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_instance_mobile_url is not None:
+            result['createInstanceMobileUrl'] = self.create_instance_mobile_url
+        if self.create_instance_pc_url is not None:
+            result['createInstancePcUrl'] = self.create_instance_pc_url
+        if self.hidden is not None:
+            result['hidden'] = self.hidden
+        if self.template_edit_url is not None:
+            result['templateEditUrl'] = self.template_edit_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createInstanceMobileUrl') is not None:
+            self.create_instance_mobile_url = m.get('createInstanceMobileUrl')
+        if m.get('createInstancePcUrl') is not None:
+            self.create_instance_pc_url = m.get('createInstancePcUrl')
+        if m.get('hidden') is not None:
+            self.hidden = m.get('hidden')
+        if m.get('templateEditUrl') is not None:
+            self.template_edit_url = m.get('templateEditUrl')
+        return self
+
+
 class SaveProcessRequest(TeaModel):
     def __init__(
         self,
@@ -10668,6 +10717,7 @@ class SaveProcessRequest(TeaModel):
         name: str = None,
         process_code: str = None,
         process_feature_config: SaveProcessRequestProcessFeatureConfig = None,
+        template_config: SaveProcessRequestTemplateConfig = None,
     ):
         # 表单模板描述
         self.description = description
@@ -10679,6 +10729,8 @@ class SaveProcessRequest(TeaModel):
         self.process_code = process_code
         # 流程中心集成配置
         self.process_feature_config = process_feature_config
+        # 流程中心模板配置
+        self.template_config = template_config
 
     def validate(self):
         if self.form_components:
@@ -10687,6 +10739,8 @@ class SaveProcessRequest(TeaModel):
                     k.validate()
         if self.process_feature_config:
             self.process_feature_config.validate()
+        if self.template_config:
+            self.template_config.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -10706,6 +10760,8 @@ class SaveProcessRequest(TeaModel):
             result['processCode'] = self.process_code
         if self.process_feature_config is not None:
             result['processFeatureConfig'] = self.process_feature_config.to_map()
+        if self.template_config is not None:
+            result['templateConfig'] = self.template_config.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -10724,6 +10780,9 @@ class SaveProcessRequest(TeaModel):
         if m.get('processFeatureConfig') is not None:
             temp_model = SaveProcessRequestProcessFeatureConfig()
             self.process_feature_config = temp_model.from_map(m['processFeatureConfig'])
+        if m.get('templateConfig') is not None:
+            temp_model = SaveProcessRequestTemplateConfig()
+            self.template_config = temp_model.from_map(m['templateConfig'])
         return self
 
 

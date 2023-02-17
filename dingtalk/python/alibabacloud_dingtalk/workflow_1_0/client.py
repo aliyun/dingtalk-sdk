@@ -2567,6 +2567,8 @@ class Client(OpenApiClient):
             body['processCode'] = request.process_code
         if not UtilClient.is_unset(request.process_feature_config):
             body['processFeatureConfig'] = request.process_feature_config
+        if not UtilClient.is_unset(request.template_config):
+            body['templateConfig'] = request.template_config
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2599,6 +2601,8 @@ class Client(OpenApiClient):
             body['processCode'] = request.process_code
         if not UtilClient.is_unset(request.process_feature_config):
             body['processFeatureConfig'] = request.process_feature_config
+        if not UtilClient.is_unset(request.template_config):
+            body['templateConfig'] = request.template_config
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

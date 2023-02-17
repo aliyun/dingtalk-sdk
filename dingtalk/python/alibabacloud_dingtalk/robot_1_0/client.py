@@ -231,6 +231,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchRecallOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/otoMessages/batchRecall', 'json', req, runtime)
         )
 
+    def batch_recall_private_chat(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallPrivateChatRequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchRecallPrivateChatHeaders()
+        return self.batch_recall_private_chat_with_options(request, headers, runtime)
+
+    async def batch_recall_private_chat_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallPrivateChatRequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.BatchRecallPrivateChatHeaders()
+        return await self.batch_recall_private_chat_with_options_async(request, headers, runtime)
+
+    def batch_recall_private_chat_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallPrivateChatRequest,
+        headers: dingtalkrobot__1__0_models.BatchRecallPrivateChatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_keys):
+            body['processQueryKeys'] = request.process_query_keys
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse(),
+            self.do_roarequest('BatchRecallPrivateChat', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/batchRecall', 'json', req, runtime)
+        )
+
+    async def batch_recall_private_chat_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.BatchRecallPrivateChatRequest,
+        headers: dingtalkrobot__1__0_models.BatchRecallPrivateChatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_keys):
+            body['processQueryKeys'] = request.process_query_keys
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse(),
+            await self.do_roarequest_async('BatchRecallPrivateChat', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/batchRecall', 'json', req, runtime)
+        )
+
     def batch_send_oto(
         self,
         request: dingtalkrobot__1__0_models.BatchSendOTORequest,
@@ -369,6 +441,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.ClearRobotPluginResponse(),
             await self.do_roarequest_async('ClearRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/clear', 'json', req, runtime)
+        )
+
+    def get_bot_list_in_group(
+        self,
+        request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
+    ) -> dingtalkrobot__1__0_models.GetBotListInGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.GetBotListInGroupHeaders()
+        return self.get_bot_list_in_group_with_options(request, headers, runtime)
+
+    async def get_bot_list_in_group_async(
+        self,
+        request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
+    ) -> dingtalkrobot__1__0_models.GetBotListInGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.GetBotListInGroupHeaders()
+        return await self.get_bot_list_in_group_with_options_async(request, headers, runtime)
+
+    def get_bot_list_in_group_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
+        headers: dingtalkrobot__1__0_models.GetBotListInGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.GetBotListInGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.GetBotListInGroupResponse(),
+            self.do_roarequest('GetBotListInGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groups/robots/query', 'json', req, runtime)
+        )
+
+    async def get_bot_list_in_group_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
+        headers: dingtalkrobot__1__0_models.GetBotListInGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.GetBotListInGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.GetBotListInGroupResponse(),
+            await self.do_roarequest_async('GetBotListInGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groups/robots/query', 'json', req, runtime)
         )
 
     def manage_single_chat_robot_status(
@@ -677,6 +813,86 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.OrgGroupSendResponse(),
             await self.do_roarequest_async('OrgGroupSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/send', 'json', req, runtime)
+        )
+
+    def private_chat_query(
+        self,
+        request: dingtalkrobot__1__0_models.PrivateChatQueryRequest,
+    ) -> dingtalkrobot__1__0_models.PrivateChatQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.PrivateChatQueryHeaders()
+        return self.private_chat_query_with_options(request, headers, runtime)
+
+    async def private_chat_query_async(
+        self,
+        request: dingtalkrobot__1__0_models.PrivateChatQueryRequest,
+    ) -> dingtalkrobot__1__0_models.PrivateChatQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.PrivateChatQueryHeaders()
+        return await self.private_chat_query_with_options_async(request, headers, runtime)
+
+    def private_chat_query_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.PrivateChatQueryRequest,
+        headers: dingtalkrobot__1__0_models.PrivateChatQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.PrivateChatQueryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_key):
+            body['processQueryKey'] = request.process_query_key
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.PrivateChatQueryResponse(),
+            self.do_roarequest('PrivateChatQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/query', 'json', req, runtime)
+        )
+
+    async def private_chat_query_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.PrivateChatQueryRequest,
+        headers: dingtalkrobot__1__0_models.PrivateChatQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.PrivateChatQueryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.process_query_key):
+            body['processQueryKey'] = request.process_query_key
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.PrivateChatQueryResponse(),
+            await self.do_roarequest_async('PrivateChatQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/query', 'json', req, runtime)
         )
 
     def query_bot_instance_in_group_info(
