@@ -41,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupSendResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\PrivateChatQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\PrivateChatQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\PrivateChatQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\PrivateChatSendHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\PrivateChatSendRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\PrivateChatSendResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryBotInstanceInGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryBotInstanceInGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryBotInstanceInGroupInfoResponse;
@@ -655,6 +658,60 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return PrivateChatQueryResponse::fromMap($this->doROARequest('PrivateChatQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/privateChatMessages/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param PrivateChatSendRequest $request
+     *
+     * @return PrivateChatSendResponse
+     */
+    public function privateChatSend($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PrivateChatSendHeaders([]);
+
+        return $this->privateChatSendWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PrivateChatSendRequest $request
+     * @param PrivateChatSendHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return PrivateChatSendResponse
+     */
+    public function privateChatSendWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->coolAppCode)) {
+            @$body['coolAppCode'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->msgKey)) {
+            @$body['msgKey'] = $request->msgKey;
+        }
+        if (!Utils::isUnset($request->msgParam)) {
+            @$body['msgParam'] = $request->msgParam;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            @$body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return PrivateChatSendResponse::fromMap($this->doROARequest('PrivateChatSend', 'robot_1.0', 'HTTP', 'POST', 'AK', '/v1.0/robot/privateChatMessages/send', 'json', $req, $runtime));
     }
 
     /**

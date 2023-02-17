@@ -120,6 +120,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantRespons
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCorpStatisticDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCorpStatisticDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCorpStatisticDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCorpUserStatisticHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCorpUserStatisticRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCorpUserStatisticResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryResourceManagementMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryStatusHeaders;
@@ -2132,6 +2138,114 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryCardVisitorStatisticDataResponse::fromMap($this->doROARequest('QueryCardVisitorStatisticData', 'contact_1.0', 'HTTP', 'GET', 'AK', '/v1.0/contact/cards/visitors/statistics', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryCorpStatisticDataRequest $request
+     *
+     * @return QueryCorpStatisticDataResponse
+     */
+    public function queryCorpStatisticData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCorpStatisticDataHeaders([]);
+
+        return $this->queryCorpStatisticDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCorpStatisticDataRequest $request
+     * @param QueryCorpStatisticDataHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return QueryCorpStatisticDataResponse
+     */
+    public function queryCorpStatisticDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->templateIds)) {
+            @$body['templateIds'] = $request->templateIds;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryCorpStatisticDataResponse::fromMap($this->doROARequest('QueryCorpStatisticData', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cards/templates/statistics/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryCorpUserStatisticRequest $request
+     *
+     * @return QueryCorpUserStatisticResponse
+     */
+    public function queryCorpUserStatistic($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCorpUserStatisticHeaders([]);
+
+        return $this->queryCorpUserStatisticWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCorpUserStatisticRequest $request
+     * @param QueryCorpUserStatisticHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return QueryCorpUserStatisticResponse
+     */
+    public function queryCorpUserStatisticWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->templateIds)) {
+            @$body['templateIds'] = $request->templateIds;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryCorpUserStatisticResponse::fromMap($this->doROARequest('QueryCorpUserStatistic', 'contact_1.0', 'HTTP', 'POST', 'AK', '/v1.0/contact/cards/users/statistics/query', 'json', $req, $runtime));
     }
 
     /**
