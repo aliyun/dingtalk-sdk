@@ -3631,6 +3631,221 @@ export class QueryCardVisitorStatisticDataResponse extends $tea.Model {
   }
 }
 
+export class QueryCorpStatisticDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpStatisticDataRequest extends $tea.Model {
+  endTime?: string;
+  startTime?: string;
+  templateIds?: string[];
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      startTime: 'startTime',
+      templateIds: 'templateIds',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'string',
+      startTime: 'string',
+      templateIds: { 'type': 'array', 'itemType': 'string' },
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpStatisticDataResponseBody extends $tea.Model {
+  cardBeReceivedTotalCnt?: number;
+  cardReceiveTotalCnt?: number;
+  cardTotalBeVisitedCnt?: number;
+  dataDate?: string;
+  dingTotalShareCnt?: number;
+  totalSendCnt?: number;
+  wechatTotalShareCnt?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cardBeReceivedTotalCnt: 'cardBeReceivedTotalCnt',
+      cardReceiveTotalCnt: 'cardReceiveTotalCnt',
+      cardTotalBeVisitedCnt: 'cardTotalBeVisitedCnt',
+      dataDate: 'dataDate',
+      dingTotalShareCnt: 'dingTotalShareCnt',
+      totalSendCnt: 'totalSendCnt',
+      wechatTotalShareCnt: 'wechatTotalShareCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBeReceivedTotalCnt: 'number',
+      cardReceiveTotalCnt: 'number',
+      cardTotalBeVisitedCnt: 'number',
+      dataDate: 'string',
+      dingTotalShareCnt: 'number',
+      totalSendCnt: 'number',
+      wechatTotalShareCnt: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpStatisticDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryCorpStatisticDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryCorpStatisticDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpUserStatisticHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpUserStatisticRequest extends $tea.Model {
+  endTime?: string;
+  maxResults?: number;
+  nextToken?: number;
+  startTime?: string;
+  templateIds?: string[];
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      startTime: 'startTime',
+      templateIds: 'templateIds',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'string',
+      maxResults: 'number',
+      nextToken: 'number',
+      startTime: 'string',
+      templateIds: { 'type': 'array', 'itemType': 'string' },
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpUserStatisticResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: QueryCorpUserStatisticResponseBodyList[];
+  nextToken?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryCorpUserStatisticResponseBodyList },
+      nextToken: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpUserStatisticResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryCorpUserStatisticResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryCorpUserStatisticResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryResourceManagementMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6759,6 +6974,37 @@ export class ListSeniorSettingsResponseBodySeniorWhiteList extends $tea.Model {
   }
 }
 
+export class QueryCorpUserStatisticResponseBodyList extends $tea.Model {
+  avatarUrl?: string;
+  name?: string;
+  receiveCnt?: number;
+  sendCnt?: number;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      name: 'name',
+      receiveCnt: 'receiveCnt',
+      sendCnt: 'sendCnt',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      name: 'string',
+      receiveCnt: 'number',
+      sendCnt: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryResourceManagementMembersResponseBodyMembers extends $tea.Model {
   memberId?: string;
   memberType?: string;
@@ -8438,6 +8684,96 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryCardVisitorStatisticDataResponse>(await this.doROARequest("QueryCardVisitorStatisticData", "contact_1.0", "HTTP", "GET", "AK", `/v1.0/contact/cards/visitors/statistics`, "json", req, runtime), new QueryCardVisitorStatisticDataResponse({}));
+  }
+
+  async queryCorpStatisticData(request: QueryCorpStatisticDataRequest): Promise<QueryCorpStatisticDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCorpStatisticDataHeaders({ });
+    return await this.queryCorpStatisticDataWithOptions(request, headers, runtime);
+  }
+
+  async queryCorpStatisticDataWithOptions(request: QueryCorpStatisticDataRequest, headers: QueryCorpStatisticDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCorpStatisticDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.templateIds)) {
+      body["templateIds"] = request.templateIds;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryCorpStatisticDataResponse>(await this.doROARequest("QueryCorpStatisticData", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cards/templates/statistics/query`, "json", req, runtime), new QueryCorpStatisticDataResponse({}));
+  }
+
+  async queryCorpUserStatistic(request: QueryCorpUserStatisticRequest): Promise<QueryCorpUserStatisticResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCorpUserStatisticHeaders({ });
+    return await this.queryCorpUserStatisticWithOptions(request, headers, runtime);
+  }
+
+  async queryCorpUserStatisticWithOptions(request: QueryCorpUserStatisticRequest, headers: QueryCorpUserStatisticHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCorpUserStatisticResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.templateIds)) {
+      body["templateIds"] = request.templateIds;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryCorpUserStatisticResponse>(await this.doROARequest("QueryCorpUserStatistic", "contact_1.0", "HTTP", "POST", "AK", `/v1.0/contact/cards/users/statistics/query`, "json", req, runtime), new QueryCorpUserStatisticResponse({}));
   }
 
   async queryResourceManagementMembers(resourceId: string): Promise<QueryResourceManagementMembersResponse> {

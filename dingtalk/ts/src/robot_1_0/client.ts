@@ -1108,6 +1108,100 @@ export class PrivateChatQueryResponse extends $tea.Model {
   }
 }
 
+export class PrivateChatSendHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrivateChatSendRequest extends $tea.Model {
+  coolAppCode?: string;
+  msgKey?: string;
+  msgParam?: string;
+  openConversationId?: string;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coolAppCode: 'coolAppCode',
+      msgKey: 'msgKey',
+      msgParam: 'msgParam',
+      openConversationId: 'openConversationId',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coolAppCode: 'string',
+      msgKey: 'string',
+      msgParam: 'string',
+      openConversationId: 'string',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrivateChatSendResponseBody extends $tea.Model {
+  processQueryKey?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processQueryKey: 'processQueryKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processQueryKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrivateChatSendResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PrivateChatSendResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PrivateChatSendResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryBotInstanceInGroupInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2217,6 +2311,51 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<PrivateChatQueryResponse>(await this.doROARequest("PrivateChatQuery", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/privateChatMessages/query`, "json", req, runtime), new PrivateChatQueryResponse({}));
+  }
+
+  async privateChatSend(request: PrivateChatSendRequest): Promise<PrivateChatSendResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PrivateChatSendHeaders({ });
+    return await this.privateChatSendWithOptions(request, headers, runtime);
+  }
+
+  async privateChatSendWithOptions(request: PrivateChatSendRequest, headers: PrivateChatSendHeaders, runtime: $Util.RuntimeOptions): Promise<PrivateChatSendResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
+    if (!Util.isUnset(request.msgKey)) {
+      body["msgKey"] = request.msgKey;
+    }
+
+    if (!Util.isUnset(request.msgParam)) {
+      body["msgParam"] = request.msgParam;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PrivateChatSendResponse>(await this.doROARequest("PrivateChatSend", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/privateChatMessages/send`, "json", req, runtime), new PrivateChatSendResponse({}));
   }
 
   async queryBotInstanceInGroupInfo(request: QueryBotInstanceInGroupInfoRequest): Promise<QueryBotInstanceInGroupInfoResponse> {
