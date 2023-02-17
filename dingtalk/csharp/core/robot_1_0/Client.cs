@@ -1002,6 +1002,102 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
             return TeaModel.ToObject<PrivateChatQueryResponse>(await DoROARequestAsync("PrivateChatQuery", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/privateChatMessages/query", "json", req, runtime));
         }
 
+        public PrivateChatSendResponse PrivateChatSend(PrivateChatSendRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PrivateChatSendHeaders headers = new PrivateChatSendHeaders();
+            return PrivateChatSendWithOptions(request, headers, runtime);
+        }
+
+        public async Task<PrivateChatSendResponse> PrivateChatSendAsync(PrivateChatSendRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PrivateChatSendHeaders headers = new PrivateChatSendHeaders();
+            return await PrivateChatSendWithOptionsAsync(request, headers, runtime);
+        }
+
+        public PrivateChatSendResponse PrivateChatSendWithOptions(PrivateChatSendRequest request, PrivateChatSendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgKey))
+            {
+                body["msgKey"] = request.MsgKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgParam))
+            {
+                body["msgParam"] = request.MsgParam;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<PrivateChatSendResponse>(DoROARequest("PrivateChatSend", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/privateChatMessages/send", "json", req, runtime));
+        }
+
+        public async Task<PrivateChatSendResponse> PrivateChatSendWithOptionsAsync(PrivateChatSendRequest request, PrivateChatSendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgKey))
+            {
+                body["msgKey"] = request.MsgKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgParam))
+            {
+                body["msgParam"] = request.MsgParam;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<PrivateChatSendResponse>(await DoROARequestAsync("PrivateChatSend", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/privateChatMessages/send", "json", req, runtime));
+        }
+
         public QueryBotInstanceInGroupInfoResponse QueryBotInstanceInGroupInfo(QueryBotInstanceInGroupInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
