@@ -1048,6 +1048,56 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             return TeaModel.ToObject<ListAllAppResponse>(await DoROARequestAsync("ListAllApp", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/allApps", "json", req, runtime));
         }
 
+        public ListAllInnerAppsResponse ListAllInnerApps()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListAllInnerAppsHeaders headers = new ListAllInnerAppsHeaders();
+            return ListAllInnerAppsWithOptions(headers, runtime);
+        }
+
+        public async Task<ListAllInnerAppsResponse> ListAllInnerAppsAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListAllInnerAppsHeaders headers = new ListAllInnerAppsHeaders();
+            return await ListAllInnerAppsWithOptionsAsync(headers, runtime);
+        }
+
+        public ListAllInnerAppsResponse ListAllInnerAppsWithOptions(ListAllInnerAppsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<ListAllInnerAppsResponse>(DoROARequest("ListAllInnerApps", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/allInnerApps", "json", req, runtime));
+        }
+
+        public async Task<ListAllInnerAppsResponse> ListAllInnerAppsWithOptionsAsync(ListAllInnerAppsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<ListAllInnerAppsResponse>(await DoROARequestAsync("ListAllInnerApps", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/allInnerApps", "json", req, runtime));
+        }
+
         public ListAppRoleScopesResponse ListAppRoleScopes(string agentId, ListAppRoleScopesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1186,6 +1236,58 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             return TeaModel.ToObject<ListInnerAppResponse>(await DoROARequestAsync("ListInnerApp", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/apps", "json", req, runtime));
         }
 
+        public ListInnerAppVersionResponse ListInnerAppVersion(string agentId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListInnerAppVersionHeaders headers = new ListInnerAppVersionHeaders();
+            return ListInnerAppVersionWithOptions(agentId, headers, runtime);
+        }
+
+        public async Task<ListInnerAppVersionResponse> ListInnerAppVersionAsync(string agentId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListInnerAppVersionHeaders headers = new ListInnerAppVersionHeaders();
+            return await ListInnerAppVersionWithOptionsAsync(agentId, headers, runtime);
+        }
+
+        public ListInnerAppVersionResponse ListInnerAppVersionWithOptions(string agentId, ListInnerAppVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<ListInnerAppVersionResponse>(DoROARequest("ListInnerAppVersion", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/innerMiniApps/" + agentId + "/versions", "json", req, runtime));
+        }
+
+        public async Task<ListInnerAppVersionResponse> ListInnerAppVersionWithOptionsAsync(string agentId, ListInnerAppVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<ListInnerAppVersionResponse>(await DoROARequestAsync("ListInnerAppVersion", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/innerMiniApps/" + agentId + "/versions", "json", req, runtime));
+        }
+
         public ListRoleInfoByUserResponse ListRoleInfoByUser(string agentId, string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1290,6 +1392,170 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
                 Headers = realHeaders,
             };
             return TeaModel.ToObject<ListUserVilebleAppResponse>(await DoROARequestAsync("ListUserVilebleApp", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/users/" + userId + "/apps", "json", req, runtime));
+        }
+
+        public PageInnerAppHistoryVersionResponse PageInnerAppHistoryVersion(string agentId, PageInnerAppHistoryVersionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PageInnerAppHistoryVersionHeaders headers = new PageInnerAppHistoryVersionHeaders();
+            return PageInnerAppHistoryVersionWithOptions(agentId, request, headers, runtime);
+        }
+
+        public async Task<PageInnerAppHistoryVersionResponse> PageInnerAppHistoryVersionAsync(string agentId, PageInnerAppHistoryVersionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PageInnerAppHistoryVersionHeaders headers = new PageInnerAppHistoryVersionHeaders();
+            return await PageInnerAppHistoryVersionWithOptionsAsync(agentId, request, headers, runtime);
+        }
+
+        public PageInnerAppHistoryVersionResponse PageInnerAppHistoryVersionWithOptions(string agentId, PageInnerAppHistoryVersionRequest request, PageInnerAppHistoryVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<PageInnerAppHistoryVersionResponse>(DoROARequest("PageInnerAppHistoryVersion", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/innerMiniApps/" + agentId + "/historyVersions", "json", req, runtime));
+        }
+
+        public async Task<PageInnerAppHistoryVersionResponse> PageInnerAppHistoryVersionWithOptionsAsync(string agentId, PageInnerAppHistoryVersionRequest request, PageInnerAppHistoryVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<PageInnerAppHistoryVersionResponse>(await DoROARequestAsync("PageInnerAppHistoryVersion", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/innerMiniApps/" + agentId + "/historyVersions", "json", req, runtime));
+        }
+
+        public PublishInnerAppVersionResponse PublishInnerAppVersion(string agentId, PublishInnerAppVersionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PublishInnerAppVersionHeaders headers = new PublishInnerAppVersionHeaders();
+            return PublishInnerAppVersionWithOptions(agentId, request, headers, runtime);
+        }
+
+        public async Task<PublishInnerAppVersionResponse> PublishInnerAppVersionAsync(string agentId, PublishInnerAppVersionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PublishInnerAppVersionHeaders headers = new PublishInnerAppVersionHeaders();
+            return await PublishInnerAppVersionWithOptionsAsync(agentId, request, headers, runtime);
+        }
+
+        public PublishInnerAppVersionResponse PublishInnerAppVersionWithOptions(string agentId, PublishInnerAppVersionRequest request, PublishInnerAppVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MiniAppOnPc))
+            {
+                body["miniAppOnPc"] = request.MiniAppOnPc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
+            {
+                body["opUnionId"] = request.OpUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublishType))
+            {
+                body["publishType"] = request.PublishType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
+            {
+                body["versionId"] = request.VersionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<PublishInnerAppVersionResponse>(DoROARequest("PublishInnerAppVersion", "microApp_1.0", "HTTP", "POST", "AK", "/v1.0/microApp/innerMiniApps/" + agentId + "/versions/publish", "json", req, runtime));
+        }
+
+        public async Task<PublishInnerAppVersionResponse> PublishInnerAppVersionWithOptionsAsync(string agentId, PublishInnerAppVersionRequest request, PublishInnerAppVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MiniAppOnPc))
+            {
+                body["miniAppOnPc"] = request.MiniAppOnPc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
+            {
+                body["opUnionId"] = request.OpUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublishType))
+            {
+                body["publishType"] = request.PublishType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
+            {
+                body["versionId"] = request.VersionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<PublishInnerAppVersionResponse>(await DoROARequestAsync("PublishInnerAppVersion", "microApp_1.0", "HTTP", "POST", "AK", "/v1.0/microApp/innerMiniApps/" + agentId + "/versions/publish", "json", req, runtime));
         }
 
         public RebuildRoleScopeForAppRoleResponse RebuildRoleScopeForAppRole(string agentId, string roleId, RebuildRoleScopeForAppRoleRequest request)
@@ -1636,6 +1902,80 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<RemoveMemberForAppRoleResponse>(await DoROARequestAsync("RemoveMemberForAppRole", "microApp_1.0", "HTTP", "POST", "AK", "/v1.0/microApp/apps/" + agentId + "/roles/" + roleId + "/members/batchRemove", "json", req, runtime));
+        }
+
+        public RollbackInnerAppVersionResponse RollbackInnerAppVersion(string agentId, RollbackInnerAppVersionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RollbackInnerAppVersionHeaders headers = new RollbackInnerAppVersionHeaders();
+            return RollbackInnerAppVersionWithOptions(agentId, request, headers, runtime);
+        }
+
+        public async Task<RollbackInnerAppVersionResponse> RollbackInnerAppVersionAsync(string agentId, RollbackInnerAppVersionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RollbackInnerAppVersionHeaders headers = new RollbackInnerAppVersionHeaders();
+            return await RollbackInnerAppVersionWithOptionsAsync(agentId, request, headers, runtime);
+        }
+
+        public RollbackInnerAppVersionResponse RollbackInnerAppVersionWithOptions(string agentId, RollbackInnerAppVersionRequest request, RollbackInnerAppVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
+            {
+                body["opUnionId"] = request.OpUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
+            {
+                body["versionId"] = request.VersionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RollbackInnerAppVersionResponse>(DoROARequest("RollbackInnerAppVersion", "microApp_1.0", "HTTP", "POST", "AK", "/v1.0/microApp/innerMiniApps/" + agentId + "/versions/rollback", "json", req, runtime));
+        }
+
+        public async Task<RollbackInnerAppVersionResponse> RollbackInnerAppVersionWithOptionsAsync(string agentId, RollbackInnerAppVersionRequest request, RollbackInnerAppVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
+            {
+                body["opUnionId"] = request.OpUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
+            {
+                body["versionId"] = request.VersionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<RollbackInnerAppVersionResponse>(await DoROARequestAsync("RollbackInnerAppVersion", "microApp_1.0", "HTTP", "POST", "AK", "/v1.0/microApp/innerMiniApps/" + agentId + "/versions/rollback", "json", req, runtime));
         }
 
         public SetMicroAppScopeResponse SetMicroAppScope(string agentId, SetMicroAppScopeRequest request)
