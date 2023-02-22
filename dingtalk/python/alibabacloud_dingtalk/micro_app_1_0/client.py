@@ -981,6 +981,52 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListAllApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/allApps', 'json', req, runtime)
         )
 
+    def list_all_inner_apps(self) -> dingtalkmicro_app__1__0_models.ListAllInnerAppsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListAllInnerAppsHeaders()
+        return self.list_all_inner_apps_with_options(headers, runtime)
+
+    async def list_all_inner_apps_async(self) -> dingtalkmicro_app__1__0_models.ListAllInnerAppsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListAllInnerAppsHeaders()
+        return await self.list_all_inner_apps_with_options_async(headers, runtime)
+
+    def list_all_inner_apps_with_options(
+        self,
+        headers: dingtalkmicro_app__1__0_models.ListAllInnerAppsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListAllInnerAppsResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListAllInnerAppsResponse(),
+            self.do_roarequest('ListAllInnerApps', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/allInnerApps', 'json', req, runtime)
+        )
+
+    async def list_all_inner_apps_with_options_async(
+        self,
+        headers: dingtalkmicro_app__1__0_models.ListAllInnerAppsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListAllInnerAppsResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListAllInnerAppsResponse(),
+            await self.do_roarequest_async('ListAllInnerApps', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/allInnerApps', 'json', req, runtime)
+        )
+
     def list_app_role_scopes(
         self,
         agent_id: str,
@@ -1119,6 +1165,62 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListInnerApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps', 'json', req, runtime)
         )
 
+    def list_inner_app_version(
+        self,
+        agent_id: str,
+    ) -> dingtalkmicro_app__1__0_models.ListInnerAppVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListInnerAppVersionHeaders()
+        return self.list_inner_app_version_with_options(agent_id, headers, runtime)
+
+    async def list_inner_app_version_async(
+        self,
+        agent_id: str,
+    ) -> dingtalkmicro_app__1__0_models.ListInnerAppVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListInnerAppVersionHeaders()
+        return await self.list_inner_app_version_with_options_async(agent_id, headers, runtime)
+
+    def list_inner_app_version_with_options(
+        self,
+        agent_id: str,
+        headers: dingtalkmicro_app__1__0_models.ListInnerAppVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListInnerAppVersionResponse:
+        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListInnerAppVersionResponse(),
+            self.do_roarequest('ListInnerAppVersion', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/innerMiniApps/{agent_id}/versions', 'json', req, runtime)
+        )
+
+    async def list_inner_app_version_with_options_async(
+        self,
+        agent_id: str,
+        headers: dingtalkmicro_app__1__0_models.ListInnerAppVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListInnerAppVersionResponse:
+        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListInnerAppVersionResponse(),
+            await self.do_roarequest_async('ListInnerAppVersion', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/innerMiniApps/{agent_id}/versions', 'json', req, runtime)
+        )
+
     def list_role_info_by_user(
         self,
         agent_id: str,
@@ -1235,6 +1337,162 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.ListUserVilebleAppResponse(),
             await self.do_roarequest_async('ListUserVilebleApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/users/{user_id}/apps', 'json', req, runtime)
+        )
+
+    def page_inner_app_history_version(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionRequest,
+    ) -> dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionHeaders()
+        return self.page_inner_app_history_version_with_options(agent_id, request, headers, runtime)
+
+    async def page_inner_app_history_version_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionRequest,
+    ) -> dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionHeaders()
+        return await self.page_inner_app_history_version_with_options_async(agent_id, request, headers, runtime)
+
+    def page_inner_app_history_version_with_options(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionRequest,
+        headers: dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionResponse:
+        UtilClient.validate_model(request)
+        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionResponse(),
+            self.do_roarequest('PageInnerAppHistoryVersion', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/innerMiniApps/{agent_id}/historyVersions', 'json', req, runtime)
+        )
+
+    async def page_inner_app_history_version_with_options_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionRequest,
+        headers: dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionResponse:
+        UtilClient.validate_model(request)
+        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.PageInnerAppHistoryVersionResponse(),
+            await self.do_roarequest_async('PageInnerAppHistoryVersion', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/innerMiniApps/{agent_id}/historyVersions', 'json', req, runtime)
+        )
+
+    def publish_inner_app_version(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.PublishInnerAppVersionRequest,
+    ) -> dingtalkmicro_app__1__0_models.PublishInnerAppVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.PublishInnerAppVersionHeaders()
+        return self.publish_inner_app_version_with_options(agent_id, request, headers, runtime)
+
+    async def publish_inner_app_version_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.PublishInnerAppVersionRequest,
+    ) -> dingtalkmicro_app__1__0_models.PublishInnerAppVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.PublishInnerAppVersionHeaders()
+        return await self.publish_inner_app_version_with_options_async(agent_id, request, headers, runtime)
+
+    def publish_inner_app_version_with_options(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.PublishInnerAppVersionRequest,
+        headers: dingtalkmicro_app__1__0_models.PublishInnerAppVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.PublishInnerAppVersionResponse:
+        UtilClient.validate_model(request)
+        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
+        body = {}
+        if not UtilClient.is_unset(request.mini_app_on_pc):
+            body['miniAppOnPc'] = request.mini_app_on_pc
+        if not UtilClient.is_unset(request.op_union_id):
+            body['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.publish_type):
+            body['publishType'] = request.publish_type
+        if not UtilClient.is_unset(request.version_id):
+            body['versionId'] = request.version_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.PublishInnerAppVersionResponse(),
+            self.do_roarequest('PublishInnerAppVersion', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/innerMiniApps/{agent_id}/versions/publish', 'json', req, runtime)
+        )
+
+    async def publish_inner_app_version_with_options_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.PublishInnerAppVersionRequest,
+        headers: dingtalkmicro_app__1__0_models.PublishInnerAppVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.PublishInnerAppVersionResponse:
+        UtilClient.validate_model(request)
+        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
+        body = {}
+        if not UtilClient.is_unset(request.mini_app_on_pc):
+            body['miniAppOnPc'] = request.mini_app_on_pc
+        if not UtilClient.is_unset(request.op_union_id):
+            body['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.publish_type):
+            body['publishType'] = request.publish_type
+        if not UtilClient.is_unset(request.version_id):
+            body['versionId'] = request.version_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.PublishInnerAppVersionResponse(),
+            await self.do_roarequest_async('PublishInnerAppVersion', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/innerMiniApps/{agent_id}/versions/publish', 'json', req, runtime)
         )
 
     def rebuild_role_scope_for_app_role(
@@ -1561,6 +1819,80 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.RemoveMemberForAppRoleResponse(),
             await self.do_roarequest_async('RemoveMemberForAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/apps/{agent_id}/roles/{role_id}/members/batchRemove', 'json', req, runtime)
+        )
+
+    def rollback_inner_app_version(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.RollbackInnerAppVersionRequest,
+    ) -> dingtalkmicro_app__1__0_models.RollbackInnerAppVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.RollbackInnerAppVersionHeaders()
+        return self.rollback_inner_app_version_with_options(agent_id, request, headers, runtime)
+
+    async def rollback_inner_app_version_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.RollbackInnerAppVersionRequest,
+    ) -> dingtalkmicro_app__1__0_models.RollbackInnerAppVersionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.RollbackInnerAppVersionHeaders()
+        return await self.rollback_inner_app_version_with_options_async(agent_id, request, headers, runtime)
+
+    def rollback_inner_app_version_with_options(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.RollbackInnerAppVersionRequest,
+        headers: dingtalkmicro_app__1__0_models.RollbackInnerAppVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.RollbackInnerAppVersionResponse:
+        UtilClient.validate_model(request)
+        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
+        body = {}
+        if not UtilClient.is_unset(request.op_union_id):
+            body['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.version_id):
+            body['versionId'] = request.version_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.RollbackInnerAppVersionResponse(),
+            self.do_roarequest('RollbackInnerAppVersion', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/innerMiniApps/{agent_id}/versions/rollback', 'json', req, runtime)
+        )
+
+    async def rollback_inner_app_version_with_options_async(
+        self,
+        agent_id: str,
+        request: dingtalkmicro_app__1__0_models.RollbackInnerAppVersionRequest,
+        headers: dingtalkmicro_app__1__0_models.RollbackInnerAppVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.RollbackInnerAppVersionResponse:
+        UtilClient.validate_model(request)
+        agent_id = OpenApiUtilClient.get_encode_param(agent_id)
+        body = {}
+        if not UtilClient.is_unset(request.op_union_id):
+            body['opUnionId'] = request.op_union_id
+        if not UtilClient.is_unset(request.version_id):
+            body['versionId'] = request.version_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.RollbackInnerAppVersionResponse(),
+            await self.do_roarequest_async('RollbackInnerAppVersion', 'microApp_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/microApp/innerMiniApps/{agent_id}/versions/rollback', 'json', req, runtime)
         )
 
     def set_micro_app_scope(

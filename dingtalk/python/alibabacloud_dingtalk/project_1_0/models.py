@@ -4604,6 +4604,266 @@ class SearchProjectTemplateResponse(TeaModel):
         return self
 
 
+class SearchTaskflowStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchTaskflowStatusRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        query: str = None,
+        tf_ids: str = None,
+        tfs_ids: str = None,
+    ):
+        # 每页返回最大数量。默认10，最大300。
+        self.max_results = max_results
+        # 分页标，从上一次请求结果中获取。
+        self.next_token = next_token
+        # 模糊查询工作流状态名字。
+        self.query = query
+        # 工作流ID集合，多个以逗号隔开。
+        self.tf_ids = tf_ids
+        # 工作流状态ID集合，多个以逗号隔开。
+        self.tfs_ids = tfs_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.query is not None:
+            result['query'] = self.query
+        if self.tf_ids is not None:
+            result['tfIds'] = self.tf_ids
+        if self.tfs_ids is not None:
+            result['tfsIds'] = self.tfs_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        if m.get('tfIds') is not None:
+            self.tf_ids = m.get('tfIds')
+        if m.get('tfsIds') is not None:
+            self.tfs_ids = m.get('tfsIds')
+        return self
+
+
+class SearchTaskflowStatusResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        created: str = None,
+        creator_id: str = None,
+        id: str = None,
+        is_deleted: bool = None,
+        is_taskflowstatusruleexector: bool = None,
+        kind: str = None,
+        name: str = None,
+        pos: int = None,
+        reject_status_ids: List[str] = None,
+        taskflow_id: str = None,
+        updated: str = None,
+    ):
+        # 创建时间。
+        self.created = created
+        # 创建者ID。
+        self.creator_id = creator_id
+        # 工作流状态ID。
+        self.id = id
+        # 是否已删除。
+        self.is_deleted = is_deleted
+        # 是否特定任务角色才能流转该工作流状态。
+        self.is_taskflowstatusruleexector = is_taskflowstatusruleexector
+        # start,end,unset
+        self.kind = kind
+        # 工作流状态名字。
+        self.name = name
+        # 工作流状态位置。
+        self.pos = pos
+        # 该工作流状态不能流转到其他工作流状态。
+        self.reject_status_ids = reject_status_ids
+        # 工作流状态ID。
+        self.taskflow_id = taskflow_id
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.is_taskflowstatusruleexector is not None:
+            result['isTaskflowstatusruleexector'] = self.is_taskflowstatusruleexector
+        if self.kind is not None:
+            result['kind'] = self.kind
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pos is not None:
+            result['pos'] = self.pos
+        if self.reject_status_ids is not None:
+            result['rejectStatusIds'] = self.reject_status_ids
+        if self.taskflow_id is not None:
+            result['taskflowId'] = self.taskflow_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('isTaskflowstatusruleexector') is not None:
+            self.is_taskflowstatusruleexector = m.get('isTaskflowstatusruleexector')
+        if m.get('kind') is not None:
+            self.kind = m.get('kind')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pos') is not None:
+            self.pos = m.get('pos')
+        if m.get('rejectStatusIds') is not None:
+            self.reject_status_ids = m.get('rejectStatusIds')
+        if m.get('taskflowId') is not None:
+            self.taskflow_id = m.get('taskflowId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class SearchTaskflowStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[SearchTaskflowStatusResponseBodyResult] = None,
+    ):
+        # 工作流状态列表。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = SearchTaskflowStatusResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class SearchTaskflowStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchTaskflowStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchTaskflowStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateCustomfieldValueHeaders(TeaModel):
     def __init__(
         self,
@@ -6456,6 +6716,169 @@ class UpdateProjectGroupResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateProjectGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskTaskflowstatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskTaskflowstatusRequest(TeaModel):
+    def __init__(
+        self,
+        taskflow_status_id: str = None,
+        tfs_update_note: str = None,
+    ):
+        # 任务状态ID。
+        self.taskflow_status_id = taskflow_status_id
+        # 任务流转说明。
+        self.tfs_update_note = tfs_update_note
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.taskflow_status_id is not None:
+            result['taskflowStatusId'] = self.taskflow_status_id
+        if self.tfs_update_note is not None:
+            result['tfsUpdateNote'] = self.tfs_update_note
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskflowStatusId') is not None:
+            self.taskflow_status_id = m.get('taskflowStatusId')
+        if m.get('tfsUpdateNote') is not None:
+            self.tfs_update_note = m.get('tfsUpdateNote')
+        return self
+
+
+class UpdateTaskTaskflowstatusResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        updated: str = None,
+    ):
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskTaskflowstatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskTaskflowstatusResponseBodyResult = None,
+    ):
+        # 结果。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskTaskflowstatusResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskTaskflowstatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskTaskflowstatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskTaskflowstatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

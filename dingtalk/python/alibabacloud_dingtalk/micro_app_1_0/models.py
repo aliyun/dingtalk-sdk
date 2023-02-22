@@ -2083,6 +2083,203 @@ class ListAllAppResponse(TeaModel):
         return self
 
 
+class ListAllInnerAppsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListAllInnerAppsResponseBodyAppList(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        app_id: int = None,
+        app_status: int = None,
+        desc: str = None,
+        develop_type: int = None,
+        homepage_link: str = None,
+        icon: str = None,
+        name: str = None,
+        omp_link: str = None,
+        pc_homepage_link: str = None,
+    ):
+        # 应用id
+        self.agent_id = agent_id
+        # 三方应用id，如果是企业内部应用，返回0
+        self.app_id = app_id
+        # 应用状态，0：停用，1：启用 ，3：过期
+        self.app_status = app_status
+        # 应用描述
+        self.desc = desc
+        # 应用类型，0表示h5应用，1表示小程序
+        self.develop_type = develop_type
+        # 应用移动端首页地址
+        self.homepage_link = homepage_link
+        # 应用图标
+        self.icon = icon
+        # 应用名称
+        self.name = name
+        # 应用管理后台地址
+        self.omp_link = omp_link
+        # 应用PC端首页地址
+        self.pc_homepage_link = pc_homepage_link
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_status is not None:
+            result['appStatus'] = self.app_status
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.develop_type is not None:
+            result['developType'] = self.develop_type
+        if self.homepage_link is not None:
+            result['homepageLink'] = self.homepage_link
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.omp_link is not None:
+            result['ompLink'] = self.omp_link
+        if self.pc_homepage_link is not None:
+            result['pcHomepageLink'] = self.pc_homepage_link
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appStatus') is not None:
+            self.app_status = m.get('appStatus')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('developType') is not None:
+            self.develop_type = m.get('developType')
+        if m.get('homepageLink') is not None:
+            self.homepage_link = m.get('homepageLink')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('ompLink') is not None:
+            self.omp_link = m.get('ompLink')
+        if m.get('pcHomepageLink') is not None:
+            self.pc_homepage_link = m.get('pcHomepageLink')
+        return self
+
+
+class ListAllInnerAppsResponseBody(TeaModel):
+    def __init__(
+        self,
+        app_list: List[ListAllInnerAppsResponseBodyAppList] = None,
+    ):
+        # 应用列表
+        self.app_list = app_list
+
+    def validate(self):
+        if self.app_list:
+            for k in self.app_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['appList'] = []
+        if self.app_list is not None:
+            for k in self.app_list:
+                result['appList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.app_list = []
+        if m.get('appList') is not None:
+            for k in m.get('appList'):
+                temp_model = ListAllInnerAppsResponseBodyAppList()
+                self.app_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListAllInnerAppsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListAllInnerAppsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListAllInnerAppsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListAppRoleScopesHeaders(TeaModel):
     def __init__(
         self,
@@ -2512,6 +2709,182 @@ class ListInnerAppResponse(TeaModel):
         return self
 
 
+class ListInnerAppVersionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListInnerAppVersionResponseBodyAppVersionList(TeaModel):
+    def __init__(
+        self,
+        app_version: str = None,
+        app_version_id: int = None,
+        app_version_type: int = None,
+        create_time: str = None,
+        mini_app_id: str = None,
+        mini_app_on_pc: bool = None,
+        modify_time: str = None,
+    ):
+        # 小程序版本号
+        self.app_version = app_version
+        # 小程序版本id，用于发布和回滚的版本唯一标识。
+        self.app_version_id = app_version_id
+        # 小程序版本类型，0表示开发版本，2表示正式版本，3表示体验版本
+        self.app_version_type = app_version_type
+        # 小程序版本创建事件，格式:yyyy-MM-dd HH:mm:ss
+        self.create_time = create_time
+        # 小程序id
+        self.mini_app_id = mini_app_id
+        # 是否支持PC端打开小程序，false表示只支持移动端，true表示既支持移动端又支持PC端  
+        self.mini_app_on_pc = mini_app_on_pc
+        # 小程序版本号更新时间，格式:yyyy-MM-dd HH:mm:ss
+        self.modify_time = modify_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_version is not None:
+            result['appVersion'] = self.app_version
+        if self.app_version_id is not None:
+            result['appVersionId'] = self.app_version_id
+        if self.app_version_type is not None:
+            result['appVersionType'] = self.app_version_type
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
+        if self.mini_app_on_pc is not None:
+            result['miniAppOnPc'] = self.mini_app_on_pc
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appVersion') is not None:
+            self.app_version = m.get('appVersion')
+        if m.get('appVersionId') is not None:
+            self.app_version_id = m.get('appVersionId')
+        if m.get('appVersionType') is not None:
+            self.app_version_type = m.get('appVersionType')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
+        if m.get('miniAppOnPc') is not None:
+            self.mini_app_on_pc = m.get('miniAppOnPc')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        return self
+
+
+class ListInnerAppVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        app_version_list: List[ListInnerAppVersionResponseBodyAppVersionList] = None,
+    ):
+        # 企业内部小程序版本号列表
+        self.app_version_list = app_version_list
+
+    def validate(self):
+        if self.app_version_list:
+            for k in self.app_version_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['appVersionList'] = []
+        if self.app_version_list is not None:
+            for k in self.app_version_list:
+                result['appVersionList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.app_version_list = []
+        if m.get('appVersionList') is not None:
+            for k in m.get('appVersionList'):
+                temp_model = ListInnerAppVersionResponseBodyAppVersionList()
+                self.app_version_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListInnerAppVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListInnerAppVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListInnerAppVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListRoleInfoByUserHeaders(TeaModel):
     def __init__(
         self,
@@ -2852,6 +3225,371 @@ class ListUserVilebleAppResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = ListUserVilebleAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PageInnerAppHistoryVersionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PageInnerAppHistoryVersionRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        # 当前页
+        self.page_number = page_number
+        # 本次读取的最大数据记录数量
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class PageInnerAppHistoryVersionResponseBodyMiniAppVersionList(TeaModel):
+    def __init__(
+        self,
+        app_version: str = None,
+        app_version_id: int = None,
+        app_version_type: int = None,
+        create_time: str = None,
+        mini_app_id: str = None,
+        mini_app_on_pc: bool = None,
+        modify_time: str = None,
+    ):
+        # 小程序版本号
+        self.app_version = app_version
+        # 小程序版本号id，用于小程序的发布和回滚等操作的唯一标识。
+        self.app_version_id = app_version_id
+        # 小程序版本类型，0表示开发版本，2表示正式版本，3表示体验版本
+        self.app_version_type = app_version_type
+        # 小程序版本创建事件，格式:yyyy-MM-dd HH:mm:ss
+        self.create_time = create_time
+        # 小程序id
+        self.mini_app_id = mini_app_id
+        # 是否支持PC端打开小程序，false表示只支持移动端，true表示既支持移动端又支持PC端  
+        self.mini_app_on_pc = mini_app_on_pc
+        # 小程序版本号更新时间，格式:yyyy-MM-dd HH:mm:ss
+        self.modify_time = modify_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_version is not None:
+            result['appVersion'] = self.app_version
+        if self.app_version_id is not None:
+            result['appVersionId'] = self.app_version_id
+        if self.app_version_type is not None:
+            result['appVersionType'] = self.app_version_type
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.mini_app_id is not None:
+            result['miniAppId'] = self.mini_app_id
+        if self.mini_app_on_pc is not None:
+            result['miniAppOnPc'] = self.mini_app_on_pc
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appVersion') is not None:
+            self.app_version = m.get('appVersion')
+        if m.get('appVersionId') is not None:
+            self.app_version_id = m.get('appVersionId')
+        if m.get('appVersionType') is not None:
+            self.app_version_type = m.get('appVersionType')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('miniAppId') is not None:
+            self.mini_app_id = m.get('miniAppId')
+        if m.get('miniAppOnPc') is not None:
+            self.mini_app_on_pc = m.get('miniAppOnPc')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        return self
+
+
+class PageInnerAppHistoryVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        mini_app_version_list: List[PageInnerAppHistoryVersionResponseBodyMiniAppVersionList] = None,
+        total_count: int = None,
+    ):
+        # 企业内部小程序版本号列表
+        self.mini_app_version_list = mini_app_version_list
+        # 当前小程序历史版本的总数量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.mini_app_version_list:
+            for k in self.mini_app_version_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['miniAppVersionList'] = []
+        if self.mini_app_version_list is not None:
+            for k in self.mini_app_version_list:
+                result['miniAppVersionList'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.mini_app_version_list = []
+        if m.get('miniAppVersionList') is not None:
+            for k in m.get('miniAppVersionList'):
+                temp_model = PageInnerAppHistoryVersionResponseBodyMiniAppVersionList()
+                self.mini_app_version_list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class PageInnerAppHistoryVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PageInnerAppHistoryVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PageInnerAppHistoryVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PublishInnerAppVersionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PublishInnerAppVersionRequest(TeaModel):
+    def __init__(
+        self,
+        mini_app_on_pc: bool = None,
+        op_union_id: str = None,
+        publish_type: str = None,
+        version_id: int = None,
+    ):
+        # 小程序是否在PC端发布，true表示发布移动端和PC端，false表示只发布移动端
+        self.mini_app_on_pc = mini_app_on_pc
+        # 操作人unionId
+        self.op_union_id = op_union_id
+        # 小程序发布类型，”online“表示发布线上版本，”experience“表示发布体验版本
+        self.publish_type = publish_type
+        # 小程序版本id
+        self.version_id = version_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mini_app_on_pc is not None:
+            result['miniAppOnPc'] = self.mini_app_on_pc
+        if self.op_union_id is not None:
+            result['opUnionId'] = self.op_union_id
+        if self.publish_type is not None:
+            result['publishType'] = self.publish_type
+        if self.version_id is not None:
+            result['versionId'] = self.version_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('miniAppOnPc') is not None:
+            self.mini_app_on_pc = m.get('miniAppOnPc')
+        if m.get('opUnionId') is not None:
+            self.op_union_id = m.get('opUnionId')
+        if m.get('publishType') is not None:
+            self.publish_type = m.get('publishType')
+        if m.get('versionId') is not None:
+            self.version_id = m.get('versionId')
+        return self
+
+
+class PublishInnerAppVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 小程序发布结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class PublishInnerAppVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: PublishInnerAppVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = PublishInnerAppVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3431,6 +4169,139 @@ class RemoveMemberForAppRoleResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = RemoveMemberForAppRoleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RollbackInnerAppVersionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RollbackInnerAppVersionRequest(TeaModel):
+    def __init__(
+        self,
+        op_union_id: str = None,
+        version_id: int = None,
+    ):
+        # 操作人unionId
+        self.op_union_id = op_union_id
+        # 小程序版本id
+        self.version_id = version_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.op_union_id is not None:
+            result['opUnionId'] = self.op_union_id
+        if self.version_id is not None:
+            result['versionId'] = self.version_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opUnionId') is not None:
+            self.op_union_id = m.get('opUnionId')
+        if m.get('versionId') is not None:
+            self.version_id = m.get('versionId')
+        return self
+
+
+class RollbackInnerAppVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        # 小程序回滚结果
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class RollbackInnerAppVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: RollbackInnerAppVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = RollbackInnerAppVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
