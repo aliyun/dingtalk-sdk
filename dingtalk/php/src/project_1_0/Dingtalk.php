@@ -59,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryTaskOfProjectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchTaskflowStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchTaskflowStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchTaskflowStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponse;
@@ -86,6 +89,9 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateOrganizationTaskStatusRe
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateProjectGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateProjectGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateProjectGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateTaskTaskflowstatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateTaskTaskflowstatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateTaskTaskflowstatusResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\OpenApi\Models\OpenApiRequest;
@@ -1111,6 +1117,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                      $userId
+     * @param string                      $projectId
+     * @param SearchTaskflowStatusRequest $request
+     *
+     * @return SearchTaskflowStatusResponse
+     */
+    public function searchTaskflowStatus($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchTaskflowStatusHeaders([]);
+
+        return $this->searchTaskflowStatusWithOptions($userId, $projectId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                      $userId
+     * @param string                      $projectId
+     * @param SearchTaskflowStatusRequest $request
+     * @param SearchTaskflowStatusHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return SearchTaskflowStatusResponse
+     */
+    public function searchTaskflowStatusWithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId    = OpenApiUtilClient::getEncodeParam($userId);
+        $projectId = OpenApiUtilClient::getEncodeParam($projectId);
+        $query     = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->query)) {
+            @$query['query'] = $request->query;
+        }
+        if (!Utils::isUnset($request->tfIds)) {
+            @$query['tfIds'] = $request->tfIds;
+        }
+        if (!Utils::isUnset($request->tfsIds)) {
+            @$query['tfsIds'] = $request->tfsIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SearchTaskflowStatusResponse::fromMap($this->doROARequest('SearchTaskflowStatus', 'project_1.0', 'HTTP', 'GET', 'AK', '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/taskflowStatuses/search', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                        $userId
      * @param string                        $taskId
      * @param UpdateCustomfieldValueRequest $request
@@ -1597,5 +1663,56 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateProjectGroupResponse::fromMap($this->doROARequest('UpdateProjectGroup', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/users/' . $userId . '/projects/' . $projectId . '/groups', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string                          $userId
+     * @param string                          $taskId
+     * @param UpdateTaskTaskflowstatusRequest $request
+     *
+     * @return UpdateTaskTaskflowstatusResponse
+     */
+    public function updateTaskTaskflowstatus($userId, $taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateTaskTaskflowstatusHeaders([]);
+
+        return $this->updateTaskTaskflowstatusWithOptions($userId, $taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                          $userId
+     * @param string                          $taskId
+     * @param UpdateTaskTaskflowstatusRequest $request
+     * @param UpdateTaskTaskflowstatusHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return UpdateTaskTaskflowstatusResponse
+     */
+    public function updateTaskTaskflowstatusWithOptions($userId, $taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $userId = OpenApiUtilClient::getEncodeParam($userId);
+        $taskId = OpenApiUtilClient::getEncodeParam($taskId);
+        $body   = [];
+        if (!Utils::isUnset($request->taskflowStatusId)) {
+            @$body['taskflowStatusId'] = $request->taskflowStatusId;
+        }
+        if (!Utils::isUnset($request->tfsUpdateNote)) {
+            @$body['tfsUpdateNote'] = $request->tfsUpdateNote;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateTaskTaskflowstatusResponse::fromMap($this->doROARequest('UpdateTaskTaskflowstatus', 'project_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/project/users/' . $userId . '/tasks/' . $taskId . '/taskflowStatuses', 'json', $req, $runtime));
     }
 }
