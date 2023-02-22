@@ -1712,6 +1712,100 @@ export class SearchProjectTemplateResponse extends $tea.Model {
   }
 }
 
+export class SearchTaskflowStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTaskflowStatusRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  query?: string;
+  tfIds?: string;
+  tfsIds?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      query: 'query',
+      tfIds: 'tfIds',
+      tfsIds: 'tfsIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      query: 'string',
+      tfIds: 'string',
+      tfsIds: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTaskflowStatusResponseBody extends $tea.Model {
+  result?: SearchTaskflowStatusResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': SearchTaskflowStatusResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTaskflowStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchTaskflowStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchTaskflowStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCustomfieldValueHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2499,6 +2593,91 @@ export class UpdateProjectGroupResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateProjectGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTaskTaskflowstatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTaskTaskflowstatusRequest extends $tea.Model {
+  taskflowStatusId?: string;
+  tfsUpdateNote?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskflowStatusId: 'taskflowStatusId',
+      tfsUpdateNote: 'tfsUpdateNote',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskflowStatusId: 'string',
+      tfsUpdateNote: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTaskTaskflowstatusResponseBody extends $tea.Model {
+  result?: UpdateTaskTaskflowstatusResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateTaskTaskflowstatusResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTaskTaskflowstatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateTaskTaskflowstatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateTaskTaskflowstatusResponseBody,
     };
   }
 
@@ -3425,6 +3604,55 @@ export class SearchProjectTemplateResponseBodyResult extends $tea.Model {
   }
 }
 
+export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
+  created?: string;
+  creatorId?: string;
+  id?: string;
+  isDeleted?: boolean;
+  isTaskflowstatusruleexector?: boolean;
+  kind?: string;
+  name?: string;
+  pos?: number;
+  rejectStatusIds?: string[];
+  taskflowId?: string;
+  updated?: string;
+  static names(): { [key: string]: string } {
+    return {
+      created: 'created',
+      creatorId: 'creatorId',
+      id: 'id',
+      isDeleted: 'isDeleted',
+      isTaskflowstatusruleexector: 'isTaskflowstatusruleexector',
+      kind: 'kind',
+      name: 'name',
+      pos: 'pos',
+      rejectStatusIds: 'rejectStatusIds',
+      taskflowId: 'taskflowId',
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      created: 'string',
+      creatorId: 'string',
+      id: 'string',
+      isDeleted: 'boolean',
+      isTaskflowstatusruleexector: 'boolean',
+      kind: 'string',
+      name: 'string',
+      pos: 'number',
+      rejectStatusIds: { 'type': 'array', 'itemType': 'string' },
+      taskflowId: 'string',
+      updated: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCustomfieldValueRequestValue extends $tea.Model {
   title?: string;
   static names(): { [key: string]: string } {
@@ -3750,6 +3978,25 @@ export class UpdateProjectGroupResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       ok: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTaskTaskflowstatusResponseBodyResult extends $tea.Model {
+  updated?: string;
+  static names(): { [key: string]: string } {
+    return {
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      updated: 'string',
     };
   }
 
@@ -4562,6 +4809,53 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchProjectTemplateResponse>(await this.doROARequest("SearchProjectTemplate", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/templates`, "json", req, runtime), new SearchProjectTemplateResponse({}));
   }
 
+  async searchTaskflowStatus(userId: string, projectId: string, request: SearchTaskflowStatusRequest): Promise<SearchTaskflowStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchTaskflowStatusHeaders({ });
+    return await this.searchTaskflowStatusWithOptions(userId, projectId, request, headers, runtime);
+  }
+
+  async searchTaskflowStatusWithOptions(userId: string, projectId: string, request: SearchTaskflowStatusRequest, headers: SearchTaskflowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskflowStatusResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    projectId = OpenApiUtil.getEncodeParam(projectId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.query)) {
+      query["query"] = request.query;
+    }
+
+    if (!Util.isUnset(request.tfIds)) {
+      query["tfIds"] = request.tfIds;
+    }
+
+    if (!Util.isUnset(request.tfsIds)) {
+      query["tfsIds"] = request.tfsIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SearchTaskflowStatusResponse>(await this.doROARequest("SearchTaskflowStatus", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/taskflowStatuses/search`, "json", req, runtime), new SearchTaskflowStatusResponse({}));
+  }
+
   async updateCustomfieldValue(userId: string, taskId: string, request: UpdateCustomfieldValueRequest): Promise<UpdateCustomfieldValueResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCustomfieldValueHeaders({ });
@@ -4915,6 +5209,41 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateProjectGroupResponse>(await this.doROARequest("UpdateProjectGroup", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/groups`, "json", req, runtime), new UpdateProjectGroupResponse({}));
+  }
+
+  async updateTaskTaskflowstatus(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest): Promise<UpdateTaskTaskflowstatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTaskTaskflowstatusHeaders({ });
+    return await this.updateTaskTaskflowstatusWithOptions(userId, taskId, request, headers, runtime);
+  }
+
+  async updateTaskTaskflowstatusWithOptions(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest, headers: UpdateTaskTaskflowstatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskTaskflowstatusResponse> {
+    Util.validateModel(request);
+    userId = OpenApiUtil.getEncodeParam(userId);
+    taskId = OpenApiUtil.getEncodeParam(taskId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.taskflowStatusId)) {
+      body["taskflowStatusId"] = request.taskflowStatusId;
+    }
+
+    if (!Util.isUnset(request.tfsUpdateNote)) {
+      body["tfsUpdateNote"] = request.tfsUpdateNote;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateTaskTaskflowstatusResponse>(await this.doROARequest("UpdateTaskTaskflowstatus", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/taskflowStatuses`, "json", req, runtime), new UpdateTaskTaskflowstatusResponse({}));
   }
 
 }

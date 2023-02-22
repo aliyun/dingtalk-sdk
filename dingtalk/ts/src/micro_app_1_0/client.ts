@@ -1125,6 +1125,69 @@ export class ListAllAppResponse extends $tea.Model {
   }
 }
 
+export class ListAllInnerAppsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAllInnerAppsResponseBody extends $tea.Model {
+  appList?: ListAllInnerAppsResponseBodyAppList[];
+  static names(): { [key: string]: string } {
+    return {
+      appList: 'appList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appList: { 'type': 'array', 'itemType': ListAllInnerAppsResponseBodyAppList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAllInnerAppsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListAllInnerAppsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListAllInnerAppsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAppRoleScopesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1298,6 +1361,69 @@ export class ListInnerAppResponse extends $tea.Model {
   }
 }
 
+export class ListInnerAppVersionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListInnerAppVersionResponseBody extends $tea.Model {
+  appVersionList?: ListInnerAppVersionResponseBodyAppVersionList[];
+  static names(): { [key: string]: string } {
+    return {
+      appVersionList: 'appVersionList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appVersionList: { 'type': 'array', 'itemType': ListInnerAppVersionResponseBodyAppVersionList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListInnerAppVersionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ListInnerAppVersionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ListInnerAppVersionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListRoleInfoByUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1416,6 +1542,185 @@ export class ListUserVilebleAppResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: ListUserVilebleAppResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageInnerAppHistoryVersionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageInnerAppHistoryVersionRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageInnerAppHistoryVersionResponseBody extends $tea.Model {
+  miniAppVersionList?: PageInnerAppHistoryVersionResponseBodyMiniAppVersionList[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      miniAppVersionList: 'miniAppVersionList',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      miniAppVersionList: { 'type': 'array', 'itemType': PageInnerAppHistoryVersionResponseBodyMiniAppVersionList },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageInnerAppHistoryVersionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PageInnerAppHistoryVersionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PageInnerAppHistoryVersionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishInnerAppVersionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishInnerAppVersionRequest extends $tea.Model {
+  miniAppOnPc?: boolean;
+  opUnionId?: string;
+  publishType?: string;
+  versionId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      miniAppOnPc: 'miniAppOnPc',
+      opUnionId: 'opUnionId',
+      publishType: 'publishType',
+      versionId: 'versionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      miniAppOnPc: 'boolean',
+      opUnionId: 'string',
+      publishType: 'string',
+      versionId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishInnerAppVersionResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishInnerAppVersionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: PublishInnerAppVersionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: PublishInnerAppVersionResponseBody,
     };
   }
 
@@ -1777,6 +2082,91 @@ export class RemoveMemberForAppRoleResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: RemoveMemberForAppRoleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackInnerAppVersionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackInnerAppVersionRequest extends $tea.Model {
+  opUnionId?: string;
+  versionId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      opUnionId: 'opUnionId',
+      versionId: 'versionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUnionId: 'string',
+      versionId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackInnerAppVersionResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackInnerAppVersionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: RollbackInnerAppVersionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: RollbackInnerAppVersionResponseBody,
     };
   }
 
@@ -2300,6 +2690,52 @@ export class ListAllAppResponseBodyAppList extends $tea.Model {
   }
 }
 
+export class ListAllInnerAppsResponseBodyAppList extends $tea.Model {
+  agentId?: number;
+  appId?: number;
+  appStatus?: number;
+  desc?: string;
+  developType?: number;
+  homepageLink?: string;
+  icon?: string;
+  name?: string;
+  ompLink?: string;
+  pcHomepageLink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+      appId: 'appId',
+      appStatus: 'appStatus',
+      desc: 'desc',
+      developType: 'developType',
+      homepageLink: 'homepageLink',
+      icon: 'icon',
+      name: 'name',
+      ompLink: 'ompLink',
+      pcHomepageLink: 'pcHomepageLink',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'number',
+      appId: 'number',
+      appStatus: 'number',
+      desc: 'string',
+      developType: 'number',
+      homepageLink: 'string',
+      icon: 'string',
+      name: 'string',
+      ompLink: 'string',
+      pcHomepageLink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAppRoleScopesResponseBodyDataList extends $tea.Model {
   canManageRole?: boolean;
   deptIdList?: number[];
@@ -2374,6 +2810,43 @@ export class ListInnerAppResponseBodyAppList extends $tea.Model {
   }
 }
 
+export class ListInnerAppVersionResponseBodyAppVersionList extends $tea.Model {
+  appVersion?: string;
+  appVersionId?: number;
+  appVersionType?: number;
+  createTime?: string;
+  miniAppId?: string;
+  miniAppOnPc?: boolean;
+  modifyTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appVersion: 'appVersion',
+      appVersionId: 'appVersionId',
+      appVersionType: 'appVersionType',
+      createTime: 'createTime',
+      miniAppId: 'miniAppId',
+      miniAppOnPc: 'miniAppOnPc',
+      modifyTime: 'modifyTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appVersion: 'string',
+      appVersionId: 'number',
+      appVersionType: 'number',
+      createTime: 'string',
+      miniAppId: 'string',
+      miniAppOnPc: 'boolean',
+      modifyTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListRoleInfoByUserResponseBodyResult extends $tea.Model {
   canManageRole?: boolean;
   roleId?: number;
@@ -2437,6 +2910,43 @@ export class ListUserVilebleAppResponseBodyAppList extends $tea.Model {
       name: 'string',
       ompLink: 'string',
       pcHomepageLink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageInnerAppHistoryVersionResponseBodyMiniAppVersionList extends $tea.Model {
+  appVersion?: string;
+  appVersionId?: number;
+  appVersionType?: number;
+  createTime?: string;
+  miniAppId?: string;
+  miniAppOnPc?: boolean;
+  modifyTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appVersion: 'appVersion',
+      appVersionId: 'appVersionId',
+      appVersionType: 'appVersionType',
+      createTime: 'createTime',
+      miniAppId: 'miniAppId',
+      miniAppOnPc: 'miniAppOnPc',
+      modifyTime: 'modifyTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appVersion: 'string',
+      appVersionId: 'number',
+      appVersionType: 'number',
+      createTime: 'string',
+      miniAppId: 'string',
+      miniAppOnPc: 'boolean',
+      modifyTime: 'string',
     };
   }
 
@@ -2930,6 +3440,28 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAllAppResponse>(await this.doROARequest("ListAllApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/allApps`, "json", req, runtime), new ListAllAppResponse({}));
   }
 
+  async listAllInnerApps(): Promise<ListAllInnerAppsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListAllInnerAppsHeaders({ });
+    return await this.listAllInnerAppsWithOptions(headers, runtime);
+  }
+
+  async listAllInnerAppsWithOptions(headers: ListAllInnerAppsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllInnerAppsResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListAllInnerAppsResponse>(await this.doROARequest("ListAllInnerApps", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/allInnerApps`, "json", req, runtime), new ListAllInnerAppsResponse({}));
+  }
+
   async listAppRoleScopes(agentId: string, request: ListAppRoleScopesRequest): Promise<ListAppRoleScopesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAppRoleScopesHeaders({ });
@@ -2993,6 +3525,29 @@ export default class Client extends OpenApi {
     return $tea.cast<ListInnerAppResponse>(await this.doROARequest("ListInnerApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps`, "json", req, runtime), new ListInnerAppResponse({}));
   }
 
+  async listInnerAppVersion(agentId: string): Promise<ListInnerAppVersionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListInnerAppVersionHeaders({ });
+    return await this.listInnerAppVersionWithOptions(agentId, headers, runtime);
+  }
+
+  async listInnerAppVersionWithOptions(agentId: string, headers: ListInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListInnerAppVersionResponse> {
+    agentId = OpenApiUtil.getEncodeParam(agentId);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<ListInnerAppVersionResponse>(await this.doROARequest("ListInnerAppVersion", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/innerMiniApps/${agentId}/versions`, "json", req, runtime), new ListInnerAppVersionResponse({}));
+  }
+
   async listRoleInfoByUser(agentId: string, userId: string): Promise<ListRoleInfoByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListRoleInfoByUserHeaders({ });
@@ -3038,6 +3593,82 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<ListUserVilebleAppResponse>(await this.doROARequest("ListUserVilebleApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/users/${userId}/apps`, "json", req, runtime), new ListUserVilebleAppResponse({}));
+  }
+
+  async pageInnerAppHistoryVersion(agentId: string, request: PageInnerAppHistoryVersionRequest): Promise<PageInnerAppHistoryVersionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageInnerAppHistoryVersionHeaders({ });
+    return await this.pageInnerAppHistoryVersionWithOptions(agentId, request, headers, runtime);
+  }
+
+  async pageInnerAppHistoryVersionWithOptions(agentId: string, request: PageInnerAppHistoryVersionRequest, headers: PageInnerAppHistoryVersionHeaders, runtime: $Util.RuntimeOptions): Promise<PageInnerAppHistoryVersionResponse> {
+    Util.validateModel(request);
+    agentId = OpenApiUtil.getEncodeParam(agentId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<PageInnerAppHistoryVersionResponse>(await this.doROARequest("PageInnerAppHistoryVersion", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/innerMiniApps/${agentId}/historyVersions`, "json", req, runtime), new PageInnerAppHistoryVersionResponse({}));
+  }
+
+  async publishInnerAppVersion(agentId: string, request: PublishInnerAppVersionRequest): Promise<PublishInnerAppVersionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PublishInnerAppVersionHeaders({ });
+    return await this.publishInnerAppVersionWithOptions(agentId, request, headers, runtime);
+  }
+
+  async publishInnerAppVersionWithOptions(agentId: string, request: PublishInnerAppVersionRequest, headers: PublishInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<PublishInnerAppVersionResponse> {
+    Util.validateModel(request);
+    agentId = OpenApiUtil.getEncodeParam(agentId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.miniAppOnPc)) {
+      body["miniAppOnPc"] = request.miniAppOnPc;
+    }
+
+    if (!Util.isUnset(request.opUnionId)) {
+      body["opUnionId"] = request.opUnionId;
+    }
+
+    if (!Util.isUnset(request.publishType)) {
+      body["publishType"] = request.publishType;
+    }
+
+    if (!Util.isUnset(request.versionId)) {
+      body["versionId"] = request.versionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<PublishInnerAppVersionResponse>(await this.doROARequest("PublishInnerAppVersion", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/innerMiniApps/${agentId}/versions/publish`, "json", req, runtime), new PublishInnerAppVersionResponse({}));
   }
 
   async rebuildRoleScopeForAppRole(agentId: string, roleId: string, request: RebuildRoleScopeForAppRoleRequest): Promise<RebuildRoleScopeForAppRoleResponse> {
@@ -3199,6 +3830,40 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RemoveMemberForAppRoleResponse>(await this.doROARequest("RemoveMemberForAppRole", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}/members/batchRemove`, "json", req, runtime), new RemoveMemberForAppRoleResponse({}));
+  }
+
+  async rollbackInnerAppVersion(agentId: string, request: RollbackInnerAppVersionRequest): Promise<RollbackInnerAppVersionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RollbackInnerAppVersionHeaders({ });
+    return await this.rollbackInnerAppVersionWithOptions(agentId, request, headers, runtime);
+  }
+
+  async rollbackInnerAppVersionWithOptions(agentId: string, request: RollbackInnerAppVersionRequest, headers: RollbackInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<RollbackInnerAppVersionResponse> {
+    Util.validateModel(request);
+    agentId = OpenApiUtil.getEncodeParam(agentId);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUnionId)) {
+      body["opUnionId"] = request.opUnionId;
+    }
+
+    if (!Util.isUnset(request.versionId)) {
+      body["versionId"] = request.versionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<RollbackInnerAppVersionResponse>(await this.doROARequest("RollbackInnerAppVersion", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/innerMiniApps/${agentId}/versions/rollback`, "json", req, runtime), new RollbackInnerAppVersionResponse({}));
   }
 
   async setMicroAppScope(agentId: string, request: SetMicroAppScopeRequest): Promise<SetMicroAppScopeResponse> {
