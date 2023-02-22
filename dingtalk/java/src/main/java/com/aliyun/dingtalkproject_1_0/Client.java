@@ -807,6 +807,53 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SearchProjectTemplate", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/templates", "json", req, runtime), new SearchProjectTemplateResponse());
     }
 
+    public SearchTaskflowStatusResponse searchTaskflowStatus(String userId, String projectId, SearchTaskflowStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SearchTaskflowStatusHeaders headers = new SearchTaskflowStatusHeaders();
+        return this.searchTaskflowStatusWithOptions(userId, projectId, request, headers, runtime);
+    }
+
+    public SearchTaskflowStatusResponse searchTaskflowStatusWithOptions(String userId, String projectId, SearchTaskflowStatusRequest request, SearchTaskflowStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.query)) {
+            query.put("query", request.query);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tfIds)) {
+            query.put("tfIds", request.tfIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tfsIds)) {
+            query.put("tfsIds", request.tfsIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("SearchTaskflowStatus", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskflowStatuses/search", "json", req, runtime), new SearchTaskflowStatusResponse());
+    }
+
     public UpdateCustomfieldValueResponse updateCustomfieldValue(String userId, String taskId, UpdateCustomfieldValueRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateCustomfieldValueHeaders headers = new UpdateCustomfieldValueHeaders();
@@ -1160,5 +1207,40 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         return TeaModel.toModel(this.doROARequest("UpdateProjectGroup", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/groups", "json", req, runtime), new UpdateProjectGroupResponse());
+    }
+
+    public UpdateTaskTaskflowstatusResponse updateTaskTaskflowstatus(String userId, String taskId, UpdateTaskTaskflowstatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateTaskTaskflowstatusHeaders headers = new UpdateTaskTaskflowstatusHeaders();
+        return this.updateTaskTaskflowstatusWithOptions(userId, taskId, request, headers, runtime);
+    }
+
+    public UpdateTaskTaskflowstatusResponse updateTaskTaskflowstatusWithOptions(String userId, String taskId, UpdateTaskTaskflowstatusRequest request, UpdateTaskTaskflowstatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskflowStatusId)) {
+            body.put("taskflowStatusId", request.taskflowStatusId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tfsUpdateNote)) {
+            body.put("tfsUpdateNote", request.tfsUpdateNote);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("UpdateTaskTaskflowstatus", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/taskflowStatuses", "json", req, runtime), new UpdateTaskTaskflowstatusResponse());
     }
 }
