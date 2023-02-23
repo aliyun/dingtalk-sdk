@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupNameResponseBody extends Model
 {
     /**
-     * @description Id of the request
+     * @description 新群名称
      *
      * @var string
      */

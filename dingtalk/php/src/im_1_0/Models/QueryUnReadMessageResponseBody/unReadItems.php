@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class unReadItems extends Model
 {
     /**
-     * @description 群会话Id
+     * @description 群会话Id。
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 未读消息数
+     * @description 未读消息数。
      *
      * @var int
      */

@@ -16,7 +16,7 @@ class CreateGroupConversationRequest extends Model
     public $appUserIds;
 
     /**
-     * @description 群头像。
+     * @description 群头像地址。
      *
      * @var string
      */
@@ -30,7 +30,7 @@ class CreateGroupConversationRequest extends Model
     public $groupName;
 
     /**
-     * @description 群主(钉内用户)userId。
+     * @description 群主在业务系统内的唯一标识
      *
      * @var string
      */

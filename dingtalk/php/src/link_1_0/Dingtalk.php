@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ApplyFollowerAuthInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ApplyFollowerAuthInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ApplyFollowerAuthInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CallbackRegiesterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CallbackRegiesterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CallbackRegiesterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CloseTopBoxInteractiveOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CloseTopBoxInteractiveOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\CloseTopBoxInteractiveOTOMessageResponse;
@@ -102,6 +105,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ApplyFollowerAuthInfoResponse::fromMap($this->doROARequest('ApplyFollowerAuthInfo', 'link_1.0', 'HTTP', 'POST', 'AK', '/v1.0/link/followers/authInfos/apply', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CallbackRegiesterRequest $request
+     *
+     * @return CallbackRegiesterResponse
+     */
+    public function callbackRegiester($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CallbackRegiesterHeaders([]);
+
+        return $this->callbackRegiesterWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CallbackRegiesterRequest $request
+     * @param CallbackRegiesterHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CallbackRegiesterResponse
+     */
+    public function callbackRegiesterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->apiSecret)) {
+            @$body['apiSecret'] = $request->apiSecret;
+        }
+        if (!Utils::isUnset($request->callbackKey)) {
+            @$body['callbackKey'] = $request->callbackKey;
+        }
+        if (!Utils::isUnset($request->callbackUrl)) {
+            @$body['callbackUrl'] = $request->callbackUrl;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CallbackRegiesterResponse::fromMap($this->doROARequest('CallbackRegiester', 'link_1.0', 'HTTP', 'POST', 'AK', '/v1.0/link/callbacks/regiester', 'json', $req, $runtime));
     }
 
     /**

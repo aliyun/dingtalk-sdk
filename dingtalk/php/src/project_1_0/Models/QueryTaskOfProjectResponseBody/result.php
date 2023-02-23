@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryTaskOfProjectResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryTaskOfProjectResponseBody\result\customfields;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -46,7 +47,7 @@ class result extends Model
     /**
      * @description 自定义字段id列表。
      *
-     * @var string[]
+     * @var customfields[]
      */
     public $customfields;
 
@@ -93,9 +94,9 @@ class result extends Model
     public $isDone;
 
     /**
-     * @description 任务自定义标识。
+     * @description 任务标签集合。
      *
-     * @var string
+     * @var string[]
      */
     public $labels;
 
@@ -165,7 +166,7 @@ class result extends Model
     /**
      * @description 标签id集合。
      *
-     * @var string
+     * @var string[]
      */
     public $tagIds;
 
@@ -249,7 +250,13 @@ class result extends Model
             $res['creatorId'] = $this->creatorId;
         }
         if (null !== $this->customfields) {
-            $res['customfields'] = $this->customfields;
+            $res['customfields'] = [];
+            if (null !== $this->customfields && \is_array($this->customfields)) {
+                $n = 0;
+                foreach ($this->customfields as $item) {
+                    $res['customfields'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->dueDate) {
             $res['dueDate'] = $this->dueDate;
@@ -345,7 +352,11 @@ class result extends Model
         }
         if (isset($map['customfields'])) {
             if (!empty($map['customfields'])) {
-                $model->customfields = $map['customfields'];
+                $model->customfields = [];
+                $n                   = 0;
+                foreach ($map['customfields'] as $item) {
+                    $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
+                }
             }
         }
         if (isset($map['dueDate'])) {
@@ -369,7 +380,9 @@ class result extends Model
             $model->isDone = $map['isDone'];
         }
         if (isset($map['labels'])) {
-            $model->labels = $map['labels'];
+            if (!empty($map['labels'])) {
+                $model->labels = $map['labels'];
+            }
         }
         if (isset($map['note'])) {
             $model->note = $map['note'];
@@ -399,7 +412,9 @@ class result extends Model
             $model->storyPoint = $map['storyPoint'];
         }
         if (isset($map['tagIds'])) {
-            $model->tagIds = $map['tagIds'];
+            if (!empty($map['tagIds'])) {
+                $model->tagIds = $map['tagIds'];
+            }
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];

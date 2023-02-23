@@ -23,13 +23,6 @@ class result extends Model
     public $creatorId;
 
     /**
-     * @description 工作流状态ID。
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
      * @description 是否已删除。
      *
      * @var bool
@@ -44,39 +37,46 @@ class result extends Model
     public $isTaskflowstatusruleexector;
 
     /**
-     * @description start,end,unset
+     * @description 任务工作流状态类型。  start: 开始  end: 结束  unset: 未设置
      *
      * @var string
      */
     public $kind;
 
     /**
-     * @description 工作流状态名字。
+     * @description 任务工作流状态名字。
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 工作流状态位置。
+     * @description 任务工作流状态位置。
      *
      * @var int
      */
     public $pos;
 
     /**
-     * @description 该工作流状态不能流转到其他工作流状态。
+     * @description 拒绝的工作流状态Id。
      *
      * @var string[]
      */
     public $rejectStatusIds;
 
     /**
-     * @description 工作流状态ID。
+     * @description 任务工作流ID。
      *
      * @var string
      */
     public $taskflowId;
+
+    /**
+     * @description 任务工作流状态ID。
+     *
+     * @var string
+     */
+    public $taskflowStatusId;
 
     /**
      * @description 更新时间。
@@ -87,7 +87,6 @@ class result extends Model
     protected $_name = [
         'created'                     => 'created',
         'creatorId'                   => 'creatorId',
-        'id'                          => 'id',
         'isDeleted'                   => 'isDeleted',
         'isTaskflowstatusruleexector' => 'isTaskflowstatusruleexector',
         'kind'                        => 'kind',
@@ -95,6 +94,7 @@ class result extends Model
         'pos'                         => 'pos',
         'rejectStatusIds'             => 'rejectStatusIds',
         'taskflowId'                  => 'taskflowId',
+        'taskflowStatusId'            => 'taskflowStatusId',
         'updated'                     => 'updated',
     ];
 
@@ -110,9 +110,6 @@ class result extends Model
         }
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
-        }
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
         }
         if (null !== $this->isDeleted) {
             $res['isDeleted'] = $this->isDeleted;
@@ -135,6 +132,9 @@ class result extends Model
         if (null !== $this->taskflowId) {
             $res['taskflowId'] = $this->taskflowId;
         }
+        if (null !== $this->taskflowStatusId) {
+            $res['taskflowStatusId'] = $this->taskflowStatusId;
+        }
         if (null !== $this->updated) {
             $res['updated'] = $this->updated;
         }
@@ -155,9 +155,6 @@ class result extends Model
         }
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
-        }
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
         }
         if (isset($map['isDeleted'])) {
             $model->isDeleted = $map['isDeleted'];
@@ -181,6 +178,9 @@ class result extends Model
         }
         if (isset($map['taskflowId'])) {
             $model->taskflowId = $map['taskflowId'];
+        }
+        if (isset($map['taskflowStatusId'])) {
+            $model->taskflowStatusId = $map['taskflowStatusId'];
         }
         if (isset($map['updated'])) {
             $model->updated = $map['updated'];

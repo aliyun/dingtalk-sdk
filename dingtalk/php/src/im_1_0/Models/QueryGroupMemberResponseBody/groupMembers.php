@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class groupMembers extends Model
 {
     /**
-     * @description 群成员头像。
+     * @description 群成员头像地址。
      *
      * @var string
      */

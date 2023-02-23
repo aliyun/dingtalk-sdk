@@ -9,13 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ChangeGroupOwnerResponseBody extends Model
 {
     /**
-     * @description Id of the request
+     * @description 群主在业务系统内的唯一标识
      *
      * @var string
      */
     public $newGroupOwnerId;
 
     /**
+     * @description 群主类型<2.钉内用户类型 3.钉外用户类型>
+     *
      * @var int
      */
     public $newGroupOwnerType;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class openConversations extends Model
 {
     /**
-     * @description 钉外用户在业务系统内的唯一标识。
+     * @description 钉外账号在业务系统内的唯一标识。
      *
      * @var string
      */
@@ -23,7 +23,7 @@ class openConversations extends Model
     public $openConversationId;
 
     /**
-     * @description 钉内用户userId。
+     * @description 钉内账号userId。
      *
      * @var string
      */

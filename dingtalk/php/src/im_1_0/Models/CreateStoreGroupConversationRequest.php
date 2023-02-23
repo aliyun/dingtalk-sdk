@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateStoreGroupConversationRequest extends Model
 {
     /**
-     * @description 钉外用户在业务系统内的唯一标识。
+     * @description 钉外账号在业务系统内的唯一标识。
      *
      * @var string
      */
@@ -23,7 +23,7 @@ class CreateStoreGroupConversationRequest extends Model
     public $businessUniqueKey;
 
     /**
-     * @description 群头像。
+     * @description 群头像地址。
      *
      * @var string
      */
@@ -51,7 +51,7 @@ class CreateStoreGroupConversationRequest extends Model
     public $operatorId;
 
     /**
-     * @description 钉内用户列表。
+     * @description 钉内成员列表。
      *
      * @var string[]
      */

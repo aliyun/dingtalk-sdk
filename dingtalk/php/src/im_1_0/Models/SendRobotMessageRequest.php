@@ -16,14 +16,14 @@ class SendRobotMessageRequest extends Model
     public $atAll;
 
     /**
-     * @description @钉外在业务系统内的唯一标志。
+     * @description @钉外账号在业务系统内的唯一标志。
      *
      * @var string
      */
     public $atAppUserId;
 
     /**
-     * @description @钉内用户userId。
+     * @description @钉内账号userId。
      *
      * @var string
      */
@@ -44,7 +44,7 @@ class SendRobotMessageRequest extends Model
     public $msgType;
 
     /**
-     * @description 群会话列表。
+     * @description 群会话Id列表。
      *
      * @var string[]
      */

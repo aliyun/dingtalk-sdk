@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SendMessageResponseBody extends Model
 {
     /**
-     * @description 发送消息请求Id
+     * @description 发送消息请求Id。
      *
      * @var string
      */

@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class SendMessageRequest extends Model
 {
     /**
-     * @description 消息内容
+     * @description 消息内容。
      *
      * @var string
      */
     public $message;
 
     /**
-     * @description 消息类型
+     * @description 消息类型。
      *
      * @var string
      */
     public $messageType;
 
     /**
-     * @description 群会话Id
+     * @description 群会话Id。
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description B端客服钉钉Id
+     * @description 钉内账号userId。
      *
      * @var string
      */
     public $receiverId;
 
     /**
-     * @description C端客户appUserId
+     * @description 钉外账号在业务系统内的唯一标志。
      *
      * @var string
      */
     public $senderId;
 
     /**
-     * @description 渠道按钮跳转信息
+     * @description 渠道按钮跳转信息。
      *
      * @var mixed[]
      */

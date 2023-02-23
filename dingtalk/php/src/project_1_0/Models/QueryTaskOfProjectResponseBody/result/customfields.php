@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryTaskOfProjectResponseBody\result;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateGroupAvatarResponseBody extends Model
+class customfields extends Model
 {
     /**
-     * @description 新头像地址。
+     * @description 自定义字段Id。
      *
      * @var string
      */
-    public $newGroupAvatar;
+    public $customfieldId;
     protected $_name = [
-        'newGroupAvatar' => 'newGroupAvatar',
+        'customfieldId' => 'customfieldId',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class UpdateGroupAvatarResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->newGroupAvatar) {
-            $res['newGroupAvatar'] = $this->newGroupAvatar;
+        if (null !== $this->customfieldId) {
+            $res['customfieldId'] = $this->customfieldId;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class UpdateGroupAvatarResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return UpdateGroupAvatarResponseBody
+     * @return customfields
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['newGroupAvatar'])) {
-            $model->newGroupAvatar = $map['newGroupAvatar'];
+        if (isset($map['customfieldId'])) {
+            $model->customfieldId = $map['customfieldId'];
         }
 
         return $model;

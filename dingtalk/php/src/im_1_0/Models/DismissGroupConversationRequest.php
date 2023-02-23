@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DismissGroupConversationRequest extends Model
 {
     /**
-     * @description 群id(客联系业务系统内的群id)
+     * @description 群会话Id。
      *
      * @var string
      */

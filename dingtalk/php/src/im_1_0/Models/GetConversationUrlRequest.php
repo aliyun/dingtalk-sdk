@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetConversationUrlRequest extends Model
 {
     /**
-     * @description 钉外用户在业务系统内的唯一标志。
+     * @description 钉外账号在业务系统内的唯一标志。
      *
      * @var string
      */
@@ -30,14 +30,7 @@ class GetConversationUrlRequest extends Model
     public $openConversationId;
 
     /**
-     * @description 钉外用户标识。
-     *
-     * @var string
-     */
-    public $sourceCode;
-
-    /**
-     * @description 钉内用户userId。
+     * @description 钉内账号userId。
      *
      * @var string
      */
@@ -46,7 +39,6 @@ class GetConversationUrlRequest extends Model
         'appUserId'          => 'appUserId',
         'channelCode'        => 'channelCode',
         'openConversationId' => 'openConversationId',
-        'sourceCode'         => 'sourceCode',
         'userId'             => 'userId',
     ];
 
@@ -65,9 +57,6 @@ class GetConversationUrlRequest extends Model
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
-        }
-        if (null !== $this->sourceCode) {
-            $res['sourceCode'] = $this->sourceCode;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -92,9 +81,6 @@ class GetConversationUrlRequest extends Model
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
-        }
-        if (isset($map['sourceCode'])) {
-            $model->sourceCode = $map['sourceCode'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

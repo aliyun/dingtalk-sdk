@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetConversationUrlResponseBody extends Model
 {
     /**
-     * @description 会话url
+     * @description ToB会话地址
      *
      * @var string
      */

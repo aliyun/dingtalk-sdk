@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupNameRequest extends Model
 {
     /**
-     * @description 群名称
+     * @description 群名称。
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群会话id
+     * @description 群会话id。
      *
      * @var string
      */

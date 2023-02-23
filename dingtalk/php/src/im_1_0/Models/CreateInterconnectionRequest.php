@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class CreateInterconnectionRequest extends Model
 {
     /**
-     * @description 钉外钉内关系列表。
+     * @description 要创建的钉外账号列表。
      *
      * @var interconnections[]
      */
