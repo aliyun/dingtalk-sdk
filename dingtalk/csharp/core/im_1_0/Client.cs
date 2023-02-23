@@ -1310,10 +1310,6 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["openConversationId"] = request.OpenConversationId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceCode))
-            {
-                body["sourceCode"] = request.SourceCode;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -1350,10 +1346,6 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceCode))
-            {
-                body["sourceCode"] = request.SourceCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {

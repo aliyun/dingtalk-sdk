@@ -63,7 +63,16 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             /// </summary>
             [NameInMap("customfields")]
             [Validation(Required=false)]
-            public List<string> Customfields { get; set; }
+            public List<QueryTaskOfProjectResponseBodyResultCustomfields> Customfields { get; set; }
+            public class QueryTaskOfProjectResponseBodyResultCustomfields : TeaModel {
+                /// <summary>
+                /// 自定义字段Id。
+                /// </summary>
+                [NameInMap("customfieldId")]
+                [Validation(Required=false)]
+                public string CustomfieldId { get; set; }
+
+            }
 
             /// <summary>
             /// 任务截止时间。
@@ -108,11 +117,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             public bool? IsDone { get; set; }
 
             /// <summary>
-            /// 任务自定义标识。
+            /// 任务标签集合。
             /// </summary>
             [NameInMap("labels")]
             [Validation(Required=false)]
-            public string Labels { get; set; }
+            public List<string> Labels { get; set; }
 
             /// <summary>
             /// 备注。
@@ -182,7 +191,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             /// </summary>
             [NameInMap("tagIds")]
             [Validation(Required=false)]
-            public string TagIds { get; set; }
+            public List<string> TagIds { get; set; }
 
             /// <summary>
             /// 任务id。

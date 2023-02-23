@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateGroupNameResponseBody : TeaModel {
         /// <summary>
-        /// Id of the request
+        /// 新群名称
         /// </summary>
         [NameInMap("newGroupName")]
         [Validation(Required=false)]

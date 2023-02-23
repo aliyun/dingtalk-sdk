@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class GetConversationUrlResponseBody : TeaModel {
         /// <summary>
-        /// 会话url
+        /// ToB会话地址
         /// </summary>
         [NameInMap("url")]
         [Validation(Required=false)]

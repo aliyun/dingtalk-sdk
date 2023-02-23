@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class SearchTaskflowStatusResponseBody : TeaModel {
         /// <summary>
-        /// 工作流状态列表。
+        /// 任务工作流状态列表。
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
@@ -31,13 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             public string CreatorId { get; set; }
 
             /// <summary>
-            /// 工作流状态ID。
-            /// </summary>
-            [NameInMap("id")]
-            [Validation(Required=false)]
-            public string Id { get; set; }
-
-            /// <summary>
             /// 是否已删除。
             /// </summary>
             [NameInMap("isDeleted")]
@@ -52,39 +45,46 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             public bool? IsTaskflowstatusruleexector { get; set; }
 
             /// <summary>
-            /// start,end,unset
+            /// 任务工作流状态类型。  start: 开始  end: 结束  unset: 未设置
             /// </summary>
             [NameInMap("kind")]
             [Validation(Required=false)]
             public string Kind { get; set; }
 
             /// <summary>
-            /// 工作流状态名字。
+            /// 任务工作流状态名字。
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// 工作流状态位置。
+            /// 任务工作流状态位置。
             /// </summary>
             [NameInMap("pos")]
             [Validation(Required=false)]
             public int? Pos { get; set; }
 
             /// <summary>
-            /// 该工作流状态不能流转到其他工作流状态。
+            /// 拒绝的工作流状态Id。
             /// </summary>
             [NameInMap("rejectStatusIds")]
             [Validation(Required=false)]
             public List<string> RejectStatusIds { get; set; }
 
             /// <summary>
-            /// 工作流状态ID。
+            /// 任务工作流ID。
             /// </summary>
             [NameInMap("taskflowId")]
             [Validation(Required=false)]
             public string TaskflowId { get; set; }
+
+            /// <summary>
+            /// 任务工作流状态ID。
+            /// </summary>
+            [NameInMap("taskflowStatusId")]
+            [Validation(Required=false)]
+            public string TaskflowStatusId { get; set; }
 
             /// <summary>
             /// 更新时间。

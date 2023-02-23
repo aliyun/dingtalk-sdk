@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateCoupleGroupConversationRequest : TeaModel {
         /// <summary>
-        /// 钉外用户在业务系统内的唯一标识。
+        /// 钉外账号在业务系统内的唯一标识。
         /// </summary>
         [NameInMap("appUserId")]
         [Validation(Required=false)]
         public string AppUserId { get; set; }
 
         /// <summary>
-        /// 群头像。
+        /// 群头像地址。
         /// </summary>
         [NameInMap("groupAvatar")]
         [Validation(Required=false)]
@@ -31,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 群主(钉外用户)userId。
+        /// 群主在业务系统内的唯一标识
         /// </summary>
         [NameInMap("groupOwnerId")]
         [Validation(Required=false)]

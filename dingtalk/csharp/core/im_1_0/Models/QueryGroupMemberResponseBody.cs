@@ -17,7 +17,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public List<QueryGroupMemberResponseBodyGroupMembers> GroupMembers { get; set; }
         public class QueryGroupMemberResponseBodyGroupMembers : TeaModel {
             /// <summary>
-            /// 群成员头像。
+            /// 群成员头像地址。
             /// </summary>
             [NameInMap("groupMemberAvatar")]
             [Validation(Required=false)]

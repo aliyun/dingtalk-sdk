@@ -17,14 +17,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public List<QuerySingleGroupRequestGroupMembers> GroupMembers { get; set; }
         public class QuerySingleGroupRequestGroupMembers : TeaModel {
             /// <summary>
-            /// 钉外用户在业务系统内的唯一标识。
+            /// 钉外账号在业务系统内的唯一标识。
             /// </summary>
             [NameInMap("appUserId")]
             [Validation(Required=false)]
             public string AppUserId { get; set; }
 
             /// <summary>
-            /// 钉内用户userId。
+            /// 钉内账号userId。
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]

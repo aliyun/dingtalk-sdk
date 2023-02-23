@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateGroupAvatarResponseBody : TeaModel {
         /// <summary>
-        /// 新头像
+        /// 新头像地址。
         /// </summary>
         [NameInMap("newGroupAvatar")]
         [Validation(Required=false)]

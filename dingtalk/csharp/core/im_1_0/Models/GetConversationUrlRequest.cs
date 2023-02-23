@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class GetConversationUrlRequest : TeaModel {
         /// <summary>
-        /// 钉外用户在业务系统内的唯一标志。
+        /// 钉外账号在业务系统内的唯一标志。
         /// </summary>
         [NameInMap("appUserId")]
         [Validation(Required=false)]
@@ -31,14 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// 钉外用户标识。
-        /// </summary>
-        [NameInMap("sourceCode")]
-        [Validation(Required=false)]
-        public string SourceCode { get; set; }
-
-        /// <summary>
-        /// 钉内用户userId。
+        /// 钉内账号userId。
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateGroupAvatarRequest : TeaModel {
         /// <summary>
-        /// 群头像地址
+        /// 群头像地址。
         /// </summary>
         [NameInMap("groupAvatar")]
         [Validation(Required=false)]
         public string GroupAvatar { get; set; }
 
         /// <summary>
-        /// 群会话id
+        /// 群会话id。
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class DismissGroupConversationRequest : TeaModel {
         /// <summary>
-        /// 群id(客联系业务系统内的群id)
+        /// 群会话Id。
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

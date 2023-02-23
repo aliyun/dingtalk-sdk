@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateStoreGroupConversationRequest : TeaModel {
         /// <summary>
-        /// 钉外用户在业务系统内的唯一标识。
+        /// 钉外账号在业务系统内的唯一标识。
         /// </summary>
         [NameInMap("appUserId")]
         [Validation(Required=false)]
@@ -24,7 +24,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string BusinessUniqueKey { get; set; }
 
         /// <summary>
-        /// 群头像。
+        /// 群头像地址。
         /// </summary>
         [NameInMap("groupAvatar")]
         [Validation(Required=false)]
@@ -52,7 +52,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string OperatorId { get; set; }
 
         /// <summary>
-        /// 钉内用户列表。
+        /// 钉内成员列表。
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

@@ -38,14 +38,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// 钉外用户在业务系统内的唯一标志。
+        /// 钉外账号在业务系统内的唯一标志。
         /// </summary>
         [NameInMap("receiverId")]
         [Validation(Required=false)]
         public string ReceiverId { get; set; }
 
         /// <summary>
-        /// 钉内用户userId。
+        /// 钉内账号userId。
         /// </summary>
         [NameInMap("senderId")]
         [Validation(Required=false)]

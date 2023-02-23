@@ -17,14 +17,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public bool? AtAll { get; set; }
 
         /// <summary>
-        /// @钉外在业务系统内的唯一标志。
+        /// @钉外账号在业务系统内的唯一标志。
         /// </summary>
         [NameInMap("atAppUserId")]
         [Validation(Required=false)]
         public string AtAppUserId { get; set; }
 
         /// <summary>
-        /// @钉内用户userId。
+        /// @钉内账号userId。
         /// </summary>
         [NameInMap("atDingUserId")]
         [Validation(Required=false)]
@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string MsgType { get; set; }
 
         /// <summary>
-        /// 群会话列表。
+        /// 群会话Id列表。
         /// </summary>
         [NameInMap("openConversationIds")]
         [Validation(Required=false)]

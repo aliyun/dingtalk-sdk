@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class SendRobotMessageResponseBody : TeaModel {
         /// <summary>
-        /// 本次操作是否成功
+        /// 本次操作是否成功。
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

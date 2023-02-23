@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class SendMessageResponseBody : TeaModel {
         /// <summary>
-        /// 发送消息请求Id
+        /// 发送消息请求Id。
         /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]
