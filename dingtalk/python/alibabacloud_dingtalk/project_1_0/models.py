@@ -4089,6 +4089,34 @@ class QueryTaskOfProjectRequest(TeaModel):
         return self
 
 
+class QueryTaskOfProjectResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+    ):
+        # 自定义字段Id。
+        self.customfield_id = customfield_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        return self
+
+
 class QueryTaskOfProjectResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -4097,14 +4125,14 @@ class QueryTaskOfProjectResponseBodyResult(TeaModel):
         content: str = None,
         created: str = None,
         creator_id: str = None,
-        customfields: List[str] = None,
+        customfields: List[QueryTaskOfProjectResponseBodyResultCustomfields] = None,
         due_date: str = None,
         executor_id: str = None,
         involve_members: List[str] = None,
         is_archived: bool = None,
         is_deleted: bool = None,
         is_done: bool = None,
-        labels: str = None,
+        labels: List[str] = None,
         note: str = None,
         priority: int = None,
         progress: int = None,
@@ -4114,7 +4142,7 @@ class QueryTaskOfProjectResponseBodyResult(TeaModel):
         stage_id: str = None,
         start_date: str = None,
         story_point: int = None,
-        tag_ids: str = None,
+        tag_ids: List[str] = None,
         task_id: str = None,
         taskflowstatus_id: str = None,
         updated: str = None,
@@ -4144,7 +4172,7 @@ class QueryTaskOfProjectResponseBodyResult(TeaModel):
         self.is_deleted = is_deleted
         # 任务是否已完成。
         self.is_done = is_done
-        # 任务自定义标识。
+        # 任务标签集合。
         self.labels = labels
         # 备注。
         self.note = note
@@ -4176,7 +4204,10 @@ class QueryTaskOfProjectResponseBodyResult(TeaModel):
         self.visible = visible
 
     def validate(self):
-        pass
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -4194,8 +4225,10 @@ class QueryTaskOfProjectResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
+        result['customfields'] = []
         if self.customfields is not None:
-            result['customfields'] = self.customfields
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
         if self.due_date is not None:
             result['dueDate'] = self.due_date
         if self.executor_id is not None:
@@ -4252,8 +4285,11 @@ class QueryTaskOfProjectResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
+        self.customfields = []
         if m.get('customfields') is not None:
-            self.customfields = m.get('customfields')
+            for k in m.get('customfields'):
+                temp_model = QueryTaskOfProjectResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
         if m.get('dueDate') is not None:
             self.due_date = m.get('dueDate')
         if m.get('executorId') is not None:
@@ -4698,7 +4734,6 @@ class SearchTaskflowStatusResponseBodyResult(TeaModel):
         self,
         created: str = None,
         creator_id: str = None,
-        id: str = None,
         is_deleted: bool = None,
         is_taskflowstatusruleexector: bool = None,
         kind: str = None,
@@ -4706,28 +4741,29 @@ class SearchTaskflowStatusResponseBodyResult(TeaModel):
         pos: int = None,
         reject_status_ids: List[str] = None,
         taskflow_id: str = None,
+        taskflow_status_id: str = None,
         updated: str = None,
     ):
         # 创建时间。
         self.created = created
         # 创建者ID。
         self.creator_id = creator_id
-        # 工作流状态ID。
-        self.id = id
         # 是否已删除。
         self.is_deleted = is_deleted
         # 是否特定任务角色才能流转该工作流状态。
         self.is_taskflowstatusruleexector = is_taskflowstatusruleexector
-        # start,end,unset
+        # 任务工作流状态类型。  start: 开始  end: 结束  unset: 未设置
         self.kind = kind
-        # 工作流状态名字。
+        # 任务工作流状态名字。
         self.name = name
-        # 工作流状态位置。
+        # 任务工作流状态位置。
         self.pos = pos
-        # 该工作流状态不能流转到其他工作流状态。
+        # 拒绝的工作流状态Id。
         self.reject_status_ids = reject_status_ids
-        # 工作流状态ID。
+        # 任务工作流ID。
         self.taskflow_id = taskflow_id
+        # 任务工作流状态ID。
+        self.taskflow_status_id = taskflow_status_id
         # 更新时间。
         self.updated = updated
 
@@ -4744,8 +4780,6 @@ class SearchTaskflowStatusResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
-        if self.id is not None:
-            result['id'] = self.id
         if self.is_deleted is not None:
             result['isDeleted'] = self.is_deleted
         if self.is_taskflowstatusruleexector is not None:
@@ -4760,6 +4794,8 @@ class SearchTaskflowStatusResponseBodyResult(TeaModel):
             result['rejectStatusIds'] = self.reject_status_ids
         if self.taskflow_id is not None:
             result['taskflowId'] = self.taskflow_id
+        if self.taskflow_status_id is not None:
+            result['taskflowStatusId'] = self.taskflow_status_id
         if self.updated is not None:
             result['updated'] = self.updated
         return result
@@ -4770,8 +4806,6 @@ class SearchTaskflowStatusResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
-        if m.get('id') is not None:
-            self.id = m.get('id')
         if m.get('isDeleted') is not None:
             self.is_deleted = m.get('isDeleted')
         if m.get('isTaskflowstatusruleexector') is not None:
@@ -4786,6 +4820,8 @@ class SearchTaskflowStatusResponseBodyResult(TeaModel):
             self.reject_status_ids = m.get('rejectStatusIds')
         if m.get('taskflowId') is not None:
             self.taskflow_id = m.get('taskflowId')
+        if m.get('taskflowStatusId') is not None:
+            self.taskflow_status_id = m.get('taskflowStatusId')
         if m.get('updated') is not None:
             self.updated = m.get('updated')
         return self
@@ -4796,7 +4832,7 @@ class SearchTaskflowStatusResponseBody(TeaModel):
         self,
         result: List[SearchTaskflowStatusResponseBodyResult] = None,
     ):
-        # 工作流状态列表。
+        # 任务工作流状态列表。
         self.result = result
 
     def validate(self):

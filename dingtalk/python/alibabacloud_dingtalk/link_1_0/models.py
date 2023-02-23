@@ -176,6 +176,192 @@ class ApplyFollowerAuthInfoResponse(TeaModel):
         return self
 
 
+class CallbackRegiesterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CallbackRegiesterRequest(TeaModel):
+    def __init__(
+        self,
+        api_secret: str = None,
+        callback_key: str = None,
+        callback_url: str = None,
+        type: str = None,
+    ):
+        # 回调API签名生成密钥。
+        # 最大长度不超过32个字符。
+        self.api_secret = api_secret
+        # 回调key，由调用者定义，需要确保同一服务窗帐号下的唯一性。
+        # 最长不超过32个字符。
+        self.callback_key = callback_key
+        # 回调URL。暂不支持附带queryString的URL
+        self.callback_url = callback_url
+        # 回调类型，支持互动卡片、应用快捷入口、吊顶卡片等。
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.api_secret is not None:
+            result['apiSecret'] = self.api_secret
+        if self.callback_key is not None:
+            result['callbackKey'] = self.callback_key
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('apiSecret') is not None:
+            self.api_secret = m.get('apiSecret')
+        if m.get('callbackKey') is not None:
+            self.callback_key = m.get('callbackKey')
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CallbackRegiesterResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        api_secret: str = None,
+        callback_url: str = None,
+    ):
+        # 成功注册的api secret
+        self.api_secret = api_secret
+        # 成功注册的url
+        self.callback_url = callback_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.api_secret is not None:
+            result['apiSecret'] = self.api_secret
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('apiSecret') is not None:
+            self.api_secret = m.get('apiSecret')
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        return self
+
+
+class CallbackRegiesterResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CallbackRegiesterResponseBodyResult = None,
+    ):
+        # 注册结果详情
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CallbackRegiesterResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CallbackRegiesterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CallbackRegiesterResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CallbackRegiesterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CloseTopBoxInteractiveOTOMessageHeaders(TeaModel):
     def __init__(
         self,

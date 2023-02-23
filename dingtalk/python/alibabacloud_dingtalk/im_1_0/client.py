@@ -1147,8 +1147,6 @@ class Client(OpenApiClient):
             body['channelCode'] = request.channel_code
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.source_code):
-            body['sourceCode'] = request.source_code
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -1179,8 +1177,6 @@ class Client(OpenApiClient):
             body['channelCode'] = request.channel_code
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.source_code):
-            body['sourceCode'] = request.source_code
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}

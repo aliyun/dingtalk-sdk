@@ -95,6 +95,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ApplyFollowerAuthInfo', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/followers/authInfos/apply', 'json', req, runtime)
         )
 
+    def callback_regiester(
+        self,
+        request: dingtalklink__1__0_models.CallbackRegiesterRequest,
+    ) -> dingtalklink__1__0_models.CallbackRegiesterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.CallbackRegiesterHeaders()
+        return self.callback_regiester_with_options(request, headers, runtime)
+
+    async def callback_regiester_async(
+        self,
+        request: dingtalklink__1__0_models.CallbackRegiesterRequest,
+    ) -> dingtalklink__1__0_models.CallbackRegiesterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.CallbackRegiesterHeaders()
+        return await self.callback_regiester_with_options_async(request, headers, runtime)
+
+    def callback_regiester_with_options(
+        self,
+        request: dingtalklink__1__0_models.CallbackRegiesterRequest,
+        headers: dingtalklink__1__0_models.CallbackRegiesterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.CallbackRegiesterResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_secret):
+            body['apiSecret'] = request.api_secret
+        if not UtilClient.is_unset(request.callback_key):
+            body['callbackKey'] = request.callback_key
+        if not UtilClient.is_unset(request.callback_url):
+            body['callbackUrl'] = request.callback_url
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.CallbackRegiesterResponse(),
+            self.do_roarequest('CallbackRegiester', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/callbacks/regiester', 'json', req, runtime)
+        )
+
+    async def callback_regiester_with_options_async(
+        self,
+        request: dingtalklink__1__0_models.CallbackRegiesterRequest,
+        headers: dingtalklink__1__0_models.CallbackRegiesterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.CallbackRegiesterResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_secret):
+            body['apiSecret'] = request.api_secret
+        if not UtilClient.is_unset(request.callback_key):
+            body['callbackKey'] = request.callback_key
+        if not UtilClient.is_unset(request.callback_url):
+            body['callbackUrl'] = request.callback_url
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.CallbackRegiesterResponse(),
+            await self.do_roarequest_async('CallbackRegiester', 'link_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/link/callbacks/regiester', 'json', req, runtime)
+        )
+
     def close_top_box_interactive_otomessage(
         self,
         request: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageRequest,
