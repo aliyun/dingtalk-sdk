@@ -1375,14 +1375,12 @@ export class GetConversationUrlRequest extends $tea.Model {
   appUserId?: string;
   channelCode?: string;
   openConversationId?: string;
-  sourceCode?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       appUserId: 'appUserId',
       channelCode: 'channelCode',
       openConversationId: 'openConversationId',
-      sourceCode: 'sourceCode',
       userId: 'userId',
     };
   }
@@ -1392,7 +1390,6 @@ export class GetConversationUrlRequest extends $tea.Model {
       appUserId: 'string',
       channelCode: 'string',
       openConversationId: 'string',
-      sourceCode: 'string',
       userId: 'string',
     };
   }
@@ -5786,10 +5783,12 @@ export class CreateInterconnectionRequestInterconnections extends $tea.Model {
 
 export class CreateInterconnectionResponseBodyResults extends $tea.Model {
   appUserId?: string;
+  message?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       appUserId: 'appUserId',
+      message: 'message',
       userId: 'userId',
     };
   }
@@ -5797,6 +5796,7 @@ export class CreateInterconnectionResponseBodyResults extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       appUserId: 'string',
+      message: 'string',
       userId: 'string',
     };
   }
@@ -7104,10 +7104,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.openConversationId)) {
       body["openConversationId"] = request.openConversationId;
-    }
-
-    if (!Util.isUnset(request.sourceCode)) {
-      body["sourceCode"] = request.sourceCode;
     }
 
     if (!Util.isUnset(request.userId)) {

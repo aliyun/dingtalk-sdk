@@ -3464,20 +3464,39 @@ export class GetTbUserIdByStaffIdResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryTaskOfProjectResponseBodyResultCustomfields extends $tea.Model {
+  customfieldId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customfieldId: 'customfieldId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customfieldId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryTaskOfProjectResponseBodyResult extends $tea.Model {
   accomplished?: string;
   ancestorIds?: string[];
   content?: string;
   created?: string;
   creatorId?: string;
-  customfields?: string[];
+  customfields?: QueryTaskOfProjectResponseBodyResultCustomfields[];
   dueDate?: string;
   executorId?: string;
   involveMembers?: string[];
   isArchived?: boolean;
   isDeleted?: boolean;
   isDone?: boolean;
-  labels?: string;
+  labels?: string[];
   note?: string;
   priority?: number;
   progress?: number;
@@ -3487,7 +3506,7 @@ export class QueryTaskOfProjectResponseBodyResult extends $tea.Model {
   stageId?: string;
   startDate?: string;
   storyPoint?: number;
-  tagIds?: string;
+  tagIds?: string[];
   taskId?: string;
   taskflowstatusId?: string;
   updated?: string;
@@ -3531,14 +3550,14 @@ export class QueryTaskOfProjectResponseBodyResult extends $tea.Model {
       content: 'string',
       created: 'string',
       creatorId: 'string',
-      customfields: { 'type': 'array', 'itemType': 'string' },
+      customfields: { 'type': 'array', 'itemType': QueryTaskOfProjectResponseBodyResultCustomfields },
       dueDate: 'string',
       executorId: 'string',
       involveMembers: { 'type': 'array', 'itemType': 'string' },
       isArchived: 'boolean',
       isDeleted: 'boolean',
       isDone: 'boolean',
-      labels: 'string',
+      labels: { 'type': 'array', 'itemType': 'string' },
       note: 'string',
       priority: 'number',
       progress: 'number',
@@ -3548,7 +3567,7 @@ export class QueryTaskOfProjectResponseBodyResult extends $tea.Model {
       stageId: 'string',
       startDate: 'string',
       storyPoint: 'number',
-      tagIds: 'string',
+      tagIds: { 'type': 'array', 'itemType': 'string' },
       taskId: 'string',
       taskflowstatusId: 'string',
       updated: 'string',
@@ -3607,7 +3626,6 @@ export class SearchProjectTemplateResponseBodyResult extends $tea.Model {
 export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
   created?: string;
   creatorId?: string;
-  id?: string;
   isDeleted?: boolean;
   isTaskflowstatusruleexector?: boolean;
   kind?: string;
@@ -3615,12 +3633,12 @@ export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
   pos?: number;
   rejectStatusIds?: string[];
   taskflowId?: string;
+  taskflowStatusId?: string;
   updated?: string;
   static names(): { [key: string]: string } {
     return {
       created: 'created',
       creatorId: 'creatorId',
-      id: 'id',
       isDeleted: 'isDeleted',
       isTaskflowstatusruleexector: 'isTaskflowstatusruleexector',
       kind: 'kind',
@@ -3628,6 +3646,7 @@ export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
       pos: 'pos',
       rejectStatusIds: 'rejectStatusIds',
       taskflowId: 'taskflowId',
+      taskflowStatusId: 'taskflowStatusId',
       updated: 'updated',
     };
   }
@@ -3636,7 +3655,6 @@ export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
     return {
       created: 'string',
       creatorId: 'string',
-      id: 'string',
       isDeleted: 'boolean',
       isTaskflowstatusruleexector: 'boolean',
       kind: 'string',
@@ -3644,6 +3662,7 @@ export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
       pos: 'number',
       rejectStatusIds: { 'type': 'array', 'itemType': 'string' },
       taskflowId: 'string',
+      taskflowStatusId: 'string',
       updated: 'string',
     };
   }
