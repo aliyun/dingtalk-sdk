@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class DismissGroupConversationRequest extends TeaModel {
     /**
-     * <p>群id(客联系业务系统内的群id)</p>
+     * <p>群会话Id。</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

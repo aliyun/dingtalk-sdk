@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class UpdateGroupNameResponseBody extends TeaModel {
     /**
-     * <p>Id of the request</p>
+     * <p>新群名称</p>
      */
     @NameInMap("newGroupName")
     public String newGroupName;

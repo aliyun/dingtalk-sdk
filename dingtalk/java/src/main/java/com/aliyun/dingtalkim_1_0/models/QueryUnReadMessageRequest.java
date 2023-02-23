@@ -5,13 +5,13 @@ import com.aliyun.tea.*;
 
 public class QueryUnReadMessageRequest extends TeaModel {
     /**
-     * <p>钉外用户在业务系统内的唯一标志。</p>
+     * <p>钉外账号在业务系统内的唯一标志。</p>
      */
     @NameInMap("appUserId")
     public String appUserId;
 
     /**
-     * <p>群会话列表。</p>
+     * <p>群会话Id列表。</p>
      */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;

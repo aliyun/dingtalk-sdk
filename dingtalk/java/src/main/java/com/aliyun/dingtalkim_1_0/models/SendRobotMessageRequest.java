@@ -11,13 +11,13 @@ public class SendRobotMessageRequest extends TeaModel {
     public Boolean atAll;
 
     /**
-     * <p>@钉外在业务系统内的唯一标志。</p>
+     * <p>@钉外账号在业务系统内的唯一标志。</p>
      */
     @NameInMap("atAppUserId")
     public String atAppUserId;
 
     /**
-     * <p>@钉内用户userId。</p>
+     * <p>@钉内账号userId。</p>
      */
     @NameInMap("atDingUserId")
     public String atDingUserId;
@@ -35,7 +35,7 @@ public class SendRobotMessageRequest extends TeaModel {
     public String msgType;
 
     /**
-     * <p>群会话列表。</p>
+     * <p>群会话Id列表。</p>
      */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;

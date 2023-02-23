@@ -39,7 +39,7 @@ public class QueryGroupMemberResponseBody extends TeaModel {
 
     public static class QueryGroupMemberResponseBodyGroupMembers extends TeaModel {
         /**
-         * <p>群成员头像。</p>
+         * <p>群成员头像地址。</p>
          */
         @NameInMap("groupMemberAvatar")
         public String groupMemberAvatar;

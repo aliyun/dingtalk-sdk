@@ -5,37 +5,37 @@ import com.aliyun.tea.*;
 
 public class SendMessageRequest extends TeaModel {
     /**
-     * <p>消息内容</p>
+     * <p>消息内容。</p>
      */
     @NameInMap("message")
     public String message;
 
     /**
-     * <p>消息类型</p>
+     * <p>消息类型。</p>
      */
     @NameInMap("messageType")
     public String messageType;
 
     /**
-     * <p>群会话Id</p>
+     * <p>群会话Id。</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
-     * <p>B端客服钉钉Id</p>
+     * <p>钉内账号userId。</p>
      */
     @NameInMap("receiverId")
     public String receiverId;
 
     /**
-     * <p>C端客户appUserId</p>
+     * <p>钉外账号在业务系统内的唯一标志。</p>
      */
     @NameInMap("senderId")
     public String senderId;
 
     /**
-     * <p>渠道按钮跳转信息</p>
+     * <p>渠道按钮跳转信息。</p>
      */
     @NameInMap("sourceInfos")
     public java.util.Map<String, ?> sourceInfos;

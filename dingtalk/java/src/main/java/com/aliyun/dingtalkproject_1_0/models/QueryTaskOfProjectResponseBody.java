@@ -51,6 +51,28 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
         return this.totalCount;
     }
 
+    public static class QueryTaskOfProjectResponseBodyResultCustomfields extends TeaModel {
+        /**
+         * <p>自定义字段Id。</p>
+         */
+        @NameInMap("customfieldId")
+        public String customfieldId;
+
+        public static QueryTaskOfProjectResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
+            QueryTaskOfProjectResponseBodyResultCustomfields self = new QueryTaskOfProjectResponseBodyResultCustomfields();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryTaskOfProjectResponseBodyResultCustomfields setCustomfieldId(String customfieldId) {
+            this.customfieldId = customfieldId;
+            return this;
+        }
+        public String getCustomfieldId() {
+            return this.customfieldId;
+        }
+
+    }
+
     public static class QueryTaskOfProjectResponseBodyResult extends TeaModel {
         /**
          * <p>任务完成时间。</p>
@@ -86,7 +108,7 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
          * <p>自定义字段id列表。</p>
          */
         @NameInMap("customfields")
-        public java.util.List<String> customfields;
+        public java.util.List<QueryTaskOfProjectResponseBodyResultCustomfields> customfields;
 
         /**
          * <p>任务截止时间。</p>
@@ -125,10 +147,10 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
         public Boolean isDone;
 
         /**
-         * <p>任务自定义标识。</p>
+         * <p>任务标签集合。</p>
          */
         @NameInMap("labels")
-        public String labels;
+        public java.util.List<String> labels;
 
         /**
          * <p>备注。</p>
@@ -188,7 +210,7 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
          * <p>标签id集合。</p>
          */
         @NameInMap("tagIds")
-        public String tagIds;
+        public java.util.List<String> tagIds;
 
         /**
          * <p>任务id。</p>
@@ -259,11 +281,11 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public QueryTaskOfProjectResponseBodyResult setCustomfields(java.util.List<String> customfields) {
+        public QueryTaskOfProjectResponseBodyResult setCustomfields(java.util.List<QueryTaskOfProjectResponseBodyResultCustomfields> customfields) {
             this.customfields = customfields;
             return this;
         }
-        public java.util.List<String> getCustomfields() {
+        public java.util.List<QueryTaskOfProjectResponseBodyResultCustomfields> getCustomfields() {
             return this.customfields;
         }
 
@@ -315,11 +337,11 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
             return this.isDone;
         }
 
-        public QueryTaskOfProjectResponseBodyResult setLabels(String labels) {
+        public QueryTaskOfProjectResponseBodyResult setLabels(java.util.List<String> labels) {
             this.labels = labels;
             return this;
         }
-        public String getLabels() {
+        public java.util.List<String> getLabels() {
             return this.labels;
         }
 
@@ -395,11 +417,11 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
             return this.storyPoint;
         }
 
-        public QueryTaskOfProjectResponseBodyResult setTagIds(String tagIds) {
+        public QueryTaskOfProjectResponseBodyResult setTagIds(java.util.List<String> tagIds) {
             this.tagIds = tagIds;
             return this;
         }
-        public String getTagIds() {
+        public java.util.List<String> getTagIds() {
             return this.tagIds;
         }
 

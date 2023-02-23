@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class SearchTaskflowStatusResponseBody extends TeaModel {
     /**
-     * <p>工作流状态列表。</p>
+     * <p>任务工作流状态列表。</p>
      */
     @NameInMap("result")
     public java.util.List<SearchTaskflowStatusResponseBodyResult> result;
@@ -37,12 +37,6 @@ public class SearchTaskflowStatusResponseBody extends TeaModel {
         public String creatorId;
 
         /**
-         * <p>工作流状态ID。</p>
-         */
-        @NameInMap("id")
-        public String id;
-
-        /**
          * <p>是否已删除。</p>
          */
         @NameInMap("isDeleted")
@@ -55,34 +49,40 @@ public class SearchTaskflowStatusResponseBody extends TeaModel {
         public Boolean isTaskflowstatusruleexector;
 
         /**
-         * <p>start,end,unset</p>
+         * <p>任务工作流状态类型。  start: 开始  end: 结束  unset: 未设置</p>
          */
         @NameInMap("kind")
         public String kind;
 
         /**
-         * <p>工作流状态名字。</p>
+         * <p>任务工作流状态名字。</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
-         * <p>工作流状态位置。</p>
+         * <p>任务工作流状态位置。</p>
          */
         @NameInMap("pos")
         public Integer pos;
 
         /**
-         * <p>该工作流状态不能流转到其他工作流状态。</p>
+         * <p>拒绝的工作流状态Id。</p>
          */
         @NameInMap("rejectStatusIds")
         public java.util.List<String> rejectStatusIds;
 
         /**
-         * <p>工作流状态ID。</p>
+         * <p>任务工作流ID。</p>
          */
         @NameInMap("taskflowId")
         public String taskflowId;
+
+        /**
+         * <p>任务工作流状态ID。</p>
+         */
+        @NameInMap("taskflowStatusId")
+        public String taskflowStatusId;
 
         /**
          * <p>更新时间。</p>
@@ -109,14 +109,6 @@ public class SearchTaskflowStatusResponseBody extends TeaModel {
         }
         public String getCreatorId() {
             return this.creatorId;
-        }
-
-        public SearchTaskflowStatusResponseBodyResult setId(String id) {
-            this.id = id;
-            return this;
-        }
-        public String getId() {
-            return this.id;
         }
 
         public SearchTaskflowStatusResponseBodyResult setIsDeleted(Boolean isDeleted) {
@@ -173,6 +165,14 @@ public class SearchTaskflowStatusResponseBody extends TeaModel {
         }
         public String getTaskflowId() {
             return this.taskflowId;
+        }
+
+        public SearchTaskflowStatusResponseBodyResult setTaskflowStatusId(String taskflowStatusId) {
+            this.taskflowStatusId = taskflowStatusId;
+            return this;
+        }
+        public String getTaskflowStatusId() {
+            return this.taskflowStatusId;
         }
 
         public SearchTaskflowStatusResponseBodyResult setUpdated(String updated) {

@@ -29,13 +29,13 @@ public class SendDingMessageRequest extends TeaModel {
     public String openConversationId;
 
     /**
-     * <p>钉外用户在业务系统内的唯一标志。</p>
+     * <p>钉外账号在业务系统内的唯一标志。</p>
      */
     @NameInMap("receiverId")
     public String receiverId;
 
     /**
-     * <p>钉内用户userId。</p>
+     * <p>钉内账号userId。</p>
      */
     @NameInMap("senderId")
     public String senderId;

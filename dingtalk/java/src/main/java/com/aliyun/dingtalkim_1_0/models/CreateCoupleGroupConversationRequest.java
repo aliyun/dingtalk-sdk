@@ -5,13 +5,13 @@ import com.aliyun.tea.*;
 
 public class CreateCoupleGroupConversationRequest extends TeaModel {
     /**
-     * <p>钉外用户在业务系统内的唯一标识。</p>
+     * <p>钉外账号在业务系统内的唯一标识。</p>
      */
     @NameInMap("appUserId")
     public String appUserId;
 
     /**
-     * <p>群头像。</p>
+     * <p>群头像地址。</p>
      */
     @NameInMap("groupAvatar")
     public String groupAvatar;
@@ -23,7 +23,7 @@ public class CreateCoupleGroupConversationRequest extends TeaModel {
     public String groupName;
 
     /**
-     * <p>群主(钉外用户)userId。</p>
+     * <p>群主在业务系统内的唯一标识</p>
      */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;

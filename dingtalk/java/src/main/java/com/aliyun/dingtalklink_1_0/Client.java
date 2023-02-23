@@ -53,6 +53,47 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("ApplyFollowerAuthInfo", "link_1.0", "HTTP", "POST", "AK", "/v1.0/link/followers/authInfos/apply", "json", req, runtime), new ApplyFollowerAuthInfoResponse());
     }
 
+    public CallbackRegiesterResponse callbackRegiester(CallbackRegiesterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CallbackRegiesterHeaders headers = new CallbackRegiesterHeaders();
+        return this.callbackRegiesterWithOptions(request, headers, runtime);
+    }
+
+    public CallbackRegiesterResponse callbackRegiesterWithOptions(CallbackRegiesterRequest request, CallbackRegiesterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.apiSecret)) {
+            body.put("apiSecret", request.apiSecret);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.callbackKey)) {
+            body.put("callbackKey", request.callbackKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.callbackUrl)) {
+            body.put("callbackUrl", request.callbackUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CallbackRegiester", "link_1.0", "HTTP", "POST", "AK", "/v1.0/link/callbacks/regiester", "json", req, runtime), new CallbackRegiesterResponse());
+    }
+
     public CloseTopBoxInteractiveOTOMessageResponse closeTopBoxInteractiveOTOMessage(CloseTopBoxInteractiveOTOMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CloseTopBoxInteractiveOTOMessageHeaders headers = new CloseTopBoxInteractiveOTOMessageHeaders();

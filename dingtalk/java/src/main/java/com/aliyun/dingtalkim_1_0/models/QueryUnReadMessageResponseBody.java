@@ -5,13 +5,13 @@ import com.aliyun.tea.*;
 
 public class QueryUnReadMessageResponseBody extends TeaModel {
     /**
-     * <p>未读消息数</p>
+     * <p>未读消息数。</p>
      */
     @NameInMap("unReadCount")
     public Long unReadCount;
 
     /**
-     * <p>未读消息列表</p>
+     * <p>未读消息列表。</p>
      */
     @NameInMap("unReadItems")
     public java.util.List<QueryUnReadMessageResponseBodyUnReadItems> unReadItems;
@@ -39,13 +39,13 @@ public class QueryUnReadMessageResponseBody extends TeaModel {
 
     public static class QueryUnReadMessageResponseBodyUnReadItems extends TeaModel {
         /**
-         * <p>群会话Id</p>
+         * <p>群会话Id。</p>
          */
         @NameInMap("openConversationId")
         public String openConversationId;
 
         /**
-         * <p>未读消息数</p>
+         * <p>未读消息数。</p>
          */
         @NameInMap("unReadCount")
         public Long unReadCount;

@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class SendMessageResponseBody extends TeaModel {
     /**
-     * <p>发送消息请求Id</p>
+     * <p>发送消息请求Id。</p>
      */
     @NameInMap("requestId")
     public String requestId;

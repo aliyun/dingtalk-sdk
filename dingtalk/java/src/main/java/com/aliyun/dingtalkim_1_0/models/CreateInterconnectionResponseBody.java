@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class CreateInterconnectionResponseBody extends TeaModel {
     /**
-     * <p>创建失败的钉外钉内关系列表。</p>
+     * <p>创建失败的钉外账号列表。</p>
      */
     @NameInMap("results")
     public java.util.List<CreateInterconnectionResponseBodyResults> results;
@@ -25,13 +25,19 @@ public class CreateInterconnectionResponseBody extends TeaModel {
 
     public static class CreateInterconnectionResponseBodyResults extends TeaModel {
         /**
-         * <p>钉外用户在业务系统内的唯一标识。</p>
+         * <p>钉外账号在业务系统内的唯一标识。</p>
          */
         @NameInMap("appUserId")
         public String appUserId;
 
         /**
-         * <p>钉内用户userId。</p>
+         * <p>失败原因。</p>
+         */
+        @NameInMap("message")
+        public String message;
+
+        /**
+         * <p>该钉外账号被哪个钉内账号负责。</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -47,6 +53,14 @@ public class CreateInterconnectionResponseBody extends TeaModel {
         }
         public String getAppUserId() {
             return this.appUserId;
+        }
+
+        public CreateInterconnectionResponseBodyResults setMessage(String message) {
+            this.message = message;
+            return this;
+        }
+        public String getMessage() {
+            return this.message;
         }
 
         public CreateInterconnectionResponseBodyResults setUserId(String userId) {
