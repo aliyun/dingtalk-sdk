@@ -11004,6 +11004,245 @@ class QueryPartnerInfoResponse(TeaModel):
         return self
 
 
+class QueryUserBehaviorHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserBehaviorRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        platform: int = None,
+        start_time: int = None,
+        type: int = None,
+        user_id: int = None,
+    ):
+        # 结束时间(默认当前时间)
+        self.end_time = end_time
+        # 起始页(默认从1开始)
+        self.page_number = page_number
+        # 页大小(最大100)
+        self.page_size = page_size
+        # 端类型((0-全部，1-iOS，2-Android, 3-Mac, 4-Windows))
+        self.platform = platform
+        # 开始时间(默认当前时间前7天)
+        self.start_time = start_time
+        # 用户行为((0-全部，1-截屏，2-录屏))
+        self.type = type
+        # 工号
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryUserBehaviorResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        picture_url: str = None,
+        platform: int = None,
+        time: int = None,
+        type: int = None,
+        user_name: str = None,
+    ):
+        self.picture_url = picture_url
+        self.platform = platform
+        self.time = time
+        self.type = type
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.picture_url is not None:
+            result['pictureUrl'] = self.picture_url
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.time is not None:
+            result['time'] = self.time
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pictureUrl') is not None:
+            self.picture_url = m.get('pictureUrl')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('time') is not None:
+            self.time = m.get('time')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class QueryUserBehaviorResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[QueryUserBehaviorResponseBodyData] = None,
+        data_cnt: int = None,
+        total_cnt: int = None,
+    ):
+        # 数据列表
+        self.data = data
+        self.data_cnt = data_cnt
+        self.total_cnt = total_cnt
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.data_cnt is not None:
+            result['dataCnt'] = self.data_cnt
+        if self.total_cnt is not None:
+            result['totalCnt'] = self.total_cnt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = QueryUserBehaviorResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('dataCnt') is not None:
+            self.data_cnt = m.get('dataCnt')
+        if m.get('totalCnt') is not None:
+            self.total_cnt = m.get('totalCnt')
+        return self
+
+
+class QueryUserBehaviorResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryUserBehaviorResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryUserBehaviorResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RollbackMiniAppVersionHeaders(TeaModel):
     def __init__(
         self,

@@ -6363,6 +6363,8 @@ class ListContactRestrictSettingResponseBodyList(TeaModel):
         exclude_user_ids: List[str] = None,
         id: int = None,
         name: str = None,
+        restrict_in_search: bool = None,
+        restrict_in_user_profile: bool = None,
         subject_dept_ids: List[int] = None,
         subject_tag_ids: List[int] = None,
         subject_user_ids: List[str] = None,
@@ -6382,6 +6384,10 @@ class ListContactRestrictSettingResponseBodyList(TeaModel):
         self.id = id
         # 规则名称
         self.name = name
+        # 是否同时限制搜索
+        self.restrict_in_search = restrict_in_search
+        # 是否同时限制查看个人资料页
+        self.restrict_in_user_profile = restrict_in_user_profile
         # 主体用户deptId列表
         self.subject_dept_ids = subject_dept_ids
         # 主体用户tagId列表
@@ -6414,6 +6420,10 @@ class ListContactRestrictSettingResponseBodyList(TeaModel):
             result['id'] = self.id
         if self.name is not None:
             result['name'] = self.name
+        if self.restrict_in_search is not None:
+            result['restrictInSearch'] = self.restrict_in_search
+        if self.restrict_in_user_profile is not None:
+            result['restrictInUserProfile'] = self.restrict_in_user_profile
         if self.subject_dept_ids is not None:
             result['subjectDeptIds'] = self.subject_dept_ids
         if self.subject_tag_ids is not None:
@@ -6440,6 +6450,10 @@ class ListContactRestrictSettingResponseBodyList(TeaModel):
             self.id = m.get('id')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('restrictInSearch') is not None:
+            self.restrict_in_search = m.get('restrictInSearch')
+        if m.get('restrictInUserProfile') is not None:
+            self.restrict_in_user_profile = m.get('restrictInUserProfile')
         if m.get('subjectDeptIds') is not None:
             self.subject_dept_ids = m.get('subjectDeptIds')
         if m.get('subjectTagIds') is not None:

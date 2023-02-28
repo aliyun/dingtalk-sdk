@@ -935,6 +935,62 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetMicroAppUserAccess', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/apps/{agent_id}/users/{user_id}/adminAccess', 'json', req, runtime)
         )
 
+    def get_user_app_dev_access(
+        self,
+        user_id: str,
+    ) -> dingtalkmicro_app__1__0_models.GetUserAppDevAccessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetUserAppDevAccessHeaders()
+        return self.get_user_app_dev_access_with_options(user_id, headers, runtime)
+
+    async def get_user_app_dev_access_async(
+        self,
+        user_id: str,
+    ) -> dingtalkmicro_app__1__0_models.GetUserAppDevAccessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetUserAppDevAccessHeaders()
+        return await self.get_user_app_dev_access_with_options_async(user_id, headers, runtime)
+
+    def get_user_app_dev_access_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkmicro_app__1__0_models.GetUserAppDevAccessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetUserAppDevAccessResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetUserAppDevAccessResponse(),
+            self.do_roarequest('GetUserAppDevAccess', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/users/{user_id}/devAccesses', 'json', req, runtime)
+        )
+
+    async def get_user_app_dev_access_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkmicro_app__1__0_models.GetUserAppDevAccessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetUserAppDevAccessResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetUserAppDevAccessResponse(),
+            await self.do_roarequest_async('GetUserAppDevAccess', 'microApp_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/microApp/users/{user_id}/devAccesses', 'json', req, runtime)
+        )
+
     def list_all_app(self) -> dingtalkmicro_app__1__0_models.ListAllAppResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.ListAllAppHeaders()
@@ -1441,14 +1497,14 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
+        if not UtilClient.is_unset(request.app_version_id):
+            body['appVersionId'] = request.app_version_id
         if not UtilClient.is_unset(request.mini_app_on_pc):
             body['miniAppOnPc'] = request.mini_app_on_pc
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
         if not UtilClient.is_unset(request.publish_type):
             body['publishType'] = request.publish_type
-        if not UtilClient.is_unset(request.version_id):
-            body['versionId'] = request.version_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1473,14 +1529,14 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
+        if not UtilClient.is_unset(request.app_version_id):
+            body['appVersionId'] = request.app_version_id
         if not UtilClient.is_unset(request.mini_app_on_pc):
             body['miniAppOnPc'] = request.mini_app_on_pc
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
         if not UtilClient.is_unset(request.publish_type):
             body['publishType'] = request.publish_type
-        if not UtilClient.is_unset(request.version_id):
-            body['versionId'] = request.version_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1849,10 +1905,10 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
+        if not UtilClient.is_unset(request.app_version_id):
+            body['appVersionId'] = request.app_version_id
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.version_id):
-            body['versionId'] = request.version_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1877,10 +1933,10 @@ class Client(OpenApiClient):
         UtilClient.validate_model(request)
         agent_id = OpenApiUtilClient.get_encode_param(agent_id)
         body = {}
+        if not UtilClient.is_unset(request.app_version_id):
+            body['appVersionId'] = request.app_version_id
         if not UtilClient.is_unset(request.op_union_id):
             body['opUnionId'] = request.op_union_id
-        if not UtilClient.is_unset(request.version_id):
-            body['versionId'] = request.version_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

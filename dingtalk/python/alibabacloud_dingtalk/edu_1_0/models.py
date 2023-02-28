@@ -2380,14 +2380,11 @@ class CreateAppOrderHeaders(TeaModel):
 class CreateAppOrderRequestDetailList(TeaModel):
     def __init__(
         self,
-        feature: str = None,
         goods_id: str = None,
         goods_name: str = None,
         goods_price: int = None,
         goods_quantity: int = None,
     ):
-        # 扩展字段。
-        self.feature = feature
         # 商品id。
         self.goods_id = goods_id
         # 商品名称。
@@ -2406,8 +2403,6 @@ class CreateAppOrderRequestDetailList(TeaModel):
             return _map
 
         result = dict()
-        if self.feature is not None:
-            result['feature'] = self.feature
         if self.goods_id is not None:
             result['goodsId'] = self.goods_id
         if self.goods_name is not None:
@@ -2420,8 +2415,6 @@ class CreateAppOrderRequestDetailList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('feature') is not None:
-            self.feature = m.get('feature')
         if m.get('goodsId') is not None:
             self.goods_id = m.get('goodsId')
         if m.get('goodsName') is not None:
@@ -5544,14 +5537,11 @@ class CreateSnsAppOrderHeaders(TeaModel):
 class CreateSnsAppOrderRequestDetailList(TeaModel):
     def __init__(
         self,
-        feature: str = None,
         goods_id: str = None,
         goods_name: str = None,
         goods_price: int = None,
         goods_quantity: int = None,
     ):
-        # 扩展字段。
-        self.feature = feature
         # 商品id。
         self.goods_id = goods_id
         # 商品名称。
@@ -5570,8 +5560,6 @@ class CreateSnsAppOrderRequestDetailList(TeaModel):
             return _map
 
         result = dict()
-        if self.feature is not None:
-            result['feature'] = self.feature
         if self.goods_id is not None:
             result['goodsId'] = self.goods_id
         if self.goods_name is not None:
@@ -5584,8 +5572,6 @@ class CreateSnsAppOrderRequestDetailList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('feature') is not None:
-            self.feature = m.get('feature')
         if m.get('goodsId') is not None:
             self.goods_id = m.get('goodsId')
         if m.get('goodsName') is not None:
@@ -15926,7 +15912,6 @@ class QueryOrderResponseBody(TeaModel):
         close_timestamp: int = None,
         create_time: str = None,
         create_timestamp: int = None,
-        feature: str = None,
         label_amount: int = None,
         merchant_id: str = None,
         merchant_merge_order_no: str = None,
@@ -15958,8 +15943,6 @@ class QueryOrderResponseBody(TeaModel):
         self.create_time = create_time
         # 订单创建时间戳
         self.create_timestamp = create_timestamp
-        # 扩展字段。
-        self.feature = feature
         self.label_amount = label_amount
         # 商户id。
         self.merchant_id = merchant_id
@@ -16016,8 +15999,6 @@ class QueryOrderResponseBody(TeaModel):
             result['createTime'] = self.create_time
         if self.create_timestamp is not None:
             result['createTimestamp'] = self.create_timestamp
-        if self.feature is not None:
-            result['feature'] = self.feature
         if self.label_amount is not None:
             result['labelAmount'] = self.label_amount
         if self.merchant_id is not None:
@@ -16072,8 +16053,6 @@ class QueryOrderResponseBody(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('createTimestamp') is not None:
             self.create_timestamp = m.get('createTimestamp')
-        if m.get('feature') is not None:
-            self.feature = m.get('feature')
         if m.get('labelAmount') is not None:
             self.label_amount = m.get('labelAmount')
         if m.get('merchantId') is not None:
@@ -17809,7 +17788,6 @@ class QuerySnsOrderResponseBody(TeaModel):
         close_timestamp: int = None,
         create_time: str = None,
         create_timestamp: int = None,
-        feature: str = None,
         label_amount: int = None,
         merchant_id: str = None,
         merchant_merge_order_no: str = None,
@@ -17841,8 +17819,6 @@ class QuerySnsOrderResponseBody(TeaModel):
         self.create_time = create_time
         # 订单创建时间戳
         self.create_timestamp = create_timestamp
-        # 扩展字段。
-        self.feature = feature
         self.label_amount = label_amount
         # 商户id。
         self.merchant_id = merchant_id
@@ -17899,8 +17875,6 @@ class QuerySnsOrderResponseBody(TeaModel):
             result['createTime'] = self.create_time
         if self.create_timestamp is not None:
             result['createTimestamp'] = self.create_timestamp
-        if self.feature is not None:
-            result['feature'] = self.feature
         if self.label_amount is not None:
             result['labelAmount'] = self.label_amount
         if self.merchant_id is not None:
@@ -17955,8 +17929,6 @@ class QuerySnsOrderResponseBody(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('createTimestamp') is not None:
             self.create_timestamp = m.get('createTimestamp')
-        if m.get('feature') is not None:
-            self.feature = m.get('feature')
         if m.get('labelAmount') is not None:
             self.label_amount = m.get('labelAmount')
         if m.get('merchantId') is not None:

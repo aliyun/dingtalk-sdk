@@ -3911,6 +3911,94 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryPartnerInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/exclusive/partners/users/{user_id}', 'json', req, runtime)
         )
 
+    def query_user_behavior(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryUserBehaviorRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryUserBehaviorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryUserBehaviorHeaders()
+        return self.query_user_behavior_with_options(request, headers, runtime)
+
+    async def query_user_behavior_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryUserBehaviorRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryUserBehaviorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryUserBehaviorHeaders()
+        return await self.query_user_behavior_with_options_async(request, headers, runtime)
+
+    def query_user_behavior_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryUserBehaviorRequest,
+        headers: dingtalkexclusive__1__0_models.QueryUserBehaviorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryUserBehaviorResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryUserBehaviorResponse(),
+            self.do_roarequest('QueryUserBehavior', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/enterpriseSecurities/userBehaviors/screenshots/query', 'json', req, runtime)
+        )
+
+    async def query_user_behavior_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryUserBehaviorRequest,
+        headers: dingtalkexclusive__1__0_models.QueryUserBehaviorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryUserBehaviorResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryUserBehaviorResponse(),
+            await self.do_roarequest_async('QueryUserBehavior', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/enterpriseSecurities/userBehaviors/screenshots/query', 'json', req, runtime)
+        )
+
     def rollback_mini_app_version(
         self,
         request: dingtalkexclusive__1__0_models.RollbackMiniAppVersionRequest,

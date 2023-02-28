@@ -23,6 +23,78 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_delete_recents(
+        self,
+        request: dingtalkdoc__2__0_models.BatchDeleteRecentsRequest,
+    ) -> dingtalkdoc__2__0_models.BatchDeleteRecentsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.BatchDeleteRecentsHeaders()
+        return self.batch_delete_recents_with_options(request, headers, runtime)
+
+    async def batch_delete_recents_async(
+        self,
+        request: dingtalkdoc__2__0_models.BatchDeleteRecentsRequest,
+    ) -> dingtalkdoc__2__0_models.BatchDeleteRecentsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.BatchDeleteRecentsHeaders()
+        return await self.batch_delete_recents_with_options_async(request, headers, runtime)
+
+    def batch_delete_recents_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.BatchDeleteRecentsRequest,
+        headers: dingtalkdoc__2__0_models.BatchDeleteRecentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.BatchDeleteRecentsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_uuids):
+            body['dentryUuids'] = request.dentry_uuids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.BatchDeleteRecentsResponse(),
+            self.do_roarequest('BatchDeleteRecents', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/dentries/recentRecords/batchRemove', 'json', req, runtime)
+        )
+
+    async def batch_delete_recents_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.BatchDeleteRecentsRequest,
+        headers: dingtalkdoc__2__0_models.BatchDeleteRecentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.BatchDeleteRecentsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.dentry_uuids):
+            body['dentryUuids'] = request.dentry_uuids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.BatchDeleteRecentsResponse(),
+            await self.do_roarequest_async('BatchDeleteRecents', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/dentries/recentRecords/batchRemove', 'json', req, runtime)
+        )
+
     def copy_dentry(
         self,
         space_id: str,
@@ -603,6 +675,76 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetSpaceDirectories', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/spaces/{space_id}/directories', 'json', req, runtime)
         )
 
+    def get_star_info(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetStarInfoRequest,
+    ) -> dingtalkdoc__2__0_models.GetStarInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetStarInfoHeaders()
+        return self.get_star_info_with_options(dentry_uuid, request, headers, runtime)
+
+    async def get_star_info_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetStarInfoRequest,
+    ) -> dingtalkdoc__2__0_models.GetStarInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetStarInfoHeaders()
+        return await self.get_star_info_with_options_async(dentry_uuid, request, headers, runtime)
+
+    def get_star_info_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetStarInfoRequest,
+        headers: dingtalkdoc__2__0_models.GetStarInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetStarInfoResponse:
+        UtilClient.validate_model(request)
+        dentry_uuid = OpenApiUtilClient.get_encode_param(dentry_uuid)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetStarInfoResponse(),
+            self.do_roarequest('GetStarInfo', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/dentries/{dentry_uuid}/starInfos', 'json', req, runtime)
+        )
+
+    async def get_star_info_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetStarInfoRequest,
+        headers: dingtalkdoc__2__0_models.GetStarInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetStarInfoResponse:
+        UtilClient.validate_model(request)
+        dentry_uuid = OpenApiUtilClient.get_encode_param(dentry_uuid)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetStarInfoResponse(),
+            await self.do_roarequest_async('GetStarInfo', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/dentries/{dentry_uuid}/starInfos', 'json', req, runtime)
+        )
+
     def get_team(
         self,
         team_id: str,
@@ -1029,6 +1171,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListHotDocs', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams/{team_id}/hotDocs', 'json', req, runtime)
         )
 
+    def list_pin_spaces(
+        self,
+        request: dingtalkdoc__2__0_models.ListPinSpacesRequest,
+    ) -> dingtalkdoc__2__0_models.ListPinSpacesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListPinSpacesHeaders()
+        return self.list_pin_spaces_with_options(request, headers, runtime)
+
+    async def list_pin_spaces_async(
+        self,
+        request: dingtalkdoc__2__0_models.ListPinSpacesRequest,
+    ) -> dingtalkdoc__2__0_models.ListPinSpacesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListPinSpacesHeaders()
+        return await self.list_pin_spaces_with_options_async(request, headers, runtime)
+
+    def list_pin_spaces_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.ListPinSpacesRequest,
+        headers: dingtalkdoc__2__0_models.ListPinSpacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListPinSpacesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListPinSpacesResponse(),
+            self.do_roarequest('ListPinSpaces', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/pinLists/query', 'json', req, runtime)
+        )
+
+    async def list_pin_spaces_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.ListPinSpacesRequest,
+        headers: dingtalkdoc__2__0_models.ListPinSpacesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListPinSpacesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListPinSpacesResponse(),
+            await self.do_roarequest_async('ListPinSpaces', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/pinLists/query', 'json', req, runtime)
+        )
+
     def list_related_space_teams(
         self,
         request: dingtalkdoc__2__0_models.ListRelatedSpaceTeamsRequest,
@@ -1243,6 +1457,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListSpaceSections', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams/{team_id}/spaceSections', 'json', req, runtime)
         )
 
+    def list_stars(
+        self,
+        request: dingtalkdoc__2__0_models.ListStarsRequest,
+    ) -> dingtalkdoc__2__0_models.ListStarsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListStarsHeaders()
+        return self.list_stars_with_options(request, headers, runtime)
+
+    async def list_stars_async(
+        self,
+        request: dingtalkdoc__2__0_models.ListStarsRequest,
+    ) -> dingtalkdoc__2__0_models.ListStarsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListStarsHeaders()
+        return await self.list_stars_with_options_async(request, headers, runtime)
+
+    def list_stars_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.ListStarsRequest,
+        headers: dingtalkdoc__2__0_models.ListStarsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListStarsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListStarsResponse(),
+            self.do_roarequest('ListStars', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/dentries/starLists/query', 'json', req, runtime)
+        )
+
+    async def list_stars_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.ListStarsRequest,
+        headers: dingtalkdoc__2__0_models.ListStarsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListStarsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListStarsResponse(),
+            await self.do_roarequest_async('ListStars', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/dentries/starLists/query', 'json', req, runtime)
+        )
+
     def list_team_members(
         self,
         team_id: str,
@@ -1311,6 +1597,76 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__2__0_models.ListTeamMembersResponse(),
             await self.do_roarequest_async('ListTeamMembers', 'doc_2.0', 'HTTP', 'GET', 'AK', f'/v2.0/doc/teams/{team_id}/members', 'json', req, runtime)
+        )
+
+    def mark_star(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.MarkStarRequest,
+    ) -> dingtalkdoc__2__0_models.MarkStarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.MarkStarHeaders()
+        return self.mark_star_with_options(dentry_uuid, request, headers, runtime)
+
+    async def mark_star_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.MarkStarRequest,
+    ) -> dingtalkdoc__2__0_models.MarkStarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.MarkStarHeaders()
+        return await self.mark_star_with_options_async(dentry_uuid, request, headers, runtime)
+
+    def mark_star_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.MarkStarRequest,
+        headers: dingtalkdoc__2__0_models.MarkStarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.MarkStarResponse:
+        UtilClient.validate_model(request)
+        dentry_uuid = OpenApiUtilClient.get_encode_param(dentry_uuid)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.MarkStarResponse(),
+            self.do_roarequest('MarkStar', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/dentries/{dentry_uuid}/stars/mark', 'json', req, runtime)
+        )
+
+    async def mark_star_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.MarkStarRequest,
+        headers: dingtalkdoc__2__0_models.MarkStarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.MarkStarResponse:
+        UtilClient.validate_model(request)
+        dentry_uuid = OpenApiUtilClient.get_encode_param(dentry_uuid)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.MarkStarResponse(),
+            await self.do_roarequest_async('MarkStar', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/dentries/{dentry_uuid}/stars/mark', 'json', req, runtime)
         )
 
     def move_dentry(
@@ -1403,6 +1759,76 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__2__0_models.MoveDentryResponse(),
             await self.do_roarequest_async('MoveDentry', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/{space_id}/dentries/{dentry_id}/move', 'json', req, runtime)
+        )
+
+    def pin_space(
+        self,
+        space_id: str,
+        request: dingtalkdoc__2__0_models.PinSpaceRequest,
+    ) -> dingtalkdoc__2__0_models.PinSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.PinSpaceHeaders()
+        return self.pin_space_with_options(space_id, request, headers, runtime)
+
+    async def pin_space_async(
+        self,
+        space_id: str,
+        request: dingtalkdoc__2__0_models.PinSpaceRequest,
+    ) -> dingtalkdoc__2__0_models.PinSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.PinSpaceHeaders()
+        return await self.pin_space_with_options_async(space_id, request, headers, runtime)
+
+    def pin_space_with_options(
+        self,
+        space_id: str,
+        request: dingtalkdoc__2__0_models.PinSpaceRequest,
+        headers: dingtalkdoc__2__0_models.PinSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.PinSpaceResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.PinSpaceResponse(),
+            self.do_roarequest('PinSpace', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/{space_id}/pin', 'json', req, runtime)
+        )
+
+    async def pin_space_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkdoc__2__0_models.PinSpaceRequest,
+        headers: dingtalkdoc__2__0_models.PinSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.PinSpaceResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.PinSpaceResponse(),
+            await self.do_roarequest_async('PinSpace', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/{space_id}/pin', 'json', req, runtime)
         )
 
     def query_dentry(
@@ -2149,6 +2575,146 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__2__0_models.SearchResponse(),
             await self.do_roarequest_async('Search', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/search', 'json', req, runtime)
+        )
+
+    def unmark_star(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.UnmarkStarRequest,
+    ) -> dingtalkdoc__2__0_models.UnmarkStarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UnmarkStarHeaders()
+        return self.unmark_star_with_options(dentry_uuid, request, headers, runtime)
+
+    async def unmark_star_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.UnmarkStarRequest,
+    ) -> dingtalkdoc__2__0_models.UnmarkStarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UnmarkStarHeaders()
+        return await self.unmark_star_with_options_async(dentry_uuid, request, headers, runtime)
+
+    def unmark_star_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.UnmarkStarRequest,
+        headers: dingtalkdoc__2__0_models.UnmarkStarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UnmarkStarResponse:
+        UtilClient.validate_model(request)
+        dentry_uuid = OpenApiUtilClient.get_encode_param(dentry_uuid)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UnmarkStarResponse(),
+            self.do_roarequest('UnmarkStar', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/dentries/{dentry_uuid}/stars/unmark', 'json', req, runtime)
+        )
+
+    async def unmark_star_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.UnmarkStarRequest,
+        headers: dingtalkdoc__2__0_models.UnmarkStarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UnmarkStarResponse:
+        UtilClient.validate_model(request)
+        dentry_uuid = OpenApiUtilClient.get_encode_param(dentry_uuid)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UnmarkStarResponse(),
+            await self.do_roarequest_async('UnmarkStar', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/dentries/{dentry_uuid}/stars/unmark', 'json', req, runtime)
+        )
+
+    def unpin_space(
+        self,
+        space_id: str,
+        request: dingtalkdoc__2__0_models.UnpinSpaceRequest,
+    ) -> dingtalkdoc__2__0_models.UnpinSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UnpinSpaceHeaders()
+        return self.unpin_space_with_options(space_id, request, headers, runtime)
+
+    async def unpin_space_async(
+        self,
+        space_id: str,
+        request: dingtalkdoc__2__0_models.UnpinSpaceRequest,
+    ) -> dingtalkdoc__2__0_models.UnpinSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UnpinSpaceHeaders()
+        return await self.unpin_space_with_options_async(space_id, request, headers, runtime)
+
+    def unpin_space_with_options(
+        self,
+        space_id: str,
+        request: dingtalkdoc__2__0_models.UnpinSpaceRequest,
+        headers: dingtalkdoc__2__0_models.UnpinSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UnpinSpaceResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UnpinSpaceResponse(),
+            self.do_roarequest('UnpinSpace', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/{space_id}/unpin', 'json', req, runtime)
+        )
+
+    async def unpin_space_with_options_async(
+        self,
+        space_id: str,
+        request: dingtalkdoc__2__0_models.UnpinSpaceRequest,
+        headers: dingtalkdoc__2__0_models.UnpinSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UnpinSpaceResponse:
+        UtilClient.validate_model(request)
+        space_id = OpenApiUtilClient.get_encode_param(space_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UnpinSpaceResponse(),
+            await self.do_roarequest_async('UnpinSpace', 'doc_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/doc/spaces/{space_id}/unpin', 'json', req, runtime)
         )
 
     def update_team(
