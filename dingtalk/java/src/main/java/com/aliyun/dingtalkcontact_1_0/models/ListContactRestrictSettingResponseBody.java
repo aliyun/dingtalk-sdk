@@ -95,6 +95,18 @@ public class ListContactRestrictSettingResponseBody extends TeaModel {
         public String name;
 
         /**
+         * <p>是否同时限制搜索</p>
+         */
+        @NameInMap("restrictInSearch")
+        public Boolean restrictInSearch;
+
+        /**
+         * <p>是否同时限制查看个人资料页</p>
+         */
+        @NameInMap("restrictInUserProfile")
+        public Boolean restrictInUserProfile;
+
+        /**
          * <p>主体用户deptId列表</p>
          */
         @NameInMap("subjectDeptIds")
@@ -177,6 +189,22 @@ public class ListContactRestrictSettingResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public ListContactRestrictSettingResponseBodyList setRestrictInSearch(Boolean restrictInSearch) {
+            this.restrictInSearch = restrictInSearch;
+            return this;
+        }
+        public Boolean getRestrictInSearch() {
+            return this.restrictInSearch;
+        }
+
+        public ListContactRestrictSettingResponseBodyList setRestrictInUserProfile(Boolean restrictInUserProfile) {
+            this.restrictInUserProfile = restrictInUserProfile;
+            return this;
+        }
+        public Boolean getRestrictInUserProfile() {
+            return this.restrictInUserProfile;
         }
 
         public ListContactRestrictSettingResponseBodyList setSubjectDeptIds(java.util.List<Long> subjectDeptIds) {

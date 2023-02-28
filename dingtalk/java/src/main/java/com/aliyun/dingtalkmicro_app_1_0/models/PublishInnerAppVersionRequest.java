@@ -5,6 +5,12 @@ import com.aliyun.tea.*;
 
 public class PublishInnerAppVersionRequest extends TeaModel {
     /**
+     * <p>小程序版本id，用于唯一标识小程序版本信息。</p>
+     */
+    @NameInMap("appVersionId")
+    public Long appVersionId;
+
+    /**
      * <p>小程序是否在PC端发布，true表示发布移动端和PC端，false表示只发布移动端</p>
      */
     @NameInMap("miniAppOnPc")
@@ -22,15 +28,17 @@ public class PublishInnerAppVersionRequest extends TeaModel {
     @NameInMap("publishType")
     public String publishType;
 
-    /**
-     * <p>小程序版本id</p>
-     */
-    @NameInMap("versionId")
-    public Long versionId;
-
     public static PublishInnerAppVersionRequest build(java.util.Map<String, ?> map) throws Exception {
         PublishInnerAppVersionRequest self = new PublishInnerAppVersionRequest();
         return TeaModel.build(map, self);
+    }
+
+    public PublishInnerAppVersionRequest setAppVersionId(Long appVersionId) {
+        this.appVersionId = appVersionId;
+        return this;
+    }
+    public Long getAppVersionId() {
+        return this.appVersionId;
     }
 
     public PublishInnerAppVersionRequest setMiniAppOnPc(Boolean miniAppOnPc) {
@@ -55,14 +63,6 @@ public class PublishInnerAppVersionRequest extends TeaModel {
     }
     public String getPublishType() {
         return this.publishType;
-    }
-
-    public PublishInnerAppVersionRequest setVersionId(Long versionId) {
-        this.versionId = versionId;
-        return this;
-    }
-    public Long getVersionId() {
-        return this.versionId;
     }
 
 }

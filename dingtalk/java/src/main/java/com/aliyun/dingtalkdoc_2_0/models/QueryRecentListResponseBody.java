@@ -51,6 +51,42 @@ public class QueryRecentListResponseBody extends TeaModel {
         return this.recentList;
     }
 
+    public static class QueryRecentListResponseBodyRecentListTeam extends TeaModel {
+        /**
+         * <p>小组id</p>
+         */
+        @NameInMap("id")
+        public String id;
+
+        /**
+         * <p>小组名称</p>
+         */
+        @NameInMap("name")
+        public String name;
+
+        public static QueryRecentListResponseBodyRecentListTeam build(java.util.Map<String, ?> map) throws Exception {
+            QueryRecentListResponseBodyRecentListTeam self = new QueryRecentListResponseBodyRecentListTeam();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryRecentListResponseBodyRecentListTeam setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public QueryRecentListResponseBodyRecentListTeam setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
     public static class QueryRecentListResponseBodyRecentList extends TeaModel {
         /**
          * <p>是否被删除。</p>
@@ -69,6 +105,12 @@ public class QueryRecentListResponseBody extends TeaModel {
          */
         @NameInMap("recentTime")
         public Long recentTime;
+
+        /**
+         * <p>小组信息</p>
+         */
+        @NameInMap("team")
+        public QueryRecentListResponseBodyRecentListTeam team;
 
         public static QueryRecentListResponseBodyRecentList build(java.util.Map<String, ?> map) throws Exception {
             QueryRecentListResponseBodyRecentList self = new QueryRecentListResponseBodyRecentList();
@@ -97,6 +139,14 @@ public class QueryRecentListResponseBody extends TeaModel {
         }
         public Long getRecentTime() {
             return this.recentTime;
+        }
+
+        public QueryRecentListResponseBodyRecentList setTeam(QueryRecentListResponseBodyRecentListTeam team) {
+            this.team = team;
+            return this;
+        }
+        public QueryRecentListResponseBodyRecentListTeam getTeam() {
+            return this.team;
         }
 
     }

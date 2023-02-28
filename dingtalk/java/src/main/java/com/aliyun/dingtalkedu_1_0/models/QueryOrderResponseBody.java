@@ -37,12 +37,6 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
-    /**
-     * <p>扩展字段。</p>
-     */
-    @NameInMap("feature")
-    public String feature;
-
     @NameInMap("labelAmount")
     public Long labelAmount;
 
@@ -196,14 +190,6 @@ public class QueryOrderResponseBody extends TeaModel {
     }
     public Long getCreateTimestamp() {
         return this.createTimestamp;
-    }
-
-    public QueryOrderResponseBody setFeature(String feature) {
-        this.feature = feature;
-        return this;
-    }
-    public String getFeature() {
-        return this.feature;
     }
 
     public QueryOrderResponseBody setLabelAmount(Long labelAmount) {

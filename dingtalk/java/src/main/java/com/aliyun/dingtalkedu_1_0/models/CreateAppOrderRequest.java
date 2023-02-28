@@ -165,12 +165,6 @@ public class CreateAppOrderRequest extends TeaModel {
 
     public static class CreateAppOrderRequestDetailList extends TeaModel {
         /**
-         * <p>扩展字段。</p>
-         */
-        @NameInMap("feature")
-        public String feature;
-
-        /**
          * <p>商品id。</p>
          */
         @NameInMap("goodsId")
@@ -197,14 +191,6 @@ public class CreateAppOrderRequest extends TeaModel {
         public static CreateAppOrderRequestDetailList build(java.util.Map<String, ?> map) throws Exception {
             CreateAppOrderRequestDetailList self = new CreateAppOrderRequestDetailList();
             return TeaModel.build(map, self);
-        }
-
-        public CreateAppOrderRequestDetailList setFeature(String feature) {
-            this.feature = feature;
-            return this;
-        }
-        public String getFeature() {
-            return this.feature;
         }
 
         public CreateAppOrderRequestDetailList setGoodsId(String goodsId) {

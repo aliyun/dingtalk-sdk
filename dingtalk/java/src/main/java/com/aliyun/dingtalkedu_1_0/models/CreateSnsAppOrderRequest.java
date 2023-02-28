@@ -151,12 +151,6 @@ public class CreateSnsAppOrderRequest extends TeaModel {
 
     public static class CreateSnsAppOrderRequestDetailList extends TeaModel {
         /**
-         * <p>扩展字段。</p>
-         */
-        @NameInMap("feature")
-        public String feature;
-
-        /**
          * <p>商品id。</p>
          */
         @NameInMap("goodsId")
@@ -183,14 +177,6 @@ public class CreateSnsAppOrderRequest extends TeaModel {
         public static CreateSnsAppOrderRequestDetailList build(java.util.Map<String, ?> map) throws Exception {
             CreateSnsAppOrderRequestDetailList self = new CreateSnsAppOrderRequestDetailList();
             return TeaModel.build(map, self);
-        }
-
-        public CreateSnsAppOrderRequestDetailList setFeature(String feature) {
-            this.feature = feature;
-            return this;
-        }
-        public String getFeature() {
-            return this.feature;
         }
 
         public CreateSnsAppOrderRequestDetailList setGoodsId(String goodsId) {
