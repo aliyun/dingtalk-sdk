@@ -37,6 +37,8 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppScopeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppScopeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppUserAccessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppUserAccessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListAllInnerAppsHeaders;
@@ -704,6 +706,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string $userId
+     *
+     * @return GetUserAppDevAccessResponse
+     */
+    public function getUserAppDevAccess($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserAppDevAccessHeaders([]);
+
+        return $this->getUserAppDevAccessWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $userId
+     * @param GetUserAppDevAccessHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetUserAppDevAccessResponse
+     */
+    public function getUserAppDevAccessWithOptions($userId, $headers, $runtime)
+    {
+        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetUserAppDevAccessResponse::fromMap($this->doROARequest('GetUserAppDevAccess', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/users/' . $userId . '/devAccesses', 'json', $req, $runtime));
+    }
+
+    /**
      * @return ListAllAppResponse
      */
     public function listAllApp()
@@ -1048,6 +1087,9 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $agentId = OpenApiUtilClient::getEncodeParam($agentId);
         $body    = [];
+        if (!Utils::isUnset($request->appVersionId)) {
+            @$body['appVersionId'] = $request->appVersionId;
+        }
         if (!Utils::isUnset($request->miniAppOnPc)) {
             @$body['miniAppOnPc'] = $request->miniAppOnPc;
         }
@@ -1056,9 +1098,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->publishType)) {
             @$body['publishType'] = $request->publishType;
-        }
-        if (!Utils::isUnset($request->versionId)) {
-            @$body['versionId'] = $request->versionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1315,11 +1354,11 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $agentId = OpenApiUtilClient::getEncodeParam($agentId);
         $body    = [];
+        if (!Utils::isUnset($request->appVersionId)) {
+            @$body['appVersionId'] = $request->appVersionId;
+        }
         if (!Utils::isUnset($request->opUnionId)) {
             @$body['opUnionId'] = $request->opUnionId;
-        }
-        if (!Utils::isUnset($request->versionId)) {
-            @$body['versionId'] = $request->versionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

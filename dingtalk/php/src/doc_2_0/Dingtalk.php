@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchDeleteRecentsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchDeleteRecentsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchDeleteRecentsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryResponse;
@@ -26,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSpaceDirectoriesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetStarInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetStarInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetStarInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTeamResponse;
@@ -44,6 +50,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListPinSpacesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListPinSpacesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListPinSpacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsResponse;
@@ -53,12 +62,21 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedTeamsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListSpaceSectionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListStarsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListStarsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListStarsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListTeamMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListTeamMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListTeamMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MarkStarHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MarkStarRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MarkStarResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\MoveDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\PinSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\PinSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\PinSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryResponse;
@@ -88,6 +106,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SaveTeamMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnpinSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnpinSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnpinSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UpdateTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UpdateTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UpdateTeamResponse;
@@ -105,6 +129,53 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param BatchDeleteRecentsRequest $request
+     *
+     * @return BatchDeleteRecentsResponse
+     */
+    public function batchDeleteRecents($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchDeleteRecentsHeaders([]);
+
+        return $this->batchDeleteRecentsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchDeleteRecentsRequest $request
+     * @param BatchDeleteRecentsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return BatchDeleteRecentsResponse
+     */
+    public function batchDeleteRecentsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->dentryUuids)) {
+            @$body['dentryUuids'] = $request->dentryUuids;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchDeleteRecentsResponse::fromMap($this->doROARequest('BatchDeleteRecents', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/dentries/recentRecords/batchRemove', 'json', $req, $runtime));
     }
 
     /**
@@ -492,6 +563,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string             $dentryUuid
+     * @param GetStarInfoRequest $request
+     *
+     * @return GetStarInfoResponse
+     */
+    public function getStarInfo($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetStarInfoHeaders([]);
+
+        return $this->getStarInfoWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string             $dentryUuid
+     * @param GetStarInfoRequest $request
+     * @param GetStarInfoHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetStarInfoResponse
+     */
+    public function getStarInfoWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $dentryUuid = OpenApiUtilClient::getEncodeParam($dentryUuid);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetStarInfoResponse::fromMap($this->doROARequest('GetStarInfo', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/dentries/' . $dentryUuid . '/starInfos', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string         $teamId
      * @param GetTeamRequest $request
      *
@@ -771,6 +887,53 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListPinSpacesRequest $request
+     *
+     * @return ListPinSpacesResponse
+     */
+    public function listPinSpaces($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListPinSpacesHeaders([]);
+
+        return $this->listPinSpacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListPinSpacesRequest $request
+     * @param ListPinSpacesHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ListPinSpacesResponse
+     */
+    public function listPinSpacesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListPinSpacesResponse::fromMap($this->doROARequest('ListPinSpaces', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/spaces/pinLists/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param ListRelatedSpaceTeamsRequest $request
      *
      * @return ListRelatedSpaceTeamsResponse
@@ -912,6 +1075,53 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListStarsRequest $request
+     *
+     * @return ListStarsResponse
+     */
+    public function listStars($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListStarsHeaders([]);
+
+        return $this->listStarsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListStarsRequest $request
+     * @param ListStarsHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return ListStarsResponse
+     */
+    public function listStarsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            @$body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListStarsResponse::fromMap($this->doROARequest('ListStars', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/dentries/starLists/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param string                 $teamId
      * @param ListTeamMembersRequest $request
      *
@@ -954,6 +1164,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListTeamMembersResponse::fromMap($this->doROARequest('ListTeamMembers', 'doc_2.0', 'HTTP', 'GET', 'AK', '/v2.0/doc/teams/' . $teamId . '/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string          $dentryUuid
+     * @param MarkStarRequest $request
+     *
+     * @return MarkStarResponse
+     */
+    public function markStar($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MarkStarHeaders([]);
+
+        return $this->markStarWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string          $dentryUuid
+     * @param MarkStarRequest $request
+     * @param MarkStarHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return MarkStarResponse
+     */
+    public function markStarWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $dentryUuid = OpenApiUtilClient::getEncodeParam($dentryUuid);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return MarkStarResponse::fromMap($this->doROARequest('MarkStar', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/dentries/' . $dentryUuid . '/stars/mark', 'json', $req, $runtime));
     }
 
     /**
@@ -1014,6 +1269,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return MoveDentryResponse::fromMap($this->doROARequest('MoveDentry', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/spaces/' . $spaceId . '/dentries/' . $dentryId . '/move', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string          $spaceId
+     * @param PinSpaceRequest $request
+     *
+     * @return PinSpaceResponse
+     */
+    public function pinSpace($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PinSpaceHeaders([]);
+
+        return $this->pinSpaceWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string          $spaceId
+     * @param PinSpaceRequest $request
+     * @param PinSpaceHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return PinSpaceResponse
+     */
+    public function pinSpaceWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId = OpenApiUtilClient::getEncodeParam($spaceId);
+        $query   = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return PinSpaceResponse::fromMap($this->doROARequest('PinSpace', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/spaces/' . $spaceId . '/pin', 'json', $req, $runtime));
     }
 
     /**
@@ -1504,6 +1804,96 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SearchResponse::fromMap($this->doROARequest('Search', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/search', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string            $dentryUuid
+     * @param UnmarkStarRequest $request
+     *
+     * @return UnmarkStarResponse
+     */
+    public function unmarkStar($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnmarkStarHeaders([]);
+
+        return $this->unmarkStarWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $dentryUuid
+     * @param UnmarkStarRequest $request
+     * @param UnmarkStarHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return UnmarkStarResponse
+     */
+    public function unmarkStarWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $dentryUuid = OpenApiUtilClient::getEncodeParam($dentryUuid);
+        $query      = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return UnmarkStarResponse::fromMap($this->doROARequest('UnmarkStar', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/dentries/' . $dentryUuid . '/stars/unmark', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string            $spaceId
+     * @param UnpinSpaceRequest $request
+     *
+     * @return UnpinSpaceResponse
+     */
+    public function unpinSpace($spaceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnpinSpaceHeaders([]);
+
+        return $this->unpinSpaceWithOptions($spaceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string            $spaceId
+     * @param UnpinSpaceRequest $request
+     * @param UnpinSpaceHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return UnpinSpaceResponse
+     */
+    public function unpinSpaceWithOptions($spaceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $spaceId = OpenApiUtilClient::getEncodeParam($spaceId);
+        $query   = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            @$query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return UnpinSpaceResponse::fromMap($this->doROARequest('UnpinSpace', 'doc_2.0', 'HTTP', 'POST', 'AK', '/v2.0/doc/spaces/' . $spaceId . '/unpin', 'json', $req, $runtime));
     }
 
     /**

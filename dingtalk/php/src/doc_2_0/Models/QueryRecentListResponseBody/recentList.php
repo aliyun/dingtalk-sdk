@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryRecentListResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryRecentListResponseBody\recentList\team;
 use AlibabaCloud\Tea\Model;
 
 class recentList extends Model
@@ -29,10 +30,18 @@ class recentList extends Model
      * @var int
      */
     public $recentTime;
+
+    /**
+     * @description 小组信息
+     *
+     * @var team
+     */
+    public $team;
     protected $_name = [
         'deleted'    => 'deleted',
         'dentry'     => 'dentry',
         'recentTime' => 'recentTime',
+        'team'       => 'team',
     ];
 
     public function validate()
@@ -50,6 +59,9 @@ class recentList extends Model
         }
         if (null !== $this->recentTime) {
             $res['recentTime'] = $this->recentTime;
+        }
+        if (null !== $this->team) {
+            $res['team'] = null !== $this->team ? $this->team->toMap() : null;
         }
 
         return $res;
@@ -71,6 +83,9 @@ class recentList extends Model
         }
         if (isset($map['recentTime'])) {
             $model->recentTime = $map['recentTime'];
+        }
+        if (isset($map['team'])) {
+            $model->team = team::fromMap($map['team']);
         }
 
         return $model;

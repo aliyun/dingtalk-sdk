@@ -161,6 +161,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfi
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionResponse;
@@ -2799,6 +2802,66 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryPartnerInfoResponse::fromMap($this->doROARequest('QueryPartnerInfo', 'exclusive_1.0', 'HTTP', 'GET', 'AK', '/v1.0/exclusive/partners/users/' . $userId . '', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryUserBehaviorRequest $request
+     *
+     * @return QueryUserBehaviorResponse
+     */
+    public function queryUserBehavior($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserBehaviorHeaders([]);
+
+        return $this->queryUserBehaviorWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUserBehaviorRequest $request
+     * @param QueryUserBehaviorHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return QueryUserBehaviorResponse
+     */
+    public function queryUserBehaviorWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            @$body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            @$body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            @$body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->type)) {
+            @$body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return QueryUserBehaviorResponse::fromMap($this->doROARequest('QueryUserBehavior', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/enterpriseSecurities/userBehaviors/screenshots/query', 'json', $req, $runtime));
     }
 
     /**

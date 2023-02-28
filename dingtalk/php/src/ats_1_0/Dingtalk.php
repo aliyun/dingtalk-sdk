@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddUserAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddUserAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\AddUserAccountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeDetailResponse;
@@ -238,6 +241,71 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AddUserAccountResponse::fromMap($this->doROARequest('AddUserAccount', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/channels/users/accounts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollectRecruitJobDetailRequest $request
+     *
+     * @return CollectRecruitJobDetailResponse
+     */
+    public function collectRecruitJobDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollectRecruitJobDetailHeaders([]);
+
+        return $this->collectRecruitJobDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollectRecruitJobDetailRequest $request
+     * @param CollectRecruitJobDetailHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return CollectRecruitJobDetailResponse
+     */
+    public function collectRecruitJobDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->channel)) {
+            @$body['channel'] = $request->channel;
+        }
+        if (!Utils::isUnset($request->jonInfo)) {
+            @$body['jonInfo'] = $request->jonInfo;
+        }
+        if (!Utils::isUnset($request->outCorpId)) {
+            @$body['outCorpId'] = $request->outCorpId;
+        }
+        if (!Utils::isUnset($request->outCorpName)) {
+            @$body['outCorpName'] = $request->outCorpName;
+        }
+        if (!Utils::isUnset($request->recruitUserInfo)) {
+            @$body['recruitUserInfo'] = $request->recruitUserInfo;
+        }
+        if (!Utils::isUnset($request->source)) {
+            @$body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->updateTime)) {
+            @$body['updateTime'] = $request->updateTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CollectRecruitJobDetailResponse::fromMap($this->doROARequest('CollectRecruitJobDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/channels/jobs/import', 'json', $req, $runtime));
     }
 
     /**

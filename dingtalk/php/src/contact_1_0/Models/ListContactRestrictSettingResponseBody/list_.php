@@ -58,6 +58,20 @@ class list_ extends Model
     public $name;
 
     /**
+     * @description 是否同时限制搜索
+     *
+     * @var bool
+     */
+    public $restrictInSearch;
+
+    /**
+     * @description 是否同时限制查看个人资料页
+     *
+     * @var bool
+     */
+    public $restrictInUserProfile;
+
+    /**
      * @description 主体用户deptId列表
      *
      * @var int[]
@@ -85,17 +99,19 @@ class list_ extends Model
      */
     public $type;
     protected $_name = [
-        'active'         => 'active',
-        'description'    => 'description',
-        'excludeDeptIds' => 'excludeDeptIds',
-        'excludeTagIds'  => 'excludeTagIds',
-        'excludeUserIds' => 'excludeUserIds',
-        'id'             => 'id',
-        'name'           => 'name',
-        'subjectDeptIds' => 'subjectDeptIds',
-        'subjectTagIds'  => 'subjectTagIds',
-        'subjectUserIds' => 'subjectUserIds',
-        'type'           => 'type',
+        'active'                => 'active',
+        'description'           => 'description',
+        'excludeDeptIds'        => 'excludeDeptIds',
+        'excludeTagIds'         => 'excludeTagIds',
+        'excludeUserIds'        => 'excludeUserIds',
+        'id'                    => 'id',
+        'name'                  => 'name',
+        'restrictInSearch'      => 'restrictInSearch',
+        'restrictInUserProfile' => 'restrictInUserProfile',
+        'subjectDeptIds'        => 'subjectDeptIds',
+        'subjectTagIds'         => 'subjectTagIds',
+        'subjectUserIds'        => 'subjectUserIds',
+        'type'                  => 'type',
     ];
 
     public function validate()
@@ -125,6 +141,12 @@ class list_ extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->restrictInSearch) {
+            $res['restrictInSearch'] = $this->restrictInSearch;
+        }
+        if (null !== $this->restrictInUserProfile) {
+            $res['restrictInUserProfile'] = $this->restrictInUserProfile;
         }
         if (null !== $this->subjectDeptIds) {
             $res['subjectDeptIds'] = $this->subjectDeptIds;
@@ -176,6 +198,12 @@ class list_ extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['restrictInSearch'])) {
+            $model->restrictInSearch = $map['restrictInSearch'];
+        }
+        if (isset($map['restrictInUserProfile'])) {
+            $model->restrictInUserProfile = $map['restrictInUserProfile'];
         }
         if (isset($map['subjectDeptIds'])) {
             if (!empty($map['subjectDeptIds'])) {

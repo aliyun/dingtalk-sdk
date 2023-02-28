@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class PublishInnerAppVersionRequest extends Model
 {
     /**
+     * @description 小程序版本id，用于唯一标识小程序版本信息。
+     *
+     * @var int
+     */
+    public $appVersionId;
+
+    /**
      * @description 小程序是否在PC端发布，true表示发布移动端和PC端，false表示只发布移动端
      *
      * @var bool
@@ -28,18 +35,11 @@ class PublishInnerAppVersionRequest extends Model
      * @var string
      */
     public $publishType;
-
-    /**
-     * @description 小程序版本id
-     *
-     * @var int
-     */
-    public $versionId;
     protected $_name = [
-        'miniAppOnPc' => 'miniAppOnPc',
-        'opUnionId'   => 'opUnionId',
-        'publishType' => 'publishType',
-        'versionId'   => 'versionId',
+        'appVersionId' => 'appVersionId',
+        'miniAppOnPc'  => 'miniAppOnPc',
+        'opUnionId'    => 'opUnionId',
+        'publishType'  => 'publishType',
     ];
 
     public function validate()
@@ -49,6 +49,9 @@ class PublishInnerAppVersionRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->appVersionId) {
+            $res['appVersionId'] = $this->appVersionId;
+        }
         if (null !== $this->miniAppOnPc) {
             $res['miniAppOnPc'] = $this->miniAppOnPc;
         }
@@ -57,9 +60,6 @@ class PublishInnerAppVersionRequest extends Model
         }
         if (null !== $this->publishType) {
             $res['publishType'] = $this->publishType;
-        }
-        if (null !== $this->versionId) {
-            $res['versionId'] = $this->versionId;
         }
 
         return $res;
@@ -73,6 +73,9 @@ class PublishInnerAppVersionRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['appVersionId'])) {
+            $model->appVersionId = $map['appVersionId'];
+        }
         if (isset($map['miniAppOnPc'])) {
             $model->miniAppOnPc = $map['miniAppOnPc'];
         }
@@ -81,9 +84,6 @@ class PublishInnerAppVersionRequest extends Model
         }
         if (isset($map['publishType'])) {
             $model->publishType = $map['publishType'];
-        }
-        if (isset($map['versionId'])) {
-            $model->versionId = $map['versionId'];
         }
 
         return $model;

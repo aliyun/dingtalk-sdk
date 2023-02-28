@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\RelatedSpacesResponseBody\items;
 use AlibabaCloud\Tea\Model;
 
 class RelatedSpacesResponseBody extends Model
@@ -16,7 +17,7 @@ class RelatedSpacesResponseBody extends Model
     public $hasMore;
 
     /**
-     * @var SpaceModel[]
+     * @var items[]
      */
     public $items;
 
@@ -74,7 +75,7 @@ class RelatedSpacesResponseBody extends Model
                 $model->items = [];
                 $n            = 0;
                 foreach ($map['items'] as $item) {
-                    $model->items[$n++] = null !== $item ? SpaceModel::fromMap($item) : $item;
+                    $model->items[$n++] = null !== $item ? items::fromMap($item) : $item;
                 }
             }
         }

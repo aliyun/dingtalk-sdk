@@ -49,13 +49,6 @@ class QuerySnsOrderResponseBody extends Model
     public $createTimestamp;
 
     /**
-     * @description 扩展字段。
-     *
-     * @var string
-     */
-    public $feature;
-
-    /**
      * @var int
      */
     public $labelAmount;
@@ -186,7 +179,6 @@ class QuerySnsOrderResponseBody extends Model
         'closeTimestamp'       => 'closeTimestamp',
         'createTime'           => 'createTime',
         'createTimestamp'      => 'createTimestamp',
-        'feature'              => 'feature',
         'labelAmount'          => 'labelAmount',
         'merchantId'           => 'merchantId',
         'merchantMergeOrderNo' => 'merchantMergeOrderNo',
@@ -232,9 +224,6 @@ class QuerySnsOrderResponseBody extends Model
         }
         if (null !== $this->createTimestamp) {
             $res['createTimestamp'] = $this->createTimestamp;
-        }
-        if (null !== $this->feature) {
-            $res['feature'] = $this->feature;
         }
         if (null !== $this->labelAmount) {
             $res['labelAmount'] = $this->labelAmount;
@@ -322,9 +311,6 @@ class QuerySnsOrderResponseBody extends Model
         }
         if (isset($map['createTimestamp'])) {
             $model->createTimestamp = $map['createTimestamp'];
-        }
-        if (isset($map['feature'])) {
-            $model->feature = $map['feature'];
         }
         if (isset($map['labelAmount'])) {
             $model->labelAmount = $map['labelAmount'];
