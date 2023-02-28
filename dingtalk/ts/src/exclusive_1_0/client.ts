@@ -4819,6 +4819,112 @@ export class QueryPartnerInfoResponse extends $tea.Model {
   }
 }
 
+export class QueryUserBehaviorHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserBehaviorRequest extends $tea.Model {
+  endTime?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  platform?: number;
+  startTime?: number;
+  type?: number;
+  userId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      platform: 'platform',
+      startTime: 'startTime',
+      type: 'type',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+      platform: 'number',
+      startTime: 'number',
+      type: 'number',
+      userId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserBehaviorResponseBody extends $tea.Model {
+  data?: QueryUserBehaviorResponseBodyData[];
+  dataCnt?: number;
+  totalCnt?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      dataCnt: 'dataCnt',
+      totalCnt: 'totalCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': QueryUserBehaviorResponseBodyData },
+      dataCnt: 'number',
+      totalCnt: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserBehaviorResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserBehaviorResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserBehaviorResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RollbackMiniAppVersionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7542,6 +7648,37 @@ export class QueryPartnerInfoResponseBodyPartnerLabelList extends $tea.Model {
   }
 }
 
+export class QueryUserBehaviorResponseBodyData extends $tea.Model {
+  pictureUrl?: string;
+  platform?: number;
+  time?: number;
+  type?: number;
+  userName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pictureUrl: 'pictureUrl',
+      platform: 'platform',
+      time: 'time',
+      type: 'type',
+      userName: 'userName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pictureUrl: 'string',
+      platform: 'number',
+      time: 'number',
+      type: 'number',
+      userName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   groupAdminsCount?: number;
   groupCreateTime?: number;
@@ -9537,6 +9674,59 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<QueryPartnerInfoResponse>(await this.doROARequest("QueryPartnerInfo", "exclusive_1.0", "HTTP", "GET", "AK", `/v1.0/exclusive/partners/users/${userId}`, "json", req, runtime), new QueryPartnerInfoResponse({}));
+  }
+
+  async queryUserBehavior(request: QueryUserBehaviorRequest): Promise<QueryUserBehaviorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserBehaviorHeaders({ });
+    return await this.queryUserBehaviorWithOptions(request, headers, runtime);
+  }
+
+  async queryUserBehaviorWithOptions(request: QueryUserBehaviorRequest, headers: QueryUserBehaviorHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserBehaviorResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.platform)) {
+      body["platform"] = request.platform;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryUserBehaviorResponse>(await this.doROARequest("QueryUserBehavior", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/enterpriseSecurities/userBehaviors/screenshots/query`, "json", req, runtime), new QueryUserBehaviorResponse({}));
   }
 
   async rollbackMiniAppVersion(request: RollbackMiniAppVersionRequest): Promise<RollbackMiniAppVersionResponse> {

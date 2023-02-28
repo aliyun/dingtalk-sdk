@@ -298,6 +298,109 @@ export class AddUserAccountResponse extends $tea.Model {
   }
 }
 
+export class CollectRecruitJobDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectRecruitJobDetailRequest extends $tea.Model {
+  bizCode?: string;
+  channel?: string;
+  jonInfo?: CollectRecruitJobDetailRequestJonInfo;
+  outCorpId?: string;
+  outCorpName?: string;
+  recruitUserInfo?: CollectRecruitJobDetailRequestRecruitUserInfo;
+  source?: string;
+  updateTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      channel: 'channel',
+      jonInfo: 'jonInfo',
+      outCorpId: 'outCorpId',
+      outCorpName: 'outCorpName',
+      recruitUserInfo: 'recruitUserInfo',
+      source: 'source',
+      updateTime: 'updateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      channel: 'string',
+      jonInfo: CollectRecruitJobDetailRequestJonInfo,
+      outCorpId: 'string',
+      outCorpName: 'string',
+      recruitUserInfo: CollectRecruitJobDetailRequestRecruitUserInfo,
+      source: 'string',
+      updateTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectRecruitJobDetailResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectRecruitJobDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollectRecruitJobDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollectRecruitJobDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CollectResumeDetailHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1625,6 +1728,200 @@ export class UpdateJobDeliverResponse extends $tea.Model {
   }
 }
 
+export class CollectRecruitJobDetailRequestJonInfoAddress extends $tea.Model {
+  cityCode?: string;
+  detail?: string;
+  districtCode?: string;
+  latitude?: string;
+  longitude?: string;
+  name?: string;
+  provinceCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cityCode: 'cityCode',
+      detail: 'detail',
+      districtCode: 'districtCode',
+      latitude: 'latitude',
+      longitude: 'longitude',
+      name: 'name',
+      provinceCode: 'provinceCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cityCode: 'string',
+      detail: 'string',
+      districtCode: 'string',
+      latitude: 'string',
+      longitude: 'string',
+      name: 'string',
+      provinceCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectRecruitJobDetailRequestJonInfoFullTimeInfo extends $tea.Model {
+  maxJobExperience?: string;
+  minJobExperience?: string;
+  salaryMonth?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxJobExperience: 'maxJobExperience',
+      minJobExperience: 'minJobExperience',
+      salaryMonth: 'salaryMonth',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxJobExperience: 'string',
+      minJobExperience: 'string',
+      salaryMonth: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectRecruitJobDetailRequestJonInfoPartTimeInfo extends $tea.Model {
+  contactNumber?: string;
+  salaryPeriod?: string;
+  settleType?: string;
+  specifyWorkDate?: string;
+  specifyWorkTime?: string;
+  workBeginTimeMin?: string;
+  workDateType?: string;
+  workEndDate?: string;
+  workEndTimeMin?: string;
+  workStartDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contactNumber: 'contactNumber',
+      salaryPeriod: 'salaryPeriod',
+      settleType: 'settleType',
+      specifyWorkDate: 'specifyWorkDate',
+      specifyWorkTime: 'specifyWorkTime',
+      workBeginTimeMin: 'workBeginTimeMin',
+      workDateType: 'workDateType',
+      workEndDate: 'workEndDate',
+      workEndTimeMin: 'workEndTimeMin',
+      workStartDate: 'workStartDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contactNumber: 'string',
+      salaryPeriod: 'string',
+      settleType: 'string',
+      specifyWorkDate: 'string',
+      specifyWorkTime: 'string',
+      workBeginTimeMin: 'string',
+      workDateType: 'string',
+      workEndDate: 'string',
+      workEndTimeMin: 'string',
+      workStartDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectRecruitJobDetailRequestJonInfo extends $tea.Model {
+  address?: CollectRecruitJobDetailRequestJonInfoAddress;
+  category?: string;
+  description?: string;
+  extInfo?: string;
+  fullTimeInfo?: CollectRecruitJobDetailRequestJonInfoFullTimeInfo;
+  headCount?: string;
+  jobNature?: string;
+  jobTags?: string[];
+  maxSalary?: string;
+  minSalary?: string;
+  name?: string;
+  outJobId?: string;
+  partTimeInfo?: CollectRecruitJobDetailRequestJonInfoPartTimeInfo;
+  requiredEdu?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      category: 'category',
+      description: 'description',
+      extInfo: 'extInfo',
+      fullTimeInfo: 'fullTimeInfo',
+      headCount: 'headCount',
+      jobNature: 'jobNature',
+      jobTags: 'jobTags',
+      maxSalary: 'maxSalary',
+      minSalary: 'minSalary',
+      name: 'name',
+      outJobId: 'outJobId',
+      partTimeInfo: 'partTimeInfo',
+      requiredEdu: 'requiredEdu',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: CollectRecruitJobDetailRequestJonInfoAddress,
+      category: 'string',
+      description: 'string',
+      extInfo: 'string',
+      fullTimeInfo: CollectRecruitJobDetailRequestJonInfoFullTimeInfo,
+      headCount: 'string',
+      jobNature: 'string',
+      jobTags: { 'type': 'array', 'itemType': 'string' },
+      maxSalary: 'string',
+      minSalary: 'string',
+      name: 'string',
+      outJobId: 'string',
+      partTimeInfo: CollectRecruitJobDetailRequestJonInfoPartTimeInfo,
+      requiredEdu: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectRecruitJobDetailRequestRecruitUserInfo extends $tea.Model {
+  extInfo?: string;
+  outUserId?: string;
+  userMobile?: string;
+  userName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extInfo: 'extInfo',
+      outUserId: 'outUserId',
+      userMobile: 'userMobile',
+      userName: 'userName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extInfo: 'string',
+      outUserId: 'string',
+      userMobile: 'string',
+      userName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CollectResumeDetailRequestResumeDataBaseInfo extends $tea.Model {
   age?: number;
   avatar?: string;
@@ -2188,6 +2485,65 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<AddUserAccountResponse>(await this.doROARequest("AddUserAccount", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/users/accounts`, "json", req, runtime), new AddUserAccountResponse({}));
+  }
+
+  async collectRecruitJobDetail(request: CollectRecruitJobDetailRequest): Promise<CollectRecruitJobDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollectRecruitJobDetailHeaders({ });
+    return await this.collectRecruitJobDetailWithOptions(request, headers, runtime);
+  }
+
+  async collectRecruitJobDetailWithOptions(request: CollectRecruitJobDetailRequest, headers: CollectRecruitJobDetailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectRecruitJobDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channel)) {
+      body["channel"] = request.channel;
+    }
+
+    if (!Util.isUnset(request.jonInfo)) {
+      body["jonInfo"] = request.jonInfo;
+    }
+
+    if (!Util.isUnset(request.outCorpId)) {
+      body["outCorpId"] = request.outCorpId;
+    }
+
+    if (!Util.isUnset(request.outCorpName)) {
+      body["outCorpName"] = request.outCorpName;
+    }
+
+    if (!Util.isUnset(request.recruitUserInfo)) {
+      body["recruitUserInfo"] = request.recruitUserInfo;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
+    }
+
+    if (!Util.isUnset(request.updateTime)) {
+      body["updateTime"] = request.updateTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CollectRecruitJobDetailResponse>(await this.doROARequest("CollectRecruitJobDetail", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/jobs/import`, "json", req, runtime), new CollectRecruitJobDetailResponse({}));
   }
 
   async collectResumeDetail(request: CollectResumeDetailRequest): Promise<CollectResumeDetailResponse> {

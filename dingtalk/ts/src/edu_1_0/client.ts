@@ -6726,7 +6726,6 @@ export class QueryOrderResponseBody extends $tea.Model {
   closeTimestamp?: number;
   createTime?: string;
   createTimestamp?: number;
-  feature?: string;
   labelAmount?: number;
   merchantId?: string;
   merchantMergeOrderNo?: string;
@@ -6754,7 +6753,6 @@ export class QueryOrderResponseBody extends $tea.Model {
       closeTimestamp: 'closeTimestamp',
       createTime: 'createTime',
       createTimestamp: 'createTimestamp',
-      feature: 'feature',
       labelAmount: 'labelAmount',
       merchantId: 'merchantId',
       merchantMergeOrderNo: 'merchantMergeOrderNo',
@@ -6785,7 +6783,6 @@ export class QueryOrderResponseBody extends $tea.Model {
       closeTimestamp: 'number',
       createTime: 'string',
       createTimestamp: 'number',
-      feature: 'string',
       labelAmount: 'number',
       merchantId: 'string',
       merchantMergeOrderNo: 'string',
@@ -7607,7 +7604,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
   closeTimestamp?: number;
   createTime?: string;
   createTimestamp?: number;
-  feature?: string;
   labelAmount?: number;
   merchantId?: string;
   merchantMergeOrderNo?: string;
@@ -7635,7 +7631,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       closeTimestamp: 'closeTimestamp',
       createTime: 'createTime',
       createTimestamp: 'createTimestamp',
-      feature: 'feature',
       labelAmount: 'labelAmount',
       merchantId: 'merchantId',
       merchantMergeOrderNo: 'merchantMergeOrderNo',
@@ -7666,7 +7661,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       closeTimestamp: 'number',
       createTime: 'string',
       createTimestamp: 'number',
-      feature: 'string',
       labelAmount: 'number',
       merchantId: 'string',
       merchantMergeOrderNo: 'string',
@@ -9945,14 +9939,12 @@ export class BatchOrgCreateHWResponseBodyResult extends $tea.Model {
 }
 
 export class CreateAppOrderRequestDetailList extends $tea.Model {
-  feature?: string;
   goodsId?: string;
   goodsName?: string;
   goodsPrice?: number;
   goodsQuantity?: number;
   static names(): { [key: string]: string } {
     return {
-      feature: 'feature',
       goodsId: 'goodsId',
       goodsName: 'goodsName',
       goodsPrice: 'goodsPrice',
@@ -9962,7 +9954,6 @@ export class CreateAppOrderRequestDetailList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      feature: 'string',
       goodsId: 'string',
       goodsName: 'string',
       goodsPrice: 'number',
@@ -10411,14 +10402,12 @@ export class CreateSectionConfigRequestSectionConfigs extends $tea.Model {
 }
 
 export class CreateSnsAppOrderRequestDetailList extends $tea.Model {
-  feature?: string;
   goodsId?: string;
   goodsName?: string;
   goodsPrice?: number;
   goodsQuantity?: number;
   static names(): { [key: string]: string } {
     return {
-      feature: 'feature',
       goodsId: 'goodsId',
       goodsName: 'goodsName',
       goodsPrice: 'goodsPrice',
@@ -10428,7 +10417,6 @@ export class CreateSnsAppOrderRequestDetailList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      feature: 'string',
       goodsId: 'string',
       goodsName: 'string',
       goodsPrice: 'number',

@@ -6722,6 +6722,8 @@ export class ListContactRestrictSettingResponseBodyList extends $tea.Model {
   excludeUserIds?: string[];
   id?: number;
   name?: string;
+  restrictInSearch?: boolean;
+  restrictInUserProfile?: boolean;
   subjectDeptIds?: number[];
   subjectTagIds?: number[];
   subjectUserIds?: string[];
@@ -6735,6 +6737,8 @@ export class ListContactRestrictSettingResponseBodyList extends $tea.Model {
       excludeUserIds: 'excludeUserIds',
       id: 'id',
       name: 'name',
+      restrictInSearch: 'restrictInSearch',
+      restrictInUserProfile: 'restrictInUserProfile',
       subjectDeptIds: 'subjectDeptIds',
       subjectTagIds: 'subjectTagIds',
       subjectUserIds: 'subjectUserIds',
@@ -6751,6 +6755,8 @@ export class ListContactRestrictSettingResponseBodyList extends $tea.Model {
       excludeUserIds: { 'type': 'array', 'itemType': 'string' },
       id: 'number',
       name: 'string',
+      restrictInSearch: 'boolean',
+      restrictInUserProfile: 'boolean',
       subjectDeptIds: { 'type': 'array', 'itemType': 'number' },
       subjectTagIds: { 'type': 'array', 'itemType': 'number' },
       subjectUserIds: { 'type': 'array', 'itemType': 'string' },
