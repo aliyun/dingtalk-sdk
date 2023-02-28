@@ -38,13 +38,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<CreateAppOrderRequestDetailList> DetailList { get; set; }
         public class CreateAppOrderRequestDetailList : TeaModel {
             /// <summary>
-            /// 扩展字段。
-            /// </summary>
-            [NameInMap("feature")]
-            [Validation(Required=false)]
-            public string Feature { get; set; }
-
-            /// <summary>
             /// 商品id。
             /// </summary>
             [NameInMap("goodsId")]

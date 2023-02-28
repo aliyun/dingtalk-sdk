@@ -51,6 +51,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public long? RecentTime { get; set; }
 
+            /// <summary>
+            /// 小组信息
+            /// </summary>
+            [NameInMap("team")]
+            [Validation(Required=false)]
+            public QueryRecentListResponseBodyRecentListTeam Team { get; set; }
+            public class QueryRecentListResponseBodyRecentListTeam : TeaModel {
+                /// <summary>
+                /// 小组id
+                /// </summary>
+                [NameInMap("id")]
+                [Validation(Required=false)]
+                public string Id { get; set; }
+
+                /// <summary>
+                /// 小组名称
+                /// </summary>
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+            }
+
         }
 
     }

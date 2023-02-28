@@ -73,6 +73,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public string Name { get; set; }
 
             /// <summary>
+            /// 是否同时限制搜索
+            /// </summary>
+            [NameInMap("restrictInSearch")]
+            [Validation(Required=false)]
+            public bool? RestrictInSearch { get; set; }
+
+            /// <summary>
+            /// 是否同时限制查看个人资料页
+            /// </summary>
+            [NameInMap("restrictInUserProfile")]
+            [Validation(Required=false)]
+            public bool? RestrictInUserProfile { get; set; }
+
+            /// <summary>
             /// 主体用户deptId列表
             /// </summary>
             [NameInMap("subjectDeptIds")]

@@ -326,6 +326,130 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             return TeaModel.ToObject<AddUserAccountResponse>(await DoROARequestAsync("AddUserAccount", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/users/accounts", "json", req, runtime));
         }
 
+        public CollectRecruitJobDetailResponse CollectRecruitJobDetail(CollectRecruitJobDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CollectRecruitJobDetailHeaders headers = new CollectRecruitJobDetailHeaders();
+            return CollectRecruitJobDetailWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CollectRecruitJobDetailResponse> CollectRecruitJobDetailAsync(CollectRecruitJobDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CollectRecruitJobDetailHeaders headers = new CollectRecruitJobDetailHeaders();
+            return await CollectRecruitJobDetailWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CollectRecruitJobDetailResponse CollectRecruitJobDetailWithOptions(CollectRecruitJobDetailRequest request, CollectRecruitJobDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                query["bizCode"] = request.BizCode;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JonInfo))
+            {
+                body["jonInfo"] = request.JonInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutCorpId))
+            {
+                body["outCorpId"] = request.OutCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutCorpName))
+            {
+                body["outCorpName"] = request.OutCorpName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecruitUserInfo))
+            {
+                body["recruitUserInfo"] = request.RecruitUserInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
+            {
+                body["source"] = request.Source;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateTime))
+            {
+                body["updateTime"] = request.UpdateTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CollectRecruitJobDetailResponse>(DoROARequest("CollectRecruitJobDetail", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/jobs/import", "json", req, runtime));
+        }
+
+        public async Task<CollectRecruitJobDetailResponse> CollectRecruitJobDetailWithOptionsAsync(CollectRecruitJobDetailRequest request, CollectRecruitJobDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                query["bizCode"] = request.BizCode;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Channel))
+            {
+                body["channel"] = request.Channel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JonInfo))
+            {
+                body["jonInfo"] = request.JonInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutCorpId))
+            {
+                body["outCorpId"] = request.OutCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutCorpName))
+            {
+                body["outCorpName"] = request.OutCorpName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecruitUserInfo))
+            {
+                body["recruitUserInfo"] = request.RecruitUserInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
+            {
+                body["source"] = request.Source;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateTime))
+            {
+                body["updateTime"] = request.UpdateTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<CollectRecruitJobDetailResponse>(await DoROARequestAsync("CollectRecruitJobDetail", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/channels/jobs/import", "json", req, runtime));
+        }
+
         public CollectResumeDetailResponse CollectResumeDetail(CollectResumeDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

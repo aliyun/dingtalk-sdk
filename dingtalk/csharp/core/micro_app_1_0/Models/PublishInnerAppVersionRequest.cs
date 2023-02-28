@@ -10,6 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class PublishInnerAppVersionRequest : TeaModel {
         /// <summary>
+        /// 小程序版本id，用于唯一标识小程序版本信息。
+        /// </summary>
+        [NameInMap("appVersionId")]
+        [Validation(Required=false)]
+        public long? AppVersionId { get; set; }
+
+        /// <summary>
         /// 小程序是否在PC端发布，true表示发布移动端和PC端，false表示只发布移动端
         /// </summary>
         [NameInMap("miniAppOnPc")]
@@ -29,13 +36,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [NameInMap("publishType")]
         [Validation(Required=false)]
         public string PublishType { get; set; }
-
-        /// <summary>
-        /// 小程序版本id
-        /// </summary>
-        [NameInMap("versionId")]
-        [Validation(Required=false)]
-        public long? VersionId { get; set; }
 
     }
 

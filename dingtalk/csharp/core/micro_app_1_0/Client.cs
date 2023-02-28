@@ -998,6 +998,58 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             return TeaModel.ToObject<GetMicroAppUserAccessResponse>(await DoROARequestAsync("GetMicroAppUserAccess", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/apps/" + agentId + "/users/" + userId + "/adminAccess", "json", req, runtime));
         }
 
+        public GetUserAppDevAccessResponse GetUserAppDevAccess(string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUserAppDevAccessHeaders headers = new GetUserAppDevAccessHeaders();
+            return GetUserAppDevAccessWithOptions(userId, headers, runtime);
+        }
+
+        public async Task<GetUserAppDevAccessResponse> GetUserAppDevAccessAsync(string userId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUserAppDevAccessHeaders headers = new GetUserAppDevAccessHeaders();
+            return await GetUserAppDevAccessWithOptionsAsync(userId, headers, runtime);
+        }
+
+        public GetUserAppDevAccessResponse GetUserAppDevAccessWithOptions(string userId, GetUserAppDevAccessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetUserAppDevAccessResponse>(DoROARequest("GetUserAppDevAccess", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/users/" + userId + "/devAccesses", "json", req, runtime));
+        }
+
+        public async Task<GetUserAppDevAccessResponse> GetUserAppDevAccessWithOptionsAsync(string userId, GetUserAppDevAccessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetUserAppDevAccessResponse>(await DoROARequestAsync("GetUserAppDevAccess", "microApp_1.0", "HTTP", "GET", "AK", "/v1.0/microApp/users/" + userId + "/devAccesses", "json", req, runtime));
+        }
+
         public ListAllAppResponse ListAllApp()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1487,6 +1539,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppVersionId))
+            {
+                body["appVersionId"] = request.AppVersionId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MiniAppOnPc))
             {
                 body["miniAppOnPc"] = request.MiniAppOnPc;
@@ -1498,10 +1554,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublishType))
             {
                 body["publishType"] = request.PublishType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
-            {
-                body["versionId"] = request.VersionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1525,6 +1577,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppVersionId))
+            {
+                body["appVersionId"] = request.AppVersionId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MiniAppOnPc))
             {
                 body["miniAppOnPc"] = request.MiniAppOnPc;
@@ -1536,10 +1592,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublishType))
             {
                 body["publishType"] = request.PublishType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
-            {
-                body["versionId"] = request.VersionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1923,13 +1975,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppVersionId))
+            {
+                body["appVersionId"] = request.AppVersionId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
                 body["opUnionId"] = request.OpUnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
-            {
-                body["versionId"] = request.VersionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1953,13 +2005,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             agentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(agentId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppVersionId))
+            {
+                body["appVersionId"] = request.AppVersionId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
             {
                 body["opUnionId"] = request.OpUnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
-            {
-                body["versionId"] = request.VersionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

@@ -48,13 +48,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public long? CreateTimestamp { get; set; }
 
-        /// <summary>
-        /// 扩展字段。
-        /// </summary>
-        [NameInMap("feature")]
-        [Validation(Required=false)]
-        public string Feature { get; set; }
-
         [NameInMap("labelAmount")]
         [Validation(Required=false)]
         public long? LabelAmount { get; set; }
