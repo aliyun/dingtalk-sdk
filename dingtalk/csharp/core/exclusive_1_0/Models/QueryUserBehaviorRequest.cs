@@ -51,12 +51,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public int? Type { get; set; }
 
-        /// <summary>
-        /// 工号
-        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
-        public long? UserId { get; set; }
+        public string UserId { get; set; }
 
     }
 

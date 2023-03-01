@@ -17,23 +17,23 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         public string BizCode { get; set; }
 
         /// <summary>
-        /// 业务标识，目前固定为ddats
+        /// 渠道ID
         /// </summary>
         [NameInMap("channel")]
         [Validation(Required=false)]
         public string Channel { get; set; }
 
-        [NameInMap("jonInfo")]
+        [NameInMap("jobInfo")]
         [Validation(Required=false)]
-        public CollectRecruitJobDetailRequestJonInfo JonInfo { get; set; }
-        public class CollectRecruitJobDetailRequestJonInfo : TeaModel {
+        public CollectRecruitJobDetailRequestJobInfo JobInfo { get; set; }
+        public class CollectRecruitJobDetailRequestJobInfo : TeaModel {
             /// <summary>
             /// 地址信息
             /// </summary>
             [NameInMap("address")]
             [Validation(Required=false)]
-            public CollectRecruitJobDetailRequestJonInfoAddress Address { get; set; }
-            public class CollectRecruitJobDetailRequestJonInfoAddress : TeaModel {
+            public CollectRecruitJobDetailRequestJobInfoAddress Address { get; set; }
+            public class CollectRecruitJobDetailRequestJobInfoAddress : TeaModel {
                 /// <summary>
                 /// 城市编码
                 /// </summary>
@@ -108,8 +108,8 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
             /// </summary>
             [NameInMap("fullTimeInfo")]
             [Validation(Required=false)]
-            public CollectRecruitJobDetailRequestJonInfoFullTimeInfo FullTimeInfo { get; set; }
-            public class CollectRecruitJobDetailRequestJonInfoFullTimeInfo : TeaModel {
+            public CollectRecruitJobDetailRequestJobInfoFullTimeInfo FullTimeInfo { get; set; }
+            public class CollectRecruitJobDetailRequestJobInfoFullTimeInfo : TeaModel {
                 /// <summary>
                 /// 工作经验要求最高年限
                 /// </summary>
@@ -187,8 +187,8 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
             /// </summary>
             [NameInMap("partTimeInfo")]
             [Validation(Required=false)]
-            public CollectRecruitJobDetailRequestJonInfoPartTimeInfo PartTimeInfo { get; set; }
-            public class CollectRecruitJobDetailRequestJonInfoPartTimeInfo : TeaModel {
+            public CollectRecruitJobDetailRequestJobInfoPartTimeInfo PartTimeInfo { get; set; }
+            public class CollectRecruitJobDetailRequestJobInfoPartTimeInfo : TeaModel {
                 /// <summary>
                 /// 联系电话
                 /// </summary>

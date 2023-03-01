@@ -353,9 +353,9 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["channel"] = request.Channel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JonInfo))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobInfo))
             {
-                body["jonInfo"] = request.JonInfo;
+                body["jobInfo"] = request.JobInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutCorpId))
             {
@@ -408,9 +408,9 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["channel"] = request.Channel;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JonInfo))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobInfo))
             {
-                body["jonInfo"] = request.JonInfo;
+                body["jobInfo"] = request.JobInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutCorpId))
             {

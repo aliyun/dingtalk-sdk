@@ -163,6 +163,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
                         }
 
+                        /// <summary>
+                        /// 标签字段 颜色属性
+                        /// </summary>
+                        [NameInMap("defaultColor")]
+                        [Validation(Required=false)]
+                        public string DefaultColor { get; set; }
+
                         [NameInMap("disabled")]
                         [Validation(Required=false)]
                         public bool? Disabled { get; set; }
@@ -935,6 +942,13 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                         public string Type { get; set; }
 
                     }
+
+                    /// <summary>
+                    /// 标签字段 颜色属性
+                    /// </summary>
+                    [NameInMap("defaultColor")]
+                    [Validation(Required=false)]
+                    public string DefaultColor { get; set; }
 
                     /// <summary>
                     /// 是否可编辑
