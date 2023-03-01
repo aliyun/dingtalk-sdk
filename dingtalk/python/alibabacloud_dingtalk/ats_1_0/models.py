@@ -519,7 +519,7 @@ class CollectRecruitJobDetailHeaders(TeaModel):
         return self
 
 
-class CollectRecruitJobDetailRequestJonInfoAddress(TeaModel):
+class CollectRecruitJobDetailRequestJobInfoAddress(TeaModel):
     def __init__(
         self,
         city_code: str = None,
@@ -589,7 +589,7 @@ class CollectRecruitJobDetailRequestJonInfoAddress(TeaModel):
         return self
 
 
-class CollectRecruitJobDetailRequestJonInfoFullTimeInfo(TeaModel):
+class CollectRecruitJobDetailRequestJobInfoFullTimeInfo(TeaModel):
     def __init__(
         self,
         max_job_experience: str = None,
@@ -631,7 +631,7 @@ class CollectRecruitJobDetailRequestJonInfoFullTimeInfo(TeaModel):
         return self
 
 
-class CollectRecruitJobDetailRequestJonInfoPartTimeInfo(TeaModel):
+class CollectRecruitJobDetailRequestJobInfoPartTimeInfo(TeaModel):
     def __init__(
         self,
         contact_number: str = None,
@@ -722,14 +722,14 @@ class CollectRecruitJobDetailRequestJonInfoPartTimeInfo(TeaModel):
         return self
 
 
-class CollectRecruitJobDetailRequestJonInfo(TeaModel):
+class CollectRecruitJobDetailRequestJobInfo(TeaModel):
     def __init__(
         self,
-        address: CollectRecruitJobDetailRequestJonInfoAddress = None,
+        address: CollectRecruitJobDetailRequestJobInfoAddress = None,
         category: str = None,
         description: str = None,
         ext_info: str = None,
-        full_time_info: CollectRecruitJobDetailRequestJonInfoFullTimeInfo = None,
+        full_time_info: CollectRecruitJobDetailRequestJobInfoFullTimeInfo = None,
         head_count: str = None,
         job_nature: str = None,
         job_tags: List[str] = None,
@@ -737,7 +737,7 @@ class CollectRecruitJobDetailRequestJonInfo(TeaModel):
         min_salary: str = None,
         name: str = None,
         out_job_id: str = None,
-        part_time_info: CollectRecruitJobDetailRequestJonInfoPartTimeInfo = None,
+        part_time_info: CollectRecruitJobDetailRequestJobInfoPartTimeInfo = None,
         required_edu: str = None,
     ):
         # 地址信息
@@ -815,7 +815,7 @@ class CollectRecruitJobDetailRequestJonInfo(TeaModel):
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('address') is not None:
-            temp_model = CollectRecruitJobDetailRequestJonInfoAddress()
+            temp_model = CollectRecruitJobDetailRequestJobInfoAddress()
             self.address = temp_model.from_map(m['address'])
         if m.get('category') is not None:
             self.category = m.get('category')
@@ -824,7 +824,7 @@ class CollectRecruitJobDetailRequestJonInfo(TeaModel):
         if m.get('extInfo') is not None:
             self.ext_info = m.get('extInfo')
         if m.get('fullTimeInfo') is not None:
-            temp_model = CollectRecruitJobDetailRequestJonInfoFullTimeInfo()
+            temp_model = CollectRecruitJobDetailRequestJobInfoFullTimeInfo()
             self.full_time_info = temp_model.from_map(m['fullTimeInfo'])
         if m.get('headCount') is not None:
             self.head_count = m.get('headCount')
@@ -841,7 +841,7 @@ class CollectRecruitJobDetailRequestJonInfo(TeaModel):
         if m.get('outJobId') is not None:
             self.out_job_id = m.get('outJobId')
         if m.get('partTimeInfo') is not None:
-            temp_model = CollectRecruitJobDetailRequestJonInfoPartTimeInfo()
+            temp_model = CollectRecruitJobDetailRequestJobInfoPartTimeInfo()
             self.part_time_info = temp_model.from_map(m['partTimeInfo'])
         if m.get('requiredEdu') is not None:
             self.required_edu = m.get('requiredEdu')
@@ -902,7 +902,7 @@ class CollectRecruitJobDetailRequest(TeaModel):
         self,
         biz_code: str = None,
         channel: str = None,
-        jon_info: CollectRecruitJobDetailRequestJonInfo = None,
+        job_info: CollectRecruitJobDetailRequestJobInfo = None,
         out_corp_id: str = None,
         out_corp_name: str = None,
         recruit_user_info: CollectRecruitJobDetailRequestRecruitUserInfo = None,
@@ -911,9 +911,9 @@ class CollectRecruitJobDetailRequest(TeaModel):
     ):
         # 业务标识，目前固定为ddats
         self.biz_code = biz_code
-        # 业务标识，目前固定为ddats
+        # 渠道ID
         self.channel = channel
-        self.jon_info = jon_info
+        self.job_info = job_info
         # 渠道侧外部企业唯一ID
         self.out_corp_id = out_corp_id
         # 企业名称
@@ -926,8 +926,8 @@ class CollectRecruitJobDetailRequest(TeaModel):
         self.update_time = update_time
 
     def validate(self):
-        if self.jon_info:
-            self.jon_info.validate()
+        if self.job_info:
+            self.job_info.validate()
         if self.recruit_user_info:
             self.recruit_user_info.validate()
 
@@ -941,8 +941,8 @@ class CollectRecruitJobDetailRequest(TeaModel):
             result['bizCode'] = self.biz_code
         if self.channel is not None:
             result['channel'] = self.channel
-        if self.jon_info is not None:
-            result['jonInfo'] = self.jon_info.to_map()
+        if self.job_info is not None:
+            result['jobInfo'] = self.job_info.to_map()
         if self.out_corp_id is not None:
             result['outCorpId'] = self.out_corp_id
         if self.out_corp_name is not None:
@@ -961,9 +961,9 @@ class CollectRecruitJobDetailRequest(TeaModel):
             self.biz_code = m.get('bizCode')
         if m.get('channel') is not None:
             self.channel = m.get('channel')
-        if m.get('jonInfo') is not None:
-            temp_model = CollectRecruitJobDetailRequestJonInfo()
-            self.jon_info = temp_model.from_map(m['jonInfo'])
+        if m.get('jobInfo') is not None:
+            temp_model = CollectRecruitJobDetailRequestJobInfo()
+            self.job_info = temp_model.from_map(m['jobInfo'])
         if m.get('outCorpId') is not None:
             self.out_corp_id = m.get('outCorpId')
         if m.get('outCorpName') is not None:

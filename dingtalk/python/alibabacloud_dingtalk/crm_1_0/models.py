@@ -7318,6 +7318,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
         choice: int = None,
         content: str = None,
         data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource = None,
+        default_color: str = None,
         disabled: bool = None,
         duration: bool = None,
         duration_label: str = None,
@@ -7358,6 +7359,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
         self.choice = choice
         self.content = content
         self.data_source = data_source
+        # 标签字段 颜色属性
+        self.default_color = default_color
         self.disabled = disabled
         self.duration = duration
         self.duration_label = duration_label
@@ -7442,6 +7445,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
             result['content'] = self.content
         if self.data_source is not None:
             result['dataSource'] = self.data_source.to_map()
+        if self.default_color is not None:
+            result['defaultColor'] = self.default_color
         if self.disabled is not None:
             result['disabled'] = self.disabled
         if self.duration is not None:
@@ -7538,6 +7543,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
         if m.get('dataSource') is not None:
             temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource()
             self.data_source = temp_model.from_map(m['dataSource'])
+        if m.get('defaultColor') is not None:
+            self.default_color = m.get('defaultColor')
         if m.get('disabled') is not None:
             self.disabled = m.get('disabled')
         if m.get('duration') is not None:
@@ -8983,6 +8990,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         choice: int = None,
         content: str = None,
         data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource = None,
+        default_color: str = None,
         disabled: bool = None,
         duration: bool = None,
         duration_label: str = None,
@@ -9030,6 +9038,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         self.content = content
         # 关联表单的数据源配置
         self.data_source = data_source
+        # 标签字段 颜色属性
+        self.default_color = default_color
         # 是否可编辑
         self.disabled = disabled
         # 是否自动计算时长
@@ -9144,6 +9154,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
             result['content'] = self.content
         if self.data_source is not None:
             result['dataSource'] = self.data_source.to_map()
+        if self.default_color is not None:
+            result['defaultColor'] = self.default_color
         if self.disabled is not None:
             result['disabled'] = self.disabled
         if self.duration is not None:
@@ -9244,6 +9256,8 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         if m.get('dataSource') is not None:
             temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource()
             self.data_source = temp_model.from_map(m['dataSource'])
+        if m.get('defaultColor') is not None:
+            self.default_color = m.get('defaultColor')
         if m.get('disabled') is not None:
             self.disabled = m.get('disabled')
         if m.get('duration') is not None:

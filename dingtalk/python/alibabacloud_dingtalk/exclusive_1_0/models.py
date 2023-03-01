@@ -11046,7 +11046,7 @@ class QueryUserBehaviorRequest(TeaModel):
         platform: int = None,
         start_time: int = None,
         type: int = None,
-        user_id: int = None,
+        user_id: str = None,
     ):
         # 结束时间(默认当前时间)
         self.end_time = end_time
@@ -11060,7 +11060,6 @@ class QueryUserBehaviorRequest(TeaModel):
         self.start_time = start_time
         # 用户行为((0-全部，1-截屏，2-录屏))
         self.type = type
-        # 工号
         self.user_id = user_id
 
     def validate(self):

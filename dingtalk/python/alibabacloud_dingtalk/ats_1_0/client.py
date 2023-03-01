@@ -304,8 +304,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.channel):
             body['channel'] = request.channel
-        if not UtilClient.is_unset(request.jon_info):
-            body['jonInfo'] = request.jon_info
+        if not UtilClient.is_unset(request.job_info):
+            body['jobInfo'] = request.job_info
         if not UtilClient.is_unset(request.out_corp_id):
             body['outCorpId'] = request.out_corp_id
         if not UtilClient.is_unset(request.out_corp_name):
@@ -344,8 +344,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.channel):
             body['channel'] = request.channel
-        if not UtilClient.is_unset(request.jon_info):
-            body['jonInfo'] = request.jon_info
+        if not UtilClient.is_unset(request.job_info):
+            body['jobInfo'] = request.job_info
         if not UtilClient.is_unset(request.out_corp_id):
             body['outCorpId'] = request.out_corp_id
         if not UtilClient.is_unset(request.out_corp_name):

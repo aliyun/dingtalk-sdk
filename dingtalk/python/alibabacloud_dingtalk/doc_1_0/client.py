@@ -401,6 +401,84 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('BatchGetWorkspaces', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workspaces/infos/query', 'json', req, runtime)
         )
 
+    def bind_cool_app_to_sheet(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.BindCoolAppToSheetRequest,
+    ) -> dingtalkdoc__1__0_models.BindCoolAppToSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.BindCoolAppToSheetHeaders()
+        return self.bind_cool_app_to_sheet_with_options(workbook_id, request, headers, runtime)
+
+    async def bind_cool_app_to_sheet_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.BindCoolAppToSheetRequest,
+    ) -> dingtalkdoc__1__0_models.BindCoolAppToSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.BindCoolAppToSheetHeaders()
+        return await self.bind_cool_app_to_sheet_with_options_async(workbook_id, request, headers, runtime)
+
+    def bind_cool_app_to_sheet_with_options(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.BindCoolAppToSheetRequest,
+        headers: dingtalkdoc__1__0_models.BindCoolAppToSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.BindCoolAppToSheetResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.BindCoolAppToSheetResponse(),
+            self.do_roarequest('BindCoolAppToSheet', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/coolApps', 'json', req, runtime)
+        )
+
+    async def bind_cool_app_to_sheet_with_options_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.BindCoolAppToSheetRequest,
+        headers: dingtalkdoc__1__0_models.BindCoolAppToSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.BindCoolAppToSheetResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['coolAppCode'] = request.cool_app_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.BindCoolAppToSheetResponse(),
+            await self.do_roarequest_async('BindCoolAppToSheet', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/coolApps', 'json', req, runtime)
+        )
+
     def clear(
         self,
         workbook_id: str,
@@ -3501,6 +3579,80 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.SheetFindAllResponse(),
             await self.do_roarequest_async('SheetFindAll', 'doc_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/findAll', 'json', req, runtime)
+        )
+
+    def unbind_cool_app_to_sheet(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.UnbindCoolAppToSheetRequest,
+    ) -> dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders()
+        return self.unbind_cool_app_to_sheet_with_options(workbook_id, request, headers, runtime)
+
+    async def unbind_cool_app_to_sheet_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.UnbindCoolAppToSheetRequest,
+    ) -> dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders()
+        return await self.unbind_cool_app_to_sheet_with_options_async(workbook_id, request, headers, runtime)
+
+    def unbind_cool_app_to_sheet_with_options(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.UnbindCoolAppToSheetRequest,
+        headers: dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        query = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            query['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse(),
+            self.do_roarequest('UnbindCoolAppToSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/coolApps', 'json', req, runtime)
+        )
+
+    async def unbind_cool_app_to_sheet_with_options_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.UnbindCoolAppToSheetRequest,
+        headers: dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse:
+        UtilClient.validate_model(request)
+        workbook_id = OpenApiUtilClient.get_encode_param(workbook_id)
+        query = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            query['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse(),
+            await self.do_roarequest_async('UnbindCoolAppToSheet', 'doc_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/doc/workbooks/{workbook_id}/coolApps', 'json', req, runtime)
         )
 
     def update_range(

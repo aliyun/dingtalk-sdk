@@ -8046,7 +8046,7 @@ class QueryCorpStatisticDataRequest(TeaModel):
         return self
 
 
-class QueryCorpStatisticDataResponseBody(TeaModel):
+class QueryCorpStatisticDataResponseBodyResult(TeaModel):
     def __init__(
         self,
         card_be_received_total_cnt: int = None,
@@ -8057,13 +8057,13 @@ class QueryCorpStatisticDataResponseBody(TeaModel):
         total_send_cnt: int = None,
         wechat_total_share_cnt: int = None,
     ):
-        # 被收下总数
+        # 被收下名片数
         self.card_be_received_total_cnt = card_be_received_total_cnt
-        # 收下总数
+        # 收下名片数
         self.card_receive_total_cnt = card_receive_total_cnt
-        # 被查看总数
+        # 被访问数
         self.card_total_be_visited_cnt = card_total_be_visited_cnt
-        # 数据日期
+        # 日期
         self.data_date = data_date
         # 钉钉发送数
         self.ding_total_share_cnt = ding_total_share_cnt
@@ -8113,6 +8113,42 @@ class QueryCorpStatisticDataResponseBody(TeaModel):
             self.total_send_cnt = m.get('totalSendCnt')
         if m.get('wechatTotalShareCnt') is not None:
             self.wechat_total_share_cnt = m.get('wechatTotalShareCnt')
+        return self
+
+
+class QueryCorpStatisticDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryCorpStatisticDataResponseBodyResult] = None,
+    ):
+        # 查询结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryCorpStatisticDataResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
         return self
 
 
