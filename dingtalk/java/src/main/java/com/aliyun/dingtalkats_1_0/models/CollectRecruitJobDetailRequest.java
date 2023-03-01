@@ -11,13 +11,13 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     public String bizCode;
 
     /**
-     * <p>业务标识，目前固定为ddats</p>
+     * <p>渠道ID</p>
      */
     @NameInMap("channel")
     public String channel;
 
-    @NameInMap("jonInfo")
-    public CollectRecruitJobDetailRequestJonInfo jonInfo;
+    @NameInMap("jobInfo")
+    public CollectRecruitJobDetailRequestJobInfo jobInfo;
 
     /**
      * <p>渠道侧外部企业唯一ID</p>
@@ -70,12 +70,12 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
         return this.channel;
     }
 
-    public CollectRecruitJobDetailRequest setJonInfo(CollectRecruitJobDetailRequestJonInfo jonInfo) {
-        this.jonInfo = jonInfo;
+    public CollectRecruitJobDetailRequest setJobInfo(CollectRecruitJobDetailRequestJobInfo jobInfo) {
+        this.jobInfo = jobInfo;
         return this;
     }
-    public CollectRecruitJobDetailRequestJonInfo getJonInfo() {
-        return this.jonInfo;
+    public CollectRecruitJobDetailRequestJobInfo getJobInfo() {
+        return this.jobInfo;
     }
 
     public CollectRecruitJobDetailRequest setOutCorpId(String outCorpId) {
@@ -118,7 +118,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
         return this.updateTime;
     }
 
-    public static class CollectRecruitJobDetailRequestJonInfoAddress extends TeaModel {
+    public static class CollectRecruitJobDetailRequestJobInfoAddress extends TeaModel {
         /**
          * <p>城市编码</p>
          */
@@ -161,12 +161,12 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
         @NameInMap("provinceCode")
         public String provinceCode;
 
-        public static CollectRecruitJobDetailRequestJonInfoAddress build(java.util.Map<String, ?> map) throws Exception {
-            CollectRecruitJobDetailRequestJonInfoAddress self = new CollectRecruitJobDetailRequestJonInfoAddress();
+        public static CollectRecruitJobDetailRequestJobInfoAddress build(java.util.Map<String, ?> map) throws Exception {
+            CollectRecruitJobDetailRequestJobInfoAddress self = new CollectRecruitJobDetailRequestJobInfoAddress();
             return TeaModel.build(map, self);
         }
 
-        public CollectRecruitJobDetailRequestJonInfoAddress setCityCode(String cityCode) {
+        public CollectRecruitJobDetailRequestJobInfoAddress setCityCode(String cityCode) {
             this.cityCode = cityCode;
             return this;
         }
@@ -174,7 +174,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.cityCode;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoAddress setDetail(String detail) {
+        public CollectRecruitJobDetailRequestJobInfoAddress setDetail(String detail) {
             this.detail = detail;
             return this;
         }
@@ -182,7 +182,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.detail;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoAddress setDistrictCode(String districtCode) {
+        public CollectRecruitJobDetailRequestJobInfoAddress setDistrictCode(String districtCode) {
             this.districtCode = districtCode;
             return this;
         }
@@ -190,7 +190,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.districtCode;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoAddress setLatitude(String latitude) {
+        public CollectRecruitJobDetailRequestJobInfoAddress setLatitude(String latitude) {
             this.latitude = latitude;
             return this;
         }
@@ -198,7 +198,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.latitude;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoAddress setLongitude(String longitude) {
+        public CollectRecruitJobDetailRequestJobInfoAddress setLongitude(String longitude) {
             this.longitude = longitude;
             return this;
         }
@@ -206,7 +206,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.longitude;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoAddress setName(String name) {
+        public CollectRecruitJobDetailRequestJobInfoAddress setName(String name) {
             this.name = name;
             return this;
         }
@@ -214,7 +214,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.name;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoAddress setProvinceCode(String provinceCode) {
+        public CollectRecruitJobDetailRequestJobInfoAddress setProvinceCode(String provinceCode) {
             this.provinceCode = provinceCode;
             return this;
         }
@@ -224,7 +224,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
 
     }
 
-    public static class CollectRecruitJobDetailRequestJonInfoFullTimeInfo extends TeaModel {
+    public static class CollectRecruitJobDetailRequestJobInfoFullTimeInfo extends TeaModel {
         /**
          * <p>工作经验要求最高年限</p>
          */
@@ -243,12 +243,12 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
         @NameInMap("salaryMonth")
         public String salaryMonth;
 
-        public static CollectRecruitJobDetailRequestJonInfoFullTimeInfo build(java.util.Map<String, ?> map) throws Exception {
-            CollectRecruitJobDetailRequestJonInfoFullTimeInfo self = new CollectRecruitJobDetailRequestJonInfoFullTimeInfo();
+        public static CollectRecruitJobDetailRequestJobInfoFullTimeInfo build(java.util.Map<String, ?> map) throws Exception {
+            CollectRecruitJobDetailRequestJobInfoFullTimeInfo self = new CollectRecruitJobDetailRequestJobInfoFullTimeInfo();
             return TeaModel.build(map, self);
         }
 
-        public CollectRecruitJobDetailRequestJonInfoFullTimeInfo setMaxJobExperience(String maxJobExperience) {
+        public CollectRecruitJobDetailRequestJobInfoFullTimeInfo setMaxJobExperience(String maxJobExperience) {
             this.maxJobExperience = maxJobExperience;
             return this;
         }
@@ -256,7 +256,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.maxJobExperience;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoFullTimeInfo setMinJobExperience(String minJobExperience) {
+        public CollectRecruitJobDetailRequestJobInfoFullTimeInfo setMinJobExperience(String minJobExperience) {
             this.minJobExperience = minJobExperience;
             return this;
         }
@@ -264,7 +264,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.minJobExperience;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoFullTimeInfo setSalaryMonth(String salaryMonth) {
+        public CollectRecruitJobDetailRequestJobInfoFullTimeInfo setSalaryMonth(String salaryMonth) {
             this.salaryMonth = salaryMonth;
             return this;
         }
@@ -274,7 +274,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
 
     }
 
-    public static class CollectRecruitJobDetailRequestJonInfoPartTimeInfo extends TeaModel {
+    public static class CollectRecruitJobDetailRequestJobInfoPartTimeInfo extends TeaModel {
         /**
          * <p>联系电话</p>
          */
@@ -335,12 +335,12 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
         @NameInMap("workStartDate")
         public String workStartDate;
 
-        public static CollectRecruitJobDetailRequestJonInfoPartTimeInfo build(java.util.Map<String, ?> map) throws Exception {
-            CollectRecruitJobDetailRequestJonInfoPartTimeInfo self = new CollectRecruitJobDetailRequestJonInfoPartTimeInfo();
+        public static CollectRecruitJobDetailRequestJobInfoPartTimeInfo build(java.util.Map<String, ?> map) throws Exception {
+            CollectRecruitJobDetailRequestJobInfoPartTimeInfo self = new CollectRecruitJobDetailRequestJobInfoPartTimeInfo();
             return TeaModel.build(map, self);
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setContactNumber(String contactNumber) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setContactNumber(String contactNumber) {
             this.contactNumber = contactNumber;
             return this;
         }
@@ -348,7 +348,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.contactNumber;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setSalaryPeriod(String salaryPeriod) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setSalaryPeriod(String salaryPeriod) {
             this.salaryPeriod = salaryPeriod;
             return this;
         }
@@ -356,7 +356,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.salaryPeriod;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setSettleType(String settleType) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setSettleType(String settleType) {
             this.settleType = settleType;
             return this;
         }
@@ -364,7 +364,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.settleType;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setSpecifyWorkDate(String specifyWorkDate) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setSpecifyWorkDate(String specifyWorkDate) {
             this.specifyWorkDate = specifyWorkDate;
             return this;
         }
@@ -372,7 +372,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.specifyWorkDate;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setSpecifyWorkTime(String specifyWorkTime) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setSpecifyWorkTime(String specifyWorkTime) {
             this.specifyWorkTime = specifyWorkTime;
             return this;
         }
@@ -380,7 +380,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.specifyWorkTime;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setWorkBeginTimeMin(String workBeginTimeMin) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setWorkBeginTimeMin(String workBeginTimeMin) {
             this.workBeginTimeMin = workBeginTimeMin;
             return this;
         }
@@ -388,7 +388,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.workBeginTimeMin;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setWorkDateType(String workDateType) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setWorkDateType(String workDateType) {
             this.workDateType = workDateType;
             return this;
         }
@@ -396,7 +396,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.workDateType;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setWorkEndDate(String workEndDate) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setWorkEndDate(String workEndDate) {
             this.workEndDate = workEndDate;
             return this;
         }
@@ -404,7 +404,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.workEndDate;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setWorkEndTimeMin(String workEndTimeMin) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setWorkEndTimeMin(String workEndTimeMin) {
             this.workEndTimeMin = workEndTimeMin;
             return this;
         }
@@ -412,7 +412,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.workEndTimeMin;
         }
 
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo setWorkStartDate(String workStartDate) {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo setWorkStartDate(String workStartDate) {
             this.workStartDate = workStartDate;
             return this;
         }
@@ -422,12 +422,12 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
 
     }
 
-    public static class CollectRecruitJobDetailRequestJonInfo extends TeaModel {
+    public static class CollectRecruitJobDetailRequestJobInfo extends TeaModel {
         /**
          * <p>地址信息</p>
          */
         @NameInMap("address")
-        public CollectRecruitJobDetailRequestJonInfoAddress address;
+        public CollectRecruitJobDetailRequestJobInfoAddress address;
 
         /**
          * <p>职位分类编码</p>
@@ -448,7 +448,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
          * <p>全职信息</p>
          */
         @NameInMap("fullTimeInfo")
-        public CollectRecruitJobDetailRequestJonInfoFullTimeInfo fullTimeInfo;
+        public CollectRecruitJobDetailRequestJobInfoFullTimeInfo fullTimeInfo;
 
         /**
          * <p>招聘人数</p>
@@ -496,7 +496,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
          * <p>兼职信息</p>
          */
         @NameInMap("partTimeInfo")
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo partTimeInfo;
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo partTimeInfo;
 
         /**
          * <p>学历要求</p>
@@ -504,20 +504,20 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
         @NameInMap("requiredEdu")
         public String requiredEdu;
 
-        public static CollectRecruitJobDetailRequestJonInfo build(java.util.Map<String, ?> map) throws Exception {
-            CollectRecruitJobDetailRequestJonInfo self = new CollectRecruitJobDetailRequestJonInfo();
+        public static CollectRecruitJobDetailRequestJobInfo build(java.util.Map<String, ?> map) throws Exception {
+            CollectRecruitJobDetailRequestJobInfo self = new CollectRecruitJobDetailRequestJobInfo();
             return TeaModel.build(map, self);
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setAddress(CollectRecruitJobDetailRequestJonInfoAddress address) {
+        public CollectRecruitJobDetailRequestJobInfo setAddress(CollectRecruitJobDetailRequestJobInfoAddress address) {
             this.address = address;
             return this;
         }
-        public CollectRecruitJobDetailRequestJonInfoAddress getAddress() {
+        public CollectRecruitJobDetailRequestJobInfoAddress getAddress() {
             return this.address;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setCategory(String category) {
+        public CollectRecruitJobDetailRequestJobInfo setCategory(String category) {
             this.category = category;
             return this;
         }
@@ -525,7 +525,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.category;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setDescription(String description) {
+        public CollectRecruitJobDetailRequestJobInfo setDescription(String description) {
             this.description = description;
             return this;
         }
@@ -533,7 +533,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.description;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setExtInfo(String extInfo) {
+        public CollectRecruitJobDetailRequestJobInfo setExtInfo(String extInfo) {
             this.extInfo = extInfo;
             return this;
         }
@@ -541,15 +541,15 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.extInfo;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setFullTimeInfo(CollectRecruitJobDetailRequestJonInfoFullTimeInfo fullTimeInfo) {
+        public CollectRecruitJobDetailRequestJobInfo setFullTimeInfo(CollectRecruitJobDetailRequestJobInfoFullTimeInfo fullTimeInfo) {
             this.fullTimeInfo = fullTimeInfo;
             return this;
         }
-        public CollectRecruitJobDetailRequestJonInfoFullTimeInfo getFullTimeInfo() {
+        public CollectRecruitJobDetailRequestJobInfoFullTimeInfo getFullTimeInfo() {
             return this.fullTimeInfo;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setHeadCount(String headCount) {
+        public CollectRecruitJobDetailRequestJobInfo setHeadCount(String headCount) {
             this.headCount = headCount;
             return this;
         }
@@ -557,7 +557,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.headCount;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setJobNature(String jobNature) {
+        public CollectRecruitJobDetailRequestJobInfo setJobNature(String jobNature) {
             this.jobNature = jobNature;
             return this;
         }
@@ -565,7 +565,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.jobNature;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setJobTags(java.util.List<String> jobTags) {
+        public CollectRecruitJobDetailRequestJobInfo setJobTags(java.util.List<String> jobTags) {
             this.jobTags = jobTags;
             return this;
         }
@@ -573,7 +573,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.jobTags;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setMaxSalary(String maxSalary) {
+        public CollectRecruitJobDetailRequestJobInfo setMaxSalary(String maxSalary) {
             this.maxSalary = maxSalary;
             return this;
         }
@@ -581,7 +581,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.maxSalary;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setMinSalary(String minSalary) {
+        public CollectRecruitJobDetailRequestJobInfo setMinSalary(String minSalary) {
             this.minSalary = minSalary;
             return this;
         }
@@ -589,7 +589,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.minSalary;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setName(String name) {
+        public CollectRecruitJobDetailRequestJobInfo setName(String name) {
             this.name = name;
             return this;
         }
@@ -597,7 +597,7 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.name;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setOutJobId(String outJobId) {
+        public CollectRecruitJobDetailRequestJobInfo setOutJobId(String outJobId) {
             this.outJobId = outJobId;
             return this;
         }
@@ -605,15 +605,15 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
             return this.outJobId;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setPartTimeInfo(CollectRecruitJobDetailRequestJonInfoPartTimeInfo partTimeInfo) {
+        public CollectRecruitJobDetailRequestJobInfo setPartTimeInfo(CollectRecruitJobDetailRequestJobInfoPartTimeInfo partTimeInfo) {
             this.partTimeInfo = partTimeInfo;
             return this;
         }
-        public CollectRecruitJobDetailRequestJonInfoPartTimeInfo getPartTimeInfo() {
+        public CollectRecruitJobDetailRequestJobInfoPartTimeInfo getPartTimeInfo() {
             return this.partTimeInfo;
         }
 
-        public CollectRecruitJobDetailRequestJonInfo setRequiredEdu(String requiredEdu) {
+        public CollectRecruitJobDetailRequestJobInfo setRequiredEdu(String requiredEdu) {
             this.requiredEdu = requiredEdu;
             return this;
         }

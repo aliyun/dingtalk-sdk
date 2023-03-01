@@ -1506,6 +1506,12 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource dataSource;
 
+        /**
+         * <p>标签字段 颜色属性</p>
+         */
+        @NameInMap("defaultColor")
+        public String defaultColor;
+
         @NameInMap("disabled")
         public Boolean disabled;
 
@@ -1664,6 +1670,14 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         }
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource getDataSource() {
             return this.dataSource;
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps setDefaultColor(String defaultColor) {
+            this.defaultColor = defaultColor;
+            return this;
+        }
+        public String getDefaultColor() {
+            return this.defaultColor;
         }
 
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps setDisabled(Boolean disabled) {
@@ -3599,6 +3613,12 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource dataSource;
 
         /**
+         * <p>标签字段 颜色属性</p>
+         */
+        @NameInMap("defaultColor")
+        public String defaultColor;
+
+        /**
          * <p>是否可编辑</p>
          */
         @NameInMap("disabled")
@@ -3846,6 +3866,14 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         }
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource getDataSource() {
             return this.dataSource;
+        }
+
+        public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps setDefaultColor(String defaultColor) {
+            this.defaultColor = defaultColor;
+            return this;
+        }
+        public String getDefaultColor() {
+            return this.defaultColor;
         }
 
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps setDisabled(Boolean disabled) {

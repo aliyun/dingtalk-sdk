@@ -40,11 +40,8 @@ public class QueryUserBehaviorRequest extends TeaModel {
     @NameInMap("type")
     public Integer type;
 
-    /**
-     * <p>工号</p>
-     */
     @NameInMap("userId")
-    public Long userId;
+    public String userId;
 
     public static QueryUserBehaviorRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryUserBehaviorRequest self = new QueryUserBehaviorRequest();
@@ -99,11 +96,11 @@ public class QueryUserBehaviorRequest extends TeaModel {
         return this.type;
     }
 
-    public QueryUserBehaviorRequest setUserId(Long userId) {
+    public QueryUserBehaviorRequest setUserId(String userId) {
         this.userId = userId;
         return this;
     }
-    public Long getUserId() {
+    public String getUserId() {
         return this.userId;
     }
 
