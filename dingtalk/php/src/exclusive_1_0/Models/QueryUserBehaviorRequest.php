@@ -51,9 +51,7 @@ class QueryUserBehaviorRequest extends Model
     public $type;
 
     /**
-     * @description 工号
-     *
-     * @var int
+     * @var string
      */
     public $userId;
     protected $_name = [

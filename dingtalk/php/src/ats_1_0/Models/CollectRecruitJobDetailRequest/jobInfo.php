@@ -4,12 +4,12 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest;
 
-use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\jonInfo\address;
-use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\jonInfo\fullTimeInfo;
-use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\jonInfo\partTimeInfo;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\jobInfo\address;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\jobInfo\fullTimeInfo;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\jobInfo\partTimeInfo;
 use AlibabaCloud\Tea\Model;
 
-class jonInfo extends Model
+class jobInfo extends Model
 {
     /**
      * @description 地址信息
@@ -179,7 +179,7 @@ class jonInfo extends Model
     /**
      * @param array $map
      *
-     * @return jonInfo
+     * @return jobInfo
      */
     public static function fromMap($map = [])
     {

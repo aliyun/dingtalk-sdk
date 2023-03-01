@@ -4,66 +4,19 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCorpStatisticDataResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class QueryCorpStatisticDataResponseBody extends Model
 {
     /**
-     * @description 被收下总数
+     * @description 查询结果
      *
-     * @var int
+     * @var result[]
      */
-    public $cardBeReceivedTotalCnt;
-
-    /**
-     * @description 收下总数
-     *
-     * @var int
-     */
-    public $cardReceiveTotalCnt;
-
-    /**
-     * @description 被查看总数
-     *
-     * @var int
-     */
-    public $cardTotalBeVisitedCnt;
-
-    /**
-     * @description 数据日期
-     *
-     * @var string
-     */
-    public $dataDate;
-
-    /**
-     * @description 钉钉发送数
-     *
-     * @var int
-     */
-    public $dingTotalShareCnt;
-
-    /**
-     * @description 总发送数
-     *
-     * @var int
-     */
-    public $totalSendCnt;
-
-    /**
-     * @description 微信发送数
-     *
-     * @var int
-     */
-    public $wechatTotalShareCnt;
+    public $result;
     protected $_name = [
-        'cardBeReceivedTotalCnt' => 'cardBeReceivedTotalCnt',
-        'cardReceiveTotalCnt'    => 'cardReceiveTotalCnt',
-        'cardTotalBeVisitedCnt'  => 'cardTotalBeVisitedCnt',
-        'dataDate'               => 'dataDate',
-        'dingTotalShareCnt'      => 'dingTotalShareCnt',
-        'totalSendCnt'           => 'totalSendCnt',
-        'wechatTotalShareCnt'    => 'wechatTotalShareCnt',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -73,26 +26,14 @@ class QueryCorpStatisticDataResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->cardBeReceivedTotalCnt) {
-            $res['cardBeReceivedTotalCnt'] = $this->cardBeReceivedTotalCnt;
-        }
-        if (null !== $this->cardReceiveTotalCnt) {
-            $res['cardReceiveTotalCnt'] = $this->cardReceiveTotalCnt;
-        }
-        if (null !== $this->cardTotalBeVisitedCnt) {
-            $res['cardTotalBeVisitedCnt'] = $this->cardTotalBeVisitedCnt;
-        }
-        if (null !== $this->dataDate) {
-            $res['dataDate'] = $this->dataDate;
-        }
-        if (null !== $this->dingTotalShareCnt) {
-            $res['dingTotalShareCnt'] = $this->dingTotalShareCnt;
-        }
-        if (null !== $this->totalSendCnt) {
-            $res['totalSendCnt'] = $this->totalSendCnt;
-        }
-        if (null !== $this->wechatTotalShareCnt) {
-            $res['wechatTotalShareCnt'] = $this->wechatTotalShareCnt;
+        if (null !== $this->result) {
+            $res['result'] = [];
+            if (null !== $this->result && \is_array($this->result)) {
+                $n = 0;
+                foreach ($this->result as $item) {
+                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -106,26 +47,14 @@ class QueryCorpStatisticDataResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['cardBeReceivedTotalCnt'])) {
-            $model->cardBeReceivedTotalCnt = $map['cardBeReceivedTotalCnt'];
-        }
-        if (isset($map['cardReceiveTotalCnt'])) {
-            $model->cardReceiveTotalCnt = $map['cardReceiveTotalCnt'];
-        }
-        if (isset($map['cardTotalBeVisitedCnt'])) {
-            $model->cardTotalBeVisitedCnt = $map['cardTotalBeVisitedCnt'];
-        }
-        if (isset($map['dataDate'])) {
-            $model->dataDate = $map['dataDate'];
-        }
-        if (isset($map['dingTotalShareCnt'])) {
-            $model->dingTotalShareCnt = $map['dingTotalShareCnt'];
-        }
-        if (isset($map['totalSendCnt'])) {
-            $model->totalSendCnt = $map['totalSendCnt'];
-        }
-        if (isset($map['wechatTotalShareCnt'])) {
-            $model->wechatTotalShareCnt = $map['wechatTotalShareCnt'];
+        if (isset($map['result'])) {
+            if (!empty($map['result'])) {
+                $model->result = [];
+                $n             = 0;
+                foreach ($map['result'] as $item) {
+                    $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

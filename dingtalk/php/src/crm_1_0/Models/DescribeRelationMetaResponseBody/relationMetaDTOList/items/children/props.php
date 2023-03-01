@@ -51,6 +51,13 @@ class props extends Model
     public $dataSource;
 
     /**
+     * @description 标签字段 颜色属性
+     *
+     * @var string
+     */
+    public $defaultColor;
+
+    /**
      * @var bool
      */
     public $disabled;
@@ -219,6 +226,7 @@ class props extends Model
         'choice'                 => 'choice',
         'content'                => 'content',
         'dataSource'             => 'dataSource',
+        'defaultColor'           => 'defaultColor',
         'disabled'               => 'disabled',
         'duration'               => 'duration',
         'durationLabel'          => 'durationLabel',
@@ -286,6 +294,9 @@ class props extends Model
         }
         if (null !== $this->dataSource) {
             $res['dataSource'] = null !== $this->dataSource ? $this->dataSource->toMap() : null;
+        }
+        if (null !== $this->defaultColor) {
+            $res['defaultColor'] = $this->defaultColor;
         }
         if (null !== $this->disabled) {
             $res['disabled'] = $this->disabled;
@@ -451,6 +462,9 @@ class props extends Model
         }
         if (isset($map['dataSource'])) {
             $model->dataSource = dataSource::fromMap($map['dataSource']);
+        }
+        if (isset($map['defaultColor'])) {
+            $model->defaultColor = $map['defaultColor'];
         }
         if (isset($map['disabled'])) {
             $model->disabled = $map['disabled'];

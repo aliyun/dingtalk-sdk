@@ -4,7 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\jonInfo;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\jobInfo;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailRequest\recruitUserInfo;
 use AlibabaCloud\Tea\Model;
 
@@ -18,16 +18,16 @@ class CollectRecruitJobDetailRequest extends Model
     public $bizCode;
 
     /**
-     * @description 业务标识，目前固定为ddats
+     * @description 渠道ID
      *
      * @var string
      */
     public $channel;
 
     /**
-     * @var jonInfo
+     * @var jobInfo
      */
-    public $jonInfo;
+    public $jobInfo;
 
     /**
      * @description 渠道侧外部企业唯一ID
@@ -66,7 +66,7 @@ class CollectRecruitJobDetailRequest extends Model
     protected $_name = [
         'bizCode'         => 'bizCode',
         'channel'         => 'channel',
-        'jonInfo'         => 'jonInfo',
+        'jobInfo'         => 'jobInfo',
         'outCorpId'       => 'outCorpId',
         'outCorpName'     => 'outCorpName',
         'recruitUserInfo' => 'recruitUserInfo',
@@ -87,8 +87,8 @@ class CollectRecruitJobDetailRequest extends Model
         if (null !== $this->channel) {
             $res['channel'] = $this->channel;
         }
-        if (null !== $this->jonInfo) {
-            $res['jonInfo'] = null !== $this->jonInfo ? $this->jonInfo->toMap() : null;
+        if (null !== $this->jobInfo) {
+            $res['jobInfo'] = null !== $this->jobInfo ? $this->jobInfo->toMap() : null;
         }
         if (null !== $this->outCorpId) {
             $res['outCorpId'] = $this->outCorpId;
@@ -123,8 +123,8 @@ class CollectRecruitJobDetailRequest extends Model
         if (isset($map['channel'])) {
             $model->channel = $map['channel'];
         }
-        if (isset($map['jonInfo'])) {
-            $model->jonInfo = jonInfo::fromMap($map['jonInfo']);
+        if (isset($map['jobInfo'])) {
+            $model->jobInfo = jobInfo::fromMap($map['jobInfo']);
         }
         if (isset($map['outCorpId'])) {
             $model->outCorpId = $map['outCorpId'];

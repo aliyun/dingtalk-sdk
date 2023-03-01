@@ -274,8 +274,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->channel)) {
             @$body['channel'] = $request->channel;
         }
-        if (!Utils::isUnset($request->jonInfo)) {
-            @$body['jonInfo'] = $request->jonInfo;
+        if (!Utils::isUnset($request->jobInfo)) {
+            @$body['jobInfo'] = $request->jobInfo;
         }
         if (!Utils::isUnset($request->outCorpId)) {
             @$body['outCorpId'] = $request->outCorpId;
