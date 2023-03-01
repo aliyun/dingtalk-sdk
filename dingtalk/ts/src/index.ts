@@ -6,6 +6,7 @@ import * as ats_1_0 from './ats_1_0/client';
 import * as attendance_1_0 from './attendance_1_0/client';
 import * as badge_1_0 from './badge_1_0/client';
 import * as bizfinance_1_0 from './bizfinance_1_0/client';
+import * as blackboard_1_0 from './blackboard_1_0/client';
 import * as calendar_1_0 from './calendar_1_0/client';
 import * as carbon_1_0 from './carbon_1_0/client';
 import * as card_1_0 from './card_1_0/client';
@@ -87,6 +88,7 @@ export = {
   attendance_1_0,
   badge_1_0,
   bizfinance_1_0,
+  blackboard_1_0,
   calendar_1_0,
   carbon_1_0,
   card_1_0,

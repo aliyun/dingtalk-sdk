@@ -4848,7 +4848,7 @@ export class QueryUserBehaviorRequest extends $tea.Model {
   platform?: number;
   startTime?: number;
   type?: number;
-  userId?: number;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       endTime: 'endTime',
@@ -4869,7 +4869,7 @@ export class QueryUserBehaviorRequest extends $tea.Model {
       platform: 'number',
       startTime: 'number',
       type: 'number',
-      userId: 'number',
+      userId: 'string',
     };
   }
 

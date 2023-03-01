@@ -6770,6 +6770,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
   choice?: number;
   content?: string;
   dataSource?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource;
+  defaultColor?: string;
   disabled?: boolean;
   duration?: boolean;
   durationLabel?: string;
@@ -6811,6 +6812,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
       choice: 'choice',
       content: 'content',
       dataSource: 'dataSource',
+      defaultColor: 'defaultColor',
       disabled: 'disabled',
       duration: 'duration',
       durationLabel: 'durationLabel',
@@ -6855,6 +6857,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPro
       choice: 'number',
       content: 'string',
       dataSource: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource,
+      defaultColor: 'string',
       disabled: 'boolean',
       duration: 'boolean',
       durationLabel: 'string',
@@ -7645,6 +7648,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
   choice?: number;
   content?: string;
   dataSource?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource;
+  defaultColor?: string;
   disabled?: boolean;
   duration?: boolean;
   durationLabel?: string;
@@ -7688,6 +7692,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
       choice: 'choice',
       content: 'content',
       dataSource: 'dataSource',
+      defaultColor: 'defaultColor',
       disabled: 'disabled',
       duration: 'duration',
       durationLabel: 'durationLabel',
@@ -7734,6 +7739,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
       choice: 'number',
       content: 'string',
       dataSource: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource,
+      defaultColor: 'string',
       disabled: 'boolean',
       duration: 'boolean',
       durationLabel: 'string',

@@ -323,7 +323,7 @@ export class CollectRecruitJobDetailHeaders extends $tea.Model {
 export class CollectRecruitJobDetailRequest extends $tea.Model {
   bizCode?: string;
   channel?: string;
-  jonInfo?: CollectRecruitJobDetailRequestJonInfo;
+  jobInfo?: CollectRecruitJobDetailRequestJobInfo;
   outCorpId?: string;
   outCorpName?: string;
   recruitUserInfo?: CollectRecruitJobDetailRequestRecruitUserInfo;
@@ -333,7 +333,7 @@ export class CollectRecruitJobDetailRequest extends $tea.Model {
     return {
       bizCode: 'bizCode',
       channel: 'channel',
-      jonInfo: 'jonInfo',
+      jobInfo: 'jobInfo',
       outCorpId: 'outCorpId',
       outCorpName: 'outCorpName',
       recruitUserInfo: 'recruitUserInfo',
@@ -346,7 +346,7 @@ export class CollectRecruitJobDetailRequest extends $tea.Model {
     return {
       bizCode: 'string',
       channel: 'string',
-      jonInfo: CollectRecruitJobDetailRequestJonInfo,
+      jobInfo: CollectRecruitJobDetailRequestJobInfo,
       outCorpId: 'string',
       outCorpName: 'string',
       recruitUserInfo: CollectRecruitJobDetailRequestRecruitUserInfo,
@@ -1728,7 +1728,7 @@ export class UpdateJobDeliverResponse extends $tea.Model {
   }
 }
 
-export class CollectRecruitJobDetailRequestJonInfoAddress extends $tea.Model {
+export class CollectRecruitJobDetailRequestJobInfoAddress extends $tea.Model {
   cityCode?: string;
   detail?: string;
   districtCode?: string;
@@ -1765,7 +1765,7 @@ export class CollectRecruitJobDetailRequestJonInfoAddress extends $tea.Model {
   }
 }
 
-export class CollectRecruitJobDetailRequestJonInfoFullTimeInfo extends $tea.Model {
+export class CollectRecruitJobDetailRequestJobInfoFullTimeInfo extends $tea.Model {
   maxJobExperience?: string;
   minJobExperience?: string;
   salaryMonth?: string;
@@ -1790,7 +1790,7 @@ export class CollectRecruitJobDetailRequestJonInfoFullTimeInfo extends $tea.Mode
   }
 }
 
-export class CollectRecruitJobDetailRequestJonInfoPartTimeInfo extends $tea.Model {
+export class CollectRecruitJobDetailRequestJobInfoPartTimeInfo extends $tea.Model {
   contactNumber?: string;
   salaryPeriod?: string;
   settleType?: string;
@@ -1836,12 +1836,12 @@ export class CollectRecruitJobDetailRequestJonInfoPartTimeInfo extends $tea.Mode
   }
 }
 
-export class CollectRecruitJobDetailRequestJonInfo extends $tea.Model {
-  address?: CollectRecruitJobDetailRequestJonInfoAddress;
+export class CollectRecruitJobDetailRequestJobInfo extends $tea.Model {
+  address?: CollectRecruitJobDetailRequestJobInfoAddress;
   category?: string;
   description?: string;
   extInfo?: string;
-  fullTimeInfo?: CollectRecruitJobDetailRequestJonInfoFullTimeInfo;
+  fullTimeInfo?: CollectRecruitJobDetailRequestJobInfoFullTimeInfo;
   headCount?: string;
   jobNature?: string;
   jobTags?: string[];
@@ -1849,7 +1849,7 @@ export class CollectRecruitJobDetailRequestJonInfo extends $tea.Model {
   minSalary?: string;
   name?: string;
   outJobId?: string;
-  partTimeInfo?: CollectRecruitJobDetailRequestJonInfoPartTimeInfo;
+  partTimeInfo?: CollectRecruitJobDetailRequestJobInfoPartTimeInfo;
   requiredEdu?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1872,11 +1872,11 @@ export class CollectRecruitJobDetailRequestJonInfo extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      address: CollectRecruitJobDetailRequestJonInfoAddress,
+      address: CollectRecruitJobDetailRequestJobInfoAddress,
       category: 'string',
       description: 'string',
       extInfo: 'string',
-      fullTimeInfo: CollectRecruitJobDetailRequestJonInfoFullTimeInfo,
+      fullTimeInfo: CollectRecruitJobDetailRequestJobInfoFullTimeInfo,
       headCount: 'string',
       jobNature: 'string',
       jobTags: { 'type': 'array', 'itemType': 'string' },
@@ -1884,7 +1884,7 @@ export class CollectRecruitJobDetailRequestJonInfo extends $tea.Model {
       minSalary: 'string',
       name: 'string',
       outJobId: 'string',
-      partTimeInfo: CollectRecruitJobDetailRequestJonInfoPartTimeInfo,
+      partTimeInfo: CollectRecruitJobDetailRequestJobInfoPartTimeInfo,
       requiredEdu: 'string',
     };
   }
@@ -2505,8 +2505,8 @@ export default class Client extends OpenApi {
       body["channel"] = request.channel;
     }
 
-    if (!Util.isUnset(request.jonInfo)) {
-      body["jonInfo"] = request.jonInfo;
+    if (!Util.isUnset(request.jobInfo)) {
+      body["jobInfo"] = request.jobInfo;
     }
 
     if (!Util.isUnset(request.outCorpId)) {

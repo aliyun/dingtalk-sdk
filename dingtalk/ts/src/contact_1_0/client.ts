@@ -3682,34 +3682,16 @@ export class QueryCorpStatisticDataRequest extends $tea.Model {
 }
 
 export class QueryCorpStatisticDataResponseBody extends $tea.Model {
-  cardBeReceivedTotalCnt?: number;
-  cardReceiveTotalCnt?: number;
-  cardTotalBeVisitedCnt?: number;
-  dataDate?: string;
-  dingTotalShareCnt?: number;
-  totalSendCnt?: number;
-  wechatTotalShareCnt?: number;
+  result?: QueryCorpStatisticDataResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
-      cardBeReceivedTotalCnt: 'cardBeReceivedTotalCnt',
-      cardReceiveTotalCnt: 'cardReceiveTotalCnt',
-      cardTotalBeVisitedCnt: 'cardTotalBeVisitedCnt',
-      dataDate: 'dataDate',
-      dingTotalShareCnt: 'dingTotalShareCnt',
-      totalSendCnt: 'totalSendCnt',
-      wechatTotalShareCnt: 'wechatTotalShareCnt',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      cardBeReceivedTotalCnt: 'number',
-      cardReceiveTotalCnt: 'number',
-      cardTotalBeVisitedCnt: 'number',
-      dataDate: 'string',
-      dingTotalShareCnt: 'number',
-      totalSendCnt: 'number',
-      wechatTotalShareCnt: 'number',
+      result: { 'type': 'array', 'itemType': QueryCorpStatisticDataResponseBodyResult },
     };
   }
 
@@ -6972,6 +6954,43 @@ export class ListSeniorSettingsResponseBodySeniorWhiteList extends $tea.Model {
       id: 'string',
       name: 'string',
       type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCorpStatisticDataResponseBodyResult extends $tea.Model {
+  cardBeReceivedTotalCnt?: number;
+  cardReceiveTotalCnt?: number;
+  cardTotalBeVisitedCnt?: number;
+  dataDate?: string;
+  dingTotalShareCnt?: number;
+  totalSendCnt?: number;
+  wechatTotalShareCnt?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cardBeReceivedTotalCnt: 'cardBeReceivedTotalCnt',
+      cardReceiveTotalCnt: 'cardReceiveTotalCnt',
+      cardTotalBeVisitedCnt: 'cardTotalBeVisitedCnt',
+      dataDate: 'dataDate',
+      dingTotalShareCnt: 'dingTotalShareCnt',
+      totalSendCnt: 'totalSendCnt',
+      wechatTotalShareCnt: 'wechatTotalShareCnt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBeReceivedTotalCnt: 'number',
+      cardReceiveTotalCnt: 'number',
+      cardTotalBeVisitedCnt: 'number',
+      dataDate: 'string',
+      dingTotalShareCnt: 'number',
+      totalSendCnt: 'number',
+      wechatTotalShareCnt: 'number',
     };
   }
 

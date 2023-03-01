@@ -391,6 +391,91 @@ export class BatchGetWorkspacesResponse extends $tea.Model {
   }
 }
 
+export class BindCoolAppToSheetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BindCoolAppToSheetRequest extends $tea.Model {
+  coolAppCode?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coolAppCode: 'coolAppCode',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coolAppCode: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BindCoolAppToSheetResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BindCoolAppToSheetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BindCoolAppToSheetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BindCoolAppToSheetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ClearHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3682,6 +3767,91 @@ export class SheetFindAllResponse extends $tea.Model {
   }
 }
 
+export class UnbindCoolAppToSheetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindCoolAppToSheetRequest extends $tea.Model {
+  coolAppCode?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coolAppCode: 'coolAppCode',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coolAppCode: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindCoolAppToSheetResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UnbindCoolAppToSheetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UnbindCoolAppToSheetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UnbindCoolAppToSheetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateRangeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5389,6 +5559,42 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchGetWorkspacesResponse>(await this.doROARequest("BatchGetWorkspaces", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/infos/query`, "json", req, runtime), new BatchGetWorkspacesResponse({}));
   }
 
+  async bindCoolAppToSheet(workbookId: string, request: BindCoolAppToSheetRequest): Promise<BindCoolAppToSheetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BindCoolAppToSheetHeaders({ });
+    return await this.bindCoolAppToSheetWithOptions(workbookId, request, headers, runtime);
+  }
+
+  async bindCoolAppToSheetWithOptions(workbookId: string, request: BindCoolAppToSheetRequest, headers: BindCoolAppToSheetHeaders, runtime: $Util.RuntimeOptions): Promise<BindCoolAppToSheetResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BindCoolAppToSheetResponse>(await this.doROARequest("BindCoolAppToSheet", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/coolApps`, "json", req, runtime), new BindCoolAppToSheetResponse({}));
+  }
+
   async clear(workbookId: string, sheetId: string, rangeAddress: string, request: ClearRequest): Promise<ClearResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ClearHeaders({ });
@@ -6808,6 +7014,40 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SheetFindAllResponse>(await this.doROARequest("SheetFindAll", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/findAll`, "json", req, runtime), new SheetFindAllResponse({}));
+  }
+
+  async unbindCoolAppToSheet(workbookId: string, request: UnbindCoolAppToSheetRequest): Promise<UnbindCoolAppToSheetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UnbindCoolAppToSheetHeaders({ });
+    return await this.unbindCoolAppToSheetWithOptions(workbookId, request, headers, runtime);
+  }
+
+  async unbindCoolAppToSheetWithOptions(workbookId: string, request: UnbindCoolAppToSheetRequest, headers: UnbindCoolAppToSheetHeaders, runtime: $Util.RuntimeOptions): Promise<UnbindCoolAppToSheetResponse> {
+    Util.validateModel(request);
+    workbookId = OpenApiUtil.getEncodeParam(workbookId);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      query["coolAppCode"] = request.coolAppCode;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<UnbindCoolAppToSheetResponse>(await this.doROARequest("UnbindCoolAppToSheet", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workbooks/${workbookId}/coolApps`, "json", req, runtime), new UnbindCoolAppToSheetResponse({}));
   }
 
   async updateRange(workbookId: string, sheetId: string, rangeAddress: string, request: UpdateRangeRequest): Promise<UpdateRangeResponse> {
