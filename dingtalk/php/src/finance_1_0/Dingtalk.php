@@ -1588,6 +1588,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->corpId)) {
             @$body['corpId'] = $request->corpId;
         }
+        if (!Utils::isUnset($request->extension)) {
+            @$body['extension'] = $request->extension;
+        }
         if (!Utils::isUnset($request->invoiceCode)) {
             @$body['invoiceCode'] = $request->invoiceCode;
         }

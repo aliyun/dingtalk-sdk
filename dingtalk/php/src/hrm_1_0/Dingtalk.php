@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponse;
@@ -287,6 +290,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return HrmProcessTransferResponse::fromMap($this->doROARequest('HrmProcessTransfer', 'hrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/hrm/processes/transfer', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param HrmProcessUpdateTerminationInfoRequest $request
+     *
+     * @return HrmProcessUpdateTerminationInfoResponse
+     */
+    public function hrmProcessUpdateTerminationInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmProcessUpdateTerminationInfoHeaders([]);
+
+        return $this->hrmProcessUpdateTerminationInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param HrmProcessUpdateTerminationInfoRequest $request
+     * @param HrmProcessUpdateTerminationInfoHeaders $headers
+     * @param RuntimeOptions                         $runtime
+     *
+     * @return HrmProcessUpdateTerminationInfoResponse
+     */
+    public function hrmProcessUpdateTerminationInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dismissionMemo)) {
+            @$body['dismissionMemo'] = $request->dismissionMemo;
+        }
+        if (!Utils::isUnset($request->lastWorkDate)) {
+            @$body['lastWorkDate'] = $request->lastWorkDate;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return HrmProcessUpdateTerminationInfoResponse::fromMap($this->doROARequest('HrmProcessUpdateTerminationInfo', 'hrm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/hrm/processes/employees/terminations', 'json', $req, $runtime));
     }
 
     /**

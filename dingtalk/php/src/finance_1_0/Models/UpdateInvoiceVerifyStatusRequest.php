@@ -44,6 +44,11 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public $corpId;
 
     /**
+     * @var string
+     */
+    public $extension;
+
+    /**
      * @description 发票代码
      *
      * @var string
@@ -90,6 +95,7 @@ class UpdateInvoiceVerifyStatusRequest extends Model
         'checkingStatus'  => 'checkingStatus',
         'code'            => 'code',
         'corpId'          => 'corpId',
+        'extension'       => 'extension',
         'invoiceCode'     => 'invoiceCode',
         'invoiceNo'       => 'invoiceNo',
         'invoiceStatus'   => 'invoiceStatus',
@@ -119,6 +125,9 @@ class UpdateInvoiceVerifyStatusRequest extends Model
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->extension) {
+            $res['extension'] = $this->extension;
         }
         if (null !== $this->invoiceCode) {
             $res['invoiceCode'] = $this->invoiceCode;
@@ -164,6 +173,9 @@ class UpdateInvoiceVerifyStatusRequest extends Model
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['extension'])) {
+            $model->extension = $map['extension'];
         }
         if (isset($map['invoiceCode'])) {
             $model->invoiceCode = $map['invoiceCode'];

@@ -16,6 +16,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AutoOpenDingTalkConnectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AutoOpenDingTalkConnectResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryFamilySchoolMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryFamilySchoolMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryFamilySchoolMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryGroupMemberResponse;
@@ -334,6 +337,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return AutoOpenDingTalkConnectResponse::fromMap($this->doROARequest('AutoOpenDingTalkConnect', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/apps/open', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param BatchQueryFamilySchoolMessageRequest $request
+     *
+     * @return BatchQueryFamilySchoolMessageResponse
+     */
+    public function batchQueryFamilySchoolMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQueryFamilySchoolMessageHeaders([]);
+
+        return $this->batchQueryFamilySchoolMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchQueryFamilySchoolMessageRequest $request
+     * @param BatchQueryFamilySchoolMessageHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return BatchQueryFamilySchoolMessageResponse
+     */
+    public function batchQueryFamilySchoolMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openMessageIds)) {
+            @$body['openMessageIds'] = $request->openMessageIds;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return BatchQueryFamilySchoolMessageResponse::fromMap($this->doROARequest('BatchQueryFamilySchoolMessage', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/conversations/familySchools/messages/batchQuery', 'json', $req, $runtime));
     }
 
     /**
