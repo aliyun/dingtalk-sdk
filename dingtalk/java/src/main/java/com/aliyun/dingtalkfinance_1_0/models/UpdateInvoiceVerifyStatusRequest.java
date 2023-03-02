@@ -34,6 +34,9 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    @NameInMap("extension")
+    public String extension;
+
     /**
      * <p>发票代码</p>
      */
@@ -113,6 +116,14 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public UpdateInvoiceVerifyStatusRequest setExtension(String extension) {
+        this.extension = extension;
+        return this;
+    }
+    public String getExtension() {
+        return this.extension;
     }
 
     public UpdateInvoiceVerifyStatusRequest setInvoiceCode(String invoiceCode) {

@@ -1327,6 +1327,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("corpId", request.corpId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.invoiceCode)) {
             body.put("invoiceCode", request.invoiceCode);
         }
