@@ -2624,6 +2624,7 @@ export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
   checkingStatus?: number;
   code?: string;
   corpId?: string;
+  extension?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: number;
@@ -2637,6 +2638,7 @@ export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
       checkingStatus: 'checkingStatus',
       code: 'code',
       corpId: 'corpId',
+      extension: 'extension',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
@@ -2653,6 +2655,7 @@ export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
       checkingStatus: 'number',
       code: 'string',
       corpId: 'string',
+      extension: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'number',
@@ -6395,6 +6398,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.corpId)) {
       body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
     }
 
     if (!Util.isUnset(request.invoiceCode)) {

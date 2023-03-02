@@ -422,6 +422,94 @@ export class HrmProcessTransferResponse extends $tea.Model {
   }
 }
 
+export class HrmProcessUpdateTerminationInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessUpdateTerminationInfoRequest extends $tea.Model {
+  dismissionMemo?: string;
+  lastWorkDate?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dismissionMemo: 'dismissionMemo',
+      lastWorkDate: 'lastWorkDate',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dismissionMemo: 'string',
+      lastWorkDate: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessUpdateTerminationInfoResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessUpdateTerminationInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: HrmProcessUpdateTerminationInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: HrmProcessUpdateTerminationInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MasterDataQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2571,6 +2659,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<HrmProcessTransferResponse>(await this.doROARequest("HrmProcessTransfer", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/processes/transfer`, "json", req, runtime), new HrmProcessTransferResponse({}));
+  }
+
+  async hrmProcessUpdateTerminationInfo(request: HrmProcessUpdateTerminationInfoRequest): Promise<HrmProcessUpdateTerminationInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmProcessUpdateTerminationInfoHeaders({ });
+    return await this.hrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
+  }
+
+  async hrmProcessUpdateTerminationInfoWithOptions(request: HrmProcessUpdateTerminationInfoRequest, headers: HrmProcessUpdateTerminationInfoHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessUpdateTerminationInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dismissionMemo)) {
+      body["dismissionMemo"] = request.dismissionMemo;
+    }
+
+    if (!Util.isUnset(request.lastWorkDate)) {
+      body["lastWorkDate"] = request.lastWorkDate;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<HrmProcessUpdateTerminationInfoResponse>(await this.doROARequest("HrmProcessUpdateTerminationInfo", "hrm_1.0", "HTTP", "PUT", "AK", `/v1.0/hrm/processes/employees/terminations`, "json", req, runtime), new HrmProcessUpdateTerminationInfoResponse({}));
   }
 
   async masterDataQuery(request: MasterDataQueryRequest): Promise<MasterDataQueryResponse> {

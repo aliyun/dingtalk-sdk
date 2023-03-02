@@ -520,6 +520,91 @@ export class WriteUserCarbonResponse extends $tea.Model {
   }
 }
 
+export class WriteUserCarbonEnergyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteUserCarbonEnergyRequest extends $tea.Model {
+  userDetailsList?: WriteUserCarbonEnergyRequestUserDetailsList[];
+  static names(): { [key: string]: string } {
+    return {
+      userDetailsList: 'userDetailsList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userDetailsList: { 'type': 'array', 'itemType': WriteUserCarbonEnergyRequestUserDetailsList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteUserCarbonEnergyResponseBody extends $tea.Model {
+  result?: number;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'number',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteUserCarbonEnergyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: WriteUserCarbonEnergyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: WriteUserCarbonEnergyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class WriteAlibabaOrgCarbonRequestOrgDetailsList extends $tea.Model {
   actionId?: string;
   actionTime?: string;
@@ -638,6 +723,49 @@ export class WriteOrgCarbonRequestOrgDetailsList extends $tea.Model {
 }
 
 export class WriteUserCarbonRequestUserDetailsList extends $tea.Model {
+  actionEndTime?: string;
+  actionId?: string;
+  actionStartTime?: string;
+  actionType?: string;
+  carbonAmount?: string;
+  corpId?: string;
+  deptId?: number;
+  userId?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      actionEndTime: 'actionEndTime',
+      actionId: 'actionId',
+      actionStartTime: 'actionStartTime',
+      actionType: 'actionType',
+      carbonAmount: 'carbonAmount',
+      corpId: 'corpId',
+      deptId: 'deptId',
+      userId: 'userId',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionEndTime: 'string',
+      actionId: 'string',
+      actionStartTime: 'string',
+      actionType: 'string',
+      carbonAmount: 'string',
+      corpId: 'string',
+      deptId: 'number',
+      userId: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WriteUserCarbonEnergyRequestUserDetailsList extends $tea.Model {
   actionEndTime?: string;
   actionId?: string;
   actionStartTime?: string;
@@ -873,6 +1001,35 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<WriteUserCarbonResponse>(await this.doROARequest("WriteUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/userDetails/write`, "json", req, runtime), new WriteUserCarbonResponse({}));
+  }
+
+  async writeUserCarbonEnergy(request: WriteUserCarbonEnergyRequest): Promise<WriteUserCarbonEnergyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new WriteUserCarbonEnergyHeaders({ });
+    return await this.writeUserCarbonEnergyWithOptions(request, headers, runtime);
+  }
+
+  async writeUserCarbonEnergyWithOptions(request: WriteUserCarbonEnergyRequest, headers: WriteUserCarbonEnergyHeaders, runtime: $Util.RuntimeOptions): Promise<WriteUserCarbonEnergyResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userDetailsList)) {
+      body["userDetailsList"] = request.userDetailsList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<WriteUserCarbonEnergyResponse>(await this.doROARequest("WriteUserCarbonEnergy", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/userDetails/energies/write`, "json", req, runtime), new WriteUserCarbonEnergyResponse({}));
   }
 
 }

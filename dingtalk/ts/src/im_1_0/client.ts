@@ -255,6 +255,94 @@ export class AutoOpenDingTalkConnectResponse extends $tea.Model {
   }
 }
 
+export class BatchQueryFamilySchoolMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryFamilySchoolMessageRequest extends $tea.Model {
+  openConversationId?: string;
+  openMessageIds?: string[];
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      openMessageIds: 'openMessageIds',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      openMessageIds: { 'type': 'array', 'itemType': 'string' },
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryFamilySchoolMessageResponseBody extends $tea.Model {
+  messages?: BatchQueryFamilySchoolMessageResponseBodyMessages[];
+  static names(): { [key: string]: string } {
+    return {
+      messages: 'messages',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messages: { 'type': 'array', 'itemType': BatchQueryFamilySchoolMessageResponseBodyMessages },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryFamilySchoolMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: BatchQueryFamilySchoolMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: BatchQueryFamilySchoolMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchQueryGroupMemberHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5741,6 +5829,68 @@ export class AddOrgTextEmotionResponseBodyResult extends $tea.Model {
   }
 }
 
+export class BatchQueryFamilySchoolMessageResponseBodyMessagesMediaModels extends $tea.Model {
+  fileName?: string;
+  fileType?: string;
+  mediaId?: string;
+  size?: string;
+  url?: string;
+  videoPicMediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      fileType: 'fileType',
+      mediaId: 'mediaId',
+      size: 'size',
+      url: 'url',
+      videoPicMediaId: 'videoPicMediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      fileType: 'string',
+      mediaId: 'string',
+      size: 'string',
+      url: 'string',
+      videoPicMediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryFamilySchoolMessageResponseBodyMessages extends $tea.Model {
+  contentType?: number;
+  createAt?: number;
+  mediaModels?: BatchQueryFamilySchoolMessageResponseBodyMessagesMediaModels[];
+  openMsgId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contentType: 'contentType',
+      createAt: 'createAt',
+      mediaModels: 'mediaModels',
+      openMsgId: 'openMsgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contentType: 'number',
+      createAt: 'number',
+      mediaModels: { 'type': 'array', 'itemType': BatchQueryFamilySchoolMessageResponseBodyMessagesMediaModels },
+      openMsgId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateInterconnectionRequestInterconnections extends $tea.Model {
   appUserAvatar?: string;
   appUserAvatarMediaType?: number;
@@ -6605,6 +6755,43 @@ export default class Client extends OpenApi {
       headers: realHeaders,
     });
     return $tea.cast<AutoOpenDingTalkConnectResponse>(await this.doROARequest("AutoOpenDingTalkConnect", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/apps/open`, "json", req, runtime), new AutoOpenDingTalkConnectResponse({}));
+  }
+
+  async batchQueryFamilySchoolMessage(request: BatchQueryFamilySchoolMessageRequest): Promise<BatchQueryFamilySchoolMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchQueryFamilySchoolMessageHeaders({ });
+    return await this.batchQueryFamilySchoolMessageWithOptions(request, headers, runtime);
+  }
+
+  async batchQueryFamilySchoolMessageWithOptions(request: BatchQueryFamilySchoolMessageRequest, headers: BatchQueryFamilySchoolMessageHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryFamilySchoolMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.openMessageIds)) {
+      body["openMessageIds"] = request.openMessageIds;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<BatchQueryFamilySchoolMessageResponse>(await this.doROARequest("BatchQueryFamilySchoolMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/familySchools/messages/batchQuery`, "json", req, runtime), new BatchQueryFamilySchoolMessageResponse({}));
   }
 
   async batchQueryGroupMember(request: BatchQueryGroupMemberRequest): Promise<BatchQueryGroupMemberResponse> {
