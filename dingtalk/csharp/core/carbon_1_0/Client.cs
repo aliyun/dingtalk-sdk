@@ -426,5 +426,69 @@ namespace AlibabaCloud.SDK.Dingtalkcarbon_1_0
             return TeaModel.ToObject<WriteUserCarbonResponse>(await DoROARequestAsync("WriteUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/userDetails/write", "json", req, runtime));
         }
 
+        public WriteUserCarbonEnergyResponse WriteUserCarbonEnergy(WriteUserCarbonEnergyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            WriteUserCarbonEnergyHeaders headers = new WriteUserCarbonEnergyHeaders();
+            return WriteUserCarbonEnergyWithOptions(request, headers, runtime);
+        }
+
+        public async Task<WriteUserCarbonEnergyResponse> WriteUserCarbonEnergyAsync(WriteUserCarbonEnergyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            WriteUserCarbonEnergyHeaders headers = new WriteUserCarbonEnergyHeaders();
+            return await WriteUserCarbonEnergyWithOptionsAsync(request, headers, runtime);
+        }
+
+        public WriteUserCarbonEnergyResponse WriteUserCarbonEnergyWithOptions(WriteUserCarbonEnergyRequest request, WriteUserCarbonEnergyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserDetailsList))
+            {
+                body["userDetailsList"] = request.UserDetailsList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<WriteUserCarbonEnergyResponse>(DoROARequest("WriteUserCarbonEnergy", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/userDetails/energies/write", "json", req, runtime));
+        }
+
+        public async Task<WriteUserCarbonEnergyResponse> WriteUserCarbonEnergyWithOptionsAsync(WriteUserCarbonEnergyRequest request, WriteUserCarbonEnergyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserDetailsList))
+            {
+                body["userDetailsList"] = request.UserDetailsList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<WriteUserCarbonEnergyResponse>(await DoROARequestAsync("WriteUserCarbonEnergy", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/userDetails/energies/write", "json", req, runtime));
+        }
+
     }
 }

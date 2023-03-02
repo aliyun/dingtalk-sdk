@@ -44,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
+        [NameInMap("extension")]
+        [Validation(Required=false)]
+        public string Extension { get; set; }
+
         /// <summary>
         /// 发票代码
         /// </summary>
