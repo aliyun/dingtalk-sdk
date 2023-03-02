@@ -7479,6 +7479,7 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
         checking_status: int = None,
         code: str = None,
         corp_id: str = None,
+        extension: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         invoice_status: int = None,
@@ -7496,6 +7497,7 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
         self.code = code
         # 企业Id
         self.corp_id = corp_id
+        self.extension = extension
         # 发票代码
         self.invoice_code = invoice_code
         # 发票号码
@@ -7528,6 +7530,8 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
             result['code'] = self.code
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.extension is not None:
+            result['extension'] = self.extension
         if self.invoice_code is not None:
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
@@ -7554,6 +7558,8 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
             self.code = m.get('code')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
         if m.get('invoiceCode') is not None:
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:

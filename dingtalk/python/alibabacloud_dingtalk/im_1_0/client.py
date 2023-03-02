@@ -221,6 +221,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AutoOpenDingTalkConnect', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/apps/open', 'json', req, runtime)
         )
 
+    def batch_query_family_school_message(
+        self,
+        request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
+    ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders()
+        return self.batch_query_family_school_message_with_options(request, headers, runtime)
+
+    async def batch_query_family_school_message_async(
+        self,
+        request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
+    ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders()
+        return await self.batch_query_family_school_message_with_options_async(request, headers, runtime)
+
+    def batch_query_family_school_message_with_options(
+        self,
+        request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
+        headers: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_message_ids):
+            body['openMessageIds'] = request.open_message_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse(),
+            self.do_roarequest('BatchQueryFamilySchoolMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/messages/batchQuery', 'json', req, runtime)
+        )
+
+    async def batch_query_family_school_message_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
+        headers: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_message_ids):
+            body['openMessageIds'] = request.open_message_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse(),
+            await self.do_roarequest_async('BatchQueryFamilySchoolMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/messages/batchQuery', 'json', req, runtime)
+        )
+
     def batch_query_group_member(
         self,
         request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,

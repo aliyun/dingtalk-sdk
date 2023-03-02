@@ -339,6 +339,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('HrmProcessTransfer', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/transfer', 'json', req, runtime)
         )
 
+    def hrm_process_update_termination_info(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders()
+        return self.hrm_process_update_termination_info_with_options(request, headers, runtime)
+
+    async def hrm_process_update_termination_info_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders()
+        return await self.hrm_process_update_termination_info_with_options_async(request, headers, runtime)
+
+    def hrm_process_update_termination_info_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoRequest,
+        headers: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dismission_memo):
+            body['dismissionMemo'] = request.dismission_memo
+        if not UtilClient.is_unset(request.last_work_date):
+            body['lastWorkDate'] = request.last_work_date
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse(),
+            self.do_roarequest('HrmProcessUpdateTerminationInfo', 'hrm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/hrm/processes/employees/terminations', 'json', req, runtime)
+        )
+
+    async def hrm_process_update_termination_info_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoRequest,
+        headers: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dismission_memo):
+            body['dismissionMemo'] = request.dismission_memo
+        if not UtilClient.is_unset(request.last_work_date):
+            body['lastWorkDate'] = request.last_work_date
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse(),
+            await self.do_roarequest_async('HrmProcessUpdateTerminationInfo', 'hrm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/hrm/processes/employees/terminations', 'json', req, runtime)
+        )
+
     def master_data_query(
         self,
         request: dingtalkhrm__1__0_models.MasterDataQueryRequest,

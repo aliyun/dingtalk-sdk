@@ -1149,3 +1149,227 @@ class WriteUserCarbonResponse(TeaModel):
         return self
 
 
+class WriteUserCarbonEnergyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class WriteUserCarbonEnergyRequestUserDetailsList(TeaModel):
+    def __init__(
+        self,
+        action_end_time: str = None,
+        action_id: str = None,
+        action_start_time: str = None,
+        action_type: str = None,
+        carbon_amount: str = None,
+        corp_id: str = None,
+        dept_id: int = None,
+        user_id: str = None,
+        version: int = None,
+    ):
+        # 行为结束时间
+        self.action_end_time = action_end_time
+        # 系统唯一id，生成格式：userId+日期20230302
+        self.action_id = action_id
+        # 行为起始时间
+        self.action_start_time = action_start_time
+        # 碳能量行为类型，需要联系管理员添加
+        self.action_type = action_type
+        # 碳能量数据
+        self.carbon_amount = carbon_amount
+        # 钉钉组织id
+        self.corp_id = corp_id
+        # 钉钉部门id
+        self.dept_id = dept_id
+        # 钉钉用户id
+        self.user_id = user_id
+        # 版本，默认为1
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_end_time is not None:
+            result['actionEndTime'] = self.action_end_time
+        if self.action_id is not None:
+            result['actionId'] = self.action_id
+        if self.action_start_time is not None:
+            result['actionStartTime'] = self.action_start_time
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.carbon_amount is not None:
+            result['carbonAmount'] = self.carbon_amount
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionEndTime') is not None:
+            self.action_end_time = m.get('actionEndTime')
+        if m.get('actionId') is not None:
+            self.action_id = m.get('actionId')
+        if m.get('actionStartTime') is not None:
+            self.action_start_time = m.get('actionStartTime')
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('carbonAmount') is not None:
+            self.carbon_amount = m.get('carbonAmount')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class WriteUserCarbonEnergyRequest(TeaModel):
+    def __init__(
+        self,
+        user_details_list: List[WriteUserCarbonEnergyRequestUserDetailsList] = None,
+    ):
+        self.user_details_list = user_details_list
+
+    def validate(self):
+        if self.user_details_list:
+            for k in self.user_details_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['userDetailsList'] = []
+        if self.user_details_list is not None:
+            for k in self.user_details_list:
+                result['userDetailsList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.user_details_list = []
+        if m.get('userDetailsList') is not None:
+            for k in m.get('userDetailsList'):
+                temp_model = WriteUserCarbonEnergyRequestUserDetailsList()
+                self.user_details_list.append(temp_model.from_map(k))
+        return self
+
+
+class WriteUserCarbonEnergyResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: int = None,
+        success: bool = None,
+    ):
+        # 返回结果
+        self.result = result
+        # 输出状态
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class WriteUserCarbonEnergyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: WriteUserCarbonEnergyResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = WriteUserCarbonEnergyResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

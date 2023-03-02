@@ -2157,6 +2157,8 @@ class Client(OpenApiClient):
             body['code'] = request.code
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
         if not UtilClient.is_unset(request.invoice_code):
             body['invoiceCode'] = request.invoice_code
         if not UtilClient.is_unset(request.invoice_no):
@@ -2201,6 +2203,8 @@ class Client(OpenApiClient):
             body['code'] = request.code
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
         if not UtilClient.is_unset(request.invoice_code):
             body['invoiceCode'] = request.invoice_code
         if not UtilClient.is_unset(request.invoice_no):

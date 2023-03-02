@@ -440,6 +440,273 @@ class AutoOpenDingTalkConnectResponse(TeaModel):
         return self
 
 
+class BatchQueryFamilySchoolMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchQueryFamilySchoolMessageRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        open_message_ids: List[str] = None,
+        union_id: str = None,
+    ):
+        # 接收卡片的群的openConversationId
+        self.open_conversation_id = open_conversation_id
+        self.open_message_ids = open_message_ids
+        # 用户唯一标识
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_message_ids is not None:
+            result['openMessageIds'] = self.open_message_ids
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openMessageIds') is not None:
+            self.open_message_ids = m.get('openMessageIds')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class BatchQueryFamilySchoolMessageResponseBodyMessagesMediaModels(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        file_type: str = None,
+        media_id: str = None,
+        size: str = None,
+        url: str = None,
+        video_pic_media_id: str = None,
+    ):
+        # 消息mediaId文件名称
+        self.file_name = file_name
+        # 消息mediaId文件类型
+        self.file_type = file_type
+        # 消息mediaId
+        self.media_id = media_id
+        # 消息mediaId文件大小
+        self.size = size
+        # 消息mediaId对应的下载地址
+        self.url = url
+        # 视频文件缩略图mediaId
+        self.video_pic_media_id = video_pic_media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.size is not None:
+            result['size'] = self.size
+        if self.url is not None:
+            result['url'] = self.url
+        if self.video_pic_media_id is not None:
+            result['videoPicMediaId'] = self.video_pic_media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('videoPicMediaId') is not None:
+            self.video_pic_media_id = m.get('videoPicMediaId')
+        return self
+
+
+class BatchQueryFamilySchoolMessageResponseBodyMessages(TeaModel):
+    def __init__(
+        self,
+        content_type: int = None,
+        create_at: int = None,
+        media_models: List[BatchQueryFamilySchoolMessageResponseBodyMessagesMediaModels] = None,
+        open_msg_id: str = None,
+    ):
+        # 消息类型，2-图片、202视频、3100富文本消息
+        self.content_type = content_type
+        # 消息的创建时间
+        self.create_at = create_at
+        # media文件对象列表
+        self.media_models = media_models
+        # 消息的唯一标识
+        self.open_msg_id = open_msg_id
+
+    def validate(self):
+        if self.media_models:
+            for k in self.media_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        result['mediaModels'] = []
+        if self.media_models is not None:
+            for k in self.media_models:
+                result['mediaModels'].append(k.to_map() if k else None)
+        if self.open_msg_id is not None:
+            result['openMsgId'] = self.open_msg_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        self.media_models = []
+        if m.get('mediaModels') is not None:
+            for k in m.get('mediaModels'):
+                temp_model = BatchQueryFamilySchoolMessageResponseBodyMessagesMediaModels()
+                self.media_models.append(temp_model.from_map(k))
+        if m.get('openMsgId') is not None:
+            self.open_msg_id = m.get('openMsgId')
+        return self
+
+
+class BatchQueryFamilySchoolMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        messages: List[BatchQueryFamilySchoolMessageResponseBodyMessages] = None,
+    ):
+        # 消息数据
+        self.messages = messages
+
+    def validate(self):
+        if self.messages:
+            for k in self.messages:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['messages'] = []
+        if self.messages is not None:
+            for k in self.messages:
+                result['messages'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.messages = []
+        if m.get('messages') is not None:
+            for k in m.get('messages'):
+                temp_model = BatchQueryFamilySchoolMessageResponseBodyMessages()
+                self.messages.append(temp_model.from_map(k))
+        return self
+
+
+class BatchQueryFamilySchoolMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: BatchQueryFamilySchoolMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = BatchQueryFamilySchoolMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchQueryGroupMemberHeaders(TeaModel):
     def __init__(
         self,
