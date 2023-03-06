@@ -228,6 +228,7 @@ export class AddCustomerTrackRequest extends $tea.Model {
   customerId?: string;
   extraBizInfo?: string;
   idempotentKey?: string;
+  maskedContent?: string;
   operatorUserId?: string;
   relationType?: string;
   title?: string;
@@ -238,6 +239,7 @@ export class AddCustomerTrackRequest extends $tea.Model {
       customerId: 'customerId',
       extraBizInfo: 'extraBizInfo',
       idempotentKey: 'idempotentKey',
+      maskedContent: 'maskedContent',
       operatorUserId: 'operatorUserId',
       relationType: 'relationType',
       title: 'title',
@@ -251,6 +253,7 @@ export class AddCustomerTrackRequest extends $tea.Model {
       customerId: 'string',
       extraBizInfo: 'string',
       idempotentKey: 'string',
+      maskedContent: 'string',
       operatorUserId: 'string',
       relationType: 'string',
       title: 'string',
@@ -9753,6 +9756,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.idempotentKey)) {
       body["idempotentKey"] = request.idempotentKey;
+    }
+
+    if (!Util.isUnset(request.maskedContent)) {
+      body["maskedContent"] = request.maskedContent;
     }
 
     if (!Util.isUnset(request.operatorUserId)) {

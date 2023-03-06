@@ -535,6 +535,94 @@ export class GetPictureDownloadUrlResponse extends $tea.Model {
   }
 }
 
+export class GetUserFollowStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserFollowStatusRequest extends $tea.Model {
+  accountId?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountId: 'accountId',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountId: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserFollowStatusResponseBody extends $tea.Model {
+  result?: GetUserFollowStatusResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetUserFollowStatusResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserFollowStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetUserFollowStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetUserFollowStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAccountHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1356,6 +1444,25 @@ export class GetPictureDownloadUrlResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetUserFollowStatusResponseBodyResult extends $tea.Model {
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAccountResponseBodyResult extends $tea.Model {
   accountId?: string;
   accountName?: string;
@@ -1864,6 +1971,7 @@ export class UpdateInteractiveOTOMessageResponseBodyResult extends $tea.Model {
 
 export class UpdateShortcutsRequestDetails extends $tea.Model {
   actionUrl?: string;
+  callbackKey?: string;
   iconFont?: string;
   iconMediaId?: string;
   shortcutId?: string;
@@ -1872,6 +1980,7 @@ export class UpdateShortcutsRequestDetails extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       actionUrl: 'actionUrl',
+      callbackKey: 'callbackKey',
       iconFont: 'iconFont',
       iconMediaId: 'iconMediaId',
       shortcutId: 'shortcutId',
@@ -1883,6 +1992,7 @@ export class UpdateShortcutsRequestDetails extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       actionUrl: 'string',
+      callbackKey: 'string',
       iconFont: 'string',
       iconMediaId: 'string',
       shortcutId: 'string',
@@ -2117,6 +2227,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetPictureDownloadUrlResponse>(await this.doROARequest("GetPictureDownloadUrl", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/oToMessages/pictures/downloadUrls`, "json", req, runtime), new GetPictureDownloadUrlResponse({}));
+  }
+
+  async getUserFollowStatus(request: GetUserFollowStatusRequest): Promise<GetUserFollowStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUserFollowStatusHeaders({ });
+    return await this.getUserFollowStatusWithOptions(request, headers, runtime);
+  }
+
+  async getUserFollowStatusWithOptions(request: GetUserFollowStatusRequest, headers: GetUserFollowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserFollowStatusResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accountId)) {
+      query["accountId"] = request.accountId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetUserFollowStatusResponse>(await this.doROARequest("GetUserFollowStatus", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/followers/statuses`, "json", req, runtime), new GetUserFollowStatusResponse({}));
   }
 
   async listAccount(): Promise<ListAccountResponse> {

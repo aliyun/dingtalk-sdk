@@ -203,6 +203,7 @@ export class OpenActionModel extends $tea.Model {
 export class SpaceModel extends $tea.Model {
   cover?: string;
   description?: string;
+  hdIconVO?: SpaceModelHdIconVO;
   iconVO?: SpaceModelIconVO;
   id?: string;
   name?: string;
@@ -215,6 +216,7 @@ export class SpaceModel extends $tea.Model {
     return {
       cover: 'cover',
       description: 'description',
+      hdIconVO: 'hdIconVO',
       iconVO: 'iconVO',
       id: 'id',
       name: 'name',
@@ -230,6 +232,7 @@ export class SpaceModel extends $tea.Model {
     return {
       cover: 'string',
       description: 'string',
+      hdIconVO: SpaceModelHdIconVO,
       iconVO: SpaceModelIconVO,
       id: 'string',
       name: 'string',
@@ -3590,6 +3593,28 @@ export class LinkSourceInfoIconUrl extends $tea.Model {
     return {
       line: 'string',
       small: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpaceModelHdIconVO extends $tea.Model {
+  icon?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      type: 'string',
     };
   }
 
