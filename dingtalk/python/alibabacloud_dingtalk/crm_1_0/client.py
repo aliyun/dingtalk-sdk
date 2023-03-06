@@ -223,6 +223,8 @@ class Client(OpenApiClient):
             body['extraBizInfo'] = request.extra_biz_info
         if not UtilClient.is_unset(request.idempotent_key):
             body['idempotentKey'] = request.idempotent_key
+        if not UtilClient.is_unset(request.masked_content):
+            body['maskedContent'] = request.masked_content
         if not UtilClient.is_unset(request.operator_user_id):
             body['operatorUserId'] = request.operator_user_id
         if not UtilClient.is_unset(request.relation_type):
@@ -261,6 +263,8 @@ class Client(OpenApiClient):
             body['extraBizInfo'] = request.extra_biz_info
         if not UtilClient.is_unset(request.idempotent_key):
             body['idempotentKey'] = request.idempotent_key
+        if not UtilClient.is_unset(request.masked_content):
+            body['maskedContent'] = request.masked_content
         if not UtilClient.is_unset(request.operator_user_id):
             body['operatorUserId'] = request.operator_user_id
         if not UtilClient.is_unset(request.relation_type):

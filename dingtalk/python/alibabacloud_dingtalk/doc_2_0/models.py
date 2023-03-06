@@ -209,6 +209,41 @@ class LinkSourceInfo(TeaModel):
         return self
 
 
+class SpaceModelHdIconVO(TeaModel):
+    def __init__(
+        self,
+        icon: str = None,
+        type: str = None,
+    ):
+        # 图标
+        self.icon = icon
+        # 图标类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
 class SpaceModelIconVO(TeaModel):
     def __init__(
         self,
@@ -326,6 +361,7 @@ class SpaceModel(TeaModel):
         self,
         cover: str = None,
         description: str = None,
+        hd_icon_vo: SpaceModelHdIconVO = None,
         icon_vo: SpaceModelIconVO = None,
         id: str = None,
         name: str = None,
@@ -339,6 +375,8 @@ class SpaceModel(TeaModel):
         self.cover = cover
         # 空间描述信息
         self.description = description
+        # 知识库高清图标
+        self.hd_icon_vo = hd_icon_vo
         # 知识库图标
         self.icon_vo = icon_vo
         # 知识库id。
@@ -357,6 +395,8 @@ class SpaceModel(TeaModel):
         self.visitor_info = visitor_info
 
     def validate(self):
+        if self.hd_icon_vo:
+            self.hd_icon_vo.validate()
         if self.icon_vo:
             self.icon_vo.validate()
         if self.owner:
@@ -378,6 +418,8 @@ class SpaceModel(TeaModel):
             result['cover'] = self.cover
         if self.description is not None:
             result['description'] = self.description
+        if self.hd_icon_vo is not None:
+            result['hdIconVO'] = self.hd_icon_vo.to_map()
         if self.icon_vo is not None:
             result['iconVO'] = self.icon_vo.to_map()
         if self.id is not None:
@@ -404,6 +446,9 @@ class SpaceModel(TeaModel):
             self.cover = m.get('cover')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('hdIconVO') is not None:
+            temp_model = SpaceModelHdIconVO()
+            self.hd_icon_vo = temp_model.from_map(m['hdIconVO'])
         if m.get('iconVO') is not None:
             temp_model = SpaceModelIconVO()
             self.icon_vo = temp_model.from_map(m['iconVO'])

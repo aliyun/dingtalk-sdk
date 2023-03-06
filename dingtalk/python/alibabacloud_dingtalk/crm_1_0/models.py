@@ -403,12 +403,13 @@ class AddCustomerTrackRequest(TeaModel):
         customer_id: str = None,
         extra_biz_info: str = None,
         idempotent_key: str = None,
+        masked_content: str = None,
         operator_user_id: str = None,
         relation_type: str = None,
         title: str = None,
         type: int = None,
     ):
-        # 动态内容,markdown格式
+        # 动态内容（明文未脱敏内容），markdown格式，必填。客户动态列表页的展示规则：如果有maskedContent字段对应动态脱敏内容则优先展示动态脱敏内容，否则优先展示本content字段内容。当显示了动态脱敏内容时用户可以点击页面按钮来查看动态未脱敏明文内容。
         self.content = content
         # 客户ID
         self.customer_id = customer_id
@@ -416,6 +417,8 @@ class AddCustomerTrackRequest(TeaModel):
         self.extra_biz_info = extra_biz_info
         # 幂等key，5分钟内避免重复写入，保证幂等，可空
         self.idempotent_key = idempotent_key
+        # 动态脱敏内容，markdown格式，非必填。客户动态列表页的展示规则：如果本字段有值，则优先展示本字段的动态脱敏内容，否则展示content字段内容。当显示了动态脱敏内容时用户可以点击页面按钮来查看动态未脱敏明文内容。
+        self.masked_content = masked_content
         # 操作人userId
         self.operator_user_id = operator_user_id
         # 关系类型
@@ -442,6 +445,8 @@ class AddCustomerTrackRequest(TeaModel):
             result['extraBizInfo'] = self.extra_biz_info
         if self.idempotent_key is not None:
             result['idempotentKey'] = self.idempotent_key
+        if self.masked_content is not None:
+            result['maskedContent'] = self.masked_content
         if self.operator_user_id is not None:
             result['operatorUserId'] = self.operator_user_id
         if self.relation_type is not None:
@@ -462,6 +467,8 @@ class AddCustomerTrackRequest(TeaModel):
             self.extra_biz_info = m.get('extraBizInfo')
         if m.get('idempotentKey') is not None:
             self.idempotent_key = m.get('idempotentKey')
+        if m.get('maskedContent') is not None:
+            self.masked_content = m.get('maskedContent')
         if m.get('operatorUserId') is not None:
             self.operator_user_id = m.get('operatorUserId')
         if m.get('relationType') is not None:

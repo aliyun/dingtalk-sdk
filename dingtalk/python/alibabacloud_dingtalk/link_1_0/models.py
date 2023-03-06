@@ -1214,6 +1214,179 @@ class GetPictureDownloadUrlResponse(TeaModel):
         return self
 
 
+class GetUserFollowStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserFollowStatusRequest(TeaModel):
+    def __init__(
+        self,
+        account_id: str = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        # 服务窗帐号ID，可选参数。
+        # 帐号ID用于开发者应用为服务窗所属组织应用场景，此ID可以通过服务窗帐号信息查询接口获取。
+        self.account_id = account_id
+        # 待查询的服务窗关注者unionId。
+        self.union_id = union_id
+        # 待查询的服务窗关注者userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetUserFollowStatusResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        status: str = None,
+    ):
+        # 用户关注服务窗的状态:
+        # FOLLOWED：已关注。
+        # UNFOLLOW：未关注。
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class GetUserFollowStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetUserFollowStatusResponseBodyResult = None,
+    ):
+        # 响应结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetUserFollowStatusResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetUserFollowStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUserFollowStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUserFollowStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListAccountHeaders(TeaModel):
     def __init__(
         self,
@@ -2987,14 +3160,17 @@ class UpdateShortcutsRequestDetails(TeaModel):
     def __init__(
         self,
         action_url: str = None,
+        callback_key: str = None,
         icon_font: str = None,
         icon_media_id: str = None,
         shortcut_id: str = None,
         slide_icon_media_id: str = None,
         title: str = None,
     ):
-        # 跳转链接
+        # 用户点快捷入口时的跳转链接，此参数与callbackKey二选一。
         self.action_url = action_url
+        # 快捷入口点击回调Key,可通过回调注册接口获得。此参数与actionUrl二选一。
+        self.callback_key = callback_key
         # windows侧边栏图标的unicode
         self.icon_font = icon_font
         # 移动端图标
@@ -3017,6 +3193,8 @@ class UpdateShortcutsRequestDetails(TeaModel):
         result = dict()
         if self.action_url is not None:
             result['actionUrl'] = self.action_url
+        if self.callback_key is not None:
+            result['callbackKey'] = self.callback_key
         if self.icon_font is not None:
             result['iconFont'] = self.icon_font
         if self.icon_media_id is not None:
@@ -3033,6 +3211,8 @@ class UpdateShortcutsRequestDetails(TeaModel):
         m = m or dict()
         if m.get('actionUrl') is not None:
             self.action_url = m.get('actionUrl')
+        if m.get('callbackKey') is not None:
+            self.callback_key = m.get('callbackKey')
         if m.get('iconFont') is not None:
             self.icon_font = m.get('iconFont')
         if m.get('iconMediaId') is not None:

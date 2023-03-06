@@ -443,6 +443,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetPictureDownloadUrl', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/oToMessages/pictures/downloadUrls', 'json', req, runtime)
         )
 
+    def get_user_follow_status(
+        self,
+        request: dingtalklink__1__0_models.GetUserFollowStatusRequest,
+    ) -> dingtalklink__1__0_models.GetUserFollowStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.GetUserFollowStatusHeaders()
+        return self.get_user_follow_status_with_options(request, headers, runtime)
+
+    async def get_user_follow_status_async(
+        self,
+        request: dingtalklink__1__0_models.GetUserFollowStatusRequest,
+    ) -> dingtalklink__1__0_models.GetUserFollowStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.GetUserFollowStatusHeaders()
+        return await self.get_user_follow_status_with_options_async(request, headers, runtime)
+
+    def get_user_follow_status_with_options(
+        self,
+        request: dingtalklink__1__0_models.GetUserFollowStatusRequest,
+        headers: dingtalklink__1__0_models.GetUserFollowStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.GetUserFollowStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.account_id):
+            query['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.GetUserFollowStatusResponse(),
+            self.do_roarequest('GetUserFollowStatus', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/followers/statuses', 'json', req, runtime)
+        )
+
+    async def get_user_follow_status_with_options_async(
+        self,
+        request: dingtalklink__1__0_models.GetUserFollowStatusRequest,
+        headers: dingtalklink__1__0_models.GetUserFollowStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.GetUserFollowStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.account_id):
+            query['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.GetUserFollowStatusResponse(),
+            await self.do_roarequest_async('GetUserFollowStatus', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/followers/statuses', 'json', req, runtime)
+        )
+
     def list_account(self) -> dingtalklink__1__0_models.ListAccountResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ListAccountHeaders()
