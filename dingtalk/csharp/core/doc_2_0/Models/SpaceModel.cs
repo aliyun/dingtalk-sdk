@@ -24,6 +24,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public string Description { get; set; }
 
         /// <summary>
+        /// 知识库高清图标
+        /// </summary>
+        [NameInMap("hdIconVO")]
+        [Validation(Required=false)]
+        public SpaceModelHdIconVO HdIconVO { get; set; }
+        public class SpaceModelHdIconVO : TeaModel {
+            /// <summary>
+            /// 图标
+            /// </summary>
+            [NameInMap("icon")]
+            [Validation(Required=false)]
+            public string Icon { get; set; }
+
+            /// <summary>
+            /// 图标类型
+            /// </summary>
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+        }
+
+        /// <summary>
         /// 知识库图标
         /// </summary>
         [NameInMap("iconVO")]

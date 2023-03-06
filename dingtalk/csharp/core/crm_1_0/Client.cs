@@ -268,6 +268,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["idempotentKey"] = request.IdempotentKey;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaskedContent))
+            {
+                body["maskedContent"] = request.MaskedContent;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
             {
                 body["operatorUserId"] = request.OperatorUserId;
@@ -320,6 +324,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IdempotentKey))
             {
                 body["idempotentKey"] = request.IdempotentKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaskedContent))
+            {
+                body["maskedContent"] = request.MaskedContent;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
             {

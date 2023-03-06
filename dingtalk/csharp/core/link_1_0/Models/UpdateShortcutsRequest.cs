@@ -17,11 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
         public List<UpdateShortcutsRequestDetails> Details { get; set; }
         public class UpdateShortcutsRequestDetails : TeaModel {
             /// <summary>
-            /// 跳转链接
+            /// 用户点快捷入口时的跳转链接，此参数与callbackKey二选一。
             /// </summary>
             [NameInMap("actionUrl")]
             [Validation(Required=false)]
             public string ActionUrl { get; set; }
+
+            /// <summary>
+            /// 快捷入口点击回调Key,可通过回调注册接口获得。此参数与actionUrl二选一。
+            /// </summary>
+            [NameInMap("callbackKey")]
+            [Validation(Required=false)]
+            public string CallbackKey { get; set; }
 
             /// <summary>
             /// windows侧边栏图标的unicode
