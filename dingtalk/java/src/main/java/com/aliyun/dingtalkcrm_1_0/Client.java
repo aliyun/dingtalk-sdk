@@ -139,6 +139,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("idempotentKey", request.idempotentKey);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.maskedContent)) {
+            body.put("maskedContent", request.maskedContent);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
             body.put("operatorUserId", request.operatorUserId);
         }

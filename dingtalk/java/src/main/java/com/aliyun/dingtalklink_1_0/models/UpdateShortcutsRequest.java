@@ -53,10 +53,16 @@ public class UpdateShortcutsRequest extends TeaModel {
 
     public static class UpdateShortcutsRequestDetails extends TeaModel {
         /**
-         * <p>跳转链接</p>
+         * <p>用户点快捷入口时的跳转链接，此参数与callbackKey二选一。</p>
          */
         @NameInMap("actionUrl")
         public String actionUrl;
+
+        /**
+         * <p>快捷入口点击回调Key,可通过回调注册接口获得。此参数与actionUrl二选一。</p>
+         */
+        @NameInMap("callbackKey")
+        public String callbackKey;
 
         /**
          * <p>windows侧边栏图标的unicode</p>
@@ -99,6 +105,14 @@ public class UpdateShortcutsRequest extends TeaModel {
         }
         public String getActionUrl() {
             return this.actionUrl;
+        }
+
+        public UpdateShortcutsRequestDetails setCallbackKey(String callbackKey) {
+            this.callbackKey = callbackKey;
+            return this;
+        }
+        public String getCallbackKey() {
+            return this.callbackKey;
         }
 
         public UpdateShortcutsRequestDetails setIconFont(String iconFont) {

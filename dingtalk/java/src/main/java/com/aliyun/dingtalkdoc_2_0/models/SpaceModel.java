@@ -17,6 +17,12 @@ public class SpaceModel extends TeaModel {
     public String description;
 
     /**
+     * <p>知识库高清图标</p>
+     */
+    @NameInMap("hdIconVO")
+    public SpaceModelHdIconVO hdIconVO;
+
+    /**
      * <p>知识库图标</p>
      */
     @NameInMap("iconVO")
@@ -85,6 +91,14 @@ public class SpaceModel extends TeaModel {
         return this.description;
     }
 
+    public SpaceModel setHdIconVO(SpaceModelHdIconVO hdIconVO) {
+        this.hdIconVO = hdIconVO;
+        return this;
+    }
+    public SpaceModelHdIconVO getHdIconVO() {
+        return this.hdIconVO;
+    }
+
     public SpaceModel setIconVO(SpaceModelIconVO iconVO) {
         this.iconVO = iconVO;
         return this;
@@ -147,6 +161,42 @@ public class SpaceModel extends TeaModel {
     }
     public SpaceModelVisitorInfo getVisitorInfo() {
         return this.visitorInfo;
+    }
+
+    public static class SpaceModelHdIconVO extends TeaModel {
+        /**
+         * <p>图标</p>
+         */
+        @NameInMap("icon")
+        public String icon;
+
+        /**
+         * <p>图标类型</p>
+         */
+        @NameInMap("type")
+        public String type;
+
+        public static SpaceModelHdIconVO build(java.util.Map<String, ?> map) throws Exception {
+            SpaceModelHdIconVO self = new SpaceModelHdIconVO();
+            return TeaModel.build(map, self);
+        }
+
+        public SpaceModelHdIconVO setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
+        }
+
+        public SpaceModelHdIconVO setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
     }
 
     public static class SpaceModelIconVO extends TeaModel {
