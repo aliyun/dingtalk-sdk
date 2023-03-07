@@ -24,6 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public int? Platform { get; set; }
 
+            [NameInMap("scene")]
+            [Validation(Required=false)]
+            public string Scene { get; set; }
+
             [NameInMap("time")]
             [Validation(Required=false)]
             public long? Time { get; set; }
