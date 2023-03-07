@@ -19,6 +19,11 @@ class data extends Model
     public $platform;
 
     /**
+     * @var string
+     */
+    public $scene;
+
+    /**
      * @var int
      */
     public $time;
@@ -35,6 +40,7 @@ class data extends Model
     protected $_name = [
         'pictureUrl' => 'pictureUrl',
         'platform'   => 'platform',
+        'scene'      => 'scene',
         'time'       => 'time',
         'type'       => 'type',
         'userName'   => 'userName',
@@ -52,6 +58,9 @@ class data extends Model
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
+        }
+        if (null !== $this->scene) {
+            $res['scene'] = $this->scene;
         }
         if (null !== $this->time) {
             $res['time'] = $this->time;
@@ -79,6 +88,9 @@ class data extends Model
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];
+        }
+        if (isset($map['scene'])) {
+            $model->scene = $map['scene'];
         }
         if (isset($map['time'])) {
             $model->time = $map['time'];
