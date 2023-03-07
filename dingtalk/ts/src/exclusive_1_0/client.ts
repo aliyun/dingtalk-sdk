@@ -7651,6 +7651,7 @@ export class QueryPartnerInfoResponseBodyPartnerLabelList extends $tea.Model {
 export class QueryUserBehaviorResponseBodyData extends $tea.Model {
   pictureUrl?: string;
   platform?: number;
+  scene?: string;
   time?: number;
   type?: number;
   userName?: string;
@@ -7658,6 +7659,7 @@ export class QueryUserBehaviorResponseBodyData extends $tea.Model {
     return {
       pictureUrl: 'pictureUrl',
       platform: 'platform',
+      scene: 'scene',
       time: 'time',
       type: 'type',
       userName: 'userName',
@@ -7668,6 +7670,7 @@ export class QueryUserBehaviorResponseBodyData extends $tea.Model {
     return {
       pictureUrl: 'string',
       platform: 'number',
+      scene: 'string',
       time: 'number',
       type: 'number',
       userName: 'string',
