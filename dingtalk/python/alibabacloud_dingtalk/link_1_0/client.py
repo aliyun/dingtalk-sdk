@@ -561,6 +561,52 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('ListAccount', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/accounts', 'json', req, runtime)
         )
 
+    def list_account_info(self) -> dingtalklink__1__0_models.ListAccountInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.ListAccountInfoHeaders()
+        return self.list_account_info_with_options(headers, runtime)
+
+    async def list_account_info_async(self) -> dingtalklink__1__0_models.ListAccountInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.ListAccountInfoHeaders()
+        return await self.list_account_info_with_options_async(headers, runtime)
+
+    def list_account_info_with_options(
+        self,
+        headers: dingtalklink__1__0_models.ListAccountInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.ListAccountInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.ListAccountInfoResponse(),
+            self.do_roarequest('ListAccountInfo', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/isv/accounts', 'json', req, runtime)
+        )
+
+    async def list_account_info_with_options_async(
+        self,
+        headers: dingtalklink__1__0_models.ListAccountInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.ListAccountInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.ListAccountInfoResponse(),
+            await self.do_roarequest_async('ListAccountInfo', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/isv/accounts', 'json', req, runtime)
+        )
+
     def list_follower(
         self,
         request: dingtalklink__1__0_models.ListFollowerRequest,
@@ -631,6 +677,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalklink__1__0_models.ListFollowerResponse(),
             await self.do_roarequest_async('ListFollower', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/followers', 'json', req, runtime)
+        )
+
+    def query_user_follow_status(
+        self,
+        request: dingtalklink__1__0_models.QueryUserFollowStatusRequest,
+    ) -> dingtalklink__1__0_models.QueryUserFollowStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.QueryUserFollowStatusHeaders()
+        return self.query_user_follow_status_with_options(request, headers, runtime)
+
+    async def query_user_follow_status_async(
+        self,
+        request: dingtalklink__1__0_models.QueryUserFollowStatusRequest,
+    ) -> dingtalklink__1__0_models.QueryUserFollowStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklink__1__0_models.QueryUserFollowStatusHeaders()
+        return await self.query_user_follow_status_with_options_async(request, headers, runtime)
+
+    def query_user_follow_status_with_options(
+        self,
+        request: dingtalklink__1__0_models.QueryUserFollowStatusRequest,
+        headers: dingtalklink__1__0_models.QueryUserFollowStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.QueryUserFollowStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.account_id):
+            query['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.QueryUserFollowStatusResponse(),
+            self.do_roarequest('QueryUserFollowStatus', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/isv/followers/statuses', 'json', req, runtime)
+        )
+
+    async def query_user_follow_status_with_options_async(
+        self,
+        request: dingtalklink__1__0_models.QueryUserFollowStatusRequest,
+        headers: dingtalklink__1__0_models.QueryUserFollowStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklink__1__0_models.QueryUserFollowStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.account_id):
+            query['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalklink__1__0_models.QueryUserFollowStatusResponse(),
+            await self.do_roarequest_async('QueryUserFollowStatus', 'link_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/link/isv/followers/statuses', 'json', req, runtime)
         )
 
     def send_agent_otomessage(

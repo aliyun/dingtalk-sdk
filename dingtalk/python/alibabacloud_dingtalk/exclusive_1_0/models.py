@@ -11111,12 +11111,14 @@ class QueryUserBehaviorResponseBodyData(TeaModel):
         self,
         picture_url: str = None,
         platform: int = None,
+        scene: str = None,
         time: int = None,
         type: int = None,
         user_name: str = None,
     ):
         self.picture_url = picture_url
         self.platform = platform
+        self.scene = scene
         self.time = time
         self.type = type
         self.user_name = user_name
@@ -11134,6 +11136,8 @@ class QueryUserBehaviorResponseBodyData(TeaModel):
             result['pictureUrl'] = self.picture_url
         if self.platform is not None:
             result['platform'] = self.platform
+        if self.scene is not None:
+            result['scene'] = self.scene
         if self.time is not None:
             result['time'] = self.time
         if self.type is not None:
@@ -11148,6 +11152,8 @@ class QueryUserBehaviorResponseBodyData(TeaModel):
             self.picture_url = m.get('pictureUrl')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
         if m.get('time') is not None:
             self.time = m.get('time')
         if m.get('type') is not None:
