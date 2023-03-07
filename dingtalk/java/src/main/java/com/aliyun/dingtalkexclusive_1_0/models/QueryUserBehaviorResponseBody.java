@@ -52,6 +52,9 @@ public class QueryUserBehaviorResponseBody extends TeaModel {
         @NameInMap("platform")
         public Integer platform;
 
+        @NameInMap("scene")
+        public String scene;
+
         @NameInMap("time")
         public Long time;
 
@@ -80,6 +83,14 @@ public class QueryUserBehaviorResponseBody extends TeaModel {
         }
         public Integer getPlatform() {
             return this.platform;
+        }
+
+        public QueryUserBehaviorResponseBodyData setScene(String scene) {
+            this.scene = scene;
+            return this;
+        }
+        public String getScene() {
+            return this.scene;
         }
 
         public QueryUserBehaviorResponseBodyData setTime(Long time) {
