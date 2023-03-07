@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\hdIconVO;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\iconVO;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\owner;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SpaceModel\visitorInfo;
@@ -24,6 +25,13 @@ class SpaceModel extends Model
      * @var string
      */
     public $description;
+
+    /**
+     * @description 知识库高清图标
+     *
+     * @var hdIconVO
+     */
+    public $hdIconVO;
 
     /**
      * @description 知识库图标
@@ -83,6 +91,7 @@ class SpaceModel extends Model
     protected $_name = [
         'cover'       => 'cover',
         'description' => 'description',
+        'hdIconVO'    => 'hdIconVO',
         'iconVO'      => 'iconVO',
         'id'          => 'id',
         'name'        => 'name',
@@ -105,6 +114,9 @@ class SpaceModel extends Model
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
+        }
+        if (null !== $this->hdIconVO) {
+            $res['hdIconVO'] = null !== $this->hdIconVO ? $this->hdIconVO->toMap() : null;
         }
         if (null !== $this->iconVO) {
             $res['iconVO'] = null !== $this->iconVO ? $this->iconVO->toMap() : null;
@@ -153,6 +165,9 @@ class SpaceModel extends Model
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
+        }
+        if (isset($map['hdIconVO'])) {
+            $model->hdIconVO = hdIconVO::fromMap($map['hdIconVO']);
         }
         if (isset($map['iconVO'])) {
             $model->iconVO = iconVO::fromMap($map['iconVO']);

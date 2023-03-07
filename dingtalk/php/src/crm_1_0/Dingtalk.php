@@ -322,6 +322,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->idempotentKey)) {
             @$body['idempotentKey'] = $request->idempotentKey;
         }
+        if (!Utils::isUnset($request->maskedContent)) {
+            @$body['maskedContent'] = $request->maskedContent;
+        }
         if (!Utils::isUnset($request->operatorUserId)) {
             @$body['operatorUserId'] = $request->operatorUserId;
         }

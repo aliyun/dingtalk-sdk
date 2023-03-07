@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AddCustomerTrackRequest extends Model
 {
     /**
-     * @description 动态内容,markdown格式
+     * @description 动态内容（明文未脱敏内容），markdown格式，必填。客户动态列表页的展示规则：如果有maskedContent字段对应动态脱敏内容则优先展示动态脱敏内容，否则优先展示本content字段内容。当显示了动态脱敏内容时用户可以点击页面按钮来查看动态未脱敏明文内容。
      *
      * @var string
      */
@@ -35,6 +35,13 @@ class AddCustomerTrackRequest extends Model
      * @var string
      */
     public $idempotentKey;
+
+    /**
+     * @description 动态脱敏内容，markdown格式，非必填。客户动态列表页的展示规则：如果本字段有值，则优先展示本字段的动态脱敏内容，否则展示content字段内容。当显示了动态脱敏内容时用户可以点击页面按钮来查看动态未脱敏明文内容。
+     *
+     * @var string
+     */
+    public $maskedContent;
 
     /**
      * @description 操作人userId
@@ -68,6 +75,7 @@ class AddCustomerTrackRequest extends Model
         'customerId'     => 'customerId',
         'extraBizInfo'   => 'extraBizInfo',
         'idempotentKey'  => 'idempotentKey',
+        'maskedContent'  => 'maskedContent',
         'operatorUserId' => 'operatorUserId',
         'relationType'   => 'relationType',
         'title'          => 'title',
@@ -92,6 +100,9 @@ class AddCustomerTrackRequest extends Model
         }
         if (null !== $this->idempotentKey) {
             $res['idempotentKey'] = $this->idempotentKey;
+        }
+        if (null !== $this->maskedContent) {
+            $res['maskedContent'] = $this->maskedContent;
         }
         if (null !== $this->operatorUserId) {
             $res['operatorUserId'] = $this->operatorUserId;
@@ -128,6 +139,9 @@ class AddCustomerTrackRequest extends Model
         }
         if (isset($map['idempotentKey'])) {
             $model->idempotentKey = $map['idempotentKey'];
+        }
+        if (isset($map['maskedContent'])) {
+            $model->maskedContent = $map['maskedContent'];
         }
         if (isset($map['operatorUserId'])) {
             $model->operatorUserId = $map['operatorUserId'];

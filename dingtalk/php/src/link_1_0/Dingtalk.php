@@ -23,11 +23,19 @@ use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetFollowerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetPictureDownloadUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetUserFollowStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetUserFollowStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\GetUserFollowStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListAccountInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListAccountInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\ListFollowerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\QueryUserFollowStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\QueryUserFollowStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\QueryUserFollowStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendAgentOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendAgentOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlink_1_0\Models\SendAgentOTOMessageResponse;
@@ -339,6 +347,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetUserFollowStatusRequest $request
+     *
+     * @return GetUserFollowStatusResponse
+     */
+    public function getUserFollowStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserFollowStatusHeaders([]);
+
+        return $this->getUserFollowStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetUserFollowStatusRequest $request
+     * @param GetUserFollowStatusHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return GetUserFollowStatusResponse
+     */
+    public function getUserFollowStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountId)) {
+            @$query['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetUserFollowStatusResponse::fromMap($this->doROARequest('GetUserFollowStatus', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/followers/statuses', 'json', $req, $runtime));
+    }
+
+    /**
      * @return ListAccountResponse
      */
     public function listAccount()
@@ -369,6 +425,39 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListAccountResponse::fromMap($this->doROARequest('ListAccount', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/accounts', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return ListAccountInfoResponse
+     */
+    public function listAccountInfo()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAccountInfoHeaders([]);
+
+        return $this->listAccountInfoWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param ListAccountInfoHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ListAccountInfoResponse
+     */
+    public function listAccountInfoWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return ListAccountInfoResponse::fromMap($this->doROARequest('ListAccountInfo', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/isv/accounts', 'json', $req, $runtime));
     }
 
     /**
@@ -417,6 +506,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return ListFollowerResponse::fromMap($this->doROARequest('ListFollower', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/followers', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryUserFollowStatusRequest $request
+     *
+     * @return QueryUserFollowStatusResponse
+     */
+    public function queryUserFollowStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserFollowStatusHeaders([]);
+
+        return $this->queryUserFollowStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUserFollowStatusRequest $request
+     * @param QueryUserFollowStatusHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QueryUserFollowStatusResponse
+     */
+    public function queryUserFollowStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountId)) {
+            @$query['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryUserFollowStatusResponse::fromMap($this->doROARequest('QueryUserFollowStatus', 'link_1.0', 'HTTP', 'GET', 'AK', '/v1.0/link/isv/followers/statuses', 'json', $req, $runtime));
     }
 
     /**
