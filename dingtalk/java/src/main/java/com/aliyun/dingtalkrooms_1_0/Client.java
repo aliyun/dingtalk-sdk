@@ -204,6 +204,49 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices/shareCodes/" + shareCode + "", "json", req, runtime), new QueryDeviceIpByCodeResponse());
     }
 
+    public QueryDevicePropertiesResponse queryDeviceProperties(QueryDevicePropertiesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryDevicePropertiesHeaders headers = new QueryDevicePropertiesHeaders();
+        return this.queryDevicePropertiesWithOptions(request, headers, runtime);
+    }
+
+    public QueryDevicePropertiesResponse queryDevicePropertiesWithOptions(QueryDevicePropertiesRequest request, QueryDevicePropertiesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceId)) {
+            query.put("deviceId", request.deviceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUnionId)) {
+            query.put("deviceUnionId", request.deviceUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUnionId)) {
+            query.put("operatorUnionId", request.operatorUnionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.propertyNames)) {
+            body.put("propertyNames", request.propertyNames);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryDeviceProperties", "rooms_1.0", "HTTP", "POST", "AK", "/v1.0/rooms/devices/properties/query", "json", req, runtime), new QueryDevicePropertiesResponse());
+    }
+
     public QueryMeetingRoomResponse queryMeetingRoom(String roomId, QueryMeetingRoomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMeetingRoomHeaders headers = new QueryMeetingRoomHeaders();
@@ -232,6 +275,43 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("QueryMeetingRoom", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/meetingRooms/" + roomId + "", "json", req, runtime), new QueryMeetingRoomResponse());
+    }
+
+    public QueryMeetingRoomDeviceResponse queryMeetingRoomDevice(QueryMeetingRoomDeviceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMeetingRoomDeviceHeaders headers = new QueryMeetingRoomDeviceHeaders();
+        return this.queryMeetingRoomDeviceWithOptions(request, headers, runtime);
+    }
+
+    public QueryMeetingRoomDeviceResponse queryMeetingRoomDeviceWithOptions(QueryMeetingRoomDeviceRequest request, QueryMeetingRoomDeviceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceId)) {
+            query.put("deviceId", request.deviceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUnionId)) {
+            query.put("deviceUnionId", request.deviceUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUnionId)) {
+            query.put("operatorUnionId", request.operatorUnionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryMeetingRoomDevice", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices", "json", req, runtime), new QueryMeetingRoomDeviceResponse());
     }
 
     public QueryMeetingRoomGroupResponse queryMeetingRoomGroup(String groupId, QueryMeetingRoomGroupRequest request) throws Exception {
