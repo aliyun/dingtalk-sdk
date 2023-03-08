@@ -450,6 +450,97 @@ export class QueryDeviceIpByCodeResponse extends $tea.Model {
   }
 }
 
+export class QueryDevicePropertiesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDevicePropertiesRequest extends $tea.Model {
+  propertyNames?: string[];
+  deviceId?: string;
+  deviceUnionId?: string;
+  operatorUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      propertyNames: 'propertyNames',
+      deviceId: 'deviceId',
+      deviceUnionId: 'deviceUnionId',
+      operatorUnionId: 'operatorUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      propertyNames: { 'type': 'array', 'itemType': 'string' },
+      deviceId: 'string',
+      deviceUnionId: 'string',
+      operatorUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDevicePropertiesResponseBody extends $tea.Model {
+  result?: QueryDevicePropertiesResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': QueryDevicePropertiesResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDevicePropertiesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryDevicePropertiesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryDevicePropertiesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMeetingRoomHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -524,6 +615,94 @@ export class QueryMeetingRoomResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryMeetingRoomResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomDeviceRequest extends $tea.Model {
+  deviceId?: string;
+  deviceUnionId?: string;
+  operatorUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deviceId: 'deviceId',
+      deviceUnionId: 'deviceUnionId',
+      operatorUnionId: 'operatorUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceId: 'string',
+      deviceUnionId: 'string',
+      operatorUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomDeviceResponseBody extends $tea.Model {
+  result?: QueryMeetingRoomDeviceResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryMeetingRoomDeviceResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryMeetingRoomDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryMeetingRoomDeviceResponseBody,
     };
   }
 
@@ -1034,6 +1213,28 @@ export class QueryDeviceIpByCodeResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryDevicePropertiesResponseBodyResult extends $tea.Model {
+  propertyName?: string;
+  propertyValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      propertyName: 'propertyName',
+      propertyValue: 'propertyValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      propertyName: 'string',
+      propertyValue: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMeetingRoomResponseBodyResultRoomGroup extends $tea.Model {
   groupId?: number;
   groupName?: string;
@@ -1144,6 +1345,113 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
       roomPicture: 'string',
       roomStaffId: 'string',
       roomStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomDeviceResponseBodyResultControllers extends $tea.Model {
+  corpId?: string;
+  deviceId?: string;
+  deviceMac?: string;
+  deviceModel?: string;
+  deviceName?: string;
+  deviceServiceId?: number;
+  deviceSn?: string;
+  deviceStatus?: string;
+  deviceType?: string;
+  deviceUnionId?: string;
+  openRoomId?: string;
+  shareCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deviceId: 'deviceId',
+      deviceMac: 'deviceMac',
+      deviceModel: 'deviceModel',
+      deviceName: 'deviceName',
+      deviceServiceId: 'deviceServiceId',
+      deviceSn: 'deviceSn',
+      deviceStatus: 'deviceStatus',
+      deviceType: 'deviceType',
+      deviceUnionId: 'deviceUnionId',
+      openRoomId: 'openRoomId',
+      shareCode: 'shareCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deviceId: 'string',
+      deviceMac: 'string',
+      deviceModel: 'string',
+      deviceName: 'string',
+      deviceServiceId: 'number',
+      deviceSn: 'string',
+      deviceStatus: 'string',
+      deviceType: 'string',
+      deviceUnionId: 'string',
+      openRoomId: 'string',
+      shareCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomDeviceResponseBodyResult extends $tea.Model {
+  controllers?: QueryMeetingRoomDeviceResponseBodyResultControllers[];
+  corpId?: string;
+  deviceId?: string;
+  deviceMac?: string;
+  deviceModel?: string;
+  deviceName?: string;
+  deviceServiceId?: number;
+  deviceSn?: string;
+  deviceStatus?: string;
+  deviceType?: string;
+  deviceUnionId?: string;
+  openRoomId?: string;
+  shareCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      controllers: 'controllers',
+      corpId: 'corpId',
+      deviceId: 'deviceId',
+      deviceMac: 'deviceMac',
+      deviceModel: 'deviceModel',
+      deviceName: 'deviceName',
+      deviceServiceId: 'deviceServiceId',
+      deviceSn: 'deviceSn',
+      deviceStatus: 'deviceStatus',
+      deviceType: 'deviceType',
+      deviceUnionId: 'deviceUnionId',
+      openRoomId: 'openRoomId',
+      shareCode: 'shareCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      controllers: { 'type': 'array', 'itemType': QueryMeetingRoomDeviceResponseBodyResultControllers },
+      corpId: 'string',
+      deviceId: 'string',
+      deviceMac: 'string',
+      deviceModel: 'string',
+      deviceName: 'string',
+      deviceServiceId: 'number',
+      deviceSn: 'string',
+      deviceStatus: 'string',
+      deviceType: 'string',
+      deviceUnionId: 'string',
+      openRoomId: 'string',
+      shareCode: 'string',
     };
   }
 
@@ -1518,6 +1826,49 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDeviceIpByCodeResponse>(await this.doROARequest("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/devices/shareCodes/${shareCode}`, "json", req, runtime), new QueryDeviceIpByCodeResponse({}));
   }
 
+  async queryDeviceProperties(request: QueryDevicePropertiesRequest): Promise<QueryDevicePropertiesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDevicePropertiesHeaders({ });
+    return await this.queryDevicePropertiesWithOptions(request, headers, runtime);
+  }
+
+  async queryDevicePropertiesWithOptions(request: QueryDevicePropertiesRequest, headers: QueryDevicePropertiesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDevicePropertiesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceId)) {
+      query["deviceId"] = request.deviceId;
+    }
+
+    if (!Util.isUnset(request.deviceUnionId)) {
+      query["deviceUnionId"] = request.deviceUnionId;
+    }
+
+    if (!Util.isUnset(request.operatorUnionId)) {
+      query["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.propertyNames)) {
+      body["propertyNames"] = request.propertyNames;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<QueryDevicePropertiesResponse>(await this.doROARequest("QueryDeviceProperties", "rooms_1.0", "HTTP", "POST", "AK", `/v1.0/rooms/devices/properties/query`, "json", req, runtime), new QueryDevicePropertiesResponse({}));
+  }
+
   async queryMeetingRoom(roomId: string, request: QueryMeetingRoomRequest): Promise<QueryMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMeetingRoomHeaders({ });
@@ -1546,6 +1897,43 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryMeetingRoomResponse>(await this.doROARequest("QueryMeetingRoom", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/meetingRooms/${roomId}`, "json", req, runtime), new QueryMeetingRoomResponse({}));
+  }
+
+  async queryMeetingRoomDevice(request: QueryMeetingRoomDeviceRequest): Promise<QueryMeetingRoomDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMeetingRoomDeviceHeaders({ });
+    return await this.queryMeetingRoomDeviceWithOptions(request, headers, runtime);
+  }
+
+  async queryMeetingRoomDeviceWithOptions(request: QueryMeetingRoomDeviceRequest, headers: QueryMeetingRoomDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomDeviceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deviceId)) {
+      query["deviceId"] = request.deviceId;
+    }
+
+    if (!Util.isUnset(request.deviceUnionId)) {
+      query["deviceUnionId"] = request.deviceUnionId;
+    }
+
+    if (!Util.isUnset(request.operatorUnionId)) {
+      query["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryMeetingRoomDeviceResponse>(await this.doROARequest("QueryMeetingRoomDevice", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/devices`, "json", req, runtime), new QueryMeetingRoomDeviceResponse({}));
   }
 
   async queryMeetingRoomGroup(groupId: string, request: QueryMeetingRoomGroupRequest): Promise<QueryMeetingRoomGroupResponse> {
