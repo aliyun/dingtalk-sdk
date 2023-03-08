@@ -777,6 +777,196 @@ class QueryDeviceIpByCodeResponse(TeaModel):
         return self
 
 
+class QueryDevicePropertiesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDevicePropertiesRequest(TeaModel):
+    def __init__(
+        self,
+        property_names: List[str] = None,
+        device_id: str = None,
+        device_union_id: str = None,
+        operator_union_id: str = None,
+    ):
+        # 设备属性名称列表
+        self.property_names = property_names
+        # 查询设备id
+        self.device_id = device_id
+        # 查询设备unionId
+        self.device_union_id = device_union_id
+        # 查询人unionId
+        self.operator_union_id = operator_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.property_names is not None:
+            result['propertyNames'] = self.property_names
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_union_id is not None:
+            result['deviceUnionId'] = self.device_union_id
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('propertyNames') is not None:
+            self.property_names = m.get('propertyNames')
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceUnionId') is not None:
+            self.device_union_id = m.get('deviceUnionId')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        return self
+
+
+class QueryDevicePropertiesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        property_name: str = None,
+        property_value: str = None,
+    ):
+        # 设备属性名称
+        self.property_name = property_name
+        # 设备属性值
+        self.property_value = property_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.property_name is not None:
+            result['propertyName'] = self.property_name
+        if self.property_value is not None:
+            result['propertyValue'] = self.property_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('propertyName') is not None:
+            self.property_name = m.get('propertyName')
+        if m.get('propertyValue') is not None:
+            self.property_value = m.get('propertyValue')
+        return self
+
+
+class QueryDevicePropertiesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryDevicePropertiesResponseBodyResult] = None,
+    ):
+        # 响应结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryDevicePropertiesResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryDevicePropertiesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryDevicePropertiesResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryDevicePropertiesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryMeetingRoomHeaders(TeaModel):
     def __init__(
         self,
@@ -1121,6 +1311,373 @@ class QueryMeetingRoomResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = QueryMeetingRoomResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryMeetingRoomDeviceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMeetingRoomDeviceRequest(TeaModel):
+    def __init__(
+        self,
+        device_id: str = None,
+        device_union_id: str = None,
+        operator_union_id: str = None,
+    ):
+        # 查询设备id
+        self.device_id = device_id
+        # 查询设备unionId
+        self.device_union_id = device_union_id
+        # 查询人unionId
+        self.operator_union_id = operator_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_union_id is not None:
+            result['deviceUnionId'] = self.device_union_id
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceUnionId') is not None:
+            self.device_union_id = m.get('deviceUnionId')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        return self
+
+
+class QueryMeetingRoomDeviceResponseBodyResultControllers(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        device_id: str = None,
+        device_mac: str = None,
+        device_model: str = None,
+        device_name: str = None,
+        device_service_id: int = None,
+        device_sn: str = None,
+        device_status: str = None,
+        device_type: str = None,
+        device_union_id: str = None,
+        open_room_id: str = None,
+        share_code: str = None,
+    ):
+        # 企业corpId
+        self.corp_id = corp_id
+        # 控制器设备id
+        self.device_id = device_id
+        # 控制器mac地址
+        self.device_mac = device_mac
+        # 控制器型号
+        self.device_model = device_model
+        # 控制器名称
+        self.device_name = device_name
+        # 控制器注册serviceId
+        self.device_service_id = device_service_id
+        # 控制器sn
+        self.device_sn = device_sn
+        # 控制器状态
+        self.device_status = device_status
+        # 设备类型
+        self.device_type = device_type
+        # 控制器unionId
+        self.device_union_id = device_union_id
+        # 控制器绑定会议室id
+        self.open_room_id = open_room_id
+        # 控制器投屏码
+        self.share_code = share_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_mac is not None:
+            result['deviceMac'] = self.device_mac
+        if self.device_model is not None:
+            result['deviceModel'] = self.device_model
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.device_service_id is not None:
+            result['deviceServiceId'] = self.device_service_id
+        if self.device_sn is not None:
+            result['deviceSn'] = self.device_sn
+        if self.device_status is not None:
+            result['deviceStatus'] = self.device_status
+        if self.device_type is not None:
+            result['deviceType'] = self.device_type
+        if self.device_union_id is not None:
+            result['deviceUnionId'] = self.device_union_id
+        if self.open_room_id is not None:
+            result['openRoomId'] = self.open_room_id
+        if self.share_code is not None:
+            result['shareCode'] = self.share_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceMac') is not None:
+            self.device_mac = m.get('deviceMac')
+        if m.get('deviceModel') is not None:
+            self.device_model = m.get('deviceModel')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('deviceServiceId') is not None:
+            self.device_service_id = m.get('deviceServiceId')
+        if m.get('deviceSn') is not None:
+            self.device_sn = m.get('deviceSn')
+        if m.get('deviceStatus') is not None:
+            self.device_status = m.get('deviceStatus')
+        if m.get('deviceType') is not None:
+            self.device_type = m.get('deviceType')
+        if m.get('deviceUnionId') is not None:
+            self.device_union_id = m.get('deviceUnionId')
+        if m.get('openRoomId') is not None:
+            self.open_room_id = m.get('openRoomId')
+        if m.get('shareCode') is not None:
+            self.share_code = m.get('shareCode')
+        return self
+
+
+class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        controllers: List[QueryMeetingRoomDeviceResponseBodyResultControllers] = None,
+        corp_id: str = None,
+        device_id: str = None,
+        device_mac: str = None,
+        device_model: str = None,
+        device_name: str = None,
+        device_service_id: int = None,
+        device_sn: str = None,
+        device_status: str = None,
+        device_type: str = None,
+        device_union_id: str = None,
+        open_room_id: str = None,
+        share_code: str = None,
+    ):
+        # 设备控制器
+        self.controllers = controllers
+        # 企业corpId
+        self.corp_id = corp_id
+        # 设备id
+        self.device_id = device_id
+        # 设备mac地址
+        self.device_mac = device_mac
+        # 设备型号
+        self.device_model = device_model
+        # 设备名称
+        self.device_name = device_name
+        # 设备注册serviceId
+        self.device_service_id = device_service_id
+        # 设备sn
+        self.device_sn = device_sn
+        # 设备状态
+        self.device_status = device_status
+        # 设备类型
+        self.device_type = device_type
+        # 设备unionId
+        self.device_union_id = device_union_id
+        # 设备绑定会议室id
+        self.open_room_id = open_room_id
+        # 设备投屏码
+        self.share_code = share_code
+
+    def validate(self):
+        if self.controllers:
+            for k in self.controllers:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['controllers'] = []
+        if self.controllers is not None:
+            for k in self.controllers:
+                result['controllers'].append(k.to_map() if k else None)
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_mac is not None:
+            result['deviceMac'] = self.device_mac
+        if self.device_model is not None:
+            result['deviceModel'] = self.device_model
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.device_service_id is not None:
+            result['deviceServiceId'] = self.device_service_id
+        if self.device_sn is not None:
+            result['deviceSn'] = self.device_sn
+        if self.device_status is not None:
+            result['deviceStatus'] = self.device_status
+        if self.device_type is not None:
+            result['deviceType'] = self.device_type
+        if self.device_union_id is not None:
+            result['deviceUnionId'] = self.device_union_id
+        if self.open_room_id is not None:
+            result['openRoomId'] = self.open_room_id
+        if self.share_code is not None:
+            result['shareCode'] = self.share_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.controllers = []
+        if m.get('controllers') is not None:
+            for k in m.get('controllers'):
+                temp_model = QueryMeetingRoomDeviceResponseBodyResultControllers()
+                self.controllers.append(temp_model.from_map(k))
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceMac') is not None:
+            self.device_mac = m.get('deviceMac')
+        if m.get('deviceModel') is not None:
+            self.device_model = m.get('deviceModel')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('deviceServiceId') is not None:
+            self.device_service_id = m.get('deviceServiceId')
+        if m.get('deviceSn') is not None:
+            self.device_sn = m.get('deviceSn')
+        if m.get('deviceStatus') is not None:
+            self.device_status = m.get('deviceStatus')
+        if m.get('deviceType') is not None:
+            self.device_type = m.get('deviceType')
+        if m.get('deviceUnionId') is not None:
+            self.device_union_id = m.get('deviceUnionId')
+        if m.get('openRoomId') is not None:
+            self.open_room_id = m.get('openRoomId')
+        if m.get('shareCode') is not None:
+            self.share_code = m.get('shareCode')
+        return self
+
+
+class QueryMeetingRoomDeviceResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryMeetingRoomDeviceResponseBodyResult = None,
+    ):
+        # 响应结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryMeetingRoomDeviceResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryMeetingRoomDeviceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryMeetingRoomDeviceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryMeetingRoomDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

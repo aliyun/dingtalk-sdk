@@ -401,6 +401,86 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryDeviceIpByCode', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices/shareCodes/{share_code}', 'json', req, runtime)
         )
 
+    def query_device_properties(
+        self,
+        request: dingtalkrooms__1__0_models.QueryDevicePropertiesRequest,
+    ) -> dingtalkrooms__1__0_models.QueryDevicePropertiesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDevicePropertiesHeaders()
+        return self.query_device_properties_with_options(request, headers, runtime)
+
+    async def query_device_properties_async(
+        self,
+        request: dingtalkrooms__1__0_models.QueryDevicePropertiesRequest,
+    ) -> dingtalkrooms__1__0_models.QueryDevicePropertiesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDevicePropertiesHeaders()
+        return await self.query_device_properties_with_options_async(request, headers, runtime)
+
+    def query_device_properties_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.QueryDevicePropertiesRequest,
+        headers: dingtalkrooms__1__0_models.QueryDevicePropertiesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryDevicePropertiesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.device_id):
+            query['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.device_union_id):
+            query['deviceUnionId'] = request.device_union_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            query['operatorUnionId'] = request.operator_union_id
+        body = {}
+        if not UtilClient.is_unset(request.property_names):
+            body['propertyNames'] = request.property_names
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryDevicePropertiesResponse(),
+            self.do_roarequest('QueryDeviceProperties', 'rooms_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rooms/devices/properties/query', 'json', req, runtime)
+        )
+
+    async def query_device_properties_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.QueryDevicePropertiesRequest,
+        headers: dingtalkrooms__1__0_models.QueryDevicePropertiesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryDevicePropertiesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.device_id):
+            query['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.device_union_id):
+            query['deviceUnionId'] = request.device_union_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            query['operatorUnionId'] = request.operator_union_id
+        body = {}
+        if not UtilClient.is_unset(request.property_names):
+            body['propertyNames'] = request.property_names
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryDevicePropertiesResponse(),
+            await self.do_roarequest_async('QueryDeviceProperties', 'rooms_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rooms/devices/properties/query', 'json', req, runtime)
+        )
+
     def query_meeting_room(
         self,
         room_id: str,
@@ -469,6 +549,78 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryMeetingRoomResponse(),
             await self.do_roarequest_async('QueryMeetingRoom', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/meetingRooms/{room_id}', 'json', req, runtime)
+        )
+
+    def query_meeting_room_device(
+        self,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomDeviceHeaders()
+        return self.query_meeting_room_device_with_options(request, headers, runtime)
+
+    async def query_meeting_room_device_async(
+        self,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomDeviceHeaders()
+        return await self.query_meeting_room_device_with_options_async(request, headers, runtime)
+
+    def query_meeting_room_device_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceRequest,
+        headers: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.device_id):
+            query['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.device_union_id):
+            query['deviceUnionId'] = request.device_union_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            query['operatorUnionId'] = request.operator_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse(),
+            self.do_roarequest('QueryMeetingRoomDevice', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices', 'json', req, runtime)
+        )
+
+    async def query_meeting_room_device_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceRequest,
+        headers: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.device_id):
+            query['deviceId'] = request.device_id
+        if not UtilClient.is_unset(request.device_union_id):
+            query['deviceUnionId'] = request.device_union_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            query['operatorUnionId'] = request.operator_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse(),
+            await self.do_roarequest_async('QueryMeetingRoomDevice', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices', 'json', req, runtime)
         )
 
     def query_meeting_room_group(
