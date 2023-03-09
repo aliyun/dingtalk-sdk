@@ -16,12 +16,6 @@ public class QueryUserFollowStatusRequest extends TeaModel {
     @NameInMap("unionId")
     public String unionId;
 
-    /**
-     * <p>待查询的服务窗关注者userId。</p>
-     */
-    @NameInMap("userId")
-    public String userId;
-
     public static QueryUserFollowStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryUserFollowStatusRequest self = new QueryUserFollowStatusRequest();
         return TeaModel.build(map, self);
@@ -41,14 +35,6 @@ public class QueryUserFollowStatusRequest extends TeaModel {
     }
     public String getUnionId() {
         return this.unionId;
-    }
-
-    public QueryUserFollowStatusRequest setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-    public String getUserId() {
-        return this.userId;
     }
 
 }
