@@ -302,6 +302,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyResponse;
@@ -5553,5 +5556,50 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return VPaasProxyResponse::fromMap($this->doROARequest('VPaasProxy', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpaas/proxy', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ValidateUserRoleRequest $request
+     *
+     * @return ValidateUserRoleResponse
+     */
+    public function validateUserRole($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ValidateUserRoleHeaders([]);
+
+        return $this->validateUserRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ValidateUserRoleRequest $request
+     * @param ValidateUserRoleHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return ValidateUserRoleResponse
+     */
+    public function validateUserRoleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->timeThreshold)) {
+            @$body['timeThreshold'] = $request->timeThreshold;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            @$body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ValidateUserRoleResponse::fromMap($this->doROARequest('ValidateUserRole', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/users/roles/validate', 'json', $req, $runtime));
     }
 }
