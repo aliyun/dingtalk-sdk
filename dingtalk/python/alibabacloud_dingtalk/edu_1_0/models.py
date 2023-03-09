@@ -22380,3 +22380,145 @@ class VPaasProxyResponse(TeaModel):
         return self
 
 
+class ValidateUserRoleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ValidateUserRoleRequest(TeaModel):
+    def __init__(
+        self,
+        time_threshold: int = None,
+        union_id: str = None,
+    ):
+        # 时间阈值，查询在此时间之前的用户角色信息
+        self.time_threshold = time_threshold
+        # 用户的uionId
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.time_threshold is not None:
+            result['timeThreshold'] = self.time_threshold
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('timeThreshold') is not None:
+            self.time_threshold = m.get('timeThreshold')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ValidateUserRoleResponseBody(TeaModel):
+    def __init__(
+        self,
+        match_parent_identity: bool = None,
+        match_teacher_identity: bool = None,
+    ):
+        # 是否是家长身份。
+        # true表示是家长，false表示不是家长。
+        self.match_parent_identity = match_parent_identity
+        # 是否为老师身份。
+        # true表示是老师，false表示不是老师。
+        self.match_teacher_identity = match_teacher_identity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.match_parent_identity is not None:
+            result['matchParentIdentity'] = self.match_parent_identity
+        if self.match_teacher_identity is not None:
+            result['matchTeacherIdentity'] = self.match_teacher_identity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('matchParentIdentity') is not None:
+            self.match_parent_identity = m.get('matchParentIdentity')
+        if m.get('matchTeacherIdentity') is not None:
+            self.match_teacher_identity = m.get('matchTeacherIdentity')
+        return self
+
+
+class ValidateUserRoleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ValidateUserRoleResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ValidateUserRoleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

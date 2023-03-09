@@ -7834,3 +7834,71 @@ class Client(OpenApiClient):
             dingtalkedu__1__0_models.VPaasProxyResponse(),
             await self.do_roarequest_async('VPaasProxy', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/vpaas/proxy', 'json', req, runtime)
         )
+
+    def validate_user_role(
+        self,
+        request: dingtalkedu__1__0_models.ValidateUserRoleRequest,
+    ) -> dingtalkedu__1__0_models.ValidateUserRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ValidateUserRoleHeaders()
+        return self.validate_user_role_with_options(request, headers, runtime)
+
+    async def validate_user_role_async(
+        self,
+        request: dingtalkedu__1__0_models.ValidateUserRoleRequest,
+    ) -> dingtalkedu__1__0_models.ValidateUserRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ValidateUserRoleHeaders()
+        return await self.validate_user_role_with_options_async(request, headers, runtime)
+
+    def validate_user_role_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ValidateUserRoleRequest,
+        headers: dingtalkedu__1__0_models.ValidateUserRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ValidateUserRoleResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.time_threshold):
+            body['timeThreshold'] = request.time_threshold
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ValidateUserRoleResponse(),
+            self.do_roarequest('ValidateUserRole', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/users/roles/validate', 'json', req, runtime)
+        )
+
+    async def validate_user_role_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ValidateUserRoleRequest,
+        headers: dingtalkedu__1__0_models.ValidateUserRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ValidateUserRoleResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.time_threshold):
+            body['timeThreshold'] = request.time_threshold
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ValidateUserRoleResponse(),
+            await self.do_roarequest_async('ValidateUserRole', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/users/roles/validate', 'json', req, runtime)
+        )

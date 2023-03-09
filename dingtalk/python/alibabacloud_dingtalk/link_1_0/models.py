@@ -1942,14 +1942,11 @@ class QueryUserFollowStatusRequest(TeaModel):
         self,
         account_id: str = None,
         union_id: str = None,
-        user_id: str = None,
     ):
         # 服务窗帐号ID，此ID可以通过服务窗帐号信息查询接口获取。
         self.account_id = account_id
         # 待查询的服务窗关注者unionId。
         self.union_id = union_id
-        # 待查询的服务窗关注者userId。
-        self.user_id = user_id
 
     def validate(self):
         pass
@@ -1964,8 +1961,6 @@ class QueryUserFollowStatusRequest(TeaModel):
             result['accountId'] = self.account_id
         if self.union_id is not None:
             result['unionId'] = self.union_id
-        if self.user_id is not None:
-            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1974,8 +1969,6 @@ class QueryUserFollowStatusRequest(TeaModel):
             self.account_id = m.get('accountId')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
-        if m.get('userId') is not None:
-            self.user_id = m.get('userId')
         return self
 
 

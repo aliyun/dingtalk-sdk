@@ -707,8 +707,6 @@ class Client(OpenApiClient):
             query['accountId'] = request.account_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
-        if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -735,8 +733,6 @@ class Client(OpenApiClient):
             query['accountId'] = request.account_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
-        if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
