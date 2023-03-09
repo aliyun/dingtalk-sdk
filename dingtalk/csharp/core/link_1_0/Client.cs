@@ -768,10 +768,6 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             {
                 query["unionId"] = request.UnionId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                query["userId"] = request.UserId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -800,10 +796,6 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                query["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

@@ -9078,5 +9078,77 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return TeaModel.ToObject<VPaasProxyResponse>(await DoROARequestAsync("VPaasProxy", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/vpaas/proxy", "json", req, runtime));
         }
 
+        public ValidateUserRoleResponse ValidateUserRole(ValidateUserRoleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ValidateUserRoleHeaders headers = new ValidateUserRoleHeaders();
+            return ValidateUserRoleWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ValidateUserRoleResponse> ValidateUserRoleAsync(ValidateUserRoleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ValidateUserRoleHeaders headers = new ValidateUserRoleHeaders();
+            return await ValidateUserRoleWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ValidateUserRoleResponse ValidateUserRoleWithOptions(ValidateUserRoleRequest request, ValidateUserRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeThreshold))
+            {
+                body["timeThreshold"] = request.TimeThreshold;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ValidateUserRoleResponse>(DoROARequest("ValidateUserRole", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/users/roles/validate", "json", req, runtime));
+        }
+
+        public async Task<ValidateUserRoleResponse> ValidateUserRoleWithOptionsAsync(ValidateUserRoleRequest request, ValidateUserRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeThreshold))
+            {
+                body["timeThreshold"] = request.TimeThreshold;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ValidateUserRoleResponse>(await DoROARequestAsync("ValidateUserRole", "edu_1.0", "HTTP", "POST", "AK", "/v1.0/edu/users/roles/validate", "json", req, runtime));
+        }
+
     }
 }

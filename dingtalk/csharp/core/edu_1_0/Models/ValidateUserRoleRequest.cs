@@ -6,18 +6,18 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
-    public class QueryUserFollowStatusRequest : TeaModel {
+    public class ValidateUserRoleRequest : TeaModel {
         /// <summary>
-        /// 服务窗帐号ID，此ID可以通过服务窗帐号信息查询接口获取。
+        /// 时间阈值，查询在此时间之前的用户角色信息
         /// </summary>
-        [NameInMap("accountId")]
+        [NameInMap("timeThreshold")]
         [Validation(Required=false)]
-        public string AccountId { get; set; }
+        public long? TimeThreshold { get; set; }
 
         /// <summary>
-        /// 待查询的服务窗关注者unionId。
+        /// 用户的uionId
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
