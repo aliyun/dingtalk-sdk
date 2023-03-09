@@ -865,12 +865,10 @@ export class QueryUserFollowStatusHeaders extends $tea.Model {
 export class QueryUserFollowStatusRequest extends $tea.Model {
   accountId?: string;
   unionId?: string;
-  userId?: string;
   static names(): { [key: string]: string } {
     return {
       accountId: 'accountId',
       unionId: 'unionId',
-      userId: 'userId',
     };
   }
 
@@ -878,7 +876,6 @@ export class QueryUserFollowStatusRequest extends $tea.Model {
     return {
       accountId: 'string',
       unionId: 'string',
-      userId: 'string',
     };
   }
 
@@ -2554,10 +2551,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
-    }
-
-    if (!Util.isUnset(request.userId)) {
-      query["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

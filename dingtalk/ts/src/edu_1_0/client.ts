@@ -9630,6 +9630,94 @@ export class VPaasProxyResponse extends $tea.Model {
   }
 }
 
+export class ValidateUserRoleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ValidateUserRoleRequest extends $tea.Model {
+  timeThreshold?: number;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      timeThreshold: 'timeThreshold',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      timeThreshold: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ValidateUserRoleResponseBody extends $tea.Model {
+  matchParentIdentity?: boolean;
+  matchTeacherIdentity?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      matchParentIdentity: 'matchParentIdentity',
+      matchTeacherIdentity: 'matchTeacherIdentity',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      matchParentIdentity: 'boolean',
+      matchTeacherIdentity: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ValidateUserRoleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ValidateUserRoleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ValidateUserRoleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchCreateRequestDataCardRuleItemParamList extends $tea.Model {
   cardRuleAttr?: string;
   cardTaskCode?: string;
@@ -17274,6 +17362,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<VPaasProxyResponse>(await this.doROARequest("VPaasProxy", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/vpaas/proxy`, "json", req, runtime), new VPaasProxyResponse({}));
+  }
+
+  async validateUserRole(request: ValidateUserRoleRequest): Promise<ValidateUserRoleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ValidateUserRoleHeaders({ });
+    return await this.validateUserRoleWithOptions(request, headers, runtime);
+  }
+
+  async validateUserRoleWithOptions(request: ValidateUserRoleRequest, headers: ValidateUserRoleHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateUserRoleResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.timeThreshold)) {
+      body["timeThreshold"] = request.timeThreshold;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ValidateUserRoleResponse>(await this.doROARequest("ValidateUserRole", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/users/roles/validate`, "json", req, runtime), new ValidateUserRoleResponse({}));
   }
 
 }
