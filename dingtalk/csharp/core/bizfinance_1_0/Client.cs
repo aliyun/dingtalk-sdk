@@ -922,6 +922,70 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetIsNewVersionResponse>(await DoROARequestAsync("GetIsNewVersion", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/accounts/uses", "json", req, runtime));
         }
 
+        public GetProductResponse GetProduct(GetProductRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetProductHeaders headers = new GetProductHeaders();
+            return GetProductWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetProductResponse> GetProductAsync(GetProductRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetProductHeaders headers = new GetProductHeaders();
+            return await GetProductWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetProductResponse GetProductWithOptions(GetProductRequest request, GetProductHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetProductResponse>(DoROARequest("GetProduct", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/products", "json", req, runtime));
+        }
+
+        public async Task<GetProductResponse> GetProductWithOptionsAsync(GetProductRequest request, GetProductHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetProductResponse>(await DoROARequestAsync("GetProduct", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/products", "json", req, runtime));
+        }
+
         public GetProjectResponse GetProject(GetProjectRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1732,6 +1796,78 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             return TeaModel.ToObject<QueryPermissionRoleMemberResponse>(await DoROARequestAsync("QueryPermissionRoleMember", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/roles/members/query", "json", req, runtime));
+        }
+
+        public QueryProductByPageResponse QueryProductByPage(QueryProductByPageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryProductByPageHeaders headers = new QueryProductByPageHeaders();
+            return QueryProductByPageWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryProductByPageResponse> QueryProductByPageAsync(QueryProductByPageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryProductByPageHeaders headers = new QueryProductByPageHeaders();
+            return await QueryProductByPageWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryProductByPageResponse QueryProductByPageWithOptions(QueryProductByPageRequest request, QueryProductByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryProductByPageResponse>(DoROARequest("QueryProductByPage", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/products/query", "json", req, runtime));
+        }
+
+        public async Task<QueryProductByPageResponse> QueryProductByPageWithOptionsAsync(QueryProductByPageRequest request, QueryProductByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<QueryProductByPageResponse>(await DoROARequestAsync("QueryProductByPage", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/products/query", "json", req, runtime));
         }
 
         public QueryProjectByPageResponse QueryProjectByPage(QueryProjectByPageRequest request)

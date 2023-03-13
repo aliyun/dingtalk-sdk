@@ -23,6 +23,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public string Url { get; set; }
 
+        /// <summary>
+        /// 是否查询统计信息
+        /// </summary>
+        [NameInMap("withStatisticalInfo")]
+        [Validation(Required=false)]
+        public bool? WithStatisticalInfo { get; set; }
+
     }
 
 }

@@ -2036,6 +2036,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
             {
                 query["url"] = request.Url;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithStatisticalInfo))
+            {
+                query["withStatisticalInfo"] = request.WithStatisticalInfo;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2064,6 +2068,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Url))
             {
                 query["url"] = request.Url;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithStatisticalInfo))
+            {
+                query["withStatisticalInfo"] = request.WithStatisticalInfo;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

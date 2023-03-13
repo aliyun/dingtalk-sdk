@@ -127,6 +127,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public string SpaceId { get; set; }
 
         /// <summary>
+        /// 统计信息
+        /// </summary>
+        [NameInMap("statisticalInfo")]
+        [Validation(Required=false)]
+        public DentryModelStatisticalInfo StatisticalInfo { get; set; }
+        public class DentryModelStatisticalInfo : TeaModel {
+            /// <summary>
+            /// 字数
+            /// </summary>
+            [NameInMap("wordCount")]
+            [Validation(Required=false)]
+            public long? WordCount { get; set; }
+
+        }
+
+        /// <summary>
         /// 更新时间。
         /// </summary>
         [NameInMap("updatedTime")]
