@@ -950,6 +950,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("url", request.url);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.withStatisticalInfo)) {
+            query.put("withStatisticalInfo", request.withStatisticalInfo);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

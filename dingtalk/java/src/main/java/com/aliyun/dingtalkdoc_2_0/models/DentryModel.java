@@ -89,6 +89,12 @@ public class DentryModel extends TeaModel {
     public String spaceId;
 
     /**
+     * <p>统计信息</p>
+     */
+    @NameInMap("statisticalInfo")
+    public DentryModelStatisticalInfo statisticalInfo;
+
+    /**
      * <p>更新时间。</p>
      */
     @NameInMap("updatedTime")
@@ -229,6 +235,14 @@ public class DentryModel extends TeaModel {
         return this.spaceId;
     }
 
+    public DentryModel setStatisticalInfo(DentryModelStatisticalInfo statisticalInfo) {
+        this.statisticalInfo = statisticalInfo;
+        return this;
+    }
+    public DentryModelStatisticalInfo getStatisticalInfo() {
+        return this.statisticalInfo;
+    }
+
     public DentryModel setUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
         return this;
@@ -293,6 +307,28 @@ public class DentryModel extends TeaModel {
         }
         public String getUnionId() {
             return this.unionId;
+        }
+
+    }
+
+    public static class DentryModelStatisticalInfo extends TeaModel {
+        /**
+         * <p>字数</p>
+         */
+        @NameInMap("wordCount")
+        public Long wordCount;
+
+        public static DentryModelStatisticalInfo build(java.util.Map<String, ?> map) throws Exception {
+            DentryModelStatisticalInfo self = new DentryModelStatisticalInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public DentryModelStatisticalInfo setWordCount(Long wordCount) {
+            this.wordCount = wordCount;
+            return this;
+        }
+        public Long getWordCount() {
+            return this.wordCount;
         }
 
     }

@@ -16,6 +16,12 @@ public class QueryItemByUrlRequest extends TeaModel {
     @NameInMap("url")
     public String url;
 
+    /**
+     * <p>是否查询统计信息</p>
+     */
+    @NameInMap("withStatisticalInfo")
+    public Boolean withStatisticalInfo;
+
     public static QueryItemByUrlRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryItemByUrlRequest self = new QueryItemByUrlRequest();
         return TeaModel.build(map, self);
@@ -35,6 +41,14 @@ public class QueryItemByUrlRequest extends TeaModel {
     }
     public String getUrl() {
         return this.url;
+    }
+
+    public QueryItemByUrlRequest setWithStatisticalInfo(Boolean withStatisticalInfo) {
+        this.withStatisticalInfo = withStatisticalInfo;
+        return this;
+    }
+    public Boolean getWithStatisticalInfo() {
+        return this.withStatisticalInfo;
     }
 
 }
