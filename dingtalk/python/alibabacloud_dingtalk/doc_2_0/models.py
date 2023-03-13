@@ -39,6 +39,34 @@ class DentryModelCreator(TeaModel):
         return self
 
 
+class DentryModelStatisticalInfo(TeaModel):
+    def __init__(
+        self,
+        word_count: int = None,
+    ):
+        # 字数
+        self.word_count = word_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.word_count is not None:
+            result['wordCount'] = self.word_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('wordCount') is not None:
+            self.word_count = m.get('wordCount')
+        return self
+
+
 class DentryModelUpdater(TeaModel):
     def __init__(
         self,
@@ -491,6 +519,7 @@ class DentryModel(TeaModel):
         path: str = None,
         space: SpaceModel = None,
         space_id: str = None,
+        statistical_info: DentryModelStatisticalInfo = None,
         updated_time: int = None,
         updater: DentryModelUpdater = None,
         url: str = None,
@@ -524,6 +553,8 @@ class DentryModel(TeaModel):
         self.space = space
         # 知识库id。
         self.space_id = space_id
+        # 统计信息
+        self.statistical_info = statistical_info
         # 更新时间。
         self.updated_time = updated_time
         # 更新人。
@@ -540,6 +571,8 @@ class DentryModel(TeaModel):
             self.link_source_info.validate()
         if self.space:
             self.space.validate()
+        if self.statistical_info:
+            self.statistical_info.validate()
         if self.updater:
             self.updater.validate()
         if self.visitor_info:
@@ -579,6 +612,8 @@ class DentryModel(TeaModel):
             result['space'] = self.space.to_map()
         if self.space_id is not None:
             result['spaceId'] = self.space_id
+        if self.statistical_info is not None:
+            result['statisticalInfo'] = self.statistical_info.to_map()
         if self.updated_time is not None:
             result['updatedTime'] = self.updated_time
         if self.updater is not None:
@@ -622,6 +657,9 @@ class DentryModel(TeaModel):
             self.space = temp_model.from_map(m['space'])
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
+        if m.get('statisticalInfo') is not None:
+            temp_model = DentryModelStatisticalInfo()
+            self.statistical_info = temp_model.from_map(m['statisticalInfo'])
         if m.get('updatedTime') is not None:
             self.updated_time = m.get('updatedTime')
         if m.get('updater') is not None:
@@ -6236,11 +6274,14 @@ class QueryItemByUrlRequest(TeaModel):
         self,
         operator_id: str = None,
         url: str = None,
+        with_statistical_info: bool = None,
     ):
         # 操作用户unionId。
         self.operator_id = operator_id
         # 链接url。
         self.url = url
+        # 是否查询统计信息
+        self.with_statistical_info = with_statistical_info
 
     def validate(self):
         pass
@@ -6255,6 +6296,8 @@ class QueryItemByUrlRequest(TeaModel):
             result['operatorId'] = self.operator_id
         if self.url is not None:
             result['url'] = self.url
+        if self.with_statistical_info is not None:
+            result['withStatisticalInfo'] = self.with_statistical_info
         return result
 
     def from_map(self, m: dict = None):
@@ -6263,6 +6306,8 @@ class QueryItemByUrlRequest(TeaModel):
             self.operator_id = m.get('operatorId')
         if m.get('url') is not None:
             self.url = m.get('url')
+        if m.get('withStatisticalInfo') is not None:
+            self.with_statistical_info = m.get('withStatisticalInfo')
         return self
 
 

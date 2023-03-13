@@ -1939,6 +1939,8 @@ class Client(OpenApiClient):
             query['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.url):
             query['url'] = request.url
+        if not UtilClient.is_unset(request.with_statistical_info):
+            query['withStatisticalInfo'] = request.with_statistical_info
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1965,6 +1967,8 @@ class Client(OpenApiClient):
             query['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.url):
             query['url'] = request.url
+        if not UtilClient.is_unset(request.with_statistical_info):
+            query['withStatisticalInfo'] = request.with_statistical_info
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
