@@ -22,6 +22,7 @@ export class DentryModel extends $tea.Model {
   path?: string;
   space?: SpaceModel;
   spaceId?: string;
+  statisticalInfo?: DentryModelStatisticalInfo;
   updatedTime?: number;
   updater?: DentryModelUpdater;
   url?: string;
@@ -42,6 +43,7 @@ export class DentryModel extends $tea.Model {
       path: 'path',
       space: 'space',
       spaceId: 'spaceId',
+      statisticalInfo: 'statisticalInfo',
       updatedTime: 'updatedTime',
       updater: 'updater',
       url: 'url',
@@ -65,6 +67,7 @@ export class DentryModel extends $tea.Model {
       path: 'string',
       space: SpaceModel,
       spaceId: 'string',
+      statisticalInfo: DentryModelStatisticalInfo,
       updatedTime: 'number',
       updater: DentryModelUpdater,
       url: 'string',
@@ -2490,10 +2493,12 @@ export class QueryItemByUrlHeaders extends $tea.Model {
 export class QueryItemByUrlRequest extends $tea.Model {
   operatorId?: string;
   url?: string;
+  withStatisticalInfo?: boolean;
   static names(): { [key: string]: string } {
     return {
       operatorId: 'operatorId',
       url: 'url',
+      withStatisticalInfo: 'withStatisticalInfo',
     };
   }
 
@@ -2501,6 +2506,7 @@ export class QueryItemByUrlRequest extends $tea.Model {
     return {
       operatorId: 'string',
       url: 'string',
+      withStatisticalInfo: 'boolean',
     };
   }
 
@@ -3455,6 +3461,25 @@ export class DentryModelCreator extends $tea.Model {
     return {
       name: 'string',
       unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DentryModelStatisticalInfo extends $tea.Model {
+  wordCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      wordCount: 'wordCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      wordCount: 'number',
     };
   }
 
@@ -6066,6 +6091,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.url)) {
       query["url"] = request.url;
+    }
+
+    if (!Util.isUnset(request.withStatisticalInfo)) {
+      query["withStatisticalInfo"] = request.withStatisticalInfo;
     }
 
     let realHeaders : {[key: string ]: string} = { };

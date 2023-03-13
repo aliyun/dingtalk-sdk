@@ -1104,6 +1104,103 @@ export class GetIsNewVersionResponse extends $tea.Model {
   }
 }
 
+export class GetProductHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProductRequest extends $tea.Model {
+  code?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProductResponseBody extends $tea.Model {
+  code?: string;
+  createTime?: number;
+  description?: string;
+  name?: string;
+  status?: string;
+  userDefineCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      createTime: 'createTime',
+      description: 'description',
+      name: 'name',
+      status: 'status',
+      userDefineCode: 'userDefineCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      createTime: 'number',
+      description: 'string',
+      name: 'string',
+      status: 'string',
+      userDefineCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProductResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetProductResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetProductResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetProjectHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2141,6 +2238,94 @@ export class QueryPermissionRoleMemberResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryPermissionRoleMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryProductByPageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryProductByPageRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryProductByPageResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: QueryProductByPageResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryProductByPageResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryProductByPageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryProductByPageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryProductByPageResponseBody,
     };
   }
 
@@ -4898,6 +5083,40 @@ export class QueryPermissionByUserIdResponseBodyPermissionDTOList extends $tea.M
     return {
       actionIdList: { 'type': 'array', 'itemType': 'string' },
       resourceIdentity: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryProductByPageResponseBodyList extends $tea.Model {
+  code?: string;
+  createTime?: number;
+  description?: string;
+  name?: string;
+  status?: string;
+  userDefineCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      createTime: 'createTime',
+      description: 'description',
+      name: 'name',
+      status: 'status',
+      userDefineCode: 'userDefineCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      createTime: 'number',
+      description: 'string',
+      name: 'string',
+      status: 'string',
+      userDefineCode: 'string',
     };
   }
 
@@ -8190,6 +8409,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetIsNewVersionResponse>(await this.doROARequest("GetIsNewVersion", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/accounts/uses`, "json", req, runtime), new GetIsNewVersionResponse({}));
   }
 
+  async getProduct(request: GetProductRequest): Promise<GetProductResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetProductHeaders({ });
+    return await this.getProductWithOptions(request, headers, runtime);
+  }
+
+  async getProductWithOptions(request: GetProductRequest, headers: GetProductHeaders, runtime: $Util.RuntimeOptions): Promise<GetProductResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetProductResponse>(await this.doROARequest("GetProduct", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/products`, "json", req, runtime), new GetProductResponse({}));
+  }
+
   async getProject(request: GetProjectRequest): Promise<GetProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProjectHeaders({ });
@@ -8558,6 +8806,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<QueryPermissionRoleMemberResponse>(await this.doROARequest("QueryPermissionRoleMember", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/roles/members/query`, "json", req, runtime), new QueryPermissionRoleMemberResponse({}));
+  }
+
+  async queryProductByPage(request: QueryProductByPageRequest): Promise<QueryProductByPageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryProductByPageHeaders({ });
+    return await this.queryProductByPageWithOptions(request, headers, runtime);
+  }
+
+  async queryProductByPageWithOptions(request: QueryProductByPageRequest, headers: QueryProductByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProductByPageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryProductByPageResponse>(await this.doROARequest("QueryProductByPage", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/products/query`, "json", req, runtime), new QueryProductByPageResponse({}));
   }
 
   async queryProjectByPage(request: QueryProjectByPageRequest): Promise<QueryProjectByPageResponse> {
