@@ -1397,6 +1397,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->url)) {
             @$query['url'] = $request->url;
         }
+        if (!Utils::isUnset($request->withStatisticalInfo)) {
+            @$query['withStatisticalInfo'] = $request->withStatisticalInfo;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

@@ -21,9 +21,17 @@ class QueryItemByUrlRequest extends Model
      * @var string
      */
     public $url;
+
+    /**
+     * @description 是否查询统计信息
+     *
+     * @var bool
+     */
+    public $withStatisticalInfo;
     protected $_name = [
-        'operatorId' => 'operatorId',
-        'url'        => 'url',
+        'operatorId'          => 'operatorId',
+        'url'                 => 'url',
+        'withStatisticalInfo' => 'withStatisticalInfo',
     ];
 
     public function validate()
@@ -38,6 +46,9 @@ class QueryItemByUrlRequest extends Model
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
+        }
+        if (null !== $this->withStatisticalInfo) {
+            $res['withStatisticalInfo'] = $this->withStatisticalInfo;
         }
 
         return $res;
@@ -56,6 +67,9 @@ class QueryItemByUrlRequest extends Model
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
+        }
+        if (isset($map['withStatisticalInfo'])) {
+            $model->withStatisticalInfo = $map['withStatisticalInfo'];
         }
 
         return $model;

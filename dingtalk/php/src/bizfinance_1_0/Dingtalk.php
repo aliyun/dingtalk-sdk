@@ -40,6 +40,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetIsNewVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetIsNewVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProductHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProductRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProductResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetProjectResponse;
@@ -74,6 +77,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionByUserIdResp
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionRoleMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionRoleMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionRoleMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProductByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProductByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProductByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryProjectByPageResponse;
@@ -684,6 +690,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetProductRequest $request
+     *
+     * @return GetProductResponse
+     */
+    public function getProduct($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetProductHeaders([]);
+
+        return $this->getProductWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetProductRequest $request
+     * @param GetProductHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return GetProductResponse
+     */
+    public function getProductWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            @$query['code'] = $request->code;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetProductResponse::fromMap($this->doROARequest('GetProduct', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/products', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetProjectRequest $request
      *
      * @return GetProjectResponse
@@ -1194,6 +1242,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return QueryPermissionRoleMemberResponse::fromMap($this->doROARequest('QueryPermissionRoleMember', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/bizfinance/roles/members/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param QueryProductByPageRequest $request
+     *
+     * @return QueryProductByPageResponse
+     */
+    public function queryProductByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryProductByPageHeaders([]);
+
+        return $this->queryProductByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryProductByPageRequest $request
+     * @param QueryProductByPageHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryProductByPageResponse
+     */
+    public function queryProductByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryProductByPageResponse::fromMap($this->doROARequest('QueryProductByPage', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/bizfinance/products/query', 'json', $req, $runtime));
     }
 
     /**

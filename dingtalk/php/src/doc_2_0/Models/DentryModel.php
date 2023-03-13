@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel\creator;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel\statisticalInfo;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel\updater;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DentryModel\visitorInfo;
 use AlibabaCloud\Tea\Model;
@@ -110,6 +111,13 @@ class DentryModel extends Model
     public $spaceId;
 
     /**
+     * @description 统计信息
+     *
+     * @var statisticalInfo
+     */
+    public $statisticalInfo;
+
+    /**
      * @description 更新时间。
      *
      * @var int
@@ -137,24 +145,25 @@ class DentryModel extends Model
      */
     public $visitorInfo;
     protected $_name = [
-        'contentType'    => 'contentType',
-        'createdTime'    => 'createdTime',
-        'creator'        => 'creator',
-        'dentryId'       => 'dentryId',
-        'dentryType'     => 'dentryType',
-        'dentryUuid'     => 'dentryUuid',
-        'docKey'         => 'docKey',
-        'extension'      => 'extension',
-        'hasChildren'    => 'hasChildren',
-        'linkSourceInfo' => 'linkSourceInfo',
-        'name'           => 'name',
-        'path'           => 'path',
-        'space'          => 'space',
-        'spaceId'        => 'spaceId',
-        'updatedTime'    => 'updatedTime',
-        'updater'        => 'updater',
-        'url'            => 'url',
-        'visitorInfo'    => 'visitorInfo',
+        'contentType'     => 'contentType',
+        'createdTime'     => 'createdTime',
+        'creator'         => 'creator',
+        'dentryId'        => 'dentryId',
+        'dentryType'      => 'dentryType',
+        'dentryUuid'      => 'dentryUuid',
+        'docKey'          => 'docKey',
+        'extension'       => 'extension',
+        'hasChildren'     => 'hasChildren',
+        'linkSourceInfo'  => 'linkSourceInfo',
+        'name'            => 'name',
+        'path'            => 'path',
+        'space'           => 'space',
+        'spaceId'         => 'spaceId',
+        'statisticalInfo' => 'statisticalInfo',
+        'updatedTime'     => 'updatedTime',
+        'updater'         => 'updater',
+        'url'             => 'url',
+        'visitorInfo'     => 'visitorInfo',
     ];
 
     public function validate()
@@ -205,6 +214,9 @@ class DentryModel extends Model
         }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
+        }
+        if (null !== $this->statisticalInfo) {
+            $res['statisticalInfo'] = null !== $this->statisticalInfo ? $this->statisticalInfo->toMap() : null;
         }
         if (null !== $this->updatedTime) {
             $res['updatedTime'] = $this->updatedTime;
@@ -271,6 +283,9 @@ class DentryModel extends Model
         }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];
+        }
+        if (isset($map['statisticalInfo'])) {
+            $model->statisticalInfo = statisticalInfo::fromMap($map['statisticalInfo']);
         }
         if (isset($map['updatedTime'])) {
             $model->updatedTime = $map['updatedTime'];
