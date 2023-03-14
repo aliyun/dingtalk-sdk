@@ -37,11 +37,25 @@ class GetProductResponseBody extends Model
     public $name;
 
     /**
+     * @description 规格型号
+     *
+     * @var string
+     */
+    public $specification;
+
+    /**
      * @description 商品状态
      *
      * @var string
      */
     public $status;
+
+    /**
+     * @description 商品单位
+     *
+     * @var string
+     */
+    public $unit;
 
     /**
      * @description 商品用户自定义码
@@ -54,7 +68,9 @@ class GetProductResponseBody extends Model
         'createTime'     => 'createTime',
         'description'    => 'description',
         'name'           => 'name',
+        'specification'  => 'specification',
         'status'         => 'status',
+        'unit'           => 'unit',
         'userDefineCode' => 'userDefineCode',
     ];
 
@@ -77,8 +93,14 @@ class GetProductResponseBody extends Model
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
+        if (null !== $this->specification) {
+            $res['specification'] = $this->specification;
+        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->unit) {
+            $res['unit'] = $this->unit;
         }
         if (null !== $this->userDefineCode) {
             $res['userDefineCode'] = $this->userDefineCode;
@@ -107,8 +129,14 @@ class GetProductResponseBody extends Model
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
+        if (isset($map['specification'])) {
+            $model->specification = $map['specification'];
+        }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['unit'])) {
+            $model->unit = $map['unit'];
         }
         if (isset($map['userDefineCode'])) {
             $model->userDefineCode = $map['userDefineCode'];

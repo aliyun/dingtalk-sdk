@@ -336,6 +336,9 @@ class Dingtalk extends OpenApiClient
             @$query['bizCode'] = $request->bizCode;
         }
         $body = [];
+        if (!Utils::isUnset($request->channelCode)) {
+            @$body['channelCode'] = $request->channelCode;
+        }
         if (!Utils::isUnset($request->channelOuterId)) {
             @$body['channelOuterId'] = $request->channelOuterId;
         }
@@ -348,8 +351,14 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->optUserId)) {
             @$body['optUserId'] = $request->optUserId;
         }
+        if (!Utils::isUnset($request->resumeChannelUrl)) {
+            @$body['resumeChannelUrl'] = $request->resumeChannelUrl;
+        }
         if (!Utils::isUnset($request->resumeData)) {
             @$body['resumeData'] = $request->resumeData;
+        }
+        if (!Utils::isUnset($request->resumeFile)) {
+            @$body['resumeFile'] = $request->resumeFile;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
