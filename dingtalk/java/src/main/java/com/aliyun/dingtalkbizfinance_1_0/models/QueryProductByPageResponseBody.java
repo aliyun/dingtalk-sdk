@@ -57,10 +57,22 @@ public class QueryProductByPageResponseBody extends TeaModel {
         public String name;
 
         /**
+         * <p>商品规格</p>
+         */
+        @NameInMap("specification")
+        public String specification;
+
+        /**
          * <p>商品状态</p>
          */
         @NameInMap("status")
         public String status;
+
+        /**
+         * <p>商品单位</p>
+         */
+        @NameInMap("unit")
+        public String unit;
 
         /**
          * <p>商品用户自定义码</p>
@@ -105,12 +117,28 @@ public class QueryProductByPageResponseBody extends TeaModel {
             return this.name;
         }
 
+        public QueryProductByPageResponseBodyList setSpecification(String specification) {
+            this.specification = specification;
+            return this;
+        }
+        public String getSpecification() {
+            return this.specification;
+        }
+
         public QueryProductByPageResponseBodyList setStatus(String status) {
             this.status = status;
             return this;
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public QueryProductByPageResponseBodyList setUnit(String unit) {
+            this.unit = unit;
+            return this;
+        }
+        public String getUnit() {
+            return this.unit;
         }
 
         public QueryProductByPageResponseBodyList setUserDefineCode(String userDefineCode) {

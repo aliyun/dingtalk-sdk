@@ -29,10 +29,22 @@ public class GetProductResponseBody extends TeaModel {
     public String name;
 
     /**
+     * <p>规格型号</p>
+     */
+    @NameInMap("specification")
+    public String specification;
+
+    /**
      * <p>商品状态</p>
      */
     @NameInMap("status")
     public String status;
+
+    /**
+     * <p>商品单位</p>
+     */
+    @NameInMap("unit")
+    public String unit;
 
     /**
      * <p>商品用户自定义码</p>
@@ -77,12 +89,28 @@ public class GetProductResponseBody extends TeaModel {
         return this.name;
     }
 
+    public GetProductResponseBody setSpecification(String specification) {
+        this.specification = specification;
+        return this;
+    }
+    public String getSpecification() {
+        return this.specification;
+    }
+
     public GetProductResponseBody setStatus(String status) {
         this.status = status;
         return this;
     }
     public String getStatus() {
         return this.status;
+    }
+
+    public GetProductResponseBody setUnit(String unit) {
+        this.unit = unit;
+        return this;
+    }
+    public String getUnit() {
+        return this.unit;
     }
 
     public GetProductResponseBody setUserDefineCode(String userDefineCode) {

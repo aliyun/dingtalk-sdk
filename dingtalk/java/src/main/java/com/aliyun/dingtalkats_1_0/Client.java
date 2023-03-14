@@ -230,6 +230,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channelCode)) {
+            body.put("channelCode", request.channelCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.channelOuterId)) {
             body.put("channelOuterId", request.channelOuterId);
         }
@@ -246,8 +250,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("optUserId", request.optUserId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.resumeChannelUrl)) {
+            body.put("resumeChannelUrl", request.resumeChannelUrl);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.resumeData)) {
             body.put("resumeData", request.resumeData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resumeFile)) {
+            body.put("resumeFile", request.resumeFile);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

@@ -11,6 +11,12 @@ public class CollectResumeDetailRequest extends TeaModel {
     public String bizCode;
 
     /**
+     * <p>渠道编码</p>
+     */
+    @NameInMap("channelCode")
+    public String channelCode;
+
+    /**
      * <p>渠道侧简历标识</p>
      */
     @NameInMap("channelOuterId")
@@ -32,10 +38,22 @@ public class CollectResumeDetailRequest extends TeaModel {
     public String optUserId;
 
     /**
+     * <p>渠道简历链接</p>
+     */
+    @NameInMap("resumeChannelUrl")
+    public String resumeChannelUrl;
+
+    /**
      * <p>简历详情信息</p>
      */
     @NameInMap("resumeData")
     public CollectResumeDetailRequestResumeData resumeData;
+
+    /**
+     * <p>原始简历文件</p>
+     */
+    @NameInMap("resumeFile")
+    public CollectResumeDetailRequestResumeFile resumeFile;
 
     public static CollectResumeDetailRequest build(java.util.Map<String, ?> map) throws Exception {
         CollectResumeDetailRequest self = new CollectResumeDetailRequest();
@@ -48,6 +66,14 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
     public String getBizCode() {
         return this.bizCode;
+    }
+
+    public CollectResumeDetailRequest setChannelCode(String channelCode) {
+        this.channelCode = channelCode;
+        return this;
+    }
+    public String getChannelCode() {
+        return this.channelCode;
     }
 
     public CollectResumeDetailRequest setChannelOuterId(String channelOuterId) {
@@ -82,12 +108,28 @@ public class CollectResumeDetailRequest extends TeaModel {
         return this.optUserId;
     }
 
+    public CollectResumeDetailRequest setResumeChannelUrl(String resumeChannelUrl) {
+        this.resumeChannelUrl = resumeChannelUrl;
+        return this;
+    }
+    public String getResumeChannelUrl() {
+        return this.resumeChannelUrl;
+    }
+
     public CollectResumeDetailRequest setResumeData(CollectResumeDetailRequestResumeData resumeData) {
         this.resumeData = resumeData;
         return this;
     }
     public CollectResumeDetailRequestResumeData getResumeData() {
         return this.resumeData;
+    }
+
+    public CollectResumeDetailRequest setResumeFile(CollectResumeDetailRequestResumeFile resumeFile) {
+        this.resumeFile = resumeFile;
+        return this;
+    }
+    public CollectResumeDetailRequestResumeFile getResumeFile() {
+        return this.resumeFile;
     }
 
     public static class CollectResumeDetailRequestResumeDataBaseInfo extends TeaModel {
@@ -956,6 +998,56 @@ public class CollectResumeDetailRequest extends TeaModel {
         }
         public java.util.List<CollectResumeDetailRequestResumeDataWorkExperiences> getWorkExperiences() {
             return this.workExperiences;
+        }
+
+    }
+
+    public static class CollectResumeDetailRequestResumeFile extends TeaModel {
+        /**
+         * <p>简历文件下载链接</p>
+         */
+        @NameInMap("downloadUrl")
+        public String downloadUrl;
+
+        /**
+         * <p>文件名称</p>
+         */
+        @NameInMap("fileName")
+        public String fileName;
+
+        /**
+         * <p>文件类型</p>
+         */
+        @NameInMap("fileType")
+        public String fileType;
+
+        public static CollectResumeDetailRequestResumeFile build(java.util.Map<String, ?> map) throws Exception {
+            CollectResumeDetailRequestResumeFile self = new CollectResumeDetailRequestResumeFile();
+            return TeaModel.build(map, self);
+        }
+
+        public CollectResumeDetailRequestResumeFile setDownloadUrl(String downloadUrl) {
+            this.downloadUrl = downloadUrl;
+            return this;
+        }
+        public String getDownloadUrl() {
+            return this.downloadUrl;
+        }
+
+        public CollectResumeDetailRequestResumeFile setFileName(String fileName) {
+            this.fileName = fileName;
+            return this;
+        }
+        public String getFileName() {
+            return this.fileName;
+        }
+
+        public CollectResumeDetailRequestResumeFile setFileType(String fileType) {
+            this.fileType = fileType;
+            return this;
+        }
+        public String getFileType() {
+            return this.fileType;
         }
 
     }
