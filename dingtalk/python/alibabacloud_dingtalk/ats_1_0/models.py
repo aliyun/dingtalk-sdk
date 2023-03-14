@@ -1698,18 +1698,65 @@ class CollectResumeDetailRequestResumeData(TeaModel):
         return self
 
 
+class CollectResumeDetailRequestResumeFile(TeaModel):
+    def __init__(
+        self,
+        download_url: str = None,
+        file_name: str = None,
+        file_type: str = None,
+    ):
+        # 简历文件下载链接
+        self.download_url = download_url
+        # 文件名称
+        self.file_name = file_name
+        # 文件类型
+        self.file_type = file_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        return self
+
+
 class CollectResumeDetailRequest(TeaModel):
     def __init__(
         self,
         biz_code: str = None,
+        channel_code: str = None,
         channel_outer_id: str = None,
         channel_talent_id: str = None,
         deliver_job_id: str = None,
         opt_user_id: str = None,
+        resume_channel_url: str = None,
         resume_data: CollectResumeDetailRequestResumeData = None,
+        resume_file: CollectResumeDetailRequestResumeFile = None,
     ):
         # 业务标识，目前固定为ddats
         self.biz_code = biz_code
+        # 渠道编码
+        self.channel_code = channel_code
         # 渠道侧简历标识
         self.channel_outer_id = channel_outer_id
         # 渠道侧候选人标识。
@@ -1717,12 +1764,18 @@ class CollectResumeDetailRequest(TeaModel):
         # 简历投递职位标识
         self.deliver_job_id = deliver_job_id
         self.opt_user_id = opt_user_id
+        # 渠道简历链接
+        self.resume_channel_url = resume_channel_url
         # 简历详情信息
         self.resume_data = resume_data
+        # 原始简历文件
+        self.resume_file = resume_file
 
     def validate(self):
         if self.resume_data:
             self.resume_data.validate()
+        if self.resume_file:
+            self.resume_file.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1732,6 +1785,8 @@ class CollectResumeDetailRequest(TeaModel):
         result = dict()
         if self.biz_code is not None:
             result['bizCode'] = self.biz_code
+        if self.channel_code is not None:
+            result['channelCode'] = self.channel_code
         if self.channel_outer_id is not None:
             result['channelOuterId'] = self.channel_outer_id
         if self.channel_talent_id is not None:
@@ -1740,14 +1795,20 @@ class CollectResumeDetailRequest(TeaModel):
             result['deliverJobId'] = self.deliver_job_id
         if self.opt_user_id is not None:
             result['optUserId'] = self.opt_user_id
+        if self.resume_channel_url is not None:
+            result['resumeChannelUrl'] = self.resume_channel_url
         if self.resume_data is not None:
             result['resumeData'] = self.resume_data.to_map()
+        if self.resume_file is not None:
+            result['resumeFile'] = self.resume_file.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('bizCode') is not None:
             self.biz_code = m.get('bizCode')
+        if m.get('channelCode') is not None:
+            self.channel_code = m.get('channelCode')
         if m.get('channelOuterId') is not None:
             self.channel_outer_id = m.get('channelOuterId')
         if m.get('channelTalentId') is not None:
@@ -1756,9 +1817,14 @@ class CollectResumeDetailRequest(TeaModel):
             self.deliver_job_id = m.get('deliverJobId')
         if m.get('optUserId') is not None:
             self.opt_user_id = m.get('optUserId')
+        if m.get('resumeChannelUrl') is not None:
+            self.resume_channel_url = m.get('resumeChannelUrl')
         if m.get('resumeData') is not None:
             temp_model = CollectResumeDetailRequestResumeData()
             self.resume_data = temp_model.from_map(m['resumeData'])
+        if m.get('resumeFile') is not None:
+            temp_model = CollectResumeDetailRequestResumeFile()
+            self.resume_file = temp_model.from_map(m['resumeFile'])
         return self
 
 

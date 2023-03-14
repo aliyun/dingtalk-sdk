@@ -4046,7 +4046,9 @@ class GetProductResponseBody(TeaModel):
         create_time: int = None,
         description: str = None,
         name: str = None,
+        specification: str = None,
         status: str = None,
+        unit: str = None,
         user_define_code: str = None,
     ):
         # Id of the request
@@ -4057,8 +4059,12 @@ class GetProductResponseBody(TeaModel):
         self.description = description
         # 商品名称
         self.name = name
+        # 规格型号
+        self.specification = specification
         # 商品状态
         self.status = status
+        # 商品单位
+        self.unit = unit
         # 商品用户自定义码
         self.user_define_code = user_define_code
 
@@ -4079,8 +4085,12 @@ class GetProductResponseBody(TeaModel):
             result['description'] = self.description
         if self.name is not None:
             result['name'] = self.name
+        if self.specification is not None:
+            result['specification'] = self.specification
         if self.status is not None:
             result['status'] = self.status
+        if self.unit is not None:
+            result['unit'] = self.unit
         if self.user_define_code is not None:
             result['userDefineCode'] = self.user_define_code
         return result
@@ -4095,8 +4105,12 @@ class GetProductResponseBody(TeaModel):
             self.description = m.get('description')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
         if m.get('userDefineCode') is not None:
             self.user_define_code = m.get('userDefineCode')
         return self
@@ -6410,7 +6424,9 @@ class QueryProductByPageResponseBodyList(TeaModel):
         create_time: int = None,
         description: str = None,
         name: str = None,
+        specification: str = None,
         status: str = None,
+        unit: str = None,
         user_define_code: str = None,
     ):
         # 商品code
@@ -6421,8 +6437,12 @@ class QueryProductByPageResponseBodyList(TeaModel):
         self.description = description
         # 商品名称
         self.name = name
+        # 商品规格
+        self.specification = specification
         # 商品状态
         self.status = status
+        # 商品单位
+        self.unit = unit
         # 商品用户自定义码
         self.user_define_code = user_define_code
 
@@ -6443,8 +6463,12 @@ class QueryProductByPageResponseBodyList(TeaModel):
             result['description'] = self.description
         if self.name is not None:
             result['name'] = self.name
+        if self.specification is not None:
+            result['specification'] = self.specification
         if self.status is not None:
             result['status'] = self.status
+        if self.unit is not None:
+            result['unit'] = self.unit
         if self.user_define_code is not None:
             result['userDefineCode'] = self.user_define_code
         return result
@@ -6459,8 +6483,12 @@ class QueryProductByPageResponseBodyList(TeaModel):
             self.description = m.get('description')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
         if m.get('userDefineCode') is not None:
             self.user_define_code = m.get('userDefineCode')
         return self

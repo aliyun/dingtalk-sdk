@@ -398,6 +398,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
         body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
         if not UtilClient.is_unset(request.channel_outer_id):
             body['channelOuterId'] = request.channel_outer_id
         if not UtilClient.is_unset(request.channel_talent_id):
@@ -406,8 +408,12 @@ class Client(OpenApiClient):
             body['deliverJobId'] = request.deliver_job_id
         if not UtilClient.is_unset(request.opt_user_id):
             body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.resume_channel_url):
+            body['resumeChannelUrl'] = request.resume_channel_url
         if not UtilClient.is_unset(request.resume_data):
             body['resumeData'] = request.resume_data
+        if not UtilClient.is_unset(request.resume_file):
+            body['resumeFile'] = request.resume_file
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -434,6 +440,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
         body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
         if not UtilClient.is_unset(request.channel_outer_id):
             body['channelOuterId'] = request.channel_outer_id
         if not UtilClient.is_unset(request.channel_talent_id):
@@ -442,8 +450,12 @@ class Client(OpenApiClient):
             body['deliverJobId'] = request.deliver_job_id
         if not UtilClient.is_unset(request.opt_user_id):
             body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.resume_channel_url):
+            body['resumeChannelUrl'] = request.resume_channel_url
         if not UtilClient.is_unset(request.resume_data):
             body['resumeData'] = request.resume_data
+        if not UtilClient.is_unset(request.resume_file):
+            body['resumeFile'] = request.resume_file
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
