@@ -425,30 +425,39 @@ export class CollectResumeDetailHeaders extends $tea.Model {
 
 export class CollectResumeDetailRequest extends $tea.Model {
   bizCode?: string;
+  channelCode?: string;
   channelOuterId?: string;
   channelTalentId?: string;
   deliverJobId?: string;
   optUserId?: string;
+  resumeChannelUrl?: string;
   resumeData?: CollectResumeDetailRequestResumeData;
+  resumeFile?: CollectResumeDetailRequestResumeFile;
   static names(): { [key: string]: string } {
     return {
       bizCode: 'bizCode',
+      channelCode: 'channelCode',
       channelOuterId: 'channelOuterId',
       channelTalentId: 'channelTalentId',
       deliverJobId: 'deliverJobId',
       optUserId: 'optUserId',
+      resumeChannelUrl: 'resumeChannelUrl',
       resumeData: 'resumeData',
+      resumeFile: 'resumeFile',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       bizCode: 'string',
+      channelCode: 'string',
       channelOuterId: 'string',
       channelTalentId: 'string',
       deliverJobId: 'string',
       optUserId: 'string',
+      resumeChannelUrl: 'string',
       resumeData: CollectResumeDetailRequestResumeData,
+      resumeFile: CollectResumeDetailRequestResumeFile,
     };
   }
 
@@ -2224,6 +2233,31 @@ export class CollectResumeDetailRequestResumeData extends $tea.Model {
   }
 }
 
+export class CollectResumeDetailRequestResumeFile extends $tea.Model {
+  downloadUrl?: string;
+  fileName?: string;
+  fileType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      downloadUrl: 'downloadUrl',
+      fileName: 'fileName',
+      fileType: 'fileType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      downloadUrl: 'string',
+      fileName: 'string',
+      fileType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetJobAuthResponseBodyJobOwners extends $tea.Model {
   name?: string;
   userId?: string;
@@ -2560,6 +2594,10 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelCode)) {
+      body["channelCode"] = request.channelCode;
+    }
+
     if (!Util.isUnset(request.channelOuterId)) {
       body["channelOuterId"] = request.channelOuterId;
     }
@@ -2576,8 +2614,16 @@ export default class Client extends OpenApi {
       body["optUserId"] = request.optUserId;
     }
 
+    if (!Util.isUnset(request.resumeChannelUrl)) {
+      body["resumeChannelUrl"] = request.resumeChannelUrl;
+    }
+
     if (!Util.isUnset(request.resumeData)) {
       body["resumeData"] = request.resumeData;
+    }
+
+    if (!Util.isUnset(request.resumeFile)) {
+      body["resumeFile"] = request.resumeFile;
     }
 
     let realHeaders : {[key: string ]: string} = { };

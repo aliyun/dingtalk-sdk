@@ -1150,7 +1150,9 @@ export class GetProductResponseBody extends $tea.Model {
   createTime?: number;
   description?: string;
   name?: string;
+  specification?: string;
   status?: string;
+  unit?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1158,7 +1160,9 @@ export class GetProductResponseBody extends $tea.Model {
       createTime: 'createTime',
       description: 'description',
       name: 'name',
+      specification: 'specification',
       status: 'status',
+      unit: 'unit',
       userDefineCode: 'userDefineCode',
     };
   }
@@ -1169,7 +1173,9 @@ export class GetProductResponseBody extends $tea.Model {
       createTime: 'number',
       description: 'string',
       name: 'string',
+      specification: 'string',
       status: 'string',
+      unit: 'string',
       userDefineCode: 'string',
     };
   }
@@ -5096,7 +5102,9 @@ export class QueryProductByPageResponseBodyList extends $tea.Model {
   createTime?: number;
   description?: string;
   name?: string;
+  specification?: string;
   status?: string;
+  unit?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5104,7 +5112,9 @@ export class QueryProductByPageResponseBodyList extends $tea.Model {
       createTime: 'createTime',
       description: 'description',
       name: 'name',
+      specification: 'specification',
       status: 'status',
+      unit: 'unit',
       userDefineCode: 'userDefineCode',
     };
   }
@@ -5115,7 +5125,9 @@ export class QueryProductByPageResponseBodyList extends $tea.Model {
       createTime: 'number',
       description: 'string',
       name: 'string',
+      specification: 'string',
       status: 'string',
+      unit: 'string',
       userDefineCode: 'string',
     };
   }
