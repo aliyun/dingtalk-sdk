@@ -473,6 +473,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
                 query["bizCode"] = request.BizCode;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelCode))
+            {
+                body["channelCode"] = request.ChannelCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelOuterId))
             {
                 body["channelOuterId"] = request.ChannelOuterId;
@@ -489,9 +493,17 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["optUserId"] = request.OptUserId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeChannelUrl))
+            {
+                body["resumeChannelUrl"] = request.ResumeChannelUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData))
             {
                 body["resumeData"] = request.ResumeData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeFile))
+            {
+                body["resumeFile"] = request.ResumeFile;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -520,6 +532,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
                 query["bizCode"] = request.BizCode;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelCode))
+            {
+                body["channelCode"] = request.ChannelCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelOuterId))
             {
                 body["channelOuterId"] = request.ChannelOuterId;
@@ -536,9 +552,17 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["optUserId"] = request.OptUserId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeChannelUrl))
+            {
+                body["resumeChannelUrl"] = request.ResumeChannelUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeData))
             {
                 body["resumeData"] = request.ResumeData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResumeFile))
+            {
+                body["resumeFile"] = request.ResumeFile;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

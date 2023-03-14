@@ -17,6 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         public string BizCode { get; set; }
 
         /// <summary>
+        /// 渠道编码
+        /// </summary>
+        [NameInMap("channelCode")]
+        [Validation(Required=false)]
+        public string ChannelCode { get; set; }
+
+        /// <summary>
         /// 渠道侧简历标识
         /// </summary>
         [NameInMap("channelOuterId")]
@@ -40,6 +47,13 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [NameInMap("optUserId")]
         [Validation(Required=false)]
         public string OptUserId { get; set; }
+
+        /// <summary>
+        /// 渠道简历链接
+        /// </summary>
+        [NameInMap("resumeChannelUrl")]
+        [Validation(Required=false)]
+        public string ResumeChannelUrl { get; set; }
 
         /// <summary>
         /// 简历详情信息
@@ -461,6 +475,36 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
                 public string StartDate { get; set; }
 
             }
+
+        }
+
+        /// <summary>
+        /// 原始简历文件
+        /// </summary>
+        [NameInMap("resumeFile")]
+        [Validation(Required=false)]
+        public CollectResumeDetailRequestResumeFile ResumeFile { get; set; }
+        public class CollectResumeDetailRequestResumeFile : TeaModel {
+            /// <summary>
+            /// 简历文件下载链接
+            /// </summary>
+            [NameInMap("downloadUrl")]
+            [Validation(Required=false)]
+            public string DownloadUrl { get; set; }
+
+            /// <summary>
+            /// 文件名称
+            /// </summary>
+            [NameInMap("fileName")]
+            [Validation(Required=false)]
+            public string FileName { get; set; }
+
+            /// <summary>
+            /// 文件类型
+            /// </summary>
+            [NameInMap("fileType")]
+            [Validation(Required=false)]
+            public string FileType { get; set; }
 
         }
 

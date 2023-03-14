@@ -38,11 +38,25 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// 规格型号
+        /// </summary>
+        [NameInMap("specification")]
+        [Validation(Required=false)]
+        public string Specification { get; set; }
+
+        /// <summary>
         /// 商品状态
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// 商品单位
+        /// </summary>
+        [NameInMap("unit")]
+        [Validation(Required=false)]
+        public string Unit { get; set; }
 
         /// <summary>
         /// 商品用户自定义码
