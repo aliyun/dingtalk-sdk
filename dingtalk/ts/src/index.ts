@@ -64,6 +64,7 @@ import * as service_group_1_0 from './service_group_1_0/client';
 import * as smart_device_1_0 from './smart_device_1_0/client';
 import * as sns_storage_1_0 from './sns_storage_1_0/client';
 import * as storage_1_0 from './storage_1_0/client';
+import * as storage_2_0 from './storage_2_0/client';
 import * as swform_1_0 from './swform_1_0/client';
 import * as todo_1_0 from './todo_1_0/client';
 import * as trade_1_0 from './trade_1_0/client';
@@ -146,6 +147,7 @@ export = {
   smart_device_1_0,
   sns_storage_1_0,
   storage_1_0,
+  storage_2_0,
   swform_1_0,
   todo_1_0,
   trade_1_0,

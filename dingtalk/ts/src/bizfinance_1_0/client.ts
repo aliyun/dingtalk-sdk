@@ -3010,6 +3010,94 @@ export class UpdateApplyReceiptAndInvoiceRelatedResponse extends $tea.Model {
   }
 }
 
+export class UpdateDigitalInvoiceOrgInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDigitalInvoiceOrgInfoRequest extends $tea.Model {
+  digitalInvoiceType?: string[];
+  isDigitalOrg?: boolean;
+  location?: string;
+  static names(): { [key: string]: string } {
+    return {
+      digitalInvoiceType: 'digitalInvoiceType',
+      isDigitalOrg: 'isDigitalOrg',
+      location: 'location',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      digitalInvoiceType: { 'type': 'array', 'itemType': 'string' },
+      isDigitalOrg: 'boolean',
+      location: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDigitalInvoiceOrgInfoResponseBody extends $tea.Model {
+  resulte?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      resulte: 'resulte',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resulte: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDigitalInvoiceOrgInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateDigitalInvoiceOrgInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateDigitalInvoiceOrgInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateFinanceCompanyInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3296,6 +3384,170 @@ export class UpdateInvoiceAccountPeriodResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: UpdateInvoiceAccountPeriodResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingPeriodDateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingPeriodDateRequest extends $tea.Model {
+  invoiceFinanceInfoVOList?: UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      invoiceFinanceInfoVOList: 'invoiceFinanceInfoVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceFinanceInfoVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingPeriodDateResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingPeriodDateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateInvoiceAccountingPeriodDateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateInvoiceAccountingPeriodDateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingStatusRequest extends $tea.Model {
+  invoiceFinanceInfoVOList?: UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      invoiceFinanceInfoVOList: 'invoiceFinanceInfoVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceFinanceInfoVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingStatusResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: UpdateInvoiceAccountingStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: UpdateInvoiceAccountingStatusResponseBody,
     };
   }
 
@@ -7145,6 +7397,62 @@ export class UpdateInvoiceAccountPeriodResponseBodySuccessResult extends $tea.Mo
   }
 }
 
+export class UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList extends $tea.Model {
+  accountingPeriodData?: string;
+  invoiceCode?: string;
+  invoiceNo?: string;
+  invoiceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountingPeriodData: 'accountingPeriodData',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      invoiceType: 'invoiceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountingPeriodData: 'string',
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      invoiceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList extends $tea.Model {
+  accountingStatus?: string;
+  invoiceCode?: string;
+  invoiceNo?: string;
+  invoiceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountingStatus: 'accountingStatus',
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+      invoiceType: 'invoiceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountingStatus: 'string',
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+      invoiceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodsName?: string;
@@ -9148,6 +9456,43 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateApplyReceiptAndInvoiceRelatedResponse>(await this.doROARequest("UpdateApplyReceiptAndInvoiceRelated", "bizfinance_1.0", "HTTP", "POST", "AK", `/v1.0/bizfinance/invoices/applyReceipts/relate`, "json", req, runtime), new UpdateApplyReceiptAndInvoiceRelatedResponse({}));
   }
 
+  async updateDigitalInvoiceOrgInfo(request: UpdateDigitalInvoiceOrgInfoRequest): Promise<UpdateDigitalInvoiceOrgInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateDigitalInvoiceOrgInfoHeaders({ });
+    return await this.updateDigitalInvoiceOrgInfoWithOptions(request, headers, runtime);
+  }
+
+  async updateDigitalInvoiceOrgInfoWithOptions(request: UpdateDigitalInvoiceOrgInfoRequest, headers: UpdateDigitalInvoiceOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDigitalInvoiceOrgInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.digitalInvoiceType)) {
+      body["digitalInvoiceType"] = request.digitalInvoiceType;
+    }
+
+    if (!Util.isUnset(request.isDigitalOrg)) {
+      body["isDigitalOrg"] = request.isDigitalOrg;
+    }
+
+    if (!Util.isUnset(request.location)) {
+      body["location"] = request.location;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateDigitalInvoiceOrgInfoResponse>(await this.doROARequest("UpdateDigitalInvoiceOrgInfo", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/invoices/organizationInfos`, "json", req, runtime), new UpdateDigitalInvoiceOrgInfoResponse({}));
+  }
+
   async updateFinanceCompanyInfo(request: UpdateFinanceCompanyInfoRequest): Promise<UpdateFinanceCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateFinanceCompanyInfoHeaders({ });
@@ -9293,6 +9638,64 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<UpdateInvoiceAccountPeriodResponse>(await this.doROARequest("UpdateInvoiceAccountPeriod", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/invoices/accountPeriods`, "json", req, runtime), new UpdateInvoiceAccountPeriodResponse({}));
+  }
+
+  async updateInvoiceAccountingPeriodDate(request: UpdateInvoiceAccountingPeriodDateRequest): Promise<UpdateInvoiceAccountingPeriodDateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInvoiceAccountingPeriodDateHeaders({ });
+    return await this.updateInvoiceAccountingPeriodDateWithOptions(request, headers, runtime);
+  }
+
+  async updateInvoiceAccountingPeriodDateWithOptions(request: UpdateInvoiceAccountingPeriodDateRequest, headers: UpdateInvoiceAccountingPeriodDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountingPeriodDateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.invoiceFinanceInfoVOList)) {
+      body["invoiceFinanceInfoVOList"] = request.invoiceFinanceInfoVOList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateInvoiceAccountingPeriodDateResponse>(await this.doROARequest("UpdateInvoiceAccountingPeriodDate", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/invoices/accounts/periodDates`, "json", req, runtime), new UpdateInvoiceAccountingPeriodDateResponse({}));
+  }
+
+  async updateInvoiceAccountingStatus(request: UpdateInvoiceAccountingStatusRequest): Promise<UpdateInvoiceAccountingStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInvoiceAccountingStatusHeaders({ });
+    return await this.updateInvoiceAccountingStatusWithOptions(request, headers, runtime);
+  }
+
+  async updateInvoiceAccountingStatusWithOptions(request: UpdateInvoiceAccountingStatusRequest, headers: UpdateInvoiceAccountingStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountingStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.invoiceFinanceInfoVOList)) {
+      body["invoiceFinanceInfoVOList"] = request.invoiceFinanceInfoVOList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<UpdateInvoiceAccountingStatusResponse>(await this.doROARequest("UpdateInvoiceAccountingStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", `/v1.0/bizfinance/invoices/accounts/statuses`, "json", req, runtime), new UpdateInvoiceAccountingStatusResponse({}));
   }
 
   async updateInvoiceAndReceiptRelated(request: UpdateInvoiceAndReceiptRelatedRequest): Promise<UpdateInvoiceAndReceiptRelatedResponse> {

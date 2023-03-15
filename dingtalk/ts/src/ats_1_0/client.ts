@@ -507,6 +507,121 @@ export class CollectResumeDetailResponse extends $tea.Model {
   }
 }
 
+export class CollectResumeMailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeMailRequest extends $tea.Model {
+  bizCode?: string;
+  channelCode?: string;
+  deliverJobId?: string;
+  fromMailAddress?: string;
+  mailId?: string;
+  mailTitle?: string;
+  optUserId?: string;
+  receiveMailAddress?: string;
+  receiveMailType?: number;
+  receivedTime?: number;
+  resumeChannelUrl?: string;
+  resumeFile?: CollectResumeMailRequestResumeFile;
+  static names(): { [key: string]: string } {
+    return {
+      bizCode: 'bizCode',
+      channelCode: 'channelCode',
+      deliverJobId: 'deliverJobId',
+      fromMailAddress: 'fromMailAddress',
+      mailId: 'mailId',
+      mailTitle: 'mailTitle',
+      optUserId: 'optUserId',
+      receiveMailAddress: 'receiveMailAddress',
+      receiveMailType: 'receiveMailType',
+      receivedTime: 'receivedTime',
+      resumeChannelUrl: 'resumeChannelUrl',
+      resumeFile: 'resumeFile',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizCode: 'string',
+      channelCode: 'string',
+      deliverJobId: 'string',
+      fromMailAddress: 'string',
+      mailId: 'string',
+      mailTitle: 'string',
+      optUserId: 'string',
+      receiveMailAddress: 'string',
+      receiveMailType: 'number',
+      receivedTime: 'number',
+      resumeChannelUrl: 'string',
+      resumeFile: CollectResumeMailRequestResumeFile,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeMailResponseBody extends $tea.Model {
+  resumeId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      resumeId: 'resumeId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resumeId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CollectResumeMailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: CollectResumeMailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: CollectResumeMailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ConfirmRightsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2258,6 +2373,31 @@ export class CollectResumeDetailRequestResumeFile extends $tea.Model {
   }
 }
 
+export class CollectResumeMailRequestResumeFile extends $tea.Model {
+  downloadUrl?: string;
+  fileName?: string;
+  fileType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      downloadUrl: 'downloadUrl',
+      fileName: 'fileName',
+      fileType: 'fileType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      downloadUrl: 'string',
+      fileName: 'string',
+      fileType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetJobAuthResponseBodyJobOwners extends $tea.Model {
   name?: string;
   userId?: string;
@@ -2641,6 +2781,81 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<CollectResumeDetailResponse>(await this.doROARequest("CollectResumeDetail", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/resumes/details`, "json", req, runtime), new CollectResumeDetailResponse({}));
+  }
+
+  async collectResumeMail(request: CollectResumeMailRequest): Promise<CollectResumeMailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CollectResumeMailHeaders({ });
+    return await this.collectResumeMailWithOptions(request, headers, runtime);
+  }
+
+  async collectResumeMailWithOptions(request: CollectResumeMailRequest, headers: CollectResumeMailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectResumeMailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizCode)) {
+      query["bizCode"] = request.bizCode;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelCode)) {
+      body["channelCode"] = request.channelCode;
+    }
+
+    if (!Util.isUnset(request.deliverJobId)) {
+      body["deliverJobId"] = request.deliverJobId;
+    }
+
+    if (!Util.isUnset(request.fromMailAddress)) {
+      body["fromMailAddress"] = request.fromMailAddress;
+    }
+
+    if (!Util.isUnset(request.mailId)) {
+      body["mailId"] = request.mailId;
+    }
+
+    if (!Util.isUnset(request.mailTitle)) {
+      body["mailTitle"] = request.mailTitle;
+    }
+
+    if (!Util.isUnset(request.optUserId)) {
+      body["optUserId"] = request.optUserId;
+    }
+
+    if (!Util.isUnset(request.receiveMailAddress)) {
+      body["receiveMailAddress"] = request.receiveMailAddress;
+    }
+
+    if (!Util.isUnset(request.receiveMailType)) {
+      body["receiveMailType"] = request.receiveMailType;
+    }
+
+    if (!Util.isUnset(request.receivedTime)) {
+      body["receivedTime"] = request.receivedTime;
+    }
+
+    if (!Util.isUnset(request.resumeChannelUrl)) {
+      body["resumeChannelUrl"] = request.resumeChannelUrl;
+    }
+
+    if (!Util.isUnset(request.resumeFile)) {
+      body["resumeFile"] = request.resumeFile;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<CollectResumeMailResponse>(await this.doROARequest("CollectResumeMail", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/resumes/mails`, "json", req, runtime), new CollectResumeMailResponse({}));
   }
 
   async confirmRights(rightsCode: string, request: ConfirmRightsRequest): Promise<ConfirmRightsResponse> {

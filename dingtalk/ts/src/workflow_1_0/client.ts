@@ -6374,12 +6374,14 @@ export class SaveProcessRequestProcessFeatureConfig extends $tea.Model {
 export class SaveProcessRequestTemplateConfig extends $tea.Model {
   createInstanceMobileUrl?: string;
   createInstancePcUrl?: string;
+  disableSendCard?: boolean;
   hidden?: boolean;
   templateEditUrl?: string;
   static names(): { [key: string]: string } {
     return {
       createInstanceMobileUrl: 'createInstanceMobileUrl',
       createInstancePcUrl: 'createInstancePcUrl',
+      disableSendCard: 'disableSendCard',
       hidden: 'hidden',
       templateEditUrl: 'templateEditUrl',
     };
@@ -6389,6 +6391,7 @@ export class SaveProcessRequestTemplateConfig extends $tea.Model {
     return {
       createInstanceMobileUrl: 'string',
       createInstancePcUrl: 'string',
+      disableSendCard: 'boolean',
       hidden: 'boolean',
       templateEditUrl: 'string',
     };

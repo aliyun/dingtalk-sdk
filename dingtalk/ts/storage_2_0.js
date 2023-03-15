@@ -1,0 +1,1 @@
+module.exports = require('./dist').storage_2_0;
