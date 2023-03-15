@@ -10665,6 +10665,7 @@ class SaveProcessRequestTemplateConfig(TeaModel):
         self,
         create_instance_mobile_url: str = None,
         create_instance_pc_url: str = None,
+        disable_send_card: bool = None,
         hidden: bool = None,
         template_edit_url: str = None,
     ):
@@ -10672,6 +10673,7 @@ class SaveProcessRequestTemplateConfig(TeaModel):
         self.create_instance_mobile_url = create_instance_mobile_url
         # 表单创建PC端地址
         self.create_instance_pc_url = create_instance_pc_url
+        self.disable_send_card = disable_send_card
         # 是否为隐藏模板
         self.hidden = hidden
         # 模板编辑地址
@@ -10690,6 +10692,8 @@ class SaveProcessRequestTemplateConfig(TeaModel):
             result['createInstanceMobileUrl'] = self.create_instance_mobile_url
         if self.create_instance_pc_url is not None:
             result['createInstancePcUrl'] = self.create_instance_pc_url
+        if self.disable_send_card is not None:
+            result['disableSendCard'] = self.disable_send_card
         if self.hidden is not None:
             result['hidden'] = self.hidden
         if self.template_edit_url is not None:
@@ -10702,6 +10706,8 @@ class SaveProcessRequestTemplateConfig(TeaModel):
             self.create_instance_mobile_url = m.get('createInstanceMobileUrl')
         if m.get('createInstancePcUrl') is not None:
             self.create_instance_pc_url = m.get('createInstancePcUrl')
+        if m.get('disableSendCard') is not None:
+            self.disable_send_card = m.get('disableSendCard')
         if m.get('hidden') is not None:
             self.hidden = m.get('hidden')
         if m.get('templateEditUrl') is not None:

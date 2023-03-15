@@ -471,6 +471,118 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CollectResumeDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/details', 'json', req, runtime)
         )
 
+    def collect_resume_mail(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeMailRequest,
+    ) -> dingtalkats__1__0_models.CollectResumeMailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.CollectResumeMailHeaders()
+        return self.collect_resume_mail_with_options(request, headers, runtime)
+
+    async def collect_resume_mail_async(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeMailRequest,
+    ) -> dingtalkats__1__0_models.CollectResumeMailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.CollectResumeMailHeaders()
+        return await self.collect_resume_mail_with_options_async(request, headers, runtime)
+
+    def collect_resume_mail_with_options(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeMailRequest,
+        headers: dingtalkats__1__0_models.CollectResumeMailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.CollectResumeMailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.deliver_job_id):
+            body['deliverJobId'] = request.deliver_job_id
+        if not UtilClient.is_unset(request.from_mail_address):
+            body['fromMailAddress'] = request.from_mail_address
+        if not UtilClient.is_unset(request.mail_id):
+            body['mailId'] = request.mail_id
+        if not UtilClient.is_unset(request.mail_title):
+            body['mailTitle'] = request.mail_title
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.receive_mail_address):
+            body['receiveMailAddress'] = request.receive_mail_address
+        if not UtilClient.is_unset(request.receive_mail_type):
+            body['receiveMailType'] = request.receive_mail_type
+        if not UtilClient.is_unset(request.received_time):
+            body['receivedTime'] = request.received_time
+        if not UtilClient.is_unset(request.resume_channel_url):
+            body['resumeChannelUrl'] = request.resume_channel_url
+        if not UtilClient.is_unset(request.resume_file):
+            body['resumeFile'] = request.resume_file
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.CollectResumeMailResponse(),
+            self.do_roarequest('CollectResumeMail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/mails', 'json', req, runtime)
+        )
+
+    async def collect_resume_mail_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeMailRequest,
+        headers: dingtalkats__1__0_models.CollectResumeMailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.CollectResumeMailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.deliver_job_id):
+            body['deliverJobId'] = request.deliver_job_id
+        if not UtilClient.is_unset(request.from_mail_address):
+            body['fromMailAddress'] = request.from_mail_address
+        if not UtilClient.is_unset(request.mail_id):
+            body['mailId'] = request.mail_id
+        if not UtilClient.is_unset(request.mail_title):
+            body['mailTitle'] = request.mail_title
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.receive_mail_address):
+            body['receiveMailAddress'] = request.receive_mail_address
+        if not UtilClient.is_unset(request.receive_mail_type):
+            body['receiveMailType'] = request.receive_mail_type
+        if not UtilClient.is_unset(request.received_time):
+            body['receivedTime'] = request.received_time
+        if not UtilClient.is_unset(request.resume_channel_url):
+            body['resumeChannelUrl'] = request.resume_channel_url
+        if not UtilClient.is_unset(request.resume_file):
+            body['resumeFile'] = request.resume_file
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.CollectResumeMailResponse(),
+            await self.do_roarequest_async('CollectResumeMail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/mails', 'json', req, runtime)
+        )
+
     def confirm_rights(
         self,
         rights_code: str,

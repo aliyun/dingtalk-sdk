@@ -2275,6 +2275,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('UpdateApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/applyReceipts/relate', 'json', req, runtime)
         )
 
+    def update_digital_invoice_org_info(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoHeaders()
+        return self.update_digital_invoice_org_info_with_options(request, headers, runtime)
+
+    async def update_digital_invoice_org_info_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoHeaders()
+        return await self.update_digital_invoice_org_info_with_options_async(request, headers, runtime)
+
+    def update_digital_invoice_org_info_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.digital_invoice_type):
+            body['digitalInvoiceType'] = request.digital_invoice_type
+        if not UtilClient.is_unset(request.is_digital_org):
+            body['isDigitalOrg'] = request.is_digital_org
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse(),
+            self.do_roarequest('UpdateDigitalInvoiceOrgInfo', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/organizationInfos', 'json', req, runtime)
+        )
+
+    async def update_digital_invoice_org_info_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.digital_invoice_type):
+            body['digitalInvoiceType'] = request.digital_invoice_type
+        if not UtilClient.is_unset(request.is_digital_org):
+            body['isDigitalOrg'] = request.is_digital_org
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse(),
+            await self.do_roarequest_async('UpdateDigitalInvoiceOrgInfo', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/organizationInfos', 'json', req, runtime)
+        )
+
     def update_finance_company_info(
         self,
         request: dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoRequest,
@@ -2525,6 +2597,134 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse(),
             await self.do_roarequest_async('UpdateInvoiceAccountPeriod', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accountPeriods', 'json', req, runtime)
+        )
+
+    def update_invoice_accounting_period_date(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateHeaders()
+        return self.update_invoice_accounting_period_date_with_options(request, headers, runtime)
+
+    async def update_invoice_accounting_period_date_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateHeaders()
+        return await self.update_invoice_accounting_period_date_with_options_async(request, headers, runtime)
+
+    def update_invoice_accounting_period_date_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.invoice_finance_info_volist):
+            body['invoiceFinanceInfoVOList'] = request.invoice_finance_info_volist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse(),
+            self.do_roarequest('UpdateInvoiceAccountingPeriodDate', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accounts/periodDates', 'json', req, runtime)
+        )
+
+    async def update_invoice_accounting_period_date_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.invoice_finance_info_volist):
+            body['invoiceFinanceInfoVOList'] = request.invoice_finance_info_volist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse(),
+            await self.do_roarequest_async('UpdateInvoiceAccountingPeriodDate', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accounts/periodDates', 'json', req, runtime)
+        )
+
+    def update_invoice_accounting_status(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusHeaders()
+        return self.update_invoice_accounting_status_with_options(request, headers, runtime)
+
+    async def update_invoice_accounting_status_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusHeaders()
+        return await self.update_invoice_accounting_status_with_options_async(request, headers, runtime)
+
+    def update_invoice_accounting_status_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.invoice_finance_info_volist):
+            body['invoiceFinanceInfoVOList'] = request.invoice_finance_info_volist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse(),
+            self.do_roarequest('UpdateInvoiceAccountingStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accounts/statuses', 'json', req, runtime)
+        )
+
+    async def update_invoice_accounting_status_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.invoice_finance_info_volist):
+            body['invoiceFinanceInfoVOList'] = request.invoice_finance_info_volist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse(),
+            await self.do_roarequest_async('UpdateInvoiceAccountingStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accounts/statuses', 'json', req, runtime)
         )
 
     def update_invoice_and_receipt_related(

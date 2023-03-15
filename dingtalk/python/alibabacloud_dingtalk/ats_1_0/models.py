@@ -1893,6 +1893,253 @@ class CollectResumeDetailResponse(TeaModel):
         return self
 
 
+class CollectResumeMailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CollectResumeMailRequestResumeFile(TeaModel):
+    def __init__(
+        self,
+        download_url: str = None,
+        file_name: str = None,
+        file_type: str = None,
+    ):
+        # 文件下载地址
+        self.download_url = download_url
+        # 文件名称
+        self.file_name = file_name
+        # 文件类型
+        self.file_type = file_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        return self
+
+
+class CollectResumeMailRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        channel_code: str = None,
+        deliver_job_id: str = None,
+        from_mail_address: str = None,
+        mail_id: str = None,
+        mail_title: str = None,
+        opt_user_id: str = None,
+        receive_mail_address: str = None,
+        receive_mail_type: int = None,
+        received_time: int = None,
+        resume_channel_url: str = None,
+        resume_file: CollectResumeMailRequestResumeFile = None,
+    ):
+        # 业务标识
+        self.biz_code = biz_code
+        # 渠道编码
+        self.channel_code = channel_code
+        # 候选人投递职位标识
+        self.deliver_job_id = deliver_job_id
+        # 邮件来源地址
+        self.from_mail_address = from_mail_address
+        # 邮件唯一标识
+        self.mail_id = mail_id
+        # 邮件标题
+        self.mail_title = mail_title
+        # 操作人userId
+        self.opt_user_id = opt_user_id
+        # 收件邮箱地址
+        self.receive_mail_address = receive_mail_address
+        # 收件邮箱类型
+        self.receive_mail_type = receive_mail_type
+        # 收件时间
+        self.received_time = received_time
+        # 渠道简历跳转链接
+        self.resume_channel_url = resume_channel_url
+        # 简历原始文件
+        self.resume_file = resume_file
+
+    def validate(self):
+        if self.resume_file:
+            self.resume_file.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.channel_code is not None:
+            result['channelCode'] = self.channel_code
+        if self.deliver_job_id is not None:
+            result['deliverJobId'] = self.deliver_job_id
+        if self.from_mail_address is not None:
+            result['fromMailAddress'] = self.from_mail_address
+        if self.mail_id is not None:
+            result['mailId'] = self.mail_id
+        if self.mail_title is not None:
+            result['mailTitle'] = self.mail_title
+        if self.opt_user_id is not None:
+            result['optUserId'] = self.opt_user_id
+        if self.receive_mail_address is not None:
+            result['receiveMailAddress'] = self.receive_mail_address
+        if self.receive_mail_type is not None:
+            result['receiveMailType'] = self.receive_mail_type
+        if self.received_time is not None:
+            result['receivedTime'] = self.received_time
+        if self.resume_channel_url is not None:
+            result['resumeChannelUrl'] = self.resume_channel_url
+        if self.resume_file is not None:
+            result['resumeFile'] = self.resume_file.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('channelCode') is not None:
+            self.channel_code = m.get('channelCode')
+        if m.get('deliverJobId') is not None:
+            self.deliver_job_id = m.get('deliverJobId')
+        if m.get('fromMailAddress') is not None:
+            self.from_mail_address = m.get('fromMailAddress')
+        if m.get('mailId') is not None:
+            self.mail_id = m.get('mailId')
+        if m.get('mailTitle') is not None:
+            self.mail_title = m.get('mailTitle')
+        if m.get('optUserId') is not None:
+            self.opt_user_id = m.get('optUserId')
+        if m.get('receiveMailAddress') is not None:
+            self.receive_mail_address = m.get('receiveMailAddress')
+        if m.get('receiveMailType') is not None:
+            self.receive_mail_type = m.get('receiveMailType')
+        if m.get('receivedTime') is not None:
+            self.received_time = m.get('receivedTime')
+        if m.get('resumeChannelUrl') is not None:
+            self.resume_channel_url = m.get('resumeChannelUrl')
+        if m.get('resumeFile') is not None:
+            temp_model = CollectResumeMailRequestResumeFile()
+            self.resume_file = temp_model.from_map(m['resumeFile'])
+        return self
+
+
+class CollectResumeMailResponseBody(TeaModel):
+    def __init__(
+        self,
+        resume_id: str = None,
+    ):
+        # 简历标识
+        self.resume_id = resume_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.resume_id is not None:
+            result['resumeId'] = self.resume_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resumeId') is not None:
+            self.resume_id = m.get('resumeId')
+        return self
+
+
+class CollectResumeMailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CollectResumeMailResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CollectResumeMailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ConfirmRightsHeaders(TeaModel):
     def __init__(
         self,
