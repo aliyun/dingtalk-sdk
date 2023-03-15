@@ -279,6 +279,81 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("CollectResumeDetail", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/resumes/details", "json", req, runtime), new CollectResumeDetailResponse());
     }
 
+    public CollectResumeMailResponse collectResumeMail(CollectResumeMailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CollectResumeMailHeaders headers = new CollectResumeMailHeaders();
+        return this.collectResumeMailWithOptions(request, headers, runtime);
+    }
+
+    public CollectResumeMailResponse collectResumeMailWithOptions(CollectResumeMailRequest request, CollectResumeMailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            query.put("bizCode", request.bizCode);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channelCode)) {
+            body.put("channelCode", request.channelCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deliverJobId)) {
+            body.put("deliverJobId", request.deliverJobId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fromMailAddress)) {
+            body.put("fromMailAddress", request.fromMailAddress);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mailId)) {
+            body.put("mailId", request.mailId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mailTitle)) {
+            body.put("mailTitle", request.mailTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optUserId)) {
+            body.put("optUserId", request.optUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiveMailAddress)) {
+            body.put("receiveMailAddress", request.receiveMailAddress);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiveMailType)) {
+            body.put("receiveMailType", request.receiveMailType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receivedTime)) {
+            body.put("receivedTime", request.receivedTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resumeChannelUrl)) {
+            body.put("resumeChannelUrl", request.resumeChannelUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resumeFile)) {
+            body.put("resumeFile", request.resumeFile);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        return TeaModel.toModel(this.doROARequest("CollectResumeMail", "ats_1.0", "HTTP", "POST", "AK", "/v1.0/ats/resumes/mails", "json", req, runtime), new CollectResumeMailResponse());
+    }
+
     public ConfirmRightsResponse confirmRights(String rightsCode, ConfirmRightsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ConfirmRightsHeaders headers = new ConfirmRightsHeaders();

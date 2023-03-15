@@ -255,6 +255,9 @@ public class SaveProcessRequest extends TeaModel {
         @NameInMap("createInstancePcUrl")
         public String createInstancePcUrl;
 
+        @NameInMap("disableSendCard")
+        public Boolean disableSendCard;
+
         /**
          * <p>是否为隐藏模板</p>
          */
@@ -286,6 +289,14 @@ public class SaveProcessRequest extends TeaModel {
         }
         public String getCreateInstancePcUrl() {
             return this.createInstancePcUrl;
+        }
+
+        public SaveProcessRequestTemplateConfig setDisableSendCard(Boolean disableSendCard) {
+            this.disableSendCard = disableSendCard;
+            return this;
+        }
+        public Boolean getDisableSendCard() {
+            return this.disableSendCard;
         }
 
         public SaveProcessRequestTemplateConfig setHidden(Boolean hidden) {
