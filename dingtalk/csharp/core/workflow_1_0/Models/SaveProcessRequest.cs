@@ -133,6 +133,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public string CreateInstancePcUrl { get; set; }
 
+            [NameInMap("disableSendCard")]
+            [Validation(Required=false)]
+            public bool? DisableSendCard { get; set; }
+
             /// <summary>
             /// 是否为隐藏模板
             /// </summary>
