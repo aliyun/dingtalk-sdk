@@ -23,6 +23,11 @@ class templateConfig extends Model
     public $createInstancePcUrl;
 
     /**
+     * @var bool
+     */
+    public $disableSendCard;
+
+    /**
      * @description 是否为隐藏模板
      *
      * @var bool
@@ -38,6 +43,7 @@ class templateConfig extends Model
     protected $_name = [
         'createInstanceMobileUrl' => 'createInstanceMobileUrl',
         'createInstancePcUrl'     => 'createInstancePcUrl',
+        'disableSendCard'         => 'disableSendCard',
         'hidden'                  => 'hidden',
         'templateEditUrl'         => 'templateEditUrl',
     ];
@@ -54,6 +60,9 @@ class templateConfig extends Model
         }
         if (null !== $this->createInstancePcUrl) {
             $res['createInstancePcUrl'] = $this->createInstancePcUrl;
+        }
+        if (null !== $this->disableSendCard) {
+            $res['disableSendCard'] = $this->disableSendCard;
         }
         if (null !== $this->hidden) {
             $res['hidden'] = $this->hidden;
@@ -78,6 +87,9 @@ class templateConfig extends Model
         }
         if (isset($map['createInstancePcUrl'])) {
             $model->createInstancePcUrl = $map['createInstancePcUrl'];
+        }
+        if (isset($map['disableSendCard'])) {
+            $model->disableSendCard = $map['disableSendCard'];
         }
         if (isset($map['hidden'])) {
             $model->hidden = $map['hidden'];

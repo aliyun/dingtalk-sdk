@@ -101,12 +101,21 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UnbindApplyReceiptAndInvoic
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateApplyReceiptAndInvoiceRelatedResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateDigitalInvoiceOrgInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateDigitalInvoiceOrgInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateDigitalInvoiceOrgInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateFinanceCompanyInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAbandonStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingPeriodDateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingPeriodDateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingPeriodDateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountPeriodHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountPeriodRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountPeriodResponse;
@@ -1653,6 +1662,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UpdateDigitalInvoiceOrgInfoRequest $request
+     *
+     * @return UpdateDigitalInvoiceOrgInfoResponse
+     */
+    public function updateDigitalInvoiceOrgInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateDigitalInvoiceOrgInfoHeaders([]);
+
+        return $this->updateDigitalInvoiceOrgInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateDigitalInvoiceOrgInfoRequest $request
+     * @param UpdateDigitalInvoiceOrgInfoHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return UpdateDigitalInvoiceOrgInfoResponse
+     */
+    public function updateDigitalInvoiceOrgInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->digitalInvoiceType)) {
+            @$body['digitalInvoiceType'] = $request->digitalInvoiceType;
+        }
+        if (!Utils::isUnset($request->isDigitalOrg)) {
+            @$body['isDigitalOrg'] = $request->isDigitalOrg;
+        }
+        if (!Utils::isUnset($request->location)) {
+            @$body['location'] = $request->location;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateDigitalInvoiceOrgInfoResponse::fromMap($this->doROARequest('UpdateDigitalInvoiceOrgInfo', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/organizationInfos', 'json', $req, $runtime));
+    }
+
+    /**
      * @param UpdateFinanceCompanyInfoRequest $request
      *
      * @return UpdateFinanceCompanyInfoResponse
@@ -1821,6 +1878,90 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return UpdateInvoiceAccountPeriodResponse::fromMap($this->doROARequest('UpdateInvoiceAccountPeriod', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/accountPeriods', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateInvoiceAccountingPeriodDateRequest $request
+     *
+     * @return UpdateInvoiceAccountingPeriodDateResponse
+     */
+    public function updateInvoiceAccountingPeriodDate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInvoiceAccountingPeriodDateHeaders([]);
+
+        return $this->updateInvoiceAccountingPeriodDateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateInvoiceAccountingPeriodDateRequest $request
+     * @param UpdateInvoiceAccountingPeriodDateHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return UpdateInvoiceAccountingPeriodDateResponse
+     */
+    public function updateInvoiceAccountingPeriodDateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->invoiceFinanceInfoVOList)) {
+            @$body['invoiceFinanceInfoVOList'] = $request->invoiceFinanceInfoVOList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInvoiceAccountingPeriodDateResponse::fromMap($this->doROARequest('UpdateInvoiceAccountingPeriodDate', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/accounts/periodDates', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param UpdateInvoiceAccountingStatusRequest $request
+     *
+     * @return UpdateInvoiceAccountingStatusResponse
+     */
+    public function updateInvoiceAccountingStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInvoiceAccountingStatusHeaders([]);
+
+        return $this->updateInvoiceAccountingStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateInvoiceAccountingStatusRequest $request
+     * @param UpdateInvoiceAccountingStatusHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return UpdateInvoiceAccountingStatusResponse
+     */
+    public function updateInvoiceAccountingStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->invoiceFinanceInfoVOList)) {
+            @$body['invoiceFinanceInfoVOList'] = $request->invoiceFinanceInfoVOList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return UpdateInvoiceAccountingStatusResponse::fromMap($this->doROARequest('UpdateInvoiceAccountingStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/bizfinance/invoices/accounts/statuses', 'json', $req, $runtime));
     }
 
     /**

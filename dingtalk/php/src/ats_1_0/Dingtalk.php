@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectRecruitJobDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeMailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeMailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\CollectResumeMailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ConfirmRightsResponse;
@@ -374,6 +377,83 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CollectResumeDetailResponse::fromMap($this->doROARequest('CollectResumeDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/resumes/details', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param CollectResumeMailRequest $request
+     *
+     * @return CollectResumeMailResponse
+     */
+    public function collectResumeMail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CollectResumeMailHeaders([]);
+
+        return $this->collectResumeMailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CollectResumeMailRequest $request
+     * @param CollectResumeMailHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CollectResumeMailResponse
+     */
+    public function collectResumeMailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            @$query['bizCode'] = $request->bizCode;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->channelCode)) {
+            @$body['channelCode'] = $request->channelCode;
+        }
+        if (!Utils::isUnset($request->deliverJobId)) {
+            @$body['deliverJobId'] = $request->deliverJobId;
+        }
+        if (!Utils::isUnset($request->fromMailAddress)) {
+            @$body['fromMailAddress'] = $request->fromMailAddress;
+        }
+        if (!Utils::isUnset($request->mailId)) {
+            @$body['mailId'] = $request->mailId;
+        }
+        if (!Utils::isUnset($request->mailTitle)) {
+            @$body['mailTitle'] = $request->mailTitle;
+        }
+        if (!Utils::isUnset($request->optUserId)) {
+            @$body['optUserId'] = $request->optUserId;
+        }
+        if (!Utils::isUnset($request->receiveMailAddress)) {
+            @$body['receiveMailAddress'] = $request->receiveMailAddress;
+        }
+        if (!Utils::isUnset($request->receiveMailType)) {
+            @$body['receiveMailType'] = $request->receiveMailType;
+        }
+        if (!Utils::isUnset($request->receivedTime)) {
+            @$body['receivedTime'] = $request->receivedTime;
+        }
+        if (!Utils::isUnset($request->resumeChannelUrl)) {
+            @$body['resumeChannelUrl'] = $request->resumeChannelUrl;
+        }
+        if (!Utils::isUnset($request->resumeFile)) {
+            @$body['resumeFile'] = $request->resumeFile;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CollectResumeMailResponse::fromMap($this->doROARequest('CollectResumeMail', 'ats_1.0', 'HTTP', 'POST', 'AK', '/v1.0/ats/resumes/mails', 'json', $req, $runtime));
     }
 
     /**
