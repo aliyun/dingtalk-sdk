@@ -128,6 +128,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("preStartTime", request.preStartTime);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.publicType)) {
+            body.put("publicType", request.publicType);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.title)) {
             body.put("title", request.title);
         }

@@ -22,6 +22,12 @@ public class UpdateDigitalInvoiceOrgInfoRequest extends TeaModel {
     @NameInMap("location")
     public String location;
 
+    /**
+     * <p>员工id</p>
+     */
+    @NameInMap("operator")
+    public String operator;
+
     public static UpdateDigitalInvoiceOrgInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateDigitalInvoiceOrgInfoRequest self = new UpdateDigitalInvoiceOrgInfoRequest();
         return TeaModel.build(map, self);
@@ -49,6 +55,14 @@ public class UpdateDigitalInvoiceOrgInfoRequest extends TeaModel {
     }
     public String getLocation() {
         return this.location;
+    }
+
+    public UpdateDigitalInvoiceOrgInfoRequest setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
     }
 
 }

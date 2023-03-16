@@ -29,6 +29,12 @@ public class CreateLiveRequest extends TeaModel {
     public Long preStartTime;
 
     /**
+     * <p>直播分享范围 0:不公开 1:全面公开 2:组织内公开</p>
+     */
+    @NameInMap("publicType")
+    public Long publicType;
+
+    /**
      * <p>标题</p>
      */
     @NameInMap("title")
@@ -75,6 +81,14 @@ public class CreateLiveRequest extends TeaModel {
     }
     public Long getPreStartTime() {
         return this.preStartTime;
+    }
+
+    public CreateLiveRequest setPublicType(Long publicType) {
+        this.publicType = publicType;
+        return this;
+    }
+    public Long getPublicType() {
+        return this.publicType;
     }
 
     public CreateLiveRequest setTitle(String title) {

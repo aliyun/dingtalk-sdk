@@ -64,6 +64,12 @@ public class QueryLiveInfoResponseBody extends TeaModel {
         public Integer liveStatus;
 
         /**
+         * <p>直播回放时长</p>
+         */
+        @NameInMap("playbackDuration")
+        public Long playbackDuration;
+
+        /**
          * <p>直播真实开始时间</p>
          */
         @NameInMap("startTime")
@@ -152,6 +158,14 @@ public class QueryLiveInfoResponseBody extends TeaModel {
         }
         public Integer getLiveStatus() {
             return this.liveStatus;
+        }
+
+        public QueryLiveInfoResponseBodyResultLiveInfo setPlaybackDuration(Long playbackDuration) {
+            this.playbackDuration = playbackDuration;
+            return this;
+        }
+        public Long getPlaybackDuration() {
+            return this.playbackDuration;
         }
 
         public QueryLiveInfoResponseBodyResultLiveInfo setStartTime(Long startTime) {
