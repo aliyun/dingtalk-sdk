@@ -10,6 +10,12 @@ public class UpdateInvoiceAccountingPeriodDateRequest extends TeaModel {
     @NameInMap("invoiceFinanceInfoVOList")
     public java.util.List<UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList> invoiceFinanceInfoVOList;
 
+    /**
+     * <p>员工id</p>
+     */
+    @NameInMap("operator")
+    public String operator;
+
     public static UpdateInvoiceAccountingPeriodDateRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateInvoiceAccountingPeriodDateRequest self = new UpdateInvoiceAccountingPeriodDateRequest();
         return TeaModel.build(map, self);
@@ -21,6 +27,14 @@ public class UpdateInvoiceAccountingPeriodDateRequest extends TeaModel {
     }
     public java.util.List<UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList> getInvoiceFinanceInfoVOList() {
         return this.invoiceFinanceInfoVOList;
+    }
+
+    public UpdateInvoiceAccountingPeriodDateRequest setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
     }
 
     public static class UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList extends TeaModel {
