@@ -90,6 +90,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("coFeedOpenSpaceModel", request.coFeedOpenSpaceModel);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.docOpenDeliverModel)) {
+            body.put("docOpenDeliverModel", request.docOpenDeliverModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenDeliverModel)) {
             body.put("imGroupOpenDeliverModel", request.imGroupOpenDeliverModel);
         }
@@ -238,6 +242,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.coFeedOpenDeliverModel)) {
             body.put("coFeedOpenDeliverModel", request.coFeedOpenDeliverModel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.docOpenDeliverModel)) {
+            body.put("docOpenDeliverModel", request.docOpenDeliverModel);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.imGroupOpenDeliverModel)) {

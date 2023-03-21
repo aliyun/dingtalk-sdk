@@ -7,6 +7,9 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<GetEventResponseBodyAttendees> attendees;
 
+    @NameInMap("categories")
+    public java.util.List<GetEventResponseBodyCategories> categories;
+
     /**
      * <p>创建时间</p>
      */
@@ -48,6 +51,9 @@ public class GetEventResponseBody extends TeaModel {
 
     @NameInMap("organizer")
     public GetEventResponseBodyOrganizer organizer;
+
+    @NameInMap("originStart")
+    public GetEventResponseBodyOriginStart originStart;
 
     @NameInMap("recurrence")
     public GetEventResponseBodyRecurrence recurrence;
@@ -96,6 +102,14 @@ public class GetEventResponseBody extends TeaModel {
     }
     public java.util.List<GetEventResponseBodyAttendees> getAttendees() {
         return this.attendees;
+    }
+
+    public GetEventResponseBody setCategories(java.util.List<GetEventResponseBodyCategories> categories) {
+        this.categories = categories;
+        return this;
+    }
+    public java.util.List<GetEventResponseBodyCategories> getCategories() {
+        return this.categories;
     }
 
     public GetEventResponseBody setCreateTime(String createTime) {
@@ -176,6 +190,14 @@ public class GetEventResponseBody extends TeaModel {
     }
     public GetEventResponseBodyOrganizer getOrganizer() {
         return this.organizer;
+    }
+
+    public GetEventResponseBody setOriginStart(GetEventResponseBodyOriginStart originStart) {
+        this.originStart = originStart;
+        return this;
+    }
+    public GetEventResponseBodyOriginStart getOriginStart() {
+        return this.originStart;
     }
 
     public GetEventResponseBody setRecurrence(GetEventResponseBodyRecurrence recurrence) {
@@ -302,6 +324,25 @@ public class GetEventResponseBody extends TeaModel {
         }
         public Boolean getSelf() {
             return this.self;
+        }
+
+    }
+
+    public static class GetEventResponseBodyCategories extends TeaModel {
+        @NameInMap("displayName")
+        public String displayName;
+
+        public static GetEventResponseBodyCategories build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyCategories self = new GetEventResponseBodyCategories();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyCategories setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
         }
 
     }
@@ -576,6 +617,25 @@ public class GetEventResponseBody extends TeaModel {
         }
         public Boolean getSelf() {
             return this.self;
+        }
+
+    }
+
+    public static class GetEventResponseBodyOriginStart extends TeaModel {
+        @NameInMap("dateTime")
+        public String dateTime;
+
+        public static GetEventResponseBodyOriginStart build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyOriginStart self = new GetEventResponseBodyOriginStart();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyOriginStart setDateTime(String dateTime) {
+            this.dateTime = dateTime;
+            return this;
+        }
+        public String getDateTime() {
+            return this.dateTime;
         }
 
     }

@@ -35,6 +35,12 @@ public class CreateAndDeliverRequest extends TeaModel {
     public CreateAndDeliverRequestCoFeedOpenSpaceModel coFeedOpenSpaceModel;
 
     /**
+     * <p>文档投放参数</p>
+     */
+    @NameInMap("docOpenDeliverModel")
+    public CreateAndDeliverRequestDocOpenDeliverModel docOpenDeliverModel;
+
+    /**
      * <p>群聊投放参数</p>
      */
     @NameInMap("imGroupOpenDeliverModel")
@@ -143,6 +149,14 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
     public CreateAndDeliverRequestCoFeedOpenSpaceModel getCoFeedOpenSpaceModel() {
         return this.coFeedOpenSpaceModel;
+    }
+
+    public CreateAndDeliverRequest setDocOpenDeliverModel(CreateAndDeliverRequestDocOpenDeliverModel docOpenDeliverModel) {
+        this.docOpenDeliverModel = docOpenDeliverModel;
+        return this;
+    }
+    public CreateAndDeliverRequestDocOpenDeliverModel getDocOpenDeliverModel() {
+        return this.docOpenDeliverModel;
     }
 
     public CreateAndDeliverRequest setImGroupOpenDeliverModel(CreateAndDeliverRequestImGroupOpenDeliverModel imGroupOpenDeliverModel) {
@@ -328,6 +342,28 @@ public class CreateAndDeliverRequest extends TeaModel {
         }
         public String getTitle() {
             return this.title;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestDocOpenDeliverModel extends TeaModel {
+        /**
+         * <p>【必填】员工id</p>
+         */
+        @NameInMap("userId")
+        public String userId;
+
+        public static CreateAndDeliverRequestDocOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestDocOpenDeliverModel self = new CreateAndDeliverRequestDocOpenDeliverModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestDocOpenDeliverModel setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

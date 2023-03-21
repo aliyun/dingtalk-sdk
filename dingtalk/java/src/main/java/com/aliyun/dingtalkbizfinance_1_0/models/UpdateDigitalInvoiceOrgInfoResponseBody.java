@@ -7,20 +7,20 @@ public class UpdateDigitalInvoiceOrgInfoResponseBody extends TeaModel {
     /**
      * <p>返回结果</p>
      */
-    @NameInMap("resulte")
-    public Boolean resulte;
+    @NameInMap("result")
+    public Boolean result;
 
     public static UpdateDigitalInvoiceOrgInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         UpdateDigitalInvoiceOrgInfoResponseBody self = new UpdateDigitalInvoiceOrgInfoResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public UpdateDigitalInvoiceOrgInfoResponseBody setResulte(Boolean resulte) {
-        this.resulte = resulte;
+    public UpdateDigitalInvoiceOrgInfoResponseBody setResult(Boolean result) {
+        this.result = result;
         return this;
     }
-    public Boolean getResulte() {
-        return this.resulte;
+    public Boolean getResult() {
+        return this.result;
     }
 
 }

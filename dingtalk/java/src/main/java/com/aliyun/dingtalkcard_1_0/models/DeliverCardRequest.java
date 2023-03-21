@@ -11,6 +11,12 @@ public class DeliverCardRequest extends TeaModel {
     public DeliverCardRequestCoFeedOpenDeliverModel coFeedOpenDeliverModel;
 
     /**
+     * <p>文档投放参数</p>
+     */
+    @NameInMap("docOpenDeliverModel")
+    public DeliverCardRequestDocOpenDeliverModel docOpenDeliverModel;
+
+    /**
      * <p>群聊投放参数</p>
      */
     @NameInMap("imGroupOpenDeliverModel")
@@ -63,6 +69,14 @@ public class DeliverCardRequest extends TeaModel {
     }
     public DeliverCardRequestCoFeedOpenDeliverModel getCoFeedOpenDeliverModel() {
         return this.coFeedOpenDeliverModel;
+    }
+
+    public DeliverCardRequest setDocOpenDeliverModel(DeliverCardRequestDocOpenDeliverModel docOpenDeliverModel) {
+        this.docOpenDeliverModel = docOpenDeliverModel;
+        return this;
+    }
+    public DeliverCardRequestDocOpenDeliverModel getDocOpenDeliverModel() {
+        return this.docOpenDeliverModel;
     }
 
     public DeliverCardRequest setImGroupOpenDeliverModel(DeliverCardRequestImGroupOpenDeliverModel imGroupOpenDeliverModel) {
@@ -145,6 +159,28 @@ public class DeliverCardRequest extends TeaModel {
         }
         public Long getGmtTimeLine() {
             return this.gmtTimeLine;
+        }
+
+    }
+
+    public static class DeliverCardRequestDocOpenDeliverModel extends TeaModel {
+        /**
+         * <p>【必填】员工id</p>
+         */
+        @NameInMap("userId")
+        public String userId;
+
+        public static DeliverCardRequestDocOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
+            DeliverCardRequestDocOpenDeliverModel self = new DeliverCardRequestDocOpenDeliverModel();
+            return TeaModel.build(map, self);
+        }
+
+        public DeliverCardRequestDocOpenDeliverModel setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

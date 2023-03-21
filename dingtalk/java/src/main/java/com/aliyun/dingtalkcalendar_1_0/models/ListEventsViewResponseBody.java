@@ -112,6 +112,25 @@ public class ListEventsViewResponseBody extends TeaModel {
 
     }
 
+    public static class ListEventsViewResponseBodyEventsCategories extends TeaModel {
+        @NameInMap("displayName")
+        public String displayName;
+
+        public static ListEventsViewResponseBodyEventsCategories build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsViewResponseBodyEventsCategories self = new ListEventsViewResponseBodyEventsCategories();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsCategories setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
+        }
+
+    }
+
     public static class ListEventsViewResponseBodyEventsEnd extends TeaModel {
         @NameInMap("date")
         public String date;
@@ -351,6 +370,25 @@ public class ListEventsViewResponseBody extends TeaModel {
 
     }
 
+    public static class ListEventsViewResponseBodyEventsOriginStart extends TeaModel {
+        @NameInMap("dateTime")
+        public String dateTime;
+
+        public static ListEventsViewResponseBodyEventsOriginStart build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsViewResponseBodyEventsOriginStart self = new ListEventsViewResponseBodyEventsOriginStart();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsOriginStart setDateTime(String dateTime) {
+            this.dateTime = dateTime;
+            return this;
+        }
+        public String getDateTime() {
+            return this.dateTime;
+        }
+
+    }
+
     public static class ListEventsViewResponseBodyEventsRecurrencePattern extends TeaModel {
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
@@ -554,6 +592,9 @@ public class ListEventsViewResponseBody extends TeaModel {
         @NameInMap("attendees")
         public java.util.List<ListEventsViewResponseBodyEventsAttendees> attendees;
 
+        @NameInMap("categories")
+        public java.util.List<ListEventsViewResponseBodyEventsCategories> categories;
+
         /**
          * <p>创建时间</p>
          */
@@ -602,6 +643,9 @@ public class ListEventsViewResponseBody extends TeaModel {
         @NameInMap("organizer")
         public ListEventsViewResponseBodyEventsOrganizer organizer;
 
+        @NameInMap("originStart")
+        public ListEventsViewResponseBodyEventsOriginStart originStart;
+
         /**
          * <p>日程重复规则</p>
          */
@@ -649,6 +693,14 @@ public class ListEventsViewResponseBody extends TeaModel {
         }
         public java.util.List<ListEventsViewResponseBodyEventsAttendees> getAttendees() {
             return this.attendees;
+        }
+
+        public ListEventsViewResponseBodyEvents setCategories(java.util.List<ListEventsViewResponseBodyEventsCategories> categories) {
+            this.categories = categories;
+            return this;
+        }
+        public java.util.List<ListEventsViewResponseBodyEventsCategories> getCategories() {
+            return this.categories;
         }
 
         public ListEventsViewResponseBodyEvents setCreateTime(String createTime) {
@@ -721,6 +773,14 @@ public class ListEventsViewResponseBody extends TeaModel {
         }
         public ListEventsViewResponseBodyEventsOrganizer getOrganizer() {
             return this.organizer;
+        }
+
+        public ListEventsViewResponseBodyEvents setOriginStart(ListEventsViewResponseBodyEventsOriginStart originStart) {
+            this.originStart = originStart;
+            return this;
+        }
+        public ListEventsViewResponseBodyEventsOriginStart getOriginStart() {
+            return this.originStart;
         }
 
         public ListEventsViewResponseBodyEvents setRecurrence(ListEventsViewResponseBodyEventsRecurrence recurrence) {
