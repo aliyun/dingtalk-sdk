@@ -909,6 +909,7 @@ export class GetEventRequest extends $tea.Model {
 
 export class GetEventResponseBody extends $tea.Model {
   attendees?: GetEventResponseBodyAttendees[];
+  categories?: GetEventResponseBodyCategories[];
   createTime?: string;
   description?: string;
   end?: GetEventResponseBodyEnd;
@@ -919,6 +920,7 @@ export class GetEventResponseBody extends $tea.Model {
   meetingRooms?: GetEventResponseBodyMeetingRooms[];
   onlineMeetingInfo?: GetEventResponseBodyOnlineMeetingInfo;
   organizer?: GetEventResponseBodyOrganizer;
+  originStart?: GetEventResponseBodyOriginStart;
   recurrence?: GetEventResponseBodyRecurrence;
   reminders?: GetEventResponseBodyReminders[];
   seriesMasterId?: string;
@@ -929,6 +931,7 @@ export class GetEventResponseBody extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
+      categories: 'categories',
       createTime: 'createTime',
       description: 'description',
       end: 'end',
@@ -939,6 +942,7 @@ export class GetEventResponseBody extends $tea.Model {
       meetingRooms: 'meetingRooms',
       onlineMeetingInfo: 'onlineMeetingInfo',
       organizer: 'organizer',
+      originStart: 'originStart',
       recurrence: 'recurrence',
       reminders: 'reminders',
       seriesMasterId: 'seriesMasterId',
@@ -952,6 +956,7 @@ export class GetEventResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       attendees: { 'type': 'array', 'itemType': GetEventResponseBodyAttendees },
+      categories: { 'type': 'array', 'itemType': GetEventResponseBodyCategories },
       createTime: 'string',
       description: 'string',
       end: GetEventResponseBodyEnd,
@@ -962,6 +967,7 @@ export class GetEventResponseBody extends $tea.Model {
       meetingRooms: { 'type': 'array', 'itemType': GetEventResponseBodyMeetingRooms },
       onlineMeetingInfo: GetEventResponseBodyOnlineMeetingInfo,
       organizer: GetEventResponseBodyOrganizer,
+      originStart: GetEventResponseBodyOriginStart,
       recurrence: GetEventResponseBodyRecurrence,
       reminders: { 'type': 'array', 'itemType': GetEventResponseBodyReminders },
       seriesMasterId: 'string',
@@ -3318,6 +3324,25 @@ export class GetEventResponseBodyAttendees extends $tea.Model {
   }
 }
 
+export class GetEventResponseBodyCategories extends $tea.Model {
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEventResponseBodyEnd extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -3479,6 +3504,25 @@ export class GetEventResponseBodyOrganizer extends $tea.Model {
       id: 'string',
       responseStatus: 'string',
       self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventResponseBodyOriginStart extends $tea.Model {
+  dateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dateTime: 'dateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dateTime: 'string',
     };
   }
 
@@ -4071,6 +4115,25 @@ export class ListEventsResponseBodyEventsAttendees extends $tea.Model {
   }
 }
 
+export class ListEventsResponseBodyEventsCategories extends $tea.Model {
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsResponseBodyEventsEnd extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -4240,6 +4303,25 @@ export class ListEventsResponseBodyEventsOrganizer extends $tea.Model {
   }
 }
 
+export class ListEventsResponseBodyEventsOriginStart extends $tea.Model {
+  dateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dateTime: 'dateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dateTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsResponseBodyEventsRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
@@ -4367,6 +4449,7 @@ export class ListEventsResponseBodyEventsStart extends $tea.Model {
 
 export class ListEventsResponseBodyEvents extends $tea.Model {
   attendees?: ListEventsResponseBodyEventsAttendees[];
+  categories?: ListEventsResponseBodyEventsCategories[];
   createTime?: string;
   description?: string;
   end?: ListEventsResponseBodyEventsEnd;
@@ -4377,6 +4460,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   meetingRooms?: ListEventsResponseBodyEventsMeetingRooms[];
   onlineMeetingInfo?: ListEventsResponseBodyEventsOnlineMeetingInfo;
   organizer?: ListEventsResponseBodyEventsOrganizer;
+  originStart?: ListEventsResponseBodyEventsOriginStart;
   recurrence?: ListEventsResponseBodyEventsRecurrence;
   reminders?: ListEventsResponseBodyEventsReminders[];
   seriesMasterId?: string;
@@ -4387,6 +4471,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
+      categories: 'categories',
       createTime: 'createTime',
       description: 'description',
       end: 'end',
@@ -4397,6 +4482,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       meetingRooms: 'meetingRooms',
       onlineMeetingInfo: 'onlineMeetingInfo',
       organizer: 'organizer',
+      originStart: 'originStart',
       recurrence: 'recurrence',
       reminders: 'reminders',
       seriesMasterId: 'seriesMasterId',
@@ -4410,6 +4496,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       attendees: { 'type': 'array', 'itemType': ListEventsResponseBodyEventsAttendees },
+      categories: { 'type': 'array', 'itemType': ListEventsResponseBodyEventsCategories },
       createTime: 'string',
       description: 'string',
       end: ListEventsResponseBodyEventsEnd,
@@ -4420,6 +4507,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       meetingRooms: { 'type': 'array', 'itemType': ListEventsResponseBodyEventsMeetingRooms },
       onlineMeetingInfo: ListEventsResponseBodyEventsOnlineMeetingInfo,
       organizer: ListEventsResponseBodyEventsOrganizer,
+      originStart: ListEventsResponseBodyEventsOriginStart,
       recurrence: ListEventsResponseBodyEventsRecurrence,
       reminders: { 'type': 'array', 'itemType': ListEventsResponseBodyEventsReminders },
       seriesMasterId: 'string',
@@ -4827,6 +4915,25 @@ export class ListEventsViewResponseBodyEventsAttendees extends $tea.Model {
   }
 }
 
+export class ListEventsViewResponseBodyEventsCategories extends $tea.Model {
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsViewResponseBodyEventsEnd extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -4971,6 +5078,25 @@ export class ListEventsViewResponseBodyEventsOrganizer extends $tea.Model {
   }
 }
 
+export class ListEventsViewResponseBodyEventsOriginStart extends $tea.Model {
+  dateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dateTime: 'dateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dateTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsViewResponseBodyEventsRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
@@ -5076,6 +5202,7 @@ export class ListEventsViewResponseBodyEventsStart extends $tea.Model {
 
 export class ListEventsViewResponseBodyEvents extends $tea.Model {
   attendees?: ListEventsViewResponseBodyEventsAttendees[];
+  categories?: ListEventsViewResponseBodyEventsCategories[];
   createTime?: string;
   description?: string;
   end?: ListEventsViewResponseBodyEventsEnd;
@@ -5085,6 +5212,7 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
   location?: ListEventsViewResponseBodyEventsLocation;
   onlineMeetingInfo?: ListEventsViewResponseBodyEventsOnlineMeetingInfo;
   organizer?: ListEventsViewResponseBodyEventsOrganizer;
+  originStart?: ListEventsViewResponseBodyEventsOriginStart;
   recurrence?: ListEventsViewResponseBodyEventsRecurrence;
   seriesMasterId?: string;
   start?: ListEventsViewResponseBodyEventsStart;
@@ -5094,6 +5222,7 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
+      categories: 'categories',
       createTime: 'createTime',
       description: 'description',
       end: 'end',
@@ -5103,6 +5232,7 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
       location: 'location',
       onlineMeetingInfo: 'onlineMeetingInfo',
       organizer: 'organizer',
+      originStart: 'originStart',
       recurrence: 'recurrence',
       seriesMasterId: 'seriesMasterId',
       start: 'start',
@@ -5115,6 +5245,7 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       attendees: { 'type': 'array', 'itemType': ListEventsViewResponseBodyEventsAttendees },
+      categories: { 'type': 'array', 'itemType': ListEventsViewResponseBodyEventsCategories },
       createTime: 'string',
       description: 'string',
       end: ListEventsViewResponseBodyEventsEnd,
@@ -5124,6 +5255,7 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
       location: ListEventsViewResponseBodyEventsLocation,
       onlineMeetingInfo: ListEventsViewResponseBodyEventsOnlineMeetingInfo,
       organizer: ListEventsViewResponseBodyEventsOrganizer,
+      originStart: ListEventsViewResponseBodyEventsOriginStart,
       recurrence: ListEventsViewResponseBodyEventsRecurrence,
       seriesMasterId: 'string',
       start: ListEventsViewResponseBodyEventsStart,

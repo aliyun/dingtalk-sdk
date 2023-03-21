@@ -2828,6 +2828,88 @@ export class QuerySupplierByPageResponse extends $tea.Model {
   }
 }
 
+export class QueryUserRoleListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRoleListRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRoleListResponseBody extends $tea.Model {
+  roleVOList?: QueryUserRoleListResponseBodyRoleVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      roleVOList: 'roleVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleVOList: { 'type': 'array', 'itemType': QueryUserRoleListResponseBodyRoleVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRoleListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryUserRoleListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryUserRoleListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UnbindApplyReceiptAndInvoiceRelatedHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3036,11 +3118,13 @@ export class UpdateDigitalInvoiceOrgInfoRequest extends $tea.Model {
   digitalInvoiceType?: string[];
   isDigitalOrg?: boolean;
   location?: string;
+  operator?: string;
   static names(): { [key: string]: string } {
     return {
       digitalInvoiceType: 'digitalInvoiceType',
       isDigitalOrg: 'isDigitalOrg',
       location: 'location',
+      operator: 'operator',
     };
   }
 
@@ -3049,6 +3133,7 @@ export class UpdateDigitalInvoiceOrgInfoRequest extends $tea.Model {
       digitalInvoiceType: { 'type': 'array', 'itemType': 'string' },
       isDigitalOrg: 'boolean',
       location: 'string',
+      operator: 'string',
     };
   }
 
@@ -3058,16 +3143,16 @@ export class UpdateDigitalInvoiceOrgInfoRequest extends $tea.Model {
 }
 
 export class UpdateDigitalInvoiceOrgInfoResponseBody extends $tea.Model {
-  resulte?: boolean;
+  result?: boolean;
   static names(): { [key: string]: string } {
     return {
-      resulte: 'resulte',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      resulte: 'boolean',
+      result: 'boolean',
     };
   }
 
@@ -3416,15 +3501,18 @@ export class UpdateInvoiceAccountingPeriodDateHeaders extends $tea.Model {
 
 export class UpdateInvoiceAccountingPeriodDateRequest extends $tea.Model {
   invoiceFinanceInfoVOList?: UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList[];
+  operator?: string;
   static names(): { [key: string]: string } {
     return {
       invoiceFinanceInfoVOList: 'invoiceFinanceInfoVOList',
+      operator: 'operator',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       invoiceFinanceInfoVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList },
+      operator: 'string',
     };
   }
 
@@ -3434,16 +3522,16 @@ export class UpdateInvoiceAccountingPeriodDateRequest extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountingPeriodDateResponseBody extends $tea.Model {
-  result?: boolean;
+  failInvoices?: UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices[];
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      failInvoices: 'failInvoices',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: 'boolean',
+      failInvoices: { 'type': 'array', 'itemType': UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices },
     };
   }
 
@@ -3498,15 +3586,18 @@ export class UpdateInvoiceAccountingStatusHeaders extends $tea.Model {
 
 export class UpdateInvoiceAccountingStatusRequest extends $tea.Model {
   invoiceFinanceInfoVOList?: UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList[];
+  operator?: string;
   static names(): { [key: string]: string } {
     return {
       invoiceFinanceInfoVOList: 'invoiceFinanceInfoVOList',
+      operator: 'operator',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       invoiceFinanceInfoVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList },
+      operator: 'string',
     };
   }
 
@@ -3516,16 +3607,16 @@ export class UpdateInvoiceAccountingStatusRequest extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountingStatusResponseBody extends $tea.Model {
-  result?: boolean;
+  failInvoices?: UpdateInvoiceAccountingStatusResponseBodyFailInvoices[];
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      failInvoices: 'failInvoices',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: 'boolean',
+      failInvoices: { 'type': 'array', 'itemType': UpdateInvoiceAccountingStatusResponseBodyFailInvoices },
     };
   }
 
@@ -5791,6 +5882,28 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
   }
 }
 
+export class QueryUserRoleListResponseBodyRoleVOList extends $tea.Model {
+  roleCode?: string;
+  roleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roleCode: 'roleCode',
+      roleName: 'roleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleCode: 'string',
+      roleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList extends $tea.Model {
   invoiceCode?: string;
   invoiceNo?: string;
@@ -7425,6 +7538,28 @@ export class UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList ex
   }
 }
 
+export class UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList extends $tea.Model {
   accountingStatus?: string;
   invoiceCode?: string;
@@ -7445,6 +7580,28 @@ export class UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList extend
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingStatusResponseBodyFailInvoices extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
     };
   }
 
@@ -9382,6 +9539,35 @@ export default class Client extends OpenApi {
     return $tea.cast<QuerySupplierByPageResponse>(await this.doROARequest("QuerySupplierByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/suppliers`, "json", req, runtime), new QuerySupplierByPageResponse({}));
   }
 
+  async queryUserRoleList(request: QueryUserRoleListRequest): Promise<QueryUserRoleListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserRoleListHeaders({ });
+    return await this.queryUserRoleListWithOptions(request, headers, runtime);
+  }
+
+  async queryUserRoleListWithOptions(request: QueryUserRoleListRequest, headers: QueryUserRoleListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRoleListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryUserRoleListResponse>(await this.doROARequest("QueryUserRoleList", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/users/roles`, "json", req, runtime), new QueryUserRoleListResponse({}));
+  }
+
   async unbindApplyReceiptAndInvoiceRelated(request: UnbindApplyReceiptAndInvoiceRelatedRequest): Promise<UnbindApplyReceiptAndInvoiceRelatedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnbindApplyReceiptAndInvoiceRelatedHeaders({ });
@@ -9475,6 +9661,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.location)) {
       body["location"] = request.location;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -9653,6 +9843,10 @@ export default class Client extends OpenApi {
       body["invoiceFinanceInfoVOList"] = request.invoiceFinanceInfoVOList;
     }
 
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -9680,6 +9874,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.invoiceFinanceInfoVOList)) {
       body["invoiceFinanceInfoVOList"] = request.invoiceFinanceInfoVOList;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
     }
 
     let realHeaders : {[key: string ]: string} = { };

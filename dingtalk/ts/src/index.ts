@@ -18,6 +18,7 @@ import * as content_1_0 from './content_1_0/client';
 import * as contract_1_0 from './contract_1_0/client';
 import * as conv_file_1_0 from './conv_file_1_0/client';
 import * as crm_1_0 from './crm_1_0/client';
+import * as crm_2_0 from './crm_2_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
 import * as datacenter_1_0 from './datacenter_1_0/client';
 import * as devicemng_1_0 from './devicemng_1_0/client';
@@ -101,6 +102,7 @@ export = {
   contract_1_0,
   conv_file_1_0,
   crm_1_0,
+  crm_2_0,
   customer_service_1_0,
   datacenter_1_0,
   devicemng_1_0,

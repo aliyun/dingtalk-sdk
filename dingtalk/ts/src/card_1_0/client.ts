@@ -132,6 +132,7 @@ export class CreateAndDeliverRequest extends $tea.Model {
   cardTemplateId?: string;
   coFeedOpenDeliverModel?: CreateAndDeliverRequestCoFeedOpenDeliverModel;
   coFeedOpenSpaceModel?: CreateAndDeliverRequestCoFeedOpenSpaceModel;
+  docOpenDeliverModel?: CreateAndDeliverRequestDocOpenDeliverModel;
   imGroupOpenDeliverModel?: CreateAndDeliverRequestImGroupOpenDeliverModel;
   imGroupOpenSpaceModel?: CreateAndDeliverRequestImGroupOpenSpaceModel;
   imRobotOpenDeliverModel?: CreateAndDeliverRequestImRobotOpenDeliverModel;
@@ -151,6 +152,7 @@ export class CreateAndDeliverRequest extends $tea.Model {
       cardTemplateId: 'cardTemplateId',
       coFeedOpenDeliverModel: 'coFeedOpenDeliverModel',
       coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
+      docOpenDeliverModel: 'docOpenDeliverModel',
       imGroupOpenDeliverModel: 'imGroupOpenDeliverModel',
       imGroupOpenSpaceModel: 'imGroupOpenSpaceModel',
       imRobotOpenDeliverModel: 'imRobotOpenDeliverModel',
@@ -173,6 +175,7 @@ export class CreateAndDeliverRequest extends $tea.Model {
       cardTemplateId: 'string',
       coFeedOpenDeliverModel: CreateAndDeliverRequestCoFeedOpenDeliverModel,
       coFeedOpenSpaceModel: CreateAndDeliverRequestCoFeedOpenSpaceModel,
+      docOpenDeliverModel: CreateAndDeliverRequestDocOpenDeliverModel,
       imGroupOpenDeliverModel: CreateAndDeliverRequestImGroupOpenDeliverModel,
       imGroupOpenSpaceModel: CreateAndDeliverRequestImGroupOpenSpaceModel,
       imRobotOpenDeliverModel: CreateAndDeliverRequestImRobotOpenDeliverModel,
@@ -379,6 +382,7 @@ export class DeliverCardHeaders extends $tea.Model {
 
 export class DeliverCardRequest extends $tea.Model {
   coFeedOpenDeliverModel?: DeliverCardRequestCoFeedOpenDeliverModel;
+  docOpenDeliverModel?: DeliverCardRequestDocOpenDeliverModel;
   imGroupOpenDeliverModel?: DeliverCardRequestImGroupOpenDeliverModel;
   imRobotOpenDeliverModel?: DeliverCardRequestImRobotOpenDeliverModel;
   openSpaceId?: string;
@@ -388,6 +392,7 @@ export class DeliverCardRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       coFeedOpenDeliverModel: 'coFeedOpenDeliverModel',
+      docOpenDeliverModel: 'docOpenDeliverModel',
       imGroupOpenDeliverModel: 'imGroupOpenDeliverModel',
       imRobotOpenDeliverModel: 'imRobotOpenDeliverModel',
       openSpaceId: 'openSpaceId',
@@ -400,6 +405,7 @@ export class DeliverCardRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       coFeedOpenDeliverModel: DeliverCardRequestCoFeedOpenDeliverModel,
+      docOpenDeliverModel: DeliverCardRequestDocOpenDeliverModel,
       imGroupOpenDeliverModel: DeliverCardRequestImGroupOpenDeliverModel,
       imRobotOpenDeliverModel: DeliverCardRequestImRobotOpenDeliverModel,
       openSpaceId: 'string',
@@ -911,6 +917,25 @@ export class CreateAndDeliverRequestCoFeedOpenSpaceModel extends $tea.Model {
     return {
       coolAppCode: 'string',
       title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverRequestDocOpenDeliverModel extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
     };
   }
 
@@ -1574,6 +1599,25 @@ export class DeliverCardRequestCoFeedOpenDeliverModel extends $tea.Model {
   }
 }
 
+export class DeliverCardRequestDocOpenDeliverModel extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeliverCardRequestImGroupOpenDeliverModel extends $tea.Model {
   atUserIds?: { [key: string]: string };
   recipients?: string[];
@@ -1818,6 +1862,10 @@ export default class Client extends OpenApi {
       body["coFeedOpenSpaceModel"] = request.coFeedOpenSpaceModel;
     }
 
+    if (!Util.isUnset(request.docOpenDeliverModel)) {
+      body["docOpenDeliverModel"] = request.docOpenDeliverModel;
+    }
+
     if (!Util.isUnset(request.imGroupOpenDeliverModel)) {
       body["imGroupOpenDeliverModel"] = request.imGroupOpenDeliverModel;
     }
@@ -1966,6 +2014,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.coFeedOpenDeliverModel)) {
       body["coFeedOpenDeliverModel"] = request.coFeedOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.docOpenDeliverModel)) {
+      body["docOpenDeliverModel"] = request.docOpenDeliverModel;
     }
 
     if (!Util.isUnset(request.imGroupOpenDeliverModel)) {

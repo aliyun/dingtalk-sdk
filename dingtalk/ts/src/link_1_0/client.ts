@@ -30,11 +30,13 @@ export class ApplyFollowerAuthInfoHeaders extends $tea.Model {
 }
 
 export class ApplyFollowerAuthInfoRequest extends $tea.Model {
+  appAuthKey?: string;
   fieldScope?: string;
   sessionId?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      appAuthKey: 'appAuthKey',
       fieldScope: 'fieldScope',
       sessionId: 'sessionId',
       userId: 'userId',
@@ -43,6 +45,7 @@ export class ApplyFollowerAuthInfoRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appAuthKey: 'string',
       fieldScope: 'string',
       sessionId: 'string',
       userId: 'string',
@@ -2217,6 +2220,10 @@ export default class Client extends OpenApi {
   async applyFollowerAuthInfoWithOptions(request: ApplyFollowerAuthInfoRequest, headers: ApplyFollowerAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ApplyFollowerAuthInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appAuthKey)) {
+      body["appAuthKey"] = request.appAuthKey;
+    }
+
     if (!Util.isUnset(request.fieldScope)) {
       body["fieldScope"] = request.fieldScope;
     }

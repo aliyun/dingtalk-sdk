@@ -222,6 +222,7 @@ export class CreateLiveRequest extends $tea.Model {
   introduction?: string;
   preEndTime?: number;
   preStartTime?: number;
+  publicType?: number;
   title?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
@@ -230,6 +231,7 @@ export class CreateLiveRequest extends $tea.Model {
       introduction: 'introduction',
       preEndTime: 'preEndTime',
       preStartTime: 'preStartTime',
+      publicType: 'publicType',
       title: 'title',
       unionId: 'unionId',
     };
@@ -241,6 +243,7 @@ export class CreateLiveRequest extends $tea.Model {
       introduction: 'string',
       preEndTime: 'number',
       preStartTime: 'number',
+      publicType: 'number',
       title: 'string',
       unionId: 'string',
     };
@@ -2268,6 +2271,7 @@ export class QueryLiveInfoResponseBodyResultLiveInfo extends $tea.Model {
   liveId?: string;
   livePlayUrl?: string;
   liveStatus?: number;
+  playbackDuration?: number;
   startTime?: number;
   subscribeCount?: number;
   title?: string;
@@ -2282,6 +2286,7 @@ export class QueryLiveInfoResponseBodyResultLiveInfo extends $tea.Model {
       liveId: 'liveId',
       livePlayUrl: 'livePlayUrl',
       liveStatus: 'liveStatus',
+      playbackDuration: 'playbackDuration',
       startTime: 'startTime',
       subscribeCount: 'subscribeCount',
       title: 'title',
@@ -2299,6 +2304,7 @@ export class QueryLiveInfoResponseBodyResultLiveInfo extends $tea.Model {
       liveId: 'string',
       livePlayUrl: 'string',
       liveStatus: 'number',
+      playbackDuration: 'number',
       startTime: 'number',
       subscribeCount: 'number',
       title: 'string',
@@ -2679,6 +2685,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.preStartTime)) {
       body["preStartTime"] = request.preStartTime;
+    }
+
+    if (!Util.isUnset(request.publicType)) {
+      body["publicType"] = request.publicType;
     }
 
     if (!Util.isUnset(request.title)) {
