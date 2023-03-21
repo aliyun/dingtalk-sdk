@@ -6,11 +6,11 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class UpdateDigitalInvoiceOrgInfoResponseBody : TeaModel {
+    public class CheckUserIsGroupMemberResponseBody : TeaModel {
         /// <summary>
-        /// 返回结果
+        /// 用户是否为群成员。
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

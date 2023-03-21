@@ -2460,6 +2460,94 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             return TeaModel.ToObject<InitAndGetLeaveALlocationQuotasResponse>(await DoROARequestAsync("InitAndGetLeaveALlocationQuotas", "attendance_1.0", "HTTP", "GET", "AK", "/v1.0/attendance/leaves/initializations/balances", "json", req, runtime));
         }
 
+        public ListApproveByUsersResponse ListApproveByUsers(ListApproveByUsersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListApproveByUsersHeaders headers = new ListApproveByUsersHeaders();
+            return ListApproveByUsersWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListApproveByUsersResponse> ListApproveByUsersAsync(ListApproveByUsersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListApproveByUsersHeaders headers = new ListApproveByUsersHeaders();
+            return await ListApproveByUsersWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ListApproveByUsersResponse ListApproveByUsersWithOptions(ListApproveByUsersRequest request, ListApproveByUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTypes))
+            {
+                body["bizTypes"] = request.BizTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromDateTime))
+            {
+                body["fromDateTime"] = request.FromDateTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToDateTime))
+            {
+                body["toDateTime"] = request.ToDateTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ListApproveByUsersResponse>(DoROARequest("ListApproveByUsers", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/approvals/query", "json", req, runtime));
+        }
+
+        public async Task<ListApproveByUsersResponse> ListApproveByUsersWithOptionsAsync(ListApproveByUsersRequest request, ListApproveByUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTypes))
+            {
+                body["bizTypes"] = request.BizTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromDateTime))
+            {
+                body["fromDateTime"] = request.FromDateTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToDateTime))
+            {
+                body["toDateTime"] = request.ToDateTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            return TeaModel.ToObject<ListApproveByUsersResponse>(await DoROARequestAsync("ListApproveByUsers", "attendance_1.0", "HTTP", "POST", "AK", "/v1.0/attendance/approvals/query", "json", req, runtime));
+        }
+
         public ModifyWaterMarkTemplateResponse ModifyWaterMarkTemplate(ModifyWaterMarkTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

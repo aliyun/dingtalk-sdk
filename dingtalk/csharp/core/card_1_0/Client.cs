@@ -160,6 +160,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["coFeedOpenSpaceModel"] = request.CoFeedOpenSpaceModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocOpenDeliverModel))
+            {
+                body["docOpenDeliverModel"] = request.DocOpenDeliverModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenDeliverModel))
             {
                 body["imGroupOpenDeliverModel"] = request.ImGroupOpenDeliverModel;
@@ -248,6 +252,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenSpaceModel))
             {
                 body["coFeedOpenSpaceModel"] = request.CoFeedOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocOpenDeliverModel))
+            {
+                body["docOpenDeliverModel"] = request.DocOpenDeliverModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenDeliverModel))
             {
@@ -488,6 +496,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["coFeedOpenDeliverModel"] = request.CoFeedOpenDeliverModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocOpenDeliverModel))
+            {
+                body["docOpenDeliverModel"] = request.DocOpenDeliverModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenDeliverModel))
             {
                 body["imGroupOpenDeliverModel"] = request.ImGroupOpenDeliverModel;
@@ -536,6 +548,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenDeliverModel))
             {
                 body["coFeedOpenDeliverModel"] = request.CoFeedOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocOpenDeliverModel))
+            {
+                body["docOpenDeliverModel"] = request.DocOpenDeliverModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenDeliverModel))
             {

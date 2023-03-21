@@ -67,6 +67,13 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
                 public int? LiveStatus { get; set; }
 
                 /// <summary>
+                /// 直播回放时长
+                /// </summary>
+                [NameInMap("playbackDuration")]
+                [Validation(Required=false)]
+                public long? PlaybackDuration { get; set; }
+
+                /// <summary>
                 /// 直播真实开始时间
                 /// </summary>
                 [NameInMap("startTime")]

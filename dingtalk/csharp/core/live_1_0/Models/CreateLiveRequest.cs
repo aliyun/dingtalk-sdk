@@ -38,6 +38,13 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         public long? PreStartTime { get; set; }
 
         /// <summary>
+        /// 直播分享范围 0:不公开 1:全面公开 2:组织内公开
+        /// </summary>
+        [NameInMap("publicType")]
+        [Validation(Required=false)]
+        public long? PublicType { get; set; }
+
+        /// <summary>
         /// 标题
         /// </summary>
         [NameInMap("title")]

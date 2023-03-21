@@ -8,13 +8,13 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
-    public class UpdateDigitalInvoiceOrgInfoResponseBody : TeaModel {
+    public class QueryUserRoleListRequest : TeaModel {
         /// <summary>
-        /// 返回结果
+        /// 用户id
         /// </summary>
-        [NameInMap("result")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public bool? Result { get; set; }
+        public string UserId { get; set; }
 
     }
 

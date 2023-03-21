@@ -30,6 +30,13 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string Location { get; set; }
 
+        /// <summary>
+        /// 员工id
+        /// </summary>
+        [NameInMap("operator")]
+        [Validation(Required=false)]
+        public string Operator { get; set; }
+
     }
 
 }

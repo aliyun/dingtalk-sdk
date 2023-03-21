@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class UpdateDigitalInvoiceOrgInfoResponseBody : TeaModel {
+    public class GetNewestInnerGroupsRequest : TeaModel {
         /// <summary>
-        /// 返回结果
+        /// 用户userId。
         /// </summary>
-        [NameInMap("result")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public bool? Result { get; set; }
+        public string UserId { get; set; }
 
     }
 

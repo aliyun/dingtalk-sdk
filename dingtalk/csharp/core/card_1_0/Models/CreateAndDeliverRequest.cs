@@ -83,6 +83,22 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
+        /// 文档投放参数
+        /// </summary>
+        [NameInMap("docOpenDeliverModel")]
+        [Validation(Required=false)]
+        public CreateAndDeliverRequestDocOpenDeliverModel DocOpenDeliverModel { get; set; }
+        public class CreateAndDeliverRequestDocOpenDeliverModel : TeaModel {
+            /// <summary>
+            /// 【必填】员工id
+            /// </summary>
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
+        }
+
+        /// <summary>
         /// 群聊投放参数
         /// </summary>
         [NameInMap("imGroupOpenDeliverModel")]

@@ -44,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppAuthKey))
+            {
+                body["appAuthKey"] = request.AppAuthKey;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldScope))
             {
                 body["fieldScope"] = request.FieldScope;
@@ -77,6 +81,10 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppAuthKey))
+            {
+                body["appAuthKey"] = request.AppAuthKey;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldScope))
             {
                 body["fieldScope"] = request.FieldScope;

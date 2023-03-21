@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkcrm_2_0.Models
 {
-    public class UpdateDigitalInvoiceOrgInfoResponseBody : TeaModel {
+    public class GetRelationUkSettingRequest : TeaModel {
         /// <summary>
-        /// 返回结果
+        /// 关系类型。
         /// </summary>
-        [NameInMap("result")]
+        [NameInMap("relationType")]
         [Validation(Required=false)]
-        public bool? Result { get; set; }
+        public string RelationType { get; set; }
 
     }
 

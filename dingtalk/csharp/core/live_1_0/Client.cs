@@ -246,6 +246,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 body["preStartTime"] = request.PreStartTime;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublicType))
+            {
+                body["publicType"] = request.PublicType;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
             {
                 body["title"] = request.Title;
@@ -290,6 +294,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreStartTime))
             {
                 body["preStartTime"] = request.PreStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublicType))
+            {
+                body["publicType"] = request.PublicType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
             {

@@ -57,6 +57,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
             }
 
+            [NameInMap("categories")]
+            [Validation(Required=false)]
+            public List<ListEventsResponseBodyEventsCategories> Categories { get; set; }
+            public class ListEventsResponseBodyEventsCategories : TeaModel {
+                [NameInMap("displayName")]
+                [Validation(Required=false)]
+                public string DisplayName { get; set; }
+
+            }
+
             /// <summary>
             /// 创建时间
             /// </summary>
@@ -220,6 +230,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [NameInMap("self")]
                 [Validation(Required=false)]
                 public bool? Self { get; set; }
+
+            }
+
+            [NameInMap("originStart")]
+            [Validation(Required=false)]
+            public ListEventsResponseBodyEventsOriginStart OriginStart { get; set; }
+            public class ListEventsResponseBodyEventsOriginStart : TeaModel {
+                [NameInMap("dateTime")]
+                [Validation(Required=false)]
+                public string DateTime { get; set; }
 
             }
 
