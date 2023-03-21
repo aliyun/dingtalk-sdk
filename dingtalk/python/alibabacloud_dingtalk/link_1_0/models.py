@@ -40,11 +40,14 @@ class ApplyFollowerAuthInfoHeaders(TeaModel):
 class ApplyFollowerAuthInfoRequest(TeaModel):
     def __init__(
         self,
+        app_auth_key: str = None,
         field_scope: str = None,
         session_id: str = None,
         user_id: str = None,
     ):
-        # 申请的授权数据，多个数据时使用,分隔。
+        # 应用授权Key,可通过服务窗开放互联功能获取。此参数与fieldScope参数二选一。
+        self.app_auth_key = app_auth_key
+        # 申请的授权数据，多个数据时使用,分隔。此参数与appAuthKey参数二选一。
         # 暂时仅支持申请手机号码授权：Contact.User.mobile
         self.field_scope = field_scope
         # 服务窗机器人消息sessionId。
@@ -62,6 +65,8 @@ class ApplyFollowerAuthInfoRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.app_auth_key is not None:
+            result['appAuthKey'] = self.app_auth_key
         if self.field_scope is not None:
             result['fieldScope'] = self.field_scope
         if self.session_id is not None:
@@ -72,6 +77,8 @@ class ApplyFollowerAuthInfoRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('appAuthKey') is not None:
+            self.app_auth_key = m.get('appAuthKey')
         if m.get('fieldScope') is not None:
             self.field_scope = m.get('fieldScope')
         if m.get('sessionId') is not None:

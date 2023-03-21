@@ -2493,6 +2493,33 @@ class GetEventResponseBodyAttendees(TeaModel):
         return self
 
 
+class GetEventResponseBodyCategories(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+    ):
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        return self
+
+
 class GetEventResponseBodyEnd(TeaModel):
     def __init__(
         self,
@@ -2759,6 +2786,33 @@ class GetEventResponseBodyOrganizer(TeaModel):
         return self
 
 
+class GetEventResponseBodyOriginStart(TeaModel):
+    def __init__(
+        self,
+        date_time: str = None,
+    ):
+        self.date_time = date_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        return self
+
+
 class GetEventResponseBodyRecurrencePattern(TeaModel):
     def __init__(
         self,
@@ -2970,6 +3024,7 @@ class GetEventResponseBody(TeaModel):
     def __init__(
         self,
         attendees: List[GetEventResponseBodyAttendees] = None,
+        categories: List[GetEventResponseBodyCategories] = None,
         create_time: str = None,
         description: str = None,
         end: GetEventResponseBodyEnd = None,
@@ -2980,6 +3035,7 @@ class GetEventResponseBody(TeaModel):
         meeting_rooms: List[GetEventResponseBodyMeetingRooms] = None,
         online_meeting_info: GetEventResponseBodyOnlineMeetingInfo = None,
         organizer: GetEventResponseBodyOrganizer = None,
+        origin_start: GetEventResponseBodyOriginStart = None,
         recurrence: GetEventResponseBodyRecurrence = None,
         reminders: List[GetEventResponseBodyReminders] = None,
         series_master_id: str = None,
@@ -2989,6 +3045,7 @@ class GetEventResponseBody(TeaModel):
         update_time: str = None,
     ):
         self.attendees = attendees
+        self.categories = categories
         # 创建时间
         self.create_time = create_time
         # 日程描述
@@ -3003,6 +3060,7 @@ class GetEventResponseBody(TeaModel):
         self.meeting_rooms = meeting_rooms
         self.online_meeting_info = online_meeting_info
         self.organizer = organizer
+        self.origin_start = origin_start
         self.recurrence = recurrence
         self.reminders = reminders
         # 重复日程的主日程id，非重复日程为空
@@ -3021,6 +3079,10 @@ class GetEventResponseBody(TeaModel):
             for k in self.attendees:
                 if k:
                     k.validate()
+        if self.categories:
+            for k in self.categories:
+                if k:
+                    k.validate()
         if self.end:
             self.end.validate()
         if self.extended_properties:
@@ -3035,6 +3097,8 @@ class GetEventResponseBody(TeaModel):
             self.online_meeting_info.validate()
         if self.organizer:
             self.organizer.validate()
+        if self.origin_start:
+            self.origin_start.validate()
         if self.recurrence:
             self.recurrence.validate()
         if self.reminders:
@@ -3054,6 +3118,10 @@ class GetEventResponseBody(TeaModel):
         if self.attendees is not None:
             for k in self.attendees:
                 result['attendees'].append(k.to_map() if k else None)
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.description is not None:
@@ -3076,6 +3144,8 @@ class GetEventResponseBody(TeaModel):
             result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         if self.organizer is not None:
             result['organizer'] = self.organizer.to_map()
+        if self.origin_start is not None:
+            result['originStart'] = self.origin_start.to_map()
         if self.recurrence is not None:
             result['recurrence'] = self.recurrence.to_map()
         result['reminders'] = []
@@ -3101,6 +3171,11 @@ class GetEventResponseBody(TeaModel):
             for k in m.get('attendees'):
                 temp_model = GetEventResponseBodyAttendees()
                 self.attendees.append(temp_model.from_map(k))
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = GetEventResponseBodyCategories()
+                self.categories.append(temp_model.from_map(k))
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('description') is not None:
@@ -3129,6 +3204,9 @@ class GetEventResponseBody(TeaModel):
         if m.get('organizer') is not None:
             temp_model = GetEventResponseBodyOrganizer()
             self.organizer = temp_model.from_map(m['organizer'])
+        if m.get('originStart') is not None:
+            temp_model = GetEventResponseBodyOriginStart()
+            self.origin_start = temp_model.from_map(m['originStart'])
         if m.get('recurrence') is not None:
             temp_model = GetEventResponseBodyRecurrence()
             self.recurrence = temp_model.from_map(m['recurrence'])
@@ -5191,6 +5269,33 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
         return self
 
 
+class ListEventsResponseBodyEventsCategories(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+    ):
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        return self
+
+
 class ListEventsResponseBodyEventsEnd(TeaModel):
     def __init__(
         self,
@@ -5459,6 +5564,33 @@ class ListEventsResponseBodyEventsOrganizer(TeaModel):
         return self
 
 
+class ListEventsResponseBodyEventsOriginStart(TeaModel):
+    def __init__(
+        self,
+        date_time: str = None,
+    ):
+        self.date_time = date_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        return self
+
+
 class ListEventsResponseBodyEventsRecurrencePattern(TeaModel):
     def __init__(
         self,
@@ -5670,6 +5802,7 @@ class ListEventsResponseBodyEvents(TeaModel):
     def __init__(
         self,
         attendees: List[ListEventsResponseBodyEventsAttendees] = None,
+        categories: List[ListEventsResponseBodyEventsCategories] = None,
         create_time: str = None,
         description: str = None,
         end: ListEventsResponseBodyEventsEnd = None,
@@ -5680,6 +5813,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         meeting_rooms: List[ListEventsResponseBodyEventsMeetingRooms] = None,
         online_meeting_info: ListEventsResponseBodyEventsOnlineMeetingInfo = None,
         organizer: ListEventsResponseBodyEventsOrganizer = None,
+        origin_start: ListEventsResponseBodyEventsOriginStart = None,
         recurrence: ListEventsResponseBodyEventsRecurrence = None,
         reminders: List[ListEventsResponseBodyEventsReminders] = None,
         series_master_id: str = None,
@@ -5690,6 +5824,7 @@ class ListEventsResponseBodyEvents(TeaModel):
     ):
         # 日程参与人
         self.attendees = attendees
+        self.categories = categories
         # 创建时间
         self.create_time = create_time
         # 日程描述
@@ -5707,6 +5842,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         self.online_meeting_info = online_meeting_info
         # 日程组织人
         self.organizer = organizer
+        self.origin_start = origin_start
         # 日程重复规则
         self.recurrence = recurrence
         self.reminders = reminders
@@ -5726,6 +5862,10 @@ class ListEventsResponseBodyEvents(TeaModel):
             for k in self.attendees:
                 if k:
                     k.validate()
+        if self.categories:
+            for k in self.categories:
+                if k:
+                    k.validate()
         if self.end:
             self.end.validate()
         if self.extended_properties:
@@ -5740,6 +5880,8 @@ class ListEventsResponseBodyEvents(TeaModel):
             self.online_meeting_info.validate()
         if self.organizer:
             self.organizer.validate()
+        if self.origin_start:
+            self.origin_start.validate()
         if self.recurrence:
             self.recurrence.validate()
         if self.reminders:
@@ -5759,6 +5901,10 @@ class ListEventsResponseBodyEvents(TeaModel):
         if self.attendees is not None:
             for k in self.attendees:
                 result['attendees'].append(k.to_map() if k else None)
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.description is not None:
@@ -5781,6 +5927,8 @@ class ListEventsResponseBodyEvents(TeaModel):
             result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         if self.organizer is not None:
             result['organizer'] = self.organizer.to_map()
+        if self.origin_start is not None:
+            result['originStart'] = self.origin_start.to_map()
         if self.recurrence is not None:
             result['recurrence'] = self.recurrence.to_map()
         result['reminders'] = []
@@ -5806,6 +5954,11 @@ class ListEventsResponseBodyEvents(TeaModel):
             for k in m.get('attendees'):
                 temp_model = ListEventsResponseBodyEventsAttendees()
                 self.attendees.append(temp_model.from_map(k))
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = ListEventsResponseBodyEventsCategories()
+                self.categories.append(temp_model.from_map(k))
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('description') is not None:
@@ -5834,6 +5987,9 @@ class ListEventsResponseBodyEvents(TeaModel):
         if m.get('organizer') is not None:
             temp_model = ListEventsResponseBodyEventsOrganizer()
             self.organizer = temp_model.from_map(m['organizer'])
+        if m.get('originStart') is not None:
+            temp_model = ListEventsResponseBodyEventsOriginStart()
+            self.origin_start = temp_model.from_map(m['originStart'])
         if m.get('recurrence') is not None:
             temp_model = ListEventsResponseBodyEventsRecurrence()
             self.recurrence = temp_model.from_map(m['recurrence'])
@@ -6912,6 +7068,33 @@ class ListEventsViewResponseBodyEventsAttendees(TeaModel):
         return self
 
 
+class ListEventsViewResponseBodyEventsCategories(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+    ):
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        return self
+
+
 class ListEventsViewResponseBodyEventsEnd(TeaModel):
     def __init__(
         self,
@@ -7141,6 +7324,33 @@ class ListEventsViewResponseBodyEventsOrganizer(TeaModel):
         return self
 
 
+class ListEventsViewResponseBodyEventsOriginStart(TeaModel):
+    def __init__(
+        self,
+        date_time: str = None,
+    ):
+        self.date_time = date_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        return self
+
+
 class ListEventsViewResponseBodyEventsRecurrencePattern(TeaModel):
     def __init__(
         self,
@@ -7319,6 +7529,7 @@ class ListEventsViewResponseBodyEvents(TeaModel):
     def __init__(
         self,
         attendees: List[ListEventsViewResponseBodyEventsAttendees] = None,
+        categories: List[ListEventsViewResponseBodyEventsCategories] = None,
         create_time: str = None,
         description: str = None,
         end: ListEventsViewResponseBodyEventsEnd = None,
@@ -7328,6 +7539,7 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         location: ListEventsViewResponseBodyEventsLocation = None,
         online_meeting_info: ListEventsViewResponseBodyEventsOnlineMeetingInfo = None,
         organizer: ListEventsViewResponseBodyEventsOrganizer = None,
+        origin_start: ListEventsViewResponseBodyEventsOriginStart = None,
         recurrence: ListEventsViewResponseBodyEventsRecurrence = None,
         series_master_id: str = None,
         start: ListEventsViewResponseBodyEventsStart = None,
@@ -7337,6 +7549,7 @@ class ListEventsViewResponseBodyEvents(TeaModel):
     ):
         # 日程参与人
         self.attendees = attendees
+        self.categories = categories
         # 创建时间
         self.create_time = create_time
         # 日程描述
@@ -7353,6 +7566,7 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         self.online_meeting_info = online_meeting_info
         # 日程组织人
         self.organizer = organizer
+        self.origin_start = origin_start
         # 日程重复规则
         self.recurrence = recurrence
         # 重复日程的主日程id，非重复日程为空
@@ -7371,6 +7585,10 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             for k in self.attendees:
                 if k:
                     k.validate()
+        if self.categories:
+            for k in self.categories:
+                if k:
+                    k.validate()
         if self.end:
             self.end.validate()
         if self.extended_properties:
@@ -7381,6 +7599,8 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             self.online_meeting_info.validate()
         if self.organizer:
             self.organizer.validate()
+        if self.origin_start:
+            self.origin_start.validate()
         if self.recurrence:
             self.recurrence.validate()
         if self.start:
@@ -7396,6 +7616,10 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         if self.attendees is not None:
             for k in self.attendees:
                 result['attendees'].append(k.to_map() if k else None)
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.description is not None:
@@ -7414,6 +7638,8 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         if self.organizer is not None:
             result['organizer'] = self.organizer.to_map()
+        if self.origin_start is not None:
+            result['originStart'] = self.origin_start.to_map()
         if self.recurrence is not None:
             result['recurrence'] = self.recurrence.to_map()
         if self.series_master_id is not None:
@@ -7435,6 +7661,11 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             for k in m.get('attendees'):
                 temp_model = ListEventsViewResponseBodyEventsAttendees()
                 self.attendees.append(temp_model.from_map(k))
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = ListEventsViewResponseBodyEventsCategories()
+                self.categories.append(temp_model.from_map(k))
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('description') is not None:
@@ -7458,6 +7689,9 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         if m.get('organizer') is not None:
             temp_model = ListEventsViewResponseBodyEventsOrganizer()
             self.organizer = temp_model.from_map(m['organizer'])
+        if m.get('originStart') is not None:
+            temp_model = ListEventsViewResponseBodyEventsOriginStart()
+            self.origin_start = temp_model.from_map(m['originStart'])
         if m.get('recurrence') is not None:
             temp_model = ListEventsViewResponseBodyEventsRecurrence()
             self.recurrence = temp_model.from_map(m['recurrence'])

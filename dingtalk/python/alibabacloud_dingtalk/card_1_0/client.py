@@ -137,6 +137,8 @@ class Client(OpenApiClient):
             body['coFeedOpenDeliverModel'] = request.co_feed_open_deliver_model
         if not UtilClient.is_unset(request.co_feed_open_space_model):
             body['coFeedOpenSpaceModel'] = request.co_feed_open_space_model
+        if not UtilClient.is_unset(request.doc_open_deliver_model):
+            body['docOpenDeliverModel'] = request.doc_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_deliver_model):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_space_model):
@@ -193,6 +195,8 @@ class Client(OpenApiClient):
             body['coFeedOpenDeliverModel'] = request.co_feed_open_deliver_model
         if not UtilClient.is_unset(request.co_feed_open_space_model):
             body['coFeedOpenSpaceModel'] = request.co_feed_open_space_model
+        if not UtilClient.is_unset(request.doc_open_deliver_model):
+            body['docOpenDeliverModel'] = request.doc_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_deliver_model):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_space_model):
@@ -365,6 +369,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_deliver_model):
             body['coFeedOpenDeliverModel'] = request.co_feed_open_deliver_model
+        if not UtilClient.is_unset(request.doc_open_deliver_model):
+            body['docOpenDeliverModel'] = request.doc_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_deliver_model):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
         if not UtilClient.is_unset(request.im_robot_open_deliver_model):
@@ -401,6 +407,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_deliver_model):
             body['coFeedOpenDeliverModel'] = request.co_feed_open_deliver_model
+        if not UtilClient.is_unset(request.doc_open_deliver_model):
+            body['docOpenDeliverModel'] = request.doc_open_deliver_model
         if not UtilClient.is_unset(request.im_group_open_deliver_model):
             body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
         if not UtilClient.is_unset(request.im_robot_open_deliver_model):

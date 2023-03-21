@@ -47,6 +47,8 @@ class Client(OpenApiClient):
     ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.app_auth_key):
+            body['appAuthKey'] = request.app_auth_key
         if not UtilClient.is_unset(request.field_scope):
             body['fieldScope'] = request.field_scope
         if not UtilClient.is_unset(request.session_id):
@@ -75,6 +77,8 @@ class Client(OpenApiClient):
     ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.app_auth_key):
+            body['appAuthKey'] = request.app_auth_key
         if not UtilClient.is_unset(request.field_scope):
             body['fieldScope'] = request.field_scope
         if not UtilClient.is_unset(request.session_id):

@@ -628,6 +628,34 @@ class CreateAndDeliverRequestCoFeedOpenSpaceModel(TeaModel):
         return self
 
 
+class CreateAndDeliverRequestDocOpenDeliverModel(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 【必填】员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class CreateAndDeliverRequestImGroupOpenDeliverModel(TeaModel):
     def __init__(
         self,
@@ -1177,6 +1205,7 @@ class CreateAndDeliverRequest(TeaModel):
         card_template_id: str = None,
         co_feed_open_deliver_model: CreateAndDeliverRequestCoFeedOpenDeliverModel = None,
         co_feed_open_space_model: CreateAndDeliverRequestCoFeedOpenSpaceModel = None,
+        doc_open_deliver_model: CreateAndDeliverRequestDocOpenDeliverModel = None,
         im_group_open_deliver_model: CreateAndDeliverRequestImGroupOpenDeliverModel = None,
         im_group_open_space_model: CreateAndDeliverRequestImGroupOpenSpaceModel = None,
         im_robot_open_deliver_model: CreateAndDeliverRequestImRobotOpenDeliverModel = None,
@@ -1200,6 +1229,8 @@ class CreateAndDeliverRequest(TeaModel):
         self.co_feed_open_deliver_model = co_feed_open_deliver_model
         # 协作场域信息
         self.co_feed_open_space_model = co_feed_open_space_model
+        # 文档投放参数
+        self.doc_open_deliver_model = doc_open_deliver_model
         # 群聊投放参数
         self.im_group_open_deliver_model = im_group_open_deliver_model
         # IM群聊场域信息
@@ -1230,6 +1261,8 @@ class CreateAndDeliverRequest(TeaModel):
             self.co_feed_open_deliver_model.validate()
         if self.co_feed_open_space_model:
             self.co_feed_open_space_model.validate()
+        if self.doc_open_deliver_model:
+            self.doc_open_deliver_model.validate()
         if self.im_group_open_deliver_model:
             self.im_group_open_deliver_model.validate()
         if self.im_group_open_space_model:
@@ -1265,6 +1298,8 @@ class CreateAndDeliverRequest(TeaModel):
             result['coFeedOpenDeliverModel'] = self.co_feed_open_deliver_model.to_map()
         if self.co_feed_open_space_model is not None:
             result['coFeedOpenSpaceModel'] = self.co_feed_open_space_model.to_map()
+        if self.doc_open_deliver_model is not None:
+            result['docOpenDeliverModel'] = self.doc_open_deliver_model.to_map()
         if self.im_group_open_deliver_model is not None:
             result['imGroupOpenDeliverModel'] = self.im_group_open_deliver_model.to_map()
         if self.im_group_open_space_model is not None:
@@ -1308,6 +1343,9 @@ class CreateAndDeliverRequest(TeaModel):
         if m.get('coFeedOpenSpaceModel') is not None:
             temp_model = CreateAndDeliverRequestCoFeedOpenSpaceModel()
             self.co_feed_open_space_model = temp_model.from_map(m['coFeedOpenSpaceModel'])
+        if m.get('docOpenDeliverModel') is not None:
+            temp_model = CreateAndDeliverRequestDocOpenDeliverModel()
+            self.doc_open_deliver_model = temp_model.from_map(m['docOpenDeliverModel'])
         if m.get('imGroupOpenDeliverModel') is not None:
             temp_model = CreateAndDeliverRequestImGroupOpenDeliverModel()
             self.im_group_open_deliver_model = temp_model.from_map(m['imGroupOpenDeliverModel'])
@@ -2307,6 +2345,34 @@ class DeliverCardRequestCoFeedOpenDeliverModel(TeaModel):
         return self
 
 
+class DeliverCardRequestDocOpenDeliverModel(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 【必填】员工id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class DeliverCardRequestImGroupOpenDeliverModel(TeaModel):
     def __init__(
         self,
@@ -2423,6 +2489,7 @@ class DeliverCardRequest(TeaModel):
     def __init__(
         self,
         co_feed_open_deliver_model: DeliverCardRequestCoFeedOpenDeliverModel = None,
+        doc_open_deliver_model: DeliverCardRequestDocOpenDeliverModel = None,
         im_group_open_deliver_model: DeliverCardRequestImGroupOpenDeliverModel = None,
         im_robot_open_deliver_model: DeliverCardRequestImRobotOpenDeliverModel = None,
         open_space_id: str = None,
@@ -2432,6 +2499,8 @@ class DeliverCardRequest(TeaModel):
     ):
         # 协作投放参数
         self.co_feed_open_deliver_model = co_feed_open_deliver_model
+        # 文档投放参数
+        self.doc_open_deliver_model = doc_open_deliver_model
         # 群聊投放参数
         self.im_group_open_deliver_model = im_group_open_deliver_model
         # 单聊机器人场域投放参数
@@ -2454,6 +2523,8 @@ class DeliverCardRequest(TeaModel):
     def validate(self):
         if self.co_feed_open_deliver_model:
             self.co_feed_open_deliver_model.validate()
+        if self.doc_open_deliver_model:
+            self.doc_open_deliver_model.validate()
         if self.im_group_open_deliver_model:
             self.im_group_open_deliver_model.validate()
         if self.im_robot_open_deliver_model:
@@ -2469,6 +2540,8 @@ class DeliverCardRequest(TeaModel):
         result = dict()
         if self.co_feed_open_deliver_model is not None:
             result['coFeedOpenDeliverModel'] = self.co_feed_open_deliver_model.to_map()
+        if self.doc_open_deliver_model is not None:
+            result['docOpenDeliverModel'] = self.doc_open_deliver_model.to_map()
         if self.im_group_open_deliver_model is not None:
             result['imGroupOpenDeliverModel'] = self.im_group_open_deliver_model.to_map()
         if self.im_robot_open_deliver_model is not None:
@@ -2488,6 +2561,9 @@ class DeliverCardRequest(TeaModel):
         if m.get('coFeedOpenDeliverModel') is not None:
             temp_model = DeliverCardRequestCoFeedOpenDeliverModel()
             self.co_feed_open_deliver_model = temp_model.from_map(m['coFeedOpenDeliverModel'])
+        if m.get('docOpenDeliverModel') is not None:
+            temp_model = DeliverCardRequestDocOpenDeliverModel()
+            self.doc_open_deliver_model = temp_model.from_map(m['docOpenDeliverModel'])
         if m.get('imGroupOpenDeliverModel') is not None:
             temp_model = DeliverCardRequestImGroupOpenDeliverModel()
             self.im_group_open_deliver_model = temp_model.from_map(m['imGroupOpenDeliverModel'])

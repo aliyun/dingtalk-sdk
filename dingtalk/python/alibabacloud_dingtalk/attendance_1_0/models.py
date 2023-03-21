@@ -7182,6 +7182,263 @@ class InitAndGetLeaveALlocationQuotasResponse(TeaModel):
         return self
 
 
+class ListApproveByUsersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListApproveByUsersRequest(TeaModel):
+    def __init__(
+        self,
+        biz_types: List[int] = None,
+        from_date_time: int = None,
+        to_date_time: int = None,
+        user_ids: str = None,
+    ):
+        # 传入需要查询的审批单类型：
+        # ● 1：加班
+        # ● 2：出差、外出
+        # ● 3：请假
+        # ● 4:  补卡
+        # ● 5：外勤审批
+        self.biz_types = biz_types
+        # 起始日期，Unix时间戳，单位毫秒。（不支持180天前）
+        self.from_date_time = from_date_time
+        # 结束日期，Unix时间戳，单位毫秒。（不支持180天前，开始和结束不能超过30天）
+        self.to_date_time = to_date_time
+        # 要查询的人员userId列表，多个userId用逗号分隔，一次最多可传50个
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_types is not None:
+            result['bizTypes'] = self.biz_types
+        if self.from_date_time is not None:
+            result['fromDateTime'] = self.from_date_time
+        if self.to_date_time is not None:
+            result['toDateTime'] = self.to_date_time
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizTypes') is not None:
+            self.biz_types = m.get('bizTypes')
+        if m.get('fromDateTime') is not None:
+            self.from_date_time = m.get('fromDateTime')
+        if m.get('toDateTime') is not None:
+            self.to_date_time = m.get('toDateTime')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class ListApproveByUsersResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        approve_id: str = None,
+        begin_time: str = None,
+        biz_type: int = None,
+        calculate_model: int = None,
+        duration_unit: str = None,
+        end_time: str = None,
+        sub_type: str = None,
+        tag_name: str = None,
+        user_id: str = None,
+    ):
+        # 审批单自定义id
+        self.approve_id = approve_id
+        # 审批单开始时间原始格式
+        self.begin_time = begin_time
+        # 审批单类型：
+        # ● 1：加班
+        # ● 2：出差、外出
+        # ● 3：请假
+        # ● 4:  补卡
+        # ● 5：外勤审批
+        self.biz_type = biz_type
+        # 计算方法：
+        # ● 0：按自然日计算
+        # ● 1：按工作日计算
+        self.calculate_model = calculate_model
+        # 时长单位，支持格式如下：
+        # ● day
+        # ● halfDay
+        # ● hour
+        # 时间格式必须与时长单位对应：
+        # ● 2019-08-15对应day
+        # ● 2019-08-15 AM对应halfDay
+        # ● 2019-08-15 12:43对应hour
+        self.duration_unit = duration_unit
+        # 审批单结束时间原始格式
+        self.end_time = end_time
+        # 子类型名称，最大长度20个字符
+        self.sub_type = sub_type
+        # 审批单类型名称，最大长度20个字符
+        self.tag_name = tag_name
+        # 用户userid
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.approve_id is not None:
+            result['approveId'] = self.approve_id
+        if self.begin_time is not None:
+            result['beginTime'] = self.begin_time
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.calculate_model is not None:
+            result['calculateModel'] = self.calculate_model
+        if self.duration_unit is not None:
+            result['durationUnit'] = self.duration_unit
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.sub_type is not None:
+            result['subType'] = self.sub_type
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('approveId') is not None:
+            self.approve_id = m.get('approveId')
+        if m.get('beginTime') is not None:
+            self.begin_time = m.get('beginTime')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('calculateModel') is not None:
+            self.calculate_model = m.get('calculateModel')
+        if m.get('durationUnit') is not None:
+            self.duration_unit = m.get('durationUnit')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('subType') is not None:
+            self.sub_type = m.get('subType')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListApproveByUsersResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListApproveByUsersResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListApproveByUsersResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class ListApproveByUsersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ListApproveByUsersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ListApproveByUsersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ModifyWaterMarkTemplateHeaders(TeaModel):
     def __init__(
         self,

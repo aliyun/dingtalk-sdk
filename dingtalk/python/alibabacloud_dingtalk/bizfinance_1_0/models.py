@@ -8173,6 +8173,174 @@ class QuerySupplierByPageResponse(TeaModel):
         return self
 
 
+class QueryUserRoleListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserRoleListRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # 用户id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryUserRoleListResponseBodyRoleVOList(TeaModel):
+    def __init__(
+        self,
+        role_code: str = None,
+        role_name: str = None,
+    ):
+        # 角色Code
+        self.role_code = role_code
+        # 角色名字
+        self.role_name = role_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        return self
+
+
+class QueryUserRoleListResponseBody(TeaModel):
+    def __init__(
+        self,
+        role_volist: List[QueryUserRoleListResponseBodyRoleVOList] = None,
+    ):
+        self.role_volist = role_volist
+
+    def validate(self):
+        if self.role_volist:
+            for k in self.role_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['roleVOList'] = []
+        if self.role_volist is not None:
+            for k in self.role_volist:
+                result['roleVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.role_volist = []
+        if m.get('roleVOList') is not None:
+            for k in m.get('roleVOList'):
+                temp_model = QueryUserRoleListResponseBodyRoleVOList()
+                self.role_volist.append(temp_model.from_map(k))
+        return self
+
+
+class QueryUserRoleListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryUserRoleListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryUserRoleListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UnbindApplyReceiptAndInvoiceRelatedHeaders(TeaModel):
     def __init__(
         self,
@@ -9495,6 +9663,7 @@ class UpdateDigitalInvoiceOrgInfoRequest(TeaModel):
         digital_invoice_type: List[str] = None,
         is_digital_org: bool = None,
         location: str = None,
+        operator: str = None,
     ):
         # 支持的全电票种
         self.digital_invoice_type = digital_invoice_type
@@ -9502,6 +9671,8 @@ class UpdateDigitalInvoiceOrgInfoRequest(TeaModel):
         self.is_digital_org = is_digital_org
         # 报税地点
         self.location = location
+        # 员工id
+        self.operator = operator
 
     def validate(self):
         pass
@@ -9518,6 +9689,8 @@ class UpdateDigitalInvoiceOrgInfoRequest(TeaModel):
             result['isDigitalOrg'] = self.is_digital_org
         if self.location is not None:
             result['location'] = self.location
+        if self.operator is not None:
+            result['operator'] = self.operator
         return result
 
     def from_map(self, m: dict = None):
@@ -9528,16 +9701,18 @@ class UpdateDigitalInvoiceOrgInfoRequest(TeaModel):
             self.is_digital_org = m.get('isDigitalOrg')
         if m.get('location') is not None:
             self.location = m.get('location')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         return self
 
 
 class UpdateDigitalInvoiceOrgInfoResponseBody(TeaModel):
     def __init__(
         self,
-        resulte: bool = None,
+        result: bool = None,
     ):
         # 返回结果
-        self.resulte = resulte
+        self.result = result
 
     def validate(self):
         pass
@@ -9548,14 +9723,14 @@ class UpdateDigitalInvoiceOrgInfoResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.resulte is not None:
-            result['resulte'] = self.resulte
+        if self.result is not None:
+            result['result'] = self.result
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('resulte') is not None:
-            self.resulte = m.get('resulte')
+        if m.get('result') is not None:
+            self.result = m.get('result')
         return self
 
 
@@ -12677,9 +12852,12 @@ class UpdateInvoiceAccountingPeriodDateRequest(TeaModel):
     def __init__(
         self,
         invoice_finance_info_volist: List[UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList] = None,
+        operator: str = None,
     ):
         # 发票财务信息列表
         self.invoice_finance_info_volist = invoice_finance_info_volist
+        # 员工id
+        self.operator = operator
 
     def validate(self):
         if self.invoice_finance_info_volist:
@@ -12697,6 +12875,8 @@ class UpdateInvoiceAccountingPeriodDateRequest(TeaModel):
         if self.invoice_finance_info_volist is not None:
             for k in self.invoice_finance_info_volist:
                 result['invoiceFinanceInfoVOList'].append(k.to_map() if k else None)
+        if self.operator is not None:
+            result['operator'] = self.operator
         return result
 
     def from_map(self, m: dict = None):
@@ -12706,16 +12886,21 @@ class UpdateInvoiceAccountingPeriodDateRequest(TeaModel):
             for k in m.get('invoiceFinanceInfoVOList'):
                 temp_model = UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList()
                 self.invoice_finance_info_volist.append(temp_model.from_map(k))
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         return self
 
 
-class UpdateInvoiceAccountingPeriodDateResponseBody(TeaModel):
+class UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices(TeaModel):
     def __init__(
         self,
-        result: bool = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
     ):
-        # 返回结果
-        self.result = result
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
 
     def validate(self):
         pass
@@ -12726,14 +12911,54 @@ class UpdateInvoiceAccountingPeriodDateResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.result is not None:
-            result['result'] = self.result
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('result') is not None:
-            self.result = m.get('result')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class UpdateInvoiceAccountingPeriodDateResponseBody(TeaModel):
+    def __init__(
+        self,
+        fail_invoices: List[UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices] = None,
+    ):
+        # 返回结果
+        self.fail_invoices = fail_invoices
+
+    def validate(self):
+        if self.fail_invoices:
+            for k in self.fail_invoices:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['failInvoices'] = []
+        if self.fail_invoices is not None:
+            for k in self.fail_invoices:
+                result['failInvoices'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.fail_invoices = []
+        if m.get('failInvoices') is not None:
+            for k in m.get('failInvoices'):
+                temp_model = UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices()
+                self.fail_invoices.append(temp_model.from_map(k))
         return self
 
 
@@ -12860,9 +13085,12 @@ class UpdateInvoiceAccountingStatusRequest(TeaModel):
     def __init__(
         self,
         invoice_finance_info_volist: List[UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList] = None,
+        operator: str = None,
     ):
         # 发票财务模型列表
         self.invoice_finance_info_volist = invoice_finance_info_volist
+        # 员工id
+        self.operator = operator
 
     def validate(self):
         if self.invoice_finance_info_volist:
@@ -12880,6 +13108,8 @@ class UpdateInvoiceAccountingStatusRequest(TeaModel):
         if self.invoice_finance_info_volist is not None:
             for k in self.invoice_finance_info_volist:
                 result['invoiceFinanceInfoVOList'].append(k.to_map() if k else None)
+        if self.operator is not None:
+            result['operator'] = self.operator
         return result
 
     def from_map(self, m: dict = None):
@@ -12889,16 +13119,21 @@ class UpdateInvoiceAccountingStatusRequest(TeaModel):
             for k in m.get('invoiceFinanceInfoVOList'):
                 temp_model = UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList()
                 self.invoice_finance_info_volist.append(temp_model.from_map(k))
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         return self
 
 
-class UpdateInvoiceAccountingStatusResponseBody(TeaModel):
+class UpdateInvoiceAccountingStatusResponseBodyFailInvoices(TeaModel):
     def __init__(
         self,
-        result: bool = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
     ):
-        # 返回结果
-        self.result = result
+        # 发票代码
+        self.invoice_code = invoice_code
+        # 发票号码
+        self.invoice_no = invoice_no
 
     def validate(self):
         pass
@@ -12909,14 +13144,54 @@ class UpdateInvoiceAccountingStatusResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.result is not None:
-            result['result'] = self.result
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('result') is not None:
-            self.result = m.get('result')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class UpdateInvoiceAccountingStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        fail_invoices: List[UpdateInvoiceAccountingStatusResponseBodyFailInvoices] = None,
+    ):
+        # 返回结果
+        self.fail_invoices = fail_invoices
+
+    def validate(self):
+        if self.fail_invoices:
+            for k in self.fail_invoices:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['failInvoices'] = []
+        if self.fail_invoices is not None:
+            for k in self.fail_invoices:
+                result['failInvoices'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.fail_invoices = []
+        if m.get('failInvoices') is not None:
+            for k in m.get('failInvoices'):
+                temp_model = UpdateInvoiceAccountingStatusResponseBodyFailInvoices()
+                self.fail_invoices.append(temp_model.from_map(k))
         return self
 
 

@@ -1985,6 +1985,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('InitAndGetLeaveALlocationQuotas', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/initializations/balances', 'json', req, runtime)
         )
 
+    def list_approve_by_users(
+        self,
+        request: dingtalkattendance__1__0_models.ListApproveByUsersRequest,
+    ) -> dingtalkattendance__1__0_models.ListApproveByUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ListApproveByUsersHeaders()
+        return self.list_approve_by_users_with_options(request, headers, runtime)
+
+    async def list_approve_by_users_async(
+        self,
+        request: dingtalkattendance__1__0_models.ListApproveByUsersRequest,
+    ) -> dingtalkattendance__1__0_models.ListApproveByUsersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ListApproveByUsersHeaders()
+        return await self.list_approve_by_users_with_options_async(request, headers, runtime)
+
+    def list_approve_by_users_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.ListApproveByUsersRequest,
+        headers: dingtalkattendance__1__0_models.ListApproveByUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ListApproveByUsersResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_types):
+            body['bizTypes'] = request.biz_types
+        if not UtilClient.is_unset(request.from_date_time):
+            body['fromDateTime'] = request.from_date_time
+        if not UtilClient.is_unset(request.to_date_time):
+            body['toDateTime'] = request.to_date_time
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ListApproveByUsersResponse(),
+            self.do_roarequest('ListApproveByUsers', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approvals/query', 'json', req, runtime)
+        )
+
+    async def list_approve_by_users_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.ListApproveByUsersRequest,
+        headers: dingtalkattendance__1__0_models.ListApproveByUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ListApproveByUsersResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_types):
+            body['bizTypes'] = request.biz_types
+        if not UtilClient.is_unset(request.from_date_time):
+            body['fromDateTime'] = request.from_date_time
+        if not UtilClient.is_unset(request.to_date_time):
+            body['toDateTime'] = request.to_date_time
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ListApproveByUsersResponse(),
+            await self.do_roarequest_async('ListApproveByUsers', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approvals/query', 'json', req, runtime)
+        )
+
     def modify_water_mark_template(
         self,
         request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,

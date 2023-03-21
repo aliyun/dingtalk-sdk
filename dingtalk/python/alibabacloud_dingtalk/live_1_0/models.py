@@ -352,6 +352,7 @@ class CreateLiveRequest(TeaModel):
         introduction: str = None,
         pre_end_time: int = None,
         pre_start_time: int = None,
+        public_type: int = None,
         title: str = None,
         union_id: str = None,
     ):
@@ -363,6 +364,8 @@ class CreateLiveRequest(TeaModel):
         self.pre_end_time = pre_end_time
         # 预计开播时间
         self.pre_start_time = pre_start_time
+        # 直播分享范围 0:不公开 1:全面公开 2:组织内公开
+        self.public_type = public_type
         # 标题
         self.title = title
         # 用户id（主播id）
@@ -385,6 +388,8 @@ class CreateLiveRequest(TeaModel):
             result['preEndTime'] = self.pre_end_time
         if self.pre_start_time is not None:
             result['preStartTime'] = self.pre_start_time
+        if self.public_type is not None:
+            result['publicType'] = self.public_type
         if self.title is not None:
             result['title'] = self.title
         if self.union_id is not None:
@@ -401,6 +406,8 @@ class CreateLiveRequest(TeaModel):
             self.pre_end_time = m.get('preEndTime')
         if m.get('preStartTime') is not None:
             self.pre_start_time = m.get('preStartTime')
+        if m.get('publicType') is not None:
+            self.public_type = m.get('publicType')
         if m.get('title') is not None:
             self.title = m.get('title')
         if m.get('unionId') is not None:
@@ -2516,6 +2523,7 @@ class QueryLiveInfoResponseBodyResultLiveInfo(TeaModel):
         live_id: str = None,
         live_play_url: str = None,
         live_status: int = None,
+        playback_duration: int = None,
         start_time: int = None,
         subscribe_count: int = None,
         title: str = None,
@@ -2536,6 +2544,8 @@ class QueryLiveInfoResponseBodyResultLiveInfo(TeaModel):
         self.live_play_url = live_play_url
         # 直播状态
         self.live_status = live_status
+        # 直播回放时长
+        self.playback_duration = playback_duration
         # 直播真实开始时间
         self.start_time = start_time
         # 预约人数
@@ -2570,6 +2580,8 @@ class QueryLiveInfoResponseBodyResultLiveInfo(TeaModel):
             result['livePlayUrl'] = self.live_play_url
         if self.live_status is not None:
             result['liveStatus'] = self.live_status
+        if self.playback_duration is not None:
+            result['playbackDuration'] = self.playback_duration
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.subscribe_count is not None:
@@ -2598,6 +2610,8 @@ class QueryLiveInfoResponseBodyResultLiveInfo(TeaModel):
             self.live_play_url = m.get('livePlayUrl')
         if m.get('liveStatus') is not None:
             self.live_status = m.get('liveStatus')
+        if m.get('playbackDuration') is not None:
+            self.playback_duration = m.get('playbackDuration')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('subscribeCount') is not None:

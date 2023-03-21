@@ -217,6 +217,8 @@ class Client(OpenApiClient):
             body['preEndTime'] = request.pre_end_time
         if not UtilClient.is_unset(request.pre_start_time):
             body['preStartTime'] = request.pre_start_time
+        if not UtilClient.is_unset(request.public_type):
+            body['publicType'] = request.public_type
         if not UtilClient.is_unset(request.title):
             body['title'] = request.title
         if not UtilClient.is_unset(request.union_id):
@@ -251,6 +253,8 @@ class Client(OpenApiClient):
             body['preEndTime'] = request.pre_end_time
         if not UtilClient.is_unset(request.pre_start_time):
             body['preStartTime'] = request.pre_start_time
+        if not UtilClient.is_unset(request.public_type):
+            body['publicType'] = request.public_type
         if not UtilClient.is_unset(request.title):
             body['title'] = request.title
         if not UtilClient.is_unset(request.union_id):
