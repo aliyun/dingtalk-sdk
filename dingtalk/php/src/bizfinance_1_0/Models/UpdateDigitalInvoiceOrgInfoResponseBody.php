@@ -13,9 +13,9 @@ class UpdateDigitalInvoiceOrgInfoResponseBody extends Model
      *
      * @var bool
      */
-    public $resulte;
+    public $result;
     protected $_name = [
-        'resulte' => 'resulte',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class UpdateDigitalInvoiceOrgInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->resulte) {
-            $res['resulte'] = $this->resulte;
+        if (null !== $this->result) {
+            $res['result'] = $this->result;
         }
 
         return $res;
@@ -40,8 +40,8 @@ class UpdateDigitalInvoiceOrgInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['resulte'])) {
-            $model->resulte = $map['resulte'];
+        if (isset($map['result'])) {
+            $model->result = $map['result'];
         }
 
         return $model;

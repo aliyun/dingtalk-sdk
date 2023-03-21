@@ -58,6 +58,13 @@ class liveInfo extends Model
     public $liveStatus;
 
     /**
+     * @description 直播回放时长
+     *
+     * @var int
+     */
+    public $playbackDuration;
+
+    /**
      * @description 直播真实开始时间
      *
      * @var int
@@ -92,18 +99,19 @@ class liveInfo extends Model
      */
     public $uv;
     protected $_name = [
-        'coverUrl'       => 'coverUrl',
-        'duration'       => 'duration',
-        'endTime'        => 'endTime',
-        'introduction'   => 'introduction',
-        'liveId'         => 'liveId',
-        'livePlayUrl'    => 'livePlayUrl',
-        'liveStatus'     => 'liveStatus',
-        'startTime'      => 'startTime',
-        'subscribeCount' => 'subscribeCount',
-        'title'          => 'title',
-        'unionId'        => 'unionId',
-        'uv'             => 'uv',
+        'coverUrl'         => 'coverUrl',
+        'duration'         => 'duration',
+        'endTime'          => 'endTime',
+        'introduction'     => 'introduction',
+        'liveId'           => 'liveId',
+        'livePlayUrl'      => 'livePlayUrl',
+        'liveStatus'       => 'liveStatus',
+        'playbackDuration' => 'playbackDuration',
+        'startTime'        => 'startTime',
+        'subscribeCount'   => 'subscribeCount',
+        'title'            => 'title',
+        'unionId'          => 'unionId',
+        'uv'               => 'uv',
     ];
 
     public function validate()
@@ -133,6 +141,9 @@ class liveInfo extends Model
         }
         if (null !== $this->liveStatus) {
             $res['liveStatus'] = $this->liveStatus;
+        }
+        if (null !== $this->playbackDuration) {
+            $res['playbackDuration'] = $this->playbackDuration;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -181,6 +192,9 @@ class liveInfo extends Model
         }
         if (isset($map['liveStatus'])) {
             $model->liveStatus = $map['liveStatus'];
+        }
+        if (isset($map['playbackDuration'])) {
+            $model->playbackDuration = $map['playbackDuration'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];

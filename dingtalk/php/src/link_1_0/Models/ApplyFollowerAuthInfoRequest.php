@@ -9,7 +9,14 @@ use AlibabaCloud\Tea\Model;
 class ApplyFollowerAuthInfoRequest extends Model
 {
     /**
-     * @description 申请的授权数据，多个数据时使用,分隔。
+     * @description 应用授权Key,可通过服务窗开放互联功能获取。此参数与fieldScope参数二选一。
+     *
+     * @var string
+     */
+    public $appAuthKey;
+
+    /**
+     * @description 申请的授权数据，多个数据时使用,分隔。此参数与appAuthKey参数二选一。
      * 暂时仅支持申请手机号码授权：Contact.User.mobile
      * @var string
      */
@@ -29,6 +36,7 @@ class ApplyFollowerAuthInfoRequest extends Model
      */
     public $userId;
     protected $_name = [
+        'appAuthKey' => 'appAuthKey',
         'fieldScope' => 'fieldScope',
         'sessionId'  => 'sessionId',
         'userId'     => 'userId',
@@ -41,6 +49,9 @@ class ApplyFollowerAuthInfoRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->appAuthKey) {
+            $res['appAuthKey'] = $this->appAuthKey;
+        }
         if (null !== $this->fieldScope) {
             $res['fieldScope'] = $this->fieldScope;
         }
@@ -62,6 +73,9 @@ class ApplyFollowerAuthInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['appAuthKey'])) {
+            $model->appAuthKey = $map['appAuthKey'];
+        }
         if (isset($map['fieldScope'])) {
             $model->fieldScope = $map['fieldScope'];
         }

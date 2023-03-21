@@ -5,11 +5,13 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\attendees;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\categories;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\extendedProperties;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\organizer;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\originStart;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\recurrence;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\start;
 use AlibabaCloud\Tea\Model;
@@ -22,6 +24,11 @@ class events extends Model
      * @var attendees[]
      */
     public $attendees;
+
+    /**
+     * @var categories[]
+     */
+    public $categories;
 
     /**
      * @description 创建时间
@@ -83,6 +90,11 @@ class events extends Model
     public $organizer;
 
     /**
+     * @var originStart
+     */
+    public $originStart;
+
+    /**
      * @description 日程重复规则
      *
      * @var recurrence
@@ -125,6 +137,7 @@ class events extends Model
     public $updateTime;
     protected $_name = [
         'attendees'          => 'attendees',
+        'categories'         => 'categories',
         'createTime'         => 'createTime',
         'description'        => 'description',
         'end'                => 'end',
@@ -134,6 +147,7 @@ class events extends Model
         'location'           => 'location',
         'onlineMeetingInfo'  => 'onlineMeetingInfo',
         'organizer'          => 'organizer',
+        'originStart'        => 'originStart',
         'recurrence'         => 'recurrence',
         'seriesMasterId'     => 'seriesMasterId',
         'start'              => 'start',
@@ -155,6 +169,15 @@ class events extends Model
                 $n = 0;
                 foreach ($this->attendees as $item) {
                     $res['attendees'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->categories) {
+            $res['categories'] = [];
+            if (null !== $this->categories && \is_array($this->categories)) {
+                $n = 0;
+                foreach ($this->categories as $item) {
+                    $res['categories'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -184,6 +207,9 @@ class events extends Model
         }
         if (null !== $this->organizer) {
             $res['organizer'] = null !== $this->organizer ? $this->organizer->toMap() : null;
+        }
+        if (null !== $this->originStart) {
+            $res['originStart'] = null !== $this->originStart ? $this->originStart->toMap() : null;
         }
         if (null !== $this->recurrence) {
             $res['recurrence'] = null !== $this->recurrence ? $this->recurrence->toMap() : null;
@@ -224,6 +250,15 @@ class events extends Model
                 }
             }
         }
+        if (isset($map['categories'])) {
+            if (!empty($map['categories'])) {
+                $model->categories = [];
+                $n                 = 0;
+                foreach ($map['categories'] as $item) {
+                    $model->categories[$n++] = null !== $item ? categories::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }
@@ -250,6 +285,9 @@ class events extends Model
         }
         if (isset($map['organizer'])) {
             $model->organizer = organizer::fromMap($map['organizer']);
+        }
+        if (isset($map['originStart'])) {
+            $model->originStart = originStart::fromMap($map['originStart']);
         }
         if (isset($map['recurrence'])) {
             $model->recurrence = recurrence::fromMap($map['recurrence']);

@@ -91,6 +91,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->appAuthKey)) {
+            @$body['appAuthKey'] = $request->appAuthKey;
+        }
         if (!Utils::isUnset($request->fieldScope)) {
             @$body['fieldScope'] = $request->fieldScope;
         }

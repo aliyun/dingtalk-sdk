@@ -73,6 +73,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\InitAndGetLeaveALlocationQuotasResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ListApproveByUsersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ListApproveByUsersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ListApproveByUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ModifyWaterMarkTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ModifyWaterMarkTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ModifyWaterMarkTemplateResponse;
@@ -1432,6 +1435,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return InitAndGetLeaveALlocationQuotasResponse::fromMap($this->doROARequest('InitAndGetLeaveALlocationQuotas', 'attendance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/attendance/leaves/initializations/balances', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ListApproveByUsersRequest $request
+     *
+     * @return ListApproveByUsersResponse
+     */
+    public function listApproveByUsers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListApproveByUsersHeaders([]);
+
+        return $this->listApproveByUsersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListApproveByUsersRequest $request
+     * @param ListApproveByUsersHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return ListApproveByUsersResponse
+     */
+    public function listApproveByUsersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizTypes)) {
+            @$body['bizTypes'] = $request->bizTypes;
+        }
+        if (!Utils::isUnset($request->fromDateTime)) {
+            @$body['fromDateTime'] = $request->fromDateTime;
+        }
+        if (!Utils::isUnset($request->toDateTime)) {
+            @$body['toDateTime'] = $request->toDateTime;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            @$body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ListApproveByUsersResponse::fromMap($this->doROARequest('ListApproveByUsers', 'attendance_1.0', 'HTTP', 'POST', 'AK', '/v1.0/attendance/approvals/query', 'json', $req, $runtime));
     }
 
     /**

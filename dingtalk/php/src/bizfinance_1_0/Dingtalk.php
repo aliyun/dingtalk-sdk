@@ -95,6 +95,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptsByPageResponse
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QuerySupplierByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryUserRoleListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryUserRoleListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryUserRoleListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UnbindApplyReceiptAndInvoiceRelatedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UnbindApplyReceiptAndInvoiceRelatedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UnbindApplyReceiptAndInvoiceRelatedResponse;
@@ -1566,6 +1569,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryUserRoleListRequest $request
+     *
+     * @return QueryUserRoleListResponse
+     */
+    public function queryUserRoleList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserRoleListHeaders([]);
+
+        return $this->queryUserRoleListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUserRoleListRequest $request
+     * @param QueryUserRoleListHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return QueryUserRoleListResponse
+     */
+    public function queryUserRoleListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return QueryUserRoleListResponse::fromMap($this->doROARequest('QueryUserRoleList', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', '/v1.0/bizfinance/users/roles', 'json', $req, $runtime));
+    }
+
+    /**
      * @param UnbindApplyReceiptAndInvoiceRelatedRequest $request
      *
      * @return UnbindApplyReceiptAndInvoiceRelatedResponse
@@ -1693,6 +1738,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->location)) {
             @$body['location'] = $request->location;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1907,6 +1955,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->invoiceFinanceInfoVOList)) {
             @$body['invoiceFinanceInfoVOList'] = $request->invoiceFinanceInfoVOList;
         }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1948,6 +1999,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->invoiceFinanceInfoVOList)) {
             @$body['invoiceFinanceInfoVOList'] = $request->invoiceFinanceInfoVOList;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            @$body['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

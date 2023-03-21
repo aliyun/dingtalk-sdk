@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\cardData;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\coFeedOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\coFeedOpenSpaceModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\docOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imGroupOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imGroupOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imRobotOpenDeliverModel;
@@ -52,6 +53,13 @@ class CreateAndDeliverRequest extends Model
      * @var coFeedOpenSpaceModel
      */
     public $coFeedOpenSpaceModel;
+
+    /**
+     * @description 文档投放参数
+     *
+     * @var docOpenDeliverModel
+     */
+    public $docOpenDeliverModel;
 
     /**
      * @description 群聊投放参数
@@ -138,6 +146,7 @@ class CreateAndDeliverRequest extends Model
         'cardTemplateId'          => 'cardTemplateId',
         'coFeedOpenDeliverModel'  => 'coFeedOpenDeliverModel',
         'coFeedOpenSpaceModel'    => 'coFeedOpenSpaceModel',
+        'docOpenDeliverModel'     => 'docOpenDeliverModel',
         'imGroupOpenDeliverModel' => 'imGroupOpenDeliverModel',
         'imGroupOpenSpaceModel'   => 'imGroupOpenSpaceModel',
         'imRobotOpenDeliverModel' => 'imRobotOpenDeliverModel',
@@ -173,6 +182,9 @@ class CreateAndDeliverRequest extends Model
         }
         if (null !== $this->coFeedOpenSpaceModel) {
             $res['coFeedOpenSpaceModel'] = null !== $this->coFeedOpenSpaceModel ? $this->coFeedOpenSpaceModel->toMap() : null;
+        }
+        if (null !== $this->docOpenDeliverModel) {
+            $res['docOpenDeliverModel'] = null !== $this->docOpenDeliverModel ? $this->docOpenDeliverModel->toMap() : null;
         }
         if (null !== $this->imGroupOpenDeliverModel) {
             $res['imGroupOpenDeliverModel'] = null !== $this->imGroupOpenDeliverModel ? $this->imGroupOpenDeliverModel->toMap() : null;
@@ -241,6 +253,9 @@ class CreateAndDeliverRequest extends Model
         }
         if (isset($map['coFeedOpenSpaceModel'])) {
             $model->coFeedOpenSpaceModel = coFeedOpenSpaceModel::fromMap($map['coFeedOpenSpaceModel']);
+        }
+        if (isset($map['docOpenDeliverModel'])) {
+            $model->docOpenDeliverModel = docOpenDeliverModel::fromMap($map['docOpenDeliverModel']);
         }
         if (isset($map['imGroupOpenDeliverModel'])) {
             $model->imGroupOpenDeliverModel = imGroupOpenDeliverModel::fromMap($map['imGroupOpenDeliverModel']);

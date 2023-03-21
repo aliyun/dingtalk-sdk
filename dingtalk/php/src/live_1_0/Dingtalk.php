@@ -227,6 +227,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->preStartTime)) {
             @$body['preStartTime'] = $request->preStartTime;
         }
+        if (!Utils::isUnset($request->publicType)) {
+            @$body['publicType'] = $request->publicType;
+        }
         if (!Utils::isUnset($request->title)) {
             @$body['title'] = $request->title;
         }

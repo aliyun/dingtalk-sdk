@@ -15,8 +15,16 @@ class UpdateInvoiceAccountingStatusRequest extends Model
      * @var invoiceFinanceInfoVOList[]
      */
     public $invoiceFinanceInfoVOList;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $operator;
     protected $_name = [
         'invoiceFinanceInfoVOList' => 'invoiceFinanceInfoVOList',
+        'operator'                 => 'operator',
     ];
 
     public function validate()
@@ -34,6 +42,9 @@ class UpdateInvoiceAccountingStatusRequest extends Model
                     $res['invoiceFinanceInfoVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
 
         return $res;
@@ -55,6 +66,9 @@ class UpdateInvoiceAccountingStatusRequest extends Model
                     $model->invoiceFinanceInfoVOList[$n++] = null !== $item ? invoiceFinanceInfoVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
 
         return $model;

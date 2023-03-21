@@ -132,6 +132,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->coFeedOpenSpaceModel)) {
             @$body['coFeedOpenSpaceModel'] = $request->coFeedOpenSpaceModel;
         }
+        if (!Utils::isUnset($request->docOpenDeliverModel)) {
+            @$body['docOpenDeliverModel'] = $request->docOpenDeliverModel;
+        }
         if (!Utils::isUnset($request->imGroupOpenDeliverModel)) {
             @$body['imGroupOpenDeliverModel'] = $request->imGroupOpenDeliverModel;
         }
@@ -284,6 +287,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->coFeedOpenDeliverModel)) {
             @$body['coFeedOpenDeliverModel'] = $request->coFeedOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->docOpenDeliverModel)) {
+            @$body['docOpenDeliverModel'] = $request->docOpenDeliverModel;
         }
         if (!Utils::isUnset($request->imGroupOpenDeliverModel)) {
             @$body['imGroupOpenDeliverModel'] = $request->imGroupOpenDeliverModel;

@@ -28,10 +28,18 @@ class UpdateDigitalInvoiceOrgInfoRequest extends Model
      * @var string
      */
     public $location;
+
+    /**
+     * @description 员工id
+     *
+     * @var string
+     */
+    public $operator;
     protected $_name = [
         'digitalInvoiceType' => 'digitalInvoiceType',
         'isDigitalOrg'       => 'isDigitalOrg',
         'location'           => 'location',
+        'operator'           => 'operator',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class UpdateDigitalInvoiceOrgInfoRequest extends Model
         }
         if (null !== $this->location) {
             $res['location'] = $this->location;
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
 
         return $res;
@@ -72,6 +83,9 @@ class UpdateDigitalInvoiceOrgInfoRequest extends Model
         }
         if (isset($map['location'])) {
             $model->location = $map['location'];
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
 
         return $model;

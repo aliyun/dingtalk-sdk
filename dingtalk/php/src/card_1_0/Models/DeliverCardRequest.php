@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\coFeedOpenDeliverModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\docOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imGroupOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imRobotOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\topOpenDeliverModel;
@@ -18,6 +19,13 @@ class DeliverCardRequest extends Model
      * @var coFeedOpenDeliverModel
      */
     public $coFeedOpenDeliverModel;
+
+    /**
+     * @description 文档投放参数
+     *
+     * @var docOpenDeliverModel
+     */
+    public $docOpenDeliverModel;
 
     /**
      * @description 群聊投放参数
@@ -64,6 +72,7 @@ class DeliverCardRequest extends Model
     public $userIdType;
     protected $_name = [
         'coFeedOpenDeliverModel'  => 'coFeedOpenDeliverModel',
+        'docOpenDeliverModel'     => 'docOpenDeliverModel',
         'imGroupOpenDeliverModel' => 'imGroupOpenDeliverModel',
         'imRobotOpenDeliverModel' => 'imRobotOpenDeliverModel',
         'openSpaceId'             => 'openSpaceId',
@@ -81,6 +90,9 @@ class DeliverCardRequest extends Model
         $res = [];
         if (null !== $this->coFeedOpenDeliverModel) {
             $res['coFeedOpenDeliverModel'] = null !== $this->coFeedOpenDeliverModel ? $this->coFeedOpenDeliverModel->toMap() : null;
+        }
+        if (null !== $this->docOpenDeliverModel) {
+            $res['docOpenDeliverModel'] = null !== $this->docOpenDeliverModel ? $this->docOpenDeliverModel->toMap() : null;
         }
         if (null !== $this->imGroupOpenDeliverModel) {
             $res['imGroupOpenDeliverModel'] = null !== $this->imGroupOpenDeliverModel ? $this->imGroupOpenDeliverModel->toMap() : null;
@@ -114,6 +126,9 @@ class DeliverCardRequest extends Model
         $model = new self();
         if (isset($map['coFeedOpenDeliverModel'])) {
             $model->coFeedOpenDeliverModel = coFeedOpenDeliverModel::fromMap($map['coFeedOpenDeliverModel']);
+        }
+        if (isset($map['docOpenDeliverModel'])) {
+            $model->docOpenDeliverModel = docOpenDeliverModel::fromMap($map['docOpenDeliverModel']);
         }
         if (isset($map['imGroupOpenDeliverModel'])) {
             $model->imGroupOpenDeliverModel = imGroupOpenDeliverModel::fromMap($map['imGroupOpenDeliverModel']);

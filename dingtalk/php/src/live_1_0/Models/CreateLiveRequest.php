@@ -37,6 +37,13 @@ class CreateLiveRequest extends Model
     public $preStartTime;
 
     /**
+     * @description 直播分享范围 0:不公开 1:全面公开 2:组织内公开
+     *
+     * @var int
+     */
+    public $publicType;
+
+    /**
      * @description 标题
      *
      * @var string
@@ -54,6 +61,7 @@ class CreateLiveRequest extends Model
         'introduction' => 'introduction',
         'preEndTime'   => 'preEndTime',
         'preStartTime' => 'preStartTime',
+        'publicType'   => 'publicType',
         'title'        => 'title',
         'unionId'      => 'unionId',
     ];
@@ -76,6 +84,9 @@ class CreateLiveRequest extends Model
         }
         if (null !== $this->preStartTime) {
             $res['preStartTime'] = $this->preStartTime;
+        }
+        if (null !== $this->publicType) {
+            $res['publicType'] = $this->publicType;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -106,6 +117,9 @@ class CreateLiveRequest extends Model
         }
         if (isset($map['preStartTime'])) {
             $model->preStartTime = $map['preStartTime'];
+        }
+        if (isset($map['publicType'])) {
+            $model->publicType = $map['publicType'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];

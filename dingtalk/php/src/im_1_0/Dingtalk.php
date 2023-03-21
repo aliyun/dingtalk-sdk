@@ -33,6 +33,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatIdToOpenConversationIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationResponse;
@@ -63,9 +66,15 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationMsgRespo
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInnerGroupMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInnerGroupMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInnerGroupMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetNewestInnerGroupsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetNewestInnerGroupsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetNewestInnerGroupsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoResponse;
@@ -617,6 +626,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CheckUserIsGroupMemberRequest $request
+     *
+     * @return CheckUserIsGroupMemberResponse
+     */
+    public function checkUserIsGroupMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckUserIsGroupMemberHeaders([]);
+
+        return $this->checkUserIsGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CheckUserIsGroupMemberRequest $request
+     * @param CheckUserIsGroupMemberHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CheckUserIsGroupMemberResponse
+     */
+    public function checkUserIsGroupMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return CheckUserIsGroupMemberResponse::fromMap($this->doROARequest('CheckUserIsGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/innerGroups/members/check', 'json', $req, $runtime));
+    }
+
+    /**
      * @param CreateCoupleGroupConversationRequest $request
      *
      * @return CreateCoupleGroupConversationResponse
@@ -1142,6 +1196,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetInnerGroupMembersRequest $request
+     *
+     * @return GetInnerGroupMembersResponse
+     */
+    public function getInnerGroupMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInnerGroupMembersHeaders([]);
+
+        return $this->getInnerGroupMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetInnerGroupMembersRequest $request
+     * @param GetInnerGroupMembersHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetInnerGroupMembersResponse
+     */
+    public function getInnerGroupMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetInnerGroupMembersResponse::fromMap($this->doROARequest('GetInnerGroupMembers', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/innerGroups/members/query', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetInterconnectionUrlRequest $request
      *
      * @return GetInterconnectionUrlResponse
@@ -1211,6 +1316,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetInterconnectionUrlResponse::fromMap($this->doROARequest('GetInterconnectionUrl', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/interconnections/sessions/urls', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetNewestInnerGroupsRequest $request
+     *
+     * @return GetNewestInnerGroupsResponse
+     */
+    public function getNewestInnerGroups($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetNewestInnerGroupsHeaders([]);
+
+        return $this->getNewestInnerGroupsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetNewestInnerGroupsRequest $request
+     * @param GetNewestInnerGroupsHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetNewestInnerGroupsResponse
+     */
+    public function getNewestInnerGroupsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetNewestInnerGroupsResponse::fromMap($this->doROARequest('GetNewestInnerGroups', 'im_1.0', 'HTTP', 'GET', 'AK', '/v1.0/im/activities/innerGroups', 'json', $req, $runtime));
     }
 
     /**
