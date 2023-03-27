@@ -10,6 +10,9 @@ public class DigitalStoreUserInfoResponseBody extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    @NameInMap("roleIdList")
+    public java.util.List<Long> roleIdList;
+
     /**
      * <p>管理范围</p>
      */
@@ -39,6 +42,14 @@ public class DigitalStoreUserInfoResponseBody extends TeaModel {
     }
     public String getName() {
         return this.name;
+    }
+
+    public DigitalStoreUserInfoResponseBody setRoleIdList(java.util.List<Long> roleIdList) {
+        this.roleIdList = roleIdList;
+        return this;
+    }
+    public java.util.List<Long> getRoleIdList() {
+        return this.roleIdList;
     }
 
     public DigitalStoreUserInfoResponseBody setScopeList(java.util.List<Long> scopeList) {

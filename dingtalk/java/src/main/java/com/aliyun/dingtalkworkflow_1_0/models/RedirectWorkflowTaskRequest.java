@@ -11,6 +11,12 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
     public String actionName;
 
     /**
+     * <p>文件。</p>
+     */
+    @NameInMap("file")
+    public RedirectWorkflowTaskRequestFile file;
+
+    /**
      * <p>操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验</p>
      */
     @NameInMap("operateUserId")
@@ -47,6 +53,14 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
         return this.actionName;
     }
 
+    public RedirectWorkflowTaskRequest setFile(RedirectWorkflowTaskRequestFile file) {
+        this.file = file;
+        return this;
+    }
+    public RedirectWorkflowTaskRequestFile getFile() {
+        return this.file;
+    }
+
     public RedirectWorkflowTaskRequest setOperateUserId(String operateUserId) {
         this.operateUserId = operateUserId;
         return this;
@@ -77,6 +91,120 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
     }
     public String getToUserId() {
         return this.toUserId;
+    }
+
+    public static class RedirectWorkflowTaskRequestFileAttachments extends TeaModel {
+        /**
+         * <p>文件ID。</p>
+         */
+        @NameInMap("fileId")
+        public String fileId;
+
+        /**
+         * <p>文件名称。</p>
+         */
+        @NameInMap("fileName")
+        public String fileName;
+
+        /**
+         * <p>文件大小。</p>
+         */
+        @NameInMap("fileSize")
+        public String fileSize;
+
+        /**
+         * <p>文件类型。</p>
+         */
+        @NameInMap("fileType")
+        public String fileType;
+
+        /**
+         * <p>钉盘空间ID。</p>
+         */
+        @NameInMap("spaceId")
+        public String spaceId;
+
+        public static RedirectWorkflowTaskRequestFileAttachments build(java.util.Map<String, ?> map) throws Exception {
+            RedirectWorkflowTaskRequestFileAttachments self = new RedirectWorkflowTaskRequestFileAttachments();
+            return TeaModel.build(map, self);
+        }
+
+        public RedirectWorkflowTaskRequestFileAttachments setFileId(String fileId) {
+            this.fileId = fileId;
+            return this;
+        }
+        public String getFileId() {
+            return this.fileId;
+        }
+
+        public RedirectWorkflowTaskRequestFileAttachments setFileName(String fileName) {
+            this.fileName = fileName;
+            return this;
+        }
+        public String getFileName() {
+            return this.fileName;
+        }
+
+        public RedirectWorkflowTaskRequestFileAttachments setFileSize(String fileSize) {
+            this.fileSize = fileSize;
+            return this;
+        }
+        public String getFileSize() {
+            return this.fileSize;
+        }
+
+        public RedirectWorkflowTaskRequestFileAttachments setFileType(String fileType) {
+            this.fileType = fileType;
+            return this;
+        }
+        public String getFileType() {
+            return this.fileType;
+        }
+
+        public RedirectWorkflowTaskRequestFileAttachments setSpaceId(String spaceId) {
+            this.spaceId = spaceId;
+            return this;
+        }
+        public String getSpaceId() {
+            return this.spaceId;
+        }
+
+    }
+
+    public static class RedirectWorkflowTaskRequestFile extends TeaModel {
+        /**
+         * <p>附件列表。</p>
+         */
+        @NameInMap("attachments")
+        public java.util.List<RedirectWorkflowTaskRequestFileAttachments> attachments;
+
+        /**
+         * <p>图片URL地址。</p>
+         */
+        @NameInMap("photos")
+        public java.util.List<String> photos;
+
+        public static RedirectWorkflowTaskRequestFile build(java.util.Map<String, ?> map) throws Exception {
+            RedirectWorkflowTaskRequestFile self = new RedirectWorkflowTaskRequestFile();
+            return TeaModel.build(map, self);
+        }
+
+        public RedirectWorkflowTaskRequestFile setAttachments(java.util.List<RedirectWorkflowTaskRequestFileAttachments> attachments) {
+            this.attachments = attachments;
+            return this;
+        }
+        public java.util.List<RedirectWorkflowTaskRequestFileAttachments> getAttachments() {
+            return this.attachments;
+        }
+
+        public RedirectWorkflowTaskRequestFile setPhotos(java.util.List<String> photos) {
+            this.photos = photos;
+            return this;
+        }
+        public java.util.List<String> getPhotos() {
+            return this.photos;
+        }
+
     }
 
 }

@@ -341,6 +341,42 @@ public class SearchResponseBody extends TeaModel {
 
     }
 
+    public static class SearchResponseBodySpaceResultItemsTeamVO extends TeaModel {
+        /**
+         * <p>知识小组id</p>
+         */
+        @NameInMap("id")
+        public String id;
+
+        /**
+         * <p>知识小组名称</p>
+         */
+        @NameInMap("name")
+        public String name;
+
+        public static SearchResponseBodySpaceResultItemsTeamVO build(java.util.Map<String, ?> map) throws Exception {
+            SearchResponseBodySpaceResultItemsTeamVO self = new SearchResponseBodySpaceResultItemsTeamVO();
+            return TeaModel.build(map, self);
+        }
+
+        public SearchResponseBodySpaceResultItemsTeamVO setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public SearchResponseBodySpaceResultItemsTeamVO setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
     public static class SearchResponseBodySpaceResultItemsUserLastOperation extends TeaModel {
         /**
          * <p>操作人名称。</p>
@@ -403,6 +439,12 @@ public class SearchResponseBody extends TeaModel {
         public String spaceId;
 
         /**
+         * <p>知识小组信息</p>
+         */
+        @NameInMap("teamVO")
+        public SearchResponseBodySpaceResultItemsTeamVO teamVO;
+
+        /**
          * <p>知识库访问url。</p>
          */
         @NameInMap("url")
@@ -449,6 +491,14 @@ public class SearchResponseBody extends TeaModel {
         }
         public String getSpaceId() {
             return this.spaceId;
+        }
+
+        public SearchResponseBodySpaceResultItems setTeamVO(SearchResponseBodySpaceResultItemsTeamVO teamVO) {
+            this.teamVO = teamVO;
+            return this;
+        }
+        public SearchResponseBodySpaceResultItemsTeamVO getTeamVO() {
+            return this.teamVO;
         }
 
         public SearchResponseBodySpaceResultItems setUrl(String url) {

@@ -1231,6 +1231,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("actionName", request.actionName);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.file)) {
+            body.put("file", request.file);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
             body.put("operateUserId", request.operateUserId);
         }

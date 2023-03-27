@@ -315,6 +315,12 @@ public class TeamModel extends TeaModel {
 
     public static class TeamModelVisitInfo extends TeaModel {
         /**
+         * <p>加入团队时间</p>
+         */
+        @NameInMap("joinTime")
+        public String joinTime;
+
+        /**
          * <p>用户对这个团队的访问情况</p>
          */
         @NameInMap("roleCode")
@@ -323,6 +329,14 @@ public class TeamModel extends TeaModel {
         public static TeamModelVisitInfo build(java.util.Map<String, ?> map) throws Exception {
             TeamModelVisitInfo self = new TeamModelVisitInfo();
             return TeaModel.build(map, self);
+        }
+
+        public TeamModelVisitInfo setJoinTime(String joinTime) {
+            this.joinTime = joinTime;
+            return this;
+        }
+        public String getJoinTime() {
+            return this.joinTime;
         }
 
         public TeamModelVisitInfo setRoleCode(String roleCode) {

@@ -220,6 +220,12 @@ public class SearchRequest extends TeaModel {
         @NameInMap("nextToken")
         public String nextToken;
 
+        /**
+         * <p>同时请求知识小组信息</p>
+         */
+        @NameInMap("withTeamInfo")
+        public Boolean withTeamInfo;
+
         public static SearchRequestSpaceRequest build(java.util.Map<String, ?> map) throws Exception {
             SearchRequestSpaceRequest self = new SearchRequestSpaceRequest();
             return TeaModel.build(map, self);
@@ -239,6 +245,14 @@ public class SearchRequest extends TeaModel {
         }
         public String getNextToken() {
             return this.nextToken;
+        }
+
+        public SearchRequestSpaceRequest setWithTeamInfo(Boolean withTeamInfo) {
+            this.withTeamInfo = withTeamInfo;
+            return this;
+        }
+        public Boolean getWithTeamInfo() {
+            return this.withTeamInfo;
         }
 
     }

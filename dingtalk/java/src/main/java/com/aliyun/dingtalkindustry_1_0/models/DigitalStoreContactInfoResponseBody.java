@@ -10,6 +10,9 @@ public class DigitalStoreContactInfoResponseBody extends TeaModel {
     @NameInMap("code")
     public String code;
 
+    @NameInMap("dingDeptId")
+    public Long dingDeptId;
+
     /**
      * <p>门店通通讯录名称</p>
      */
@@ -33,6 +36,14 @@ public class DigitalStoreContactInfoResponseBody extends TeaModel {
     }
     public String getCode() {
         return this.code;
+    }
+
+    public DigitalStoreContactInfoResponseBody setDingDeptId(Long dingDeptId) {
+        this.dingDeptId = dingDeptId;
+        return this;
+    }
+    public Long getDingDeptId() {
+        return this.dingDeptId;
     }
 
     public DigitalStoreContactInfoResponseBody setName(String name) {

@@ -144,6 +144,14 @@ public class CommitFileRequest extends TeaModel {
         public String conflictStrategy;
 
         /**
+         * <p>是否转换成在线文档</p>
+         * <p>默认值:</p>
+         * <p>	false</p>
+         */
+        @NameInMap("convertToOnlineDoc")
+        public Boolean convertToOnlineDoc;
+
+        /**
          * <p>默认文件大小, 单位:Byte</p>
          * <p>如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错</p>
          */
@@ -169,6 +177,14 @@ public class CommitFileRequest extends TeaModel {
         }
         public String getConflictStrategy() {
             return this.conflictStrategy;
+        }
+
+        public CommitFileRequestOption setConvertToOnlineDoc(Boolean convertToOnlineDoc) {
+            this.convertToOnlineDoc = convertToOnlineDoc;
+            return this;
+        }
+        public Boolean getConvertToOnlineDoc() {
+            return this.convertToOnlineDoc;
         }
 
         public CommitFileRequestOption setSize(Long size) {

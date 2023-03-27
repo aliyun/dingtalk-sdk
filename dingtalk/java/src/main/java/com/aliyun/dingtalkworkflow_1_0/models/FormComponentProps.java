@@ -155,6 +155,12 @@ public class FormComponentProps extends TeaModel {
     public String placeholder;
 
     /**
+     * <p>小数点位数</p>
+     */
+    @NameInMap("precision")
+    public Integer precision;
+
+    /**
      * <p>字段是否可打印，1打印，0不打印，默认打印</p>
      */
     @NameInMap("print")
@@ -399,6 +405,14 @@ public class FormComponentProps extends TeaModel {
     }
     public String getPlaceholder() {
         return this.placeholder;
+    }
+
+    public FormComponentProps setPrecision(Integer precision) {
+        this.precision = precision;
+        return this;
+    }
+    public Integer getPrecision() {
+        return this.precision;
     }
 
     public FormComponentProps setPrint(String print) {

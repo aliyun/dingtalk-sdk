@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreNodeInfoResponseBody extends TeaModel {
+    @NameInMap("dingDeptId")
+    public Long dingDeptId;
+
     /**
      * <p>节点Id</p>
      */
@@ -31,6 +34,14 @@ public class DigitalStoreNodeInfoResponseBody extends TeaModel {
     public static DigitalStoreNodeInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         DigitalStoreNodeInfoResponseBody self = new DigitalStoreNodeInfoResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public DigitalStoreNodeInfoResponseBody setDingDeptId(Long dingDeptId) {
+        this.dingDeptId = dingDeptId;
+        return this;
+    }
+    public Long getDingDeptId() {
+        return this.dingDeptId;
     }
 
     public DigitalStoreNodeInfoResponseBody setId(Long id) {

@@ -16,6 +16,9 @@ public class DigitalStoreStoreInfoResponseBody extends TeaModel {
     @NameInMap("businessHours")
     public String businessHours;
 
+    @NameInMap("dingDeptId")
+    public Long dingDeptId;
+
     /**
      * <p>纬度</p>
      */
@@ -101,6 +104,14 @@ public class DigitalStoreStoreInfoResponseBody extends TeaModel {
     }
     public String getBusinessHours() {
         return this.businessHours;
+    }
+
+    public DigitalStoreStoreInfoResponseBody setDingDeptId(Long dingDeptId) {
+        this.dingDeptId = dingDeptId;
+        return this;
+    }
+    public Long getDingDeptId() {
+        return this.dingDeptId;
     }
 
     public DigitalStoreStoreInfoResponseBody setLatitude(String latitude) {
