@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ConsumePointHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ConsumePointRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ConsumePointResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeResponse;
@@ -856,6 +859,57 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return CheckRestrictionResponse::fromMap($this->doROARequest('CheckRestriction', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/restrictions/check', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param ConsumePointRequest $request
+     *
+     * @return ConsumePointResponse
+     */
+    public function consumePoint($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConsumePointHeaders([]);
+
+        return $this->consumePointWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ConsumePointRequest $request
+     * @param ConsumePointHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return ConsumePointResponse
+     */
+    public function consumePointWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->amount)) {
+            @$body['amount'] = $request->amount;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            @$body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->description)) {
+            @$body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            @$body['productCode'] = $request->productCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return ConsumePointResponse::fromMap($this->doROARequest('ConsumePoint', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/poins/consume', 'json', $req, $runtime));
     }
 
     /**

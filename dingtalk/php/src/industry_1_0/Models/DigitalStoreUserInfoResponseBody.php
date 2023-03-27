@@ -16,6 +16,11 @@ class DigitalStoreUserInfoResponseBody extends Model
     public $name;
 
     /**
+     * @var int[]
+     */
+    public $roleIdList;
+
+    /**
      * @description 管理范围
      *
      * @var int[]
@@ -36,10 +41,11 @@ class DigitalStoreUserInfoResponseBody extends Model
      */
     public $userId;
     protected $_name = [
-        'name'      => 'name',
-        'scopeList' => 'scopeList',
-        'storeList' => 'storeList',
-        'userId'    => 'userId',
+        'name'       => 'name',
+        'roleIdList' => 'roleIdList',
+        'scopeList'  => 'scopeList',
+        'storeList'  => 'storeList',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -51,6 +57,9 @@ class DigitalStoreUserInfoResponseBody extends Model
         $res = [];
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->roleIdList) {
+            $res['roleIdList'] = $this->roleIdList;
         }
         if (null !== $this->scopeList) {
             $res['scopeList'] = $this->scopeList;
@@ -75,6 +84,11 @@ class DigitalStoreUserInfoResponseBody extends Model
         $model = new self();
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['roleIdList'])) {
+            if (!empty($map['roleIdList'])) {
+                $model->roleIdList = $map['roleIdList'];
+            }
         }
         if (isset($map['scopeList'])) {
             if (!empty($map['scopeList'])) {

@@ -4,19 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingPeriodDateResponseBody\failInvoices;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingPeriodDateResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class UpdateInvoiceAccountingPeriodDateResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     *
-     * @var failInvoices[]
+     * @var result
      */
-    public $failInvoices;
+    public $result;
     protected $_name = [
-        'failInvoices' => 'failInvoices',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -26,14 +24,8 @@ class UpdateInvoiceAccountingPeriodDateResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->failInvoices) {
-            $res['failInvoices'] = [];
-            if (null !== $this->failInvoices && \is_array($this->failInvoices)) {
-                $n = 0;
-                foreach ($this->failInvoices as $item) {
-                    $res['failInvoices'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->result) {
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
 
         return $res;
@@ -47,14 +39,8 @@ class UpdateInvoiceAccountingPeriodDateResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['failInvoices'])) {
-            if (!empty($map['failInvoices'])) {
-                $model->failInvoices = [];
-                $n                   = 0;
-                foreach ($map['failInvoices'] as $item) {
-                    $model->failInvoices[$n++] = null !== $item ? failInvoices::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['result'])) {
+            $model->result = result::fromMap($map['result']);
         }
 
         return $model;

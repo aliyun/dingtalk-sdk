@@ -16,6 +16,11 @@ class DigitalStoreContactInfoResponseBody extends Model
     public $code;
 
     /**
+     * @var int
+     */
+    public $dingDeptId;
+
+    /**
      * @description 门店通通讯录名称
      *
      * @var string
@@ -30,6 +35,7 @@ class DigitalStoreContactInfoResponseBody extends Model
     public $rootDeptId;
     protected $_name = [
         'code'       => 'code',
+        'dingDeptId' => 'dingDeptId',
         'name'       => 'name',
         'rootDeptId' => 'rootDeptId',
     ];
@@ -43,6 +49,9 @@ class DigitalStoreContactInfoResponseBody extends Model
         $res = [];
         if (null !== $this->code) {
             $res['code'] = $this->code;
+        }
+        if (null !== $this->dingDeptId) {
+            $res['dingDeptId'] = $this->dingDeptId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -64,6 +73,9 @@ class DigitalStoreContactInfoResponseBody extends Model
         $model = new self();
         if (isset($map['code'])) {
             $model->code = $map['code'];
+        }
+        if (isset($map['dingDeptId'])) {
+            $model->dingDeptId = $map['dingDeptId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

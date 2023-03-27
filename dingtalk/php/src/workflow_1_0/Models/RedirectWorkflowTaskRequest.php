@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\RedirectWorkflowTaskRequest\file;
 use AlibabaCloud\Tea\Model;
 
 class RedirectWorkflowTaskRequest extends Model
@@ -14,6 +15,13 @@ class RedirectWorkflowTaskRequest extends Model
      * @var string
      */
     public $actionName;
+
+    /**
+     * @description 文件。
+     *
+     * @var file
+     */
+    public $file;
 
     /**
      * @description 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
@@ -44,6 +52,7 @@ class RedirectWorkflowTaskRequest extends Model
     public $toUserId;
     protected $_name = [
         'actionName'    => 'actionName',
+        'file'          => 'file',
         'operateUserId' => 'operateUserId',
         'remark'        => 'remark',
         'taskId'        => 'taskId',
@@ -59,6 +68,9 @@ class RedirectWorkflowTaskRequest extends Model
         $res = [];
         if (null !== $this->actionName) {
             $res['actionName'] = $this->actionName;
+        }
+        if (null !== $this->file) {
+            $res['file'] = null !== $this->file ? $this->file->toMap() : null;
         }
         if (null !== $this->operateUserId) {
             $res['operateUserId'] = $this->operateUserId;
@@ -86,6 +98,9 @@ class RedirectWorkflowTaskRequest extends Model
         $model = new self();
         if (isset($map['actionName'])) {
             $model->actionName = $map['actionName'];
+        }
+        if (isset($map['file'])) {
+            $model->file = file::fromMap($map['file']);
         }
         if (isset($map['operateUserId'])) {
             $model->operateUserId = $map['operateUserId'];

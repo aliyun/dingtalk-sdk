@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponseBody\spaceResult;
 
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponseBody\spaceResult\items\iconVO;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponseBody\spaceResult\items\teamVO;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponseBody\spaceResult\items\userLastOperation;
 use AlibabaCloud\Tea\Model;
 
@@ -39,6 +40,13 @@ class items extends Model
     public $spaceId;
 
     /**
+     * @description 知识小组信息
+     *
+     * @var teamVO
+     */
+    public $teamVO;
+
+    /**
      * @description 知识库访问url。
      *
      * @var string
@@ -56,6 +64,7 @@ class items extends Model
         'name'              => 'name',
         'originName'        => 'originName',
         'spaceId'           => 'spaceId',
+        'teamVO'            => 'teamVO',
         'url'               => 'url',
         'userLastOperation' => 'userLastOperation',
     ];
@@ -78,6 +87,9 @@ class items extends Model
         }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
+        }
+        if (null !== $this->teamVO) {
+            $res['teamVO'] = null !== $this->teamVO ? $this->teamVO->toMap() : null;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -108,6 +120,9 @@ class items extends Model
         }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];
+        }
+        if (isset($map['teamVO'])) {
+            $model->teamVO = teamVO::fromMap($map['teamVO']);
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];

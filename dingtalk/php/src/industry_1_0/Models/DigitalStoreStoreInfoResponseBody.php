@@ -23,6 +23,11 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $businessHours;
 
     /**
+     * @var int
+     */
+    public $dingDeptId;
+
+    /**
      * @description 纬度
      *
      * @var string
@@ -101,6 +106,7 @@ class DigitalStoreStoreInfoResponseBody extends Model
     protected $_name = [
         'address'         => 'address',
         'businessHours'   => 'businessHours',
+        'dingDeptId'      => 'dingDeptId',
         'latitude'        => 'latitude',
         'locationAddress' => 'locationAddress',
         'longitude'       => 'longitude',
@@ -126,6 +132,9 @@ class DigitalStoreStoreInfoResponseBody extends Model
         }
         if (null !== $this->businessHours) {
             $res['businessHours'] = $this->businessHours;
+        }
+        if (null !== $this->dingDeptId) {
+            $res['dingDeptId'] = $this->dingDeptId;
         }
         if (null !== $this->latitude) {
             $res['latitude'] = $this->latitude;
@@ -177,6 +186,9 @@ class DigitalStoreStoreInfoResponseBody extends Model
         }
         if (isset($map['businessHours'])) {
             $model->businessHours = $map['businessHours'];
+        }
+        if (isset($map['dingDeptId'])) {
+            $model->dingDeptId = $map['dingDeptId'];
         }
         if (isset($map['latitude'])) {
             $model->latitude = $map['latitude'];

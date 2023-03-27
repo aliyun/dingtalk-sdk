@@ -21,9 +21,17 @@ class spaceRequest extends Model
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @description 同时请求知识小组信息
+     *
+     * @var bool
+     */
+    public $withTeamInfo;
     protected $_name = [
-        'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'maxResults'   => 'maxResults',
+        'nextToken'    => 'nextToken',
+        'withTeamInfo' => 'withTeamInfo',
     ];
 
     public function validate()
@@ -38,6 +46,9 @@ class spaceRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->withTeamInfo) {
+            $res['withTeamInfo'] = $this->withTeamInfo;
         }
 
         return $res;
@@ -56,6 +67,9 @@ class spaceRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['withTeamInfo'])) {
+            $model->withTeamInfo = $map['withTeamInfo'];
         }
 
         return $model;

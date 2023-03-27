@@ -5,12 +5,38 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAllJobLevelHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAllJobLevelResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAllJobPositionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAllJobPositionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAllJobPostHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAllJobPostResponse;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAnalyzeDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAnalyzeDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetAnalyzeDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetChildOrgListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetChildOrgListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetChildOrgListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetEmployeeInfoByWorkNoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetEmployeeInfoByWorkNoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetEmployeeInfoByWorkNoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetEmploymentRecordByWorkNoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetEmploymentRecordByWorkNoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetJobPositionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetJobPositionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetJobPositionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetJobPostHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetJobPostRequest;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetJobPostResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetOrgInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetOrgInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetOrgInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetStaffInfoByWorkNoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetStaffInfoByWorkNoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetStaffInfoByWorkNoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetStaffPageQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetStaffPageQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetStaffPageQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\GetUserResponse;
@@ -45,6 +71,105 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @return GetAllJobLevelResponse
+     */
+    public function getAllJobLevel()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAllJobLevelHeaders([]);
+
+        return $this->getAllJobLevelWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetAllJobLevelHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetAllJobLevelResponse
+     */
+    public function getAllJobLevelWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetAllJobLevelResponse::fromMap($this->doROARequest('GetAllJobLevel', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobLevels', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetAllJobPositionResponse
+     */
+    public function getAllJobPosition()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAllJobPositionHeaders([]);
+
+        return $this->getAllJobPositionWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetAllJobPositionHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetAllJobPositionResponse
+     */
+    public function getAllJobPositionWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetAllJobPositionResponse::fromMap($this->doROARequest('GetAllJobPosition', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobPositions', 'json', $req, $runtime));
+    }
+
+    /**
+     * @return GetAllJobPostResponse
+     */
+    public function getAllJobPost()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAllJobPostHeaders([]);
+
+        return $this->getAllJobPostWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetAllJobPostHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetAllJobPostResponse
+     */
+    public function getAllJobPostWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetAllJobPostResponse::fromMap($this->doROARequest('GetAllJobPost', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobPosts', 'json', $req, $runtime));
     }
 
     /**
@@ -95,6 +220,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetChildOrgListRequest $request
+     *
+     * @return GetChildOrgListResponse
+     */
+    public function getChildOrgList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetChildOrgListHeaders([]);
+
+        return $this->getChildOrgListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetChildOrgListRequest $request
+     * @param GetChildOrgListHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetChildOrgListResponse
+     */
+    public function getChildOrgListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptCode)) {
+            @$query['deptCode'] = $request->deptCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetChildOrgListResponse::fromMap($this->doROARequest('GetChildOrgList', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/organizations', 'json', $req, $runtime));
+    }
+
+    /**
      * @param GetEmployeeInfoByWorkNoRequest $request
      *
      * @return GetEmployeeInfoByWorkNoResponse
@@ -134,6 +301,265 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetEmployeeInfoByWorkNoResponse::fromMap($this->doROARequest('GetEmployeeInfoByWorkNo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/workNumbers/employees', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param string $workNumbers
+     *
+     * @return GetEmploymentRecordByWorkNoResponse
+     */
+    public function getEmploymentRecordByWorkNo($workNumbers)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetEmploymentRecordByWorkNoHeaders([]);
+
+        return $this->getEmploymentRecordByWorkNoWithOptions($workNumbers, $headers, $runtime);
+    }
+
+    /**
+     * @param string                             $workNumbers
+     * @param GetEmploymentRecordByWorkNoHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return GetEmploymentRecordByWorkNoResponse
+     */
+    public function getEmploymentRecordByWorkNoWithOptions($workNumbers, $headers, $runtime)
+    {
+        $workNumbers = OpenApiUtilClient::getEncodeParam($workNumbers);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+
+        return GetEmploymentRecordByWorkNoResponse::fromMap($this->doROARequest('GetEmploymentRecordByWorkNo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/users/workNumber/' . $workNumbers . 'employmentRecords', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetJobPositionRequest $request
+     *
+     * @return GetJobPositionResponse
+     */
+    public function getJobPosition($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetJobPositionHeaders([]);
+
+        return $this->getJobPositionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetJobPositionRequest $request
+     * @param GetJobPositionHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetJobPositionResponse
+     */
+    public function getJobPositionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->jobPositionCode)) {
+            @$query['jobPositionCode'] = $request->jobPositionCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetJobPositionResponse::fromMap($this->doROARequest('GetJobPosition', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobPositions/infos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetJobPostRequest $request
+     *
+     * @return GetJobPostResponse
+     */
+    public function getJobPost($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetJobPostHeaders([]);
+
+        return $this->getJobPostWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetJobPostRequest $request
+     * @param GetJobPostHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return GetJobPostResponse
+     */
+    public function getJobPostWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->jobPostCode)) {
+            @$query['jobPostCode'] = $request->jobPostCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetJobPostResponse::fromMap($this->doROARequest('GetJobPost', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobPosts/infos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOrgInfoRequest $request
+     *
+     * @return GetOrgInfoResponse
+     */
+    public function getOrgInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOrgInfoHeaders([]);
+
+        return $this->getOrgInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOrgInfoRequest $request
+     * @param GetOrgInfoHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return GetOrgInfoResponse
+     */
+    public function getOrgInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptCode)) {
+            @$query['deptCode'] = $request->deptCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetOrgInfoResponse::fromMap($this->doROARequest('GetOrgInfo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/organizations/infos', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetStaffInfoByWorkNoRequest $request
+     *
+     * @return GetStaffInfoByWorkNoResponse
+     */
+    public function getStaffInfoByWorkNo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetStaffInfoByWorkNoHeaders([]);
+
+        return $this->getStaffInfoByWorkNoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetStaffInfoByWorkNoRequest $request
+     * @param GetStaffInfoByWorkNoHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetStaffInfoByWorkNoResponse
+     */
+    public function getStaffInfoByWorkNoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->workNumbers)) {
+            @$query['workNumbers'] = $request->workNumbers;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetStaffInfoByWorkNoResponse::fromMap($this->doROARequest('GetStaffInfoByWorkNo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/users', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetStaffPageQueryRequest $request
+     *
+     * @return GetStaffPageQueryResponse
+     */
+    public function getStaffPageQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetStaffPageQueryHeaders([]);
+
+        return $this->getStaffPageQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetStaffPageQueryRequest $request
+     * @param GetStaffPageQueryHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetStaffPageQueryResponse
+     */
+    public function getStaffPageQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptCode)) {
+            @$query['deptCode'] = $request->deptCode;
+        }
+        if (!Utils::isUnset($request->name)) {
+            @$query['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->workNo)) {
+            @$query['workNo'] = $request->workNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return GetStaffPageQueryResponse::fromMap($this->doROARequest('GetStaffPageQuery', 'chengfeng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/chengfeng/users/query', 'json', $req, $runtime));
     }
 
     /**

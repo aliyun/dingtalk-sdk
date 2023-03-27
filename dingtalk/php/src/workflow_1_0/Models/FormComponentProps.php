@@ -185,6 +185,13 @@ class FormComponentProps extends Model
     public $placeholder;
 
     /**
+     * @description 小数点位数
+     *
+     * @var int
+     */
+    public $precision;
+
+    /**
      * @description 字段是否可打印，1打印，0不打印，默认打印
      *
      * @var string
@@ -258,6 +265,7 @@ class FormComponentProps extends Model
         'multiple'           => 'multiple',
         'options'            => 'options',
         'placeholder'        => 'placeholder',
+        'precision'          => 'precision',
         'print'              => 'print',
         'required'           => 'required',
         'statField'          => 'statField',
@@ -360,6 +368,9 @@ class FormComponentProps extends Model
         }
         if (null !== $this->placeholder) {
             $res['placeholder'] = $this->placeholder;
+        }
+        if (null !== $this->precision) {
+            $res['precision'] = $this->precision;
         }
         if (null !== $this->print) {
             $res['print'] = $this->print;
@@ -486,6 +497,9 @@ class FormComponentProps extends Model
         }
         if (isset($map['placeholder'])) {
             $model->placeholder = $map['placeholder'];
+        }
+        if (isset($map['precision'])) {
+            $model->precision = $map['precision'];
         }
         if (isset($map['print'])) {
             $model->print = $map['print'];

@@ -24,15 +24,23 @@ class option extends Model
     public $conflictStrategy;
 
     /**
+     * @description 是否转换成在线文档
+     * false
+     * @var bool
+     */
+    public $convertToOnlineDoc;
+
+    /**
      * @description 默认文件大小, 单位:Byte
      * 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
      * @var int
      */
     public $size;
     protected $_name = [
-        'appProperties'    => 'appProperties',
-        'conflictStrategy' => 'conflictStrategy',
-        'size'             => 'size',
+        'appProperties'      => 'appProperties',
+        'conflictStrategy'   => 'conflictStrategy',
+        'convertToOnlineDoc' => 'convertToOnlineDoc',
+        'size'               => 'size',
     ];
 
     public function validate()
@@ -53,6 +61,9 @@ class option extends Model
         }
         if (null !== $this->conflictStrategy) {
             $res['conflictStrategy'] = $this->conflictStrategy;
+        }
+        if (null !== $this->convertToOnlineDoc) {
+            $res['convertToOnlineDoc'] = $this->convertToOnlineDoc;
         }
         if (null !== $this->size) {
             $res['size'] = $this->size;
@@ -80,6 +91,9 @@ class option extends Model
         }
         if (isset($map['conflictStrategy'])) {
             $model->conflictStrategy = $map['conflictStrategy'];
+        }
+        if (isset($map['convertToOnlineDoc'])) {
+            $model->convertToOnlineDoc = $map['convertToOnlineDoc'];
         }
         if (isset($map['size'])) {
             $model->size = $map['size'];

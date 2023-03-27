@@ -2,12 +2,26 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingPeriodDateResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\UpdateInvoiceAccountingStatusResponseBody\result;
 
 use AlibabaCloud\Tea\Model;
 
 class failInvoices extends Model
 {
+    /**
+     * @description 错误码
+     *
+     * @var string
+     */
+    public $errorCode;
+
+    /**
+     * @description 错误信息
+     *
+     * @var string
+     */
+    public $errorMsg;
+
     /**
      * @description 发票代码
      *
@@ -22,6 +36,8 @@ class failInvoices extends Model
      */
     public $invoiceNo;
     protected $_name = [
+        'errorCode'   => 'errorCode',
+        'errorMsg'    => 'errorMsg',
         'invoiceCode' => 'invoiceCode',
         'invoiceNo'   => 'invoiceNo',
     ];
@@ -33,6 +49,12 @@ class failInvoices extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->errorCode) {
+            $res['errorCode'] = $this->errorCode;
+        }
+        if (null !== $this->errorMsg) {
+            $res['errorMsg'] = $this->errorMsg;
+        }
         if (null !== $this->invoiceCode) {
             $res['invoiceCode'] = $this->invoiceCode;
         }
@@ -51,6 +73,12 @@ class failInvoices extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['errorCode'])) {
+            $model->errorCode = $map['errorCode'];
+        }
+        if (isset($map['errorMsg'])) {
+            $model->errorMsg = $map['errorMsg'];
+        }
         if (isset($map['invoiceCode'])) {
             $model->invoiceCode = $map['invoiceCode'];
         }

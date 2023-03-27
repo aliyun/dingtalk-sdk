@@ -1733,6 +1733,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->actionName)) {
             @$body['actionName'] = $request->actionName;
         }
+        if (!Utils::isUnset($request->file)) {
+            @$body['file'] = $request->file;
+        }
         if (!Utils::isUnset($request->operateUserId)) {
             @$body['operateUserId'] = $request->operateUserId;
         }
