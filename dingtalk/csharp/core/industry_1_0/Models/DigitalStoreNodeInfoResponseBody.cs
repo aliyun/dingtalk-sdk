@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class DigitalStoreNodeInfoResponseBody : TeaModel {
+        [NameInMap("dingDeptId")]
+        [Validation(Required=false)]
+        public long? DingDeptId { get; set; }
+
         /// <summary>
         /// 节点Id
         /// </summary>

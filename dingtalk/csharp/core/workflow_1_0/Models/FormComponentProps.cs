@@ -185,6 +185,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public string Placeholder { get; set; }
 
         /// <summary>
+        /// 小数点位数
+        /// </summary>
+        [NameInMap("precision")]
+        [Validation(Required=false)]
+        public int? Precision { get; set; }
+
+        /// <summary>
         /// 字段是否可打印，1打印，0不打印，默认打印
         /// </summary>
         [NameInMap("print")]

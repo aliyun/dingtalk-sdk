@@ -26,6 +26,156 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0
         }
 
 
+        public GetAllJobLevelResponse GetAllJobLevel()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAllJobLevelHeaders headers = new GetAllJobLevelHeaders();
+            return GetAllJobLevelWithOptions(headers, runtime);
+        }
+
+        public async Task<GetAllJobLevelResponse> GetAllJobLevelAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAllJobLevelHeaders headers = new GetAllJobLevelHeaders();
+            return await GetAllJobLevelWithOptionsAsync(headers, runtime);
+        }
+
+        public GetAllJobLevelResponse GetAllJobLevelWithOptions(GetAllJobLevelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetAllJobLevelResponse>(DoROARequest("GetAllJobLevel", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobLevels", "json", req, runtime));
+        }
+
+        public async Task<GetAllJobLevelResponse> GetAllJobLevelWithOptionsAsync(GetAllJobLevelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetAllJobLevelResponse>(await DoROARequestAsync("GetAllJobLevel", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobLevels", "json", req, runtime));
+        }
+
+        public GetAllJobPositionResponse GetAllJobPosition()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAllJobPositionHeaders headers = new GetAllJobPositionHeaders();
+            return GetAllJobPositionWithOptions(headers, runtime);
+        }
+
+        public async Task<GetAllJobPositionResponse> GetAllJobPositionAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAllJobPositionHeaders headers = new GetAllJobPositionHeaders();
+            return await GetAllJobPositionWithOptionsAsync(headers, runtime);
+        }
+
+        public GetAllJobPositionResponse GetAllJobPositionWithOptions(GetAllJobPositionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetAllJobPositionResponse>(DoROARequest("GetAllJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPositions", "json", req, runtime));
+        }
+
+        public async Task<GetAllJobPositionResponse> GetAllJobPositionWithOptionsAsync(GetAllJobPositionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetAllJobPositionResponse>(await DoROARequestAsync("GetAllJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPositions", "json", req, runtime));
+        }
+
+        public GetAllJobPostResponse GetAllJobPost()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAllJobPostHeaders headers = new GetAllJobPostHeaders();
+            return GetAllJobPostWithOptions(headers, runtime);
+        }
+
+        public async Task<GetAllJobPostResponse> GetAllJobPostAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAllJobPostHeaders headers = new GetAllJobPostHeaders();
+            return await GetAllJobPostWithOptionsAsync(headers, runtime);
+        }
+
+        public GetAllJobPostResponse GetAllJobPostWithOptions(GetAllJobPostHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetAllJobPostResponse>(DoROARequest("GetAllJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPosts", "json", req, runtime));
+        }
+
+        public async Task<GetAllJobPostResponse> GetAllJobPostWithOptionsAsync(GetAllJobPostHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetAllJobPostResponse>(await DoROARequestAsync("GetAllJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPosts", "json", req, runtime));
+        }
+
         public GetAnalyzeDataResponse GetAnalyzeData(GetAnalyzeDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -102,6 +252,70 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0
             return TeaModel.ToObject<GetAnalyzeDataResponse>(await DoROARequestAsync("GetAnalyzeData", "chengfeng_1.0", "HTTP", "POST", "AK", "/v1.0/chengfeng/okr/analyses/datas/query", "json", req, runtime));
         }
 
+        public GetChildOrgListResponse GetChildOrgList(GetChildOrgListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetChildOrgListHeaders headers = new GetChildOrgListHeaders();
+            return GetChildOrgListWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetChildOrgListResponse> GetChildOrgListAsync(GetChildOrgListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetChildOrgListHeaders headers = new GetChildOrgListHeaders();
+            return await GetChildOrgListWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetChildOrgListResponse GetChildOrgListWithOptions(GetChildOrgListRequest request, GetChildOrgListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                query["deptCode"] = request.DeptCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetChildOrgListResponse>(DoROARequest("GetChildOrgList", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/organizations", "json", req, runtime));
+        }
+
+        public async Task<GetChildOrgListResponse> GetChildOrgListWithOptionsAsync(GetChildOrgListRequest request, GetChildOrgListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                query["deptCode"] = request.DeptCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetChildOrgListResponse>(await DoROARequestAsync("GetChildOrgList", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/organizations", "json", req, runtime));
+        }
+
         public GetEmployeeInfoByWorkNoResponse GetEmployeeInfoByWorkNo(GetEmployeeInfoByWorkNoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -164,6 +378,410 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             return TeaModel.ToObject<GetEmployeeInfoByWorkNoResponse>(await DoROARequestAsync("GetEmployeeInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/workNumbers/employees", "json", req, runtime));
+        }
+
+        public GetEmploymentRecordByWorkNoResponse GetEmploymentRecordByWorkNo(string workNumbers)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetEmploymentRecordByWorkNoHeaders headers = new GetEmploymentRecordByWorkNoHeaders();
+            return GetEmploymentRecordByWorkNoWithOptions(workNumbers, headers, runtime);
+        }
+
+        public async Task<GetEmploymentRecordByWorkNoResponse> GetEmploymentRecordByWorkNoAsync(string workNumbers)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetEmploymentRecordByWorkNoHeaders headers = new GetEmploymentRecordByWorkNoHeaders();
+            return await GetEmploymentRecordByWorkNoWithOptionsAsync(workNumbers, headers, runtime);
+        }
+
+        public GetEmploymentRecordByWorkNoResponse GetEmploymentRecordByWorkNoWithOptions(string workNumbers, GetEmploymentRecordByWorkNoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            workNumbers = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workNumbers);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetEmploymentRecordByWorkNoResponse>(DoROARequest("GetEmploymentRecordByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/users/workNumber/" + workNumbers + "employmentRecords", "json", req, runtime));
+        }
+
+        public async Task<GetEmploymentRecordByWorkNoResponse> GetEmploymentRecordByWorkNoWithOptionsAsync(string workNumbers, GetEmploymentRecordByWorkNoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            workNumbers = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workNumbers);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            return TeaModel.ToObject<GetEmploymentRecordByWorkNoResponse>(await DoROARequestAsync("GetEmploymentRecordByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/users/workNumber/" + workNumbers + "employmentRecords", "json", req, runtime));
+        }
+
+        public GetJobPositionResponse GetJobPosition(GetJobPositionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetJobPositionHeaders headers = new GetJobPositionHeaders();
+            return GetJobPositionWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetJobPositionResponse> GetJobPositionAsync(GetJobPositionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetJobPositionHeaders headers = new GetJobPositionHeaders();
+            return await GetJobPositionWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetJobPositionResponse GetJobPositionWithOptions(GetJobPositionRequest request, GetJobPositionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobPositionCode))
+            {
+                query["jobPositionCode"] = request.JobPositionCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetJobPositionResponse>(DoROARequest("GetJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPositions/infos", "json", req, runtime));
+        }
+
+        public async Task<GetJobPositionResponse> GetJobPositionWithOptionsAsync(GetJobPositionRequest request, GetJobPositionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobPositionCode))
+            {
+                query["jobPositionCode"] = request.JobPositionCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetJobPositionResponse>(await DoROARequestAsync("GetJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPositions/infos", "json", req, runtime));
+        }
+
+        public GetJobPostResponse GetJobPost(GetJobPostRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetJobPostHeaders headers = new GetJobPostHeaders();
+            return GetJobPostWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetJobPostResponse> GetJobPostAsync(GetJobPostRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetJobPostHeaders headers = new GetJobPostHeaders();
+            return await GetJobPostWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetJobPostResponse GetJobPostWithOptions(GetJobPostRequest request, GetJobPostHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobPostCode))
+            {
+                query["jobPostCode"] = request.JobPostCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetJobPostResponse>(DoROARequest("GetJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPosts/infos", "json", req, runtime));
+        }
+
+        public async Task<GetJobPostResponse> GetJobPostWithOptionsAsync(GetJobPostRequest request, GetJobPostHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobPostCode))
+            {
+                query["jobPostCode"] = request.JobPostCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetJobPostResponse>(await DoROARequestAsync("GetJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPosts/infos", "json", req, runtime));
+        }
+
+        public GetOrgInfoResponse GetOrgInfo(GetOrgInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetOrgInfoHeaders headers = new GetOrgInfoHeaders();
+            return GetOrgInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetOrgInfoResponse> GetOrgInfoAsync(GetOrgInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetOrgInfoHeaders headers = new GetOrgInfoHeaders();
+            return await GetOrgInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetOrgInfoResponse GetOrgInfoWithOptions(GetOrgInfoRequest request, GetOrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                query["deptCode"] = request.DeptCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetOrgInfoResponse>(DoROARequest("GetOrgInfo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/organizations/infos", "json", req, runtime));
+        }
+
+        public async Task<GetOrgInfoResponse> GetOrgInfoWithOptionsAsync(GetOrgInfoRequest request, GetOrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                query["deptCode"] = request.DeptCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetOrgInfoResponse>(await DoROARequestAsync("GetOrgInfo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/organizations/infos", "json", req, runtime));
+        }
+
+        public GetStaffInfoByWorkNoResponse GetStaffInfoByWorkNo(GetStaffInfoByWorkNoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetStaffInfoByWorkNoHeaders headers = new GetStaffInfoByWorkNoHeaders();
+            return GetStaffInfoByWorkNoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetStaffInfoByWorkNoResponse> GetStaffInfoByWorkNoAsync(GetStaffInfoByWorkNoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetStaffInfoByWorkNoHeaders headers = new GetStaffInfoByWorkNoHeaders();
+            return await GetStaffInfoByWorkNoWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetStaffInfoByWorkNoResponse GetStaffInfoByWorkNoWithOptions(GetStaffInfoByWorkNoRequest request, GetStaffInfoByWorkNoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNumbers))
+            {
+                query["workNumbers"] = request.WorkNumbers;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetStaffInfoByWorkNoResponse>(DoROARequest("GetStaffInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/users", "json", req, runtime));
+        }
+
+        public async Task<GetStaffInfoByWorkNoResponse> GetStaffInfoByWorkNoWithOptionsAsync(GetStaffInfoByWorkNoRequest request, GetStaffInfoByWorkNoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNumbers))
+            {
+                query["workNumbers"] = request.WorkNumbers;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetStaffInfoByWorkNoResponse>(await DoROARequestAsync("GetStaffInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/users", "json", req, runtime));
+        }
+
+        public GetStaffPageQueryResponse GetStaffPageQuery(GetStaffPageQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetStaffPageQueryHeaders headers = new GetStaffPageQueryHeaders();
+            return GetStaffPageQueryWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetStaffPageQueryResponse> GetStaffPageQueryAsync(GetStaffPageQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetStaffPageQueryHeaders headers = new GetStaffPageQueryHeaders();
+            return await GetStaffPageQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetStaffPageQueryResponse GetStaffPageQueryWithOptions(GetStaffPageQueryRequest request, GetStaffPageQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                query["deptCode"] = request.DeptCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                query["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNo))
+            {
+                query["workNo"] = request.WorkNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetStaffPageQueryResponse>(DoROARequest("GetStaffPageQuery", "chengfeng_1.0", "HTTP", "POST", "AK", "/v1.0/chengfeng/users/query", "json", req, runtime));
+        }
+
+        public async Task<GetStaffPageQueryResponse> GetStaffPageQueryWithOptionsAsync(GetStaffPageQueryRequest request, GetStaffPageQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                query["deptCode"] = request.DeptCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                query["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNo))
+            {
+                query["workNo"] = request.WorkNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            return TeaModel.ToObject<GetStaffPageQueryResponse>(await DoROARequestAsync("GetStaffPageQuery", "chengfeng_1.0", "HTTP", "POST", "AK", "/v1.0/chengfeng/users/query", "json", req, runtime));
         }
 
         public GetUserResponse GetUser(GetUserRequest request)

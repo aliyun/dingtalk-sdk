@@ -76,6 +76,15 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
             public string ConflictStrategy { get; set; }
 
             /// <summary>
+            /// 是否转换成在线文档
+            /// 默认值:
+            /// 	false
+            /// </summary>
+            [NameInMap("convertToOnlineDoc")]
+            [Validation(Required=false)]
+            public bool? ConvertToOnlineDoc { get; set; }
+
+            /// <summary>
             /// 默认文件大小, 单位:Byte
             /// 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
             /// </summary>

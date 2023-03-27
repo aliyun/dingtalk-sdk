@@ -212,6 +212,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
                 public string SpaceId { get; set; }
 
                 /// <summary>
+                /// 知识小组信息
+                /// </summary>
+                [NameInMap("teamVO")]
+                [Validation(Required=false)]
+                public SearchResponseBodySpaceResultItemsTeamVO TeamVO { get; set; }
+                public class SearchResponseBodySpaceResultItemsTeamVO : TeaModel {
+                    /// <summary>
+                    /// 知识小组id
+                    /// </summary>
+                    [NameInMap("id")]
+                    [Validation(Required=false)]
+                    public string Id { get; set; }
+
+                    /// <summary>
+                    /// 知识小组名称
+                    /// </summary>
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                }
+
+                /// <summary>
                 /// 知识库访问url。
                 /// </summary>
                 [NameInMap("url")]

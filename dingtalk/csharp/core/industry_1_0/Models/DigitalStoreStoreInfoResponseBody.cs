@@ -23,6 +23,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string BusinessHours { get; set; }
 
+        [NameInMap("dingDeptId")]
+        [Validation(Required=false)]
+        public long? DingDeptId { get; set; }
+
         /// <summary>
         /// 纬度
         /// </summary>

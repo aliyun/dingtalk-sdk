@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        [NameInMap("roleIdList")]
+        [Validation(Required=false)]
+        public List<long?> RoleIdList { get; set; }
+
         /// <summary>
         /// 管理范围
         /// </summary>

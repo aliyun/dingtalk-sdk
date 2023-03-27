@@ -156,6 +156,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public TeamModelVisitInfo VisitInfo { get; set; }
         public class TeamModelVisitInfo : TeaModel {
             /// <summary>
+            /// 加入团队时间
+            /// </summary>
+            [NameInMap("joinTime")]
+            [Validation(Required=false)]
+            public string JoinTime { get; set; }
+
+            /// <summary>
             /// 用户对这个团队的访问情况
             /// </summary>
             [NameInMap("roleCode")]

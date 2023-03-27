@@ -118,6 +118,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public string NextToken { get; set; }
 
+            /// <summary>
+            /// 同时请求知识小组信息
+            /// </summary>
+            [NameInMap("withTeamInfo")]
+            [Validation(Required=false)]
+            public bool? WithTeamInfo { get; set; }
+
         }
 
     }

@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string Code { get; set; }
 
+        [NameInMap("dingDeptId")]
+        [Validation(Required=false)]
+        public long? DingDeptId { get; set; }
+
         /// <summary>
         /// 门店通通讯录名称
         /// </summary>
