@@ -87,6 +87,7 @@ class CommitFileRequestOption(TeaModel):
         self,
         app_properties: List[CommitFileRequestOptionAppProperties] = None,
         conflict_strategy: str = None,
+        convert_to_online_doc: bool = None,
         size: int = None,
     ):
         # 文件在应用上的属性, 一个应用最多只能设置3个属性
@@ -102,6 +103,10 @@ class CommitFileRequestOption(TeaModel):
         # 默认值:
         # 	AUTO_RENAME
         self.conflict_strategy = conflict_strategy
+        # 是否转换成在线文档
+        # 默认值:
+        # 	false
+        self.convert_to_online_doc = convert_to_online_doc
         # 默认文件大小, 单位:Byte
         # 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
         self.size = size
@@ -124,6 +129,8 @@ class CommitFileRequestOption(TeaModel):
                 result['appProperties'].append(k.to_map() if k else None)
         if self.conflict_strategy is not None:
             result['conflictStrategy'] = self.conflict_strategy
+        if self.convert_to_online_doc is not None:
+            result['convertToOnlineDoc'] = self.convert_to_online_doc
         if self.size is not None:
             result['size'] = self.size
         return result
@@ -137,6 +144,8 @@ class CommitFileRequestOption(TeaModel):
                 self.app_properties.append(temp_model.from_map(k))
         if m.get('conflictStrategy') is not None:
             self.conflict_strategy = m.get('conflictStrategy')
+        if m.get('convertToOnlineDoc') is not None:
+            self.convert_to_online_doc = m.get('convertToOnlineDoc')
         if m.get('size') is not None:
             self.size = m.get('size')
         return self

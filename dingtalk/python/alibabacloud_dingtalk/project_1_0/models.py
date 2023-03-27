@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class AddProjectMemberHeaders(TeaModel):
@@ -166,6 +166,268 @@ class AddProjectMemberResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = AddProjectMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ArchiveProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ArchiveProjectResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        is_archived: bool = None,
+        updated: str = None,
+    ):
+        # 是否已放入回收站。
+        self.is_archived = is_archived
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class ArchiveProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ArchiveProjectResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ArchiveProjectResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ArchiveProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ArchiveProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ArchiveProjectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ArchiveTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ArchiveTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        updated: str = None,
+    ):
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class ArchiveTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ArchiveTaskResponseBodyResult = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ArchiveTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ArchiveTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: ArchiveTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = ArchiveTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -935,6 +1197,367 @@ class CreatePlanTimeResponse(TeaModel):
         return self
 
 
+class CreateProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateProjectRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+    ):
+        # 项目名称。
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class CreateProjectResponseBodyResultCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        fieldvalue_id: str = None,
+        meta_string: str = None,
+        title: str = None,
+    ):
+        # 自定义字段值ID。
+        self.fieldvalue_id = fieldvalue_id
+        # 自定义字段值元属性。
+        self.meta_string = meta_string
+        # 自定义字段值内容。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fieldvalue_id is not None:
+            result['fieldvalueId'] = self.fieldvalue_id
+        if self.meta_string is not None:
+            result['metaString'] = self.meta_string
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldvalueId') is not None:
+            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('metaString') is not None:
+            self.meta_string = m.get('metaString')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class CreateProjectResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        type: str = None,
+        value: List[CreateProjectResponseBodyResultCustomfieldsValue] = None,
+    ):
+        # 自定义字段ID。
+        self.customfield_id = customfield_id
+        # 自定义字段类型。
+        self.type = type
+        # 自定义字段值列表。
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.type is not None:
+            result['type'] = self.type
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = CreateProjectResponseBodyResultCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class CreateProjectResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        created: str = None,
+        creator_id: str = None,
+        customfields: List[CreateProjectResponseBodyResultCustomfields] = None,
+        default_collection_id: str = None,
+        is_archived: bool = None,
+        is_suspended: bool = None,
+        is_template: bool = None,
+        logo: str = None,
+        name: str = None,
+        normal_type: str = None,
+        project_id: str = None,
+        root_collection_id: str = None,
+        source_id: str = None,
+        unique_id_prefix: str = None,
+        updated: str = None,
+        visibility: str = None,
+    ):
+        # 创建时间。
+        self.created = created
+        # 创建人ID。
+        self.creator_id = creator_id
+        # 自定义字段值集合。
+        self.customfields = customfields
+        # 项目默认文件夹ID。
+        self.default_collection_id = default_collection_id
+        # 是否在回收站。
+        self.is_archived = is_archived
+        # 是否归档。
+        self.is_suspended = is_suspended
+        # 是否为模版项目。
+        self.is_template = is_template
+        # 项目封面。
+        self.logo = logo
+        # 项目名称。
+        self.name = name
+        # 项目类型。
+        self.normal_type = normal_type
+        # 项目ID。
+        self.project_id = project_id
+        # 项目根文件夹ID。
+        self.root_collection_id = root_collection_id
+        # 来源项目ID。
+        self.source_id = source_id
+        # 任务ID前缀。
+        self.unique_id_prefix = unique_id_prefix
+        # 更新时间。
+        self.updated = updated
+        # 项目可见性。
+        self.visibility = visibility
+
+    def validate(self):
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
+        if self.default_collection_id is not None:
+            result['defaultCollectionId'] = self.default_collection_id
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.is_suspended is not None:
+            result['isSuspended'] = self.is_suspended
+        if self.is_template is not None:
+            result['isTemplate'] = self.is_template
+        if self.logo is not None:
+            result['logo'] = self.logo
+        if self.name is not None:
+            result['name'] = self.name
+        if self.normal_type is not None:
+            result['normalType'] = self.normal_type
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.root_collection_id is not None:
+            result['rootCollectionId'] = self.root_collection_id
+        if self.source_id is not None:
+            result['sourceId'] = self.source_id
+        if self.unique_id_prefix is not None:
+            result['uniqueIdPrefix'] = self.unique_id_prefix
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = CreateProjectResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
+        if m.get('defaultCollectionId') is not None:
+            self.default_collection_id = m.get('defaultCollectionId')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('isSuspended') is not None:
+            self.is_suspended = m.get('isSuspended')
+        if m.get('isTemplate') is not None:
+            self.is_template = m.get('isTemplate')
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('normalType') is not None:
+            self.normal_type = m.get('normalType')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('rootCollectionId') is not None:
+            self.root_collection_id = m.get('rootCollectionId')
+        if m.get('sourceId') is not None:
+            self.source_id = m.get('sourceId')
+        if m.get('uniqueIdPrefix') is not None:
+            self.unique_id_prefix = m.get('uniqueIdPrefix')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        return self
+
+
+class CreateProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateProjectResponseBodyResult = None,
+    ):
+        # 返回结果。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateProjectResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreateProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateProjectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateProjectByTemplateHeaders(TeaModel):
     def __init__(
         self,
@@ -1115,6 +1738,318 @@ class CreateProjectByTemplateResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateProjectByTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateProjectCustomfieldStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateProjectCustomfieldStatusRequestValue(TeaModel):
+    def __init__(
+        self,
+        fieldvalue_id: str = None,
+        meta_string: str = None,
+        title: str = None,
+    ):
+        # 字段值id。
+        self.fieldvalue_id = fieldvalue_id
+        # 字段值元信息(json格式)。
+        self.meta_string = meta_string
+        # 字段值渲染值。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fieldvalue_id is not None:
+            result['fieldvalueId'] = self.fieldvalue_id
+        if self.meta_string is not None:
+            result['metaString'] = self.meta_string
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldvalueId') is not None:
+            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('metaString') is not None:
+            self.meta_string = m.get('metaString')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class CreateProjectCustomfieldStatusRequest(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        customfield_instance_id: str = None,
+        customfield_name: str = None,
+        value: List[CreateProjectCustomfieldStatusRequestValue] = None,
+    ):
+        # 自定义字段ID。
+        self.customfield_id = customfield_id
+        # 自定义字段InstanceId(如果提供自定义字段ID 或者 自定义字段名称 则忽略)。
+        self.customfield_instance_id = customfield_instance_id
+        # 自定义字段名称(如果提供自定义字段ID 则忽略)。
+        self.customfield_name = customfield_name
+        # 字段值集合。
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.customfield_instance_id is not None:
+            result['customfieldInstanceId'] = self.customfield_instance_id
+        if self.customfield_name is not None:
+            result['customfieldName'] = self.customfield_name
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('customfieldInstanceId') is not None:
+            self.customfield_instance_id = m.get('customfieldInstanceId')
+        if m.get('customfieldName') is not None:
+            self.customfield_name = m.get('customfieldName')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = CreateProjectCustomfieldStatusRequestValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class CreateProjectCustomfieldStatusResponseBodyResultValue(TeaModel):
+    def __init__(
+        self,
+        fieldvalue_id: str = None,
+        meta_string: str = None,
+        title: str = None,
+    ):
+        # 字段值id。
+        self.fieldvalue_id = fieldvalue_id
+        # 自定义字段值元属性。
+        self.meta_string = meta_string
+        # 自定义字段值。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fieldvalue_id is not None:
+            result['fieldvalueId'] = self.fieldvalue_id
+        if self.meta_string is not None:
+            result['metaString'] = self.meta_string
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldvalueId') is not None:
+            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('metaString') is not None:
+            self.meta_string = m.get('metaString')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class CreateProjectCustomfieldStatusResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        adv_cf_object_type: str = None,
+        customfield_id: str = None,
+        name: str = None,
+        original_id: str = None,
+        type: str = None,
+        value: List[CreateProjectCustomfieldStatusResponseBodyResultValue] = None,
+    ):
+        # 高级字段类型名(冗余)。
+        self.adv_cf_object_type = adv_cf_object_type
+        # 自定义字段ID。
+        self.customfield_id = customfield_id
+        # 字段名称。
+        self.name = name
+        # 如果是企业字段，返回企业字段ID。
+        self.original_id = original_id
+        # 字段类型。
+        self.type = type
+        # 字段值集合。
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.adv_cf_object_type is not None:
+            result['advCfObjectType'] = self.adv_cf_object_type
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.original_id is not None:
+            result['originalId'] = self.original_id
+        if self.type is not None:
+            result['type'] = self.type
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advCfObjectType') is not None:
+            self.adv_cf_object_type = m.get('advCfObjectType')
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('originalId') is not None:
+            self.original_id = m.get('originalId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = CreateProjectCustomfieldStatusResponseBodyResultValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class CreateProjectCustomfieldStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateProjectCustomfieldStatusResponseBodyResult = None,
+    ):
+        # 结果。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateProjectCustomfieldStatusResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreateProjectCustomfieldStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: CreateProjectCustomfieldStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = CreateProjectCustomfieldStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2084,6 +3019,230 @@ class CreateWorkTimeResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = CreateWorkTimeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteProjectMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteProjectMemberRequest(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+    ):
+        # 用户ID。
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class DeleteProjectMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[str] = None,
+    ):
+        # 项目成员列表。
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteProjectMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteProjectMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteProjectMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: Dict[str, str] = None,
+    ):
+        # 删除的任务Id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DeleteTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DeleteTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3406,6 +4565,837 @@ class GetProjectGroupResponse(TeaModel):
         return self
 
 
+class GetProjectMemebersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetProjectMemebersRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        project_role_id: str = None,
+        skip: int = None,
+        user_ids: str = None,
+    ):
+        # 每页返回最大数量。默认10，最大300。
+        self.max_results = max_results
+        # 项目角色ID，仅查询拥有该角色的成员，并且仅支持单个角色查询。
+        self.project_role_id = project_role_id
+        # 跳过的数据数量。
+        self.skip = skip
+        # 如果传递，仅查询这些用户ID， 用逗号组合。
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.project_role_id is not None:
+            result['projectRoleId'] = self.project_role_id
+        if self.skip is not None:
+            result['skip'] = self.skip
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('projectRoleId') is not None:
+            self.project_role_id = m.get('projectRoleId')
+        if m.get('skip') is not None:
+            self.skip = m.get('skip')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetProjectMemebersResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        role: int = None,
+        role_ids: List[str] = None,
+        user_id: str = None,
+    ):
+        # 项目成员ID。
+        self.member_id = member_id
+        # 项目角色，0=成员；1=管理员；2=拥有者。
+        self.role = role
+        # 项目角色ID列表。
+        self.role_ids = role_ids
+        # 用户ID。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.role is not None:
+            result['role'] = self.role
+        if self.role_ids is not None:
+            result['roleIds'] = self.role_ids
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('roleIds') is not None:
+            self.role_ids = m.get('roleIds')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetProjectMemebersResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetProjectMemebersResponseBodyResult] = None,
+    ):
+        # 项目成员列表。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetProjectMemebersResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetProjectMemebersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetProjectMemebersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetProjectMemebersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetProjectStatusListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetProjectStatusListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        created: str = None,
+        creator_id: str = None,
+        degree: str = None,
+        name: str = None,
+        project_id: str = None,
+    ):
+        # 项目状态内容。
+        self.content = content
+        # 创建时间。
+        self.created = created
+        # 项目状态创建人ID。
+        self.creator_id = creator_id
+        # 项目状态指标：'normal','risky','urgent'。
+        self.degree = degree
+        # 项目状态名称。
+        self.name = name
+        # 项目ID。
+        self.project_id = project_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.degree is not None:
+            result['degree'] = self.degree
+        if self.name is not None:
+            result['name'] = self.name
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('degree') is not None:
+            self.degree = m.get('degree')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        return self
+
+
+class GetProjectStatusListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetProjectStatusListResponseBodyResult] = None,
+    ):
+        # 项目状态历史列表。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetProjectStatusListResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetProjectStatusListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetProjectStatusListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetProjectStatusListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetTaskByIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTaskByIdsRequest(TeaModel):
+    def __init__(
+        self,
+        parent_task_id: str = None,
+        task_id: str = None,
+    ):
+        # 父任务ID,和taskIds冲突(选其一)。
+        self.parent_task_id = parent_task_id
+        # 任务ID集合,使用逗号分隔,和parentTaskId冲突(选其一)。
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.parent_task_id is not None:
+            result['parentTaskId'] = self.parent_task_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('parentTaskId') is not None:
+            self.parent_task_id = m.get('parentTaskId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class GetTaskByIdsResponseBodyResultCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        fieldvalue_id: str = None,
+        meta_string: str = None,
+        title: str = None,
+    ):
+        # 字段值ID。
+        self.fieldvalue_id = fieldvalue_id
+        # 字段值元属性。
+        self.meta_string = meta_string
+        # 字段值内容。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fieldvalue_id is not None:
+            result['fieldvalueId'] = self.fieldvalue_id
+        if self.meta_string is not None:
+            result['metaString'] = self.meta_string
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldvalueId') is not None:
+            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('metaString') is not None:
+            self.meta_string = m.get('metaString')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetTaskByIdsResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        type: str = None,
+        value: List[GetTaskByIdsResponseBodyResultCustomfieldsValue] = None,
+    ):
+        # 自定义字段ID。
+        self.customfield_id = customfield_id
+        # 自定义字段类型。
+        self.type = type
+        # 字段值集合。
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.type is not None:
+            result['type'] = self.type
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = GetTaskByIdsResponseBodyResultCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class GetTaskByIdsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        accomplish_time: str = None,
+        ancestor_ids: List[str] = None,
+        content: str = None,
+        created: str = None,
+        creator_id: str = None,
+        customfields: List[GetTaskByIdsResponseBodyResultCustomfields] = None,
+        due_date: str = None,
+        executor_id: str = None,
+        involve_members: List[str] = None,
+        is_archived: bool = None,
+        is_done: bool = None,
+        note: str = None,
+        parent_task_id: str = None,
+        priority: int = None,
+        project_id: str = None,
+        recurrence: List[str] = None,
+        scenariofieldconfig_id: str = None,
+        sprint_id: str = None,
+        stage_id: str = None,
+        start_date: str = None,
+        story_point: str = None,
+        tag_ids: List[str] = None,
+        task_id: str = None,
+        task_list_id: str = None,
+        taskflowstatus_id: str = None,
+        unique_id: str = None,
+        updated: str = None,
+        visible: str = None,
+    ):
+        # 任务完成时间(UTC)。
+        self.accomplish_time = accomplish_time
+        # 祖先任务ID列表。
+        self.ancestor_ids = ancestor_ids
+        # 任务标题。
+        self.content = content
+        # 创建时间(UTC)。
+        self.created = created
+        # 创建人ID。
+        self.creator_id = creator_id
+        # 自定义字段值集合。
+        self.customfields = customfields
+        # 任务截止时间(UTC)。
+        self.due_date = due_date
+        # 执行人ID。
+        self.executor_id = executor_id
+        # 参与者ID集合。
+        self.involve_members = involve_members
+        # 是否任务放入回收站。
+        self.is_archived = is_archived
+        # 是否任务已完成。
+        self.is_done = is_done
+        # 任务备注。
+        self.note = note
+        # 父任务ID。
+        self.parent_task_id = parent_task_id
+        # 任务优先级。
+        self.priority = priority
+        # 项目ID。
+        self.project_id = project_id
+        # 重复规则列表。
+        self.recurrence = recurrence
+        # 任务类型ID。
+        self.scenariofieldconfig_id = scenariofieldconfig_id
+        # 迭代ID。
+        self.sprint_id = sprint_id
+        # 任务列ID。
+        self.stage_id = stage_id
+        # 任务开始时间(UTC)。
+        self.start_date = start_date
+        # StoryPoint。
+        self.story_point = story_point
+        # 标签ID集合。
+        self.tag_ids = tag_ids
+        # 任务ID。
+        self.task_id = task_id
+        # 任务分组ID。
+        self.task_list_id = task_list_id
+        # 任务状态ID。
+        self.taskflowstatus_id = taskflowstatus_id
+        # 任务数字ID。
+        self.unique_id = unique_id
+        # 更新时间(UTC)。
+        self.updated = updated
+        # 任务隐私性，'involves'表达仅参与者可见; 'members'表达项目成员可见。
+        self.visible = visible
+
+    def validate(self):
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accomplish_time is not None:
+            result['accomplishTime'] = self.accomplish_time
+        if self.ancestor_ids is not None:
+            result['ancestorIds'] = self.ancestor_ids
+        if self.content is not None:
+            result['content'] = self.content
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.note is not None:
+            result['note'] = self.note
+        if self.parent_task_id is not None:
+            result['parentTaskId'] = self.parent_task_id
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.recurrence is not None:
+            result['recurrence'] = self.recurrence
+        if self.scenariofieldconfig_id is not None:
+            result['scenariofieldconfigId'] = self.scenariofieldconfig_id
+        if self.sprint_id is not None:
+            result['sprintId'] = self.sprint_id
+        if self.stage_id is not None:
+            result['stageId'] = self.stage_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.story_point is not None:
+            result['storyPoint'] = self.story_point
+        if self.tag_ids is not None:
+            result['tagIds'] = self.tag_ids
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_list_id is not None:
+            result['taskListId'] = self.task_list_id
+        if self.taskflowstatus_id is not None:
+            result['taskflowstatusId'] = self.taskflowstatus_id
+        if self.unique_id is not None:
+            result['uniqueId'] = self.unique_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accomplishTime') is not None:
+            self.accomplish_time = m.get('accomplishTime')
+        if m.get('ancestorIds') is not None:
+            self.ancestor_ids = m.get('ancestorIds')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = GetTaskByIdsResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('parentTaskId') is not None:
+            self.parent_task_id = m.get('parentTaskId')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('recurrence') is not None:
+            self.recurrence = m.get('recurrence')
+        if m.get('scenariofieldconfigId') is not None:
+            self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
+        if m.get('sprintId') is not None:
+            self.sprint_id = m.get('sprintId')
+        if m.get('stageId') is not None:
+            self.stage_id = m.get('stageId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('storyPoint') is not None:
+            self.story_point = m.get('storyPoint')
+        if m.get('tagIds') is not None:
+            self.tag_ids = m.get('tagIds')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskListId') is not None:
+            self.task_list_id = m.get('taskListId')
+        if m.get('taskflowstatusId') is not None:
+            self.taskflowstatus_id = m.get('taskflowstatusId')
+        if m.get('uniqueId') is not None:
+            self.unique_id = m.get('uniqueId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
+class GetTaskByIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetTaskByIdsResponseBodyResult] = None,
+    ):
+        # 任务详情集合。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetTaskByIdsResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetTaskByIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetTaskByIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetTaskByIdsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetTbOrgIdByDingOrgIdHeaders(TeaModel):
     def __init__(
         self,
@@ -4014,6 +6004,548 @@ class GetTbUserIdByStaffIdResponse(TeaModel):
         return self
 
 
+class GetUserJoinedProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserJoinedProjectRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # 分页大小。
+        self.max_results = max_results
+        # 分页标。
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetUserJoinedProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        result: List[str] = None,
+        total_count: int = None,
+    ):
+        # 分页标。
+        self.next_token = next_token
+        # 项目 ID 列表。
+        self.result = result
+        # 总数。
+        self.total_count = total_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.result is not None:
+            result['result'] = self.result
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetUserJoinedProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetUserJoinedProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetUserJoinedProjectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryProjectRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        name: str = None,
+        next_token: str = None,
+        project_ids: str = None,
+        source_id: str = None,
+    ):
+        # 分页大小。每页返回最大数量。默认10，最大300。
+        self.max_results = max_results
+        # 项目名字(模糊匹配)。
+        self.name = name
+        # 分页标。供分页使用，下一页token，从当前页结果中获取。
+        self.next_token = next_token
+        # 项目ID集合，逗号分隔。
+        self.project_ids = project_ids
+        # 原始项目ID。
+        self.source_id = source_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.name is not None:
+            result['name'] = self.name
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.project_ids is not None:
+            result['projectIds'] = self.project_ids
+        if self.source_id is not None:
+            result['sourceId'] = self.source_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('projectIds') is not None:
+            self.project_ids = m.get('projectIds')
+        if m.get('sourceId') is not None:
+            self.source_id = m.get('sourceId')
+        return self
+
+
+class QueryProjectResponseBodyResultCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        fieldvalue_id: str = None,
+        meta_string: str = None,
+        title: str = None,
+    ):
+        # 自定义字段值ID。
+        self.fieldvalue_id = fieldvalue_id
+        # 自定义字段值元属性。
+        self.meta_string = meta_string
+        # 自定义字段值内容。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fieldvalue_id is not None:
+            result['fieldvalueId'] = self.fieldvalue_id
+        if self.meta_string is not None:
+            result['metaString'] = self.meta_string
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldvalueId') is not None:
+            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('metaString') is not None:
+            self.meta_string = m.get('metaString')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryProjectResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        type: str = None,
+        value: List[QueryProjectResponseBodyResultCustomfieldsValue] = None,
+    ):
+        # 自定义字段ID。
+        self.customfield_id = customfield_id
+        # 自定义字段类型。
+        self.type = type
+        # 自定义字段值列表。
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.type is not None:
+            result['type'] = self.type
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = QueryProjectResponseBodyResultCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class QueryProjectResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        created: str = None,
+        creator_id: str = None,
+        customfields: List[QueryProjectResponseBodyResultCustomfields] = None,
+        description: str = None,
+        end_date: str = None,
+        is_archived: bool = None,
+        is_suspended: bool = None,
+        is_template: bool = None,
+        logo: str = None,
+        name: str = None,
+        organization_id: str = None,
+        project_id: str = None,
+        start_date: str = None,
+        unique_id_prefix: str = None,
+        updated: str = None,
+        visibility: str = None,
+    ):
+        # 创建时间。
+        self.created = created
+        # 创建人ID。
+        self.creator_id = creator_id
+        # 自定义字段值集合。
+        self.customfields = customfields
+        # 项目描述。
+        self.description = description
+        # 项目结束时间。
+        self.end_date = end_date
+        # 是否放入回收站。
+        self.is_archived = is_archived
+        # 是否归档。
+        self.is_suspended = is_suspended
+        # 是模版项目。
+        self.is_template = is_template
+        # 项目LOGO。
+        self.logo = logo
+        # 项目名称。
+        self.name = name
+        # 企业ID。
+        self.organization_id = organization_id
+        # 项目ID。
+        self.project_id = project_id
+        # 项目开始时间。
+        self.start_date = start_date
+        # 任务ID前缀。
+        self.unique_id_prefix = unique_id_prefix
+        # 更新时间。
+        self.updated = updated
+        # 可见性，project | organization。
+        self.visibility = visibility
+
+    def validate(self):
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.is_suspended is not None:
+            result['isSuspended'] = self.is_suspended
+        if self.is_template is not None:
+            result['isTemplate'] = self.is_template
+        if self.logo is not None:
+            result['logo'] = self.logo
+        if self.name is not None:
+            result['name'] = self.name
+        if self.organization_id is not None:
+            result['organizationId'] = self.organization_id
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.unique_id_prefix is not None:
+            result['uniqueIdPrefix'] = self.unique_id_prefix
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = QueryProjectResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('isSuspended') is not None:
+            self.is_suspended = m.get('isSuspended')
+        if m.get('isTemplate') is not None:
+            self.is_template = m.get('isTemplate')
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('organizationId') is not None:
+            self.organization_id = m.get('organizationId')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('uniqueIdPrefix') is not None:
+            self.unique_id_prefix = m.get('uniqueIdPrefix')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        return self
+
+
+class QueryProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryProjectResponseBodyResult] = None,
+    ):
+        # 项目列表。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryProjectResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryProjectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryTaskOfProjectHeaders(TeaModel):
     def __init__(
         self,
@@ -4422,6 +6954,983 @@ class QueryTaskOfProjectResponse(TeaModel):
         return self
 
 
+class SeachTaskStageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SeachTaskStageRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        query: str = None,
+        stage_ids: str = None,
+        task_list_id: str = None,
+    ):
+        # 每页返回最大数量。默认10，最大300。
+        self.max_results = max_results
+        # 分页标，从上一次请求结果中获取。
+        self.next_token = next_token
+        # 任务列表名字。
+        self.query = query
+        # 任务列表 ID 集合，逗号组合。
+        self.stage_ids = stage_ids
+        # 项目分组ID。
+        self.task_list_id = task_list_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.query is not None:
+            result['query'] = self.query
+        if self.stage_ids is not None:
+            result['stageIds'] = self.stage_ids
+        if self.task_list_id is not None:
+            result['taskListId'] = self.task_list_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        if m.get('stageIds') is not None:
+            self.stage_ids = m.get('stageIds')
+        if m.get('taskListId') is not None:
+            self.task_list_id = m.get('taskListId')
+        return self
+
+
+class SeachTaskStageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        created: str = None,
+        creator_id: str = None,
+        description: str = None,
+        name: str = None,
+        project_id: str = None,
+        task_list_id: str = None,
+        task_stage_id: str = None,
+        updated: str = None,
+    ):
+        # 创建时间。
+        self.created = created
+        # 创建者用户 ID。
+        self.creator_id = creator_id
+        # 任务列表名称。
+        self.description = description
+        # 任务列表名称。
+        self.name = name
+        # 项目 ID。
+        self.project_id = project_id
+        # 任务分组 ID。
+        self.task_list_id = task_list_id
+        # 任务列表 ID。
+        self.task_stage_id = task_stage_id
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.task_list_id is not None:
+            result['taskListId'] = self.task_list_id
+        if self.task_stage_id is not None:
+            result['taskStageId'] = self.task_stage_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('taskListId') is not None:
+            self.task_list_id = m.get('taskListId')
+        if m.get('taskStageId') is not None:
+            self.task_stage_id = m.get('taskStageId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class SeachTaskStageResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        result: List[SeachTaskStageResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        # 分页标，供分页使用，下一页token。
+        self.next_token = next_token
+        # 任务列表列表。
+        self.result = result
+        # 总数。
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = SeachTaskStageResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SeachTaskStageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SeachTaskStageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SeachTaskStageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchOranizationCustomfieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchOranizationCustomfieldRequest(TeaModel):
+    def __init__(
+        self,
+        customfield_ids: str = None,
+        instance_ids: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        project_ids: str = None,
+        query: str = None,
+        scope: str = None,
+    ):
+        # 自定义字段ID集合，逗号组合。
+        self.customfield_ids = customfield_ids
+        # 字段InstanceId集合，用逗号组合。
+        self.instance_ids = instance_ids
+        # 每页返回最大数量。默认10，最大300。
+        self.max_results = max_results
+        # 供分页使用，下一页token，从当前页结果中获取。
+        self.next_token = next_token
+        # 过滤出在指定项目中使用的企业字段，当scope=usedInProjectIds有效。多个以逗号隔开。
+        self.project_ids = project_ids
+        # 过滤字段名字。
+        self.query = query
+        # 字段应用场景, 可以是 sfcAdd,usedInProjectIds,all 其中一个。
+        self.scope = scope
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_ids is not None:
+            result['customfieldIds'] = self.customfield_ids
+        if self.instance_ids is not None:
+            result['instanceIds'] = self.instance_ids
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.project_ids is not None:
+            result['projectIds'] = self.project_ids
+        if self.query is not None:
+            result['query'] = self.query
+        if self.scope is not None:
+            result['scope'] = self.scope
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldIds') is not None:
+            self.customfield_ids = m.get('customfieldIds')
+        if m.get('instanceIds') is not None:
+            self.instance_ids = m.get('instanceIds')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('projectIds') is not None:
+            self.project_ids = m.get('projectIds')
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        return self
+
+
+class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield(TeaModel):
+    def __init__(
+        self,
+        advanced_customfield_id: str = None,
+        name: str = None,
+        object_type: str = None,
+    ):
+        # 字段类型ID。
+        self.advanced_customfield_id = advanced_customfield_id
+        # 字段类型名称
+        self.name = name
+        # 字段类型名称2
+        self.object_type = object_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advanced_customfield_id is not None:
+            result['advancedCustomfieldId'] = self.advanced_customfield_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advancedCustomfieldId') is not None:
+            self.advanced_customfield_id = m.get('advancedCustomfieldId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        return self
+
+
+class SearchOranizationCustomfieldResponseBodyResultChoices(TeaModel):
+    def __init__(
+        self,
+        choice_id: str = None,
+        value: str = None,
+    ):
+        # 选项ID。
+        self.choice_id = choice_id
+        # 选项值。
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.choice_id is not None:
+            result['choiceId'] = self.choice_id
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('choiceId') is not None:
+            self.choice_id = m.get('choiceId')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class SearchOranizationCustomfieldResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        advanced_customfield: SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield = None,
+        choices: List[SearchOranizationCustomfieldResponseBodyResultChoices] = None,
+        created: str = None,
+        creator_id: str = None,
+        customfields_id: str = None,
+        name: str = None,
+        payload: Dict[str, Any] = None,
+        type: str = None,
+    ):
+        # 高级自定义字段。
+        self.advanced_customfield = advanced_customfield
+        # 如果是单选或多选字段，这里是可选项的值
+        self.choices = choices
+        # 创建时间。
+        self.created = created
+        # 创建人ID。
+        self.creator_id = creator_id
+        # 自定义字段ID。
+        self.customfields_id = customfields_id
+        # 字段名称。
+        self.name = name
+        # 用户自定义数据载体，json格式类型任意数据。
+        self.payload = payload
+        # 字段类型。   'number', // 数字     'date', // 日期     'text', // 文本     'work',     'multipleChoice', // 多选     'dropDown', // 下拉,     'lookup',     'commongroup',     'cascading', // 层级字段     'rtf', // 多行文本/富文本 字段 'lookup2' // 新高级字段
+        self.type = type
+
+    def validate(self):
+        if self.advanced_customfield:
+            self.advanced_customfield.validate()
+        if self.choices:
+            for k in self.choices:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advanced_customfield is not None:
+            result['advancedCustomfield'] = self.advanced_customfield.to_map()
+        result['choices'] = []
+        if self.choices is not None:
+            for k in self.choices:
+                result['choices'].append(k.to_map() if k else None)
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.customfields_id is not None:
+            result['customfieldsId'] = self.customfields_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.payload is not None:
+            result['payload'] = self.payload
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advancedCustomfield') is not None:
+            temp_model = SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield()
+            self.advanced_customfield = temp_model.from_map(m['advancedCustomfield'])
+        self.choices = []
+        if m.get('choices') is not None:
+            for k in m.get('choices'):
+                temp_model = SearchOranizationCustomfieldResponseBodyResultChoices()
+                self.choices.append(temp_model.from_map(k))
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('customfieldsId') is not None:
+            self.customfields_id = m.get('customfieldsId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('payload') is not None:
+            self.payload = m.get('payload')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class SearchOranizationCustomfieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        result: List[SearchOranizationCustomfieldResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        # 供分页使用，下一页token，从当前页结果中获取。
+        self.next_token = next_token
+        # 自定义字段列表。
+        self.result = result
+        # 总数。
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = SearchOranizationCustomfieldResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchOranizationCustomfieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchOranizationCustomfieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchOranizationCustomfieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchProjectCustomfieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchProjectCustomfieldRequest(TeaModel):
+    def __init__(
+        self,
+        customfield_ids: str = None,
+        instance_ids: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        query: str = None,
+        scenariofieldconfig_id: str = None,
+        scope: str = None,
+    ):
+        # 自定义字段ID集合，逗号组合。
+        self.customfield_ids = customfield_ids
+        # 字段InstanceId集合，用逗号组合。
+        self.instance_ids = instance_ids
+        # 每页返回最大数量。默认10，最大500。
+        self.max_results = max_results
+        # 分页标。
+        self.next_token = next_token
+        # 过滤字段名字。
+        self.query = query
+        # 任务类型ID。
+        self.scenariofieldconfig_id = scenariofieldconfig_id
+        # 字段应用场景, 可以是 taskTableHeader,searcherAdd,taskExportHeader,sfcAdd,kanbanCardAdd,all 其中一个。
+        self.scope = scope
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_ids is not None:
+            result['customfieldIds'] = self.customfield_ids
+        if self.instance_ids is not None:
+            result['instanceIds'] = self.instance_ids
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.query is not None:
+            result['query'] = self.query
+        if self.scenariofieldconfig_id is not None:
+            result['scenariofieldconfigId'] = self.scenariofieldconfig_id
+        if self.scope is not None:
+            result['scope'] = self.scope
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldIds') is not None:
+            self.customfield_ids = m.get('customfieldIds')
+        if m.get('instanceIds') is not None:
+            self.instance_ids = m.get('instanceIds')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        if m.get('scenariofieldconfigId') is not None:
+            self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        return self
+
+
+class SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield(TeaModel):
+    def __init__(
+        self,
+        advanced_customfield_id: str = None,
+        name: str = None,
+        object_type: str = None,
+    ):
+        # 字段类型ID。
+        self.advanced_customfield_id = advanced_customfield_id
+        # 字段类型名称
+        self.name = name
+        # 字段类型名称2。
+        self.object_type = object_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advanced_customfield_id is not None:
+            result['advancedCustomfieldId'] = self.advanced_customfield_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advancedCustomfieldId') is not None:
+            self.advanced_customfield_id = m.get('advancedCustomfieldId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        return self
+
+
+class SearchProjectCustomfieldResponseBodyResultChoices(TeaModel):
+    def __init__(
+        self,
+        choice_id: str = None,
+        value: str = None,
+    ):
+        # 选项Id。
+        self.choice_id = choice_id
+        # 选项值。
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.choice_id is not None:
+            result['choiceId'] = self.choice_id
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('choiceId') is not None:
+            self.choice_id = m.get('choiceId')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class SearchProjectCustomfieldResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        advanced_customfield: SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield = None,
+        bound_to_object_id: str = None,
+        choices: List[SearchProjectCustomfieldResponseBodyResultChoices] = None,
+        created: str = None,
+        creator_id: str = None,
+        customfiled_id: str = None,
+        name: str = None,
+        original_id: str = None,
+        payload: Dict[str, Any] = None,
+        type: str = None,
+    ):
+        # 高级自定义字段。
+        self.advanced_customfield = advanced_customfield
+        # 绑定的对象Id，此接口为项目ID。
+        self.bound_to_object_id = bound_to_object_id
+        # 如果是单选或多选字段，这里是可选项的值
+        self.choices = choices
+        # 创建时间。
+        self.created = created
+        # 创建人ID。
+        self.creator_id = creator_id
+        # 自定义字段ID。
+        self.customfiled_id = customfiled_id
+        # 字段名称。
+        self.name = name
+        # 如果是企业字段，该字段表达绑定的企业字段ID。
+        self.original_id = original_id
+        # 用户自定义数据载体，json格式类型任意数据。
+        self.payload = payload
+        # 字段类型。 'number', // 数字 'date', // 日期 'text', // 文本 'work', 'multipleChoice', // 多选 'dropDown', // 下拉, 'lookup', 'commongroup', 'cascading', // 层级字段 'rtf', // 多行文本/富文本 字段 'lookup2' // 新高级字段
+        self.type = type
+
+    def validate(self):
+        if self.advanced_customfield:
+            self.advanced_customfield.validate()
+        if self.choices:
+            for k in self.choices:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advanced_customfield is not None:
+            result['advancedCustomfield'] = self.advanced_customfield.to_map()
+        if self.bound_to_object_id is not None:
+            result['boundToObjectId'] = self.bound_to_object_id
+        result['choices'] = []
+        if self.choices is not None:
+            for k in self.choices:
+                result['choices'].append(k.to_map() if k else None)
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.customfiled_id is not None:
+            result['customfiledId'] = self.customfiled_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.original_id is not None:
+            result['originalId'] = self.original_id
+        if self.payload is not None:
+            result['payload'] = self.payload
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advancedCustomfield') is not None:
+            temp_model = SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield()
+            self.advanced_customfield = temp_model.from_map(m['advancedCustomfield'])
+        if m.get('boundToObjectId') is not None:
+            self.bound_to_object_id = m.get('boundToObjectId')
+        self.choices = []
+        if m.get('choices') is not None:
+            for k in m.get('choices'):
+                temp_model = SearchProjectCustomfieldResponseBodyResultChoices()
+                self.choices.append(temp_model.from_map(k))
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('customfiledId') is not None:
+            self.customfiled_id = m.get('customfiledId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('originalId') is not None:
+            self.original_id = m.get('originalId')
+        if m.get('payload') is not None:
+            self.payload = m.get('payload')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class SearchProjectCustomfieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        result: List[SearchProjectCustomfieldResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        # 供分页使用，下一页token，从当前页结果中获取。
+        self.next_token = next_token
+        # 自定义字段列表。
+        self.result = result
+        # 总数。
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = SearchProjectCustomfieldResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchProjectCustomfieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchProjectCustomfieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchProjectCustomfieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SearchProjectTemplateHeaders(TeaModel):
     def __init__(
         self,
@@ -4636,6 +8145,477 @@ class SearchProjectTemplateResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SearchProjectTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchTaskFlowHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchTaskFlowRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        query: str = None,
+        taskflow_ids: str = None,
+    ):
+        # 每页返回最大数量。默认10，最大300。
+        self.max_results = max_results
+        # 分页标，从上一次请求结果中获取。
+        self.next_token = next_token
+        # 模糊查询工作流名字。
+        self.query = query
+        # 工作流ID集合，逗号组合。
+        self.taskflow_ids = taskflow_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.query is not None:
+            result['query'] = self.query
+        if self.taskflow_ids is not None:
+            result['taskflowIds'] = self.taskflow_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        if m.get('taskflowIds') is not None:
+            self.taskflow_ids = m.get('taskflowIds')
+        return self
+
+
+class SearchTaskFlowResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        bound_to_object_id: str = None,
+        bound_to_object_type: str = None,
+        created: str = None,
+        creator_id: str = None,
+        is_deleted: bool = None,
+        name: str = None,
+        taskflow_id: str = None,
+        updated: str = None,
+    ):
+        # 绑定对象Id，此接口为项目id。
+        self.bound_to_object_id = bound_to_object_id
+        # 绑定类型，增加项目成员默认是project。
+        self.bound_to_object_type = bound_to_object_type
+        # 创建时间。
+        self.created = created
+        # 创建者id。
+        self.creator_id = creator_id
+        # 是否已删除。
+        self.is_deleted = is_deleted
+        # 工作流名称。
+        self.name = name
+        # 工作流ID。
+        self.taskflow_id = taskflow_id
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bound_to_object_id is not None:
+            result['boundToObjectId'] = self.bound_to_object_id
+        if self.bound_to_object_type is not None:
+            result['boundToObjectType'] = self.bound_to_object_type
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.name is not None:
+            result['name'] = self.name
+        if self.taskflow_id is not None:
+            result['taskflowId'] = self.taskflow_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('boundToObjectId') is not None:
+            self.bound_to_object_id = m.get('boundToObjectId')
+        if m.get('boundToObjectType') is not None:
+            self.bound_to_object_type = m.get('boundToObjectType')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('taskflowId') is not None:
+            self.taskflow_id = m.get('taskflowId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class SearchTaskFlowResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[SearchTaskFlowResponseBodyResult] = None,
+    ):
+        # 工作流列表。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = SearchTaskFlowResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class SearchTaskFlowResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchTaskFlowResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchTaskFlowResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchTaskListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchTaskListRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        query: str = None,
+        task_list_ids: str = None,
+    ):
+        # 每页返回最大数量。默认10，最大300。
+        self.max_results = max_results
+        # 分页标，从上一次请求结果中获取。
+        self.next_token = next_token
+        # 模糊任务分组名字。
+        self.query = query
+        # 任务分组ID集合，逗号组合。
+        self.task_list_ids = task_list_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.query is not None:
+            result['query'] = self.query
+        if self.task_list_ids is not None:
+            result['taskListIds'] = self.task_list_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        if m.get('taskListIds') is not None:
+            self.task_list_ids = m.get('taskListIds')
+        return self
+
+
+class SearchTaskListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        created: str = None,
+        creator_id: str = None,
+        description: str = None,
+        project_id: str = None,
+        task_id: str = None,
+        title: str = None,
+        updated: str = None,
+    ):
+        # 创建时间。
+        self.created = created
+        # 创建者用户ID。
+        self.creator_id = creator_id
+        # 任务分组名称。
+        self.description = description
+        # 项目ID。
+        self.project_id = project_id
+        # 任务分组ID。
+        self.task_id = task_id
+        # 任务分组名称。
+        self.title = title
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class SearchTaskListResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        result: List[SearchTaskListResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        # 分页标，供分页使用，下一页token。
+        self.next_token = next_token
+        # 任务分0组列表。
+        self.result = result
+        # 总数。
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = SearchTaskListResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchTaskListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchTaskListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchTaskListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4896,6 +8876,727 @@ class SearchTaskflowStatusResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SearchTaskflowStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchUserTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchUserTaskRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        role_types: str = None,
+        tql: str = None,
+    ):
+        # 每页返回最大数量。默认10，最大100。
+        self.max_results = max_results
+        # 分页标，从上一次请求结果中获取。
+        self.next_token = next_token
+        # 用户的任务角色, creator,executor,involveMember 中的一个或多个,以 ','拼接。例如：creator,executor。
+        self.role_types = role_types
+        # tql，参考项目内的tql使用说明。
+        self.tql = tql
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.role_types is not None:
+            result['roleTypes'] = self.role_types
+        if self.tql is not None:
+            result['tql'] = self.tql
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('roleTypes') is not None:
+            self.role_types = m.get('roleTypes')
+        if m.get('tql') is not None:
+            self.tql = m.get('tql')
+        return self
+
+
+class SearchUserTaskResponseBodyResultCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        fieldvalue_id: str = None,
+        meta_string: str = None,
+        title: str = None,
+    ):
+        # 字段值ID。
+        self.fieldvalue_id = fieldvalue_id
+        # 字段值元属性。
+        self.meta_string = meta_string
+        # 字段值内容。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fieldvalue_id is not None:
+            result['fieldvalueId'] = self.fieldvalue_id
+        if self.meta_string is not None:
+            result['metaString'] = self.meta_string
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldvalueId') is not None:
+            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('metaString') is not None:
+            self.meta_string = m.get('metaString')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SearchUserTaskResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        type: str = None,
+        value: List[SearchUserTaskResponseBodyResultCustomfieldsValue] = None,
+    ):
+        # 自定义字段ID。
+        self.customfield_id = customfield_id
+        # 自定义字段类型。
+        self.type = type
+        # 字段值集合。
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.type is not None:
+            result['type'] = self.type
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = SearchUserTaskResponseBodyResultCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class SearchUserTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        accomplish_time: str = None,
+        ancestor_ids: List[str] = None,
+        content: str = None,
+        created: str = None,
+        creator_id: str = None,
+        customfields: List[SearchUserTaskResponseBodyResultCustomfields] = None,
+        due_date: str = None,
+        executor_id: str = None,
+        involve_members: List[str] = None,
+        is_archived: bool = None,
+        is_done: bool = None,
+        note: str = None,
+        parent_task_id: str = None,
+        priority: int = None,
+        project_id: str = None,
+        recurrence: List[str] = None,
+        scenariofieldconfig_id: str = None,
+        sprint_id: str = None,
+        stage_id: str = None,
+        start_date: str = None,
+        story_point: str = None,
+        tag_ids: List[str] = None,
+        task_id: str = None,
+        task_list_id: str = None,
+        unique_id: str = None,
+        updated: str = None,
+        visible: str = None,
+    ):
+        # 任务完成时间(UTC)。
+        self.accomplish_time = accomplish_time
+        # 祖先任务ID列表。
+        self.ancestor_ids = ancestor_ids
+        # 任务标题。
+        self.content = content
+        # 创建时间(UTC)。
+        self.created = created
+        # 创建人ID。
+        self.creator_id = creator_id
+        # 自定义字段值集合。
+        self.customfields = customfields
+        # 任务截止时间(UTC)。
+        self.due_date = due_date
+        # 执行人ID。
+        self.executor_id = executor_id
+        # 参与者ID集合。
+        self.involve_members = involve_members
+        # 是否任务放入回收站。
+        self.is_archived = is_archived
+        # 是否任务已完成。
+        self.is_done = is_done
+        # 任务备注。
+        self.note = note
+        # 父任务ID。
+        self.parent_task_id = parent_task_id
+        # 任务优先级。
+        self.priority = priority
+        # 项目ID。
+        self.project_id = project_id
+        # 重复规则列表。
+        self.recurrence = recurrence
+        # 任务类型ID。
+        self.scenariofieldconfig_id = scenariofieldconfig_id
+        # 迭代ID。
+        self.sprint_id = sprint_id
+        # 任务列ID。
+        self.stage_id = stage_id
+        # 任务开始时间(UTC)。
+        self.start_date = start_date
+        # StoryPoint。
+        self.story_point = story_point
+        # 标签ID集合。
+        self.tag_ids = tag_ids
+        # 任务状态ID。
+        self.task_id = task_id
+        # 任务列表ID。
+        self.task_list_id = task_list_id
+        # 任务数字ID。
+        self.unique_id = unique_id
+        # 更新时间(UTC)。
+        self.updated = updated
+        # 任务隐私性，'involves'表达仅参与者可见; 'members'表达项目成员可见。
+        self.visible = visible
+
+    def validate(self):
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accomplish_time is not None:
+            result['accomplishTime'] = self.accomplish_time
+        if self.ancestor_ids is not None:
+            result['ancestorIds'] = self.ancestor_ids
+        if self.content is not None:
+            result['content'] = self.content
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.note is not None:
+            result['note'] = self.note
+        if self.parent_task_id is not None:
+            result['parentTaskId'] = self.parent_task_id
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.recurrence is not None:
+            result['recurrence'] = self.recurrence
+        if self.scenariofieldconfig_id is not None:
+            result['scenariofieldconfigId'] = self.scenariofieldconfig_id
+        if self.sprint_id is not None:
+            result['sprintId'] = self.sprint_id
+        if self.stage_id is not None:
+            result['stageId'] = self.stage_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.story_point is not None:
+            result['storyPoint'] = self.story_point
+        if self.tag_ids is not None:
+            result['tagIds'] = self.tag_ids
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_list_id is not None:
+            result['taskListId'] = self.task_list_id
+        if self.unique_id is not None:
+            result['uniqueId'] = self.unique_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accomplishTime') is not None:
+            self.accomplish_time = m.get('accomplishTime')
+        if m.get('ancestorIds') is not None:
+            self.ancestor_ids = m.get('ancestorIds')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = SearchUserTaskResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('parentTaskId') is not None:
+            self.parent_task_id = m.get('parentTaskId')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('recurrence') is not None:
+            self.recurrence = m.get('recurrence')
+        if m.get('scenariofieldconfigId') is not None:
+            self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
+        if m.get('sprintId') is not None:
+            self.sprint_id = m.get('sprintId')
+        if m.get('stageId') is not None:
+            self.stage_id = m.get('stageId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('storyPoint') is not None:
+            self.story_point = m.get('storyPoint')
+        if m.get('tagIds') is not None:
+            self.tag_ids = m.get('tagIds')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskListId') is not None:
+            self.task_list_id = m.get('taskListId')
+        if m.get('uniqueId') is not None:
+            self.unique_id = m.get('uniqueId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
+class SearchUserTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[SearchUserTaskResponseBodyResult] = None,
+    ):
+        # 任务详情集合。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = SearchUserTaskResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class SearchUserTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchUserTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchUserTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SuspendProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SuspendProjectResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        updated: str = None,
+    ):
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class SuspendProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SuspendProjectResponseBodyResult = None,
+    ):
+        # 返回对象。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SuspendProjectResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class SuspendProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SuspendProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SuspendProjectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UnSuspendProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UnSuspendProjectResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        updated: str = None,
+    ):
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UnSuspendProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UnSuspendProjectResponseBodyResult = None,
+    ):
+        # 返回对象。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UnSuspendProjectResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UnSuspendProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UnSuspendProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UnSuspendProjectResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6752,6 +11453,1357 @@ class UpdateProjectGroupResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = UpdateProjectGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskContentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskContentRequest(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        # 任务标题。
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class UpdateTaskContentResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        updated: str = None,
+    ):
+        # 任务标题。
+        self.content = content
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskContentResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskContentResponseBodyResult = None,
+    ):
+        # 结果。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskContentResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskContentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskContentResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskContentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskDueDateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskDueDateRequest(TeaModel):
+    def __init__(
+        self,
+        due_date: str = None,
+    ):
+        # 截止时间。
+        self.due_date = due_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        return self
+
+
+class UpdateTaskDueDateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        due_date: str = None,
+        updated: str = None,
+    ):
+        # 截止时间。
+        self.due_date = due_date
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskDueDateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskDueDateResponseBodyResult = None,
+    ):
+        # 结果。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskDueDateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskDueDateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskDueDateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskDueDateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskExecutorHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskExecutorRequest(TeaModel):
+    def __init__(
+        self,
+        executor_id: str = None,
+    ):
+        # 执行者用户ID。
+        self.executor_id = executor_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        return self
+
+
+class UpdateTaskExecutorResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        executor_id: str = None,
+        updated: str = None,
+    ):
+        # 执行者用户ID。
+        self.executor_id = executor_id
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskExecutorResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskExecutorResponseBodyResult = None,
+    ):
+        # 结果。
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskExecutorResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskExecutorResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskExecutorResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskExecutorResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskInvolvemembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskInvolvemembersRequest(TeaModel):
+    def __init__(
+        self,
+        add_involvers: List[str] = None,
+        del_involvers: List[str] = None,
+        involve_members: List[str] = None,
+    ):
+        # 新增参与者列表。
+        self.add_involvers = add_involvers
+        # 移除参与者列表。
+        self.del_involvers = del_involvers
+        # 更新任务参与者列表。
+        self.involve_members = involve_members
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.add_involvers is not None:
+            result['addInvolvers'] = self.add_involvers
+        if self.del_involvers is not None:
+            result['delInvolvers'] = self.del_involvers
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('addInvolvers') is not None:
+            self.add_involvers = m.get('addInvolvers')
+        if m.get('delInvolvers') is not None:
+            self.del_involvers = m.get('delInvolvers')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        return self
+
+
+class UpdateTaskInvolvemembersResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        involve_members: List[str] = None,
+        updated: str = None,
+    ):
+        # 参与者列表。
+        self.involve_members = involve_members
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskInvolvemembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskInvolvemembersResponseBodyResult = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskInvolvemembersResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskInvolvemembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskInvolvemembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskInvolvemembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskNoteHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskNoteRequest(TeaModel):
+    def __init__(
+        self,
+        note: str = None,
+    ):
+        # 任务备注。
+        self.note = note
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.note is not None:
+            result['note'] = self.note
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        return self
+
+
+class UpdateTaskNoteResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        note: str = None,
+        updated: str = None,
+    ):
+        # 任务备注。
+        self.note = note
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.note is not None:
+            result['note'] = self.note
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskNoteResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskNoteResponseBodyResult = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskNoteResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskNoteResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskNoteResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskNoteResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskPriorityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskPriorityRequest(TeaModel):
+    def __init__(
+        self,
+        priority: int = None,
+    ):
+        # 优先级。
+        self.priority = priority
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.priority is not None:
+            result['priority'] = self.priority
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        return self
+
+
+class UpdateTaskPriorityResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        priority: int = None,
+        updated: str = None,
+    ):
+        # 优先级。
+        self.priority = priority
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskPriorityResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskPriorityResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskPriorityResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskPriorityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskPriorityResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskPriorityResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskStageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskStageRequest(TeaModel):
+    def __init__(
+        self,
+        stage_id: str = None,
+    ):
+        # 任务列表Id。
+        self.stage_id = stage_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stage_id is not None:
+            result['stageId'] = self.stage_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('stageId') is not None:
+            self.stage_id = m.get('stageId')
+        return self
+
+
+class UpdateTaskStageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        accomplish_time: str = None,
+        is_done: bool = None,
+        project_id: str = None,
+        stage_id: str = None,
+        task_id: str = None,
+        task_list_id: str = None,
+        updated: str = None,
+    ):
+        # 任务完成时间(UTC)。
+        self.accomplish_time = accomplish_time
+        # 是否任务已完成。
+        self.is_done = is_done
+        # 项目ID。
+        self.project_id = project_id
+        # 任务列ID。
+        self.stage_id = stage_id
+        # 任务ID。
+        self.task_id = task_id
+        # 任务分组ID。
+        self.task_list_id = task_list_id
+        # 更新时间(UTC)。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accomplish_time is not None:
+            result['accomplishTime'] = self.accomplish_time
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.stage_id is not None:
+            result['stageId'] = self.stage_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_list_id is not None:
+            result['taskListId'] = self.task_list_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accomplishTime') is not None:
+            self.accomplish_time = m.get('accomplishTime')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('stageId') is not None:
+            self.stage_id = m.get('stageId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskListId') is not None:
+            self.task_list_id = m.get('taskListId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskStageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskStageResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskStageResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskStageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskStageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskStageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTaskStartdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTaskStartdateRequest(TeaModel):
+    def __init__(
+        self,
+        start_date: str = None,
+    ):
+        # 任务开始时间。
+        self.start_date = start_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        return self
+
+
+class UpdateTaskStartdateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        start_date: str = None,
+        updated: str = None,
+    ):
+        # 任务开始时间。
+        self.start_date = start_date
+        # 更新时间。
+        self.updated = updated
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
+class UpdateTaskStartdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateTaskStartdateResponseBodyResult = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateTaskStartdateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateTaskStartdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: UpdateTaskStartdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = UpdateTaskStartdateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

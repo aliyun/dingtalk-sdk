@@ -8945,11 +8945,13 @@ class DigitalStoreContactInfoResponseBody(TeaModel):
     def __init__(
         self,
         code: str = None,
+        ding_dept_id: int = None,
         name: str = None,
         root_dept_id: int = None,
     ):
         # 门店通通讯录Code
         self.code = code
+        self.ding_dept_id = ding_dept_id
         # 门店通通讯录名称
         self.name = name
         # 门店通通讯录根节点Id
@@ -8966,6 +8968,8 @@ class DigitalStoreContactInfoResponseBody(TeaModel):
         result = dict()
         if self.code is not None:
             result['code'] = self.code
+        if self.ding_dept_id is not None:
+            result['dingDeptId'] = self.ding_dept_id
         if self.name is not None:
             result['name'] = self.name
         if self.root_dept_id is not None:
@@ -8976,6 +8980,8 @@ class DigitalStoreContactInfoResponseBody(TeaModel):
         m = m or dict()
         if m.get('code') is not None:
             self.code = m.get('code')
+        if m.get('dingDeptId') is not None:
+            self.ding_dept_id = m.get('dingDeptId')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('rootDeptId') is not None:
@@ -9371,11 +9377,13 @@ class DigitalStoreNodeInfoRequest(TeaModel):
 class DigitalStoreNodeInfoResponseBody(TeaModel):
     def __init__(
         self,
+        ding_dept_id: int = None,
         id: int = None,
         name: str = None,
         parent_id: int = None,
         type: int = None,
     ):
+        self.ding_dept_id = ding_dept_id
         # 节点Id
         self.id = id
         # 门店名称
@@ -9394,6 +9402,8 @@ class DigitalStoreNodeInfoResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.ding_dept_id is not None:
+            result['dingDeptId'] = self.ding_dept_id
         if self.id is not None:
             result['id'] = self.id
         if self.name is not None:
@@ -9406,6 +9416,8 @@ class DigitalStoreNodeInfoResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('dingDeptId') is not None:
+            self.ding_dept_id = m.get('dingDeptId')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('name') is not None:
@@ -9807,6 +9819,7 @@ class DigitalStoreStoreInfoResponseBody(TeaModel):
         self,
         address: str = None,
         business_hours: str = None,
+        ding_dept_id: int = None,
         latitude: str = None,
         location_address: str = None,
         longitude: str = None,
@@ -9823,6 +9836,7 @@ class DigitalStoreStoreInfoResponseBody(TeaModel):
         self.address = address
         # 营业时间
         self.business_hours = business_hours
+        self.ding_dept_id = ding_dept_id
         # 纬度
         self.latitude = latitude
         # 定位地址
@@ -9859,6 +9873,8 @@ class DigitalStoreStoreInfoResponseBody(TeaModel):
             result['address'] = self.address
         if self.business_hours is not None:
             result['businessHours'] = self.business_hours
+        if self.ding_dept_id is not None:
+            result['dingDeptId'] = self.ding_dept_id
         if self.latitude is not None:
             result['latitude'] = self.latitude
         if self.location_address is not None:
@@ -9889,6 +9905,8 @@ class DigitalStoreStoreInfoResponseBody(TeaModel):
             self.address = m.get('address')
         if m.get('businessHours') is not None:
             self.business_hours = m.get('businessHours')
+        if m.get('dingDeptId') is not None:
+            self.ding_dept_id = m.get('dingDeptId')
         if m.get('latitude') is not None:
             self.latitude = m.get('latitude')
         if m.get('locationAddress') is not None:
@@ -10212,12 +10230,14 @@ class DigitalStoreUserInfoResponseBody(TeaModel):
     def __init__(
         self,
         name: str = None,
+        role_id_list: List[int] = None,
         scope_list: List[int] = None,
         store_list: List[int] = None,
         user_id: str = None,
     ):
         # 人员名称
         self.name = name
+        self.role_id_list = role_id_list
         # 管理范围
         self.scope_list = scope_list
         # 所在节点列表
@@ -10236,6 +10256,8 @@ class DigitalStoreUserInfoResponseBody(TeaModel):
         result = dict()
         if self.name is not None:
             result['name'] = self.name
+        if self.role_id_list is not None:
+            result['roleIdList'] = self.role_id_list
         if self.scope_list is not None:
             result['scopeList'] = self.scope_list
         if self.store_list is not None:
@@ -10248,6 +10270,8 @@ class DigitalStoreUserInfoResponseBody(TeaModel):
         m = m or dict()
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('roleIdList') is not None:
+            self.role_id_list = m.get('roleIdList')
         if m.get('scopeList') is not None:
             self.scope_list = m.get('scopeList')
         if m.get('storeList') is not None:

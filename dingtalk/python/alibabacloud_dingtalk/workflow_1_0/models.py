@@ -230,6 +230,7 @@ class FormComponentProps(TeaModel):
         multiple: bool = None,
         options: List[SelectOption] = None,
         placeholder: str = None,
+        precision: int = None,
         print: str = None,
         required: bool = None,
         stat_field: List[FormComponentPropsStatField] = None,
@@ -288,6 +289,8 @@ class FormComponentProps(TeaModel):
         self.options = options
         # 输入提示
         self.placeholder = placeholder
+        # 小数点位数
+        self.precision = precision
         # 字段是否可打印，1打印，0不打印，默认打印
         self.print = print
         # 是否必填
@@ -379,6 +382,8 @@ class FormComponentProps(TeaModel):
                 result['options'].append(k.to_map() if k else None)
         if self.placeholder is not None:
             result['placeholder'] = self.placeholder
+        if self.precision is not None:
+            result['precision'] = self.precision
         if self.print is not None:
             result['print'] = self.print
         if self.required is not None:
@@ -456,6 +461,8 @@ class FormComponentProps(TeaModel):
                 self.options.append(temp_model.from_map(k))
         if m.get('placeholder') is not None:
             self.placeholder = m.get('placeholder')
+        if m.get('precision') is not None:
+            self.precision = m.get('precision')
         if m.get('print') is not None:
             self.print = m.get('print')
         if m.get('required') is not None:
@@ -10025,25 +10032,25 @@ class RedirectWorkflowTaskHeaders(TeaModel):
         return self
 
 
-class RedirectWorkflowTaskRequest(TeaModel):
+class RedirectWorkflowTaskRequestFileAttachments(TeaModel):
     def __init__(
         self,
-        action_name: str = None,
-        operate_user_id: str = None,
-        remark: str = None,
-        task_id: int = None,
-        to_user_id: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+        space_id: str = None,
     ):
-        # 操作节点名
-        self.action_name = action_name
-        # 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
-        self.operate_user_id = operate_user_id
-        # 转交备注信息
-        self.remark = remark
-        # OA审批任务ID
-        self.task_id = task_id
-        # OA审批任务被转交对象的用户ID
-        self.to_user_id = to_user_id
+        # 文件ID。
+        self.file_id = file_id
+        # 文件名称。
+        self.file_name = file_name
+        # 文件大小。
+        self.file_size = file_size
+        # 文件类型。
+        self.file_type = file_type
+        # 钉盘空间ID。
+        self.space_id = space_id
 
     def validate(self):
         pass
@@ -10054,8 +10061,113 @@ class RedirectWorkflowTaskRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class RedirectWorkflowTaskRequestFile(TeaModel):
+    def __init__(
+        self,
+        attachments: List[RedirectWorkflowTaskRequestFileAttachments] = None,
+        photos: List[str] = None,
+    ):
+        # 附件列表。
+        self.attachments = attachments
+        # 图片URL地址。
+        self.photos = photos
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.photos is not None:
+            result['photos'] = self.photos
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = RedirectWorkflowTaskRequestFileAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('photos') is not None:
+            self.photos = m.get('photos')
+        return self
+
+
+class RedirectWorkflowTaskRequest(TeaModel):
+    def __init__(
+        self,
+        action_name: str = None,
+        file: RedirectWorkflowTaskRequestFile = None,
+        operate_user_id: str = None,
+        remark: str = None,
+        task_id: int = None,
+        to_user_id: str = None,
+    ):
+        # 操作节点名
+        self.action_name = action_name
+        # 文件。
+        self.file = file
+        # 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
+        self.operate_user_id = operate_user_id
+        # 转交备注信息
+        self.remark = remark
+        # OA审批任务ID
+        self.task_id = task_id
+        # OA审批任务被转交对象的用户ID
+        self.to_user_id = to_user_id
+
+    def validate(self):
+        if self.file:
+            self.file.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.action_name is not None:
             result['actionName'] = self.action_name
+        if self.file is not None:
+            result['file'] = self.file.to_map()
         if self.operate_user_id is not None:
             result['operateUserId'] = self.operate_user_id
         if self.remark is not None:
@@ -10070,6 +10182,9 @@ class RedirectWorkflowTaskRequest(TeaModel):
         m = m or dict()
         if m.get('actionName') is not None:
             self.action_name = m.get('actionName')
+        if m.get('file') is not None:
+            temp_model = RedirectWorkflowTaskRequestFile()
+            self.file = temp_model.from_map(m['file'])
         if m.get('operateUserId') is not None:
             self.operate_user_id = m.get('operateUserId')
         if m.get('remark') is not None:

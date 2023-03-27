@@ -4,6 +4,377 @@ from Tea.model import TeaModel
 from typing import List, Dict
 
 
+class CfEmploymentRecordResp(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+        dept_name: str = None,
+        employee_status: str = None,
+        end_date: str = None,
+        is_latest_record: bool = None,
+        job_level_name: str = None,
+        job_position_code: str = None,
+        job_position_name: str = None,
+        job_post_code: str = None,
+        job_post_name: str = None,
+        service_status: str = None,
+        service_type: str = None,
+        start_date: str = None,
+        work_numbers: str = None,
+    ):
+        # 部门编码
+        self.dept_code = dept_code
+        # 部门名称
+        self.dept_name = dept_name
+        # 人员状态(2:试用,3:正式)
+        self.employee_status = employee_status
+        # 结束时间
+        self.end_date = end_date
+        # 是否是最新任职
+        self.is_latest_record = is_latest_record
+        # 职级名称
+        self.job_level_name = job_level_name
+        # 职位编码
+        self.job_position_code = job_position_code
+        # 职位名称
+        self.job_position_name = job_position_name
+        # 职务编码
+        self.job_post_code = job_post_code
+        # 职务名称
+        self.job_post_name = job_post_name
+        # 任职状态(1:任职中,2:任职结束)
+        self.service_status = service_status
+        # 任职类型(5:主职, 6:兼职)
+        self.service_type = service_type
+        # 开始时间
+        self.start_date = start_date
+        # 工号
+        self.work_numbers = work_numbers
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.employee_status is not None:
+            result['employeeStatus'] = self.employee_status
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.is_latest_record is not None:
+            result['isLatestRecord'] = self.is_latest_record
+        if self.job_level_name is not None:
+            result['jobLevelName'] = self.job_level_name
+        if self.job_position_code is not None:
+            result['jobPositionCode'] = self.job_position_code
+        if self.job_position_name is not None:
+            result['jobPositionName'] = self.job_position_name
+        if self.job_post_code is not None:
+            result['jobPostCode'] = self.job_post_code
+        if self.job_post_name is not None:
+            result['jobPostName'] = self.job_post_name
+        if self.service_status is not None:
+            result['serviceStatus'] = self.service_status
+        if self.service_type is not None:
+            result['serviceType'] = self.service_type
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.work_numbers is not None:
+            result['workNumbers'] = self.work_numbers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('employeeStatus') is not None:
+            self.employee_status = m.get('employeeStatus')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('isLatestRecord') is not None:
+            self.is_latest_record = m.get('isLatestRecord')
+        if m.get('jobLevelName') is not None:
+            self.job_level_name = m.get('jobLevelName')
+        if m.get('jobPositionCode') is not None:
+            self.job_position_code = m.get('jobPositionCode')
+        if m.get('jobPositionName') is not None:
+            self.job_position_name = m.get('jobPositionName')
+        if m.get('jobPostCode') is not None:
+            self.job_post_code = m.get('jobPostCode')
+        if m.get('jobPostName') is not None:
+            self.job_post_name = m.get('jobPostName')
+        if m.get('serviceStatus') is not None:
+            self.service_status = m.get('serviceStatus')
+        if m.get('serviceType') is not None:
+            self.service_type = m.get('serviceType')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('workNumbers') is not None:
+            self.work_numbers = m.get('workNumbers')
+        return self
+
+
+class CfJobLevelResp(TeaModel):
+    def __init__(
+        self,
+        level: int = None,
+        name: str = None,
+        start_date: str = None,
+        stop_date: str = None,
+    ):
+        # 级别
+        self.level = level
+        # 名称
+        self.name = name
+        # 生效日期
+        self.start_date = start_date
+        # 失效日期
+        self.stop_date = stop_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.level is not None:
+            result['level'] = self.level
+        if self.name is not None:
+            result['name'] = self.name
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.stop_date is not None:
+            result['stopDate'] = self.stop_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('level') is not None:
+            self.level = m.get('level')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('stopDate') is not None:
+            self.stop_date = m.get('stopDate')
+        return self
+
+
+class CfJobPositionResp(TeaModel):
+    def __init__(
+        self,
+        job_position_code: str = None,
+        name: str = None,
+    ):
+        # 职位编码
+        self.job_position_code = job_position_code
+        # 职位名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.job_position_code is not None:
+            result['jobPositionCode'] = self.job_position_code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jobPositionCode') is not None:
+            self.job_position_code = m.get('jobPositionCode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class CfJobPostResp(TeaModel):
+    def __init__(
+        self,
+        job_post_code: str = None,
+        name: str = None,
+    ):
+        # 职务编码
+        self.job_post_code = job_post_code
+        # 职务名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.job_post_code is not None:
+            result['jobPostCode'] = self.job_post_code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jobPostCode') is not None:
+            self.job_post_code = m.get('jobPostCode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class CfOrgResp(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+        dept_name: str = None,
+        level: int = None,
+        organization_code_path: str = None,
+        organization_path: str = None,
+        parent_dept_code: str = None,
+    ):
+        # 部门编码
+        self.dept_code = dept_code
+        # 部门名称
+        self.dept_name = dept_name
+        # 级别
+        self.level = level
+        # 部门编码路径
+        self.organization_code_path = organization_code_path
+        # 部门路径
+        self.organization_path = organization_path
+        # 父级部门编码
+        self.parent_dept_code = parent_dept_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.level is not None:
+            result['level'] = self.level
+        if self.organization_code_path is not None:
+            result['organizationCodePath'] = self.organization_code_path
+        if self.organization_path is not None:
+            result['organizationPath'] = self.organization_path
+        if self.parent_dept_code is not None:
+            result['parentDeptCode'] = self.parent_dept_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('level') is not None:
+            self.level = m.get('level')
+        if m.get('organizationCodePath') is not None:
+            self.organization_code_path = m.get('organizationCodePath')
+        if m.get('organizationPath') is not None:
+            self.organization_path = m.get('organizationPath')
+        if m.get('parentDeptCode') is not None:
+            self.parent_dept_code = m.get('parentDeptCode')
+        return self
+
+
+class CfStaffResp(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+        dept_name: str = None,
+        email: str = None,
+        mobile: str = None,
+        name: str = None,
+        nick_name: str = None,
+        work_numbers: str = None,
+    ):
+        # 部门编码
+        self.dept_code = dept_code
+        # 部门名称
+        self.dept_name = dept_name
+        # 邮箱
+        self.email = email
+        # 手机号
+        self.mobile = mobile
+        # 姓名
+        self.name = name
+        # 花名
+        self.nick_name = nick_name
+        # 工号
+        self.work_numbers = work_numbers
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.nick_name is not None:
+            result['nickName'] = self.nick_name
+        if self.work_numbers is not None:
+            result['workNumbers'] = self.work_numbers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nickName') is not None:
+            self.nick_name = m.get('nickName')
+        if m.get('workNumbers') is not None:
+            self.work_numbers = m.get('workNumbers')
+        return self
+
+
 class OpenAnalyzeDataDTO(TeaModel):
     def __init__(
         self,
@@ -532,6 +903,345 @@ class OpenProgressDTO(TeaModel):
         return self
 
 
+class GetAllJobLevelHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAllJobLevelResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[CfJobLevelResp] = None,
+        request_id: str = None,
+    ):
+        # 返回数据
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = CfJobLevelResp()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetAllJobLevelResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAllJobLevelResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAllJobLevelResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAllJobPositionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAllJobPositionResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[CfJobPositionResp] = None,
+        request_id: str = None,
+    ):
+        # 职位列表
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = CfJobPositionResp()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetAllJobPositionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAllJobPositionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAllJobPositionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAllJobPostHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAllJobPostResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[CfJobPostResp] = None,
+        request_id: str = None,
+    ):
+        # 返回数据
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = CfJobPostResp()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetAllJobPostResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetAllJobPostResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetAllJobPostResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetAnalyzeDataHeaders(TeaModel):
     def __init__(
         self,
@@ -675,6 +1385,147 @@ class GetAnalyzeDataResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetAnalyzeDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetChildOrgListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetChildOrgListRequest(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+    ):
+        # 部门编码
+        self.dept_code = dept_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        return self
+
+
+class GetChildOrgListResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[CfOrgResp] = None,
+        request_id: str = None,
+    ):
+        # 返回内容
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = CfOrgResp()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetChildOrgListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetChildOrgListResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetChildOrgListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -845,6 +1696,1215 @@ class GetEmployeeInfoByWorkNoResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = GetEmployeeInfoByWorkNoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetEmploymentRecordByWorkNoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetEmploymentRecordByWorkNoResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[CfEmploymentRecordResp] = None,
+        request_id: str = None,
+    ):
+        # 任职记录
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = CfEmploymentRecordResp()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetEmploymentRecordByWorkNoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetEmploymentRecordByWorkNoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetEmploymentRecordByWorkNoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetJobPositionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetJobPositionRequest(TeaModel):
+    def __init__(
+        self,
+        job_position_code: str = None,
+    ):
+        # 职位编码
+        self.job_position_code = job_position_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.job_position_code is not None:
+            result['jobPositionCode'] = self.job_position_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jobPositionCode') is not None:
+            self.job_position_code = m.get('jobPositionCode')
+        return self
+
+
+class GetJobPositionResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        establish_date: str = None,
+        job_code: str = None,
+        job_requirements: str = None,
+        name: str = None,
+        start_date: str = None,
+        stop_date: str = None,
+    ):
+        # 职责描述
+        self.description = description
+        # 创建时间
+        self.establish_date = establish_date
+        # 职位编码
+        self.job_code = job_code
+        # 任职要求
+        self.job_requirements = job_requirements
+        # 职位名称
+        self.name = name
+        # 生效时间
+        self.start_date = start_date
+        # 失效时间
+        self.stop_date = stop_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.establish_date is not None:
+            result['establishDate'] = self.establish_date
+        if self.job_code is not None:
+            result['jobCode'] = self.job_code
+        if self.job_requirements is not None:
+            result['jobRequirements'] = self.job_requirements
+        if self.name is not None:
+            result['name'] = self.name
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.stop_date is not None:
+            result['stopDate'] = self.stop_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('establishDate') is not None:
+            self.establish_date = m.get('establishDate')
+        if m.get('jobCode') is not None:
+            self.job_code = m.get('jobCode')
+        if m.get('jobRequirements') is not None:
+            self.job_requirements = m.get('jobRequirements')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('stopDate') is not None:
+            self.stop_date = m.get('stopDate')
+        return self
+
+
+class GetJobPositionResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: GetJobPositionResponseBodyContent = None,
+        request_id: str = None,
+    ):
+        # 职位详情
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = GetJobPositionResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetJobPositionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetJobPositionResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetJobPositionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetJobPostHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetJobPostRequest(TeaModel):
+    def __init__(
+        self,
+        job_post_code: str = None,
+    ):
+        # 职务编码
+        self.job_post_code = job_post_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.job_post_code is not None:
+            result['jobPostCode'] = self.job_post_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('jobPostCode') is not None:
+            self.job_post_code = m.get('jobPostCode')
+        return self
+
+
+class GetJobPostResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        establish_date: str = None,
+        name: str = None,
+        start_date: str = None,
+        stop_date: str = None,
+    ):
+        # 职务编码
+        self.code = code
+        # 设立日期
+        self.establish_date = establish_date
+        # 职务名称
+        self.name = name
+        # 生效日期
+        self.start_date = start_date
+        # 失效日期
+        self.stop_date = stop_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.establish_date is not None:
+            result['establishDate'] = self.establish_date
+        if self.name is not None:
+            result['name'] = self.name
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.stop_date is not None:
+            result['stopDate'] = self.stop_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('establishDate') is not None:
+            self.establish_date = m.get('establishDate')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('stopDate') is not None:
+            self.stop_date = m.get('stopDate')
+        return self
+
+
+class GetJobPostResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: GetJobPostResponseBodyContent = None,
+        request_id: str = None,
+    ):
+        # 返回数据
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = GetJobPostResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetJobPostResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetJobPostResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetJobPostResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetOrgInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOrgInfoRequest(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+    ):
+        # 部门编码
+        self.dept_code = dept_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        return self
+
+
+class GetOrgInfoResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+        dept_name: str = None,
+        dept_num: str = None,
+        level: str = None,
+        organization_code_path: str = None,
+        organization_path: str = None,
+        parent_dept_code: str = None,
+        short_name: str = None,
+        start_date: str = None,
+        stop_date: str = None,
+    ):
+        # 部门编码
+        self.dept_code = dept_code
+        # 部门名称
+        self.dept_name = dept_name
+        # 部门人数
+        self.dept_num = dept_num
+        # 部门层级
+        self.level = level
+        # 部门编码路径
+        self.organization_code_path = organization_code_path
+        # 部门路径
+        self.organization_path = organization_path
+        # 父级部门编码
+        self.parent_dept_code = parent_dept_code
+        # 部门简称
+        self.short_name = short_name
+        # 生效日期
+        self.start_date = start_date
+        # 失效日期
+        self.stop_date = stop_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.dept_num is not None:
+            result['deptNum'] = self.dept_num
+        if self.level is not None:
+            result['level'] = self.level
+        if self.organization_code_path is not None:
+            result['organizationCodePath'] = self.organization_code_path
+        if self.organization_path is not None:
+            result['organizationPath'] = self.organization_path
+        if self.parent_dept_code is not None:
+            result['parentDeptCode'] = self.parent_dept_code
+        if self.short_name is not None:
+            result['shortName'] = self.short_name
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.stop_date is not None:
+            result['stopDate'] = self.stop_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('deptNum') is not None:
+            self.dept_num = m.get('deptNum')
+        if m.get('level') is not None:
+            self.level = m.get('level')
+        if m.get('organizationCodePath') is not None:
+            self.organization_code_path = m.get('organizationCodePath')
+        if m.get('organizationPath') is not None:
+            self.organization_path = m.get('organizationPath')
+        if m.get('parentDeptCode') is not None:
+            self.parent_dept_code = m.get('parentDeptCode')
+        if m.get('shortName') is not None:
+            self.short_name = m.get('shortName')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('stopDate') is not None:
+            self.stop_date = m.get('stopDate')
+        return self
+
+
+class GetOrgInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: GetOrgInfoResponseBodyContent = None,
+        request_id: str = None,
+    ):
+        # 部门详情
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = GetOrgInfoResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetOrgInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOrgInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOrgInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetStaffInfoByWorkNoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetStaffInfoByWorkNoRequest(TeaModel):
+    def __init__(
+        self,
+        work_numbers: str = None,
+    ):
+        # 员工工号
+        self.work_numbers = work_numbers
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.work_numbers is not None:
+            result['workNumbers'] = self.work_numbers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('workNumbers') is not None:
+            self.work_numbers = m.get('workNumbers')
+        return self
+
+
+class GetStaffInfoByWorkNoResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+        dept_name: str = None,
+        email: str = None,
+        employ_type: str = None,
+        employee_status: str = None,
+        job_level_name: str = None,
+        job_position_code: str = None,
+        job_position_name: str = None,
+        job_post_code: str = None,
+        job_post_name: str = None,
+        mobile: str = None,
+        name: str = None,
+        nick_name: str = None,
+        work_numbers: str = None,
+    ):
+        # 部门编码
+        self.dept_code = dept_code
+        # 部门名称
+        self.dept_name = dept_name
+        # 邮箱
+        self.email = email
+        # 员工类型
+        self.employ_type = employ_type
+        # 员工状态
+        self.employee_status = employee_status
+        # 职级
+        self.job_level_name = job_level_name
+        # 职位编码
+        self.job_position_code = job_position_code
+        # 职位名称
+        self.job_position_name = job_position_name
+        # 职务编码
+        self.job_post_code = job_post_code
+        # 职务名称
+        self.job_post_name = job_post_name
+        # 手机号
+        self.mobile = mobile
+        # 姓名
+        self.name = name
+        # 花名
+        self.nick_name = nick_name
+        # 工号
+        self.work_numbers = work_numbers
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.email is not None:
+            result['email'] = self.email
+        if self.employ_type is not None:
+            result['employType'] = self.employ_type
+        if self.employee_status is not None:
+            result['employeeStatus'] = self.employee_status
+        if self.job_level_name is not None:
+            result['jobLevelName'] = self.job_level_name
+        if self.job_position_code is not None:
+            result['jobPositionCode'] = self.job_position_code
+        if self.job_position_name is not None:
+            result['jobPositionName'] = self.job_position_name
+        if self.job_post_code is not None:
+            result['jobPostCode'] = self.job_post_code
+        if self.job_post_name is not None:
+            result['jobPostName'] = self.job_post_name
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.nick_name is not None:
+            result['nickName'] = self.nick_name
+        if self.work_numbers is not None:
+            result['workNumbers'] = self.work_numbers
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('employType') is not None:
+            self.employ_type = m.get('employType')
+        if m.get('employeeStatus') is not None:
+            self.employee_status = m.get('employeeStatus')
+        if m.get('jobLevelName') is not None:
+            self.job_level_name = m.get('jobLevelName')
+        if m.get('jobPositionCode') is not None:
+            self.job_position_code = m.get('jobPositionCode')
+        if m.get('jobPositionName') is not None:
+            self.job_position_name = m.get('jobPositionName')
+        if m.get('jobPostCode') is not None:
+            self.job_post_code = m.get('jobPostCode')
+        if m.get('jobPostName') is not None:
+            self.job_post_name = m.get('jobPostName')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nickName') is not None:
+            self.nick_name = m.get('nickName')
+        if m.get('workNumbers') is not None:
+            self.work_numbers = m.get('workNumbers')
+        return self
+
+
+class GetStaffInfoByWorkNoResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: GetStaffInfoByWorkNoResponseBodyContent = None,
+        request_id: str = None,
+    ):
+        # 员工详情
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = GetStaffInfoByWorkNoResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetStaffInfoByWorkNoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetStaffInfoByWorkNoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetStaffInfoByWorkNoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetStaffPageQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetStaffPageQueryRequest(TeaModel):
+    def __init__(
+        self,
+        dept_code: str = None,
+        name: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        work_no: str = None,
+    ):
+        # 部门编码
+        self.dept_code = dept_code
+        # 员工名称,模糊查询
+        self.name = name
+        # 当前页码
+        self.page_number = page_number
+        # 分页条数
+        self.page_size = page_size
+        # 工号
+        self.work_no = work_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class GetStaffPageQueryResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        data: List[CfStaffResp] = None,
+        page_number: int = None,
+        page_size: int = None,
+        total_count: int = None,
+    ):
+        # 员工列表
+        self.data = data
+        # 当前页码
+        self.page_number = page_number
+        # 分页条数
+        self.page_size = page_size
+        # 总数量
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = CfStaffResp()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetStaffPageQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: GetStaffPageQueryResponseBodyContent = None,
+        request_id: str = None,
+    ):
+        # 查询数据返回
+        self.content = content
+        # Id of the request
+        self.request_id = request_id
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = GetStaffPageQueryResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetStaffPageQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetStaffPageQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetStaffPageQueryResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

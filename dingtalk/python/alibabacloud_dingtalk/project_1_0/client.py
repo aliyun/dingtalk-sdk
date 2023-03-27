@@ -99,6 +99,130 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('AddProjectMember', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/members', 'json', req, runtime)
         )
 
+    def archive_project(
+        self,
+        user_id: str,
+        project_id: str,
+    ) -> dingtalkproject__1__0_models.ArchiveProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.ArchiveProjectHeaders()
+        return self.archive_project_with_options(user_id, project_id, headers, runtime)
+
+    async def archive_project_async(
+        self,
+        user_id: str,
+        project_id: str,
+    ) -> dingtalkproject__1__0_models.ArchiveProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.ArchiveProjectHeaders()
+        return await self.archive_project_with_options_async(user_id, project_id, headers, runtime)
+
+    def archive_project_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        headers: dingtalkproject__1__0_models.ArchiveProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.ArchiveProjectResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.ArchiveProjectResponse(),
+            self.do_roarequest('ArchiveProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/archive', 'json', req, runtime)
+        )
+
+    async def archive_project_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        headers: dingtalkproject__1__0_models.ArchiveProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.ArchiveProjectResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.ArchiveProjectResponse(),
+            await self.do_roarequest_async('ArchiveProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/archive', 'json', req, runtime)
+        )
+
+    def archive_task(
+        self,
+        user_id: str,
+        task_id: str,
+    ) -> dingtalkproject__1__0_models.ArchiveTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.ArchiveTaskHeaders()
+        return self.archive_task_with_options(user_id, task_id, headers, runtime)
+
+    async def archive_task_async(
+        self,
+        user_id: str,
+        task_id: str,
+    ) -> dingtalkproject__1__0_models.ArchiveTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.ArchiveTaskHeaders()
+        return await self.archive_task_with_options_async(user_id, task_id, headers, runtime)
+
+    def archive_task_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        headers: dingtalkproject__1__0_models.ArchiveTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.ArchiveTaskResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.ArchiveTaskResponse(),
+            self.do_roarequest('ArchiveTask', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/archive', 'json', req, runtime)
+        )
+
+    async def archive_task_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        headers: dingtalkproject__1__0_models.ArchiveTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.ArchiveTaskResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.ArchiveTaskResponse(),
+            await self.do_roarequest_async('ArchiveTask', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/archive', 'json', req, runtime)
+        )
+
     def create_organization_task(
         self,
         user_id: str,
@@ -315,6 +439,76 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CreatePlanTime', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/planTimes', 'json', req, runtime)
         )
 
+    def create_project(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreateProjectRequest,
+    ) -> dingtalkproject__1__0_models.CreateProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreateProjectHeaders()
+        return self.create_project_with_options(user_id, request, headers, runtime)
+
+    async def create_project_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreateProjectRequest,
+    ) -> dingtalkproject__1__0_models.CreateProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreateProjectHeaders()
+        return await self.create_project_with_options_async(user_id, request, headers, runtime)
+
+    def create_project_with_options(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreateProjectRequest,
+        headers: dingtalkproject__1__0_models.CreateProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreateProjectResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreateProjectResponse(),
+            self.do_roarequest('CreateProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects', 'json', req, runtime)
+        )
+
+    async def create_project_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.CreateProjectRequest,
+        headers: dingtalkproject__1__0_models.CreateProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreateProjectResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreateProjectResponse(),
+            await self.do_roarequest_async('CreateProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects', 'json', req, runtime)
+        )
+
     def create_project_by_template(
         self,
         user_id: str,
@@ -387,6 +581,94 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.CreateProjectByTemplateResponse(),
             await self.do_roarequest_async('CreateProjectByTemplate', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/templates/projects', 'json', req, runtime)
+        )
+
+    def create_project_customfield_status(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.CreateProjectCustomfieldStatusRequest,
+    ) -> dingtalkproject__1__0_models.CreateProjectCustomfieldStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreateProjectCustomfieldStatusHeaders()
+        return self.create_project_customfield_status_with_options(user_id, project_id, request, headers, runtime)
+
+    async def create_project_customfield_status_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.CreateProjectCustomfieldStatusRequest,
+    ) -> dingtalkproject__1__0_models.CreateProjectCustomfieldStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.CreateProjectCustomfieldStatusHeaders()
+        return await self.create_project_customfield_status_with_options_async(user_id, project_id, request, headers, runtime)
+
+    def create_project_customfield_status_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.CreateProjectCustomfieldStatusRequest,
+        headers: dingtalkproject__1__0_models.CreateProjectCustomfieldStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreateProjectCustomfieldStatusResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        body = {}
+        if not UtilClient.is_unset(request.customfield_id):
+            body['customfieldId'] = request.customfield_id
+        if not UtilClient.is_unset(request.customfield_instance_id):
+            body['customfieldInstanceId'] = request.customfield_instance_id
+        if not UtilClient.is_unset(request.customfield_name):
+            body['customfieldName'] = request.customfield_name
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreateProjectCustomfieldStatusResponse(),
+            self.do_roarequest('CreateProjectCustomfieldStatus', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/customfields', 'json', req, runtime)
+        )
+
+    async def create_project_customfield_status_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.CreateProjectCustomfieldStatusRequest,
+        headers: dingtalkproject__1__0_models.CreateProjectCustomfieldStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.CreateProjectCustomfieldStatusResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        body = {}
+        if not UtilClient.is_unset(request.customfield_id):
+            body['customfieldId'] = request.customfield_id
+        if not UtilClient.is_unset(request.customfield_instance_id):
+            body['customfieldInstanceId'] = request.customfield_instance_id
+        if not UtilClient.is_unset(request.customfield_name):
+            body['customfieldName'] = request.customfield_name
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.CreateProjectCustomfieldStatusResponse(),
+            await self.do_roarequest_async('CreateProjectCustomfieldStatus', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/customfields', 'json', req, runtime)
         )
 
     def create_task(
@@ -687,6 +969,144 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.CreateWorkTimeResponse(),
             await self.do_roarequest_async('CreateWorkTime', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/workTimes', 'json', req, runtime)
+        )
+
+    def delete_project_member(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.DeleteProjectMemberRequest,
+    ) -> dingtalkproject__1__0_models.DeleteProjectMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.DeleteProjectMemberHeaders()
+        return self.delete_project_member_with_options(user_id, project_id, request, headers, runtime)
+
+    async def delete_project_member_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.DeleteProjectMemberRequest,
+    ) -> dingtalkproject__1__0_models.DeleteProjectMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.DeleteProjectMemberHeaders()
+        return await self.delete_project_member_with_options_async(user_id, project_id, request, headers, runtime)
+
+    def delete_project_member_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.DeleteProjectMemberRequest,
+        headers: dingtalkproject__1__0_models.DeleteProjectMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.DeleteProjectMemberResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.DeleteProjectMemberResponse(),
+            self.do_roarequest('DeleteProjectMember', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/members/remove', 'json', req, runtime)
+        )
+
+    async def delete_project_member_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.DeleteProjectMemberRequest,
+        headers: dingtalkproject__1__0_models.DeleteProjectMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.DeleteProjectMemberResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        body = {}
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.DeleteProjectMemberResponse(),
+            await self.do_roarequest_async('DeleteProjectMember', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/members/remove', 'json', req, runtime)
+        )
+
+    def delete_task(
+        self,
+        user_id: str,
+        task_id: str,
+    ) -> dingtalkproject__1__0_models.DeleteTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.DeleteTaskHeaders()
+        return self.delete_task_with_options(user_id, task_id, headers, runtime)
+
+    async def delete_task_async(
+        self,
+        user_id: str,
+        task_id: str,
+    ) -> dingtalkproject__1__0_models.DeleteTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.DeleteTaskHeaders()
+        return await self.delete_task_with_options_async(user_id, task_id, headers, runtime)
+
+    def delete_task_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        headers: dingtalkproject__1__0_models.DeleteTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.DeleteTaskResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.DeleteTaskResponse(),
+            self.do_roarequest('DeleteTask', 'project_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}', 'json', req, runtime)
+        )
+
+    async def delete_task_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        headers: dingtalkproject__1__0_models.DeleteTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.DeleteTaskResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.DeleteTaskResponse(),
+            await self.do_roarequest_async('DeleteTask', 'project_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}', 'json', req, runtime)
         )
 
     def get_depts_by_org_id(
@@ -1107,6 +1527,230 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetProjectGroup', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/users/{user_id}/groups', 'json', req, runtime)
         )
 
+    def get_project_memebers(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.GetProjectMemebersRequest,
+    ) -> dingtalkproject__1__0_models.GetProjectMemebersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetProjectMemebersHeaders()
+        return self.get_project_memebers_with_options(user_id, project_id, request, headers, runtime)
+
+    async def get_project_memebers_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.GetProjectMemebersRequest,
+    ) -> dingtalkproject__1__0_models.GetProjectMemebersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetProjectMemebersHeaders()
+        return await self.get_project_memebers_with_options_async(user_id, project_id, request, headers, runtime)
+
+    def get_project_memebers_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.GetProjectMemebersRequest,
+        headers: dingtalkproject__1__0_models.GetProjectMemebersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetProjectMemebersResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.project_role_id):
+            query['projectRoleId'] = request.project_role_id
+        if not UtilClient.is_unset(request.skip):
+            query['skip'] = request.skip
+        if not UtilClient.is_unset(request.user_ids):
+            query['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetProjectMemebersResponse(),
+            self.do_roarequest('GetProjectMemebers', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/members', 'json', req, runtime)
+        )
+
+    async def get_project_memebers_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.GetProjectMemebersRequest,
+        headers: dingtalkproject__1__0_models.GetProjectMemebersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetProjectMemebersResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.project_role_id):
+            query['projectRoleId'] = request.project_role_id
+        if not UtilClient.is_unset(request.skip):
+            query['skip'] = request.skip
+        if not UtilClient.is_unset(request.user_ids):
+            query['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetProjectMemebersResponse(),
+            await self.do_roarequest_async('GetProjectMemebers', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/members', 'json', req, runtime)
+        )
+
+    def get_project_status_list(
+        self,
+        user_id: str,
+        project_id: str,
+    ) -> dingtalkproject__1__0_models.GetProjectStatusListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetProjectStatusListHeaders()
+        return self.get_project_status_list_with_options(user_id, project_id, headers, runtime)
+
+    async def get_project_status_list_async(
+        self,
+        user_id: str,
+        project_id: str,
+    ) -> dingtalkproject__1__0_models.GetProjectStatusListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetProjectStatusListHeaders()
+        return await self.get_project_status_list_with_options_async(user_id, project_id, headers, runtime)
+
+    def get_project_status_list_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        headers: dingtalkproject__1__0_models.GetProjectStatusListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetProjectStatusListResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetProjectStatusListResponse(),
+            self.do_roarequest('GetProjectStatusList', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/statuses', 'json', req, runtime)
+        )
+
+    async def get_project_status_list_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        headers: dingtalkproject__1__0_models.GetProjectStatusListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetProjectStatusListResponse:
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetProjectStatusListResponse(),
+            await self.do_roarequest_async('GetProjectStatusList', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/statuses', 'json', req, runtime)
+        )
+
+    def get_task_by_ids(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.GetTaskByIdsRequest,
+    ) -> dingtalkproject__1__0_models.GetTaskByIdsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetTaskByIdsHeaders()
+        return self.get_task_by_ids_with_options(user_id, request, headers, runtime)
+
+    async def get_task_by_ids_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.GetTaskByIdsRequest,
+    ) -> dingtalkproject__1__0_models.GetTaskByIdsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetTaskByIdsHeaders()
+        return await self.get_task_by_ids_with_options_async(user_id, request, headers, runtime)
+
+    def get_task_by_ids_with_options(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.GetTaskByIdsRequest,
+        headers: dingtalkproject__1__0_models.GetTaskByIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetTaskByIdsResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.parent_task_id):
+            query['parentTaskId'] = request.parent_task_id
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetTaskByIdsResponse(),
+            self.do_roarequest('GetTaskByIds', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/tasks', 'json', req, runtime)
+        )
+
+    async def get_task_by_ids_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.GetTaskByIdsRequest,
+        headers: dingtalkproject__1__0_models.GetTaskByIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetTaskByIdsResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.parent_task_id):
+            query['parentTaskId'] = request.parent_task_id
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetTaskByIdsResponse(),
+            await self.do_roarequest_async('GetTaskByIds', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/tasks', 'json', req, runtime)
+        )
+
     def get_tb_org_id_by_ding_org_id(
         self,
         request: dingtalkproject__1__0_models.GetTbOrgIdByDingOrgIdRequest,
@@ -1389,6 +2033,166 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetTbUserIdByStaffId', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/teambition/users', 'json', req, runtime)
         )
 
+    def get_user_joined_project(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.GetUserJoinedProjectRequest,
+    ) -> dingtalkproject__1__0_models.GetUserJoinedProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetUserJoinedProjectHeaders()
+        return self.get_user_joined_project_with_options(user_id, request, headers, runtime)
+
+    async def get_user_joined_project_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.GetUserJoinedProjectRequest,
+    ) -> dingtalkproject__1__0_models.GetUserJoinedProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.GetUserJoinedProjectHeaders()
+        return await self.get_user_joined_project_with_options_async(user_id, request, headers, runtime)
+
+    def get_user_joined_project_with_options(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.GetUserJoinedProjectRequest,
+        headers: dingtalkproject__1__0_models.GetUserJoinedProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetUserJoinedProjectResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetUserJoinedProjectResponse(),
+            self.do_roarequest('GetUserJoinedProject', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/joinProjects', 'json', req, runtime)
+        )
+
+    async def get_user_joined_project_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.GetUserJoinedProjectRequest,
+        headers: dingtalkproject__1__0_models.GetUserJoinedProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.GetUserJoinedProjectResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.GetUserJoinedProjectResponse(),
+            await self.do_roarequest_async('GetUserJoinedProject', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/joinProjects', 'json', req, runtime)
+        )
+
+    def query_project(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.QueryProjectRequest,
+    ) -> dingtalkproject__1__0_models.QueryProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.QueryProjectHeaders()
+        return self.query_project_with_options(user_id, request, headers, runtime)
+
+    async def query_project_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.QueryProjectRequest,
+    ) -> dingtalkproject__1__0_models.QueryProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.QueryProjectHeaders()
+        return await self.query_project_with_options_async(user_id, request, headers, runtime)
+
+    def query_project_with_options(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.QueryProjectRequest,
+        headers: dingtalkproject__1__0_models.QueryProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.QueryProjectResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.project_ids):
+            query['projectIds'] = request.project_ids
+        if not UtilClient.is_unset(request.source_id):
+            query['sourceId'] = request.source_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.QueryProjectResponse(),
+            self.do_roarequest('QueryProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/query', 'json', req, runtime)
+        )
+
+    async def query_project_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.QueryProjectRequest,
+        headers: dingtalkproject__1__0_models.QueryProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.QueryProjectResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.project_ids):
+            query['projectIds'] = request.project_ids
+        if not UtilClient.is_unset(request.source_id):
+            query['sourceId'] = request.source_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.QueryProjectResponse(),
+            await self.do_roarequest_async('QueryProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/query', 'json', req, runtime)
+        )
+
     def query_task_of_project(
         self,
         user_id: str,
@@ -1473,6 +2277,292 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('QueryTaskOfProject', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/projectIds/{project_id}/tasks', 'json', req, runtime)
         )
 
+    def seach_task_stage(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SeachTaskStageRequest,
+    ) -> dingtalkproject__1__0_models.SeachTaskStageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SeachTaskStageHeaders()
+        return self.seach_task_stage_with_options(user_id, project_id, request, headers, runtime)
+
+    async def seach_task_stage_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SeachTaskStageRequest,
+    ) -> dingtalkproject__1__0_models.SeachTaskStageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SeachTaskStageHeaders()
+        return await self.seach_task_stage_with_options_async(user_id, project_id, request, headers, runtime)
+
+    def seach_task_stage_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SeachTaskStageRequest,
+        headers: dingtalkproject__1__0_models.SeachTaskStageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SeachTaskStageResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.stage_ids):
+            query['stageIds'] = request.stage_ids
+        if not UtilClient.is_unset(request.task_list_id):
+            query['taskListId'] = request.task_list_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SeachTaskStageResponse(),
+            self.do_roarequest('SeachTaskStage', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/taskStages/search', 'json', req, runtime)
+        )
+
+    async def seach_task_stage_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SeachTaskStageRequest,
+        headers: dingtalkproject__1__0_models.SeachTaskStageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SeachTaskStageResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.stage_ids):
+            query['stageIds'] = request.stage_ids
+        if not UtilClient.is_unset(request.task_list_id):
+            query['taskListId'] = request.task_list_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SeachTaskStageResponse(),
+            await self.do_roarequest_async('SeachTaskStage', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/taskStages/search', 'json', req, runtime)
+        )
+
+    def search_oranization_customfield(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.SearchOranizationCustomfieldRequest,
+    ) -> dingtalkproject__1__0_models.SearchOranizationCustomfieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchOranizationCustomfieldHeaders()
+        return self.search_oranization_customfield_with_options(user_id, request, headers, runtime)
+
+    async def search_oranization_customfield_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.SearchOranizationCustomfieldRequest,
+    ) -> dingtalkproject__1__0_models.SearchOranizationCustomfieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchOranizationCustomfieldHeaders()
+        return await self.search_oranization_customfield_with_options_async(user_id, request, headers, runtime)
+
+    def search_oranization_customfield_with_options(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.SearchOranizationCustomfieldRequest,
+        headers: dingtalkproject__1__0_models.SearchOranizationCustomfieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchOranizationCustomfieldResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.customfield_ids):
+            query['customfieldIds'] = request.customfield_ids
+        if not UtilClient.is_unset(request.instance_ids):
+            query['instanceIds'] = request.instance_ids
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.project_ids):
+            query['projectIds'] = request.project_ids
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.scope):
+            query['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchOranizationCustomfieldResponse(),
+            self.do_roarequest('SearchOranizationCustomfield', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/organizations/users/{user_id}/customfields/search', 'json', req, runtime)
+        )
+
+    async def search_oranization_customfield_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.SearchOranizationCustomfieldRequest,
+        headers: dingtalkproject__1__0_models.SearchOranizationCustomfieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchOranizationCustomfieldResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.customfield_ids):
+            query['customfieldIds'] = request.customfield_ids
+        if not UtilClient.is_unset(request.instance_ids):
+            query['instanceIds'] = request.instance_ids
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.project_ids):
+            query['projectIds'] = request.project_ids
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.scope):
+            query['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchOranizationCustomfieldResponse(),
+            await self.do_roarequest_async('SearchOranizationCustomfield', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/organizations/users/{user_id}/customfields/search', 'json', req, runtime)
+        )
+
+    def search_project_customfield(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchProjectCustomfieldRequest,
+    ) -> dingtalkproject__1__0_models.SearchProjectCustomfieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchProjectCustomfieldHeaders()
+        return self.search_project_customfield_with_options(user_id, project_id, request, headers, runtime)
+
+    async def search_project_customfield_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchProjectCustomfieldRequest,
+    ) -> dingtalkproject__1__0_models.SearchProjectCustomfieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchProjectCustomfieldHeaders()
+        return await self.search_project_customfield_with_options_async(user_id, project_id, request, headers, runtime)
+
+    def search_project_customfield_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchProjectCustomfieldRequest,
+        headers: dingtalkproject__1__0_models.SearchProjectCustomfieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchProjectCustomfieldResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.customfield_ids):
+            query['customfieldIds'] = request.customfield_ids
+        if not UtilClient.is_unset(request.instance_ids):
+            query['instanceIds'] = request.instance_ids
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.scenariofieldconfig_id):
+            query['scenariofieldconfigId'] = request.scenariofieldconfig_id
+        if not UtilClient.is_unset(request.scope):
+            query['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchProjectCustomfieldResponse(),
+            self.do_roarequest('SearchProjectCustomfield', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/customfields/search', 'json', req, runtime)
+        )
+
+    async def search_project_customfield_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchProjectCustomfieldRequest,
+        headers: dingtalkproject__1__0_models.SearchProjectCustomfieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchProjectCustomfieldResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.customfield_ids):
+            query['customfieldIds'] = request.customfield_ids
+        if not UtilClient.is_unset(request.instance_ids):
+            query['instanceIds'] = request.instance_ids
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.scenariofieldconfig_id):
+            query['scenariofieldconfigId'] = request.scenariofieldconfig_id
+        if not UtilClient.is_unset(request.scope):
+            query['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchProjectCustomfieldResponse(),
+            await self.do_roarequest_async('SearchProjectCustomfield', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/customfields/search', 'json', req, runtime)
+        )
+
     def search_project_template(
         self,
         user_id: str,
@@ -1541,6 +2631,182 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.SearchProjectTemplateResponse(),
             await self.do_roarequest_async('SearchProjectTemplate', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/organizations/users/{user_id}/templates', 'json', req, runtime)
+        )
+
+    def search_task_flow(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchTaskFlowRequest,
+    ) -> dingtalkproject__1__0_models.SearchTaskFlowResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchTaskFlowHeaders()
+        return self.search_task_flow_with_options(user_id, project_id, request, headers, runtime)
+
+    async def search_task_flow_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchTaskFlowRequest,
+    ) -> dingtalkproject__1__0_models.SearchTaskFlowResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchTaskFlowHeaders()
+        return await self.search_task_flow_with_options_async(user_id, project_id, request, headers, runtime)
+
+    def search_task_flow_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchTaskFlowRequest,
+        headers: dingtalkproject__1__0_models.SearchTaskFlowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchTaskFlowResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.taskflow_ids):
+            query['taskflowIds'] = request.taskflow_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchTaskFlowResponse(),
+            self.do_roarequest('SearchTaskFlow', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/taskflows/search', 'json', req, runtime)
+        )
+
+    async def search_task_flow_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchTaskFlowRequest,
+        headers: dingtalkproject__1__0_models.SearchTaskFlowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchTaskFlowResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.taskflow_ids):
+            query['taskflowIds'] = request.taskflow_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchTaskFlowResponse(),
+            await self.do_roarequest_async('SearchTaskFlow', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/taskflows/search', 'json', req, runtime)
+        )
+
+    def search_task_list(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchTaskListRequest,
+    ) -> dingtalkproject__1__0_models.SearchTaskListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchTaskListHeaders()
+        return self.search_task_list_with_options(user_id, project_id, request, headers, runtime)
+
+    async def search_task_list_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchTaskListRequest,
+    ) -> dingtalkproject__1__0_models.SearchTaskListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchTaskListHeaders()
+        return await self.search_task_list_with_options_async(user_id, project_id, request, headers, runtime)
+
+    def search_task_list_with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchTaskListRequest,
+        headers: dingtalkproject__1__0_models.SearchTaskListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchTaskListResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.task_list_ids):
+            query['taskListIds'] = request.task_list_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchTaskListResponse(),
+            self.do_roarequest('SearchTaskList', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/taskLists/search', 'json', req, runtime)
+        )
+
+    async def search_task_list_with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkproject__1__0_models.SearchTaskListRequest,
+        headers: dingtalkproject__1__0_models.SearchTaskListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchTaskListResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.task_list_ids):
+            query['taskListIds'] = request.task_list_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchTaskListResponse(),
+            await self.do_roarequest_async('SearchTaskList', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/taskLists/search', 'json', req, runtime)
         )
 
     def search_taskflow_status(
@@ -1633,6 +2899,212 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.SearchTaskflowStatusResponse(),
             await self.do_roarequest_async('SearchTaskflowStatus', 'project_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/taskflowStatuses/search', 'json', req, runtime)
+        )
+
+    def search_user_task(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.SearchUserTaskRequest,
+    ) -> dingtalkproject__1__0_models.SearchUserTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchUserTaskHeaders()
+        return self.search_user_task_with_options(user_id, request, headers, runtime)
+
+    async def search_user_task_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.SearchUserTaskRequest,
+    ) -> dingtalkproject__1__0_models.SearchUserTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SearchUserTaskHeaders()
+        return await self.search_user_task_with_options_async(user_id, request, headers, runtime)
+
+    def search_user_task_with_options(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.SearchUserTaskRequest,
+        headers: dingtalkproject__1__0_models.SearchUserTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchUserTaskResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_types):
+            query['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.tql):
+            query['tql'] = request.tql
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchUserTaskResponse(),
+            self.do_roarequest('SearchUserTask', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/tasks/search', 'json', req, runtime)
+        )
+
+    async def search_user_task_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkproject__1__0_models.SearchUserTaskRequest,
+        headers: dingtalkproject__1__0_models.SearchUserTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SearchUserTaskResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_types):
+            query['roleTypes'] = request.role_types
+        if not UtilClient.is_unset(request.tql):
+            query['tql'] = request.tql
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SearchUserTaskResponse(),
+            await self.do_roarequest_async('SearchUserTask', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/tasks/search', 'json', req, runtime)
+        )
+
+    def suspend_project(
+        self,
+        project_id: str,
+        user_id: str,
+    ) -> dingtalkproject__1__0_models.SuspendProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SuspendProjectHeaders()
+        return self.suspend_project_with_options(project_id, user_id, headers, runtime)
+
+    async def suspend_project_async(
+        self,
+        project_id: str,
+        user_id: str,
+    ) -> dingtalkproject__1__0_models.SuspendProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.SuspendProjectHeaders()
+        return await self.suspend_project_with_options_async(project_id, user_id, headers, runtime)
+
+    def suspend_project_with_options(
+        self,
+        project_id: str,
+        user_id: str,
+        headers: dingtalkproject__1__0_models.SuspendProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SuspendProjectResponse:
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SuspendProjectResponse(),
+            self.do_roarequest('SuspendProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/suspend', 'json', req, runtime)
+        )
+
+    async def suspend_project_with_options_async(
+        self,
+        project_id: str,
+        user_id: str,
+        headers: dingtalkproject__1__0_models.SuspendProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.SuspendProjectResponse:
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.SuspendProjectResponse(),
+            await self.do_roarequest_async('SuspendProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/suspend', 'json', req, runtime)
+        )
+
+    def un_suspend_project(
+        self,
+        project_id: str,
+        user_id: str,
+    ) -> dingtalkproject__1__0_models.UnSuspendProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UnSuspendProjectHeaders()
+        return self.un_suspend_project_with_options(project_id, user_id, headers, runtime)
+
+    async def un_suspend_project_async(
+        self,
+        project_id: str,
+        user_id: str,
+    ) -> dingtalkproject__1__0_models.UnSuspendProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UnSuspendProjectHeaders()
+        return await self.un_suspend_project_with_options_async(project_id, user_id, headers, runtime)
+
+    def un_suspend_project_with_options(
+        self,
+        project_id: str,
+        user_id: str,
+        headers: dingtalkproject__1__0_models.UnSuspendProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UnSuspendProjectResponse:
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UnSuspendProjectResponse(),
+            self.do_roarequest('UnSuspendProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/unsuspend', 'json', req, runtime)
+        )
+
+    async def un_suspend_project_with_options_async(
+        self,
+        project_id: str,
+        user_id: str,
+        headers: dingtalkproject__1__0_models.UnSuspendProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UnSuspendProjectResponse:
+        project_id = OpenApiUtilClient.get_encode_param(project_id)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UnSuspendProjectResponse(),
+            await self.do_roarequest_async('UnSuspendProject', 'project_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/unsuspend', 'json', req, runtime)
         )
 
     def update_customfield_value(
@@ -2393,6 +3865,622 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkproject__1__0_models.UpdateProjectGroupResponse(),
             await self.do_roarequest_async('UpdateProjectGroup', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/projects/{project_id}/groups', 'json', req, runtime)
+        )
+
+    def update_task_content(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskContentRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskContentHeaders()
+        return self.update_task_content_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_task_content_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskContentRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskContentHeaders()
+        return await self.update_task_content_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_task_content_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskContentRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskContentResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskContentResponse(),
+            self.do_roarequest('UpdateTaskContent', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/contents', 'json', req, runtime)
+        )
+
+    async def update_task_content_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskContentRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskContentResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskContentResponse(),
+            await self.do_roarequest_async('UpdateTaskContent', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/contents', 'json', req, runtime)
+        )
+
+    def update_task_due_date(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskDueDateRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskDueDateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskDueDateHeaders()
+        return self.update_task_due_date_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_task_due_date_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskDueDateRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskDueDateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskDueDateHeaders()
+        return await self.update_task_due_date_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_task_due_date_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskDueDateRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskDueDateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskDueDateResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.due_date):
+            body['dueDate'] = request.due_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskDueDateResponse(),
+            self.do_roarequest('UpdateTaskDueDate', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/dueDates', 'json', req, runtime)
+        )
+
+    async def update_task_due_date_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskDueDateRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskDueDateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskDueDateResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.due_date):
+            body['dueDate'] = request.due_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskDueDateResponse(),
+            await self.do_roarequest_async('UpdateTaskDueDate', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/dueDates', 'json', req, runtime)
+        )
+
+    def update_task_executor(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskExecutorRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskExecutorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskExecutorHeaders()
+        return self.update_task_executor_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_task_executor_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskExecutorRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskExecutorResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskExecutorHeaders()
+        return await self.update_task_executor_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_task_executor_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskExecutorRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskExecutorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskExecutorResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskExecutorResponse(),
+            self.do_roarequest('UpdateTaskExecutor', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/executors', 'json', req, runtime)
+        )
+
+    async def update_task_executor_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskExecutorRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskExecutorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskExecutorResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.executor_id):
+            body['executorId'] = request.executor_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskExecutorResponse(),
+            await self.do_roarequest_async('UpdateTaskExecutor', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/executors', 'json', req, runtime)
+        )
+
+    def update_task_involvemembers(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskInvolvemembersRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskInvolvemembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskInvolvemembersHeaders()
+        return self.update_task_involvemembers_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_task_involvemembers_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskInvolvemembersRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskInvolvemembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskInvolvemembersHeaders()
+        return await self.update_task_involvemembers_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_task_involvemembers_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskInvolvemembersRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskInvolvemembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskInvolvemembersResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.add_involvers):
+            body['addInvolvers'] = request.add_involvers
+        if not UtilClient.is_unset(request.del_involvers):
+            body['delInvolvers'] = request.del_involvers
+        if not UtilClient.is_unset(request.involve_members):
+            body['involveMembers'] = request.involve_members
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskInvolvemembersResponse(),
+            self.do_roarequest('UpdateTaskInvolvemembers', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/involveMembers', 'json', req, runtime)
+        )
+
+    async def update_task_involvemembers_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskInvolvemembersRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskInvolvemembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskInvolvemembersResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.add_involvers):
+            body['addInvolvers'] = request.add_involvers
+        if not UtilClient.is_unset(request.del_involvers):
+            body['delInvolvers'] = request.del_involvers
+        if not UtilClient.is_unset(request.involve_members):
+            body['involveMembers'] = request.involve_members
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskInvolvemembersResponse(),
+            await self.do_roarequest_async('UpdateTaskInvolvemembers', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/involveMembers', 'json', req, runtime)
+        )
+
+    def update_task_note(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskNoteRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskNoteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskNoteHeaders()
+        return self.update_task_note_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_task_note_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskNoteRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskNoteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskNoteHeaders()
+        return await self.update_task_note_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_task_note_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskNoteRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskNoteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskNoteResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.note):
+            body['note'] = request.note
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskNoteResponse(),
+            self.do_roarequest('UpdateTaskNote', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/notes', 'json', req, runtime)
+        )
+
+    async def update_task_note_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskNoteRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskNoteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskNoteResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.note):
+            body['note'] = request.note
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskNoteResponse(),
+            await self.do_roarequest_async('UpdateTaskNote', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/notes', 'json', req, runtime)
+        )
+
+    def update_task_priority(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskPriorityRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskPriorityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskPriorityHeaders()
+        return self.update_task_priority_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_task_priority_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskPriorityRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskPriorityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskPriorityHeaders()
+        return await self.update_task_priority_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_task_priority_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskPriorityRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskPriorityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskPriorityResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskPriorityResponse(),
+            self.do_roarequest('UpdateTaskPriority', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/priorities', 'json', req, runtime)
+        )
+
+    async def update_task_priority_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskPriorityRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskPriorityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskPriorityResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.priority):
+            body['priority'] = request.priority
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskPriorityResponse(),
+            await self.do_roarequest_async('UpdateTaskPriority', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/priorities', 'json', req, runtime)
+        )
+
+    def update_task_stage(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskStageRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskStageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskStageHeaders()
+        return self.update_task_stage_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_task_stage_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskStageRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskStageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskStageHeaders()
+        return await self.update_task_stage_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_task_stage_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskStageRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskStageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskStageResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.stage_id):
+            body['stageId'] = request.stage_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskStageResponse(),
+            self.do_roarequest('UpdateTaskStage', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/stages', 'json', req, runtime)
+        )
+
+    async def update_task_stage_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskStageRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskStageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskStageResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.stage_id):
+            body['stageId'] = request.stage_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskStageResponse(),
+            await self.do_roarequest_async('UpdateTaskStage', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/stages', 'json', req, runtime)
+        )
+
+    def update_task_startdate(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskStartdateRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskStartdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskStartdateHeaders()
+        return self.update_task_startdate_with_options(user_id, task_id, request, headers, runtime)
+
+    async def update_task_startdate_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskStartdateRequest,
+    ) -> dingtalkproject__1__0_models.UpdateTaskStartdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkproject__1__0_models.UpdateTaskStartdateHeaders()
+        return await self.update_task_startdate_with_options_async(user_id, task_id, request, headers, runtime)
+
+    def update_task_startdate_with_options(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskStartdateRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskStartdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskStartdateResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskStartdateResponse(),
+            self.do_roarequest('UpdateTaskStartdate', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/startDates', 'json', req, runtime)
+        )
+
+    async def update_task_startdate_with_options_async(
+        self,
+        user_id: str,
+        task_id: str,
+        request: dingtalkproject__1__0_models.UpdateTaskStartdateRequest,
+        headers: dingtalkproject__1__0_models.UpdateTaskStartdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkproject__1__0_models.UpdateTaskStartdateResponse:
+        UtilClient.validate_model(request)
+        user_id = OpenApiUtilClient.get_encode_param(user_id)
+        task_id = OpenApiUtilClient.get_encode_param(task_id)
+        body = {}
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkproject__1__0_models.UpdateTaskStartdateResponse(),
+            await self.do_roarequest_async('UpdateTaskStartdate', 'project_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/project/users/{user_id}/tasks/{task_id}/startDates', 'json', req, runtime)
         )
 
     def update_task_taskflowstatus(

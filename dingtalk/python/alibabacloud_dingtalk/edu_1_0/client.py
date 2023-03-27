@@ -807,6 +807,82 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('CheckRestriction', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/restrictions/check', 'json', req, runtime)
         )
 
+    def consume_point(
+        self,
+        request: dingtalkedu__1__0_models.ConsumePointRequest,
+    ) -> dingtalkedu__1__0_models.ConsumePointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ConsumePointHeaders()
+        return self.consume_point_with_options(request, headers, runtime)
+
+    async def consume_point_async(
+        self,
+        request: dingtalkedu__1__0_models.ConsumePointRequest,
+    ) -> dingtalkedu__1__0_models.ConsumePointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ConsumePointHeaders()
+        return await self.consume_point_with_options_async(request, headers, runtime)
+
+    def consume_point_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ConsumePointRequest,
+        headers: dingtalkedu__1__0_models.ConsumePointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ConsumePointResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.amount):
+            body['amount'] = request.amount
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ConsumePointResponse(),
+            self.do_roarequest('ConsumePoint', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/poins/consume', 'json', req, runtime)
+        )
+
+    async def consume_point_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ConsumePointRequest,
+        headers: dingtalkedu__1__0_models.ConsumePointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ConsumePointResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.amount):
+            body['amount'] = request.amount
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ConsumePointResponse(),
+            await self.do_roarequest_async('ConsumePoint', 'edu_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/edu/poins/consume', 'json', req, runtime)
+        )
+
     def course_scheduling_compliment_notice(
         self,
         request: dingtalkedu__1__0_models.CourseSchedulingComplimentNoticeRequest,

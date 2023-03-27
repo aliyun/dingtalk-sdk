@@ -1293,8 +1293,11 @@ class TeamModelUpdater(TeaModel):
 class TeamModelVisitInfo(TeaModel):
     def __init__(
         self,
+        join_time: str = None,
         role_code: str = None,
     ):
+        # 加入团队时间
+        self.join_time = join_time
         # 用户对这个团队的访问情况
         self.role_code = role_code
 
@@ -1307,12 +1310,16 @@ class TeamModelVisitInfo(TeaModel):
             return _map
 
         result = dict()
+        if self.join_time is not None:
+            result['joinTime'] = self.join_time
         if self.role_code is not None:
             result['roleCode'] = self.role_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('joinTime') is not None:
+            self.join_time = m.get('joinTime')
         if m.get('roleCode') is not None:
             self.role_code = m.get('roleCode')
         return self
@@ -8142,11 +8149,14 @@ class SearchRequestSpaceRequest(TeaModel):
         self,
         max_results: int = None,
         next_token: str = None,
+        with_team_info: bool = None,
     ):
         # 每页最大条目数，最大值50。
         self.max_results = max_results
         # 分页游标。如果是首次调用，可不传；如果非首次调用，该参数传上次调用时返回的nextToken。
         self.next_token = next_token
+        # 同时请求知识小组信息
+        self.with_team_info = with_team_info
 
     def validate(self):
         pass
@@ -8161,6 +8171,8 @@ class SearchRequestSpaceRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.with_team_info is not None:
+            result['withTeamInfo'] = self.with_team_info
         return result
 
     def from_map(self, m: dict = None):
@@ -8169,6 +8181,8 @@ class SearchRequestSpaceRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('withTeamInfo') is not None:
+            self.with_team_info = m.get('withTeamInfo')
         return self
 
 
@@ -8442,6 +8456,41 @@ class SearchResponseBodySpaceResultItemsIconVO(TeaModel):
         return self
 
 
+class SearchResponseBodySpaceResultItemsTeamVO(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        name: str = None,
+    ):
+        # 知识小组id
+        self.id = id
+        # 知识小组名称
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
 class SearchResponseBodySpaceResultItemsUserLastOperation(TeaModel):
     def __init__(
         self,
@@ -8484,6 +8533,7 @@ class SearchResponseBodySpaceResultItems(TeaModel):
         name: str = None,
         origin_name: str = None,
         space_id: str = None,
+        team_vo: SearchResponseBodySpaceResultItemsTeamVO = None,
         url: str = None,
         user_last_operation: SearchResponseBodySpaceResultItemsUserLastOperation = None,
     ):
@@ -8495,6 +8545,8 @@ class SearchResponseBodySpaceResultItems(TeaModel):
         self.origin_name = origin_name
         # 知识库id。
         self.space_id = space_id
+        # 知识小组信息
+        self.team_vo = team_vo
         # 知识库访问url。
         self.url = url
         # 用户最后一次操作信息。
@@ -8503,6 +8555,8 @@ class SearchResponseBodySpaceResultItems(TeaModel):
     def validate(self):
         if self.icon_vo:
             self.icon_vo.validate()
+        if self.team_vo:
+            self.team_vo.validate()
         if self.user_last_operation:
             self.user_last_operation.validate()
 
@@ -8520,6 +8574,8 @@ class SearchResponseBodySpaceResultItems(TeaModel):
             result['originName'] = self.origin_name
         if self.space_id is not None:
             result['spaceId'] = self.space_id
+        if self.team_vo is not None:
+            result['teamVO'] = self.team_vo.to_map()
         if self.url is not None:
             result['url'] = self.url
         if self.user_last_operation is not None:
@@ -8537,6 +8593,9 @@ class SearchResponseBodySpaceResultItems(TeaModel):
             self.origin_name = m.get('originName')
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
+        if m.get('teamVO') is not None:
+            temp_model = SearchResponseBodySpaceResultItemsTeamVO()
+            self.team_vo = temp_model.from_map(m['teamVO'])
         if m.get('url') is not None:
             self.url = m.get('url')
         if m.get('userLastOperation') is not None:
