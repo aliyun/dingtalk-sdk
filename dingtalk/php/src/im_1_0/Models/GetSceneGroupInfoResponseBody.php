@@ -37,6 +37,13 @@ class GetSceneGroupInfoResponseBody extends Model
     public $ownerUserId;
 
     /**
+     * @description 群状态。
+     * 2：已解散
+     * @var int
+     */
+    public $status;
+
+    /**
      * @description result
      *
      * @var bool
@@ -61,6 +68,7 @@ class GetSceneGroupInfoResponseBody extends Model
         'icon'               => 'icon',
         'openConversationId' => 'openConversationId',
         'ownerUserId'        => 'ownerUserId',
+        'status'             => 'status',
         'success'            => 'success',
         'templateId'         => 'templateId',
         'title'              => 'title',
@@ -84,6 +92,9 @@ class GetSceneGroupInfoResponseBody extends Model
         }
         if (null !== $this->ownerUserId) {
             $res['ownerUserId'] = $this->ownerUserId;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -117,6 +128,9 @@ class GetSceneGroupInfoResponseBody extends Model
         }
         if (isset($map['ownerUserId'])) {
             $model->ownerUserId = $map['ownerUserId'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

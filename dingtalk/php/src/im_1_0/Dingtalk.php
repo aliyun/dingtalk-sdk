@@ -137,6 +137,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveRobotFromConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveRobotFromConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveRobotFromConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SearchInnerGroupsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SearchInnerGroupsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SearchInnerGroupsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendDingMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendDingMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendDingMessageResponse;
@@ -2366,6 +2369,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return RemoveRobotFromConversationResponse::fromMap($this->doROARequest('RemoveRobotFromConversation', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/conversations/robots/remove', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SearchInnerGroupsRequest $request
+     *
+     * @return SearchInnerGroupsResponse
+     */
+    public function searchInnerGroups($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchInnerGroupsHeaders([]);
+
+        return $this->searchInnerGroupsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchInnerGroupsRequest $request
+     * @param SearchInnerGroupsHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return SearchInnerGroupsResponse
+     */
+    public function searchInnerGroupsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->searchKey)) {
+            @$body['searchKey'] = $request->searchKey;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SearchInnerGroupsResponse::fromMap($this->doROARequest('SearchInnerGroups', 'im_1.0', 'HTTP', 'POST', 'AK', '/v1.0/im/innerGroups/search', 'json', $req, $runtime));
     }
 
     /**

@@ -181,6 +181,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreStoreInfoResponse
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreSubNodesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreSubNodesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreSubNodesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUpdateAuthInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUpdateAuthInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUpdateAuthInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUserInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUserInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreUserInfoResponse;
@@ -3180,6 +3183,48 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return DigitalStoreSubNodesResponse::fromMap($this->doROARequest('DigitalStoreSubNodes', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/digitalStores/subsidiaryNodes', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreUpdateAuthInfoRequest $request
+     *
+     * @return DigitalStoreUpdateAuthInfoResponse
+     */
+    public function digitalStoreUpdateAuthInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreUpdateAuthInfoHeaders([]);
+
+        return $this->digitalStoreUpdateAuthInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreUpdateAuthInfoRequest $request
+     * @param DigitalStoreUpdateAuthInfoHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return DigitalStoreUpdateAuthInfoResponse
+     */
+    public function digitalStoreUpdateAuthInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->updateUserList)) {
+            @$body['updateUserList'] = $request->updateUserList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return DigitalStoreUpdateAuthInfoResponse::fromMap($this->doROARequest('DigitalStoreUpdateAuthInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/industry/digitalStores/authInfos', 'json', $req, $runtime));
     }
 
     /**

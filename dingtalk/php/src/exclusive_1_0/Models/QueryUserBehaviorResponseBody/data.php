@@ -36,6 +36,11 @@ class data extends Model
     /**
      * @var string
      */
+    public $userId;
+
+    /**
+     * @var string
+     */
     public $userName;
     protected $_name = [
         'pictureUrl' => 'pictureUrl',
@@ -43,6 +48,7 @@ class data extends Model
         'scene'      => 'scene',
         'time'       => 'time',
         'type'       => 'type',
+        'userId'     => 'userId',
         'userName'   => 'userName',
     ];
 
@@ -67,6 +73,9 @@ class data extends Model
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
         if (null !== $this->userName) {
             $res['userName'] = $this->userName;
@@ -97,6 +106,9 @@ class data extends Model
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
         if (isset($map['userName'])) {
             $model->userName = $map['userName'];

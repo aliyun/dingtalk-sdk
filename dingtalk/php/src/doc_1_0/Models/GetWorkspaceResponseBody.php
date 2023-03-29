@@ -21,11 +21,17 @@ class GetWorkspaceResponseBody extends Model
     /**
      * @var string
      */
+    public $rootDentryUuid;
+
+    /**
+     * @var string
+     */
     public $url;
     protected $_name = [
-        'isDeleted' => 'isDeleted',
-        'owner'     => 'owner',
-        'url'       => 'url',
+        'isDeleted'      => 'isDeleted',
+        'owner'          => 'owner',
+        'rootDentryUuid' => 'rootDentryUuid',
+        'url'            => 'url',
     ];
 
     public function validate()
@@ -40,6 +46,9 @@ class GetWorkspaceResponseBody extends Model
         }
         if (null !== $this->owner) {
             $res['owner'] = $this->owner;
+        }
+        if (null !== $this->rootDentryUuid) {
+            $res['rootDentryUuid'] = $this->rootDentryUuid;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -61,6 +70,9 @@ class GetWorkspaceResponseBody extends Model
         }
         if (isset($map['owner'])) {
             $model->owner = $map['owner'];
+        }
+        if (isset($map['rootDentryUuid'])) {
+            $model->rootDentryUuid = $map['rootDentryUuid'];
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];
