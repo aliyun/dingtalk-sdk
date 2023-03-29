@@ -29,6 +29,14 @@ public class GetSceneGroupInfoResponseBody extends TeaModel {
     public String ownerUserId;
 
     /**
+     * <p>群状态。</p>
+     * <p> 1：正常</p>
+     * <p> 2：已解散</p>
+     */
+    @NameInMap("status")
+    public Integer status;
+
+    /**
      * <p>result</p>
      */
     @NameInMap("success")
@@ -81,6 +89,14 @@ public class GetSceneGroupInfoResponseBody extends TeaModel {
     }
     public String getOwnerUserId() {
         return this.ownerUserId;
+    }
+
+    public GetSceneGroupInfoResponseBody setStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+    public Integer getStatus() {
+        return this.status;
     }
 
     public GetSceneGroupInfoResponseBody setSuccess(Boolean success) {

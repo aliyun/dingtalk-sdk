@@ -10,6 +10,9 @@ public class GetWorkspaceResponseBody extends TeaModel {
     @NameInMap("owner")
     public String owner;
 
+    @NameInMap("rootDentryUuid")
+    public String rootDentryUuid;
+
     @NameInMap("url")
     public String url;
 
@@ -32,6 +35,14 @@ public class GetWorkspaceResponseBody extends TeaModel {
     }
     public String getOwner() {
         return this.owner;
+    }
+
+    public GetWorkspaceResponseBody setRootDentryUuid(String rootDentryUuid) {
+        this.rootDentryUuid = rootDentryUuid;
+        return this;
+    }
+    public String getRootDentryUuid() {
+        return this.rootDentryUuid;
     }
 
     public GetWorkspaceResponseBody setUrl(String url) {

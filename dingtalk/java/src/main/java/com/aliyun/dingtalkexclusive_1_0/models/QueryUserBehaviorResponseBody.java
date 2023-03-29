@@ -61,6 +61,9 @@ public class QueryUserBehaviorResponseBody extends TeaModel {
         @NameInMap("type")
         public Integer type;
 
+        @NameInMap("userId")
+        public String userId;
+
         @NameInMap("userName")
         public String userName;
 
@@ -107,6 +110,14 @@ public class QueryUserBehaviorResponseBody extends TeaModel {
         }
         public Integer getType() {
             return this.type;
+        }
+
+        public QueryUserBehaviorResponseBodyData setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
         public QueryUserBehaviorResponseBodyData setUserName(String userName) {
