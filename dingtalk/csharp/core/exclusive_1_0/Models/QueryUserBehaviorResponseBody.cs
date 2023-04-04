@@ -36,6 +36,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public int? Type { get; set; }
 
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
             [NameInMap("userName")]
             [Validation(Required=false)]
             public string UserName { get; set; }

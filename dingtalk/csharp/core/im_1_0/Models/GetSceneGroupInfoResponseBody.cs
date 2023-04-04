@@ -38,6 +38,15 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string OwnerUserId { get; set; }
 
         /// <summary>
+        /// 群状态。
+        ///  1：正常
+        ///  2：已解散
+        /// </summary>
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public int? Status { get; set; }
+
+        /// <summary>
         /// result
         /// </summary>
         [NameInMap("success")]

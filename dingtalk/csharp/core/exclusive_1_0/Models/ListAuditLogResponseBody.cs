@@ -81,6 +81,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 
             }
 
+            [NameInMap("docMobileUrl")]
+            [Validation(Required=false)]
+            public string DocMobileUrl { get; set; }
+
+            [NameInMap("docPcUrl")]
+            [Validation(Required=false)]
+            public string DocPcUrl { get; set; }
+
             /// <summary>
             /// 成员授权列表，仅文档授权返回
             /// </summary>
@@ -243,6 +251,22 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
+
+            [NameInMap("workSpaceId")]
+            [Validation(Required=false)]
+            public long? WorkSpaceId { get; set; }
+
+            [NameInMap("workSpaceMobileUrl")]
+            [Validation(Required=false)]
+            public string WorkSpaceMobileUrl { get; set; }
+
+            [NameInMap("workSpaceName")]
+            [Validation(Required=false)]
+            public string WorkSpaceName { get; set; }
+
+            [NameInMap("workSpacePcUrl")]
+            [Validation(Required=false)]
+            public string WorkSpacePcUrl { get; set; }
 
         }
 

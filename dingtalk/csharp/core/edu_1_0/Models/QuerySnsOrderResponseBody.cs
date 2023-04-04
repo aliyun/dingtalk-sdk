@@ -95,13 +95,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string OuterUserId { get; set; }
 
         /// <summary>
-        /// 买家支付id。
-        /// </summary>
-        [NameInMap("payId")]
-        [Validation(Required=false)]
-        public string PayId { get; set; }
-
-        /// <summary>
         /// 买家支付登陆id。
         /// </summary>
         [NameInMap("payLogonId")]

@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public string Owner { get; set; }
 
+        [NameInMap("rootDentryUuid")]
+        [Validation(Required=false)]
+        public string RootDentryUuid { get; set; }
+
         [NameInMap("url")]
         [Validation(Required=false)]
         public string Url { get; set; }
