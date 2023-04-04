@@ -39,6 +39,16 @@ class list_ extends Model
     public $docMemberList;
 
     /**
+     * @var string
+     */
+    public $docMobileUrl;
+
+    /**
+     * @var string
+     */
+    public $docPcUrl;
+
+    /**
      * @description 成员授权列表，仅文档授权返回
      *
      * @var docReceiverList[]
@@ -177,31 +187,57 @@ class list_ extends Model
      * @var string
      */
     public $userId;
+
+    /**
+     * @var int
+     */
+    public $workSpaceId;
+
+    /**
+     * @var string
+     */
+    public $workSpaceMobileUrl;
+
+    /**
+     * @var string
+     */
+    public $workSpaceName;
+
+    /**
+     * @var string
+     */
+    public $workSpacePcUrl;
     protected $_name = [
-        'action'            => 'action',
-        'actionView'        => 'actionView',
-        'bizId'             => 'bizId',
-        'docMemberList'     => 'docMemberList',
-        'docReceiverList'   => 'docReceiverList',
-        'gmtCreate'         => 'gmtCreate',
-        'gmtModified'       => 'gmtModified',
-        'ipAddress'         => 'ipAddress',
-        'operateModule'     => 'operateModule',
-        'operateModuleView' => 'operateModuleView',
-        'operatorName'      => 'operatorName',
-        'orgName'           => 'orgName',
-        'platform'          => 'platform',
-        'platformView'      => 'platformView',
-        'realName'          => 'realName',
-        'receiverName'      => 'receiverName',
-        'receiverType'      => 'receiverType',
-        'receiverTypeView'  => 'receiverTypeView',
-        'resource'          => 'resource',
-        'resourceExtension' => 'resourceExtension',
-        'resourceSize'      => 'resourceSize',
-        'status'            => 'status',
-        'targetSpaceId'     => 'targetSpaceId',
-        'userId'            => 'userId',
+        'action'             => 'action',
+        'actionView'         => 'actionView',
+        'bizId'              => 'bizId',
+        'docMemberList'      => 'docMemberList',
+        'docMobileUrl'       => 'docMobileUrl',
+        'docPcUrl'           => 'docPcUrl',
+        'docReceiverList'    => 'docReceiverList',
+        'gmtCreate'          => 'gmtCreate',
+        'gmtModified'        => 'gmtModified',
+        'ipAddress'          => 'ipAddress',
+        'operateModule'      => 'operateModule',
+        'operateModuleView'  => 'operateModuleView',
+        'operatorName'       => 'operatorName',
+        'orgName'            => 'orgName',
+        'platform'           => 'platform',
+        'platformView'       => 'platformView',
+        'realName'           => 'realName',
+        'receiverName'       => 'receiverName',
+        'receiverType'       => 'receiverType',
+        'receiverTypeView'   => 'receiverTypeView',
+        'resource'           => 'resource',
+        'resourceExtension'  => 'resourceExtension',
+        'resourceSize'       => 'resourceSize',
+        'status'             => 'status',
+        'targetSpaceId'      => 'targetSpaceId',
+        'userId'             => 'userId',
+        'workSpaceId'        => 'workSpaceId',
+        'workSpaceMobileUrl' => 'workSpaceMobileUrl',
+        'workSpaceName'      => 'workSpaceName',
+        'workSpacePcUrl'     => 'workSpacePcUrl',
     ];
 
     public function validate()
@@ -228,6 +264,12 @@ class list_ extends Model
                     $res['docMemberList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->docMobileUrl) {
+            $res['docMobileUrl'] = $this->docMobileUrl;
+        }
+        if (null !== $this->docPcUrl) {
+            $res['docPcUrl'] = $this->docPcUrl;
         }
         if (null !== $this->docReceiverList) {
             $res['docReceiverList'] = [];
@@ -295,6 +337,18 @@ class list_ extends Model
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
+        if (null !== $this->workSpaceId) {
+            $res['workSpaceId'] = $this->workSpaceId;
+        }
+        if (null !== $this->workSpaceMobileUrl) {
+            $res['workSpaceMobileUrl'] = $this->workSpaceMobileUrl;
+        }
+        if (null !== $this->workSpaceName) {
+            $res['workSpaceName'] = $this->workSpaceName;
+        }
+        if (null !== $this->workSpacePcUrl) {
+            $res['workSpacePcUrl'] = $this->workSpacePcUrl;
+        }
 
         return $res;
     }
@@ -324,6 +378,12 @@ class list_ extends Model
                     $model->docMemberList[$n++] = null !== $item ? docMemberList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['docMobileUrl'])) {
+            $model->docMobileUrl = $map['docMobileUrl'];
+        }
+        if (isset($map['docPcUrl'])) {
+            $model->docPcUrl = $map['docPcUrl'];
         }
         if (isset($map['docReceiverList'])) {
             if (!empty($map['docReceiverList'])) {
@@ -390,6 +450,18 @@ class list_ extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
+        }
+        if (isset($map['workSpaceId'])) {
+            $model->workSpaceId = $map['workSpaceId'];
+        }
+        if (isset($map['workSpaceMobileUrl'])) {
+            $model->workSpaceMobileUrl = $map['workSpaceMobileUrl'];
+        }
+        if (isset($map['workSpaceName'])) {
+            $model->workSpaceName = $map['workSpaceName'];
+        }
+        if (isset($map['workSpacePcUrl'])) {
+            $model->workSpacePcUrl = $map['workSpacePcUrl'];
         }
 
         return $model;

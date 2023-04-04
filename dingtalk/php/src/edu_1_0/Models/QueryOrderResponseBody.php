@@ -96,13 +96,6 @@ class QueryOrderResponseBody extends Model
     public $outerUserId;
 
     /**
-     * @description 买家支付id。
-     *
-     * @var string
-     */
-    public $payId;
-
-    /**
      * @description 买家支付登陆id。
      *
      * @var string
@@ -186,7 +179,6 @@ class QueryOrderResponseBody extends Model
         'orderNo'              => 'orderNo',
         'orderType'            => 'orderType',
         'outerUserId'          => 'outerUserId',
-        'payId'                => 'payId',
         'payLogonId'           => 'payLogonId',
         'payStatus'            => 'payStatus',
         'payTime'              => 'payTime',
@@ -245,9 +237,6 @@ class QueryOrderResponseBody extends Model
         }
         if (null !== $this->outerUserId) {
             $res['outerUserId'] = $this->outerUserId;
-        }
-        if (null !== $this->payId) {
-            $res['payId'] = $this->payId;
         }
         if (null !== $this->payLogonId) {
             $res['payLogonId'] = $this->payLogonId;
@@ -332,9 +321,6 @@ class QueryOrderResponseBody extends Model
         }
         if (isset($map['outerUserId'])) {
             $model->outerUserId = $map['outerUserId'];
-        }
-        if (isset($map['payId'])) {
-            $model->payId = $map['payId'];
         }
         if (isset($map['payLogonId'])) {
             $model->payLogonId = $map['payLogonId'];
