@@ -952,6 +952,100 @@ export class CheckRestrictionResponse extends $tea.Model {
   }
 }
 
+export class ConsumePointHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumePointRequest extends $tea.Model {
+  amount?: number;
+  bizId?: string;
+  description?: string;
+  productCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      bizId: 'bizId',
+      description: 'description',
+      productCode: 'productCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'number',
+      bizId: 'string',
+      description: 'string',
+      productCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumePointResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumePointResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: ConsumePointResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: ConsumePointResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CourseSchedulingComplimentNoticeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6387,6 +6481,100 @@ export class QueryClassScheduleConfigResponse extends $tea.Model {
   }
 }
 
+export class QueryDeviceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceRequest extends $tea.Model {
+  sn?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sn: 'sn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sn: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceResponseBody extends $tea.Model {
+  gmtExpiry?: number;
+  model?: string;
+  name?: string;
+  sn?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gmtExpiry: 'gmtExpiry',
+      model: 'model',
+      name: 'name',
+      sn: 'sn',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtExpiry: 'number',
+      model: 'string',
+      name: 'string',
+      sn: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryDeviceListByCorpIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6733,7 +6921,6 @@ export class QueryOrderResponseBody extends $tea.Model {
   orderNo?: string;
   orderType?: string;
   outerUserId?: string;
-  payId?: string;
   payLogonId?: string;
   payStatus?: number;
   payTime?: string;
@@ -6760,7 +6947,6 @@ export class QueryOrderResponseBody extends $tea.Model {
       orderNo: 'orderNo',
       orderType: 'orderType',
       outerUserId: 'outerUserId',
-      payId: 'payId',
       payLogonId: 'payLogonId',
       payStatus: 'payStatus',
       payTime: 'payTime',
@@ -6790,7 +6976,6 @@ export class QueryOrderResponseBody extends $tea.Model {
       orderNo: 'string',
       orderType: 'string',
       outerUserId: 'string',
-      payId: 'string',
       payLogonId: 'string',
       payStatus: 'number',
       payTime: 'string',
@@ -7611,7 +7796,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
   orderNo?: string;
   orderType?: string;
   outerUserId?: string;
-  payId?: string;
   payLogonId?: string;
   payStatus?: number;
   payTime?: string;
@@ -7638,7 +7822,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       orderNo: 'orderNo',
       orderType: 'orderType',
       outerUserId: 'outerUserId',
-      payId: 'payId',
       payLogonId: 'payLogonId',
       payStatus: 'payStatus',
       payTime: 'payTime',
@@ -7668,7 +7851,6 @@ export class QuerySnsOrderResponseBody extends $tea.Model {
       orderNo: 'string',
       orderType: 'string',
       outerUserId: 'string',
-      payId: 'string',
       payLogonId: 'string',
       payStatus: 'number',
       payTime: 'string',
@@ -13610,6 +13792,47 @@ export default class Client extends OpenApi {
     return $tea.cast<CheckRestrictionResponse>(await this.doROARequest("CheckRestriction", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/restrictions/check`, "json", req, runtime), new CheckRestrictionResponse({}));
   }
 
+  async consumePoint(request: ConsumePointRequest): Promise<ConsumePointResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConsumePointHeaders({ });
+    return await this.consumePointWithOptions(request, headers, runtime);
+  }
+
+  async consumePointWithOptions(request: ConsumePointRequest, headers: ConsumePointHeaders, runtime: $Util.RuntimeOptions): Promise<ConsumePointResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.amount)) {
+      body["amount"] = request.amount;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.productCode)) {
+      body["productCode"] = request.productCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<ConsumePointResponse>(await this.doROARequest("ConsumePoint", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/poins/consume`, "json", req, runtime), new ConsumePointResponse({}));
+  }
+
   async courseSchedulingComplimentNotice(request: CourseSchedulingComplimentNoticeRequest): Promise<CourseSchedulingComplimentNoticeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CourseSchedulingComplimentNoticeHeaders({ });
@@ -16018,6 +16241,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryClassScheduleConfigResponse>(await this.doROARequest("QueryClassScheduleConfig", "edu_1.0", "HTTP", "GET", "AK", `/v1.0/edu/schedules/configs`, "json", req, runtime), new QueryClassScheduleConfigResponse({}));
+  }
+
+  async queryDevice(request: QueryDeviceRequest): Promise<QueryDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDeviceHeaders({ });
+    return await this.queryDeviceWithOptions(request, headers, runtime);
+  }
+
+  async queryDeviceWithOptions(request: QueryDeviceRequest, headers: QueryDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sn)) {
+      query["sn"] = request.sn;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryDeviceResponse>(await this.doROARequest("QueryDevice", "edu_1.0", "HTTP", "POST", "AK", `/v1.0/edu/vpass/devices/query`, "json", req, runtime), new QueryDeviceResponse({}));
   }
 
   async queryDeviceListByCorpId(request: QueryDeviceListByCorpIdRequest): Promise<QueryDeviceListByCorpIdResponse> {

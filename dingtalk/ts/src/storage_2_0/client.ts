@@ -248,11 +248,13 @@ export class CommitFileRequestOptionAppProperties extends $tea.Model {
 export class CommitFileRequestOption extends $tea.Model {
   appProperties?: CommitFileRequestOptionAppProperties[];
   conflictStrategy?: string;
+  convertToOnlineDoc?: boolean;
   size?: number;
   static names(): { [key: string]: string } {
     return {
       appProperties: 'appProperties',
       conflictStrategy: 'conflictStrategy',
+      convertToOnlineDoc: 'convertToOnlineDoc',
       size: 'size',
     };
   }
@@ -261,6 +263,7 @@ export class CommitFileRequestOption extends $tea.Model {
     return {
       appProperties: { 'type': 'array', 'itemType': CommitFileRequestOptionAppProperties },
       conflictStrategy: 'string',
+      convertToOnlineDoc: 'boolean',
       size: 'number',
     };
   }

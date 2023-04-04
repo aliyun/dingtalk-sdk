@@ -80,6 +80,7 @@ export class FormComponentProps extends $tea.Model {
   multiple?: boolean;
   options?: SelectOption[];
   placeholder?: string;
+  precision?: number;
   print?: string;
   required?: boolean;
   statField?: FormComponentPropsStatField[];
@@ -114,6 +115,7 @@ export class FormComponentProps extends $tea.Model {
       multiple: 'multiple',
       options: 'options',
       placeholder: 'placeholder',
+      precision: 'precision',
       print: 'print',
       required: 'required',
       statField: 'statField',
@@ -151,6 +153,7 @@ export class FormComponentProps extends $tea.Model {
       multiple: 'boolean',
       options: { 'type': 'array', 'itemType': SelectOption },
       placeholder: 'string',
+      precision: 'number',
       print: 'string',
       required: 'boolean',
       statField: { 'type': 'array', 'itemType': FormComponentPropsStatField },
@@ -3151,6 +3154,7 @@ export class RedirectWorkflowTaskHeaders extends $tea.Model {
 
 export class RedirectWorkflowTaskRequest extends $tea.Model {
   actionName?: string;
+  file?: RedirectWorkflowTaskRequestFile;
   operateUserId?: string;
   remark?: string;
   taskId?: number;
@@ -3158,6 +3162,7 @@ export class RedirectWorkflowTaskRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       actionName: 'actionName',
+      file: 'file',
       operateUserId: 'operateUserId',
       remark: 'remark',
       taskId: 'taskId',
@@ -3168,6 +3173,7 @@ export class RedirectWorkflowTaskRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       actionName: 'string',
+      file: RedirectWorkflowTaskRequestFile,
       operateUserId: 'string',
       remark: 'string',
       taskId: 'number',
@@ -6221,6 +6227,59 @@ export class QuerySchemaByProcessCodeResponseBodyResult extends $tea.Model {
   }
 }
 
+export class RedirectWorkflowTaskRequestFileAttachments extends $tea.Model {
+  fileId?: string;
+  fileName?: string;
+  fileSize?: string;
+  fileType?: string;
+  spaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileId: 'fileId',
+      fileName: 'fileName',
+      fileSize: 'fileSize',
+      fileType: 'fileType',
+      spaceId: 'spaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileId: 'string',
+      fileName: 'string',
+      fileSize: 'string',
+      fileType: 'string',
+      spaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RedirectWorkflowTaskRequestFile extends $tea.Model {
+  attachments?: RedirectWorkflowTaskRequestFileAttachments[];
+  photos?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      attachments: 'attachments',
+      photos: 'photos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachments: { 'type': 'array', 'itemType': RedirectWorkflowTaskRequestFileAttachments },
+      photos: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SaveIntegratedInstanceRequestFormComponentValueList extends $tea.Model {
   bizAlias?: string;
   componentType?: string;
@@ -7840,6 +7899,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.actionName)) {
       body["actionName"] = request.actionName;
+    }
+
+    if (!Util.isUnset(request.file)) {
+      body["file"] = request.file;
     }
 
     if (!Util.isUnset(request.operateUserId)) {

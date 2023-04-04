@@ -2153,6 +2153,7 @@ export class GetSceneGroupInfoResponseBody extends $tea.Model {
   icon?: string;
   openConversationId?: string;
   ownerUserId?: string;
+  status?: number;
   success?: boolean;
   templateId?: string;
   title?: string;
@@ -2162,6 +2163,7 @@ export class GetSceneGroupInfoResponseBody extends $tea.Model {
       icon: 'icon',
       openConversationId: 'openConversationId',
       ownerUserId: 'ownerUserId',
+      status: 'status',
       success: 'success',
       templateId: 'templateId',
       title: 'title',
@@ -2174,6 +2176,7 @@ export class GetSceneGroupInfoResponseBody extends $tea.Model {
       icon: 'string',
       openConversationId: 'string',
       ownerUserId: 'string',
+      status: 'number',
       success: 'boolean',
       templateId: 'string',
       title: 'string',
@@ -3973,6 +3976,94 @@ export class RemoveRobotFromConversationResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: RemoveRobotFromConversationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchInnerGroupsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchInnerGroupsRequest extends $tea.Model {
+  maxResults?: number;
+  searchKey?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      searchKey: 'searchKey',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      searchKey: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchInnerGroupsResponseBody extends $tea.Model {
+  groupInfos?: SearchInnerGroupsResponseBodyGroupInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      groupInfos: 'groupInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupInfos: { 'type': 'array', 'itemType': SearchInnerGroupsResponseBodyGroupInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchInnerGroupsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SearchInnerGroupsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SearchInnerGroupsResponseBody,
     };
   }
 
@@ -6674,6 +6765,34 @@ export class QueryUnReadMessageResponseBodyUnReadItems extends $tea.Model {
   }
 }
 
+export class SearchInnerGroupsResponseBodyGroupInfos extends $tea.Model {
+  icon?: string;
+  memberAmount?: string;
+  openConversationId?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      memberAmount: 'memberAmount',
+      openConversationId: 'openConversationId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      memberAmount: 'string',
+      openConversationId: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendInteractiveCardRequestCardData extends $tea.Model {
   cardMediaIdParamMap?: { [key: string]: string };
   cardParamMap?: { [key: string]: string };
@@ -8666,6 +8785,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<RemoveRobotFromConversationResponse>(await this.doROARequest("RemoveRobotFromConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/robots/remove`, "json", req, runtime), new RemoveRobotFromConversationResponse({}));
+  }
+
+  async searchInnerGroups(request: SearchInnerGroupsRequest): Promise<SearchInnerGroupsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchInnerGroupsHeaders({ });
+    return await this.searchInnerGroupsWithOptions(request, headers, runtime);
+  }
+
+  async searchInnerGroupsWithOptions(request: SearchInnerGroupsRequest, headers: SearchInnerGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchInnerGroupsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.searchKey)) {
+      body["searchKey"] = request.searchKey;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SearchInnerGroupsResponse>(await this.doROARequest("SearchInnerGroups", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/innerGroups/search`, "json", req, runtime), new SearchInnerGroupsResponse({}));
   }
 
   async sendInteractiveCard(request: SendInteractiveCardRequest): Promise<SendInteractiveCardResponse> {

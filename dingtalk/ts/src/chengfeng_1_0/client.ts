@@ -7,6 +7,207 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CfEmploymentRecordResp extends $tea.Model {
+  deptCode?: string;
+  deptName?: string;
+  employeeStatus?: string;
+  endDate?: string;
+  isLatestRecord?: boolean;
+  jobLevelName?: string;
+  jobPositionCode?: string;
+  jobPositionName?: string;
+  jobPostCode?: string;
+  jobPostName?: string;
+  serviceStatus?: string;
+  serviceType?: string;
+  startDate?: string;
+  workNumbers?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+      deptName: 'deptName',
+      employeeStatus: 'employeeStatus',
+      endDate: 'endDate',
+      isLatestRecord: 'isLatestRecord',
+      jobLevelName: 'jobLevelName',
+      jobPositionCode: 'jobPositionCode',
+      jobPositionName: 'jobPositionName',
+      jobPostCode: 'jobPostCode',
+      jobPostName: 'jobPostName',
+      serviceStatus: 'serviceStatus',
+      serviceType: 'serviceType',
+      startDate: 'startDate',
+      workNumbers: 'workNumbers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+      deptName: 'string',
+      employeeStatus: 'string',
+      endDate: 'string',
+      isLatestRecord: 'boolean',
+      jobLevelName: 'string',
+      jobPositionCode: 'string',
+      jobPositionName: 'string',
+      jobPostCode: 'string',
+      jobPostName: 'string',
+      serviceStatus: 'string',
+      serviceType: 'string',
+      startDate: 'string',
+      workNumbers: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CfJobLevelResp extends $tea.Model {
+  level?: number;
+  name?: string;
+  startDate?: string;
+  stopDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      level: 'level',
+      name: 'name',
+      startDate: 'startDate',
+      stopDate: 'stopDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      level: 'number',
+      name: 'string',
+      startDate: 'string',
+      stopDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CfJobPositionResp extends $tea.Model {
+  jobPositionCode?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobPositionCode: 'jobPositionCode',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobPositionCode: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CfJobPostResp extends $tea.Model {
+  jobPostCode?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobPostCode: 'jobPostCode',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobPostCode: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CfOrgResp extends $tea.Model {
+  deptCode?: string;
+  deptName?: string;
+  level?: number;
+  organizationCodePath?: string;
+  organizationPath?: string;
+  parentDeptCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+      deptName: 'deptName',
+      level: 'level',
+      organizationCodePath: 'organizationCodePath',
+      organizationPath: 'organizationPath',
+      parentDeptCode: 'parentDeptCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+      deptName: 'string',
+      level: 'number',
+      organizationCodePath: 'string',
+      organizationPath: 'string',
+      parentDeptCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CfStaffResp extends $tea.Model {
+  deptCode?: string;
+  deptName?: string;
+  email?: string;
+  mobile?: string;
+  name?: string;
+  nickName?: string;
+  workNumbers?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+      deptName: 'deptName',
+      email: 'email',
+      mobile: 'mobile',
+      name: 'name',
+      nickName: 'nickName',
+      workNumbers: 'workNumbers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+      deptName: 'string',
+      email: 'string',
+      mobile: 'string',
+      name: 'string',
+      nickName: 'string',
+      workNumbers: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OpenAnalyzeDataDTO extends $tea.Model {
   deptCount?: number;
   noAlignObjectiveCount?: number;
@@ -273,6 +474,204 @@ export class TitleMention extends $tea.Model {
   }
 }
 
+export class GetAllJobLevelHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllJobLevelResponseBody extends $tea.Model {
+  content?: CfJobLevelResp[];
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': CfJobLevelResp },
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllJobLevelResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAllJobLevelResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAllJobLevelResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllJobPositionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllJobPositionResponseBody extends $tea.Model {
+  content?: CfJobPositionResp[];
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': CfJobPositionResp },
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllJobPositionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAllJobPositionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAllJobPositionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllJobPostHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllJobPostResponseBody extends $tea.Model {
+  content?: CfJobPostResp[];
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': CfJobPostResp },
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllJobPostResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetAllJobPostResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetAllJobPostResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAnalyzeDataHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -364,6 +763,91 @@ export class GetAnalyzeDataResponse extends $tea.Model {
   }
 }
 
+export class GetChildOrgListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetChildOrgListRequest extends $tea.Model {
+  deptCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetChildOrgListResponseBody extends $tea.Model {
+  content?: CfOrgResp[];
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': CfOrgResp },
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetChildOrgListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetChildOrgListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetChildOrgListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEmployeeInfoByWorkNoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -441,6 +925,509 @@ export class GetEmployeeInfoByWorkNoResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: GetEmployeeInfoByWorkNoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmploymentRecordByWorkNoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmploymentRecordByWorkNoResponseBody extends $tea.Model {
+  content?: CfEmploymentRecordResp[];
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': CfEmploymentRecordResp },
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmploymentRecordByWorkNoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetEmploymentRecordByWorkNoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetEmploymentRecordByWorkNoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPositionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPositionRequest extends $tea.Model {
+  jobPositionCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobPositionCode: 'jobPositionCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobPositionCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPositionResponseBody extends $tea.Model {
+  content?: GetJobPositionResponseBodyContent;
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: GetJobPositionResponseBodyContent,
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPositionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetJobPositionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetJobPositionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPostHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPostRequest extends $tea.Model {
+  jobPostCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobPostCode: 'jobPostCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobPostCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPostResponseBody extends $tea.Model {
+  content?: GetJobPostResponseBodyContent;
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: GetJobPostResponseBodyContent,
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPostResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetJobPostResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetJobPostResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgInfoRequest extends $tea.Model {
+  deptCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgInfoResponseBody extends $tea.Model {
+  content?: GetOrgInfoResponseBodyContent;
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: GetOrgInfoResponseBodyContent,
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOrgInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOrgInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffInfoByWorkNoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffInfoByWorkNoRequest extends $tea.Model {
+  workNumbers?: string;
+  static names(): { [key: string]: string } {
+    return {
+      workNumbers: 'workNumbers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workNumbers: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffInfoByWorkNoResponseBody extends $tea.Model {
+  content?: GetStaffInfoByWorkNoResponseBodyContent;
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: GetStaffInfoByWorkNoResponseBodyContent,
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffInfoByWorkNoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetStaffInfoByWorkNoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetStaffInfoByWorkNoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffPageQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffPageQueryRequest extends $tea.Model {
+  deptCode?: string;
+  name?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  workNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+      name: 'name',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      workNo: 'workNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+      name: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      workNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffPageQueryResponseBody extends $tea.Model {
+  content?: GetStaffPageQueryResponseBodyContent;
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: GetStaffPageQueryResponseBodyContent,
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffPageQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetStaffPageQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetStaffPageQueryResponseBody,
     };
   }
 
@@ -1086,6 +2073,206 @@ export class GetEmployeeInfoByWorkNoResponseBodyContent extends $tea.Model {
   }
 }
 
+export class GetJobPositionResponseBodyContent extends $tea.Model {
+  description?: string;
+  establishDate?: string;
+  jobCode?: string;
+  jobRequirements?: string;
+  name?: string;
+  startDate?: string;
+  stopDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      establishDate: 'establishDate',
+      jobCode: 'jobCode',
+      jobRequirements: 'jobRequirements',
+      name: 'name',
+      startDate: 'startDate',
+      stopDate: 'stopDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      establishDate: 'string',
+      jobCode: 'string',
+      jobRequirements: 'string',
+      name: 'string',
+      startDate: 'string',
+      stopDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetJobPostResponseBodyContent extends $tea.Model {
+  code?: string;
+  establishDate?: string;
+  name?: string;
+  startDate?: string;
+  stopDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      establishDate: 'establishDate',
+      name: 'name',
+      startDate: 'startDate',
+      stopDate: 'stopDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      establishDate: 'string',
+      name: 'string',
+      startDate: 'string',
+      stopDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOrgInfoResponseBodyContent extends $tea.Model {
+  deptCode?: string;
+  deptName?: string;
+  deptNum?: string;
+  level?: string;
+  organizationCodePath?: string;
+  organizationPath?: string;
+  parentDeptCode?: string;
+  shortName?: string;
+  startDate?: string;
+  stopDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+      deptName: 'deptName',
+      deptNum: 'deptNum',
+      level: 'level',
+      organizationCodePath: 'organizationCodePath',
+      organizationPath: 'organizationPath',
+      parentDeptCode: 'parentDeptCode',
+      shortName: 'shortName',
+      startDate: 'startDate',
+      stopDate: 'stopDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+      deptName: 'string',
+      deptNum: 'string',
+      level: 'string',
+      organizationCodePath: 'string',
+      organizationPath: 'string',
+      parentDeptCode: 'string',
+      shortName: 'string',
+      startDate: 'string',
+      stopDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffInfoByWorkNoResponseBodyContent extends $tea.Model {
+  deptCode?: string;
+  deptName?: string;
+  email?: string;
+  employType?: string;
+  employeeStatus?: string;
+  jobLevelName?: string;
+  jobPositionCode?: string;
+  jobPositionName?: string;
+  jobPostCode?: string;
+  jobPostName?: string;
+  mobile?: string;
+  name?: string;
+  nickName?: string;
+  workNumbers?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptCode: 'deptCode',
+      deptName: 'deptName',
+      email: 'email',
+      employType: 'employType',
+      employeeStatus: 'employeeStatus',
+      jobLevelName: 'jobLevelName',
+      jobPositionCode: 'jobPositionCode',
+      jobPositionName: 'jobPositionName',
+      jobPostCode: 'jobPostCode',
+      jobPostName: 'jobPostName',
+      mobile: 'mobile',
+      name: 'name',
+      nickName: 'nickName',
+      workNumbers: 'workNumbers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptCode: 'string',
+      deptName: 'string',
+      email: 'string',
+      employType: 'string',
+      employeeStatus: 'string',
+      jobLevelName: 'string',
+      jobPositionCode: 'string',
+      jobPositionName: 'string',
+      jobPostCode: 'string',
+      jobPostName: 'string',
+      mobile: 'string',
+      name: 'string',
+      nickName: 'string',
+      workNumbers: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetStaffPageQueryResponseBodyContent extends $tea.Model {
+  data?: CfStaffResp[];
+  pageNumber?: number;
+  pageSize?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': CfStaffResp },
+      pageNumber: 'number',
+      pageSize: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListObjectiveByUserResponseBodyContent extends $tea.Model {
   count?: number;
   objectives?: OpenObjectiveDTO[];
@@ -1143,6 +2330,72 @@ export default class Client extends OpenApi {
   }
 
 
+  async getAllJobLevel(): Promise<GetAllJobLevelResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAllJobLevelHeaders({ });
+    return await this.getAllJobLevelWithOptions(headers, runtime);
+  }
+
+  async getAllJobLevelWithOptions(headers: GetAllJobLevelHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobLevelResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetAllJobLevelResponse>(await this.doROARequest("GetAllJobLevel", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobLevels`, "json", req, runtime), new GetAllJobLevelResponse({}));
+  }
+
+  async getAllJobPosition(): Promise<GetAllJobPositionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAllJobPositionHeaders({ });
+    return await this.getAllJobPositionWithOptions(headers, runtime);
+  }
+
+  async getAllJobPositionWithOptions(headers: GetAllJobPositionHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobPositionResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetAllJobPositionResponse>(await this.doROARequest("GetAllJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobPositions`, "json", req, runtime), new GetAllJobPositionResponse({}));
+  }
+
+  async getAllJobPost(): Promise<GetAllJobPostResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAllJobPostHeaders({ });
+    return await this.getAllJobPostWithOptions(headers, runtime);
+  }
+
+  async getAllJobPostWithOptions(headers: GetAllJobPostHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobPostResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetAllJobPostResponse>(await this.doROARequest("GetAllJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobPosts`, "json", req, runtime), new GetAllJobPostResponse({}));
+  }
+
   async getAnalyzeData(request: GetAnalyzeDataRequest): Promise<GetAnalyzeDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAnalyzeDataHeaders({ });
@@ -1178,6 +2431,35 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAnalyzeDataResponse>(await this.doROARequest("GetAnalyzeData", "chengfeng_1.0", "HTTP", "POST", "AK", `/v1.0/chengfeng/okr/analyses/datas/query`, "json", req, runtime), new GetAnalyzeDataResponse({}));
   }
 
+  async getChildOrgList(request: GetChildOrgListRequest): Promise<GetChildOrgListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetChildOrgListHeaders({ });
+    return await this.getChildOrgListWithOptions(request, headers, runtime);
+  }
+
+  async getChildOrgListWithOptions(request: GetChildOrgListRequest, headers: GetChildOrgListHeaders, runtime: $Util.RuntimeOptions): Promise<GetChildOrgListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptCode)) {
+      query["deptCode"] = request.deptCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetChildOrgListResponse>(await this.doROARequest("GetChildOrgList", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/organizations`, "json", req, runtime), new GetChildOrgListResponse({}));
+  }
+
   async getEmployeeInfoByWorkNo(request: GetEmployeeInfoByWorkNoRequest): Promise<GetEmployeeInfoByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEmployeeInfoByWorkNoHeaders({ });
@@ -1205,6 +2487,190 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<GetEmployeeInfoByWorkNoResponse>(await this.doROARequest("GetEmployeeInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/workNumbers/employees`, "json", req, runtime), new GetEmployeeInfoByWorkNoResponse({}));
+  }
+
+  async getEmploymentRecordByWorkNo(workNumbers: string): Promise<GetEmploymentRecordByWorkNoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetEmploymentRecordByWorkNoHeaders({ });
+    return await this.getEmploymentRecordByWorkNoWithOptions(workNumbers, headers, runtime);
+  }
+
+  async getEmploymentRecordByWorkNoWithOptions(workNumbers: string, headers: GetEmploymentRecordByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmploymentRecordByWorkNoResponse> {
+    workNumbers = OpenApiUtil.getEncodeParam(workNumbers);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    return $tea.cast<GetEmploymentRecordByWorkNoResponse>(await this.doROARequest("GetEmploymentRecordByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/users/workNumber/${workNumbers}employmentRecords`, "json", req, runtime), new GetEmploymentRecordByWorkNoResponse({}));
+  }
+
+  async getJobPosition(request: GetJobPositionRequest): Promise<GetJobPositionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetJobPositionHeaders({ });
+    return await this.getJobPositionWithOptions(request, headers, runtime);
+  }
+
+  async getJobPositionWithOptions(request: GetJobPositionRequest, headers: GetJobPositionHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobPositionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.jobPositionCode)) {
+      query["jobPositionCode"] = request.jobPositionCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetJobPositionResponse>(await this.doROARequest("GetJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobPositions/infos`, "json", req, runtime), new GetJobPositionResponse({}));
+  }
+
+  async getJobPost(request: GetJobPostRequest): Promise<GetJobPostResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetJobPostHeaders({ });
+    return await this.getJobPostWithOptions(request, headers, runtime);
+  }
+
+  async getJobPostWithOptions(request: GetJobPostRequest, headers: GetJobPostHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobPostResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.jobPostCode)) {
+      query["jobPostCode"] = request.jobPostCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetJobPostResponse>(await this.doROARequest("GetJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobPosts/infos`, "json", req, runtime), new GetJobPostResponse({}));
+  }
+
+  async getOrgInfo(request: GetOrgInfoRequest): Promise<GetOrgInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOrgInfoHeaders({ });
+    return await this.getOrgInfoWithOptions(request, headers, runtime);
+  }
+
+  async getOrgInfoWithOptions(request: GetOrgInfoRequest, headers: GetOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrgInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptCode)) {
+      query["deptCode"] = request.deptCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetOrgInfoResponse>(await this.doROARequest("GetOrgInfo", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/organizations/infos`, "json", req, runtime), new GetOrgInfoResponse({}));
+  }
+
+  async getStaffInfoByWorkNo(request: GetStaffInfoByWorkNoRequest): Promise<GetStaffInfoByWorkNoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetStaffInfoByWorkNoHeaders({ });
+    return await this.getStaffInfoByWorkNoWithOptions(request, headers, runtime);
+  }
+
+  async getStaffInfoByWorkNoWithOptions(request: GetStaffInfoByWorkNoRequest, headers: GetStaffInfoByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetStaffInfoByWorkNoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.workNumbers)) {
+      query["workNumbers"] = request.workNumbers;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetStaffInfoByWorkNoResponse>(await this.doROARequest("GetStaffInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/users`, "json", req, runtime), new GetStaffInfoByWorkNoResponse({}));
+  }
+
+  async getStaffPageQuery(request: GetStaffPageQueryRequest): Promise<GetStaffPageQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetStaffPageQueryHeaders({ });
+    return await this.getStaffPageQueryWithOptions(request, headers, runtime);
+  }
+
+  async getStaffPageQueryWithOptions(request: GetStaffPageQueryRequest, headers: GetStaffPageQueryHeaders, runtime: $Util.RuntimeOptions): Promise<GetStaffPageQueryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptCode)) {
+      query["deptCode"] = request.deptCode;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      query["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.workNo)) {
+      query["workNo"] = request.workNo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<GetStaffPageQueryResponse>(await this.doROARequest("GetStaffPageQuery", "chengfeng_1.0", "HTTP", "POST", "AK", `/v1.0/chengfeng/users/query`, "json", req, runtime), new GetStaffPageQueryResponse({}));
   }
 
   async getUser(request: GetUserRequest): Promise<GetUserResponse> {

@@ -3853,15 +3853,18 @@ export class TeamModelUpdater extends $tea.Model {
 }
 
 export class TeamModelVisitInfo extends $tea.Model {
+  joinTime?: string;
   roleCode?: string;
   static names(): { [key: string]: string } {
     return {
+      joinTime: 'joinTime',
       roleCode: 'roleCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      joinTime: 'string',
       roleCode: 'string',
     };
   }
@@ -4938,10 +4941,12 @@ export class SearchRequestDentryRequest extends $tea.Model {
 export class SearchRequestSpaceRequest extends $tea.Model {
   maxResults?: number;
   nextToken?: string;
+  withTeamInfo?: boolean;
   static names(): { [key: string]: string } {
     return {
       maxResults: 'maxResults',
       nextToken: 'nextToken',
+      withTeamInfo: 'withTeamInfo',
     };
   }
 
@@ -4949,6 +4954,7 @@ export class SearchRequestSpaceRequest extends $tea.Model {
     return {
       maxResults: 'number',
       nextToken: 'string',
+      withTeamInfo: 'boolean',
     };
   }
 
@@ -5065,6 +5071,28 @@ export class SearchResponseBodySpaceResultItemsIconVO extends $tea.Model {
   }
 }
 
+export class SearchResponseBodySpaceResultItemsTeamVO extends $tea.Model {
+  id?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchResponseBodySpaceResultItemsUserLastOperation extends $tea.Model {
   name?: string;
   time?: number;
@@ -5092,6 +5120,7 @@ export class SearchResponseBodySpaceResultItems extends $tea.Model {
   name?: string;
   originName?: string;
   spaceId?: string;
+  teamVO?: SearchResponseBodySpaceResultItemsTeamVO;
   url?: string;
   userLastOperation?: SearchResponseBodySpaceResultItemsUserLastOperation;
   static names(): { [key: string]: string } {
@@ -5100,6 +5129,7 @@ export class SearchResponseBodySpaceResultItems extends $tea.Model {
       name: 'name',
       originName: 'originName',
       spaceId: 'spaceId',
+      teamVO: 'teamVO',
       url: 'url',
       userLastOperation: 'userLastOperation',
     };
@@ -5111,6 +5141,7 @@ export class SearchResponseBodySpaceResultItems extends $tea.Model {
       name: 'string',
       originName: 'string',
       spaceId: 'string',
+      teamVO: SearchResponseBodySpaceResultItemsTeamVO,
       url: 'string',
       userLastOperation: SearchResponseBodySpaceResultItemsUserLastOperation,
     };

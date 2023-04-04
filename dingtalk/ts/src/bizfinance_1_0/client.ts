@@ -3522,16 +3522,16 @@ export class UpdateInvoiceAccountingPeriodDateRequest extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountingPeriodDateResponseBody extends $tea.Model {
-  failInvoices?: UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices[];
+  result?: UpdateInvoiceAccountingPeriodDateResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
-      failInvoices: 'failInvoices',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      failInvoices: { 'type': 'array', 'itemType': UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices },
+      result: UpdateInvoiceAccountingPeriodDateResponseBodyResult,
     };
   }
 
@@ -3607,16 +3607,16 @@ export class UpdateInvoiceAccountingStatusRequest extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountingStatusResponseBody extends $tea.Model {
-  failInvoices?: UpdateInvoiceAccountingStatusResponseBodyFailInvoices[];
+  result?: UpdateInvoiceAccountingStatusResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
-      failInvoices: 'failInvoices',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      failInvoices: { 'type': 'array', 'itemType': UpdateInvoiceAccountingStatusResponseBodyFailInvoices },
+      result: UpdateInvoiceAccountingStatusResponseBodyResult,
     };
   }
 
@@ -7538,11 +7538,15 @@ export class UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList ex
   }
 }
 
-export class UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices extends $tea.Model {
+export class UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
     };
@@ -7550,8 +7554,35 @@ export class UpdateInvoiceAccountingPeriodDateResponseBodyFailInvoices extends $
 
   static types(): { [key: string]: any } {
     return {
+      errorCode: 'string',
+      errorMsg: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingPeriodDateResponseBodyResult extends $tea.Model {
+  failCount?: number;
+  failInvoices?: UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      failCount: 'failCount',
+      failInvoices: 'failInvoices',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failCount: 'number',
+      failInvoices: { 'type': 'array', 'itemType': UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices },
+      success: 'boolean',
     };
   }
 
@@ -7588,11 +7619,15 @@ export class UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList extend
   }
 }
 
-export class UpdateInvoiceAccountingStatusResponseBodyFailInvoices extends $tea.Model {
+export class UpdateInvoiceAccountingStatusResponseBodyResultFailInvoices extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
     };
@@ -7600,8 +7635,35 @@ export class UpdateInvoiceAccountingStatusResponseBodyFailInvoices extends $tea.
 
   static types(): { [key: string]: any } {
     return {
+      errorCode: 'string',
+      errorMsg: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInvoiceAccountingStatusResponseBodyResult extends $tea.Model {
+  failCount?: number;
+  failInvoices?: UpdateInvoiceAccountingStatusResponseBodyResultFailInvoices[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      failCount: 'failCount',
+      failInvoices: 'failInvoices',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failCount: 'number',
+      failInvoices: { 'type': 'array', 'itemType': UpdateInvoiceAccountingStatusResponseBodyResultFailInvoices },
+      success: 'boolean',
     };
   }
 

@@ -7231,6 +7231,8 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
   actionView?: string;
   bizId?: string;
   docMemberList?: ListAuditLogResponseBodyListDocMemberList[];
+  docMobileUrl?: string;
+  docPcUrl?: string;
   docReceiverList?: ListAuditLogResponseBodyListDocReceiverList[];
   gmtCreate?: number;
   gmtModified?: number;
@@ -7251,12 +7253,18 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
   status?: number;
   targetSpaceId?: number;
   userId?: string;
+  workSpaceId?: number;
+  workSpaceMobileUrl?: string;
+  workSpaceName?: string;
+  workSpacePcUrl?: string;
   static names(): { [key: string]: string } {
     return {
       action: 'action',
       actionView: 'actionView',
       bizId: 'bizId',
       docMemberList: 'docMemberList',
+      docMobileUrl: 'docMobileUrl',
+      docPcUrl: 'docPcUrl',
       docReceiverList: 'docReceiverList',
       gmtCreate: 'gmtCreate',
       gmtModified: 'gmtModified',
@@ -7277,6 +7285,10 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
       status: 'status',
       targetSpaceId: 'targetSpaceId',
       userId: 'userId',
+      workSpaceId: 'workSpaceId',
+      workSpaceMobileUrl: 'workSpaceMobileUrl',
+      workSpaceName: 'workSpaceName',
+      workSpacePcUrl: 'workSpacePcUrl',
     };
   }
 
@@ -7286,6 +7298,8 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
       actionView: 'string',
       bizId: 'string',
       docMemberList: { 'type': 'array', 'itemType': ListAuditLogResponseBodyListDocMemberList },
+      docMobileUrl: 'string',
+      docPcUrl: 'string',
       docReceiverList: { 'type': 'array', 'itemType': ListAuditLogResponseBodyListDocReceiverList },
       gmtCreate: 'number',
       gmtModified: 'number',
@@ -7306,6 +7320,10 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
       status: 'number',
       targetSpaceId: 'number',
       userId: 'string',
+      workSpaceId: 'number',
+      workSpaceMobileUrl: 'string',
+      workSpaceName: 'string',
+      workSpacePcUrl: 'string',
     };
   }
 
@@ -7654,6 +7672,7 @@ export class QueryUserBehaviorResponseBodyData extends $tea.Model {
   scene?: string;
   time?: number;
   type?: number;
+  userId?: string;
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7662,6 +7681,7 @@ export class QueryUserBehaviorResponseBodyData extends $tea.Model {
       scene: 'scene',
       time: 'time',
       type: 'type',
+      userId: 'userId',
       userName: 'userName',
     };
   }
@@ -7673,6 +7693,7 @@ export class QueryUserBehaviorResponseBodyData extends $tea.Model {
       scene: 'string',
       time: 'number',
       type: 'number',
+      userId: 'string',
       userName: 'string',
     };
   }

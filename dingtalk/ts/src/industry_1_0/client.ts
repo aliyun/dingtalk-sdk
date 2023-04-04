@@ -4877,11 +4877,13 @@ export class DigitalStoreContactInfoHeaders extends $tea.Model {
 
 export class DigitalStoreContactInfoResponseBody extends $tea.Model {
   code?: string;
+  dingDeptId?: number;
   name?: string;
   rootDeptId?: number;
   static names(): { [key: string]: string } {
     return {
       code: 'code',
+      dingDeptId: 'dingDeptId',
       name: 'name',
       rootDeptId: 'rootDeptId',
     };
@@ -4890,6 +4892,7 @@ export class DigitalStoreContactInfoResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       code: 'string',
+      dingDeptId: 'number',
       name: 'string',
       rootDeptId: 'number',
     };
@@ -5118,12 +5121,14 @@ export class DigitalStoreNodeInfoRequest extends $tea.Model {
 }
 
 export class DigitalStoreNodeInfoResponseBody extends $tea.Model {
+  dingDeptId?: number;
   id?: number;
   name?: string;
   parentId?: number;
   type?: number;
   static names(): { [key: string]: string } {
     return {
+      dingDeptId: 'dingDeptId',
       id: 'id',
       name: 'name',
       parentId: 'parentId',
@@ -5133,6 +5138,7 @@ export class DigitalStoreNodeInfoResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      dingDeptId: 'number',
       id: 'number',
       name: 'string',
       parentId: 'number',
@@ -5352,6 +5358,7 @@ export class DigitalStoreStoreInfoRequest extends $tea.Model {
 export class DigitalStoreStoreInfoResponseBody extends $tea.Model {
   address?: string;
   businessHours?: string;
+  dingDeptId?: number;
   latitude?: string;
   locationAddress?: string;
   longitude?: string;
@@ -5367,6 +5374,7 @@ export class DigitalStoreStoreInfoResponseBody extends $tea.Model {
     return {
       address: 'address',
       businessHours: 'businessHours',
+      dingDeptId: 'dingDeptId',
       latitude: 'latitude',
       locationAddress: 'locationAddress',
       longitude: 'longitude',
@@ -5385,6 +5393,7 @@ export class DigitalStoreStoreInfoResponseBody extends $tea.Model {
     return {
       address: 'string',
       businessHours: 'string',
+      dingDeptId: 'number',
       latitude: 'string',
       locationAddress: 'string',
       longitude: 'string',
@@ -5511,6 +5520,88 @@ export class DigitalStoreSubNodesResponse extends $tea.Model {
   }
 }
 
+export class DigitalStoreUpdateAuthInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUpdateAuthInfoRequest extends $tea.Model {
+  updateUserList?: DigitalStoreUpdateAuthInfoRequestUpdateUserList[];
+  static names(): { [key: string]: string } {
+    return {
+      updateUserList: 'updateUserList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      updateUserList: { 'type': 'array', 'itemType': DigitalStoreUpdateAuthInfoRequestUpdateUserList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUpdateAuthInfoResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUpdateAuthInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: DigitalStoreUpdateAuthInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: DigitalStoreUpdateAuthInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DigitalStoreUserInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5557,12 +5648,14 @@ export class DigitalStoreUserInfoRequest extends $tea.Model {
 
 export class DigitalStoreUserInfoResponseBody extends $tea.Model {
   name?: string;
+  roleIdList?: number[];
   scopeList?: number[];
   storeList?: number[];
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       name: 'name',
+      roleIdList: 'roleIdList',
       scopeList: 'scopeList',
       storeList: 'storeList',
       userId: 'userId',
@@ -5572,6 +5665,7 @@ export class DigitalStoreUserInfoResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       name: 'string',
+      roleIdList: { 'type': 'array', 'itemType': 'number' },
       scopeList: { 'type': 'array', 'itemType': 'number' },
       storeList: { 'type': 'array', 'itemType': 'number' },
       userId: 'string',
@@ -10623,6 +10717,75 @@ export class DigitalStoreSubNodesResponseBodyContent extends $tea.Model {
   }
 }
 
+export class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList extends $tea.Model {
+  roleName?: string;
+  sourceRoleId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      roleName: 'roleName',
+      sourceRoleId: 'sourceRoleId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleName: 'string',
+      sourceRoleId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList extends $tea.Model {
+  dingDeptId?: number;
+  sourceDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dingDeptId: 'dingDeptId',
+      sourceDeptId: 'sourceDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingDeptId: 'number',
+      sourceDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreUpdateAuthInfoRequestUpdateUserList extends $tea.Model {
+  roleList?: DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList[];
+  userAuthList?: DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roleList: 'roleList',
+      userAuthList: 'userAuthList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleList: { 'type': 'array', 'itemType': DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList },
+      userAuthList: { 'type': 'array', 'itemType': DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DigitalStoreUsersResponseBodyContent extends $tea.Model {
   name?: string;
   userId?: string;
@@ -15200,6 +15363,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<DigitalStoreSubNodesResponse>(await this.doROARequest("DigitalStoreSubNodes", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/subsidiaryNodes`, "json", req, runtime), new DigitalStoreSubNodesResponse({}));
+  }
+
+  async digitalStoreUpdateAuthInfo(request: DigitalStoreUpdateAuthInfoRequest): Promise<DigitalStoreUpdateAuthInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreUpdateAuthInfoHeaders({ });
+    return await this.digitalStoreUpdateAuthInfoWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreUpdateAuthInfoWithOptions(request: DigitalStoreUpdateAuthInfoRequest, headers: DigitalStoreUpdateAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreUpdateAuthInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.updateUserList)) {
+      body["updateUserList"] = request.updateUserList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<DigitalStoreUpdateAuthInfoResponse>(await this.doROARequest("DigitalStoreUpdateAuthInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/digitalStores/authInfos`, "json", req, runtime), new DigitalStoreUpdateAuthInfoResponse({}));
   }
 
   async digitalStoreUserInfo(request: DigitalStoreUserInfoRequest): Promise<DigitalStoreUserInfoResponse> {

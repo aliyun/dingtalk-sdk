@@ -2574,11 +2574,13 @@ export class GetWorkspaceHeaders extends $tea.Model {
 export class GetWorkspaceResponseBody extends $tea.Model {
   isDeleted?: boolean;
   owner?: string;
+  rootDentryUuid?: string;
   url?: string;
   static names(): { [key: string]: string } {
     return {
       isDeleted: 'isDeleted',
       owner: 'owner',
+      rootDentryUuid: 'rootDentryUuid',
       url: 'url',
     };
   }
@@ -2587,6 +2589,7 @@ export class GetWorkspaceResponseBody extends $tea.Model {
     return {
       isDeleted: 'boolean',
       owner: 'string',
+      rootDentryUuid: 'string',
       url: 'string',
     };
   }
