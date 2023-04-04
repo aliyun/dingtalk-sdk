@@ -15350,6 +15350,160 @@ class QueryClassScheduleConfigResponse(TeaModel):
         return self
 
 
+class QueryDeviceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDeviceRequest(TeaModel):
+    def __init__(
+        self,
+        sn: str = None,
+    ):
+        # 设备sn码
+        self.sn = sn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sn is not None:
+            result['sn'] = self.sn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        return self
+
+
+class QueryDeviceResponseBody(TeaModel):
+    def __init__(
+        self,
+        gmt_expiry: int = None,
+        model: str = None,
+        name: str = None,
+        sn: str = None,
+        type: str = None,
+    ):
+        # 设备过期时间
+        self.gmt_expiry = gmt_expiry
+        # 设备型号
+        self.model = model
+        # 设备名称
+        self.name = name
+        # 设备sn码
+        self.sn = sn
+        # 设备类型
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.gmt_expiry is not None:
+            result['gmtExpiry'] = self.gmt_expiry
+        if self.model is not None:
+            result['model'] = self.model
+        if self.name is not None:
+            result['name'] = self.name
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('gmtExpiry') is not None:
+            self.gmt_expiry = m.get('gmtExpiry')
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class QueryDeviceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryDeviceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryDeviceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryDeviceListByCorpIdHeaders(TeaModel):
     def __init__(
         self,
@@ -16073,7 +16227,6 @@ class QueryOrderResponseBody(TeaModel):
         order_no: str = None,
         order_type: str = None,
         outer_user_id: str = None,
-        pay_id: str = None,
         pay_logon_id: str = None,
         pay_status: int = None,
         pay_time: str = None,
@@ -16110,8 +16263,6 @@ class QueryOrderResponseBody(TeaModel):
         self.order_type = order_type
         # 用户唯一id。
         self.outer_user_id = outer_user_id
-        # 买家支付id。
-        self.pay_id = pay_id
         # 买家支付登陆id。
         self.pay_logon_id = pay_logon_id
         self.pay_status = pay_status
@@ -16167,8 +16318,6 @@ class QueryOrderResponseBody(TeaModel):
             result['orderType'] = self.order_type
         if self.outer_user_id is not None:
             result['outerUserId'] = self.outer_user_id
-        if self.pay_id is not None:
-            result['payId'] = self.pay_id
         if self.pay_logon_id is not None:
             result['payLogonId'] = self.pay_logon_id
         if self.pay_status is not None:
@@ -16221,8 +16370,6 @@ class QueryOrderResponseBody(TeaModel):
             self.order_type = m.get('orderType')
         if m.get('outerUserId') is not None:
             self.outer_user_id = m.get('outerUserId')
-        if m.get('payId') is not None:
-            self.pay_id = m.get('payId')
         if m.get('payLogonId') is not None:
             self.pay_logon_id = m.get('payLogonId')
         if m.get('payStatus') is not None:
@@ -17949,7 +18096,6 @@ class QuerySnsOrderResponseBody(TeaModel):
         order_no: str = None,
         order_type: str = None,
         outer_user_id: str = None,
-        pay_id: str = None,
         pay_logon_id: str = None,
         pay_status: int = None,
         pay_time: str = None,
@@ -17986,8 +18132,6 @@ class QuerySnsOrderResponseBody(TeaModel):
         self.order_type = order_type
         # 用户唯一id。
         self.outer_user_id = outer_user_id
-        # 买家支付id。
-        self.pay_id = pay_id
         # 买家支付登陆id。
         self.pay_logon_id = pay_logon_id
         self.pay_status = pay_status
@@ -18043,8 +18187,6 @@ class QuerySnsOrderResponseBody(TeaModel):
             result['orderType'] = self.order_type
         if self.outer_user_id is not None:
             result['outerUserId'] = self.outer_user_id
-        if self.pay_id is not None:
-            result['payId'] = self.pay_id
         if self.pay_logon_id is not None:
             result['payLogonId'] = self.pay_logon_id
         if self.pay_status is not None:
@@ -18097,8 +18239,6 @@ class QuerySnsOrderResponseBody(TeaModel):
             self.order_type = m.get('orderType')
         if m.get('outerUserId') is not None:
             self.outer_user_id = m.get('outerUserId')
-        if m.get('payId') is not None:
-            self.pay_id = m.get('payId')
         if m.get('payLogonId') is not None:
             self.pay_logon_id = m.get('payLogonId')
         if m.get('payStatus') is not None:

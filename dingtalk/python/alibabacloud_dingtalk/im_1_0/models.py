@@ -4122,6 +4122,7 @@ class GetSceneGroupInfoResponseBody(TeaModel):
         icon: str = None,
         open_conversation_id: str = None,
         owner_user_id: str = None,
+        status: int = None,
         success: bool = None,
         template_id: str = None,
         title: str = None,
@@ -4134,6 +4135,10 @@ class GetSceneGroupInfoResponseBody(TeaModel):
         self.open_conversation_id = open_conversation_id
         # 群主员工id
         self.owner_user_id = owner_user_id
+        # 群状态。
+        #  1：正常
+        #  2：已解散
+        self.status = status
         # result
         self.success = success
         # 场景群模板ID
@@ -4158,6 +4163,8 @@ class GetSceneGroupInfoResponseBody(TeaModel):
             result['openConversationId'] = self.open_conversation_id
         if self.owner_user_id is not None:
             result['ownerUserId'] = self.owner_user_id
+        if self.status is not None:
+            result['status'] = self.status
         if self.success is not None:
             result['success'] = self.success
         if self.template_id is not None:
@@ -4176,6 +4183,8 @@ class GetSceneGroupInfoResponseBody(TeaModel):
             self.open_conversation_id = m.get('openConversationId')
         if m.get('ownerUserId') is not None:
             self.owner_user_id = m.get('ownerUserId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         if m.get('success') is not None:
             self.success = m.get('success')
         if m.get('templateId') is not None:
@@ -7775,6 +7784,203 @@ class RemoveRobotFromConversationResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = RemoveRobotFromConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchInnerGroupsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchInnerGroupsRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        search_key: str = None,
+        user_id: str = None,
+    ):
+        # 查询最大数量。
+        self.max_results = max_results
+        # 关键词。
+        self.search_key = search_key
+        # 用户userId。
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.search_key is not None:
+            result['searchKey'] = self.search_key
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('searchKey') is not None:
+            self.search_key = m.get('searchKey')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchInnerGroupsResponseBodyGroupInfos(TeaModel):
+    def __init__(
+        self,
+        icon: str = None,
+        member_amount: str = None,
+        open_conversation_id: str = None,
+        title: str = None,
+    ):
+        # 群头像。
+        self.icon = icon
+        # 群成员人数。
+        self.member_amount = member_amount
+        # 会话id。
+        self.open_conversation_id = open_conversation_id
+        # 群名称。
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.member_amount is not None:
+            result['memberAmount'] = self.member_amount
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('memberAmount') is not None:
+            self.member_amount = m.get('memberAmount')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SearchInnerGroupsResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_infos: List[SearchInnerGroupsResponseBodyGroupInfos] = None,
+    ):
+        # 群列表。
+        self.group_infos = group_infos
+
+    def validate(self):
+        if self.group_infos:
+            for k in self.group_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupInfos'] = []
+        if self.group_infos is not None:
+            for k in self.group_infos:
+                result['groupInfos'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_infos = []
+        if m.get('groupInfos') is not None:
+            for k in m.get('groupInfos'):
+                temp_model = SearchInnerGroupsResponseBodyGroupInfos()
+                self.group_infos.append(temp_model.from_map(k))
+        return self
+
+
+class SearchInnerGroupsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SearchInnerGroupsResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SearchInnerGroupsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

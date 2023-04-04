@@ -3227,6 +3227,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('RemoveRobotFromConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots/remove', 'json', req, runtime)
         )
 
+    def search_inner_groups(
+        self,
+        request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
+    ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SearchInnerGroupsHeaders()
+        return self.search_inner_groups_with_options(request, headers, runtime)
+
+    async def search_inner_groups_async(
+        self,
+        request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
+    ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SearchInnerGroupsHeaders()
+        return await self.search_inner_groups_with_options_async(request, headers, runtime)
+
+    def search_inner_groups_with_options(
+        self,
+        request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
+        headers: dingtalkim__1__0_models.SearchInnerGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.search_key):
+            body['searchKey'] = request.search_key
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SearchInnerGroupsResponse(),
+            self.do_roarequest('SearchInnerGroups', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/innerGroups/search', 'json', req, runtime)
+        )
+
+    async def search_inner_groups_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
+        headers: dingtalkim__1__0_models.SearchInnerGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.search_key):
+            body['searchKey'] = request.search_key
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SearchInnerGroupsResponse(),
+            await self.do_roarequest_async('SearchInnerGroups', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/innerGroups/search', 'json', req, runtime)
+        )
+
     def send_interactive_card(
         self,
         request: dingtalkim__1__0_models.SendInteractiveCardRequest,

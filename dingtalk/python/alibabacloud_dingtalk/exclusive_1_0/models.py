@@ -8856,6 +8856,8 @@ class ListAuditLogResponseBodyList(TeaModel):
         action_view: str = None,
         biz_id: str = None,
         doc_member_list: List[ListAuditLogResponseBodyListDocMemberList] = None,
+        doc_mobile_url: str = None,
+        doc_pc_url: str = None,
         doc_receiver_list: List[ListAuditLogResponseBodyListDocReceiverList] = None,
         gmt_create: int = None,
         gmt_modified: int = None,
@@ -8876,6 +8878,10 @@ class ListAuditLogResponseBodyList(TeaModel):
         status: int = None,
         target_space_id: int = None,
         user_id: str = None,
+        work_space_id: int = None,
+        work_space_mobile_url: str = None,
+        work_space_name: str = None,
+        work_space_pc_url: str = None,
     ):
         # 操作类型
         self.action = action
@@ -8885,6 +8891,8 @@ class ListAuditLogResponseBodyList(TeaModel):
         self.biz_id = biz_id
         # 接收成员列表，仅分享文档返回
         self.doc_member_list = doc_member_list
+        self.doc_mobile_url = doc_mobile_url
+        self.doc_pc_url = doc_pc_url
         # 成员授权列表，仅文档授权返回
         self.doc_receiver_list = doc_receiver_list
         # 记录生成时间，unix时间戳，单位ms
@@ -8925,6 +8933,10 @@ class ListAuditLogResponseBodyList(TeaModel):
         self.target_space_id = target_space_id
         # 员工的userId
         self.user_id = user_id
+        self.work_space_id = work_space_id
+        self.work_space_mobile_url = work_space_mobile_url
+        self.work_space_name = work_space_name
+        self.work_space_pc_url = work_space_pc_url
 
     def validate(self):
         if self.doc_member_list:
@@ -8952,6 +8964,10 @@ class ListAuditLogResponseBodyList(TeaModel):
         if self.doc_member_list is not None:
             for k in self.doc_member_list:
                 result['docMemberList'].append(k.to_map() if k else None)
+        if self.doc_mobile_url is not None:
+            result['docMobileUrl'] = self.doc_mobile_url
+        if self.doc_pc_url is not None:
+            result['docPcUrl'] = self.doc_pc_url
         result['docReceiverList'] = []
         if self.doc_receiver_list is not None:
             for k in self.doc_receiver_list:
@@ -8994,6 +9010,14 @@ class ListAuditLogResponseBodyList(TeaModel):
             result['targetSpaceId'] = self.target_space_id
         if self.user_id is not None:
             result['userId'] = self.user_id
+        if self.work_space_id is not None:
+            result['workSpaceId'] = self.work_space_id
+        if self.work_space_mobile_url is not None:
+            result['workSpaceMobileUrl'] = self.work_space_mobile_url
+        if self.work_space_name is not None:
+            result['workSpaceName'] = self.work_space_name
+        if self.work_space_pc_url is not None:
+            result['workSpacePcUrl'] = self.work_space_pc_url
         return result
 
     def from_map(self, m: dict = None):
@@ -9009,6 +9033,10 @@ class ListAuditLogResponseBodyList(TeaModel):
             for k in m.get('docMemberList'):
                 temp_model = ListAuditLogResponseBodyListDocMemberList()
                 self.doc_member_list.append(temp_model.from_map(k))
+        if m.get('docMobileUrl') is not None:
+            self.doc_mobile_url = m.get('docMobileUrl')
+        if m.get('docPcUrl') is not None:
+            self.doc_pc_url = m.get('docPcUrl')
         self.doc_receiver_list = []
         if m.get('docReceiverList') is not None:
             for k in m.get('docReceiverList'):
@@ -9052,6 +9080,14 @@ class ListAuditLogResponseBodyList(TeaModel):
             self.target_space_id = m.get('targetSpaceId')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
+        if m.get('workSpaceId') is not None:
+            self.work_space_id = m.get('workSpaceId')
+        if m.get('workSpaceMobileUrl') is not None:
+            self.work_space_mobile_url = m.get('workSpaceMobileUrl')
+        if m.get('workSpaceName') is not None:
+            self.work_space_name = m.get('workSpaceName')
+        if m.get('workSpacePcUrl') is not None:
+            self.work_space_pc_url = m.get('workSpacePcUrl')
         return self
 
 
@@ -11114,6 +11150,7 @@ class QueryUserBehaviorResponseBodyData(TeaModel):
         scene: str = None,
         time: int = None,
         type: int = None,
+        user_id: str = None,
         user_name: str = None,
     ):
         self.picture_url = picture_url
@@ -11121,6 +11158,7 @@ class QueryUserBehaviorResponseBodyData(TeaModel):
         self.scene = scene
         self.time = time
         self.type = type
+        self.user_id = user_id
         self.user_name = user_name
 
     def validate(self):
@@ -11142,6 +11180,8 @@ class QueryUserBehaviorResponseBodyData(TeaModel):
             result['time'] = self.time
         if self.type is not None:
             result['type'] = self.type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         if self.user_name is not None:
             result['userName'] = self.user_name
         return result
@@ -11158,6 +11198,8 @@ class QueryUserBehaviorResponseBodyData(TeaModel):
             self.time = m.get('time')
         if m.get('type') is not None:
             self.type = m.get('type')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         if m.get('userName') is not None:
             self.user_name = m.get('userName')
         return self

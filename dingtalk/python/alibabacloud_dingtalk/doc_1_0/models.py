@@ -5442,10 +5442,12 @@ class GetWorkspaceResponseBody(TeaModel):
         self,
         is_deleted: bool = None,
         owner: str = None,
+        root_dentry_uuid: str = None,
         url: str = None,
     ):
         self.is_deleted = is_deleted
         self.owner = owner
+        self.root_dentry_uuid = root_dentry_uuid
         self.url = url
 
     def validate(self):
@@ -5461,6 +5463,8 @@ class GetWorkspaceResponseBody(TeaModel):
             result['isDeleted'] = self.is_deleted
         if self.owner is not None:
             result['owner'] = self.owner
+        if self.root_dentry_uuid is not None:
+            result['rootDentryUuid'] = self.root_dentry_uuid
         if self.url is not None:
             result['url'] = self.url
         return result
@@ -5471,6 +5475,8 @@ class GetWorkspaceResponseBody(TeaModel):
             self.is_deleted = m.get('isDeleted')
         if m.get('owner') is not None:
             self.owner = m.get('owner')
+        if m.get('rootDentryUuid') is not None:
+            self.root_dentry_uuid = m.get('rootDentryUuid')
         if m.get('url') is not None:
             self.url = m.get('url')
         return self

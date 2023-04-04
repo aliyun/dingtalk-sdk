@@ -4277,6 +4277,70 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('DigitalStoreSubNodes', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/subsidiaryNodes', 'json', req, runtime)
         )
 
+    def digital_store_update_auth_info(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoHeaders()
+        return self.digital_store_update_auth_info_with_options(request, headers, runtime)
+
+    async def digital_store_update_auth_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoHeaders()
+        return await self.digital_store_update_auth_info_with_options_async(request, headers, runtime)
+
+    def digital_store_update_auth_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.update_user_list):
+            body['updateUserList'] = request.update_user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse(),
+            self.do_roarequest('DigitalStoreUpdateAuthInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/digitalStores/authInfos', 'json', req, runtime)
+        )
+
+    async def digital_store_update_auth_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.update_user_list):
+            body['updateUserList'] = request.update_user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse(),
+            await self.do_roarequest_async('DigitalStoreUpdateAuthInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/digitalStores/authInfos', 'json', req, runtime)
+        )
+
     def digital_store_user_info(
         self,
         request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,

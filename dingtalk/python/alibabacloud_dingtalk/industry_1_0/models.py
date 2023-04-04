@@ -10158,6 +10158,260 @@ class DigitalStoreSubNodesResponse(TeaModel):
         return self
 
 
+class DigitalStoreUpdateAuthInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList(TeaModel):
+    def __init__(
+        self,
+        role_name: str = None,
+        source_role_id: int = None,
+    ):
+        self.role_name = role_name
+        self.source_role_id = source_role_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        if self.source_role_id is not None:
+            result['sourceRoleId'] = self.source_role_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        if m.get('sourceRoleId') is not None:
+            self.source_role_id = m.get('sourceRoleId')
+        return self
+
+
+class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList(TeaModel):
+    def __init__(
+        self,
+        ding_dept_id: int = None,
+        source_dept_id: int = None,
+    ):
+        self.ding_dept_id = ding_dept_id
+        self.source_dept_id = source_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_dept_id is not None:
+            result['dingDeptId'] = self.ding_dept_id
+        if self.source_dept_id is not None:
+            result['sourceDeptId'] = self.source_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingDeptId') is not None:
+            self.ding_dept_id = m.get('dingDeptId')
+        if m.get('sourceDeptId') is not None:
+            self.source_dept_id = m.get('sourceDeptId')
+        return self
+
+
+class DigitalStoreUpdateAuthInfoRequestUpdateUserList(TeaModel):
+    def __init__(
+        self,
+        role_list: List[DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList] = None,
+        user_auth_list: List[DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList] = None,
+        user_id: str = None,
+    ):
+        self.role_list = role_list
+        self.user_auth_list = user_auth_list
+        self.user_id = user_id
+
+    def validate(self):
+        if self.role_list:
+            for k in self.role_list:
+                if k:
+                    k.validate()
+        if self.user_auth_list:
+            for k in self.user_auth_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['roleList'] = []
+        if self.role_list is not None:
+            for k in self.role_list:
+                result['roleList'].append(k.to_map() if k else None)
+        result['userAuthList'] = []
+        if self.user_auth_list is not None:
+            for k in self.user_auth_list:
+                result['userAuthList'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.role_list = []
+        if m.get('roleList') is not None:
+            for k in m.get('roleList'):
+                temp_model = DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList()
+                self.role_list.append(temp_model.from_map(k))
+        self.user_auth_list = []
+        if m.get('userAuthList') is not None:
+            for k in m.get('userAuthList'):
+                temp_model = DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList()
+                self.user_auth_list.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DigitalStoreUpdateAuthInfoRequest(TeaModel):
+    def __init__(
+        self,
+        update_user_list: List[DigitalStoreUpdateAuthInfoRequestUpdateUserList] = None,
+    ):
+        self.update_user_list = update_user_list
+
+    def validate(self):
+        if self.update_user_list:
+            for k in self.update_user_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['updateUserList'] = []
+        if self.update_user_list is not None:
+            for k in self.update_user_list:
+                result['updateUserList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.update_user_list = []
+        if m.get('updateUserList') is not None:
+            for k in m.get('updateUserList'):
+                temp_model = DigitalStoreUpdateAuthInfoRequestUpdateUserList()
+                self.update_user_list.append(temp_model.from_map(k))
+        return self
+
+
+class DigitalStoreUpdateAuthInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DigitalStoreUpdateAuthInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: DigitalStoreUpdateAuthInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreUpdateAuthInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DigitalStoreUserInfoHeaders(TeaModel):
     def __init__(
         self,
