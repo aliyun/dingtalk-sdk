@@ -317,6 +317,8 @@ export class CreateCustomerHeaders extends $tea.Model {
 export class CreateCustomerRequest extends $tea.Model {
   creator?: string;
   description?: string;
+  drawerEmail?: string;
+  drawerTelephone?: string;
   name?: string;
   purchaserAccount?: string;
   purchaserAddress?: string;
@@ -328,6 +330,8 @@ export class CreateCustomerRequest extends $tea.Model {
     return {
       creator: 'creator',
       description: 'description',
+      drawerEmail: 'drawerEmail',
+      drawerTelephone: 'drawerTelephone',
       name: 'name',
       purchaserAccount: 'purchaserAccount',
       purchaserAddress: 'purchaserAddress',
@@ -342,6 +346,8 @@ export class CreateCustomerRequest extends $tea.Model {
     return {
       creator: 'string',
       description: 'string',
+      drawerEmail: 'string',
+      drawerTelephone: 'string',
       name: 'string',
       purchaserAccount: 'string',
       purchaserAddress: 'string',
@@ -2420,6 +2426,88 @@ export class QueryProjectByPageResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       body: QueryProjectByPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptDetailForInvoiceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptDetailForInvoiceRequest extends $tea.Model {
+  instanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instanceId: 'instanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptDetailForInvoiceResponseBody extends $tea.Model {
+  result?: QueryReceiptDetailForInvoiceResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryReceiptDetailForInvoiceResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptDetailForInvoiceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: QueryReceiptDetailForInvoiceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: QueryReceiptDetailForInvoiceResponseBody,
     };
   }
 
@@ -4626,6 +4714,8 @@ export class BatchAddInvoiceResponseBodySuccessResult extends $tea.Model {
 
 export class BatchCreateCustomerRequestCreateCustomerRequestList extends $tea.Model {
   description?: string;
+  drawerEmail?: string;
+  drawerTelephone?: string;
   name?: string;
   purchaserAccount?: string;
   purchaserAddress?: string;
@@ -4636,6 +4726,8 @@ export class BatchCreateCustomerRequestCreateCustomerRequestList extends $tea.Mo
   static names(): { [key: string]: string } {
     return {
       description: 'description',
+      drawerEmail: 'drawerEmail',
+      drawerTelephone: 'drawerTelephone',
       name: 'name',
       purchaserAccount: 'purchaserAccount',
       purchaserAddress: 'purchaserAddress',
@@ -4649,6 +4741,8 @@ export class BatchCreateCustomerRequestCreateCustomerRequestList extends $tea.Mo
   static types(): { [key: string]: any } {
     return {
       description: 'string',
+      drawerEmail: 'string',
+      drawerTelephone: 'string',
       name: 'string',
       purchaserAccount: 'string',
       purchaserAddress: 'string',
@@ -5316,6 +5410,8 @@ export class QueryCustomerInfoResponseBodyList extends $tea.Model {
   contactName?: string;
   contactTelephone?: string;
   description?: string;
+  drawerEmail?: string;
+  drawerTelephone?: string;
   name?: string;
   purchaserAccount?: string;
   purchaserAddress?: string;
@@ -5334,6 +5430,8 @@ export class QueryCustomerInfoResponseBodyList extends $tea.Model {
       contactName: 'contactName',
       contactTelephone: 'contactTelephone',
       description: 'description',
+      drawerEmail: 'drawerEmail',
+      drawerTelephone: 'drawerTelephone',
       name: 'name',
       purchaserAccount: 'purchaserAccount',
       purchaserAddress: 'purchaserAddress',
@@ -5355,6 +5453,8 @@ export class QueryCustomerInfoResponseBodyList extends $tea.Model {
       contactName: 'string',
       contactTelephone: 'string',
       description: 'string',
+      drawerEmail: 'string',
+      drawerTelephone: 'string',
       name: 'string',
       purchaserAccount: 'string',
       purchaserAddress: 'string',
@@ -5523,6 +5623,172 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
   }
 }
 
+export class QueryReceiptDetailForInvoiceResponseBodyResultCreator extends $tea.Model {
+  avatarUrl?: string;
+  nick?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      nick: 'nick',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      nick: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptDetailForInvoiceResponseBodyResultCustomer extends $tea.Model {
+  code?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList extends $tea.Model {
+  amountWithTax?: string;
+  name?: string;
+  quantity?: string;
+  specification?: string;
+  taxRate?: string;
+  unit?: string;
+  unitPriceWithTax?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amountWithTax: 'amountWithTax',
+      name: 'name',
+      quantity: 'quantity',
+      specification: 'specification',
+      taxRate: 'taxRate',
+      unit: 'unit',
+      unitPriceWithTax: 'unitPriceWithTax',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amountWithTax: 'string',
+      name: 'string',
+      quantity: 'string',
+      specification: 'string',
+      taxRate: 'string',
+      unit: 'string',
+      unitPriceWithTax: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
+  amount?: string;
+  applyStatus?: string;
+  createTime?: string;
+  creator?: QueryReceiptDetailForInvoiceResponseBodyResultCreator;
+  customer?: QueryReceiptDetailForInvoiceResponseBodyResultCustomer;
+  drawerEmail?: string;
+  drawerTelephone?: string;
+  invoiceType?: string;
+  modelId?: string;
+  productInfoList?: QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList[];
+  purchaserAccount?: string;
+  purchaserAddress?: string;
+  purchaserBankName?: string;
+  purchaserName?: string;
+  purchaserTaxNo?: string;
+  purchaserTel?: string;
+  receiptId?: string;
+  recordTime?: string;
+  remark?: string;
+  source?: string;
+  status?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      applyStatus: 'applyStatus',
+      createTime: 'createTime',
+      creator: 'creator',
+      customer: 'customer',
+      drawerEmail: 'drawerEmail',
+      drawerTelephone: 'drawerTelephone',
+      invoiceType: 'invoiceType',
+      modelId: 'modelId',
+      productInfoList: 'productInfoList',
+      purchaserAccount: 'purchaserAccount',
+      purchaserAddress: 'purchaserAddress',
+      purchaserBankName: 'purchaserBankName',
+      purchaserName: 'purchaserName',
+      purchaserTaxNo: 'purchaserTaxNo',
+      purchaserTel: 'purchaserTel',
+      receiptId: 'receiptId',
+      recordTime: 'recordTime',
+      remark: 'remark',
+      source: 'source',
+      status: 'status',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      applyStatus: 'string',
+      createTime: 'string',
+      creator: QueryReceiptDetailForInvoiceResponseBodyResultCreator,
+      customer: QueryReceiptDetailForInvoiceResponseBodyResultCustomer,
+      drawerEmail: 'string',
+      drawerTelephone: 'string',
+      invoiceType: 'string',
+      modelId: 'string',
+      productInfoList: { 'type': 'array', 'itemType': QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList },
+      purchaserAccount: 'string',
+      purchaserAddress: 'string',
+      purchaserBankName: 'string',
+      purchaserName: 'string',
+      purchaserTaxNo: 'string',
+      purchaserTel: 'string',
+      receiptId: 'string',
+      recordTime: 'string',
+      remark: 'string',
+      source: 'string',
+      status: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryReceiptForInvoiceResponseBodyListCreator extends $tea.Model {
   avatarUrl?: string;
   nick?: string;
@@ -5570,14 +5836,54 @@ export class QueryReceiptForInvoiceResponseBodyListCustomer extends $tea.Model {
   }
 }
 
+export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.Model {
+  amountWithTax?: string;
+  name?: string;
+  quantity?: string;
+  specification?: string;
+  taxRate?: string;
+  unit?: string;
+  unitPriceWithTax?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amountWithTax: 'amountWithTax',
+      name: 'name',
+      quantity: 'quantity',
+      specification: 'specification',
+      taxRate: 'taxRate',
+      unit: 'unit',
+      unitPriceWithTax: 'unitPriceWithTax',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amountWithTax: 'string',
+      name: 'string',
+      quantity: 'string',
+      specification: 'string',
+      taxRate: 'string',
+      unit: 'string',
+      unitPriceWithTax: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
   amount?: string;
   applyStatus?: string;
   createTime?: string;
   creator?: QueryReceiptForInvoiceResponseBodyListCreator;
   customer?: QueryReceiptForInvoiceResponseBodyListCustomer;
+  drawerEmail?: string;
+  drawerTelephone?: string;
   invoiceType?: string;
   modelId?: string;
+  productInfoList?: QueryReceiptForInvoiceResponseBodyListProductInfoList[];
   purchaserAccount?: string;
   purchaserAddress?: string;
   purchaserBankName?: string;
@@ -5597,8 +5903,11 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
+      drawerEmail: 'drawerEmail',
+      drawerTelephone: 'drawerTelephone',
       invoiceType: 'invoiceType',
       modelId: 'modelId',
+      productInfoList: 'productInfoList',
       purchaserAccount: 'purchaserAccount',
       purchaserAddress: 'purchaserAddress',
       purchaserBankName: 'purchaserBankName',
@@ -5621,8 +5930,11 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
       createTime: 'string',
       creator: QueryReceiptForInvoiceResponseBodyListCreator,
       customer: QueryReceiptForInvoiceResponseBodyListCustomer,
+      drawerEmail: 'string',
+      drawerTelephone: 'string',
       invoiceType: 'string',
       modelId: 'string',
+      productInfoList: { 'type': 'array', 'itemType': QueryReceiptForInvoiceResponseBodyListProductInfoList },
       purchaserAccount: 'string',
       purchaserAddress: 'string',
       purchaserBankName: 'string',
@@ -8680,6 +8992,14 @@ export default class Client extends OpenApi {
       body["description"] = request.description;
     }
 
+    if (!Util.isUnset(request.drawerEmail)) {
+      body["drawerEmail"] = request.drawerEmail;
+    }
+
+    if (!Util.isUnset(request.drawerTelephone)) {
+      body["drawerTelephone"] = request.drawerTelephone;
+    }
+
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
     }
@@ -9411,6 +9731,35 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<QueryProjectByPageResponse>(await this.doROARequest("QueryProjectByPage", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/projects/list`, "json", req, runtime), new QueryProjectByPageResponse({}));
+  }
+
+  async queryReceiptDetailForInvoice(request: QueryReceiptDetailForInvoiceRequest): Promise<QueryReceiptDetailForInvoiceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryReceiptDetailForInvoiceHeaders({ });
+    return await this.queryReceiptDetailForInvoiceWithOptions(request, headers, runtime);
+  }
+
+  async queryReceiptDetailForInvoiceWithOptions(request: QueryReceiptDetailForInvoiceRequest, headers: QueryReceiptDetailForInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptDetailForInvoiceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instanceId)) {
+      query["instanceId"] = request.instanceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<QueryReceiptDetailForInvoiceResponse>(await this.doROARequest("QueryReceiptDetailForInvoice", "bizfinance_1.0", "HTTP", "GET", "AK", `/v1.0/bizfinance/invoices/receipts/details`, "json", req, runtime), new QueryReceiptDetailForInvoiceResponse({}));
   }
 
   async queryReceiptForInvoice(request: QueryReceiptForInvoiceRequest): Promise<QueryReceiptForInvoiceResponse> {

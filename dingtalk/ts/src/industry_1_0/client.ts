@@ -10719,7 +10719,7 @@ export class DigitalStoreSubNodesResponseBodyContent extends $tea.Model {
 
 export class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList extends $tea.Model {
   roleName?: string;
-  sourceRoleId?: number;
+  sourceRoleId?: string;
   static names(): { [key: string]: string } {
     return {
       roleName: 'roleName',
@@ -10730,7 +10730,7 @@ export class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList extends $te
   static types(): { [key: string]: any } {
     return {
       roleName: 'string',
-      sourceRoleId: 'number',
+      sourceRoleId: 'string',
     };
   }
 
@@ -10740,8 +10740,8 @@ export class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList extends $te
 }
 
 export class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList extends $tea.Model {
-  dingDeptId?: number;
-  sourceDeptId?: number;
+  dingDeptId?: string;
+  sourceDeptId?: string;
   static names(): { [key: string]: string } {
     return {
       dingDeptId: 'dingDeptId',
@@ -10751,8 +10751,8 @@ export class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList extends
 
   static types(): { [key: string]: any } {
     return {
-      dingDeptId: 'number',
-      sourceDeptId: 'number',
+      dingDeptId: 'string',
+      sourceDeptId: 'string',
     };
   }
 

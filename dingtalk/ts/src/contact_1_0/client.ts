@@ -4858,6 +4858,7 @@ export class UniqueQueryUserCardResponseBody extends $tea.Model {
   introduce?: string;
   name?: string;
   orgName?: string;
+  settings?: { [key: string]: any };
   templateId?: string;
   title?: string;
   static names(): { [key: string]: string } {
@@ -4869,6 +4870,7 @@ export class UniqueQueryUserCardResponseBody extends $tea.Model {
       introduce: 'introduce',
       name: 'name',
       orgName: 'orgName',
+      settings: 'settings',
       templateId: 'templateId',
       title: 'title',
     };
@@ -4883,6 +4885,7 @@ export class UniqueQueryUserCardResponseBody extends $tea.Model {
       introduce: 'string',
       name: 'string',
       orgName: 'string',
+      settings: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       templateId: 'string',
       title: 'string',
     };
@@ -6229,7 +6232,7 @@ export class GetCardInfoResponseBodyExtensionCardContactInfoEmail extends $tea.M
   }
 }
 
-export class GetCardInfoResponseBodyExtensionCardContactInfoTelephone extends $tea.Model {
+export class GetCardInfoResponseBodyExtensionCardContactInfoLink extends $tea.Model {
   label?: string;
   value?: string;
   static names(): { [key: string]: string } {
@@ -6251,7 +6254,7 @@ export class GetCardInfoResponseBodyExtensionCardContactInfoTelephone extends $t
   }
 }
 
-export class GetCardInfoResponseBodyExtensionCardContactInfoWechat extends $tea.Model {
+export class GetCardInfoResponseBodyExtensionCardContactInfoTelephone extends $tea.Model {
   label?: string;
   value?: string;
   static names(): { [key: string]: string } {
@@ -6276,14 +6279,14 @@ export class GetCardInfoResponseBodyExtensionCardContactInfoWechat extends $tea.
 export class GetCardInfoResponseBodyExtensionCardContactInfo extends $tea.Model {
   address?: GetCardInfoResponseBodyExtensionCardContactInfoAddress[];
   email?: GetCardInfoResponseBodyExtensionCardContactInfoEmail[];
+  link?: GetCardInfoResponseBodyExtensionCardContactInfoLink[];
   telephone?: GetCardInfoResponseBodyExtensionCardContactInfoTelephone[];
-  wechat?: GetCardInfoResponseBodyExtensionCardContactInfoWechat[];
   static names(): { [key: string]: string } {
     return {
       address: 'address',
       email: 'email',
+      link: 'link',
       telephone: 'telephone',
-      wechat: 'wechat',
     };
   }
 
@@ -6291,8 +6294,8 @@ export class GetCardInfoResponseBodyExtensionCardContactInfo extends $tea.Model 
     return {
       address: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoAddress },
       email: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoEmail },
+      link: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoLink },
       telephone: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoTelephone },
-      wechat: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoWechat },
     };
   }
 

@@ -1952,16 +1952,19 @@ export class GroupAddRequest extends $tea.Model {
 }
 
 export class GroupAddResponseBody extends $tea.Model {
-  result?: GroupAddResponseBodyResult[];
+  result?: GroupAddResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': GroupAddResponseBodyResult },
+      result: GroupAddResponseBodyResult,
+      success: 'boolean',
     };
   }
 
@@ -2121,16 +2124,19 @@ export class GroupUpdateRequest extends $tea.Model {
 }
 
 export class GroupUpdateResponseBody extends $tea.Model {
-  result?: GroupUpdateResponseBodyResult[];
+  result?: GroupUpdateResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': GroupUpdateResponseBodyResult },
+      result: GroupUpdateResponseBodyResult,
+      success: 'boolean',
     };
   }
 
@@ -4104,15 +4110,18 @@ export class GroupAddRequestFreeCheckSettingFreeCheckGap extends $tea.Model {
 }
 
 export class GroupAddRequestFreeCheckSetting extends $tea.Model {
+  delimitOffsetMinutesBetweenDays?: number;
   freeCheckGap?: GroupAddRequestFreeCheckSettingFreeCheckGap;
   static names(): { [key: string]: string } {
     return {
+      delimitOffsetMinutesBetweenDays: 'delimitOffsetMinutesBetweenDays',
       freeCheckGap: 'freeCheckGap',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      delimitOffsetMinutesBetweenDays: 'number',
       freeCheckGap: GroupAddRequestFreeCheckSettingFreeCheckGap,
     };
   }
@@ -4260,19 +4269,19 @@ export class GroupAddRequestWifis extends $tea.Model {
 }
 
 export class GroupAddResponseBodyResult extends $tea.Model {
-  groupId?: number;
-  groupName?: string;
+  id?: number;
+  name?: string;
   static names(): { [key: string]: string } {
     return {
-      groupId: 'groupId',
-      groupName: 'groupName',
+      id: 'id',
+      name: 'name',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      groupId: 'number',
-      groupName: 'string',
+      id: 'number',
+      name: 'string',
     };
   }
 
@@ -4304,15 +4313,18 @@ export class GroupUpdateRequestFreeCheckSettingFreeCheckGap extends $tea.Model {
 }
 
 export class GroupUpdateRequestFreeCheckSetting extends $tea.Model {
+  delimitOffsetMinutesBetweenDays?: number;
   freeCheckGap?: GroupUpdateRequestFreeCheckSettingFreeCheckGap;
   static names(): { [key: string]: string } {
     return {
+      delimitOffsetMinutesBetweenDays: 'delimitOffsetMinutesBetweenDays',
       freeCheckGap: 'freeCheckGap',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      delimitOffsetMinutesBetweenDays: 'number',
       freeCheckGap: GroupUpdateRequestFreeCheckSettingFreeCheckGap,
     };
   }
@@ -4413,19 +4425,19 @@ export class GroupUpdateRequestShiftVOList extends $tea.Model {
 }
 
 export class GroupUpdateResponseBodyResult extends $tea.Model {
-  groupId?: number;
-  groupName?: string;
+  id?: number;
+  name?: string;
   static names(): { [key: string]: string } {
     return {
-      groupId: 'groupId',
-      groupName: 'groupName',
+      id: 'id',
+      name: 'name',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      groupId: 'number',
-      groupName: 'string',
+      id: 'number',
+      name: 'string',
     };
   }
 

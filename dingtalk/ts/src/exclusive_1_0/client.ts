@@ -5252,6 +5252,91 @@ export class SaveAndSubmitAuthInfoResponse extends $tea.Model {
   }
 }
 
+export class SaveWhiteAppHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveWhiteAppRequest extends $tea.Model {
+  agentIdList?: number[];
+  operation?: string;
+  static names(): { [key: string]: string } {
+    return {
+      agentIdList: 'agentIdList',
+      operation: 'operation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentIdList: { 'type': 'array', 'itemType': 'number' },
+      operation: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveWhiteAppResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveWhiteAppResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SaveWhiteAppResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SaveWhiteAppResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOrgInnerGroupInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9934,6 +10019,39 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<SaveAndSubmitAuthInfoResponse>(await this.doROARequest("SaveAndSubmitAuthInfo", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/ognizations/authInfos/saveAndSubmit`, "json", req, runtime), new SaveAndSubmitAuthInfoResponse({}));
+  }
+
+  async saveWhiteApp(request: SaveWhiteAppRequest): Promise<SaveWhiteAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveWhiteAppHeaders({ });
+    return await this.saveWhiteAppWithOptions(request, headers, runtime);
+  }
+
+  async saveWhiteAppWithOptions(request: SaveWhiteAppRequest, headers: SaveWhiteAppHeaders, runtime: $Util.RuntimeOptions): Promise<SaveWhiteAppResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.agentIdList)) {
+      body["agentIdList"] = request.agentIdList;
+    }
+
+    if (!Util.isUnset(request.operation)) {
+      body["operation"] = request.operation;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<SaveWhiteAppResponse>(await this.doROARequest("SaveWhiteApp", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/miniApps/whiteLists/save`, "json", req, runtime), new SaveWhiteAppResponse({}));
   }
 
   async searchOrgInnerGroupInfo(request: SearchOrgInnerGroupInfoRequest): Promise<SearchOrgInnerGroupInfoResponse> {
