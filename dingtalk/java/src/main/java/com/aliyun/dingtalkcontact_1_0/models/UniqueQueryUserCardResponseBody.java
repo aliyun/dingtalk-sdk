@@ -47,6 +47,12 @@ public class UniqueQueryUserCardResponseBody extends TeaModel {
     public String orgName;
 
     /**
+     * <p>用户设置</p>
+     */
+    @NameInMap("settings")
+    public java.util.Map<String, ?> settings;
+
+    /**
      * <p>模版id</p>
      */
     @NameInMap("templateId")
@@ -117,6 +123,14 @@ public class UniqueQueryUserCardResponseBody extends TeaModel {
     }
     public String getOrgName() {
         return this.orgName;
+    }
+
+    public UniqueQueryUserCardResponseBody setSettings(java.util.Map<String, ?> settings) {
+        this.settings = settings;
+        return this;
+    }
+    public java.util.Map<String, ?> getSettings() {
+        return this.settings;
     }
 
     public UniqueQueryUserCardResponseBody setTemplateId(String templateId) {

@@ -42,6 +42,18 @@ public class BatchCreateCustomerRequest extends TeaModel {
         public String description;
 
         /**
+         * <p>开票人邮箱</p>
+         */
+        @NameInMap("drawerEmail")
+        public String drawerEmail;
+
+        /**
+         * <p>开票人手机号</p>
+         */
+        @NameInMap("drawerTelephone")
+        public String drawerTelephone;
+
+        /**
          * <p>客户名字</p>
          */
         @NameInMap("name")
@@ -94,6 +106,22 @@ public class BatchCreateCustomerRequest extends TeaModel {
         }
         public String getDescription() {
             return this.description;
+        }
+
+        public BatchCreateCustomerRequestCreateCustomerRequestList setDrawerEmail(String drawerEmail) {
+            this.drawerEmail = drawerEmail;
+            return this;
+        }
+        public String getDrawerEmail() {
+            return this.drawerEmail;
+        }
+
+        public BatchCreateCustomerRequestCreateCustomerRequestList setDrawerTelephone(String drawerTelephone) {
+            this.drawerTelephone = drawerTelephone;
+            return this;
+        }
+        public String getDrawerTelephone() {
+            return this.drawerTelephone;
         }
 
         public BatchCreateCustomerRequestCreateCustomerRequestList setName(String name) {

@@ -4,57 +4,59 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupAddResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("result")
-    public java.util.List<GroupAddResponseBodyResult> result;
+    public GroupAddResponseBodyResult result;
+
+    @NameInMap("success")
+    public Boolean success;
 
     public static GroupAddResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GroupAddResponseBody self = new GroupAddResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GroupAddResponseBody setResult(java.util.List<GroupAddResponseBodyResult> result) {
+    public GroupAddResponseBody setResult(GroupAddResponseBodyResult result) {
         this.result = result;
         return this;
     }
-    public java.util.List<GroupAddResponseBodyResult> getResult() {
+    public GroupAddResponseBodyResult getResult() {
         return this.result;
     }
 
-    public static class GroupAddResponseBodyResult extends TeaModel {
-        /**
-         * <p>考勤组id</p>
-         */
-        @NameInMap("groupId")
-        public Long groupId;
+    public GroupAddResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
+    }
 
-        /**
-         * <p>考勤组名</p>
-         */
-        @NameInMap("groupName")
-        public String groupName;
+    public static class GroupAddResponseBodyResult extends TeaModel {
+        @NameInMap("id")
+        public Long id;
+
+        @NameInMap("name")
+        public String name;
 
         public static GroupAddResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GroupAddResponseBodyResult self = new GroupAddResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public GroupAddResponseBodyResult setGroupId(Long groupId) {
-            this.groupId = groupId;
+        public GroupAddResponseBodyResult setId(Long id) {
+            this.id = id;
             return this;
         }
-        public Long getGroupId() {
-            return this.groupId;
+        public Long getId() {
+            return this.id;
         }
 
-        public GroupAddResponseBodyResult setGroupName(String groupName) {
-            this.groupName = groupName;
+        public GroupAddResponseBodyResult setName(String name) {
+            this.name = name;
             return this;
         }
-        public String getGroupName() {
-            return this.groupName;
+        public String getName() {
+            return this.name;
         }
 
     }

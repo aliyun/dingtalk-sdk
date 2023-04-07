@@ -4,57 +4,59 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupUpdateResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("result")
-    public java.util.List<GroupUpdateResponseBodyResult> result;
+    public GroupUpdateResponseBodyResult result;
+
+    @NameInMap("success")
+    public Boolean success;
 
     public static GroupUpdateResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GroupUpdateResponseBody self = new GroupUpdateResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GroupUpdateResponseBody setResult(java.util.List<GroupUpdateResponseBodyResult> result) {
+    public GroupUpdateResponseBody setResult(GroupUpdateResponseBodyResult result) {
         this.result = result;
         return this;
     }
-    public java.util.List<GroupUpdateResponseBodyResult> getResult() {
+    public GroupUpdateResponseBodyResult getResult() {
         return this.result;
     }
 
-    public static class GroupUpdateResponseBodyResult extends TeaModel {
-        /**
-         * <p>考勤组id</p>
-         */
-        @NameInMap("groupId")
-        public Long groupId;
+    public GroupUpdateResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
+    }
 
-        /**
-         * <p>考勤组名</p>
-         */
-        @NameInMap("groupName")
-        public String groupName;
+    public static class GroupUpdateResponseBodyResult extends TeaModel {
+        @NameInMap("id")
+        public Long id;
+
+        @NameInMap("name")
+        public String name;
 
         public static GroupUpdateResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GroupUpdateResponseBodyResult self = new GroupUpdateResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public GroupUpdateResponseBodyResult setGroupId(Long groupId) {
-            this.groupId = groupId;
+        public GroupUpdateResponseBodyResult setId(Long id) {
+            this.id = id;
             return this;
         }
-        public Long getGroupId() {
-            return this.groupId;
+        public Long getId() {
+            return this.id;
         }
 
-        public GroupUpdateResponseBodyResult setGroupName(String groupName) {
-            this.groupName = groupName;
+        public GroupUpdateResponseBodyResult setName(String name) {
+            this.name = name;
             return this;
         }
-        public String getGroupName() {
-            return this.groupName;
+        public String getName() {
+            return this.name;
         }
 
     }

@@ -265,6 +265,36 @@ public class GetCardInfoResponseBody extends TeaModel {
 
     }
 
+    public static class GetCardInfoResponseBodyExtensionCardContactInfoLink extends TeaModel {
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("value")
+        public String value;
+
+        public static GetCardInfoResponseBodyExtensionCardContactInfoLink build(java.util.Map<String, ?> map) throws Exception {
+            GetCardInfoResponseBodyExtensionCardContactInfoLink self = new GetCardInfoResponseBodyExtensionCardContactInfoLink();
+            return TeaModel.build(map, self);
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoLink setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoLink setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
     public static class GetCardInfoResponseBodyExtensionCardContactInfoTelephone extends TeaModel {
         @NameInMap("label")
         public String label;
@@ -295,36 +325,6 @@ public class GetCardInfoResponseBody extends TeaModel {
 
     }
 
-    public static class GetCardInfoResponseBodyExtensionCardContactInfoWechat extends TeaModel {
-        @NameInMap("label")
-        public String label;
-
-        @NameInMap("value")
-        public String value;
-
-        public static GetCardInfoResponseBodyExtensionCardContactInfoWechat build(java.util.Map<String, ?> map) throws Exception {
-            GetCardInfoResponseBodyExtensionCardContactInfoWechat self = new GetCardInfoResponseBodyExtensionCardContactInfoWechat();
-            return TeaModel.build(map, self);
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfoWechat setLabel(String label) {
-            this.label = label;
-            return this;
-        }
-        public String getLabel() {
-            return this.label;
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfoWechat setValue(String value) {
-            this.value = value;
-            return this;
-        }
-        public String getValue() {
-            return this.value;
-        }
-
-    }
-
     public static class GetCardInfoResponseBodyExtensionCardContactInfo extends TeaModel {
         /**
          * <p>地址</p>
@@ -339,16 +339,16 @@ public class GetCardInfoResponseBody extends TeaModel {
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> email;
 
         /**
+         * <p>微信</p>
+         */
+        @NameInMap("link")
+        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoLink> link;
+
+        /**
          * <p>电话</p>
          */
         @NameInMap("telephone")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> telephone;
-
-        /**
-         * <p>微信</p>
-         */
-        @NameInMap("wechat")
-        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoWechat> wechat;
 
         public static GetCardInfoResponseBodyExtensionCardContactInfo build(java.util.Map<String, ?> map) throws Exception {
             GetCardInfoResponseBodyExtensionCardContactInfo self = new GetCardInfoResponseBodyExtensionCardContactInfo();
@@ -371,20 +371,20 @@ public class GetCardInfoResponseBody extends TeaModel {
             return this.email;
         }
 
+        public GetCardInfoResponseBodyExtensionCardContactInfo setLink(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoLink> link) {
+            this.link = link;
+            return this;
+        }
+        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoLink> getLink() {
+            return this.link;
+        }
+
         public GetCardInfoResponseBodyExtensionCardContactInfo setTelephone(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> telephone) {
             this.telephone = telephone;
             return this;
         }
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> getTelephone() {
             return this.telephone;
-        }
-
-        public GetCardInfoResponseBodyExtensionCardContactInfo setWechat(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoWechat> wechat) {
-            this.wechat = wechat;
-            return this;
-        }
-        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoWechat> getWechat() {
-            return this.wechat;
         }
 
     }

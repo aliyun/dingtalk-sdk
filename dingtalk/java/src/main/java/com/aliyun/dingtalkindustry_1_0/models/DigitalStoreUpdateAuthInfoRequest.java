@@ -25,7 +25,7 @@ public class DigitalStoreUpdateAuthInfoRequest extends TeaModel {
         public String roleName;
 
         @NameInMap("sourceRoleId")
-        public Long sourceRoleId;
+        public String sourceRoleId;
 
         public static DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList build(java.util.Map<String, ?> map) throws Exception {
             DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList self = new DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList();
@@ -40,11 +40,11 @@ public class DigitalStoreUpdateAuthInfoRequest extends TeaModel {
             return this.roleName;
         }
 
-        public DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList setSourceRoleId(Long sourceRoleId) {
+        public DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList setSourceRoleId(String sourceRoleId) {
             this.sourceRoleId = sourceRoleId;
             return this;
         }
-        public Long getSourceRoleId() {
+        public String getSourceRoleId() {
             return this.sourceRoleId;
         }
 
@@ -52,29 +52,29 @@ public class DigitalStoreUpdateAuthInfoRequest extends TeaModel {
 
     public static class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList extends TeaModel {
         @NameInMap("dingDeptId")
-        public Long dingDeptId;
+        public String dingDeptId;
 
         @NameInMap("sourceDeptId")
-        public Long sourceDeptId;
+        public String sourceDeptId;
 
         public static DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList build(java.util.Map<String, ?> map) throws Exception {
             DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList self = new DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList();
             return TeaModel.build(map, self);
         }
 
-        public DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList setDingDeptId(Long dingDeptId) {
+        public DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList setDingDeptId(String dingDeptId) {
             this.dingDeptId = dingDeptId;
             return this;
         }
-        public Long getDingDeptId() {
+        public String getDingDeptId() {
             return this.dingDeptId;
         }
 
-        public DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList setSourceDeptId(Long sourceDeptId) {
+        public DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList setSourceDeptId(String sourceDeptId) {
             this.sourceDeptId = sourceDeptId;
             return this;
         }
-        public Long getSourceDeptId() {
+        public String getSourceDeptId() {
             return this.sourceDeptId;
         }
 

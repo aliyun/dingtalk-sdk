@@ -160,6 +160,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("description", request.description);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.drawerEmail)) {
+            body.put("drawerEmail", request.drawerEmail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.drawerTelephone)) {
+            body.put("drawerTelephone", request.drawerTelephone);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }
@@ -891,6 +899,35 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         return TeaModel.toModel(this.doROARequest("QueryProjectByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/projects/list", "json", req, runtime), new QueryProjectByPageResponse());
+    }
+
+    public QueryReceiptDetailForInvoiceResponse queryReceiptDetailForInvoice(QueryReceiptDetailForInvoiceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryReceiptDetailForInvoiceHeaders headers = new QueryReceiptDetailForInvoiceHeaders();
+        return this.queryReceiptDetailForInvoiceWithOptions(request, headers, runtime);
+    }
+
+    public QueryReceiptDetailForInvoiceResponse queryReceiptDetailForInvoiceWithOptions(QueryReceiptDetailForInvoiceRequest request, QueryReceiptDetailForInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.instanceId)) {
+            query.put("instanceId", request.instanceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("QueryReceiptDetailForInvoice", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/invoices/receipts/details", "json", req, runtime), new QueryReceiptDetailForInvoiceResponse());
     }
 
     public QueryReceiptForInvoiceResponse queryReceiptForInvoice(QueryReceiptForInvoiceRequest request) throws Exception {

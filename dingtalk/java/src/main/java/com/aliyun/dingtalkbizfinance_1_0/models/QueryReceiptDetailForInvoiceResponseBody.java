@@ -3,55 +3,27 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class QueryReceiptForInvoiceResponseBody extends TeaModel {
+public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
     /**
-     * <p>是否还有数据</p>
+     * <p>结果</p>
      */
-    @NameInMap("hasMore")
-    public String hasMore;
+    @NameInMap("result")
+    public QueryReceiptDetailForInvoiceResponseBodyResult result;
 
-    /**
-     * <p>分页数据</p>
-     */
-    @NameInMap("list")
-    public java.util.List<QueryReceiptForInvoiceResponseBodyList> list;
-
-    /**
-     * <p>总数</p>
-     */
-    @NameInMap("totalCount")
-    public Long totalCount;
-
-    public static QueryReceiptForInvoiceResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        QueryReceiptForInvoiceResponseBody self = new QueryReceiptForInvoiceResponseBody();
+    public static QueryReceiptDetailForInvoiceResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        QueryReceiptDetailForInvoiceResponseBody self = new QueryReceiptDetailForInvoiceResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public QueryReceiptForInvoiceResponseBody setHasMore(String hasMore) {
-        this.hasMore = hasMore;
+    public QueryReceiptDetailForInvoiceResponseBody setResult(QueryReceiptDetailForInvoiceResponseBodyResult result) {
+        this.result = result;
         return this;
     }
-    public String getHasMore() {
-        return this.hasMore;
+    public QueryReceiptDetailForInvoiceResponseBodyResult getResult() {
+        return this.result;
     }
 
-    public QueryReceiptForInvoiceResponseBody setList(java.util.List<QueryReceiptForInvoiceResponseBodyList> list) {
-        this.list = list;
-        return this;
-    }
-    public java.util.List<QueryReceiptForInvoiceResponseBodyList> getList() {
-        return this.list;
-    }
-
-    public QueryReceiptForInvoiceResponseBody setTotalCount(Long totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Long getTotalCount() {
-        return this.totalCount;
-    }
-
-    public static class QueryReceiptForInvoiceResponseBodyListCreator extends TeaModel {
+    public static class QueryReceiptDetailForInvoiceResponseBodyResultCreator extends TeaModel {
         /**
          * <p>创建人头像</p>
          */
@@ -70,12 +42,12 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("userId")
         public String userId;
 
-        public static QueryReceiptForInvoiceResponseBodyListCreator build(java.util.Map<String, ?> map) throws Exception {
-            QueryReceiptForInvoiceResponseBodyListCreator self = new QueryReceiptForInvoiceResponseBodyListCreator();
+        public static QueryReceiptDetailForInvoiceResponseBodyResultCreator build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptDetailForInvoiceResponseBodyResultCreator self = new QueryReceiptDetailForInvoiceResponseBodyResultCreator();
             return TeaModel.build(map, self);
         }
 
-        public QueryReceiptForInvoiceResponseBodyListCreator setAvatarUrl(String avatarUrl) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultCreator setAvatarUrl(String avatarUrl) {
             this.avatarUrl = avatarUrl;
             return this;
         }
@@ -83,7 +55,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.avatarUrl;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListCreator setNick(String nick) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultCreator setNick(String nick) {
             this.nick = nick;
             return this;
         }
@@ -91,7 +63,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.nick;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListCreator setUserId(String userId) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultCreator setUserId(String userId) {
             this.userId = userId;
             return this;
         }
@@ -101,7 +73,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
 
     }
 
-    public static class QueryReceiptForInvoiceResponseBodyListCustomer extends TeaModel {
+    public static class QueryReceiptDetailForInvoiceResponseBodyResultCustomer extends TeaModel {
         /**
          * <p>客户code</p>
          */
@@ -114,12 +86,12 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        public static QueryReceiptForInvoiceResponseBodyListCustomer build(java.util.Map<String, ?> map) throws Exception {
-            QueryReceiptForInvoiceResponseBodyListCustomer self = new QueryReceiptForInvoiceResponseBodyListCustomer();
+        public static QueryReceiptDetailForInvoiceResponseBodyResultCustomer build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptDetailForInvoiceResponseBodyResultCustomer self = new QueryReceiptDetailForInvoiceResponseBodyResultCustomer();
             return TeaModel.build(map, self);
         }
 
-        public QueryReceiptForInvoiceResponseBodyListCustomer setCode(String code) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultCustomer setCode(String code) {
             this.code = code;
             return this;
         }
@@ -127,7 +99,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.code;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListCustomer setName(String name) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultCustomer setName(String name) {
             this.name = name;
             return this;
         }
@@ -137,7 +109,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
 
     }
 
-    public static class QueryReceiptForInvoiceResponseBodyListProductInfoList extends TeaModel {
+    public static class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList extends TeaModel {
         /**
          * <p>含税金额</p>
          */
@@ -180,12 +152,12 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("unitPriceWithTax")
         public String unitPriceWithTax;
 
-        public static QueryReceiptForInvoiceResponseBodyListProductInfoList build(java.util.Map<String, ?> map) throws Exception {
-            QueryReceiptForInvoiceResponseBodyListProductInfoList self = new QueryReceiptForInvoiceResponseBodyListProductInfoList();
+        public static QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList self = new QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList();
             return TeaModel.build(map, self);
         }
 
-        public QueryReceiptForInvoiceResponseBodyListProductInfoList setAmountWithTax(String amountWithTax) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setAmountWithTax(String amountWithTax) {
             this.amountWithTax = amountWithTax;
             return this;
         }
@@ -193,7 +165,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.amountWithTax;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListProductInfoList setName(String name) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setName(String name) {
             this.name = name;
             return this;
         }
@@ -201,7 +173,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.name;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListProductInfoList setQuantity(String quantity) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setQuantity(String quantity) {
             this.quantity = quantity;
             return this;
         }
@@ -209,7 +181,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.quantity;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListProductInfoList setSpecification(String specification) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setSpecification(String specification) {
             this.specification = specification;
             return this;
         }
@@ -217,7 +189,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.specification;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListProductInfoList setTaxRate(String taxRate) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setTaxRate(String taxRate) {
             this.taxRate = taxRate;
             return this;
         }
@@ -225,7 +197,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.taxRate;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListProductInfoList setUnit(String unit) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setUnit(String unit) {
             this.unit = unit;
             return this;
         }
@@ -233,7 +205,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.unit;
         }
 
-        public QueryReceiptForInvoiceResponseBodyListProductInfoList setUnitPriceWithTax(String unitPriceWithTax) {
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setUnitPriceWithTax(String unitPriceWithTax) {
             this.unitPriceWithTax = unitPriceWithTax;
             return this;
         }
@@ -243,7 +215,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
 
     }
 
-    public static class QueryReceiptForInvoiceResponseBodyList extends TeaModel {
+    public static class QueryReceiptDetailForInvoiceResponseBodyResult extends TeaModel {
         /**
          * <p>金额</p>
          */
@@ -266,13 +238,13 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
          * <p>创建人</p>
          */
         @NameInMap("creator")
-        public QueryReceiptForInvoiceResponseBodyListCreator creator;
+        public QueryReceiptDetailForInvoiceResponseBodyResultCreator creator;
 
         /**
          * <p>客户</p>
          */
         @NameInMap("customer")
-        public QueryReceiptForInvoiceResponseBodyListCustomer customer;
+        public QueryReceiptDetailForInvoiceResponseBodyResultCustomer customer;
 
         /**
          * <p>开票人邮箱</p>
@@ -302,7 +274,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
          * <p>商品列表</p>
          */
         @NameInMap("productInfoList")
-        public java.util.List<QueryReceiptForInvoiceResponseBodyListProductInfoList> productInfoList;
+        public java.util.List<QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList> productInfoList;
 
         /**
          * <p>购方账户</p>
@@ -376,12 +348,12 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        public static QueryReceiptForInvoiceResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
-            QueryReceiptForInvoiceResponseBodyList self = new QueryReceiptForInvoiceResponseBodyList();
+        public static QueryReceiptDetailForInvoiceResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            QueryReceiptDetailForInvoiceResponseBodyResult self = new QueryReceiptDetailForInvoiceResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setAmount(String amount) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setAmount(String amount) {
             this.amount = amount;
             return this;
         }
@@ -389,7 +361,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.amount;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setApplyStatus(String applyStatus) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setApplyStatus(String applyStatus) {
             this.applyStatus = applyStatus;
             return this;
         }
@@ -397,7 +369,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.applyStatus;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setCreateTime(String createTime) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setCreateTime(String createTime) {
             this.createTime = createTime;
             return this;
         }
@@ -405,23 +377,23 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.createTime;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setCreator(QueryReceiptForInvoiceResponseBodyListCreator creator) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setCreator(QueryReceiptDetailForInvoiceResponseBodyResultCreator creator) {
             this.creator = creator;
             return this;
         }
-        public QueryReceiptForInvoiceResponseBodyListCreator getCreator() {
+        public QueryReceiptDetailForInvoiceResponseBodyResultCreator getCreator() {
             return this.creator;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setCustomer(QueryReceiptForInvoiceResponseBodyListCustomer customer) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setCustomer(QueryReceiptDetailForInvoiceResponseBodyResultCustomer customer) {
             this.customer = customer;
             return this;
         }
-        public QueryReceiptForInvoiceResponseBodyListCustomer getCustomer() {
+        public QueryReceiptDetailForInvoiceResponseBodyResultCustomer getCustomer() {
             return this.customer;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setDrawerEmail(String drawerEmail) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setDrawerEmail(String drawerEmail) {
             this.drawerEmail = drawerEmail;
             return this;
         }
@@ -429,7 +401,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.drawerEmail;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setDrawerTelephone(String drawerTelephone) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setDrawerTelephone(String drawerTelephone) {
             this.drawerTelephone = drawerTelephone;
             return this;
         }
@@ -437,7 +409,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.drawerTelephone;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setInvoiceType(String invoiceType) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setInvoiceType(String invoiceType) {
             this.invoiceType = invoiceType;
             return this;
         }
@@ -445,7 +417,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.invoiceType;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setModelId(String modelId) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setModelId(String modelId) {
             this.modelId = modelId;
             return this;
         }
@@ -453,15 +425,15 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.modelId;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setProductInfoList(java.util.List<QueryReceiptForInvoiceResponseBodyListProductInfoList> productInfoList) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setProductInfoList(java.util.List<QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList> productInfoList) {
             this.productInfoList = productInfoList;
             return this;
         }
-        public java.util.List<QueryReceiptForInvoiceResponseBodyListProductInfoList> getProductInfoList() {
+        public java.util.List<QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList> getProductInfoList() {
             return this.productInfoList;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setPurchaserAccount(String purchaserAccount) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setPurchaserAccount(String purchaserAccount) {
             this.purchaserAccount = purchaserAccount;
             return this;
         }
@@ -469,7 +441,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.purchaserAccount;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setPurchaserAddress(String purchaserAddress) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setPurchaserAddress(String purchaserAddress) {
             this.purchaserAddress = purchaserAddress;
             return this;
         }
@@ -477,7 +449,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.purchaserAddress;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setPurchaserBankName(String purchaserBankName) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setPurchaserBankName(String purchaserBankName) {
             this.purchaserBankName = purchaserBankName;
             return this;
         }
@@ -485,7 +457,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.purchaserBankName;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setPurchaserName(String purchaserName) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setPurchaserName(String purchaserName) {
             this.purchaserName = purchaserName;
             return this;
         }
@@ -493,7 +465,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.purchaserName;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setPurchaserTaxNo(String purchaserTaxNo) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setPurchaserTaxNo(String purchaserTaxNo) {
             this.purchaserTaxNo = purchaserTaxNo;
             return this;
         }
@@ -501,7 +473,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.purchaserTaxNo;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setPurchaserTel(String purchaserTel) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setPurchaserTel(String purchaserTel) {
             this.purchaserTel = purchaserTel;
             return this;
         }
@@ -509,7 +481,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.purchaserTel;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setReceiptId(String receiptId) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setReceiptId(String receiptId) {
             this.receiptId = receiptId;
             return this;
         }
@@ -517,7 +489,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.receiptId;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setRecordTime(String recordTime) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setRecordTime(String recordTime) {
             this.recordTime = recordTime;
             return this;
         }
@@ -525,7 +497,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.recordTime;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setRemark(String remark) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setRemark(String remark) {
             this.remark = remark;
             return this;
         }
@@ -533,7 +505,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.remark;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setSource(String source) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setSource(String source) {
             this.source = source;
             return this;
         }
@@ -541,7 +513,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.source;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setStatus(String status) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setStatus(String status) {
             this.status = status;
             return this;
         }
@@ -549,7 +521,7 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
             return this.status;
         }
 
-        public QueryReceiptForInvoiceResponseBodyList setTitle(String title) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setTitle(String title) {
             this.title = title;
             return this;
         }

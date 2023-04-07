@@ -723,6 +723,14 @@ public class GroupAddRequest extends TeaModel {
 
     public static class GroupAddRequestFreeCheckSetting extends TeaModel {
         /**
+         * <p>自由工时考勤组考勤开始时间与当天0点偏移分钟数。</p>
+         * <br>
+         * <p>例如：540表示9:00</p>
+         */
+        @NameInMap("delimitOffsetMinutesBetweenDays")
+        public Integer delimitOffsetMinutesBetweenDays;
+
+        /**
          * <p>休息日打卡间隔设置。</p>
          */
         @NameInMap("freeCheckGap")
@@ -731,6 +739,14 @@ public class GroupAddRequest extends TeaModel {
         public static GroupAddRequestFreeCheckSetting build(java.util.Map<String, ?> map) throws Exception {
             GroupAddRequestFreeCheckSetting self = new GroupAddRequestFreeCheckSetting();
             return TeaModel.build(map, self);
+        }
+
+        public GroupAddRequestFreeCheckSetting setDelimitOffsetMinutesBetweenDays(Integer delimitOffsetMinutesBetweenDays) {
+            this.delimitOffsetMinutesBetweenDays = delimitOffsetMinutesBetweenDays;
+            return this;
+        }
+        public Integer getDelimitOffsetMinutesBetweenDays() {
+            return this.delimitOffsetMinutesBetweenDays;
         }
 
         public GroupAddRequestFreeCheckSetting setFreeCheckGap(GroupAddRequestFreeCheckSettingFreeCheckGap freeCheckGap) {
