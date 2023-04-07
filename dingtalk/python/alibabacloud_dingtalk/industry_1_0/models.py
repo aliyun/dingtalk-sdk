@@ -10195,7 +10195,7 @@ class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList(TeaModel):
     def __init__(
         self,
         role_name: str = None,
-        source_role_id: int = None,
+        source_role_id: str = None,
     ):
         self.role_name = role_name
         self.source_role_id = source_role_id
@@ -10227,8 +10227,8 @@ class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList(TeaModel):
 class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList(TeaModel):
     def __init__(
         self,
-        ding_dept_id: int = None,
-        source_dept_id: int = None,
+        ding_dept_id: str = None,
+        source_dept_id: str = None,
     ):
         self.ding_dept_id = ding_dept_id
         self.source_dept_id = source_dept_id

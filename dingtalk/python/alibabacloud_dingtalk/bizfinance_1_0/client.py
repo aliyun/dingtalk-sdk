@@ -283,6 +283,10 @@ class Client(OpenApiClient):
             body['creator'] = request.creator
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
+        if not UtilClient.is_unset(request.drawer_email):
+            body['drawerEmail'] = request.drawer_email
+        if not UtilClient.is_unset(request.drawer_telephone):
+            body['drawerTelephone'] = request.drawer_telephone
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.purchaser_account):
@@ -323,6 +327,10 @@ class Client(OpenApiClient):
             body['creator'] = request.creator
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
+        if not UtilClient.is_unset(request.drawer_email):
+            body['drawerEmail'] = request.drawer_email
+        if not UtilClient.is_unset(request.drawer_telephone):
+            body['drawerTelephone'] = request.drawer_telephone
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.purchaser_account):
@@ -1801,6 +1809,70 @@ class Client(OpenApiClient):
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryProjectByPageResponse(),
             await self.do_roarequest_async('QueryProjectByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/projects/list', 'json', req, runtime)
+        )
+
+    def query_receipt_detail_for_invoice(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceHeaders()
+        return self.query_receipt_detail_for_invoice_with_options(request, headers, runtime)
+
+    async def query_receipt_detail_for_invoice_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceHeaders()
+        return await self.query_receipt_detail_for_invoice_with_options_async(request, headers, runtime)
+
+    def query_receipt_detail_for_invoice_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse(),
+            self.do_roarequest('QueryReceiptDetailForInvoice', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/invoices/receipts/details', 'json', req, runtime)
+        )
+
+    async def query_receipt_detail_for_invoice_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse(),
+            await self.do_roarequest_async('QueryReceiptDetailForInvoice', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/invoices/receipts/details', 'json', req, runtime)
         )
 
     def query_receipt_for_invoice(

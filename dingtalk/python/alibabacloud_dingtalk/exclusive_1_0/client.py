@@ -4287,6 +4287,74 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SaveAndSubmitAuthInfo', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/ognizations/authInfos/saveAndSubmit', 'json', req, runtime)
         )
 
+    def save_white_app(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveWhiteAppRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveWhiteAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveWhiteAppHeaders()
+        return self.save_white_app_with_options(request, headers, runtime)
+
+    async def save_white_app_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveWhiteAppRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveWhiteAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveWhiteAppHeaders()
+        return await self.save_white_app_with_options_async(request, headers, runtime)
+
+    def save_white_app_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveWhiteAppRequest,
+        headers: dingtalkexclusive__1__0_models.SaveWhiteAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveWhiteAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id_list):
+            body['agentIdList'] = request.agent_id_list
+        if not UtilClient.is_unset(request.operation):
+            body['operation'] = request.operation
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveWhiteAppResponse(),
+            self.do_roarequest('SaveWhiteApp', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/whiteLists/save', 'json', req, runtime)
+        )
+
+    async def save_white_app_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveWhiteAppRequest,
+        headers: dingtalkexclusive__1__0_models.SaveWhiteAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveWhiteAppResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id_list):
+            body['agentIdList'] = request.agent_id_list
+        if not UtilClient.is_unset(request.operation):
+            body['operation'] = request.operation
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveWhiteAppResponse(),
+            await self.do_roarequest_async('SaveWhiteApp', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/miniApps/whiteLists/save', 'json', req, runtime)
+        )
+
     def search_org_inner_group_info(
         self,
         request: dingtalkexclusive__1__0_models.SearchOrgInnerGroupInfoRequest,

@@ -1064,6 +1064,8 @@ class BatchCreateCustomerRequestCreateCustomerRequestList(TeaModel):
     def __init__(
         self,
         description: str = None,
+        drawer_email: str = None,
+        drawer_telephone: str = None,
         name: str = None,
         purchaser_account: str = None,
         purchaser_address: str = None,
@@ -1074,6 +1076,10 @@ class BatchCreateCustomerRequestCreateCustomerRequestList(TeaModel):
     ):
         # 客户描述
         self.description = description
+        # 开票人邮箱
+        self.drawer_email = drawer_email
+        # 开票人手机号
+        self.drawer_telephone = drawer_telephone
         # 客户名字
         self.name = name
         # 购方账户
@@ -1100,6 +1106,10 @@ class BatchCreateCustomerRequestCreateCustomerRequestList(TeaModel):
         result = dict()
         if self.description is not None:
             result['description'] = self.description
+        if self.drawer_email is not None:
+            result['drawerEmail'] = self.drawer_email
+        if self.drawer_telephone is not None:
+            result['drawerTelephone'] = self.drawer_telephone
         if self.name is not None:
             result['name'] = self.name
         if self.purchaser_account is not None:
@@ -1120,6 +1130,10 @@ class BatchCreateCustomerRequestCreateCustomerRequestList(TeaModel):
         m = m or dict()
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('drawerEmail') is not None:
+            self.drawer_email = m.get('drawerEmail')
+        if m.get('drawerTelephone') is not None:
+            self.drawer_telephone = m.get('drawerTelephone')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('purchaserAccount') is not None:
@@ -1515,6 +1529,8 @@ class CreateCustomerRequest(TeaModel):
         self,
         creator: str = None,
         description: str = None,
+        drawer_email: str = None,
+        drawer_telephone: str = None,
         name: str = None,
         purchaser_account: str = None,
         purchaser_address: str = None,
@@ -1527,6 +1543,10 @@ class CreateCustomerRequest(TeaModel):
         self.creator = creator
         # 客户描述
         self.description = description
+        # 开票人邮箱
+        self.drawer_email = drawer_email
+        # 开票人手机号
+        self.drawer_telephone = drawer_telephone
         # 客户名字
         self.name = name
         # 购方账户
@@ -1555,6 +1575,10 @@ class CreateCustomerRequest(TeaModel):
             result['creator'] = self.creator
         if self.description is not None:
             result['description'] = self.description
+        if self.drawer_email is not None:
+            result['drawerEmail'] = self.drawer_email
+        if self.drawer_telephone is not None:
+            result['drawerTelephone'] = self.drawer_telephone
         if self.name is not None:
             result['name'] = self.name
         if self.purchaser_account is not None:
@@ -1577,6 +1601,10 @@ class CreateCustomerRequest(TeaModel):
             self.creator = m.get('creator')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('drawerEmail') is not None:
+            self.drawer_email = m.get('drawerEmail')
+        if m.get('drawerTelephone') is not None:
+            self.drawer_telephone = m.get('drawerTelephone')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('purchaserAccount') is not None:
@@ -5306,6 +5334,8 @@ class QueryCustomerInfoResponseBodyList(TeaModel):
         contact_name: str = None,
         contact_telephone: str = None,
         description: str = None,
+        drawer_email: str = None,
+        drawer_telephone: str = None,
         name: str = None,
         purchaser_account: str = None,
         purchaser_address: str = None,
@@ -5325,6 +5355,10 @@ class QueryCustomerInfoResponseBodyList(TeaModel):
         self.contact_telephone = contact_telephone
         # 客户描述
         self.description = description
+        # 开票人邮箱
+        self.drawer_email = drawer_email
+        # 开票人手机号
+        self.drawer_telephone = drawer_telephone
         # 客户名字
         self.name = name
         # 购方账户
@@ -5367,6 +5401,10 @@ class QueryCustomerInfoResponseBodyList(TeaModel):
             result['contactTelephone'] = self.contact_telephone
         if self.description is not None:
             result['description'] = self.description
+        if self.drawer_email is not None:
+            result['drawerEmail'] = self.drawer_email
+        if self.drawer_telephone is not None:
+            result['drawerTelephone'] = self.drawer_telephone
         if self.name is not None:
             result['name'] = self.name
         if self.purchaser_account is not None:
@@ -5403,6 +5441,10 @@ class QueryCustomerInfoResponseBodyList(TeaModel):
             self.contact_telephone = m.get('contactTelephone')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('drawerEmail') is not None:
+            self.drawer_email = m.get('drawerEmail')
+        if m.get('drawerTelephone') is not None:
+            self.drawer_telephone = m.get('drawerTelephone')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('purchaserAccount') is not None:
@@ -6804,6 +6846,470 @@ class QueryProjectByPageResponse(TeaModel):
         return self
 
 
+class QueryReceiptDetailForInvoiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryReceiptDetailForInvoiceRequest(TeaModel):
+    def __init__(
+        self,
+        instance_id: str = None,
+    ):
+        # 审批单id
+        self.instance_id = instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        return self
+
+
+class QueryReceiptDetailForInvoiceResponseBodyResultCreator(TeaModel):
+    def __init__(
+        self,
+        avatar_url: str = None,
+        nick: str = None,
+        user_id: str = None,
+    ):
+        # 创建人头像
+        self.avatar_url = avatar_url
+        # 创建人昵称
+        self.nick = nick
+        # 创建人工号
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryReceiptDetailForInvoiceResponseBodyResultCustomer(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        # 客户code
+        self.code = code
+        # 客户名字
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
+    def __init__(
+        self,
+        amount_with_tax: str = None,
+        name: str = None,
+        quantity: str = None,
+        specification: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price_with_tax: str = None,
+    ):
+        # 含税金额
+        self.amount_with_tax = amount_with_tax
+        # 商品名称
+        self.name = name
+        # 数量
+        self.quantity = quantity
+        # 规格型号
+        self.specification = specification
+        # 税率
+        self.tax_rate = tax_rate
+        # 计量单位
+        self.unit = unit
+        # 含税单价
+        self.unit_price_with_tax = unit_price_with_tax
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.name is not None:
+            result['name'] = self.name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price_with_tax is not None:
+            result['unitPriceWithTax'] = self.unit_price_with_tax
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPriceWithTax') is not None:
+            self.unit_price_with_tax = m.get('unitPriceWithTax')
+        return self
+
+
+class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        apply_status: str = None,
+        create_time: str = None,
+        creator: QueryReceiptDetailForInvoiceResponseBodyResultCreator = None,
+        customer: QueryReceiptDetailForInvoiceResponseBodyResultCustomer = None,
+        drawer_email: str = None,
+        drawer_telephone: str = None,
+        invoice_type: str = None,
+        model_id: str = None,
+        product_info_list: List[QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList] = None,
+        purchaser_account: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        receipt_id: str = None,
+        record_time: str = None,
+        remark: str = None,
+        source: str = None,
+        status: str = None,
+        title: str = None,
+    ):
+        # 金额
+        self.amount = amount
+        # 开票状态
+        self.apply_status = apply_status
+        # 创建时间
+        self.create_time = create_time
+        # 创建人
+        self.creator = creator
+        # 客户
+        self.customer = customer
+        # 开票人邮箱
+        self.drawer_email = drawer_email
+        # 开票人手机号码
+        self.drawer_telephone = drawer_telephone
+        # 发票种类
+        self.invoice_type = invoice_type
+        # 主数据modelId
+        self.model_id = model_id
+        # 商品列表
+        self.product_info_list = product_info_list
+        # 购方账户
+        self.purchaser_account = purchaser_account
+        # 购方地址
+        self.purchaser_address = purchaser_address
+        # 购方银行
+        self.purchaser_bank_name = purchaser_bank_name
+        # 购方抬头
+        self.purchaser_name = purchaser_name
+        # 购方税号
+        self.purchaser_tax_no = purchaser_tax_no
+        # 购方电话
+        self.purchaser_tel = purchaser_tel
+        # 单据ID
+        self.receipt_id = receipt_id
+        # 记录时间，默认为审批通过时间
+        self.record_time = record_time
+        # 备注
+        self.remark = remark
+        # 来源
+        self.source = source
+        # 状态 agree running
+        self.status = status
+        # 单据标题
+        self.title = title
+
+    def validate(self):
+        if self.creator:
+            self.creator.validate()
+        if self.customer:
+            self.customer.validate()
+        if self.product_info_list:
+            for k in self.product_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.apply_status is not None:
+            result['applyStatus'] = self.apply_status
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator is not None:
+            result['creator'] = self.creator.to_map()
+        if self.customer is not None:
+            result['customer'] = self.customer.to_map()
+        if self.drawer_email is not None:
+            result['drawerEmail'] = self.drawer_email
+        if self.drawer_telephone is not None:
+            result['drawerTelephone'] = self.drawer_telephone
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        result['productInfoList'] = []
+        if self.product_info_list is not None:
+            for k in self.product_info_list:
+                result['productInfoList'].append(k.to_map() if k else None)
+        if self.purchaser_account is not None:
+            result['purchaserAccount'] = self.purchaser_account
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name is not None:
+            result['purchaserBankName'] = self.purchaser_bank_name
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.receipt_id is not None:
+            result['receiptId'] = self.receipt_id
+        if self.record_time is not None:
+            result['recordTime'] = self.record_time
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.source is not None:
+            result['source'] = self.source
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('applyStatus') is not None:
+            self.apply_status = m.get('applyStatus')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creator') is not None:
+            temp_model = QueryReceiptDetailForInvoiceResponseBodyResultCreator()
+            self.creator = temp_model.from_map(m['creator'])
+        if m.get('customer') is not None:
+            temp_model = QueryReceiptDetailForInvoiceResponseBodyResultCustomer()
+            self.customer = temp_model.from_map(m['customer'])
+        if m.get('drawerEmail') is not None:
+            self.drawer_email = m.get('drawerEmail')
+        if m.get('drawerTelephone') is not None:
+            self.drawer_telephone = m.get('drawerTelephone')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        self.product_info_list = []
+        if m.get('productInfoList') is not None:
+            for k in m.get('productInfoList'):
+                temp_model = QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList()
+                self.product_info_list.append(temp_model.from_map(k))
+        if m.get('purchaserAccount') is not None:
+            self.purchaser_account = m.get('purchaserAccount')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankName') is not None:
+            self.purchaser_bank_name = m.get('purchaserBankName')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('receiptId') is not None:
+            self.receipt_id = m.get('receiptId')
+        if m.get('recordTime') is not None:
+            self.record_time = m.get('recordTime')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryReceiptDetailForInvoiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryReceiptDetailForInvoiceResponseBodyResult = None,
+    ):
+        # 结果
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryReceiptDetailForInvoiceResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryReceiptDetailForInvoiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: QueryReceiptDetailForInvoiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = QueryReceiptDetailForInvoiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryReceiptForInvoiceHeaders(TeaModel):
     def __init__(
         self,
@@ -6983,6 +7489,76 @@ class QueryReceiptForInvoiceResponseBodyListCustomer(TeaModel):
         return self
 
 
+class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
+    def __init__(
+        self,
+        amount_with_tax: str = None,
+        name: str = None,
+        quantity: str = None,
+        specification: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price_with_tax: str = None,
+    ):
+        # 含税金额
+        self.amount_with_tax = amount_with_tax
+        # 商品名称
+        self.name = name
+        # 数量
+        self.quantity = quantity
+        # 规格型号
+        self.specification = specification
+        # 税率
+        self.tax_rate = tax_rate
+        # 计量单位
+        self.unit = unit
+        # 含税单价
+        self.unit_price_with_tax = unit_price_with_tax
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.name is not None:
+            result['name'] = self.name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price_with_tax is not None:
+            result['unitPriceWithTax'] = self.unit_price_with_tax
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPriceWithTax') is not None:
+            self.unit_price_with_tax = m.get('unitPriceWithTax')
+        return self
+
+
 class QueryReceiptForInvoiceResponseBodyList(TeaModel):
     def __init__(
         self,
@@ -6991,8 +7567,11 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         create_time: str = None,
         creator: QueryReceiptForInvoiceResponseBodyListCreator = None,
         customer: QueryReceiptForInvoiceResponseBodyListCustomer = None,
+        drawer_email: str = None,
+        drawer_telephone: str = None,
         invoice_type: str = None,
         model_id: str = None,
+        product_info_list: List[QueryReceiptForInvoiceResponseBodyListProductInfoList] = None,
         purchaser_account: str = None,
         purchaser_address: str = None,
         purchaser_bank_name: str = None,
@@ -7016,10 +7595,16 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         self.creator = creator
         # 客户
         self.customer = customer
+        # 开票人邮箱
+        self.drawer_email = drawer_email
+        # 开票人手机号码
+        self.drawer_telephone = drawer_telephone
         # 发票种类
         self.invoice_type = invoice_type
         # 主数据modelId
         self.model_id = model_id
+        # 商品列表
+        self.product_info_list = product_info_list
         # 购方账户
         self.purchaser_account = purchaser_account
         # 购方地址
@@ -7050,6 +7635,10 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             self.creator.validate()
         if self.customer:
             self.customer.validate()
+        if self.product_info_list:
+            for k in self.product_info_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7067,10 +7656,18 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             result['creator'] = self.creator.to_map()
         if self.customer is not None:
             result['customer'] = self.customer.to_map()
+        if self.drawer_email is not None:
+            result['drawerEmail'] = self.drawer_email
+        if self.drawer_telephone is not None:
+            result['drawerTelephone'] = self.drawer_telephone
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
         if self.model_id is not None:
             result['modelId'] = self.model_id
+        result['productInfoList'] = []
+        if self.product_info_list is not None:
+            for k in self.product_info_list:
+                result['productInfoList'].append(k.to_map() if k else None)
         if self.purchaser_account is not None:
             result['purchaserAccount'] = self.purchaser_account
         if self.purchaser_address is not None:
@@ -7111,10 +7708,19 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         if m.get('customer') is not None:
             temp_model = QueryReceiptForInvoiceResponseBodyListCustomer()
             self.customer = temp_model.from_map(m['customer'])
+        if m.get('drawerEmail') is not None:
+            self.drawer_email = m.get('drawerEmail')
+        if m.get('drawerTelephone') is not None:
+            self.drawer_telephone = m.get('drawerTelephone')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
         if m.get('modelId') is not None:
             self.model_id = m.get('modelId')
+        self.product_info_list = []
+        if m.get('productInfoList') is not None:
+            for k in m.get('productInfoList'):
+                temp_model = QueryReceiptForInvoiceResponseBodyListProductInfoList()
+                self.product_info_list.append(temp_model.from_map(k))
         if m.get('purchaserAccount') is not None:
             self.purchaser_account = m.get('purchaserAccount')
         if m.get('purchaserAddress') is not None:

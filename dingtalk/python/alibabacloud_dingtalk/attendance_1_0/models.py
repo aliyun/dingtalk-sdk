@@ -5513,8 +5513,13 @@ class GroupAddRequestFreeCheckSettingFreeCheckGap(TeaModel):
 class GroupAddRequestFreeCheckSetting(TeaModel):
     def __init__(
         self,
+        delimit_offset_minutes_between_days: int = None,
         free_check_gap: GroupAddRequestFreeCheckSettingFreeCheckGap = None,
     ):
+        # 自由工时考勤组考勤开始时间与当天0点偏移分钟数。
+        # 
+        # 例如：540表示9:00
+        self.delimit_offset_minutes_between_days = delimit_offset_minutes_between_days
         # 休息日打卡间隔设置。
         self.free_check_gap = free_check_gap
 
@@ -5528,12 +5533,16 @@ class GroupAddRequestFreeCheckSetting(TeaModel):
             return _map
 
         result = dict()
+        if self.delimit_offset_minutes_between_days is not None:
+            result['delimitOffsetMinutesBetweenDays'] = self.delimit_offset_minutes_between_days
         if self.free_check_gap is not None:
             result['freeCheckGap'] = self.free_check_gap.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('delimitOffsetMinutesBetweenDays') is not None:
+            self.delimit_offset_minutes_between_days = m.get('delimitOffsetMinutesBetweenDays')
         if m.get('freeCheckGap') is not None:
             temp_model = GroupAddRequestFreeCheckSettingFreeCheckGap()
             self.free_check_gap = temp_model.from_map(m['freeCheckGap'])
@@ -6211,13 +6220,11 @@ class GroupAddRequest(TeaModel):
 class GroupAddResponseBodyResult(TeaModel):
     def __init__(
         self,
-        group_id: int = None,
-        group_name: str = None,
+        id: int = None,
+        name: str = None,
     ):
-        # 考勤组id
-        self.group_id = group_id
-        # 考勤组名
-        self.group_name = group_name
+        self.id = id
+        self.name = name
 
     def validate(self):
         pass
@@ -6228,34 +6235,33 @@ class GroupAddResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.group_id is not None:
-            result['groupId'] = self.group_id
-        if self.group_name is not None:
-            result['groupName'] = self.group_name
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('groupId') is not None:
-            self.group_id = m.get('groupId')
-        if m.get('groupName') is not None:
-            self.group_name = m.get('groupName')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         return self
 
 
 class GroupAddResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[GroupAddResponseBodyResult] = None,
+        result: GroupAddResponseBodyResult = None,
+        success: bool = None,
     ):
-        # Id of the request
         self.result = result
+        self.success = success
 
     def validate(self):
         if self.result:
-            for k in self.result:
-                if k:
-                    k.validate()
+            self.result.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -6263,19 +6269,19 @@ class GroupAddResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
         if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
         if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = GroupAddResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+            temp_model = GroupAddResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 
@@ -6387,8 +6393,13 @@ class GroupUpdateRequestFreeCheckSettingFreeCheckGap(TeaModel):
 class GroupUpdateRequestFreeCheckSetting(TeaModel):
     def __init__(
         self,
+        delimit_offset_minutes_between_days: int = None,
         free_check_gap: GroupUpdateRequestFreeCheckSettingFreeCheckGap = None,
     ):
+        # 自由工时考勤组考勤开始时间与当天0点偏移分钟数。
+        # 
+        # 例如：540表示9:00
+        self.delimit_offset_minutes_between_days = delimit_offset_minutes_between_days
         # 休息日打卡间隔设置。
         self.free_check_gap = free_check_gap
 
@@ -6402,12 +6413,16 @@ class GroupUpdateRequestFreeCheckSetting(TeaModel):
             return _map
 
         result = dict()
+        if self.delimit_offset_minutes_between_days is not None:
+            result['delimitOffsetMinutesBetweenDays'] = self.delimit_offset_minutes_between_days
         if self.free_check_gap is not None:
             result['freeCheckGap'] = self.free_check_gap.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('delimitOffsetMinutesBetweenDays') is not None:
+            self.delimit_offset_minutes_between_days = m.get('delimitOffsetMinutesBetweenDays')
         if m.get('freeCheckGap') is not None:
             temp_model = GroupUpdateRequestFreeCheckSettingFreeCheckGap()
             self.free_check_gap = temp_model.from_map(m['freeCheckGap'])
@@ -6838,13 +6853,11 @@ class GroupUpdateRequest(TeaModel):
 class GroupUpdateResponseBodyResult(TeaModel):
     def __init__(
         self,
-        group_id: int = None,
-        group_name: str = None,
+        id: int = None,
+        name: str = None,
     ):
-        # 考勤组id
-        self.group_id = group_id
-        # 考勤组名
-        self.group_name = group_name
+        self.id = id
+        self.name = name
 
     def validate(self):
         pass
@@ -6855,34 +6868,33 @@ class GroupUpdateResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.group_id is not None:
-            result['groupId'] = self.group_id
-        if self.group_name is not None:
-            result['groupName'] = self.group_name
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('groupId') is not None:
-            self.group_id = m.get('groupId')
-        if m.get('groupName') is not None:
-            self.group_name = m.get('groupName')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         return self
 
 
 class GroupUpdateResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[GroupUpdateResponseBodyResult] = None,
+        result: GroupUpdateResponseBodyResult = None,
+        success: bool = None,
     ):
-        # Id of the request
         self.result = result
+        self.success = success
 
     def validate(self):
         if self.result:
-            for k in self.result:
-                if k:
-                    k.validate()
+            self.result.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -6890,19 +6902,19 @@ class GroupUpdateResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
         if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
         if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = GroupUpdateResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+            temp_model = GroupUpdateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 

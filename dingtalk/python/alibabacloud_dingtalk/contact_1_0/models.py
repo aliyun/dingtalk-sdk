@@ -2887,7 +2887,7 @@ class GetCardInfoResponseBodyExtensionCardContactInfoEmail(TeaModel):
         return self
 
 
-class GetCardInfoResponseBodyExtensionCardContactInfoTelephone(TeaModel):
+class GetCardInfoResponseBodyExtensionCardContactInfoLink(TeaModel):
     def __init__(
         self,
         label: str = None,
@@ -2920,7 +2920,7 @@ class GetCardInfoResponseBodyExtensionCardContactInfoTelephone(TeaModel):
         return self
 
 
-class GetCardInfoResponseBodyExtensionCardContactInfoWechat(TeaModel):
+class GetCardInfoResponseBodyExtensionCardContactInfoTelephone(TeaModel):
     def __init__(
         self,
         label: str = None,
@@ -2958,17 +2958,17 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
         self,
         address: List[GetCardInfoResponseBodyExtensionCardContactInfoAddress] = None,
         email: List[GetCardInfoResponseBodyExtensionCardContactInfoEmail] = None,
+        link: List[GetCardInfoResponseBodyExtensionCardContactInfoLink] = None,
         telephone: List[GetCardInfoResponseBodyExtensionCardContactInfoTelephone] = None,
-        wechat: List[GetCardInfoResponseBodyExtensionCardContactInfoWechat] = None,
     ):
         # 地址
         self.address = address
         # 邮箱
         self.email = email
+        # 微信
+        self.link = link
         # 电话
         self.telephone = telephone
-        # 微信
-        self.wechat = wechat
 
     def validate(self):
         if self.address:
@@ -2979,12 +2979,12 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
             for k in self.email:
                 if k:
                     k.validate()
-        if self.telephone:
-            for k in self.telephone:
+        if self.link:
+            for k in self.link:
                 if k:
                     k.validate()
-        if self.wechat:
-            for k in self.wechat:
+        if self.telephone:
+            for k in self.telephone:
                 if k:
                     k.validate()
 
@@ -3002,14 +3002,14 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
         if self.email is not None:
             for k in self.email:
                 result['email'].append(k.to_map() if k else None)
+        result['link'] = []
+        if self.link is not None:
+            for k in self.link:
+                result['link'].append(k.to_map() if k else None)
         result['telephone'] = []
         if self.telephone is not None:
             for k in self.telephone:
                 result['telephone'].append(k.to_map() if k else None)
-        result['wechat'] = []
-        if self.wechat is not None:
-            for k in self.wechat:
-                result['wechat'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -3024,16 +3024,16 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
             for k in m.get('email'):
                 temp_model = GetCardInfoResponseBodyExtensionCardContactInfoEmail()
                 self.email.append(temp_model.from_map(k))
+        self.link = []
+        if m.get('link') is not None:
+            for k in m.get('link'):
+                temp_model = GetCardInfoResponseBodyExtensionCardContactInfoLink()
+                self.link.append(temp_model.from_map(k))
         self.telephone = []
         if m.get('telephone') is not None:
             for k in m.get('telephone'):
                 temp_model = GetCardInfoResponseBodyExtensionCardContactInfoTelephone()
                 self.telephone.append(temp_model.from_map(k))
-        self.wechat = []
-        if m.get('wechat') is not None:
-            for k in m.get('wechat'):
-                temp_model = GetCardInfoResponseBodyExtensionCardContactInfoWechat()
-                self.wechat.append(temp_model.from_map(k))
         return self
 
 
@@ -10089,6 +10089,7 @@ class UniqueQueryUserCardResponseBody(TeaModel):
         introduce: str = None,
         name: str = None,
         org_name: str = None,
+        settings: Dict[str, Any] = None,
         template_id: str = None,
         title: str = None,
     ):
@@ -10106,6 +10107,8 @@ class UniqueQueryUserCardResponseBody(TeaModel):
         self.name = name
         # 组织名
         self.org_name = org_name
+        # 用户设置
+        self.settings = settings
         # 模版id
         self.template_id = template_id
         # 标题
@@ -10134,6 +10137,8 @@ class UniqueQueryUserCardResponseBody(TeaModel):
             result['name'] = self.name
         if self.org_name is not None:
             result['orgName'] = self.org_name
+        if self.settings is not None:
+            result['settings'] = self.settings
         if self.template_id is not None:
             result['templateId'] = self.template_id
         if self.title is not None:
@@ -10156,6 +10161,8 @@ class UniqueQueryUserCardResponseBody(TeaModel):
             self.name = m.get('name')
         if m.get('orgName') is not None:
             self.org_name = m.get('orgName')
+        if m.get('settings') is not None:
+            self.settings = m.get('settings')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
         if m.get('title') is not None:
