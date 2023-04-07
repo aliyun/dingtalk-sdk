@@ -10,13 +10,17 @@ use AlibabaCloud\Tea\Model;
 class GroupUpdateResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
-     * @var result[]
+     * @var result
      */
     public $result;
+
+    /**
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'result' => 'result',
+        'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -27,13 +31,10 @@ class GroupUpdateResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = [];
-            if (null !== $this->result && \is_array($this->result)) {
-                $n = 0;
-                foreach ($this->result as $item) {
-                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -48,13 +49,10 @@ class GroupUpdateResponseBody extends Model
     {
         $model = new self();
         if (isset($map['result'])) {
-            if (!empty($map['result'])) {
-                $model->result = [];
-                $n             = 0;
-                foreach ($map['result'] as $item) {
-                    $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
-                }
-            }
+            $model->result = result::fromMap($map['result']);
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

@@ -6,8 +6,8 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\
 
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\address;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\email;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\link;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\telephone;
-use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\wechat;
 use AlibabaCloud\Tea\Model;
 
 class cardContactInfo extends Model
@@ -27,23 +27,23 @@ class cardContactInfo extends Model
     public $email;
 
     /**
+     * @description 微信
+     *
+     * @var link[]
+     */
+    public $link;
+
+    /**
      * @description 电话
      *
      * @var telephone[]
      */
     public $telephone;
-
-    /**
-     * @description 微信
-     *
-     * @var wechat[]
-     */
-    public $wechat;
     protected $_name = [
         'address'   => 'address',
         'email'     => 'email',
+        'link'      => 'link',
         'telephone' => 'telephone',
-        'wechat'    => 'wechat',
     ];
 
     public function validate()
@@ -71,21 +71,21 @@ class cardContactInfo extends Model
                 }
             }
         }
+        if (null !== $this->link) {
+            $res['link'] = [];
+            if (null !== $this->link && \is_array($this->link)) {
+                $n = 0;
+                foreach ($this->link as $item) {
+                    $res['link'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->telephone) {
             $res['telephone'] = [];
             if (null !== $this->telephone && \is_array($this->telephone)) {
                 $n = 0;
                 foreach ($this->telephone as $item) {
                     $res['telephone'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->wechat) {
-            $res['wechat'] = [];
-            if (null !== $this->wechat && \is_array($this->wechat)) {
-                $n = 0;
-                foreach ($this->wechat as $item) {
-                    $res['wechat'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -119,21 +119,21 @@ class cardContactInfo extends Model
                 }
             }
         }
+        if (isset($map['link'])) {
+            if (!empty($map['link'])) {
+                $model->link = [];
+                $n           = 0;
+                foreach ($map['link'] as $item) {
+                    $model->link[$n++] = null !== $item ? link::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['telephone'])) {
             if (!empty($map['telephone'])) {
                 $model->telephone = [];
                 $n                = 0;
                 foreach ($map['telephone'] as $item) {
                     $model->telephone[$n++] = null !== $item ? telephone::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['wechat'])) {
-            if (!empty($map['wechat'])) {
-                $model->wechat = [];
-                $n             = 0;
-                foreach ($map['wechat'] as $item) {
-                    $model->wechat[$n++] = null !== $item ? wechat::fromMap($item) : $item;
                 }
             }
         }

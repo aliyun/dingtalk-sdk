@@ -2,23 +2,27 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result;
 
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class customer extends Model
 {
     /**
-     * @var int
+     * @description 客户code
+     *
+     * @var string
      */
-    public $id;
+    public $code;
 
     /**
+     * @description 客户名字
+     *
      * @var string
      */
     public $name;
     protected $_name = [
-        'id'   => 'id',
+        'code' => 'code',
         'name' => 'name',
     ];
 
@@ -29,8 +33,8 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->id) {
-            $res['id'] = $this->id;
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -42,13 +46,13 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return customer
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['id'])) {
-            $model->id = $map['id'];
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

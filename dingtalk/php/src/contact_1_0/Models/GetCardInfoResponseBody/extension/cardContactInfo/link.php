@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\
 
 use AlibabaCloud\Tea\Model;
 
-class wechat extends Model
+class link extends Model
 {
     /**
      * @var string
@@ -42,7 +42,7 @@ class wechat extends Model
     /**
      * @param array $map
      *
-     * @return wechat
+     * @return link
      */
     public static function fromMap($map = [])
     {

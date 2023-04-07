@@ -173,6 +173,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAcrossCloudStroageConfig
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SearchOrgInnerGroupInfoResponse;
@@ -3060,6 +3063,51 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SaveAndSubmitAuthInfoResponse::fromMap($this->doROARequest('SaveAndSubmitAuthInfo', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/ognizations/authInfos/saveAndSubmit', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SaveWhiteAppRequest $request
+     *
+     * @return SaveWhiteAppResponse
+     */
+    public function saveWhiteApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveWhiteAppHeaders([]);
+
+        return $this->saveWhiteAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SaveWhiteAppRequest $request
+     * @param SaveWhiteAppHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return SaveWhiteAppResponse
+     */
+    public function saveWhiteAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentIdList)) {
+            @$body['agentIdList'] = $request->agentIdList;
+        }
+        if (!Utils::isUnset($request->operation)) {
+            @$body['operation'] = $request->operation;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return SaveWhiteAppResponse::fromMap($this->doROARequest('SaveWhiteApp', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/miniApps/whiteLists/save', 'json', $req, $runtime));
     }
 
     /**

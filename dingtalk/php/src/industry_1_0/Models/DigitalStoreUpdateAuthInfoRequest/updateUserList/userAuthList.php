@@ -9,12 +9,12 @@ use AlibabaCloud\Tea\Model;
 class userAuthList extends Model
 {
     /**
-     * @var int
+     * @var string
      */
     public $dingDeptId;
 
     /**
-     * @var int
+     * @var string
      */
     public $sourceDeptId;
     protected $_name = [

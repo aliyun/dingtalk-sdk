@@ -2,14 +2,14 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptForInvoiceResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptForInvoiceResponseBody\list_\creator;
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptForInvoiceResponseBody\list_\customer;
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptForInvoiceResponseBody\list_\productInfoList;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result\creator;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result\customer;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result\productInfoList;
 use AlibabaCloud\Tea\Model;
 
-class list_ extends Model
+class result extends Model
 {
     /**
      * @description 金额
@@ -275,7 +275,7 @@ class list_ extends Model
     /**
      * @param array $map
      *
-     * @return list_
+     * @return result
      */
     public static function fromMap($map = [])
     {

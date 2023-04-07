@@ -2,25 +2,21 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryReceiptDetailForInvoiceResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class GroupAddResponseBody extends Model
+class QueryReceiptDetailForInvoiceResponseBody extends Model
 {
     /**
+     * @description 结果
+     *
      * @var result
      */
     public $result;
-
-    /**
-     * @var bool
-     */
-    public $success;
     protected $_name = [
-        'result'  => 'result',
-        'success' => 'success',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -33,9 +29,6 @@ class GroupAddResponseBody extends Model
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
 
         return $res;
     }
@@ -43,16 +36,13 @@ class GroupAddResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GroupAddResponseBody
+     * @return QueryReceiptDetailForInvoiceResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
         }
 
         return $model;

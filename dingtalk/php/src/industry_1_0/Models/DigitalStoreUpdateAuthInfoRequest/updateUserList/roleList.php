@@ -14,7 +14,7 @@ class roleList extends Model
     public $roleName;
 
     /**
-     * @var int
+     * @var string
      */
     public $sourceRoleId;
     protected $_name = [

@@ -16,6 +16,20 @@ class createCustomerRequestList extends Model
     public $description;
 
     /**
+     * @description 开票人邮箱
+     *
+     * @var string
+     */
+    public $drawerEmail;
+
+    /**
+     * @description 开票人手机号
+     *
+     * @var string
+     */
+    public $drawerTelephone;
+
+    /**
      * @description 客户名字
      *
      * @var string
@@ -65,6 +79,8 @@ class createCustomerRequestList extends Model
     public $purchaserTel;
     protected $_name = [
         'description'       => 'description',
+        'drawerEmail'       => 'drawerEmail',
+        'drawerTelephone'   => 'drawerTelephone',
         'name'              => 'name',
         'purchaserAccount'  => 'purchaserAccount',
         'purchaserAddress'  => 'purchaserAddress',
@@ -83,6 +99,12 @@ class createCustomerRequestList extends Model
         $res = [];
         if (null !== $this->description) {
             $res['description'] = $this->description;
+        }
+        if (null !== $this->drawerEmail) {
+            $res['drawerEmail'] = $this->drawerEmail;
+        }
+        if (null !== $this->drawerTelephone) {
+            $res['drawerTelephone'] = $this->drawerTelephone;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -119,6 +141,12 @@ class createCustomerRequestList extends Model
         $model = new self();
         if (isset($map['description'])) {
             $model->description = $map['description'];
+        }
+        if (isset($map['drawerEmail'])) {
+            $model->drawerEmail = $map['drawerEmail'];
+        }
+        if (isset($map['drawerTelephone'])) {
+            $model->drawerTelephone = $map['drawerTelephone'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

@@ -2,24 +2,17 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class GroupAddResponseBody extends Model
+class SaveWhiteAppResponseBody extends Model
 {
-    /**
-     * @var result
-     */
-    public $result;
-
     /**
      * @var bool
      */
     public $success;
     protected $_name = [
-        'result'  => 'result',
         'success' => 'success',
     ];
 
@@ -30,9 +23,6 @@ class GroupAddResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
-        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
         }
@@ -43,14 +33,11 @@ class GroupAddResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GroupAddResponseBody
+     * @return SaveWhiteAppResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
-        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
         }

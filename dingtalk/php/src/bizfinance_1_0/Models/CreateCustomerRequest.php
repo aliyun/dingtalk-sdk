@@ -23,6 +23,20 @@ class CreateCustomerRequest extends Model
     public $description;
 
     /**
+     * @description 开票人邮箱
+     *
+     * @var string
+     */
+    public $drawerEmail;
+
+    /**
+     * @description 开票人手机号
+     *
+     * @var string
+     */
+    public $drawerTelephone;
+
+    /**
      * @description 客户名字
      *
      * @var string
@@ -73,6 +87,8 @@ class CreateCustomerRequest extends Model
     protected $_name = [
         'creator'           => 'creator',
         'description'       => 'description',
+        'drawerEmail'       => 'drawerEmail',
+        'drawerTelephone'   => 'drawerTelephone',
         'name'              => 'name',
         'purchaserAccount'  => 'purchaserAccount',
         'purchaserAddress'  => 'purchaserAddress',
@@ -94,6 +110,12 @@ class CreateCustomerRequest extends Model
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
+        }
+        if (null !== $this->drawerEmail) {
+            $res['drawerEmail'] = $this->drawerEmail;
+        }
+        if (null !== $this->drawerTelephone) {
+            $res['drawerTelephone'] = $this->drawerTelephone;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -133,6 +155,12 @@ class CreateCustomerRequest extends Model
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
+        }
+        if (isset($map['drawerEmail'])) {
+            $model->drawerEmail = $map['drawerEmail'];
+        }
+        if (isset($map['drawerTelephone'])) {
+            $model->drawerTelephone = $map['drawerTelephone'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
