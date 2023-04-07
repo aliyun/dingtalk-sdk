@@ -101,12 +101,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
                 }
 
                 /// <summary>
-                /// 电话
+                /// 微信
                 /// </summary>
-                [NameInMap("telephone")]
+                [NameInMap("link")]
                 [Validation(Required=false)]
-                public List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> Telephone { get; set; }
-                public class GetCardInfoResponseBodyExtensionCardContactInfoTelephone : TeaModel {
+                public List<GetCardInfoResponseBodyExtensionCardContactInfoLink> Link { get; set; }
+                public class GetCardInfoResponseBodyExtensionCardContactInfoLink : TeaModel {
                     [NameInMap("label")]
                     [Validation(Required=false)]
                     public string Label { get; set; }
@@ -118,12 +118,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
                 }
 
                 /// <summary>
-                /// 微信
+                /// 电话
                 /// </summary>
-                [NameInMap("wechat")]
+                [NameInMap("telephone")]
                 [Validation(Required=false)]
-                public List<GetCardInfoResponseBodyExtensionCardContactInfoWechat> Wechat { get; set; }
-                public class GetCardInfoResponseBodyExtensionCardContactInfoWechat : TeaModel {
+                public List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> Telephone { get; set; }
+                public class GetCardInfoResponseBodyExtensionCardContactInfoTelephone : TeaModel {
                     [NameInMap("label")]
                     [Validation(Required=false)]
                     public string Label { get; set; }

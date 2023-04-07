@@ -21,6 +21,20 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string Description { get; set; }
 
             /// <summary>
+            /// 开票人邮箱
+            /// </summary>
+            [NameInMap("drawerEmail")]
+            [Validation(Required=false)]
+            public string DrawerEmail { get; set; }
+
+            /// <summary>
+            /// 开票人手机号
+            /// </summary>
+            [NameInMap("drawerTelephone")]
+            [Validation(Required=false)]
+            public string DrawerTelephone { get; set; }
+
+            /// <summary>
             /// 客户名字
             /// </summary>
             [NameInMap("name")]

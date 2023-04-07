@@ -9,28 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class GroupUpdateResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
-        public List<GroupUpdateResponseBodyResult> Result { get; set; }
+        public GroupUpdateResponseBodyResult Result { get; set; }
         public class GroupUpdateResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 考勤组id
-            /// </summary>
-            [NameInMap("groupId")]
+            [NameInMap("id")]
             [Validation(Required=false)]
-            public long? GroupId { get; set; }
+            public long? Id { get; set; }
 
-            /// <summary>
-            /// 考勤组名
-            /// </summary>
-            [NameInMap("groupName")]
+            [NameInMap("name")]
             [Validation(Required=false)]
-            public string GroupName { get; set; }
+            public string Name { get; set; }
 
         }
+
+        [NameInMap("success")]
+        [Validation(Required=false)]
+        public bool? Success { get; set; }
 
     }
 

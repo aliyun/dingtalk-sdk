@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 
                 [NameInMap("sourceRoleId")]
                 [Validation(Required=false)]
-                public long? SourceRoleId { get; set; }
+                public string SourceRoleId { get; set; }
 
             }
 
@@ -33,11 +33,11 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList : TeaModel {
                 [NameInMap("dingDeptId")]
                 [Validation(Required=false)]
-                public long? DingDeptId { get; set; }
+                public string DingDeptId { get; set; }
 
                 [NameInMap("sourceDeptId")]
                 [Validation(Required=false)]
-                public long? SourceDeptId { get; set; }
+                public string SourceDeptId { get; set; }
 
             }
 

@@ -8,21 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
-    public class QueryReceiptForInvoiceResponseBody : TeaModel {
+    public class QueryReceiptDetailForInvoiceResponseBody : TeaModel {
         /// <summary>
-        /// 是否还有数据
+        /// 结果
         /// </summary>
-        [NameInMap("hasMore")]
+        [NameInMap("result")]
         [Validation(Required=false)]
-        public string HasMore { get; set; }
-
-        /// <summary>
-        /// 分页数据
-        /// </summary>
-        [NameInMap("list")]
-        [Validation(Required=false)]
-        public List<QueryReceiptForInvoiceResponseBodyList> List { get; set; }
-        public class QueryReceiptForInvoiceResponseBodyList : TeaModel {
+        public QueryReceiptDetailForInvoiceResponseBodyResult Result { get; set; }
+        public class QueryReceiptDetailForInvoiceResponseBodyResult : TeaModel {
             /// <summary>
             /// 金额
             /// </summary>
@@ -49,8 +42,8 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             /// </summary>
             [NameInMap("creator")]
             [Validation(Required=false)]
-            public QueryReceiptForInvoiceResponseBodyListCreator Creator { get; set; }
-            public class QueryReceiptForInvoiceResponseBodyListCreator : TeaModel {
+            public QueryReceiptDetailForInvoiceResponseBodyResultCreator Creator { get; set; }
+            public class QueryReceiptDetailForInvoiceResponseBodyResultCreator : TeaModel {
                 /// <summary>
                 /// 创建人头像
                 /// </summary>
@@ -79,8 +72,8 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             /// </summary>
             [NameInMap("customer")]
             [Validation(Required=false)]
-            public QueryReceiptForInvoiceResponseBodyListCustomer Customer { get; set; }
-            public class QueryReceiptForInvoiceResponseBodyListCustomer : TeaModel {
+            public QueryReceiptDetailForInvoiceResponseBodyResultCustomer Customer { get; set; }
+            public class QueryReceiptDetailForInvoiceResponseBodyResultCustomer : TeaModel {
                 /// <summary>
                 /// 客户code
                 /// </summary>
@@ -130,8 +123,8 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             /// </summary>
             [NameInMap("productInfoList")]
             [Validation(Required=false)]
-            public List<QueryReceiptForInvoiceResponseBodyListProductInfoList> ProductInfoList { get; set; }
-            public class QueryReceiptForInvoiceResponseBodyListProductInfoList : TeaModel {
+            public List<QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList> ProductInfoList { get; set; }
+            public class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList : TeaModel {
                 /// <summary>
                 /// 含税金额
                 /// </summary>
@@ -268,13 +261,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string Title { get; set; }
 
         }
-
-        /// <summary>
-        /// 总数
-        /// </summary>
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public long? TotalCount { get; set; }
 
     }
 

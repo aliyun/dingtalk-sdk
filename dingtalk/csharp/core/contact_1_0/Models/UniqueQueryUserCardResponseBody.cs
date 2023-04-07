@@ -59,6 +59,13 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string OrgName { get; set; }
 
         /// <summary>
+        /// 用户设置
+        /// </summary>
+        [NameInMap("settings")]
+        [Validation(Required=false)]
+        public Dictionary<string, object> Settings { get; set; }
+
+        /// <summary>
         /// 模版id
         /// </summary>
         [NameInMap("templateId")]
