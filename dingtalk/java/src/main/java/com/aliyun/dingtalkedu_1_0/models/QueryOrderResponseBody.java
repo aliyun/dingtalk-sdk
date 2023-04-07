@@ -77,12 +77,6 @@ public class QueryOrderResponseBody extends TeaModel {
     public String outerUserId;
 
     /**
-     * <p>买家支付id。</p>
-     */
-    @NameInMap("payId")
-    public String payId;
-
-    /**
      * <p>买家支付登陆id。</p>
      */
     @NameInMap("payLogonId")
@@ -246,14 +240,6 @@ public class QueryOrderResponseBody extends TeaModel {
     }
     public String getOuterUserId() {
         return this.outerUserId;
-    }
-
-    public QueryOrderResponseBody setPayId(String payId) {
-        this.payId = payId;
-        return this;
-    }
-    public String getPayId() {
-        return this.payId;
     }
 
     public QueryOrderResponseBody setPayLogonId(String payLogonId) {

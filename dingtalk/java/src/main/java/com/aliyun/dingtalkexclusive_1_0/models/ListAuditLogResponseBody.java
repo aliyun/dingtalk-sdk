@@ -176,6 +176,12 @@ public class ListAuditLogResponseBody extends TeaModel {
         @NameInMap("docMemberList")
         public java.util.List<ListAuditLogResponseBodyListDocMemberList> docMemberList;
 
+        @NameInMap("docMobileUrl")
+        public String docMobileUrl;
+
+        @NameInMap("docPcUrl")
+        public String docPcUrl;
+
         /**
          * <p>成员授权列表，仅文档授权返回</p>
          */
@@ -296,6 +302,18 @@ public class ListAuditLogResponseBody extends TeaModel {
         @NameInMap("userId")
         public String userId;
 
+        @NameInMap("workSpaceId")
+        public Long workSpaceId;
+
+        @NameInMap("workSpaceMobileUrl")
+        public String workSpaceMobileUrl;
+
+        @NameInMap("workSpaceName")
+        public String workSpaceName;
+
+        @NameInMap("workSpacePcUrl")
+        public String workSpacePcUrl;
+
         public static ListAuditLogResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             ListAuditLogResponseBodyList self = new ListAuditLogResponseBodyList();
             return TeaModel.build(map, self);
@@ -331,6 +349,22 @@ public class ListAuditLogResponseBody extends TeaModel {
         }
         public java.util.List<ListAuditLogResponseBodyListDocMemberList> getDocMemberList() {
             return this.docMemberList;
+        }
+
+        public ListAuditLogResponseBodyList setDocMobileUrl(String docMobileUrl) {
+            this.docMobileUrl = docMobileUrl;
+            return this;
+        }
+        public String getDocMobileUrl() {
+            return this.docMobileUrl;
+        }
+
+        public ListAuditLogResponseBodyList setDocPcUrl(String docPcUrl) {
+            this.docPcUrl = docPcUrl;
+            return this;
+        }
+        public String getDocPcUrl() {
+            return this.docPcUrl;
         }
 
         public ListAuditLogResponseBodyList setDocReceiverList(java.util.List<ListAuditLogResponseBodyListDocReceiverList> docReceiverList) {
@@ -491,6 +525,38 @@ public class ListAuditLogResponseBody extends TeaModel {
         }
         public String getUserId() {
             return this.userId;
+        }
+
+        public ListAuditLogResponseBodyList setWorkSpaceId(Long workSpaceId) {
+            this.workSpaceId = workSpaceId;
+            return this;
+        }
+        public Long getWorkSpaceId() {
+            return this.workSpaceId;
+        }
+
+        public ListAuditLogResponseBodyList setWorkSpaceMobileUrl(String workSpaceMobileUrl) {
+            this.workSpaceMobileUrl = workSpaceMobileUrl;
+            return this;
+        }
+        public String getWorkSpaceMobileUrl() {
+            return this.workSpaceMobileUrl;
+        }
+
+        public ListAuditLogResponseBodyList setWorkSpaceName(String workSpaceName) {
+            this.workSpaceName = workSpaceName;
+            return this;
+        }
+        public String getWorkSpaceName() {
+            return this.workSpaceName;
+        }
+
+        public ListAuditLogResponseBodyList setWorkSpacePcUrl(String workSpacePcUrl) {
+            this.workSpacePcUrl = workSpacePcUrl;
+            return this;
+        }
+        public String getWorkSpacePcUrl() {
+            return this.workSpacePcUrl;
         }
 
     }
