@@ -148,11 +148,8 @@ public class GroupUpdateRequest extends TeaModel {
     @NameInMap("positions")
     public java.util.List<GroupUpdateRequestPositions> positions;
 
-    /**
-     * <p>子管理员权限范围。w：可管理r：可读</p>
-     */
     @NameInMap("resourcePermissionMap")
-    public java.util.List<GroupUpdateRequestResourcePermissionMap> resourcePermissionMap;
+    public java.util.Map<String, ?> resourcePermissionMap;
 
     /**
      * <p>班次相关配置信息。</p>
@@ -381,11 +378,11 @@ public class GroupUpdateRequest extends TeaModel {
         return this.positions;
     }
 
-    public GroupUpdateRequest setResourcePermissionMap(java.util.List<GroupUpdateRequestResourcePermissionMap> resourcePermissionMap) {
+    public GroupUpdateRequest setResourcePermissionMap(java.util.Map<String, ?> resourcePermissionMap) {
         this.resourcePermissionMap = resourcePermissionMap;
         return this;
     }
-    public java.util.List<GroupUpdateRequestResourcePermissionMap> getResourcePermissionMap() {
+    public java.util.Map<String, ?> getResourcePermissionMap() {
         return this.resourcePermissionMap;
     }
 
@@ -577,126 +574,6 @@ public class GroupUpdateRequest extends TeaModel {
         }
         public String getTitle() {
             return this.title;
-        }
-
-    }
-
-    public static class GroupUpdateRequestResourcePermissionMap extends TeaModel {
-        /**
-         * <p>设置拍照打卡规则。</p>
-         */
-        @NameInMap("cameraCheck")
-        public String cameraCheck;
-
-        /**
-         * <p>设置打卡方式。</p>
-         */
-        @NameInMap("checkPositionType")
-        public String checkPositionType;
-
-        /**
-         * <p>设置考勤时间。</p>
-         */
-        @NameInMap("checkTime")
-        public String checkTime;
-
-        /**
-         * <p>设置参与考勤人员。</p>
-         */
-        @NameInMap("groupMember")
-        public String groupMember;
-
-        /**
-         * <p>设置考勤类型。</p>
-         */
-        @NameInMap("groupType")
-        public String groupType;
-
-        /**
-         * <p>设置外勤打卡。</p>
-         */
-        @NameInMap("outSideCheck")
-        public String outSideCheck;
-
-        /**
-         * <p>设置加班规则。</p>
-         */
-        @NameInMap("overTimeRule")
-        public String overTimeRule;
-
-        /**
-         * <p>员工排班。</p>
-         */
-        @NameInMap("schedule")
-        public String schedule;
-
-        public static GroupUpdateRequestResourcePermissionMap build(java.util.Map<String, ?> map) throws Exception {
-            GroupUpdateRequestResourcePermissionMap self = new GroupUpdateRequestResourcePermissionMap();
-            return TeaModel.build(map, self);
-        }
-
-        public GroupUpdateRequestResourcePermissionMap setCameraCheck(String cameraCheck) {
-            this.cameraCheck = cameraCheck;
-            return this;
-        }
-        public String getCameraCheck() {
-            return this.cameraCheck;
-        }
-
-        public GroupUpdateRequestResourcePermissionMap setCheckPositionType(String checkPositionType) {
-            this.checkPositionType = checkPositionType;
-            return this;
-        }
-        public String getCheckPositionType() {
-            return this.checkPositionType;
-        }
-
-        public GroupUpdateRequestResourcePermissionMap setCheckTime(String checkTime) {
-            this.checkTime = checkTime;
-            return this;
-        }
-        public String getCheckTime() {
-            return this.checkTime;
-        }
-
-        public GroupUpdateRequestResourcePermissionMap setGroupMember(String groupMember) {
-            this.groupMember = groupMember;
-            return this;
-        }
-        public String getGroupMember() {
-            return this.groupMember;
-        }
-
-        public GroupUpdateRequestResourcePermissionMap setGroupType(String groupType) {
-            this.groupType = groupType;
-            return this;
-        }
-        public String getGroupType() {
-            return this.groupType;
-        }
-
-        public GroupUpdateRequestResourcePermissionMap setOutSideCheck(String outSideCheck) {
-            this.outSideCheck = outSideCheck;
-            return this;
-        }
-        public String getOutSideCheck() {
-            return this.outSideCheck;
-        }
-
-        public GroupUpdateRequestResourcePermissionMap setOverTimeRule(String overTimeRule) {
-            this.overTimeRule = overTimeRule;
-            return this;
-        }
-        public String getOverTimeRule() {
-            return this.overTimeRule;
-        }
-
-        public GroupUpdateRequestResourcePermissionMap setSchedule(String schedule) {
-            this.schedule = schedule;
-            return this;
-        }
-        public String getSchedule() {
-            return this.schedule;
         }
 
     }

@@ -4513,6 +4513,162 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.doROARequest("SaveUserExtendValues", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/medicals/users/" + userId + "/extends", "json", req, runtime), new SaveUserExtendValuesResponse());
     }
 
+    public SupplyAddDeptResponse supplyAddDept(SupplyAddDeptRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SupplyAddDeptHeaders headers = new SupplyAddDeptHeaders();
+        return this.supplyAddDeptWithOptions(request, headers, runtime);
+    }
+
+    public SupplyAddDeptResponse supplyAddDeptWithOptions(SupplyAddDeptRequest request, SupplyAddDeptHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptName)) {
+            query.put("deptName", request.deptName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.partnerNumber)) {
+            query.put("partnerNumber", request.partnerNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.superDeptId)) {
+            query.put("superDeptId", request.superDeptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.supplyDeptType)) {
+            query.put("supplyDeptType", request.supplyDeptType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("SupplyAddDept", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/supplyChains/departments", "json", req, runtime), new SupplyAddDeptResponse());
+    }
+
+    public SupplyAddMemberResponse supplyAddMember(SupplyAddMemberRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SupplyAddMemberHeaders headers = new SupplyAddMemberHeaders();
+        return this.supplyAddMemberWithOptions(request, headers, runtime);
+    }
+
+    public SupplyAddMemberResponse supplyAddMemberWithOptions(SupplyAddMemberRequest request, SupplyAddMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isPartnerManager)) {
+            query.put("isPartnerManager", request.isPartnerManager);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.memberMobile)) {
+            query.put("memberMobile", request.memberMobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.memberName)) {
+            query.put("memberName", request.memberName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.memberWorkNumber)) {
+            query.put("memberWorkNumber", request.memberWorkNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.supplyDeptId)) {
+            query.put("supplyDeptId", request.supplyDeptId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("SupplyAddMember", "industry_1.0", "HTTP", "POST", "AK", "/v1.0/industry/supplyChains/members", "json", req, runtime), new SupplyAddMemberResponse());
+    }
+
+    public SupplyGetMemberResponse supplyGetMember(SupplyGetMemberRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SupplyGetMemberHeaders headers = new SupplyGetMemberHeaders();
+        return this.supplyGetMemberWithOptions(request, headers, runtime);
+    }
+
+    public SupplyGetMemberResponse supplyGetMemberWithOptions(SupplyGetMemberRequest request, SupplyGetMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("SupplyGetMember", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/supplyChains/members", "json", req, runtime), new SupplyGetMemberResponse());
+    }
+
+    public SupplyListDeptMembersResponse supplyListDeptMembers(SupplyListDeptMembersRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SupplyListDeptMembersHeaders headers = new SupplyListDeptMembersHeaders();
+        return this.supplyListDeptMembersWithOptions(request, headers, runtime);
+    }
+
+    public SupplyListDeptMembersResponse supplyListDeptMembersWithOptions(SupplyListDeptMembersRequest request, SupplyListDeptMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.supplyDeptId)) {
+            query.put("supplyDeptId", request.supplyDeptId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        return TeaModel.toModel(this.doROARequest("SupplyListDeptMembers", "industry_1.0", "HTTP", "GET", "AK", "/v1.0/industry/supplyChains/departments/members", "json", req, runtime), new SupplyListDeptMembersResponse());
+    }
+
     public UpdateUserExtendInfoResponse updateUserExtendInfo(String userId, UpdateUserExtendInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateUserExtendInfoHeaders headers = new UpdateUserExtendInfoHeaders();

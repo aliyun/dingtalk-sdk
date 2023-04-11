@@ -21,6 +21,9 @@ public class DigitalStoreSubNodesResponseBody extends TeaModel {
     }
 
     public static class DigitalStoreSubNodesResponseBodyContent extends TeaModel {
+        @NameInMap("dingDeptId")
+        public Long dingDeptId;
+
         /**
          * <p>节点Id</p>
          */
@@ -48,6 +51,14 @@ public class DigitalStoreSubNodesResponseBody extends TeaModel {
         public static DigitalStoreSubNodesResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             DigitalStoreSubNodesResponseBodyContent self = new DigitalStoreSubNodesResponseBodyContent();
             return TeaModel.build(map, self);
+        }
+
+        public DigitalStoreSubNodesResponseBodyContent setDingDeptId(Long dingDeptId) {
+            this.dingDeptId = dingDeptId;
+            return this;
+        }
+        public Long getDingDeptId() {
+            return this.dingDeptId;
         }
 
         public DigitalStoreSubNodesResponseBodyContent setId(Long id) {
