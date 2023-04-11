@@ -10072,6 +10072,367 @@ export class SaveUserExtendValuesResponse extends $tea.Model {
   }
 }
 
+export class SupplyAddDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddDeptRequest extends $tea.Model {
+  deptName?: string;
+  partnerNumber?: string;
+  superDeptId?: number;
+  supplyDeptType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptName: 'deptName',
+      partnerNumber: 'partnerNumber',
+      superDeptId: 'superDeptId',
+      supplyDeptType: 'supplyDeptType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptName: 'string',
+      partnerNumber: 'string',
+      superDeptId: 'number',
+      supplyDeptType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddDeptResponseBody extends $tea.Model {
+  result?: SupplyAddDeptResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SupplyAddDeptResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddDeptResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SupplyAddDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SupplyAddDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddMemberRequest extends $tea.Model {
+  isPartnerManager?: boolean;
+  memberMobile?: string;
+  memberName?: string;
+  memberWorkNumber?: string;
+  supplyDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      isPartnerManager: 'isPartnerManager',
+      memberMobile: 'memberMobile',
+      memberName: 'memberName',
+      memberWorkNumber: 'memberWorkNumber',
+      supplyDeptId: 'supplyDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isPartnerManager: 'boolean',
+      memberMobile: 'string',
+      memberName: 'string',
+      memberWorkNumber: 'string',
+      supplyDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddMemberResponseBody extends $tea.Model {
+  result?: SupplyAddMemberResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SupplyAddMemberResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SupplyAddMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SupplyAddMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyGetMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyGetMemberRequest extends $tea.Model {
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyGetMemberResponseBody extends $tea.Model {
+  result?: SupplyGetMemberResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SupplyGetMemberResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyGetMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SupplyGetMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SupplyGetMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyListDeptMembersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyListDeptMembersRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  supplyDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      supplyDeptId: 'supplyDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+      supplyDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyListDeptMembersResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: SupplyListDeptMembersResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': SupplyListDeptMembersResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyListDeptMembersResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: SupplyListDeptMembersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: SupplyListDeptMembersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateUserExtendInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10690,12 +11051,14 @@ export class DigitalStoreRolesResponseBodyContent extends $tea.Model {
 }
 
 export class DigitalStoreSubNodesResponseBodyContent extends $tea.Model {
+  dingDeptId?: number;
   id?: number;
   name?: string;
   parentId?: number;
   type?: number;
   static names(): { [key: string]: string } {
     return {
+      dingDeptId: 'dingDeptId',
       id: 'id',
       name: 'name',
       parentId: 'parentId',
@@ -10705,6 +11068,7 @@ export class DigitalStoreSubNodesResponseBodyContent extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      dingDeptId: 'number',
       id: 'number',
       name: 'string',
       parentId: 'number',
@@ -13148,6 +13512,112 @@ export class QueryUserRolesResponseBodyContent extends $tea.Model {
     return {
       roleCode: 'string',
       roleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddDeptResponseBodyResult extends $tea.Model {
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyAddMemberResponseBodyResult extends $tea.Model {
+  dingMemberStatus?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingMemberStatus: 'dingMemberStatus',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingMemberStatus: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyGetMemberResponseBodyResult extends $tea.Model {
+  dingMemberStatus?: string;
+  isActive?: boolean;
+  memberName?: string;
+  memberWorkNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingMemberStatus: 'dingMemberStatus',
+      isActive: 'isActive',
+      memberName: 'memberName',
+      memberWorkNumber: 'memberWorkNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingMemberStatus: 'string',
+      isActive: 'boolean',
+      memberName: 'string',
+      memberWorkNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyListDeptMembersResponseBodyList extends $tea.Model {
+  dingMemberStatus?: string;
+  isActive?: boolean;
+  memberName?: string;
+  memberWorkNumber?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingMemberStatus: 'dingMemberStatus',
+      isActive: 'isActive',
+      memberName: 'memberName',
+      memberWorkNumber: 'memberWorkNumber',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingMemberStatus: 'string',
+      isActive: 'boolean',
+      memberName: 'string',
+      memberWorkNumber: 'string',
+      unionId: 'string',
+      userId: 'string',
     };
   }
 
@@ -17664,6 +18134,162 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
     });
     return $tea.cast<SaveUserExtendValuesResponse>(await this.doROARequest("SaveUserExtendValues", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/users/${userId}/extends`, "json", req, runtime), new SaveUserExtendValuesResponse({}));
+  }
+
+  async supplyAddDept(request: SupplyAddDeptRequest): Promise<SupplyAddDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SupplyAddDeptHeaders({ });
+    return await this.supplyAddDeptWithOptions(request, headers, runtime);
+  }
+
+  async supplyAddDeptWithOptions(request: SupplyAddDeptRequest, headers: SupplyAddDeptHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyAddDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptName)) {
+      query["deptName"] = request.deptName;
+    }
+
+    if (!Util.isUnset(request.partnerNumber)) {
+      query["partnerNumber"] = request.partnerNumber;
+    }
+
+    if (!Util.isUnset(request.superDeptId)) {
+      query["superDeptId"] = request.superDeptId;
+    }
+
+    if (!Util.isUnset(request.supplyDeptType)) {
+      query["supplyDeptType"] = request.supplyDeptType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SupplyAddDeptResponse>(await this.doROARequest("SupplyAddDept", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/supplyChains/departments`, "json", req, runtime), new SupplyAddDeptResponse({}));
+  }
+
+  async supplyAddMember(request: SupplyAddMemberRequest): Promise<SupplyAddMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SupplyAddMemberHeaders({ });
+    return await this.supplyAddMemberWithOptions(request, headers, runtime);
+  }
+
+  async supplyAddMemberWithOptions(request: SupplyAddMemberRequest, headers: SupplyAddMemberHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyAddMemberResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isPartnerManager)) {
+      query["isPartnerManager"] = request.isPartnerManager;
+    }
+
+    if (!Util.isUnset(request.memberMobile)) {
+      query["memberMobile"] = request.memberMobile;
+    }
+
+    if (!Util.isUnset(request.memberName)) {
+      query["memberName"] = request.memberName;
+    }
+
+    if (!Util.isUnset(request.memberWorkNumber)) {
+      query["memberWorkNumber"] = request.memberWorkNumber;
+    }
+
+    if (!Util.isUnset(request.supplyDeptId)) {
+      query["supplyDeptId"] = request.supplyDeptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SupplyAddMemberResponse>(await this.doROARequest("SupplyAddMember", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/supplyChains/members`, "json", req, runtime), new SupplyAddMemberResponse({}));
+  }
+
+  async supplyGetMember(request: SupplyGetMemberRequest): Promise<SupplyGetMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SupplyGetMemberHeaders({ });
+    return await this.supplyGetMemberWithOptions(request, headers, runtime);
+  }
+
+  async supplyGetMemberWithOptions(request: SupplyGetMemberRequest, headers: SupplyGetMemberHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyGetMemberResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SupplyGetMemberResponse>(await this.doROARequest("SupplyGetMember", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/supplyChains/members`, "json", req, runtime), new SupplyGetMemberResponse({}));
+  }
+
+  async supplyListDeptMembers(request: SupplyListDeptMembersRequest): Promise<SupplyListDeptMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SupplyListDeptMembersHeaders({ });
+    return await this.supplyListDeptMembersWithOptions(request, headers, runtime);
+  }
+
+  async supplyListDeptMembersWithOptions(request: SupplyListDeptMembersRequest, headers: SupplyListDeptMembersHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyListDeptMembersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.supplyDeptId)) {
+      query["supplyDeptId"] = request.supplyDeptId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    return $tea.cast<SupplyListDeptMembersResponse>(await this.doROARequest("SupplyListDeptMembers", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/supplyChains/departments/members`, "json", req, runtime), new SupplyListDeptMembersResponse({}));
   }
 
   async updateUserExtendInfo(userId: string, request: UpdateUserExtendInfoRequest): Promise<UpdateUserExtendInfoResponse> {

@@ -1841,7 +1841,7 @@ export class GroupAddRequest extends $tea.Model {
   overtimeSettingId?: number;
   owner?: string;
   positions?: GroupAddRequestPositions[];
-  resourcePermissionMap?: GroupAddRequestResourcePermissionMap[];
+  resourcePermissionMap?: { [key: string]: any };
   shiftVOList?: GroupAddRequestShiftVOList[];
   skipHolidays?: boolean;
   specialDays?: string;
@@ -1934,7 +1934,7 @@ export class GroupAddRequest extends $tea.Model {
       overtimeSettingId: 'number',
       owner: 'string',
       positions: { 'type': 'array', 'itemType': GroupAddRequestPositions },
-      resourcePermissionMap: { 'type': 'array', 'itemType': GroupAddRequestResourcePermissionMap },
+      resourcePermissionMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       shiftVOList: { 'type': 'array', 'itemType': GroupAddRequestShiftVOList },
       skipHolidays: 'boolean',
       specialDays: 'string',
@@ -2042,7 +2042,7 @@ export class GroupUpdateRequest extends $tea.Model {
   overtimeSettingId?: number;
   owner?: string;
   positions?: GroupUpdateRequestPositions[];
-  resourcePermissionMap?: GroupUpdateRequestResourcePermissionMap[];
+  resourcePermissionMap?: { [key: string]: any };
   shiftVOList?: GroupUpdateRequestShiftVOList[];
   skipHolidays?: boolean;
   trimDistance?: number;
@@ -2109,7 +2109,7 @@ export class GroupUpdateRequest extends $tea.Model {
       overtimeSettingId: 'number',
       owner: 'string',
       positions: { 'type': 'array', 'itemType': GroupUpdateRequestPositions },
-      resourcePermissionMap: { 'type': 'array', 'itemType': GroupUpdateRequestResourcePermissionMap },
+      resourcePermissionMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       shiftVOList: { 'type': 'array', 'itemType': GroupUpdateRequestShiftVOList },
       skipHolidays: 'boolean',
       trimDistance: 'number',
@@ -4187,46 +4187,6 @@ export class GroupAddRequestPositions extends $tea.Model {
   }
 }
 
-export class GroupAddRequestResourcePermissionMap extends $tea.Model {
-  cameraCheck?: string;
-  checkPositionType?: string;
-  checkTime?: string;
-  groupMember?: string;
-  groupType?: string;
-  outSideCheck?: string;
-  overTimeRule?: string;
-  schedule?: string;
-  static names(): { [key: string]: string } {
-    return {
-      cameraCheck: 'cameraCheck',
-      checkPositionType: 'checkPositionType',
-      checkTime: 'checkTime',
-      groupMember: 'groupMember',
-      groupType: 'groupType',
-      outSideCheck: 'outSideCheck',
-      overTimeRule: 'overTimeRule',
-      schedule: 'schedule',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      cameraCheck: 'string',
-      checkPositionType: 'string',
-      checkTime: 'string',
-      groupMember: 'string',
-      groupType: 'string',
-      outSideCheck: 'string',
-      overTimeRule: 'string',
-      schedule: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GroupAddRequestShiftVOList extends $tea.Model {
   shiftId?: number;
   static names(): { [key: string]: string } {
@@ -4357,46 +4317,6 @@ export class GroupUpdateRequestPositions extends $tea.Model {
       longitude: 'string',
       offset: 'number',
       title: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GroupUpdateRequestResourcePermissionMap extends $tea.Model {
-  cameraCheck?: string;
-  checkPositionType?: string;
-  checkTime?: string;
-  groupMember?: string;
-  groupType?: string;
-  outSideCheck?: string;
-  overTimeRule?: string;
-  schedule?: string;
-  static names(): { [key: string]: string } {
-    return {
-      cameraCheck: 'cameraCheck',
-      checkPositionType: 'checkPositionType',
-      checkTime: 'checkTime',
-      groupMember: 'groupMember',
-      groupType: 'groupType',
-      outSideCheck: 'outSideCheck',
-      overTimeRule: 'overTimeRule',
-      schedule: 'schedule',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      cameraCheck: 'string',
-      checkPositionType: 'string',
-      checkTime: 'string',
-      groupMember: 'string',
-      groupType: 'string',
-      outSideCheck: 'string',
-      overTimeRule: 'string',
-      schedule: 'string',
     };
   }
 

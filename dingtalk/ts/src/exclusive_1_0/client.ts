@@ -2963,6 +2963,94 @@ export class GetOaOperatorLogListResponse extends $tea.Model {
   }
 }
 
+export class GetOutsideAuditGroupMessageByPageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOutsideAuditGroupMessageByPageRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: number;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOutsideAuditGroupMessageByPageResponseBody extends $tea.Model {
+  responseBody?: GetOutsideAuditGroupMessageByPageResponseBodyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      responseBody: 'responseBody',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      responseBody: GetOutsideAuditGroupMessageByPageResponseBodyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOutsideAuditGroupMessageByPageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  body: GetOutsideAuditGroupMessageByPageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      body: GetOutsideAuditGroupMessageByPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPartnerTypeByParentIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6829,6 +6917,84 @@ export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender extends $tea.Model {
+  id?: string;
+  idType?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      idType: 'idType',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      idType: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList extends $tea.Model {
+  content?: string;
+  contentType?: string;
+  createAt?: string;
+  openConversationId?: string;
+  sender?: GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      contentType: 'contentType',
+      createAt: 'createAt',
+      openConversationId: 'openConversationId',
+      sender: 'sender',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      contentType: 'string',
+      createAt: 'string',
+      openConversationId: 'string',
+      sender: GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOutsideAuditGroupMessageByPageResponseBodyResponseBody extends $tea.Model {
+  messageList?: GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      messageList: 'messageList',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messageList: { 'type': 'array', 'itemType': GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPartnerTypeByParentIdResponseBodyData extends $tea.Model {
   labelId?: string;
   typeId?: number;
@@ -9010,6 +9176,43 @@ export default class Client extends OpenApi {
       body: OpenApiUtil.parseToMap(body),
     });
     return $tea.cast<GetOaOperatorLogListResponse>(await this.doROARequest("GetOaOperatorLogList", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/oaOperatorLogs/query`, "json", req, runtime), new GetOaOperatorLogListResponse({}));
+  }
+
+  async getOutsideAuditGroupMessageByPage(request: GetOutsideAuditGroupMessageByPageRequest): Promise<GetOutsideAuditGroupMessageByPageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOutsideAuditGroupMessageByPageHeaders({ });
+    return await this.getOutsideAuditGroupMessageByPageWithOptions(request, headers, runtime);
+  }
+
+  async getOutsideAuditGroupMessageByPageWithOptions(request: GetOutsideAuditGroupMessageByPageRequest, headers: GetOutsideAuditGroupMessageByPageHeaders, runtime: $Util.RuntimeOptions): Promise<GetOutsideAuditGroupMessageByPageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    return $tea.cast<GetOutsideAuditGroupMessageByPageResponse>(await this.doROARequest("GetOutsideAuditGroupMessageByPage", "exclusive_1.0", "HTTP", "POST", "AK", `/v1.0/exclusive/audits/outsideGroups/messages/query`, "json", req, runtime), new GetOutsideAuditGroupMessageByPageResponse({}));
   }
 
   async getPartnerTypeByParentId(parentId: string): Promise<GetPartnerTypeByParentIdResponse> {
