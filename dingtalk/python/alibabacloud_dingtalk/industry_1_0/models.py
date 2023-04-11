@@ -10040,11 +10040,13 @@ class DigitalStoreSubNodesRequest(TeaModel):
 class DigitalStoreSubNodesResponseBodyContent(TeaModel):
     def __init__(
         self,
+        ding_dept_id: int = None,
         id: int = None,
         name: str = None,
         parent_id: int = None,
         type: int = None,
     ):
+        self.ding_dept_id = ding_dept_id
         # 节点Id
         self.id = id
         # 门店名称
@@ -10063,6 +10065,8 @@ class DigitalStoreSubNodesResponseBodyContent(TeaModel):
             return _map
 
         result = dict()
+        if self.ding_dept_id is not None:
+            result['dingDeptId'] = self.ding_dept_id
         if self.id is not None:
             result['id'] = self.id
         if self.name is not None:
@@ -10075,6 +10079,8 @@ class DigitalStoreSubNodesResponseBodyContent(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('dingDeptId') is not None:
+            self.ding_dept_id = m.get('dingDeptId')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('name') is not None:
@@ -22608,6 +22614,779 @@ class SaveUserExtendValuesResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('body') is not None:
             temp_model = SaveUserExtendValuesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SupplyAddDeptHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SupplyAddDeptRequest(TeaModel):
+    def __init__(
+        self,
+        dept_name: str = None,
+        partner_number: str = None,
+        super_dept_id: int = None,
+        supply_dept_type: str = None,
+    ):
+        # 部门名字
+        self.dept_name = dept_name
+        # 供应商编号
+        self.partner_number = partner_number
+        # 上级部门id
+        self.super_dept_id = super_dept_id
+        # 供应链部门类型
+        self.supply_dept_type = supply_dept_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.partner_number is not None:
+            result['partnerNumber'] = self.partner_number
+        if self.super_dept_id is not None:
+            result['superDeptId'] = self.super_dept_id
+        if self.supply_dept_type is not None:
+            result['supplyDeptType'] = self.supply_dept_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('partnerNumber') is not None:
+            self.partner_number = m.get('partnerNumber')
+        if m.get('superDeptId') is not None:
+            self.super_dept_id = m.get('superDeptId')
+        if m.get('supplyDeptType') is not None:
+            self.supply_dept_type = m.get('supplyDeptType')
+        return self
+
+
+class SupplyAddDeptResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+    ):
+        # 部门id
+        self.dept_id = dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        return self
+
+
+class SupplyAddDeptResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SupplyAddDeptResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SupplyAddDeptResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class SupplyAddDeptResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SupplyAddDeptResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SupplyAddDeptResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SupplyAddMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SupplyAddMemberRequest(TeaModel):
+    def __init__(
+        self,
+        is_partner_manager: bool = None,
+        member_mobile: str = None,
+        member_name: str = None,
+        member_work_number: str = None,
+        supply_dept_id: int = None,
+    ):
+        # 是否为伙伴负责人
+        self.is_partner_manager = is_partner_manager
+        # 成员手机号
+        self.member_mobile = member_mobile
+        # 成员名字
+        self.member_name = member_name
+        # 成员编码/工号
+        self.member_work_number = member_work_number
+        # 所属伙伴/子部门
+        self.supply_dept_id = supply_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_partner_manager is not None:
+            result['isPartnerManager'] = self.is_partner_manager
+        if self.member_mobile is not None:
+            result['memberMobile'] = self.member_mobile
+        if self.member_name is not None:
+            result['memberName'] = self.member_name
+        if self.member_work_number is not None:
+            result['memberWorkNumber'] = self.member_work_number
+        if self.supply_dept_id is not None:
+            result['supplyDeptId'] = self.supply_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isPartnerManager') is not None:
+            self.is_partner_manager = m.get('isPartnerManager')
+        if m.get('memberMobile') is not None:
+            self.member_mobile = m.get('memberMobile')
+        if m.get('memberName') is not None:
+            self.member_name = m.get('memberName')
+        if m.get('memberWorkNumber') is not None:
+            self.member_work_number = m.get('memberWorkNumber')
+        if m.get('supplyDeptId') is not None:
+            self.supply_dept_id = m.get('supplyDeptId')
+        return self
+
+
+class SupplyAddMemberResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        ding_member_status: str = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        # 成员在钉钉组织的状态
+        self.ding_member_status = ding_member_status
+        # isv内用户唯一id
+        self.union_id = union_id
+        # 已经进组织的用户唯一id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_member_status is not None:
+            result['dingMemberStatus'] = self.ding_member_status
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingMemberStatus') is not None:
+            self.ding_member_status = m.get('dingMemberStatus')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SupplyAddMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SupplyAddMemberResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SupplyAddMemberResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class SupplyAddMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SupplyAddMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SupplyAddMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SupplyGetMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SupplyGetMemberRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        # isv下钉钉唯一账号ID
+        self.union_id = union_id
+        # 组织内钉钉员工ID
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SupplyGetMemberResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        ding_member_status: str = None,
+        is_active: bool = None,
+        member_name: str = None,
+        member_work_number: str = None,
+    ):
+        # 成员状态，已进组织或者待接收邀请
+        self.ding_member_status = ding_member_status
+        # 成员是否激活
+        self.is_active = is_active
+        # 成员名字
+        self.member_name = member_name
+        # 成员在上下游中的工号
+        self.member_work_number = member_work_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_member_status is not None:
+            result['dingMemberStatus'] = self.ding_member_status
+        if self.is_active is not None:
+            result['isActive'] = self.is_active
+        if self.member_name is not None:
+            result['memberName'] = self.member_name
+        if self.member_work_number is not None:
+            result['memberWorkNumber'] = self.member_work_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingMemberStatus') is not None:
+            self.ding_member_status = m.get('dingMemberStatus')
+        if m.get('isActive') is not None:
+            self.is_active = m.get('isActive')
+        if m.get('memberName') is not None:
+            self.member_name = m.get('memberName')
+        if m.get('memberWorkNumber') is not None:
+            self.member_work_number = m.get('memberWorkNumber')
+        return self
+
+
+class SupplyGetMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SupplyGetMemberResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SupplyGetMemberResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class SupplyGetMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SupplyGetMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SupplyGetMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SupplyListDeptMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SupplyListDeptMembersRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        supply_dept_id: int = None,
+    ):
+        # 页码
+        self.page_number = page_number
+        # 单页的条目数
+        self.page_size = page_size
+        # 供应链部门id
+        self.supply_dept_id = supply_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.supply_dept_id is not None:
+            result['supplyDeptId'] = self.supply_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('supplyDeptId') is not None:
+            self.supply_dept_id = m.get('supplyDeptId')
+        return self
+
+
+class SupplyListDeptMembersResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        ding_member_status: str = None,
+        is_active: bool = None,
+        member_name: str = None,
+        member_work_number: str = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        # 人员状态，已进组织 或 待接收邀请
+        self.ding_member_status = ding_member_status
+        # 是否激活
+        self.is_active = is_active
+        # 名字
+        self.member_name = member_name
+        # 人员在上下游中的工号
+        self.member_work_number = member_work_number
+        # 应用层面的唯一id
+        self.union_id = union_id
+        # 人员组织内id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_member_status is not None:
+            result['dingMemberStatus'] = self.ding_member_status
+        if self.is_active is not None:
+            result['isActive'] = self.is_active
+        if self.member_name is not None:
+            result['memberName'] = self.member_name
+        if self.member_work_number is not None:
+            result['memberWorkNumber'] = self.member_work_number
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingMemberStatus') is not None:
+            self.ding_member_status = m.get('dingMemberStatus')
+        if m.get('isActive') is not None:
+            self.is_active = m.get('isActive')
+        if m.get('memberName') is not None:
+            self.member_name = m.get('memberName')
+        if m.get('memberWorkNumber') is not None:
+            self.member_work_number = m.get('memberWorkNumber')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SupplyListDeptMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[SupplyListDeptMembersResponseBodyList] = None,
+    ):
+        # 是否还有下一页
+        self.has_more = has_more
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = SupplyListDeptMembersResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class SupplyListDeptMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: SupplyListDeptMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = SupplyListDeptMembersResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

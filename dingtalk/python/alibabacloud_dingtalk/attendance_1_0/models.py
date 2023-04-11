@@ -5647,83 +5647,6 @@ class GroupAddRequestPositions(TeaModel):
         return self
 
 
-class GroupAddRequestResourcePermissionMap(TeaModel):
-    def __init__(
-        self,
-        camera_check: str = None,
-        check_position_type: str = None,
-        check_time: str = None,
-        group_member: str = None,
-        group_type: str = None,
-        out_side_check: str = None,
-        over_time_rule: str = None,
-        schedule: str = None,
-    ):
-        # 设置拍照打卡规则。
-        self.camera_check = camera_check
-        # 设置打卡方式。
-        self.check_position_type = check_position_type
-        # 设置考勤时间。
-        self.check_time = check_time
-        # 设置参与考勤人员。
-        self.group_member = group_member
-        # 设置考勤类型。
-        self.group_type = group_type
-        # 设置外勤打卡。
-        self.out_side_check = out_side_check
-        # 设置加班规则。
-        self.over_time_rule = over_time_rule
-        # 员工排班。
-        self.schedule = schedule
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.camera_check is not None:
-            result['cameraCheck'] = self.camera_check
-        if self.check_position_type is not None:
-            result['checkPositionType'] = self.check_position_type
-        if self.check_time is not None:
-            result['checkTime'] = self.check_time
-        if self.group_member is not None:
-            result['groupMember'] = self.group_member
-        if self.group_type is not None:
-            result['groupType'] = self.group_type
-        if self.out_side_check is not None:
-            result['outSideCheck'] = self.out_side_check
-        if self.over_time_rule is not None:
-            result['overTimeRule'] = self.over_time_rule
-        if self.schedule is not None:
-            result['schedule'] = self.schedule
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('cameraCheck') is not None:
-            self.camera_check = m.get('cameraCheck')
-        if m.get('checkPositionType') is not None:
-            self.check_position_type = m.get('checkPositionType')
-        if m.get('checkTime') is not None:
-            self.check_time = m.get('checkTime')
-        if m.get('groupMember') is not None:
-            self.group_member = m.get('groupMember')
-        if m.get('groupType') is not None:
-            self.group_type = m.get('groupType')
-        if m.get('outSideCheck') is not None:
-            self.out_side_check = m.get('outSideCheck')
-        if m.get('overTimeRule') is not None:
-            self.over_time_rule = m.get('overTimeRule')
-        if m.get('schedule') is not None:
-            self.schedule = m.get('schedule')
-        return self
-
-
 class GroupAddRequestShiftVOList(TeaModel):
     def __init__(
         self,
@@ -5824,7 +5747,7 @@ class GroupAddRequest(TeaModel):
         overtime_setting_id: int = None,
         owner: str = None,
         positions: List[GroupAddRequestPositions] = None,
-        resource_permission_map: List[GroupAddRequestResourcePermissionMap] = None,
+        resource_permission_map: Dict[str, Any] = None,
         shift_volist: List[GroupAddRequestShiftVOList] = None,
         skip_holidays: bool = None,
         special_days: str = None,
@@ -5937,11 +5860,6 @@ class GroupAddRequest(TeaModel):
         self.owner = owner
         # 考勤地点相关设置信息。
         self.positions = positions
-        # 子管理员权限范围。
-        # 
-        # w：可管理
-        # 
-        # r：可读
         self.resource_permission_map = resource_permission_map
         # 班次相关配置信息。
         self.shift_volist = shift_volist
@@ -5986,10 +5904,6 @@ class GroupAddRequest(TeaModel):
                     k.validate()
         if self.positions:
             for k in self.positions:
-                if k:
-                    k.validate()
-        if self.resource_permission_map:
-            for k in self.resource_permission_map:
                 if k:
                     k.validate()
         if self.shift_volist:
@@ -6081,10 +5995,8 @@ class GroupAddRequest(TeaModel):
         if self.positions is not None:
             for k in self.positions:
                 result['positions'].append(k.to_map() if k else None)
-        result['resourcePermissionMap'] = []
         if self.resource_permission_map is not None:
-            for k in self.resource_permission_map:
-                result['resourcePermissionMap'].append(k.to_map() if k else None)
+            result['resourcePermissionMap'] = self.resource_permission_map
         result['shiftVOList'] = []
         if self.shift_volist is not None:
             for k in self.shift_volist:
@@ -6187,11 +6099,8 @@ class GroupAddRequest(TeaModel):
             for k in m.get('positions'):
                 temp_model = GroupAddRequestPositions()
                 self.positions.append(temp_model.from_map(k))
-        self.resource_permission_map = []
         if m.get('resourcePermissionMap') is not None:
-            for k in m.get('resourcePermissionMap'):
-                temp_model = GroupAddRequestResourcePermissionMap()
-                self.resource_permission_map.append(temp_model.from_map(k))
+            self.resource_permission_map = m.get('resourcePermissionMap')
         self.shift_volist = []
         if m.get('shiftVOList') is not None:
             for k in m.get('shiftVOList'):
@@ -6485,83 +6394,6 @@ class GroupUpdateRequestPositions(TeaModel):
         return self
 
 
-class GroupUpdateRequestResourcePermissionMap(TeaModel):
-    def __init__(
-        self,
-        camera_check: str = None,
-        check_position_type: str = None,
-        check_time: str = None,
-        group_member: str = None,
-        group_type: str = None,
-        out_side_check: str = None,
-        over_time_rule: str = None,
-        schedule: str = None,
-    ):
-        # 设置拍照打卡规则。
-        self.camera_check = camera_check
-        # 设置打卡方式。
-        self.check_position_type = check_position_type
-        # 设置考勤时间。
-        self.check_time = check_time
-        # 设置参与考勤人员。
-        self.group_member = group_member
-        # 设置考勤类型。
-        self.group_type = group_type
-        # 设置外勤打卡。
-        self.out_side_check = out_side_check
-        # 设置加班规则。
-        self.over_time_rule = over_time_rule
-        # 员工排班。
-        self.schedule = schedule
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.camera_check is not None:
-            result['cameraCheck'] = self.camera_check
-        if self.check_position_type is not None:
-            result['checkPositionType'] = self.check_position_type
-        if self.check_time is not None:
-            result['checkTime'] = self.check_time
-        if self.group_member is not None:
-            result['groupMember'] = self.group_member
-        if self.group_type is not None:
-            result['groupType'] = self.group_type
-        if self.out_side_check is not None:
-            result['outSideCheck'] = self.out_side_check
-        if self.over_time_rule is not None:
-            result['overTimeRule'] = self.over_time_rule
-        if self.schedule is not None:
-            result['schedule'] = self.schedule
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('cameraCheck') is not None:
-            self.camera_check = m.get('cameraCheck')
-        if m.get('checkPositionType') is not None:
-            self.check_position_type = m.get('checkPositionType')
-        if m.get('checkTime') is not None:
-            self.check_time = m.get('checkTime')
-        if m.get('groupMember') is not None:
-            self.group_member = m.get('groupMember')
-        if m.get('groupType') is not None:
-            self.group_type = m.get('groupType')
-        if m.get('outSideCheck') is not None:
-            self.out_side_check = m.get('outSideCheck')
-        if m.get('overTimeRule') is not None:
-            self.over_time_rule = m.get('overTimeRule')
-        if m.get('schedule') is not None:
-            self.schedule = m.get('schedule')
-        return self
-
-
 class GroupUpdateRequestShiftVOList(TeaModel):
     def __init__(
         self,
@@ -6617,7 +6449,7 @@ class GroupUpdateRequest(TeaModel):
         overtime_setting_id: int = None,
         owner: str = None,
         positions: List[GroupUpdateRequestPositions] = None,
-        resource_permission_map: List[GroupUpdateRequestResourcePermissionMap] = None,
+        resource_permission_map: Dict[str, Any] = None,
         shift_volist: List[GroupUpdateRequestShiftVOList] = None,
         skip_holidays: bool = None,
         trim_distance: int = None,
@@ -6672,7 +6504,6 @@ class GroupUpdateRequest(TeaModel):
         self.owner = owner
         # 考勤地点相关设置信息。
         self.positions = positions
-        # 子管理员权限范围。w：可管理r：可读
         self.resource_permission_map = resource_permission_map
         # 班次相关配置信息。
         self.shift_volist = shift_volist
@@ -6690,10 +6521,6 @@ class GroupUpdateRequest(TeaModel):
             self.free_check_setting.validate()
         if self.positions:
             for k in self.positions:
-                if k:
-                    k.validate()
-        if self.resource_permission_map:
-            for k in self.resource_permission_map:
                 if k:
                     k.validate()
         if self.shift_volist:
@@ -6757,10 +6584,8 @@ class GroupUpdateRequest(TeaModel):
         if self.positions is not None:
             for k in self.positions:
                 result['positions'].append(k.to_map() if k else None)
-        result['resourcePermissionMap'] = []
         if self.resource_permission_map is not None:
-            for k in self.resource_permission_map:
-                result['resourcePermissionMap'].append(k.to_map() if k else None)
+            result['resourcePermissionMap'] = self.resource_permission_map
         result['shiftVOList'] = []
         if self.shift_volist is not None:
             for k in self.shift_volist:
@@ -6829,11 +6654,8 @@ class GroupUpdateRequest(TeaModel):
             for k in m.get('positions'):
                 temp_model = GroupUpdateRequestPositions()
                 self.positions.append(temp_model.from_map(k))
-        self.resource_permission_map = []
         if m.get('resourcePermissionMap') is not None:
-            for k in m.get('resourcePermissionMap'):
-                temp_model = GroupUpdateRequestResourcePermissionMap()
-                self.resource_permission_map.append(temp_model.from_map(k))
+            self.resource_permission_map = m.get('resourcePermissionMap')
         self.shift_volist = []
         if m.get('shiftVOList') is not None:
             for k in m.get('shiftVOList'):

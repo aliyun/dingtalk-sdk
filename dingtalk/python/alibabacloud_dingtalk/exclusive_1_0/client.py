@@ -2399,6 +2399,78 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('GetOaOperatorLogList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/oaOperatorLogs/query', 'json', req, runtime)
         )
 
+    def get_outside_audit_group_message_by_page(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageHeaders()
+        return self.get_outside_audit_group_message_by_page_with_options(request, headers, runtime)
+
+    async def get_outside_audit_group_message_by_page_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageHeaders()
+        return await self.get_outside_audit_group_message_by_page_with_options_async(request, headers, runtime)
+
+    def get_outside_audit_group_message_by_page_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageResponse(),
+            self.do_roarequest('GetOutsideAuditGroupMessageByPage', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/audits/outsideGroups/messages/query', 'json', req, runtime)
+        )
+
+    async def get_outside_audit_group_message_by_page_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageResponse(),
+            await self.do_roarequest_async('GetOutsideAuditGroupMessageByPage', 'exclusive_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/exclusive/audits/outsideGroups/messages/query', 'json', req, runtime)
+        )
+
     def get_partner_type_by_parent_id(
         self,
         parent_id: str,

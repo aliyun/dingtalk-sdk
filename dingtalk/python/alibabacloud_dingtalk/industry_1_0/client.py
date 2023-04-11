@@ -8155,6 +8155,302 @@ class Client(OpenApiClient):
             await self.do_roarequest_async('SaveUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extends', 'json', req, runtime)
         )
 
+    def supply_add_dept(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddDeptHeaders()
+        return self.supply_add_dept_with_options(request, headers, runtime)
+
+    async def supply_add_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddDeptHeaders()
+        return await self.supply_add_dept_with_options_async(request, headers, runtime)
+
+    def supply_add_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_name):
+            query['deptName'] = request.dept_name
+        if not UtilClient.is_unset(request.partner_number):
+            query['partnerNumber'] = request.partner_number
+        if not UtilClient.is_unset(request.super_dept_id):
+            query['superDeptId'] = request.super_dept_id
+        if not UtilClient.is_unset(request.supply_dept_type):
+            query['supplyDeptType'] = request.supply_dept_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddDeptResponse(),
+            self.do_roarequest('SupplyAddDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/supplyChains/departments', 'json', req, runtime)
+        )
+
+    async def supply_add_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_name):
+            query['deptName'] = request.dept_name
+        if not UtilClient.is_unset(request.partner_number):
+            query['partnerNumber'] = request.partner_number
+        if not UtilClient.is_unset(request.super_dept_id):
+            query['superDeptId'] = request.super_dept_id
+        if not UtilClient.is_unset(request.supply_dept_type):
+            query['supplyDeptType'] = request.supply_dept_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddDeptResponse(),
+            await self.do_roarequest_async('SupplyAddDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/supplyChains/departments', 'json', req, runtime)
+        )
+
+    def supply_add_member(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddMemberHeaders()
+        return self.supply_add_member_with_options(request, headers, runtime)
+
+    async def supply_add_member_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddMemberHeaders()
+        return await self.supply_add_member_with_options_async(request, headers, runtime)
+
+    def supply_add_member_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddMemberRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_partner_manager):
+            query['isPartnerManager'] = request.is_partner_manager
+        if not UtilClient.is_unset(request.member_mobile):
+            query['memberMobile'] = request.member_mobile
+        if not UtilClient.is_unset(request.member_name):
+            query['memberName'] = request.member_name
+        if not UtilClient.is_unset(request.member_work_number):
+            query['memberWorkNumber'] = request.member_work_number
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddMemberResponse(),
+            self.do_roarequest('SupplyAddMember', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/supplyChains/members', 'json', req, runtime)
+        )
+
+    async def supply_add_member_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddMemberRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_partner_manager):
+            query['isPartnerManager'] = request.is_partner_manager
+        if not UtilClient.is_unset(request.member_mobile):
+            query['memberMobile'] = request.member_mobile
+        if not UtilClient.is_unset(request.member_name):
+            query['memberName'] = request.member_name
+        if not UtilClient.is_unset(request.member_work_number):
+            query['memberWorkNumber'] = request.member_work_number
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddMemberResponse(),
+            await self.do_roarequest_async('SupplyAddMember', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/supplyChains/members', 'json', req, runtime)
+        )
+
+    def supply_get_member(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyGetMemberHeaders()
+        return self.supply_get_member_with_options(request, headers, runtime)
+
+    async def supply_get_member_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyGetMemberHeaders()
+        return await self.supply_get_member_with_options_async(request, headers, runtime)
+
+    def supply_get_member_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
+        headers: dingtalkindustry__1__0_models.SupplyGetMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyGetMemberResponse(),
+            self.do_roarequest('SupplyGetMember', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/supplyChains/members', 'json', req, runtime)
+        )
+
+    async def supply_get_member_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
+        headers: dingtalkindustry__1__0_models.SupplyGetMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyGetMemberResponse(),
+            await self.do_roarequest_async('SupplyGetMember', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/supplyChains/members', 'json', req, runtime)
+        )
+
+    def supply_list_dept_members(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListDeptMembersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListDeptMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders()
+        return self.supply_list_dept_members_with_options(request, headers, runtime)
+
+    async def supply_list_dept_members_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListDeptMembersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListDeptMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders()
+        return await self.supply_list_dept_members_with_options_async(request, headers, runtime)
+
+    def supply_list_dept_members_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListDeptMembersRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListDeptMembersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListDeptMembersResponse(),
+            self.do_roarequest('SupplyListDeptMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/supplyChains/departments/members', 'json', req, runtime)
+        )
+
+    async def supply_list_dept_members_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListDeptMembersRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListDeptMembersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListDeptMembersResponse(),
+            await self.do_roarequest_async('SupplyListDeptMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/supplyChains/departments/members', 'json', req, runtime)
+        )
+
     def update_user_extend_info(
         self,
         user_id: str,

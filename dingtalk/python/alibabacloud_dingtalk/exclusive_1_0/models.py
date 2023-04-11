@@ -6134,6 +6134,291 @@ class GetOaOperatorLogListResponse(TeaModel):
         return self
 
 
+class GetOutsideAuditGroupMessageByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOutsideAuditGroupMessageByPageRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: int = None,
+        open_conversation_id: str = None,
+    ):
+        # 页大小，一次请求几条消息，合法区间[20,50]
+        self.max_results = max_results
+        # 毫秒时间戳，从该时间向过去拉消息
+        self.next_token = next_token
+        # 会话
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        id_type: str = None,
+        type: str = None,
+    ):
+        # 根据id的类型决定是哪一种id
+        self.id = id
+        # 发送者的id类型，可以是userId或者unionId
+        self.id_type = id_type
+        # 用户-user 机器人-bot 系统账号-sys
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.id_type is not None:
+            result['idType'] = self.id_type
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('idType') is not None:
+            self.id_type = m.get('idType')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        content_type: str = None,
+        create_at: str = None,
+        open_conversation_id: str = None,
+        sender: GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender = None,
+    ):
+        # 内容
+        self.content = content
+        # 内容类型 文本/语音/视频
+        self.content_type = content_type
+        # 发送时间 格式:yyyy-MM-dd HH:mm:ss
+        self.create_at = create_at
+        # 会话id
+        self.open_conversation_id = open_conversation_id
+        # 发送人
+        self.sender = sender
+
+    def validate(self):
+        if self.sender:
+            self.sender.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.sender is not None:
+            result['sender'] = self.sender.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('sender') is not None:
+            temp_model = GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender()
+            self.sender = temp_model.from_map(m['sender'])
+        return self
+
+
+class GetOutsideAuditGroupMessageByPageResponseBodyResponseBody(TeaModel):
+    def __init__(
+        self,
+        message_list: List[GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList] = None,
+        next_token: str = None,
+    ):
+        # 消息列表
+        self.message_list = message_list
+        # 下一次请求的token,无返回值则下一条消息不存在
+        self.next_token = next_token
+
+    def validate(self):
+        if self.message_list:
+            for k in self.message_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['messageList'] = []
+        if self.message_list is not None:
+            for k in self.message_list:
+                result['messageList'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.message_list = []
+        if m.get('messageList') is not None:
+            for k in m.get('messageList'):
+                temp_model = GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList()
+                self.message_list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetOutsideAuditGroupMessageByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        response_body: GetOutsideAuditGroupMessageByPageResponseBodyResponseBody = None,
+    ):
+        # 返回结构体
+        self.response_body = response_body
+
+    def validate(self):
+        if self.response_body:
+            self.response_body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.response_body is not None:
+            result['responseBody'] = self.response_body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('responseBody') is not None:
+            temp_model = GetOutsideAuditGroupMessageByPageResponseBodyResponseBody()
+            self.response_body = temp_model.from_map(m['responseBody'])
+        return self
+
+
+class GetOutsideAuditGroupMessageByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        body: GetOutsideAuditGroupMessageByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('body') is not None:
+            temp_model = GetOutsideAuditGroupMessageByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetPartnerTypeByParentIdHeaders(TeaModel):
     def __init__(
         self,
