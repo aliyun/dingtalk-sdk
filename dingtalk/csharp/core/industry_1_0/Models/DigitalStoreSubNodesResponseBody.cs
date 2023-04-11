@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<DigitalStoreSubNodesResponseBodyContent> Content { get; set; }
         public class DigitalStoreSubNodesResponseBodyContent : TeaModel {
+            [NameInMap("dingDeptId")]
+            [Validation(Required=false)]
+            public long? DingDeptId { get; set; }
+
             /// <summary>
             /// 节点Id
             /// </summary>

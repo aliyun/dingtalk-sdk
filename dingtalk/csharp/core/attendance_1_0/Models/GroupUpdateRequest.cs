@@ -248,70 +248,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
         }
 
-        /// <summary>
-        /// 子管理员权限范围。w：可管理r：可读
-        /// </summary>
         [NameInMap("resourcePermissionMap")]
         [Validation(Required=false)]
-        public List<GroupUpdateRequestResourcePermissionMap> ResourcePermissionMap { get; set; }
-        public class GroupUpdateRequestResourcePermissionMap : TeaModel {
-            /// <summary>
-            /// 设置拍照打卡规则。
-            /// </summary>
-            [NameInMap("cameraCheck")]
-            [Validation(Required=false)]
-            public string CameraCheck { get; set; }
-
-            /// <summary>
-            /// 设置打卡方式。
-            /// </summary>
-            [NameInMap("checkPositionType")]
-            [Validation(Required=false)]
-            public string CheckPositionType { get; set; }
-
-            /// <summary>
-            /// 设置考勤时间。
-            /// </summary>
-            [NameInMap("checkTime")]
-            [Validation(Required=false)]
-            public string CheckTime { get; set; }
-
-            /// <summary>
-            /// 设置参与考勤人员。
-            /// </summary>
-            [NameInMap("groupMember")]
-            [Validation(Required=false)]
-            public string GroupMember { get; set; }
-
-            /// <summary>
-            /// 设置考勤类型。
-            /// </summary>
-            [NameInMap("groupType")]
-            [Validation(Required=false)]
-            public string GroupType { get; set; }
-
-            /// <summary>
-            /// 设置外勤打卡。
-            /// </summary>
-            [NameInMap("outSideCheck")]
-            [Validation(Required=false)]
-            public string OutSideCheck { get; set; }
-
-            /// <summary>
-            /// 设置加班规则。
-            /// </summary>
-            [NameInMap("overTimeRule")]
-            [Validation(Required=false)]
-            public string OverTimeRule { get; set; }
-
-            /// <summary>
-            /// 员工排班。
-            /// </summary>
-            [NameInMap("schedule")]
-            [Validation(Required=false)]
-            public string Schedule { get; set; }
-
-        }
+        public Dictionary<string, object> ResourcePermissionMap { get; set; }
 
         /// <summary>
         /// 班次相关配置信息。
