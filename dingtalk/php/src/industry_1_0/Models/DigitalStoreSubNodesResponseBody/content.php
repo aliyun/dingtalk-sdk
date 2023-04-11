@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @var int
+     */
+    public $dingDeptId;
+
+    /**
      * @description 节点Id
      *
      * @var int
@@ -36,10 +41,11 @@ class content extends Model
      */
     public $type;
     protected $_name = [
-        'id'       => 'id',
-        'name'     => 'name',
-        'parentId' => 'parentId',
-        'type'     => 'type',
+        'dingDeptId' => 'dingDeptId',
+        'id'         => 'id',
+        'name'       => 'name',
+        'parentId'   => 'parentId',
+        'type'       => 'type',
     ];
 
     public function validate()
@@ -49,6 +55,9 @@ class content extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->dingDeptId) {
+            $res['dingDeptId'] = $this->dingDeptId;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
@@ -73,6 +82,9 @@ class content extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['dingDeptId'])) {
+            $model->dingDeptId = $map['dingDeptId'];
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }

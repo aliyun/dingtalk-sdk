@@ -101,6 +101,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesHeaders;
@@ -1797,6 +1800,54 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return GetOaOperatorLogListResponse::fromMap($this->doROARequest('GetOaOperatorLogList', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/oaOperatorLogs/query', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param GetOutsideAuditGroupMessageByPageRequest $request
+     *
+     * @return GetOutsideAuditGroupMessageByPageResponse
+     */
+    public function getOutsideAuditGroupMessageByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOutsideAuditGroupMessageByPageHeaders([]);
+
+        return $this->getOutsideAuditGroupMessageByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOutsideAuditGroupMessageByPageRequest $request
+     * @param GetOutsideAuditGroupMessageByPageHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return GetOutsideAuditGroupMessageByPageResponse
+     */
+    public function getOutsideAuditGroupMessageByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            @$body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            @$body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            @$body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+
+        return GetOutsideAuditGroupMessageByPageResponse::fromMap($this->doROARequest('GetOutsideAuditGroupMessageByPage', 'exclusive_1.0', 'HTTP', 'POST', 'AK', '/v1.0/exclusive/audits/outsideGroups/messages/query', 'json', $req, $runtime));
     }
 
     /**

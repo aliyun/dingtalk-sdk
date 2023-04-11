@@ -6,7 +6,6 @@ namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupUpdateRequest\freeCheckSetting;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupUpdateRequest\positions;
-use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupUpdateRequest\resourcePermissionMap;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupUpdateRequest\shiftVOList;
 use AlibabaCloud\Tea\Model;
 
@@ -181,9 +180,7 @@ class GroupUpdateRequest extends Model
     public $positions;
 
     /**
-     * @description 子管理员权限范围。w：可管理r：可读
-     *
-     * @var resourcePermissionMap[]
+     * @var mixed[]
      */
     public $resourcePermissionMap;
 
@@ -340,13 +337,7 @@ class GroupUpdateRequest extends Model
             }
         }
         if (null !== $this->resourcePermissionMap) {
-            $res['resourcePermissionMap'] = [];
-            if (null !== $this->resourcePermissionMap && \is_array($this->resourcePermissionMap)) {
-                $n = 0;
-                foreach ($this->resourcePermissionMap as $item) {
-                    $res['resourcePermissionMap'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['resourcePermissionMap'] = $this->resourcePermissionMap;
         }
         if (null !== $this->shiftVOList) {
             $res['shiftVOList'] = [];
@@ -462,13 +453,7 @@ class GroupUpdateRequest extends Model
             }
         }
         if (isset($map['resourcePermissionMap'])) {
-            if (!empty($map['resourcePermissionMap'])) {
-                $model->resourcePermissionMap = [];
-                $n                            = 0;
-                foreach ($map['resourcePermissionMap'] as $item) {
-                    $model->resourcePermissionMap[$n++] = null !== $item ? resourcePermissionMap::fromMap($item) : $item;
-                }
-            }
+            $model->resourcePermissionMap = $map['resourcePermissionMap'];
         }
         if (isset($map['shiftVOList'])) {
             if (!empty($map['shiftVOList'])) {

@@ -310,6 +310,18 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyGetMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyGetMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyGetMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListDeptMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListDeptMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListDeptMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoResponse;
@@ -5833,6 +5845,204 @@ class Dingtalk extends OpenApiClient
         ]);
 
         return SaveUserExtendValuesResponse::fromMap($this->doROARequest('SaveUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/medicals/users/' . $userId . '/extends', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SupplyAddDeptRequest $request
+     *
+     * @return SupplyAddDeptResponse
+     */
+    public function supplyAddDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyAddDeptHeaders([]);
+
+        return $this->supplyAddDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyAddDeptRequest $request
+     * @param SupplyAddDeptHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return SupplyAddDeptResponse
+     */
+    public function supplyAddDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptName)) {
+            @$query['deptName'] = $request->deptName;
+        }
+        if (!Utils::isUnset($request->partnerNumber)) {
+            @$query['partnerNumber'] = $request->partnerNumber;
+        }
+        if (!Utils::isUnset($request->superDeptId)) {
+            @$query['superDeptId'] = $request->superDeptId;
+        }
+        if (!Utils::isUnset($request->supplyDeptType)) {
+            @$query['supplyDeptType'] = $request->supplyDeptType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SupplyAddDeptResponse::fromMap($this->doROARequest('SupplyAddDept', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/supplyChains/departments', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SupplyAddMemberRequest $request
+     *
+     * @return SupplyAddMemberResponse
+     */
+    public function supplyAddMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyAddMemberHeaders([]);
+
+        return $this->supplyAddMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyAddMemberRequest $request
+     * @param SupplyAddMemberHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return SupplyAddMemberResponse
+     */
+    public function supplyAddMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isPartnerManager)) {
+            @$query['isPartnerManager'] = $request->isPartnerManager;
+        }
+        if (!Utils::isUnset($request->memberMobile)) {
+            @$query['memberMobile'] = $request->memberMobile;
+        }
+        if (!Utils::isUnset($request->memberName)) {
+            @$query['memberName'] = $request->memberName;
+        }
+        if (!Utils::isUnset($request->memberWorkNumber)) {
+            @$query['memberWorkNumber'] = $request->memberWorkNumber;
+        }
+        if (!Utils::isUnset($request->supplyDeptId)) {
+            @$query['supplyDeptId'] = $request->supplyDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SupplyAddMemberResponse::fromMap($this->doROARequest('SupplyAddMember', 'industry_1.0', 'HTTP', 'POST', 'AK', '/v1.0/industry/supplyChains/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SupplyGetMemberRequest $request
+     *
+     * @return SupplyGetMemberResponse
+     */
+    public function supplyGetMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyGetMemberHeaders([]);
+
+        return $this->supplyGetMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyGetMemberRequest $request
+     * @param SupplyGetMemberHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return SupplyGetMemberResponse
+     */
+    public function supplyGetMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            @$query['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            @$query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SupplyGetMemberResponse::fromMap($this->doROARequest('SupplyGetMember', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/supplyChains/members', 'json', $req, $runtime));
+    }
+
+    /**
+     * @param SupplyListDeptMembersRequest $request
+     *
+     * @return SupplyListDeptMembersResponse
+     */
+    public function supplyListDeptMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyListDeptMembersHeaders([]);
+
+        return $this->supplyListDeptMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyListDeptMembersRequest $request
+     * @param SupplyListDeptMembersHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return SupplyListDeptMembersResponse
+     */
+    public function supplyListDeptMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            @$query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            @$query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->supplyDeptId)) {
+            @$query['supplyDeptId'] = $request->supplyDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+
+        return SupplyListDeptMembersResponse::fromMap($this->doROARequest('SupplyListDeptMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', '/v1.0/industry/supplyChains/departments/members', 'json', $req, $runtime));
     }
 
     /**

@@ -8,7 +8,6 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddRequest\bleDeviceLi
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddRequest\freeCheckSetting;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddRequest\members;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddRequest\positions;
-use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddRequest\resourcePermissionMap;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddRequest\shiftVOList;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GroupAddRequest\wifis;
 use AlibabaCloud\Tea\Model;
@@ -262,10 +261,7 @@ class GroupAddRequest extends Model
     public $positions;
 
     /**
-     * @description 子管理员权限范围。
-     *
-     * r：可读
-     * @var resourcePermissionMap[]
+     * @var mixed[]
      */
     public $resourcePermissionMap;
 
@@ -500,13 +496,7 @@ class GroupAddRequest extends Model
             }
         }
         if (null !== $this->resourcePermissionMap) {
-            $res['resourcePermissionMap'] = [];
-            if (null !== $this->resourcePermissionMap && \is_array($this->resourcePermissionMap)) {
-                $n = 0;
-                foreach ($this->resourcePermissionMap as $item) {
-                    $res['resourcePermissionMap'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['resourcePermissionMap'] = $this->resourcePermissionMap;
         }
         if (null !== $this->shiftVOList) {
             $res['shiftVOList'] = [];
@@ -681,13 +671,7 @@ class GroupAddRequest extends Model
             }
         }
         if (isset($map['resourcePermissionMap'])) {
-            if (!empty($map['resourcePermissionMap'])) {
-                $model->resourcePermissionMap = [];
-                $n                            = 0;
-                foreach ($map['resourcePermissionMap'] as $item) {
-                    $model->resourcePermissionMap[$n++] = null !== $item ? resourcePermissionMap::fromMap($item) : $item;
-                }
-            }
+            $model->resourcePermissionMap = $map['resourcePermissionMap'];
         }
         if (isset($map['shiftVOList'])) {
             if (!empty($map['shiftVOList'])) {
