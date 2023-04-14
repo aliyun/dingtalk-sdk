@@ -159,12 +159,15 @@ class AddHrmPreentryRequest(TeaModel):
         groups: List[AddHrmPreentryRequestGroups] = None,
         mobile: str = None,
         name: str = None,
+        need_send_pre_entry_msg: bool = None,
         pre_entry_time: int = None,
     ):
         self.agent_id = agent_id
         self.groups = groups
         self.mobile = mobile
         self.name = name
+        # 是否需要发送完善入职登记表的入职IM消息给员工本人
+        self.need_send_pre_entry_msg = need_send_pre_entry_msg
         self.pre_entry_time = pre_entry_time
 
     def validate(self):
@@ -189,6 +192,8 @@ class AddHrmPreentryRequest(TeaModel):
             result['mobile'] = self.mobile
         if self.name is not None:
             result['name'] = self.name
+        if self.need_send_pre_entry_msg is not None:
+            result['needSendPreEntryMsg'] = self.need_send_pre_entry_msg
         if self.pre_entry_time is not None:
             result['preEntryTime'] = self.pre_entry_time
         return result
@@ -206,6 +211,8 @@ class AddHrmPreentryRequest(TeaModel):
             self.mobile = m.get('mobile')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('needSendPreEntryMsg') is not None:
+            self.need_send_pre_entry_msg = m.get('needSendPreEntryMsg')
         if m.get('preEntryTime') is not None:
             self.pre_entry_time = m.get('preEntryTime')
         return self

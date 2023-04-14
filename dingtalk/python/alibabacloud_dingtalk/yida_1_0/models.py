@@ -5259,7 +5259,6 @@ class GetFormDataByIDResponseBody(TeaModel):
         self,
         form_data: Dict[str, Any] = None,
         form_inst_id: str = None,
-        form_uuid: str = None,
         modified_time_gmt: str = None,
         originator: GetFormDataByIDResponseBodyOriginator = None,
     ):
@@ -5267,8 +5266,6 @@ class GetFormDataByIDResponseBody(TeaModel):
         self.form_data = form_data
         # 表单实例ID
         self.form_inst_id = form_inst_id
-        # 表单ID
-        self.form_uuid = form_uuid
         # 最后修改时间
         self.modified_time_gmt = modified_time_gmt
         # 发起人详情
@@ -5288,8 +5285,6 @@ class GetFormDataByIDResponseBody(TeaModel):
             result['formData'] = self.form_data
         if self.form_inst_id is not None:
             result['formInstId'] = self.form_inst_id
-        if self.form_uuid is not None:
-            result['formUuid'] = self.form_uuid
         if self.modified_time_gmt is not None:
             result['modifiedTimeGMT'] = self.modified_time_gmt
         if self.originator is not None:
@@ -5302,8 +5297,6 @@ class GetFormDataByIDResponseBody(TeaModel):
             self.form_data = m.get('formData')
         if m.get('formInstId') is not None:
             self.form_inst_id = m.get('formInstId')
-        if m.get('formUuid') is not None:
-            self.form_uuid = m.get('formUuid')
         if m.get('modifiedTimeGMT') is not None:
             self.modified_time_gmt = m.get('modifiedTimeGMT')
         if m.get('originator') is not None:
@@ -18709,15 +18702,9 @@ class SearchFormDatasResponseBodyDataModifyUserUserName(TeaModel):
 class SearchFormDatasResponseBodyDataModifyUser(TeaModel):
     def __init__(
         self,
-        department_name: str = None,
-        email: str = None,
         user_id: str = None,
         user_name: SearchFormDatasResponseBodyDataModifyUserUserName = None,
     ):
-        # 部门名称
-        self.department_name = department_name
-        # 邮箱
-        self.email = email
         # 用户工号
         self.user_id = user_id
         # 用户名
@@ -18733,10 +18720,6 @@ class SearchFormDatasResponseBodyDataModifyUser(TeaModel):
             return _map
 
         result = dict()
-        if self.department_name is not None:
-            result['departmentName'] = self.department_name
-        if self.email is not None:
-            result['email'] = self.email
         if self.user_id is not None:
             result['userId'] = self.user_id
         if self.user_name is not None:
@@ -18745,10 +18728,6 @@ class SearchFormDatasResponseBodyDataModifyUser(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('departmentName') is not None:
-            self.department_name = m.get('departmentName')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         if m.get('userName') is not None:
@@ -18802,15 +18781,9 @@ class SearchFormDatasResponseBodyDataOriginatorUserName(TeaModel):
 class SearchFormDatasResponseBodyDataOriginator(TeaModel):
     def __init__(
         self,
-        department_name: str = None,
-        email: str = None,
         user_id: str = None,
         user_name: SearchFormDatasResponseBodyDataOriginatorUserName = None,
     ):
-        # 部门名称
-        self.department_name = department_name
-        # 邮箱
-        self.email = email
         # 用户工号
         self.user_id = user_id
         # 用户名
@@ -18826,10 +18799,6 @@ class SearchFormDatasResponseBodyDataOriginator(TeaModel):
             return _map
 
         result = dict()
-        if self.department_name is not None:
-            result['departmentName'] = self.department_name
-        if self.email is not None:
-            result['email'] = self.email
         if self.user_id is not None:
             result['userId'] = self.user_id
         if self.user_name is not None:
@@ -18838,10 +18807,6 @@ class SearchFormDatasResponseBodyDataOriginator(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('departmentName') is not None:
-            self.department_name = m.get('departmentName')
-        if m.get('email') is not None:
-            self.email = m.get('email')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         if m.get('userName') is not None:

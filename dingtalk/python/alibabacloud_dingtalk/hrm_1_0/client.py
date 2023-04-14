@@ -55,6 +55,8 @@ class Client(OpenApiClient):
             body['mobile'] = request.mobile
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.need_send_pre_entry_msg):
+            body['needSendPreEntryMsg'] = request.need_send_pre_entry_msg
         if not UtilClient.is_unset(request.pre_entry_time):
             body['preEntryTime'] = request.pre_entry_time
         real_headers = {}
@@ -87,6 +89,8 @@ class Client(OpenApiClient):
             body['mobile'] = request.mobile
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.need_send_pre_entry_msg):
+            body['needSendPreEntryMsg'] = request.need_send_pre_entry_msg
         if not UtilClient.is_unset(request.pre_entry_time):
             body['preEntryTime'] = request.pre_entry_time
         real_headers = {}

@@ -5150,6 +5150,7 @@ class ListEventsRequest(TeaModel):
         max_attendees: int = None,
         max_results: int = None,
         next_token: str = None,
+        series_master_id: str = None,
         show_deleted: bool = None,
         sync_token: str = None,
         time_max: str = None,
@@ -5161,6 +5162,7 @@ class ListEventsRequest(TeaModel):
         self.max_results = max_results
         # 查询翻页token
         self.next_token = next_token
+        self.series_master_id = series_master_id
         # 是否返回删除事件
         self.show_deleted = show_deleted
         # 增量查询token
@@ -5185,6 +5187,8 @@ class ListEventsRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.series_master_id is not None:
+            result['seriesMasterId'] = self.series_master_id
         if self.show_deleted is not None:
             result['showDeleted'] = self.show_deleted
         if self.sync_token is not None:
@@ -5203,6 +5207,8 @@ class ListEventsRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('seriesMasterId') is not None:
+            self.series_master_id = m.get('seriesMasterId')
         if m.get('showDeleted') is not None:
             self.show_deleted = m.get('showDeleted')
         if m.get('syncToken') is not None:

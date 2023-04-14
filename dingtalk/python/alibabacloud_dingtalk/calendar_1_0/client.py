@@ -1601,6 +1601,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.series_master_id):
+            query['seriesMasterId'] = request.series_master_id
         if not UtilClient.is_unset(request.show_deleted):
             query['showDeleted'] = request.show_deleted
         if not UtilClient.is_unset(request.sync_token):
@@ -1641,6 +1643,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.series_master_id):
+            query['seriesMasterId'] = request.series_master_id
         if not UtilClient.is_unset(request.show_deleted):
             query['showDeleted'] = request.show_deleted
         if not UtilClient.is_unset(request.sync_token):
