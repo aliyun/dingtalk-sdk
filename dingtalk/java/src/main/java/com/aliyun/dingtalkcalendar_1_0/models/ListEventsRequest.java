@@ -22,6 +22,9 @@ public class ListEventsRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    @NameInMap("seriesMasterId")
+    public String seriesMasterId;
+
     /**
      * <p>是否返回删除事件</p>
      */
@@ -73,6 +76,14 @@ public class ListEventsRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
+    }
+
+    public ListEventsRequest setSeriesMasterId(String seriesMasterId) {
+        this.seriesMasterId = seriesMasterId;
+        return this;
+    }
+    public String getSeriesMasterId() {
+        return this.seriesMasterId;
     }
 
     public ListEventsRequest setShowDeleted(Boolean showDeleted) {

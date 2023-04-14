@@ -17,12 +17,6 @@ public class GetFormDataByIDResponseBody extends TeaModel {
     public String formInstId;
 
     /**
-     * <p>表单ID</p>
-     */
-    @NameInMap("formUuid")
-    public String formUuid;
-
-    /**
      * <p>最后修改时间</p>
      */
     @NameInMap("modifiedTimeGMT")
@@ -53,14 +47,6 @@ public class GetFormDataByIDResponseBody extends TeaModel {
     }
     public String getFormInstId() {
         return this.formInstId;
-    }
-
-    public GetFormDataByIDResponseBody setFormUuid(String formUuid) {
-        this.formUuid = formUuid;
-        return this;
-    }
-    public String getFormUuid() {
-        return this.formUuid;
     }
 
     public GetFormDataByIDResponseBody setModifiedTimeGMT(String modifiedTimeGMT) {

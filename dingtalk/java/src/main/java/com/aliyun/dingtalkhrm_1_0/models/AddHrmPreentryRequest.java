@@ -16,6 +16,12 @@ public class AddHrmPreentryRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>是否需要发送完善入职登记表的入职IM消息给员工本人</p>
+     */
+    @NameInMap("needSendPreEntryMsg")
+    public Boolean needSendPreEntryMsg;
+
     @NameInMap("preEntryTime")
     public Long preEntryTime;
 
@@ -54,6 +60,14 @@ public class AddHrmPreentryRequest extends TeaModel {
     }
     public String getName() {
         return this.name;
+    }
+
+    public AddHrmPreentryRequest setNeedSendPreEntryMsg(Boolean needSendPreEntryMsg) {
+        this.needSendPreEntryMsg = needSendPreEntryMsg;
+        return this;
+    }
+    public Boolean getNeedSendPreEntryMsg() {
+        return this.needSendPreEntryMsg;
     }
 
     public AddHrmPreentryRequest setPreEntryTime(Long preEntryTime) {

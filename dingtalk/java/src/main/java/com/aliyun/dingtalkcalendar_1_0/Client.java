@@ -713,6 +713,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("nextToken", request.nextToken);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.seriesMasterId)) {
+            query.put("seriesMasterId", request.seriesMasterId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.showDeleted)) {
             query.put("showDeleted", request.showDeleted);
         }

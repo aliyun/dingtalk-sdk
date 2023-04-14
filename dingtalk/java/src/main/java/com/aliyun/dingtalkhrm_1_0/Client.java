@@ -41,6 +41,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("name", request.name);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.needSendPreEntryMsg)) {
+            body.put("needSendPreEntryMsg", request.needSendPreEntryMsg);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.preEntryTime)) {
             body.put("preEntryTime", request.preEntryTime);
         }

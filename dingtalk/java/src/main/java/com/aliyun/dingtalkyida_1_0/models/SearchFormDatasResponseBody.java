@@ -103,18 +103,6 @@ public class SearchFormDatasResponseBody extends TeaModel {
 
     public static class SearchFormDatasResponseBodyDataModifyUser extends TeaModel {
         /**
-         * <p>部门名称</p>
-         */
-        @NameInMap("departmentName")
-        public String departmentName;
-
-        /**
-         * <p>邮箱</p>
-         */
-        @NameInMap("email")
-        public String email;
-
-        /**
          * <p>用户工号</p>
          */
         @NameInMap("userId")
@@ -129,22 +117,6 @@ public class SearchFormDatasResponseBody extends TeaModel {
         public static SearchFormDatasResponseBodyDataModifyUser build(java.util.Map<String, ?> map) throws Exception {
             SearchFormDatasResponseBodyDataModifyUser self = new SearchFormDatasResponseBodyDataModifyUser();
             return TeaModel.build(map, self);
-        }
-
-        public SearchFormDatasResponseBodyDataModifyUser setDepartmentName(String departmentName) {
-            this.departmentName = departmentName;
-            return this;
-        }
-        public String getDepartmentName() {
-            return this.departmentName;
-        }
-
-        public SearchFormDatasResponseBodyDataModifyUser setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public SearchFormDatasResponseBodyDataModifyUser setUserId(String userId) {
@@ -217,18 +189,6 @@ public class SearchFormDatasResponseBody extends TeaModel {
 
     public static class SearchFormDatasResponseBodyDataOriginator extends TeaModel {
         /**
-         * <p>部门名称</p>
-         */
-        @NameInMap("departmentName")
-        public String departmentName;
-
-        /**
-         * <p>邮箱</p>
-         */
-        @NameInMap("email")
-        public String email;
-
-        /**
          * <p>用户工号</p>
          */
         @NameInMap("userId")
@@ -243,22 +203,6 @@ public class SearchFormDatasResponseBody extends TeaModel {
         public static SearchFormDatasResponseBodyDataOriginator build(java.util.Map<String, ?> map) throws Exception {
             SearchFormDatasResponseBodyDataOriginator self = new SearchFormDatasResponseBodyDataOriginator();
             return TeaModel.build(map, self);
-        }
-
-        public SearchFormDatasResponseBodyDataOriginator setDepartmentName(String departmentName) {
-            this.departmentName = departmentName;
-            return this;
-        }
-        public String getDepartmentName() {
-            return this.departmentName;
-        }
-
-        public SearchFormDatasResponseBodyDataOriginator setEmail(String email) {
-            this.email = email;
-            return this;
-        }
-        public String getEmail() {
-            return this.email;
         }
 
         public SearchFormDatasResponseBodyDataOriginator setUserId(String userId) {
