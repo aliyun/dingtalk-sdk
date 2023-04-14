@@ -2610,14 +2610,12 @@ export class GetFormDataByIDRequest extends $tea.Model {
 export class GetFormDataByIDResponseBody extends $tea.Model {
   formData?: { [key: string]: any };
   formInstId?: string;
-  formUuid?: string;
   modifiedTimeGMT?: string;
   originator?: GetFormDataByIDResponseBodyOriginator;
   static names(): { [key: string]: string } {
     return {
       formData: 'formData',
       formInstId: 'formInstId',
-      formUuid: 'formUuid',
       modifiedTimeGMT: 'modifiedTimeGMT',
       originator: 'originator',
     };
@@ -2627,7 +2625,6 @@ export class GetFormDataByIDResponseBody extends $tea.Model {
     return {
       formData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       formInstId: 'string',
-      formUuid: 'string',
       modifiedTimeGMT: 'string',
       originator: GetFormDataByIDResponseBodyOriginator,
     };
@@ -11789,14 +11786,10 @@ export class SearchFormDatasResponseBodyDataModifyUserUserName extends $tea.Mode
 }
 
 export class SearchFormDatasResponseBodyDataModifyUser extends $tea.Model {
-  departmentName?: string;
-  email?: string;
   userId?: string;
   userName?: SearchFormDatasResponseBodyDataModifyUserUserName;
   static names(): { [key: string]: string } {
     return {
-      departmentName: 'departmentName',
-      email: 'email',
       userId: 'userId',
       userName: 'userName',
     };
@@ -11804,8 +11797,6 @@ export class SearchFormDatasResponseBodyDataModifyUser extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      departmentName: 'string',
-      email: 'string',
       userId: 'string',
       userName: SearchFormDatasResponseBodyDataModifyUserUserName,
     };
@@ -11842,14 +11833,10 @@ export class SearchFormDatasResponseBodyDataOriginatorUserName extends $tea.Mode
 }
 
 export class SearchFormDatasResponseBodyDataOriginator extends $tea.Model {
-  departmentName?: string;
-  email?: string;
   userId?: string;
   userName?: SearchFormDatasResponseBodyDataOriginatorUserName;
   static names(): { [key: string]: string } {
     return {
-      departmentName: 'departmentName',
-      email: 'email',
       userId: 'userId',
       userName: 'userName',
     };
@@ -11857,8 +11844,6 @@ export class SearchFormDatasResponseBodyDataOriginator extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      departmentName: 'string',
-      email: 'string',
       userId: 'string',
       userName: SearchFormDatasResponseBodyDataOriginatorUserName,
     };

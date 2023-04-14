@@ -1681,6 +1681,7 @@ export class ListEventsRequest extends $tea.Model {
   maxAttendees?: number;
   maxResults?: number;
   nextToken?: string;
+  seriesMasterId?: string;
   showDeleted?: boolean;
   syncToken?: string;
   timeMax?: string;
@@ -1690,6 +1691,7 @@ export class ListEventsRequest extends $tea.Model {
       maxAttendees: 'maxAttendees',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
+      seriesMasterId: 'seriesMasterId',
       showDeleted: 'showDeleted',
       syncToken: 'syncToken',
       timeMax: 'timeMax',
@@ -1702,6 +1704,7 @@ export class ListEventsRequest extends $tea.Model {
       maxAttendees: 'number',
       maxResults: 'number',
       nextToken: 'string',
+      seriesMasterId: 'string',
       showDeleted: 'boolean',
       syncToken: 'string',
       timeMax: 'string',
@@ -6855,6 +6858,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.seriesMasterId)) {
+      query["seriesMasterId"] = request.seriesMasterId;
     }
 
     if (!Util.isUnset(request.showDeleted)) {

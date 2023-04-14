@@ -34,6 +34,7 @@ export class AddHrmPreentryRequest extends $tea.Model {
   groups?: AddHrmPreentryRequestGroups[];
   mobile?: string;
   name?: string;
+  needSendPreEntryMsg?: boolean;
   preEntryTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -41,6 +42,7 @@ export class AddHrmPreentryRequest extends $tea.Model {
       groups: 'groups',
       mobile: 'mobile',
       name: 'name',
+      needSendPreEntryMsg: 'needSendPreEntryMsg',
       preEntryTime: 'preEntryTime',
     };
   }
@@ -51,6 +53,7 @@ export class AddHrmPreentryRequest extends $tea.Model {
       groups: { 'type': 'array', 'itemType': AddHrmPreentryRequestGroups },
       mobile: 'string',
       name: 'string',
+      needSendPreEntryMsg: 'boolean',
       preEntryTime: 'number',
     };
   }
@@ -2508,6 +2511,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.needSendPreEntryMsg)) {
+      body["needSendPreEntryMsg"] = request.needSendPreEntryMsg;
     }
 
     if (!Util.isUnset(request.preEntryTime)) {

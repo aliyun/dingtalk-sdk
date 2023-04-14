@@ -3199,13 +3199,11 @@ export class SearchUserTaskHeaders extends $tea.Model {
 export class SearchUserTaskRequest extends $tea.Model {
   maxResults?: number;
   nextToken?: string;
-  roleTypes?: string;
   tql?: string;
   static names(): { [key: string]: string } {
     return {
       maxResults: 'maxResults',
       nextToken: 'nextToken',
-      roleTypes: 'roleTypes',
       tql: 'tql',
     };
   }
@@ -3214,7 +3212,6 @@ export class SearchUserTaskRequest extends $tea.Model {
     return {
       maxResults: 'number',
       nextToken: 'string',
-      roleTypes: 'string',
       tql: 'string',
     };
   }
@@ -3225,16 +3222,25 @@ export class SearchUserTaskRequest extends $tea.Model {
 }
 
 export class SearchUserTaskResponseBody extends $tea.Model {
-  result?: SearchUserTaskResponseBodyResult[];
+  nextToken?: string;
+  requestId?: string;
+  result?: string[];
+  totalSize?: number;
   static names(): { [key: string]: string } {
     return {
+      nextToken: 'nextToken',
+      requestId: 'requestId',
       result: 'result',
+      totalSize: 'totalSize',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResult },
+      nextToken: 'string',
+      requestId: 'string',
+      result: { 'type': 'array', 'itemType': 'string' },
+      totalSize: 'number',
     };
   }
 
@@ -6781,153 +6787,6 @@ export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
   }
 }
 
-export class SearchUserTaskResponseBodyResultCustomfieldsValue extends $tea.Model {
-  fieldvalueId?: string;
-  metaString?: string;
-  title?: string;
-  static names(): { [key: string]: string } {
-    return {
-      fieldvalueId: 'fieldvalueId',
-      metaString: 'metaString',
-      title: 'title',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      fieldvalueId: 'string',
-      metaString: 'string',
-      title: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SearchUserTaskResponseBodyResultCustomfields extends $tea.Model {
-  customfieldId?: string;
-  type?: string;
-  value?: SearchUserTaskResponseBodyResultCustomfieldsValue[];
-  static names(): { [key: string]: string } {
-    return {
-      customfieldId: 'customfieldId',
-      type: 'type',
-      value: 'value',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      customfieldId: 'string',
-      type: 'string',
-      value: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResultCustomfieldsValue },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class SearchUserTaskResponseBodyResult extends $tea.Model {
-  accomplishTime?: string;
-  ancestorIds?: string[];
-  content?: string;
-  created?: string;
-  creatorId?: string;
-  customfields?: SearchUserTaskResponseBodyResultCustomfields[];
-  dueDate?: string;
-  executorId?: string;
-  involveMembers?: string[];
-  isArchived?: boolean;
-  isDone?: boolean;
-  note?: string;
-  parentTaskId?: string;
-  priority?: number;
-  projectId?: string;
-  recurrence?: string[];
-  scenariofieldconfigId?: string;
-  sprintId?: string;
-  stageId?: string;
-  startDate?: string;
-  storyPoint?: string;
-  tagIds?: string[];
-  taskId?: string;
-  taskListId?: string;
-  uniqueId?: string;
-  updated?: string;
-  visible?: string;
-  static names(): { [key: string]: string } {
-    return {
-      accomplishTime: 'accomplishTime',
-      ancestorIds: 'ancestorIds',
-      content: 'content',
-      created: 'created',
-      creatorId: 'creatorId',
-      customfields: 'customfields',
-      dueDate: 'dueDate',
-      executorId: 'executorId',
-      involveMembers: 'involveMembers',
-      isArchived: 'isArchived',
-      isDone: 'isDone',
-      note: 'note',
-      parentTaskId: 'parentTaskId',
-      priority: 'priority',
-      projectId: 'projectId',
-      recurrence: 'recurrence',
-      scenariofieldconfigId: 'scenariofieldconfigId',
-      sprintId: 'sprintId',
-      stageId: 'stageId',
-      startDate: 'startDate',
-      storyPoint: 'storyPoint',
-      tagIds: 'tagIds',
-      taskId: 'taskId',
-      taskListId: 'taskListId',
-      uniqueId: 'uniqueId',
-      updated: 'updated',
-      visible: 'visible',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      accomplishTime: 'string',
-      ancestorIds: { 'type': 'array', 'itemType': 'string' },
-      content: 'string',
-      created: 'string',
-      creatorId: 'string',
-      customfields: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResultCustomfields },
-      dueDate: 'string',
-      executorId: 'string',
-      involveMembers: { 'type': 'array', 'itemType': 'string' },
-      isArchived: 'boolean',
-      isDone: 'boolean',
-      note: 'string',
-      parentTaskId: 'string',
-      priority: 'number',
-      projectId: 'string',
-      recurrence: { 'type': 'array', 'itemType': 'string' },
-      scenariofieldconfigId: 'string',
-      sprintId: 'string',
-      stageId: 'string',
-      startDate: 'string',
-      storyPoint: 'string',
-      tagIds: { 'type': 'array', 'itemType': 'string' },
-      taskId: 'string',
-      taskListId: 'string',
-      uniqueId: 'string',
-      updated: 'string',
-      visible: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class SuspendProjectResponseBodyResult extends $tea.Model {
   updated?: string;
   static names(): { [key: string]: string } {
@@ -8975,10 +8834,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
-    }
-
-    if (!Util.isUnset(request.roleTypes)) {
-      query["roleTypes"] = request.roleTypes;
     }
 
     if (!Util.isUnset(request.tql)) {
