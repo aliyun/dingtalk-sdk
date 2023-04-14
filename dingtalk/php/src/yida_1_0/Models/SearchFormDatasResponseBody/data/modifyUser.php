@@ -10,20 +10,6 @@ use AlibabaCloud\Tea\Model;
 class modifyUser extends Model
 {
     /**
-     * @description 部门名称
-     *
-     * @var string
-     */
-    public $departmentName;
-
-    /**
-     * @description 邮箱
-     *
-     * @var string
-     */
-    public $email;
-
-    /**
      * @description 用户工号
      *
      * @var string
@@ -37,10 +23,8 @@ class modifyUser extends Model
      */
     public $userName;
     protected $_name = [
-        'departmentName' => 'departmentName',
-        'email'          => 'email',
-        'userId'         => 'userId',
-        'userName'       => 'userName',
+        'userId'   => 'userId',
+        'userName' => 'userName',
     ];
 
     public function validate()
@@ -50,12 +34,6 @@ class modifyUser extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->departmentName) {
-            $res['departmentName'] = $this->departmentName;
-        }
-        if (null !== $this->email) {
-            $res['email'] = $this->email;
-        }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
@@ -74,12 +52,6 @@ class modifyUser extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['departmentName'])) {
-            $model->departmentName = $map['departmentName'];
-        }
-        if (isset($map['email'])) {
-            $model->email = $map['email'];
-        }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }

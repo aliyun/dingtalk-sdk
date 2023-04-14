@@ -1136,6 +1136,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
+        if (!Utils::isUnset($request->seriesMasterId)) {
+            @$query['seriesMasterId'] = $request->seriesMasterId;
+        }
         if (!Utils::isUnset($request->showDeleted)) {
             @$query['showDeleted'] = $request->showDeleted;
         }

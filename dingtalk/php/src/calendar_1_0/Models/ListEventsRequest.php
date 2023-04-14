@@ -30,6 +30,11 @@ class ListEventsRequest extends Model
     public $nextToken;
 
     /**
+     * @var string
+     */
+    public $seriesMasterId;
+
+    /**
      * @description 是否返回删除事件
      *
      * @var bool
@@ -57,13 +62,14 @@ class ListEventsRequest extends Model
      */
     public $timeMin;
     protected $_name = [
-        'maxAttendees' => 'maxAttendees',
-        'maxResults'   => 'maxResults',
-        'nextToken'    => 'nextToken',
-        'showDeleted'  => 'showDeleted',
-        'syncToken'    => 'syncToken',
-        'timeMax'      => 'timeMax',
-        'timeMin'      => 'timeMin',
+        'maxAttendees'   => 'maxAttendees',
+        'maxResults'     => 'maxResults',
+        'nextToken'      => 'nextToken',
+        'seriesMasterId' => 'seriesMasterId',
+        'showDeleted'    => 'showDeleted',
+        'syncToken'      => 'syncToken',
+        'timeMax'        => 'timeMax',
+        'timeMin'        => 'timeMin',
     ];
 
     public function validate()
@@ -81,6 +87,9 @@ class ListEventsRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->seriesMasterId) {
+            $res['seriesMasterId'] = $this->seriesMasterId;
         }
         if (null !== $this->showDeleted) {
             $res['showDeleted'] = $this->showDeleted;
@@ -114,6 +123,9 @@ class ListEventsRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['seriesMasterId'])) {
+            $model->seriesMasterId = $map['seriesMasterId'];
         }
         if (isset($map['showDeleted'])) {
             $model->showDeleted = $map['showDeleted'];

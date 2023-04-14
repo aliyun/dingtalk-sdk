@@ -24,13 +24,6 @@ class GetFormDataByIDResponseBody extends Model
     public $formInstId;
 
     /**
-     * @description 表单ID
-     *
-     * @var string
-     */
-    public $formUuid;
-
-    /**
      * @description 最后修改时间
      *
      * @var string
@@ -46,7 +39,6 @@ class GetFormDataByIDResponseBody extends Model
     protected $_name = [
         'formData'        => 'formData',
         'formInstId'      => 'formInstId',
-        'formUuid'        => 'formUuid',
         'modifiedTimeGMT' => 'modifiedTimeGMT',
         'originator'      => 'originator',
     ];
@@ -63,9 +55,6 @@ class GetFormDataByIDResponseBody extends Model
         }
         if (null !== $this->formInstId) {
             $res['formInstId'] = $this->formInstId;
-        }
-        if (null !== $this->formUuid) {
-            $res['formUuid'] = $this->formUuid;
         }
         if (null !== $this->modifiedTimeGMT) {
             $res['modifiedTimeGMT'] = $this->modifiedTimeGMT;
@@ -90,9 +79,6 @@ class GetFormDataByIDResponseBody extends Model
         }
         if (isset($map['formInstId'])) {
             $model->formInstId = $map['formInstId'];
-        }
-        if (isset($map['formUuid'])) {
-            $model->formUuid = $map['formUuid'];
         }
         if (isset($map['modifiedTimeGMT'])) {
             $model->modifiedTimeGMT = $map['modifiedTimeGMT'];

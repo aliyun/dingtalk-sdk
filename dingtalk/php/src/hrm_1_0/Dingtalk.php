@@ -115,6 +115,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->name)) {
             @$body['name'] = $request->name;
         }
+        if (!Utils::isUnset($request->needSendPreEntryMsg)) {
+            @$body['needSendPreEntryMsg'] = $request->needSendPreEntryMsg;
+        }
         if (!Utils::isUnset($request->preEntryTime)) {
             @$body['preEntryTime'] = $request->preEntryTime;
         }

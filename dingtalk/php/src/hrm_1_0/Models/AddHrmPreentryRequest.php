@@ -30,15 +30,23 @@ class AddHrmPreentryRequest extends Model
     public $name;
 
     /**
+     * @description 是否需要发送完善入职登记表的入职IM消息给员工本人
+     *
+     * @var bool
+     */
+    public $needSendPreEntryMsg;
+
+    /**
      * @var int
      */
     public $preEntryTime;
     protected $_name = [
-        'agentId'      => 'agentId',
-        'groups'       => 'groups',
-        'mobile'       => 'mobile',
-        'name'         => 'name',
-        'preEntryTime' => 'preEntryTime',
+        'agentId'             => 'agentId',
+        'groups'              => 'groups',
+        'mobile'              => 'mobile',
+        'name'                => 'name',
+        'needSendPreEntryMsg' => 'needSendPreEntryMsg',
+        'preEntryTime'        => 'preEntryTime',
     ];
 
     public function validate()
@@ -65,6 +73,9 @@ class AddHrmPreentryRequest extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->needSendPreEntryMsg) {
+            $res['needSendPreEntryMsg'] = $this->needSendPreEntryMsg;
         }
         if (null !== $this->preEntryTime) {
             $res['preEntryTime'] = $this->preEntryTime;
@@ -98,6 +109,9 @@ class AddHrmPreentryRequest extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['needSendPreEntryMsg'])) {
+            $model->needSendPreEntryMsg = $map['needSendPreEntryMsg'];
         }
         if (isset($map['preEntryTime'])) {
             $model->preEntryTime = $map['preEntryTime'];
