@@ -55,6 +55,13 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// 是否需要发送完善入职登记表的入职IM消息给员工本人
+        /// </summary>
+        [NameInMap("needSendPreEntryMsg")]
+        [Validation(Required=false)]
+        public bool? NeedSendPreEntryMsg { get; set; }
+
         [NameInMap("preEntryTime")]
         [Validation(Required=false)]
         public long? PreEntryTime { get; set; }

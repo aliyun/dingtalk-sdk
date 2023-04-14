@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class SearchUserTaskRequest : TeaModel {
         /// <summary>
-        /// 每页返回最大数量。默认10，最大100。
+        /// 每页返回最大数量。默认10，最大300。
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -24,14 +24,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// 用户的任务角色, creator,executor,involveMember 中的一个或多个,以 ','拼接。例如：creator,executor。
-        /// </summary>
-        [NameInMap("roleTypes")]
-        [Validation(Required=false)]
-        public string RoleTypes { get; set; }
-
-        /// <summary>
-        /// tql，参考项目内的tql使用说明。
+        /// 企业下任务搜索TQL语句。
         /// </summary>
         [NameInMap("tql")]
         [Validation(Required=false)]

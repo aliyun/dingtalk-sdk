@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public UpdateTaskPriorityResponseBodyResult Result { get; set; }
         public class UpdateTaskPriorityResponseBodyResult : TeaModel {
             /// <summary>
-            /// 优先级。
+            /// 优先级，默认的优先级包含：-10、0、1、2，含义分别为较低、普通、紧急、非常紧急。
             /// </summary>
             [NameInMap("priority")]
             [Validation(Required=false)]

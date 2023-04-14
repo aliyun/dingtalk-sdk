@@ -30,6 +30,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
+        [NameInMap("seriesMasterId")]
+        [Validation(Required=false)]
+        public string SeriesMasterId { get; set; }
+
         /// <summary>
         /// 是否返回删除事件
         /// </summary>

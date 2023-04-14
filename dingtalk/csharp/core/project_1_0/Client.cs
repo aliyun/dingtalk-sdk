@@ -3143,10 +3143,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 query["nextToken"] = request.NextToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleTypes))
-            {
-                query["roleTypes"] = request.RoleTypes;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tql))
             {
                 query["tql"] = request.Tql;
@@ -3180,10 +3176,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleTypes))
-            {
-                query["roleTypes"] = request.RoleTypes;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tql))
             {

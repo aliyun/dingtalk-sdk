@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public List<CreateProjectCustomfieldStatusRequestValue> Value { get; set; }
         public class CreateProjectCustomfieldStatusRequestValue : TeaModel {
             /// <summary>
-            /// 字段值id。
+            /// 字段值id,当自定义字段是work类型该id表示文件id，当自定义字段是commongroup类型该id表示分类id，其他类型无意义。
             /// </summary>
             [NameInMap("fieldvalueId")]
             [Validation(Required=false)]

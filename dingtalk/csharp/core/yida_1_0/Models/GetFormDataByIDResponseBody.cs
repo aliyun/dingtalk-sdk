@@ -24,13 +24,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string FormInstId { get; set; }
 
         /// <summary>
-        /// 表单ID
-        /// </summary>
-        [NameInMap("formUuid")]
-        [Validation(Required=false)]
-        public string FormUuid { get; set; }
-
-        /// <summary>
         /// 最后修改时间
         /// </summary>
         [NameInMap("modifiedTimeGMT")]

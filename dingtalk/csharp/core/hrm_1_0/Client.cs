@@ -60,6 +60,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             {
                 body["name"] = request.Name;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedSendPreEntryMsg))
+            {
+                body["needSendPreEntryMsg"] = request.NeedSendPreEntryMsg;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreEntryTime))
             {
                 body["preEntryTime"] = request.PreEntryTime;
@@ -100,6 +104,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
                 body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedSendPreEntryMsg))
+            {
+                body["needSendPreEntryMsg"] = request.NeedSendPreEntryMsg;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreEntryTime))
             {

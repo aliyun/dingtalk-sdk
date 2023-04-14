@@ -1526,6 +1526,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 query["nextToken"] = request.NextToken;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeriesMasterId))
+            {
+                query["seriesMasterId"] = request.SeriesMasterId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowDeleted))
             {
                 query["showDeleted"] = request.ShowDeleted;
@@ -1576,6 +1580,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeriesMasterId))
+            {
+                query["seriesMasterId"] = request.SeriesMasterId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowDeleted))
             {
