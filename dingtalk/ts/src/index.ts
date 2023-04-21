@@ -34,6 +34,7 @@ import * as event_1_0 from './event_1_0/client';
 import * as exclusive_1_0 from './exclusive_1_0/client';
 import * as finance_1_0 from './finance_1_0/client';
 import * as flashmeeting_1_0 from './flashmeeting_1_0/client';
+import * as gateway_1_0 from './gateway_1_0/client';
 import * as group_blackboard_1_0 from './group_blackboard_1_0/client';
 import * as h3yun_1_0 from './h3yun_1_0/client';
 import * as h5package_1_0 from './h5package_1_0/client';
@@ -54,6 +55,7 @@ import * as occupationauth_1_0 from './occupationauth_1_0/client';
 import * as okr_1_0 from './okr_1_0/client';
 import * as org_culture_1_0 from './org_culture_1_0/client';
 import * as package_1_0 from './package_1_0/client';
+import * as pedia_1_0 from './pedia_1_0/client';
 import * as project_1_0 from './project_1_0/client';
 import * as project_integration_1_0 from './project_integration_1_0/client';
 import * as rcs_call_1_0 from './rcs_call_1_0/client';
@@ -118,6 +120,7 @@ export = {
   exclusive_1_0,
   finance_1_0,
   flashmeeting_1_0,
+  gateway_1_0,
   group_blackboard_1_0,
   h3yun_1_0,
   h5package_1_0,
@@ -138,6 +141,7 @@ export = {
   okr_1_0,
   org_culture_1_0,
   package_1_0,
+  pedia_1_0,
   project_1_0,
   project_integration_1_0,
   rcs_call_1_0,

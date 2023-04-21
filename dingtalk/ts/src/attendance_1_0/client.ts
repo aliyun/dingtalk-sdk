@@ -3524,6 +3524,7 @@ export class GetLeaveRecordsResponseBodyResultLeaveRecords extends $tea.Model {
   leaveRecordType?: string;
   leaveStatus?: string;
   leaveViewUnit?: string;
+  opUserId?: string;
   quotaId?: string;
   recordId?: string;
   recordNumPerDay?: number;
@@ -3541,6 +3542,7 @@ export class GetLeaveRecordsResponseBodyResultLeaveRecords extends $tea.Model {
       leaveRecordType: 'leaveRecordType',
       leaveStatus: 'leaveStatus',
       leaveViewUnit: 'leaveViewUnit',
+      opUserId: 'opUserId',
       quotaId: 'quotaId',
       recordId: 'recordId',
       recordNumPerDay: 'recordNumPerDay',
@@ -3561,6 +3563,7 @@ export class GetLeaveRecordsResponseBodyResultLeaveRecords extends $tea.Model {
       leaveRecordType: 'string',
       leaveStatus: 'string',
       leaveViewUnit: 'string',
+      opUserId: 'string',
       quotaId: 'string',
       recordId: 'string',
       recordNumPerDay: 'number',

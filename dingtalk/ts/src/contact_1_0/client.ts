@@ -6276,17 +6276,41 @@ export class GetCardInfoResponseBodyExtensionCardContactInfoTelephone extends $t
   }
 }
 
+export class GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone extends $tea.Model {
+  label?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      label: 'label',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      label: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCardInfoResponseBodyExtensionCardContactInfo extends $tea.Model {
   address?: GetCardInfoResponseBodyExtensionCardContactInfoAddress[];
   email?: GetCardInfoResponseBodyExtensionCardContactInfoEmail[];
   link?: GetCardInfoResponseBodyExtensionCardContactInfoLink[];
   telephone?: GetCardInfoResponseBodyExtensionCardContactInfoTelephone[];
+  workPhone?: GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone[];
   static names(): { [key: string]: string } {
     return {
       address: 'address',
       email: 'email',
       link: 'link',
       telephone: 'telephone',
+      workPhone: 'workPhone',
     };
   }
 
@@ -6296,6 +6320,7 @@ export class GetCardInfoResponseBodyExtensionCardContactInfo extends $tea.Model 
       email: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoEmail },
       link: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoLink },
       telephone: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoTelephone },
+      workPhone: { 'type': 'array', 'itemType': GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone },
     };
   }
 

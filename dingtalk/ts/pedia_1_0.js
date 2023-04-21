@@ -1,0 +1,1 @@
+module.exports = require('./dist').pedia_1_0;
