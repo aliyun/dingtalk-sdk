@@ -5,7 +5,7 @@ import com.aliyun.tea.*;
 
 public class SearchUserTaskRequest extends TeaModel {
     /**
-     * <p>每页返回最大数量。默认10，最大100。</p>
+     * <p>每页返回最大数量。默认10，最大300。</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
@@ -17,13 +17,7 @@ public class SearchUserTaskRequest extends TeaModel {
     public String nextToken;
 
     /**
-     * <p>用户的任务角色, creator,executor,involveMember 中的一个或多个,以 ','拼接。例如：creator,executor。</p>
-     */
-    @NameInMap("roleTypes")
-    public String roleTypes;
-
-    /**
-     * <p>tql，参考项目内的tql使用说明。</p>
+     * <p>企业下任务搜索TQL语句。</p>
      */
     @NameInMap("tql")
     public String tql;
@@ -47,14 +41,6 @@ public class SearchUserTaskRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
-    }
-
-    public SearchUserTaskRequest setRoleTypes(String roleTypes) {
-        this.roleTypes = roleTypes;
-        return this;
-    }
-    public String getRoleTypes() {
-        return this.roleTypes;
     }
 
     public SearchUserTaskRequest setTql(String tql) {

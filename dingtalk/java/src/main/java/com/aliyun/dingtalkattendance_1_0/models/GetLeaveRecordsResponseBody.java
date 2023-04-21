@@ -94,6 +94,12 @@ public class GetLeaveRecordsResponseBody extends TeaModel {
         public String leaveViewUnit;
 
         /**
+         * <p>操作人userId。</p>
+         */
+        @NameInMap("opUserId")
+        public String opUserId;
+
+        /**
          * <p>额度唯一标识。</p>
          */
         @NameInMap("quotaId")
@@ -204,6 +210,14 @@ public class GetLeaveRecordsResponseBody extends TeaModel {
         }
         public String getLeaveViewUnit() {
             return this.leaveViewUnit;
+        }
+
+        public GetLeaveRecordsResponseBodyResultLeaveRecords setOpUserId(String opUserId) {
+            this.opUserId = opUserId;
+            return this;
+        }
+        public String getOpUserId() {
+            return this.opUserId;
         }
 
         public GetLeaveRecordsResponseBodyResultLeaveRecords setQuotaId(String quotaId) {

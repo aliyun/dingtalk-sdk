@@ -325,6 +325,36 @@ public class GetCardInfoResponseBody extends TeaModel {
 
     }
 
+    public static class GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone extends TeaModel {
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("value")
+        public String value;
+
+        public static GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone build(java.util.Map<String, ?> map) throws Exception {
+            GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone self = new GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone();
+            return TeaModel.build(map, self);
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
     public static class GetCardInfoResponseBodyExtensionCardContactInfo extends TeaModel {
         /**
          * <p>地址</p>
@@ -349,6 +379,9 @@ public class GetCardInfoResponseBody extends TeaModel {
          */
         @NameInMap("telephone")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> telephone;
+
+        @NameInMap("workPhone")
+        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone> workPhone;
 
         public static GetCardInfoResponseBodyExtensionCardContactInfo build(java.util.Map<String, ?> map) throws Exception {
             GetCardInfoResponseBodyExtensionCardContactInfo self = new GetCardInfoResponseBodyExtensionCardContactInfo();
@@ -385,6 +418,14 @@ public class GetCardInfoResponseBody extends TeaModel {
         }
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> getTelephone() {
             return this.telephone;
+        }
+
+        public GetCardInfoResponseBodyExtensionCardContactInfo setWorkPhone(java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone> workPhone) {
+            this.workPhone = workPhone;
+            return this;
+        }
+        public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone> getWorkPhone() {
+            return this.workPhone;
         }
 
     }

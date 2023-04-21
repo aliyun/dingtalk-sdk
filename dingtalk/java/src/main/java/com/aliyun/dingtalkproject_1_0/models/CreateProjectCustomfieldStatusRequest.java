@@ -67,7 +67,7 @@ public class CreateProjectCustomfieldStatusRequest extends TeaModel {
 
     public static class CreateProjectCustomfieldStatusRequestValue extends TeaModel {
         /**
-         * <p>字段值id。</p>
+         * <p>字段值id,当自定义字段是work类型该id表示文件id，当自定义字段是commongroup类型该id表示分类id，其他类型无意义。</p>
          */
         @NameInMap("fieldvalueId")
         public String fieldvalueId;

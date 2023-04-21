@@ -1,0 +1,36 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkpedia_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class PediaWordsSearchResponse extends TeaModel {
+    @NameInMap("headers")
+    @Validation(required = true)
+    public java.util.Map<String, String> headers;
+
+    @NameInMap("body")
+    @Validation(required = true)
+    public PediaWordsSearchResponseBody body;
+
+    public static PediaWordsSearchResponse build(java.util.Map<String, ?> map) throws Exception {
+        PediaWordsSearchResponse self = new PediaWordsSearchResponse();
+        return TeaModel.build(map, self);
+    }
+
+    public PediaWordsSearchResponse setHeaders(java.util.Map<String, String> headers) {
+        this.headers = headers;
+        return this;
+    }
+    public java.util.Map<String, String> getHeaders() {
+        return this.headers;
+    }
+
+    public PediaWordsSearchResponse setBody(PediaWordsSearchResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public PediaWordsSearchResponseBody getBody() {
+        return this.body;
+    }
+
+}
