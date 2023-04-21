@@ -2107,9 +2107,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->nextToken)) {
             @$query['nextToken'] = $request->nextToken;
         }
-        if (!Utils::isUnset($request->roleTypes)) {
-            @$query['roleTypes'] = $request->roleTypes;
-        }
         if (!Utils::isUnset($request->tql)) {
             @$query['tql'] = $request->tql;
         }

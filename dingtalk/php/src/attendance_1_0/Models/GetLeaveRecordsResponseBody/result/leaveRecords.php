@@ -72,6 +72,13 @@ class leaveRecords extends Model
     public $leaveViewUnit;
 
     /**
+     * @description 操作人userId。
+     *
+     * @var string
+     */
+    public $opUserId;
+
+    /**
      * @description 额度唯一标识。
      *
      * @var string
@@ -122,6 +129,7 @@ class leaveRecords extends Model
         'leaveRecordType'  => 'leaveRecordType',
         'leaveStatus'      => 'leaveStatus',
         'leaveViewUnit'    => 'leaveViewUnit',
+        'opUserId'         => 'opUserId',
         'quotaId'          => 'quotaId',
         'recordId'         => 'recordId',
         'recordNumPerDay'  => 'recordNumPerDay',
@@ -163,6 +171,9 @@ class leaveRecords extends Model
         }
         if (null !== $this->leaveViewUnit) {
             $res['leaveViewUnit'] = $this->leaveViewUnit;
+        }
+        if (null !== $this->opUserId) {
+            $res['opUserId'] = $this->opUserId;
         }
         if (null !== $this->quotaId) {
             $res['quotaId'] = $this->quotaId;
@@ -220,6 +231,9 @@ class leaveRecords extends Model
         }
         if (isset($map['leaveViewUnit'])) {
             $model->leaveViewUnit = $map['leaveViewUnit'];
+        }
+        if (isset($map['opUserId'])) {
+            $model->opUserId = $map['opUserId'];
         }
         if (isset($map['quotaId'])) {
             $model->quotaId = $map['quotaId'];

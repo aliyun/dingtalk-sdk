@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class value extends Model
 {
     /**
-     * @description 字段值id。
+     * @description 字段值id,当自定义字段是work类型该id表示文件id，当自定义字段是commongroup类型该id表示分类id，其他类型无意义。
      *
      * @var string
      */

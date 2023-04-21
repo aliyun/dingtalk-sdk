@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extens
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\email;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\link;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\telephone;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetCardInfoResponseBody\extension\cardContactInfo\workPhone;
 use AlibabaCloud\Tea\Model;
 
 class cardContactInfo extends Model
@@ -39,11 +40,17 @@ class cardContactInfo extends Model
      * @var telephone[]
      */
     public $telephone;
+
+    /**
+     * @var workPhone[]
+     */
+    public $workPhone;
     protected $_name = [
         'address'   => 'address',
         'email'     => 'email',
         'link'      => 'link',
         'telephone' => 'telephone',
+        'workPhone' => 'workPhone',
     ];
 
     public function validate()
@@ -86,6 +93,15 @@ class cardContactInfo extends Model
                 $n = 0;
                 foreach ($this->telephone as $item) {
                     $res['telephone'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->workPhone) {
+            $res['workPhone'] = [];
+            if (null !== $this->workPhone && \is_array($this->workPhone)) {
+                $n = 0;
+                foreach ($this->workPhone as $item) {
+                    $res['workPhone'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -134,6 +150,15 @@ class cardContactInfo extends Model
                 $n                = 0;
                 foreach ($map['telephone'] as $item) {
                     $model->telephone[$n++] = null !== $item ? telephone::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['workPhone'])) {
+            if (!empty($map['workPhone'])) {
+                $model->workPhone = [];
+                $n                = 0;
+                foreach ($map['workPhone'] as $item) {
+                    $model->workPhone[$n++] = null !== $item ? workPhone::fromMap($item) : $item;
                 }
             }
         }

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SearchUserTaskRequest extends Model
 {
     /**
-     * @description 每页返回最大数量。默认10，最大100。
+     * @description 每页返回最大数量。默认10，最大300。
      *
      * @var int
      */
@@ -23,14 +23,7 @@ class SearchUserTaskRequest extends Model
     public $nextToken;
 
     /**
-     * @description 用户的任务角色, creator,executor,involveMember 中的一个或多个,以 ','拼接。例如：creator,executor。
-     *
-     * @var string
-     */
-    public $roleTypes;
-
-    /**
-     * @description tql，参考项目内的tql使用说明。
+     * @description 企业下任务搜索TQL语句。
      *
      * @var string
      */
@@ -38,7 +31,6 @@ class SearchUserTaskRequest extends Model
     protected $_name = [
         'maxResults' => 'maxResults',
         'nextToken'  => 'nextToken',
-        'roleTypes'  => 'roleTypes',
         'tql'        => 'tql',
     ];
 
@@ -54,9 +46,6 @@ class SearchUserTaskRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->roleTypes) {
-            $res['roleTypes'] = $this->roleTypes;
         }
         if (null !== $this->tql) {
             $res['tql'] = $this->tql;
@@ -78,9 +67,6 @@ class SearchUserTaskRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['roleTypes'])) {
-            $model->roleTypes = $map['roleTypes'];
         }
         if (isset($map['tql'])) {
             $model->tql = $map['tql'];
