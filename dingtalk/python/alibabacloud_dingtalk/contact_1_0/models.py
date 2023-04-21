@@ -2953,6 +2953,39 @@ class GetCardInfoResponseBodyExtensionCardContactInfoTelephone(TeaModel):
         return self
 
 
+class GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone(TeaModel):
+    def __init__(
+        self,
+        label: str = None,
+        value: str = None,
+    ):
+        self.label = label
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label is not None:
+            result['label'] = self.label
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
 class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
     def __init__(
         self,
@@ -2960,6 +2993,7 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
         email: List[GetCardInfoResponseBodyExtensionCardContactInfoEmail] = None,
         link: List[GetCardInfoResponseBodyExtensionCardContactInfoLink] = None,
         telephone: List[GetCardInfoResponseBodyExtensionCardContactInfoTelephone] = None,
+        work_phone: List[GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone] = None,
     ):
         # 地址
         self.address = address
@@ -2969,6 +3003,7 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
         self.link = link
         # 电话
         self.telephone = telephone
+        self.work_phone = work_phone
 
     def validate(self):
         if self.address:
@@ -2985,6 +3020,10 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
                     k.validate()
         if self.telephone:
             for k in self.telephone:
+                if k:
+                    k.validate()
+        if self.work_phone:
+            for k in self.work_phone:
                 if k:
                     k.validate()
 
@@ -3010,6 +3049,10 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
         if self.telephone is not None:
             for k in self.telephone:
                 result['telephone'].append(k.to_map() if k else None)
+        result['workPhone'] = []
+        if self.work_phone is not None:
+            for k in self.work_phone:
+                result['workPhone'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -3034,6 +3077,11 @@ class GetCardInfoResponseBodyExtensionCardContactInfo(TeaModel):
             for k in m.get('telephone'):
                 temp_model = GetCardInfoResponseBodyExtensionCardContactInfoTelephone()
                 self.telephone.append(temp_model.from_map(k))
+        self.work_phone = []
+        if m.get('workPhone') is not None:
+            for k in m.get('workPhone'):
+                temp_model = GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone()
+                self.work_phone.append(temp_model.from_map(k))
         return self
 
 

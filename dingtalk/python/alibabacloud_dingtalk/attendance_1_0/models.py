@@ -3282,6 +3282,7 @@ class GetLeaveRecordsResponseBodyResultLeaveRecords(TeaModel):
         leave_record_type: str = None,
         leave_status: str = None,
         leave_view_unit: str = None,
+        op_user_id: str = None,
         quota_id: str = None,
         record_id: str = None,
         record_num_per_day: int = None,
@@ -3307,6 +3308,8 @@ class GetLeaveRecordsResponseBodyResultLeaveRecords(TeaModel):
         self.leave_status = leave_status
         # 显示单位。
         self.leave_view_unit = leave_view_unit
+        # 操作人userId。
+        self.op_user_id = op_user_id
         # 额度唯一标识。
         self.quota_id = quota_id
         # 假期记录唯一标识。
@@ -3347,6 +3350,8 @@ class GetLeaveRecordsResponseBodyResultLeaveRecords(TeaModel):
             result['leaveStatus'] = self.leave_status
         if self.leave_view_unit is not None:
             result['leaveViewUnit'] = self.leave_view_unit
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
         if self.quota_id is not None:
             result['quotaId'] = self.quota_id
         if self.record_id is not None:
@@ -3381,6 +3386,8 @@ class GetLeaveRecordsResponseBodyResultLeaveRecords(TeaModel):
             self.leave_status = m.get('leaveStatus')
         if m.get('leaveViewUnit') is not None:
             self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
         if m.get('quotaId') is not None:
             self.quota_id = m.get('quotaId')
         if m.get('recordId') is not None:

@@ -2933,8 +2933,6 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.role_types):
-            query['roleTypes'] = request.role_types
         if not UtilClient.is_unset(request.tql):
             query['tql'] = request.tql
         real_headers = {}
@@ -2965,8 +2963,6 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
-        if not UtilClient.is_unset(request.role_types):
-            query['roleTypes'] = request.role_types
         if not UtilClient.is_unset(request.tql):
             query['tql'] = request.tql
         real_headers = {}

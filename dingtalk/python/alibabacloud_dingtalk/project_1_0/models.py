@@ -1782,7 +1782,7 @@ class CreateProjectCustomfieldStatusRequestValue(TeaModel):
         meta_string: str = None,
         title: str = None,
     ):
-        # 字段值id。
+        # 字段值id,当自定义字段是work类型该id表示文件id，当自定义字段是commongroup类型该id表示分类id，其他类型无意义。
         self.fieldvalue_id = fieldvalue_id
         # 字段值元信息(json格式)。
         self.meta_string = meta_string
@@ -8918,16 +8918,13 @@ class SearchUserTaskRequest(TeaModel):
         self,
         max_results: int = None,
         next_token: str = None,
-        role_types: str = None,
         tql: str = None,
     ):
-        # 每页返回最大数量。默认10，最大100。
+        # 每页返回最大数量。默认10，最大300。
         self.max_results = max_results
         # 分页标，从上一次请求结果中获取。
         self.next_token = next_token
-        # 用户的任务角色, creator,executor,involveMember 中的一个或多个,以 ','拼接。例如：creator,executor。
-        self.role_types = role_types
-        # tql，参考项目内的tql使用说明。
+        # 企业下任务搜索TQL语句。
         self.tql = tql
 
     def validate(self):
@@ -8943,8 +8940,6 @@ class SearchUserTaskRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
-        if self.role_types is not None:
-            result['roleTypes'] = self.role_types
         if self.tql is not None:
             result['tql'] = self.tql
         return result
@@ -8955,26 +8950,27 @@ class SearchUserTaskRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
-        if m.get('roleTypes') is not None:
-            self.role_types = m.get('roleTypes')
         if m.get('tql') is not None:
             self.tql = m.get('tql')
         return self
 
 
-class SearchUserTaskResponseBodyResultCustomfieldsValue(TeaModel):
+class SearchUserTaskResponseBody(TeaModel):
     def __init__(
         self,
-        fieldvalue_id: str = None,
-        meta_string: str = None,
-        title: str = None,
+        next_token: str = None,
+        request_id: str = None,
+        result: List[str] = None,
+        total_size: int = None,
     ):
-        # 字段值ID。
-        self.fieldvalue_id = fieldvalue_id
-        # 字段值元属性。
-        self.meta_string = meta_string
-        # 字段值内容。
-        self.title = title
+        # 分页标，供分页使用，下一页token。
+        self.next_token = next_token
+        # 请求 ID，请求异常时可提供此 ID，进行问题排查。
+        self.request_id = request_id
+        # 任务ID列表。
+        self.result = result
+        # 任务总数。
+        self.total_size = total_size
 
     def validate(self):
         pass
@@ -8985,326 +8981,26 @@ class SearchUserTaskResponseBodyResultCustomfieldsValue(TeaModel):
             return _map
 
         result = dict()
-        if self.fieldvalue_id is not None:
-            result['fieldvalueId'] = self.fieldvalue_id
-        if self.meta_string is not None:
-            result['metaString'] = self.meta_string
-        if self.title is not None:
-            result['title'] = self.title
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('fieldvalueId') is not None:
-            self.fieldvalue_id = m.get('fieldvalueId')
-        if m.get('metaString') is not None:
-            self.meta_string = m.get('metaString')
-        if m.get('title') is not None:
-            self.title = m.get('title')
-        return self
-
-
-class SearchUserTaskResponseBodyResultCustomfields(TeaModel):
-    def __init__(
-        self,
-        customfield_id: str = None,
-        type: str = None,
-        value: List[SearchUserTaskResponseBodyResultCustomfieldsValue] = None,
-    ):
-        # 自定义字段ID。
-        self.customfield_id = customfield_id
-        # 自定义字段类型。
-        self.type = type
-        # 字段值集合。
-        self.value = value
-
-    def validate(self):
-        if self.value:
-            for k in self.value:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
-        if self.type is not None:
-            result['type'] = self.type
-        result['value'] = []
-        if self.value is not None:
-            for k in self.value:
-                result['value'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        self.value = []
-        if m.get('value') is not None:
-            for k in m.get('value'):
-                temp_model = SearchUserTaskResponseBodyResultCustomfieldsValue()
-                self.value.append(temp_model.from_map(k))
-        return self
-
-
-class SearchUserTaskResponseBodyResult(TeaModel):
-    def __init__(
-        self,
-        accomplish_time: str = None,
-        ancestor_ids: List[str] = None,
-        content: str = None,
-        created: str = None,
-        creator_id: str = None,
-        customfields: List[SearchUserTaskResponseBodyResultCustomfields] = None,
-        due_date: str = None,
-        executor_id: str = None,
-        involve_members: List[str] = None,
-        is_archived: bool = None,
-        is_done: bool = None,
-        note: str = None,
-        parent_task_id: str = None,
-        priority: int = None,
-        project_id: str = None,
-        recurrence: List[str] = None,
-        scenariofieldconfig_id: str = None,
-        sprint_id: str = None,
-        stage_id: str = None,
-        start_date: str = None,
-        story_point: str = None,
-        tag_ids: List[str] = None,
-        task_id: str = None,
-        task_list_id: str = None,
-        unique_id: str = None,
-        updated: str = None,
-        visible: str = None,
-    ):
-        # 任务完成时间(UTC)。
-        self.accomplish_time = accomplish_time
-        # 祖先任务ID列表。
-        self.ancestor_ids = ancestor_ids
-        # 任务标题。
-        self.content = content
-        # 创建时间(UTC)。
-        self.created = created
-        # 创建人ID。
-        self.creator_id = creator_id
-        # 自定义字段值集合。
-        self.customfields = customfields
-        # 任务截止时间(UTC)。
-        self.due_date = due_date
-        # 执行人ID。
-        self.executor_id = executor_id
-        # 参与者ID集合。
-        self.involve_members = involve_members
-        # 是否任务放入回收站。
-        self.is_archived = is_archived
-        # 是否任务已完成。
-        self.is_done = is_done
-        # 任务备注。
-        self.note = note
-        # 父任务ID。
-        self.parent_task_id = parent_task_id
-        # 任务优先级。
-        self.priority = priority
-        # 项目ID。
-        self.project_id = project_id
-        # 重复规则列表。
-        self.recurrence = recurrence
-        # 任务类型ID。
-        self.scenariofieldconfig_id = scenariofieldconfig_id
-        # 迭代ID。
-        self.sprint_id = sprint_id
-        # 任务列ID。
-        self.stage_id = stage_id
-        # 任务开始时间(UTC)。
-        self.start_date = start_date
-        # StoryPoint。
-        self.story_point = story_point
-        # 标签ID集合。
-        self.tag_ids = tag_ids
-        # 任务状态ID。
-        self.task_id = task_id
-        # 任务列表ID。
-        self.task_list_id = task_list_id
-        # 任务数字ID。
-        self.unique_id = unique_id
-        # 更新时间(UTC)。
-        self.updated = updated
-        # 任务隐私性，'involves'表达仅参与者可见; 'members'表达项目成员可见。
-        self.visible = visible
-
-    def validate(self):
-        if self.customfields:
-            for k in self.customfields:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.accomplish_time is not None:
-            result['accomplishTime'] = self.accomplish_time
-        if self.ancestor_ids is not None:
-            result['ancestorIds'] = self.ancestor_ids
-        if self.content is not None:
-            result['content'] = self.content
-        if self.created is not None:
-            result['created'] = self.created
-        if self.creator_id is not None:
-            result['creatorId'] = self.creator_id
-        result['customfields'] = []
-        if self.customfields is not None:
-            for k in self.customfields:
-                result['customfields'].append(k.to_map() if k else None)
-        if self.due_date is not None:
-            result['dueDate'] = self.due_date
-        if self.executor_id is not None:
-            result['executorId'] = self.executor_id
-        if self.involve_members is not None:
-            result['involveMembers'] = self.involve_members
-        if self.is_archived is not None:
-            result['isArchived'] = self.is_archived
-        if self.is_done is not None:
-            result['isDone'] = self.is_done
-        if self.note is not None:
-            result['note'] = self.note
-        if self.parent_task_id is not None:
-            result['parentTaskId'] = self.parent_task_id
-        if self.priority is not None:
-            result['priority'] = self.priority
-        if self.project_id is not None:
-            result['projectId'] = self.project_id
-        if self.recurrence is not None:
-            result['recurrence'] = self.recurrence
-        if self.scenariofieldconfig_id is not None:
-            result['scenariofieldconfigId'] = self.scenariofieldconfig_id
-        if self.sprint_id is not None:
-            result['sprintId'] = self.sprint_id
-        if self.stage_id is not None:
-            result['stageId'] = self.stage_id
-        if self.start_date is not None:
-            result['startDate'] = self.start_date
-        if self.story_point is not None:
-            result['storyPoint'] = self.story_point
-        if self.tag_ids is not None:
-            result['tagIds'] = self.tag_ids
-        if self.task_id is not None:
-            result['taskId'] = self.task_id
-        if self.task_list_id is not None:
-            result['taskListId'] = self.task_list_id
-        if self.unique_id is not None:
-            result['uniqueId'] = self.unique_id
-        if self.updated is not None:
-            result['updated'] = self.updated
-        if self.visible is not None:
-            result['visible'] = self.visible
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('accomplishTime') is not None:
-            self.accomplish_time = m.get('accomplishTime')
-        if m.get('ancestorIds') is not None:
-            self.ancestor_ids = m.get('ancestorIds')
-        if m.get('content') is not None:
-            self.content = m.get('content')
-        if m.get('created') is not None:
-            self.created = m.get('created')
-        if m.get('creatorId') is not None:
-            self.creator_id = m.get('creatorId')
-        self.customfields = []
-        if m.get('customfields') is not None:
-            for k in m.get('customfields'):
-                temp_model = SearchUserTaskResponseBodyResultCustomfields()
-                self.customfields.append(temp_model.from_map(k))
-        if m.get('dueDate') is not None:
-            self.due_date = m.get('dueDate')
-        if m.get('executorId') is not None:
-            self.executor_id = m.get('executorId')
-        if m.get('involveMembers') is not None:
-            self.involve_members = m.get('involveMembers')
-        if m.get('isArchived') is not None:
-            self.is_archived = m.get('isArchived')
-        if m.get('isDone') is not None:
-            self.is_done = m.get('isDone')
-        if m.get('note') is not None:
-            self.note = m.get('note')
-        if m.get('parentTaskId') is not None:
-            self.parent_task_id = m.get('parentTaskId')
-        if m.get('priority') is not None:
-            self.priority = m.get('priority')
-        if m.get('projectId') is not None:
-            self.project_id = m.get('projectId')
-        if m.get('recurrence') is not None:
-            self.recurrence = m.get('recurrence')
-        if m.get('scenariofieldconfigId') is not None:
-            self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
-        if m.get('sprintId') is not None:
-            self.sprint_id = m.get('sprintId')
-        if m.get('stageId') is not None:
-            self.stage_id = m.get('stageId')
-        if m.get('startDate') is not None:
-            self.start_date = m.get('startDate')
-        if m.get('storyPoint') is not None:
-            self.story_point = m.get('storyPoint')
-        if m.get('tagIds') is not None:
-            self.tag_ids = m.get('tagIds')
-        if m.get('taskId') is not None:
-            self.task_id = m.get('taskId')
-        if m.get('taskListId') is not None:
-            self.task_list_id = m.get('taskListId')
-        if m.get('uniqueId') is not None:
-            self.unique_id = m.get('uniqueId')
-        if m.get('updated') is not None:
-            self.updated = m.get('updated')
-        if m.get('visible') is not None:
-            self.visible = m.get('visible')
-        return self
-
-
-class SearchUserTaskResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: List[SearchUserTaskResponseBodyResult] = None,
-    ):
-        # 任务详情集合。
-        self.result = result
-
-    def validate(self):
-        if self.result:
-            for k in self.result:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['result'] = []
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
         if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+            result['result'] = self.result
+        if self.total_size is not None:
+            result['totalSize'] = self.total_size
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
         if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = SearchUserTaskResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+            self.result = m.get('result')
+        if m.get('totalSize') is not None:
+            self.total_size = m.get('totalSize')
         return self
 
 
@@ -12353,7 +12049,7 @@ class UpdateTaskPriorityResponseBodyResult(TeaModel):
         priority: int = None,
         updated: str = None,
     ):
-        # 优先级。
+        # 优先级，默认的优先级包含：-10、0、1、2，含义分别为较低、普通、紧急、非常紧急。
         self.priority = priority
         # 更新时间。
         self.updated = updated
