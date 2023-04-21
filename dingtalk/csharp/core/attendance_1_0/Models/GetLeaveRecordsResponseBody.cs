@@ -95,6 +95,13 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 public string LeaveViewUnit { get; set; }
 
                 /// <summary>
+                /// 操作人userId。
+                /// </summary>
+                [NameInMap("opUserId")]
+                [Validation(Required=false)]
+                public string OpUserId { get; set; }
+
+                /// <summary>
                 /// 额度唯一标识。
                 /// </summary>
                 [NameInMap("quotaId")]

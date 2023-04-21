@@ -134,6 +134,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 
                 }
 
+                [NameInMap("workPhone")]
+                [Validation(Required=false)]
+                public List<GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone> WorkPhone { get; set; }
+                public class GetCardInfoResponseBodyExtensionCardContactInfoWorkPhone : TeaModel {
+                    [NameInMap("label")]
+                    [Validation(Required=false)]
+                    public string Label { get; set; }
+
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
+                    public string Value { get; set; }
+
+                }
+
             }
 
             /// <summary>
