@@ -43,9 +43,7 @@ class CreateMeetingRoomRequestRoomLocation(TeaModel):
         desc: str = None,
         title: str = None,
     ):
-        # 位置详细信息
         self.desc = desc
-        # 位置标题
         self.title = title
 
     def validate(self):
@@ -85,23 +83,14 @@ class CreateMeetingRoomRequest(TeaModel):
         room_status: int = None,
         union_id: str = None,
     ):
-        # 会议室所属分组id
         self.group_id = group_id
-        # isv外部会议室id
         self.isv_room_id = isv_room_id
-        # 会议室容量
         self.room_capacity = room_capacity
-        # 会议室标签
         self.room_label_ids = room_label_ids
-        # 会议室位置
         self.room_location = room_location
-        # 会议室名称
         self.room_name = room_name
-        # 会议室图片
         self.room_picture = room_picture
-        # 会议室状态
         self.room_status = room_status
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -163,7 +152,6 @@ class CreateMeetingRoomResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 创建的会议室id
         self.result = result
 
     def validate(self):
@@ -190,13 +178,16 @@ class CreateMeetingRoomResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateMeetingRoomResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -209,6 +200,8 @@ class CreateMeetingRoomResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -217,6 +210,8 @@ class CreateMeetingRoomResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateMeetingRoomResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -263,11 +258,8 @@ class CreateMeetingRoomGroupRequest(TeaModel):
         parent_group_id: int = None,
         union_id: str = None,
     ):
-        # 分组名称
         self.group_name = group_name
-        # 父分组id
         self.parent_group_id = parent_group_id
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -303,7 +295,6 @@ class CreateMeetingRoomGroupResponseBody(TeaModel):
         self,
         result: int = None,
     ):
-        # 创建的分组id
         self.result = result
 
     def validate(self):
@@ -330,13 +321,16 @@ class CreateMeetingRoomGroupResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateMeetingRoomGroupResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -349,6 +343,8 @@ class CreateMeetingRoomGroupResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -357,6 +353,8 @@ class CreateMeetingRoomGroupResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateMeetingRoomGroupResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -401,7 +399,6 @@ class DeleteMeetingRoomRequest(TeaModel):
         self,
         union_id: str = None,
     ):
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -429,7 +426,6 @@ class DeleteMeetingRoomResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 是否成功
         self.result = result
 
     def validate(self):
@@ -456,13 +452,16 @@ class DeleteMeetingRoomResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteMeetingRoomResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -475,6 +474,8 @@ class DeleteMeetingRoomResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -483,6 +484,8 @@ class DeleteMeetingRoomResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteMeetingRoomResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -527,7 +530,6 @@ class DeleteMeetingRoomGroupRequest(TeaModel):
         self,
         union_id: str = None,
     ):
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -555,7 +557,6 @@ class DeleteMeetingRoomGroupResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 是否成功
         self.result = result
 
     def validate(self):
@@ -582,13 +583,16 @@ class DeleteMeetingRoomGroupResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteMeetingRoomGroupResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -601,6 +605,8 @@ class DeleteMeetingRoomGroupResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -609,6 +615,8 @@ class DeleteMeetingRoomGroupResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteMeetingRoomGroupResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -653,7 +661,6 @@ class QueryDeviceIpByCodeRequest(TeaModel):
         self,
         device_sn: str = None,
     ):
-        # 设备sn号
         self.device_sn = device_sn
 
     def validate(self):
@@ -681,7 +688,6 @@ class QueryDeviceIpByCodeResponseBodyResult(TeaModel):
         self,
         device_ip: str = None,
     ):
-        # 设备内网ip
         self.device_ip = device_ip
 
     def validate(self):
@@ -710,7 +716,6 @@ class QueryDeviceIpByCodeResponseBody(TeaModel):
         result: QueryDeviceIpByCodeResponseBodyResult = None,
         success: bool = None,
     ):
-        # 结果
         self.result = result
         self.success = success
 
@@ -744,13 +749,16 @@ class QueryDeviceIpByCodeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDeviceIpByCodeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -763,6 +771,8 @@ class QueryDeviceIpByCodeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -771,6 +781,8 @@ class QueryDeviceIpByCodeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDeviceIpByCodeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -818,13 +830,9 @@ class QueryDevicePropertiesRequest(TeaModel):
         device_union_id: str = None,
         operator_union_id: str = None,
     ):
-        # 设备属性名称列表
         self.property_names = property_names
-        # 查询设备id
         self.device_id = device_id
-        # 查询设备unionId
         self.device_union_id = device_union_id
-        # 查询人unionId
         self.operator_union_id = operator_union_id
 
     def validate(self):
@@ -865,9 +873,7 @@ class QueryDevicePropertiesResponseBodyResult(TeaModel):
         property_name: str = None,
         property_value: str = None,
     ):
-        # 设备属性名称
         self.property_name = property_name
-        # 设备属性值
         self.property_value = property_value
 
     def validate(self):
@@ -899,7 +905,6 @@ class QueryDevicePropertiesResponseBody(TeaModel):
         self,
         result: List[QueryDevicePropertiesResponseBodyResult] = None,
     ):
-        # 响应结果
         self.result = result
 
     def validate(self):
@@ -934,13 +939,16 @@ class QueryDevicePropertiesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDevicePropertiesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -953,6 +961,8 @@ class QueryDevicePropertiesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -961,6 +971,8 @@ class QueryDevicePropertiesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDevicePropertiesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1005,7 +1017,6 @@ class QueryMeetingRoomRequest(TeaModel):
         self,
         union_id: str = None,
     ):
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -1035,11 +1046,8 @@ class QueryMeetingRoomResponseBodyResultRoomGroup(TeaModel):
         group_name: str = None,
         parent_id: int = None,
     ):
-        # 分组id
         self.group_id = group_id
-        # 分组名称
         self.group_name = group_name
-        # 父分组id
         self.parent_id = parent_id
 
     def validate(self):
@@ -1109,9 +1117,7 @@ class QueryMeetingRoomResponseBodyResultRoomLocation(TeaModel):
         desc: str = None,
         title: str = None,
     ):
-        # 位置详细信息
         self.desc = desc
-        # 位置名称
         self.title = title
 
     def validate(self):
@@ -1153,26 +1159,16 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         room_staff_id: str = None,
         room_status: int = None,
     ):
-        # 企业corpId
         self.corp_id = corp_id
-        # isv外部会议室id
         self.isv_room_id = isv_room_id
-        # 会议室容量
         self.room_capacity = room_capacity
-        # 会议室分组
         self.room_group = room_group
-        # 会议室id
         self.room_id = room_id
         self.room_labels = room_labels
-        # 会议室位置
         self.room_location = room_location
-        # 会议室名称
         self.room_name = room_name
-        # 会议室图片
         self.room_picture = room_picture
-        # 会议室staffId
         self.room_staff_id = room_staff_id
-        # 会议室状态
         self.room_status = room_status
 
     def validate(self):
@@ -1282,13 +1278,16 @@ class QueryMeetingRoomResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryMeetingRoomResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1301,6 +1300,8 @@ class QueryMeetingRoomResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1309,6 +1310,8 @@ class QueryMeetingRoomResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMeetingRoomResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1355,11 +1358,8 @@ class QueryMeetingRoomDeviceRequest(TeaModel):
         device_union_id: str = None,
         operator_union_id: str = None,
     ):
-        # 查询设备id
         self.device_id = device_id
-        # 查询设备unionId
         self.device_union_id = device_union_id
-        # 查询人unionId
         self.operator_union_id = operator_union_id
 
     def validate(self):
@@ -1406,29 +1406,17 @@ class QueryMeetingRoomDeviceResponseBodyResultControllers(TeaModel):
         open_room_id: str = None,
         share_code: str = None,
     ):
-        # 企业corpId
         self.corp_id = corp_id
-        # 控制器设备id
         self.device_id = device_id
-        # 控制器mac地址
         self.device_mac = device_mac
-        # 控制器型号
         self.device_model = device_model
-        # 控制器名称
         self.device_name = device_name
-        # 控制器注册serviceId
         self.device_service_id = device_service_id
-        # 控制器sn
         self.device_sn = device_sn
-        # 控制器状态
         self.device_status = device_status
-        # 设备类型
         self.device_type = device_type
-        # 控制器unionId
         self.device_union_id = device_union_id
-        # 控制器绑定会议室id
         self.open_room_id = open_room_id
-        # 控制器投屏码
         self.share_code = share_code
 
     def validate(self):
@@ -1512,31 +1500,18 @@ class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
         open_room_id: str = None,
         share_code: str = None,
     ):
-        # 设备控制器
         self.controllers = controllers
-        # 企业corpId
         self.corp_id = corp_id
-        # 设备id
         self.device_id = device_id
-        # 设备mac地址
         self.device_mac = device_mac
-        # 设备型号
         self.device_model = device_model
-        # 设备名称
         self.device_name = device_name
-        # 设备注册serviceId
         self.device_service_id = device_service_id
-        # 设备sn
         self.device_sn = device_sn
-        # 设备状态
         self.device_status = device_status
-        # 设备类型
         self.device_type = device_type
-        # 设备unionId
         self.device_union_id = device_union_id
-        # 设备绑定会议室id
         self.open_room_id = open_room_id
-        # 设备投屏码
         self.share_code = share_code
 
     def validate(self):
@@ -1620,7 +1595,6 @@ class QueryMeetingRoomDeviceResponseBody(TeaModel):
         self,
         result: QueryMeetingRoomDeviceResponseBodyResult = None,
     ):
-        # 响应结果
         self.result = result
 
     def validate(self):
@@ -1649,13 +1623,16 @@ class QueryMeetingRoomDeviceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryMeetingRoomDeviceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1668,6 +1645,8 @@ class QueryMeetingRoomDeviceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1676,6 +1655,8 @@ class QueryMeetingRoomDeviceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMeetingRoomDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1720,7 +1701,6 @@ class QueryMeetingRoomGroupRequest(TeaModel):
         self,
         union_id: str = None,
     ):
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -1750,11 +1730,8 @@ class QueryMeetingRoomGroupResponseBody(TeaModel):
         group_name: str = None,
         parent_id: int = None,
     ):
-        # 分组id
         self.group_id = group_id
-        # 分组名称
         self.group_name = group_name
-        # 父分组id
         self.parent_id = parent_id
 
     def validate(self):
@@ -1789,13 +1766,16 @@ class QueryMeetingRoomGroupResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryMeetingRoomGroupResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1808,6 +1788,8 @@ class QueryMeetingRoomGroupResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1816,6 +1798,8 @@ class QueryMeetingRoomGroupResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMeetingRoomGroupResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1860,7 +1844,6 @@ class QueryMeetingRoomGroupListRequest(TeaModel):
         self,
         union_id: str = None,
     ):
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -1890,11 +1873,8 @@ class QueryMeetingRoomGroupListResponseBodyResult(TeaModel):
         group_name: str = None,
         parent_id: int = None,
     ):
-        # 分组id
         self.group_id = group_id
-        # 分组名称
         self.group_name = group_name
-        # 父分组id
         self.parent_id = parent_id
 
     def validate(self):
@@ -1930,7 +1910,6 @@ class QueryMeetingRoomGroupListResponseBody(TeaModel):
         self,
         result: List[QueryMeetingRoomGroupListResponseBodyResult] = None,
     ):
-        # 结果列表
         self.result = result
 
     def validate(self):
@@ -1965,13 +1944,16 @@ class QueryMeetingRoomGroupListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryMeetingRoomGroupListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1984,6 +1966,8 @@ class QueryMeetingRoomGroupListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1992,6 +1976,8 @@ class QueryMeetingRoomGroupListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMeetingRoomGroupListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2038,11 +2024,8 @@ class QueryMeetingRoomListRequest(TeaModel):
         next_token: int = None,
         union_id: str = None,
     ):
-        # 请求分页大小
         self.max_results = max_results
-        # 请求分页token
         self.next_token = next_token
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -2080,11 +2063,8 @@ class QueryMeetingRoomListResponseBodyResultRoomGroup(TeaModel):
         group_name: str = None,
         parent_id: int = None,
     ):
-        # 分组id
         self.group_id = group_id
-        # 分组名称
         self.group_name = group_name
-        # 父分组id
         self.parent_id = parent_id
 
     def validate(self):
@@ -2154,9 +2134,7 @@ class QueryMeetingRoomListResponseBodyResultRoomLocation(TeaModel):
         desc: str = None,
         title: str = None,
     ):
-        # 位置详细信息
         self.desc = desc
-        # 位置名称
         self.title = title
 
     def validate(self):
@@ -2198,26 +2176,16 @@ class QueryMeetingRoomListResponseBodyResult(TeaModel):
         room_staff_id: str = None,
         room_status: int = None,
     ):
-        # 企业corpId
         self.corp_id = corp_id
-        # isv外部会议室id
         self.isv_room_id = isv_room_id
-        # 会议室容量
         self.room_capacity = room_capacity
-        # 会议室分组
         self.room_group = room_group
-        # 会议室id
         self.room_id = room_id
         self.room_labels = room_labels
-        # 会议室位置
         self.room_location = room_location
-        # 会议室名称
         self.room_name = room_name
-        # 会议室图片
         self.room_picture = room_picture
-        # 会议室staffId
         self.room_staff_id = room_staff_id
-        # 会议室状态
         self.room_status = room_status
 
     def validate(self):
@@ -2301,11 +2269,8 @@ class QueryMeetingRoomListResponseBody(TeaModel):
         next_token: int = None,
         result: List[QueryMeetingRoomListResponseBodyResult] = None,
     ):
-        # 是否有更多
         self.has_more = has_more
-        # 下次查询分页标记
         self.next_token = next_token
-        # 会议室列表
         self.result = result
 
     def validate(self):
@@ -2348,13 +2313,16 @@ class QueryMeetingRoomListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryMeetingRoomListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2367,6 +2335,8 @@ class QueryMeetingRoomListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2375,6 +2345,8 @@ class QueryMeetingRoomListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMeetingRoomListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2420,9 +2392,7 @@ class UpdateMeetingRoomRequestRoomLocation(TeaModel):
         desc: str = None,
         title: str = None,
     ):
-        # 位置详细信息
         self.desc = desc
-        # 位置标题
         self.title = title
 
     def validate(self):
@@ -2463,25 +2433,15 @@ class UpdateMeetingRoomRequest(TeaModel):
         room_status: int = None,
         union_id: str = None,
     ):
-        # 会议室所属分组id
         self.group_id = group_id
-        # isv外部会议室id
         self.isv_room_id = isv_room_id
-        # 会议室容量
         self.room_capacity = room_capacity
-        # 会议室id
         self.room_id = room_id
-        # 会议室标签
         self.room_label_ids = room_label_ids
-        # 会议室位置
         self.room_location = room_location
-        # 会议室名称
         self.room_name = room_name
-        # 会议室图片
         self.room_picture = room_picture
-        # 会议室状态
         self.room_status = room_status
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -2547,7 +2507,6 @@ class UpdateMeetingRoomResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 是否成功
         self.result = result
 
     def validate(self):
@@ -2574,13 +2533,16 @@ class UpdateMeetingRoomResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateMeetingRoomResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2593,6 +2555,8 @@ class UpdateMeetingRoomResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2601,6 +2565,8 @@ class UpdateMeetingRoomResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateMeetingRoomResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2647,11 +2613,8 @@ class UpdateMeetingRoomGroupRequest(TeaModel):
         group_name: str = None,
         union_id: str = None,
     ):
-        # 分组id
         self.group_id = group_id
-        # 分组名称
         self.group_name = group_name
-        # 操作人unionId
         self.union_id = union_id
 
     def validate(self):
@@ -2687,7 +2650,6 @@ class UpdateMeetingRoomGroupResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 是否成功
         self.result = result
 
     def validate(self):
@@ -2714,13 +2676,16 @@ class UpdateMeetingRoomGroupResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateMeetingRoomGroupResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2733,6 +2698,8 @@ class UpdateMeetingRoomGroupResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2741,6 +2708,8 @@ class UpdateMeetingRoomGroupResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateMeetingRoomGroupResponseBody()
             self.body = temp_model.from_map(m['body'])

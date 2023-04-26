@@ -43,9 +43,7 @@ class AddRobotInstanceToGroupRequest(TeaModel):
         chatbot_id: str = None,
         open_conversation_id: str = None,
     ):
-        # 机器人id
         self.chatbot_id = chatbot_id
-        # 对话id
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -77,7 +75,6 @@ class AddRobotInstanceToGroupResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 是否成功拉入群
         self.result = result
 
     def validate(self):
@@ -104,13 +101,16 @@ class AddRobotInstanceToGroupResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddRobotInstanceToGroupResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -123,6 +123,8 @@ class AddRobotInstanceToGroupResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -131,6 +133,8 @@ class AddRobotInstanceToGroupResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddRobotInstanceToGroupResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -179,11 +183,8 @@ class AskRobotRequest(TeaModel):
         session_uuid: str = None,
     ):
         self.ding_user_id = ding_user_id
-        # 问题
         self.question = question
-        # 机器人id
         self.robot_app_key = robot_app_key
-        # sessionId(非必传)
         self.session_uuid = session_uuid
 
     def validate(self):
@@ -223,7 +224,6 @@ class AskRobotResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 答案的json string
         self.result = result
 
     def validate(self):
@@ -250,13 +250,16 @@ class AskRobotResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AskRobotResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -269,6 +272,8 @@ class AskRobotResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -277,6 +282,8 @@ class AskRobotResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AskRobotResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -324,13 +331,9 @@ class GetDingMeBaseDataRequest(TeaModel):
         end_day: str = None,
         start_day: str = None,
     ):
-        # 机器人ID
         self.app_key = app_key
-        # 是否按天分组
         self.by_day = by_day
-        # 结束时间
         self.end_day = end_day
-        # 开始时间
         self.start_day = start_day
 
     def validate(self):
@@ -373,13 +376,9 @@ class GetDingMeBaseDataResponseBody(TeaModel):
         runtime: int = None,
         tips: Dict[str, Any] = None,
     ):
-        # 是否缓存
         self.from_cache = from_cache
-        # 结果集
         self.rawset = rawset
-        # 运行时间
         self.runtime = runtime
-        # 字段解释
         self.tips = tips
 
     def validate(self):
@@ -418,13 +417,16 @@ class GetDingMeBaseDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDingMeBaseDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -437,6 +439,8 @@ class GetDingMeBaseDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -445,6 +449,8 @@ class GetDingMeBaseDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDingMeBaseDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -489,7 +495,6 @@ class GetIntelligentRobotInfoRequest(TeaModel):
         self,
         robot_app_key: str = None,
     ):
-        # 机器人业务标识
         self.robot_app_key = robot_app_key
 
     def validate(self):
@@ -517,7 +522,6 @@ class GetIntelligentRobotInfoResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 机器人id
         self.result = result
 
     def validate(self):
@@ -544,13 +548,16 @@ class GetIntelligentRobotInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetIntelligentRobotInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -563,6 +570,8 @@ class GetIntelligentRobotInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -571,6 +580,8 @@ class GetIntelligentRobotInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetIntelligentRobotInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -615,7 +626,6 @@ class GetOfficialAccountRobotInfoRequest(TeaModel):
         self,
         type: str = None,
     ):
-        # 机器人类型参数
         self.type = type
 
     def validate(self):
@@ -648,17 +658,11 @@ class GetOfficialAccountRobotInfoResponseBody(TeaModel):
         name: str = None,
         preview_media_url: str = None,
     ):
-        # 机器人id
         self.app_id = app_id
-        # 机器人简介
         self.brief = brief
-        # 机器人描述
         self.description = description
-        # 机器人icon
         self.icon = icon
-        # 机器人名称
         self.name = name
-        # 机器人预览图
         self.preview_media_url = preview_media_url
 
     def validate(self):
@@ -705,13 +709,16 @@ class GetOfficialAccountRobotInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetOfficialAccountRobotInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -724,6 +731,8 @@ class GetOfficialAccountRobotInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -732,6 +741,8 @@ class GetOfficialAccountRobotInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetOfficialAccountRobotInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -778,11 +789,8 @@ class GetWebChannelUserTokenRequest(TeaModel):
         nick: str = None,
         source: int = None,
     ):
-        # 登录用户在业务账号体系内的用户id
         self.foreign_id = foreign_id
-        # 登录用户在业务账号体系内的昵称
         self.nick = nick
-        # 调用方在小蜜客服平台申请的业务账号体系的id
         self.source = source
 
     def validate(self):
@@ -818,7 +826,6 @@ class GetWebChannelUserTokenResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 返回结果
         self.result = result
 
     def validate(self):
@@ -845,13 +852,16 @@ class GetWebChannelUserTokenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetWebChannelUserTokenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -864,6 +874,8 @@ class GetWebChannelUserTokenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -872,6 +884,8 @@ class GetWebChannelUserTokenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetWebChannelUserTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -918,11 +932,8 @@ class PushCustomerGroupMessageRequest(TeaModel):
         msg_key: str = None,
         msg_param: str = None,
     ):
-        # 客户群会话id
         self.conversation_id = conversation_id
-        # 消息类型
         self.msg_key = msg_key
-        # 消息模板替换参数
         self.msg_param = msg_param
 
     def validate(self):
@@ -958,7 +969,6 @@ class PushCustomerGroupMessageResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 推送queryKey
         self.result = result
 
     def validate(self):
@@ -985,13 +995,16 @@ class PushCustomerGroupMessageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PushCustomerGroupMessageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1004,6 +1017,8 @@ class PushCustomerGroupMessageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1012,6 +1027,8 @@ class PushCustomerGroupMessageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PushCustomerGroupMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1059,13 +1076,9 @@ class PushIntelligentRobotGroupMessageRequest(TeaModel):
         msg_param: str = None,
         open_conversation_id: str = None,
     ):
-        # 机器人id
         self.chatbot_id = chatbot_id
-        # 消息类型
         self.msg_key = msg_key
-        # 消息模板替换参数
         self.msg_param = msg_param
-        # 群对话id
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -1105,7 +1118,6 @@ class PushIntelligentRobotGroupMessageResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 推送queryKey
         self.result = result
 
     def validate(self):
@@ -1132,13 +1144,16 @@ class PushIntelligentRobotGroupMessageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PushIntelligentRobotGroupMessageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1151,6 +1166,8 @@ class PushIntelligentRobotGroupMessageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1159,6 +1176,8 @@ class PushIntelligentRobotGroupMessageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PushIntelligentRobotGroupMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1206,13 +1225,9 @@ class PushIntelligentRobotMessageRequest(TeaModel):
         msg_param: str = None,
         user_id: str = None,
     ):
-        # 机器人id
         self.chatbot_id = chatbot_id
-        # 消息类型
         self.msg_key = msg_key
-        # 消息模板替换参数
         self.msg_param = msg_param
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -1252,7 +1267,6 @@ class PushIntelligentRobotMessageResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 推送queryKey
         self.result = result
 
     def validate(self):
@@ -1279,13 +1293,16 @@ class PushIntelligentRobotMessageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PushIntelligentRobotMessageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1298,6 +1315,8 @@ class PushIntelligentRobotMessageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1306,6 +1325,8 @@ class PushIntelligentRobotMessageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PushIntelligentRobotMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1352,11 +1373,8 @@ class PushOfficialAccountMessageRequest(TeaModel):
         msg_param: str = None,
         user_id: str = None,
     ):
-        # 消息类型
         self.msg_key = msg_key
-        # 消息模板替换参数
         self.msg_param = msg_param
-        # 用户id(在服务窗对应虚拟企业中的用户id)
         self.user_id = user_id
 
     def validate(self):
@@ -1392,7 +1410,6 @@ class PushOfficialAccountMessageResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 推送queryKey
         self.result = result
 
     def validate(self):
@@ -1419,13 +1436,16 @@ class PushOfficialAccountMessageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PushOfficialAccountMessageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1438,6 +1458,8 @@ class PushOfficialAccountMessageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1446,6 +1468,8 @@ class PushOfficialAccountMessageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PushOfficialAccountMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1493,13 +1517,9 @@ class PushRobotMessageRequest(TeaModel):
         msg_param: str = None,
         user_id: str = None,
     ):
-        # 机器人id
         self.chatbot_id = chatbot_id
-        # 消息类型
         self.msg_key = msg_key
-        # 消息模板替换参数
         self.msg_param = msg_param
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -1539,7 +1559,6 @@ class PushRobotMessageResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 推送queryKey
         self.result = result
 
     def validate(self):
@@ -1566,13 +1585,16 @@ class PushRobotMessageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PushRobotMessageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1585,6 +1607,8 @@ class PushRobotMessageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1593,6 +1617,8 @@ class PushRobotMessageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PushRobotMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1637,7 +1663,6 @@ class ReplyRobotRequest(TeaModel):
         self,
         proxy_message_str: str = None,
     ):
-        # 回复消息内容的json string
         self.proxy_message_str = proxy_message_str
 
     def validate(self):
@@ -1665,7 +1690,6 @@ class ReplyRobotResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 回复是否成功结果
         self.result = result
 
     def validate(self):
@@ -1692,13 +1716,16 @@ class ReplyRobotResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ReplyRobotResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1711,6 +1738,8 @@ class ReplyRobotResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1719,6 +1748,8 @@ class ReplyRobotResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReplyRobotResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1768,17 +1799,11 @@ class UpdateOfficialAccountRobotInfoRequest(TeaModel):
         preview_media_url: str = None,
         type: str = None,
     ):
-        # 机器人头像
         self.avatar = avatar
-        # 机器人简介
         self.brief = brief
-        # 机器人描述
         self.description = description
-        # 机器人名称
         self.name = name
-        # 机器人预览图
         self.preview_media_url = preview_media_url
-        # 机器人类型参数
         self.type = type
 
     def validate(self):
@@ -1826,7 +1851,6 @@ class UpdateOfficialAccountRobotInfoResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -1853,13 +1877,16 @@ class UpdateOfficialAccountRobotInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateOfficialAccountRobotInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1872,6 +1899,8 @@ class UpdateOfficialAccountRobotInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1880,6 +1909,8 @@ class UpdateOfficialAccountRobotInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateOfficialAccountRobotInfoResponseBody()
             self.body = temp_model.from_map(m['body'])

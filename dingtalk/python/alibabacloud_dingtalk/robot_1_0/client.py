@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.robot_1_0 import models as dingtalkrobot__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def batch_otoquery(
-        self,
-        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
-    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
-        return self.batch_otoquery_with_options(request, headers, runtime)
-
-    async def batch_otoquery_async(
-        self,
-        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
-    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
-        return await self.batch_otoquery_with_options_async(request, headers, runtime)
 
     def batch_otoquery_with_options(
         self,
@@ -60,9 +50,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BatchOTOQuery',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/oToMessages/readStatus',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchOTOQueryResponse(),
-            self.do_roarequest('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/oToMessages/readStatus', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_otoquery_with_options_async(
@@ -86,26 +87,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BatchOTOQuery',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/oToMessages/readStatus',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchOTOQueryResponse(),
-            await self.do_roarequest_async('BatchOTOQuery', 'robot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/robot/oToMessages/readStatus', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_recall_group(
+    def batch_otoquery(
         self,
-        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallGroupHeaders()
-        return self.batch_recall_group_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
+        return self.batch_otoquery_with_options(request, headers, runtime)
 
-    async def batch_recall_group_async(
+    async def batch_otoquery_async(
         self,
-        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
+        request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,
+    ) -> dingtalkrobot__1__0_models.BatchOTOQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallGroupHeaders()
-        return await self.batch_recall_group_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchOTOQueryHeaders()
+        return await self.batch_otoquery_with_options_async(request, headers, runtime)
 
     def batch_recall_group_with_options(
         self,
@@ -130,9 +142,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRecallGroup',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groupMessages/batchRecall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchRecallGroupResponse(),
-            self.do_roarequest('BatchRecallGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/batchRecall', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_recall_group_with_options_async(
@@ -158,26 +181,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRecallGroup',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groupMessages/batchRecall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchRecallGroupResponse(),
-            await self.do_roarequest_async('BatchRecallGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/batchRecall', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_recall_oto(
+    def batch_recall_group(
         self,
-        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
+        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallOTOHeaders()
-        return self.batch_recall_otowith_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchRecallGroupHeaders()
+        return self.batch_recall_group_with_options(request, headers, runtime)
 
-    async def batch_recall_oto_async(
+    async def batch_recall_group_async(
         self,
-        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
+        request: dingtalkrobot__1__0_models.BatchRecallGroupRequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallOTOHeaders()
-        return await self.batch_recall_otowith_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchRecallGroupHeaders()
+        return await self.batch_recall_group_with_options_async(request, headers, runtime)
 
     def batch_recall_otowith_options(
         self,
@@ -200,9 +234,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRecallOTO',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/otoMessages/batchRecall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchRecallOTOResponse(),
-            self.do_roarequest('BatchRecallOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/otoMessages/batchRecall', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_recall_otowith_options_async(
@@ -226,26 +271,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRecallOTO',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/otoMessages/batchRecall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchRecallOTOResponse(),
-            await self.do_roarequest_async('BatchRecallOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/otoMessages/batchRecall', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_recall_private_chat(
+    def batch_recall_oto(
         self,
-        request: dingtalkrobot__1__0_models.BatchRecallPrivateChatRequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse:
+        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallPrivateChatHeaders()
-        return self.batch_recall_private_chat_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchRecallOTOHeaders()
+        return self.batch_recall_otowith_options(request, headers, runtime)
 
-    async def batch_recall_private_chat_async(
+    async def batch_recall_oto_async(
         self,
-        request: dingtalkrobot__1__0_models.BatchRecallPrivateChatRequest,
-    ) -> dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse:
+        request: dingtalkrobot__1__0_models.BatchRecallOTORequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallOTOResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchRecallPrivateChatHeaders()
-        return await self.batch_recall_private_chat_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchRecallOTOHeaders()
+        return await self.batch_recall_otowith_options_async(request, headers, runtime)
 
     def batch_recall_private_chat_with_options(
         self,
@@ -270,9 +326,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRecallPrivateChat',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/privateChatMessages/batchRecall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse(),
-            self.do_roarequest('BatchRecallPrivateChat', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/batchRecall', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_recall_private_chat_with_options_async(
@@ -298,26 +365,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRecallPrivateChat',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/privateChatMessages/batchRecall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse(),
-            await self.do_roarequest_async('BatchRecallPrivateChat', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/batchRecall', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_send_oto(
+    def batch_recall_private_chat(
         self,
-        request: dingtalkrobot__1__0_models.BatchSendOTORequest,
-    ) -> dingtalkrobot__1__0_models.BatchSendOTOResponse:
+        request: dingtalkrobot__1__0_models.BatchRecallPrivateChatRequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchSendOTOHeaders()
-        return self.batch_send_otowith_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchRecallPrivateChatHeaders()
+        return self.batch_recall_private_chat_with_options(request, headers, runtime)
 
-    async def batch_send_oto_async(
+    async def batch_recall_private_chat_async(
         self,
-        request: dingtalkrobot__1__0_models.BatchSendOTORequest,
-    ) -> dingtalkrobot__1__0_models.BatchSendOTOResponse:
+        request: dingtalkrobot__1__0_models.BatchRecallPrivateChatRequest,
+    ) -> dingtalkrobot__1__0_models.BatchRecallPrivateChatResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.BatchSendOTOHeaders()
-        return await self.batch_send_otowith_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchRecallPrivateChatHeaders()
+        return await self.batch_recall_private_chat_with_options_async(request, headers, runtime)
 
     def batch_send_otowith_options(
         self,
@@ -344,9 +422,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchSendOTO',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/oToMessages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchSendOTOResponse(),
-            self.do_roarequest('BatchSendOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/oToMessages/batchSend', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_send_otowith_options_async(
@@ -374,26 +463,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchSendOTO',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/oToMessages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.BatchSendOTOResponse(),
-            await self.do_roarequest_async('BatchSendOTO', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/oToMessages/batchSend', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def clear_robot_plugin(
+    def batch_send_oto(
         self,
-        request: dingtalkrobot__1__0_models.ClearRobotPluginRequest,
-    ) -> dingtalkrobot__1__0_models.ClearRobotPluginResponse:
+        request: dingtalkrobot__1__0_models.BatchSendOTORequest,
+    ) -> dingtalkrobot__1__0_models.BatchSendOTOResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.ClearRobotPluginHeaders()
-        return self.clear_robot_plugin_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchSendOTOHeaders()
+        return self.batch_send_otowith_options(request, headers, runtime)
 
-    async def clear_robot_plugin_async(
+    async def batch_send_oto_async(
         self,
-        request: dingtalkrobot__1__0_models.ClearRobotPluginRequest,
-    ) -> dingtalkrobot__1__0_models.ClearRobotPluginResponse:
+        request: dingtalkrobot__1__0_models.BatchSendOTORequest,
+    ) -> dingtalkrobot__1__0_models.BatchSendOTOResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.ClearRobotPluginHeaders()
-        return await self.clear_robot_plugin_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.BatchSendOTOHeaders()
+        return await self.batch_send_otowith_options_async(request, headers, runtime)
 
     def clear_robot_plugin_with_options(
         self,
@@ -414,9 +514,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ClearRobotPlugin',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/plugins/clear',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.ClearRobotPluginResponse(),
-            self.do_roarequest('ClearRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/clear', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def clear_robot_plugin_with_options_async(
@@ -438,26 +549,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ClearRobotPlugin',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/plugins/clear',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.ClearRobotPluginResponse(),
-            await self.do_roarequest_async('ClearRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/clear', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_bot_list_in_group(
+    def clear_robot_plugin(
         self,
-        request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
-    ) -> dingtalkrobot__1__0_models.GetBotListInGroupResponse:
+        request: dingtalkrobot__1__0_models.ClearRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.ClearRobotPluginResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.GetBotListInGroupHeaders()
-        return self.get_bot_list_in_group_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.ClearRobotPluginHeaders()
+        return self.clear_robot_plugin_with_options(request, headers, runtime)
 
-    async def get_bot_list_in_group_async(
+    async def clear_robot_plugin_async(
         self,
-        request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
-    ) -> dingtalkrobot__1__0_models.GetBotListInGroupResponse:
+        request: dingtalkrobot__1__0_models.ClearRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.ClearRobotPluginResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.GetBotListInGroupHeaders()
-        return await self.get_bot_list_in_group_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.ClearRobotPluginHeaders()
+        return await self.clear_robot_plugin_with_options_async(request, headers, runtime)
 
     def get_bot_list_in_group_with_options(
         self,
@@ -478,9 +600,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetBotListInGroup',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groups/robots/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.GetBotListInGroupResponse(),
-            self.do_roarequest('GetBotListInGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groups/robots/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_bot_list_in_group_with_options_async(
@@ -502,26 +635,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetBotListInGroup',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groups/robots/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.GetBotListInGroupResponse(),
-            await self.do_roarequest_async('GetBotListInGroup', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groups/robots/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def manage_single_chat_robot_status(
+    def get_bot_list_in_group(
         self,
-        request: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusRequest,
-    ) -> dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse:
+        request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
+    ) -> dingtalkrobot__1__0_models.GetBotListInGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.ManageSingleChatRobotStatusHeaders()
-        return self.manage_single_chat_robot_status_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.GetBotListInGroupHeaders()
+        return self.get_bot_list_in_group_with_options(request, headers, runtime)
 
-    async def manage_single_chat_robot_status_async(
+    async def get_bot_list_in_group_async(
         self,
-        request: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusRequest,
-    ) -> dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse:
+        request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
+    ) -> dingtalkrobot__1__0_models.GetBotListInGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.ManageSingleChatRobotStatusHeaders()
-        return await self.manage_single_chat_robot_status_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.GetBotListInGroupHeaders()
+        return await self.get_bot_list_in_group_with_options_async(request, headers, runtime)
 
     def manage_single_chat_robot_status_with_options(
         self,
@@ -544,9 +688,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ManageSingleChatRobotStatus',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/statuses/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse(),
-            self.do_roarequest('ManageSingleChatRobotStatus', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/statuses/manage', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def manage_single_chat_robot_status_with_options_async(
@@ -570,26 +725,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ManageSingleChatRobotStatus',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/statuses/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse(),
-            await self.do_roarequest_async('ManageSingleChatRobotStatus', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/statuses/manage', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def org_group_query(
+    def manage_single_chat_robot_status(
         self,
-        request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
-    ) -> dingtalkrobot__1__0_models.OrgGroupQueryResponse:
+        request: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusRequest,
+    ) -> dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.OrgGroupQueryHeaders()
-        return self.org_group_query_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.ManageSingleChatRobotStatusHeaders()
+        return self.manage_single_chat_robot_status_with_options(request, headers, runtime)
 
-    async def org_group_query_async(
+    async def manage_single_chat_robot_status_async(
         self,
-        request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
-    ) -> dingtalkrobot__1__0_models.OrgGroupQueryResponse:
+        request: dingtalkrobot__1__0_models.ManageSingleChatRobotStatusRequest,
+    ) -> dingtalkrobot__1__0_models.ManageSingleChatRobotStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.OrgGroupQueryHeaders()
-        return await self.org_group_query_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.ManageSingleChatRobotStatusHeaders()
+        return await self.manage_single_chat_robot_status_with_options_async(request, headers, runtime)
 
     def org_group_query_with_options(
         self,
@@ -620,9 +786,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='OrgGroupQuery',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groupMessages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.OrgGroupQueryResponse(),
-            self.do_roarequest('OrgGroupQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def org_group_query_with_options_async(
@@ -654,26 +831,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='OrgGroupQuery',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groupMessages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.OrgGroupQueryResponse(),
-            await self.do_roarequest_async('OrgGroupQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def org_group_recall(
+    def org_group_query(
         self,
-        request: dingtalkrobot__1__0_models.OrgGroupRecallRequest,
-    ) -> dingtalkrobot__1__0_models.OrgGroupRecallResponse:
+        request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.OrgGroupRecallHeaders()
-        return self.org_group_recall_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.OrgGroupQueryHeaders()
+        return self.org_group_query_with_options(request, headers, runtime)
 
-    async def org_group_recall_async(
+    async def org_group_query_async(
         self,
-        request: dingtalkrobot__1__0_models.OrgGroupRecallRequest,
-    ) -> dingtalkrobot__1__0_models.OrgGroupRecallResponse:
+        request: dingtalkrobot__1__0_models.OrgGroupQueryRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.OrgGroupRecallHeaders()
-        return await self.org_group_recall_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.OrgGroupQueryHeaders()
+        return await self.org_group_query_with_options_async(request, headers, runtime)
 
     def org_group_recall_with_options(
         self,
@@ -698,9 +886,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='OrgGroupRecall',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groupMessages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.OrgGroupRecallResponse(),
-            self.do_roarequest('OrgGroupRecall', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/recall', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def org_group_recall_with_options_async(
@@ -726,26 +925,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='OrgGroupRecall',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groupMessages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.OrgGroupRecallResponse(),
-            await self.do_roarequest_async('OrgGroupRecall', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/recall', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def org_group_send(
+    def org_group_recall(
         self,
-        request: dingtalkrobot__1__0_models.OrgGroupSendRequest,
-    ) -> dingtalkrobot__1__0_models.OrgGroupSendResponse:
+        request: dingtalkrobot__1__0_models.OrgGroupRecallRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupRecallResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.OrgGroupSendHeaders()
-        return self.org_group_send_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.OrgGroupRecallHeaders()
+        return self.org_group_recall_with_options(request, headers, runtime)
 
-    async def org_group_send_async(
+    async def org_group_recall_async(
         self,
-        request: dingtalkrobot__1__0_models.OrgGroupSendRequest,
-    ) -> dingtalkrobot__1__0_models.OrgGroupSendResponse:
+        request: dingtalkrobot__1__0_models.OrgGroupRecallRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupRecallResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.OrgGroupSendHeaders()
-        return await self.org_group_send_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.OrgGroupRecallHeaders()
+        return await self.org_group_recall_with_options_async(request, headers, runtime)
 
     def org_group_send_with_options(
         self,
@@ -776,9 +986,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='OrgGroupSend',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groupMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.OrgGroupSendResponse(),
-            self.do_roarequest('OrgGroupSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def org_group_send_with_options_async(
@@ -810,26 +1031,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='OrgGroupSend',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groupMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.OrgGroupSendResponse(),
-            await self.do_roarequest_async('OrgGroupSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groupMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def private_chat_query(
+    def org_group_send(
         self,
-        request: dingtalkrobot__1__0_models.PrivateChatQueryRequest,
-    ) -> dingtalkrobot__1__0_models.PrivateChatQueryResponse:
+        request: dingtalkrobot__1__0_models.OrgGroupSendRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupSendResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.PrivateChatQueryHeaders()
-        return self.private_chat_query_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.OrgGroupSendHeaders()
+        return self.org_group_send_with_options(request, headers, runtime)
 
-    async def private_chat_query_async(
+    async def org_group_send_async(
         self,
-        request: dingtalkrobot__1__0_models.PrivateChatQueryRequest,
-    ) -> dingtalkrobot__1__0_models.PrivateChatQueryResponse:
+        request: dingtalkrobot__1__0_models.OrgGroupSendRequest,
+    ) -> dingtalkrobot__1__0_models.OrgGroupSendResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.PrivateChatQueryHeaders()
-        return await self.private_chat_query_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.OrgGroupSendHeaders()
+        return await self.org_group_send_with_options_async(request, headers, runtime)
 
     def private_chat_query_with_options(
         self,
@@ -858,9 +1090,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PrivateChatQuery',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/privateChatMessages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.PrivateChatQueryResponse(),
-            self.do_roarequest('PrivateChatQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def private_chat_query_with_options_async(
@@ -890,26 +1133,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PrivateChatQuery',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/privateChatMessages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.PrivateChatQueryResponse(),
-            await self.do_roarequest_async('PrivateChatQuery', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def private_chat_send(
+    def private_chat_query(
         self,
-        request: dingtalkrobot__1__0_models.PrivateChatSendRequest,
-    ) -> dingtalkrobot__1__0_models.PrivateChatSendResponse:
+        request: dingtalkrobot__1__0_models.PrivateChatQueryRequest,
+    ) -> dingtalkrobot__1__0_models.PrivateChatQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.PrivateChatSendHeaders()
-        return self.private_chat_send_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.PrivateChatQueryHeaders()
+        return self.private_chat_query_with_options(request, headers, runtime)
 
-    async def private_chat_send_async(
+    async def private_chat_query_async(
         self,
-        request: dingtalkrobot__1__0_models.PrivateChatSendRequest,
-    ) -> dingtalkrobot__1__0_models.PrivateChatSendResponse:
+        request: dingtalkrobot__1__0_models.PrivateChatQueryRequest,
+    ) -> dingtalkrobot__1__0_models.PrivateChatQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.PrivateChatSendHeaders()
-        return await self.private_chat_send_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.PrivateChatQueryHeaders()
+        return await self.private_chat_query_with_options_async(request, headers, runtime)
 
     def private_chat_send_with_options(
         self,
@@ -938,9 +1192,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PrivateChatSend',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/privateChatMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.PrivateChatSendResponse(),
-            self.do_roarequest('PrivateChatSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def private_chat_send_with_options_async(
@@ -970,26 +1235,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PrivateChatSend',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/privateChatMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.PrivateChatSendResponse(),
-            await self.do_roarequest_async('PrivateChatSend', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/privateChatMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_bot_instance_in_group_info(
+    def private_chat_send(
         self,
-        request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,
-    ) -> dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse:
+        request: dingtalkrobot__1__0_models.PrivateChatSendRequest,
+    ) -> dingtalkrobot__1__0_models.PrivateChatSendResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders()
-        return self.query_bot_instance_in_group_info_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.PrivateChatSendHeaders()
+        return self.private_chat_send_with_options(request, headers, runtime)
 
-    async def query_bot_instance_in_group_info_async(
+    async def private_chat_send_async(
         self,
-        request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,
-    ) -> dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse:
+        request: dingtalkrobot__1__0_models.PrivateChatSendRequest,
+    ) -> dingtalkrobot__1__0_models.PrivateChatSendResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders()
-        return await self.query_bot_instance_in_group_info_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.PrivateChatSendHeaders()
+        return await self.private_chat_send_with_options_async(request, headers, runtime)
 
     def query_bot_instance_in_group_info_with_options(
         self,
@@ -1014,9 +1290,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryBotInstanceInGroupInfo',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse(),
-            self.do_roarequest('QueryBotInstanceInGroupInfo', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groups/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_bot_instance_in_group_info_with_options_async(
@@ -1042,26 +1329,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryBotInstanceInGroupInfo',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse(),
-            await self.do_roarequest_async('QueryBotInstanceInGroupInfo', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/groups/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_robot_plugin(
+    def query_bot_instance_in_group_info(
         self,
-        request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
-    ) -> dingtalkrobot__1__0_models.QueryRobotPluginResponse:
+        request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,
+    ) -> dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.QueryRobotPluginHeaders()
-        return self.query_robot_plugin_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders()
+        return self.query_bot_instance_in_group_info_with_options(request, headers, runtime)
 
-    async def query_robot_plugin_async(
+    async def query_bot_instance_in_group_info_async(
         self,
-        request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
-    ) -> dingtalkrobot__1__0_models.QueryRobotPluginResponse:
+        request: dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoRequest,
+    ) -> dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.QueryRobotPluginHeaders()
-        return await self.query_robot_plugin_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.QueryBotInstanceInGroupInfoHeaders()
+        return await self.query_bot_instance_in_group_info_with_options_async(request, headers, runtime)
 
     def query_robot_plugin_with_options(
         self,
@@ -1082,9 +1380,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryRobotPlugin',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/plugins/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.QueryRobotPluginResponse(),
-            self.do_roarequest('QueryRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_robot_plugin_with_options_async(
@@ -1106,26 +1415,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryRobotPlugin',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/plugins/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.QueryRobotPluginResponse(),
-            await self.do_roarequest_async('QueryRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def robot_message_file_download(
+    def query_robot_plugin(
         self,
-        request: dingtalkrobot__1__0_models.RobotMessageFileDownloadRequest,
-    ) -> dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse:
+        request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotPluginResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.RobotMessageFileDownloadHeaders()
-        return self.robot_message_file_download_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.QueryRobotPluginHeaders()
+        return self.query_robot_plugin_with_options(request, headers, runtime)
 
-    async def robot_message_file_download_async(
+    async def query_robot_plugin_async(
         self,
-        request: dingtalkrobot__1__0_models.RobotMessageFileDownloadRequest,
-    ) -> dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse:
+        request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotPluginResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.RobotMessageFileDownloadHeaders()
-        return await self.robot_message_file_download_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.QueryRobotPluginHeaders()
+        return await self.query_robot_plugin_with_options_async(request, headers, runtime)
 
     def robot_message_file_download_with_options(
         self,
@@ -1148,9 +1468,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RobotMessageFileDownload',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/messageFiles/download',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse(),
-            self.do_roarequest('RobotMessageFileDownload', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/messageFiles/download', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def robot_message_file_download_with_options_async(
@@ -1174,26 +1505,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RobotMessageFileDownload',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/messageFiles/download',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse(),
-            await self.do_roarequest_async('RobotMessageFileDownload', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/messageFiles/download', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_robot_ding_message(
+    def robot_message_file_download(
         self,
-        request: dingtalkrobot__1__0_models.SendRobotDingMessageRequest,
-    ) -> dingtalkrobot__1__0_models.SendRobotDingMessageResponse:
+        request: dingtalkrobot__1__0_models.RobotMessageFileDownloadRequest,
+    ) -> dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.SendRobotDingMessageHeaders()
-        return self.send_robot_ding_message_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.RobotMessageFileDownloadHeaders()
+        return self.robot_message_file_download_with_options(request, headers, runtime)
 
-    async def send_robot_ding_message_async(
+    async def robot_message_file_download_async(
         self,
-        request: dingtalkrobot__1__0_models.SendRobotDingMessageRequest,
-    ) -> dingtalkrobot__1__0_models.SendRobotDingMessageResponse:
+        request: dingtalkrobot__1__0_models.RobotMessageFileDownloadRequest,
+    ) -> dingtalkrobot__1__0_models.RobotMessageFileDownloadResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.SendRobotDingMessageHeaders()
-        return await self.send_robot_ding_message_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.RobotMessageFileDownloadHeaders()
+        return await self.robot_message_file_download_with_options_async(request, headers, runtime)
 
     def send_robot_ding_message_with_options(
         self,
@@ -1222,9 +1564,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendRobotDingMessage',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/dingMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.SendRobotDingMessageResponse(),
-            self.do_roarequest('SendRobotDingMessage', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/dingMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_robot_ding_message_with_options_async(
@@ -1254,26 +1607,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendRobotDingMessage',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/dingMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.SendRobotDingMessageResponse(),
-            await self.do_roarequest_async('SendRobotDingMessage', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/dingMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def set_robot_plugin(
+    def send_robot_ding_message(
         self,
-        request: dingtalkrobot__1__0_models.SetRobotPluginRequest,
-    ) -> dingtalkrobot__1__0_models.SetRobotPluginResponse:
+        request: dingtalkrobot__1__0_models.SendRobotDingMessageRequest,
+    ) -> dingtalkrobot__1__0_models.SendRobotDingMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.SetRobotPluginHeaders()
-        return self.set_robot_plugin_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.SendRobotDingMessageHeaders()
+        return self.send_robot_ding_message_with_options(request, headers, runtime)
 
-    async def set_robot_plugin_async(
+    async def send_robot_ding_message_async(
         self,
-        request: dingtalkrobot__1__0_models.SetRobotPluginRequest,
-    ) -> dingtalkrobot__1__0_models.SetRobotPluginResponse:
+        request: dingtalkrobot__1__0_models.SendRobotDingMessageRequest,
+    ) -> dingtalkrobot__1__0_models.SendRobotDingMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.SetRobotPluginHeaders()
-        return await self.set_robot_plugin_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.SendRobotDingMessageHeaders()
+        return await self.send_robot_ding_message_with_options_async(request, headers, runtime)
 
     def set_robot_plugin_with_options(
         self,
@@ -1296,9 +1660,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SetRobotPlugin',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/plugins/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.SetRobotPluginResponse(),
-            self.do_roarequest('SetRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/set', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def set_robot_plugin_with_options_async(
@@ -1322,26 +1697,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SetRobotPlugin',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/plugins/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.SetRobotPluginResponse(),
-            await self.do_roarequest_async('SetRobotPlugin', 'robot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/robot/plugins/set', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_installed_robot(
+    def set_robot_plugin(
         self,
-        request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,
-    ) -> dingtalkrobot__1__0_models.UpdateInstalledRobotResponse:
+        request: dingtalkrobot__1__0_models.SetRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.SetRobotPluginResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.UpdateInstalledRobotHeaders()
-        return self.update_installed_robot_with_options(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.SetRobotPluginHeaders()
+        return self.set_robot_plugin_with_options(request, headers, runtime)
 
-    async def update_installed_robot_async(
+    async def set_robot_plugin_async(
         self,
-        request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,
-    ) -> dingtalkrobot__1__0_models.UpdateInstalledRobotResponse:
+        request: dingtalkrobot__1__0_models.SetRobotPluginRequest,
+    ) -> dingtalkrobot__1__0_models.SetRobotPluginResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrobot__1__0_models.UpdateInstalledRobotHeaders()
-        return await self.update_installed_robot_with_options_async(request, headers, runtime)
+        headers = dingtalkrobot__1__0_models.SetRobotPluginHeaders()
+        return await self.set_robot_plugin_with_options_async(request, headers, runtime)
 
     def update_installed_robot_with_options(
         self,
@@ -1372,9 +1758,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInstalledRobot',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/managements/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.UpdateInstalledRobotResponse(),
-            self.do_roarequest('UpdateInstalledRobot', 'robot_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/robot/managements/infos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_installed_robot_with_options_async(
@@ -1406,7 +1803,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInstalledRobot',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/managements/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrobot__1__0_models.UpdateInstalledRobotResponse(),
-            await self.do_roarequest_async('UpdateInstalledRobot', 'robot_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/robot/managements/infos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_installed_robot(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,
+    ) -> dingtalkrobot__1__0_models.UpdateInstalledRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.UpdateInstalledRobotHeaders()
+        return self.update_installed_robot_with_options(request, headers, runtime)
+
+    async def update_installed_robot_async(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,
+    ) -> dingtalkrobot__1__0_models.UpdateInstalledRobotResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.UpdateInstalledRobotHeaders()
+        return await self.update_installed_robot_with_options_async(request, headers, runtime)

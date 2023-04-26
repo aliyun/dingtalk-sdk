@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.badge_1_0 import models as dingtalkbadge__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def create_badge_code_user_instance(
-        self,
-        request: dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceRequest,
-    ) -> dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceHeaders()
-        return self.create_badge_code_user_instance_with_options(request, headers, runtime)
-
-    async def create_badge_code_user_instance_async(
-        self,
-        request: dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceRequest,
-    ) -> dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceHeaders()
-        return await self.create_badge_code_user_instance_with_options_async(request, headers, runtime)
 
     def create_badge_code_user_instance_with_options(
         self,
@@ -78,9 +68,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateBadgeCodeUserInstance',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/userInstances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse(),
-            self.do_roarequest('CreateBadgeCodeUserInstance', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/userInstances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_badge_code_user_instance_with_options_async(
@@ -122,26 +123,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateBadgeCodeUserInstance',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/userInstances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse(),
-            await self.do_roarequest_async('CreateBadgeCodeUserInstance', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/userInstances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_badge_notify(
+    def create_badge_code_user_instance(
         self,
-        request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
-    ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        request: dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceRequest,
+    ) -> dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders()
-        return self.create_badge_notify_with_options(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceHeaders()
+        return self.create_badge_code_user_instance_with_options(request, headers, runtime)
 
-    async def create_badge_notify_async(
+    async def create_badge_code_user_instance_async(
         self,
-        request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
-    ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        request: dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceRequest,
+    ) -> dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders()
-        return await self.create_badge_notify_with_options_async(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceHeaders()
+        return await self.create_badge_code_user_instance_with_options_async(request, headers, runtime)
 
     def create_badge_notify_with_options(
         self,
@@ -168,9 +180,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateBadgeNotify',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/notices',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.CreateBadgeNotifyResponse(),
-            self.do_roarequest('CreateBadgeNotify', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/notices', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_badge_notify_with_options_async(
@@ -198,26 +221,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateBadgeNotify',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/notices',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.CreateBadgeNotifyResponse(),
-            await self.do_roarequest_async('CreateBadgeNotify', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/notices', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def decode_badge_code(
+    def create_badge_notify(
         self,
-        request: dingtalkbadge__1__0_models.DecodeBadgeCodeRequest,
-    ) -> dingtalkbadge__1__0_models.DecodeBadgeCodeResponse:
+        request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
+    ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.DecodeBadgeCodeHeaders()
-        return self.decode_badge_code_with_options(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders()
+        return self.create_badge_notify_with_options(request, headers, runtime)
 
-    async def decode_badge_code_async(
+    async def create_badge_notify_async(
         self,
-        request: dingtalkbadge__1__0_models.DecodeBadgeCodeRequest,
-    ) -> dingtalkbadge__1__0_models.DecodeBadgeCodeResponse:
+        request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
+    ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.DecodeBadgeCodeHeaders()
-        return await self.decode_badge_code_with_options_async(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders()
+        return await self.create_badge_notify_with_options_async(request, headers, runtime)
 
     def decode_badge_code_with_options(
         self,
@@ -240,9 +274,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DecodeBadgeCode',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/decode',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.DecodeBadgeCodeResponse(),
-            self.do_roarequest('DecodeBadgeCode', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/decode', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def decode_badge_code_with_options_async(
@@ -266,26 +311,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DecodeBadgeCode',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/decode',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.DecodeBadgeCodeResponse(),
-            await self.do_roarequest_async('DecodeBadgeCode', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/decode', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def notify_badge_code_pay_result(
+    def decode_badge_code(
         self,
-        request: dingtalkbadge__1__0_models.NotifyBadgeCodePayResultRequest,
-    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse:
+        request: dingtalkbadge__1__0_models.DecodeBadgeCodeRequest,
+    ) -> dingtalkbadge__1__0_models.DecodeBadgeCodeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.NotifyBadgeCodePayResultHeaders()
-        return self.notify_badge_code_pay_result_with_options(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.DecodeBadgeCodeHeaders()
+        return self.decode_badge_code_with_options(request, headers, runtime)
 
-    async def notify_badge_code_pay_result_async(
+    async def decode_badge_code_async(
         self,
-        request: dingtalkbadge__1__0_models.NotifyBadgeCodePayResultRequest,
-    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse:
+        request: dingtalkbadge__1__0_models.DecodeBadgeCodeRequest,
+    ) -> dingtalkbadge__1__0_models.DecodeBadgeCodeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.NotifyBadgeCodePayResultHeaders()
-        return await self.notify_badge_code_pay_result_with_options_async(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.DecodeBadgeCodeHeaders()
+        return await self.decode_badge_code_with_options_async(request, headers, runtime)
 
     def notify_badge_code_pay_result_with_options(
         self,
@@ -338,9 +394,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyBadgeCodePayResult',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/payResults',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse(),
-            self.do_roarequest('NotifyBadgeCodePayResult', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/payResults', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def notify_badge_code_pay_result_with_options_async(
@@ -394,26 +461,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyBadgeCodePayResult',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/payResults',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse(),
-            await self.do_roarequest_async('NotifyBadgeCodePayResult', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/payResults', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def notify_badge_code_refund_result(
+    def notify_badge_code_pay_result(
         self,
-        request: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultRequest,
-    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse:
+        request: dingtalkbadge__1__0_models.NotifyBadgeCodePayResultRequest,
+    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultHeaders()
-        return self.notify_badge_code_refund_result_with_options(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.NotifyBadgeCodePayResultHeaders()
+        return self.notify_badge_code_pay_result_with_options(request, headers, runtime)
 
-    async def notify_badge_code_refund_result_async(
+    async def notify_badge_code_pay_result_async(
         self,
-        request: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultRequest,
-    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse:
+        request: dingtalkbadge__1__0_models.NotifyBadgeCodePayResultRequest,
+    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultHeaders()
-        return await self.notify_badge_code_refund_result_with_options_async(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.NotifyBadgeCodePayResultHeaders()
+        return await self.notify_badge_code_pay_result_with_options_async(request, headers, runtime)
 
     def notify_badge_code_refund_result_with_options(
         self,
@@ -452,9 +530,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyBadgeCodeRefundResult',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/refundResults',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse(),
-            self.do_roarequest('NotifyBadgeCodeRefundResult', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/refundResults', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def notify_badge_code_refund_result_with_options_async(
@@ -494,26 +583,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyBadgeCodeRefundResult',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/refundResults',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse(),
-            await self.do_roarequest_async('NotifyBadgeCodeRefundResult', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/refundResults', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def notify_badge_code_verify_result(
+    def notify_badge_code_refund_result(
         self,
-        request: dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultRequest,
-    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse:
+        request: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultRequest,
+    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultHeaders()
-        return self.notify_badge_code_verify_result_with_options(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultHeaders()
+        return self.notify_badge_code_refund_result_with_options(request, headers, runtime)
 
-    async def notify_badge_code_verify_result_async(
+    async def notify_badge_code_refund_result_async(
         self,
-        request: dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultRequest,
-    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse:
+        request: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultRequest,
+    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultHeaders()
-        return await self.notify_badge_code_verify_result_with_options_async(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultHeaders()
+        return await self.notify_badge_code_refund_result_with_options_async(request, headers, runtime)
 
     def notify_badge_code_verify_result_with_options(
         self,
@@ -552,9 +652,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyBadgeCodeVerifyResult',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/verifyResults',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse(),
-            self.do_roarequest('NotifyBadgeCodeVerifyResult', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/verifyResults', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def notify_badge_code_verify_result_with_options_async(
@@ -594,26 +705,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyBadgeCodeVerifyResult',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/verifyResults',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse(),
-            await self.do_roarequest_async('NotifyBadgeCodeVerifyResult', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/verifyResults', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def save_badge_code_corp_instance(
+    def notify_badge_code_verify_result(
         self,
-        request: dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceRequest,
-    ) -> dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse:
+        request: dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultRequest,
+    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceHeaders()
-        return self.save_badge_code_corp_instance_with_options(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultHeaders()
+        return self.notify_badge_code_verify_result_with_options(request, headers, runtime)
 
-    async def save_badge_code_corp_instance_async(
+    async def notify_badge_code_verify_result_async(
         self,
-        request: dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceRequest,
-    ) -> dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse:
+        request: dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultRequest,
+    ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceHeaders()
-        return await self.save_badge_code_corp_instance_with_options_async(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultHeaders()
+        return await self.notify_badge_code_verify_result_with_options_async(request, headers, runtime)
 
     def save_badge_code_corp_instance_with_options(
         self,
@@ -640,9 +762,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SaveBadgeCodeCorpInstance',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/corpInstances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse(),
-            self.do_roarequest('SaveBadgeCodeCorpInstance', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/corpInstances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def save_badge_code_corp_instance_with_options_async(
@@ -670,26 +803,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SaveBadgeCodeCorpInstance',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/corpInstances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse(),
-            await self.do_roarequest_async('SaveBadgeCodeCorpInstance', 'badge_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/badge/codes/corpInstances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_badge_code_user_instance(
+    def save_badge_code_corp_instance(
         self,
-        request: dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceRequest,
-    ) -> dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse:
+        request: dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceRequest,
+    ) -> dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceHeaders()
-        return self.update_badge_code_user_instance_with_options(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceHeaders()
+        return self.save_badge_code_corp_instance_with_options(request, headers, runtime)
 
-    async def update_badge_code_user_instance_async(
+    async def save_badge_code_corp_instance_async(
         self,
-        request: dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceRequest,
-    ) -> dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse:
+        request: dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceRequest,
+    ) -> dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceHeaders()
-        return await self.update_badge_code_user_instance_with_options_async(request, headers, runtime)
+        headers = dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceHeaders()
+        return await self.save_badge_code_corp_instance_with_options_async(request, headers, runtime)
 
     def update_badge_code_user_instance_with_options(
         self,
@@ -728,9 +872,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateBadgeCodeUserInstance',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/userInstances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse(),
-            self.do_roarequest('UpdateBadgeCodeUserInstance', 'badge_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/badge/codes/userInstances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_badge_code_user_instance_with_options_async(
@@ -770,7 +925,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateBadgeCodeUserInstance',
+            version='badge_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/badge/codes/userInstances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse(),
-            await self.do_roarequest_async('UpdateBadgeCodeUserInstance', 'badge_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/badge/codes/userInstances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_badge_code_user_instance(
+        self,
+        request: dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceRequest,
+    ) -> dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceHeaders()
+        return self.update_badge_code_user_instance_with_options(request, headers, runtime)
+
+    async def update_badge_code_user_instance_async(
+        self,
+        request: dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceRequest,
+    ) -> dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceHeaders()
+        return await self.update_badge_code_user_instance_with_options_async(request, headers, runtime)

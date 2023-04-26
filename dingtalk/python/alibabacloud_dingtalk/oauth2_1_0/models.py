@@ -43,9 +43,7 @@ class CreateJsapiTicketResponseBody(TeaModel):
         expire_in: int = None,
         jsapi_ticket: str = None,
     ):
-        # 超时时间
         self.expire_in = expire_in
-        # jsapi ticket
         self.jsapi_ticket = jsapi_ticket
 
     def validate(self):
@@ -76,13 +74,16 @@ class CreateJsapiTicketResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateJsapiTicketResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -95,6 +96,8 @@ class CreateJsapiTicketResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -103,6 +106,8 @@ class CreateJsapiTicketResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateJsapiTicketResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -115,9 +120,7 @@ class GetAccessTokenRequest(TeaModel):
         app_key: str = None,
         app_secret: str = None,
     ):
-        # 应用id
         self.app_key = app_key
-        # 应用密码
         self.app_secret = app_secret
 
     def validate(self):
@@ -150,9 +153,7 @@ class GetAccessTokenResponseBody(TeaModel):
         access_token: str = None,
         expire_in: int = None,
     ):
-        # accessToken
         self.access_token = access_token
-        # 超时时间
         self.expire_in = expire_in
 
     def validate(self):
@@ -183,13 +184,16 @@ class GetAccessTokenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAccessTokenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -202,6 +206,8 @@ class GetAccessTokenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -210,6 +216,8 @@ class GetAccessTokenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAccessTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -284,13 +292,9 @@ class GetAuthInfoResponseBodyAuthAppInfoAgentList(TeaModel):
         agent_name: str = None,
         app_id: int = None,
     ):
-        # 对此微应用有管理权限的管理员列表
         self.admin_list = admin_list
-        # 应用id
         self.agent_id = agent_id
-        # 应用名称
         self.agent_name = agent_name
-        # 三方应用id
         self.app_id = app_id
 
     def validate(self):
@@ -373,23 +377,14 @@ class GetAuthInfoResponseBodyAuthCorpInfo(TeaModel):
         invite_url: str = None,
         license_code: str = None,
     ):
-        # 渠道码。
         self.auth_channel = auth_channel
-        # 渠道类型。  为了避免渠道码重复，可与渠道码共同确认渠道。可能为空，非空时当前只有满天星类型，值为STAR_ACTIVITY。
         self.auth_channel_type = auth_channel_type
-        # 企业认证等级：  0：未认证  1：高级认证  2：中级认证  3：初级认证
         self.auth_level = auth_level
-        # 企业logo。
         self.corp_logo_url = corp_logo_url
-        # 授权方企业名称。
         self.corp_name = corp_name
-        # 企业所属行业。
         self.industry = industry
-        # 邀请码，只有自己邀请的企业才会返回邀请码，可用该邀请码统计不同渠道的拉新，否则值为空字符串。
         self.invite_code = invite_code
-        # 企业邀请链接。
         self.invite_url = invite_url
-        # 序列号。
         self.license_code = license_code
 
     def validate(self):
@@ -449,7 +444,6 @@ class GetAuthInfoResponseBodyAuthUserInfo(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 授权管理员id
         self.user_id = user_id
 
     def validate(self):
@@ -479,11 +473,8 @@ class GetAuthInfoResponseBody(TeaModel):
         auth_corp_info: GetAuthInfoResponseBodyAuthCorpInfo = None,
         auth_user_info: GetAuthInfoResponseBodyAuthUserInfo = None,
     ):
-        # 授权应用信息
         self.auth_app_info = auth_app_info
-        # 应用企业信息
         self.auth_corp_info = auth_corp_info
-        # 授权用户信息
         self.auth_user_info = auth_user_info
 
     def validate(self):
@@ -526,13 +517,16 @@ class GetAuthInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAuthInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -545,6 +539,8 @@ class GetAuthInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -553,6 +549,8 @@ class GetAuthInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAuthInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -567,13 +565,9 @@ class GetCorpAccessTokenRequest(TeaModel):
         suite_secret: str = None,
         suite_ticket: str = None,
     ):
-        # OAuth 2.0 临时授权码
         self.auth_corp_id = auth_corp_id
-        # 应用id
         self.suite_key = suite_key
-        # 应用密码
         self.suite_secret = suite_secret
-        # suiteTicket
         self.suite_ticket = suite_ticket
 
     def validate(self):
@@ -614,9 +608,7 @@ class GetCorpAccessTokenResponseBody(TeaModel):
         access_token: str = None,
         expire_in: int = None,
     ):
-        # accessToken
         self.access_token = access_token
-        # 超时时间
         self.expire_in = expire_in
 
     def validate(self):
@@ -647,13 +639,16 @@ class GetCorpAccessTokenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetCorpAccessTokenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -666,6 +661,8 @@ class GetCorpAccessTokenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -674,6 +671,8 @@ class GetCorpAccessTokenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCorpAccessTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -719,9 +718,7 @@ class GetPersonalAuthRuleResponseBodyResult(TeaModel):
         auth_items: List[str] = None,
         resource: str = None,
     ):
-        # authItems
         self.auth_items = auth_items
-        # resource
         self.resource = resource
 
     def validate(self):
@@ -753,7 +750,6 @@ class GetPersonalAuthRuleResponseBody(TeaModel):
         self,
         result: List[GetPersonalAuthRuleResponseBodyResult] = None,
     ):
-        # list
         self.result = result
 
     def validate(self):
@@ -788,13 +784,16 @@ class GetPersonalAuthRuleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPersonalAuthRuleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -807,6 +806,8 @@ class GetPersonalAuthRuleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -815,6 +816,8 @@ class GetPersonalAuthRuleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPersonalAuthRuleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -827,9 +830,7 @@ class GetSsoAccessTokenRequest(TeaModel):
         corpid: str = None,
         sso_secret: str = None,
     ):
-        # 企业id
         self.corpid = corpid
-        # sso密码
         self.sso_secret = sso_secret
 
     def validate(self):
@@ -862,9 +863,7 @@ class GetSsoAccessTokenResponseBody(TeaModel):
         access_token: str = None,
         expire_in: int = None,
     ):
-        # accessToken
         self.access_token = access_token
-        # 超时时间
         self.expire_in = expire_in
 
     def validate(self):
@@ -895,13 +894,16 @@ class GetSsoAccessTokenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSsoAccessTokenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -914,6 +916,8 @@ class GetSsoAccessTokenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -922,6 +926,8 @@ class GetSsoAccessTokenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSsoAccessTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -999,19 +1005,12 @@ class GetSsoUserInfoResponseBody(TeaModel):
         user_id: str = None,
         user_name: str = None,
     ):
-        # 用户头像链接
         self.avatar = avatar
-        # 微应用免登用户所在企业id
         self.corp_id = corp_id
-        # 微应用免登用户所在企业名称
         self.corp_name = corp_name
-        # 用户邮箱
         self.email = email
-        # 是否为企业管理员
         self.is_admin = is_admin
-        # 用户id
         self.user_id = user_id
-        # 用户名称
         self.user_name = user_name
 
     def validate(self):
@@ -1062,13 +1061,16 @@ class GetSsoUserInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSsoUserInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1081,6 +1083,8 @@ class GetSsoUserInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1089,6 +1093,8 @@ class GetSsoUserInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSsoUserInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1102,11 +1108,8 @@ class GetSuiteAccessTokenRequest(TeaModel):
         suite_secret: str = None,
         suite_ticket: str = None,
     ):
-        # 应用id
         self.suite_key = suite_key
-        # 应用密码
         self.suite_secret = suite_secret
-        # suiteTicket
         self.suite_ticket = suite_ticket
 
     def validate(self):
@@ -1143,9 +1146,7 @@ class GetSuiteAccessTokenResponseBody(TeaModel):
         access_token: str = None,
         expire_in: int = None,
     ):
-        # accessToken
         self.access_token = access_token
-        # 超时时间
         self.expire_in = expire_in
 
     def validate(self):
@@ -1176,13 +1177,16 @@ class GetSuiteAccessTokenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSuiteAccessTokenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1195,6 +1199,8 @@ class GetSuiteAccessTokenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1203,6 +1209,8 @@ class GetSuiteAccessTokenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSuiteAccessTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1218,15 +1226,10 @@ class GetUserTokenRequest(TeaModel):
         grant_type: str = None,
         refresh_token: str = None,
     ):
-        # 应用id
         self.client_id = client_id
-        # 应用密码
         self.client_secret = client_secret
-        # OAuth 2.0 临时授权码
         self.code = code
-        # 分为authorization_code和refresh_token。使用授权码换token，传authorization_code；使用刷新token换用户token，传refresh_token
         self.grant_type = grant_type
-        # OAuth 2.0 刷新令牌
         self.refresh_token = refresh_token
 
     def validate(self):
@@ -1273,13 +1276,9 @@ class GetUserTokenResponseBody(TeaModel):
         expire_in: int = None,
         refresh_token: str = None,
     ):
-        # accessToken
         self.access_token = access_token
-        # 所选企业corpId
         self.corp_id = corp_id
-        # 超时时间
         self.expire_in = expire_in
-        # refreshToken
         self.refresh_token = refresh_token
 
     def validate(self):
@@ -1318,13 +1317,16 @@ class GetUserTokenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserTokenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1337,6 +1339,8 @@ class GetUserTokenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1345,6 +1349,8 @@ class GetUserTokenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserTokenResponseBody()
             self.body = temp_model.from_map(m['body'])

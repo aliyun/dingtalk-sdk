@@ -42,7 +42,6 @@ class GetRelationUkSettingRequest(TeaModel):
         self,
         relation_type: str = None,
     ):
-        # 关系类型。
         self.relation_type = relation_type
 
     def validate(self):
@@ -71,9 +70,7 @@ class GetRelationUkSettingResponseBodyResultFormUkSettingsFieldList(TeaModel):
         biz_alias: str = None,
         field_id: str = None,
     ):
-        # 查重字段的bizAlias。
         self.biz_alias = biz_alias
-        # 查重字段的字段id。
         self.field_id = field_id
 
     def validate(self):
@@ -142,7 +139,6 @@ class GetRelationUkSettingResponseBodyResult(TeaModel):
         header_field_ids: List[str] = None,
     ):
         self.form_uk_settings = form_uk_settings
-        # 查重列表表头字段id列表。
         self.header_field_ids = header_field_ids
 
     def validate(self):
@@ -210,13 +206,16 @@ class GetRelationUkSettingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetRelationUkSettingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -229,6 +228,8 @@ class GetRelationUkSettingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -237,6 +238,8 @@ class GetRelationUkSettingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetRelationUkSettingResponseBody()
             self.body = temp_model.from_map(m['body'])

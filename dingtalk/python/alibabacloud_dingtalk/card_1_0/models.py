@@ -4,6 +4,33 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class PrivateDataValue(TeaModel):
+    def __init__(
+        self,
+        card_param_map: Dict[str, str] = None,
+    ):
+        self.card_param_map = card_param_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_param_map is not None:
+            result['cardParamMap'] = self.card_param_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardParamMap') is not None:
+            self.card_param_map = m.get('cardParamMap')
+        return self
+
+
 class AppendSpaceHeaders(TeaModel):
     def __init__(
         self,
@@ -42,7 +69,6 @@ class AppendSpaceRequestCoFeedOpenSpaceModel(TeaModel):
         self,
         title: str = None,
     ):
-        # 【必填】标题
         self.title = title
 
     def validate(self):
@@ -71,11 +97,7 @@ class AppendSpaceRequestImGroupOpenSpaceModelNotification(TeaModel):
         alert_content: str = None,
         notification_off: bool = None,
     ):
-        # 【条件必填】通知内容
-        # 
-        # 【注意】若不填写则使用默认文案：如你收到1条新消息
         self.alert_content = alert_content
-        # 是否关闭推送通知，默认为false
         self.notification_off = notification_off
 
     def validate(self):
@@ -109,11 +131,8 @@ class AppendSpaceRequestImGroupOpenSpaceModelSearchSupport(TeaModel):
         search_icon: str = None,
         search_type_name: str = None,
     ):
-        # 卡片的具体描述
         self.search_desc = search_desc
-        # 类型的icon，供搜索展示使用
         self.search_icon = search_icon
-        # 卡片类型名
         self.search_type_name = search_type_name
 
     def validate(self):
@@ -152,13 +171,9 @@ class AppendSpaceRequestImGroupOpenSpaceModel(TeaModel):
         search_support: AppendSpaceRequestImGroupOpenSpaceModelSearchSupport = None,
         support_forward: bool = None,
     ):
-        # 支持国际化的LastMessage
         self.last_message_i18n = last_message_i18n
-        # 通知信息
         self.notification = notification
-        # 支持卡片消息可被搜索字段
         self.search_support = search_support
-        # 是否支持转发, 默认false
         self.support_forward = support_forward
 
     def validate(self):
@@ -204,11 +219,7 @@ class AppendSpaceRequestImRobotOpenSpaceModelNotification(TeaModel):
         alert_content: str = None,
         notification_off: bool = None,
     ):
-        # 【条件必填】通知内容
-        # 
-        # 【注意】若不填写则使用默认文案：如你收到1条新消息
         self.alert_content = alert_content
-        # 是否关闭推送通知，默认为false
         self.notification_off = notification_off
 
     def validate(self):
@@ -242,11 +253,8 @@ class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport(TeaModel):
         search_icon: str = None,
         search_type_name: str = None,
     ):
-        # 卡片的具体描述
         self.search_desc = search_desc
-        # 类型的icon，供搜索展示使用
         self.search_icon = search_icon
-        # 卡片类型名
         self.search_type_name = search_type_name
 
     def validate(self):
@@ -285,13 +293,9 @@ class AppendSpaceRequestImRobotOpenSpaceModel(TeaModel):
         search_support: AppendSpaceRequestImRobotOpenSpaceModelSearchSupport = None,
         support_forward: bool = None,
     ):
-        # 支持国际化的LastMessage
         self.last_message_i18n = last_message_i18n
-        # 通知信息
         self.notification = notification
-        # 支持卡片消息可被搜索字段
         self.search_support = search_support
-        # 是否支持转发, 默认false
         self.support_forward = support_forward
 
     def validate(self):
@@ -336,9 +340,6 @@ class AppendSpaceRequestTopOpenSpaceModel(TeaModel):
         self,
         space_type: str = None,
     ):
-        # 【必填】场域类型
-        # 
-        # 吊顶无其他场域属性，通过设置spaeType为ONE_BOX使卡片支持吊顶场域
         self.space_type = space_type
 
     def validate(self):
@@ -370,15 +371,10 @@ class AppendSpaceRequest(TeaModel):
         out_track_id: str = None,
         top_open_space_model: AppendSpaceRequestTopOpenSpaceModel = None,
     ):
-        # 协作场域信息
         self.co_feed_open_space_model = co_feed_open_space_model
-        # IM群聊场域信息
         self.im_group_open_space_model = im_group_open_space_model
-        # IM群聊场域信息
         self.im_robot_open_space_model = im_robot_open_space_model
-        # 唯一标识一张卡片的外部Id
         self.out_track_id = out_track_id
-        # 吊顶场域信息
         self.top_open_space_model = top_open_space_model
 
     def validate(self):
@@ -465,13 +461,16 @@ class AppendSpaceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AppendSpaceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -484,6 +483,8 @@ class AppendSpaceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -492,6 +493,8 @@ class AppendSpaceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AppendSpaceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -536,7 +539,6 @@ class CreateAndDeliverRequestCardData(TeaModel):
         self,
         card_param_map: Dict[str, str] = None,
     ):
-        # 卡片模板-文本内容参数
         self.card_param_map = card_param_map
 
     def validate(self):
@@ -565,9 +567,7 @@ class CreateAndDeliverRequestCoFeedOpenDeliverModel(TeaModel):
         biz_tag: str = None,
         gmt_time_line: int = None,
     ):
-        # 【必填】业务标识
         self.biz_tag = biz_tag
-        # 【必填】协作场域下的排序时间
         self.gmt_time_line = gmt_time_line
 
     def validate(self):
@@ -601,7 +601,6 @@ class CreateAndDeliverRequestCoFeedOpenSpaceModel(TeaModel):
         title: str = None,
     ):
         self.cool_app_code = cool_app_code
-        # 【必填】标题
         self.title = title
 
     def validate(self):
@@ -633,7 +632,6 @@ class CreateAndDeliverRequestDocOpenDeliverModel(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 【必填】员工id
         self.user_id = user_id
 
     def validate(self):
@@ -663,11 +661,8 @@ class CreateAndDeliverRequestImGroupOpenDeliverModel(TeaModel):
         recipients: List[str] = None,
         robot_code: str = None,
     ):
-        # 消息@人，
         self.at_user_ids = at_user_ids
-        # 指定接收者
         self.recipients = recipients
-        # 机器人的code
         self.robot_code = robot_code
 
     def validate(self):
@@ -778,13 +773,9 @@ class CreateAndDeliverRequestImGroupOpenSpaceModel(TeaModel):
         search_support: CreateAndDeliverRequestImGroupOpenSpaceModelSearchSupport = None,
         support_forward: bool = None,
     ):
-        # 支持国际化的LastMessage
         self.last_message_i18n = last_message_i18n
-        # 通知信息
         self.notification = notification
-        # 支持卡片消息可被搜索字段
         self.search_support = search_support
-        # 是否支持转发, 默认false
         self.support_forward = support_forward
 
     def validate(self):
@@ -931,13 +922,9 @@ class CreateAndDeliverRequestImRobotOpenSpaceModel(TeaModel):
         search_support: CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport = None,
         support_forward: bool = None,
     ):
-        # 支持国际化的LastMessage
         self.last_message_i18n = last_message_i18n
-        # 通知信息
         self.notification = notification
-        # 支持卡片消息可被搜索字段
         self.search_support = search_support
-        # 是否支持转发, 默认false
         self.support_forward = support_forward
 
     def validate(self):
@@ -984,11 +971,8 @@ class CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullCo
         pull_strategy: str = None,
         time_unit: str = None,
     ):
-        # 间隔
         self.interval = interval
-        # 拉取策略 (NONE: 不拉取,无动态数据, INTERVAL: 间隔拉取, ONCE: 只拉取一次)
         self.pull_strategy = pull_strategy
-        # 间隔的时间单位 (SECONDS, MINUTES, HOURS, DAYS)
         self.time_unit = time_unit
 
     def validate(self):
@@ -1026,11 +1010,8 @@ class CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigs(TeaMo
         dynamic_data_source_id: str = None,
         pull_config: CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig = None,
     ):
-        # 回调数据源的常量参数
         self.const_params = const_params
-        # 数据源配置id
         self.dynamic_data_source_id = dynamic_data_source_id
-        # 数据源拉取配置
         self.pull_config = pull_config
 
     def validate(self):
@@ -1068,7 +1049,6 @@ class CreateAndDeliverRequestOpenDynamicDataConfig(TeaModel):
         self,
         dynamic_data_source_configs: List[CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigs] = None,
     ):
-        # 动态数据源配置列表
         self.dynamic_data_source_configs = dynamic_data_source_configs
 
     def validate(self):
@@ -1106,11 +1086,8 @@ class CreateAndDeliverRequestTopOpenDeliverModel(TeaModel):
         platforms: List[str] = None,
         user_ids: List[str] = None,
     ):
-        # 【必填】过期时间戳
         self.expired_time_millis = expired_time_millis
-        # 可以查看该吊顶卡片的设备
         self.platforms = platforms
-        # 可以查看该吊顶卡片的staffId
         self.user_ids = user_ids
 
     def validate(self):
@@ -1146,7 +1123,6 @@ class CreateAndDeliverRequestTopOpenSpaceModel(TeaModel):
         self,
         space_type: str = None,
     ):
-        # 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
         self.space_type = space_type
 
     def validate(self):
@@ -1166,34 +1142,6 @@ class CreateAndDeliverRequestTopOpenSpaceModel(TeaModel):
         m = m or dict()
         if m.get('spaceType') is not None:
             self.space_type = m.get('spaceType')
-        return self
-
-
-class PrivateDataValue(TeaModel):
-    def __init__(
-        self,
-        card_param_map: Dict[str, str] = None,
-    ):
-        # 卡片模板-文本内容参数
-        self.card_param_map = card_param_map
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.card_param_map is not None:
-            result['cardParamMap'] = self.card_param_map
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('cardParamMap') is not None:
-            self.card_param_map = m.get('cardParamMap')
         return self
 
 
@@ -1219,38 +1167,22 @@ class CreateAndDeliverRequest(TeaModel):
         user_id: str = None,
         user_id_type: int = None,
     ):
-        # 卡片回调时的路由 key
         self.callback_route_key = callback_route_key
-        # 卡片数据
         self.card_data = card_data
-        # 卡片内容模板ID
         self.card_template_id = card_template_id
-        # 协作投放参数
         self.co_feed_open_deliver_model = co_feed_open_deliver_model
-        # 协作场域信息
         self.co_feed_open_space_model = co_feed_open_space_model
-        # 文档投放参数
         self.doc_open_deliver_model = doc_open_deliver_model
-        # 群聊投放参数
         self.im_group_open_deliver_model = im_group_open_deliver_model
-        # IM群聊场域信息
         self.im_group_open_space_model = im_group_open_space_model
-        # 单聊场域投放参数
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
-        # IM单聊场域信息
         self.im_robot_open_space_model = im_robot_open_space_model
-        # 动态数据源配置
         self.open_dynamic_data_config = open_dynamic_data_config
-        # dt.card//spaceType.spaceId;spaceType.spaceId
         self.open_space_id = open_space_id
-        # 外部业务标识符
         self.out_track_id = out_track_id
         self.private_data = private_data
-        # 吊顶投放参数
         self.top_open_deliver_model = top_open_deliver_model
-        # 吊顶场域信息
         self.top_open_space_model = top_open_space_model
-        # 卡片创建者 id
         self.user_id = user_id
         self.user_id_type = user_id_type
 
@@ -1391,13 +1323,9 @@ class CreateAndDeliverResponseBodyResultDeliverResults(TeaModel):
         space_type: str = None,
         success: bool = None,
     ):
-        # 错误信息
         self.error_msg = error_msg
-        # 场域Id
         self.space_id = space_id
-        # 场域类型 (IM: IM类型，包括群聊和单聊，仅供返回结果使用, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
         self.space_type = space_type
-        # 投放成功
         self.success = success
 
     def validate(self):
@@ -1438,9 +1366,7 @@ class CreateAndDeliverResponseBodyResult(TeaModel):
         deliver_results: List[CreateAndDeliverResponseBodyResultDeliverResults] = None,
         out_track_id: str = None,
     ):
-        # 投放结果
         self.deliver_results = deliver_results
-        # 外部卡片实例Id
         self.out_track_id = out_track_id
 
     def validate(self):
@@ -1514,13 +1440,16 @@ class CreateAndDeliverResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateAndDeliverResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1533,6 +1462,8 @@ class CreateAndDeliverResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1541,6 +1472,8 @@ class CreateAndDeliverResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateAndDeliverResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1585,9 +1518,6 @@ class CreateCardRequestCardData(TeaModel):
         self,
         card_param_map: Dict[str, str] = None,
     ):
-        # 卡片模板内容替换参数，普通文本类型
-        # ● key：参数名
-        # ● value: 参数值
         self.card_param_map = card_param_map
 
     def validate(self):
@@ -1615,7 +1545,6 @@ class CreateCardRequestCoFeedOpenSpaceModel(TeaModel):
         self,
         title: str = None,
     ):
-        # 卡片标题
         self.title = title
 
     def validate(self):
@@ -1644,10 +1573,7 @@ class CreateCardRequestImGroupOpenSpaceModelNotification(TeaModel):
         alert_content: str = None,
         notification_off: bool = None,
     ):
-        # 【条件必填】通知内容
-        # 若不填写则使用默认文案：如你收到1条新消息
         self.alert_content = alert_content
-        # 是否推送通知，默认为 false
         self.notification_off = notification_off
 
     def validate(self):
@@ -1681,12 +1607,8 @@ class CreateCardRequestImGroupOpenSpaceModelSearchSupport(TeaModel):
         search_icon: str = None,
         search_type_name: str = None,
     ):
-        #  【条件必填】供消息展示与搜索的字段
-        #  【注意】最大限制200个字符，超过存储截断200
         self.search_desc = search_desc
-        # 类型的icon，供搜索展示使用
         self.search_icon = search_icon
-        # 卡片类型名
         self.search_type_name = search_type_name
 
     def validate(self):
@@ -1725,20 +1647,9 @@ class CreateCardRequestImGroupOpenSpaceModel(TeaModel):
         search_support: CreateCardRequestImGroupOpenSpaceModelSearchSupport = None,
         support_forward: bool = None,
     ):
-        # 支持国际化的LastMessage
-        # key为语言枚举值，value为lastMessage内容
-        # 目前支持的语言枚举值：
-        # 简体中文: ZH_CN
-        # 繁体中文: ZH_TW
-        # 英文： EN_US
-        # 日语: JA_JP
-        # 越南语: VI_VN
         self.last_message_i18n = last_message_i18n
-        # 卡片的通知属性信息
         self.notification = notification
-        # 支持卡片消息可被搜索字段
         self.search_support = search_support
-        # 是否支持转发, 默认 false
         self.support_forward = support_forward
 
     def validate(self):
@@ -1784,10 +1695,7 @@ class CreateCardRequestImRobotOpenSpaceModelNotification(TeaModel):
         alert_content: str = None,
         notification_off: bool = None,
     ):
-        # 【条件必填】通知内容
-        # 若不填写则使用默认文案：如你收到1条新消息
         self.alert_content = alert_content
-        # 是否推送通知，默认为 false
         self.notification_off = notification_off
 
     def validate(self):
@@ -1821,12 +1729,8 @@ class CreateCardRequestImRobotOpenSpaceModelSearchSupport(TeaModel):
         search_icon: str = None,
         search_type_name: str = None,
     ):
-        # 【条件必填】供消息展示与搜索的字段
-        #  【注意】最大限制200个字符，超过存储截断200
         self.search_desc = search_desc
-        # 类型的icon，供搜索展示使用
         self.search_icon = search_icon
-        # 卡片类型名
         self.search_type_name = search_type_name
 
     def validate(self):
@@ -1865,20 +1769,9 @@ class CreateCardRequestImRobotOpenSpaceModel(TeaModel):
         search_support: CreateCardRequestImRobotOpenSpaceModelSearchSupport = None,
         support_forward: bool = None,
     ):
-        # 支持国际化的LastMessage
-        # key为语言枚举值，value为lastMessage内容
-        # 目前支持的语言枚举值：
-        # 简体中文: ZH_CN
-        # 繁体中文: ZH_TW
-        # 英文： EN_US
-        # 日语: JA_JP
-        # 越南语: VI_VN
         self.last_message_i18n = last_message_i18n
-        # 卡片的通知属性信息
         self.notification = notification
-        # 支持卡片消息可被搜索字段
         self.search_support = search_support
-        # 是否支持转发, 默认 false
         self.support_forward = support_forward
 
     def validate(self):
@@ -1925,18 +1818,8 @@ class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig(T
         pull_strategy: str = None,
         time_unit: str = None,
     ):
-        # 拉取的间隔时间，只在将 pullStrategy 设置为 INTERVAL 的时候生效
         self.interval = interval
-        # 【条件必填】拉取策略，可选值：
-        # ● NONE：不拉取，无动态数据
-        # ● INTERVAL：间隔拉取
-        # ● ONCE：只拉取一次
         self.pull_strategy = pull_strategy
-        # 拉取的间隔时间的单位，只在将 pullStrategy 设置为 INTERVAL 的时候生效。 可选值：
-        # ● SECONDS
-        # ● MINUTES
-        # ● HOURS
-        # ● DAYS
         self.time_unit = time_unit
 
     def validate(self):
@@ -1974,11 +1857,8 @@ class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigs(TeaModel):
         dynamic_data_source_id: str = None,
         pull_config: CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig = None,
     ):
-        # 回调数据源的常量参数
         self.const_params = const_params
-        # 【条件必填】数据源的唯一 ID
         self.dynamic_data_source_id = dynamic_data_source_id
-        # 【条件必填】数据源拉取配置
         self.pull_config = pull_config
 
     def validate(self):
@@ -2016,7 +1896,6 @@ class CreateCardRequestOpenDynamicDataConfig(TeaModel):
         self,
         dynamic_data_source_configs: List[CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigs] = None,
     ):
-        # 动态数据源配置列表
         self.dynamic_data_source_configs = dynamic_data_source_configs
 
     def validate(self):
@@ -2052,7 +1931,6 @@ class CreateCardRequestTopOpenSpaceModel(TeaModel):
         self,
         space_type: str = None,
     ):
-        # 吊顶无其他场域属性，通过增加spaeType使卡片支持吊顶场域；吊顶对应spaceType为: ONE_BOX
         self.space_type = space_type
 
     def validate(self):
@@ -2091,29 +1969,16 @@ class CreateCardRequest(TeaModel):
         user_id: str = None,
         user_id_type: int = None,
     ):
-        # 卡片回调时的路由 Key，用于查询注册的 callbackUrl
         self.callback_route_key = callback_route_key
-        # 卡片数据
         self.card_data = card_data
-        # 卡片的模版 Id
         self.card_template_id = card_template_id
-        # 协作场域信息
         self.co_feed_open_space_model = co_feed_open_space_model
-        # IM 群聊场域信息
         self.im_group_open_space_model = im_group_open_space_model
-        # IM 单聊场域信息
         self.im_robot_open_space_model = im_robot_open_space_model
-        # 动态数据源配置
         self.open_dynamic_data_config = open_dynamic_data_config
-        # 唯一标示卡片的外部编码
         self.out_track_id = out_track_id
-        # 用户的私有数据。
-        # ● key：userId
-        # ● value：用户私有数据（cardData）
         self.private_data = private_data
-        # 吊顶场域信息
         self.top_open_space_model = top_open_space_model
-        # 卡片创建者的 userId
         self.user_id = user_id
         self.user_id_type = user_id_type
 
@@ -2244,13 +2109,16 @@ class CreateCardResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateCardResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2263,6 +2131,8 @@ class CreateCardResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2271,6 +2141,8 @@ class CreateCardResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateCardResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2316,9 +2188,7 @@ class DeliverCardRequestCoFeedOpenDeliverModel(TeaModel):
         biz_tag: str = None,
         gmt_time_line: int = None,
     ):
-        # 【必填】业务标识
         self.biz_tag = biz_tag
-        # 【必填】协作场域下的排序时间
         self.gmt_time_line = gmt_time_line
 
     def validate(self):
@@ -2350,7 +2220,6 @@ class DeliverCardRequestDocOpenDeliverModel(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 【必填】员工id
         self.user_id = user_id
 
     def validate(self):
@@ -2380,11 +2249,8 @@ class DeliverCardRequestImGroupOpenDeliverModel(TeaModel):
         recipients: List[str] = None,
         robot_code: str = None,
     ):
-        # 消息@人，
         self.at_user_ids = at_user_ids
-        # 指定接收者
         self.recipients = recipients
-        # 机器人的code
         self.robot_code = robot_code
 
     def validate(self):
@@ -2420,7 +2286,6 @@ class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
         self,
         space_type: str = None,
     ):
-        # 【条件必填】IM机器人单聊暂无其他投放属性，仅需设置spaeType为IM_ROBOT
         self.space_type = space_type
 
     def validate(self):
@@ -2450,11 +2315,8 @@ class DeliverCardRequestTopOpenDeliverModel(TeaModel):
         platforms: List[str] = None,
         user_ids: List[str] = None,
     ):
-        # 【必填】过期时间戳
         self.expired_time_millis = expired_time_millis
-        # 可以查看该吊顶卡片的设备
         self.platforms = platforms
-        # 可以查看该吊顶卡片的staffId
         self.user_ids = user_ids
 
     def validate(self):
@@ -2497,27 +2359,13 @@ class DeliverCardRequest(TeaModel):
         top_open_deliver_model: DeliverCardRequestTopOpenDeliverModel = None,
         user_id_type: int = None,
     ):
-        # 协作投放参数
         self.co_feed_open_deliver_model = co_feed_open_deliver_model
-        # 文档投放参数
         self.doc_open_deliver_model = doc_open_deliver_model
-        # 群聊投放参数
         self.im_group_open_deliver_model = im_group_open_deliver_model
-        # 单聊机器人场域投放参数
-        # 
-        # 【注意】 机器人与人的单聊，直接用支持机器人单聊的应用来发送
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
-        # dt.card//spaceType.spaceId;spaceType.spaceId
         self.open_space_id = open_space_id
-        # 外部卡片实例Id
         self.out_track_id = out_track_id
-        # 吊顶投放参数
         self.top_open_deliver_model = top_open_deliver_model
-        # 用户id类型：
-        # 
-        # 1（默认）：userid模式
-        # 
-        # 2：unionId模式
         self.user_id_type = user_id_type
 
     def validate(self):
@@ -2589,11 +2437,8 @@ class DeliverCardResponseBodyResult(TeaModel):
         space_type: str = None,
         success: bool = None,
     ):
-        # 场域Id
         self.space_id = space_id
-        # 场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
         self.space_type = space_type
-        # 投放成功
         self.success = success
 
     def validate(self):
@@ -2669,13 +2514,16 @@ class DeliverCardResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeliverCardResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2688,6 +2536,8 @@ class DeliverCardResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2696,6 +2546,8 @@ class DeliverCardResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeliverCardResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2743,13 +2595,9 @@ class RegisterCallbackRequest(TeaModel):
         callback_url: str = None,
         force_update: bool = None,
     ):
-        # 加密密钥用于校验来源
         self.api_secret = api_secret
-        # callbackUrl 的路由 Key，一个 callbackRouteKey 可以映射一个 callbackUrl
         self.callback_route_key = callback_route_key
-        # 注册的回调 URL
         self.callback_url = callback_url
-        # 是否强制覆盖更新，默认 false
         self.force_update = force_update
 
     def validate(self):
@@ -2790,9 +2638,7 @@ class RegisterCallbackResponseBodyResult(TeaModel):
         api_secret: str = None,
         callback_url: str = None,
     ):
-        # api 签名密钥
         self.api_secret = api_secret
-        # ISV 接受动态卡片点击的回调地址
         self.callback_url = callback_url
 
     def validate(self):
@@ -2858,13 +2704,16 @@ class RegisterCallbackResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RegisterCallbackResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2877,6 +2726,8 @@ class RegisterCallbackResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2885,6 +2736,8 @@ class RegisterCallbackResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RegisterCallbackResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2929,9 +2782,6 @@ class UpdateCardRequestCardData(TeaModel):
         self,
         card_param_map: Dict[str, str] = None,
     ):
-        # 卡片模板内容替换参数，普通文本类型
-        # ● key：参数名
-        # ● value: 参数值
         self.card_param_map = card_param_map
 
     def validate(self):
@@ -2960,9 +2810,7 @@ class UpdateCardRequestCardUpdateOptions(TeaModel):
         update_card_data_by_key: bool = None,
         update_private_data_by_key: bool = None,
     ):
-        # 按 key 更新 cardData 数据，不填默认覆盖更新。
         self.update_card_data_by_key = update_card_data_by_key
-        # 【可选】按key更新privateData用户数据，不填默认覆盖更新。
         self.update_private_data_by_key = update_private_data_by_key
 
     def validate(self):
@@ -2998,15 +2846,9 @@ class UpdateCardRequest(TeaModel):
         private_data: Dict[str, PrivateDataValue] = None,
         user_id_type: int = None,
     ):
-        # 卡片数据
         self.card_data = card_data
-        # 卡片更新选项
         self.card_update_options = card_update_options
-        # 【必填】外部卡片实例Id
         self.out_track_id = out_track_id
-        # 用户的私有数据。
-        # ● key：userId
-        # ● value：用户私有数据（cardData）
         self.private_data = private_data
         self.user_id_type = user_id_type
 
@@ -3097,13 +2939,16 @@ class UpdateCardResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateCardResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3116,6 +2961,8 @@ class UpdateCardResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3124,6 +2971,8 @@ class UpdateCardResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateCardResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -43,9 +43,7 @@ class AddOrgRequest(TeaModel):
         mobile_num: str = None,
         name: str = None,
     ):
-        # 手机号
         self.mobile_num = mobile_num
-        # 组织名称
         self.name = name
 
     def validate(self):
@@ -77,7 +75,6 @@ class AddOrgResponseBody(TeaModel):
         self,
         corp_id: str = None,
     ):
-        # 组织id
         self.corp_id = corp_id
 
     def validate(self):
@@ -104,13 +101,16 @@ class AddOrgResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddOrgResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -123,6 +123,8 @@ class AddOrgResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -131,6 +133,8 @@ class AddOrgResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddOrgResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -176,9 +180,7 @@ class BanOrOpenGroupWordsRequest(TeaModel):
         ban_words_type: int = None,
         open_converation_id: str = None,
     ):
-        # 操作类型:0 不禁言;1:禁言
         self.ban_words_type = ban_words_type
-        # 群id
         self.open_converation_id = open_converation_id
 
     def validate(self):
@@ -211,9 +213,7 @@ class BanOrOpenGroupWordsResponseBody(TeaModel):
         cause: str = None,
         code: str = None,
     ):
-        # 原因
         self.cause = cause
-        # 返回码
         self.code = code
 
     def validate(self):
@@ -244,13 +244,16 @@ class BanOrOpenGroupWordsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BanOrOpenGroupWordsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -263,6 +266,8 @@ class BanOrOpenGroupWordsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -271,6 +276,8 @@ class BanOrOpenGroupWordsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BanOrOpenGroupWordsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -319,15 +326,10 @@ class CreateTrustedDeviceRequest(TeaModel):
         status: int = None,
         user_id: str = None,
     ):
-        # 支持SDK集成的设备唯一标识。
         self.did = did
-        # mac地址
         self.mac_address = mac_address
-        # 平台类型
         self.platform = platform
-        # 设备状态
         self.status = status
-        # 员工userId
         self.user_id = user_id
 
     def validate(self):
@@ -397,13 +399,16 @@ class CreateTrustedDeviceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateTrustedDeviceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -416,6 +421,8 @@ class CreateTrustedDeviceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -424,6 +431,8 @@ class CreateTrustedDeviceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateTrustedDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -470,11 +479,8 @@ class CreateTrustedDeviceBatchRequest(TeaModel):
         platform: str = None,
         user_id: str = None,
     ):
-        # mac地址列表
         self.mac_address_list = mac_address_list
-        # 平台
         self.platform = platform
-        # 员工id
         self.user_id = user_id
 
     def validate(self):
@@ -510,7 +516,6 @@ class CreateTrustedDeviceBatchResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 处理结果
         self.result = result
 
     def validate(self):
@@ -537,13 +542,16 @@ class CreateTrustedDeviceBatchResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateTrustedDeviceBatchResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -556,6 +564,8 @@ class CreateTrustedDeviceBatchResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -564,6 +574,8 @@ class CreateTrustedDeviceBatchResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateTrustedDeviceBatchResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -608,7 +620,6 @@ class DeleteAcrossCloudStroageConfigsResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 执行结果
         self.result = result
 
     def validate(self):
@@ -635,13 +646,16 @@ class DeleteAcrossCloudStroageConfigsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteAcrossCloudStroageConfigsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -654,6 +668,8 @@ class DeleteAcrossCloudStroageConfigsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -662,6 +678,8 @@ class DeleteAcrossCloudStroageConfigsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteAcrossCloudStroageConfigsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -705,13 +723,16 @@ class DeleteCommentResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: bool = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
 
     def to_map(self):
@@ -722,6 +743,8 @@ class DeleteCommentResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body
         return result
@@ -730,6 +753,8 @@ class DeleteCommentResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             self.body = m.get('body')
         return self
@@ -775,11 +800,8 @@ class DeleteTrustedDeviceRequest(TeaModel):
         mac_address: str = None,
         user_id: str = None,
     ):
-        # 是否踢下线
         self.kick_off = kick_off
-        # mac地址
         self.mac_address = mac_address
-        # 员工userId
         self.user_id = user_id
 
     def validate(self):
@@ -841,13 +863,16 @@ class DeleteTrustedDeviceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteTrustedDeviceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -860,6 +885,8 @@ class DeleteTrustedDeviceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -868,6 +895,8 @@ class DeleteTrustedDeviceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteTrustedDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -915,11 +944,9 @@ class DistributePartnerAppRequest(TeaModel):
         sub_corp_id: str = None,
         type: int = None,
     ):
-        # 应用id
         self.app_id = app_id
         self.dept_id = dept_id
         self.sub_corp_id = sub_corp_id
-        # 分发对象类型
         self.type = type
 
     def validate(self):
@@ -959,7 +986,6 @@ class DistributePartnerAppResponseBody(TeaModel):
         self,
         invite_url: str = None,
     ):
-        # 安装邀请链接
         self.invite_url = invite_url
 
     def validate(self):
@@ -986,13 +1012,16 @@ class DistributePartnerAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DistributePartnerAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1005,6 +1034,8 @@ class DistributePartnerAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1013,6 +1044,8 @@ class DistributePartnerAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DistributePartnerAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1060,13 +1093,9 @@ class ExclusiveCreateDingPortalRequest(TeaModel):
         template_app_uuid: str = None,
         template_corp_id: str = None,
     ):
-        # 工作台名称。
         self.ding_portal_name = ding_portal_name
-        # 被操纵企业ID。
         self.target_corp_id = target_corp_id
-        # 模版id。
         self.template_app_uuid = template_app_uuid
-        # 模版所属的组织id。
         self.template_corp_id = template_corp_id
 
     def validate(self):
@@ -1106,7 +1135,6 @@ class ExclusiveCreateDingPortalResponseBody(TeaModel):
         self,
         success: str = None,
     ):
-        # 是否成功。
         self.success = success
 
     def validate(self):
@@ -1133,13 +1161,16 @@ class ExclusiveCreateDingPortalResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ExclusiveCreateDingPortalResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1152,6 +1183,8 @@ class ExclusiveCreateDingPortalResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1160,6 +1193,8 @@ class ExclusiveCreateDingPortalResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ExclusiveCreateDingPortalResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1207,13 +1242,9 @@ class FileStorageActiveStorageRequest(TeaModel):
         oss: str = None,
         target_corp_id: str = None,
     ):
-        # 密匙id
         self.access_key_id = access_key_id
-        # 密匙密码
         self.access_key_secret = access_key_secret
-        # 带bucket的oss域名
         self.oss = oss
-        # 企业id
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -1256,13 +1287,9 @@ class FileStorageActiveStorageResponseBody(TeaModel):
         storage_status: int = None,
         used_quota: int = None,
     ):
-        # oss开启时间
         self.create_date = create_date
-        # 是否开启专属存储 0开启1关闭
         self.file_storage_open_status = file_storage_open_status
-        # 存储状态 0正常1异常
         self.storage_status = storage_status
-        # 已经使用的容量Bytes
         self.used_quota = used_quota
 
     def validate(self):
@@ -1301,13 +1328,16 @@ class FileStorageActiveStorageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: FileStorageActiveStorageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1320,6 +1350,8 @@ class FileStorageActiveStorageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1328,6 +1360,8 @@ class FileStorageActiveStorageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = FileStorageActiveStorageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1375,13 +1409,9 @@ class FileStorageCheckConnectionRequest(TeaModel):
         oss: str = None,
         target_corp_id: str = None,
     ):
-        # 密匙id
         self.access_key_id = access_key_id
-        # 密匙密码
         self.access_key_secret = access_key_secret
-        # 带bucket的oss域名
         self.oss = oss
-        # 企业id
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -1423,11 +1453,8 @@ class FileStorageCheckConnectionResponseBody(TeaModel):
         check_state: int = None,
         oss: str = None,
     ):
-        # 密匙ID
         self.access_key_id = access_key_id
-        # 检测oss状态 0正常1异常
         self.check_state = check_state
-        # OSS链接
         self.oss = oss
 
     def validate(self):
@@ -1462,13 +1489,16 @@ class FileStorageCheckConnectionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: FileStorageCheckConnectionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1481,6 +1511,8 @@ class FileStorageCheckConnectionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1489,6 +1521,8 @@ class FileStorageCheckConnectionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = FileStorageCheckConnectionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1536,13 +1570,9 @@ class FileStorageGetQuotaDataRequest(TeaModel):
         target_corp_id: str = None,
         type: str = None,
     ):
-        # 结束时间
         self.end_time = end_time
-        # 开始时间
         self.start_time = start_time
-        # 企业的corpId
         self.target_corp_id = target_corp_id
-        # 查询类型 0按天查询；1按月查询
         self.type = type
 
     def validate(self):
@@ -1583,9 +1613,7 @@ class FileStorageGetQuotaDataResponseBodyQuotaModelList(TeaModel):
         statistic_time: str = None,
         used_storage: int = None,
     ):
-        # 统计时间点
         self.statistic_time = statistic_time
-        # 使用的容量（byte）
         self.used_storage = used_storage
 
     def validate(self):
@@ -1617,7 +1645,6 @@ class FileStorageGetQuotaDataResponseBody(TeaModel):
         self,
         quota_model_list: List[FileStorageGetQuotaDataResponseBodyQuotaModelList] = None,
     ):
-        # 文件存储使用容量列表
         self.quota_model_list = quota_model_list
 
     def validate(self):
@@ -1652,13 +1679,16 @@ class FileStorageGetQuotaDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: FileStorageGetQuotaDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1671,6 +1701,8 @@ class FileStorageGetQuotaDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1679,6 +1711,8 @@ class FileStorageGetQuotaDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = FileStorageGetQuotaDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1723,7 +1757,6 @@ class FileStorageGetStorageStateRequest(TeaModel):
         self,
         target_corp_id: str = None,
     ):
-        # 企业的corpId
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -1756,17 +1789,11 @@ class FileStorageGetStorageStateResponseBody(TeaModel):
         storage_status: int = None,
         used_quota: int = None,
     ):
-        # 密匙ID
         self.access_key_id = access_key_id
-        # oss开启时间
         self.create_date = create_date
-        # 是否开启专属存储 0开启1关闭
         self.file_storage_open_status = file_storage_open_status
-        # OSS链接
         self.oss = oss
-        # 存储状态 0正常1异常
         self.storage_status = storage_status
-        # 已经使用的容量Bytes
         self.used_quota = used_quota
 
     def validate(self):
@@ -1813,13 +1840,16 @@ class FileStorageGetStorageStateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: FileStorageGetStorageStateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1832,6 +1862,8 @@ class FileStorageGetStorageStateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1840,6 +1872,8 @@ class FileStorageGetStorageStateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = FileStorageGetStorageStateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1886,11 +1920,8 @@ class FileStorageUpdateStorageRequest(TeaModel):
         access_key_secret: str = None,
         target_corp_id: str = None,
     ):
-        # 密匙id
         self.access_key_id = access_key_id
-        # 密匙密码
         self.access_key_secret = access_key_secret
-        # 企业id
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -1927,9 +1958,7 @@ class FileStorageUpdateStorageResponseBody(TeaModel):
         access_key_id: str = None,
         oss: str = None,
     ):
-        # 密匙ID
         self.access_key_id = access_key_id
-        # OSS链接
         self.oss = oss
 
     def validate(self):
@@ -1960,13 +1989,16 @@ class FileStorageUpdateStorageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: FileStorageUpdateStorageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1979,6 +2011,8 @@ class FileStorageUpdateStorageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1987,6 +2021,8 @@ class FileStorageUpdateStorageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = FileStorageUpdateStorageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2031,7 +2067,6 @@ class GenerateDarkWaterMarkRequest(TeaModel):
         self,
         user_id_list: List[str] = None,
     ):
-        # 工号列表
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -2060,9 +2095,7 @@ class GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList(TeaModel):
         dark_watermark: str = None,
         user_id: str = None,
     ):
-        # 暗水印链接
         self.dark_watermark = dark_watermark
-        # 员工工号
         self.user_id = user_id
 
     def validate(self):
@@ -2094,7 +2127,6 @@ class GenerateDarkWaterMarkResponseBody(TeaModel):
         self,
         dark_watermark_volist: List[GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList] = None,
     ):
-        # 返回码
         self.dark_watermark_volist = dark_watermark_volist
 
     def validate(self):
@@ -2129,13 +2161,16 @@ class GenerateDarkWaterMarkResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GenerateDarkWaterMarkResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2148,6 +2183,8 @@ class GenerateDarkWaterMarkResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2156,6 +2193,8 @@ class GenerateDarkWaterMarkResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GenerateDarkWaterMarkResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2202,11 +2241,8 @@ class GetAccountTransferListRequest(TeaModel):
         page_size: int = None,
         status: int = None,
     ):
-        # 分页页数
         self.page_number = page_number
-        # 分页大小
         self.page_size = page_size
-        # 迁移状态0-未迁移，1-已迁移，2-无需迁移
         self.status = status
 
     def validate(self):
@@ -2244,11 +2280,8 @@ class GetAccountTransferListResponseBodyItemList(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
-        # 部门名称
         self.dept_name = dept_name
-        # 员工名称
         self.name = name
-        # 工号
         self.user_id = user_id
 
     def validate(self):
@@ -2285,9 +2318,7 @@ class GetAccountTransferListResponseBody(TeaModel):
         item_list: List[GetAccountTransferListResponseBodyItemList] = None,
         total_count: int = None,
     ):
-        # 迁移详情数据
         self.item_list = item_list
-        # 总数据量
         self.total_count = total_count
 
     def validate(self):
@@ -2326,13 +2357,16 @@ class GetAccountTransferListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAccountTransferListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2345,6 +2379,8 @@ class GetAccountTransferListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2353,6 +2389,8 @@ class GetAccountTransferListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAccountTransferListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2397,7 +2435,6 @@ class GetActiveUserSummaryResponseBody(TeaModel):
         self,
         act_usr_cnt_1m: str = None,
     ):
-        # 月活跃人数
         self.act_usr_cnt_1m = act_usr_cnt_1m
 
     def validate(self):
@@ -2424,13 +2461,16 @@ class GetActiveUserSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetActiveUserSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2443,6 +2483,8 @@ class GetActiveUserSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2451,6 +2493,8 @@ class GetActiveUserSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetActiveUserSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2496,9 +2540,7 @@ class GetAgentIdByRelatedAppIdRequest(TeaModel):
         app_id: int = None,
         target_corp_id: str = None,
     ):
-        # 应用的appId。
         self.app_id = app_id
-        # 被查询的组织id。
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -2530,7 +2572,6 @@ class GetAgentIdByRelatedAppIdResponseBody(TeaModel):
         self,
         agent_id: int = None,
     ):
-        # 微应用agentId。
         self.agent_id = agent_id
 
     def validate(self):
@@ -2557,13 +2598,16 @@ class GetAgentIdByRelatedAppIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAgentIdByRelatedAppIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2576,6 +2620,8 @@ class GetAgentIdByRelatedAppIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2584,6 +2630,8 @@ class GetAgentIdByRelatedAppIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAgentIdByRelatedAppIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2630,11 +2678,8 @@ class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1(TeaModel):
         label_name: str = None,
         level_num: int = None,
     ):
-        # 伙伴类型id
         self.label_id = label_id
-        # 伙伴类型
         self.label_name = label_name
-        # 伙伴类型层级
         self.level_num = level_num
 
     def validate(self):
@@ -2672,11 +2717,8 @@ class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2(TeaModel):
         label_name: str = None,
         level_num: int = None,
     ):
-        # 伙伴类型id
         self.label_id = label_id
-        # 伙伴类型
         self.label_name = label_name
-        # 伙伴类型层级
         self.level_num = level_num
 
     def validate(self):
@@ -2714,11 +2756,8 @@ class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3(TeaModel):
         label_name: str = None,
         level_num: int = None,
     ):
-        # 伙伴类型id
         self.label_id = label_id
-        # 伙伴类型
         self.label_name = label_name
-        # 伙伴类型层级
         self.level_num = level_num
 
     def validate(self):
@@ -2756,11 +2795,8 @@ class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4(TeaModel):
         label_name: str = None,
         level_num: int = None,
     ):
-        # 伙伴类型id
         self.label_id = label_id
-        # 伙伴类型
         self.label_name = label_name
-        # 伙伴类型层级
         self.level_num = level_num
 
     def validate(self):
@@ -2798,11 +2834,8 @@ class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5(TeaModel):
         label_name: str = None,
         level_num: int = None,
     ):
-        # 伙伴类型id
         self.label_id = label_id
-        # 伙伴类型
         self.label_name = label_name
-        # 伙伴类型层级
         self.level_num = level_num
 
     def validate(self):
@@ -2847,25 +2880,15 @@ class GetAllLabelableDeptsResponseBodyData(TeaModel):
         partner_num: str = None,
         super_dept_id: str = None,
     ):
-        # 部门id
         self.dept_id = dept_id
-        # 部门名称
         self.dept_name = dept_name
-        # 部门人数
         self.member_count = member_count
-        # 部门一级伙伴类型
         self.partner_label_volevel_1 = partner_label_volevel_1
-        # 部门二级伙伴类型
         self.partner_label_volevel_2 = partner_label_volevel_2
-        # 部门三级伙伴类型
         self.partner_label_volevel_3 = partner_label_volevel_3
-        # 部门四级伙伴类型
         self.partner_label_volevel_4 = partner_label_volevel_4
-        # 部门五级伙伴类型
         self.partner_label_volevel_5 = partner_label_volevel_5
-        # 部门伙伴编码
         self.partner_num = partner_num
-        # 父部门id
         self.super_dept_id = super_dept_id
 
     def validate(self):
@@ -2943,7 +2966,6 @@ class GetAllLabelableDeptsResponseBody(TeaModel):
         self,
         data: List[GetAllLabelableDeptsResponseBodyData] = None,
     ):
-        # 伙伴钉可打标部门列表
         self.data = data
 
     def validate(self):
@@ -2978,13 +3000,16 @@ class GetAllLabelableDeptsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAllLabelableDeptsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2997,6 +3022,8 @@ class GetAllLabelableDeptsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3005,6 +3032,8 @@ class GetAllLabelableDeptsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAllLabelableDeptsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3050,9 +3079,7 @@ class GetAppDispatchInfoRequest(TeaModel):
         end_time: int = None,
         start_time: int = None,
     ):
-        # 打包结束日期查询参数
         self.end_time = end_time
-        # 打包开始日期查询参数
         self.start_time = start_time
 
     def validate(self):
@@ -3089,17 +3116,11 @@ class GetAppDispatchInfoResponseBodyAndroid(TeaModel):
         platform: str = None,
         version: str = None,
     ):
-        # 基线版本
         self.base_line_version = base_line_version
-        # 下载地址
         self.download_url = download_url
-        # 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
         self.in_gray = in_gray
-        # 打包时间
         self.pack_time = pack_time
-        # 客户端类型
         self.platform = platform
-        # 版本号
         self.version = version
 
     def validate(self):
@@ -3147,7 +3168,6 @@ class GetAppDispatchInfoResponseBodyIOSExt(TeaModel):
         self,
         plist: str = None,
     ):
-        # plist下载地址
         self.plist = plist
 
     def validate(self):
@@ -3181,18 +3201,12 @@ class GetAppDispatchInfoResponseBodyIOS(TeaModel):
         platform: str = None,
         version: str = None,
     ):
-        # 基线版本
         self.base_line_version = base_line_version
-        # 下载地址
         self.download_url = download_url
         self.ext = ext
-        # 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
         self.in_gray = in_gray
-        # 打包时间
         self.pack_time = pack_time
-        # 客户端类型
         self.platform = platform
-        # 版本号
         self.version = version
 
     def validate(self):
@@ -3251,17 +3265,11 @@ class GetAppDispatchInfoResponseBodyMac(TeaModel):
         platform: str = None,
         version: str = None,
     ):
-        # 基线版本
         self.base_line_version = base_line_version
-        # 下载地址
         self.download_url = download_url
-        # 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
         self.in_gray = in_gray
-        # 打包时间
         self.pack_time = pack_time
-        # 客户端类型
         self.platform = platform
-        # 版本号
         self.version = version
 
     def validate(self):
@@ -3314,17 +3322,11 @@ class GetAppDispatchInfoResponseBodyWindows(TeaModel):
         platform: str = None,
         version: str = None,
     ):
-        # 基线版本
         self.base_line_version = base_line_version
-        # 下载地址
         self.download_url = download_url
-        # 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
         self.in_gray = in_gray
-        # 打包时间
         self.pack_time = pack_time
-        # 客户端类型
         self.platform = platform
-        # 版本号
         self.version = version
 
     def validate(self):
@@ -3375,13 +3377,9 @@ class GetAppDispatchInfoResponseBody(TeaModel):
         mac: List[GetAppDispatchInfoResponseBodyMac] = None,
         windows: List[GetAppDispatchInfoResponseBodyWindows] = None,
     ):
-        # android打包记录
         self.android = android
-        # iOS打包记录
         self.i_os = i_os
-        # mac打包记录
         self.mac = mac
-        # windows打包记录
         self.windows = windows
 
     def validate(self):
@@ -3455,13 +3453,16 @@ class GetAppDispatchInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAppDispatchInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3474,6 +3475,8 @@ class GetAppDispatchInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3482,6 +3485,8 @@ class GetAppDispatchInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAppDispatchInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3528,11 +3533,8 @@ class GetCalenderSummaryResponseBody(TeaModel):
         recv_calendar_user_cnt_1d: str = None,
         use_calendar_user_cnt_1d: str = None,
     ):
-        # 最近1天创建日程人数
         self.calendar_create_user_cnt = calendar_create_user_cnt
-        # 最近1天接收日程人数
         self.recv_calendar_user_cnt_1d = recv_calendar_user_cnt_1d
-        # 最近1天使用日程人数
         self.use_calendar_user_cnt_1d = use_calendar_user_cnt_1d
 
     def validate(self):
@@ -3567,13 +3569,16 @@ class GetCalenderSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetCalenderSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3586,6 +3591,8 @@ class GetCalenderSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3594,6 +3601,8 @@ class GetCalenderSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCalenderSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3639,9 +3648,7 @@ class GetCommentListRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
-        # 分页起始页
         self.page_number = page_number
-        # 分页大小
         self.page_size = page_size
 
     def validate(self):
@@ -3676,13 +3683,9 @@ class GetCommentListResponseBodyData(TeaModel):
         comment_user_name: str = None,
         content: str = None,
     ):
-        # 评论ID
         self.comment_id = comment_id
-        # 评论时间
         self.comment_time = comment_time
-        # 评论者姓名
         self.comment_user_name = comment_user_name
-        # 评论内容
         self.content = content
 
     def validate(self):
@@ -3762,13 +3765,16 @@ class GetCommentListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetCommentListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3781,6 +3787,8 @@ class GetCommentListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3789,6 +3797,8 @@ class GetCommentListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCommentListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3833,7 +3843,6 @@ class GetConfBaseInfoByLogicalIdRequest(TeaModel):
         self,
         logical_conference_id: str = None,
     ):
-        # 会议id
         self.logical_conference_id = logical_conference_id
 
     def validate(self):
@@ -3866,17 +3875,11 @@ class GetConfBaseInfoByLogicalIdResponseBody(TeaModel):
         title: str = None,
         union_id: str = None,
     ):
-        # 会议ID（仅在会议正式开始后才返回该字段）
         self.conference_id = conference_id
-        # 会议逻辑id
         self.logical_conference_id = logical_conference_id
-        # 会议创建用户昵称
         self.nickname = nickname
-        # 开始时间
         self.start_time = start_time
-        # 会议标题
         self.title = title
-        # 会议创建用户id
         self.union_id = union_id
 
     def validate(self):
@@ -3923,13 +3926,16 @@ class GetConfBaseInfoByLogicalIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetConfBaseInfoByLogicalIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3942,6 +3948,8 @@ class GetConfBaseInfoByLogicalIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3950,6 +3958,8 @@ class GetConfBaseInfoByLogicalIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetConfBaseInfoByLogicalIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3997,13 +4007,9 @@ class GetConferenceDetailResponseBodyMemberList(TeaModel):
         staff_id: str = None,
         union_id: str = None,
     ):
-        # 参会时长
         self.attend_duration = attend_duration
-        # 用户昵称
         self.name = name
-        # 员工id
         self.staff_id = staff_id
-        # 用户uid
         self.union_id = union_id
 
     def validate(self):
@@ -4052,25 +4058,15 @@ class GetConferenceDetailResponseBody(TeaModel):
         title: str = None,
         total_num: int = None,
     ):
-        # 出席会议人数
         self.attendee_num = attendee_num
-        # 出席率
         self.attendee_percentage = attendee_percentage
-        # 发起人uid
         self.caller_id = caller_id
-        # 发起人昵称
         self.caller_name = caller_name
-        # 开始时间
         self.conf_start_time = conf_start_time
-        # 会议ID
         self.conference_id = conference_id
-        # 持续时间
         self.duration = duration
-        # 参会人员列表
         self.member_list = member_list
-        # 会议标题
         self.title = title
-        # 会议人数
         self.total_num = total_num
 
     def validate(self):
@@ -4141,13 +4137,16 @@ class GetConferenceDetailResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetConferenceDetailResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4160,6 +4159,8 @@ class GetConferenceDetailResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4168,6 +4169,8 @@ class GetConferenceDetailResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetConferenceDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4213,9 +4216,7 @@ class GetDingReportDeptSummaryRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
-        # 每页包含的数据条数
         self.max_results = max_results
-        # 启始数据游标
         self.next_token = next_token
 
     def validate(self):
@@ -4250,13 +4251,9 @@ class GetDingReportDeptSummaryResponseBodyData(TeaModel):
         ding_report_send_cnt: str = None,
         ding_report_send_usr_cnt: str = None,
     ):
-        # 部门id
         self.dept_id = dept_id
-        # 部门名称
         self.dept_name = dept_name
-        # 最近1天累计创建日志数
         self.ding_report_send_cnt = ding_report_send_cnt
-        # 最近1天累计创建日志人数
         self.ding_report_send_usr_cnt = ding_report_send_usr_cnt
 
     def validate(self):
@@ -4298,11 +4295,8 @@ class GetDingReportDeptSummaryResponseBody(TeaModel):
         has_more: bool = None,
         next_token: int = None,
     ):
-        # 部门维度发布日志信息
         self.data = data
-        # 是否有更多数据
         self.has_more = has_more
-        # 下一次请求的分页游标
         self.next_token = next_token
 
     def validate(self):
@@ -4345,13 +4339,16 @@ class GetDingReportDeptSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDingReportDeptSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4364,6 +4361,8 @@ class GetDingReportDeptSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4372,6 +4371,8 @@ class GetDingReportDeptSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDingReportDeptSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4416,7 +4417,6 @@ class GetDingReportSummaryResponseBody(TeaModel):
         self,
         report_comment_user_cnt_1d: str = None,
     ):
-        # 最近1天日志评论用户数
         self.report_comment_user_cnt_1d = report_comment_user_cnt_1d
 
     def validate(self):
@@ -4443,13 +4443,16 @@ class GetDingReportSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDingReportSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4462,6 +4465,8 @@ class GetDingReportSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4470,6 +4475,8 @@ class GetDingReportSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDingReportSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4515,9 +4522,7 @@ class GetDocCreatedDeptSummaryRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
-        # 每页包含的数据条数
         self.max_results = max_results
-        # 启始数据游标
         self.next_token = next_token
 
     def validate(self):
@@ -4552,13 +4557,9 @@ class GetDocCreatedDeptSummaryResponseBodyData(TeaModel):
         dept_name: str = None,
         doc_created_cnt: str = None,
     ):
-        # 最近1天创建文档人数
         self.create_doc_user_cnt_1d = create_doc_user_cnt_1d
-        # 部门id
         self.dept_id = dept_id
-        # 部门名称
         self.dept_name = dept_name
-        # 最近1天钉钉文档创建数
         self.doc_created_cnt = doc_created_cnt
 
     def validate(self):
@@ -4600,11 +4601,8 @@ class GetDocCreatedDeptSummaryResponseBody(TeaModel):
         has_more: bool = None,
         next_token: int = None,
     ):
-        # 部门维度用户创建文档数
         self.data = data
-        # 是否有更多数据
         self.has_more = has_more
-        # 下一次请求的分页游标
         self.next_token = next_token
 
     def validate(self):
@@ -4647,13 +4645,16 @@ class GetDocCreatedDeptSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDocCreatedDeptSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4666,6 +4667,8 @@ class GetDocCreatedDeptSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4674,6 +4677,8 @@ class GetDocCreatedDeptSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDocCreatedDeptSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4719,9 +4724,7 @@ class GetDocCreatedSummaryResponseBody(TeaModel):
         doc_create_user_cnt_1d: str = None,
         doc_created_cnt: str = None,
     ):
-        # 最近1天创建文档人数
         self.doc_create_user_cnt_1d = doc_create_user_cnt_1d
-        # 最近1天创建文档数
         self.doc_created_cnt = doc_created_cnt
 
     def validate(self):
@@ -4752,13 +4755,16 @@ class GetDocCreatedSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDocCreatedSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4771,6 +4777,8 @@ class GetDocCreatedSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4779,6 +4787,8 @@ class GetDocCreatedSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDocCreatedSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4823,7 +4833,6 @@ class GetExclusiveAccountAllOrgListRequest(TeaModel):
         self,
         union_id: str = None,
     ):
-        # 用户unionId
         self.union_id = union_id
 
     def validate(self):
@@ -4855,15 +4864,10 @@ class GetExclusiveAccountAllOrgListResponseBodyOrgInfoList(TeaModel):
         org_full_name: str = None,
         org_name: str = None,
     ):
-        # 组织ID
         self.corp_id = corp_id
-        # 是否是主组织
         self.is_main_org = is_main_org
-        # 组织图标地址
         self.logo_url = logo_url
-        # 组织全称
         self.org_full_name = org_full_name
-        # 组织名称
         self.org_name = org_name
 
     def validate(self):
@@ -4907,7 +4911,6 @@ class GetExclusiveAccountAllOrgListResponseBody(TeaModel):
         self,
         org_info_list: List[GetExclusiveAccountAllOrgListResponseBodyOrgInfoList] = None,
     ):
-        # 组织信息列表
         self.org_info_list = org_info_list
 
     def validate(self):
@@ -4942,13 +4945,16 @@ class GetExclusiveAccountAllOrgListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetExclusiveAccountAllOrgListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4961,6 +4967,8 @@ class GetExclusiveAccountAllOrgListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4969,6 +4977,8 @@ class GetExclusiveAccountAllOrgListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetExclusiveAccountAllOrgListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5014,9 +5024,7 @@ class GetGeneralFormCreatedDeptSummaryRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
-        # 每页包含的数据条数
         self.max_results = max_results
-        # 启始数据游标
         self.next_token = next_token
 
     def validate(self):
@@ -5051,13 +5059,9 @@ class GetGeneralFormCreatedDeptSummaryResponseBodyData(TeaModel):
         general_form_create_cnt_1d: str = None,
         use_general_form_user_cnt_1d: str = None,
     ):
-        # 部门id
         self.dept_id = dept_id
-        # 部门名称
         self.dept_name = dept_name
-        # 最近1天累计发布智能填表数
         self.general_form_create_cnt_1d = general_form_create_cnt_1d
-        # 最近1天使用智能填表人数
         self.use_general_form_user_cnt_1d = use_general_form_user_cnt_1d
 
     def validate(self):
@@ -5099,11 +5103,8 @@ class GetGeneralFormCreatedDeptSummaryResponseBody(TeaModel):
         has_more: bool = None,
         next_token: int = None,
     ):
-        # 用户版本分布情况列表
         self.data = data
-        # 是否有更多数据
         self.has_more = has_more
-        # 下一次请 求的分页游标
         self.next_token = next_token
 
     def validate(self):
@@ -5146,13 +5147,16 @@ class GetGeneralFormCreatedDeptSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetGeneralFormCreatedDeptSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5165,6 +5169,8 @@ class GetGeneralFormCreatedDeptSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5173,6 +5179,8 @@ class GetGeneralFormCreatedDeptSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetGeneralFormCreatedDeptSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5218,9 +5226,7 @@ class GetGeneralFormCreatedSummaryResponseBody(TeaModel):
         general_form_created_cnt: str = None,
         use_general_form_user_cnt_1d: str = None,
     ):
-        # 最近1天智能填表创建数
         self.general_form_created_cnt = general_form_created_cnt
-        # 最近1天使用智能填表人数
         self.use_general_form_user_cnt_1d = use_general_form_user_cnt_1d
 
     def validate(self):
@@ -5251,13 +5257,16 @@ class GetGeneralFormCreatedSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetGeneralFormCreatedSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5270,6 +5279,8 @@ class GetGeneralFormCreatedSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5278,6 +5289,8 @@ class GetGeneralFormCreatedSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetGeneralFormCreatedSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5326,15 +5339,10 @@ class GetGroupActiveInfoRequest(TeaModel):
         page_size: int = None,
         stat_date: str = None,
     ):
-        # 钉钉群组id
         self.ding_group_id = ding_group_id
-        # 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
         self.group_type = group_type
-        # 分页起始页
         self.page_number = page_number
-        # 分页大小
         self.page_size = page_size
-        # 统计日期
         self.stat_date = stat_date
 
     def validate(self):
@@ -5388,27 +5396,16 @@ class GetGroupActiveInfoResponseBodyData(TeaModel):
         send_message_user_cnt_1d: int = None,
         stat_date: str = None,
     ):
-        # 群组id
         self.ding_group_id = ding_group_id
-        # 群组创建时间
         self.group_create_time = group_create_time
-        # 群组创建用户id
         self.group_create_user_id = group_create_user_id
-        # 群组创建用户姓名
         self.group_create_user_name = group_create_user_name
-        # 群名称
         self.group_name = group_name
-        # 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
         self.group_type = group_type
-        # 最近1天群人数
         self.group_user_cnt_1d = group_user_cnt_1d
-        # 最近1天打开群人数
         self.open_conv_uv_1d = open_conv_uv_1d
-        # 最近1天发消息次数
         self.send_message_cnt_1d = send_message_cnt_1d
-        # 最近1天发消息人数
         self.send_message_user_cnt_1d = send_message_user_cnt_1d
-        # 统计时间
         self.stat_date = stat_date
 
     def validate(self):
@@ -5516,13 +5513,16 @@ class GetGroupActiveInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetGroupActiveInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5535,6 +5535,8 @@ class GetGroupActiveInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5543,6 +5545,8 @@ class GetGroupActiveInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetGroupActiveInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5636,15 +5640,10 @@ class GetInActiveUserListResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -5689,9 +5688,7 @@ class GetInActiveUserListResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[GetInActiveUserListResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -5730,13 +5727,16 @@ class GetInActiveUserListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetInActiveUserListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5749,6 +5749,8 @@ class GetInActiveUserListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5757,6 +5759,8 @@ class GetInActiveUserListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetInActiveUserListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5801,7 +5805,6 @@ class GetLastOrgAuthDataRequest(TeaModel):
         self,
         target_corp_id: str = None,
     ):
-        # 企业的corpId
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -5830,9 +5833,7 @@ class GetLastOrgAuthDataResponseBody(TeaModel):
         auth_remark: str = None,
         auth_status: int = None,
     ):
-        # 未通过原因
         self.auth_remark = auth_remark
-        # 审核状态 0 未提交， 1未审核 2 失败 3通过
         self.auth_status = auth_status
 
     def validate(self):
@@ -5863,13 +5864,16 @@ class GetLastOrgAuthDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetLastOrgAuthDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5882,6 +5886,8 @@ class GetLastOrgAuthDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5890,6 +5896,8 @@ class GetLastOrgAuthDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetLastOrgAuthDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5939,17 +5947,11 @@ class GetOaOperatorLogListRequest(TeaModel):
         page_size: int = None,
         start_time: int = None,
     ):
-        # 操作分类（一级目录）
         self.category_list = category_list
-        # 结束时间
         self.end_time = end_time
-        # 操作员userId
         self.op_user_id = op_user_id
-        # 分页起始页
         self.page_number = page_number
-        # 分页大小
         self.page_size = page_size
-        # 起始时间
         self.start_time = start_time
 
     def validate(self):
@@ -6002,17 +6004,11 @@ class GetOaOperatorLogListResponseBodyData(TeaModel):
         op_time: int = None,
         op_user_id: str = None,
     ):
-        # 操作分类（一级）
         self.category_1name = category_1name
-        # 操作分类（二级）
         self.category_2name = category_2name
-        # 操作详情
         self.content = content
-        # 操作员名字
         self.op_name = op_name
-        # 操作时间
         self.op_time = op_time
-        # 操作员userId
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -6062,7 +6058,6 @@ class GetOaOperatorLogListResponseBody(TeaModel):
         item_count: int = None,
     ):
         self.data = data
-        # 当前获取记录数
         self.item_count = item_count
 
     def validate(self):
@@ -6101,13 +6096,16 @@ class GetOaOperatorLogListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetOaOperatorLogListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6120,6 +6118,8 @@ class GetOaOperatorLogListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6128,6 +6128,8 @@ class GetOaOperatorLogListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetOaOperatorLogListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6174,11 +6176,8 @@ class GetOutsideAuditGroupMessageByPageRequest(TeaModel):
         next_token: int = None,
         open_conversation_id: str = None,
     ):
-        # 页大小，一次请求几条消息，合法区间[20,50]
         self.max_results = max_results
-        # 毫秒时间戳，从该时间向过去拉消息
         self.next_token = next_token
-        # 会话
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -6216,11 +6215,8 @@ class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender
         id_type: str = None,
         type: str = None,
     ):
-        # 根据id的类型决定是哪一种id
         self.id = id
-        # 发送者的id类型，可以是userId或者unionId
         self.id_type = id_type
-        # 用户-user 机器人-bot 系统账号-sys
         self.type = type
 
     def validate(self):
@@ -6260,15 +6256,10 @@ class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList(TeaMo
         open_conversation_id: str = None,
         sender: GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender = None,
     ):
-        # 内容
         self.content = content
-        # 内容类型 文本/语音/视频
         self.content_type = content_type
-        # 发送时间 格式:yyyy-MM-dd HH:mm:ss
         self.create_at = create_at
-        # 会话id
         self.open_conversation_id = open_conversation_id
-        # 发送人
         self.sender = sender
 
     def validate(self):
@@ -6315,9 +6306,7 @@ class GetOutsideAuditGroupMessageByPageResponseBodyResponseBody(TeaModel):
         message_list: List[GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList] = None,
         next_token: str = None,
     ):
-        # 消息列表
         self.message_list = message_list
-        # 下一次请求的token,无返回值则下一条消息不存在
         self.next_token = next_token
 
     def validate(self):
@@ -6357,7 +6346,6 @@ class GetOutsideAuditGroupMessageByPageResponseBody(TeaModel):
         self,
         response_body: GetOutsideAuditGroupMessageByPageResponseBodyResponseBody = None,
     ):
-        # 返回结构体
         self.response_body = response_body
 
     def validate(self):
@@ -6386,13 +6374,16 @@ class GetOutsideAuditGroupMessageByPageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetOutsideAuditGroupMessageByPageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6405,6 +6396,8 @@ class GetOutsideAuditGroupMessageByPageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6413,6 +6406,8 @@ class GetOutsideAuditGroupMessageByPageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetOutsideAuditGroupMessageByPageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6459,11 +6454,8 @@ class GetPartnerTypeByParentIdResponseBodyData(TeaModel):
         type_id: float = None,
         type_name: str = None,
     ):
-        # 子标签id
         self.label_id = label_id
-        # 目前无意义
         self.type_id = type_id
-        # 子标签名
         self.type_name = type_name
 
     def validate(self):
@@ -6499,7 +6491,6 @@ class GetPartnerTypeByParentIdResponseBody(TeaModel):
         self,
         data: List[GetPartnerTypeByParentIdResponseBodyData] = None,
     ):
-        # 子标签列表
         self.data = data
 
     def validate(self):
@@ -6534,13 +6525,16 @@ class GetPartnerTypeByParentIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPartnerTypeByParentIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6553,6 +6547,8 @@ class GetPartnerTypeByParentIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6561,6 +6557,8 @@ class GetPartnerTypeByParentIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPartnerTypeByParentIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6611,19 +6609,12 @@ class GetPublicDevicesRequest(TeaModel):
         start_time: int = None,
         title: str = None,
     ):
-        # 注册/申请时间止
         self.end_time = end_time
-        # 设备mac地址
         self.mac_address = mac_address
-        # 页码
         self.page_number = page_number
-        # 单页条目数
         self.page_size = page_size
-        # 系统
         self.platform = platform
-        # 注册/申请时间起
         self.start_time = start_time
-        # 设备标题
         self.title = title
 
     def validate(self):
@@ -6676,9 +6667,7 @@ class GetPublicDevicesResponseBodyDataDeviceDepts(TeaModel):
         id: int = None,
         name: str = None,
     ):
-        # 部门id
         self.id = id
-        # 部门名称
         self.name = name
 
     def validate(self):
@@ -6711,9 +6700,7 @@ class GetPublicDevicesResponseBodyDataDeviceRoles(TeaModel):
         name: str = None,
         tag_code: str = None,
     ):
-        # 角色名称
         self.name = name
-        # 角色code
         self.tag_code = tag_code
 
     def validate(self):
@@ -6746,9 +6733,7 @@ class GetPublicDevicesResponseBodyDataDeviceStaffs(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
-        # 员工姓名
         self.name = name
-        # 员工id
         self.user_id = user_id
 
     def validate(self):
@@ -6788,23 +6773,14 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         platform: str = None,
         title: str = None,
     ):
-        # 部门列表，仅生效范围是部分生效时有效
         self.device_depts = device_depts
-        # 角色列表，仅生效范围是部分生效时有效
         self.device_roles = device_roles
-        # 生效范围
         self.device_scope_type = device_scope_type
-        # 员工列表，仅生效范围是部分生效时有效
         self.device_staffs = device_staffs
-        # 创建时间时间戳
         self.gmt_create = gmt_create
-        # 修改时间时间戳
         self.gmt_modified = gmt_modified
-        # 设备mac地址
         self.mac_address = mac_address
-        # 系统
         self.platform = platform
-        # 设备标题
         self.title = title
 
     def validate(self):
@@ -6893,9 +6869,7 @@ class GetPublicDevicesResponseBody(TeaModel):
         total_cnt: int = None,
     ):
         self.data = data
-        # 当前页条目数
         self.data_cnt = data_cnt
-        # 总条目数
         self.total_cnt = total_cnt
 
     def validate(self):
@@ -6938,13 +6912,16 @@ class GetPublicDevicesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPublicDevicesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6957,6 +6934,8 @@ class GetPublicDevicesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6965,6 +6944,8 @@ class GetPublicDevicesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPublicDevicesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7010,9 +6991,7 @@ class GetPublisherSummaryRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
-        # 每页包含的数据条数
         self.max_results = max_results
-        # 启始数据游标
         self.next_token = next_token
 
     def validate(self):
@@ -7047,13 +7026,9 @@ class GetPublisherSummaryResponseBodyData(TeaModel):
         publisher_name: str = None,
         union_id: str = None,
     ):
-        # 历史截至当日服务窗文章数
         self.publisher_article_cnt_std = publisher_article_cnt_std
-        # 历史截至当日服务窗文章阅读数
         self.publisher_article_pv_cnt_std = publisher_article_pv_cnt_std
-        # 服务窗名称
         self.publisher_name = publisher_name
-        # 服务窗unionId
         self.union_id = union_id
 
     def validate(self):
@@ -7093,7 +7068,6 @@ class GetPublisherSummaryResponseBodyPublisherArticlePvTop5(TeaModel):
         self,
         name: str = None,
     ):
-        # 文章名称
         self.name = name
 
     def validate(self):
@@ -7127,19 +7101,12 @@ class GetPublisherSummaryResponseBody(TeaModel):
         publisher_article_pv_top_5: List[GetPublisherSummaryResponseBodyPublisherArticlePvTop5] = None,
         publisher_cnt_std: str = None,
     ):
-        # 互动服务窗相关数据
         self.data = data
-        # 是否有更多数据
         self.has_more = has_more
-        # 下一次请求的分页游标
         self.next_token = next_token
-        # 历史截至当日服务窗文章数
         self.publisher_article_cnt_std = publisher_article_cnt_std
-        # 历史截至当日服务窗文章阅读数
         self.publisher_article_pv_cnt_std = publisher_article_pv_cnt_std
-        # 阅读量最高的5个文章
         self.publisher_article_pv_top_5 = publisher_article_pv_top_5
-        # 历史截至当日服务窗数
         self.publisher_cnt_std = publisher_cnt_std
 
     def validate(self):
@@ -7207,13 +7174,16 @@ class GetPublisherSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPublisherSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7226,6 +7196,8 @@ class GetPublisherSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7234,6 +7206,8 @@ class GetPublisherSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPublisherSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7285,21 +7259,13 @@ class GetRealPeopleRecordsRequest(TeaModel):
         to_time: int = None,
         user_ids: List[str] = None,
     ):
-        # 应用唯一标识
         self.agent_id = agent_id
-        # 记录开始时间(毫秒时间戳)
         self.from_time = from_time
-        # 一页最大值（最大50）
         self.max_results = max_results
-        # 查询数据的起始位置，0表示从头开始。
         self.next_token = next_token
-        # 实人认证结果 1-成功 2-失败
         self.person_identification = person_identification
-        # 1. 姓名匹配阶段失败 2. 认证阶段失败 3. 实人流程阶段失败 4. 协议签署阶段失败 5. 人脸录入阶段失败 6. 人脸录入阶段用户主动取消 7. 人脸录入阶段成功 8. 人脸识别阶段失败 9. 人脸识别阶段主动取消 10. 人脸识别阶段成功  11.去实人场景
         self.scene = scene
-        # 记录结束时间(毫秒时间戳)
         self.to_time = to_time
-        # 员工userIds
         self.user_ids = user_ids
 
     def validate(self):
@@ -7360,17 +7326,11 @@ class GetRealPeopleRecordsResponseBodyData(TeaModel):
         scene: int = None,
         user_id: str = None,
     ):
-        # agentId
         self.agent_id = agent_id
-        # 接口调用时间(毫秒时间戳)
         self.invoke_time = invoke_time
-        # 实人认证结果 1-成功 2-失败
         self.person_identification = person_identification
-        # 平台 0-Android 或 1-iOS
         self.platform = platform
-        # 1. 姓名匹配阶段失败 2. 认证阶段失败 3. 实人流程阶段失败 4. 协议签署阶段失败 5. 人脸录入阶段失败 6. 人脸录入阶段用户主动取消 7. 人脸录入阶段成功 8. 人脸识别阶段失败 9. 人脸识别阶段主动取消 10. 人脸识别阶段成功  11.去实人场景
         self.scene = scene
-        # userId
         self.user_id = user_id
 
     def validate(self):
@@ -7420,11 +7380,8 @@ class GetRealPeopleRecordsResponseBody(TeaModel):
         next_token: int = None,
         total: int = None,
     ):
-        # data
         self.data = data
-        # 下一次拉取启始值
         self.next_token = next_token
-        # 总数据数
         self.total = total
 
     def validate(self):
@@ -7467,13 +7424,16 @@ class GetRealPeopleRecordsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetRealPeopleRecordsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7486,6 +7446,8 @@ class GetRealPeopleRecordsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7494,6 +7456,8 @@ class GetRealPeopleRecordsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetRealPeopleRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7544,19 +7508,12 @@ class GetRecognizeRecordsRequest(TeaModel):
         to_time: int = None,
         user_ids: List[str] = None,
     ):
-        # 应用唯一标识
         self.agent_id = agent_id
-        # 人脸对比结果 1-成功 2-失败
         self.face_compare_result = face_compare_result
-        # 记录开始时间(毫秒时间戳)
         self.from_time = from_time
-        # 一页最大值（最大50）
         self.max_results = max_results
-        # 查询数据的起始位置，0表示从头开始。
         self.next_token = next_token
-        # 记录结束时间(毫秒时间戳)
         self.to_time = to_time
-        # 员工userIds
         self.user_ids = user_ids
 
     def validate(self):
@@ -7612,15 +7569,10 @@ class GetRecognizeRecordsResponseBodyData(TeaModel):
         platform: int = None,
         user_id: str = None,
     ):
-        # agentId
         self.agent_id = agent_id
-        # 人脸对比结果 1-成功 2-失败
         self.face_compare_result = face_compare_result
-        # 接口调用时间(毫秒时间戳)
         self.invoke_time = invoke_time
-        # 平台 0-Android 或 1-iOS
         self.platform = platform
-        # userId
         self.user_id = user_id
 
     def validate(self):
@@ -7666,11 +7618,8 @@ class GetRecognizeRecordsResponseBody(TeaModel):
         next_token: int = None,
         total: int = None,
     ):
-        # data
         self.data = data
-        # 下一次拉取启始值
         self.next_token = next_token
-        # 总数据数
         self.total = total
 
     def validate(self):
@@ -7713,13 +7662,16 @@ class GetRecognizeRecordsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetRecognizeRecordsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7732,6 +7684,8 @@ class GetRecognizeRecordsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7740,6 +7694,8 @@ class GetRecognizeRecordsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetRecognizeRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7786,11 +7742,8 @@ class GetSignedDetailByPageRequest(TeaModel):
         page_size: int = None,
         sign_status: int = None,
     ):
-        # pageStart
         self.page_number = page_number
-        # pageSize
         self.page_size = page_size
-        # signStatus
         self.sign_status = sign_status
 
     def validate(self):
@@ -7832,19 +7785,12 @@ class GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList(TeaModel):
         staff_id: str = None,
         title: str = None,
     ):
-        # 部门名称
         self.dept_name = dept_name
-        # 邮件
         self.email = email
-        # 员工名称
         self.name = name
-        # 手机号
         self.phone = phone
-        # 角色
         self.roles = roles
-        # 工号
         self.staff_id = staff_id
-        # 职位
         self.title = title
 
     def validate(self):
@@ -7899,13 +7845,9 @@ class GetSignedDetailByPageResponseBody(TeaModel):
         page_size: int = None,
         total: int = None,
     ):
-        # 员工信息
         self.audit_signed_detail_dtolist = audit_signed_detail_dtolist
-        # 当前页
         self.current_page = current_page
-        # 一页数据量
         self.page_size = page_size
-        # 总数据量
         self.total = total
 
     def validate(self):
@@ -7952,13 +7894,16 @@ class GetSignedDetailByPageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSignedDetailByPageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7971,6 +7916,8 @@ class GetSignedDetailByPageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7979,6 +7926,8 @@ class GetSignedDetailByPageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSignedDetailByPageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8056,19 +8005,12 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         title: str = None,
         user_id: str = None,
     ):
-        # 创建时间
         self.create_time = create_time
-        # mac地址
         self.mac_address = mac_address
-        # 版本信息：Android端: Android,10，IOS端：iOS,12.0.1
         self.model = model
-        # 平台类型
         self.platform = platform
-        # 设备状态
         self.status = status
-        # 设备名称
         self.title = title
-        # 员工Id
         self.user_id = user_id
 
     def validate(self):
@@ -8154,13 +8096,16 @@ class GetTrustDeviceListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetTrustDeviceListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8173,6 +8118,8 @@ class GetTrustDeviceListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8181,6 +8128,8 @@ class GetTrustDeviceListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTrustDeviceListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8226,9 +8175,7 @@ class GetUserAppVersionSummaryRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
-        # 每页包含的数据条数
         self.max_results = max_results
-        # 启始数据游标
         self.next_token = next_token
 
     def validate(self):
@@ -8264,15 +8211,10 @@ class GetUserAppVersionSummaryResponseBodyData(TeaModel):
         stat_date: str = None,
         user_cnt: float = None,
     ):
-        # 版本信息
         self.app_version = app_version
-        # 端信息
         self.client = client
-        # 组织名称
         self.org_name = org_name
-        # 统计日期
         self.stat_date = stat_date
-        # 用户数
         self.user_cnt = user_cnt
 
     def validate(self):
@@ -8318,11 +8260,8 @@ class GetUserAppVersionSummaryResponseBody(TeaModel):
         has_more: bool = None,
         next_token: int = None,
     ):
-        # 用户版本分布情况列表
         self.data = data
-        # 是否有更多数据
         self.has_more = has_more
-        # 下一次请求的分页游标
         self.next_token = next_token
 
     def validate(self):
@@ -8365,13 +8304,16 @@ class GetUserAppVersionSummaryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserAppVersionSummaryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8384,6 +8326,8 @@ class GetUserAppVersionSummaryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8392,6 +8336,8 @@ class GetUserAppVersionSummaryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserAppVersionSummaryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8436,7 +8382,6 @@ class GetUserFaceStateRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
-        # userIds
         self.user_ids = user_ids
 
     def validate(self):
@@ -8465,9 +8410,7 @@ class GetUserFaceStateResponseBodyData(TeaModel):
         state: int = None,
         user_id: str = None,
     ):
-        # 人脸录入状态 1-无人脸 2-有人脸
         self.state = state
-        # userId
         self.user_id = user_id
 
     def validate(self):
@@ -8499,7 +8442,6 @@ class GetUserFaceStateResponseBody(TeaModel):
         self,
         data: List[GetUserFaceStateResponseBodyData] = None,
     ):
-        # data
         self.data = data
 
     def validate(self):
@@ -8534,13 +8476,16 @@ class GetUserFaceStateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserFaceStateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8553,6 +8498,8 @@ class GetUserFaceStateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8561,6 +8508,8 @@ class GetUserFaceStateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserFaceStateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8605,7 +8554,6 @@ class GetUserRealPeopleStateRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
-        # userIds
         self.user_ids = user_ids
 
     def validate(self):
@@ -8634,9 +8582,7 @@ class GetUserRealPeopleStateResponseBodyData(TeaModel):
         state: int = None,
         user_id: str = None,
     ):
-        # 认证状态 1-未认证 2-已认证
         self.state = state
-        # userId
         self.user_id = user_id
 
     def validate(self):
@@ -8668,7 +8614,6 @@ class GetUserRealPeopleStateResponseBody(TeaModel):
         self,
         data: List[GetUserRealPeopleStateResponseBodyData] = None,
     ):
-        # data
         self.data = data
 
     def validate(self):
@@ -8703,13 +8648,16 @@ class GetUserRealPeopleStateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserRealPeopleStateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8722,6 +8670,8 @@ class GetUserRealPeopleStateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8730,6 +8680,8 @@ class GetUserRealPeopleStateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserRealPeopleStateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8776,11 +8728,8 @@ class GetUserStayLengthRequest(TeaModel):
         page_size: int = None,
         stat_date: str = None,
     ):
-        # 分页页数
         self.page_number = page_number
-        # 分页大小
         self.page_size = page_size
-        # 统计日期（只保留当前日期的前30天）
         self.stat_date = stat_date
 
     def validate(self):
@@ -8820,15 +8769,10 @@ class GetUserStayLengthResponseBodyItemList(TeaModel):
         stay_time_len_pc_1d: int = None,
         user_id: str = None,
     ):
-        # 员工名称
         self.name = name
-        # 统计日期
         self.stat_date = stat_date
-        # 1日app使用时长（秒）
         self.stay_time_len_app_1d = stay_time_len_app_1d
-        # 1日PC端使用时长（秒）
         self.stay_time_len_pc_1d = stay_time_len_pc_1d
-        # 工号
         self.user_id = user_id
 
     def validate(self):
@@ -8873,9 +8817,7 @@ class GetUserStayLengthResponseBody(TeaModel):
         item_list: List[GetUserStayLengthResponseBodyItemList] = None,
         total_count: int = None,
     ):
-        # 员工使用时长列表
         self.item_list = item_list
-        # 总数据量
         self.total_count = total_count
 
     def validate(self):
@@ -8914,13 +8856,16 @@ class GetUserStayLengthResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserStayLengthResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8933,6 +8878,8 @@ class GetUserStayLengthResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8941,6 +8888,8 @@ class GetUserStayLengthResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserStayLengthResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8989,15 +8938,10 @@ class ListAuditLogRequest(TeaModel):
         page_size: int = None,
         start_date: int = None,
     ):
-        # 操作日志截止时间，unix时间戳，单位ms
         self.end_date = end_date
-        # 操作记录文件id，作为分页偏移量，与nextGmtCreate一起使用，返回记录的bizId为nextBizId且gmtCreate为nextGmtCreate之后的操作列表，分页查询获取下一页时，传最后一条记录的bizId和gmtCreate。
         self.next_biz_id = next_biz_id
-        # 操作记录生成时间，作为分页偏移量，分页查询时必传，unix时间戳，单位ms
         self.next_gmt_create = next_gmt_create
-        # 操作列表长度，最大500
         self.page_size = page_size
-        # 操作日志起始时间，unix时间戳，单位ms
         self.start_date = start_date
 
     def validate(self):
@@ -9045,15 +8989,10 @@ class ListAuditLogResponseBodyListDocMemberList(TeaModel):
         permission_role: int = None,
         permission_role_view: str = None,
     ):
-        # 成员名称
         self.member_name = member_name
-        # 成员类型
         self.member_type = member_type
-        # 成员类型翻译值
         self.member_type_view = member_type_view
-        # 权限类型
         self.permission_role = permission_role
-        # 权限类型翻译值
         self.permission_role_view = permission_role_view
 
     def validate(self):
@@ -9099,11 +9038,8 @@ class ListAuditLogResponseBodyListDocReceiverList(TeaModel):
         receiver_type: int = None,
         receiver_type_view: str = None,
     ):
-        # 成员名称
         self.receiver_name = receiver_name
-        # 成员类型
         self.receiver_type = receiver_type
-        # 成员类型翻译值
         self.receiver_type_view = receiver_type_view
 
     def validate(self):
@@ -9168,55 +9104,31 @@ class ListAuditLogResponseBodyList(TeaModel):
         work_space_name: str = None,
         work_space_pc_url: str = None,
     ):
-        # 操作类型
         self.action = action
-        # 操作类型翻译值
         self.action_view = action_view
-        # 文件id
         self.biz_id = biz_id
-        # 接收成员列表，仅分享文档返回
         self.doc_member_list = doc_member_list
         self.doc_mobile_url = doc_mobile_url
         self.doc_pc_url = doc_pc_url
-        # 成员授权列表，仅文档授权返回
         self.doc_receiver_list = doc_receiver_list
-        # 记录生成时间，unix时间戳，单位ms
         self.gmt_create = gmt_create
-        # 记录修改时间，unix时间戳，单位ms
         self.gmt_modified = gmt_modified
-        # 操作机器ip
         self.ip_address = ip_address
-        # 操作来源空间
         self.operate_module = operate_module
-        # 操作来源翻译值
         self.operate_module_view = operate_module_view
-        # 用户昵称
         self.operator_name = operator_name
-        # 文件所属组织名称
         self.org_name = org_name
-        # 操作端
         self.platform = platform
-        # 操作端翻译值
         self.platform_view = platform_view
-        # 用户姓名
         self.real_name = real_name
-        # 文件接收方名称
         self.receiver_name = receiver_name
-        # 文件接收方类型
         self.receiver_type = receiver_type
-        # 文件接收方类型翻译值
         self.receiver_type_view = receiver_type_view
-        # test.docx
         self.resource = resource
-        # 文件类型
         self.resource_extension = resource_extension
-        # 文件大小
         self.resource_size = resource_size
-        # 记录状态
         self.status = status
-        # 空间id
         self.target_space_id = target_space_id
-        # 员工的userId
         self.user_id = user_id
         self.work_space_id = work_space_id
         self.work_space_mobile_url = work_space_mobile_url
@@ -9381,7 +9293,6 @@ class ListAuditLogResponseBody(TeaModel):
         self,
         list: List[ListAuditLogResponseBodyList] = None,
     ):
-        # 记录列表
         self.list = list
 
     def validate(self):
@@ -9416,13 +9327,16 @@ class ListAuditLogResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListAuditLogResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9435,6 +9349,8 @@ class ListAuditLogResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9443,6 +9359,8 @@ class ListAuditLogResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListAuditLogResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9487,7 +9405,6 @@ class ListJoinOrgInfoRequest(TeaModel):
         self,
         mobile: str = None,
     ):
-        # 手机号码，企业内必须唯一，不可重复。如果是国际号码，请使用+xx-xxxxxx的格式。
         self.mobile = mobile
 
     def validate(self):
@@ -9518,13 +9435,9 @@ class ListJoinOrgInfoResponseBodyOrgInfoList(TeaModel):
         org_full_name: str = None,
         org_name: int = None,
     ):
-        # 组织ID
         self.corp_id = corp_id
-        # 组织代码
         self.domain = domain
-        # 组织全称
         self.org_full_name = org_full_name
-        # 组织名称
         self.org_name = org_name
 
     def validate(self):
@@ -9564,7 +9477,6 @@ class ListJoinOrgInfoResponseBody(TeaModel):
         self,
         org_info_list: List[ListJoinOrgInfoResponseBodyOrgInfoList] = None,
     ):
-        # 组织信息列表
         self.org_info_list = org_info_list
 
     def validate(self):
@@ -9599,13 +9511,16 @@ class ListJoinOrgInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListJoinOrgInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9618,6 +9533,8 @@ class ListJoinOrgInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9626,6 +9543,8 @@ class ListJoinOrgInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListJoinOrgInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9673,13 +9592,9 @@ class ListMiniAppAvailableVersionRequest(TeaModel):
         page_size: int = None,
         version_type_set: List[int] = None,
     ):
-        # 小程序id
         self.mini_app_id = mini_app_id
-        # 分页数1
         self.page_number = page_number
-        # 分页大小
         self.page_size = page_size
-        # 版本类型列表，0-开发版，1-灰度版，2-发布版，3-体验版
         self.version_type_set = version_type_set
 
     def validate(self):
@@ -9720,9 +9635,7 @@ class ListMiniAppAvailableVersionResponseBodyList(TeaModel):
         build_status: int = None,
         version: str = None,
     ):
-        # 打包状态，0-打包中，1-成功，2-失败
         self.build_status = build_status
-        # 版本
         self.version = version
 
     def validate(self):
@@ -9754,7 +9667,6 @@ class ListMiniAppAvailableVersionResponseBody(TeaModel):
         self,
         list: List[ListMiniAppAvailableVersionResponseBodyList] = None,
     ):
-        # result
         self.list = list
 
     def validate(self):
@@ -9789,13 +9701,16 @@ class ListMiniAppAvailableVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListMiniAppAvailableVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9808,6 +9723,8 @@ class ListMiniAppAvailableVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9816,6 +9733,8 @@ class ListMiniAppAvailableVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListMiniAppAvailableVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9862,11 +9781,8 @@ class ListMiniAppHistoryVersionRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
-        # 小程序id
         self.mini_app_id = mini_app_id
-        # 分页码
         self.page_number = page_number
-        # 分页大小
         self.page_size = page_size
 
     def validate(self):
@@ -9906,15 +9822,10 @@ class ListMiniAppHistoryVersionResponseBodyList(TeaModel):
         package_url: str = None,
         version: str = None,
     ):
-        # 构建状态
         self.build_status = build_status
-        # h5Bundle地址
         self.h_5bundle = h_5bundle
-        # 包大小
         self.package_size = package_size
-        # 包url
         self.package_url = package_url
-        # 版本
         self.version = version
 
     def validate(self):
@@ -9958,7 +9869,6 @@ class ListMiniAppHistoryVersionResponseBody(TeaModel):
         self,
         list: List[ListMiniAppHistoryVersionResponseBodyList] = None,
     ):
-        # result
         self.list = list
 
     def validate(self):
@@ -9993,13 +9903,16 @@ class ListMiniAppHistoryVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListMiniAppHistoryVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10012,6 +9925,8 @@ class ListMiniAppHistoryVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10020,6 +9935,8 @@ class ListMiniAppHistoryVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListMiniAppHistoryVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10065,9 +9982,7 @@ class ListPartnerRolesResponseBodyListVisibleDepts(TeaModel):
         dept_id: int = None,
         name: str = None,
     ):
-        # 部门id
         self.dept_id = dept_id
-        # 部门名称
         self.name = name
 
     def validate(self):
@@ -10100,9 +10015,7 @@ class ListPartnerRolesResponseBodyListVisibleUsers(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
-        # 员工姓名
         self.name = name
-        # 员工id
         self.user_id = user_id
 
     def validate(self):
@@ -10135,9 +10048,7 @@ class ListPartnerRolesResponseBodyListWarningDepts(TeaModel):
         dept_id: int = None,
         name: str = None,
     ):
-        # 部门id
         self.dept_id = dept_id
-        # 部门名称
         self.name = name
 
     def validate(self):
@@ -10170,9 +10081,7 @@ class ListPartnerRolesResponseBodyListWarningUsers(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
-        # 员工姓名
         self.name = name
-        # 员工id
         self.user_id = user_id
 
     def validate(self):
@@ -10210,19 +10119,12 @@ class ListPartnerRolesResponseBodyList(TeaModel):
         warning_depts: List[ListPartnerRolesResponseBodyListWarningDepts] = None,
         warning_users: List[ListPartnerRolesResponseBodyListWarningUsers] = None,
     ):
-        # 角色id
         self.id = id
-        # 是否必邀角色
         self.is_necessary = is_necessary
-        # 角色名称
         self.name = name
-        # 可见部门
         self.visible_depts = visible_depts
-        # 可见员工
         self.visible_users = visible_users
-        # 预警部门
         self.warning_depts = warning_depts
-        # 预警成员
         self.warning_users = warning_users
 
     def validate(self):
@@ -10343,13 +10245,16 @@ class ListPartnerRolesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListPartnerRolesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10362,6 +10267,8 @@ class ListPartnerRolesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10370,6 +10277,8 @@ class ListPartnerRolesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListPartnerRolesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10419,17 +10328,11 @@ class ListPunchScheduleByConditionWithPagingRequest(TeaModel):
         schedule_date_start: str = None,
         user_id_list: List[str] = None,
     ):
-        # 业务实例id，在该接口中表示打卡机实例id
         self.biz_instance_id = biz_instance_id
-        # 分页大小
         self.max_results = max_results
-        # 游标位置
         self.next_token = next_token
-        # 查询日期结束时间（yyyy-MM-dd)
         self.schedule_date_end = schedule_date_end
-        # 查询日期开始时间（yyyy-MM-dd)）
         self.schedule_date_start = schedule_date_start
-        # 用户id列表
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -10481,15 +10384,10 @@ class ListPunchScheduleByConditionWithPagingResponseBodyList(TeaModel):
         user_id: str = None,
         user_punch_time: int = None,
     ):
-        # 巡点业务id，同个巡点id同一个用户最多会有两条记录，一条签到，一条签退
         self.biz_outer_id = biz_outer_id
-        # 打卡巡点机名称
         self.position_name = position_name
-        # 巡点类型（checkIn-签到，checkOut-签退）
         self.punch_symbol = punch_symbol
-        # 用户id
         self.user_id = user_id
-        # 用户巡点打卡时间
         self.user_punch_time = user_punch_time
 
     def validate(self):
@@ -10535,11 +10433,8 @@ class ListPunchScheduleByConditionWithPagingResponseBody(TeaModel):
         list: List[ListPunchScheduleByConditionWithPagingResponseBodyList] = None,
         next_token: int = None,
     ):
-        # 是否有更多
         self.has_more = has_more
-        # 返回列表
         self.list = list
-        # 下一次游标位置
         self.next_token = next_token
 
     def validate(self):
@@ -10582,13 +10477,16 @@ class ListPunchScheduleByConditionWithPagingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListPunchScheduleByConditionWithPagingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10601,6 +10499,8 @@ class ListPunchScheduleByConditionWithPagingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10609,6 +10509,8 @@ class ListPunchScheduleByConditionWithPagingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListPunchScheduleByConditionWithPagingResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10656,13 +10558,9 @@ class PublishFileChangeNoticeRequest(TeaModel):
         operator_union_id: str = None,
         space_id: str = None,
     ):
-        # 钉盘文件id
         self.file_id = file_id
-        # 操作类型: 1-添加 2-修改
         self.operate_type = operate_type
-        # 操作人unionId
         self.operator_union_id = operator_union_id
-        # 钉盘spaceId
         self.space_id = space_id
 
     def validate(self):
@@ -10701,11 +10599,14 @@ class PublishFileChangeNoticeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -10715,12 +10616,16 @@ class PublishFileChangeNoticeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -10763,9 +10668,7 @@ class PushBadgeRequestBadgeItems(TeaModel):
         push_value: str = None,
         user_id: str = None,
     ):
-        # 推送的内容（目前仅限数字）
         self.push_value = push_value
-        # 员工ID。
         self.user_id = user_id
 
     def validate(self):
@@ -10799,11 +10702,8 @@ class PushBadgeRequest(TeaModel):
         badge_items: List[PushBadgeRequestBadgeItems] = None,
         push_type: str = None,
     ):
-        # 微应用agentId
         self.agent_id = agent_id
-        # 推送列表
         self.badge_items = badge_items
-        # 推送类型
         self.push_type = push_type
 
     def validate(self):
@@ -10847,7 +10747,6 @@ class PushBadgeResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -10874,13 +10773,16 @@ class PushBadgeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PushBadgeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10893,6 +10795,8 @@ class PushBadgeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10901,6 +10805,8 @@ class PushBadgeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PushBadgeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10946,9 +10852,7 @@ class QueryAcrossCloudStroageConfigsRequest(TeaModel):
         target_cloud_type: int = None,
         target_corp_id: str = None,
     ):
-        # 云厂商类型
         self.target_cloud_type = target_cloud_type
-        # 企业的corpId
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -10984,15 +10888,10 @@ class QueryAcrossCloudStroageConfigsResponseBody(TeaModel):
         cloud_type: int = None,
         endpoint: str = None,
     ):
-        # 密匙id
         self.access_key_id = access_key_id
-        # 密匙密码
         self.access_key_secret = access_key_secret
-        # bucket名称
         self.bucket_name = bucket_name
-        # 云厂商类型
         self.cloud_type = cloud_type
-        # 存储域名地址
         self.endpoint = endpoint
 
     def validate(self):
@@ -11035,13 +10934,16 @@ class QueryAcrossCloudStroageConfigsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryAcrossCloudStroageConfigsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11054,6 +10956,8 @@ class QueryAcrossCloudStroageConfigsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11062,6 +10966,8 @@ class QueryAcrossCloudStroageConfigsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAcrossCloudStroageConfigsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11107,9 +11013,7 @@ class QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1(TeaMode
         label_id: int = None,
         labelname: str = None,
     ):
-        # 标签id
         self.label_id = label_id
-        # 标签名称
         self.labelname = labelname
 
     def validate(self):
@@ -11145,15 +11049,10 @@ class QueryPartnerInfoResponseBodyPartnerDeptList(TeaModel):
         title: str = None,
         value: str = None,
     ):
-        # 部门人数
         self.member_count = member_count
-        # 一级伙伴类型
         self.partner_label_model_level_1 = partner_label_model_level_1
-        # 伙伴编码
         self.partner_num = partner_num
-        # 部门名称
         self.title = title
-        # 部门id
         self.value = value
 
     def validate(self):
@@ -11200,9 +11099,7 @@ class QueryPartnerInfoResponseBodyPartnerLabelList(TeaModel):
         id: int = None,
         name: str = None,
     ):
-        # label id
         self.id = id
-        # label value
         self.name = name
 
     def validate(self):
@@ -11236,11 +11133,8 @@ class QueryPartnerInfoResponseBody(TeaModel):
         partner_label_list: List[QueryPartnerInfoResponseBodyPartnerLabelList] = None,
         user_id: str = None,
     ):
-        # 部门列表
         self.partner_dept_list = partner_dept_list
-        # 伙伴标签
         self.partner_label_list = partner_label_list
-        # 员工id
         self.user_id = user_id
 
     def validate(self):
@@ -11292,13 +11186,16 @@ class QueryPartnerInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryPartnerInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11311,6 +11208,8 @@ class QueryPartnerInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11319,6 +11218,8 @@ class QueryPartnerInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryPartnerInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11369,17 +11270,11 @@ class QueryUserBehaviorRequest(TeaModel):
         type: int = None,
         user_id: str = None,
     ):
-        # 结束时间(默认当前时间)
         self.end_time = end_time
-        # 起始页(默认从1开始)
         self.page_number = page_number
-        # 页大小(最大100)
         self.page_size = page_size
-        # 端类型((0-全部，1-iOS，2-Android, 3-Mac, 4-Windows))
         self.platform = platform
-        # 开始时间(默认当前时间前7天)
         self.start_time = start_time
-        # 用户行为((0-全部，1-截屏，2-录屏))
         self.type = type
         self.user_id = user_id
 
@@ -11497,7 +11392,6 @@ class QueryUserBehaviorResponseBody(TeaModel):
         data_cnt: int = None,
         total_cnt: int = None,
     ):
-        # 数据列表
         self.data = data
         self.data_cnt = data_cnt
         self.total_cnt = total_cnt
@@ -11542,13 +11436,16 @@ class QueryUserBehaviorResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryUserBehaviorResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11561,6 +11458,8 @@ class QueryUserBehaviorResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11569,6 +11468,8 @@ class QueryUserBehaviorResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryUserBehaviorResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11615,11 +11516,8 @@ class RollbackMiniAppVersionRequest(TeaModel):
         rollback_version: str = None,
         target_version: str = None,
     ):
-        # 小程序id
         self.mini_app_id = mini_app_id
-        # 被回滚版本
         self.rollback_version = rollback_version
-        # 回滚到的版本
         self.target_version = target_version
 
     def validate(self):
@@ -11656,9 +11554,7 @@ class RollbackMiniAppVersionResponseBody(TeaModel):
         cause: str = None,
         code: int = None,
     ):
-        # 失败原因
         self.cause = cause
-        # 结果码
         self.code = code
 
     def validate(self):
@@ -11689,13 +11585,16 @@ class RollbackMiniAppVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RollbackMiniAppVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11708,6 +11607,8 @@ class RollbackMiniAppVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11716,6 +11617,8 @@ class RollbackMiniAppVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RollbackMiniAppVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11765,17 +11668,11 @@ class SaveAcrossCloudStroageConfigsRequest(TeaModel):
         endpoint: str = None,
         target_corp_id: str = None,
     ):
-        # 密匙id
         self.access_key_id = access_key_id
-        # 密匙密码
         self.access_key_secret = access_key_secret
-        # bucket名称
         self.bucket_name = bucket_name
-        # 云厂商类型
         self.cloud_type = cloud_type
-        # 存储域名地址
         self.endpoint = endpoint
-        # 企业id
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -11825,11 +11722,8 @@ class SaveAcrossCloudStroageConfigsResponseBody(TeaModel):
         endpoint: str = None,
         state: int = None,
     ):
-        # 密匙ID
         self.access_key_id = access_key_id
-        # 存储域名地址
         self.endpoint = endpoint
-        # 执行结果
         self.state = state
 
     def validate(self):
@@ -11864,13 +11758,16 @@ class SaveAcrossCloudStroageConfigsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SaveAcrossCloudStroageConfigsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11883,6 +11780,8 @@ class SaveAcrossCloudStroageConfigsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11891,6 +11790,8 @@ class SaveAcrossCloudStroageConfigsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SaveAcrossCloudStroageConfigsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11952,41 +11853,23 @@ class SaveAndSubmitAuthInfoRequest(TeaModel):
         target_corp_id: str = None,
         unified_social_credit: str = None,
     ):
-        # 申请说明
         self.apply_remark = apply_remark
-        # 认证书图片mediaId
         self.authorize_media_id = authorize_media_id
-        # 行业
         self.industry = industry
-        # 企业法人
         self.legal_person = legal_person
-        # 企业法人身份证
         self.legal_person_id_card = legal_person_id_card
-        # 营业执照图片mediaId
         self.license_media_id = license_media_id
-        # 城市编码
         self.loc_city = loc_city
-        # 城市名字
         self.loc_city_name = loc_city_name
-        # 省份编码
         self.loc_province = loc_province
-        # 省份名字
         self.loc_province_name = loc_province_name
-        # 申请人手机号（需要实名认证）
         self.mobile_num = mobile_num
-        # 组织名，提交认证的时候可以修改
         self.org_name = org_name
-        # 组织机构代码证号（格式11111111-1）
         self.organization_code = organization_code
-        # 组织机构代码证图片mediaId
         self.organization_code_media_id = organization_code_media_id
-        # 认证企业详细地址
         self.regist_location = regist_location
-        # 营业执照注册号（一般15位）
         self.regist_num = regist_num
-        # 企业id
         self.target_corp_id = target_corp_id
-        # 社会统一信用代码（固定18位）
         self.unified_social_credit = unified_social_credit
 
     def validate(self):
@@ -12082,7 +11965,6 @@ class SaveAndSubmitAuthInfoResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 是否成功。
         self.success = success
 
     def validate(self):
@@ -12109,13 +11991,16 @@ class SaveAndSubmitAuthInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SaveAndSubmitAuthInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12128,6 +12013,8 @@ class SaveAndSubmitAuthInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12136,6 +12023,8 @@ class SaveAndSubmitAuthInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SaveAndSubmitAuthInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12181,9 +12070,7 @@ class SaveWhiteAppRequest(TeaModel):
         agent_id_list: List[int] = None,
         operation: str = None,
     ):
-        # 微应用白名单AgentID
         self.agent_id_list = agent_id_list
-        # 操作符
         self.operation = operation
 
     def validate(self):
@@ -12241,13 +12128,16 @@ class SaveWhiteAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SaveWhiteAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12260,6 +12150,8 @@ class SaveWhiteAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12268,6 +12160,8 @@ class SaveWhiteAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SaveWhiteAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12324,31 +12218,18 @@ class SearchOrgInnerGroupInfoRequest(TeaModel):
         sync_to_dingpan: int = None,
         uuid: str = None,
     ):
-        # createTimeEnd
         self.create_time_end = create_time_end
-        # createTimeStart
         self.create_time_start = create_time_start
-        # groupMembersCntEnd
         self.group_members_count_end = group_members_count_end
-        # groupMembersCntStart
         self.group_members_count_start = group_members_count_start
-        # groupName
         self.group_name = group_name
-        # groupOwner
         self.group_owner = group_owner
-        # lastActiveTimeEnd
         self.last_active_time_end = last_active_time_end
-        # lastActiveTimeStart
         self.last_active_time_start = last_active_time_start
-        # operatorUserId
         self.operator_user_id = operator_user_id
-        # pageSize
         self.page_size = page_size
-        # pageStart
         self.page_start = page_start
-        # syncToDingpan
         self.sync_to_dingpan = sync_to_dingpan
-        # uuid
         self.uuid = uuid
 
     def validate(self):
@@ -12575,13 +12456,16 @@ class SearchOrgInnerGroupInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SearchOrgInnerGroupInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12594,6 +12478,8 @@ class SearchOrgInnerGroupInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12602,6 +12488,8 @@ class SearchOrgInnerGroupInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchOrgInnerGroupInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12647,9 +12535,7 @@ class SendAppDingRequest(TeaModel):
         content: str = None,
         userids: List[str] = None,
     ):
-        # 消息内容
         self.content = content
-        # 接收DING消息的用户列表
         self.userids = userids
 
     def validate(self):
@@ -12680,11 +12566,14 @@ class SendAppDingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -12694,12 +12583,16 @@ class SendAppDingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -12745,15 +12638,10 @@ class SendInvitationRequest(TeaModel):
         partner_num: str = None,
         phone: str = None,
     ):
-        # 部门id
         self.dept_id = dept_id
-        # 组织别名
         self.org_alias = org_alias
-        # 伙伴标签id
         self.partner_label_id = partner_label_id
-        # 伙伴编码
         self.partner_num = partner_num
-        # 手机号
         self.phone = phone
 
     def validate(self):
@@ -12796,11 +12684,14 @@ class SendInvitationResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -12810,12 +12701,16 @@ class SendInvitationResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -12858,9 +12753,7 @@ class SendPhoneDingRequest(TeaModel):
         content: str = None,
         userids: List[str] = None,
     ):
-        # 消息内容
         self.content = content
-        # 接收DING消息的用户列表
         self.userids = userids
 
     def validate(self):
@@ -12892,7 +12785,6 @@ class SendPhoneDingResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 本次操作是否更新成功
         self.success = success
 
     def validate(self):
@@ -12919,13 +12811,16 @@ class SendPhoneDingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SendPhoneDingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12938,6 +12833,8 @@ class SendPhoneDingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12946,6 +12843,8 @@ class SendPhoneDingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SendPhoneDingResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12992,11 +12891,8 @@ class SetDeptPartnerTypeAndNumRequest(TeaModel):
         label_ids: List[str] = None,
         partner_num: str = None,
     ):
-        # 部门id
         self.dept_id = dept_id
-        # 伙伴类型id列表
         self.label_ids = label_ids
-        # 伙伴编码
         self.partner_num = partner_num
 
     def validate(self):
@@ -13031,11 +12927,14 @@ class SetDeptPartnerTypeAndNumResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -13045,12 +12944,16 @@ class SetDeptPartnerTypeAndNumResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -13093,9 +12996,7 @@ class UpdateFileStatusRequest(TeaModel):
         request_ids: List[str] = None,
         status: int = None,
     ):
-        # 请求id列表
         self.request_ids = request_ids
-        # 更新的状态
         self.status = status
 
     def validate(self):
@@ -13127,7 +13028,6 @@ class UpdateFileStatusResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -13154,13 +13054,16 @@ class UpdateFileStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateFileStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -13173,6 +13076,8 @@ class UpdateFileStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -13181,6 +13086,8 @@ class UpdateFileStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateFileStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -13227,11 +13134,8 @@ class UpdateMiniAppVersionStatusRequest(TeaModel):
         version: str = None,
         version_type: int = None,
     ):
-        # 小程序id
         self.mini_app_id = mini_app_id
-        # 版本
         self.version = version
-        # 版本类型
         self.version_type = version_type
 
     def validate(self):
@@ -13268,9 +13172,7 @@ class UpdateMiniAppVersionStatusResponseBody(TeaModel):
         cause: str = None,
         code: str = None,
     ):
-        # 原因
         self.cause = cause
-        # 返回码
         self.code = code
 
     def validate(self):
@@ -13301,13 +13203,16 @@ class UpdateMiniAppVersionStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateMiniAppVersionStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -13320,6 +13225,8 @@ class UpdateMiniAppVersionStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -13328,6 +13235,8 @@ class UpdateMiniAppVersionStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateMiniAppVersionStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -13374,11 +13283,8 @@ class UpdatePartnerVisibilityRequest(TeaModel):
         label_id: int = None,
         user_ids: List[str] = None,
     ):
-        # 可见的部门id
         self.dept_ids = dept_ids
-        # 标签id
         self.label_id = label_id
-        # 可见的员工id
         self.user_ids = user_ids
 
     def validate(self):
@@ -13413,13 +13319,16 @@ class UpdatePartnerVisibilityResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: bool = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
 
     def to_map(self):
@@ -13430,6 +13339,8 @@ class UpdatePartnerVisibilityResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body
         return result
@@ -13438,6 +13349,8 @@ class UpdatePartnerVisibilityResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             self.body = m.get('body')
         return self
@@ -13483,11 +13396,8 @@ class UpdateRoleVisibilityRequest(TeaModel):
         label_id: int = None,
         user_ids: List[str] = None,
     ):
-        # 可见的部门id
         self.dept_ids = dept_ids
-        # 标签id
         self.label_id = label_id
-        # 可见的员工id
         self.user_ids = user_ids
 
     def validate(self):
@@ -13522,13 +13432,16 @@ class UpdateRoleVisibilityResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: bool = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
 
     def to_map(self):
@@ -13539,6 +13452,8 @@ class UpdateRoleVisibilityResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body
         return result
@@ -13547,6 +13462,8 @@ class UpdateRoleVisibilityResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             self.body = m.get('body')
         return self
@@ -13591,9 +13508,7 @@ class UpdateStorageModeRequest(TeaModel):
         file_storage_mode: str = None,
         target_corp_id: str = None,
     ):
-        # 专属文件跨云存储类型 0：公有模式，1：私有模式，注意，如不更新，则不填写这个字段，字段一旦有值，都会触发原有配置的删除
         self.file_storage_mode = file_storage_mode
-        # 企业id
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -13625,7 +13540,6 @@ class UpdateStorageModeResponseBody(TeaModel):
         self,
         target_corp_id: str = None,
     ):
-        # 组织id
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -13652,13 +13566,16 @@ class UpdateStorageModeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateStorageModeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -13671,6 +13588,8 @@ class UpdateStorageModeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -13679,6 +13598,8 @@ class UpdateStorageModeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateStorageModeResponseBody()
             self.body = temp_model.from_map(m['body'])

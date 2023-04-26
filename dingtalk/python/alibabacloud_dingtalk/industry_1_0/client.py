@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.industry_1_0 import models as dingtalkindustry__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def campus_add_renter_member(
-        self,
-        request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,
-    ) -> dingtalkindustry__1__0_models.CampusAddRenterMemberResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusAddRenterMemberHeaders()
-        return self.campus_add_renter_member_with_options(request, headers, runtime)
-
-    async def campus_add_renter_member_async(
-        self,
-        request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,
-    ) -> dingtalkindustry__1__0_models.CampusAddRenterMemberResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusAddRenterMemberHeaders()
-        return await self.campus_add_renter_member_with_options_async(request, headers, runtime)
 
     def campus_add_renter_member_with_options(
         self,
@@ -66,9 +56,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusAddRenterMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusAddRenterMemberResponse(),
-            self.do_roarequest('CampusAddRenterMember', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_add_renter_member_with_options_async(
@@ -98,26 +99,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusAddRenterMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusAddRenterMemberResponse(),
-            await self.do_roarequest_async('CampusAddRenterMember', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_create_campus(
+    def campus_add_renter_member(
         self,
-        request: dingtalkindustry__1__0_models.CampusCreateCampusRequest,
-    ) -> dingtalkindustry__1__0_models.CampusCreateCampusResponse:
+        request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusAddRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusCreateCampusHeaders()
-        return self.campus_create_campus_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusAddRenterMemberHeaders()
+        return self.campus_add_renter_member_with_options(request, headers, runtime)
 
-    async def campus_create_campus_async(
+    async def campus_add_renter_member_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusCreateCampusRequest,
-    ) -> dingtalkindustry__1__0_models.CampusCreateCampusResponse:
+        request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusAddRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusCreateCampusHeaders()
-        return await self.campus_create_campus_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusAddRenterMemberHeaders()
+        return await self.campus_add_renter_member_with_options_async(request, headers, runtime)
 
     def campus_create_campus_with_options(
         self,
@@ -170,9 +182,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusCreateCampus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusCreateCampusResponse(),
-            self.do_roarequest('CampusCreateCampus', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_create_campus_with_options_async(
@@ -226,26 +249,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusCreateCampus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusCreateCampusResponse(),
-            await self.do_roarequest_async('CampusCreateCampus', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_create_campus_group(
+    def campus_create_campus(
         self,
-        request: dingtalkindustry__1__0_models.CampusCreateCampusGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusCreateCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusCreateCampusGroupHeaders()
-        return self.campus_create_campus_group_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusCreateCampusHeaders()
+        return self.campus_create_campus_with_options(request, headers, runtime)
 
-    async def campus_create_campus_group_async(
+    async def campus_create_campus_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusCreateCampusGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusCreateCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusCreateCampusGroupHeaders()
-        return await self.campus_create_campus_group_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusCreateCampusHeaders()
+        return await self.campus_create_campus_with_options_async(request, headers, runtime)
 
     def campus_create_campus_group_with_options(
         self,
@@ -268,9 +302,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusCreateCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse(),
-            self.do_roarequest('CampusCreateCampusGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_create_campus_group_with_options_async(
@@ -294,26 +339,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusCreateCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse(),
-            await self.do_roarequest_async('CampusCreateCampusGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_create_renter(
+    def campus_create_campus_group(
         self,
-        request: dingtalkindustry__1__0_models.CampusCreateRenterRequest,
-    ) -> dingtalkindustry__1__0_models.CampusCreateRenterResponse:
+        request: dingtalkindustry__1__0_models.CampusCreateCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusCreateRenterHeaders()
-        return self.campus_create_renter_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusCreateCampusGroupHeaders()
+        return self.campus_create_campus_group_with_options(request, headers, runtime)
 
-    async def campus_create_renter_async(
+    async def campus_create_campus_group_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusCreateRenterRequest,
-    ) -> dingtalkindustry__1__0_models.CampusCreateRenterResponse:
+        request: dingtalkindustry__1__0_models.CampusCreateCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusCreateRenterHeaders()
-        return await self.campus_create_renter_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusCreateCampusGroupHeaders()
+        return await self.campus_create_campus_group_with_options_async(request, headers, runtime)
 
     def campus_create_renter_with_options(
         self,
@@ -344,9 +400,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusCreateRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusCreateRenterResponse(),
-            self.do_roarequest('CampusCreateRenter', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_create_renter_with_options_async(
@@ -378,26 +445,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusCreateRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusCreateRenterResponse(),
-            await self.do_roarequest_async('CampusCreateRenter', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_del_renter_member(
+    def campus_create_renter(
         self,
-        request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
-    ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
+        request: dingtalkindustry__1__0_models.CampusCreateRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusDelRenterMemberHeaders()
-        return self.campus_del_renter_member_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusCreateRenterHeaders()
+        return self.campus_create_renter_with_options(request, headers, runtime)
 
-    async def campus_del_renter_member_async(
+    async def campus_create_renter_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
-    ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
+        request: dingtalkindustry__1__0_models.CampusCreateRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusCreateRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusDelRenterMemberHeaders()
-        return await self.campus_del_renter_member_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusCreateRenterHeaders()
+        return await self.campus_create_renter_with_options_async(request, headers, runtime)
 
     def campus_del_renter_member_with_options(
         self,
@@ -420,9 +498,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusDelRenterMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/members',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusDelRenterMemberResponse(),
-            self.do_roarequest('CampusDelRenterMember', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_del_renter_member_with_options_async(
@@ -446,26 +535,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusDelRenterMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/members',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusDelRenterMemberResponse(),
-            await self.do_roarequest_async('CampusDelRenterMember', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_delete_campus_group(
+    def campus_del_renter_member(
         self,
-        request: dingtalkindustry__1__0_models.CampusDeleteCampusGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusDeleteCampusGroupHeaders()
-        return self.campus_delete_campus_group_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusDelRenterMemberHeaders()
+        return self.campus_del_renter_member_with_options(request, headers, runtime)
 
-    async def campus_delete_campus_group_async(
+    async def campus_del_renter_member_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusDeleteCampusGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusDelRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDelRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusDeleteCampusGroupHeaders()
-        return await self.campus_delete_campus_group_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusDelRenterMemberHeaders()
+        return await self.campus_del_renter_member_with_options_async(request, headers, runtime)
 
     def campus_delete_campus_group_with_options(
         self,
@@ -486,9 +586,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusDeleteCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groups',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse(),
-            self.do_roarequest('CampusDeleteCampusGroup', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_delete_campus_group_with_options_async(
@@ -510,26 +621,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusDeleteCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groups',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse(),
-            await self.do_roarequest_async('CampusDeleteCampusGroup', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_delete_renter(
+    def campus_delete_campus_group(
         self,
-        request: dingtalkindustry__1__0_models.CampusDeleteRenterRequest,
-    ) -> dingtalkindustry__1__0_models.CampusDeleteRenterResponse:
+        request: dingtalkindustry__1__0_models.CampusDeleteCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusDeleteRenterHeaders()
-        return self.campus_delete_renter_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusDeleteCampusGroupHeaders()
+        return self.campus_delete_campus_group_with_options(request, headers, runtime)
 
-    async def campus_delete_renter_async(
+    async def campus_delete_campus_group_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusDeleteRenterRequest,
-    ) -> dingtalkindustry__1__0_models.CampusDeleteRenterResponse:
+        request: dingtalkindustry__1__0_models.CampusDeleteCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusDeleteRenterHeaders()
-        return await self.campus_delete_renter_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusDeleteCampusGroupHeaders()
+        return await self.campus_delete_campus_group_with_options_async(request, headers, runtime)
 
     def campus_delete_renter_with_options(
         self,
@@ -550,9 +672,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusDeleteRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusDeleteRenterResponse(),
-            self.do_roarequest('CampusDeleteRenter', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/renters', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_delete_renter_with_options_async(
@@ -574,26 +707,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusDeleteRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusDeleteRenterResponse(),
-            await self.do_roarequest_async('CampusDeleteRenter', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/campuses/renters', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_get_campus(
+    def campus_delete_renter(
         self,
-        request: dingtalkindustry__1__0_models.CampusGetCampusRequest,
-    ) -> dingtalkindustry__1__0_models.CampusGetCampusResponse:
+        request: dingtalkindustry__1__0_models.CampusDeleteRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusGetCampusHeaders()
-        return self.campus_get_campus_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusDeleteRenterHeaders()
+        return self.campus_delete_renter_with_options(request, headers, runtime)
 
-    async def campus_get_campus_async(
+    async def campus_delete_renter_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusGetCampusRequest,
-    ) -> dingtalkindustry__1__0_models.CampusGetCampusResponse:
+        request: dingtalkindustry__1__0_models.CampusDeleteRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusDeleteRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusGetCampusHeaders()
-        return await self.campus_get_campus_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusDeleteRenterHeaders()
+        return await self.campus_delete_renter_with_options_async(request, headers, runtime)
 
     def campus_get_campus_with_options(
         self,
@@ -614,9 +758,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusGetCampus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projectInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusGetCampusResponse(),
-            self.do_roarequest('CampusGetCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projectInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_get_campus_with_options_async(
@@ -638,26 +793,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusGetCampus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projectInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusGetCampusResponse(),
-            await self.do_roarequest_async('CampusGetCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projectInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_get_campus_group(
+    def campus_get_campus(
         self,
-        request: dingtalkindustry__1__0_models.CampusGetCampusGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CampusGetCampusGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusGetCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusGetCampusGroupHeaders()
-        return self.campus_get_campus_group_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusGetCampusHeaders()
+        return self.campus_get_campus_with_options(request, headers, runtime)
 
-    async def campus_get_campus_group_async(
+    async def campus_get_campus_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusGetCampusGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CampusGetCampusGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusGetCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusGetCampusGroupHeaders()
-        return await self.campus_get_campus_group_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusGetCampusHeaders()
+        return await self.campus_get_campus_with_options_async(request, headers, runtime)
 
     def campus_get_campus_group_with_options(
         self,
@@ -678,9 +844,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusGetCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groupInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusGetCampusGroupResponse(),
-            self.do_roarequest('CampusGetCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects/groupInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_get_campus_group_with_options_async(
@@ -702,26 +879,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusGetCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groupInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusGetCampusGroupResponse(),
-            await self.do_roarequest_async('CampusGetCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects/groupInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_get_renter(
+    def campus_get_campus_group(
         self,
-        request: dingtalkindustry__1__0_models.CampusGetRenterRequest,
-    ) -> dingtalkindustry__1__0_models.CampusGetRenterResponse:
+        request: dingtalkindustry__1__0_models.CampusGetCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusGetRenterHeaders()
-        return self.campus_get_renter_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusGetCampusGroupHeaders()
+        return self.campus_get_campus_group_with_options(request, headers, runtime)
 
-    async def campus_get_renter_async(
+    async def campus_get_campus_group_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusGetRenterRequest,
-    ) -> dingtalkindustry__1__0_models.CampusGetRenterResponse:
+        request: dingtalkindustry__1__0_models.CampusGetCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusGetRenterHeaders()
-        return await self.campus_get_renter_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusGetCampusGroupHeaders()
+        return await self.campus_get_campus_group_with_options_async(request, headers, runtime)
 
     def campus_get_renter_with_options(
         self,
@@ -742,9 +930,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusGetRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renterInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusGetRenterResponse(),
-            self.do_roarequest('CampusGetRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renterInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_get_renter_with_options_async(
@@ -766,26 +965,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusGetRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renterInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusGetRenterResponse(),
-            await self.do_roarequest_async('CampusGetRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renterInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_get_renter_member(
+    def campus_get_renter(
         self,
-        request: dingtalkindustry__1__0_models.CampusGetRenterMemberRequest,
-    ) -> dingtalkindustry__1__0_models.CampusGetRenterMemberResponse:
+        request: dingtalkindustry__1__0_models.CampusGetRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusGetRenterMemberHeaders()
-        return self.campus_get_renter_member_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusGetRenterHeaders()
+        return self.campus_get_renter_with_options(request, headers, runtime)
 
-    async def campus_get_renter_member_async(
+    async def campus_get_renter_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusGetRenterMemberRequest,
-    ) -> dingtalkindustry__1__0_models.CampusGetRenterMemberResponse:
+        request: dingtalkindustry__1__0_models.CampusGetRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusGetRenterMemberHeaders()
-        return await self.campus_get_renter_member_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusGetRenterHeaders()
+        return await self.campus_get_renter_with_options_async(request, headers, runtime)
 
     def campus_get_renter_member_with_options(
         self,
@@ -808,9 +1018,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusGetRenterMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/memberInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusGetRenterMemberResponse(),
-            self.do_roarequest('CampusGetRenterMember', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters/memberInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_get_renter_member_with_options_async(
@@ -834,26 +1055,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusGetRenterMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/memberInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusGetRenterMemberResponse(),
-            await self.do_roarequest_async('CampusGetRenterMember', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters/memberInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_list_campus(
+    def campus_get_renter_member(
         self,
-        request: dingtalkindustry__1__0_models.CampusListCampusRequest,
-    ) -> dingtalkindustry__1__0_models.CampusListCampusResponse:
+        request: dingtalkindustry__1__0_models.CampusGetRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusListCampusHeaders()
-        return self.campus_list_campus_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusGetRenterMemberHeaders()
+        return self.campus_get_renter_member_with_options(request, headers, runtime)
 
-    async def campus_list_campus_async(
+    async def campus_get_renter_member_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusListCampusRequest,
-    ) -> dingtalkindustry__1__0_models.CampusListCampusResponse:
+        request: dingtalkindustry__1__0_models.CampusGetRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusGetRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusListCampusHeaders()
-        return await self.campus_list_campus_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusGetRenterMemberHeaders()
+        return await self.campus_get_renter_member_with_options_async(request, headers, runtime)
 
     def campus_list_campus_with_options(
         self,
@@ -874,9 +1106,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusListCampus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusListCampusResponse(),
-            self.do_roarequest('CampusListCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_list_campus_with_options_async(
@@ -898,20 +1141,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusListCampus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusListCampusResponse(),
-            await self.do_roarequest_async('CampusListCampus', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_list_campus_group(self) -> dingtalkindustry__1__0_models.CampusListCampusGroupResponse:
+    def campus_list_campus(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusListCampusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusListCampusGroupHeaders()
-        return self.campus_list_campus_group_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusListCampusHeaders()
+        return self.campus_list_campus_with_options(request, headers, runtime)
 
-    async def campus_list_campus_group_async(self) -> dingtalkindustry__1__0_models.CampusListCampusGroupResponse:
+    async def campus_list_campus_async(
+        self,
+        request: dingtalkindustry__1__0_models.CampusListCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusListCampusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusListCampusGroupHeaders()
-        return await self.campus_list_campus_group_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusListCampusHeaders()
+        return await self.campus_list_campus_with_options_async(request, headers, runtime)
 
     def campus_list_campus_group_with_options(
         self,
@@ -926,9 +1186,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CampusListCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusListCampusGroupResponse(),
-            self.do_roarequest('CampusListCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_list_campus_group_with_options_async(
@@ -944,20 +1215,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CampusListCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusListCampusGroupResponse(),
-            await self.do_roarequest_async('CampusListCampusGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_list_renter(self) -> dingtalkindustry__1__0_models.CampusListRenterResponse:
+    def campus_list_campus_group(self) -> dingtalkindustry__1__0_models.CampusListCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusListRenterHeaders()
-        return self.campus_list_renter_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusListCampusGroupHeaders()
+        return self.campus_list_campus_group_with_options(headers, runtime)
 
-    async def campus_list_renter_async(self) -> dingtalkindustry__1__0_models.CampusListRenterResponse:
+    async def campus_list_campus_group_async(self) -> dingtalkindustry__1__0_models.CampusListCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusListRenterHeaders()
-        return await self.campus_list_renter_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusListCampusGroupHeaders()
+        return await self.campus_list_campus_group_with_options_async(headers, runtime)
 
     def campus_list_renter_with_options(
         self,
@@ -972,9 +1254,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CampusListRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusListRenterResponse(),
-            self.do_roarequest('CampusListRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_list_renter_with_options_async(
@@ -990,26 +1283,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CampusListRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusListRenterResponse(),
-            await self.do_roarequest_async('CampusListRenter', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_list_renter_members(
-        self,
-        request: dingtalkindustry__1__0_models.CampusListRenterMembersRequest,
-    ) -> dingtalkindustry__1__0_models.CampusListRenterMembersResponse:
+    def campus_list_renter(self) -> dingtalkindustry__1__0_models.CampusListRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusListRenterMembersHeaders()
-        return self.campus_list_renter_members_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusListRenterHeaders()
+        return self.campus_list_renter_with_options(headers, runtime)
 
-    async def campus_list_renter_members_async(
-        self,
-        request: dingtalkindustry__1__0_models.CampusListRenterMembersRequest,
-    ) -> dingtalkindustry__1__0_models.CampusListRenterMembersResponse:
+    async def campus_list_renter_async(self) -> dingtalkindustry__1__0_models.CampusListRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusListRenterMembersHeaders()
-        return await self.campus_list_renter_members_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusListRenterHeaders()
+        return await self.campus_list_renter_with_options_async(headers, runtime)
 
     def campus_list_renter_members_with_options(
         self,
@@ -1030,9 +1328,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusListRenterMembers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusListRenterMembersResponse(),
-            self.do_roarequest('CampusListRenterMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_list_renter_members_with_options_async(
@@ -1054,26 +1363,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CampusListRenterMembers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusListRenterMembersResponse(),
-            await self.do_roarequest_async('CampusListRenterMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_update_campus(
+    def campus_list_renter_members(
         self,
-        request: dingtalkindustry__1__0_models.CampusUpdateCampusRequest,
-    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusResponse:
+        request: dingtalkindustry__1__0_models.CampusListRenterMembersRequest,
+    ) -> dingtalkindustry__1__0_models.CampusListRenterMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusUpdateCampusHeaders()
-        return self.campus_update_campus_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusListRenterMembersHeaders()
+        return self.campus_list_renter_members_with_options(request, headers, runtime)
 
-    async def campus_update_campus_async(
+    async def campus_list_renter_members_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusUpdateCampusRequest,
-    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusResponse:
+        request: dingtalkindustry__1__0_models.CampusListRenterMembersRequest,
+    ) -> dingtalkindustry__1__0_models.CampusListRenterMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusUpdateCampusHeaders()
-        return await self.campus_update_campus_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusListRenterMembersHeaders()
+        return await self.campus_list_renter_members_with_options_async(request, headers, runtime)
 
     def campus_update_campus_with_options(
         self,
@@ -1124,9 +1444,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusUpdateCampus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusUpdateCampusResponse(),
-            self.do_roarequest('CampusUpdateCampus', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_update_campus_with_options_async(
@@ -1178,26 +1509,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusUpdateCampus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusUpdateCampusResponse(),
-            await self.do_roarequest_async('CampusUpdateCampus', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/projects', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_update_campus_group(
+    def campus_update_campus(
         self,
-        request: dingtalkindustry__1__0_models.CampusUpdateCampusGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusUpdateCampusGroupHeaders()
-        return self.campus_update_campus_group_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusUpdateCampusHeaders()
+        return self.campus_update_campus_with_options(request, headers, runtime)
 
-    async def campus_update_campus_group_async(
+    async def campus_update_campus_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusUpdateCampusGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusUpdateCampusGroupHeaders()
-        return await self.campus_update_campus_group_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusUpdateCampusHeaders()
+        return await self.campus_update_campus_with_options_async(request, headers, runtime)
 
     def campus_update_campus_group_with_options(
         self,
@@ -1222,9 +1564,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusUpdateCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groups',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse(),
-            self.do_roarequest('CampusUpdateCampusGroup', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_update_campus_group_with_options_async(
@@ -1250,26 +1603,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusUpdateCampusGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/projects/groups',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse(),
-            await self.do_roarequest_async('CampusUpdateCampusGroup', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/projects/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_update_renter(
+    def campus_update_campus_group(
         self,
-        request: dingtalkindustry__1__0_models.CampusUpdateRenterRequest,
-    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterResponse:
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusUpdateRenterHeaders()
-        return self.campus_update_renter_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusUpdateCampusGroupHeaders()
+        return self.campus_update_campus_group_with_options(request, headers, runtime)
 
-    async def campus_update_renter_async(
+    async def campus_update_campus_group_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusUpdateRenterRequest,
-    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterResponse:
+        request: dingtalkindustry__1__0_models.CampusUpdateCampusGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateCampusGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusUpdateRenterHeaders()
-        return await self.campus_update_renter_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusUpdateCampusGroupHeaders()
+        return await self.campus_update_campus_group_with_options_async(request, headers, runtime)
 
     def campus_update_renter_with_options(
         self,
@@ -1302,9 +1666,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusUpdateRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusUpdateRenterResponse(),
-            self.do_roarequest('CampusUpdateRenter', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_update_renter_with_options_async(
@@ -1338,26 +1713,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusUpdateRenter',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusUpdateRenterResponse(),
-            await self.do_roarequest_async('CampusUpdateRenter', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def campus_update_renter_member(
+    def campus_update_renter(
         self,
-        request: dingtalkindustry__1__0_models.CampusUpdateRenterMemberRequest,
-    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse:
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
-        return self.campus_update_renter_member_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusUpdateRenterHeaders()
+        return self.campus_update_renter_with_options(request, headers, runtime)
 
-    async def campus_update_renter_member_async(
+    async def campus_update_renter_async(
         self,
-        request: dingtalkindustry__1__0_models.CampusUpdateRenterMemberRequest,
-    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse:
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
-        return await self.campus_update_renter_member_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusUpdateRenterHeaders()
+        return await self.campus_update_renter_with_options_async(request, headers, runtime)
 
     def campus_update_renter_member_with_options(
         self,
@@ -1386,9 +1772,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusUpdateRenterMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/members',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse(),
-            self.do_roarequest('CampusUpdateRenterMember', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def campus_update_renter_member_with_options_async(
@@ -1418,26 +1815,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CampusUpdateRenterMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/campuses/renters/members',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse(),
-            await self.do_roarequest_async('CampusUpdateRenterMember', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/campuses/renters/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_active_college_dept_group(
+    def campus_update_renter_member(
         self,
-        request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupHeaders()
-        return self.college_active_college_dept_group_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
+        return self.campus_update_renter_member_with_options(request, headers, runtime)
 
-    async def college_active_college_dept_group_async(
+    async def campus_update_renter_member_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse:
+        request: dingtalkindustry__1__0_models.CampusUpdateRenterMemberRequest,
+    ) -> dingtalkindustry__1__0_models.CampusUpdateRenterMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupHeaders()
-        return await self.college_active_college_dept_group_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
+        return await self.campus_update_renter_member_with_options_async(request, headers, runtime)
 
     def college_active_college_dept_group_with_options(
         self,
@@ -1458,9 +1866,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeActiveCollegeDeptGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse(),
-            self.do_roarequest('CollegeActiveCollegeDeptGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/depts/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_active_college_dept_group_with_options_async(
@@ -1482,26 +1901,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeActiveCollegeDeptGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse(),
-            await self.do_roarequest_async('CollegeActiveCollegeDeptGroup', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/depts/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_add_college_dept(
+    def college_active_college_dept_group(
         self,
-        request: dingtalkindustry__1__0_models.CollegeAddCollegeDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeAddCollegeDeptHeaders()
-        return self.college_add_college_dept_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupHeaders()
+        return self.college_active_college_dept_group_with_options(request, headers, runtime)
 
-    async def college_add_college_dept_async(
+    async def college_active_college_dept_group_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeAddCollegeDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeAddCollegeDeptHeaders()
-        return await self.college_add_college_dept_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupHeaders()
+        return await self.college_active_college_dept_group_with_options_async(request, headers, runtime)
 
     def college_add_college_dept_with_options(
         self,
@@ -1528,9 +1958,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeAddCollegeDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse(),
-            self.do_roarequest('CollegeAddCollegeDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_add_college_dept_with_options_async(
@@ -1558,26 +1999,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeAddCollegeDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse(),
-            await self.do_roarequest_async('CollegeAddCollegeDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_add_manager(
+    def college_add_college_dept(
         self,
-        request: dingtalkindustry__1__0_models.CollegeAddManagerRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeAddManagerResponse:
+        request: dingtalkindustry__1__0_models.CollegeAddCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeAddManagerHeaders()
-        return self.college_add_manager_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeAddCollegeDeptHeaders()
+        return self.college_add_college_dept_with_options(request, headers, runtime)
 
-    async def college_add_manager_async(
+    async def college_add_college_dept_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeAddManagerRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeAddManagerResponse:
+        request: dingtalkindustry__1__0_models.CollegeAddCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddCollegeDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeAddManagerHeaders()
-        return await self.college_add_manager_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeAddCollegeDeptHeaders()
+        return await self.college_add_college_dept_with_options_async(request, headers, runtime)
 
     def college_add_manager_with_options(
         self,
@@ -1600,9 +2052,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeAddManager',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/managers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeAddManagerResponse(),
-            self.do_roarequest('CollegeAddManager', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/managers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_add_manager_with_options_async(
@@ -1626,26 +2089,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeAddManager',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/managers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeAddManagerResponse(),
-            await self.do_roarequest_async('CollegeAddManager', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/managers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_add_student(
+    def college_add_manager(
         self,
-        request: dingtalkindustry__1__0_models.CollegeAddStudentRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeAddStudentResponse:
+        request: dingtalkindustry__1__0_models.CollegeAddManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddManagerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeAddStudentHeaders()
-        return self.college_add_student_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeAddManagerHeaders()
+        return self.college_add_manager_with_options(request, headers, runtime)
 
-    async def college_add_student_async(
+    async def college_add_manager_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeAddStudentRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeAddStudentResponse:
+        request: dingtalkindustry__1__0_models.CollegeAddManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddManagerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeAddStudentHeaders()
-        return await self.college_add_student_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeAddManagerHeaders()
+        return await self.college_add_manager_with_options_async(request, headers, runtime)
 
     def college_add_student_with_options(
         self,
@@ -1682,9 +2156,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollegeAddStudent',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeAddStudentResponse(),
-            self.do_roarequest('CollegeAddStudent', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_add_student_with_options_async(
@@ -1722,26 +2207,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollegeAddStudent',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeAddStudentResponse(),
-            await self.do_roarequest_async('CollegeAddStudent', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_change_student_dept(
+    def college_add_student(
         self,
-        request: dingtalkindustry__1__0_models.CollegeChangeStudentDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeAddStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddStudentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeChangeStudentDeptHeaders()
-        return self.college_change_student_dept_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeAddStudentHeaders()
+        return self.college_add_student_with_options(request, headers, runtime)
 
-    async def college_change_student_dept_async(
+    async def college_add_student_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeChangeStudentDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeAddStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeAddStudentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeChangeStudentDeptHeaders()
-        return await self.college_change_student_dept_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeAddStudentHeaders()
+        return await self.college_add_student_with_options_async(request, headers, runtime)
 
     def college_change_student_dept_with_options(
         self,
@@ -1766,9 +2262,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeChangeStudentDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students/move',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse(),
-            self.do_roarequest('CollegeChangeStudentDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/students/move', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_change_student_dept_with_options_async(
@@ -1794,26 +2301,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeChangeStudentDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students/move',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse(),
-            await self.do_roarequest_async('CollegeChangeStudentDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/colleges/members/depts/students/move', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_delete_college_dept(
+    def college_change_student_dept(
         self,
-        request: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeChangeStudentDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptHeaders()
-        return self.college_delete_college_dept_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeChangeStudentDeptHeaders()
+        return self.college_change_student_dept_with_options(request, headers, runtime)
 
-    async def college_delete_college_dept_async(
+    async def college_change_student_dept_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeChangeStudentDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeChangeStudentDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptHeaders()
-        return await self.college_delete_college_dept_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeChangeStudentDeptHeaders()
+        return await self.college_change_student_dept_with_options_async(request, headers, runtime)
 
     def college_delete_college_dept_with_options(
         self,
@@ -1834,9 +2352,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeDeleteCollegeDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse(),
-            self.do_roarequest('CollegeDeleteCollegeDept', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_delete_college_dept_with_options_async(
@@ -1858,26 +2387,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeDeleteCollegeDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse(),
-            await self.do_roarequest_async('CollegeDeleteCollegeDept', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_list_college_sub_dept(
+    def college_delete_college_dept(
         self,
-        request: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeListCollegeSubDeptHeaders()
-        return self.college_list_college_sub_dept_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptHeaders()
+        return self.college_delete_college_dept_with_options(request, headers, runtime)
 
-    async def college_list_college_sub_dept_async(
+    async def college_delete_college_dept_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeListCollegeSubDeptHeaders()
-        return await self.college_list_college_sub_dept_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeDeleteCollegeDeptHeaders()
+        return await self.college_delete_college_dept_with_options_async(request, headers, runtime)
 
     def college_list_college_sub_dept_with_options(
         self,
@@ -1898,9 +2438,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeListCollegeSubDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/subDepts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse(),
-            self.do_roarequest('CollegeListCollegeSubDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/subDepts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_list_college_sub_dept_with_options_async(
@@ -1922,26 +2473,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeListCollegeSubDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/subDepts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse(),
-            await self.do_roarequest_async('CollegeListCollegeSubDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/subDepts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_list_dept_manager(
+    def college_list_college_sub_dept(
         self,
-        request: dingtalkindustry__1__0_models.CollegeListDeptManagerRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeListDeptManagerResponse:
+        request: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeListDeptManagerHeaders()
-        return self.college_list_dept_manager_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeListCollegeSubDeptHeaders()
+        return self.college_list_college_sub_dept_with_options(request, headers, runtime)
 
-    async def college_list_dept_manager_async(
+    async def college_list_college_sub_dept_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeListDeptManagerRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeListDeptManagerResponse:
+        request: dingtalkindustry__1__0_models.CollegeListCollegeSubDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListCollegeSubDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeListDeptManagerHeaders()
-        return await self.college_list_dept_manager_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeListCollegeSubDeptHeaders()
+        return await self.college_list_college_sub_dept_with_options_async(request, headers, runtime)
 
     def college_list_dept_manager_with_options(
         self,
@@ -1966,9 +2528,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeListDeptManager',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/managers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeListDeptManagerResponse(),
-            self.do_roarequest('CollegeListDeptManager', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/managers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_list_dept_manager_with_options_async(
@@ -1994,26 +2567,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeListDeptManager',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/managers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeListDeptManagerResponse(),
-            await self.do_roarequest_async('CollegeListDeptManager', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/managers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_list_student_info(
+    def college_list_dept_manager(
         self,
-        request: dingtalkindustry__1__0_models.CollegeListStudentInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeListStudentInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeListDeptManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListDeptManagerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeListStudentInfoHeaders()
-        return self.college_list_student_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeListDeptManagerHeaders()
+        return self.college_list_dept_manager_with_options(request, headers, runtime)
 
-    async def college_list_student_info_async(
+    async def college_list_dept_manager_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeListStudentInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeListStudentInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeListDeptManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListDeptManagerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeListStudentInfoHeaders()
-        return await self.college_list_student_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeListDeptManagerHeaders()
+        return await self.college_list_dept_manager_with_options_async(request, headers, runtime)
 
     def college_list_student_info_with_options(
         self,
@@ -2040,9 +2624,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeListStudentInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeListStudentInfoResponse(),
-            self.do_roarequest('CollegeListStudentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_list_student_info_with_options_async(
@@ -2070,26 +2665,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeListStudentInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeListStudentInfoResponse(),
-            await self.do_roarequest_async('CollegeListStudentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_list_unchecked_student(
+    def college_list_student_info(
         self,
-        request: dingtalkindustry__1__0_models.CollegeListUncheckedStudentRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse:
+        request: dingtalkindustry__1__0_models.CollegeListStudentInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListStudentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeListUncheckedStudentHeaders()
-        return self.college_list_unchecked_student_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeListStudentInfoHeaders()
+        return self.college_list_student_info_with_options(request, headers, runtime)
 
-    async def college_list_unchecked_student_async(
+    async def college_list_student_info_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeListUncheckedStudentRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse:
+        request: dingtalkindustry__1__0_models.CollegeListStudentInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListStudentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeListUncheckedStudentHeaders()
-        return await self.college_list_unchecked_student_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeListStudentInfoHeaders()
+        return await self.college_list_student_info_with_options_async(request, headers, runtime)
 
     def college_list_unchecked_student_with_options(
         self,
@@ -2114,9 +2720,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeListUncheckedStudent',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/organizations/unjoinedStudents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse(),
-            self.do_roarequest('CollegeListUncheckedStudent', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/organizations/unjoinedStudents', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_list_unchecked_student_with_options_async(
@@ -2142,26 +2759,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeListUncheckedStudent',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/organizations/unjoinedStudents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse(),
-            await self.do_roarequest_async('CollegeListUncheckedStudent', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/organizations/unjoinedStudents', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_query_college_dept_group_info(
+    def college_list_unchecked_student(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeListUncheckedStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoHeaders()
-        return self.college_query_college_dept_group_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeListUncheckedStudentHeaders()
+        return self.college_list_unchecked_student_with_options(request, headers, runtime)
 
-    async def college_query_college_dept_group_info_async(
+    async def college_list_unchecked_student_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeListUncheckedStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeListUncheckedStudentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoHeaders()
-        return await self.college_query_college_dept_group_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeListUncheckedStudentHeaders()
+        return await self.college_list_unchecked_student_with_options_async(request, headers, runtime)
 
     def college_query_college_dept_group_info_with_options(
         self,
@@ -2182,9 +2810,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryCollegeDeptGroupInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts/groupInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse(),
-            self.do_roarequest('CollegeQueryCollegeDeptGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/depts/groupInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_query_college_dept_group_info_with_options_async(
@@ -2206,26 +2845,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryCollegeDeptGroupInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts/groupInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse(),
-            await self.do_roarequest_async('CollegeQueryCollegeDeptGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/depts/groupInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_query_college_dept_info(
+    def college_query_college_dept_group_info(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoHeaders()
-        return self.college_query_college_dept_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoHeaders()
+        return self.college_query_college_dept_group_info_with_options(request, headers, runtime)
 
-    async def college_query_college_dept_info_async(
+    async def college_query_college_dept_group_info_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoHeaders()
-        return await self.college_query_college_dept_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptGroupInfoHeaders()
+        return await self.college_query_college_dept_group_info_with_options_async(request, headers, runtime)
 
     def college_query_college_dept_info_with_options(
         self,
@@ -2246,9 +2896,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryCollegeDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/deptInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse(),
-            self.do_roarequest('CollegeQueryCollegeDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/deptInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_query_college_dept_info_with_options_async(
@@ -2270,26 +2931,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryCollegeDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/deptInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse(),
-            await self.do_roarequest_async('CollegeQueryCollegeDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/deptInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_query_student_info_by_dept(
+    def college_query_college_dept_info(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptHeaders()
-        return self.college_query_student_info_by_dept_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoHeaders()
+        return self.college_query_college_dept_info_with_options(request, headers, runtime)
 
-    async def college_query_student_info_by_dept_async(
+    async def college_query_college_dept_info_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptHeaders()
-        return await self.college_query_student_info_by_dept_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryCollegeDeptInfoHeaders()
+        return await self.college_query_college_dept_info_with_options_async(request, headers, runtime)
 
     def college_query_student_info_by_dept_with_options(
         self,
@@ -2312,9 +2984,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryStudentInfoByDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/studentinfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse(),
-            self.do_roarequest('CollegeQueryStudentInfoByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/studentinfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_query_student_info_by_dept_with_options_async(
@@ -2338,26 +3021,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryStudentInfoByDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/studentinfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse(),
-            await self.do_roarequest_async('CollegeQueryStudentInfoByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/depts/studentinfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_query_student_info_by_mobile(
+    def college_query_student_info_by_dept(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileHeaders()
-        return self.college_query_student_info_by_mobile_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptHeaders()
+        return self.college_query_student_info_by_dept_with_options(request, headers, runtime)
 
-    async def college_query_student_info_by_mobile_async(
+    async def college_query_student_info_by_dept_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileHeaders()
-        return await self.college_query_student_info_by_mobile_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByDeptHeaders()
+        return await self.college_query_student_info_by_dept_with_options_async(request, headers, runtime)
 
     def college_query_student_info_by_mobile_with_options(
         self,
@@ -2378,9 +3072,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryStudentInfoByMobile',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/students/mobiles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse(),
-            self.do_roarequest('CollegeQueryStudentInfoByMobile', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/students/mobiles', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_query_student_info_by_mobile_with_options_async(
@@ -2402,26 +3107,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryStudentInfoByMobile',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/students/mobiles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse(),
-            await self.do_roarequest_async('CollegeQueryStudentInfoByMobile', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/students/mobiles', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_query_student_info_by_student_id(
+    def college_query_student_info_by_mobile(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdHeaders()
-        return self.college_query_student_info_by_student_id_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileHeaders()
+        return self.college_query_student_info_by_mobile_with_options(request, headers, runtime)
 
-    async def college_query_student_info_by_student_id_async(
+    async def college_query_student_info_by_mobile_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdHeaders()
-        return await self.college_query_student_info_by_student_id_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByMobileHeaders()
+        return await self.college_query_student_info_by_mobile_with_options_async(request, headers, runtime)
 
     def college_query_student_info_by_student_id_with_options(
         self,
@@ -2442,9 +3158,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryStudentInfoByStudentId',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/students',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse(),
-            self.do_roarequest('CollegeQueryStudentInfoByStudentId', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/students', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_query_student_info_by_student_id_with_options_async(
@@ -2466,26 +3193,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeQueryStudentInfoByStudentId',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/students',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse(),
-            await self.do_roarequest_async('CollegeQueryStudentInfoByStudentId', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/colleges/members/students', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_remove_manager(
+    def college_query_student_info_by_student_id(
         self,
-        request: dingtalkindustry__1__0_models.CollegeRemoveManagerRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeRemoveManagerResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeRemoveManagerHeaders()
-        return self.college_remove_manager_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdHeaders()
+        return self.college_query_student_info_by_student_id_with_options(request, headers, runtime)
 
-    async def college_remove_manager_async(
+    async def college_query_student_info_by_student_id_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeRemoveManagerRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeRemoveManagerResponse:
+        request: dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeRemoveManagerHeaders()
-        return await self.college_remove_manager_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeQueryStudentInfoByStudentIdHeaders()
+        return await self.college_query_student_info_by_student_id_with_options_async(request, headers, runtime)
 
     def college_remove_manager_with_options(
         self,
@@ -2510,9 +3248,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeRemoveManager',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/managers',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeRemoveManagerResponse(),
-            self.do_roarequest('CollegeRemoveManager', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/members/managers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_remove_manager_with_options_async(
@@ -2538,26 +3287,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeRemoveManager',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/managers',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeRemoveManagerResponse(),
-            await self.do_roarequest_async('CollegeRemoveManager', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/members/managers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_remove_student(
+    def college_remove_manager(
         self,
-        request: dingtalkindustry__1__0_models.CollegeRemoveStudentRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeRemoveStudentResponse:
+        request: dingtalkindustry__1__0_models.CollegeRemoveManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveManagerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeRemoveStudentHeaders()
-        return self.college_remove_student_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeRemoveManagerHeaders()
+        return self.college_remove_manager_with_options(request, headers, runtime)
 
-    async def college_remove_student_async(
+    async def college_remove_manager_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeRemoveStudentRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeRemoveStudentResponse:
+        request: dingtalkindustry__1__0_models.CollegeRemoveManagerRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveManagerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeRemoveStudentHeaders()
-        return await self.college_remove_student_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeRemoveManagerHeaders()
+        return await self.college_remove_manager_with_options_async(request, headers, runtime)
 
     def college_remove_student_with_options(
         self,
@@ -2580,9 +3340,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeRemoveStudent',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeRemoveStudentResponse(),
-            self.do_roarequest('CollegeRemoveStudent', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_remove_student_with_options_async(
@@ -2606,26 +3377,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeRemoveStudent',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeRemoveStudentResponse(),
-            await self.do_roarequest_async('CollegeRemoveStudent', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_update_college_dept(
+    def college_remove_student(
         self,
-        request: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeRemoveStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveStudentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptHeaders()
-        return self.college_update_college_dept_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeRemoveStudentHeaders()
+        return self.college_remove_student_with_options(request, headers, runtime)
 
-    async def college_update_college_dept_async(
+    async def college_remove_student_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse:
+        request: dingtalkindustry__1__0_models.CollegeRemoveStudentRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeRemoveStudentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptHeaders()
-        return await self.college_update_college_dept_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeRemoveStudentHeaders()
+        return await self.college_remove_student_with_options_async(request, headers, runtime)
 
     def college_update_college_dept_with_options(
         self,
@@ -2652,9 +3434,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeUpdateCollegeDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse(),
-            self.do_roarequest('CollegeUpdateCollegeDept', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_update_college_dept_with_options_async(
@@ -2682,26 +3475,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeUpdateCollegeDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/depts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse(),
-            await self.do_roarequest_async('CollegeUpdateCollegeDept', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/depts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_update_student_dept_info(
+    def college_update_college_dept(
         self,
-        request: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoHeaders()
-        return self.college_update_student_dept_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptHeaders()
+        return self.college_update_college_dept_with_options(request, headers, runtime)
 
-    async def college_update_student_dept_info_async(
+    async def college_update_college_dept_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoHeaders()
-        return await self.college_update_student_dept_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeUpdateCollegeDeptHeaders()
+        return await self.college_update_college_dept_with_options_async(request, headers, runtime)
 
     def college_update_student_dept_info_with_options(
         self,
@@ -2726,9 +3530,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeUpdateStudentDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/deptInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse(),
-            self.do_roarequest('CollegeUpdateStudentDeptInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/deptInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_update_student_dept_info_with_options_async(
@@ -2754,26 +3569,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeUpdateStudentDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/deptInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse(),
-            await self.do_roarequest_async('CollegeUpdateStudentDeptInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/deptInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_update_student_info(
+    def college_update_student_dept_info(
         self,
-        request: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentInfoHeaders()
-        return self.college_update_student_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoHeaders()
+        return self.college_update_student_dept_info_with_options(request, headers, runtime)
 
-    async def college_update_student_info_async(
+    async def college_update_student_dept_info_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse:
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentInfoHeaders()
-        return await self.college_update_student_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentDeptInfoHeaders()
+        return await self.college_update_student_dept_info_with_options_async(request, headers, runtime)
 
     def college_update_student_info_with_options(
         self,
@@ -2804,9 +3630,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollegeUpdateStudentInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse(),
-            self.do_roarequest('CollegeUpdateStudentInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_update_student_info_with_options_async(
@@ -2838,26 +3675,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollegeUpdateStudentInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/depts/students',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse(),
-            await self.do_roarequest_async('CollegeUpdateStudentInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/depts/students', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def college_update_student_moblie(
+    def college_update_student_info(
         self,
-        request: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse:
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieHeaders()
-        return self.college_update_student_moblie_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentInfoHeaders()
+        return self.college_update_student_info_with_options(request, headers, runtime)
 
-    async def college_update_student_moblie_async(
+    async def college_update_student_info_async(
         self,
-        request: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieRequest,
-    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse:
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieHeaders()
-        return await self.college_update_student_moblie_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentInfoHeaders()
+        return await self.college_update_student_info_with_options_async(request, headers, runtime)
 
     def college_update_student_moblie_with_options(
         self,
@@ -2882,9 +3730,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeUpdateStudentMoblie',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/students/mobiles',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse(),
-            self.do_roarequest('CollegeUpdateStudentMoblie', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/students/mobiles', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def college_update_student_moblie_with_options_async(
@@ -2910,26 +3769,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CollegeUpdateStudentMoblie',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/colleges/members/students/mobiles',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse(),
-            await self.do_roarequest_async('CollegeUpdateStudentMoblie', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/colleges/members/students/mobiles', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_create(
+    def college_update_student_moblie(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactCreateResponse:
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactCreateHeaders()
-        return self.customize_contact_create_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieHeaders()
+        return self.college_update_student_moblie_with_options(request, headers, runtime)
 
-    async def customize_contact_create_async(
+    async def college_update_student_moblie_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactCreateResponse:
+        request: dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieRequest,
+    ) -> dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactCreateHeaders()
-        return await self.customize_contact_create_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CollegeUpdateStudentMoblieHeaders()
+        return await self.college_update_student_moblie_with_options_async(request, headers, runtime)
 
     def customize_contact_create_with_options(
         self,
@@ -2954,9 +3824,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactCreate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/contacts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactCreateResponse(),
-            self.do_roarequest('CustomizeContactCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_create_with_options_async(
@@ -2982,26 +3863,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactCreate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/contacts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactCreateResponse(),
-            await self.do_roarequest_async('CustomizeContactCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_delete(
+    def customize_contact_create(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeleteRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeleteResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactCreateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeleteHeaders()
-        return self.customize_contact_delete_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactCreateHeaders()
+        return self.customize_contact_create_with_options(request, headers, runtime)
 
-    async def customize_contact_delete_async(
+    async def customize_contact_create_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeleteRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeleteResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactCreateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeleteHeaders()
-        return await self.customize_contact_delete_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactCreateHeaders()
+        return await self.customize_contact_create_with_options_async(request, headers, runtime)
 
     def customize_contact_delete_with_options(
         self,
@@ -3022,9 +3914,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/contacts',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeleteResponse(),
-            self.do_roarequest('CustomizeContactDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_delete_with_options_async(
@@ -3046,26 +3949,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/contacts',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeleteResponse(),
-            await self.do_roarequest_async('CustomizeContactDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_dept_create(
+    def customize_contact_delete(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptCreateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeleteResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptCreateHeaders()
-        return self.customize_contact_dept_create_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeleteHeaders()
+        return self.customize_contact_delete_with_options(request, headers, runtime)
 
-    async def customize_contact_dept_create_async(
+    async def customize_contact_delete_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptCreateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeleteResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptCreateHeaders()
-        return await self.customize_contact_dept_create_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeleteHeaders()
+        return await self.customize_contact_delete_with_options_async(request, headers, runtime)
 
     def customize_contact_dept_create_with_options(
         self,
@@ -3098,9 +4012,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptCreate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departments',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse(),
-            self.do_roarequest('CustomizeContactDeptCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_dept_create_with_options_async(
@@ -3134,26 +4059,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptCreate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departments',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse(),
-            await self.do_roarequest_async('CustomizeContactDeptCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_dept_delete(
+    def customize_contact_dept_create(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptDeleteHeaders()
-        return self.customize_contact_dept_delete_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptCreateHeaders()
+        return self.customize_contact_dept_create_with_options(request, headers, runtime)
 
-    async def customize_contact_dept_delete_async(
+    async def customize_contact_dept_create_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptCreateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptDeleteHeaders()
-        return await self.customize_contact_dept_delete_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptCreateHeaders()
+        return await self.customize_contact_dept_create_with_options_async(request, headers, runtime)
 
     def customize_contact_dept_delete_with_options(
         self,
@@ -3176,9 +4112,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departments',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse(),
-            self.do_roarequest('CustomizeContactDeptDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_dept_delete_with_options_async(
@@ -3202,26 +4149,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departments',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse(),
-            await self.do_roarequest_async('CustomizeContactDeptDelete', 'industry_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_dept_group_create(
+    def customize_contact_dept_delete(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateHeaders()
-        return self.customize_contact_dept_group_create_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptDeleteHeaders()
+        return self.customize_contact_dept_delete_with_options(request, headers, runtime)
 
-    async def customize_contact_dept_group_create_async(
+    async def customize_contact_dept_delete_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptDeleteResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateHeaders()
-        return await self.customize_contact_dept_group_create_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptDeleteHeaders()
+        return await self.customize_contact_dept_delete_with_options_async(request, headers, runtime)
 
     def customize_contact_dept_group_create_with_options(
         self,
@@ -3244,9 +4202,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptGroupCreate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departmentGroups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse(),
-            self.do_roarequest('CustomizeContactDeptGroupCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/departmentGroups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_dept_group_create_with_options_async(
@@ -3270,26 +4239,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptGroupCreate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departmentGroups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse(),
-            await self.do_roarequest_async('CustomizeContactDeptGroupCreate', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/departmentGroups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_dept_info(
+    def customize_contact_dept_group_create(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptInfoHeaders()
-        return self.customize_contact_dept_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateHeaders()
+        return self.customize_contact_dept_group_create_with_options(request, headers, runtime)
 
-    async def customize_contact_dept_info_async(
+    async def customize_contact_dept_group_create_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptInfoRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptInfoHeaders()
-        return await self.customize_contact_dept_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptGroupCreateHeaders()
+        return await self.customize_contact_dept_group_create_with_options_async(request, headers, runtime)
 
     def customize_contact_dept_info_with_options(
         self,
@@ -3312,9 +4292,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse(),
-            self.do_roarequest('CustomizeContactDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_dept_info_with_options_async(
@@ -3338,26 +4329,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse(),
-            await self.do_roarequest_async('CustomizeContactDeptInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_dept_list(
+    def customize_contact_dept_info(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptListRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptListResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptListHeaders()
-        return self.customize_contact_dept_list_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptInfoHeaders()
+        return self.customize_contact_dept_info_with_options(request, headers, runtime)
 
-    async def customize_contact_dept_list_async(
+    async def customize_contact_dept_info_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptListRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptListResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptListHeaders()
-        return await self.customize_contact_dept_list_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptInfoHeaders()
+        return await self.customize_contact_dept_info_with_options_async(request, headers, runtime)
 
     def customize_contact_dept_list_with_options(
         self,
@@ -3380,9 +4382,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/subsidiaryDepartments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptListResponse(),
-            self.do_roarequest('CustomizeContactDeptList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/subsidiaryDepartments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_dept_list_with_options_async(
@@ -3406,26 +4419,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/subsidiaryDepartments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptListResponse(),
-            await self.do_roarequest_async('CustomizeContactDeptList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/subsidiaryDepartments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_dept_update(
+    def customize_contact_dept_list(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptListRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptUpdateHeaders()
-        return self.customize_contact_dept_update_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptListHeaders()
+        return self.customize_contact_dept_list_with_options(request, headers, runtime)
 
-    async def customize_contact_dept_update_async(
+    async def customize_contact_dept_list_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptListRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactDeptUpdateHeaders()
-        return await self.customize_contact_dept_update_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptListHeaders()
+        return await self.customize_contact_dept_list_with_options_async(request, headers, runtime)
 
     def customize_contact_dept_update_with_options(
         self,
@@ -3456,9 +4480,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptUpdate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departments',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse(),
-            self.do_roarequest('CustomizeContactDeptUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_dept_update_with_options_async(
@@ -3490,26 +4525,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactDeptUpdate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/departments',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse(),
-            await self.do_roarequest_async('CustomizeContactDeptUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/departments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_emp_add(
+    def customize_contact_dept_update(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactEmpAddRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactEmpAddHeaders()
-        return self.customize_contact_emp_add_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptUpdateHeaders()
+        return self.customize_contact_dept_update_with_options(request, headers, runtime)
 
-    async def customize_contact_emp_add_async(
+    async def customize_contact_dept_update_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactEmpAddRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactDeptUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactDeptUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactEmpAddHeaders()
-        return await self.customize_contact_emp_add_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactDeptUpdateHeaders()
+        return await self.customize_contact_dept_update_with_options_async(request, headers, runtime)
 
     def customize_contact_emp_add_with_options(
         self,
@@ -3534,9 +4580,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactEmpAdd',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/users',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse(),
-            self.do_roarequest('CustomizeContactEmpAdd', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/users', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_emp_add_with_options_async(
@@ -3562,26 +4619,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactEmpAdd',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/users',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse(),
-            await self.do_roarequest_async('CustomizeContactEmpAdd', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/users', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_emp_delete(
+    def customize_contact_emp_add(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpAddRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactEmpDeleteHeaders()
-        return self.customize_contact_emp_delete_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpAddHeaders()
+        return self.customize_contact_emp_add_with_options(request, headers, runtime)
 
-    async def customize_contact_emp_delete_async(
+    async def customize_contact_emp_add_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpAddRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpAddResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactEmpDeleteHeaders()
-        return await self.customize_contact_emp_delete_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpAddHeaders()
+        return await self.customize_contact_emp_add_with_options_async(request, headers, runtime)
 
     def customize_contact_emp_delete_with_options(
         self,
@@ -3606,9 +4674,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactEmpDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/users/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse(),
-            self.do_roarequest('CustomizeContactEmpDelete', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/users/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_emp_delete_with_options_async(
@@ -3634,26 +4713,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactEmpDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/users/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse(),
-            await self.do_roarequest_async('CustomizeContactEmpDelete', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/customizations/users/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_emp_list(
+    def customize_contact_emp_delete(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactEmpListRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpListResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactEmpListHeaders()
-        return self.customize_contact_emp_list_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpDeleteHeaders()
+        return self.customize_contact_emp_delete_with_options(request, headers, runtime)
 
-    async def customize_contact_emp_list_async(
+    async def customize_contact_emp_delete_async(
         self,
-        request: dingtalkindustry__1__0_models.CustomizeContactEmpListRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpListResponse:
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpDeleteResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactEmpListHeaders()
-        return await self.customize_contact_emp_list_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpDeleteHeaders()
+        return await self.customize_contact_emp_delete_with_options_async(request, headers, runtime)
 
     def customize_contact_emp_list_with_options(
         self,
@@ -3674,9 +4764,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactEmpList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactEmpListResponse(),
-            self.do_roarequest('CustomizeContactEmpList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/users', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_emp_list_with_options_async(
@@ -3698,20 +4799,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactEmpList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactEmpListResponse(),
-            await self.do_roarequest_async('CustomizeContactEmpList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/users', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_list(self) -> dingtalkindustry__1__0_models.CustomizeContactListResponse:
+    def customize_contact_emp_list(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpListRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactListHeaders()
-        return self.customize_contact_list_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpListHeaders()
+        return self.customize_contact_emp_list_with_options(request, headers, runtime)
 
-    async def customize_contact_list_async(self) -> dingtalkindustry__1__0_models.CustomizeContactListResponse:
+    async def customize_contact_emp_list_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactEmpListRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactEmpListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactListHeaders()
-        return await self.customize_contact_list_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactEmpListHeaders()
+        return await self.customize_contact_emp_list_with_options_async(request, headers, runtime)
 
     def customize_contact_list_with_options(
         self,
@@ -3726,9 +4844,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CustomizeContactList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/contacts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactListResponse(),
-            self.do_roarequest('CustomizeContactList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_list_with_options_async(
@@ -3744,26 +4873,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CustomizeContactList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/contacts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactListResponse(),
-            await self.do_roarequest_async('CustomizeContactList', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def customize_contact_update(
-        self,
-        request: dingtalkindustry__1__0_models.CustomizeContactUpdateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactUpdateResponse:
+    def customize_contact_list(self) -> dingtalkindustry__1__0_models.CustomizeContactListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactUpdateHeaders()
-        return self.customize_contact_update_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactListHeaders()
+        return self.customize_contact_list_with_options(headers, runtime)
 
-    async def customize_contact_update_async(
-        self,
-        request: dingtalkindustry__1__0_models.CustomizeContactUpdateRequest,
-    ) -> dingtalkindustry__1__0_models.CustomizeContactUpdateResponse:
+    async def customize_contact_list_async(self) -> dingtalkindustry__1__0_models.CustomizeContactListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.CustomizeContactUpdateHeaders()
-        return await self.customize_contact_update_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactListHeaders()
+        return await self.customize_contact_list_with_options_async(headers, runtime)
 
     def customize_contact_update_with_options(
         self,
@@ -3790,9 +4924,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactUpdate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/contacts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactUpdateResponse(),
-            self.do_roarequest('CustomizeContactUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def customize_contact_update_with_options_async(
@@ -3820,20 +4965,131 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CustomizeContactUpdate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/customizations/contacts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.CustomizeContactUpdateResponse(),
-            await self.do_roarequest_async('CustomizeContactUpdate', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/customizations/contacts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_contact_info(self) -> dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse:
+    def customize_contact_update(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders()
-        return self.digital_store_contact_info_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactUpdateHeaders()
+        return self.customize_contact_update_with_options(request, headers, runtime)
 
-    async def digital_store_contact_info_async(self) -> dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse:
+    async def customize_contact_update_async(
+        self,
+        request: dingtalkindustry__1__0_models.CustomizeContactUpdateRequest,
+    ) -> dingtalkindustry__1__0_models.CustomizeContactUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders()
-        return await self.digital_store_contact_info_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.CustomizeContactUpdateHeaders()
+        return await self.customize_contact_update_with_options_async(request, headers, runtime)
+
+    def d_igital_store_message_push_with_options(
+        self,
+        tmp_req: dingtalkindustry__1__0_models.DIgitalStoreMessagePushRequest,
+        headers: dingtalkindustry__1__0_models.DIgitalStoreMessagePushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DIgitalStoreMessagePushResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkindustry__1__0_models.DIgitalStoreMessagePushShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.message_data_list):
+            request.message_data_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.message_data_list, 'messageDataList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.message_data_list_shrink):
+            query['messageDataList'] = request.message_data_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DIgitalStoreMessagePush',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/messages/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DIgitalStoreMessagePushResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def d_igital_store_message_push_with_options_async(
+        self,
+        tmp_req: dingtalkindustry__1__0_models.DIgitalStoreMessagePushRequest,
+        headers: dingtalkindustry__1__0_models.DIgitalStoreMessagePushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DIgitalStoreMessagePushResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkindustry__1__0_models.DIgitalStoreMessagePushShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.message_data_list):
+            request.message_data_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.message_data_list, 'messageDataList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.message_data_list_shrink):
+            query['messageDataList'] = request.message_data_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DIgitalStoreMessagePush',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/messages/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DIgitalStoreMessagePushResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def d_igital_store_message_push(
+        self,
+        request: dingtalkindustry__1__0_models.DIgitalStoreMessagePushRequest,
+    ) -> dingtalkindustry__1__0_models.DIgitalStoreMessagePushResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DIgitalStoreMessagePushHeaders()
+        return self.d_igital_store_message_push_with_options(request, headers, runtime)
+
+    async def d_igital_store_message_push_async(
+        self,
+        request: dingtalkindustry__1__0_models.DIgitalStoreMessagePushRequest,
+    ) -> dingtalkindustry__1__0_models.DIgitalStoreMessagePushResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DIgitalStoreMessagePushHeaders()
+        return await self.d_igital_store_message_push_with_options_async(request, headers, runtime)
 
     def digital_store_contact_info_with_options(
         self,
@@ -3848,9 +5104,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='DigitalStoreContactInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/contactInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse(),
-            self.do_roarequest('DigitalStoreContactInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/contactInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_contact_info_with_options_async(
@@ -3866,26 +5133,121 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='DigitalStoreContactInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/contactInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse(),
-            await self.do_roarequest_async('DigitalStoreContactInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/contactInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_group_info(
-        self,
-        request: dingtalkindustry__1__0_models.DigitalStoreGroupInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse:
+    def digital_store_contact_info(self) -> dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreGroupInfoHeaders()
-        return self.digital_store_group_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders()
+        return self.digital_store_contact_info_with_options(headers, runtime)
 
-    async def digital_store_group_info_async(
-        self,
-        request: dingtalkindustry__1__0_models.DigitalStoreGroupInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse:
+    async def digital_store_contact_info_async(self) -> dingtalkindustry__1__0_models.DigitalStoreContactInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreGroupInfoHeaders()
-        return await self.digital_store_group_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders()
+        return await self.digital_store_contact_info_with_options_async(headers, runtime)
+
+    def digital_store_conversations_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreConversationsRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreConversationsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreConversationsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.conversation_title):
+            query['conversationTitle'] = request.conversation_title
+        if not UtilClient.is_unset(request.conversation_type):
+            query['conversationType'] = request.conversation_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreConversations',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/conversations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreConversationsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def digital_store_conversations_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreConversationsRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreConversationsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreConversationsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.conversation_title):
+            query['conversationTitle'] = request.conversation_title
+        if not UtilClient.is_unset(request.conversation_type):
+            query['conversationType'] = request.conversation_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreConversations',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/conversations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreConversationsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def digital_store_conversations(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreConversationsRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreConversationsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreConversationsHeaders()
+        return self.digital_store_conversations_with_options(request, headers, runtime)
+
+    async def digital_store_conversations_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreConversationsRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreConversationsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreConversationsHeaders()
+        return await self.digital_store_conversations_with_options_async(request, headers, runtime)
 
     def digital_store_group_info_with_options(
         self,
@@ -3906,9 +5268,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreGroupInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/groupInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse(),
-            self.do_roarequest('DigitalStoreGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/groupInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_group_info_with_options_async(
@@ -3930,20 +5303,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreGroupInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/groupInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse(),
-            await self.do_roarequest_async('DigitalStoreGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/groupInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_groups(self) -> dingtalkindustry__1__0_models.DigitalStoreGroupsResponse:
+    def digital_store_group_info(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreGroupInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreGroupsHeaders()
-        return self.digital_store_groups_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreGroupInfoHeaders()
+        return self.digital_store_group_info_with_options(request, headers, runtime)
 
-    async def digital_store_groups_async(self) -> dingtalkindustry__1__0_models.DigitalStoreGroupsResponse:
+    async def digital_store_group_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreGroupInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreGroupInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreGroupsHeaders()
-        return await self.digital_store_groups_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreGroupInfoHeaders()
+        return await self.digital_store_group_info_with_options_async(request, headers, runtime)
 
     def digital_store_groups_with_options(
         self,
@@ -3958,9 +5348,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='DigitalStoreGroups',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/groups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreGroupsResponse(),
-            self.do_roarequest('DigitalStoreGroups', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_groups_with_options_async(
@@ -3976,26 +5377,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='DigitalStoreGroups',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/groups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreGroupsResponse(),
-            await self.do_roarequest_async('DigitalStoreGroups', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_node_info(
-        self,
-        request: dingtalkindustry__1__0_models.DigitalStoreNodeInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse:
+    def digital_store_groups(self) -> dingtalkindustry__1__0_models.DigitalStoreGroupsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders()
-        return self.digital_store_node_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreGroupsHeaders()
+        return self.digital_store_groups_with_options(headers, runtime)
 
-    async def digital_store_node_info_async(
-        self,
-        request: dingtalkindustry__1__0_models.DigitalStoreNodeInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse:
+    async def digital_store_groups_async(self) -> dingtalkindustry__1__0_models.DigitalStoreGroupsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders()
-        return await self.digital_store_node_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreGroupsHeaders()
+        return await self.digital_store_groups_with_options_async(headers, runtime)
 
     def digital_store_node_info_with_options(
         self,
@@ -4018,9 +5424,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreNodeInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/nodeInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse(),
-            self.do_roarequest('DigitalStoreNodeInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodeInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_node_info_with_options_async(
@@ -4044,20 +5461,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreNodeInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/nodeInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse(),
-            await self.do_roarequest_async('DigitalStoreNodeInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodeInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_rights_info(self) -> dingtalkindustry__1__0_models.DigitalStoreRightsInfoResponse:
+    def digital_store_node_info(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreNodeInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreRightsInfoHeaders()
-        return self.digital_store_rights_info_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders()
+        return self.digital_store_node_info_with_options(request, headers, runtime)
 
-    async def digital_store_rights_info_async(self) -> dingtalkindustry__1__0_models.DigitalStoreRightsInfoResponse:
+    async def digital_store_node_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreNodeInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreNodeInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreRightsInfoHeaders()
-        return await self.digital_store_rights_info_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreNodeInfoHeaders()
+        return await self.digital_store_node_info_with_options_async(request, headers, runtime)
 
     def digital_store_rights_info_with_options(
         self,
@@ -4072,9 +5506,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='DigitalStoreRightsInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/rightsInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreRightsInfoResponse(),
-            self.do_roarequest('DigitalStoreRightsInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/rightsInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_rights_info_with_options_async(
@@ -4090,20 +5535,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='DigitalStoreRightsInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/rightsInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreRightsInfoResponse(),
-            await self.do_roarequest_async('DigitalStoreRightsInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/rightsInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_roles(self) -> dingtalkindustry__1__0_models.DigitalStoreRolesResponse:
+    def digital_store_rights_info(self) -> dingtalkindustry__1__0_models.DigitalStoreRightsInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreRolesHeaders()
-        return self.digital_store_roles_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreRightsInfoHeaders()
+        return self.digital_store_rights_info_with_options(headers, runtime)
 
-    async def digital_store_roles_async(self) -> dingtalkindustry__1__0_models.DigitalStoreRolesResponse:
+    async def digital_store_rights_info_async(self) -> dingtalkindustry__1__0_models.DigitalStoreRightsInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreRolesHeaders()
-        return await self.digital_store_roles_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreRightsInfoHeaders()
+        return await self.digital_store_rights_info_with_options_async(headers, runtime)
 
     def digital_store_roles_with_options(
         self,
@@ -4118,9 +5574,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='DigitalStoreRoles',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreRolesResponse(),
-            self.do_roarequest('DigitalStoreRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/roles', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_roles_with_options_async(
@@ -4136,26 +5603,121 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='DigitalStoreRoles',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreRolesResponse(),
-            await self.do_roarequest_async('DigitalStoreRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/roles', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_store_info(
-        self,
-        request: dingtalkindustry__1__0_models.DigitalStoreStoreInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse:
+    def digital_store_roles(self) -> dingtalkindustry__1__0_models.DigitalStoreRolesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreStoreInfoHeaders()
-        return self.digital_store_store_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreRolesHeaders()
+        return self.digital_store_roles_with_options(headers, runtime)
 
-    async def digital_store_store_info_async(
-        self,
-        request: dingtalkindustry__1__0_models.DigitalStoreStoreInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse:
+    async def digital_store_roles_async(self) -> dingtalkindustry__1__0_models.DigitalStoreRolesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreStoreInfoHeaders()
-        return await self.digital_store_store_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreRolesHeaders()
+        return await self.digital_store_roles_with_options_async(headers, runtime)
+
+    def digital_store_scene_scope_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreSceneScopeRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreSceneScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSceneScopeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.scene_code):
+            query['sceneCode'] = request.scene_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreSceneScope',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/sceneScopes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreSceneScopeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def digital_store_scene_scope_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreSceneScopeRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreSceneScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSceneScopeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.scene_code):
+            query['sceneCode'] = request.scene_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreSceneScope',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/sceneScopes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreSceneScopeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def digital_store_scene_scope(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreSceneScopeRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSceneScopeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreSceneScopeHeaders()
+        return self.digital_store_scene_scope_with_options(request, headers, runtime)
+
+    async def digital_store_scene_scope_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreSceneScopeRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSceneScopeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreSceneScopeHeaders()
+        return await self.digital_store_scene_scope_with_options_async(request, headers, runtime)
 
     def digital_store_store_info_with_options(
         self,
@@ -4178,9 +5740,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreStoreInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/storeInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse(),
-            self.do_roarequest('DigitalStoreStoreInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/storeInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_store_info_with_options_async(
@@ -4204,26 +5777,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreStoreInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/storeInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse(),
-            await self.do_roarequest_async('DigitalStoreStoreInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/storeInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_sub_nodes(
+    def digital_store_store_info(
         self,
-        request: dingtalkindustry__1__0_models.DigitalStoreSubNodesRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreStoreInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreSubNodesHeaders()
-        return self.digital_store_sub_nodes_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreStoreInfoHeaders()
+        return self.digital_store_store_info_with_options(request, headers, runtime)
 
-    async def digital_store_sub_nodes_async(
+    async def digital_store_store_info_async(
         self,
-        request: dingtalkindustry__1__0_models.DigitalStoreSubNodesRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreStoreInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreStoreInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreSubNodesHeaders()
-        return await self.digital_store_sub_nodes_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreStoreInfoHeaders()
+        return await self.digital_store_store_info_with_options_async(request, headers, runtime)
 
     def digital_store_sub_nodes_with_options(
         self,
@@ -4246,9 +5830,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreSubNodes',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/subsidiaryNodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse(),
-            self.do_roarequest('DigitalStoreSubNodes', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/subsidiaryNodes', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_sub_nodes_with_options_async(
@@ -4272,26 +5867,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreSubNodes',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/subsidiaryNodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse(),
-            await self.do_roarequest_async('DigitalStoreSubNodes', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/subsidiaryNodes', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_update_auth_info(
+    def digital_store_sub_nodes(
         self,
-        request: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreSubNodesRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoHeaders()
-        return self.digital_store_update_auth_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreSubNodesHeaders()
+        return self.digital_store_sub_nodes_with_options(request, headers, runtime)
 
-    async def digital_store_update_auth_info_async(
+    async def digital_store_sub_nodes_async(
         self,
-        request: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreSubNodesRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreSubNodesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoHeaders()
-        return await self.digital_store_update_auth_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreSubNodesHeaders()
+        return await self.digital_store_sub_nodes_with_options_async(request, headers, runtime)
 
     def digital_store_update_auth_info_with_options(
         self,
@@ -4312,9 +5918,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreUpdateAuthInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/authInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse(),
-            self.do_roarequest('DigitalStoreUpdateAuthInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/digitalStores/authInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_update_auth_info_with_options_async(
@@ -4336,26 +5953,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreUpdateAuthInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/authInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse(),
-            await self.do_roarequest_async('DigitalStoreUpdateAuthInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/digitalStores/authInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_user_info(
+    def digital_store_update_auth_info(
         self,
-        request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreUserInfoHeaders()
-        return self.digital_store_user_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoHeaders()
+        return self.digital_store_update_auth_info_with_options(request, headers, runtime)
 
-    async def digital_store_user_info_async(
+    async def digital_store_update_auth_info_async(
         self,
-        request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreUserInfoHeaders()
-        return await self.digital_store_user_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreUpdateAuthInfoHeaders()
+        return await self.digital_store_update_auth_info_with_options_async(request, headers, runtime)
 
     def digital_store_user_info_with_options(
         self,
@@ -4378,9 +6006,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreUserInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/userInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse(),
-            self.do_roarequest('DigitalStoreUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/userInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_user_info_with_options_async(
@@ -4404,26 +6043,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreUserInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/userInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse(),
-            await self.do_roarequest_async('DigitalStoreUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/userInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def digital_store_users(
+    def digital_store_user_info(
         self,
-        request: dingtalkindustry__1__0_models.DigitalStoreUsersRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreUsersResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreUsersHeaders()
-        return self.digital_store_users_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreUserInfoHeaders()
+        return self.digital_store_user_info_with_options(request, headers, runtime)
 
-    async def digital_store_users_async(
+    async def digital_store_user_info_async(
         self,
-        request: dingtalkindustry__1__0_models.DigitalStoreUsersRequest,
-    ) -> dingtalkindustry__1__0_models.DigitalStoreUsersResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreUserInfoRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUserInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.DigitalStoreUsersHeaders()
-        return await self.digital_store_users_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreUserInfoHeaders()
+        return await self.digital_store_user_info_with_options_async(request, headers, runtime)
 
     def digital_store_users_with_options(
         self,
@@ -4446,9 +6096,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreUsers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/nodes/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreUsersResponse(),
-            self.do_roarequest('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodes/users', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def digital_store_users_with_options_async(
@@ -4472,26 +6133,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DigitalStoreUsers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/nodes/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.DigitalStoreUsersResponse(),
-            await self.do_roarequest_async('DigitalStoreUsers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/digitalStores/nodes/users', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def external_query_external_app_orgs(
+    def digital_store_users(
         self,
-        request: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsRequest,
-    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreUsersRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsHeaders()
-        return self.external_query_external_app_orgs_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreUsersHeaders()
+        return self.digital_store_users_with_options(request, headers, runtime)
 
-    async def external_query_external_app_orgs_async(
+    async def digital_store_users_async(
         self,
-        request: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsRequest,
-    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse:
+        request: dingtalkindustry__1__0_models.DigitalStoreUsersRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsHeaders()
-        return await self.external_query_external_app_orgs_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.DigitalStoreUsersHeaders()
+        return await self.digital_store_users_with_options_async(request, headers, runtime)
 
     def external_query_external_app_orgs_with_options(
         self,
@@ -4512,9 +6184,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ExternalQueryExternalAppOrgs',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/externals/apps/organizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse(),
-            self.do_roarequest('ExternalQueryExternalAppOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/apps/organizations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def external_query_external_app_orgs_with_options_async(
@@ -4536,26 +6219,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ExternalQueryExternalAppOrgs',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/externals/apps/organizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse(),
-            await self.do_roarequest_async('ExternalQueryExternalAppOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/apps/organizations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def external_query_external_belong_main_org(
+    def external_query_external_app_orgs(
         self,
-        request: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgRequest,
-    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse:
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgHeaders()
-        return self.external_query_external_belong_main_org_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsHeaders()
+        return self.external_query_external_app_orgs_with_options(request, headers, runtime)
 
-    async def external_query_external_belong_main_org_async(
+    async def external_query_external_app_orgs_async(
         self,
-        request: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgRequest,
-    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse:
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgHeaders()
-        return await self.external_query_external_belong_main_org_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalAppOrgsHeaders()
+        return await self.external_query_external_app_orgs_with_options_async(request, headers, runtime)
 
     def external_query_external_belong_main_org_with_options(
         self,
@@ -4576,9 +6270,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ExternalQueryExternalBelongMainOrg',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/externals/attributions/masterOrganizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse(),
-            self.do_roarequest('ExternalQueryExternalBelongMainOrg', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/attributions/masterOrganizations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def external_query_external_belong_main_org_with_options_async(
@@ -4600,26 +6305,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ExternalQueryExternalBelongMainOrg',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/externals/attributions/masterOrganizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse(),
-            await self.do_roarequest_async('ExternalQueryExternalBelongMainOrg', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/attributions/masterOrganizations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def external_query_external_orgs(
+    def external_query_external_belong_main_org(
         self,
-        request: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsRequest,
-    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse:
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders()
-        return self.external_query_external_orgs_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgHeaders()
+        return self.external_query_external_belong_main_org_with_options(request, headers, runtime)
 
-    async def external_query_external_orgs_async(
+    async def external_query_external_belong_main_org_async(
         self,
-        request: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsRequest,
-    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse:
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders()
-        return await self.external_query_external_orgs_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalBelongMainOrgHeaders()
+        return await self.external_query_external_belong_main_org_with_options_async(request, headers, runtime)
 
     def external_query_external_orgs_with_options(
         self,
@@ -4640,9 +6356,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ExternalQueryExternalOrgs',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/externals/organizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse(),
-            self.do_roarequest('ExternalQueryExternalOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/organizations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def external_query_external_orgs_with_options_async(
@@ -4664,26 +6391,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ExternalQueryExternalOrgs',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/externals/organizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse(),
-            await self.do_roarequest_async('ExternalQueryExternalOrgs', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/externals/organizations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def hospital_data_check(
+    def external_query_external_orgs(
         self,
-        request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
-    ) -> dingtalkindustry__1__0_models.HospitalDataCheckResponse:
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.HospitalDataCheckHeaders()
-        return self.hospital_data_check_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders()
+        return self.external_query_external_orgs_with_options(request, headers, runtime)
 
-    async def hospital_data_check_async(
+    async def external_query_external_orgs_async(
         self,
-        request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
-    ) -> dingtalkindustry__1__0_models.HospitalDataCheckResponse:
+        request: dingtalkindustry__1__0_models.ExternalQueryExternalOrgsRequest,
+    ) -> dingtalkindustry__1__0_models.ExternalQueryExternalOrgsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.HospitalDataCheckHeaders()
-        return await self.hospital_data_check_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders()
+        return await self.external_query_external_orgs_with_options_async(request, headers, runtime)
 
     def hospital_data_check_with_options(
         self,
@@ -4718,9 +6456,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='HospitalDataCheck',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/datas/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.HospitalDataCheckResponse(),
-            self.do_roarequest('HospitalDataCheck', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/datas/check', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def hospital_data_check_with_options_async(
@@ -4756,26 +6505,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='HospitalDataCheck',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/datas/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.HospitalDataCheckResponse(),
-            await self.do_roarequest_async('HospitalDataCheck', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/datas/check', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_common_event(
+    def hospital_data_check(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse:
+        request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
+    ) -> dingtalkindustry__1__0_models.HospitalDataCheckResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureCommonEventHeaders()
-        return self.industry_manufacture_common_event_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.HospitalDataCheckHeaders()
+        return self.hospital_data_check_with_options(request, headers, runtime)
 
-    async def industry_manufacture_common_event_async(
+    async def hospital_data_check_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse:
+        request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
+    ) -> dingtalkindustry__1__0_models.HospitalDataCheckResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureCommonEventHeaders()
-        return await self.industry_manufacture_common_event_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.HospitalDataCheckHeaders()
+        return await self.hospital_data_check_with_options_async(request, headers, runtime)
 
     def industry_manufacture_common_event_with_options(
         self,
@@ -4802,9 +6562,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureCommonEvent',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturing/bases/commons/events',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse(),
-            self.do_roarequest('IndustryManufactureCommonEvent', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturing/bases/commons/events', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_common_event_with_options_async(
@@ -4832,26 +6603,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureCommonEvent',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturing/bases/commons/events',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse(),
-            await self.do_roarequest_async('IndustryManufactureCommonEvent', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturing/bases/commons/events', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_cost_record_list_get(
+    def industry_manufacture_common_event(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetHeaders()
-        return self.industry_manufacture_cost_record_list_get_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureCommonEventHeaders()
+        return self.industry_manufacture_common_event_with_options(request, headers, runtime)
 
-    async def industry_manufacture_cost_record_list_get_async(
+    async def industry_manufacture_common_event_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureCommonEventRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCommonEventResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetHeaders()
-        return await self.industry_manufacture_cost_record_list_get_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureCommonEventHeaders()
+        return await self.industry_manufacture_common_event_with_options_async(request, headers, runtime)
 
     def industry_manufacture_cost_record_list_get_with_options(
         self,
@@ -4906,9 +6688,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureCostRecordListGet',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/materialCostRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse(),
-            self.do_roarequest('IndustryManufactureCostRecordListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/materialCostRecords/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_cost_record_list_get_with_options_async(
@@ -4964,26 +6757,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureCostRecordListGet',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/materialCostRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse(),
-            await self.do_roarequest_async('IndustryManufactureCostRecordListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/materialCostRecords/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_fee_list_get(
+    def industry_manufacture_cost_record_list_get(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureFeeListGetHeaders()
-        return self.industry_manufacture_fee_list_get_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetHeaders()
+        return self.industry_manufacture_cost_record_list_get_with_options(request, headers, runtime)
 
-    async def industry_manufacture_fee_list_get_async(
+    async def industry_manufacture_cost_record_list_get_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureFeeListGetHeaders()
-        return await self.industry_manufacture_fee_list_get_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureCostRecordListGetHeaders()
+        return await self.industry_manufacture_cost_record_list_get_with_options_async(request, headers, runtime)
 
     def industry_manufacture_fee_list_get_with_options(
         self,
@@ -5036,9 +6840,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureFeeListGet',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/fees/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse(),
-            self.do_roarequest('IndustryManufactureFeeListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/fees/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_fee_list_get_with_options_async(
@@ -5092,26 +6907,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureFeeListGet',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/fees/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse(),
-            await self.do_roarequest_async('IndustryManufactureFeeListGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/fees/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_labour_cost(
+    def industry_manufacture_fee_list_get(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureLabourCostRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureLabourCostHeaders()
-        return self.industry_manufacture_labour_cost_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureFeeListGetHeaders()
+        return self.industry_manufacture_fee_list_get_with_options(request, headers, runtime)
 
-    async def industry_manufacture_labour_cost_async(
+    async def industry_manufacture_fee_list_get_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureLabourCostRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureFeeListGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureFeeListGetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureLabourCostHeaders()
-        return await self.industry_manufacture_labour_cost_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureFeeListGetHeaders()
+        return await self.industry_manufacture_fee_list_get_with_options_async(request, headers, runtime)
 
     def industry_manufacture_labour_cost_with_options(
         self,
@@ -5162,9 +6988,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureLabourCost',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/labourCosts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse(),
-            self.do_roarequest('IndustryManufactureLabourCost', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/labourCosts/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_labour_cost_with_options_async(
@@ -5216,26 +7053,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureLabourCost',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/labourCosts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse(),
-            await self.do_roarequest_async('IndustryManufactureLabourCost', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/labourCosts/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_material_list(
+    def industry_manufacture_labour_cost(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMaterialListRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureLabourCostRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMaterialListHeaders()
-        return self.industry_manufacture_material_list_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureLabourCostHeaders()
+        return self.industry_manufacture_labour_cost_with_options(request, headers, runtime)
 
-    async def industry_manufacture_material_list_async(
+    async def industry_manufacture_labour_cost_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMaterialListRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureLabourCostRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureLabourCostResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMaterialListHeaders()
-        return await self.industry_manufacture_material_list_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureLabourCostHeaders()
+        return await self.industry_manufacture_labour_cost_with_options_async(request, headers, runtime)
 
     def industry_manufacture_material_list_with_options(
         self,
@@ -5286,9 +7134,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMaterialList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/materials/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse(),
-            self.do_roarequest('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/materials/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_material_list_with_options_async(
@@ -5340,26 +7199,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMaterialList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/materials/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse(),
-            await self.do_roarequest_async('IndustryManufactureMaterialList', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/materials/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_mes_dispatch_task(
+    def industry_manufacture_material_list(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMaterialListRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskHeaders()
-        return self.industry_manufacture_mes_dispatch_task_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMaterialListHeaders()
+        return self.industry_manufacture_material_list_with_options(request, headers, runtime)
 
-    async def industry_manufacture_mes_dispatch_task_async(
+    async def industry_manufacture_material_list_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMaterialListRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMaterialListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskHeaders()
-        return await self.industry_manufacture_mes_dispatch_task_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMaterialListHeaders()
+        return await self.industry_manufacture_material_list_with_options_async(request, headers, runtime)
 
     def industry_manufacture_mes_dispatch_task_with_options(
         self,
@@ -5428,9 +7298,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesDispatchTask',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/dispatchTasks/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskResponse(),
-            self.do_roarequest('IndustryManufactureMesDispatchTask', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/dispatchTasks/manage', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_mes_dispatch_task_with_options_async(
@@ -5500,26 +7381,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesDispatchTask',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/dispatchTasks/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskResponse(),
-            await self.do_roarequest_async('IndustryManufactureMesDispatchTask', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/dispatchTasks/manage', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_mes_material(
+    def industry_manufacture_mes_dispatch_task(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesMaterialRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesMaterialResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesMaterialHeaders()
-        return self.industry_manufacture_mes_material_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskHeaders()
+        return self.industry_manufacture_mes_dispatch_task_with_options(request, headers, runtime)
 
-    async def industry_manufacture_mes_material_async(
+    async def industry_manufacture_mes_dispatch_task_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesMaterialRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesMaterialResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesMaterialHeaders()
-        return await self.industry_manufacture_mes_material_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesDispatchTaskHeaders()
+        return await self.industry_manufacture_mes_dispatch_task_with_options_async(request, headers, runtime)
 
     def industry_manufacture_mes_material_with_options(
         self,
@@ -5560,9 +7452,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesMaterial',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/materials/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesMaterialResponse(),
-            self.do_roarequest('IndustryManufactureMesMaterial', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/materials/manage', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_mes_material_with_options_async(
@@ -5604,26 +7507,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesMaterial',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/materials/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesMaterialResponse(),
-            await self.do_roarequest_async('IndustryManufactureMesMaterial', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/materials/manage', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_mes_out_plan(
+    def industry_manufacture_mes_material(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesMaterialRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesMaterialResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanHeaders()
-        return self.industry_manufacture_mes_out_plan_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesMaterialHeaders()
+        return self.industry_manufacture_mes_material_with_options(request, headers, runtime)
 
-    async def industry_manufacture_mes_out_plan_async(
+    async def industry_manufacture_mes_material_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesMaterialRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesMaterialResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanHeaders()
-        return await self.industry_manufacture_mes_out_plan_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesMaterialHeaders()
+        return await self.industry_manufacture_mes_material_with_options_async(request, headers, runtime)
 
     def industry_manufacture_mes_out_plan_with_options(
         self,
@@ -5678,9 +7592,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesOutPlan',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/outPlans/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanResponse(),
-            self.do_roarequest('IndustryManufactureMesOutPlan', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/outPlans/manage', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_mes_out_plan_with_options_async(
@@ -5736,26 +7661,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesOutPlan',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/outPlans/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanResponse(),
-            await self.do_roarequest_async('IndustryManufactureMesOutPlan', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/outPlans/manage', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_mes_output(
+    def industry_manufacture_mes_out_plan(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesOutputRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesOutputResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesOutputHeaders()
-        return self.industry_manufacture_mes_output_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanHeaders()
+        return self.industry_manufacture_mes_out_plan_with_options(request, headers, runtime)
 
-    async def industry_manufacture_mes_output_async(
+    async def industry_manufacture_mes_out_plan_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesOutputRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesOutputResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesOutputHeaders()
-        return await self.industry_manufacture_mes_output_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesOutPlanHeaders()
+        return await self.industry_manufacture_mes_out_plan_with_options_async(request, headers, runtime)
 
     def industry_manufacture_mes_output_with_options(
         self,
@@ -5832,9 +7768,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesOutput',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/outputs/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesOutputResponse(),
-            self.do_roarequest('IndustryManufactureMesOutput', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/outputs/manage', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_mes_output_with_options_async(
@@ -5912,26 +7859,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesOutput',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/outputs/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesOutputResponse(),
-            await self.do_roarequest_async('IndustryManufactureMesOutput', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/outputs/manage', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_mes_process(
+    def industry_manufacture_mes_output(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesProcessRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesProcessResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesOutputRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesOutputResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesProcessHeaders()
-        return self.industry_manufacture_mes_process_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesOutputHeaders()
+        return self.industry_manufacture_mes_output_with_options(request, headers, runtime)
 
-    async def industry_manufacture_mes_process_async(
+    async def industry_manufacture_mes_output_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesProcessRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesProcessResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesOutputRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesOutputResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesProcessHeaders()
-        return await self.industry_manufacture_mes_process_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesOutputHeaders()
+        return await self.industry_manufacture_mes_output_with_options_async(request, headers, runtime)
 
     def industry_manufacture_mes_process_with_options(
         self,
@@ -5976,9 +7934,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesProcess',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/processes/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesProcessResponse(),
-            self.do_roarequest('IndustryManufactureMesProcess', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/processes/manage', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_mes_process_with_options_async(
@@ -6024,26 +7993,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesProcess',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/processes/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesProcessResponse(),
-            await self.do_roarequest_async('IndustryManufactureMesProcess', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/processes/manage', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_mes_production_plan(
+    def industry_manufacture_mes_process(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesProcessRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesProcessResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanHeaders()
-        return self.industry_manufacture_mes_production_plan_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesProcessHeaders()
+        return self.industry_manufacture_mes_process_with_options(request, headers, runtime)
 
-    async def industry_manufacture_mes_production_plan_async(
+    async def industry_manufacture_mes_process_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesProcessRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesProcessResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanHeaders()
-        return await self.industry_manufacture_mes_production_plan_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesProcessHeaders()
+        return await self.industry_manufacture_mes_process_with_options_async(request, headers, runtime)
 
     def industry_manufacture_mes_production_plan_with_options(
         self,
@@ -6112,9 +8092,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesProductionPlan',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/productionPlans/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanResponse(),
-            self.do_roarequest('IndustryManufactureMesProductionPlan', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/productionPlans/manage', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_mes_production_plan_with_options_async(
@@ -6184,26 +8175,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesProductionPlan',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/productionPlans/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanResponse(),
-            await self.do_roarequest_async('IndustryManufactureMesProductionPlan', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/productionPlans/manage', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_mes_sub_cooperation_team(
+    def industry_manufacture_mes_production_plan(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamHeaders()
-        return self.industry_manufacture_mes_sub_cooperation_team_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanHeaders()
+        return self.industry_manufacture_mes_production_plan_with_options(request, headers, runtime)
 
-    async def industry_manufacture_mes_sub_cooperation_team_async(
+    async def industry_manufacture_mes_production_plan_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamHeaders()
-        return await self.industry_manufacture_mes_sub_cooperation_team_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesProductionPlanHeaders()
+        return await self.industry_manufacture_mes_production_plan_with_options_async(request, headers, runtime)
 
     def industry_manufacture_mes_sub_cooperation_team_with_options(
         self,
@@ -6248,9 +8250,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesSubCooperationTeam',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/outTeams/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamResponse(),
-            self.do_roarequest('IndustryManufactureMesSubCooperationTeam', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/outTeams/manage', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_mes_sub_cooperation_team_with_options_async(
@@ -6296,26 +8309,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesSubCooperationTeam',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturings/outTeams/manage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamResponse(),
-            await self.do_roarequest_async('IndustryManufactureMesSubCooperationTeam', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturings/outTeams/manage', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_manufacture_mes_team_mgmt(
+    def industry_manufacture_mes_sub_cooperation_team(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtHeaders()
-        return self.industry_manufacture_mes_team_mgmt_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamHeaders()
+        return self.industry_manufacture_mes_sub_cooperation_team_with_options(request, headers, runtime)
 
-    async def industry_manufacture_mes_team_mgmt_async(
+    async def industry_manufacture_mes_sub_cooperation_team_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtHeaders()
-        return await self.industry_manufacture_mes_team_mgmt_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesSubCooperationTeamHeaders()
+        return await self.industry_manufacture_mes_sub_cooperation_team_with_options_async(request, headers, runtime)
 
     def industry_manufacture_mes_team_mgmt_with_options(
         self,
@@ -6364,9 +8388,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesTeamMgmt',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturing/base/data/team',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtResponse(),
-            self.do_roarequest('IndustryManufactureMesTeamMgmt', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturing/base/data/team', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_manufacture_mes_team_mgmt_with_options_async(
@@ -6416,26 +8451,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryManufactureMesTeamMgmt',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufacturing/base/data/team',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtResponse(),
-            await self.do_roarequest_async('IndustryManufactureMesTeamMgmt', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufacturing/base/data/team', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def industry_mmanufacture_material_cost_get(
+    def industry_manufacture_mes_team_mgmt(
         self,
-        request: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders()
-        return self.industry_mmanufacture_material_cost_get_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtHeaders()
+        return self.industry_manufacture_mes_team_mgmt_with_options(request, headers, runtime)
 
-    async def industry_mmanufacture_material_cost_get_async(
+    async def industry_manufacture_mes_team_mgmt_async(
         self,
-        request: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetRequest,
-    ) -> dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse:
+        request: dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders()
-        return await self.industry_mmanufacture_material_cost_get_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryManufactureMesTeamMgmtHeaders()
+        return await self.industry_manufacture_mes_team_mgmt_with_options_async(request, headers, runtime)
 
     def industry_mmanufacture_material_cost_get_with_options(
         self,
@@ -6486,9 +8532,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryMmanufactureMaterialCostGet',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/base/materialCosts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse(),
-            self.do_roarequest('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/base/materialCosts/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def industry_mmanufacture_material_cost_get_with_options_async(
@@ -6540,26 +8597,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='IndustryMmanufactureMaterialCostGet',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/manufactures/base/materialCosts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse(),
-            await self.do_roarequest_async('IndustryMmanufactureMaterialCostGet', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/manufactures/base/materialCosts/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def push_ding_message(
+    def industry_mmanufacture_material_cost_get(
         self,
-        request: dingtalkindustry__1__0_models.PushDingMessageRequest,
-    ) -> dingtalkindustry__1__0_models.PushDingMessageResponse:
+        request: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.PushDingMessageHeaders()
-        return self.push_ding_message_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders()
+        return self.industry_mmanufacture_material_cost_get_with_options(request, headers, runtime)
 
-    async def push_ding_message_async(
+    async def industry_mmanufacture_material_cost_get_async(
         self,
-        request: dingtalkindustry__1__0_models.PushDingMessageRequest,
-    ) -> dingtalkindustry__1__0_models.PushDingMessageResponse:
+        request: dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetRequest,
+    ) -> dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.PushDingMessageHeaders()
-        return await self.push_ding_message_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders()
+        return await self.industry_mmanufacture_material_cost_get_with_options_async(request, headers, runtime)
 
     def push_ding_message_with_options(
         self,
@@ -6596,9 +8664,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushDingMessage',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/works/notice',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.PushDingMessageResponse(),
-            self.do_roarequest('PushDingMessage', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/works/notice', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def push_ding_message_with_options_async(
@@ -6636,26 +8715,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushDingMessage',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/works/notice',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.PushDingMessageResponse(),
-            await self.do_roarequest_async('PushDingMessage', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/works/notice', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_all_department(
+    def push_ding_message(
         self,
-        request: dingtalkindustry__1__0_models.QueryAllDepartmentRequest,
-    ) -> dingtalkindustry__1__0_models.QueryAllDepartmentResponse:
+        request: dingtalkindustry__1__0_models.PushDingMessageRequest,
+    ) -> dingtalkindustry__1__0_models.PushDingMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryAllDepartmentHeaders()
-        return self.query_all_department_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.PushDingMessageHeaders()
+        return self.push_ding_message_with_options(request, headers, runtime)
 
-    async def query_all_department_async(
+    async def push_ding_message_async(
         self,
-        request: dingtalkindustry__1__0_models.QueryAllDepartmentRequest,
-    ) -> dingtalkindustry__1__0_models.QueryAllDepartmentResponse:
+        request: dingtalkindustry__1__0_models.PushDingMessageRequest,
+    ) -> dingtalkindustry__1__0_models.PushDingMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryAllDepartmentHeaders()
-        return await self.query_all_department_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.PushDingMessageHeaders()
+        return await self.push_ding_message_with_options_async(request, headers, runtime)
 
     def query_all_department_with_options(
         self,
@@ -6678,9 +8768,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllDepartment',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllDepartmentResponse(),
-            self.do_roarequest('QueryAllDepartment', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_all_department_with_options_async(
@@ -6704,26 +8805,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllDepartment',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllDepartmentResponse(),
-            await self.do_roarequest_async('QueryAllDepartment', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_all_doctors(
+    def query_all_department(
         self,
-        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
-    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
+        request: dingtalkindustry__1__0_models.QueryAllDepartmentRequest,
+    ) -> dingtalkindustry__1__0_models.QueryAllDepartmentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryAllDoctorsHeaders()
-        return self.query_all_doctors_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryAllDepartmentHeaders()
+        return self.query_all_department_with_options(request, headers, runtime)
 
-    async def query_all_doctors_async(
+    async def query_all_department_async(
         self,
-        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
-    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
+        request: dingtalkindustry__1__0_models.QueryAllDepartmentRequest,
+    ) -> dingtalkindustry__1__0_models.QueryAllDepartmentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryAllDoctorsHeaders()
-        return await self.query_all_doctors_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryAllDepartmentHeaders()
+        return await self.query_all_department_with_options_async(request, headers, runtime)
 
     def query_all_doctors_with_options(
         self,
@@ -6748,9 +8860,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllDoctors',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/doctors',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllDoctorsResponse(),
-            self.do_roarequest('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_all_doctors_with_options_async(
@@ -6776,26 +8899,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllDoctors',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/doctors',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllDoctorsResponse(),
-            await self.do_roarequest_async('QueryAllDoctors', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_all_group(
+    def query_all_doctors(
         self,
-        request: dingtalkindustry__1__0_models.QueryAllGroupRequest,
-    ) -> dingtalkindustry__1__0_models.QueryAllGroupResponse:
+        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
+    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryAllGroupHeaders()
-        return self.query_all_group_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryAllDoctorsHeaders()
+        return self.query_all_doctors_with_options(request, headers, runtime)
 
-    async def query_all_group_async(
+    async def query_all_doctors_async(
         self,
-        request: dingtalkindustry__1__0_models.QueryAllGroupRequest,
-    ) -> dingtalkindustry__1__0_models.QueryAllGroupResponse:
+        request: dingtalkindustry__1__0_models.QueryAllDoctorsRequest,
+    ) -> dingtalkindustry__1__0_models.QueryAllDoctorsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryAllGroupHeaders()
-        return await self.query_all_group_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryAllDoctorsHeaders()
+        return await self.query_all_doctors_with_options_async(request, headers, runtime)
 
     def query_all_group_with_options(
         self,
@@ -6818,9 +8952,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/groups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllGroupResponse(),
-            self.do_roarequest('QueryAllGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_all_group_with_options_async(
@@ -6844,9 +8989,112 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/groups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryAllGroupResponse(),
-            await self.do_roarequest_async('QueryAllGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_all_group(
+        self,
+        request: dingtalkindustry__1__0_models.QueryAllGroupRequest,
+    ) -> dingtalkindustry__1__0_models.QueryAllGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryAllGroupHeaders()
+        return self.query_all_group_with_options(request, headers, runtime)
+
+    async def query_all_group_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryAllGroupRequest,
+    ) -> dingtalkindustry__1__0_models.QueryAllGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryAllGroupHeaders()
+        return await self.query_all_group_with_options_async(request, headers, runtime)
+
+    def query_all_groups_in_dept_with_options(
+        self,
+        dept_id: str,
+        request: dingtalkindustry__1__0_models.QueryAllGroupsInDeptRequest,
+        headers: dingtalkindustry__1__0_models.QueryAllGroupsInDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryAllGroupsInDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments/{dept_id}/groups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_all_groups_in_dept_with_options_async(
+        self,
+        dept_id: str,
+        request: dingtalkindustry__1__0_models.QueryAllGroupsInDeptRequest,
+        headers: dingtalkindustry__1__0_models.QueryAllGroupsInDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryAllGroupsInDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments/{dept_id}/groups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_all_groups_in_dept(
@@ -6867,16 +9115,17 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.QueryAllGroupsInDeptHeaders()
         return await self.query_all_groups_in_dept_with_options_async(dept_id, request, headers, runtime)
 
-    def query_all_groups_in_dept_with_options(
+    def query_all_member_by_dept_with_options(
         self,
         dept_id: str,
-        request: dingtalkindustry__1__0_models.QueryAllGroupsInDeptRequest,
-        headers: dingtalkindustry__1__0_models.QueryAllGroupsInDeptHeaders,
+        request: dingtalkindustry__1__0_models.QueryAllMemberByDeptRequest,
+        headers: dingtalkindustry__1__0_models.QueryAllMemberByDeptHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse:
+    ) -> dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -6890,21 +9139,33 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllMemberByDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments/{dept_id}/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse(),
-            self.do_roarequest('QueryAllGroupsInDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}/groups', 'json', req, runtime)
+            dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def query_all_groups_in_dept_with_options_async(
+    async def query_all_member_by_dept_with_options_async(
         self,
         dept_id: str,
-        request: dingtalkindustry__1__0_models.QueryAllGroupsInDeptRequest,
-        headers: dingtalkindustry__1__0_models.QueryAllGroupsInDeptHeaders,
+        request: dingtalkindustry__1__0_models.QueryAllMemberByDeptRequest,
+        headers: dingtalkindustry__1__0_models.QueryAllMemberByDeptHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse:
+    ) -> dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -6918,9 +9179,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllMemberByDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments/{dept_id}/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryAllGroupsInDeptResponse(),
-            await self.do_roarequest_async('QueryAllGroupsInDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}/groups', 'json', req, runtime)
+            dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_all_member_by_dept(
@@ -6941,15 +9213,14 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.QueryAllMemberByDeptHeaders()
         return await self.query_all_member_by_dept_with_options_async(dept_id, request, headers, runtime)
 
-    def query_all_member_by_dept_with_options(
+    def query_all_member_by_group_with_options(
         self,
-        dept_id: str,
-        request: dingtalkindustry__1__0_models.QueryAllMemberByDeptRequest,
-        headers: dingtalkindustry__1__0_models.QueryAllMemberByDeptHeaders,
+        group_id: str,
+        request: dingtalkindustry__1__0_models.QueryAllMemberByGroupRequest,
+        headers: dingtalkindustry__1__0_models.QueryAllMemberByGroupHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse:
+    ) -> dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
         if not UtilClient.is_unset(request.month_mark):
             query['monthMark'] = request.month_mark
@@ -6966,20 +9237,30 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllMemberByGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/groups/{group_id}/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse(),
-            self.do_roarequest('QueryAllMemberByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}/members', 'json', req, runtime)
+            dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def query_all_member_by_dept_with_options_async(
+    async def query_all_member_by_group_with_options_async(
         self,
-        dept_id: str,
-        request: dingtalkindustry__1__0_models.QueryAllMemberByDeptRequest,
-        headers: dingtalkindustry__1__0_models.QueryAllMemberByDeptHeaders,
+        group_id: str,
+        request: dingtalkindustry__1__0_models.QueryAllMemberByGroupRequest,
+        headers: dingtalkindustry__1__0_models.QueryAllMemberByGroupHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse:
+    ) -> dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse:
         UtilClient.validate_model(request)
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
         query = {}
         if not UtilClient.is_unset(request.month_mark):
             query['monthMark'] = request.month_mark
@@ -6996,9 +9277,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllMemberByGroup',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/groups/{group_id}/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryAllMemberByDeptResponse(),
-            await self.do_roarequest_async('QueryAllMemberByDept', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}/members', 'json', req, runtime)
+            dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_all_member_by_group(
@@ -7018,82 +9310,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.QueryAllMemberByGroupHeaders()
         return await self.query_all_member_by_group_with_options_async(group_id, request, headers, runtime)
-
-    def query_all_member_by_group_with_options(
-        self,
-        group_id: str,
-        request: dingtalkindustry__1__0_models.QueryAllMemberByGroupRequest,
-        headers: dingtalkindustry__1__0_models.QueryAllMemberByGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse:
-        UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
-        query = {}
-        if not UtilClient.is_unset(request.month_mark):
-            query['monthMark'] = request.month_mark
-        if not UtilClient.is_unset(request.page_number):
-            query['pageNumber'] = request.page_number
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse(),
-            self.do_roarequest('QueryAllMemberByGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/groups/{group_id}/members', 'json', req, runtime)
-        )
-
-    async def query_all_member_by_group_with_options_async(
-        self,
-        group_id: str,
-        request: dingtalkindustry__1__0_models.QueryAllMemberByGroupRequest,
-        headers: dingtalkindustry__1__0_models.QueryAllMemberByGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse:
-        UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
-        query = {}
-        if not UtilClient.is_unset(request.month_mark):
-            query['monthMark'] = request.month_mark
-        if not UtilClient.is_unset(request.page_number):
-            query['pageNumber'] = request.page_number
-        if not UtilClient.is_unset(request.page_size):
-            query['pageSize'] = request.page_size
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryAllMemberByGroupResponse(),
-            await self.do_roarequest_async('QueryAllMemberByGroup', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/groups/{group_id}/members', 'json', req, runtime)
-        )
-
-    def query_biz_opt_log(
-        self,
-        request: dingtalkindustry__1__0_models.QueryBizOptLogRequest,
-    ) -> dingtalkindustry__1__0_models.QueryBizOptLogResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryBizOptLogHeaders()
-        return self.query_biz_opt_log_with_options(request, headers, runtime)
-
-    async def query_biz_opt_log_async(
-        self,
-        request: dingtalkindustry__1__0_models.QueryBizOptLogRequest,
-    ) -> dingtalkindustry__1__0_models.QueryBizOptLogResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryBizOptLogHeaders()
-        return await self.query_biz_opt_log_with_options_async(request, headers, runtime)
 
     def query_biz_opt_log_with_options(
         self,
@@ -7116,9 +9332,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryBizOptLog',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/bizOptLogs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryBizOptLogResponse(),
-            self.do_roarequest('QueryBizOptLog', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/bizOptLogs', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_biz_opt_log_with_options_async(
@@ -7142,26 +9369,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryBizOptLog',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/bizOptLogs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryBizOptLogResponse(),
-            await self.do_roarequest_async('QueryBizOptLog', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/bizOptLogs', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_department_extend_info(
+    def query_biz_opt_log(
         self,
-        request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
-    ) -> dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse:
+        request: dingtalkindustry__1__0_models.QueryBizOptLogRequest,
+    ) -> dingtalkindustry__1__0_models.QueryBizOptLogResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryDepartmentExtendInfoHeaders()
-        return self.query_department_extend_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryBizOptLogHeaders()
+        return self.query_biz_opt_log_with_options(request, headers, runtime)
 
-    async def query_department_extend_info_async(
+    async def query_biz_opt_log_async(
         self,
-        request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
-    ) -> dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse:
+        request: dingtalkindustry__1__0_models.QueryBizOptLogRequest,
+    ) -> dingtalkindustry__1__0_models.QueryBizOptLogResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryDepartmentExtendInfoHeaders()
-        return await self.query_department_extend_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryBizOptLogHeaders()
+        return await self.query_biz_opt_log_with_options_async(request, headers, runtime)
 
     def query_department_extend_info_with_options(
         self,
@@ -7184,9 +9422,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDepartmentExtendInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments/extensions/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse(),
-            self.do_roarequest('QueryDepartmentExtendInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/extensions/infos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_department_extend_info_with_options_async(
@@ -7210,9 +9459,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDepartmentExtendInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments/extensions/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse(),
-            await self.do_roarequest_async('QueryDepartmentExtendInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/extensions/infos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_department_extend_info(
+        self,
+        request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryDepartmentExtendInfoHeaders()
+        return self.query_department_extend_info_with_options(request, headers, runtime)
+
+    async def query_department_extend_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentExtendInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryDepartmentExtendInfoHeaders()
+        return await self.query_department_extend_info_with_options_async(request, headers, runtime)
+
+    def query_department_info_with_options(
+        self,
+        dept_id: str,
+        headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryDepartmentInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments/{dept_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryDepartmentInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_department_info_with_options_async(
+        self,
+        dept_id: str,
+        headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryDepartmentInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/departments/{dept_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryDepartmentInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_department_info(
@@ -7231,44 +9567,76 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders()
         return await self.query_department_info_with_options_async(dept_id, headers, runtime)
 
-    def query_department_info_with_options(
+    def query_doctor_details_by_job_number_with_options(
         self,
-        dept_id: str,
-        headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
+        job_number: str,
+        request: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberRequest,
+        headers: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
+    ) -> dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryDoctorDetailsByJobNumber',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/doctors/{job_number}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryDepartmentInfoResponse(),
-            self.do_roarequest('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}', 'json', req, runtime)
+            dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def query_department_info_with_options_async(
+    async def query_doctor_details_by_job_number_with_options_async(
         self,
-        dept_id: str,
-        headers: dingtalkindustry__1__0_models.QueryDepartmentInfoHeaders,
+        job_number: str,
+        request: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberRequest,
+        headers: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryDepartmentInfoResponse:
-        dept_id = OpenApiUtilClient.get_encode_param(dept_id)
+    ) -> dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryDoctorDetailsByJobNumber',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/doctors/{job_number}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryDepartmentInfoResponse(),
-            await self.do_roarequest_async('QueryDepartmentInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/departments/{dept_id}', 'json', req, runtime)
+            dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_doctor_details_by_job_number(
@@ -7289,56 +9657,64 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders()
         return await self.query_doctor_details_by_job_number_with_options_async(job_number, request, headers, runtime)
 
-    def query_doctor_details_by_job_number_with_options(
+    def query_group_info_with_options(
         self,
-        job_number: str,
-        request: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberRequest,
-        headers: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders,
+        group_id: str,
+        headers: dingtalkindustry__1__0_models.QueryGroupInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse:
-        UtilClient.validate_model(request)
-        job_number = OpenApiUtilClient.get_encode_param(job_number)
-        query = {}
-        if not UtilClient.is_unset(request.month_mark):
-            query['monthMark'] = request.month_mark
+    ) -> dingtalkindustry__1__0_models.QueryGroupInfoResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryGroupInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/groups/{group_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse(),
-            self.do_roarequest('QueryDoctorDetailsByJobNumber', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors/{job_number}', 'json', req, runtime)
+            dingtalkindustry__1__0_models.QueryGroupInfoResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def query_doctor_details_by_job_number_with_options_async(
+    async def query_group_info_with_options_async(
         self,
-        job_number: str,
-        request: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberRequest,
-        headers: dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberHeaders,
+        group_id: str,
+        headers: dingtalkindustry__1__0_models.QueryGroupInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse:
-        UtilClient.validate_model(request)
-        job_number = OpenApiUtilClient.get_encode_param(job_number)
-        query = {}
-        if not UtilClient.is_unset(request.month_mark):
-            query['monthMark'] = request.month_mark
+    ) -> dingtalkindustry__1__0_models.QueryGroupInfoResponse:
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryGroupInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/groups/{group_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryDoctorDetailsByJobNumberResponse(),
-            await self.do_roarequest_async('QueryDoctorDetailsByJobNumber', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/doctors/{job_number}', 'json', req, runtime)
+            dingtalkindustry__1__0_models.QueryGroupInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_group_info(
@@ -7356,62 +9732,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.QueryGroupInfoHeaders()
         return await self.query_group_info_with_options_async(group_id, headers, runtime)
-
-    def query_group_info_with_options(
-        self,
-        group_id: str,
-        headers: dingtalkindustry__1__0_models.QueryGroupInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryGroupInfoResponse:
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryGroupInfoResponse(),
-            self.do_roarequest('QueryGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/groups/{group_id}', 'json', req, runtime)
-        )
-
-    async def query_group_info_with_options_async(
-        self,
-        group_id: str,
-        headers: dingtalkindustry__1__0_models.QueryGroupInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryGroupInfoResponse:
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryGroupInfoResponse(),
-            await self.do_roarequest_async('QueryGroupInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/groups/{group_id}', 'json', req, runtime)
-        )
-
-    def query_hospital_district_info(
-        self,
-        request: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoRequest,
-    ) -> dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryHospitalDistrictInfoHeaders()
-        return self.query_hospital_district_info_with_options(request, headers, runtime)
-
-    async def query_hospital_district_info_async(
-        self,
-        request: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoRequest,
-    ) -> dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryHospitalDistrictInfoHeaders()
-        return await self.query_hospital_district_info_with_options_async(request, headers, runtime)
 
     def query_hospital_district_info_with_options(
         self,
@@ -7434,9 +9754,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryHospitalDistrictInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/districts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse(),
-            self.do_roarequest('QueryHospitalDistrictInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/districts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_hospital_district_info_with_options_async(
@@ -7460,26 +9791,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryHospitalDistrictInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/districts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse(),
-            await self.do_roarequest_async('QueryHospitalDistrictInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/districts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_hospital_role_user_info(
+    def query_hospital_district_info(
         self,
-        request: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoRequest,
-    ) -> dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse:
+        request: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoHeaders()
-        return self.query_hospital_role_user_info_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryHospitalDistrictInfoHeaders()
+        return self.query_hospital_district_info_with_options(request, headers, runtime)
 
-    async def query_hospital_role_user_info_async(
+    async def query_hospital_district_info_async(
         self,
-        request: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoRequest,
-    ) -> dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse:
+        request: dingtalkindustry__1__0_models.QueryHospitalDistrictInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalDistrictInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoHeaders()
-        return await self.query_hospital_role_user_info_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryHospitalDistrictInfoHeaders()
+        return await self.query_hospital_district_info_with_options_async(request, headers, runtime)
 
     def query_hospital_role_user_info_with_options(
         self,
@@ -7502,9 +9844,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryHospitalRoleUserInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/roles/userInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse(),
-            self.do_roarequest('QueryHospitalRoleUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/roles/userInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_hospital_role_user_info_with_options_async(
@@ -7528,20 +9881,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryHospitalRoleUserInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/roles/userInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse(),
-            await self.do_roarequest_async('QueryHospitalRoleUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/roles/userInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_hospital_roles(self) -> dingtalkindustry__1__0_models.QueryHospitalRolesResponse:
+    def query_hospital_role_user_info(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryHospitalRolesHeaders()
-        return self.query_hospital_roles_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoHeaders()
+        return self.query_hospital_role_user_info_with_options(request, headers, runtime)
 
-    async def query_hospital_roles_async(self) -> dingtalkindustry__1__0_models.QueryHospitalRolesResponse:
+    async def query_hospital_role_user_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryHospitalRolesHeaders()
-        return await self.query_hospital_roles_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryHospitalRoleUserInfoHeaders()
+        return await self.query_hospital_role_user_info_with_options_async(request, headers, runtime)
 
     def query_hospital_roles_with_options(
         self,
@@ -7556,9 +9926,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryHospitalRoles',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryHospitalRolesResponse(),
-            self.do_roarequest('QueryHospitalRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/roles', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_hospital_roles_with_options_async(
@@ -7574,20 +9955,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryHospitalRoles',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryHospitalRolesResponse(),
-            await self.do_roarequest_async('QueryHospitalRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/roles', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_job_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse:
+    def query_hospital_roles(self) -> dingtalkindustry__1__0_models.QueryHospitalRolesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryJobCodeDictionaryHeaders()
-        return self.query_job_code_dictionary_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryHospitalRolesHeaders()
+        return self.query_hospital_roles_with_options(headers, runtime)
 
-    async def query_job_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse:
+    async def query_hospital_roles_async(self) -> dingtalkindustry__1__0_models.QueryHospitalRolesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryJobCodeDictionaryHeaders()
-        return await self.query_job_code_dictionary_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryHospitalRolesHeaders()
+        return await self.query_hospital_roles_with_options_async(headers, runtime)
 
     def query_job_code_dictionary_with_options(
         self,
@@ -7602,9 +9994,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryJobCodeDictionary',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/jobCodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse(),
-            self.do_roarequest('QueryJobCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/jobCodes', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_job_code_dictionary_with_options_async(
@@ -7620,20 +10023,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryJobCodeDictionary',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/jobCodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse(),
-            await self.do_roarequest_async('QueryJobCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/jobCodes', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_job_status_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse:
+    def query_job_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryHeaders()
-        return self.query_job_status_code_dictionary_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryJobCodeDictionaryHeaders()
+        return self.query_job_code_dictionary_with_options(headers, runtime)
 
-    async def query_job_status_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse:
+    async def query_job_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryJobCodeDictionaryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryHeaders()
-        return await self.query_job_status_code_dictionary_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryJobCodeDictionaryHeaders()
+        return await self.query_job_code_dictionary_with_options_async(headers, runtime)
 
     def query_job_status_code_dictionary_with_options(
         self,
@@ -7648,9 +10062,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryJobStatusCodeDictionary',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/jobStatusCodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse(),
-            self.do_roarequest('QueryJobStatusCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/jobStatusCodes', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_job_status_code_dictionary_with_options_async(
@@ -7666,20 +10091,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryJobStatusCodeDictionary',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/jobStatusCodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse(),
-            await self.do_roarequest_async('QueryJobStatusCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/jobStatusCodes', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_medical_events(self) -> dingtalkindustry__1__0_models.QueryMedicalEventsResponse:
+    def query_job_status_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryMedicalEventsHeaders()
-        return self.query_medical_events_with_options(headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryHeaders()
+        return self.query_job_status_code_dictionary_with_options(headers, runtime)
 
-    async def query_medical_events_async(self) -> dingtalkindustry__1__0_models.QueryMedicalEventsResponse:
+    async def query_job_status_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryMedicalEventsHeaders()
-        return await self.query_medical_events_with_options_async(headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryJobStatusCodeDictionaryHeaders()
+        return await self.query_job_status_code_dictionary_with_options_async(headers, runtime)
 
     def query_medical_events_with_options(
         self,
@@ -7694,9 +10130,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryMedicalEvents',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/events',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryMedicalEventsResponse(),
-            self.do_roarequest('QueryMedicalEvents', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/events', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_medical_events_with_options_async(
@@ -7712,26 +10159,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryMedicalEvents',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/events',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryMedicalEventsResponse(),
-            await self.do_roarequest_async('QueryMedicalEvents', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/events', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_user_credentials(
-        self,
-        request: dingtalkindustry__1__0_models.QueryUserCredentialsRequest,
-    ) -> dingtalkindustry__1__0_models.QueryUserCredentialsResponse:
+    def query_medical_events(self) -> dingtalkindustry__1__0_models.QueryMedicalEventsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryUserCredentialsHeaders()
-        return self.query_user_credentials_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryMedicalEventsHeaders()
+        return self.query_medical_events_with_options(headers, runtime)
 
-    async def query_user_credentials_async(
-        self,
-        request: dingtalkindustry__1__0_models.QueryUserCredentialsRequest,
-    ) -> dingtalkindustry__1__0_models.QueryUserCredentialsResponse:
+    async def query_medical_events_async(self) -> dingtalkindustry__1__0_models.QueryMedicalEventsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryUserCredentialsHeaders()
-        return await self.query_user_credentials_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.QueryMedicalEventsHeaders()
+        return await self.query_medical_events_with_options_async(headers, runtime)
 
     def query_user_credentials_with_options(
         self,
@@ -7752,9 +10204,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryUserCredentials',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/credentials/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserCredentialsResponse(),
-            self.do_roarequest('QueryUserCredentials', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/credentials/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_user_credentials_with_options_async(
@@ -7776,9 +10239,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryUserCredentials',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/credentials/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserCredentialsResponse(),
-            await self.do_roarequest_async('QueryUserCredentials', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/credentials/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_user_credentials(
+        self,
+        request: dingtalkindustry__1__0_models.QueryUserCredentialsRequest,
+    ) -> dingtalkindustry__1__0_models.QueryUserCredentialsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserCredentialsHeaders()
+        return self.query_user_credentials_with_options(request, headers, runtime)
+
+    async def query_user_credentials_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryUserCredentialsRequest,
+    ) -> dingtalkindustry__1__0_models.QueryUserCredentialsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserCredentialsHeaders()
+        return await self.query_user_credentials_with_options_async(request, headers, runtime)
+
+    def query_user_ext_info_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkindustry__1__0_models.QueryUserExtInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserExtInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryUserExtInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}/extInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserExtInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_user_ext_info_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkindustry__1__0_models.QueryUserExtInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserExtInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryUserExtInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}/extInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserExtInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_user_ext_info(
@@ -7796,62 +10346,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.QueryUserExtInfoHeaders()
         return await self.query_user_ext_info_with_options_async(user_id, headers, runtime)
-
-    def query_user_ext_info_with_options(
-        self,
-        user_id: str,
-        headers: dingtalkindustry__1__0_models.QueryUserExtInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryUserExtInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryUserExtInfoResponse(),
-            self.do_roarequest('QueryUserExtInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extInfos', 'json', req, runtime)
-        )
-
-    async def query_user_ext_info_with_options_async(
-        self,
-        user_id: str,
-        headers: dingtalkindustry__1__0_models.QueryUserExtInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryUserExtInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryUserExtInfoResponse(),
-            await self.do_roarequest_async('QueryUserExtInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extInfos', 'json', req, runtime)
-        )
-
-    def query_user_extend_values(
-        self,
-        request: dingtalkindustry__1__0_models.QueryUserExtendValuesRequest,
-    ) -> dingtalkindustry__1__0_models.QueryUserExtendValuesResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryUserExtendValuesHeaders()
-        return self.query_user_extend_values_with_options(request, headers, runtime)
-
-    async def query_user_extend_values_async(
-        self,
-        request: dingtalkindustry__1__0_models.QueryUserExtendValuesRequest,
-    ) -> dingtalkindustry__1__0_models.QueryUserExtendValuesResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryUserExtendValuesHeaders()
-        return await self.query_user_extend_values_with_options_async(request, headers, runtime)
 
     def query_user_extend_values_with_options(
         self,
@@ -7874,9 +10368,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryUserExtendValues',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/extends/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserExtendValuesResponse(),
-            self.do_roarequest('QueryUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/extends/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_user_extend_values_with_options_async(
@@ -7900,9 +10405,108 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryUserExtendValues',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/extends/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserExtendValuesResponse(),
-            await self.do_roarequest_async('QueryUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/extends/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_user_extend_values(
+        self,
+        request: dingtalkindustry__1__0_models.QueryUserExtendValuesRequest,
+    ) -> dingtalkindustry__1__0_models.QueryUserExtendValuesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserExtendValuesHeaders()
+        return self.query_user_extend_values_with_options(request, headers, runtime)
+
+    async def query_user_extend_values_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryUserExtendValuesRequest,
+    ) -> dingtalkindustry__1__0_models.QueryUserExtendValuesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserExtendValuesHeaders()
+        return await self.query_user_extend_values_with_options_async(request, headers, runtime)
+
+    def query_user_info_with_options(
+        self,
+        user_id: str,
+        request: dingtalkindustry__1__0_models.QueryUserInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUserInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_user_info_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkindustry__1__0_models.QueryUserInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.month_mark):
+            query['monthMark'] = request.month_mark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUserInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_user_info(
@@ -7923,68 +10527,6 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.QueryUserInfoHeaders()
         return await self.query_user_info_with_options_async(user_id, request, headers, runtime)
 
-    def query_user_info_with_options(
-        self,
-        user_id: str,
-        request: dingtalkindustry__1__0_models.QueryUserInfoRequest,
-        headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
-        UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        query = {}
-        if not UtilClient.is_unset(request.month_mark):
-            query['monthMark'] = request.month_mark
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryUserInfoResponse(),
-            self.do_roarequest('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}', 'json', req, runtime)
-        )
-
-    async def query_user_info_with_options_async(
-        self,
-        user_id: str,
-        request: dingtalkindustry__1__0_models.QueryUserInfoRequest,
-        headers: dingtalkindustry__1__0_models.QueryUserInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryUserInfoResponse:
-        UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        query = {}
-        if not UtilClient.is_unset(request.month_mark):
-            query['monthMark'] = request.month_mark
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryUserInfoResponse(),
-            await self.do_roarequest_async('QueryUserInfo', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}', 'json', req, runtime)
-        )
-
-    def query_user_prob_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders()
-        return self.query_user_prob_code_dictionary_with_options(headers, runtime)
-
-    async def query_user_prob_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders()
-        return await self.query_user_prob_code_dictionary_with_options_async(headers, runtime)
-
     def query_user_prob_code_dictionary_with_options(
         self,
         headers: dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders,
@@ -7998,9 +10540,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryUserProbCodeDictionary',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/userProbCodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse(),
-            self.do_roarequest('QueryUserProbCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/userProbCodes', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_user_prob_code_dictionary_with_options_async(
@@ -8016,9 +10569,90 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryUserProbCodeDictionary',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/userProbCodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse(),
-            await self.do_roarequest_async('QueryUserProbCodeDictionary', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/userProbCodes', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_user_prob_code_dictionary(self) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders()
+        return self.query_user_prob_code_dictionary_with_options(headers, runtime)
+
+    async def query_user_prob_code_dictionary_async(self) -> dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryUserProbCodeDictionaryHeaders()
+        return await self.query_user_prob_code_dictionary_with_options_async(headers, runtime)
+
+    def query_user_roles_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkindustry__1__0_models.QueryUserRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryUserRoles',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserRolesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_user_roles_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkindustry__1__0_models.QueryUserRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryUserRoles',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryUserRolesResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_user_roles(
@@ -8037,44 +10671,84 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.QueryUserRolesHeaders()
         return await self.query_user_roles_with_options_async(user_id, headers, runtime)
 
-    def query_user_roles_with_options(
+    def save_user_extend_values_with_options(
         self,
         user_id: str,
-        headers: dingtalkindustry__1__0_models.QueryUserRolesHeaders,
+        request: dingtalkindustry__1__0_models.SaveUserExtendValuesRequest,
+        headers: dingtalkindustry__1__0_models.SaveUserExtendValuesHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
+    ) -> dingtalkindustry__1__0_models.SaveUserExtendValuesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_display_name):
+            query['userDisplayName'] = request.user_display_name
+        if not UtilClient.is_unset(request.user_extend_key):
+            query['userExtendKey'] = request.user_extend_key
+        if not UtilClient.is_unset(request.user_extend_value):
+            query['userExtendValue'] = request.user_extend_value
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SaveUserExtendValues',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}/extends',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryUserRolesResponse(),
-            self.do_roarequest('QueryUserRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}/roles', 'json', req, runtime)
+            dingtalkindustry__1__0_models.SaveUserExtendValuesResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def query_user_roles_with_options_async(
+    async def save_user_extend_values_with_options_async(
         self,
         user_id: str,
-        headers: dingtalkindustry__1__0_models.QueryUserRolesHeaders,
+        request: dingtalkindustry__1__0_models.SaveUserExtendValuesRequest,
+        headers: dingtalkindustry__1__0_models.SaveUserExtendValuesHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.QueryUserRolesResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
+    ) -> dingtalkindustry__1__0_models.SaveUserExtendValuesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_display_name):
+            query['userDisplayName'] = request.user_display_name
+        if not UtilClient.is_unset(request.user_extend_key):
+            query['userExtendKey'] = request.user_extend_key
+        if not UtilClient.is_unset(request.user_extend_value):
+            query['userExtendValue'] = request.user_extend_value
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SaveUserExtendValues',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}/extends',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkindustry__1__0_models.QueryUserRolesResponse(),
-            await self.do_roarequest_async('QueryUserRoles', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/medicals/users/{user_id}/roles', 'json', req, runtime)
+            dingtalkindustry__1__0_models.SaveUserExtendValuesResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def save_user_extend_values(
@@ -8094,82 +10768,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.SaveUserExtendValuesHeaders()
         return await self.save_user_extend_values_with_options_async(user_id, request, headers, runtime)
-
-    def save_user_extend_values_with_options(
-        self,
-        user_id: str,
-        request: dingtalkindustry__1__0_models.SaveUserExtendValuesRequest,
-        headers: dingtalkindustry__1__0_models.SaveUserExtendValuesHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.SaveUserExtendValuesResponse:
-        UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        query = {}
-        if not UtilClient.is_unset(request.user_display_name):
-            query['userDisplayName'] = request.user_display_name
-        if not UtilClient.is_unset(request.user_extend_key):
-            query['userExtendKey'] = request.user_extend_key
-        if not UtilClient.is_unset(request.user_extend_value):
-            query['userExtendValue'] = request.user_extend_value
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.SaveUserExtendValuesResponse(),
-            self.do_roarequest('SaveUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extends', 'json', req, runtime)
-        )
-
-    async def save_user_extend_values_with_options_async(
-        self,
-        user_id: str,
-        request: dingtalkindustry__1__0_models.SaveUserExtendValuesRequest,
-        headers: dingtalkindustry__1__0_models.SaveUserExtendValuesHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.SaveUserExtendValuesResponse:
-        UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        query = {}
-        if not UtilClient.is_unset(request.user_display_name):
-            query['userDisplayName'] = request.user_display_name
-        if not UtilClient.is_unset(request.user_extend_key):
-            query['userExtendKey'] = request.user_extend_key
-        if not UtilClient.is_unset(request.user_extend_value):
-            query['userExtendValue'] = request.user_extend_value
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.SaveUserExtendValuesResponse(),
-            await self.do_roarequest_async('SaveUserExtendValues', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extends', 'json', req, runtime)
-        )
-
-    def supply_add_dept(
-        self,
-        request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
-    ) -> dingtalkindustry__1__0_models.SupplyAddDeptResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.SupplyAddDeptHeaders()
-        return self.supply_add_dept_with_options(request, headers, runtime)
-
-    async def supply_add_dept_async(
-        self,
-        request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
-    ) -> dingtalkindustry__1__0_models.SupplyAddDeptResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.SupplyAddDeptHeaders()
-        return await self.supply_add_dept_with_options_async(request, headers, runtime)
 
     def supply_add_dept_with_options(
         self,
@@ -8196,9 +10794,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SupplyAddDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.SupplyAddDeptResponse(),
-            self.do_roarequest('SupplyAddDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/supplyChains/departments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def supply_add_dept_with_options_async(
@@ -8226,26 +10835,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SupplyAddDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.SupplyAddDeptResponse(),
-            await self.do_roarequest_async('SupplyAddDept', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/supplyChains/departments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def supply_add_member(
+    def supply_add_dept(
         self,
-        request: dingtalkindustry__1__0_models.SupplyAddMemberRequest,
-    ) -> dingtalkindustry__1__0_models.SupplyAddMemberResponse:
+        request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.SupplyAddMemberHeaders()
-        return self.supply_add_member_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.SupplyAddDeptHeaders()
+        return self.supply_add_dept_with_options(request, headers, runtime)
 
-    async def supply_add_member_async(
+    async def supply_add_dept_async(
         self,
-        request: dingtalkindustry__1__0_models.SupplyAddMemberRequest,
-    ) -> dingtalkindustry__1__0_models.SupplyAddMemberResponse:
+        request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.SupplyAddMemberHeaders()
-        return await self.supply_add_member_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.SupplyAddDeptHeaders()
+        return await self.supply_add_dept_with_options_async(request, headers, runtime)
 
     def supply_add_member_with_options(
         self,
@@ -8274,9 +10894,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SupplyAddMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.SupplyAddMemberResponse(),
-            self.do_roarequest('SupplyAddMember', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/supplyChains/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def supply_add_member_with_options_async(
@@ -8306,26 +10937,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SupplyAddMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.SupplyAddMemberResponse(),
-            await self.do_roarequest_async('SupplyAddMember', 'industry_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/industry/supplyChains/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def supply_get_member(
+    def supply_add_member(
         self,
-        request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
-    ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
+        request: dingtalkindustry__1__0_models.SupplyAddMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.SupplyGetMemberHeaders()
-        return self.supply_get_member_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.SupplyAddMemberHeaders()
+        return self.supply_add_member_with_options(request, headers, runtime)
 
-    async def supply_get_member_async(
+    async def supply_add_member_async(
         self,
-        request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
-    ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
+        request: dingtalkindustry__1__0_models.SupplyAddMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.SupplyGetMemberHeaders()
-        return await self.supply_get_member_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.SupplyAddMemberHeaders()
+        return await self.supply_add_member_with_options_async(request, headers, runtime)
 
     def supply_get_member_with_options(
         self,
@@ -8348,9 +10990,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SupplyGetMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.SupplyGetMemberResponse(),
-            self.do_roarequest('SupplyGetMember', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/supplyChains/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def supply_get_member_with_options_async(
@@ -8374,26 +11027,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SupplyGetMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.SupplyGetMemberResponse(),
-            await self.do_roarequest_async('SupplyGetMember', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/supplyChains/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def supply_list_dept_members(
+    def supply_get_member(
         self,
-        request: dingtalkindustry__1__0_models.SupplyListDeptMembersRequest,
-    ) -> dingtalkindustry__1__0_models.SupplyListDeptMembersResponse:
+        request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders()
-        return self.supply_list_dept_members_with_options(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.SupplyGetMemberHeaders()
+        return self.supply_get_member_with_options(request, headers, runtime)
 
-    async def supply_list_dept_members_async(
+    async def supply_get_member_async(
         self,
-        request: dingtalkindustry__1__0_models.SupplyListDeptMembersRequest,
-    ) -> dingtalkindustry__1__0_models.SupplyListDeptMembersResponse:
+        request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders()
-        return await self.supply_list_dept_members_with_options_async(request, headers, runtime)
+        headers = dingtalkindustry__1__0_models.SupplyGetMemberHeaders()
+        return await self.supply_get_member_with_options_async(request, headers, runtime)
 
     def supply_list_dept_members_with_options(
         self,
@@ -8418,9 +11082,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SupplyListDeptMembers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.SupplyListDeptMembersResponse(),
-            self.do_roarequest('SupplyListDeptMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/supplyChains/departments/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def supply_list_dept_members_with_options_async(
@@ -8446,9 +11121,120 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SupplyListDeptMembers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkindustry__1__0_models.SupplyListDeptMembersResponse(),
-            await self.do_roarequest_async('SupplyListDeptMembers', 'industry_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/industry/supplyChains/departments/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_list_dept_members(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListDeptMembersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListDeptMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders()
+        return self.supply_list_dept_members_with_options(request, headers, runtime)
+
+    async def supply_list_dept_members_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListDeptMembersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListDeptMembersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders()
+        return await self.supply_list_dept_members_with_options_async(request, headers, runtime)
+
+    def update_user_extend_info_with_options(
+        self,
+        user_id: str,
+        request: dingtalkindustry__1__0_models.UpdateUserExtendInfoRequest,
+        headers: dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.comments):
+            body['comments'] = request.comments
+        if not UtilClient.is_unset(request.job_code):
+            body['jobCode'] = request.job_code
+        if not UtilClient.is_unset(request.job_status_code):
+            body['jobStatusCode'] = request.job_status_code
+        if not UtilClient.is_unset(request.user_prob_code):
+            body['userProbCode'] = request.user_prob_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateUserExtendInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}/extInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_user_extend_info_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkindustry__1__0_models.UpdateUserExtendInfoRequest,
+        headers: dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.comments):
+            body['comments'] = request.comments
+        if not UtilClient.is_unset(request.job_code):
+            body['jobCode'] = request.job_code
+        if not UtilClient.is_unset(request.job_status_code):
+            body['jobStatusCode'] = request.job_status_code
+        if not UtilClient.is_unset(request.user_prob_code):
+            body['userProbCode'] = request.user_prob_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateUserExtendInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/medicals/users/{user_id}/extInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def update_user_extend_info(
@@ -8468,67 +11254,3 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders()
         return await self.update_user_extend_info_with_options_async(user_id, request, headers, runtime)
-
-    def update_user_extend_info_with_options(
-        self,
-        user_id: str,
-        request: dingtalkindustry__1__0_models.UpdateUserExtendInfoRequest,
-        headers: dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
-        UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        body = {}
-        if not UtilClient.is_unset(request.comments):
-            body['comments'] = request.comments
-        if not UtilClient.is_unset(request.job_code):
-            body['jobCode'] = request.job_code
-        if not UtilClient.is_unset(request.job_status_code):
-            body['jobStatusCode'] = request.job_status_code
-        if not UtilClient.is_unset(request.user_prob_code):
-            body['userProbCode'] = request.user_prob_code
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse(),
-            self.do_roarequest('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extInfos', 'none', req, runtime)
-        )
-
-    async def update_user_extend_info_with_options_async(
-        self,
-        user_id: str,
-        request: dingtalkindustry__1__0_models.UpdateUserExtendInfoRequest,
-        headers: dingtalkindustry__1__0_models.UpdateUserExtendInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse:
-        UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        body = {}
-        if not UtilClient.is_unset(request.comments):
-            body['comments'] = request.comments
-        if not UtilClient.is_unset(request.job_code):
-            body['jobCode'] = request.job_code
-        if not UtilClient.is_unset(request.job_status_code):
-            body['jobStatusCode'] = request.job_status_code
-        if not UtilClient.is_unset(request.user_prob_code):
-            body['userProbCode'] = request.user_prob_code
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkindustry__1__0_models.UpdateUserExtendInfoResponse(),
-            await self.do_roarequest_async('UpdateUserExtendInfo', 'industry_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/industry/medicals/users/{user_id}/extInfos', 'none', req, runtime)
-        )

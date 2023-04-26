@@ -49,21 +49,13 @@ class ApplyBatchPayRequest(TeaModel):
         trans_amount: str = None,
         trans_expire_time: str = None,
     ):
-        # 支付账号唯一id
         self.account_id = account_id
-        # 钉钉订单号(和商户批次号一一对应)
         self.order_no = order_no
-        # 公用回传参数，如果请求时传递了该参数，则异步通知商户时会回传该参数
         self.pass_back_params = pass_back_params
-        # 支付终端
         self.pay_terminal = pay_terminal
-        # 回调url
         self.return_url = return_url
-        # 支付发起人staffId
         self.staff_id = staff_id
-        # 订单总金额（必填）, 单位为：元
         self.trans_amount = trans_amount
-        # 转账过期时间
         self.trans_expire_time = trans_expire_time
 
     def validate(self):
@@ -120,9 +112,7 @@ class ApplyBatchPayResponseBody(TeaModel):
         order_no: str = None,
         pay_data: str = None,
     ):
-        # 钉钉支付的批次号
         self.order_no = order_no
-        # 支付确认页数据
         self.pay_data = pay_data
 
     def validate(self):
@@ -153,13 +143,16 @@ class ApplyBatchPayResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ApplyBatchPayResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -172,6 +165,8 @@ class ApplyBatchPayResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -180,6 +175,8 @@ class ApplyBatchPayResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ApplyBatchPayResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -224,7 +221,6 @@ class CloseLoanEntranceRequest(TeaModel):
         self,
         request_id: str = None,
     ):
-        # 请求id唯一
         self.request_id = request_id
 
     def validate(self):
@@ -253,9 +249,7 @@ class CloseLoanEntranceResponseBody(TeaModel):
         request_id: str = None,
         result: str = None,
     ):
-        # 请求id与传入保持一致
         self.request_id = request_id
-        # 结果：Y 成功, N 失败
         self.result = result
 
     def validate(self):
@@ -286,13 +280,16 @@ class CloseLoanEntranceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CloseLoanEntranceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -305,6 +302,8 @@ class CloseLoanEntranceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -313,6 +312,8 @@ class CloseLoanEntranceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CloseLoanEntranceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -358,9 +359,7 @@ class ConsultCreateSubInstitutionRequestContactInfo(TeaModel):
         contact_name: str = None,
         mobile: str = None,
     ):
-        # 联系人姓名
         self.contact_name = contact_name
-        # 联系人手机号
         self.mobile = mobile
 
     def validate(self):
@@ -396,15 +395,10 @@ class ConsultCreateSubInstitutionRequestLegalPersonCertInfo(TeaModel):
         cert_type: str = None,
         id_card_no: str = None,
     ):
-        # 法人证件反面url
         self.cert_back_image = cert_back_image
-        # 法人证件正面url
         self.cert_front_image = cert_front_image
-        # 法人姓名
         self.cert_name = cert_name
-        # 法人证件类型 不填默认为身份证
         self.cert_type = cert_type
-        # 法人证件号
         self.id_card_no = id_card_no
 
     def validate(self):
@@ -449,9 +443,7 @@ class ConsultCreateSubInstitutionRequestQualificationInfos(TeaModel):
         qualification_image: str = None,
         qualification_type: str = None,
     ):
-        # 子机构行业资质图片
         self.qualification_image = qualification_image
-        # 子机构行业资质类型
         self.qualification_type = qualification_type
 
     def validate(self):
@@ -493,27 +485,16 @@ class ConsultCreateSubInstitutionRequestSettleInfo(TeaModel):
         type: str = None,
         usage_type: str = None,
     ):
-        # 账户账号
         self.account_id = account_id
-        # 账户名称 账号类型银行卡时为卡户名
         self.account_name = account_name
-        # 卡类型
         self.account_type = account_type
-        # 支行名称
         self.bank_branch_name = bank_branch_name
-        # 开户行所在地 市
         self.bank_city = bank_city
-        # 联行号
         self.bank_code = bank_code
-        # 银行名称
         self.bank_name = bank_name
-        # 开户行所在地 省
         self.bank_province = bank_province
-        # 开户行简称缩写
         self.bank_short_name_code = bank_short_name_code
-        # 账号类型
         self.type = type
-        # 账户使用类型
         self.usage_type = usage_type
 
     def validate(self):
@@ -584,13 +565,9 @@ class ConsultCreateSubInstitutionRequestSubInstAddressInfo(TeaModel):
         district_code: str = None,
         province_code: str = None,
     ):
-        # 详细地址
         self.address = address
-        # 市码
         self.city_code = city_code
-        # 区码
         self.district_code = district_code
-        # 省码
         self.province_code = province_code
 
     def validate(self):
@@ -630,7 +607,6 @@ class ConsultCreateSubInstitutionRequestSubInstAuthInfo(TeaModel):
         self,
         authorization_letter_url: str = None,
     ):
-        # 授权函图片url
         self.authorization_letter_url = authorization_letter_url
 
     def validate(self):
@@ -661,13 +637,9 @@ class ConsultCreateSubInstitutionRequestSubInstBasicInfo(TeaModel):
         sub_inst_name: str = None,
         type: str = None,
     ):
-        # 别名
         self.alias_name = alias_name
-        # 机构识别码
         self.mcc = mcc
-        # 名称
         self.sub_inst_name = sub_inst_name
-        # 类型
         self.type = type
 
     def validate(self):
@@ -709,11 +681,8 @@ class ConsultCreateSubInstitutionRequestSubInstCertifyInfo(TeaModel):
         cert_no: str = None,
         cert_type: str = None,
     ):
-        # 证件图片, 如果是特殊行业必填
         self.cert_image = cert_image
-        # 证件号码
         self.cert_no = cert_no
-        # 证件类型
         self.cert_type = cert_type
 
     def validate(self):
@@ -752,13 +721,9 @@ class ConsultCreateSubInstitutionRequestSubInstInvoiceInfoMailAddress(TeaModel):
         district_code: str = None,
         province_code: str = None,
     ):
-        # 详细地址
         self.address = address
-        # 市码
         self.city_code = city_code
-        # 区码
         self.district_code = district_code
-        # 省码
         self.province_code = province_code
 
     def validate(self):
@@ -810,31 +775,18 @@ class ConsultCreateSubInstitutionRequestSubInstInvoiceInfo(TeaModel):
         telephone: str = None,
         title: str = None,
     ):
-        # 是否接受电票
         self.accept_electronic = accept_electronic
-        # 开票地址
         self.address = address
-        # 是否自动开票
         self.auto_invoice = auto_invoice
-        # 银行账户
         self.bank_account = bank_account
-        # 银行名称
         self.bank_name = bank_name
-        # 收件地址
         self.mail_address = mail_address
-        # 收件人名称
         self.mail_name = mail_name
-        # 收件人号码
         self.mail_phone = mail_phone
-        # 纳税人识别号
         self.tax_no = tax_no
-        # 纳税人资质
         self.tax_payer_qualification = tax_payer_qualification
-        # 纳税人资格开始时间
         self.tax_payer_valid_date = tax_payer_valid_date
-        # 开票电话
         self.telephone = telephone
-        # 纳税人抬头
         self.title = title
 
     def validate(self):
@@ -913,9 +865,7 @@ class ConsultCreateSubInstitutionRequestSubInstShopInfo(TeaModel):
         in_door_images: List[str] = None,
         out_door_images: List[str] = None,
     ):
-        # 内景照
         self.in_door_images = in_door_images
-        # 外景照
         self.out_door_images = out_door_images
 
     def validate(self):
@@ -963,38 +913,22 @@ class ConsultCreateSubInstitutionRequest(TeaModel):
         sub_inst_invoice_info: ConsultCreateSubInstitutionRequestSubInstInvoiceInfo = None,
         sub_inst_shop_info: ConsultCreateSubInstitutionRequestSubInstShopInfo = None,
     ):
-        # 签约支付宝账户，用于协议确认
         self.binding_alipay_logon_id = binding_alipay_logon_id
-        # 联系人
         self.contact_info = contact_info
-        # 主机构编号
         self.inst_id = inst_id
         self.legal_person_cert_info = legal_person_cert_info
-        # 进件创建外部流水号
         self.out_trade_no = out_trade_no
-        # 进件渠道
         self.pay_channel = pay_channel
-        # 资质信息
         self.qualification_infos = qualification_infos
-        # 开通的服务类型
         self.services = services
-        # 资金账户信息
         self.settle_info = settle_info
-        # 解决方案，包含清算、费率规则
         self.solution = solution
-        # 子机构地址信息
         self.sub_inst_address_info = sub_inst_address_info
-        # 授权信息
         self.sub_inst_auth_info = sub_inst_auth_info
-        # 子机构基本信息
         self.sub_inst_basic_info = sub_inst_basic_info
-        # 子机构认证信息
         self.sub_inst_certify_info = sub_inst_certify_info
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 开票信息
         self.sub_inst_invoice_info = sub_inst_invoice_info
-        # 子机构门店信息
         self.sub_inst_shop_info = sub_inst_shop_info
 
     def validate(self):
@@ -1121,7 +1055,6 @@ class ConsultCreateSubInstitutionResponseBody(TeaModel):
         self,
         order_id: str = None,
     ):
-        # 进件申请单号
         self.order_id = order_id
 
     def validate(self):
@@ -1148,13 +1081,16 @@ class ConsultCreateSubInstitutionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ConsultCreateSubInstitutionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1167,6 +1103,8 @@ class ConsultCreateSubInstitutionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1175,6 +1113,8 @@ class ConsultCreateSubInstitutionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ConsultCreateSubInstitutionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1224,17 +1164,11 @@ class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDet
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
-        # 金额
         self.amount = amount
-        # 扩展信息
         self.ext_info = ext_info
-        # 资金工具名称
         self.fund_tool_name = fund_tool_name
-        # 资金明细创建时间
         self.gmt_create = gmt_create
-        # 资金明细完成时间
         self.gmt_finish = gmt_finish
-        # 是否是优惠工具
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -1287,17 +1221,11 @@ class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
-        # 渠道金额
         self.amount = amount
-        # 资金明细列表
         self.fund_tool_detail_info_list = fund_tool_detail_info_list
-        # 渠道名称
         self.pay_channel_name = pay_channel_name
-        # 支付渠道单号
         self.pay_channel_order_no = pay_channel_order_no
-        # 渠道类型
         self.pay_channel_type = pay_channel_type
-        # 总优惠金额
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -1362,25 +1290,15 @@ class CreatWithholdingOrderAndPayRequest(TeaModel):
         time_out_express: str = None,
         title: str = None,
     ):
-        # 扣款金额
         self.amount = amount
-        # 主机构编号
         self.inst_id = inst_id
-        # 其他资金渠道付款明细
         self.other_pay_channel_detail_info_list = other_pay_channel_detail_info_list
-        # 外部订单号
         self.out_trade_no = out_trade_no
-        # 支付渠道
         self.pay_channel = pay_channel
-        # 付款人staffId
         self.payer_user_id = payer_user_id
-        # 代扣备注
         self.remark = remark
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 代扣过期时间
         self.time_out_express = time_out_express
-        # 代扣标题
         self.title = title
 
     def validate(self):
@@ -1463,29 +1381,17 @@ class CreatWithholdingOrderAndPayResponseBody(TeaModel):
         sub_inst_id: str = None,
         title: str = None,
     ):
-        # 代扣金额（元）
         self.amount = amount
-        # 付款完成日期
         self.gmt_pay = gmt_pay
-        # 主机构编号
         self.inst_id = inst_id
-        # 钉钉订单号
         self.order_no = order_no
-        # 外部订单号
         self.out_trade_no = out_trade_no
-        # 支付渠道
         self.pay_channel = pay_channel
-        # 支付渠道支付账号（脱敏后返回）
         self.pay_channel_account_no = pay_channel_account_no
-        # 付款人staffId
         self.payer_staff_id = payer_staff_id
-        # 代扣备注
         self.remark = remark
-        # 状态
         self.status = status
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 代扣标题
         self.title = title
 
     def validate(self):
@@ -1556,13 +1462,16 @@ class CreatWithholdingOrderAndPayResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreatWithholdingOrderAndPayResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1575,6 +1484,8 @@ class CreatWithholdingOrderAndPayResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1583,6 +1494,8 @@ class CreatWithholdingOrderAndPayResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreatWithholdingOrderAndPayResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1632,17 +1545,11 @@ class CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoListFundToolDetail
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
-        # 金额
         self.amount = amount
-        # 扩展信息
         self.ext_info = ext_info
-        # 资金工具名称
         self.fund_tool_name = fund_tool_name
-        # 资金明细创建时间
         self.gmt_create = gmt_create
-        # 资金明细完成时间
         self.gmt_finish = gmt_finish
-        # 是否是优惠工具
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -1695,17 +1602,11 @@ class CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
-        # 渠道金额
         self.amount = amount
-        # 资金明细列表
         self.fund_tool_detail_info_list = fund_tool_detail_info_list
-        # 渠道名称
         self.pay_channel_name = pay_channel_name
-        # 支付渠道单号
         self.pay_channel_order_no = pay_channel_order_no
-        # 渠道类型
         self.pay_channel_type = pay_channel_type
-        # 总优惠金额
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -1769,23 +1670,14 @@ class CreateAcquireRefundOrderRequest(TeaModel):
         sub_inst_id: str = None,
         title: str = None,
     ):
-        # 主机构编号
         self.inst_id = inst_id
-        # 操作人userId
         self.operator_user_id = operator_user_id
-        # 原支付单外部流水号
         self.origin_out_trade_no = origin_out_trade_no
-        # 其他资金渠道退款明细
         self.other_pay_channel_detail_info_list = other_pay_channel_detail_info_list
-        # 外部退款订单号
         self.out_refund_no = out_refund_no
-        # 退款金额，支持部分退款
         self.refund_amount = refund_amount
-        # 退款备注
         self.remark = remark
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 代扣标题
         self.title = title
 
     def validate(self):
@@ -1855,11 +1747,8 @@ class CreateAcquireRefundOrderResponseBody(TeaModel):
         refund_order_no: str = None,
         status: str = None,
     ):
-        # 外部退款单号
         self.out_refund_no = out_refund_no
-        # 钉钉退款单号
         self.refund_order_no = refund_order_no
-        # 退款状态
         self.status = status
 
     def validate(self):
@@ -1894,13 +1783,16 @@ class CreateAcquireRefundOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateAcquireRefundOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1913,6 +1805,8 @@ class CreateAcquireRefundOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1921,6 +1815,8 @@ class CreateAcquireRefundOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateAcquireRefundOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1970,17 +1866,11 @@ class CreateBatchTradeOrderRequestBatchTradeDetails(TeaModel):
         payee_account_type: str = None,
         serial_no: int = None,
     ):
-        # 金额（必填，单位：元）
         self.amount = amount
-        # 备注（选填）
         self.memo = memo
-        # 收款方户名（必填）
         self.payee_account_name = payee_account_name
-        # 收款方账号（必填）
         self.payee_account_no = payee_account_no
-        # 收款方账号类型（必填）
         self.payee_account_type = payee_account_type
-        # 序号（必填）
         self.serial_no = serial_no
 
     def validate(self):
@@ -2036,23 +1926,14 @@ class CreateBatchTradeOrderRequest(TeaModel):
         total_count: int = None,
         trade_title: str = None,
     ):
-        # 付款账号唯一id
         self.account_id = account_id
-        # 付款账号(注意：用户上送的是脱敏数据)
         self.account_no = account_no
-        # 批次备注
         self.batch_remark = batch_remark
-        # 交易明细列表
         self.batch_trade_details = batch_trade_details
-        # 外部商户批次号
         self.out_batch_no = out_batch_no
-        # 员工staffId
         self.staff_id = staff_id
-        # 总金额（必填，单位：元）
         self.total_amount = total_amount
-        # 总笔数（必填）
         self.total_count = total_count
-        # 交易抬头
         self.trade_title = trade_title
 
     def validate(self):
@@ -2122,11 +2003,8 @@ class CreateBatchTradeOrderResponseBody(TeaModel):
         order_status: str = None,
         out_batch_no: str = None,
     ):
-        # 钉钉批次单号
         self.order_no = order_no
-        # 批次订单状态
         self.order_status = order_status
-        # 商户批次号
         self.out_batch_no = out_batch_no
 
     def validate(self):
@@ -2161,13 +2039,16 @@ class CreateBatchTradeOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateBatchTradeOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2180,6 +2061,8 @@ class CreateBatchTradeOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2188,6 +2071,8 @@ class CreateBatchTradeOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateBatchTradeOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2233,9 +2118,7 @@ class CreateSubInstitutionRequestContactInfo(TeaModel):
         contact_name: str = None,
         mobile: str = None,
     ):
-        # 联系人姓名
         self.contact_name = contact_name
-        # 联系人手机号
         self.mobile = mobile
 
     def validate(self):
@@ -2271,15 +2154,10 @@ class CreateSubInstitutionRequestLegalPersonCertInfo(TeaModel):
         cert_type: str = None,
         id_card_no: str = None,
     ):
-        # 法人证件反面url
         self.cert_back_image = cert_back_image
-        # 法人证件正面url
         self.cert_front_image = cert_front_image
-        # 法人姓名
         self.cert_name = cert_name
-        # 法人证件类型 不填默认为身份证
         self.cert_type = cert_type
-        # 法人证件号
         self.id_card_no = id_card_no
 
     def validate(self):
@@ -2324,9 +2202,7 @@ class CreateSubInstitutionRequestQualificationInfos(TeaModel):
         qualification_image: str = None,
         qualification_type: str = None,
     ):
-        # 子机构行业资质图片
         self.qualification_image = qualification_image
-        # 子机构行业资质类型
         self.qualification_type = qualification_type
 
     def validate(self):
@@ -2368,27 +2244,16 @@ class CreateSubInstitutionRequestSettleInfo(TeaModel):
         type: str = None,
         usage_type: str = None,
     ):
-        # 账户账号
         self.account_id = account_id
-        # 账户名称 账号类型银行卡时为卡户名
         self.account_name = account_name
-        # 卡类型, DEBIT_CARD借记卡，CREDIT_CARD信用卡
         self.account_type = account_type
-        # 支行名称
         self.bank_branch_name = bank_branch_name
-        # 开户行所在地 市
         self.bank_city = bank_city
-        # 联行号
         self.bank_code = bank_code
-        # 银行名称
         self.bank_name = bank_name
-        # 开户行所在地 省
         self.bank_province = bank_province
-        # 开户行简称缩写
         self.bank_short_name_code = bank_short_name_code
-        # 账号类型
         self.type = type
-        # 账户使用类型
         self.usage_type = usage_type
 
     def validate(self):
@@ -2459,13 +2324,9 @@ class CreateSubInstitutionRequestSubInstAddressInfo(TeaModel):
         district_code: str = None,
         province_code: str = None,
     ):
-        # 详细地址
         self.address = address
-        # 市码
         self.city_code = city_code
-        # 区码
         self.district_code = district_code
-        # 省码
         self.province_code = province_code
 
     def validate(self):
@@ -2505,7 +2366,6 @@ class CreateSubInstitutionRequestSubInstAuthInfo(TeaModel):
         self,
         authorization_letter_url: str = None,
     ):
-        # 授权函图片url
         self.authorization_letter_url = authorization_letter_url
 
     def validate(self):
@@ -2536,13 +2396,9 @@ class CreateSubInstitutionRequestSubInstBasicInfo(TeaModel):
         sub_inst_name: str = None,
         type: str = None,
     ):
-        # 别名
         self.alias_name = alias_name
-        # 机构识别码
         self.mcc = mcc
-        # 名称
         self.sub_inst_name = sub_inst_name
-        # 类型
         self.type = type
 
     def validate(self):
@@ -2584,11 +2440,8 @@ class CreateSubInstitutionRequestSubInstCertifyInfo(TeaModel):
         cert_no: str = None,
         cert_type: str = None,
     ):
-        # 证件图片, 如果是特殊行业必填
         self.cert_image = cert_image
-        # 证件号码
         self.cert_no = cert_no
-        # 证件类型
         self.cert_type = cert_type
 
     def validate(self):
@@ -2627,13 +2480,9 @@ class CreateSubInstitutionRequestSubInstInvoiceInfoMailAddress(TeaModel):
         district_code: str = None,
         province_code: str = None,
     ):
-        # 详细地址
         self.address = address
-        # 市码
         self.city_code = city_code
-        # 区码
         self.district_code = district_code
-        # 省码
         self.province_code = province_code
 
     def validate(self):
@@ -2685,31 +2534,18 @@ class CreateSubInstitutionRequestSubInstInvoiceInfo(TeaModel):
         telephone: str = None,
         title: str = None,
     ):
-        # 是否接受电票
         self.accept_electronic = accept_electronic
-        # 开票地址
         self.address = address
-        # 是否自动开票
         self.auto_invoice = auto_invoice
-        # 银行账户
         self.bank_account = bank_account
-        # 银行名称
         self.bank_name = bank_name
-        # 收件地址
         self.mail_address = mail_address
-        # 收件人名称
         self.mail_name = mail_name
-        # 收件人号码
         self.mail_phone = mail_phone
-        # 纳税人识别号
         self.tax_no = tax_no
-        # 纳税人资质
         self.tax_payer_qualification = tax_payer_qualification
-        # 纳税人资格开始时间
         self.tax_payer_valid_date = tax_payer_valid_date
-        # 开票电话
         self.telephone = telephone
-        # 纳税人抬头
         self.title = title
 
     def validate(self):
@@ -2788,9 +2624,7 @@ class CreateSubInstitutionRequestSubInstShopInfo(TeaModel):
         in_door_images: List[str] = None,
         out_door_images: List[str] = None,
     ):
-        # 内景照
         self.in_door_images = in_door_images
-        # 外景照
         self.out_door_images = out_door_images
 
     def validate(self):
@@ -2838,38 +2672,22 @@ class CreateSubInstitutionRequest(TeaModel):
         sub_inst_invoice_info: CreateSubInstitutionRequestSubInstInvoiceInfo = None,
         sub_inst_shop_info: CreateSubInstitutionRequestSubInstShopInfo = None,
     ):
-        # 签约支付宝账户，用于协议确认
         self.binding_alipay_logon_id = binding_alipay_logon_id
-        # 联系人
         self.contact_info = contact_info
-        # 主机构编号
         self.inst_id = inst_id
         self.legal_person_cert_info = legal_person_cert_info
-        # 进件创建外部流水号
         self.out_trade_no = out_trade_no
-        # 进件渠道
         self.pay_channel = pay_channel
-        # 资质信息
         self.qualification_infos = qualification_infos
-        # 开通的服务类型
         self.services = services
-        # 资金账户信息
         self.settle_info = settle_info
-        # 解决方案，包含费率、清算规则等
         self.solution = solution
-        # 子机构地址信息
         self.sub_inst_address_info = sub_inst_address_info
-        # 授权信息
         self.sub_inst_auth_info = sub_inst_auth_info
-        # 子机构基本信息
         self.sub_inst_basic_info = sub_inst_basic_info
-        # 子机构认证信息
         self.sub_inst_certify_info = sub_inst_certify_info
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 开票信息
         self.sub_inst_invoice_info = sub_inst_invoice_info
-        # 子机构门店信息
         self.sub_inst_shop_info = sub_inst_shop_info
 
     def validate(self):
@@ -2996,7 +2814,6 @@ class CreateSubInstitutionResponseBody(TeaModel):
         self,
         order_id: str = None,
     ):
-        # 进件申请单号
         self.order_id = order_id
 
     def validate(self):
@@ -3023,13 +2840,16 @@ class CreateSubInstitutionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateSubInstitutionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3042,6 +2862,8 @@ class CreateSubInstitutionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3050,6 +2872,8 @@ class CreateSubInstitutionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateSubInstitutionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3095,9 +2919,7 @@ class CreateUserCodeInstanceRequestAvailableTimes(TeaModel):
         gmt_end: str = None,
         gmt_start: str = None,
     ):
-        # 结束时间
         self.gmt_end = gmt_end
-        # 开始时间
         self.gmt_start = gmt_start
 
     def validate(self):
@@ -3139,27 +2961,16 @@ class CreateUserCodeInstanceRequest(TeaModel):
         user_corp_relation_type: str = None,
         user_identity: str = None,
     ):
-        # 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
         self.available_times = available_times
-        # 码标识，由钉钉颁发
         self.code_identity = code_identity
-        # 码值
         self.code_value = code_value
-        # 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
         self.code_value_type = code_value_type
-        # 企业ID
         self.corp_id = corp_id
-        # 扩展参数
         self.ext_info = ext_info
-        # 临时码，传入过期时间
         self.gmt_expired = gmt_expired
-        # 业务幂等ID
         self.request_id = request_id
-        # 状态，传入关闭状态需要用户手动开启后才会渲染二维
         self.status = status
-        # 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
         self.user_corp_relation_type = user_corp_relation_type
-        # 用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号
         self.user_identity = user_identity
 
     def validate(self):
@@ -3236,9 +3047,7 @@ class CreateUserCodeInstanceResponseBody(TeaModel):
         code_detail_url: str = None,
         code_id: str = None,
     ):
-        # 码详情跳转地址
         self.code_detail_url = code_detail_url
-        # 码ID
         self.code_id = code_id
 
     def validate(self):
@@ -3269,13 +3078,16 @@ class CreateUserCodeInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateUserCodeInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3288,6 +3100,8 @@ class CreateUserCodeInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3296,6 +3110,8 @@ class CreateUserCodeInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateUserCodeInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3341,9 +3157,7 @@ class DecodePayCodeRequest(TeaModel):
         pay_code: str = None,
         request_id: str = None,
     ):
-        # payCode
         self.pay_code = pay_code
-        # requestId
         self.request_id = request_id
 
     def validate(self):
@@ -3384,25 +3198,15 @@ class DecodePayCodeResponseBody(TeaModel):
         user_id: str = None,
         user_in_corp: bool = None,
     ):
-        # 支付宝付款码
         self.alipay_code = alipay_code
-        # 码ID，对于访客或会展码等静态码值返回
         self.code_id = code_id
-        # 工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE
         self.code_identity = code_identity
-        # 码类型
         self.code_type = code_type
-        # 企业id
         self.corp_id = corp_id
-        # 扩展信息
         self.ext_info = ext_info
-        # 外部业务ID,其值为调用创建用户码接口传入的requestId
         self.out_biz_id = out_biz_id
-        # 用户和企业关系
         self.user_corp_relation_type = user_corp_relation_type
-        # 员工id
         self.user_id = user_id
-        # 用户是否还在组织内
         self.user_in_corp = user_in_corp
 
     def validate(self):
@@ -3465,13 +3269,16 @@ class DecodePayCodeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DecodePayCodeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3484,6 +3291,8 @@ class DecodePayCodeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3492,6 +3301,8 @@ class DecodePayCodeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DecodePayCodeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3537,9 +3348,7 @@ class ModifySubInstitutionRequestContactInfo(TeaModel):
         contact_name: str = None,
         mobile: str = None,
     ):
-        # 联系人姓名
         self.contact_name = contact_name
-        # 联系人手机号
         self.mobile = mobile
 
     def validate(self):
@@ -3575,15 +3384,10 @@ class ModifySubInstitutionRequestLegalPersonCertInfo(TeaModel):
         cert_type: str = None,
         id_card_no: str = None,
     ):
-        # 法人证件反面url
         self.cert_back_image = cert_back_image
-        # 法人证件正面url
         self.cert_front_image = cert_front_image
-        # 法人姓名
         self.cert_name = cert_name
-        # 法人证件类型 不填默认为身份证
         self.cert_type = cert_type
-        # 法人证件号
         self.id_card_no = id_card_no
 
     def validate(self):
@@ -3628,9 +3432,7 @@ class ModifySubInstitutionRequestQualificationInfos(TeaModel):
         qualification_image: str = None,
         qualification_type: str = None,
     ):
-        # 子机构行业资质图片
         self.qualification_image = qualification_image
-        # 子机构行业资质类型
         self.qualification_type = qualification_type
 
     def validate(self):
@@ -3672,27 +3474,16 @@ class ModifySubInstitutionRequestSettleInfo(TeaModel):
         type: str = None,
         usage_type: str = None,
     ):
-        # 账户账号
         self.account_id = account_id
-        # 账户名称 账号类型银行卡时为卡户名
         self.account_name = account_name
-        # 卡类型
         self.account_type = account_type
-        # 支行名称
         self.bank_branch_name = bank_branch_name
-        # 开户行所在地 市
         self.bank_city = bank_city
-        # 联行号
         self.bank_code = bank_code
-        # 银行名称
         self.bank_name = bank_name
-        # 开户行所在地 省
         self.bank_province = bank_province
-        # 开户行简称缩写
         self.bank_short_name_code = bank_short_name_code
-        # 账号类型
         self.type = type
-        # 账户使用类型
         self.usage_type = usage_type
 
     def validate(self):
@@ -3763,13 +3554,9 @@ class ModifySubInstitutionRequestSubInstAddressInfo(TeaModel):
         district_code: str = None,
         province_code: str = None,
     ):
-        # 详细地址
         self.address = address
-        # 市码
         self.city_code = city_code
-        # 区码
         self.district_code = district_code
-        # 省码
         self.province_code = province_code
 
     def validate(self):
@@ -3809,7 +3596,6 @@ class ModifySubInstitutionRequestSubInstAuthInfo(TeaModel):
         self,
         authorization_letter_url: str = None,
     ):
-        # 授权函图片url
         self.authorization_letter_url = authorization_letter_url
 
     def validate(self):
@@ -3840,13 +3626,9 @@ class ModifySubInstitutionRequestSubInstBasicInfo(TeaModel):
         sub_inst_name: str = None,
         type: str = None,
     ):
-        # 别名
         self.alias_name = alias_name
-        # 机构识别码
         self.mcc = mcc
-        # 名称
         self.sub_inst_name = sub_inst_name
-        # 类型
         self.type = type
 
     def validate(self):
@@ -3888,11 +3670,8 @@ class ModifySubInstitutionRequestSubInstCertifyInfo(TeaModel):
         cert_no: str = None,
         cert_type: str = None,
     ):
-        # 证件图片, 如果是特殊行业必填
         self.cert_image = cert_image
-        # 证件号码
         self.cert_no = cert_no
-        # 证件类型
         self.cert_type = cert_type
 
     def validate(self):
@@ -3931,13 +3710,9 @@ class ModifySubInstitutionRequestSubInstInvoiceInfoMailAddress(TeaModel):
         district_code: str = None,
         province_code: str = None,
     ):
-        # 详细地址
         self.address = address
-        # 市码
         self.city_code = city_code
-        # 区码
         self.district_code = district_code
-        # 省码
         self.province_code = province_code
 
     def validate(self):
@@ -3989,31 +3764,18 @@ class ModifySubInstitutionRequestSubInstInvoiceInfo(TeaModel):
         telephone: str = None,
         title: str = None,
     ):
-        # 是否接受电票
         self.accept_electronic = accept_electronic
-        # 开票地址
         self.address = address
-        # 是否自动开票
         self.auto_invoice = auto_invoice
-        # 银行账户
         self.bank_account = bank_account
-        # 银行名称
         self.bank_name = bank_name
-        # 收件地址
         self.mail_address = mail_address
-        # 收件人名称
         self.mail_name = mail_name
-        # 收件人号码
         self.mail_phone = mail_phone
-        # 纳税人识别号
         self.tax_no = tax_no
-        # 纳税人资质
         self.tax_payer_qualification = tax_payer_qualification
-        # 纳税人资格开始时间
         self.tax_payer_valid_date = tax_payer_valid_date
-        # 开票电话
         self.telephone = telephone
-        # 纳税人抬头
         self.title = title
 
     def validate(self):
@@ -4092,9 +3854,7 @@ class ModifySubInstitutionRequestSubInstShopInfo(TeaModel):
         in_door_images: List[str] = None,
         out_door_images: List[str] = None,
     ):
-        # 内景照
         self.in_door_images = in_door_images
-        # 外景照
         self.out_door_images = out_door_images
 
     def validate(self):
@@ -4141,36 +3901,21 @@ class ModifySubInstitutionRequest(TeaModel):
         sub_inst_invoice_info: ModifySubInstitutionRequestSubInstInvoiceInfo = None,
         sub_inst_shop_info: ModifySubInstitutionRequestSubInstShopInfo = None,
     ):
-        # 签约支付宝账户，用于协议确认
         self.binding_alipay_logon_id = binding_alipay_logon_id
-        # 联系人
         self.contact_info = contact_info
-        # 主机构编号
         self.inst_id = inst_id
         self.legal_person_cert_info = legal_person_cert_info
-        # 进件创建外部流水号
         self.out_trade_no = out_trade_no
-        # 进件渠道
         self.pay_channel = pay_channel
-        # 资质信息
         self.qualification_infos = qualification_infos
-        # 开通的服务类型
         self.services = services
-        # 资金账户信息
         self.settle_info = settle_info
-        # 子机构地址信息
         self.sub_inst_address_info = sub_inst_address_info
-        # 授权信息
         self.sub_inst_auth_info = sub_inst_auth_info
-        # 子机构基本信息
         self.sub_inst_basic_info = sub_inst_basic_info
-        # 子机构认证信息
         self.sub_inst_certify_info = sub_inst_certify_info
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 开票信息
         self.sub_inst_invoice_info = sub_inst_invoice_info
-        # 子机构门店信息
         self.sub_inst_shop_info = sub_inst_shop_info
 
     def validate(self):
@@ -4293,7 +4038,6 @@ class ModifySubInstitutionResponseBody(TeaModel):
         self,
         order_id: str = None,
     ):
-        # 修改申请单号
         self.order_id = order_id
 
     def validate(self):
@@ -4320,13 +4064,16 @@ class ModifySubInstitutionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ModifySubInstitutionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4339,6 +4086,8 @@ class ModifySubInstitutionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4347,6 +4096,8 @@ class ModifySubInstitutionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ModifySubInstitutionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4396,17 +4147,11 @@ class NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList(TeaMod
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
-        # 1.00
         self.amount = amount
-        # 扩展信息
         self.ext_info = ext_info
-        # 资金渠道名称
         self.fund_tool_name = fund_tool_name
-        # 开始时间
         self.gmt_create = gmt_create
-        # 结束时间
         self.gmt_finish = gmt_finish
-        # 是否是优惠工具
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -4461,21 +4206,13 @@ class NotifyPayCodePayResultRequestPayChannelDetailList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
-        # 支付金额
         self.amount = amount
-        # 资金工具明细
         self.fund_tool_detail_list = fund_tool_detail_list
-        # 开始时间
         self.gmt_create = gmt_create
-        # 结束时间
         self.gmt_finish = gmt_finish
-        # 支付渠道名称
         self.pay_channel_name = pay_channel_name
-        # 支付渠道单号
         self.pay_channel_order_no = pay_channel_order_no
-        # 支付渠道类型
         self.pay_channel_type = pay_channel_type
-        # 优惠金额
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -4555,39 +4292,22 @@ class NotifyPayCodePayResultRequest(TeaModel):
         trade_status: str = None,
         user_id: str = None,
     ):
-        # 订单金额
         self.amount = amount
-        # 收费金额
         self.charge_amount = charge_amount
-        # 企业id
         self.corp_id = corp_id
-        # 扩展信息
         self.ext_info = ext_info
-        # 交易开始时间
         self.gmt_trade_create = gmt_trade_create
-        # 交易结束时间
         self.gmt_trade_finish = gmt_trade_finish
-        # merchantName
         self.merchant_name = merchant_name
-        # 支付渠道明细信息
         self.pay_channel_detail_list = pay_channel_detail_list
-        # 付款码值
         self.pay_code = pay_code
-        # 订单优惠金额
         self.promotion_amount = promotion_amount
-        # 备注
         self.remark = remark
-        # 订单标题
         self.title = title
-        # 支付失败错误码
         self.trade_error_code = trade_error_code
-        # 支付失败信息
         self.trade_error_msg = trade_error_msg
-        # 交易号
         self.trade_no = trade_no
-        # 交易状态
         self.trade_status = trade_status
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -4687,7 +4407,6 @@ class NotifyPayCodePayResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 处理结果
         self.result = result
 
     def validate(self):
@@ -4714,13 +4433,16 @@ class NotifyPayCodePayResultResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: NotifyPayCodePayResultResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4733,6 +4455,8 @@ class NotifyPayCodePayResultResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4741,6 +4465,8 @@ class NotifyPayCodePayResultResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = NotifyPayCodePayResultResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4790,17 +4516,11 @@ class NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList(Tea
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
-        # 金额
         self.amount = amount
-        # 扩展信息
         self.ext_info = ext_info
-        # 资金工具名称
         self.fund_tool_name = fund_tool_name
-        # 创建时间
         self.gmt_create = gmt_create
-        # 完成时间
         self.gmt_finish = gmt_finish
-        # 是否是优惠工具
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -4854,19 +4574,12 @@ class NotifyPayCodeRefundResultRequestPayChannelDetailList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
-        # 金额
         self.amount = amount
-        # 支付资金列表
         self.fund_tool_detail_list = fund_tool_detail_list
-        # 支付渠道名称
         self.pay_channel_name = pay_channel_name
-        # 支付渠道号
         self.pay_channel_order_no = pay_channel_order_no
-        # 支付渠道退款号
         self.pay_channel_refund_order_no = pay_channel_refund_order_no
-        # 支付渠道类型
         self.pay_channel_type = pay_channel_type
-        # 优惠金额
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -4935,25 +4648,15 @@ class NotifyPayCodeRefundResultRequest(TeaModel):
         trade_no: str = None,
         user_id: str = None,
     ):
-        # 企业id
         self.corp_id = corp_id
-        # 退款时间
         self.gmt_refund = gmt_refund
-        # 支付渠道信息
         self.pay_channel_detail_list = pay_channel_detail_list
-        # 支付时使用的付款码
         self.pay_code = pay_code
-        # 退款金额
         self.refund_amount = refund_amount
-        # 本次退款订单号
         self.refund_order_no = refund_order_no
-        # 退款的优惠金额
         self.refund_promotion_amount = refund_promotion_amount
-        # 备注
         self.remark = remark
-        # 交易订单号
         self.trade_no = trade_no
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -5025,7 +4728,6 @@ class NotifyPayCodeRefundResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 处理结果
         self.result = result
 
     def validate(self):
@@ -5052,13 +4754,16 @@ class NotifyPayCodeRefundResultResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: NotifyPayCodeRefundResultResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5071,6 +4776,8 @@ class NotifyPayCodeRefundResultResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5079,6 +4786,8 @@ class NotifyPayCodeRefundResultResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = NotifyPayCodeRefundResultResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5132,25 +4841,15 @@ class NotifyVerifyResultRequest(TeaModel):
         verify_result: bool = None,
         verify_time: str = None,
     ):
-        # 企业ID
         self.corp_id = corp_id
-        # 码值
         self.pay_code = pay_code
-        # 备注信息
         self.remark = remark
-        # 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
         self.user_corp_relation_type = user_corp_relation_type
-        # 用户身份标识
         self.user_identity = user_identity
-        # 验证事件，长度不超过8个中文
         self.verify_event = verify_event
-        # 验证地点，调用时请务必传入，以便生成工牌使用记录
         self.verify_location = verify_location
-        # 验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录
         self.verify_no = verify_no
-        # 验证结果
         self.verify_result = verify_result
-        # 验证时间
         self.verify_time = verify_time
 
     def validate(self):
@@ -5214,7 +4913,6 @@ class NotifyVerifyResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -5241,13 +4939,16 @@ class NotifyVerifyResultResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: NotifyVerifyResultResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5260,6 +4961,8 @@ class NotifyVerifyResultResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5268,6 +4971,8 @@ class NotifyVerifyResultResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = NotifyVerifyResultResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5312,7 +5017,6 @@ class QueryAcquireRefundOrderRequest(TeaModel):
         self,
         out_refund_no: str = None,
     ):
-        # 外部退款订单流水号
         self.out_refund_no = out_refund_no
 
     def validate(self):
@@ -5353,33 +5057,19 @@ class QueryAcquireRefundOrderResponseBody(TeaModel):
         sub_inst_id: str = None,
         title: str = None,
     ):
-        # 代扣金额（元）
         self.amount = amount
-        # 订单创建日期
         self.gmt_create = gmt_create
-        # 退款完成日期
         self.gmt_refund = gmt_refund
-        # 主机构编号
         self.inst_id = inst_id
-        # 钉钉订单号
         self.order_no = order_no
-        # 原支付单外部流水号
         self.origin_out_trade_no = origin_out_trade_no
-        # 外部退款订单号
         self.out_refund_no = out_refund_no
-        # 支付渠道
         self.pay_channel = pay_channel
-        # 支付渠道支付账号（脱敏后返回）
         self.pay_channel_account_no = pay_channel_account_no
-        # 退款人userId
         self.payer_user_id = payer_user_id
-        # 代扣备注
         self.remark = remark
-        # 状态
         self.status = status
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 代扣标题
         self.title = title
 
     def validate(self):
@@ -5458,13 +5148,16 @@ class QueryAcquireRefundOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryAcquireRefundOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5477,6 +5170,8 @@ class QueryAcquireRefundOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5485,6 +5180,8 @@ class QueryAcquireRefundOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAcquireRefundOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5531,11 +5228,8 @@ class QueryBatchTradeDetailListRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
-        # 外部商户批次号
         self.out_batch_no = out_batch_no
-        # 当前页数
         self.page_number = page_number
-        # 每页记录数
         self.page_size = page_size
 
     def validate(self):
@@ -5580,25 +5274,15 @@ class QueryBatchTradeDetailListResponseBodyBatchTradeDetailList(TeaModel):
         serial_no: int = None,
         status: str = None,
     ):
-        # 金额
         self.amount = amount
-        # 明细单号
         self.detail_no = detail_no
-        # 订单时间时间
         self.gmt_create = gmt_create
-        # 支付完成时间
         self.gmt_finish = gmt_finish
-        # 备注
         self.memo = memo
-        # 收款方电子钱包持有者姓名
         self.payee_account_name = payee_account_name
-        # 收款人账号
         self.payee_account_no = payee_account_no
-        # 收款账号类型
         self.payee_account_type = payee_account_type
-        # 序号
         self.serial_no = serial_no
-        # 状态
         self.status = status
 
     def validate(self):
@@ -5666,15 +5350,10 @@ class QueryBatchTradeDetailListResponseBody(TeaModel):
         total: int = None,
         total_page_number: int = None,
     ):
-        # 明细列表
         self.batch_trade_detail_list = batch_trade_detail_list
-        # 当前页数
         self.page_number = page_number
-        # 单页条数
         self.page_size = page_size
-        # 总记录数
         self.total = total
-        # 总页数
         self.total_page_number = total_page_number
 
     def validate(self):
@@ -5725,13 +5404,16 @@ class QueryBatchTradeDetailListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryBatchTradeDetailListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5744,6 +5426,8 @@ class QueryBatchTradeDetailListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5752,6 +5436,8 @@ class QueryBatchTradeDetailListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryBatchTradeDetailListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5796,7 +5482,6 @@ class QueryBatchTradeOrderRequest(TeaModel):
         self,
         out_batch_nos: List[str] = None,
     ):
-        # 外部商户批次号列表
         self.out_batch_nos = out_batch_nos
 
     def validate(self):
@@ -5837,33 +5522,19 @@ class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs(TeaModel):
         success_count: int = None,
         total_amount: str = None,
     ):
-        # 支付宝批次订单号
         self.alipay_trans_id = alipay_trans_id
-        # 明细处理失败的支付汇总金额
         self.fail_amount = fail_amount
-        # 失败笔数
         self.fail_count = fail_count
-        # 失败原因
         self.fail_reason = fail_reason
-        # 批次完成交易时间
         self.gmt_finish = gmt_finish
-        # 批次受理交易时间
         self.gmt_submit = gmt_submit
-        # 批次号
         self.out_batch_no = out_batch_no
-        # 付款人staffId
         self.payer_staff_id = payer_staff_id
-        # 付款方需要支付的金额（元）
         self.payment_amount = payment_amount
-        # 支付币种
         self.payment_currency = payment_currency
-        # 状态
         self.status = status
-        # 成功金额（元）
         self.success_amount = success_amount
-        # 成功笔数
         self.success_count = success_count
-        # 批次的总金额（元）
         self.total_amount = total_amount
 
     def validate(self):
@@ -5943,7 +5614,6 @@ class QueryBatchTradeOrderResponseBody(TeaModel):
         self,
         batch_trade_order_vos: List[QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs] = None,
     ):
-        # 批量交易订单VO
         self.batch_trade_order_vos = batch_trade_order_vos
 
     def validate(self):
@@ -5978,13 +5648,16 @@ class QueryBatchTradeOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryBatchTradeOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5997,6 +5670,8 @@ class QueryBatchTradeOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6005,6 +5680,8 @@ class QueryBatchTradeOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryBatchTradeOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6054,17 +5731,11 @@ class QueryPayAccountListResponseBodyPayAccountVOList(TeaModel):
         account_remark: str = None,
         account_type: str = None,
     ):
-        # 账户分类
         self.account_class = account_class
-        # 账号唯一id
         self.account_id = account_id
-        # 账号名称
         self.account_name = account_name
-        # 付款账号（脱敏）
         self.account_no = account_no
-        # 账户备注
         self.account_remark = account_remark
-        # 账户类型
         self.account_type = account_type
 
     def validate(self):
@@ -6112,7 +5783,6 @@ class QueryPayAccountListResponseBody(TeaModel):
         self,
         pay_account_volist: List[QueryPayAccountListResponseBodyPayAccountVOList] = None,
     ):
-        # 账号列表
         self.pay_account_volist = pay_account_volist
 
     def validate(self):
@@ -6147,13 +5817,16 @@ class QueryPayAccountListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryPayAccountListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6166,6 +5839,8 @@ class QueryPayAccountListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6174,6 +5849,8 @@ class QueryPayAccountListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryPayAccountListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6221,13 +5898,9 @@ class QueryRegisterOrderRequest(TeaModel):
         out_trade_no: str = None,
         sub_inst_id: str = None,
     ):
-        # 主机构编号
         self.inst_id = inst_id
-        # 申请单号，和外部流水号至少一个必填
         self.order_id = order_id
-        # 外部流水号，和申请单编号至少一个必填
         self.out_trade_no = out_trade_no
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
 
     def validate(self):
@@ -6274,21 +5947,13 @@ class QueryRegisterOrderResponseBody(TeaModel):
         sub_inst_id: str = None,
         sub_inst_name: str = None,
     ):
-        # 失败原因
         self.fail_reason = fail_reason
-        # 审核时间
         self.gmt_audit = gmt_audit
-        # 主机构编号
         self.inst_id = inst_id
-        # 申请单号
         self.order_id = order_id
-        # 外部流水号
         self.out_trade_no = out_trade_no
-        # 申请单状态
         self.status = status
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 子机构名称
         self.sub_inst_name = sub_inst_name
 
     def validate(self):
@@ -6343,13 +6008,16 @@ class QueryRegisterOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryRegisterOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6362,6 +6030,8 @@ class QueryRegisterOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6370,6 +6040,8 @@ class QueryRegisterOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryRegisterOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6418,15 +6090,10 @@ class QueryUserAgreementRequest(TeaModel):
         sub_inst_id: str = None,
         user_id: str = None,
     ):
-        # 业务编码
         self.biz_code = biz_code
-        # 业务场景
         self.biz_scene = biz_scene
-        # 主机构编号
         self.inst_id = inst_id
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 付款人staffId
         self.user_id = user_id
 
     def validate(self):
@@ -6481,29 +6148,17 @@ class QueryUserAgreementResponseBody(TeaModel):
         sub_inst_id: str = None,
         user_id: str = None,
     ):
-        # 协议编号
         self.agreement_no = agreement_no
-        # 组织id
         self.corp_id = corp_id
-        # 实际过期日期
         self.gmt_expire = gmt_expire
-        # 实际签约日期
         self.gmt_sign = gmt_sign
-        # 实际生效日期
         self.gmt_valid = gmt_valid
-        # 主机构id
         self.inst_id = inst_id
-        # 支付渠道
         self.pay_channel = pay_channel
-        # 实际支付账户名（脱敏）
         self.pay_channel_account_name = pay_channel_account_name
-        # 实际支付账号（脱敏）
         self.pay_channel_account_no = pay_channel_account_no
-        # 签约状态
         self.status = status
-        # 子机构id
         self.sub_inst_id = sub_inst_id
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -6574,13 +6229,16 @@ class QueryUserAgreementResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryUserAgreementResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6593,6 +6251,8 @@ class QueryUserAgreementResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6601,6 +6261,8 @@ class QueryUserAgreementResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryUserAgreementResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6645,7 +6307,6 @@ class QueryUserAlipayAccountResponseBody(TeaModel):
         self,
         alipay_uid: str = None,
     ):
-        # 支付宝uid
         self.alipay_uid = alipay_uid
 
     def validate(self):
@@ -6672,13 +6333,16 @@ class QueryUserAlipayAccountResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryUserAlipayAccountResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6691,6 +6355,8 @@ class QueryUserAlipayAccountResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6699,6 +6365,8 @@ class QueryUserAlipayAccountResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryUserAlipayAccountResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6743,7 +6411,6 @@ class QueryWithholdingOrderRequest(TeaModel):
         self,
         out_trade_no: str = None,
     ):
-        # 外部订单流水号
         self.out_trade_no = out_trade_no
 
     def validate(self):
@@ -6783,31 +6450,18 @@ class QueryWithholdingOrderResponseBody(TeaModel):
         sub_inst_id: str = None,
         title: str = None,
     ):
-        # 代扣金额（元）
         self.amount = amount
-        # 订单创建日期
         self.gmt_create = gmt_create
-        # 付款完成日期
         self.gmt_pay = gmt_pay
-        # 主机构编号
         self.inst_id = inst_id
-        # 钉钉订单号
         self.order_no = order_no
-        # 外部订单号
         self.out_trade_no = out_trade_no
-        # 支付渠道
         self.pay_channel = pay_channel
-        # 支付渠道支付账号（脱敏后返回）
         self.pay_channel_account_no = pay_channel_account_no
-        # 付款人userId
         self.payer_user_id = payer_user_id
-        # 代扣备注
         self.remark = remark
-        # 状态
         self.status = status
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 代扣标题
         self.title = title
 
     def validate(self):
@@ -6882,13 +6536,16 @@ class QueryWithholdingOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryWithholdingOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6901,6 +6558,8 @@ class QueryWithholdingOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6909,6 +6568,8 @@ class QueryWithholdingOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryWithholdingOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6956,13 +6617,9 @@ class SaveCorpPayCodeRequest(TeaModel):
         ext_info: Dict[str, str] = None,
         status: str = None,
     ):
-        # 码标识，由钉钉颁发
         self.code_identity = code_identity
-        # 开通的企业ID
         self.corp_id = corp_id
-        # 扩展参数
         self.ext_info = ext_info
-        # 状态，OPEN或CLOSED
         self.status = status
 
     def validate(self):
@@ -7005,13 +6662,9 @@ class SaveCorpPayCodeResponseBody(TeaModel):
         ext_info: Dict[str, str] = None,
         status: str = None,
     ):
-        # 码标识
         self.code_identity = code_identity
-        # 开通的企业ID
         self.corp_id = corp_id
-        # 扩展参数
         self.ext_info = ext_info
-        # 状态
         self.status = status
 
     def validate(self):
@@ -7050,13 +6703,16 @@ class SaveCorpPayCodeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SaveCorpPayCodeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7069,6 +6725,8 @@ class SaveCorpPayCodeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7077,6 +6735,8 @@ class SaveCorpPayCodeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SaveCorpPayCodeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7126,17 +6786,11 @@ class UnsignUserAgreementRequest(TeaModel):
         sub_inst_id: str = None,
         user_id: str = None,
     ):
-        # 协议编号
         self.agreement_no = agreement_no
-        # 业务代码
         self.biz_code = biz_code
-        # 业务场景
         self.biz_scene = biz_scene
-        # 主机构编号
         self.inst_id = inst_id
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 付款人staffId
         self.user_id = user_id
 
     def validate(self):
@@ -7183,11 +6837,14 @@ class UnsignUserAgreementResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -7197,12 +6854,16 @@ class UnsignUserAgreementResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -7245,9 +6906,7 @@ class UpateUserCodeInstanceRequestAvailableTimes(TeaModel):
         gmt_end: str = None,
         gmt_start: str = None,
     ):
-        # 结束时间
         self.gmt_end = gmt_end
-        # 开始时间
         self.gmt_start = gmt_start
 
     def validate(self):
@@ -7288,25 +6947,15 @@ class UpateUserCodeInstanceRequest(TeaModel):
         user_corp_relation_type: str = None,
         user_identity: str = None,
     ):
-        # 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
         self.available_times = available_times
-        # 用户码ID
         self.code_id = code_id
-        # 码标识
         self.code_identity = code_identity
-        # 码值
         self.code_value = code_value
-        # 企业ID
         self.corp_id = corp_id
-        # 扩展参数
         self.ext_info = ext_info
-        # 临时码，传入过期时间
         self.gmt_expired = gmt_expired
-        # 状态
         self.status = status
-        # 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
         self.user_corp_relation_type = user_corp_relation_type
-        # 用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号
         self.user_identity = user_identity
 
     def validate(self):
@@ -7378,7 +7027,6 @@ class UpateUserCodeInstanceResponseBody(TeaModel):
         self,
         code_id: str = None,
     ):
-        # 码ID
         self.code_id = code_id
 
     def validate(self):
@@ -7405,13 +7053,16 @@ class UpateUserCodeInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpateUserCodeInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7424,6 +7075,8 @@ class UpateUserCodeInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7432,6 +7085,8 @@ class UpateUserCodeInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpateUserCodeInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7487,28 +7142,17 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
         msg: str = None,
         union_id: str = None,
     ):
-        # 查验流水号
         self.biz_id = biz_id
-        # 查验结果
         self.checking_result = checking_result
-        # 查验状态
         self.checking_status = checking_status
-        # 业务响应码
         self.code = code
-        # 企业Id
         self.corp_id = corp_id
         self.extension = extension
-        # 发票代码
         self.invoice_code = invoice_code
-        # 发票号码
         self.invoice_no = invoice_no
-        # 发票状态
         self.invoice_status = invoice_status
-        # 发票验真编号
         self.invoice_verify_id = invoice_verify_id
-        # 响应信息
         self.msg = msg
-        # 用户Id
         self.union_id = union_id
 
     def validate(self):
@@ -7580,7 +7224,6 @@ class UpdateInvoiceVerifyStatusResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # Id of the request
         self.result = result
 
     def validate(self):
@@ -7607,13 +7250,16 @@ class UpdateInvoiceVerifyStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateInvoiceVerifyStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7626,6 +7272,8 @@ class UpdateInvoiceVerifyStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7634,6 +7282,8 @@ class UpdateInvoiceVerifyStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateInvoiceVerifyStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7683,7 +7333,6 @@ class UploadInvoiceRequestExtension(TeaModel):
     ):
         self.biz_code = biz_code
         self.order_no = order_no
-        # 订单号列表
         self.order_no_list = order_no_list
         self.order_type = order_type
 
@@ -7737,33 +7386,19 @@ class UploadInvoiceRequestInvoices(TeaModel):
         verify_code: str = None,
         without_tax_amount: str = None,
     ):
-        # 发票总金额
         self.invoice_amount = invoice_amount
-        # 发票代码
         self.invoice_code = invoice_code
-        # 开票时间
         self.invoice_date = invoice_date
-        # 发票号码
         self.invoice_no = invoice_no
-        # 发票类型
         self.invoice_type = invoice_type
-        # 发票logo地址
         self.logo_url = logo_url
-        # 收款方名称
         self.payee_name = payee_name
-        # 收款方税号
         self.payee_tax_no = payee_tax_no
-        # 付款方名称
         self.payer_name = payer_name
-        # 付款方税号
         self.payer_tax_no = payer_tax_no
-        # 发票pdf原件下载链接
         self.pdf_url = pdf_url
-        # 税金额
         self.tax_amount = tax_amount
-        # 发票校验码
         self.verify_code = verify_code
-        # 不含税金额
         self.without_tax_amount = without_tax_amount
 
     def validate(self):
@@ -7903,7 +7538,6 @@ class UploadInvoiceRequest(TeaModel):
         user_identity: UploadInvoiceRequestUserIdentity = None,
     ):
         self.extension = extension
-        # 上传发票列表
         self.invoices = invoices
         self.user_identity = user_identity
 
@@ -7958,15 +7592,10 @@ class UploadInvoiceResponseBodyResultResults(TeaModel):
         reason: str = None,
         success: bool = None,
     ):
-        # 业务错误码
         self.err_code = err_code
-        # 发票代码
         self.invoice_code = invoice_code
-        # 发票号码
         self.invoice_no = invoice_no
-        # 失败原因
         self.reason = reason
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -8010,7 +7639,6 @@ class UploadInvoiceResponseBodyResult(TeaModel):
         self,
         results: List[UploadInvoiceResponseBodyResultResults] = None,
     ):
-        # 上传结果
         self.results = results
 
     def validate(self):
@@ -8046,7 +7674,6 @@ class UploadInvoiceResponseBody(TeaModel):
         self,
         result: UploadInvoiceResponseBodyResult = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -8075,13 +7702,16 @@ class UploadInvoiceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UploadInvoiceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8094,6 +7724,8 @@ class UploadInvoiceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8102,6 +7734,8 @@ class UploadInvoiceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UploadInvoiceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8198,33 +7832,19 @@ class UploadInvoiceByAuthRequestInvoices(TeaModel):
         verify_code: str = None,
         without_tax_amount: str = None,
     ):
-        # 发票总金额
         self.invoice_amount = invoice_amount
-        # 发票代码
         self.invoice_code = invoice_code
-        # 开票时间
         self.invoice_date = invoice_date
-        # 发票号码
         self.invoice_no = invoice_no
-        # 发票类型
         self.invoice_type = invoice_type
-        # 发票logo地址
         self.logo_url = logo_url
-        # 收款方名称
         self.payee_name = payee_name
-        # 收款方税号
         self.payee_tax_no = payee_tax_no
-        # 付款方名称
         self.payer_name = payer_name
-        # 付款方税号
         self.payer_tax_no = payer_tax_no
-        # 发票pdf原件下载链接
         self.pdf_url = pdf_url
-        # 税金额
         self.tax_amount = tax_amount
-        # 发票校验码
         self.verify_code = verify_code
-        # 不含税金额
         self.without_tax_amount = without_tax_amount
 
     def validate(self):
@@ -8306,7 +7926,6 @@ class UploadInvoiceByAuthRequest(TeaModel):
         invoices: List[UploadInvoiceByAuthRequestInvoices] = None,
     ):
         self.extension = extension
-        # 上传发票列表
         self.invoices = invoices
 
     def validate(self):
@@ -8353,15 +7972,10 @@ class UploadInvoiceByAuthResponseBodyResultResults(TeaModel):
         reason: str = None,
         success: bool = None,
     ):
-        # 业务错误码
         self.err_code = err_code
-        # 发票代码
         self.invoice_code = invoice_code
-        # 发票号码
         self.invoice_no = invoice_no
-        # 失败原因
         self.reason = reason
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -8405,7 +8019,6 @@ class UploadInvoiceByAuthResponseBodyResult(TeaModel):
         self,
         results: List[UploadInvoiceByAuthResponseBodyResultResults] = None,
     ):
-        # 上传结果
         self.results = results
 
     def validate(self):
@@ -8441,7 +8054,6 @@ class UploadInvoiceByAuthResponseBody(TeaModel):
         self,
         result: UploadInvoiceByAuthResponseBodyResult = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -8470,13 +8082,16 @@ class UploadInvoiceByAuthResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UploadInvoiceByAuthResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8489,6 +8104,8 @@ class UploadInvoiceByAuthResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8497,6 +8114,8 @@ class UploadInvoiceByAuthResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UploadInvoiceByAuthResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8554,33 +8173,19 @@ class UploadInvoiceByMobileRequestInvoices(TeaModel):
         verify_code: str = None,
         without_tax_amount: str = None,
     ):
-        # 发票总金额
         self.invoice_amount = invoice_amount
-        # 发票代码
         self.invoice_code = invoice_code
-        # 开票时间
         self.invoice_date = invoice_date
-        # 发票号码
         self.invoice_no = invoice_no
-        # 发票类型
         self.invoice_type = invoice_type
-        # 发票logo地址
         self.logo_url = logo_url
-        # 收款方名称
         self.payee_name = payee_name
-        # 收款方税号
         self.payee_tax_no = payee_tax_no
-        # 付款方名称
         self.payer_name = payer_name
-        # 付款方税号
         self.payer_tax_no = payer_tax_no
-        # 发票pdf原件下载链接
         self.pdf_url = pdf_url
-        # 税金额
         self.tax_amount = tax_amount
-        # 发票校验码
         self.verify_code = verify_code
-        # 不含税金额
         self.without_tax_amount = without_tax_amount
 
     def validate(self):
@@ -8662,11 +8267,8 @@ class UploadInvoiceByMobileRequest(TeaModel):
         mobile: str = None,
         mobile_state_code: str = None,
     ):
-        # 上传发票列表
         self.invoices = invoices
-        # 手机号
         self.mobile = mobile
-        # 手机号国家码
         self.mobile_state_code = mobile_state_code
 
     def validate(self):
@@ -8714,15 +8316,10 @@ class UploadInvoiceByMobileResponseBodyResultResults(TeaModel):
         reason: str = None,
         success: bool = None,
     ):
-        # 业务错误码
         self.err_code = err_code
-        # 发票代码
         self.invoice_code = invoice_code
-        # 发票号码
         self.invoice_no = invoice_no
-        # 失败原因
         self.reason = reason
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -8766,7 +8363,6 @@ class UploadInvoiceByMobileResponseBodyResult(TeaModel):
         self,
         results: List[UploadInvoiceByMobileResponseBodyResultResults] = None,
     ):
-        # 上传结果
         self.results = results
 
     def validate(self):
@@ -8802,7 +8398,6 @@ class UploadInvoiceByMobileResponseBody(TeaModel):
         self,
         result: UploadInvoiceByMobileResponseBodyResult = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -8831,13 +8426,16 @@ class UploadInvoiceByMobileResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UploadInvoiceByMobileResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8850,6 +8448,8 @@ class UploadInvoiceByMobileResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8858,6 +8458,8 @@ class UploadInvoiceByMobileResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UploadInvoiceByMobileResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8906,15 +8508,10 @@ class UploadRegisterImageRequest(TeaModel):
         inst_id: str = None,
         pay_channel: str = None,
     ):
-        # 图片内容
         self.image_content = image_content
-        # 图片名称
         self.image_name = image_name
-        # 图片类型
         self.image_type = image_type
-        # 主机构id
         self.inst_id = inst_id
-        # 进件渠道
         self.pay_channel = pay_channel
 
     def validate(self):
@@ -8958,7 +8555,6 @@ class UploadRegisterImageResponseBody(TeaModel):
         self,
         oss_url: str = None,
     ):
-        # 进件图片上传响应
         self.oss_url = oss_url
 
     def validate(self):
@@ -8985,13 +8581,16 @@ class UploadRegisterImageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UploadRegisterImageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9004,6 +8603,8 @@ class UploadRegisterImageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9012,6 +8613,8 @@ class UploadRegisterImageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UploadRegisterImageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9067,29 +8670,17 @@ class UserAgreementPageSignRequest(TeaModel):
         sub_merchant_service_name: str = None,
         user_id: str = None,
     ):
-        # 业务编码
         self.biz_code = biz_code
-        # 业务场景
         self.biz_scene = biz_scene
-        # 主机构编号
         self.inst_id = inst_id
-        # 支付渠道
         self.pay_channel = pay_channel
-        # 备注
         self.remark = remark
-        # 签约后页面返回url
         self.return_url = return_url
-        # 签约场景
         self.sign_scene = sign_scene
-        # 子机构编号
         self.sub_inst_id = sub_inst_id
-        # 子商户商户名称
         self.sub_merchant_name = sub_merchant_name
-        # 子商户服务描述
         self.sub_merchant_service_desc = sub_merchant_service_desc
-        # 子商户服务名称
         self.sub_merchant_service_name = sub_merchant_service_name
-        # 付款人staffId
         self.user_id = user_id
 
     def validate(self):
@@ -9161,7 +8752,6 @@ class UserAgreementPageSignResponseBody(TeaModel):
         self,
         page_data: str = None,
     ):
-        # 拉起签约页的字符串
         self.page_data = page_data
 
     def validate(self):
@@ -9188,13 +8778,16 @@ class UserAgreementPageSignResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UserAgreementPageSignResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9207,6 +8800,8 @@ class UserAgreementPageSignResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9215,6 +8810,8 @@ class UserAgreementPageSignResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UserAgreementPageSignResponseBody()
             self.body = temp_model.from_map(m['body'])

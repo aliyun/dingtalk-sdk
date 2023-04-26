@@ -46,15 +46,10 @@ class CheckOpportunityResultRequest(TeaModel):
         dept_id: int = None,
         market_code: str = None,
     ):
-        # belongToPhoneNum
         self.belong_to_phone_num = belong_to_phone_num
-        # contactPhoneNum
         self.contact_phone_num = contact_phone_num
-        # corpId
         self.corp_id = corp_id
-        # deptId
         self.dept_id = dept_id
-        # marketCode
         self.market_code = market_code
 
     def validate(self):
@@ -98,7 +93,6 @@ class CheckOpportunityResultResponseBody(TeaModel):
         self,
         biz_success: bool = None,
     ):
-        # success
         self.biz_success = biz_success
 
     def validate(self):
@@ -125,13 +119,16 @@ class CheckOpportunityResultResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CheckOpportunityResultResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -144,6 +141,8 @@ class CheckOpportunityResultResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -152,6 +151,8 @@ class CheckOpportunityResultResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CheckOpportunityResultResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -200,15 +201,10 @@ class CreateOpportunityRequest(TeaModel):
         dept_id: int = None,
         market_code: str = None,
     ):
-        # 归属人电话号码
         self.belong_to_phone_num = belong_to_phone_num
-        # 联系人电话
         self.contact_phone_num = contact_phone_num
-        # 企业CorpId
         self.corp_id = corp_id
-        # 部门Id
         self.dept_id = dept_id
-        # 商品码
         self.market_code = market_code
 
     def validate(self):
@@ -251,11 +247,14 @@ class CreateOpportunityResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -265,12 +264,16 @@ class CreateOpportunityResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -313,9 +316,7 @@ class QueryTradeOrderRequest(TeaModel):
         order_id: int = None,
         outer_order_id: str = None,
     ):
-        # 内部订单号
         self.order_id = order_id
-        # 外部订单号
         self.outer_order_id = outer_order_id
 
     def validate(self):
@@ -361,35 +362,20 @@ class QueryTradeOrderResponseBody(TeaModel):
         refund_time: int = None,
         status: int = None,
     ):
-        # 商品编码
         self.article_code = article_code
-        # 规格编码
         self.article_item_code = article_item_code
-        # 规格名称
         self.article_item_name = article_item_name
-        # 商品名称
         self.article_name = article_name
-        # 订单关闭时间（单位：ms）
         self.close_time = close_time
-        # 订单创建时间（单位：ms）
         self.create_time = create_time
-        # 原价（单位：分）
         self.fee = fee
-        # ISV的组织ID
         self.isv_crop_id = isv_crop_id
-        # 内部订单号
         self.order_id = order_id
-        # 外部订单号
         self.outer_order_id = outer_order_id
-        # 实际支付的价格（单位：分）
         self.pay_fee = pay_fee
-        # 订单支付时间（单位：ms）
         self.pay_time = pay_time
-        # 商品数量
         self.quantity = quantity
-        # 订单退款时间（单位：ms）
         self.refund_time = refund_time
-        # 订单状态：-1表示已关闭、0表示未支付、1表示已支付、2表示已退款
         self.status = status
 
     def validate(self):
@@ -472,13 +458,16 @@ class QueryTradeOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryTradeOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -491,6 +480,8 @@ class QueryTradeOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -499,6 +490,8 @@ class QueryTradeOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryTradeOrderResponseBody()
             self.body = temp_model.from_map(m['body'])

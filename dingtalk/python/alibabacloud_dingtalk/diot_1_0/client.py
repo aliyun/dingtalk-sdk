@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.diot_1_0 import models as dingtalkdiot__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def batch_delete_device(
-        self,
-        request: dingtalkdiot__1__0_models.BatchDeleteDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.BatchDeleteDeviceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BatchDeleteDeviceHeaders()
-        return self.batch_delete_device_with_options(request, headers, runtime)
-
-    async def batch_delete_device_async(
-        self,
-        request: dingtalkdiot__1__0_models.BatchDeleteDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.BatchDeleteDeviceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BatchDeleteDeviceHeaders()
-        return await self.batch_delete_device_with_options_async(request, headers, runtime)
 
     def batch_delete_device_with_options(
         self,
@@ -60,9 +50,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchDeleteDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchDeleteDeviceResponse(),
-            self.do_roarequest('BatchDeleteDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_delete_device_with_options_async(
@@ -86,26 +87,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchDeleteDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchDeleteDeviceResponse(),
-            await self.do_roarequest_async('BatchDeleteDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_register_device(
+    def batch_delete_device(
         self,
-        request: dingtalkdiot__1__0_models.BatchRegisterDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.BatchRegisterDeviceResponse:
+        request: dingtalkdiot__1__0_models.BatchDeleteDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.BatchDeleteDeviceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BatchRegisterDeviceHeaders()
-        return self.batch_register_device_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BatchDeleteDeviceHeaders()
+        return self.batch_delete_device_with_options(request, headers, runtime)
 
-    async def batch_register_device_async(
+    async def batch_delete_device_async(
         self,
-        request: dingtalkdiot__1__0_models.BatchRegisterDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.BatchRegisterDeviceResponse:
+        request: dingtalkdiot__1__0_models.BatchDeleteDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.BatchDeleteDeviceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BatchRegisterDeviceHeaders()
-        return await self.batch_register_device_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BatchDeleteDeviceHeaders()
+        return await self.batch_delete_device_with_options_async(request, headers, runtime)
 
     def batch_register_device_with_options(
         self,
@@ -128,9 +140,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRegisterDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices/registrations/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchRegisterDeviceResponse(),
-            self.do_roarequest('BatchRegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/registrations/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_register_device_with_options_async(
@@ -154,26 +177,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRegisterDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices/registrations/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchRegisterDeviceResponse(),
-            await self.do_roarequest_async('BatchRegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/registrations/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_register_event_type(
+    def batch_register_device(
         self,
-        request: dingtalkdiot__1__0_models.BatchRegisterEventTypeRequest,
-    ) -> dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse:
+        request: dingtalkdiot__1__0_models.BatchRegisterDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.BatchRegisterDeviceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BatchRegisterEventTypeHeaders()
-        return self.batch_register_event_type_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BatchRegisterDeviceHeaders()
+        return self.batch_register_device_with_options(request, headers, runtime)
 
-    async def batch_register_event_type_async(
+    async def batch_register_device_async(
         self,
-        request: dingtalkdiot__1__0_models.BatchRegisterEventTypeRequest,
-    ) -> dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse:
+        request: dingtalkdiot__1__0_models.BatchRegisterDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.BatchRegisterDeviceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BatchRegisterEventTypeHeaders()
-        return await self.batch_register_event_type_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BatchRegisterDeviceHeaders()
+        return await self.batch_register_device_with_options_async(request, headers, runtime)
 
     def batch_register_event_type_with_options(
         self,
@@ -196,9 +230,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRegisterEventType',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/eventTypes/registrations/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse(),
-            self.do_roarequest('BatchRegisterEventType', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/eventTypes/registrations/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_register_event_type_with_options_async(
@@ -222,26 +267,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRegisterEventType',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/eventTypes/registrations/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse(),
-            await self.do_roarequest_async('BatchRegisterEventType', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/eventTypes/registrations/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_update_device(
+    def batch_register_event_type(
         self,
-        request: dingtalkdiot__1__0_models.BatchUpdateDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.BatchUpdateDeviceResponse:
+        request: dingtalkdiot__1__0_models.BatchRegisterEventTypeRequest,
+    ) -> dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BatchUpdateDeviceHeaders()
-        return self.batch_update_device_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BatchRegisterEventTypeHeaders()
+        return self.batch_register_event_type_with_options(request, headers, runtime)
 
-    async def batch_update_device_async(
+    async def batch_register_event_type_async(
         self,
-        request: dingtalkdiot__1__0_models.BatchUpdateDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.BatchUpdateDeviceResponse:
+        request: dingtalkdiot__1__0_models.BatchRegisterEventTypeRequest,
+    ) -> dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BatchUpdateDeviceHeaders()
-        return await self.batch_update_device_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BatchRegisterEventTypeHeaders()
+        return await self.batch_register_event_type_with_options_async(request, headers, runtime)
 
     def batch_update_device_with_options(
         self,
@@ -264,9 +320,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchUpdateDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices/batch',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchUpdateDeviceResponse(),
-            self.do_roarequest('BatchUpdateDevice', 'diot_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/diot/devices/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_update_device_with_options_async(
@@ -290,26 +357,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchUpdateDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices/batch',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BatchUpdateDeviceResponse(),
-            await self.do_roarequest_async('BatchUpdateDevice', 'diot_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/diot/devices/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def bind_system(
+    def batch_update_device(
         self,
-        request: dingtalkdiot__1__0_models.BindSystemRequest,
-    ) -> dingtalkdiot__1__0_models.BindSystemResponse:
+        request: dingtalkdiot__1__0_models.BatchUpdateDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.BatchUpdateDeviceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BindSystemHeaders()
-        return self.bind_system_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BatchUpdateDeviceHeaders()
+        return self.batch_update_device_with_options(request, headers, runtime)
 
-    async def bind_system_async(
+    async def batch_update_device_async(
         self,
-        request: dingtalkdiot__1__0_models.BindSystemRequest,
-    ) -> dingtalkdiot__1__0_models.BindSystemResponse:
+        request: dingtalkdiot__1__0_models.BatchUpdateDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.BatchUpdateDeviceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.BindSystemHeaders()
-        return await self.bind_system_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BatchUpdateDeviceHeaders()
+        return await self.batch_update_device_with_options_async(request, headers, runtime)
 
     def bind_system_with_options(
         self,
@@ -338,9 +416,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BindSystem',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/systems/bind',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BindSystemResponse(),
-            self.do_roarequest('BindSystem', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/systems/bind', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def bind_system_with_options_async(
@@ -370,26 +459,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BindSystem',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/systems/bind',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.BindSystemResponse(),
-            await self.do_roarequest_async('BindSystem', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/systems/bind', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def device_conference(
+    def bind_system(
         self,
-        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
-    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        request: dingtalkdiot__1__0_models.BindSystemRequest,
+    ) -> dingtalkdiot__1__0_models.BindSystemResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
-        return self.device_conference_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BindSystemHeaders()
+        return self.bind_system_with_options(request, headers, runtime)
 
-    async def device_conference_async(
+    async def bind_system_async(
         self,
-        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
-    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        request: dingtalkdiot__1__0_models.BindSystemRequest,
+    ) -> dingtalkdiot__1__0_models.BindSystemResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
-        return await self.device_conference_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.BindSystemHeaders()
+        return await self.bind_system_with_options_async(request, headers, runtime)
 
     def device_conference_with_options(
         self,
@@ -416,9 +516,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeviceConference',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/deviceConferences/initiate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DeviceConferenceResponse(),
-            self.do_roarequest('DeviceConference', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/deviceConferences/initiate', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def device_conference_with_options_async(
@@ -446,26 +557,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeviceConference',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/deviceConferences/initiate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DeviceConferenceResponse(),
-            await self.do_roarequest_async('DeviceConference', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/deviceConferences/initiate', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def push_event(
+    def device_conference(
         self,
-        request: dingtalkdiot__1__0_models.PushEventRequest,
-    ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
+    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.PushEventHeaders()
-        return self.push_event_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
+        return self.device_conference_with_options(request, headers, runtime)
 
-    async def push_event_async(
+    async def device_conference_async(
         self,
-        request: dingtalkdiot__1__0_models.PushEventRequest,
-    ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
+    ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.PushEventHeaders()
-        return await self.push_event_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
+        return await self.device_conference_with_options_async(request, headers, runtime)
 
     def push_event_with_options(
         self,
@@ -504,9 +626,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushEvent',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/events/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.PushEventResponse(),
-            self.do_roarequest('PushEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/push', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def push_event_with_options_async(
@@ -546,26 +679,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushEvent',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/events/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.PushEventResponse(),
-            await self.do_roarequest_async('PushEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/push', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_device(
+    def push_event(
         self,
-        request: dingtalkdiot__1__0_models.QueryDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        request: dingtalkdiot__1__0_models.PushEventRequest,
+    ) -> dingtalkdiot__1__0_models.PushEventResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.QueryDeviceHeaders()
-        return self.query_device_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.PushEventHeaders()
+        return self.push_event_with_options(request, headers, runtime)
 
-    async def query_device_async(
+    async def push_event_async(
         self,
-        request: dingtalkdiot__1__0_models.QueryDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        request: dingtalkdiot__1__0_models.PushEventRequest,
+    ) -> dingtalkdiot__1__0_models.PushEventResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.QueryDeviceHeaders()
-        return await self.query_device_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.PushEventHeaders()
+        return await self.push_event_with_options_async(request, headers, runtime)
 
     def query_device_with_options(
         self,
@@ -590,9 +734,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.QueryDeviceResponse(),
-            self.do_roarequest('QueryDevice', 'diot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/diot/devices', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_device_with_options_async(
@@ -618,26 +773,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.QueryDeviceResponse(),
-            await self.do_roarequest_async('QueryDevice', 'diot_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/diot/devices', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_event(
+    def query_device(
         self,
-        request: dingtalkdiot__1__0_models.QueryEventRequest,
-    ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        request: dingtalkdiot__1__0_models.QueryDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.QueryEventHeaders()
-        return self.query_event_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.QueryDeviceHeaders()
+        return self.query_device_with_options(request, headers, runtime)
 
-    async def query_event_async(
+    async def query_device_async(
         self,
-        request: dingtalkdiot__1__0_models.QueryEventRequest,
-    ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        request: dingtalkdiot__1__0_models.QueryDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.QueryEventHeaders()
-        return await self.query_event_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.QueryDeviceHeaders()
+        return await self.query_device_with_options_async(request, headers, runtime)
 
     def query_event_with_options(
         self,
@@ -674,9 +840,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryEvent',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/events/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.QueryEventResponse(),
-            self.do_roarequest('QueryEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_event_with_options_async(
@@ -714,26 +891,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryEvent',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/events/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.QueryEventResponse(),
-            await self.do_roarequest_async('QueryEvent', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/events/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def register_device(
+    def query_event(
         self,
-        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        request: dingtalkdiot__1__0_models.QueryEventRequest,
+    ) -> dingtalkdiot__1__0_models.QueryEventResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
-        return self.register_device_with_options(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.QueryEventHeaders()
+        return self.query_event_with_options(request, headers, runtime)
 
-    async def register_device_async(
+    async def query_event_async(
         self,
-        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
-    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        request: dingtalkdiot__1__0_models.QueryEventRequest,
+    ) -> dingtalkdiot__1__0_models.QueryEventResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
-        return await self.register_device_with_options_async(request, headers, runtime)
+        headers = dingtalkdiot__1__0_models.QueryEventHeaders()
+        return await self.query_event_with_options_async(request, headers, runtime)
 
     def register_device_with_options(
         self,
@@ -774,9 +962,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RegisterDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices/register',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.RegisterDeviceResponse(),
-            self.do_roarequest('RegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/register', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def register_device_with_options_async(
@@ -818,7 +1017,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RegisterDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/devices/register',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.RegisterDeviceResponse(),
-            await self.do_roarequest_async('RegisterDevice', 'diot_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/diot/devices/register', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def register_device(
+        self,
+        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
+        return self.register_device_with_options(request, headers, runtime)
+
+    async def register_device_async(
+        self,
+        request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
+    ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
+        return await self.register_device_with_options_async(request, headers, runtime)

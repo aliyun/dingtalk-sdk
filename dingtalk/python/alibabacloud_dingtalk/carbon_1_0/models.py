@@ -43,9 +43,7 @@ class GetPersonalCarbonInfoRequest(TeaModel):
         action_type: str = None,
         union_id: str = None,
     ):
-        # 参数类型
         self.action_type = action_type
-        # 钉钉unionId
         self.union_id = union_id
 
     def validate(self):
@@ -78,9 +76,7 @@ class GetPersonalCarbonInfoResponseBody(TeaModel):
         content: str = None,
         personal_carbon_amount: float = None,
     ):
-        # 文案
         self.content = content
-        # 减碳数据
         self.personal_carbon_amount = personal_carbon_amount
 
     def validate(self):
@@ -111,13 +107,16 @@ class GetPersonalCarbonInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPersonalCarbonInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -130,6 +129,8 @@ class GetPersonalCarbonInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -138,6 +139,8 @@ class GetPersonalCarbonInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPersonalCarbonInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -188,19 +191,12 @@ class WriteAlibabaOrgCarbonRequestOrgDetailsList(TeaModel):
         dept_id: int = None,
         version: int = None,
     ):
-        # 系统唯一id，生成格式：userId+日期20211126
         self.action_id = action_id
-        # 行为发生时间
         self.action_time = action_time
-        # 碳能量行为类型，需要联系管理员添加
         self.action_type = action_type
-        # 碳能量数据
         self.carbon_amount = carbon_amount
-        # 钉钉组织id
         self.corp_id = corp_id
-        # 钉钉部门id
         self.dept_id = dept_id
-        # 版本，默认为1
         self.version = version
 
     def validate(self):
@@ -252,7 +248,6 @@ class WriteAlibabaOrgCarbonRequest(TeaModel):
         self,
         org_details_list: List[WriteAlibabaOrgCarbonRequestOrgDetailsList] = None,
     ):
-        # 入参集
         self.org_details_list = org_details_list
 
     def validate(self):
@@ -289,9 +284,7 @@ class WriteAlibabaOrgCarbonResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
-        # 返回请求成功的数量
         self.result = result
-        # 请求是否成功
         self.success = success
 
     def validate(self):
@@ -322,13 +315,16 @@ class WriteAlibabaOrgCarbonResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WriteAlibabaOrgCarbonResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -341,6 +337,8 @@ class WriteAlibabaOrgCarbonResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -349,6 +347,8 @@ class WriteAlibabaOrgCarbonResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WriteAlibabaOrgCarbonResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -401,23 +401,14 @@ class WriteAlibabaUserCarbonRequestUserDetailsList(TeaModel):
         user_id: str = None,
         version: int = None,
     ):
-        # 行为结束时间
         self.action_end_time = action_end_time
-        # 系统唯一id，生成格式：userId+日期20211126
         self.action_id = action_id
-        # 行为起始时间
         self.action_start_time = action_start_time
-        # 碳能量行为类型，需要联系管理员添加
         self.action_type = action_type
-        # 碳能量数据
         self.carbon_amount = carbon_amount
-        # 钉钉组织id
         self.corp_id = corp_id
-        # 钉钉部门id
         self.dept_id = dept_id
-        # 钉钉用户id
         self.user_id = user_id
-        # 版本，默认为1
         self.version = version
 
     def validate(self):
@@ -477,7 +468,6 @@ class WriteAlibabaUserCarbonRequest(TeaModel):
         self,
         user_details_list: List[WriteAlibabaUserCarbonRequestUserDetailsList] = None,
     ):
-        # 入参集
         self.user_details_list = user_details_list
 
     def validate(self):
@@ -514,9 +504,7 @@ class WriteAlibabaUserCarbonResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
-        # 返回请求成功个数
         self.result = result
-        # 请求是否写入成功
         self.success = success
 
     def validate(self):
@@ -547,13 +535,16 @@ class WriteAlibabaUserCarbonResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WriteAlibabaUserCarbonResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -566,6 +557,8 @@ class WriteAlibabaUserCarbonResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -574,6 +567,8 @@ class WriteAlibabaUserCarbonResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WriteAlibabaUserCarbonResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -619,9 +614,7 @@ class WriteIsvStateRequest(TeaModel):
         isv_name: str = None,
         stat_date: str = None,
     ):
-        # ISV名称
         self.isv_name = isv_name
-        # 数据完成日期
         self.stat_date = stat_date
 
     def validate(self):
@@ -653,7 +646,6 @@ class WriteIsvStateResponseBody(TeaModel):
         self,
         result: int = None,
     ):
-        # 数据写入标识
         self.result = result
 
     def validate(self):
@@ -680,13 +672,16 @@ class WriteIsvStateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WriteIsvStateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -699,6 +694,8 @@ class WriteIsvStateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -707,6 +704,8 @@ class WriteIsvStateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WriteIsvStateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -757,19 +756,12 @@ class WriteOrgCarbonRequestOrgDetailsList(TeaModel):
         dept_id: int = None,
         version: int = None,
     ):
-        # 系统唯一id，生成格式：userId+日期20211126
         self.action_id = action_id
-        # 行为发生时间
         self.action_time = action_time
-        # 碳能量行为类型，需要联系管理员添加
         self.action_type = action_type
-        # 碳能量数据
         self.carbon_amount = carbon_amount
-        # 钉钉组织id
         self.corp_id = corp_id
-        # 钉钉部门id
         self.dept_id = dept_id
-        # 版本，默认为1
         self.version = version
 
     def validate(self):
@@ -821,7 +813,6 @@ class WriteOrgCarbonRequest(TeaModel):
         self,
         org_details_list: List[WriteOrgCarbonRequestOrgDetailsList] = None,
     ):
-        # 入参集
         self.org_details_list = org_details_list
 
     def validate(self):
@@ -858,9 +849,7 @@ class WriteOrgCarbonResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
-        # 请求成功返回的个数
         self.result = result
-        # 请求是否成功
         self.success = success
 
     def validate(self):
@@ -891,13 +880,16 @@ class WriteOrgCarbonResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WriteOrgCarbonResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -910,6 +902,8 @@ class WriteOrgCarbonResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -918,6 +912,8 @@ class WriteOrgCarbonResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WriteOrgCarbonResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -970,23 +966,14 @@ class WriteUserCarbonRequestUserDetailsList(TeaModel):
         user_id: str = None,
         version: int = None,
     ):
-        # 行为结束时间
         self.action_end_time = action_end_time
-        # 系统唯一id，生成格式：userId+日期20211126
         self.action_id = action_id
-        # 行为起始时间
         self.action_start_time = action_start_time
-        # 碳能量行为类型，需要联系管理员添加
         self.action_type = action_type
-        # 碳能量数据
         self.carbon_amount = carbon_amount
-        # 钉钉组织id
         self.corp_id = corp_id
-        # 钉钉部门id
         self.dept_id = dept_id
-        # 钉钉用户id
         self.user_id = user_id
-        # 版本，默认为1
         self.version = version
 
     def validate(self):
@@ -1046,7 +1033,6 @@ class WriteUserCarbonRequest(TeaModel):
         self,
         user_details_list: List[WriteUserCarbonRequestUserDetailsList] = None,
     ):
-        # 入参集
         self.user_details_list = user_details_list
 
     def validate(self):
@@ -1083,9 +1069,7 @@ class WriteUserCarbonResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
-        # 返回请求成功个数
         self.result = result
-        # 请求是否写入成功
         self.success = success
 
     def validate(self):
@@ -1116,13 +1100,16 @@ class WriteUserCarbonResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WriteUserCarbonResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1135,6 +1122,8 @@ class WriteUserCarbonResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1143,6 +1132,8 @@ class WriteUserCarbonResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WriteUserCarbonResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1195,23 +1186,14 @@ class WriteUserCarbonEnergyRequestUserDetailsList(TeaModel):
         user_id: str = None,
         version: int = None,
     ):
-        # 行为结束时间
         self.action_end_time = action_end_time
-        # 系统唯一id，生成格式：userId+日期20230302
         self.action_id = action_id
-        # 行为起始时间
         self.action_start_time = action_start_time
-        # 碳能量行为类型，需要联系管理员添加
         self.action_type = action_type
-        # 碳能量数据
         self.carbon_amount = carbon_amount
-        # 钉钉组织id
         self.corp_id = corp_id
-        # 钉钉部门id
         self.dept_id = dept_id
-        # 钉钉用户id
         self.user_id = user_id
-        # 版本，默认为1
         self.version = version
 
     def validate(self):
@@ -1307,9 +1289,7 @@ class WriteUserCarbonEnergyResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
-        # 返回结果
         self.result = result
-        # 输出状态
         self.success = success
 
     def validate(self):
@@ -1340,13 +1320,16 @@ class WriteUserCarbonEnergyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WriteUserCarbonEnergyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1359,6 +1342,8 @@ class WriteUserCarbonEnergyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1367,6 +1352,8 @@ class WriteUserCarbonEnergyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WriteUserCarbonEnergyResponseBody()
             self.body = temp_model.from_map(m['body'])

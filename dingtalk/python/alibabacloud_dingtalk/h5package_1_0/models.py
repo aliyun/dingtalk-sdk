@@ -45,13 +45,9 @@ class CreatePackageRequest(TeaModel):
         home_url: str = None,
         oss_object_key: str = None,
     ):
-        # 企业内部微应用agentId
         self.agent_id = agent_id
-        # 第三方企业应用appId
         self.app_id = app_id
-        # 离线包入口页面地址。没有设置时，默认值是应用设置中的应用首页地址。
         self.home_url = home_url
-        # 通过获取上传凭据接口返回的name值
         self.oss_object_key = oss_object_key
 
     def validate(self):
@@ -91,7 +87,6 @@ class CreatePackageResponseBody(TeaModel):
         self,
         task_id: str = None,
     ):
-        # 创建任务ID
         self.task_id = task_id
 
     def validate(self):
@@ -118,13 +113,16 @@ class CreatePackageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreatePackageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -137,6 +135,8 @@ class CreatePackageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -145,6 +145,8 @@ class CreatePackageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreatePackageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -190,9 +192,7 @@ class GetAccessTokenRequest(TeaModel):
         agent_id: int = None,
         app_id: int = None,
     ):
-        # 企业内部微应用agentId。
         self.agent_id = agent_id
-        # 第三方企业应用appId。
         self.app_id = app_id
 
     def validate(self):
@@ -231,21 +231,13 @@ class GetAccessTokenResponseBody(TeaModel):
         region: str = None,
         sts_token: str = None,
     ):
-        # 阿里云OSS SDK初始化配置项
         self.access_key_id = access_key_id
-        # 阿里云OSS SDK初始化配置项
         self.access_key_secret = access_key_secret
-        # 阿里云OSS SDK初始化配置项
         self.bucket = bucket
-        # 阿里云OSS SDK初始化配置项
         self.endpoint = endpoint
-        # 阿里云OSS SDK初始化配置项
         self.expiration = expiration
-        # 可上传的阿里云OSS文件地址
         self.name = name
-        # 阿里云OSS SDK初始化配置项
         self.region = region
-        # 阿里云OSS SDK初始化配置项
         self.sts_token = sts_token
 
     def validate(self):
@@ -300,13 +292,16 @@ class GetAccessTokenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAccessTokenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -319,6 +314,8 @@ class GetAccessTokenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -327,6 +324,8 @@ class GetAccessTokenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAccessTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -371,7 +370,6 @@ class GetCreateStatusRequest(TeaModel):
         self,
         task_id: str = None,
     ):
-        # 创建离线包接口返回的taskId
         self.task_id = task_id
 
     def validate(self):
@@ -404,17 +402,11 @@ class GetCreateStatusResponseBody(TeaModel):
         task_id: str = None,
         version: str = None,
     ):
-        # 创建时间
         self.build_time = build_time
-        # 任务是否已结束
         self.finished = finished
-        # H5离线包体积，单位Byte
         self.package_size = package_size
-        # 任务状态。1：构建中；2：成功；3：失败；5：超时。
         self.status = status
-        # 创建离线包接口返回的taskId
         self.task_id = task_id
-        # H5离线包版本号
         self.version = version
 
     def validate(self):
@@ -461,13 +453,16 @@ class GetCreateStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetCreateStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -480,6 +475,8 @@ class GetCreateStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -488,6 +485,8 @@ class GetCreateStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCreateStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -534,11 +533,8 @@ class PublishPackageRequest(TeaModel):
         app_id: int = None,
         version: str = None,
     ):
-        # 企业内部微应用agentId
         self.agent_id = agent_id
-        # 第三方企业应用appId
         self.app_id = app_id
-        # H5离线包版本号
         self.version = version
 
     def validate(self):
@@ -574,7 +570,6 @@ class PublishPackageResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 成功标记
         self.success = success
 
     def validate(self):
@@ -601,13 +596,16 @@ class PublishPackageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PublishPackageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -620,6 +618,8 @@ class PublishPackageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -628,6 +628,8 @@ class PublishPackageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PublishPackageResponseBody()
             self.body = temp_model.from_map(m['body'])

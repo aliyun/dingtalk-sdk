@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.rooms_1_0 import models as dingtalkrooms__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def create_meeting_room(
-        self,
-        request: dingtalkrooms__1__0_models.CreateMeetingRoomRequest,
-    ) -> dingtalkrooms__1__0_models.CreateMeetingRoomResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.CreateMeetingRoomHeaders()
-        return self.create_meeting_room_with_options(request, headers, runtime)
-
-    async def create_meeting_room_async(
-        self,
-        request: dingtalkrooms__1__0_models.CreateMeetingRoomRequest,
-    ) -> dingtalkrooms__1__0_models.CreateMeetingRoomResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.CreateMeetingRoomHeaders()
-        return await self.create_meeting_room_with_options_async(request, headers, runtime)
 
     def create_meeting_room_with_options(
         self,
@@ -74,9 +64,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingrooms',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.CreateMeetingRoomResponse(),
-            self.do_roarequest('CreateMeetingRoom', 'rooms_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rooms/meetingrooms', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_meeting_room_with_options_async(
@@ -114,26 +115,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingrooms',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.CreateMeetingRoomResponse(),
-            await self.do_roarequest_async('CreateMeetingRoom', 'rooms_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rooms/meetingrooms', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_meeting_room_group(
+    def create_meeting_room(
         self,
-        request: dingtalkrooms__1__0_models.CreateMeetingRoomGroupRequest,
-    ) -> dingtalkrooms__1__0_models.CreateMeetingRoomGroupResponse:
+        request: dingtalkrooms__1__0_models.CreateMeetingRoomRequest,
+    ) -> dingtalkrooms__1__0_models.CreateMeetingRoomResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.CreateMeetingRoomGroupHeaders()
-        return self.create_meeting_room_group_with_options(request, headers, runtime)
+        headers = dingtalkrooms__1__0_models.CreateMeetingRoomHeaders()
+        return self.create_meeting_room_with_options(request, headers, runtime)
 
-    async def create_meeting_room_group_async(
+    async def create_meeting_room_async(
         self,
-        request: dingtalkrooms__1__0_models.CreateMeetingRoomGroupRequest,
-    ) -> dingtalkrooms__1__0_models.CreateMeetingRoomGroupResponse:
+        request: dingtalkrooms__1__0_models.CreateMeetingRoomRequest,
+    ) -> dingtalkrooms__1__0_models.CreateMeetingRoomResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.CreateMeetingRoomGroupHeaders()
-        return await self.create_meeting_room_group_with_options_async(request, headers, runtime)
+        headers = dingtalkrooms__1__0_models.CreateMeetingRoomHeaders()
+        return await self.create_meeting_room_with_options_async(request, headers, runtime)
 
     def create_meeting_room_group_with_options(
         self,
@@ -158,9 +170,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateMeetingRoomGroup',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.CreateMeetingRoomGroupResponse(),
-            self.do_roarequest('CreateMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rooms/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_meeting_room_group_with_options_async(
@@ -186,9 +209,108 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateMeetingRoomGroup',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.CreateMeetingRoomGroupResponse(),
-            await self.do_roarequest_async('CreateMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rooms/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_meeting_room_group(
+        self,
+        request: dingtalkrooms__1__0_models.CreateMeetingRoomGroupRequest,
+    ) -> dingtalkrooms__1__0_models.CreateMeetingRoomGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.CreateMeetingRoomGroupHeaders()
+        return self.create_meeting_room_group_with_options(request, headers, runtime)
+
+    async def create_meeting_room_group_async(
+        self,
+        request: dingtalkrooms__1__0_models.CreateMeetingRoomGroupRequest,
+    ) -> dingtalkrooms__1__0_models.CreateMeetingRoomGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.CreateMeetingRoomGroupHeaders()
+        return await self.create_meeting_room_group_with_options_async(request, headers, runtime)
+
+    def delete_meeting_room_with_options(
+        self,
+        room_id: str,
+        request: dingtalkrooms__1__0_models.DeleteMeetingRoomRequest,
+        headers: dingtalkrooms__1__0_models.DeleteMeetingRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms/{room_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.DeleteMeetingRoomResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_meeting_room_with_options_async(
+        self,
+        room_id: str,
+        request: dingtalkrooms__1__0_models.DeleteMeetingRoomRequest,
+        headers: dingtalkrooms__1__0_models.DeleteMeetingRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms/{room_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.DeleteMeetingRoomResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def delete_meeting_room(
@@ -209,15 +331,14 @@ class Client(OpenApiClient):
         headers = dingtalkrooms__1__0_models.DeleteMeetingRoomHeaders()
         return await self.delete_meeting_room_with_options_async(room_id, request, headers, runtime)
 
-    def delete_meeting_room_with_options(
+    def delete_meeting_room_group_with_options(
         self,
-        room_id: str,
-        request: dingtalkrooms__1__0_models.DeleteMeetingRoomRequest,
-        headers: dingtalkrooms__1__0_models.DeleteMeetingRoomHeaders,
+        group_id: str,
+        request: dingtalkrooms__1__0_models.DeleteMeetingRoomGroupRequest,
+        headers: dingtalkrooms__1__0_models.DeleteMeetingRoomGroupHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomResponse:
+    ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomGroupResponse:
         UtilClient.validate_model(request)
-        room_id = OpenApiUtilClient.get_encode_param(room_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -230,20 +351,30 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteMeetingRoomGroup',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groups/{group_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkrooms__1__0_models.DeleteMeetingRoomResponse(),
-            self.do_roarequest('DeleteMeetingRoom', 'rooms_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/rooms/meetingRooms/{room_id}', 'json', req, runtime)
+            dingtalkrooms__1__0_models.DeleteMeetingRoomGroupResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def delete_meeting_room_with_options_async(
+    async def delete_meeting_room_group_with_options_async(
         self,
-        room_id: str,
-        request: dingtalkrooms__1__0_models.DeleteMeetingRoomRequest,
-        headers: dingtalkrooms__1__0_models.DeleteMeetingRoomHeaders,
+        group_id: str,
+        request: dingtalkrooms__1__0_models.DeleteMeetingRoomGroupRequest,
+        headers: dingtalkrooms__1__0_models.DeleteMeetingRoomGroupHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomResponse:
+    ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomGroupResponse:
         UtilClient.validate_model(request)
-        room_id = OpenApiUtilClient.get_encode_param(room_id)
         query = {}
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
@@ -256,9 +387,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteMeetingRoomGroup',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groups/{group_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkrooms__1__0_models.DeleteMeetingRoomResponse(),
-            await self.do_roarequest_async('DeleteMeetingRoom', 'rooms_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/rooms/meetingRooms/{room_id}', 'json', req, runtime)
+            dingtalkrooms__1__0_models.DeleteMeetingRoomGroupResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def delete_meeting_room_group(
@@ -279,18 +421,17 @@ class Client(OpenApiClient):
         headers = dingtalkrooms__1__0_models.DeleteMeetingRoomGroupHeaders()
         return await self.delete_meeting_room_group_with_options_async(group_id, request, headers, runtime)
 
-    def delete_meeting_room_group_with_options(
+    def query_device_ip_by_code_with_options(
         self,
-        group_id: str,
-        request: dingtalkrooms__1__0_models.DeleteMeetingRoomGroupRequest,
-        headers: dingtalkrooms__1__0_models.DeleteMeetingRoomGroupHeaders,
+        share_code: str,
+        request: dingtalkrooms__1__0_models.QueryDeviceIpByCodeRequest,
+        headers: dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomGroupResponse:
+    ) -> dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse:
         UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         query = {}
-        if not UtilClient.is_unset(request.union_id):
-            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.device_sn):
+            query['deviceSn'] = request.device_sn
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -300,23 +441,33 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDeviceIpByCode',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/shareCodes/{share_code}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkrooms__1__0_models.DeleteMeetingRoomGroupResponse(),
-            self.do_roarequest('DeleteMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/rooms/groups/{group_id}', 'json', req, runtime)
+            dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def delete_meeting_room_group_with_options_async(
+    async def query_device_ip_by_code_with_options_async(
         self,
-        group_id: str,
-        request: dingtalkrooms__1__0_models.DeleteMeetingRoomGroupRequest,
-        headers: dingtalkrooms__1__0_models.DeleteMeetingRoomGroupHeaders,
+        share_code: str,
+        request: dingtalkrooms__1__0_models.QueryDeviceIpByCodeRequest,
+        headers: dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomGroupResponse:
+    ) -> dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse:
         UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
         query = {}
-        if not UtilClient.is_unset(request.union_id):
-            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.device_sn):
+            query['deviceSn'] = request.device_sn
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -326,9 +477,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDeviceIpByCode',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/shareCodes/{share_code}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkrooms__1__0_models.DeleteMeetingRoomGroupResponse(),
-            await self.do_roarequest_async('DeleteMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/rooms/groups/{group_id}', 'json', req, runtime)
+            dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_device_ip_by_code(
@@ -348,74 +510,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders()
         return await self.query_device_ip_by_code_with_options_async(share_code, request, headers, runtime)
-
-    def query_device_ip_by_code_with_options(
-        self,
-        share_code: str,
-        request: dingtalkrooms__1__0_models.QueryDeviceIpByCodeRequest,
-        headers: dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse:
-        UtilClient.validate_model(request)
-        share_code = OpenApiUtilClient.get_encode_param(share_code)
-        query = {}
-        if not UtilClient.is_unset(request.device_sn):
-            query['deviceSn'] = request.device_sn
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse(),
-            self.do_roarequest('QueryDeviceIpByCode', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices/shareCodes/{share_code}', 'json', req, runtime)
-        )
-
-    async def query_device_ip_by_code_with_options_async(
-        self,
-        share_code: str,
-        request: dingtalkrooms__1__0_models.QueryDeviceIpByCodeRequest,
-        headers: dingtalkrooms__1__0_models.QueryDeviceIpByCodeHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse:
-        UtilClient.validate_model(request)
-        share_code = OpenApiUtilClient.get_encode_param(share_code)
-        query = {}
-        if not UtilClient.is_unset(request.device_sn):
-            query['deviceSn'] = request.device_sn
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkrooms__1__0_models.QueryDeviceIpByCodeResponse(),
-            await self.do_roarequest_async('QueryDeviceIpByCode', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices/shareCodes/{share_code}', 'json', req, runtime)
-        )
-
-    def query_device_properties(
-        self,
-        request: dingtalkrooms__1__0_models.QueryDevicePropertiesRequest,
-    ) -> dingtalkrooms__1__0_models.QueryDevicePropertiesResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.QueryDevicePropertiesHeaders()
-        return self.query_device_properties_with_options(request, headers, runtime)
-
-    async def query_device_properties_async(
-        self,
-        request: dingtalkrooms__1__0_models.QueryDevicePropertiesRequest,
-    ) -> dingtalkrooms__1__0_models.QueryDevicePropertiesResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.QueryDevicePropertiesHeaders()
-        return await self.query_device_properties_with_options_async(request, headers, runtime)
 
     def query_device_properties_with_options(
         self,
@@ -444,9 +538,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryDeviceProperties',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/properties/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryDevicePropertiesResponse(),
-            self.do_roarequest('QueryDeviceProperties', 'rooms_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rooms/devices/properties/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_device_properties_with_options_async(
@@ -476,9 +581,108 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryDeviceProperties',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/properties/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryDevicePropertiesResponse(),
-            await self.do_roarequest_async('QueryDeviceProperties', 'rooms_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rooms/devices/properties/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_device_properties(
+        self,
+        request: dingtalkrooms__1__0_models.QueryDevicePropertiesRequest,
+    ) -> dingtalkrooms__1__0_models.QueryDevicePropertiesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDevicePropertiesHeaders()
+        return self.query_device_properties_with_options(request, headers, runtime)
+
+    async def query_device_properties_async(
+        self,
+        request: dingtalkrooms__1__0_models.QueryDevicePropertiesRequest,
+    ) -> dingtalkrooms__1__0_models.QueryDevicePropertiesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDevicePropertiesHeaders()
+        return await self.query_device_properties_with_options_async(request, headers, runtime)
+
+    def query_meeting_room_with_options(
+        self,
+        room_id: str,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomRequest,
+        headers: dingtalkrooms__1__0_models.QueryMeetingRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms/{room_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryMeetingRoomResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_meeting_room_with_options_async(
+        self,
+        room_id: str,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomRequest,
+        headers: dingtalkrooms__1__0_models.QueryMeetingRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms/{room_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryMeetingRoomResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_meeting_room(
@@ -498,74 +702,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkrooms__1__0_models.QueryMeetingRoomHeaders()
         return await self.query_meeting_room_with_options_async(room_id, request, headers, runtime)
-
-    def query_meeting_room_with_options(
-        self,
-        room_id: str,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomRequest,
-        headers: dingtalkrooms__1__0_models.QueryMeetingRoomHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomResponse:
-        UtilClient.validate_model(request)
-        room_id = OpenApiUtilClient.get_encode_param(room_id)
-        query = {}
-        if not UtilClient.is_unset(request.union_id):
-            query['unionId'] = request.union_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkrooms__1__0_models.QueryMeetingRoomResponse(),
-            self.do_roarequest('QueryMeetingRoom', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/meetingRooms/{room_id}', 'json', req, runtime)
-        )
-
-    async def query_meeting_room_with_options_async(
-        self,
-        room_id: str,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomRequest,
-        headers: dingtalkrooms__1__0_models.QueryMeetingRoomHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomResponse:
-        UtilClient.validate_model(request)
-        room_id = OpenApiUtilClient.get_encode_param(room_id)
-        query = {}
-        if not UtilClient.is_unset(request.union_id):
-            query['unionId'] = request.union_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkrooms__1__0_models.QueryMeetingRoomResponse(),
-            await self.do_roarequest_async('QueryMeetingRoom', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/meetingRooms/{room_id}', 'json', req, runtime)
-        )
-
-    def query_meeting_room_device(
-        self,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceRequest,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.QueryMeetingRoomDeviceHeaders()
-        return self.query_meeting_room_device_with_options(request, headers, runtime)
-
-    async def query_meeting_room_device_async(
-        self,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceRequest,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.QueryMeetingRoomDeviceHeaders()
-        return await self.query_meeting_room_device_with_options_async(request, headers, runtime)
 
     def query_meeting_room_device_with_options(
         self,
@@ -590,9 +726,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomDevice',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse(),
-            self.do_roarequest('QueryMeetingRoomDevice', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_meeting_room_device_with_options_async(
@@ -618,9 +765,108 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomDevice',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse(),
-            await self.do_roarequest_async('QueryMeetingRoomDevice', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/devices', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_meeting_room_device(
+        self,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomDeviceHeaders()
+        return self.query_meeting_room_device_with_options(request, headers, runtime)
+
+    async def query_meeting_room_device_async(
+        self,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomDeviceRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomDeviceHeaders()
+        return await self.query_meeting_room_device_with_options_async(request, headers, runtime)
+
+    def query_meeting_room_group_with_options(
+        self,
+        group_id: str,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupRequest,
+        headers: dingtalkrooms__1__0_models.QueryMeetingRoomGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomGroup',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groups/{group_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryMeetingRoomGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_meeting_room_group_with_options_async(
+        self,
+        group_id: str,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupRequest,
+        headers: dingtalkrooms__1__0_models.QueryMeetingRoomGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomGroup',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groups/{group_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryMeetingRoomGroupResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_meeting_room_group(
@@ -641,74 +887,6 @@ class Client(OpenApiClient):
         headers = dingtalkrooms__1__0_models.QueryMeetingRoomGroupHeaders()
         return await self.query_meeting_room_group_with_options_async(group_id, request, headers, runtime)
 
-    def query_meeting_room_group_with_options(
-        self,
-        group_id: str,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupRequest,
-        headers: dingtalkrooms__1__0_models.QueryMeetingRoomGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupResponse:
-        UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
-        query = {}
-        if not UtilClient.is_unset(request.union_id):
-            query['unionId'] = request.union_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkrooms__1__0_models.QueryMeetingRoomGroupResponse(),
-            self.do_roarequest('QueryMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/groups/{group_id}', 'json', req, runtime)
-        )
-
-    async def query_meeting_room_group_with_options_async(
-        self,
-        group_id: str,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupRequest,
-        headers: dingtalkrooms__1__0_models.QueryMeetingRoomGroupHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupResponse:
-        UtilClient.validate_model(request)
-        group_id = OpenApiUtilClient.get_encode_param(group_id)
-        query = {}
-        if not UtilClient.is_unset(request.union_id):
-            query['unionId'] = request.union_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkrooms__1__0_models.QueryMeetingRoomGroupResponse(),
-            await self.do_roarequest_async('QueryMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/groups/{group_id}', 'json', req, runtime)
-        )
-
-    def query_meeting_room_group_list(
-        self,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupListRequest,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.QueryMeetingRoomGroupListHeaders()
-        return self.query_meeting_room_group_list_with_options(request, headers, runtime)
-
-    async def query_meeting_room_group_list_async(
-        self,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupListRequest,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.QueryMeetingRoomGroupListHeaders()
-        return await self.query_meeting_room_group_list_with_options_async(request, headers, runtime)
-
     def query_meeting_room_group_list_with_options(
         self,
         request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupListRequest,
@@ -728,9 +906,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomGroupList',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groupLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryMeetingRoomGroupListResponse(),
-            self.do_roarequest('QueryMeetingRoomGroupList', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/groupLists', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_meeting_room_group_list_with_options_async(
@@ -752,26 +941,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomGroupList',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groupLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryMeetingRoomGroupListResponse(),
-            await self.do_roarequest_async('QueryMeetingRoomGroupList', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/groupLists', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_meeting_room_list(
+    def query_meeting_room_group_list(
         self,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomListRequest,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomListResponse:
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupListRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.QueryMeetingRoomListHeaders()
-        return self.query_meeting_room_list_with_options(request, headers, runtime)
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomGroupListHeaders()
+        return self.query_meeting_room_group_list_with_options(request, headers, runtime)
 
-    async def query_meeting_room_list_async(
+    async def query_meeting_room_group_list_async(
         self,
-        request: dingtalkrooms__1__0_models.QueryMeetingRoomListRequest,
-    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomListResponse:
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupListRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.QueryMeetingRoomListHeaders()
-        return await self.query_meeting_room_list_with_options_async(request, headers, runtime)
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomGroupListHeaders()
+        return await self.query_meeting_room_group_list_with_options_async(request, headers, runtime)
 
     def query_meeting_room_list_with_options(
         self,
@@ -796,9 +996,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomList',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRoomLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryMeetingRoomListResponse(),
-            self.do_roarequest('QueryMeetingRoomList', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/meetingRoomLists', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_meeting_room_list_with_options_async(
@@ -824,26 +1035,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomList',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRoomLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.QueryMeetingRoomListResponse(),
-            await self.do_roarequest_async('QueryMeetingRoomList', 'rooms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/rooms/meetingRoomLists', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_meeting_room(
+    def query_meeting_room_list(
         self,
-        request: dingtalkrooms__1__0_models.UpdateMeetingRoomRequest,
-    ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomResponse:
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomListRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.UpdateMeetingRoomHeaders()
-        return self.update_meeting_room_with_options(request, headers, runtime)
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomListHeaders()
+        return self.query_meeting_room_list_with_options(request, headers, runtime)
 
-    async def update_meeting_room_async(
+    async def query_meeting_room_list_async(
         self,
-        request: dingtalkrooms__1__0_models.UpdateMeetingRoomRequest,
-    ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomResponse:
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomListRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.UpdateMeetingRoomHeaders()
-        return await self.update_meeting_room_with_options_async(request, headers, runtime)
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomListHeaders()
+        return await self.query_meeting_room_list_with_options_async(request, headers, runtime)
 
     def update_meeting_room_with_options(
         self,
@@ -882,9 +1104,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.UpdateMeetingRoomResponse(),
-            self.do_roarequest('UpdateMeetingRoom', 'rooms_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/rooms/meetingRooms', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_meeting_room_with_options_async(
@@ -924,26 +1157,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.UpdateMeetingRoomResponse(),
-            await self.do_roarequest_async('UpdateMeetingRoom', 'rooms_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/rooms/meetingRooms', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_meeting_room_group(
+    def update_meeting_room(
         self,
-        request: dingtalkrooms__1__0_models.UpdateMeetingRoomGroupRequest,
-    ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomGroupResponse:
+        request: dingtalkrooms__1__0_models.UpdateMeetingRoomRequest,
+    ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.UpdateMeetingRoomGroupHeaders()
-        return self.update_meeting_room_group_with_options(request, headers, runtime)
+        headers = dingtalkrooms__1__0_models.UpdateMeetingRoomHeaders()
+        return self.update_meeting_room_with_options(request, headers, runtime)
 
-    async def update_meeting_room_group_async(
+    async def update_meeting_room_async(
         self,
-        request: dingtalkrooms__1__0_models.UpdateMeetingRoomGroupRequest,
-    ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomGroupResponse:
+        request: dingtalkrooms__1__0_models.UpdateMeetingRoomRequest,
+    ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkrooms__1__0_models.UpdateMeetingRoomGroupHeaders()
-        return await self.update_meeting_room_group_with_options_async(request, headers, runtime)
+        headers = dingtalkrooms__1__0_models.UpdateMeetingRoomHeaders()
+        return await self.update_meeting_room_with_options_async(request, headers, runtime)
 
     def update_meeting_room_group_with_options(
         self,
@@ -968,9 +1212,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateMeetingRoomGroup',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groups',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.UpdateMeetingRoomGroupResponse(),
-            self.do_roarequest('UpdateMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/rooms/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_meeting_room_group_with_options_async(
@@ -996,7 +1251,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateMeetingRoomGroup',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groups',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrooms__1__0_models.UpdateMeetingRoomGroupResponse(),
-            await self.do_roarequest_async('UpdateMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/rooms/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_meeting_room_group(
+        self,
+        request: dingtalkrooms__1__0_models.UpdateMeetingRoomGroupRequest,
+    ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.UpdateMeetingRoomGroupHeaders()
+        return self.update_meeting_room_group_with_options(request, headers, runtime)
+
+    async def update_meeting_room_group_async(
+        self,
+        request: dingtalkrooms__1__0_models.UpdateMeetingRoomGroupRequest,
+    ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.UpdateMeetingRoomGroupHeaders()
+        return await self.update_meeting_room_group_with_options_async(request, headers, runtime)

@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.im_2_0 import models as dingtalkim__2__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def close_topbox(
-        self,
-        request: dingtalkim__2__0_models.CloseTopboxRequest,
-    ) -> dingtalkim__2__0_models.CloseTopboxResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__2__0_models.CloseTopboxHeaders()
-        return self.close_topbox_with_options(request, headers, runtime)
-
-    async def close_topbox_async(
-        self,
-        request: dingtalkim__2__0_models.CloseTopboxRequest,
-    ) -> dingtalkim__2__0_models.CloseTopboxResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__2__0_models.CloseTopboxHeaders()
-        return await self.close_topbox_with_options_async(request, headers, runtime)
 
     def close_topbox_with_options(
         self,
@@ -72,9 +62,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CloseTopbox',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/topBoxes/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__2__0_models.CloseTopboxResponse(),
-            self.do_roarequest('CloseTopbox', 'im_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/im/topBoxes/close', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def close_topbox_with_options_async(
@@ -110,26 +111,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CloseTopbox',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/topBoxes/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__2__0_models.CloseTopboxResponse(),
-            await self.do_roarequest_async('CloseTopbox', 'im_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/im/topBoxes/close', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_topbox(
+    def close_topbox(
         self,
-        request: dingtalkim__2__0_models.CreateTopboxRequest,
-    ) -> dingtalkim__2__0_models.CreateTopboxResponse:
+        request: dingtalkim__2__0_models.CloseTopboxRequest,
+    ) -> dingtalkim__2__0_models.CloseTopboxResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__2__0_models.CreateTopboxHeaders()
-        return self.create_topbox_with_options(request, headers, runtime)
+        headers = dingtalkim__2__0_models.CloseTopboxHeaders()
+        return self.close_topbox_with_options(request, headers, runtime)
 
-    async def create_topbox_async(
+    async def close_topbox_async(
         self,
-        request: dingtalkim__2__0_models.CreateTopboxRequest,
-    ) -> dingtalkim__2__0_models.CreateTopboxResponse:
+        request: dingtalkim__2__0_models.CloseTopboxRequest,
+    ) -> dingtalkim__2__0_models.CloseTopboxResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__2__0_models.CreateTopboxHeaders()
-        return await self.create_topbox_with_options_async(request, headers, runtime)
+        headers = dingtalkim__2__0_models.CloseTopboxHeaders()
+        return await self.close_topbox_with_options_async(request, headers, runtime)
 
     def create_topbox_with_options(
         self,
@@ -184,9 +196,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateTopbox',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/topBoxes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__2__0_models.CreateTopboxResponse(),
-            self.do_roarequest('CreateTopbox', 'im_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/im/topBoxes', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_topbox_with_options_async(
@@ -242,7 +265,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateTopbox',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/topBoxes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__2__0_models.CreateTopboxResponse(),
-            await self.do_roarequest_async('CreateTopbox', 'im_2.0', 'HTTP', 'POST', 'AK', f'/v2.0/im/topBoxes', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def create_topbox(
+        self,
+        request: dingtalkim__2__0_models.CreateTopboxRequest,
+    ) -> dingtalkim__2__0_models.CreateTopboxResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__2__0_models.CreateTopboxHeaders()
+        return self.create_topbox_with_options(request, headers, runtime)
+
+    async def create_topbox_async(
+        self,
+        request: dingtalkim__2__0_models.CreateTopboxRequest,
+    ) -> dingtalkim__2__0_models.CreateTopboxResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__2__0_models.CreateTopboxHeaders()
+        return await self.create_topbox_with_options_async(request, headers, runtime)

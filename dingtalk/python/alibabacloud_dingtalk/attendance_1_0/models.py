@@ -1,7 +1,189 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List, Any
+from typing import Dict, Any, List
+
+
+class ResultDurationSettingsValueSkipTimeByFrames(TeaModel):
+    def __init__(
+        self,
+        start_time: str = None,
+        end_time: str = None,
+        valid: bool = None,
+    ):
+        self.start_time = start_time
+        self.end_time = end_time
+        self.valid = valid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.valid is not None:
+            result['valid'] = self.valid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('valid') is not None:
+            self.valid = m.get('valid')
+        return self
+
+
+class ResultDurationSettingsValueSkipTimeByDurations(TeaModel):
+    def __init__(
+        self,
+        duration: int = None,
+        minus: int = None,
+    ):
+        self.duration = duration
+        self.minus = minus
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.minus is not None:
+            result['minus'] = self.minus
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('minus') is not None:
+            self.minus = m.get('minus')
+        return self
+
+
+class ResultDurationSettingsValue(TeaModel):
+    def __init__(
+        self,
+        calc_type: int = None,
+        duration_type: int = None,
+        overtime_redress: bool = None,
+        settings: Dict[str, Any] = None,
+        overtime_redress_by: str = None,
+        vacation_rate: float = None,
+        skip_time: str = None,
+        skip_time_by_frames: List[ResultDurationSettingsValueSkipTimeByFrames] = None,
+        skip_time_by_durations: List[ResultDurationSettingsValueSkipTimeByDurations] = None,
+        holiday_plan_overtime_redress: bool = None,
+        holiday_plan_overtime_redress_by: str = None,
+        holiday_plan_vacation_rate: float = None,
+    ):
+        self.calc_type = calc_type
+        self.duration_type = duration_type
+        self.overtime_redress = overtime_redress
+        self.settings = settings
+        self.overtime_redress_by = overtime_redress_by
+        self.vacation_rate = vacation_rate
+        self.skip_time = skip_time
+        self.skip_time_by_frames = skip_time_by_frames
+        self.skip_time_by_durations = skip_time_by_durations
+        self.holiday_plan_overtime_redress = holiday_plan_overtime_redress
+        self.holiday_plan_overtime_redress_by = holiday_plan_overtime_redress_by
+        self.holiday_plan_vacation_rate = holiday_plan_vacation_rate
+
+    def validate(self):
+        if self.skip_time_by_frames:
+            for k in self.skip_time_by_frames:
+                if k:
+                    k.validate()
+        if self.skip_time_by_durations:
+            for k in self.skip_time_by_durations:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.calc_type is not None:
+            result['calcType'] = self.calc_type
+        if self.duration_type is not None:
+            result['durationType'] = self.duration_type
+        if self.overtime_redress is not None:
+            result['overtimeRedress'] = self.overtime_redress
+        if self.settings is not None:
+            result['settings'] = self.settings
+        if self.overtime_redress_by is not None:
+            result['overtimeRedressBy'] = self.overtime_redress_by
+        if self.vacation_rate is not None:
+            result['vacationRate'] = self.vacation_rate
+        if self.skip_time is not None:
+            result['skipTime'] = self.skip_time
+        result['skipTimeByFrames'] = []
+        if self.skip_time_by_frames is not None:
+            for k in self.skip_time_by_frames:
+                result['skipTimeByFrames'].append(k.to_map() if k else None)
+        result['skipTimeByDurations'] = []
+        if self.skip_time_by_durations is not None:
+            for k in self.skip_time_by_durations:
+                result['skipTimeByDurations'].append(k.to_map() if k else None)
+        if self.holiday_plan_overtime_redress is not None:
+            result['holidayPlanOvertimeRedress'] = self.holiday_plan_overtime_redress
+        if self.holiday_plan_overtime_redress_by is not None:
+            result['holidayPlanOvertimeRedressBy'] = self.holiday_plan_overtime_redress_by
+        if self.holiday_plan_vacation_rate is not None:
+            result['holidayPlanVacationRate'] = self.holiday_plan_vacation_rate
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('calcType') is not None:
+            self.calc_type = m.get('calcType')
+        if m.get('durationType') is not None:
+            self.duration_type = m.get('durationType')
+        if m.get('overtimeRedress') is not None:
+            self.overtime_redress = m.get('overtimeRedress')
+        if m.get('settings') is not None:
+            self.settings = m.get('settings')
+        if m.get('overtimeRedressBy') is not None:
+            self.overtime_redress_by = m.get('overtimeRedressBy')
+        if m.get('vacationRate') is not None:
+            self.vacation_rate = m.get('vacationRate')
+        if m.get('skipTime') is not None:
+            self.skip_time = m.get('skipTime')
+        self.skip_time_by_frames = []
+        if m.get('skipTimeByFrames') is not None:
+            for k in m.get('skipTimeByFrames'):
+                temp_model = ResultDurationSettingsValueSkipTimeByFrames()
+                self.skip_time_by_frames.append(temp_model.from_map(k))
+        self.skip_time_by_durations = []
+        if m.get('skipTimeByDurations') is not None:
+            for k in m.get('skipTimeByDurations'):
+                temp_model = ResultDurationSettingsValueSkipTimeByDurations()
+                self.skip_time_by_durations.append(temp_model.from_map(k))
+        if m.get('holidayPlanOvertimeRedress') is not None:
+            self.holiday_plan_overtime_redress = m.get('holidayPlanOvertimeRedress')
+        if m.get('holidayPlanOvertimeRedressBy') is not None:
+            self.holiday_plan_overtime_redress_by = m.get('holidayPlanOvertimeRedressBy')
+        if m.get('holidayPlanVacationRate') is not None:
+            self.holiday_plan_vacation_rate = m.get('holidayPlanVacationRate')
+        return self
 
 
 class AddLeaveTypeHeaders(TeaModel):
@@ -45,13 +227,9 @@ class AddLeaveTypeRequestLeaveCertificate(TeaModel):
         prompt_information: str = None,
         unit: str = None,
     ):
-        # 超过多长时间需提供请假证明
         self.duration = duration
-        # 是否开启请假证明
         self.enable = enable
-        # 请假提示文案
         self.prompt_information = prompt_information
-        # 请假证明单位hour，day
         self.unit = unit
 
     def validate(self):
@@ -94,13 +272,9 @@ class AddLeaveTypeRequestSubmitTimeRule(TeaModel):
         time_unit: str = None,
         time_value: int = None,
     ):
-        # 是否开启限时提交功能：仅且为true时开启
         self.enable_time_limit = enable_time_limit
-        # 限制类型：before-提前；after-补交
         self.time_type = time_type
-        # 时间单位：day-天；hour-小时
         self.time_unit = time_unit
-        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
         self.time_value = time_value
 
     def validate(self):
@@ -141,9 +315,7 @@ class AddLeaveTypeRequestVisibilityRules(TeaModel):
         type: str = None,
         visible: List[str] = None,
     ):
-        # 规则类型：dept-部门；staff-员工；label-角色
         self.type = type
-        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
         self.visible = visible
 
     def validate(self):
@@ -184,25 +356,15 @@ class AddLeaveTypeRequest(TeaModel):
         visibility_rules: List[AddLeaveTypeRequestVisibilityRules] = None,
         op_user_id: str = None,
     ):
-        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         self.biz_type = biz_type
-        # 调休假有效期规则(validity_type:有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种 validity_value:延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数))
         self.extras = extras
-        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
         self.hours_in_per_day = hours_in_per_day
-        # 请假证明
         self.leave_certificate = leave_certificate
-        # 假期名称
         self.leave_name = leave_name
-        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
         self.leave_view_unit = leave_view_unit
-        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
         self.natural_day_leave = natural_day_leave
-        # 限时提交规则
         self.submit_time_rule = submit_time_rule
-        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
         self.visibility_rules = visibility_rules
-        # 操作者ID
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -283,13 +445,9 @@ class AddLeaveTypeResponseBodyResultLeaveCertificate(TeaModel):
         prompt_information: str = None,
         unit: str = None,
     ):
-        # 超过多长时间需提供请假证明
         self.duration = duration
-        # 是否开启请假证明
         self.enable = enable
-        # 请假提示文案
         self.prompt_information = prompt_information
-        # 请假证明单位hour，day
         self.unit = unit
 
     def validate(self):
@@ -332,13 +490,9 @@ class AddLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
         time_unit: str = None,
         time_value: int = None,
     ):
-        # 是否开启限时提交功能：仅且为true时开启
         self.enable_time_limit = enable_time_limit
-        # 限制类型：before-提前；after-补交
         self.time_type = time_type
-        # 时间单位：day-天；hour-小时
         self.time_unit = time_unit
-        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
         self.time_value = time_value
 
     def validate(self):
@@ -379,9 +533,7 @@ class AddLeaveTypeResponseBodyResultVisibilityRules(TeaModel):
         type: str = None,
         visible: List[str] = None,
     ):
-        # 规则类型：dept-部门；staff-员工；label-角色
         self.type = type
-        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
         self.visible = visible
 
     def validate(self):
@@ -421,23 +573,14 @@ class AddLeaveTypeResponseBodyResult(TeaModel):
         submit_time_rule: AddLeaveTypeResponseBodyResultSubmitTimeRule = None,
         visibility_rules: List[AddLeaveTypeResponseBodyResultVisibilityRules] = None,
     ):
-        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         self.biz_type = biz_type
-        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
         self.hours_in_per_day = hours_in_per_day
-        # 请假证明
         self.leave_certificate = leave_certificate
-        # 假期类型唯一标识
         self.leave_code = leave_code
-        # 假期名称
         self.leave_name = leave_name
-        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
         self.leave_view_unit = leave_view_unit
-        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
         self.natural_day_leave = natural_day_leave
-        # 限时提交规则
         self.submit_time_rule = submit_time_rule
-        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
         self.visibility_rules = visibility_rules
 
     def validate(self):
@@ -511,7 +654,6 @@ class AddLeaveTypeResponseBody(TeaModel):
         self,
         result: AddLeaveTypeResponseBodyResult = None,
     ):
-        # 返回参数
         self.result = result
 
     def validate(self):
@@ -540,13 +682,16 @@ class AddLeaveTypeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddLeaveTypeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -559,6 +704,8 @@ class AddLeaveTypeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -567,6 +714,8 @@ class AddLeaveTypeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddLeaveTypeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -613,11 +762,8 @@ class AttendanceBleDevicesAddRequest(TeaModel):
         group_key: str = None,
         op_user_id: str = None,
     ):
-        # 蓝牙设备Id列表
         self.device_id_list = device_id_list
-        # 考勤组Id
         self.group_key = group_key
-        # 操作人Id
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -655,11 +801,8 @@ class AttendanceBleDevicesAddResponseBodyErrorListFailureList(TeaModel):
         device_name: str = None,
         sn: str = None,
     ):
-        # 蓝牙设备Id
         self.device_id = device_id
-        # 蓝牙设备名称
         self.device_name = device_name
-        # sn
         self.sn = sn
 
     def validate(self):
@@ -697,11 +840,8 @@ class AttendanceBleDevicesAddResponseBodyErrorList(TeaModel):
         failure_list: List[AttendanceBleDevicesAddResponseBodyErrorListFailureList] = None,
         msg: str = None,
     ):
-        # 错误code
         self.code = code
-        # 失败蓝牙设备列表
         self.failure_list = failure_list
-        # errorMsg
         self.msg = msg
 
     def validate(self):
@@ -747,11 +887,8 @@ class AttendanceBleDevicesAddResponseBodySuccessList(TeaModel):
         device_name: str = None,
         sn: str = None,
     ):
-        # 蓝牙设备Id
         self.device_id = device_id
-        # 蓝牙设备名称
         self.device_name = device_name
-        # sn
         self.sn = sn
 
     def validate(self):
@@ -788,9 +925,7 @@ class AttendanceBleDevicesAddResponseBody(TeaModel):
         error_list: List[AttendanceBleDevicesAddResponseBodyErrorList] = None,
         success_list: List[AttendanceBleDevicesAddResponseBodySuccessList] = None,
     ):
-        # 添加错误列表
         self.error_list = error_list
-        # 添加成功蓝牙设备列表
         self.success_list = success_list
 
     def validate(self):
@@ -838,13 +973,16 @@ class AttendanceBleDevicesAddResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AttendanceBleDevicesAddResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -857,6 +995,8 @@ class AttendanceBleDevicesAddResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -865,6 +1005,8 @@ class AttendanceBleDevicesAddResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AttendanceBleDevicesAddResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -910,9 +1052,7 @@ class AttendanceBleDevicesQueryRequest(TeaModel):
         group_key: str = None,
         op_user_id: str = None,
     ):
-        # 考勤组Id
         self.group_key = group_key
-        # 操作人Id
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -946,11 +1086,8 @@ class AttendanceBleDevicesQueryResponseBodyResult(TeaModel):
         device_name: str = None,
         sn: str = None,
     ):
-        # 蓝牙设备Id
         self.device_id = device_id
-        # 蓝牙设备名称
         self.device_name = device_name
-        # sn
         self.sn = sn
 
     def validate(self):
@@ -986,7 +1123,6 @@ class AttendanceBleDevicesQueryResponseBody(TeaModel):
         self,
         result: List[AttendanceBleDevicesQueryResponseBodyResult] = None,
     ):
-        # 蓝牙列表
         self.result = result
 
     def validate(self):
@@ -1021,13 +1157,16 @@ class AttendanceBleDevicesQueryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AttendanceBleDevicesQueryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1040,6 +1179,8 @@ class AttendanceBleDevicesQueryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1048,6 +1189,8 @@ class AttendanceBleDevicesQueryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AttendanceBleDevicesQueryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1094,11 +1237,8 @@ class AttendanceBleDevicesRemoveRequest(TeaModel):
         group_key: str = None,
         op_user_id: str = None,
     ):
-        # 蓝牙设备Id列表
         self.device_id_list = device_id_list
-        # 考勤组Id
         self.group_key = group_key
-        # 操作人id
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -1136,11 +1276,8 @@ class AttendanceBleDevicesRemoveResponseBodyErrorList(TeaModel):
         failure_list: List[int] = None,
         msg: str = None,
     ):
-        # 错误code
         self.code = code
-        # 移除失败蓝牙设备Id列表
         self.failure_list = failure_list
-        # 错误信息
         self.msg = msg
 
     def validate(self):
@@ -1177,9 +1314,7 @@ class AttendanceBleDevicesRemoveResponseBody(TeaModel):
         error_list: List[AttendanceBleDevicesRemoveResponseBodyErrorList] = None,
         success_list: List[int] = None,
     ):
-        # 移出错误列表
         self.error_list = error_list
-        # 移除成功蓝牙设备Id列表
         self.success_list = success_list
 
     def validate(self):
@@ -1218,13 +1353,16 @@ class AttendanceBleDevicesRemoveResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AttendanceBleDevicesRemoveResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1237,6 +1375,8 @@ class AttendanceBleDevicesRemoveResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1245,6 +1385,8 @@ class AttendanceBleDevicesRemoveResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AttendanceBleDevicesRemoveResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1324,11 +1466,8 @@ class CheckClosingAccountRequest(TeaModel):
         user_ids: List[str] = None,
         user_time_range: List[CheckClosingAccountRequestUserTimeRange] = None,
     ):
-        # 情景
         self.biz_code = biz_code
-        # 员工列表
         self.user_ids = user_ids
-        # 时间段
         self.user_time_range = user_time_range
 
     def validate(self):
@@ -1410,13 +1549,16 @@ class CheckClosingAccountResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CheckClosingAccountResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1429,6 +1571,8 @@ class CheckClosingAccountResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1437,6 +1581,8 @@ class CheckClosingAccountResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CheckClosingAccountResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1484,13 +1630,9 @@ class CheckWritePermissionRequest(TeaModel):
         op_user_id: str = None,
         resource_key: str = None,
     ):
-        # category
         self.category = category
-        # entityIds
         self.entity_ids = entity_ids
-        # opUserId
         self.op_user_id = op_user_id
-        # resourceKey
         self.resource_key = resource_key
 
     def validate(self):
@@ -1530,7 +1672,6 @@ class CheckWritePermissionResponseBody(TeaModel):
         self,
         entity_permission_map: Dict[str, bool] = None,
     ):
-        # entityPermissionMap
         self.entity_permission_map = entity_permission_map
 
     def validate(self):
@@ -1557,13 +1698,16 @@ class CheckWritePermissionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CheckWritePermissionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1576,6 +1720,8 @@ class CheckWritePermissionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1584,6 +1730,8 @@ class CheckWritePermissionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CheckWritePermissionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1631,13 +1779,9 @@ class CreateApproveRequestPunchParam(TeaModel):
         position_type: str = None,
         punch_time: int = None,
     ):
-        # 地理位置标识：wifi:ssid_macAddress ble: deviceId gps:longitude_latitude
         self.position_id = position_id
-        # 地理位置名称
         self.position_name = position_name
-        # 地理位置类型：wifi/ble/gps
         self.position_type = position_type
-        # 打卡时间，单位毫秒
         self.punch_time = punch_time
 
     def validate(self):
@@ -1682,17 +1826,11 @@ class CreateApproveRequest(TeaModel):
         tag_name: str = None,
         userid: str = None,
     ):
-        # 三方审批单id，全局唯一
         self.approve_id = approve_id
-        # 审批人员工id
         self.op_userid = op_userid
-        # 审批单关联的打卡信息
         self.punch_param = punch_param
-        # 子类型名称，最大长度20个字符
         self.sub_type = sub_type
-        # 审批单类型名称，最大长度20个字符
         self.tag_name = tag_name
-        # 员工id
         self.userid = userid
 
     def validate(self):
@@ -1742,7 +1880,6 @@ class CreateApproveResponseBody(TeaModel):
         self,
         dingtalk_approve_id: str = None,
     ):
-        # 返回结果
         self.dingtalk_approve_id = dingtalk_approve_id
 
     def validate(self):
@@ -1769,13 +1906,16 @@ class CreateApproveResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateApproveResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1788,6 +1928,8 @@ class CreateApproveResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1796,6 +1938,8 @@ class CreateApproveResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateApproveResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1844,19 +1988,10 @@ class DeleteWaterMarkTemplateRequest(TeaModel):
         system_template: bool = None,
         user_id: str = None,
     ):
-        # 模板的表单Code。
         self.form_code = form_code
-        # 模板的内容。
         self.form_content = form_content
-        # 群会话ID。
         self.open_conversation_id = open_conversation_id
-        # 是否是系统模板。
-        # - true：是
-        # - false：否
-        # 
-        # 
         self.system_template = system_template
-        # 用户的userid。
         self.user_id = user_id
 
     def validate(self):
@@ -1900,7 +2035,6 @@ class DeleteWaterMarkTemplateResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 模板的表单Code。
         self.result = result
 
     def validate(self):
@@ -1927,13 +2061,16 @@ class DeleteWaterMarkTemplateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteWaterMarkTemplateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1946,6 +2083,8 @@ class DeleteWaterMarkTemplateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1954,6 +2093,8 @@ class DeleteWaterMarkTemplateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteWaterMarkTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2002,15 +2143,10 @@ class DingTalkSecurityCheckRequest(TeaModel):
         sec: str = None,
         user_id: str = None,
     ):
-        # 客户端版本号
         self.client_ver = client_ver
-        # 客户端平台类型(iOS,Android)
         self.platform = platform
-        # 客户端平台平台版本
         self.platform_ver = platform_ver
-        # 加密字符
         self.sec = sec
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -2055,9 +2191,7 @@ class DingTalkSecurityCheckResponseBodyResult(TeaModel):
         has_risk: bool = None,
         risk_info: Dict[str, str] = None,
     ):
-        # 是否有风险
         self.has_risk = has_risk
-        # 风险信息
         self.risk_info = risk_info
 
     def validate(self):
@@ -2089,7 +2223,6 @@ class DingTalkSecurityCheckResponseBody(TeaModel):
         self,
         result: DingTalkSecurityCheckResponseBodyResult = None,
     ):
-        # 返回参数
         self.result = result
 
     def validate(self):
@@ -2118,13 +2251,16 @@ class DingTalkSecurityCheckResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DingTalkSecurityCheckResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2137,6 +2273,8 @@ class DingTalkSecurityCheckResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2145,6 +2283,8 @@ class DingTalkSecurityCheckResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DingTalkSecurityCheckResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2191,11 +2331,8 @@ class GetATManageScopeRequest(TeaModel):
         next_token: str = None,
         user_id: str = None,
     ):
-        # 单次查询条数，最大200。
         self.max_results = max_results
-        # 分页游标。
         self.next_token = next_token
-        # 查询用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -2233,11 +2370,8 @@ class GetATManageScopeResponseBodyResult(TeaModel):
         manage_scope: str = None,
         user_ids: List[str] = None,
     ):
-        # 是否有更多数据。  true：有  false：没有
         self.has_more = has_more
-        # 可见范围。boss/主管理员/管理范围包含根部门的管理员：all ，管理员/考勤组负责人：partial，无权限：none
         self.manage_scope = manage_scope
-        # 员工userid。只有manageScope为partial返回数据。
         self.user_ids = user_ids
 
     def validate(self):
@@ -2273,7 +2407,6 @@ class GetATManageScopeResponseBody(TeaModel):
         self,
         result: List[GetATManageScopeResponseBodyResult] = None,
     ):
-        # 管理范围。
         self.result = result
 
     def validate(self):
@@ -2308,13 +2441,16 @@ class GetATManageScopeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetATManageScopeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2327,6 +2463,8 @@ class GetATManageScopeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2335,6 +2473,8 @@ class GetATManageScopeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetATManageScopeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2414,9 +2554,7 @@ class GetAdjustmentsResponseBodyResultItems(TeaModel):
         name: str = None,
         setting_id: int = None,
     ):
-        # 补卡规则id
         self.id = id
-        # 补卡规则名称
         self.name = name
         self.setting_id = setting_id
 
@@ -2455,11 +2593,8 @@ class GetAdjustmentsResponseBodyResult(TeaModel):
         page_number: int = None,
         total_page: int = None,
     ):
-        # 补卡规则集合
         self.items = items
-        # 当前页码
         self.page_number = page_number
-        # 总页数
         self.total_page = total_page
 
     def validate(self):
@@ -2503,7 +2638,6 @@ class GetAdjustmentsResponseBody(TeaModel):
         self,
         result: List[GetAdjustmentsResponseBodyResult] = None,
     ):
-        # Id of the request
         self.result = result
 
     def validate(self):
@@ -2538,13 +2672,16 @@ class GetAdjustmentsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAdjustmentsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2557,6 +2694,8 @@ class GetAdjustmentsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2565,6 +2704,8 @@ class GetAdjustmentsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAdjustmentsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2612,19 +2753,9 @@ class GetCheckInSchemaTemplateRequest(TeaModel):
         scene_code: str = None,
         user_id: str = None,
     ):
-        # 业务码：
-        # - water_mark_checkin 水印签到
-        # 
-        # 
         self.biz_code = biz_code
-        # 群会话ID。
         self.open_conversation_id = open_conversation_id
-        # 场景码：
-        # - water_mark_checkin_h3yun 开放场景码
-        # 
-        # 
         self.scene_code = scene_code
-        # 用户的userid。
         self.user_id = user_id
 
     def validate(self):
@@ -2673,25 +2804,15 @@ class GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels(TeaModel
         title: str = None,
         water_mark_id: str = None,
     ):
-        # 是否可以修改。
         self.can_modify = can_modify
-        # 模板的表单Code。
         self.form_code = form_code
-        # 模板的预览图片。
         self.icon = icon
-        # 模板的布局信息。
         self.layout_design = layout_design
-        # 模板的场景码。
         self.scene_code = scene_code
-        # 模板的内容。
         self.schema_content = schema_content
-        # suiteKey。
         self.suite_key = suite_key
-        # 是否系统模板。
         self.system_template = system_template
-        # 模板的标题。
         self.title = title
-        # 模板的水印ID。
         self.water_mark_id = water_mark_id
 
     def validate(self):
@@ -2762,21 +2883,13 @@ class GetCheckInSchemaTemplateResponseBodyResult(TeaModel):
         template_degrade: bool = None,
         water_mark_template_models: List[GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels] = None,
     ):
-        # 业务码。
         self.biz_code = biz_code
-        # 是否可以操作模板。
         self.can_modify_and_add_template = can_modify_and_add_template
-        # 是否群管理员。
         self.conversation_admin = conversation_admin
-        # 自定义模板的最大数量。
         self.custom_template_max_size = custom_template_max_size
-        # 群会话ID。
         self.open_conversation_id = open_conversation_id
-        # 是否展示统计入口。
         self.show_stat = show_stat
-        # 是否开启水印模板降级。
         self.template_degrade = template_degrade
-        # 模板列表。
         self.water_mark_template_models = water_mark_template_models
 
     def validate(self):
@@ -2840,7 +2953,6 @@ class GetCheckInSchemaTemplateResponseBody(TeaModel):
         self,
         result: GetCheckInSchemaTemplateResponseBodyResult = None,
     ):
-        # 返回对象。
         self.result = result
 
     def validate(self):
@@ -2869,13 +2981,16 @@ class GetCheckInSchemaTemplateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetCheckInSchemaTemplateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2888,6 +3003,8 @@ class GetCheckInSchemaTemplateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2896,6 +3013,8 @@ class GetCheckInSchemaTemplateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCheckInSchemaTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2940,7 +3059,6 @@ class GetClosingAccountsRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
-        # 人员列表
         self.user_ids = user_ids
 
     def validate(self):
@@ -2973,17 +3091,11 @@ class GetClosingAccountsResponseBodyResultClosingAccountModel(TeaModel):
         start_day: int = None,
         start_month: int = None,
     ):
-        # 封账时间-日
         self.closing_day = closing_day
-        # 封账时间-时分
         self.closing_hour_minutes = closing_hour_minutes
-        # 封账范围-结束日
         self.end_day = end_day
-        # 封账范围-结束月
         self.end_month = end_month
-        # 封账范围-开始日
         self.start_day = start_day
-        # 封账范围-开始月
         self.start_month = start_month
 
     def validate(self):
@@ -3031,7 +3143,6 @@ class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel(TeaModel):
         self,
         invalid_time_stamp: int = None,
     ):
-        # 解封时间点
         self.invalid_time_stamp = invalid_time_stamp
 
     def validate(self):
@@ -3062,13 +3173,9 @@ class GetClosingAccountsResponseBodyResult(TeaModel):
         unseal_closing_account_model: GetClosingAccountsResponseBodyResultUnsealClosingAccountModel = None,
         user_id: str = None,
     ):
-        # 封账规则
         self.closing_account_model = closing_account_model
-        # 开关
         self.switch_on = switch_on
-        # 解封规则
         self.unseal_closing_account_model = unseal_closing_account_model
-        # 人员ID
         self.user_id = user_id
 
     def validate(self):
@@ -3113,7 +3220,6 @@ class GetClosingAccountsResponseBody(TeaModel):
         self,
         result: List[GetClosingAccountsResponseBodyResult] = None,
     ):
-        # 规则列表
         self.result = result
 
     def validate(self):
@@ -3148,13 +3254,16 @@ class GetClosingAccountsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetClosingAccountsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3167,6 +3276,8 @@ class GetClosingAccountsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3175,6 +3286,8 @@ class GetClosingAccountsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetClosingAccountsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3223,15 +3336,10 @@ class GetLeaveRecordsRequest(TeaModel):
         page_size: int = None,
         user_ids: List[str] = None,
     ):
-        # 假期类型唯一标识。
         self.leave_code = leave_code
-        # 操作人userId。
         self.op_user_id = op_user_id
-        # 分页页码。
         self.page_number = page_number
-        # 分页大小。
         self.page_size = page_size
-        # 查询员工userId列表。一次最多支持50个。
         self.user_ids = user_ids
 
     def validate(self):
@@ -3290,37 +3398,21 @@ class GetLeaveRecordsResponseBodyResultLeaveRecords(TeaModel):
         start_time: int = None,
         user_id: str = None,
     ):
-        # 计算类型。
         self.cal_type = cal_type
-        # 额度有效期结束时间或请假结束时间，毫秒级时间戳。
         self.end_time = end_time
-        # 记录创建时间。
         self.gmt_create = gmt_create
-        # 记录修改时间。
         self.gmt_modified = gmt_modified
-        # 假期类型唯一标识。
         self.leave_code = leave_code
-        # 原因。
         self.leave_reason = leave_reason
-        # 假期记录类型。
         self.leave_record_type = leave_record_type
-        # 请假状态。
         self.leave_status = leave_status
-        # 显示单位。
         self.leave_view_unit = leave_view_unit
-        # 操作人userId。
         self.op_user_id = op_user_id
-        # 额度唯一标识。
         self.quota_id = quota_id
-        # 假期记录唯一标识。
         self.record_id = record_id
-        # 以天计算的消费额度。
         self.record_num_per_day = record_num_per_day
-        # 以小时计算的消费额度。
         self.record_num_per_hour = record_num_per_hour
-        # 额度有效期开始时间或请假开始时间，毫秒级时间戳。
         self.start_time = start_time
-        # 员工userId。
         self.user_id = user_id
 
     def validate(self):
@@ -3409,9 +3501,7 @@ class GetLeaveRecordsResponseBodyResult(TeaModel):
         has_more: bool = None,
         leave_records: List[GetLeaveRecordsResponseBodyResultLeaveRecords] = None,
     ):
-        # 是否有更多结果。
         self.has_more = has_more
-        # 假期消费记录列表。
         self.leave_records = leave_records
 
     def validate(self):
@@ -3452,10 +3542,7 @@ class GetLeaveRecordsResponseBody(TeaModel):
         result: GetLeaveRecordsResponseBodyResult = None,
         success: bool = None,
     ):
-        # 返回结果。
-        # 
         self.result = result
-        # 是否正确访问。
         self.success = success
 
     def validate(self):
@@ -3488,13 +3575,16 @@ class GetLeaveRecordsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetLeaveRecordsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3507,6 +3597,8 @@ class GetLeaveRecordsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3515,6 +3607,8 @@ class GetLeaveRecordsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetLeaveRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3560,9 +3654,7 @@ class GetLeaveTypeRequest(TeaModel):
         op_user_id: str = None,
         vacation_source: str = None,
     ):
-        # 操作者ID
         self.op_user_id = op_user_id
-        # 空:开放接口定义假期类型;all:所有假期类型
         self.vacation_source = vacation_source
 
     def validate(self):
@@ -3597,13 +3689,9 @@ class GetLeaveTypeResponseBodyResultLeaveCertificate(TeaModel):
         prompt_information: str = None,
         unit: str = None,
     ):
-        # 超过多长时间需提供请假证明
         self.duration = duration
-        # 是否开启请假证明
         self.enable = enable
-        # 请假提示文案
         self.prompt_information = prompt_information
-        # 请假证明单位hour，day
         self.unit = unit
 
     def validate(self):
@@ -3646,13 +3734,9 @@ class GetLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
         time_unit: str = None,
         time_value: int = None,
     ):
-        # 是否开启限时提交功能：仅且为true时开启
         self.enable_time_limit = enable_time_limit
-        # 限制类型：before-提前；after-补交
         self.time_type = time_type
-        # 时间单位：day-天；hour-小时
         self.time_unit = time_unit
-        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
         self.time_value = time_value
 
     def validate(self):
@@ -3693,9 +3777,7 @@ class GetLeaveTypeResponseBodyResultVisibilityRules(TeaModel):
         type: str = None,
         visible: List[str] = None,
     ):
-        # 规则类型：dept-部门；staff-员工；label-角色
         self.type = type
-        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
         self.visible = visible
 
     def validate(self):
@@ -3738,29 +3820,17 @@ class GetLeaveTypeResponseBodyResult(TeaModel):
         validity_value: str = None,
         visibility_rules: List[GetLeaveTypeResponseBodyResultVisibilityRules] = None,
     ):
-        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         self.biz_type = biz_type
-        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
         self.hours_in_per_day = hours_in_per_day
-        # 请假证明
         self.leave_certificate = leave_certificate
-        # 假期类型唯一标识
         self.leave_code = leave_code
-        # 假期名称
         self.leave_name = leave_name
-        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
         self.leave_view_unit = leave_view_unit
-        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
         self.natural_day_leave = natural_day_leave
-        # 开放接口自定义的:external oa后台新建的：inner
         self.source = source
-        # 限时提交规则
         self.submit_time_rule = submit_time_rule
-        # 有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种
         self.validity_type = validity_type
-        # 延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数)
         self.validity_value = validity_value
-        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
         self.visibility_rules = visibility_rules
 
     def validate(self):
@@ -3846,7 +3916,6 @@ class GetLeaveTypeResponseBody(TeaModel):
         self,
         result: List[GetLeaveTypeResponseBodyResult] = None,
     ):
-        # 返回参数
         self.result = result
 
     def validate(self):
@@ -3881,13 +3950,16 @@ class GetLeaveTypeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetLeaveTypeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3900,6 +3972,8 @@ class GetLeaveTypeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3908,6 +3982,8 @@ class GetLeaveTypeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetLeaveTypeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3961,25 +4037,15 @@ class GetMachineResponseBodyResultMachineBluetoothVO(TeaModel):
         monitor_location_abnormal: bool = None,
         user_device_count: int = None,
     ):
-        # 地址位置描述
         self.address = address
-        # 蓝牙打卡人脸识别开关值
         self.bluetooth_check_with_face = bluetooth_check_with_face
-        # 蓝牙打卡范围
         self.bluetooth_distance_mode = bluetooth_distance_mode
-        # 蓝牙打卡范围描述
         self.bluetooth_distance_mode_desc = bluetooth_distance_mode_desc
-        # 蓝牙打卡开关
         self.bluetooth_value = bluetooth_value
-        # 纬度
         self.latitude = latitude
-        # 是否限制员工常用手机
         self.limit_user_device_count = limit_user_device_count
-        # 经度
         self.longitude = longitude
-        # 是否打开位置异常监控
         self.monitor_location_abnormal = monitor_location_abnormal
-        # 员工常用手机数量
         self.user_device_count = user_device_count
 
     def validate(self):
@@ -4053,27 +4119,16 @@ class GetMachineResponseBodyResult(TeaModel):
         product_version: str = None,
         voice_mode: int = None,
     ):
-        # 设备管理员列表
         self.atm_manager_list = atm_manager_list
-        # 设备id (deviceId)
         self.dev_id = dev_id
-        # 设备id (deviceUid加密之后)
         self.device_id = device_id
-        # 设备名称
         self.device_name = device_name
-        # 设备sn号
         self.device_sn = device_sn
-        # 考勤机蓝牙相关设置信息
         self.machine_bluetooth_vo = machine_bluetooth_vo
-        # 人脸容量
         self.max_face = max_face
-        # 网络状态
         self.net_status = net_status
-        # 设备类型名称
         self.product_name = product_name
-        # 固件版本
         self.product_version = product_version
-        # 音量模式
         self.voice_mode = voice_mode
 
     def validate(self):
@@ -4143,7 +4198,6 @@ class GetMachineResponseBody(TeaModel):
         self,
         result: GetMachineResponseBodyResult = None,
     ):
-        # 查询结果
         self.result = result
 
     def validate(self):
@@ -4172,13 +4226,16 @@ class GetMachineResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetMachineResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4191,6 +4248,8 @@ class GetMachineResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4199,6 +4258,8 @@ class GetMachineResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMachineResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4390,13 +4451,16 @@ class GetMachineUserResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetMachineUserResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4409,6 +4473,8 @@ class GetMachineUserResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4417,6 +4483,8 @@ class GetMachineUserResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMachineUserResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4490,11 +4558,8 @@ class GetOvertimeSettingResponseBodyResultOvertimeDivisions(TeaModel):
         previous_day_type: str = None,
         time_split_point: str = None,
     ):
-        # 后一日类型
         self.next_day_type = next_day_type
-        # 前一日类型
         self.previous_day_type = previous_day_type
-        # 分割时间点
         self.time_split_point = time_split_point
 
     def validate(self):
@@ -4532,11 +4597,8 @@ class GetOvertimeSettingResponseBodyResultWarningSettings(TeaModel):
         threshold: int = None,
         time: str = None,
     ):
-        # 风险预警 或 最大加班时间
         self.action = action
-        # 提醒阈值
         self.threshold = threshold
-        # 预警类型
         self.time = time
 
     def validate(self):
@@ -4567,203 +4629,6 @@ class GetOvertimeSettingResponseBodyResultWarningSettings(TeaModel):
         return self
 
 
-class ResultDurationSettingsValueSkipTimeByFrames(TeaModel):
-    def __init__(
-        self,
-        start_time: str = None,
-        end_time: str = None,
-        valid: bool = None,
-    ):
-        # 开始时间，格式为"HH:mm"
-        self.start_time = start_time
-        # 结束时间，格式为"HH:mm"
-        self.end_time = end_time
-        # 是否生效
-        self.valid = valid
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.start_time is not None:
-            result['startTime'] = self.start_time
-        if self.end_time is not None:
-            result['endTime'] = self.end_time
-        if self.valid is not None:
-            result['valid'] = self.valid
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('startTime') is not None:
-            self.start_time = m.get('startTime')
-        if m.get('endTime') is not None:
-            self.end_time = m.get('endTime')
-        if m.get('valid') is not None:
-            self.valid = m.get('valid')
-        return self
-
-
-class ResultDurationSettingsValueSkipTimeByDurations(TeaModel):
-    def __init__(
-        self,
-        duration: int = None,
-        minus: int = None,
-    ):
-        # 每天加班满 x小时，单位 秒
-        self.duration = duration
-        # 扣除 x小时，单位 秒
-        self.minus = minus
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.duration is not None:
-            result['duration'] = self.duration
-        if self.minus is not None:
-            result['minus'] = self.minus
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('duration') is not None:
-            self.duration = m.get('duration')
-        if m.get('minus') is not None:
-            self.minus = m.get('minus')
-        return self
-
-
-class ResultDurationSettingsValue(TeaModel):
-    def __init__(
-        self,
-        calc_type: int = None,
-        duration_type: int = None,
-        overtime_redress: bool = None,
-        settings: Dict[str, Any] = None,
-        overtime_redress_by: str = None,
-        vacation_rate: float = None,
-        skip_time: str = None,
-        skip_time_by_frames: List[ResultDurationSettingsValueSkipTimeByFrames] = None,
-        skip_time_by_durations: List[ResultDurationSettingsValueSkipTimeByDurations] = None,
-        holiday_plan_overtime_redress: bool = None,
-        holiday_plan_overtime_redress_by: str = None,
-        holiday_plan_vacation_rate: float = None,
-    ):
-        self.calc_type = calc_type
-        self.duration_type = duration_type
-        # 加班时长计为调休或加班费开关
-        self.overtime_redress = overtime_redress
-        # 加班开始时间 或 最小加班时间
-        self.settings = settings
-        # 加班时长计为方式
-        self.overtime_redress_by = overtime_redress_by
-        # 调休时长计算
-        self.vacation_rate = vacation_rate
-        # 扣除休息时间
-        self.skip_time = skip_time
-        # 休息时段
-        self.skip_time_by_frames = skip_time_by_frames
-        # 加班时长
-        self.skip_time_by_durations = skip_time_by_durations
-        # 休息日或节假日排班加班时长计为调休或加班费开关
-        self.holiday_plan_overtime_redress = holiday_plan_overtime_redress
-        # 休息日或节假日排班加班时长计为方式
-        self.holiday_plan_overtime_redress_by = holiday_plan_overtime_redress_by
-        # 休息日或节假日排班调休时长计算
-        self.holiday_plan_vacation_rate = holiday_plan_vacation_rate
-
-    def validate(self):
-        if self.skip_time_by_frames:
-            for k in self.skip_time_by_frames:
-                if k:
-                    k.validate()
-        if self.skip_time_by_durations:
-            for k in self.skip_time_by_durations:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.calc_type is not None:
-            result['calcType'] = self.calc_type
-        if self.duration_type is not None:
-            result['durationType'] = self.duration_type
-        if self.overtime_redress is not None:
-            result['overtimeRedress'] = self.overtime_redress
-        if self.settings is not None:
-            result['settings'] = self.settings
-        if self.overtime_redress_by is not None:
-            result['overtimeRedressBy'] = self.overtime_redress_by
-        if self.vacation_rate is not None:
-            result['vacationRate'] = self.vacation_rate
-        if self.skip_time is not None:
-            result['skipTime'] = self.skip_time
-        result['skipTimeByFrames'] = []
-        if self.skip_time_by_frames is not None:
-            for k in self.skip_time_by_frames:
-                result['skipTimeByFrames'].append(k.to_map() if k else None)
-        result['skipTimeByDurations'] = []
-        if self.skip_time_by_durations is not None:
-            for k in self.skip_time_by_durations:
-                result['skipTimeByDurations'].append(k.to_map() if k else None)
-        if self.holiday_plan_overtime_redress is not None:
-            result['holidayPlanOvertimeRedress'] = self.holiday_plan_overtime_redress
-        if self.holiday_plan_overtime_redress_by is not None:
-            result['holidayPlanOvertimeRedressBy'] = self.holiday_plan_overtime_redress_by
-        if self.holiday_plan_vacation_rate is not None:
-            result['holidayPlanVacationRate'] = self.holiday_plan_vacation_rate
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('calcType') is not None:
-            self.calc_type = m.get('calcType')
-        if m.get('durationType') is not None:
-            self.duration_type = m.get('durationType')
-        if m.get('overtimeRedress') is not None:
-            self.overtime_redress = m.get('overtimeRedress')
-        if m.get('settings') is not None:
-            self.settings = m.get('settings')
-        if m.get('overtimeRedressBy') is not None:
-            self.overtime_redress_by = m.get('overtimeRedressBy')
-        if m.get('vacationRate') is not None:
-            self.vacation_rate = m.get('vacationRate')
-        if m.get('skipTime') is not None:
-            self.skip_time = m.get('skipTime')
-        self.skip_time_by_frames = []
-        if m.get('skipTimeByFrames') is not None:
-            for k in m.get('skipTimeByFrames'):
-                temp_model = ResultDurationSettingsValueSkipTimeByFrames()
-                self.skip_time_by_frames.append(temp_model.from_map(k))
-        self.skip_time_by_durations = []
-        if m.get('skipTimeByDurations') is not None:
-            for k in m.get('skipTimeByDurations'):
-                temp_model = ResultDurationSettingsValueSkipTimeByDurations()
-                self.skip_time_by_durations.append(temp_model.from_map(k))
-        if m.get('holidayPlanOvertimeRedress') is not None:
-            self.holiday_plan_overtime_redress = m.get('holidayPlanOvertimeRedress')
-        if m.get('holidayPlanOvertimeRedressBy') is not None:
-            self.holiday_plan_overtime_redress_by = m.get('holidayPlanOvertimeRedressBy')
-        if m.get('holidayPlanVacationRate') is not None:
-            self.holiday_plan_vacation_rate = m.get('holidayPlanVacationRate')
-        return self
-
-
 class GetOvertimeSettingResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -4778,23 +4643,15 @@ class GetOvertimeSettingResponseBodyResult(TeaModel):
         warning_settings: List[GetOvertimeSettingResponseBodyResultWarningSettings] = None,
         work_minutes_per_day: int = None,
     ):
-        # 是否默认
         self.default = default
         self.duration_settings = duration_settings
-        # 历史加班规则设置id
         self.id = id
-        # 规则名称
         self.name = name
-        # 时间分割规则
         self.overtime_divisions = overtime_divisions
-        # 设置id
         self.setting_id = setting_id
-        # 加班时长单位
         self.step_type = step_type
-        # 加班时长是否取整 单位 小时
         self.step_value = step_value
         self.warning_settings = warning_settings
-        # 日折算时长 单位：分钟
         self.work_minutes_per_day = work_minutes_per_day
 
     def validate(self):
@@ -4918,13 +4775,16 @@ class GetOvertimeSettingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetOvertimeSettingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4937,6 +4797,8 @@ class GetOvertimeSettingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4945,6 +4807,8 @@ class GetOvertimeSettingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetOvertimeSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5024,9 +4888,7 @@ class GetSimpleOvertimeSettingResponseBodyResultItems(TeaModel):
         name: str = None,
         setting_id: int = None,
     ):
-        # 加班规则id
         self.id = id
-        # 加班规则名称
         self.name = name
         self.setting_id = setting_id
 
@@ -5065,11 +4927,8 @@ class GetSimpleOvertimeSettingResponseBodyResult(TeaModel):
         page_number: int = None,
         total_page: int = None,
     ):
-        # 加班规则集合
         self.items = items
-        # 当前页码
         self.page_number = page_number
-        # 总页数
         self.total_page = total_page
 
     def validate(self):
@@ -5113,7 +4972,6 @@ class GetSimpleOvertimeSettingResponseBody(TeaModel):
         self,
         result: List[GetSimpleOvertimeSettingResponseBodyResult] = None,
     ):
-        # Id of the request
         self.result = result
 
     def validate(self):
@@ -5148,13 +5006,16 @@ class GetSimpleOvertimeSettingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSimpleOvertimeSettingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5167,6 +5028,8 @@ class GetSimpleOvertimeSettingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5175,6 +5038,8 @@ class GetSimpleOvertimeSettingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSimpleOvertimeSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5221,11 +5086,8 @@ class GetUserHolidaysRequest(TeaModel):
         work_date_from: int = None,
         work_date_to: int = None,
     ):
-        # 员工列表
         self.user_ids = user_ids
-        # 开始日期
         self.work_date_from = work_date_from
-        # 结束日期
         self.work_date_to = work_date_to
 
     def validate(self):
@@ -5264,13 +5126,9 @@ class GetUserHolidaysResponseBodyResultHolidays(TeaModel):
         real_work_date: int = None,
         work_date: int = None,
     ):
-        # 假期名称
         self.holiday_name = holiday_name
-        # 假期类型，festival：法定节假日；rest：调休日；overtime：加班日；
         self.holiday_type = holiday_type
-        # 补休日，只有假期类型为加班日时才有值
         self.real_work_date = real_work_date
-        # 日期
         self.work_date = work_date
 
     def validate(self):
@@ -5311,9 +5169,7 @@ class GetUserHolidaysResponseBodyResult(TeaModel):
         holidays: List[GetUserHolidaysResponseBodyResultHolidays] = None,
         user_id: str = None,
     ):
-        # 假期列表
         self.holidays = holidays
-        # 员工id
         self.user_id = user_id
 
     def validate(self):
@@ -5353,7 +5209,6 @@ class GetUserHolidaysResponseBody(TeaModel):
         self,
         result: List[GetUserHolidaysResponseBodyResult] = None,
     ):
-        # 员工假期列表
         self.result = result
 
     def validate(self):
@@ -5388,13 +5243,16 @@ class GetUserHolidaysResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserHolidaysResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5407,6 +5265,8 @@ class GetUserHolidaysResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5415,6 +5275,8 @@ class GetUserHolidaysResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserHolidaysResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5459,7 +5321,6 @@ class GroupAddRequestBleDeviceList(TeaModel):
         self,
         device_id: int = None,
     ):
-        # 设备ID，调用查询员工智能考勤机列表获取。
         self.device_id = device_id
 
     def validate(self):
@@ -5488,9 +5349,7 @@ class GroupAddRequestFreeCheckSettingFreeCheckGap(TeaModel):
         off_on_check_gap_minutes: int = None,
         on_off_check_gap_minutes: int = None,
     ):
-        # 下班打卡最小打卡间隔（单位分钟）。
         self.off_on_check_gap_minutes = off_on_check_gap_minutes
-        # 上班打卡最小打卡间隔（单位分钟）。
         self.on_off_check_gap_minutes = on_off_check_gap_minutes
 
     def validate(self):
@@ -5523,11 +5382,7 @@ class GroupAddRequestFreeCheckSetting(TeaModel):
         delimit_offset_minutes_between_days: int = None,
         free_check_gap: GroupAddRequestFreeCheckSettingFreeCheckGap = None,
     ):
-        # 自由工时考勤组考勤开始时间与当天0点偏移分钟数。
-        # 
-        # 例如：540表示9:00
         self.delimit_offset_minutes_between_days = delimit_offset_minutes_between_days
-        # 休息日打卡间隔设置。
         self.free_check_gap = free_check_gap
 
     def validate(self):
@@ -5563,11 +5418,8 @@ class GroupAddRequestMembers(TeaModel):
         type: str = None,
         user_id: str = None,
     ):
-        # 角色，固定值Attendance。
         self.role = role
-        # 类型，固定值StaffMember。
         self.type = type
-        # 用户userid。
         self.user_id = user_id
 
     def validate(self):
@@ -5607,15 +5459,10 @@ class GroupAddRequestPositions(TeaModel):
         offset: int = None,
         title: str = None,
     ):
-        # 考勤地址。
         self.address = address
-        # 纬度。
         self.latitude = latitude
-        # 经度。
         self.longitude = longitude
-        # 考勤范围。
         self.offset = offset
-        # 考勤标题。
         self.title = title
 
     def validate(self):
@@ -5659,7 +5506,6 @@ class GroupAddRequestShiftVOList(TeaModel):
         self,
         shift_id: int = None,
     ):
-        # 班次ID，可通过获取班次摘要信息接口获取。
         self.shift_id = shift_id
 
     def validate(self):
@@ -5688,9 +5534,7 @@ class GroupAddRequestWifis(TeaModel):
         mac_addr: str = None,
         ssid: str = None,
     ):
-        # mac地址。
         self.mac_addr = mac_addr
-        # wifi的ssid。
         self.ssid = ssid
 
     def validate(self):
@@ -5764,138 +5608,48 @@ class GroupAddRequest(TeaModel):
         workday_class_list: List[int] = None,
         op_user_id: str = None,
     ):
-        # 补卡规则settingId。
         self.adjustment_setting_id = adjustment_setting_id
-        # 蓝牙打卡相关配置信息。
         self.ble_device_list = ble_device_list
-        # 打卡是否需要健康码：
-        # 
-        # true：开启
-        # 
-        # false：关闭（默认值）
         self.check_need_healthy_code = check_need_healthy_code
-        # 默认班次ID。
-        # 
-        # 说明 固定班制必填，可通过获取班次摘要信息接口获取
         self.default_class_id = default_class_id
-        # 休息日打卡是否需审批：
-        # 
-        # true：需要
-        # 
-        # false：不需要
         self.disable_check_when_rest = disable_check_when_rest
-        # 未排班时是否禁止员工打卡。
         self.disable_check_without_schedule = disable_check_without_schedule
-        # 是否开启拍照打卡。
-        # 
-        # true：开启
-        # 
-        # false：关闭（默认值）
         self.enable_camera_check = enable_camera_check
-        # 未排班时是否允许员工选择班次打卡。
         self.enable_emp_select_class = enable_emp_select_class
-        # 是否开启人脸检测。
-        # 
-        # true：开启
-        # 
-        # false：关闭（默认值）
         self.enable_face_check = enable_face_check
-        # 是否开启真人验证。
         self.enable_face_strict_mode = enable_face_strict_mode
-        # 是否第二天生效。
-        # true：是
-        # false：否
         self.enable_next_day = enable_next_day
-        # 是否允许外勤卡更新内勤卡。
         self.enable_out_side_update_normal_check = enable_out_side_update_normal_check
-        # 外勤打卡是否需要审批。
         self.enable_outside_apply = enable_outside_apply
-        # 是否开启外勤打卡必须拍照。
-        # 
-        # true：开启
-        # 
-        # false：关闭（默认值）
         self.enable_outside_camera_check = enable_outside_camera_check
-        # 是否可以外勤打卡。
-        # 
-        # true：允许（默认值）
-        # 
-        # false：不允许
         self.enable_outside_check = enable_outside_check
-        # 外勤打卡是否需要拍照备注。
         self.enable_outside_remark = enable_outside_remark
-        # 是否启用蓝牙定位。
         self.enable_position_ble = enable_position_ble
-        # 是否允许地点微调距离。
         self.enable_trim_distance = enable_trim_distance
-        # 是否禁止员工隐藏详细地址。
         self.forbid_hide_out_side_address = forbid_hide_out_side_address
-        # 休息日打卡规则。
         self.free_check_setting = free_check_setting
-        # 休息日打卡方式。
-        # 0严格打卡模式 
-        # 1标准打卡模式
         self.free_check_type_id = free_check_type_id
-        # 自由工时考勤组考勤开始时间与当天0点偏移分钟数。
-        # 
-        # 例如：540表示9:00
         self.freecheck_day_start_min_offset = freecheck_day_start_min_offset
-        # 自由工时考勤组工作日。
-        # 说明
-        # 0表示休息。
-        # 数组内的值，从左到右依次代表周日到周六，每日的排班情况。
         self.freecheck_work_days = freecheck_work_days
-        # 考勤组ID。
         self.group_id = group_id
-        # 考勤组名。
         self.group_name = group_name
-        # 考勤组子管理员userid列表。
         self.manager_list = manager_list
-        # 考勤组成员相关设置信息。
         self.members = members
-        # 是否有修改考勤组成员相关信息。
         self.modify_member = modify_member
-        # 考勤范围。
         self.offset = offset
-        # 是否开启人脸打卡。
         self.open_face_check = open_face_check
-        # 外勤打卡审批模式-1无需审批，0先审批后打卡是1先打卡后审批
         self.outside_check_approve_mode_id = outside_check_approve_mode_id
-        # 加班规则settingId。
         self.overtime_setting_id = overtime_setting_id
-        # 考勤组负责人。
         self.owner = owner
-        # 考勤地点相关设置信息。
         self.positions = positions
         self.resource_permission_map = resource_permission_map
-        # 班次相关配置信息。
         self.shift_volist = shift_volist
-        # 是否跳过节假日。
-        # 
-        # true：跳过（默认值）
-        # 
-        # false：不跳过
         self.skip_holidays = skip_holidays
-        # 特殊日期配置。
         self.special_days = special_days
-        # 地点微调范围（单位米）。
         self.trim_distance = trim_distance
-        # 考勤组类型：
-        # 
-        # FIXED：固定班制考勤组
-        # 
-        # TURN：排班制考勤组
-        # 
-        # NONE：自由工时考勤组
         self.type = type
-        # 考勤wifi打卡相关配置信息。
         self.wifis = wifis
-        # 周班次列表。
-        # 说明
-        # 固定班制必填，0表示休息。
-        # 数组内的值，从左到右依次代表周日到周六，每日的排班情况。
         self.workday_class_list = workday_class_list
-        # 操作人的userid。
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -6205,13 +5959,16 @@ class GroupAddResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GroupAddResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6224,6 +5981,8 @@ class GroupAddResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6232,6 +5991,8 @@ class GroupAddResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GroupAddResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6277,9 +6038,7 @@ class GroupUpdateRequestFreeCheckSettingFreeCheckGap(TeaModel):
         off_on_check_gap_minutes: int = None,
         on_off_check_gap_minutes: int = None,
     ):
-        # 下班打卡最小打卡间隔（单位分钟）。
         self.off_on_check_gap_minutes = off_on_check_gap_minutes
-        # 上班打卡最小打卡间隔（单位分钟）。
         self.on_off_check_gap_minutes = on_off_check_gap_minutes
 
     def validate(self):
@@ -6312,11 +6071,7 @@ class GroupUpdateRequestFreeCheckSetting(TeaModel):
         delimit_offset_minutes_between_days: int = None,
         free_check_gap: GroupUpdateRequestFreeCheckSettingFreeCheckGap = None,
     ):
-        # 自由工时考勤组考勤开始时间与当天0点偏移分钟数。
-        # 
-        # 例如：540表示9:00
         self.delimit_offset_minutes_between_days = delimit_offset_minutes_between_days
-        # 休息日打卡间隔设置。
         self.free_check_gap = free_check_gap
 
     def validate(self):
@@ -6354,15 +6109,10 @@ class GroupUpdateRequestPositions(TeaModel):
         offset: int = None,
         title: str = None,
     ):
-        # 考勤地址。
         self.address = address
-        # 纬度。
         self.latitude = latitude
-        # 经度。
         self.longitude = longitude
-        # 考勤范围。
         self.offset = offset
-        # 考勤标题。
         self.title = title
 
     def validate(self):
@@ -6406,7 +6156,6 @@ class GroupUpdateRequestShiftVOList(TeaModel):
         self,
         shift_id: int = None,
     ):
-        # 班次ID，可通过获取班次摘要信息接口获取。
         self.shift_id = shift_id
 
     def validate(self):
@@ -6463,64 +6212,35 @@ class GroupUpdateRequest(TeaModel):
         workday_class_list: List[int] = None,
         op_user_id: str = None,
     ):
-        # 补卡规则settingId。
         self.adjustment_setting_id = adjustment_setting_id
-        # 休息日打卡是否需审批：true：需要false：不需要
         self.disable_check_when_rest = disable_check_when_rest
-        # 未排班时是否禁止员工打卡。
         self.disable_check_without_schedule = disable_check_without_schedule
-        # 是否开启拍照打卡。true：开启false：关闭（默认值）
         self.enable_camera_check = enable_camera_check
-        # 未排班时是否允许员工选择班次打卡。
         self.enable_emp_select_class = enable_emp_select_class
-        # 是否开启人脸检测。true：开启false：关闭（默认值）
         self.enable_face_check = enable_face_check
-        # 是否开启真人验证。
         self.enable_face_strict_mode = enable_face_strict_mode
-        # 是否允许外勤卡更新内勤卡。
         self.enable_out_side_update_normal_check = enable_out_side_update_normal_check
-        # 外勤打卡是否需要审批。
         self.enable_outside_apply = enable_outside_apply
-        # 是否可以外勤打卡。true：允许（默认值）false：不允许
         self.enable_outside_check = enable_outside_check
-        # 外勤打卡是否需要拍照备注。
         self.enable_outside_remark = enable_outside_remark
-        # 是否允许地点微调距离。
         self.enable_trim_distance = enable_trim_distance
-        # 是否禁止员工隐藏详细地址。
         self.forbid_hide_out_side_address = forbid_hide_out_side_address
-        # 休息日打卡规则。
         self.free_check_setting = free_check_setting
-        # 休息日打卡方式。0严格打卡模式 1标准打卡模式
         self.free_check_type_id = free_check_type_id
-        # 考勤组ID。
         self.group_id = group_id
-        # 考勤组名。
         self.group_name = group_name
-        # 考勤组子管理员userid列表。
         self.manager_list = manager_list
-        # 考勤范围。
         self.offset = offset
-        # 是否开启人脸打卡。
         self.open_face_check = open_face_check
-        # 外勤打卡审批模式-1无需审批，0先审批后打卡是1先打卡后审批
         self.outside_check_approve_mode_id = outside_check_approve_mode_id
-        # 加班规则settingId。
         self.overtime_setting_id = overtime_setting_id
-        # 考勤组负责人。
         self.owner = owner
-        # 考勤地点相关设置信息。
         self.positions = positions
         self.resource_permission_map = resource_permission_map
-        # 班次相关配置信息。
         self.shift_volist = shift_volist
-        # 是否跳过节假日。true：跳过（默认值）false：不跳过
         self.skip_holidays = skip_holidays
-        # 地点微调范围（单位米）。
         self.trim_distance = trim_distance
-        # 周班次列表。说明固定班制必填，0表示休息。数组内的值，从左到右依次代表周日到周六，每日的排班情况。
         self.workday_class_list = workday_class_list
-        # 操作人的userid。
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -6751,13 +6471,16 @@ class GroupUpdateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GroupUpdateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6770,6 +6493,8 @@ class GroupUpdateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6778,6 +6503,8 @@ class GroupUpdateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GroupUpdateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6824,11 +6551,8 @@ class InitAndGetLeaveALlocationQuotasRequest(TeaModel):
         op_user_id: str = None,
         user_id: str = None,
     ):
-        # 假期类型的标识。
         self.leave_code = leave_code
-        # 操作者的userId。
         self.op_user_id = op_user_id
-        # 用户id。
         self.user_id = user_id
 
     def validate(self):
@@ -6873,25 +6597,15 @@ class InitAndGetLeaveALlocationQuotasResponseBodyResult(TeaModel):
         used_num_per_hour: int = None,
         user_id: str = None,
     ):
-        # 额度有效期结束时间。
         self.end_time = end_time
-        # 假期类型标识。
         self.leave_code = leave_code
-        # 年度。
         self.quota_cycle = quota_cycle
-        # 余额标识。
         self.quota_id = quota_id
-        # 以天计算额度总数。
         self.quota_num_per_day = quota_num_per_day
-        # 以小时计算额度总数。
         self.quota_num_per_hour = quota_num_per_hour
-        # 额度有效期开始时间。
         self.start_time = start_time
-        # 用过的配额天数。
         self.used_num_per_day = used_num_per_day
-        # 用过的配额小时数。
         self.used_num_per_hour = used_num_per_hour
-        # 用户id。
         self.user_id = user_id
 
     def validate(self):
@@ -6955,7 +6669,6 @@ class InitAndGetLeaveALlocationQuotasResponseBody(TeaModel):
         self,
         result: List[InitAndGetLeaveALlocationQuotasResponseBodyResult] = None,
     ):
-        # 返回结果。
         self.result = result
 
     def validate(self):
@@ -6990,13 +6703,16 @@ class InitAndGetLeaveALlocationQuotasResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: InitAndGetLeaveALlocationQuotasResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7009,6 +6725,8 @@ class InitAndGetLeaveALlocationQuotasResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7017,6 +6735,8 @@ class InitAndGetLeaveALlocationQuotasResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = InitAndGetLeaveALlocationQuotasResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7064,18 +6784,9 @@ class ListApproveByUsersRequest(TeaModel):
         to_date_time: int = None,
         user_ids: str = None,
     ):
-        # 传入需要查询的审批单类型：
-        # ● 1：加班
-        # ● 2：出差、外出
-        # ● 3：请假
-        # ● 4:  补卡
-        # ● 5：外勤审批
         self.biz_types = biz_types
-        # 起始日期，Unix时间戳，单位毫秒。（不支持180天前）
         self.from_date_time = from_date_time
-        # 结束日期，Unix时间戳，单位毫秒。（不支持180天前，开始和结束不能超过30天）
         self.to_date_time = to_date_time
-        # 要查询的人员userId列表，多个userId用逗号分隔，一次最多可传50个
         self.user_ids = user_ids
 
     def validate(self):
@@ -7123,37 +6834,14 @@ class ListApproveByUsersResponseBodyResult(TeaModel):
         tag_name: str = None,
         user_id: str = None,
     ):
-        # 审批单自定义id
         self.approve_id = approve_id
-        # 审批单开始时间原始格式
         self.begin_time = begin_time
-        # 审批单类型：
-        # ● 1：加班
-        # ● 2：出差、外出
-        # ● 3：请假
-        # ● 4:  补卡
-        # ● 5：外勤审批
         self.biz_type = biz_type
-        # 计算方法：
-        # ● 0：按自然日计算
-        # ● 1：按工作日计算
         self.calculate_model = calculate_model
-        # 时长单位，支持格式如下：
-        # ● day
-        # ● halfDay
-        # ● hour
-        # 时间格式必须与时长单位对应：
-        # ● 2019-08-15对应day
-        # ● 2019-08-15 AM对应halfDay
-        # ● 2019-08-15 12:43对应hour
         self.duration_unit = duration_unit
-        # 审批单结束时间原始格式
         self.end_time = end_time
-        # 子类型名称，最大长度20个字符
         self.sub_type = sub_type
-        # 审批单类型名称，最大长度20个字符
         self.tag_name = tag_name
-        # 用户userid
         self.user_id = user_id
 
     def validate(self):
@@ -7247,13 +6935,16 @@ class ListApproveByUsersResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListApproveByUsersResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7266,6 +6957,8 @@ class ListApproveByUsersResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7274,6 +6967,8 @@ class ListApproveByUsersResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListApproveByUsersResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7325,21 +7020,13 @@ class ModifyWaterMarkTemplateRequest(TeaModel):
         open_conversation_id: str = None,
         user_id: str = None,
     ):
-        # 模板的表单Code。
         self.form_code = form_code
-        # 模板的预览图片。
         self.icon = icon
-        # 模板的布局ID。
         self.layout_design_id = layout_design_id
-        # 模板的内容。
         self.schema_content = schema_content
-        # 模板的标题。
         self.title = title
-        # 模板的水印ID。
         self.water_mark_id = water_mark_id
-        # 群会话ID。
         self.open_conversation_id = open_conversation_id
-        # 用户的userid。
         self.user_id = user_id
 
     def validate(self):
@@ -7395,7 +7082,6 @@ class ModifyWaterMarkTemplateResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # Id of the request
         self.result = result
 
     def validate(self):
@@ -7422,13 +7108,16 @@ class ModifyWaterMarkTemplateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ModifyWaterMarkTemplateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7441,6 +7130,8 @@ class ModifyWaterMarkTemplateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7449,6 +7140,8 @@ class ModifyWaterMarkTemplateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ModifyWaterMarkTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7496,13 +7189,9 @@ class ProcessApproveCreateRequestPunchParam(TeaModel):
         position_type: str = None,
         punch_time: int = None,
     ):
-        # 地理位置标识：wifi:ssid_macAddress ble: deviceId gps:longitude_latitude
         self.position_id = position_id
-        # 地理位置名称
         self.position_name = position_name
-        # 地理位置类型：wifi/ble/gps
         self.position_type = position_type
-        # 审批单关联的打卡时间，单位毫秒
         self.punch_time = punch_time
 
     def validate(self):
@@ -7547,17 +7236,11 @@ class ProcessApproveCreateRequest(TeaModel):
         tag_name: str = None,
         user_id: str = None,
     ):
-        # 三方审批单id，全局唯一
         self.approve_id = approve_id
-        # 审批人员工userId
         self.op_user_id = op_user_id
-        # 审批单关联的打卡信息
         self.punch_param = punch_param
-        # 审批单子类型名称：调店:shiftGroup
         self.sub_type = sub_type
-        # 审批单类型名称
         self.tag_name = tag_name
-        # 员工的userId
         self.user_id = user_id
 
     def validate(self):
@@ -7607,7 +7290,6 @@ class ProcessApproveCreateResponseBodyResult(TeaModel):
         self,
         dingtalk_approve_id: str = None,
     ):
-        # 钉钉侧生成的审批单id
         self.dingtalk_approve_id = dingtalk_approve_id
 
     def validate(self):
@@ -7635,7 +7317,6 @@ class ProcessApproveCreateResponseBody(TeaModel):
         self,
         result: ProcessApproveCreateResponseBodyResult = None,
     ):
-        # 审批单返回对象
         self.result = result
 
     def validate(self):
@@ -7664,13 +7345,16 @@ class ProcessApproveCreateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ProcessApproveCreateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7683,6 +7367,8 @@ class ProcessApproveCreateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7691,6 +7377,8 @@ class ProcessApproveCreateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ProcessApproveCreateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7742,27 +7430,13 @@ class SaveCustomWaterMarkTemplateRequest(TeaModel):
         open_conversation_id: str = None,
         user_id: str = None,
     ):
-        # 模板的业务码：
-        # - water_mark_checkin
-        # 
-        # 
         self.biz_code = biz_code
-        # 模板的预览图片。
         self.icon = icon
-        # 模板的布局ID。
         self.layout_design_id = layout_design_id
-        # 模板的场景码：
-        # - water_mark_checkin_h3yun 开放场景码
-        # 
-        # 
         self.scene_code = scene_code
-        # 模板的内容。
         self.schema_content = schema_content
-        # 模板的标题。
         self.title = title
-        # 群会话ID。
         self.open_conversation_id = open_conversation_id
-        # 用户的userid。
         self.user_id = user_id
 
     def validate(self):
@@ -7819,9 +7493,7 @@ class SaveCustomWaterMarkTemplateResponseBodyResult(TeaModel):
         form_code: str = None,
         water_mark_id: str = None,
     ):
-        # 模板的表单Code。
         self.form_code = form_code
-        # 模板的水印ID。
         self.water_mark_id = water_mark_id
 
     def validate(self):
@@ -7853,7 +7525,6 @@ class SaveCustomWaterMarkTemplateResponseBody(TeaModel):
         self,
         result: SaveCustomWaterMarkTemplateResponseBodyResult = None,
     ):
-        # 返回对象。
         self.result = result
 
     def validate(self):
@@ -7882,13 +7553,16 @@ class SaveCustomWaterMarkTemplateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SaveCustomWaterMarkTemplateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7901,6 +7575,8 @@ class SaveCustomWaterMarkTemplateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7909,6 +7585,8 @@ class SaveCustomWaterMarkTemplateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SaveCustomWaterMarkTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8038,11 +7716,14 @@ class SyncScheduleInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -8052,12 +7733,16 @@ class SyncScheduleInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -8102,13 +7787,9 @@ class UpdateLeaveTypeRequestLeaveCertificate(TeaModel):
         prompt_information: str = None,
         unit: str = None,
     ):
-        # 超过多长时间需提供请假证明
         self.duration = duration
-        # 是否开启请假证明
         self.enable = enable
-        # 请假提示文案
         self.prompt_information = prompt_information
-        # 请假证明单位hour，day
         self.unit = unit
 
     def validate(self):
@@ -8151,13 +7832,9 @@ class UpdateLeaveTypeRequestSubmitTimeRule(TeaModel):
         time_unit: str = None,
         time_value: int = None,
     ):
-        # 是否开启限时提交功能：仅且为true时开启
         self.enable_time_limit = enable_time_limit
-        # 限制类型：before-提前；after-补交
         self.time_type = time_type
-        # 时间单位：day-天；hour-小时
         self.time_unit = time_unit
-        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
         self.time_value = time_value
 
     def validate(self):
@@ -8198,9 +7875,7 @@ class UpdateLeaveTypeRequestVisibilityRules(TeaModel):
         type: str = None,
         visible: List[str] = None,
     ):
-        # 规则类型：dept-部门；staff-员工；label-角色
         self.type = type
-        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
         self.visible = visible
 
     def validate(self):
@@ -8242,27 +7917,16 @@ class UpdateLeaveTypeRequest(TeaModel):
         visibility_rules: List[UpdateLeaveTypeRequestVisibilityRules] = None,
         op_user_id: str = None,
     ):
-        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         self.biz_type = biz_type
-        # 调休假有效期规则(validity_type:有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种 validity_value:延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数))
         self.extras = extras
-        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
         self.hours_in_per_day = hours_in_per_day
-        # 请假证明
         self.leave_certificate = leave_certificate
-        # 假期类型唯一标识
         self.leave_code = leave_code
-        # 假期名称
         self.leave_name = leave_name
-        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
         self.leave_view_unit = leave_view_unit
-        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
         self.natural_day_leave = natural_day_leave
-        # 限时提交规则
         self.submit_time_rule = submit_time_rule
-        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
         self.visibility_rules = visibility_rules
-        # 操作者ID
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -8347,13 +8011,9 @@ class UpdateLeaveTypeResponseBodyResultLeaveCertificate(TeaModel):
         prompt_information: str = None,
         unit: str = None,
     ):
-        # 超过多长时间需提供请假证明
         self.duration = duration
-        # 是否开启请假证明
         self.enable = enable
-        # 请假提示文案
         self.prompt_information = prompt_information
-        # 请假证明单位hour，day
         self.unit = unit
 
     def validate(self):
@@ -8396,13 +8056,9 @@ class UpdateLeaveTypeResponseBodyResultSubmitTimeRule(TeaModel):
         time_unit: str = None,
         time_value: int = None,
     ):
-        # 是否开启限时提交功能：仅且为true时开启
         self.enable_time_limit = enable_time_limit
-        # 限制类型：before-提前；after-补交
         self.time_type = time_type
-        # 时间单位：day-天；hour-小时
         self.time_unit = time_unit
-        # 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
         self.time_value = time_value
 
     def validate(self):
@@ -8443,9 +8099,7 @@ class UpdateLeaveTypeResponseBodyResultVisibilityRules(TeaModel):
         type: str = None,
         visible: List[str] = None,
     ):
-        # 规则类型：dept-部门；staff-员工；label-角色
         self.type = type
-        # 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
         self.visible = visible
 
     def validate(self):
@@ -8485,23 +8139,14 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
         submit_time_rule: UpdateLeaveTypeResponseBodyResultSubmitTimeRule = None,
         visibility_rules: List[UpdateLeaveTypeResponseBodyResultVisibilityRules] = None,
     ):
-        # 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
         self.biz_type = biz_type
-        # 每天折算的工作时长(百分之一 例如1天=10小时=1000)
         self.hours_in_per_day = hours_in_per_day
-        # 请假证明
         self.leave_certificate = leave_certificate
-        # 假期类型唯一标识
         self.leave_code = leave_code
-        # 假期名称
         self.leave_name = leave_name
-        # 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
         self.leave_view_unit = leave_view_unit
-        # 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
         self.natural_day_leave = natural_day_leave
-        # 限时提交规则
         self.submit_time_rule = submit_time_rule
-        # 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
         self.visibility_rules = visibility_rules
 
     def validate(self):
@@ -8575,7 +8220,6 @@ class UpdateLeaveTypeResponseBody(TeaModel):
         self,
         result: UpdateLeaveTypeResponseBodyResult = None,
     ):
-        # 返回参数
         self.result = result
 
     def validate(self):
@@ -8604,13 +8248,16 @@ class UpdateLeaveTypeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateLeaveTypeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8623,6 +8270,8 @@ class UpdateLeaveTypeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8631,6 +8280,8 @@ class UpdateLeaveTypeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateLeaveTypeResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -44,11 +44,8 @@ class CreateFeedRequestCourseInfoLectorUserInfo(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
-        # 讲师头像链接
         self.avatar = avatar
-        # 讲师用户名称
         self.name = name
-        # 讲师用户Id
         self.user_id = user_id
 
     def validate(self):
@@ -86,11 +83,8 @@ class CreateFeedRequestCourseInfoPayInfoCsUserInfo(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
-        # 客服头像链接
         self.avatar = avatar
-        # 客服用户名称
         self.name = name
-        # 客服用户Id
         self.user_id = user_id
 
     def validate(self):
@@ -128,11 +122,8 @@ class CreateFeedRequestCourseInfoPayInfoDiscountInfo(TeaModel):
         price: int = None,
         start_time_millis: int = None,
     ):
-        # 打折结束的时间，时间戳精确到毫秒，时间为东八区时间
         self.end_time_millis = end_time_millis
-        # 打折时商品的价格，单位为分
         self.price = price
-        # 打折开始的时间，时间戳精确到毫秒，时间为东八区时间
         self.start_time_millis = start_time_millis
 
     def validate(self):
@@ -170,11 +161,8 @@ class CreateFeedRequestCourseInfoPayInfo(TeaModel):
         discount_info: CreateFeedRequestCourseInfoPayInfoDiscountInfo = None,
         price: int = None,
     ):
-        # 客服身份信息
         self.cs_user_info = cs_user_info
-        # 课程打折信息
         self.discount_info = discount_info
-        # 商品的默认情况下非打折时的价格，单位为分
         self.price = price
 
     def validate(self):
@@ -217,11 +205,8 @@ class CreateFeedRequestCourseInfo(TeaModel):
         pay_info: CreateFeedRequestCourseInfoPayInfo = None,
         study_group_name: str = None,
     ):
-        # 讲师身份信息
         self.lector_user_info = lector_user_info
-        # 支付信息
         self.pay_info = pay_info
-        # 创建一个和该课程绑定的学习群和圈子
         self.study_group_name = study_group_name
 
     def validate(self):
@@ -264,11 +249,8 @@ class CreateFeedRequestFeedInfoMediaContents(TeaModel):
         title: str = None,
         type: int = None,
     ):
-        # 媒体的mediaId，唯一对应oss中的一个视频或者音频
         self.media_id = media_id
-        # 媒体的标题
         self.title = title
-        # 媒体的类型，当前该接口只支持video和audio,2:视频,3:音频
         self.type = type
 
     def validate(self):
@@ -305,9 +287,7 @@ class CreateFeedRequestFeedInfoRecommends(TeaModel):
         object_id: str = None,
         type: int = None,
     ):
-        # 推荐物品的id，可以时feedId或者是微应用Id
         self.object_id = object_id
-        # 推荐物品的类别,0:课程,1:微应用
         self.type = type
 
     def validate(self):
@@ -352,33 +332,19 @@ class CreateFeedRequestFeedInfo(TeaModel):
         thumb_url: str = None,
         title: str = None,
     ):
-        # 请求的行为，是保存还是发布,1为save，2为publish，是修改还是新建取决于feedId是否为空
         self.action_type = action_type
-        # 版权所属:1：自有， 2.代理， 3.钉钉
         self.belongs_to = belongs_to
-        # 内容分类，课程分类列表详情请见附录中的列表
         self.feed_category = feed_category
-        # 可选参数，当feedId不为null时，表示对当前课程进行修改，否则为新建一个课程
         self.feed_id = feed_id
-        # 课程的文字标签
         self.feed_tag = feed_tag
-        # 内容类别,限制只能使用4种类型：0：免费 4：平价 5：专栏 6：训练营
         self.feed_type = feed_type
-        # 行业划分，决定了展示的页面的不同，例如学习中心下的职场、教育、商学院的划分,目前支持的行业id有：10001：职场学堂，10008：K12教育，10023：新职业，10024：钉钉培训
         self.industry_id = industry_id
-        # 课程的描述
         self.introduction = introduction
-        # 课程简介用的图片
         self.introduction_pic_url = introduction_pic_url
-        # 入驻账号Id(请联系钉钉接口同学获取)
         self.mcn_id = mcn_id
-        # 一个课程下可以有多个视频或音频教程
         self.media_contents = media_contents
-        # 推荐内容集合
         self.recommends = recommends
-        # 课程的封面Url
         self.thumb_url = thumb_url
-        # 内容的标题（标题不能重复）
         self.title = title
 
     def validate(self):
@@ -477,11 +443,8 @@ class CreateFeedRequest(TeaModel):
         create_user_id: str = None,
         feed_info: CreateFeedRequestFeedInfo = None,
     ):
-        # 课程相关信息
         self.course_info = course_info
-        # 发布者的用户Id
         self.create_user_id = create_user_id
-        # 内容相关信息
         self.feed_info = feed_info
 
     def validate(self):
@@ -522,7 +485,6 @@ class CreateFeedResponseBody(TeaModel):
         self,
         feed_id: str = None,
     ):
-        # 创建内容的内容Id
         self.feed_id = feed_id
 
     def validate(self):
@@ -549,13 +511,16 @@ class CreateFeedResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateFeedResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -568,6 +533,8 @@ class CreateFeedResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -576,6 +543,8 @@ class CreateFeedResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateFeedResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -620,7 +589,6 @@ class GetFeedRequest(TeaModel):
         self,
         mcn_id: str = None,
     ):
-        # 入驻账号Id(请联系钉钉接口同学获取)
         self.mcn_id = mcn_id
 
     def validate(self):
@@ -652,15 +620,10 @@ class GetFeedResponseBodyFeedItem(TeaModel):
         title: str = None,
         url: str = None,
     ):
-        # 子内容的持续时长，单位为毫秒
         self.duration_millis = duration_millis
-        # 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
         self.feed_content_type = feed_content_type
-        # 子内容Id
         self.item_id = item_id
-        # 子内容标题
         self.title = title
-        # 子内容的跳转链接
         self.url = url
 
     def validate(self):
@@ -705,9 +668,7 @@ class GetFeedResponseBody(TeaModel):
         feed_id: str = None,
         feed_item: List[GetFeedResponseBodyFeedItem] = None,
     ):
-        # 内容Id
         self.feed_id = feed_id
-        # 子内容
         self.feed_item = feed_item
 
     def validate(self):
@@ -746,13 +707,16 @@ class GetFeedResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetFeedResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -765,6 +729,8 @@ class GetFeedResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -773,6 +739,8 @@ class GetFeedResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetFeedResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -823,19 +791,12 @@ class GetMediaCerficateRequest(TeaModel):
         thumb_url: str = None,
         user_id: str = None,
     ):
-        # 视频的文件名称,必须带扩展名,支持的扩展名参考:https://help.aliyun.com/document_detail/55396.htm?spm=a2c4g.11186623.2.11.2d385d4aG2IkCZ#title-j7o-gr4-c7a
         self.file_name = file_name
-        # 入驻账号Id(请联系钉钉接口同学获取)
         self.mcn_id = mcn_id
-        # 如果传入该值，表示续订该mediaId对应的上传凭证 ;否则将视为新建一个视频上传连接和凭证
         self.media_id = media_id
-        # 视频介绍
         self.media_introduction = media_introduction
-        # 视频的标题
         self.media_title = media_title
-        # 自定义视频封面的URL地址
         self.thumb_url = thumb_url
-        # 操作人的用户id
         self.user_id = user_id
 
     def validate(self):
@@ -894,21 +855,13 @@ class GetMediaCerficateResponseBody(TeaModel):
         oss_file_name: str = None,
         oss_security_token: str = None,
     ):
-        # 媒体文件ID
         self.media_id = media_id
-        # 上传授权密钥ID
         self.oss_access_key_id = oss_access_key_id
-        # 上传授权密钥
         self.oss_access_key_secret = oss_access_key_secret
-        # OSS Bucket名称
         self.oss_bucket_name = oss_bucket_name
-        # OSS区域地址
         self.oss_endpoint = oss_endpoint
-        # 凭证有效时间(单位秒)，当上传凭证过期时，需要重新使用本次返回的videoId重新调用接口进行凭证刷新
         self.oss_expiration = oss_expiration
-        # 分配的媒体文件名
         self.oss_file_name = oss_file_name
-        # 上传授权安全令牌
         self.oss_security_token = oss_security_token
 
     def validate(self):
@@ -963,13 +916,16 @@ class GetMediaCerficateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetMediaCerficateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -982,6 +938,8 @@ class GetMediaCerficateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -990,6 +948,8 @@ class GetMediaCerficateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMediaCerficateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1034,7 +994,6 @@ class ListItemUserDataRequest(TeaModel):
         self,
         body: List[str] = None,
     ):
-        # 希望查询的用户的id列表
         self.body = body
 
     def validate(self):
@@ -1063,9 +1022,7 @@ class ListItemUserDataResponseBodyStudyInfos(TeaModel):
         duration_millis: int = None,
         uid: str = None,
     ):
-        # 时间持续长度，单位为毫秒
         self.duration_millis = duration_millis
-        # 用户id
         self.uid = uid
 
     def validate(self):
@@ -1097,7 +1054,6 @@ class ListItemUserDataResponseBody(TeaModel):
         self,
         study_infos: List[ListItemUserDataResponseBodyStudyInfos] = None,
     ):
-        # 学习的时长记录
         self.study_infos = study_infos
 
     def validate(self):
@@ -1132,13 +1088,16 @@ class ListItemUserDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListItemUserDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1151,6 +1110,8 @@ class ListItemUserDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1159,6 +1120,8 @@ class ListItemUserDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListItemUserDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1206,13 +1169,9 @@ class PageFeedRequest(TeaModel):
         mcn_id: str = None,
         next_token: int = None,
     ):
-        # 内容Id，如果传入该参数，表示仅筛选内容Id出现在本列表中的内容
         self.body = body
-        # 分页参数：页面展示数量
         self.max_results = max_results
-        # 入驻账号Id(请联系钉钉接口同学获取)
         self.mcn_id = mcn_id
-        # 分页参数：起始位置，初始值应为0，后续传入返回值中的nextCursor字段中的值
         self.next_token = next_token
 
     def validate(self):
@@ -1257,17 +1216,11 @@ class PageFeedResponseBodyFeedList(TeaModel):
         thumb_url: str = None,
         url: str = None,
     ):
-        # 内容分类，请见https://developers.dingtalk.com/document/app/appendix-content
         self.feed_category = feed_category
-        # 内容Id
         self.feed_id = feed_id
-        # 内容类型，0：免费内容 4：平价内容 5：专栏内容 6：训练营内容
         self.feed_type = feed_type
-        # 内容名称
         self.name = name
-        # 封面URL
         self.thumb_url = thumb_url
-        # 跳转Url，跳转到职场学堂后台页面
         self.url = url
 
     def validate(self):
@@ -1317,11 +1270,8 @@ class PageFeedResponseBody(TeaModel):
         has_next: bool = None,
         next_cursor: int = None,
     ):
-        # 课程列表
         self.feed_list = feed_list
-        # 分页参数：是否还有下一页，false表示没有下一页
         self.has_next = has_next
-        # 分页参数：下一页的起始位置
         self.next_cursor = next_cursor
 
     def validate(self):
@@ -1364,13 +1314,16 @@ class PageFeedResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PageFeedResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1383,6 +1336,8 @@ class PageFeedResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1391,6 +1346,8 @@ class PageFeedResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PageFeedResponseBody()
             self.body = temp_model.from_map(m['body'])

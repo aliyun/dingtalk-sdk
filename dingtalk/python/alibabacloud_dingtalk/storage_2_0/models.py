@@ -4,6 +4,45 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class DentryAppPropertiesValue(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+        visibility: str = None,
+    ):
+        self.name = name
+        self.value = value
+        self.visibility = visibility
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        return self
+
+
 class CommitFileHeaders(TeaModel):
     def __init__(
         self,
@@ -44,14 +83,8 @@ class CommitFileRequestOptionAppProperties(TeaModel):
         value: str = None,
         visibility: str = None,
     ):
-        # 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
         self.name = name
-        # 属性值
         self.value = value
-        # 属性可见范围
-        # 枚举值:
-        # 	PUBLIC: 该属性所有App可见
-        # 	PRIVATE: 该属性仅其归属App可见
         self.visibility = visibility
 
     def validate(self):
@@ -88,27 +121,13 @@ class CommitFileRequestOption(TeaModel):
         app_properties: List[CommitFileRequestOptionAppProperties] = None,
         conflict_strategy: str = None,
         convert_to_online_doc: bool = None,
+        convert_to_online_doc_target_document_type: str = None,
         size: int = None,
     ):
-        # 文件在应用上的属性, 一个应用最多只能设置3个属性
-        # 最大size:
-        # 	3
         self.app_properties = app_properties
-        # 文件名称冲突策略
-        # 枚举值:
-        # 	AUTO_RENAME: 自动重命名
-        # 	OVERWRITE: 覆盖
-        # 	RETURN_DENTRY_IF_EXISTS: 返回已存在文件
-        # 	RETURN_ERROR_IF_EXISTS: 文件已存在时报错
-        # 默认值:
-        # 	AUTO_RENAME
         self.conflict_strategy = conflict_strategy
-        # 是否转换成在线文档
-        # 默认值:
-        # 	false
         self.convert_to_online_doc = convert_to_online_doc
-        # 默认文件大小, 单位:Byte
-        # 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
+        self.convert_to_online_doc_target_document_type = convert_to_online_doc_target_document_type
         self.size = size
 
     def validate(self):
@@ -131,6 +150,8 @@ class CommitFileRequestOption(TeaModel):
             result['conflictStrategy'] = self.conflict_strategy
         if self.convert_to_online_doc is not None:
             result['convertToOnlineDoc'] = self.convert_to_online_doc
+        if self.convert_to_online_doc_target_document_type is not None:
+            result['convertToOnlineDocTargetDocumentType'] = self.convert_to_online_doc_target_document_type
         if self.size is not None:
             result['size'] = self.size
         return result
@@ -146,6 +167,8 @@ class CommitFileRequestOption(TeaModel):
             self.conflict_strategy = m.get('conflictStrategy')
         if m.get('convertToOnlineDoc') is not None:
             self.convert_to_online_doc = m.get('convertToOnlineDoc')
+        if m.get('convertToOnlineDocTargetDocumentType') is not None:
+            self.convert_to_online_doc_target_document_type = m.get('convertToOnlineDocTargetDocumentType')
         if m.get('size') is not None:
             self.size = m.get('size')
         return self
@@ -159,16 +182,9 @@ class CommitFileRequest(TeaModel):
         upload_key: str = None,
         union_id: str = None,
     ):
-        # 名称(文件名+后缀), 规则：
-        # 1. 头尾不能包含空格，否则会自动去除
-        # 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
-        # 3. 不能以"."结尾
         self.name = name
-        # 可选参数
         self.option = option
-        # 添加文件唯一标识，可通过DentryService.getUploadInfo来生成
         self.upload_key = upload_key
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -210,7 +226,6 @@ class CommitFileResponseBodyDentryProperties(TeaModel):
         self,
         read_only: bool = None,
     ):
-        # 文件是否只读
         self.read_only = read_only
 
     def validate(self):
@@ -240,11 +255,8 @@ class CommitFileResponseBodyDentryThumbnail(TeaModel):
         url: str = None,
         width: int = None,
     ):
-        # 缩略图高度
         self.height = height
-        # 缩略图url
         self.url = url
-        # 缩略图宽度
         self.width = width
 
     def validate(self):
@@ -275,51 +287,6 @@ class CommitFileResponseBodyDentryThumbnail(TeaModel):
         return self
 
 
-class DentryAppPropertiesValue(TeaModel):
-    def __init__(
-        self,
-        name: str = None,
-        value: str = None,
-        visibility: str = None,
-    ):
-        # 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
-        self.name = name
-        # 属性值
-        self.value = value
-        # 属性可见范围
-        # 枚举值:
-        # 	PUBLIC: 该属性所有App可见
-        # 	PRIVATE: 该属性仅其归属App可见
-        self.visibility = visibility
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.name is not None:
-            result['name'] = self.name
-        if self.value is not None:
-            result['value'] = self.value
-        if self.visibility is not None:
-            result['visibility'] = self.visibility
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        if m.get('visibility') is not None:
-            self.visibility = m.get('visibility')
-        return self
-
-
 class CommitFileResponseBodyDentry(TeaModel):
     def __init__(
         self,
@@ -345,75 +312,26 @@ class CommitFileResponseBodyDentry(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
-        # 在特定应用上的属性。key是微应用Id, value是属性列表。
-        # 可以通过修改DentryAppProperty里的scope来设置属性的可见性
-        # 最大size:
-        # 	10
         self.app_properties = app_properties
-        # 类别, 如图片、视频、音频等
-        # 枚举值:
-        # 	IMAGE: 图片
-        # 	VIDEO: 视频
-        # 	AUDIO: 音频
-        # 	ARCHIVE: 压缩包
-        # 	SHORTCUT: 快捷方式
-        # 	DOCUMENT: 文档
-        # 	ALI_DOC: 钉钉文档
-        # 	OTHER: 其它
         self.category = category
-        # 创建时间
         self.create_time = create_time
-        # 创建者id
         self.creator_id = creator_id
-        # 后缀
         self.extension = extension
-        # id
         self.id = id
-        # 修改时间
         self.modified_time = modified_time
-        # 修改者id
         self.modifier_id = modifier_id
-        # 名称
         self.name = name
-        # 父目录id, 根目录id值为0
-        # 空值代表根目录的parentId不存在
         self.parent_id = parent_id
-        # 存储分区，目前包括公有云OSS存储分区和专属Mini OSS存储分区
-        # 枚举值:
-        # 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
-        # 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
         self.partition_type = partition_type
-        # 路径
         self.path = path
-        # 属性
         self.properties = properties
-        # 大小, 单位:Byte
         self.size = size
-        # 所在空间id
         self.space_id = space_id
-        # 状态
-        # 枚举值:
-        # 	NORMAL: 正常
-        # 	DELETED: 已删除
-        # 	EXPIRED: 已过期
         self.status = status
-        # 驱动类型
-        # 枚举值:
-        # 	DINGTALK: 钉钉统一存储驱动
-        # 	ALIDOC: 钉钉文档存储驱动
-        # 	SHANJI: 闪记存储驱动
-        # 	UNKNOWN: 未知驱动
         self.storage_driver = storage_driver
-        # 缩略图信息
         self.thumbnail = thumbnail
-        # 类型，目录或文件
-        # 枚举值:
-        # 	FILE: 文件
-        # 	FOLDER: 文件夹
         self.type = type
-        # uuid，如移动文件，此字段不变
         self.uuid = uuid
-        # 版本
         self.version = version
 
     def validate(self):
@@ -542,7 +460,6 @@ class CommitFileResponseBody(TeaModel):
         self,
         dentry: CommitFileResponseBodyDentry = None,
     ):
-        # 文件信息
         self.dentry = dentry
 
     def validate(self):
@@ -571,13 +488,16 @@ class CommitFileResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CommitFileResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -590,6 +510,8 @@ class CommitFileResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -598,6 +520,8 @@ class CommitFileResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CommitFileResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -643,13 +567,7 @@ class GetFileUploadInfoRequestOptionPreCheckParam(TeaModel):
         name: str = None,
         size: int = None,
     ):
-        # 文件名称, 文件名称合法性和文件名称冲突校验
-        # 规则：
-        # 1. 头尾不能包含空格，否则会自动去除
-        # 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
-        # 3. 不能以"."结尾
         self.name = name
-        # 文件大小, 做容量相关校验。不传则不做校验。
         self.size = size
 
     def validate(self):
@@ -684,29 +602,9 @@ class GetFileUploadInfoRequestOption(TeaModel):
         prefer_region: str = None,
         storage_driver: str = None,
     ):
-        # 预检查的字段。可实现对文件名称，文件完整性，容量的校验
         self.pre_check_param = pre_check_param
-        # 优先使用内网传输
-        # 前提: 配置了专属存储内网传输
-        # 默认值:
-        # 	true
         self.prefer_intranet = prefer_intranet
-        # 优先地域, 倾向于将资源存到哪个地域，可实现就近上传等功能
-        # 枚举值:
-        # 	ZHANGJIAKOU: 张家口
-        # 	SHENZHEN: 深圳
-        # 	SHANGHAI: 上海
-        # 	SINGAPORE: 新加坡
-        # 	UNKNOWN: 未知
         self.prefer_region = prefer_region
-        # 文件存储驱动类型, 当前只支持DINGTALK
-        # 枚举值:
-        # 	DINGTALK: 钉钉统一存储驱动
-        # 	ALIDOC: 钉钉文档存储驱动
-        # 	SHANJI: 闪记存储驱动
-        # 	UNKNOWN: 未知驱动
-        # 默认值:
-        # 	DINGTALK
         self.storage_driver = storage_driver
 
     def validate(self):
@@ -750,15 +648,8 @@ class GetFileUploadInfoRequest(TeaModel):
         protocol: str = None,
         union_id: str = None,
     ):
-        # 可选参数
         self.option = option
-        # 通过指定上传协议返回不同协议上传所需要的信息
-        # 对于部分企业开启了专属存储，必须实现HEADER加签，否则无法支持专属存储组织文件上传。
-        # 如果指定上传协议不支持，则会返回错误Errors.DENTRY_UPLOAD_PROTOCOL_NOTSUPPORT, 请尝试用其它协议上传。
-        # 枚举值:
-        # 	HEADER_SIGNATURE: Header加签
         self.protocol = protocol
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -800,27 +691,10 @@ class GetFileUploadInfoResponseBodyHeaderSignatureInfo(TeaModel):
         region: str = None,
         resource_urls: List[str] = None,
     ):
-        # 过期时间，单位秒
         self.expiration_seconds = expiration_seconds
-        # 请求头
-        # 最大size:
-        # 	20
         self.headers = headers
-        # 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
-        # 最大size:
-        # 	10
         self.internal_resource_urls = internal_resource_urls
-        # 地域
-        # 枚举值:
-        # 	ZHANGJIAKOU: 张家口
-        # 	SHENZHEN: 深圳
-        # 	SHANGHAI: 上海
-        # 	SINGAPORE: 新加坡
-        # 	UNKNOWN: 未知
         self.region = region
-        # 多个上传下载URL, 前面url优先
-        # 最大size:
-        # 	10
         self.resource_urls = resource_urls
 
     def validate(self):
@@ -867,20 +741,9 @@ class GetFileUploadInfoResponseBody(TeaModel):
         storage_driver: str = None,
         upload_key: str = None,
     ):
-        # Header加签上传信息, 当protocol等于HEADER_SIGNATURE时，此字段生效
         self.header_signature_info = header_signature_info
-        # 上传协议，根据不同上传类型返回对应的信息.
-        # 枚举值:
-        # 	HEADER_SIGNATURE: Header加签
         self.protocol = protocol
-        # 文件存储类型
-        # 枚举值:
-        # 	DINGTALK: 钉钉统一存储驱动
-        # 	ALIDOC: 钉钉文档存储驱动
-        # 	SHANJI: 闪记存储驱动
-        # 	UNKNOWN: 未知驱动
         self.storage_driver = storage_driver
-        # 上传唯一标识
         self.upload_key = upload_key
 
     def validate(self):
@@ -921,13 +784,16 @@ class GetFileUploadInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetFileUploadInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -940,6 +806,8 @@ class GetFileUploadInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -948,6 +816,8 @@ class GetFileUploadInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetFileUploadInfoResponseBody()
             self.body = temp_model.from_map(m['body'])

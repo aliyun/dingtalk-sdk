@@ -76,9 +76,7 @@ class CreateAppGoodsServiceConversationResponseBody(TeaModel):
         conversation_name: str = None,
         new_conversation: bool = None,
     ):
-        # 群名称
         self.conversation_name = conversation_name
-        # 是否新群
         self.new_conversation = new_conversation
 
     def validate(self):
@@ -109,13 +107,16 @@ class CreateAppGoodsServiceConversationResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateAppGoodsServiceConversationResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -128,6 +129,8 @@ class CreateAppGoodsServiceConversationResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -136,6 +139,8 @@ class CreateAppGoodsServiceConversationResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateAppGoodsServiceConversationResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -182,11 +187,8 @@ class GetCoolAppAccessStatusRequest(TeaModel):
         cool_app_code: str = None,
         enc_field_biz_code: str = None,
     ):
-        # 免登授权码
         self.auth_code = auth_code
-        # 酷应用的code
         self.cool_app_code = cool_app_code
-        # 加密的场域业务code
         self.enc_field_biz_code = enc_field_biz_code
 
     def validate(self):
@@ -248,13 +250,16 @@ class GetCoolAppAccessStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetCoolAppAccessStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -267,6 +272,8 @@ class GetCoolAppAccessStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -275,6 +282,8 @@ class GetCoolAppAccessStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCoolAppAccessStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -319,7 +328,6 @@ class GetPersonalExperienceInfoRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # A short description of struct
         self.user_id = user_id
 
     def validate(self):
@@ -347,7 +355,6 @@ class GetPersonalExperienceInfoResponseBodyResult(TeaModel):
         self,
         main_corp_id: str = None,
     ):
-        # 主组织corpId
         self.main_corp_id = main_corp_id
 
     def validate(self):
@@ -375,7 +382,6 @@ class GetPersonalExperienceInfoResponseBody(TeaModel):
         self,
         result: GetPersonalExperienceInfoResponseBodyResult = None,
     ):
-        # 数据对象
         self.result = result
 
     def validate(self):
@@ -404,13 +410,16 @@ class GetPersonalExperienceInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPersonalExperienceInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -423,6 +432,8 @@ class GetPersonalExperienceInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -431,6 +442,8 @@ class GetPersonalExperienceInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPersonalExperienceInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -488,33 +501,19 @@ class QueryMarketOrderResponseBody(TeaModel):
         status: int = None,
         total_actual_pay_fee: int = None,
     ):
-        # 订单ID
         self.biz_order_id = biz_order_id
-        # 组织ID
         self.corp_id = corp_id
-        # 创建时间戳
         self.create_timestamp = create_timestamp
-        # 生效结束时间
         self.end_timestamp = end_timestamp
-        # 商品Code
         self.goods_code = goods_code
-        # 商品名称
         self.goods_name = goods_name
-        # 是否内购订单
         self.in_app_order = in_app_order
-        # 规格编码
         self.item_code = item_code
-        # 规格名称
         self.item_name = item_name
-        # 支付时间戳
         self.paid_timestamp = paid_timestamp
-        # 购买数量
         self.quantity = quantity
-        # 开始生效时间
         self.start_timestamp = start_timestamp
-        # 订单状态(0:订单关闭； 3：订单支付；4：订单创建)
         self.status = status
-        # 订单实付金额(单位分)
         self.total_actual_pay_fee = total_actual_pay_fee
 
     def validate(self):
@@ -593,13 +592,16 @@ class QueryMarketOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryMarketOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -612,6 +614,8 @@ class QueryMarketOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -620,6 +624,8 @@ class QueryMarketOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMarketOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -667,13 +673,9 @@ class UserTaskReportRequest(TeaModel):
         task_tag: str = None,
         userid: str = None,
     ):
-        # 业务的幂等ID
         self.biz_no = biz_no
-        # operateDate
         self.operate_date = operate_date
-        # taskTag
         self.task_tag = task_tag
-        # staffId
         self.userid = userid
 
     def validate(self):
@@ -712,13 +714,16 @@ class UserTaskReportResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: bool = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
 
     def to_map(self):
@@ -729,6 +734,8 @@ class UserTaskReportResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body
         return result
@@ -737,6 +744,8 @@ class UserTaskReportResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             self.body = m.get('body')
         return self

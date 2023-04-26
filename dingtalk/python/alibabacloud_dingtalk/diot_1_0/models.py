@@ -43,9 +43,7 @@ class BatchDeleteDeviceRequest(TeaModel):
         corp_id: str = None,
         device_ids: List[str] = None,
     ):
-        # 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
         self.corp_id = corp_id
-        # 设备ID列表，最多500条。
         self.device_ids = device_ids
 
     def validate(self):
@@ -77,7 +75,6 @@ class BatchDeleteDeviceResponseBody(TeaModel):
         self,
         device_ids: List[str] = None,
     ):
-        # 成功删除设备ID列表。
         self.device_ids = device_ids
 
     def validate(self):
@@ -104,13 +101,16 @@ class BatchDeleteDeviceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BatchDeleteDeviceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -123,6 +123,8 @@ class BatchDeleteDeviceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -131,6 +133,8 @@ class BatchDeleteDeviceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchDeleteDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -177,11 +181,8 @@ class BatchRegisterDeviceRequestDevicesLiveUrls(TeaModel):
         hls: str = None,
         rtmp: str = None,
     ):
-        # flv格式视频流地址
         self.flv = flv
-        # hls格式视频流地址
         self.hls = hls
-        # rtmp格式视频流地址
         self.rtmp = rtmp
 
     def validate(self):
@@ -226,25 +227,15 @@ class BatchRegisterDeviceRequestDevices(TeaModel):
         parent_id: str = None,
         product_type: str = None,
     ):
-        # 设备ID。
         self.device_id = device_id
-        # 设备名称。
         self.device_name = device_name
-        # 设备状态  0:在线  1:离线
         self.device_status = device_status
-        # 设备类型，自定义传入，最多128个字节。
         self.device_type = device_type
-        # 设备类型名称，自定义传入，最多128个字节，与deviceType一一对应。
         self.device_type_name = device_type_name
-        # 第三方平台定制参数，企业内部系统忽略。
         self.extra_data = extra_data
-        # 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
         self.live_urls = live_urls
-        # 设备地址。
         self.location = location
-        # 父设备ID。
         self.parent_id = parent_id
-        # 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
         self.product_type = product_type
 
     def validate(self):
@@ -311,9 +302,7 @@ class BatchRegisterDeviceRequest(TeaModel):
         corp_id: str = None,
         devices: List[BatchRegisterDeviceRequestDevices] = None,
     ):
-        # 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
         self.corp_id = corp_id
-        # 设备列表。
         self.devices = devices
 
     def validate(self):
@@ -353,7 +342,6 @@ class BatchRegisterDeviceResponseBody(TeaModel):
         self,
         device_ids: List[str] = None,
     ):
-        # 注册成功的设备ID列表。
         self.device_ids = device_ids
 
     def validate(self):
@@ -380,13 +368,16 @@ class BatchRegisterDeviceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BatchRegisterDeviceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -399,6 +390,8 @@ class BatchRegisterDeviceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -407,6 +400,8 @@ class BatchRegisterDeviceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchRegisterDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -452,9 +447,7 @@ class BatchRegisterEventTypeRequestEventTypes(TeaModel):
         event_type: str = None,
         event_type_name: str = None,
     ):
-        # 事件类型(唯一)，最长20个字符。
         self.event_type = event_type
-        # 事件类型名称，长度4-20个字符，一个中文汉字算2个字符。
         self.event_type_name = event_type_name
 
     def validate(self):
@@ -487,9 +480,7 @@ class BatchRegisterEventTypeRequest(TeaModel):
         corp_id: str = None,
         event_types: List[BatchRegisterEventTypeRequestEventTypes] = None,
     ):
-        # 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
         self.corp_id = corp_id
-        # 事件类型列表，最多支持添加500个。
         self.event_types = event_types
 
     def validate(self):
@@ -529,7 +520,6 @@ class BatchRegisterEventTypeResponseBody(TeaModel):
         self,
         event_types: List[str] = None,
     ):
-        # 注册成功的事件类型列表。
         self.event_types = event_types
 
     def validate(self):
@@ -556,13 +546,16 @@ class BatchRegisterEventTypeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BatchRegisterEventTypeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -575,6 +568,8 @@ class BatchRegisterEventTypeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -583,6 +578,8 @@ class BatchRegisterEventTypeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchRegisterEventTypeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -629,11 +626,8 @@ class BatchUpdateDeviceRequestDevicesLiveUrls(TeaModel):
         hls: str = None,
         rtmp: str = None,
     ):
-        # flv格式视频流地址
         self.flv = flv
-        # hls格式视频流地址
         self.hls = hls
-        # rtmp格式视频流地址
         self.rtmp = rtmp
 
     def validate(self):
@@ -674,17 +668,11 @@ class BatchUpdateDeviceRequestDevices(TeaModel):
         live_urls: BatchUpdateDeviceRequestDevicesLiveUrls = None,
         location: str = None,
     ):
-        # 设备ID。
         self.device_id = device_id
-        # 设备名称。
         self.device_name = device_name
-        # 设备状态 0:在线 1:离线
         self.device_status = device_status
-        # 第三方平台定制参数，企业内部系统忽略。
         self.extra_data = extra_data
-        # 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
         self.live_urls = live_urls
-        # 设备地址。
         self.location = location
 
     def validate(self):
@@ -735,9 +723,7 @@ class BatchUpdateDeviceRequest(TeaModel):
         corp_id: str = None,
         devices: List[BatchUpdateDeviceRequestDevices] = None,
     ):
-        # 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
         self.corp_id = corp_id
-        # 设备列表。
         self.devices = devices
 
     def validate(self):
@@ -777,7 +763,6 @@ class BatchUpdateDeviceResponseBody(TeaModel):
         self,
         device_ids: List[str] = None,
     ):
-        # 修改成功的设备ID列表。
         self.device_ids = device_ids
 
     def validate(self):
@@ -804,13 +789,16 @@ class BatchUpdateDeviceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BatchUpdateDeviceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -823,6 +811,8 @@ class BatchUpdateDeviceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -831,6 +821,8 @@ class BatchUpdateDeviceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchUpdateDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -879,15 +871,10 @@ class BindSystemRequest(TeaModel):
         corp_id: str = None,
         extra_data: Dict[str, Any] = None,
     ):
-        # 与三方平台绑定验证的临时授权码。
         self.auth_code = auth_code
-        # 三方平台的用户ID。
         self.client_id = client_id
-        # 三方平台的用户名。
         self.client_name = client_name
-        # 三方平台的用户的钉钉物联组织ID。
         self.corp_id = corp_id
-        # 三方平台协定的其它参数。
         self.extra_data = extra_data
 
     def validate(self):
@@ -932,9 +919,7 @@ class BindSystemResponseBody(TeaModel):
         client_id: str = None,
         corp_id: str = None,
     ):
-        # 三方平台的用户ID。
         self.client_id = client_id
-        # 钉钉物联组织ID。
         self.corp_id = corp_id
 
     def validate(self):
@@ -965,13 +950,16 @@ class BindSystemResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BindSystemResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -984,6 +972,8 @@ class BindSystemResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -992,6 +982,8 @@ class BindSystemResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BindSystemResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1039,13 +1031,9 @@ class DeviceConferenceRequest(TeaModel):
         conference_password: str = None,
         device_ids: List[str] = None,
     ):
-        # 会议主题，最多不能超20个中文。
         self.conf_title = conf_title
-        # 钉钉会议ID，加入已存在的会议必填。
         self.conference_id = conference_id
-        # 钉钉会议密码，加入已存在的会议必填。
         self.conference_password = conference_password
-        # 需要邀请的设备ID，最多5个。
         self.device_ids = device_ids
 
     def validate(self):
@@ -1085,7 +1073,6 @@ class DeviceConferenceResponseBody(TeaModel):
         self,
         conference_id: str = None,
     ):
-        # 会议ID
         self.conference_id = conference_id
 
     def validate(self):
@@ -1112,13 +1099,16 @@ class DeviceConferenceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeviceConferenceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1131,6 +1121,8 @@ class DeviceConferenceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1139,6 +1131,8 @@ class DeviceConferenceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeviceConferenceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1192,25 +1186,15 @@ class PushEventRequest(TeaModel):
         occurrence_time: int = None,
         pic_urls: List[str] = None,
     ):
-        # 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
         self.corp_id = corp_id
-        # 触发事件设备ID。
         self.device_id = device_id
-        # 事件ID。
         self.event_id = event_id
-        # 事件名称，长度4-20个字符，一个中文汉字算2个字符。
         self.event_name = event_name
-        # 事件类型，最长20个字符。
         self.event_type = event_type
-        # 第三方平台定制参数，企业内部系统忽略。
         self.extra_data = extra_data
-        # 事件发生地点。
         self.location = location
-        # 事件文字信息。
         self.msg = msg
-        # 事件发生事件，Unix时间戳，单位毫秒。
         self.occurrence_time = occurrence_time
-        # 事件图片地址列表。
         self.pic_urls = pic_urls
 
     def validate(self):
@@ -1274,7 +1258,6 @@ class PushEventResponseBody(TeaModel):
         self,
         event_id: str = None,
     ):
-        # 事件ID。
         self.event_id = event_id
 
     def validate(self):
@@ -1301,13 +1284,16 @@ class PushEventResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PushEventResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1320,6 +1306,8 @@ class PushEventResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1328,6 +1316,8 @@ class PushEventResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PushEventResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1374,11 +1364,8 @@ class QueryDeviceRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
-        # 钉钉组织id
         self.corp_id = corp_id
-        # 指定显示返回结果中的第几页的内容。默认值是 1
         self.page_number = page_number
-        # 指定返回结果中每页显示的记录数量，最大值是50。默认值是10
         self.page_size = page_size
 
     def validate(self):
@@ -1416,11 +1403,8 @@ class QueryDeviceResponseBodyDataLiveUrls(TeaModel):
         hls: str = None,
         rtmp: str = None,
     ):
-        # flv格式直播地址
         self.flv = flv
-        # hls格式直播地址
         self.hls = hls
-        # rtmp格式直播地址
         self.rtmp = rtmp
 
     def validate(self):
@@ -1464,23 +1448,14 @@ class QueryDeviceResponseBodyData(TeaModel):
         parent_id: str = None,
         product_type: str = None,
     ):
-        # 设备id
         self.device_id = device_id
-        # 设备昵称
         self.device_name = device_name
-        # 设备状态 0:在线 1:离线
         self.device_status = device_status
-        # 设备类型
         self.device_type = device_type
-        # 设备类型名称
         self.device_type_name = device_type_name
-        # 直播地址
         self.live_urls = live_urls
-        # 设备地址
         self.location = location
-        # 设备父节点id
         self.parent_id = parent_id
-        # 产品类型 摄像头:CAMERA 其它:OTHERS
         self.product_type = product_type
 
     def validate(self):
@@ -1545,13 +1520,9 @@ class QueryDeviceResponseBody(TeaModel):
         page_size: int = None,
         total_count: int = None,
     ):
-        # 结果数据
         self.data = data
-        # 当前页码
         self.page_number = page_number
-        # 页面大小
         self.page_size = page_size
-        # 总数
         self.total_count = total_count
 
     def validate(self):
@@ -1598,13 +1569,16 @@ class QueryDeviceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDeviceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1617,6 +1591,8 @@ class QueryDeviceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1625,6 +1601,8 @@ class QueryDeviceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1859,13 +1837,16 @@ class QueryEventResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryEventResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1878,6 +1859,8 @@ class QueryEventResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1886,6 +1869,8 @@ class QueryEventResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryEventResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1932,11 +1917,8 @@ class RegisterDeviceRequestLiveUrls(TeaModel):
         hls: str = None,
         rtmp: str = None,
     ):
-        # flv格式视频流
         self.flv = flv
-        # hls格式视频流地址
         self.hls = hls
-        # rtmp格式视频流
         self.rtmp = rtmp
 
     def validate(self):
@@ -1982,27 +1964,16 @@ class RegisterDeviceRequest(TeaModel):
         parent_id: str = None,
         product_type: str = None,
     ):
-        # 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略
         self.corp_id = corp_id
-        # 设备名称
         self.device_name = device_name
-        # 设备状态 0:在线 1:离线
         self.device_status = device_status
-        # 设备类型
         self.device_type = device_type
-        # 设备类型名称
         self.device_type_name = device_type_name
-        # 设备id
         self.id = id
-        # 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
         self.live_urls = live_urls
-        # 设备地址
         self.location = location
-        # 设备昵称
         self.nick_name = nick_name
-        # 设备父节点id
         self.parent_id = parent_id
-        # 设备类型 摄像头:CAMERA 其它:OTHERS
         self.product_type = product_type
 
     def validate(self):
@@ -2072,7 +2043,6 @@ class RegisterDeviceResponseBody(TeaModel):
         self,
         device_id: str = None,
     ):
-        # 设备id
         self.device_id = device_id
 
     def validate(self):
@@ -2099,13 +2069,16 @@ class RegisterDeviceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RegisterDeviceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2118,6 +2091,8 @@ class RegisterDeviceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2126,6 +2101,8 @@ class RegisterDeviceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RegisterDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])

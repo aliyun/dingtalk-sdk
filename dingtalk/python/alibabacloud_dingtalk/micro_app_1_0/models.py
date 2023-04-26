@@ -43,9 +43,7 @@ class AddAppRolesToMemberRequestRoleList(TeaModel):
         role_id: int = None,
         scope_version: int = None,
     ):
-        # 角色ID
         self.role_id = role_id
-        # 角色范围版本号
         self.scope_version = scope_version
 
     def validate(self):
@@ -80,13 +78,9 @@ class AddAppRolesToMemberRequest(TeaModel):
         op_user_id: str = None,
         role_list: List[AddAppRolesToMemberRequestRoleList] = None,
     ):
-        # 人员id
         self.member_id = member_id
-        # 人员类型，“DEPT”表示部门，“USER”表示员工
         self.member_type = member_type
-        # 执行用户userId
         self.op_user_id = op_user_id
-        # 角色Id列表
         self.role_list = role_list
 
     def validate(self):
@@ -138,13 +132,10 @@ class AddAppRolesToMemberResponseBodyResult(TeaModel):
         sub_error_msg: str = None,
         success: bool = None,
     ):
-        # 角色范围最新版本号
         self.latest_scope_version = latest_scope_version
-        # 角色id
         self.role_id = role_id
         self.sub_error_code = sub_error_code
         self.sub_error_msg = sub_error_msg
-        # 角色添加结果，true: 成功，false: 失败
         self.success = success
 
     def validate(self):
@@ -222,13 +213,16 @@ class AddAppRolesToMemberResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddAppRolesToMemberResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -241,6 +235,8 @@ class AddAppRolesToMemberResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -249,6 +245,8 @@ class AddAppRolesToMemberResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddAppRolesToMemberResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -295,11 +293,8 @@ class AddAppToWorkBenchGroupRequest(TeaModel):
         ecological_corp_id: str = None,
         op_union_id: str = None,
     ):
-        # 工作台分组id
         self.component_id = component_id
-        # 关联组织corpId
         self.ecological_corp_id = ecological_corp_id
-        # 创建人unionId
         self.op_union_id = op_union_id
 
     def validate(self):
@@ -335,7 +330,6 @@ class AddAppToWorkBenchGroupResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 更新结果
         self.result = result
 
     def validate(self):
@@ -362,13 +356,16 @@ class AddAppToWorkBenchGroupResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddAppToWorkBenchGroupResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -381,6 +378,8 @@ class AddAppToWorkBenchGroupResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -389,6 +388,8 @@ class AddAppToWorkBenchGroupResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddAppToWorkBenchGroupResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -436,13 +437,9 @@ class AddMemberToAppRoleRequest(TeaModel):
         scope_version: int = None,
         user_id_list: List[str] = None,
     ):
-        # 部门id列表
         self.dept_id_list = dept_id_list
-        # 执行用户userId
         self.op_user_id = op_user_id
-        # 角色范围版本号
         self.scope_version = scope_version
-        # 员工userId列表
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -482,7 +479,6 @@ class AddMemberToAppRoleResponseBody(TeaModel):
         self,
         latest_scope_version: int = None,
     ):
-        # 角色范围最新版本号
         self.latest_scope_version = latest_scope_version
 
     def validate(self):
@@ -509,13 +505,16 @@ class AddMemberToAppRoleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddMemberToAppRoleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -528,6 +527,8 @@ class AddMemberToAppRoleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -536,6 +537,8 @@ class AddMemberToAppRoleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddMemberToAppRoleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -674,9 +677,7 @@ class CreateApaasAppResponseBody(TeaModel):
         agent_id: int = None,
         biz_app_id: str = None,
     ):
-        # 钉钉侧应用id
         self.agent_id = agent_id
-        # ISV侧应用id
         self.biz_app_id = biz_app_id
 
     def validate(self):
@@ -707,13 +708,16 @@ class CreateApaasAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateApaasAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -726,6 +730,8 @@ class CreateApaasAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -734,6 +740,8 @@ class CreateApaasAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateApaasAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -787,24 +795,15 @@ class CreateInnerAppRequest(TeaModel):
         pc_homepage_link: str = None,
         scope_type: str = None,
     ):
-        # 应用描述
         self.desc = desc
         self.develop_type = develop_type
-        # 应用首页地址
         self.homepage_link = homepage_link
-        # 应用图标
         self.icon = icon
-        # 服务器出口ip白名单
         self.ip_white_list = ip_white_list
-        # 应用名称
         self.name = name
-        # 应用管理后台地址
         self.omp_link = omp_link
-        # 创建人unionId
         self.op_union_id = op_union_id
-        # 应用PC端地址
         self.pc_homepage_link = pc_homepage_link
-        # 权限类型
         self.scope_type = scope_type
 
     def validate(self):
@@ -870,7 +869,6 @@ class CreateInnerAppResponseBody(TeaModel):
         app_key: str = None,
         app_secret: str = None,
     ):
-        # 应用id
         self.agent_id = agent_id
         self.app_key = app_key
         self.app_secret = app_secret
@@ -907,13 +905,16 @@ class CreateInnerAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateInnerAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -926,6 +927,8 @@ class CreateInnerAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -934,6 +937,8 @@ class CreateInnerAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateInnerAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1005,7 +1010,6 @@ class DeleteAppRoleResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 删除结果
         self.result = result
 
     def validate(self):
@@ -1032,13 +1036,16 @@ class DeleteAppRoleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteAppRoleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1051,6 +1058,8 @@ class DeleteAppRoleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1059,6 +1068,8 @@ class DeleteAppRoleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteAppRoleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1103,7 +1114,6 @@ class DeleteInnerAppRequest(TeaModel):
         self,
         op_union_id: str = None,
     ):
-        # 操作人unionId
         self.op_union_id = op_union_id
 
     def validate(self):
@@ -1131,7 +1141,6 @@ class DeleteInnerAppResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 删除结果
         self.result = result
 
     def validate(self):
@@ -1158,13 +1167,16 @@ class DeleteInnerAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteInnerAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1177,6 +1189,8 @@ class DeleteInnerAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1185,6 +1199,8 @@ class DeleteInnerAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteInnerAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1231,11 +1247,8 @@ class GetApaasAppResponseBody(TeaModel):
         biz_app_id: str = None,
         publish_status: str = None,
     ):
-        # 钉钉侧应用id
         self.agent_id = agent_id
-        # ISV侧应用id
         self.biz_app_id = biz_app_id
-        # 发布状态
         self.publish_status = publish_status
 
     def validate(self):
@@ -1270,13 +1283,16 @@ class GetApaasAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetApaasAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1289,6 +1305,8 @@ class GetApaasAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1297,6 +1315,8 @@ class GetApaasAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetApaasAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1347,19 +1367,12 @@ class GetAppRoleScopeByRoleIdResponseBody(TeaModel):
         scope_version: str = None,
         user_id_list: List[str] = None,
     ):
-        # 是否拥有角色管理权限，默认false
         self.can_manage_role = can_manage_role
-        # 部门id列表
         self.dept_id_list = dept_id_list
-        # 角色id
         self.role_id = role_id
-        # 角色名称
         self.role_name = role_name
-        # 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
         self.scope_type = scope_type
-        # 角色范围版本号
         self.scope_version = scope_version
-        # 员工userId列表
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -1410,13 +1423,16 @@ class GetAppRoleScopeByRoleIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAppRoleScopeByRoleIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1429,6 +1445,8 @@ class GetAppRoleScopeByRoleIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1437,6 +1455,8 @@ class GetAppRoleScopeByRoleIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAppRoleScopeByRoleIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1482,9 +1502,7 @@ class GetInnerAppRequest(TeaModel):
         ecological_corp_id: str = None,
         op_union_id: str = None,
     ):
-        # 关联组织corpId
         self.ecological_corp_id = ecological_corp_id
-        # 操作人unionId
         self.op_union_id = op_union_id
 
     def validate(self):
@@ -1525,25 +1543,15 @@ class GetInnerAppResponseBody(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
-        # 应用id
         self.agent_id = agent_id
-        # 应用的appkey
         self.app_key = app_key
-        # 应用的secret
         self.app_secret = app_secret
-        # 应用描述
         self.desc = desc
-        # 应用移动端首页地址
         self.homepage_link = homepage_link
-        # 应用图标
         self.icon = icon
-        # 服务器出口ip
         self.ip_white_list = ip_white_list
-        # 应用名称
         self.name = name
-        # 应用管理后台地址
         self.omp_link = omp_link
-        # 应用PC端首页地址
         self.pc_homepage_link = pc_homepage_link
 
     def validate(self):
@@ -1606,13 +1614,16 @@ class GetInnerAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetInnerAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1625,6 +1636,8 @@ class GetInnerAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1633,6 +1646,8 @@ class GetInnerAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetInnerAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1680,13 +1695,9 @@ class GetMicroAppScopeResponseBodyResult(TeaModel):
         role_ids: List[int] = None,
         user_ids: List[str] = None,
     ):
-        # 部门可见列表
         self.dept_ids = dept_ids
-        # 是否管理员可见。如果为true，优先看这个字段
         self.only_admin_visible = only_admin_visible
-        # 角色可见列表
         self.role_ids = role_ids
-        # 用户可见列表
         self.user_ids = user_ids
 
     def validate(self):
@@ -1726,7 +1737,6 @@ class GetMicroAppScopeResponseBody(TeaModel):
         self,
         result: GetMicroAppScopeResponseBodyResult = None,
     ):
-        # 可见范围结果
         self.result = result
 
     def validate(self):
@@ -1755,13 +1765,16 @@ class GetMicroAppScopeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetMicroAppScopeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1774,6 +1787,8 @@ class GetMicroAppScopeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1782,6 +1797,8 @@ class GetMicroAppScopeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMicroAppScopeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1826,7 +1843,6 @@ class GetMicroAppUserAccessResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -1853,13 +1869,16 @@ class GetMicroAppUserAccessResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetMicroAppUserAccessResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1872,6 +1891,8 @@ class GetMicroAppUserAccessResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1880,6 +1901,8 @@ class GetMicroAppUserAccessResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMicroAppUserAccessResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1950,13 +1973,16 @@ class GetUserAppDevAccessResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserAppDevAccessResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1969,6 +1995,8 @@ class GetUserAppDevAccessResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1977,6 +2005,8 @@ class GetUserAppDevAccessResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserAppDevAccessResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2030,25 +2060,15 @@ class ListAllAppResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
-        # 应用id
         self.agent_id = agent_id
-        # 三方应用id，如果是企业内部应用，返回0
         self.app_id = app_id
-        # 应用状态，0：停用，1：启用 ，3：过期
         self.app_status = app_status
-        # 应用描述
         self.desc = desc
-        # 应用类型，0表示h5应用，1表示小程序
         self.develop_type = develop_type
-        # 应用移动端首页地址
         self.homepage_link = homepage_link
-        # 应用图标
         self.icon = icon
-        # 应用名称
         self.name = name
-        # 应用管理后台地址
         self.omp_link = omp_link
-        # 应用PC端首页地址
         self.pc_homepage_link = pc_homepage_link
 
     def validate(self):
@@ -2112,7 +2132,6 @@ class ListAllAppResponseBody(TeaModel):
         self,
         app_list: List[ListAllAppResponseBodyAppList] = None,
     ):
-        # 应用列表
         self.app_list = app_list
 
     def validate(self):
@@ -2147,13 +2166,16 @@ class ListAllAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListAllAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2166,6 +2188,8 @@ class ListAllAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2174,6 +2198,8 @@ class ListAllAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListAllAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2227,25 +2253,15 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
-        # 应用id
         self.agent_id = agent_id
-        # 三方应用id，如果是企业内部应用，返回0
         self.app_id = app_id
-        # 应用状态，0：停用，1：启用 ，3：过期
         self.app_status = app_status
-        # 应用描述
         self.desc = desc
-        # 应用类型，0表示h5应用，1表示小程序
         self.develop_type = develop_type
-        # 应用移动端首页地址
         self.homepage_link = homepage_link
-        # 应用图标
         self.icon = icon
-        # 应用名称
         self.name = name
-        # 应用管理后台地址
         self.omp_link = omp_link
-        # 应用PC端首页地址
         self.pc_homepage_link = pc_homepage_link
 
     def validate(self):
@@ -2309,7 +2325,6 @@ class ListAllInnerAppsResponseBody(TeaModel):
         self,
         app_list: List[ListAllInnerAppsResponseBodyAppList] = None,
     ):
-        # 应用列表
         self.app_list = app_list
 
     def validate(self):
@@ -2344,13 +2359,16 @@ class ListAllInnerAppsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListAllInnerAppsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2363,6 +2381,8 @@ class ListAllInnerAppsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2371,6 +2391,8 @@ class ListAllInnerAppsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListAllInnerAppsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2416,9 +2438,7 @@ class ListAppRoleScopesRequest(TeaModel):
         next_token: int = None,
         size: int = None,
     ):
-        # 起始点，默认0
         self.next_token = next_token
-        # 数据量，默认20，最大50
         self.size = size
 
     def validate(self):
@@ -2456,19 +2476,12 @@ class ListAppRoleScopesResponseBodyDataList(TeaModel):
         scope_version: int = None,
         user_id_list: List[str] = None,
     ):
-        # 是否拥有角色管理权限，默认false
         self.can_manage_role = can_manage_role
-        # 部门id列表
         self.dept_id_list = dept_id_list
-        # 角色Id
         self.role_id = role_id
-        # 角色名称
         self.role_name = role_name
-        # 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
         self.scope_type = scope_type
-        # 角色范围最新版本号
         self.scope_version = scope_version
-        # 员工userId列表
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -2522,11 +2535,8 @@ class ListAppRoleScopesResponseBody(TeaModel):
         has_more: bool = None,
         next_token: int = None,
     ):
-        # 数据列表
         self.data_list = data_list
-        # 是否还有数据，true: 还有；false: 已经全部拉取完成
         self.has_more = has_more
-        # 下一次请求的起始点
         self.next_token = next_token
 
     def validate(self):
@@ -2569,13 +2579,16 @@ class ListAppRoleScopesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListAppRoleScopesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2588,6 +2601,8 @@ class ListAppRoleScopesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2596,6 +2611,8 @@ class ListAppRoleScopesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListAppRoleScopesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2640,7 +2657,6 @@ class ListInnerAppRequest(TeaModel):
         self,
         ecological_corp_id: str = None,
     ):
-        # 合作空间corpId
         self.ecological_corp_id = ecological_corp_id
 
     def validate(self):
@@ -2674,19 +2690,12 @@ class ListInnerAppResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
-        # 应用id
         self.agent_id = agent_id
-        # 应用描述
         self.desc = desc
-        # 应用移动端首页地址
         self.homepage_link = homepage_link
-        # 应用图标
         self.icon = icon
-        # 应用名称
         self.name = name
-        # 应用管理后台地址
         self.omp_link = omp_link
-        # 应用PC端首页地址
         self.pc_homepage_link = pc_homepage_link
 
     def validate(self):
@@ -2738,7 +2747,6 @@ class ListInnerAppResponseBody(TeaModel):
         self,
         app_list: List[ListInnerAppResponseBodyAppList] = None,
     ):
-        # 应用列表
         self.app_list = app_list
 
     def validate(self):
@@ -2773,13 +2781,16 @@ class ListInnerAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListInnerAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2792,6 +2803,8 @@ class ListInnerAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2800,6 +2813,8 @@ class ListInnerAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListInnerAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2850,19 +2865,12 @@ class ListInnerAppVersionResponseBodyAppVersionList(TeaModel):
         mini_app_on_pc: bool = None,
         modify_time: str = None,
     ):
-        # 小程序版本号
         self.app_version = app_version
-        # 小程序版本id，用于发布和回滚的版本唯一标识。
         self.app_version_id = app_version_id
-        # 小程序版本类型，0表示开发版本，2表示正式版本，3表示体验版本
         self.app_version_type = app_version_type
-        # 小程序版本创建事件，格式:yyyy-MM-dd HH:mm:ss
         self.create_time = create_time
-        # 小程序id
         self.mini_app_id = mini_app_id
-        # 是否支持PC端打开小程序，false表示只支持移动端，true表示既支持移动端又支持PC端  
         self.mini_app_on_pc = mini_app_on_pc
-        # 小程序版本号更新时间，格式:yyyy-MM-dd HH:mm:ss
         self.modify_time = modify_time
 
     def validate(self):
@@ -2914,7 +2922,6 @@ class ListInnerAppVersionResponseBody(TeaModel):
         self,
         app_version_list: List[ListInnerAppVersionResponseBodyAppVersionList] = None,
     ):
-        # 企业内部小程序版本号列表
         self.app_version_list = app_version_list
 
     def validate(self):
@@ -2949,13 +2956,16 @@ class ListInnerAppVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListInnerAppVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2968,6 +2978,8 @@ class ListInnerAppVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2976,6 +2988,8 @@ class ListInnerAppVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListInnerAppVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3022,11 +3036,8 @@ class ListRoleInfoByUserResponseBodyResult(TeaModel):
         role_id: int = None,
         role_name: str = None,
     ):
-        # 是否拥有角色管理权限，默认false
         self.can_manage_role = can_manage_role
-        # 角色id
         self.role_id = role_id
-        # 角色名称
         self.role_name = role_name
 
     def validate(self):
@@ -3096,13 +3107,16 @@ class ListRoleInfoByUserResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListRoleInfoByUserResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3115,6 +3129,8 @@ class ListRoleInfoByUserResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3123,6 +3139,8 @@ class ListRoleInfoByUserResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListRoleInfoByUserResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3176,25 +3194,15 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
-        # 应用id
         self.agent_id = agent_id
-        # 三方应用id，如果是企业内部应用，返回0
         self.app_id = app_id
-        # 应用状态，0：停用，1：启用 ，3：过期
         self.app_status = app_status
-        # 应用描述
         self.desc = desc
-        # 应用类型，0表示h5应用，1表示小程序
         self.develop_type = develop_type
-        # 应用移动端首页地址
         self.homepage_link = homepage_link
-        # 应用图标
         self.icon = icon
-        # 应用名称
         self.name = name
-        # 应用管理后台地址
         self.omp_link = omp_link
-        # 应用PC端首页地址
         self.pc_homepage_link = pc_homepage_link
 
     def validate(self):
@@ -3258,7 +3266,6 @@ class ListUserVilebleAppResponseBody(TeaModel):
         self,
         app_list: List[ListUserVilebleAppResponseBodyAppList] = None,
     ):
-        # 应用列表
         self.app_list = app_list
 
     def validate(self):
@@ -3293,13 +3300,16 @@ class ListUserVilebleAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListUserVilebleAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3312,6 +3322,8 @@ class ListUserVilebleAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3320,6 +3332,8 @@ class ListUserVilebleAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListUserVilebleAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3365,9 +3379,7 @@ class PageInnerAppHistoryVersionRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
-        # 当前页
         self.page_number = page_number
-        # 本次读取的最大数据记录数量
         self.page_size = page_size
 
     def validate(self):
@@ -3405,19 +3417,12 @@ class PageInnerAppHistoryVersionResponseBodyMiniAppVersionList(TeaModel):
         mini_app_on_pc: bool = None,
         modify_time: str = None,
     ):
-        # 小程序版本号
         self.app_version = app_version
-        # 小程序版本号id，用于小程序的发布和回滚等操作的唯一标识。
         self.app_version_id = app_version_id
-        # 小程序版本类型，0表示开发版本，2表示正式版本，3表示体验版本
         self.app_version_type = app_version_type
-        # 小程序版本创建事件，格式:yyyy-MM-dd HH:mm:ss
         self.create_time = create_time
-        # 小程序id
         self.mini_app_id = mini_app_id
-        # 是否支持PC端打开小程序，false表示只支持移动端，true表示既支持移动端又支持PC端  
         self.mini_app_on_pc = mini_app_on_pc
-        # 小程序版本号更新时间，格式:yyyy-MM-dd HH:mm:ss
         self.modify_time = modify_time
 
     def validate(self):
@@ -3470,9 +3475,7 @@ class PageInnerAppHistoryVersionResponseBody(TeaModel):
         mini_app_version_list: List[PageInnerAppHistoryVersionResponseBodyMiniAppVersionList] = None,
         total_count: int = None,
     ):
-        # 企业内部小程序版本号列表
         self.mini_app_version_list = mini_app_version_list
-        # 当前小程序历史版本的总数量
         self.total_count = total_count
 
     def validate(self):
@@ -3511,13 +3514,16 @@ class PageInnerAppHistoryVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PageInnerAppHistoryVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3530,6 +3536,8 @@ class PageInnerAppHistoryVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3538,6 +3546,8 @@ class PageInnerAppHistoryVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PageInnerAppHistoryVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3585,13 +3595,9 @@ class PublishInnerAppVersionRequest(TeaModel):
         op_union_id: str = None,
         publish_type: str = None,
     ):
-        # 小程序版本id，用于唯一标识小程序版本信息。
         self.app_version_id = app_version_id
-        # 小程序是否在PC端发布，true表示发布移动端和PC端，false表示只发布移动端
         self.mini_app_on_pc = mini_app_on_pc
-        # 操作人unionId
         self.op_union_id = op_union_id
-        # 小程序发布类型，”online“表示发布线上版本，”experience“表示发布体验版本
         self.publish_type = publish_type
 
     def validate(self):
@@ -3631,7 +3637,6 @@ class PublishInnerAppVersionResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 小程序发布结果
         self.result = result
 
     def validate(self):
@@ -3658,13 +3663,16 @@ class PublishInnerAppVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PublishInnerAppVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3677,6 +3685,8 @@ class PublishInnerAppVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3685,6 +3695,8 @@ class PublishInnerAppVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PublishInnerAppVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3733,15 +3745,10 @@ class RebuildRoleScopeForAppRoleRequest(TeaModel):
         scope_version: int = None,
         user_id_list: List[str] = None,
     ):
-        # 部门id列表
         self.dept_id_list = dept_id_list
-        # 执行用户userId
         self.op_user_id = op_user_id
-        # 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
         self.scope_type = scope_type
-        # 角色范围最新版本号
         self.scope_version = scope_version
-        # 员工userId列表
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -3785,7 +3792,6 @@ class RebuildRoleScopeForAppRoleResponseBody(TeaModel):
         self,
         latest_scope_version: int = None,
     ):
-        # 角色范围最新版本号
         self.latest_scope_version = latest_scope_version
 
     def validate(self):
@@ -3812,13 +3818,16 @@ class RebuildRoleScopeForAppRoleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RebuildRoleScopeForAppRoleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3831,6 +3840,8 @@ class RebuildRoleScopeForAppRoleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3839,6 +3850,8 @@ class RebuildRoleScopeForAppRoleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RebuildRoleScopeForAppRoleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3885,11 +3898,8 @@ class RegisterCustomAppRoleRequest(TeaModel):
         op_user_id: str = None,
         role_name: str = None,
     ):
-        # 是否拥有管理角色的权限，可不传，默认false
         self.can_manage_role = can_manage_role
-        # 执行用户userId
         self.op_user_id = op_user_id
-        # 角色名称
         self.role_name = role_name
 
     def validate(self):
@@ -3926,9 +3936,7 @@ class RegisterCustomAppRoleResponseBody(TeaModel):
         role_id: int = None,
         scope_version: int = None,
     ):
-        # 角色id
         self.role_id = role_id
-        # 角色版本号
         self.scope_version = scope_version
 
     def validate(self):
@@ -3959,13 +3967,16 @@ class RegisterCustomAppRoleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RegisterCustomAppRoleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3978,6 +3989,8 @@ class RegisterCustomAppRoleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3986,6 +3999,8 @@ class RegisterCustomAppRoleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RegisterCustomAppRoleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4063,7 +4078,6 @@ class RemoveApaasAppResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -4090,13 +4104,16 @@ class RemoveApaasAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RemoveApaasAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4109,6 +4126,8 @@ class RemoveApaasAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4117,6 +4136,8 @@ class RemoveApaasAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RemoveApaasAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4164,13 +4185,9 @@ class RemoveMemberForAppRoleRequest(TeaModel):
         scope_version: int = None,
         user_id_list: List[str] = None,
     ):
-        # 部门id列表
         self.dept_id_list = dept_id_list
-        # 执行用户userId
         self.op_user_id = op_user_id
-        # 角色范围版本号
         self.scope_version = scope_version
-        # 员工userId列表
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -4210,7 +4227,6 @@ class RemoveMemberForAppRoleResponseBody(TeaModel):
         self,
         latest_scope_version: int = None,
     ):
-        # 角色最新版本号
         self.latest_scope_version = latest_scope_version
 
     def validate(self):
@@ -4237,13 +4253,16 @@ class RemoveMemberForAppRoleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RemoveMemberForAppRoleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4256,6 +4275,8 @@ class RemoveMemberForAppRoleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4264,6 +4285,8 @@ class RemoveMemberForAppRoleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RemoveMemberForAppRoleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4309,9 +4332,7 @@ class RollbackInnerAppVersionRequest(TeaModel):
         app_version_id: int = None,
         op_union_id: str = None,
     ):
-        # 小程序版本id，用于唯一标识小程序版本信息。
         self.app_version_id = app_version_id
-        # 操作人unionId
         self.op_union_id = op_union_id
 
     def validate(self):
@@ -4343,7 +4364,6 @@ class RollbackInnerAppVersionResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 小程序回滚结果
         self.result = result
 
     def validate(self):
@@ -4370,13 +4390,16 @@ class RollbackInnerAppVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RollbackInnerAppVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4389,6 +4412,8 @@ class RollbackInnerAppVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4397,6 +4422,8 @@ class RollbackInnerAppVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RollbackInnerAppVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4447,19 +4474,12 @@ class SetMicroAppScopeRequest(TeaModel):
         del_user_ids: List[str] = None,
         only_admin_visible: bool = None,
     ):
-        # 增加的可见部门
         self.add_dept_ids = add_dept_ids
-        # 增加的可见角色
         self.add_role_ids = add_role_ids
-        # 增加的可见用户
         self.add_user_ids = add_user_ids
-        # 删除的可见部门
         self.del_dept_ids = del_dept_ids
-        # 删除的可见角色
         self.del_role_ids = del_role_ids
-        # 删除的可见用户
         self.del_user_ids = del_user_ids
-        # 是否管理员可见
         self.only_admin_visible = only_admin_visible
 
     def validate(self):
@@ -4511,7 +4531,6 @@ class SetMicroAppScopeResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -4538,13 +4557,16 @@ class SetMicroAppScopeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SetMicroAppScopeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4557,6 +4579,8 @@ class SetMicroAppScopeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4565,6 +4589,8 @@ class SetMicroAppScopeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SetMicroAppScopeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4661,9 +4687,7 @@ class UpdateApaasAppResponseBody(TeaModel):
         agent_id: int = None,
         biz_app_id: str = None,
     ):
-        # 钉钉侧应用id
         self.agent_id = agent_id
-        # ISV侧应用id
         self.biz_app_id = biz_app_id
 
     def validate(self):
@@ -4694,13 +4718,16 @@ class UpdateApaasAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateApaasAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4713,6 +4740,8 @@ class UpdateApaasAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4721,6 +4750,8 @@ class UpdateApaasAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateApaasAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4767,11 +4798,8 @@ class UpdateAppRoleInfoRequest(TeaModel):
         new_role_name: str = None,
         op_user_id: str = None,
     ):
-        # 变更角色管理权限，可不传，不传则不变
         self.can_manage_role = can_manage_role
-        # 变更角色名称，可不传，不传则不变
         self.new_role_name = new_role_name
-        # 执行用户userId
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -4807,7 +4835,6 @@ class UpdateAppRoleInfoResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 更新结果
         self.result = result
 
     def validate(self):
@@ -4834,13 +4861,16 @@ class UpdateAppRoleInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateAppRoleInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4853,6 +4883,8 @@ class UpdateAppRoleInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4861,6 +4893,8 @@ class UpdateAppRoleInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateAppRoleInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4912,21 +4946,13 @@ class UpdateInnerAppRequest(TeaModel):
         op_union_id: str = None,
         pc_homepage_link: str = None,
     ):
-        # 应用描述
         self.desc = desc
-        # 应用首页地址
         self.homepage_link = homepage_link
-        # 应用图标
         self.icon = icon
-        # 服务器出口ip白名单
         self.ip_white_list = ip_white_list
-        # 应用名称
         self.name = name
-        # 应用管理后台地址
         self.omp_link = omp_link
-        # 创建人unionId
         self.op_union_id = op_union_id
-        # 应用PC端地址
         self.pc_homepage_link = pc_homepage_link
 
     def validate(self):
@@ -4982,7 +5008,6 @@ class UpdateInnerAppResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 更新结果
         self.result = result
 
     def validate(self):
@@ -5009,13 +5034,16 @@ class UpdateInnerAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateInnerAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5028,6 +5056,8 @@ class UpdateInnerAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5036,6 +5066,8 @@ class UpdateInnerAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateInnerAppResponseBody()
             self.body = temp_model.from_map(m['body'])

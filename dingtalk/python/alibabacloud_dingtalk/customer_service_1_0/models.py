@@ -82,21 +82,13 @@ class CreateTicketRequest(TeaModel):
         template_id: str = None,
         title: str = None,
     ):
-        # 第三方会员ID
         self.foreign_id = foreign_id
-        # 第三方会员名称
         self.foreign_name = foreign_name
-        # 实例ID
         self.open_instance_id = open_instance_id
-        # 智能客服产品
         self.production_type = production_type
-        # 工单表单
         self.properties = properties
-        # 会员来源
         self.source_id = source_id
-        # 工单模板ID
         self.template_id = template_id
-        # 工单标题
         self.title = title
 
     def validate(self):
@@ -160,7 +152,6 @@ class CreateTicketResponseBody(TeaModel):
         self,
         ticket_id: str = None,
     ):
-        # 新创建工单ID
         self.ticket_id = ticket_id
 
     def validate(self):
@@ -187,13 +178,16 @@ class CreateTicketResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateTicketResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -206,6 +200,8 @@ class CreateTicketResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -214,6 +210,8 @@ class CreateTicketResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateTicketResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -259,9 +257,7 @@ class ExecuteActivityRequestProperties(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 字段的key
         self.name = name
-        # 字段的值
         self.value = value
 
     def validate(self):
@@ -299,19 +295,12 @@ class ExecuteActivityRequest(TeaModel):
         properties: List[ExecuteActivityRequestProperties] = None,
         source_id: str = None,
     ):
-        # 动作编码
         self.activity_code = activity_code
-        # 会员ID
         self.foreign_id = foreign_id
-        # 会员名称
         self.foreign_name = foreign_name
-        # 实例id
         self.open_instance_id = open_instance_id
-        # 产品类型
         self.production_type = production_type
-        # 工单表单字段
         self.properties = properties
-        # 来源ID
         self.source_id = source_id
 
     def validate(self):
@@ -371,7 +360,6 @@ class ExecuteActivityResponseBody(TeaModel):
         self,
         task_id: str = None,
     ):
-        # 任务id
         self.task_id = task_id
 
     def validate(self):
@@ -398,13 +386,16 @@ class ExecuteActivityResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ExecuteActivityResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -417,6 +408,8 @@ class ExecuteActivityResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -425,6 +418,8 @@ class ExecuteActivityResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ExecuteActivityResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -617,13 +612,16 @@ class GetUserSourceListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserSourceListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -636,6 +634,8 @@ class GetUserSourceListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -644,6 +644,8 @@ class GetUserSourceListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserSourceListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -691,13 +693,9 @@ class PageListActionRequest(TeaModel):
         open_instance_id: str = None,
         production_type: int = None,
     ):
-        # 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
         self.max_results = max_results
-        # 用来标记当前开始读取的位置，置空表示从头开始。
         self.next_token = next_token
-        # 实例id
         self.open_instance_id = open_instance_id
-        # 产品类型
         self.production_type = production_type
 
     def validate(self):
@@ -741,15 +739,10 @@ class PageListActionResponseBodyListActionContent(TeaModel):
         value: str = None,
         value_type: str = None,
     ):
-        # displayName
         self.display_name = display_name
-        # displayValue
         self.display_value = display_value
-        # name
         self.name = name
-        # value
         self.value = value
-        # valueType
         self.value_type = value_type
 
     def validate(self):
@@ -797,15 +790,10 @@ class PageListActionResponseBodyList(TeaModel):
         operator_id: str = None,
         operator_role: str = None,
     ):
-        # actionCode
         self.action_code = action_code
-        # actionContent
         self.action_content = action_content
-        # operator
         self.operator = operator
-        # operatorId
         self.operator_id = operator_id
-        # operatorRole
         self.operator_role = operator_role
 
     def validate(self):
@@ -859,11 +847,8 @@ class PageListActionResponseBody(TeaModel):
         next_cursor: int = None,
         total: int = None,
     ):
-        # list
         self.list = list
-        # nextCursor
         self.next_cursor = next_cursor
-        # total
         self.total = total
 
     def validate(self):
@@ -906,13 +891,16 @@ class PageListActionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PageListActionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -925,6 +913,8 @@ class PageListActionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -933,6 +923,8 @@ class PageListActionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PageListActionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -981,15 +973,10 @@ class PageListRobotRequest(TeaModel):
         open_instance_id: str = None,
         production_type: int = None,
     ):
-        # 查询的企业Id
         self.corp_id = corp_id
-        # 本次读取的最大数据记录数量
         self.max_results = max_results
-        # 用来标记当前开始读取的位置，置空表示从头开始
         self.next_token = next_token
-        # 多实例ID
         self.open_instance_id = open_instance_id
-        # 产品类型
         self.production_type = production_type
 
     def validate(self):
@@ -1037,15 +1024,10 @@ class PageListRobotResponseBodyList(TeaModel):
         name: str = None,
         status: int = None,
     ):
-        # 机器人所在租户ID
         self.account_id = account_id
-        # 机器人APPKEY
         self.app_key = app_key
-        # 机器人自增Id
         self.id = id
-        # 机器人名称
         self.name = name
-        # 机器人状态
         self.status = status
 
     def validate(self):
@@ -1092,13 +1074,9 @@ class PageListRobotResponseBody(TeaModel):
         next_cursor: int = None,
         total: int = None,
     ):
-        # 是否有更多结果
         self.has_more = has_more
-        # 查询结果列表
         self.list = list
-        # 下一次查询起始游标
         self.next_cursor = next_cursor
-        # 查询结果总数
         self.total = total
 
     def validate(self):
@@ -1145,13 +1123,16 @@ class PageListRobotResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PageListRobotResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1164,6 +1145,8 @@ class PageListRobotResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1172,6 +1155,8 @@ class PageListRobotResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PageListRobotResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1226,27 +1211,16 @@ class PageListTicketRequest(TeaModel):
         ticket_id: str = None,
         ticket_status: str = None,
     ):
-        # 结束时间
         self.end_time = end_time
-        # 第三方用户id
         self.foreign_id = foreign_id
-        # 本次读取的最大数据记录数量
         self.max_results = max_results
-        # 用来标记当前开始读取的位置，置空表示从头开始
         self.next_token = next_token
-        # 实例id
         self.open_instance_id = open_instance_id
-        # 产品类型
         self.production_type = production_type
-        # 来源
         self.source_id = source_id
-        # 开始时间
         self.start_time = start_time
-        # 工单模板
         self.template_id = template_id
-        # 工单ID
         self.ticket_id = ticket_id
-        # 工单状态
         self.ticket_status = ticket_status
 
     def validate(self):
@@ -1325,29 +1299,17 @@ class PageListTicketResponseBodyList(TeaModel):
         ticket_status: str = None,
         title: str = None,
     ):
-        # bizDataMap
         self.biz_data_map = biz_data_map
-        # foreignId
         self.foreign_id = foreign_id
-        # foreignName
         self.foreign_name = foreign_name
-        # gmtCreate
         self.gmt_create = gmt_create
-        # gmtModified
         self.gmt_modified = gmt_modified
-        # openInstanceId
         self.open_instance_id = open_instance_id
-        # productionType
         self.production_type = production_type
-        # sourceId
         self.source_id = source_id
-        # templateId
         self.template_id = template_id
-        # ticketId
         self.ticket_id = ticket_id
-        # ticketStatus
         self.ticket_status = ticket_status
-        # title
         self.title = title
 
     def validate(self):
@@ -1421,11 +1383,8 @@ class PageListTicketResponseBody(TeaModel):
         next_cursor: int = None,
         total: int = None,
     ):
-        # list
         self.list = list
-        # nextCursor
         self.next_cursor = next_cursor
-        # total
         self.total = total
 
     def validate(self):
@@ -1468,13 +1427,16 @@ class PageListTicketResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PageListTicketResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1487,6 +1449,8 @@ class PageListTicketResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1495,6 +1459,8 @@ class PageListTicketResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PageListTicketResponseBody()
             self.body = temp_model.from_map(m['body'])

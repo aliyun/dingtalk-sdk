@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.datacenter_1_0 import models as dingtalkdatacenter__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def get_abnormal_operation(
-        self,
-        request: dingtalkdatacenter__1__0_models.GetAbnormalOperationRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetAbnormalOperationResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetAbnormalOperationHeaders()
-        return self.get_abnormal_operation_with_options(request, headers, runtime)
-
-    async def get_abnormal_operation_async(
-        self,
-        request: dingtalkdatacenter__1__0_models.GetAbnormalOperationRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetAbnormalOperationResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetAbnormalOperationHeaders()
-        return await self.get_abnormal_operation_with_options_async(request, headers, runtime)
 
     def get_abnormal_operation_with_options(
         self,
@@ -62,9 +52,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAbnormalOperation',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/abnormalOperations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetAbnormalOperationResponse(),
-            self.do_roarequest('GetAbnormalOperation', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/abnormalOperations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_abnormal_operation_with_options_async(
@@ -90,26 +91,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAbnormalOperation',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/abnormalOperations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetAbnormalOperationResponse(),
-            await self.do_roarequest_async('GetAbnormalOperation', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/abnormalOperations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_administrative_licensing(
+    def get_abnormal_operation(
         self,
-        request: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse:
+        request: dingtalkdatacenter__1__0_models.GetAbnormalOperationRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetAbnormalOperationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetAdministrativeLicensingHeaders()
-        return self.get_administrative_licensing_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetAbnormalOperationHeaders()
+        return self.get_abnormal_operation_with_options(request, headers, runtime)
 
-    async def get_administrative_licensing_async(
+    async def get_abnormal_operation_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse:
+        request: dingtalkdatacenter__1__0_models.GetAbnormalOperationRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetAbnormalOperationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetAdministrativeLicensingHeaders()
-        return await self.get_administrative_licensing_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetAbnormalOperationHeaders()
+        return await self.get_abnormal_operation_with_options_async(request, headers, runtime)
 
     def get_administrative_licensing_with_options(
         self,
@@ -134,9 +146,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAdministrativeLicensing',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/administrativeLicenses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse(),
-            self.do_roarequest('GetAdministrativeLicensing', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/administrativeLicenses', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_administrative_licensing_with_options_async(
@@ -162,26 +185,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAdministrativeLicensing',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/administrativeLicenses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse(),
-            await self.do_roarequest_async('GetAdministrativeLicensing', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/administrativeLicenses', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_administrative_penalties(
+    def get_administrative_licensing(
         self,
-        request: dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesResponse:
+        request: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesHeaders()
-        return self.get_administrative_penalties_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetAdministrativeLicensingHeaders()
+        return self.get_administrative_licensing_with_options(request, headers, runtime)
 
-    async def get_administrative_penalties_async(
+    async def get_administrative_licensing_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesResponse:
+        request: dingtalkdatacenter__1__0_models.GetAdministrativeLicensingRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetAdministrativeLicensingResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesHeaders()
-        return await self.get_administrative_penalties_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetAdministrativeLicensingHeaders()
+        return await self.get_administrative_licensing_with_options_async(request, headers, runtime)
 
     def get_administrative_penalties_with_options(
         self,
@@ -206,9 +240,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAdministrativePenalties',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/administrativePenalties',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesResponse(),
-            self.do_roarequest('GetAdministrativePenalties', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/administrativePenalties', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_administrative_penalties_with_options_async(
@@ -234,26 +279,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAdministrativePenalties',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/administrativePenalties',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesResponse(),
-            await self.do_roarequest_async('GetAdministrativePenalties', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/administrativePenalties', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_basic_info(
+    def get_administrative_penalties(
         self,
-        request: dingtalkdatacenter__1__0_models.GetBasicInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetBasicInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetBasicInfoHeaders()
-        return self.get_basic_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesHeaders()
+        return self.get_administrative_penalties_with_options(request, headers, runtime)
 
-    async def get_basic_info_async(
+    async def get_administrative_penalties_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetBasicInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetBasicInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetBasicInfoHeaders()
-        return await self.get_basic_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetAdministrativePenaltiesHeaders()
+        return await self.get_administrative_penalties_with_options_async(request, headers, runtime)
 
     def get_basic_info_with_options(
         self,
@@ -278,9 +334,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetBasicInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/businessBasicInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetBasicInfoResponse(),
-            self.do_roarequest('GetBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/businessBasicInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_basic_info_with_options_async(
@@ -306,26 +373,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetBasicInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/businessBasicInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetBasicInfoResponse(),
-            await self.do_roarequest_async('GetBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/businessBasicInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_bidding_info(
+    def get_basic_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetBiddingInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetBiddingInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetBasicInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBasicInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetBiddingInfoHeaders()
-        return self.get_bidding_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetBasicInfoHeaders()
+        return self.get_basic_info_with_options(request, headers, runtime)
 
-    async def get_bidding_info_async(
+    async def get_basic_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetBiddingInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetBiddingInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetBasicInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBasicInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetBiddingInfoHeaders()
-        return await self.get_bidding_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetBasicInfoHeaders()
+        return await self.get_basic_info_with_options_async(request, headers, runtime)
 
     def get_bidding_info_with_options(
         self,
@@ -350,9 +428,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetBiddingInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/biddingInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetBiddingInfoResponse(),
-            self.do_roarequest('GetBiddingInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/biddingInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_bidding_info_with_options_async(
@@ -378,26 +467,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetBiddingInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/biddingInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetBiddingInfoResponse(),
-            await self.do_roarequest_async('GetBiddingInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/biddingInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_branch_info(
+    def get_bidding_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetBranchInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetBranchInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetBiddingInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBiddingInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetBranchInfoHeaders()
-        return self.get_branch_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetBiddingInfoHeaders()
+        return self.get_bidding_info_with_options(request, headers, runtime)
 
-    async def get_branch_info_async(
+    async def get_bidding_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetBranchInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetBranchInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetBiddingInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBiddingInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetBranchInfoHeaders()
-        return await self.get_branch_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetBiddingInfoHeaders()
+        return await self.get_bidding_info_with_options_async(request, headers, runtime)
 
     def get_branch_info_with_options(
         self,
@@ -422,9 +522,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetBranchInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/branchInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetBranchInfoResponse(),
-            self.do_roarequest('GetBranchInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/branchInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_branch_info_with_options_async(
@@ -450,26 +561,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetBranchInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/branchInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetBranchInfoResponse(),
-            await self.do_roarequest_async('GetBranchInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/branchInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_change_record(
+    def get_branch_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetChangeRecordRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetChangeRecordResponse:
+        request: dingtalkdatacenter__1__0_models.GetBranchInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBranchInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetChangeRecordHeaders()
-        return self.get_change_record_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetBranchInfoHeaders()
+        return self.get_branch_info_with_options(request, headers, runtime)
 
-    async def get_change_record_async(
+    async def get_branch_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetChangeRecordRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetChangeRecordResponse:
+        request: dingtalkdatacenter__1__0_models.GetBranchInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetBranchInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetChangeRecordHeaders()
-        return await self.get_change_record_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetBranchInfoHeaders()
+        return await self.get_branch_info_with_options_async(request, headers, runtime)
 
     def get_change_record_with_options(
         self,
@@ -494,9 +616,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetChangeRecord',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/changeRecords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetChangeRecordResponse(),
-            self.do_roarequest('GetChangeRecord', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/changeRecords', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_change_record_with_options_async(
@@ -522,26 +655,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetChangeRecord',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/changeRecords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetChangeRecordResponse(),
-            await self.do_roarequest_async('GetChangeRecord', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/changeRecords', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_domain_info(
+    def get_change_record(
         self,
-        request: dingtalkdatacenter__1__0_models.GetDomainInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetDomainInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetChangeRecordRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetChangeRecordResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetDomainInfoHeaders()
-        return self.get_domain_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetChangeRecordHeaders()
+        return self.get_change_record_with_options(request, headers, runtime)
 
-    async def get_domain_info_async(
+    async def get_change_record_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetDomainInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetDomainInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetChangeRecordRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetChangeRecordResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetDomainInfoHeaders()
-        return await self.get_domain_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetChangeRecordHeaders()
+        return await self.get_change_record_with_options_async(request, headers, runtime)
 
     def get_domain_info_with_options(
         self,
@@ -566,9 +710,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDomainInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/domainInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetDomainInfoResponse(),
-            self.do_roarequest('GetDomainInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/domainInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_domain_info_with_options_async(
@@ -594,26 +749,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDomainInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/domainInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetDomainInfoResponse(),
-            await self.do_roarequest_async('GetDomainInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/domainInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_double_random(
+    def get_domain_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetDoubleRandomRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetDoubleRandomResponse:
+        request: dingtalkdatacenter__1__0_models.GetDomainInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDomainInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetDoubleRandomHeaders()
-        return self.get_double_random_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetDomainInfoHeaders()
+        return self.get_domain_info_with_options(request, headers, runtime)
 
-    async def get_double_random_async(
+    async def get_domain_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetDoubleRandomRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetDoubleRandomResponse:
+        request: dingtalkdatacenter__1__0_models.GetDomainInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDomainInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetDoubleRandomHeaders()
-        return await self.get_double_random_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetDomainInfoHeaders()
+        return await self.get_domain_info_with_options_async(request, headers, runtime)
 
     def get_double_random_with_options(
         self,
@@ -638,9 +804,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDoubleRandom',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/doubleRandomness',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetDoubleRandomResponse(),
-            self.do_roarequest('GetDoubleRandom', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/doubleRandomness', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_double_random_with_options_async(
@@ -666,26 +843,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDoubleRandom',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/doubleRandomness',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetDoubleRandomResponse(),
-            await self.do_roarequest_async('GetDoubleRandom', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/doubleRandomness', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_environmental_penalties(
+    def get_double_random(
         self,
-        request: dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesResponse:
+        request: dingtalkdatacenter__1__0_models.GetDoubleRandomRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDoubleRandomResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesHeaders()
-        return self.get_environmental_penalties_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetDoubleRandomHeaders()
+        return self.get_double_random_with_options(request, headers, runtime)
 
-    async def get_environmental_penalties_async(
+    async def get_double_random_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesResponse:
+        request: dingtalkdatacenter__1__0_models.GetDoubleRandomRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDoubleRandomResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesHeaders()
-        return await self.get_environmental_penalties_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetDoubleRandomHeaders()
+        return await self.get_double_random_with_options_async(request, headers, runtime)
 
     def get_environmental_penalties_with_options(
         self,
@@ -710,9 +898,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetEnvironmentalPenalties',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/environmentalPenalties',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesResponse(),
-            self.do_roarequest('GetEnvironmentalPenalties', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/environmentalPenalties', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_environmental_penalties_with_options_async(
@@ -738,26 +937,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetEnvironmentalPenalties',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/environmentalPenalties',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesResponse(),
-            await self.do_roarequest_async('GetEnvironmentalPenalties', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/environmentalPenalties', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_holder_info(
+    def get_environmental_penalties(
         self,
-        request: dingtalkdatacenter__1__0_models.GetHolderInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetHolderInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetHolderInfoHeaders()
-        return self.get_holder_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesHeaders()
+        return self.get_environmental_penalties_with_options(request, headers, runtime)
 
-    async def get_holder_info_async(
+    async def get_environmental_penalties_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetHolderInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetHolderInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetHolderInfoHeaders()
-        return await self.get_holder_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesHeaders()
+        return await self.get_environmental_penalties_with_options_async(request, headers, runtime)
 
     def get_holder_info_with_options(
         self,
@@ -782,9 +992,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetHolderInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/shareholderInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetHolderInfoResponse(),
-            self.do_roarequest('GetHolderInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/shareholderInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_holder_info_with_options_async(
@@ -810,26 +1031,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetHolderInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/shareholderInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetHolderInfoResponse(),
-            await self.do_roarequest_async('GetHolderInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/shareholderInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_intellectual_property(
+    def get_holder_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetIntellectualPropertyRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse:
+        request: dingtalkdatacenter__1__0_models.GetHolderInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetHolderInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetIntellectualPropertyHeaders()
-        return self.get_intellectual_property_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetHolderInfoHeaders()
+        return self.get_holder_info_with_options(request, headers, runtime)
 
-    async def get_intellectual_property_async(
+    async def get_holder_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetIntellectualPropertyRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse:
+        request: dingtalkdatacenter__1__0_models.GetHolderInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetHolderInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetIntellectualPropertyHeaders()
-        return await self.get_intellectual_property_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetHolderInfoHeaders()
+        return await self.get_holder_info_with_options_async(request, headers, runtime)
 
     def get_intellectual_property_with_options(
         self,
@@ -854,9 +1086,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetIntellectualProperty',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/intellectualProperties',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse(),
-            self.do_roarequest('GetIntellectualProperty', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/intellectualProperties', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_intellectual_property_with_options_async(
@@ -882,26 +1125,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetIntellectualProperty',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/intellectualProperties',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse(),
-            await self.do_roarequest_async('GetIntellectualProperty', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/intellectualProperties', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_investment_abroad(
+    def get_intellectual_property(
         self,
-        request: dingtalkdatacenter__1__0_models.GetInvestmentAbroadRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse:
+        request: dingtalkdatacenter__1__0_models.GetIntellectualPropertyRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetInvestmentAbroadHeaders()
-        return self.get_investment_abroad_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetIntellectualPropertyHeaders()
+        return self.get_intellectual_property_with_options(request, headers, runtime)
 
-    async def get_investment_abroad_async(
+    async def get_intellectual_property_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetInvestmentAbroadRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse:
+        request: dingtalkdatacenter__1__0_models.GetIntellectualPropertyRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetIntellectualPropertyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetInvestmentAbroadHeaders()
-        return await self.get_investment_abroad_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetIntellectualPropertyHeaders()
+        return await self.get_intellectual_property_with_options_async(request, headers, runtime)
 
     def get_investment_abroad_with_options(
         self,
@@ -926,9 +1180,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetInvestmentAbroad',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/abroadInvestments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse(),
-            self.do_roarequest('GetInvestmentAbroad', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/abroadInvestments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_investment_abroad_with_options_async(
@@ -954,26 +1219,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetInvestmentAbroad',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/abroadInvestments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse(),
-            await self.do_roarequest_async('GetInvestmentAbroad', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/abroadInvestments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_job_info(
+    def get_investment_abroad(
         self,
-        request: dingtalkdatacenter__1__0_models.GetJobInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetJobInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetInvestmentAbroadRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetJobInfoHeaders()
-        return self.get_job_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetInvestmentAbroadHeaders()
+        return self.get_investment_abroad_with_options(request, headers, runtime)
 
-    async def get_job_info_async(
+    async def get_investment_abroad_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetJobInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetJobInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetInvestmentAbroadRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetInvestmentAbroadResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetJobInfoHeaders()
-        return await self.get_job_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetInvestmentAbroadHeaders()
+        return await self.get_investment_abroad_with_options_async(request, headers, runtime)
 
     def get_job_info_with_options(
         self,
@@ -998,9 +1274,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetJobInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/jobInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetJobInfoResponse(),
-            self.do_roarequest('GetJobInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/jobInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_job_info_with_options_async(
@@ -1026,26 +1313,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetJobInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/jobInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetJobInfoResponse(),
-            await self.do_roarequest_async('GetJobInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/jobInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_patent_info(
+    def get_job_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetPatentInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetPatentInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetJobInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetJobInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetPatentInfoHeaders()
-        return self.get_patent_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetJobInfoHeaders()
+        return self.get_job_info_with_options(request, headers, runtime)
 
-    async def get_patent_info_async(
+    async def get_job_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetPatentInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetPatentInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetJobInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetJobInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetPatentInfoHeaders()
-        return await self.get_patent_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetJobInfoHeaders()
+        return await self.get_job_info_with_options_async(request, headers, runtime)
 
     def get_patent_info_with_options(
         self,
@@ -1070,9 +1368,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetPatentInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/patentInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetPatentInfoResponse(),
-            self.do_roarequest('GetPatentInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/patentInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_patent_info_with_options_async(
@@ -1098,26 +1407,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetPatentInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/patentInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetPatentInfoResponse(),
-            await self.do_roarequest_async('GetPatentInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/patentInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_principal_employee(
+    def get_patent_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse:
+        request: dingtalkdatacenter__1__0_models.GetPatentInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetPatentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetPrincipalEmployeeHeaders()
-        return self.get_principal_employee_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetPatentInfoHeaders()
+        return self.get_patent_info_with_options(request, headers, runtime)
 
-    async def get_principal_employee_async(
+    async def get_patent_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse:
+        request: dingtalkdatacenter__1__0_models.GetPatentInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetPatentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetPrincipalEmployeeHeaders()
-        return await self.get_principal_employee_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetPatentInfoHeaders()
+        return await self.get_patent_info_with_options_async(request, headers, runtime)
 
     def get_principal_employee_with_options(
         self,
@@ -1142,9 +1462,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetPrincipalEmployee',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/principalEmployees',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse(),
-            self.do_roarequest('GetPrincipalEmployee', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/principalEmployees', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_principal_employee_with_options_async(
@@ -1170,26 +1501,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetPrincipalEmployee',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/principalEmployees',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse(),
-            await self.do_roarequest_async('GetPrincipalEmployee', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/principalEmployees', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_qeneral_taxpayer_info(
+    def get_principal_employee(
         self,
-        request: dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoHeaders()
-        return self.get_qeneral_taxpayer_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetPrincipalEmployeeHeaders()
+        return self.get_principal_employee_with_options(request, headers, runtime)
 
-    async def get_qeneral_taxpayer_info_async(
+    async def get_principal_employee_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetPrincipalEmployeeRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetPrincipalEmployeeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoHeaders()
-        return await self.get_qeneral_taxpayer_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetPrincipalEmployeeHeaders()
+        return await self.get_principal_employee_with_options_async(request, headers, runtime)
 
     def get_qeneral_taxpayer_info_with_options(
         self,
@@ -1214,9 +1556,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetQeneralTaxpayerInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/generalTaxpayerInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoResponse(),
-            self.do_roarequest('GetQeneralTaxpayerInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/generalTaxpayerInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_qeneral_taxpayer_info_with_options_async(
@@ -1242,26 +1595,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetQeneralTaxpayerInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/generalTaxpayerInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoResponse(),
-            await self.do_roarequest_async('GetQeneralTaxpayerInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/generalTaxpayerInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_qualification_cert(
+    def get_qeneral_taxpayer_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetQualificationCertRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetQualificationCertResponse:
+        request: dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetQualificationCertHeaders()
-        return self.get_qualification_cert_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoHeaders()
+        return self.get_qeneral_taxpayer_info_with_options(request, headers, runtime)
 
-    async def get_qualification_cert_async(
+    async def get_qeneral_taxpayer_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetQualificationCertRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetQualificationCertResponse:
+        request: dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetQualificationCertHeaders()
-        return await self.get_qualification_cert_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetQeneralTaxpayerInfoHeaders()
+        return await self.get_qeneral_taxpayer_info_with_options_async(request, headers, runtime)
 
     def get_qualification_cert_with_options(
         self,
@@ -1286,9 +1650,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetQualificationCert',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/qualificationCerts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetQualificationCertResponse(),
-            self.do_roarequest('GetQualificationCert', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/qualificationCerts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_qualification_cert_with_options_async(
@@ -1314,26 +1689,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetQualificationCert',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/qualificationCerts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetQualificationCertResponse(),
-            await self.do_roarequest_async('GetQualificationCert', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/qualificationCerts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_serious_violation(
+    def get_qualification_cert(
         self,
-        request: dingtalkdatacenter__1__0_models.GetSeriousViolationRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetSeriousViolationResponse:
+        request: dingtalkdatacenter__1__0_models.GetQualificationCertRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetQualificationCertResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetSeriousViolationHeaders()
-        return self.get_serious_violation_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetQualificationCertHeaders()
+        return self.get_qualification_cert_with_options(request, headers, runtime)
 
-    async def get_serious_violation_async(
+    async def get_qualification_cert_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetSeriousViolationRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetSeriousViolationResponse:
+        request: dingtalkdatacenter__1__0_models.GetQualificationCertRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetQualificationCertResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetSeriousViolationHeaders()
-        return await self.get_serious_violation_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetQualificationCertHeaders()
+        return await self.get_qualification_cert_with_options_async(request, headers, runtime)
 
     def get_serious_violation_with_options(
         self,
@@ -1358,9 +1744,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSeriousViolation',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/seriousViolations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetSeriousViolationResponse(),
-            self.do_roarequest('GetSeriousViolation', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/seriousViolations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_serious_violation_with_options_async(
@@ -1386,26 +1783,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSeriousViolation',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/seriousViolations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetSeriousViolationResponse(),
-            await self.do_roarequest_async('GetSeriousViolation', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/seriousViolations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_software_copyright(
+    def get_serious_violation(
         self,
-        request: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse:
+        request: dingtalkdatacenter__1__0_models.GetSeriousViolationRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetSeriousViolationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetSoftwareCopyrightHeaders()
-        return self.get_software_copyright_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetSeriousViolationHeaders()
+        return self.get_serious_violation_with_options(request, headers, runtime)
 
-    async def get_software_copyright_async(
+    async def get_serious_violation_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse:
+        request: dingtalkdatacenter__1__0_models.GetSeriousViolationRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetSeriousViolationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetSoftwareCopyrightHeaders()
-        return await self.get_software_copyright_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetSeriousViolationHeaders()
+        return await self.get_serious_violation_with_options_async(request, headers, runtime)
 
     def get_software_copyright_with_options(
         self,
@@ -1430,9 +1838,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSoftwareCopyright',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/softwareCopyrights',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse(),
-            self.do_roarequest('GetSoftwareCopyright', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/softwareCopyrights', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_software_copyright_with_options_async(
@@ -1458,26 +1877,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSoftwareCopyright',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/softwareCopyrights',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse(),
-            await self.do_roarequest_async('GetSoftwareCopyright', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/softwareCopyrights', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_trademark_info(
+    def get_software_copyright(
         self,
-        request: dingtalkdatacenter__1__0_models.GetTrademarkInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetTrademarkInfoHeaders()
-        return self.get_trademark_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetSoftwareCopyrightHeaders()
+        return self.get_software_copyright_with_options(request, headers, runtime)
 
-    async def get_trademark_info_async(
+    async def get_software_copyright_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetTrademarkInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse:
+        request: dingtalkdatacenter__1__0_models.GetSoftwareCopyrightRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetSoftwareCopyrightResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetTrademarkInfoHeaders()
-        return await self.get_trademark_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetSoftwareCopyrightHeaders()
+        return await self.get_software_copyright_with_options_async(request, headers, runtime)
 
     def get_trademark_info_with_options(
         self,
@@ -1502,9 +1932,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetTrademarkInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/trademarkInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse(),
-            self.do_roarequest('GetTrademarkInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/trademarkInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_trademark_info_with_options_async(
@@ -1530,26 +1971,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetTrademarkInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/trademarkInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse(),
-            await self.do_roarequest_async('GetTrademarkInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/trademarkInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_work_copyright(
+    def get_trademark_info(
         self,
-        request: dingtalkdatacenter__1__0_models.GetWorkCopyrightRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse:
+        request: dingtalkdatacenter__1__0_models.GetTrademarkInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders()
-        return self.get_work_copyright_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetTrademarkInfoHeaders()
+        return self.get_trademark_info_with_options(request, headers, runtime)
 
-    async def get_work_copyright_async(
+    async def get_trademark_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.GetWorkCopyrightRequest,
-    ) -> dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse:
+        request: dingtalkdatacenter__1__0_models.GetTrademarkInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetTrademarkInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders()
-        return await self.get_work_copyright_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetTrademarkInfoHeaders()
+        return await self.get_trademark_info_with_options_async(request, headers, runtime)
 
     def get_work_copyright_with_options(
         self,
@@ -1574,9 +2026,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetWorkCopyright',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/workCopyrights',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse(),
-            self.do_roarequest('GetWorkCopyright', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/workCopyrights', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_work_copyright_with_options_async(
@@ -1602,20 +2065,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetWorkCopyright',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/workCopyrights',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse(),
-            await self.do_roarequest_async('GetWorkCopyright', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/workCopyrights', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def post_corp_auth_info(self) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
+    def get_work_copyright(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetWorkCopyrightRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders()
-        return self.post_corp_auth_info_with_options(headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders()
+        return self.get_work_copyright_with_options(request, headers, runtime)
 
-    async def post_corp_auth_info_async(self) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
+    async def get_work_copyright_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetWorkCopyrightRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetWorkCopyrightResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders()
-        return await self.post_corp_auth_info_with_options_async(headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders()
+        return await self.get_work_copyright_with_options_async(request, headers, runtime)
 
     def post_corp_auth_info_with_options(
         self,
@@ -1630,9 +2110,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='PostCorpAuthInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/corporations/authorize',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse(),
-            self.do_roarequest('PostCorpAuthInfo', 'datacenter_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/datacenter/corporations/authorize', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def post_corp_auth_info_with_options_async(
@@ -1648,26 +2139,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='PostCorpAuthInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/corporations/authorize',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse(),
-            await self.do_roarequest_async('PostCorpAuthInfo', 'datacenter_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/datacenter/corporations/authorize', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_active_user_statistical_data(
-        self,
-        request: dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataResponse:
+    def post_corp_auth_info(self) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataHeaders()
-        return self.query_active_user_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders()
+        return self.post_corp_auth_info_with_options(headers, runtime)
 
-    async def query_active_user_statistical_data_async(
-        self,
-        request: dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataResponse:
+    async def post_corp_auth_info_async(self) -> dingtalkdatacenter__1__0_models.PostCorpAuthInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataHeaders()
-        return await self.query_active_user_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders()
+        return await self.post_corp_auth_info_with_options_async(headers, runtime)
 
     def query_active_user_statistical_data_with_options(
         self,
@@ -1688,9 +2184,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryActiveUserStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/activeUserData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataResponse(),
-            self.do_roarequest('QueryActiveUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/activeUserData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_active_user_statistical_data_with_options_async(
@@ -1712,26 +2219,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryActiveUserStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/activeUserData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryActiveUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/activeUserData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_anhmd_statistical_data(
+    def query_active_user_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataHeaders()
-        return self.query_anhmd_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataHeaders()
+        return self.query_active_user_statistical_data_with_options(request, headers, runtime)
 
-    async def query_anhmd_statistical_data_async(
+    async def query_active_user_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataHeaders()
-        return await self.query_anhmd_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryActiveUserStatisticalDataHeaders()
+        return await self.query_active_user_statistical_data_with_options_async(request, headers, runtime)
 
     def query_anhmd_statistical_data_with_options(
         self,
@@ -1756,9 +2274,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAnhmdStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/statisticDatas/anHmd',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse(),
-            self.do_roarequest('QueryAnhmdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/statisticDatas/anHmd', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_anhmd_statistical_data_with_options_async(
@@ -1784,26 +2313,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAnhmdStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/statisticDatas/anHmd',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryAnhmdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/statisticDatas/anHmd', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_approval_statistical_data(
+    def query_anhmd_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataHeaders()
-        return self.query_approval_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataHeaders()
+        return self.query_anhmd_statistical_data_with_options(request, headers, runtime)
 
-    async def query_approval_statistical_data_async(
+    async def query_anhmd_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataHeaders()
-        return await self.query_approval_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryAnhmdStatisticalDataHeaders()
+        return await self.query_anhmd_statistical_data_with_options_async(request, headers, runtime)
 
     def query_approval_statistical_data_with_options(
         self,
@@ -1824,9 +2364,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryApprovalStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/approvalData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataResponse(),
-            self.do_roarequest('QueryApprovalStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/approvalData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_approval_statistical_data_with_options_async(
@@ -1848,26 +2399,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryApprovalStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/approvalData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryApprovalStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/approvalData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_attendance_statistical_data(
+    def query_approval_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataHeaders()
-        return self.query_attendance_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataHeaders()
+        return self.query_approval_statistical_data_with_options(request, headers, runtime)
 
-    async def query_attendance_statistical_data_async(
+    async def query_approval_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataHeaders()
-        return await self.query_attendance_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryApprovalStatisticalDataHeaders()
+        return await self.query_approval_statistical_data_with_options_async(request, headers, runtime)
 
     def query_attendance_statistical_data_with_options(
         self,
@@ -1888,9 +2450,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAttendanceStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/attendanceData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataResponse(),
-            self.do_roarequest('QueryAttendanceStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/attendanceData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_attendance_statistical_data_with_options_async(
@@ -1912,26 +2485,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAttendanceStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/attendanceData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryAttendanceStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/attendanceData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_blackboard_statistical_data(
+    def query_attendance_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataHeaders()
-        return self.query_blackboard_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataHeaders()
+        return self.query_attendance_statistical_data_with_options(request, headers, runtime)
 
-    async def query_blackboard_statistical_data_async(
+    async def query_attendance_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataHeaders()
-        return await self.query_blackboard_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryAttendanceStatisticalDataHeaders()
+        return await self.query_attendance_statistical_data_with_options_async(request, headers, runtime)
 
     def query_blackboard_statistical_data_with_options(
         self,
@@ -1952,9 +2536,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryBlackboardStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/blackboardData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataResponse(),
-            self.do_roarequest('QueryBlackboardStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/blackboardData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_blackboard_statistical_data_with_options_async(
@@ -1976,26 +2571,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryBlackboardStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/blackboardData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryBlackboardStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/blackboardData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_calendar_statistical_data(
+    def query_blackboard_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataHeaders()
-        return self.query_calendar_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataHeaders()
+        return self.query_blackboard_statistical_data_with_options(request, headers, runtime)
 
-    async def query_calendar_statistical_data_async(
+    async def query_blackboard_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataHeaders()
-        return await self.query_calendar_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryBlackboardStatisticalDataHeaders()
+        return await self.query_blackboard_statistical_data_with_options_async(request, headers, runtime)
 
     def query_calendar_statistical_data_with_options(
         self,
@@ -2016,9 +2622,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCalendarStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/calendarData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataResponse(),
-            self.do_roarequest('QueryCalendarStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/calendarData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_calendar_statistical_data_with_options_async(
@@ -2040,26 +2657,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCalendarStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/calendarData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryCalendarStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/calendarData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_checkin_statistical_data(
+    def query_calendar_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataHeaders()
-        return self.query_checkin_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataHeaders()
+        return self.query_calendar_statistical_data_with_options(request, headers, runtime)
 
-    async def query_checkin_statistical_data_async(
+    async def query_calendar_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataHeaders()
-        return await self.query_checkin_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataHeaders()
+        return await self.query_calendar_statistical_data_with_options_async(request, headers, runtime)
 
     def query_checkin_statistical_data_with_options(
         self,
@@ -2080,9 +2708,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCheckinStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/checkinData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataResponse(),
-            self.do_roarequest('QueryCheckinStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/checkinData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_checkin_statistical_data_with_options_async(
@@ -2104,26 +2743,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCheckinStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/checkinData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryCheckinStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/checkinData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_circle_statistical_data(
+    def query_checkin_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataHeaders()
-        return self.query_circle_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataHeaders()
+        return self.query_checkin_statistical_data_with_options(request, headers, runtime)
 
-    async def query_circle_statistical_data_async(
+    async def query_checkin_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataHeaders()
-        return await self.query_circle_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryCheckinStatisticalDataHeaders()
+        return await self.query_checkin_statistical_data_with_options_async(request, headers, runtime)
 
     def query_circle_statistical_data_with_options(
         self,
@@ -2144,9 +2794,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCircleStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/circleData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataResponse(),
-            self.do_roarequest('QueryCircleStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/circleData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_circle_statistical_data_with_options_async(
@@ -2168,26 +2829,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCircleStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/circleData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryCircleStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/circleData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_company_basic_info(
+    def query_circle_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse:
+        request: dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoHeaders()
-        return self.query_company_basic_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataHeaders()
+        return self.query_circle_statistical_data_with_options(request, headers, runtime)
 
-    async def query_company_basic_info_async(
+    async def query_circle_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse:
+        request: dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoHeaders()
-        return await self.query_company_basic_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryCircleStatisticalDataHeaders()
+        return await self.query_circle_statistical_data_with_options_async(request, headers, runtime)
 
     def query_company_basic_info_with_options(
         self,
@@ -2212,9 +2884,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCompanyBasicInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/basicInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse(),
-            self.do_roarequest('QueryCompanyBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/basicInfo', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_company_basic_info_with_options_async(
@@ -2240,26 +2923,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCompanyBasicInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/companies/basicInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse(),
-            await self.do_roarequest_async('QueryCompanyBasicInfo', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/companies/basicInfo', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_digital_district_org_info(
+    def query_company_basic_info(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoResponse:
+        request: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoHeaders()
-        return self.query_digital_district_org_info_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoHeaders()
+        return self.query_company_basic_info_with_options(request, headers, runtime)
 
-    async def query_digital_district_org_info_async(
+    async def query_company_basic_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoResponse:
+        request: dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoHeaders()
-        return await self.query_digital_district_org_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryCompanyBasicInfoHeaders()
+        return await self.query_company_basic_info_with_options_async(request, headers, runtime)
 
     def query_digital_district_org_info_with_options(
         self,
@@ -2282,9 +2976,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryDigitalDistrictOrgInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/digitalCounty/orgInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoResponse(),
-            self.do_roarequest('QueryDigitalDistrictOrgInfo', 'datacenter_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/datacenter/digitalCounty/orgInfos/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_digital_district_org_info_with_options_async(
@@ -2308,26 +3013,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryDigitalDistrictOrgInfo',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/digitalCounty/orgInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoResponse(),
-            await self.do_roarequest_async('QueryDigitalDistrictOrgInfo', 'datacenter_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/datacenter/digitalCounty/orgInfos/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_ding_recive_statistical_data(
+    def query_digital_district_org_info(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataHeaders()
-        return self.query_ding_recive_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoHeaders()
+        return self.query_digital_district_org_info_with_options(request, headers, runtime)
 
-    async def query_ding_recive_statistical_data_async(
+    async def query_digital_district_org_info_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataHeaders()
-        return await self.query_ding_recive_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDigitalDistrictOrgInfoHeaders()
+        return await self.query_digital_district_org_info_with_options_async(request, headers, runtime)
 
     def query_ding_recive_statistical_data_with_options(
         self,
@@ -2348,9 +3064,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDingReciveStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dingReciveData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataResponse(),
-            self.do_roarequest('QueryDingReciveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/dingReciveData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_ding_recive_statistical_data_with_options_async(
@@ -2372,26 +3099,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDingReciveStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dingReciveData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryDingReciveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/dingReciveData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_ding_send_statistical_data(
+    def query_ding_recive_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataHeaders()
-        return self.query_ding_send_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataHeaders()
+        return self.query_ding_recive_statistical_data_with_options(request, headers, runtime)
 
-    async def query_ding_send_statistical_data_async(
+    async def query_ding_recive_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataHeaders()
-        return await self.query_ding_send_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDingReciveStatisticalDataHeaders()
+        return await self.query_ding_recive_statistical_data_with_options_async(request, headers, runtime)
 
     def query_ding_send_statistical_data_with_options(
         self,
@@ -2412,9 +3150,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDingSendStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dingSendData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataResponse(),
-            self.do_roarequest('QueryDingSendStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/dingSendData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_ding_send_statistical_data_with_options_async(
@@ -2436,26 +3185,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDingSendStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dingSendData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryDingSendStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/dingSendData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_document_statistical_data(
+    def query_ding_send_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataHeaders()
-        return self.query_document_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataHeaders()
+        return self.query_ding_send_statistical_data_with_options(request, headers, runtime)
 
-    async def query_document_statistical_data_async(
+    async def query_ding_send_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataHeaders()
-        return await self.query_document_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDingSendStatisticalDataHeaders()
+        return await self.query_ding_send_statistical_data_with_options_async(request, headers, runtime)
 
     def query_document_statistical_data_with_options(
         self,
@@ -2476,9 +3236,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDocumentStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/documentData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataResponse(),
-            self.do_roarequest('QueryDocumentStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/documentData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_document_statistical_data_with_options_async(
@@ -2500,26 +3271,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDocumentStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/documentData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryDocumentStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/documentData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_drive_statistical_data(
+    def query_document_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataHeaders()
-        return self.query_drive_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataHeaders()
+        return self.query_document_statistical_data_with_options(request, headers, runtime)
 
-    async def query_drive_statistical_data_async(
+    async def query_document_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataHeaders()
-        return await self.query_drive_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataHeaders()
+        return await self.query_document_statistical_data_with_options_async(request, headers, runtime)
 
     def query_drive_statistical_data_with_options(
         self,
@@ -2540,9 +3322,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDriveStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/driveData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataResponse(),
-            self.do_roarequest('QueryDriveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/driveData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_drive_statistical_data_with_options_async(
@@ -2564,26 +3357,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDriveStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/driveData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryDriveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/driveData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_employee_type_statistical_data(
+    def query_drive_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataHeaders()
-        return self.query_employee_type_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataHeaders()
+        return self.query_drive_statistical_data_with_options(request, headers, runtime)
 
-    async def query_employee_type_statistical_data_async(
+    async def query_drive_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataHeaders()
-        return await self.query_employee_type_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataHeaders()
+        return await self.query_drive_statistical_data_with_options_async(request, headers, runtime)
 
     def query_employee_type_statistical_data_with_options(
         self,
@@ -2604,9 +3408,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryEmployeeTypeStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/employeeTypeData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataResponse(),
-            self.do_roarequest('QueryEmployeeTypeStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/employeeTypeData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_employee_type_statistical_data_with_options_async(
@@ -2628,26 +3443,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryEmployeeTypeStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/employeeTypeData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryEmployeeTypeStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/employeeTypeData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_general_data_service(
+    def query_employee_type_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataServiceResponse:
+        request: dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryGeneralDataServiceHeaders()
-        return self.query_general_data_service_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataHeaders()
+        return self.query_employee_type_statistical_data_with_options(request, headers, runtime)
 
-    async def query_general_data_service_async(
+    async def query_employee_type_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataServiceResponse:
+        request: dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryGeneralDataServiceHeaders()
-        return await self.query_general_data_service_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryEmployeeTypeStatisticalDataHeaders()
+        return await self.query_employee_type_statistical_data_with_options_async(request, headers, runtime)
 
     def query_general_data_service_with_options(
         self,
@@ -2680,9 +3506,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGeneralDataService',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/generalDataServices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryGeneralDataServiceResponse(),
-            self.do_roarequest('QueryGeneralDataService', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/generalDataServices', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_general_data_service_with_options_async(
@@ -2716,26 +3553,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGeneralDataService',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/generalDataServices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryGeneralDataServiceResponse(),
-            await self.do_roarequest_async('QueryGeneralDataService', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/generalDataServices', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group_live_statistical_data(
+    def query_general_data_service(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataServiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataHeaders()
-        return self.query_group_live_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryGeneralDataServiceHeaders()
+        return self.query_general_data_service_with_options(request, headers, runtime)
 
-    async def query_group_live_statistical_data_async(
+    async def query_general_data_service_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataServiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataHeaders()
-        return await self.query_group_live_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryGeneralDataServiceHeaders()
+        return await self.query_general_data_service_with_options_async(request, headers, runtime)
 
     def query_group_live_statistical_data_with_options(
         self,
@@ -2756,9 +3604,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupLiveStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/groupLiveData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataResponse(),
-            self.do_roarequest('QueryGroupLiveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/groupLiveData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_live_statistical_data_with_options_async(
@@ -2780,26 +3639,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupLiveStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/groupLiveData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryGroupLiveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/groupLiveData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group_message_statistical_data(
+    def query_group_live_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataHeaders()
-        return self.query_group_message_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataHeaders()
+        return self.query_group_live_statistical_data_with_options(request, headers, runtime)
 
-    async def query_group_message_statistical_data_async(
+    async def query_group_live_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataHeaders()
-        return await self.query_group_message_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataHeaders()
+        return await self.query_group_live_statistical_data_with_options_async(request, headers, runtime)
 
     def query_group_message_statistical_data_with_options(
         self,
@@ -2820,9 +3690,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMessageStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/groupMessageData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataResponse(),
-            self.do_roarequest('QueryGroupMessageStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/groupMessageData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_message_statistical_data_with_options_async(
@@ -2844,26 +3725,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMessageStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/groupMessageData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryGroupMessageStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/groupMessageData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_health_statistical_data(
+    def query_group_message_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataHeaders()
-        return self.query_health_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataHeaders()
+        return self.query_group_message_statistical_data_with_options(request, headers, runtime)
 
-    async def query_health_statistical_data_async(
+    async def query_group_message_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataHeaders()
-        return await self.query_health_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryGroupMessageStatisticalDataHeaders()
+        return await self.query_group_message_statistical_data_with_options_async(request, headers, runtime)
 
     def query_health_statistical_data_with_options(
         self,
@@ -2884,9 +3776,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryHealthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/healtheUserData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataResponse(),
-            self.do_roarequest('QueryHealthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/healtheUserData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_health_statistical_data_with_options_async(
@@ -2908,26 +3811,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryHealthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/healtheUserData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryHealthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/healtheUserData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_mail_statistical_data(
+    def query_health_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryMailStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryMailStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryMailStatisticalDataHeaders()
-        return self.query_mail_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataHeaders()
+        return self.query_health_statistical_data_with_options(request, headers, runtime)
 
-    async def query_mail_statistical_data_async(
+    async def query_health_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryMailStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryMailStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryMailStatisticalDataHeaders()
-        return await self.query_mail_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryHealthStatisticalDataHeaders()
+        return await self.query_health_statistical_data_with_options_async(request, headers, runtime)
 
     def query_mail_statistical_data_with_options(
         self,
@@ -2948,9 +3862,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryMailStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/mailData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryMailStatisticalDataResponse(),
-            self.do_roarequest('QueryMailStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/mailData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_mail_statistical_data_with_options_async(
@@ -2972,26 +3897,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryMailStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/mailData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryMailStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryMailStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/mailData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_official_data(
+    def query_mail_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryOfficialDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryMailStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryMailStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryOfficialDataHeaders()
-        return self.query_official_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryMailStatisticalDataHeaders()
+        return self.query_mail_statistical_data_with_options(request, headers, runtime)
 
-    async def query_official_data_async(
+    async def query_mail_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryOfficialDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryMailStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryMailStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryOfficialDataHeaders()
-        return await self.query_official_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryMailStatisticalDataHeaders()
+        return await self.query_mail_statistical_data_with_options_async(request, headers, runtime)
 
     def query_official_data_with_options(
         self,
@@ -3014,9 +3950,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOfficialData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/datas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryOfficialDataResponse(),
-            self.do_roarequest('QueryOfficialData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_official_data_with_options_async(
@@ -3040,26 +3987,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOfficialData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/datas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryOfficialDataResponse(),
-            await self.do_roarequest_async('QueryOfficialData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_official_dataset_fields(
+    def query_official_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse:
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsHeaders()
-        return self.query_official_dataset_fields_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDataHeaders()
+        return self.query_official_data_with_options(request, headers, runtime)
 
-    async def query_official_dataset_fields_async(
+    async def query_official_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse:
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsHeaders()
-        return await self.query_official_dataset_fields_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDataHeaders()
+        return await self.query_official_data_with_options_async(request, headers, runtime)
 
     def query_official_dataset_fields_with_options(
         self,
@@ -3082,9 +4040,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOfficialDatasetFields',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/datasetFields',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse(),
-            self.do_roarequest('QueryOfficialDatasetFields', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datasetFields', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_official_dataset_fields_with_options_async(
@@ -3108,26 +4077,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOfficialDatasetFields',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/datasetFields',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse(),
-            await self.do_roarequest_async('QueryOfficialDatasetFields', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datasetFields', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_official_dataset_list(
+    def query_official_dataset_fields(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse:
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders()
-        return self.query_official_dataset_list_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsHeaders()
+        return self.query_official_dataset_fields_with_options(request, headers, runtime)
 
-    async def query_official_dataset_list_async(
+    async def query_official_dataset_fields_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse:
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders()
-        return await self.query_official_dataset_list_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetFieldsHeaders()
+        return await self.query_official_dataset_fields_with_options_async(request, headers, runtime)
 
     def query_official_dataset_list_with_options(
         self,
@@ -3152,9 +4132,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOfficialDatasetList',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/datasetLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse(),
-            self.do_roarequest('QueryOfficialDatasetList', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datasetLists', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_official_dataset_list_with_options_async(
@@ -3180,26 +4171,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOfficialDatasetList',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/datasetLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse(),
-            await self.do_roarequest_async('QueryOfficialDatasetList', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/datasetLists', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_online_user_statistical_data(
+    def query_official_dataset_list(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataHeaders()
-        return self.query_online_user_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders()
+        return self.query_official_dataset_list_with_options(request, headers, runtime)
 
-    async def query_online_user_statistical_data_async(
+    async def query_official_dataset_list_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryOfficialDatasetListRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialDatasetListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataHeaders()
-        return await self.query_online_user_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders()
+        return await self.query_official_dataset_list_with_options_async(request, headers, runtime)
 
     def query_online_user_statistical_data_with_options(
         self,
@@ -3220,9 +4222,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOnlineUserStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/onlineUserData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataResponse(),
-            self.do_roarequest('QueryOnlineUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/onlineUserData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_online_user_statistical_data_with_options_async(
@@ -3244,26 +4257,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOnlineUserStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/onlineUserData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryOnlineUserStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/onlineUserData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_red_envelope_recive_statistical_data(
+    def query_online_user_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataHeaders()
-        return self.query_red_envelope_recive_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataHeaders()
+        return self.query_online_user_statistical_data_with_options(request, headers, runtime)
 
-    async def query_red_envelope_recive_statistical_data_async(
+    async def query_online_user_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataHeaders()
-        return await self.query_red_envelope_recive_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataHeaders()
+        return await self.query_online_user_statistical_data_with_options_async(request, headers, runtime)
 
     def query_red_envelope_recive_statistical_data_with_options(
         self,
@@ -3284,9 +4308,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryRedEnvelopeReciveStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/redEnvelopeReciveData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataResponse(),
-            self.do_roarequest('QueryRedEnvelopeReciveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/redEnvelopeReciveData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_red_envelope_recive_statistical_data_with_options_async(
@@ -3308,26 +4343,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryRedEnvelopeReciveStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/redEnvelopeReciveData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryRedEnvelopeReciveStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/redEnvelopeReciveData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_red_envelope_send_statistical_data(
+    def query_red_envelope_recive_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataHeaders()
-        return self.query_red_envelope_send_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataHeaders()
+        return self.query_red_envelope_recive_statistical_data_with_options(request, headers, runtime)
 
-    async def query_red_envelope_send_statistical_data_async(
+    async def query_red_envelope_recive_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataHeaders()
-        return await self.query_red_envelope_send_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryRedEnvelopeReciveStatisticalDataHeaders()
+        return await self.query_red_envelope_recive_statistical_data_with_options_async(request, headers, runtime)
 
     def query_red_envelope_send_statistical_data_with_options(
         self,
@@ -3348,9 +4394,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryRedEnvelopeSendStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/redEnvelopeSendData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataResponse(),
-            self.do_roarequest('QueryRedEnvelopeSendStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/redEnvelopeSendData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_red_envelope_send_statistical_data_with_options_async(
@@ -3372,26 +4429,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryRedEnvelopeSendStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/redEnvelopeSendData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryRedEnvelopeSendStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/redEnvelopeSendData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_report_statistical_data(
+    def query_red_envelope_send_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryReportStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryReportStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryReportStatisticalDataHeaders()
-        return self.query_report_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataHeaders()
+        return self.query_red_envelope_send_statistical_data_with_options(request, headers, runtime)
 
-    async def query_report_statistical_data_async(
+    async def query_red_envelope_send_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryReportStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryReportStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryReportStatisticalDataHeaders()
-        return await self.query_report_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryRedEnvelopeSendStatisticalDataHeaders()
+        return await self.query_red_envelope_send_statistical_data_with_options_async(request, headers, runtime)
 
     def query_report_statistical_data_with_options(
         self,
@@ -3412,9 +4480,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryReportStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/reportData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryReportStatisticalDataResponse(),
-            self.do_roarequest('QueryReportStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/reportData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_report_statistical_data_with_options_async(
@@ -3436,26 +4515,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryReportStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/reportData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryReportStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryReportStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/reportData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_single_message_statistical_data(
+    def query_report_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryReportStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryReportStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataHeaders()
-        return self.query_single_message_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryReportStatisticalDataHeaders()
+        return self.query_report_statistical_data_with_options(request, headers, runtime)
 
-    async def query_single_message_statistical_data_async(
+    async def query_report_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryReportStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryReportStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataHeaders()
-        return await self.query_single_message_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryReportStatisticalDataHeaders()
+        return await self.query_report_statistical_data_with_options_async(request, headers, runtime)
 
     def query_single_message_statistical_data_with_options(
         self,
@@ -3476,9 +4566,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QuerySingleMessageStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/singleMessagerData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataResponse(),
-            self.do_roarequest('QuerySingleMessageStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/singleMessagerData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_single_message_statistical_data_with_options_async(
@@ -3500,26 +4601,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QuerySingleMessageStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/singleMessagerData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataResponse(),
-            await self.do_roarequest_async('QuerySingleMessageStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/singleMessagerData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_tel_meeting_statistical_data(
+    def query_single_message_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataHeaders()
-        return self.query_tel_meeting_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataHeaders()
+        return self.query_single_message_statistical_data_with_options(request, headers, runtime)
 
-    async def query_tel_meeting_statistical_data_async(
+    async def query_single_message_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataHeaders()
-        return await self.query_tel_meeting_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QuerySingleMessageStatisticalDataHeaders()
+        return await self.query_single_message_statistical_data_with_options_async(request, headers, runtime)
 
     def query_tel_meeting_statistical_data_with_options(
         self,
@@ -3540,9 +4652,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryTelMeetingStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/telMeetingData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataResponse(),
-            self.do_roarequest('QueryTelMeetingStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/telMeetingData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_tel_meeting_statistical_data_with_options_async(
@@ -3564,26 +4687,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryTelMeetingStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/telMeetingData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryTelMeetingStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/telMeetingData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_todo_statistical_data(
+    def query_tel_meeting_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataHeaders()
-        return self.query_todo_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataHeaders()
+        return self.query_tel_meeting_statistical_data_with_options(request, headers, runtime)
 
-    async def query_todo_statistical_data_async(
+    async def query_tel_meeting_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataHeaders()
-        return await self.query_todo_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryTelMeetingStatisticalDataHeaders()
+        return await self.query_tel_meeting_statistical_data_with_options_async(request, headers, runtime)
 
     def query_todo_statistical_data_with_options(
         self,
@@ -3604,9 +4738,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryTodoStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/todoUserData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataResponse(),
-            self.do_roarequest('QueryTodoStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/todoUserData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_todo_statistical_data_with_options_async(
@@ -3628,26 +4773,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryTodoStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/todoUserData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryTodoStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/todoUserData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_vedio_meeting_statistical_data(
+    def query_todo_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataHeaders()
-        return self.query_vedio_meeting_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataHeaders()
+        return self.query_todo_statistical_data_with_options(request, headers, runtime)
 
-    async def query_vedio_meeting_statistical_data_async(
+    async def query_todo_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataHeaders()
-        return await self.query_vedio_meeting_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryTodoStatisticalDataHeaders()
+        return await self.query_todo_statistical_data_with_options_async(request, headers, runtime)
 
     def query_vedio_meeting_statistical_data_with_options(
         self,
@@ -3668,9 +4824,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryVedioMeetingStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/vedioMeetingData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataResponse(),
-            self.do_roarequest('QueryVedioMeetingStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/vedioMeetingData', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_vedio_meeting_statistical_data_with_options_async(
@@ -3692,26 +4859,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryVedioMeetingStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/vedioMeetingData',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryVedioMeetingStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/vedioMeetingData', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_active_day_statistical_data(
+    def query_vedio_meeting_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataHeaders()
-        return self.query_yyd_active_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataHeaders()
+        return self.query_vedio_meeting_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_active_day_statistical_data_async(
+    async def query_vedio_meeting_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataHeaders()
-        return await self.query_yyd_active_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryVedioMeetingStatisticalDataHeaders()
+        return await self.query_vedio_meeting_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_active_day_statistical_data_with_options(
         self,
@@ -3732,9 +4910,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydActiveDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydActiveDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydActiveDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydActiveDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_active_day_statistical_data_with_options_async(
@@ -3756,26 +4945,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydActiveDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydActiveDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydActiveDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydActiveDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_active_month_statistical_data(
+    def query_yyd_active_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataHeaders()
-        return self.query_yyd_active_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataHeaders()
+        return self.query_yyd_active_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_active_month_statistical_data_async(
+    async def query_yyd_active_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataHeaders()
-        return await self.query_yyd_active_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydActiveDayStatisticalDataHeaders()
+        return await self.query_yyd_active_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_active_month_statistical_data_with_options(
         self,
@@ -3796,9 +4996,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydActiveMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydActiveMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydActiveMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydActiveMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_active_month_statistical_data_with_options_async(
@@ -3820,26 +5031,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydActiveMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydActiveMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydActiveMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydActiveMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_active_week_statistical_data(
+    def query_yyd_active_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataHeaders()
-        return self.query_yyd_active_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataHeaders()
+        return self.query_yyd_active_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_active_week_statistical_data_async(
+    async def query_yyd_active_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataHeaders()
-        return await self.query_yyd_active_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydActiveMonthStatisticalDataHeaders()
+        return await self.query_yyd_active_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_active_week_statistical_data_with_options(
         self,
@@ -3860,9 +5082,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydActiveWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydActiveWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydActiveWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydActiveWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_active_week_statistical_data_with_options_async(
@@ -3884,26 +5117,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydActiveWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydActiveWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydActiveWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydActiveWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_app_day_statistical_data(
+    def query_yyd_active_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataHeaders()
-        return self.query_yyd_app_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataHeaders()
+        return self.query_yyd_active_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_app_day_statistical_data_async(
+    async def query_yyd_active_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataHeaders()
-        return await self.query_yyd_app_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydActiveWeekStatisticalDataHeaders()
+        return await self.query_yyd_active_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_app_day_statistical_data_with_options(
         self,
@@ -3924,9 +5168,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydAppDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydAppDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydAppDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydAppDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_app_day_statistical_data_with_options_async(
@@ -3948,26 +5203,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydAppDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydAppDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydAppDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydAppDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_app_month_statistical_data(
+    def query_yyd_app_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataHeaders()
-        return self.query_yyd_app_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataHeaders()
+        return self.query_yyd_app_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_app_month_statistical_data_async(
+    async def query_yyd_app_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataHeaders()
-        return await self.query_yyd_app_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydAppDayStatisticalDataHeaders()
+        return await self.query_yyd_app_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_app_month_statistical_data_with_options(
         self,
@@ -3988,9 +5254,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydAppMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydAppMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydAppMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydAppMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_app_month_statistical_data_with_options_async(
@@ -4012,26 +5289,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydAppMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydAppMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydAppMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydAppMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_app_std_statistical_data(
+    def query_yyd_app_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataHeaders()
-        return self.query_yyd_app_std_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataHeaders()
+        return self.query_yyd_app_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_app_std_statistical_data_async(
+    async def query_yyd_app_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataHeaders()
-        return await self.query_yyd_app_std_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydAppMonthStatisticalDataHeaders()
+        return await self.query_yyd_app_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_app_std_statistical_data_with_options(
         self,
@@ -4052,9 +5340,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydAppStdStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydAppStdDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataResponse(),
-            self.do_roarequest('QueryYydAppStdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydAppStdDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_app_std_statistical_data_with_options_async(
@@ -4076,26 +5375,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydAppStdStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydAppStdDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydAppStdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydAppStdDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_app_week_statistical_data(
+    def query_yyd_app_std_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataHeaders()
-        return self.query_yyd_app_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataHeaders()
+        return self.query_yyd_app_std_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_app_week_statistical_data_async(
+    async def query_yyd_app_std_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataHeaders()
-        return await self.query_yyd_app_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydAppStdStatisticalDataHeaders()
+        return await self.query_yyd_app_std_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_app_week_statistical_data_with_options(
         self,
@@ -4116,9 +5426,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydAppWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydAppWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydAppWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydAppWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_app_week_statistical_data_with_options_async(
@@ -4140,26 +5461,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydAppWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydAppWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydAppWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydAppWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_calendar_day_statistical_data(
+    def query_yyd_app_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataHeaders()
-        return self.query_yyd_calendar_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataHeaders()
+        return self.query_yyd_app_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_calendar_day_statistical_data_async(
+    async def query_yyd_app_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataHeaders()
-        return await self.query_yyd_calendar_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydAppWeekStatisticalDataHeaders()
+        return await self.query_yyd_app_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_calendar_day_statistical_data_with_options(
         self,
@@ -4180,9 +5512,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydCalendarDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydCalendarDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydCalendarDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydCalendarDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_calendar_day_statistical_data_with_options_async(
@@ -4204,26 +5547,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydCalendarDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydCalendarDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydCalendarDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydCalendarDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_calendar_month_statistical_data(
+    def query_yyd_calendar_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataHeaders()
-        return self.query_yyd_calendar_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataHeaders()
+        return self.query_yyd_calendar_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_calendar_month_statistical_data_async(
+    async def query_yyd_calendar_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataHeaders()
-        return await self.query_yyd_calendar_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarDayStatisticalDataHeaders()
+        return await self.query_yyd_calendar_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_calendar_month_statistical_data_with_options(
         self,
@@ -4244,9 +5598,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydCalendarMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydCalendarMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydCalendarMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydCalendarMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_calendar_month_statistical_data_with_options_async(
@@ -4268,26 +5633,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydCalendarMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydCalendarMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydCalendarMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydCalendarMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_calendar_week_statistical_data(
+    def query_yyd_calendar_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataHeaders()
-        return self.query_yyd_calendar_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataHeaders()
+        return self.query_yyd_calendar_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_calendar_week_statistical_data_async(
+    async def query_yyd_calendar_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataHeaders()
-        return await self.query_yyd_calendar_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarMonthStatisticalDataHeaders()
+        return await self.query_yyd_calendar_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_calendar_week_statistical_data_with_options(
         self,
@@ -4308,9 +5684,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydCalendarWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydCalendarWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydCalendarWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydCalendarWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_calendar_week_statistical_data_with_options_async(
@@ -4332,26 +5719,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydCalendarWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydCalendarWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydCalendarWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydCalendarWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_ding_msg_day_statistical_data(
+    def query_yyd_calendar_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataHeaders()
-        return self.query_yyd_ding_msg_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataHeaders()
+        return self.query_yyd_calendar_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_ding_msg_day_statistical_data_async(
+    async def query_yyd_calendar_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataHeaders()
-        return await self.query_yyd_ding_msg_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydCalendarWeekStatisticalDataHeaders()
+        return await self.query_yyd_calendar_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_ding_msg_day_statistical_data_with_options(
         self,
@@ -4372,9 +5770,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydDingMsgDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydDingMsgDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydDingMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydDingMsgDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_ding_msg_day_statistical_data_with_options_async(
@@ -4396,26 +5805,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydDingMsgDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydDingMsgDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydDingMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydDingMsgDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_ding_msg_month_statistical_data(
+    def query_yyd_ding_msg_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataHeaders()
-        return self.query_yyd_ding_msg_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataHeaders()
+        return self.query_yyd_ding_msg_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_ding_msg_month_statistical_data_async(
+    async def query_yyd_ding_msg_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataHeaders()
-        return await self.query_yyd_ding_msg_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgDayStatisticalDataHeaders()
+        return await self.query_yyd_ding_msg_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_ding_msg_month_statistical_data_with_options(
         self,
@@ -4436,9 +5856,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydDingMsgMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydDingMsgMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydDingMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydDingMsgMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_ding_msg_month_statistical_data_with_options_async(
@@ -4460,26 +5891,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydDingMsgMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydDingMsgMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydDingMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydDingMsgMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_ding_msg_week_statistical_data(
+    def query_yyd_ding_msg_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataHeaders()
-        return self.query_yyd_ding_msg_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataHeaders()
+        return self.query_yyd_ding_msg_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_ding_msg_week_statistical_data_async(
+    async def query_yyd_ding_msg_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataHeaders()
-        return await self.query_yyd_ding_msg_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgMonthStatisticalDataHeaders()
+        return await self.query_yyd_ding_msg_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_ding_msg_week_statistical_data_with_options(
         self,
@@ -4500,9 +5942,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydDingMsgWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydDingMsgWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydDingMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydDingMsgWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_ding_msg_week_statistical_data_with_options_async(
@@ -4524,26 +5977,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydDingMsgWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydDingMsgWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydDingMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydDingMsgWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_group_msg_day_statistical_data(
+    def query_yyd_ding_msg_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataHeaders()
-        return self.query_yyd_group_msg_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataHeaders()
+        return self.query_yyd_ding_msg_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_group_msg_day_statistical_data_async(
+    async def query_yyd_ding_msg_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataHeaders()
-        return await self.query_yyd_group_msg_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydDingMsgWeekStatisticalDataHeaders()
+        return await self.query_yyd_ding_msg_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_group_msg_day_statistical_data_with_options(
         self,
@@ -4564,9 +6028,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydGroupMsgDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydGroupMsgDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydGroupMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydGroupMsgDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_group_msg_day_statistical_data_with_options_async(
@@ -4588,26 +6063,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydGroupMsgDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydGroupMsgDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydGroupMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydGroupMsgDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_group_msg_month_statistical_data(
+    def query_yyd_group_msg_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataHeaders()
-        return self.query_yyd_group_msg_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataHeaders()
+        return self.query_yyd_group_msg_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_group_msg_month_statistical_data_async(
+    async def query_yyd_group_msg_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataHeaders()
-        return await self.query_yyd_group_msg_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgDayStatisticalDataHeaders()
+        return await self.query_yyd_group_msg_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_group_msg_month_statistical_data_with_options(
         self,
@@ -4628,9 +6114,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydGroupMsgMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydGroupMsgMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydGroupMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydGroupMsgMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_group_msg_month_statistical_data_with_options_async(
@@ -4652,26 +6149,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydGroupMsgMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydGroupMsgMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydGroupMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydGroupMsgMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_group_msg_week_statistical_data(
+    def query_yyd_group_msg_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataHeaders()
-        return self.query_yyd_group_msg_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataHeaders()
+        return self.query_yyd_group_msg_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_group_msg_week_statistical_data_async(
+    async def query_yyd_group_msg_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataHeaders()
-        return await self.query_yyd_group_msg_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgMonthStatisticalDataHeaders()
+        return await self.query_yyd_group_msg_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_group_msg_week_statistical_data_with_options(
         self,
@@ -4692,9 +6200,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydGroupMsgWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydGroupMsgWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydGroupMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydGroupMsgWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_group_msg_week_statistical_data_with_options_async(
@@ -4716,26 +6235,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydGroupMsgWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydGroupMsgWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydGroupMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydGroupMsgWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_log_day_statistical_data(
+    def query_yyd_group_msg_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataHeaders()
-        return self.query_yyd_log_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataHeaders()
+        return self.query_yyd_group_msg_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_log_day_statistical_data_async(
+    async def query_yyd_group_msg_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataHeaders()
-        return await self.query_yyd_log_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydGroupMsgWeekStatisticalDataHeaders()
+        return await self.query_yyd_group_msg_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_log_day_statistical_data_with_options(
         self,
@@ -4756,9 +6286,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydLogDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydLogDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydLogDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydLogDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_log_day_statistical_data_with_options_async(
@@ -4780,26 +6321,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydLogDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydLogDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydLogDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydLogDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_log_month_statistical_data(
+    def query_yyd_log_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataHeaders()
-        return self.query_yyd_log_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataHeaders()
+        return self.query_yyd_log_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_log_month_statistical_data_async(
+    async def query_yyd_log_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataHeaders()
-        return await self.query_yyd_log_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydLogDayStatisticalDataHeaders()
+        return await self.query_yyd_log_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_log_month_statistical_data_with_options(
         self,
@@ -4820,9 +6372,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydLogMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydLogMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydLogMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydLogMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_log_month_statistical_data_with_options_async(
@@ -4844,26 +6407,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydLogMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydLogMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydLogMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydLogMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_log_week_statistical_data(
+    def query_yyd_log_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataHeaders()
-        return self.query_yyd_log_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataHeaders()
+        return self.query_yyd_log_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_log_week_statistical_data_async(
+    async def query_yyd_log_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataHeaders()
-        return await self.query_yyd_log_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydLogMonthStatisticalDataHeaders()
+        return await self.query_yyd_log_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_log_week_statistical_data_with_options(
         self,
@@ -4884,9 +6458,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydLogWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydLogWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydLogWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydLogWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_log_week_statistical_data_with_options_async(
@@ -4908,26 +6493,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydLogWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydLogWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydLogWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydLogWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_meeting_day_statistical_data(
+    def query_yyd_log_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataHeaders()
-        return self.query_yyd_meeting_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataHeaders()
+        return self.query_yyd_log_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_meeting_day_statistical_data_async(
+    async def query_yyd_log_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataHeaders()
-        return await self.query_yyd_meeting_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydLogWeekStatisticalDataHeaders()
+        return await self.query_yyd_log_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_meeting_day_statistical_data_with_options(
         self,
@@ -4948,9 +6544,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydMeetingDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydMeetingDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydMeetingDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydMeetingDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_meeting_day_statistical_data_with_options_async(
@@ -4972,26 +6579,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydMeetingDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydMeetingDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydMeetingDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydMeetingDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_meeting_month_statistical_data(
+    def query_yyd_meeting_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataHeaders()
-        return self.query_yyd_meeting_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataHeaders()
+        return self.query_yyd_meeting_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_meeting_month_statistical_data_async(
+    async def query_yyd_meeting_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataHeaders()
-        return await self.query_yyd_meeting_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingDayStatisticalDataHeaders()
+        return await self.query_yyd_meeting_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_meeting_month_statistical_data_with_options(
         self,
@@ -5012,9 +6630,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydMeetingMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydMeetingMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydMeetingMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydMeetingMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_meeting_month_statistical_data_with_options_async(
@@ -5036,26 +6665,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydMeetingMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydMeetingMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydMeetingMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydMeetingMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_meeting_week_statistical_data(
+    def query_yyd_meeting_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataHeaders()
-        return self.query_yyd_meeting_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataHeaders()
+        return self.query_yyd_meeting_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_meeting_week_statistical_data_async(
+    async def query_yyd_meeting_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataHeaders()
-        return await self.query_yyd_meeting_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingMonthStatisticalDataHeaders()
+        return await self.query_yyd_meeting_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_meeting_week_statistical_data_with_options(
         self,
@@ -5076,9 +6716,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydMeetingWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydMeetingWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydMeetingWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydMeetingWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_meeting_week_statistical_data_with_options_async(
@@ -5100,26 +6751,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydMeetingWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydMeetingWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydMeetingWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydMeetingWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_notice_day_statistical_data(
+    def query_yyd_meeting_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataHeaders()
-        return self.query_yyd_notice_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataHeaders()
+        return self.query_yyd_meeting_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_notice_day_statistical_data_async(
+    async def query_yyd_meeting_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataHeaders()
-        return await self.query_yyd_notice_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydMeetingWeekStatisticalDataHeaders()
+        return await self.query_yyd_meeting_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_notice_day_statistical_data_with_options(
         self,
@@ -5140,9 +6802,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydNoticeDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydNoticeDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydNoticeDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydNoticeDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_notice_day_statistical_data_with_options_async(
@@ -5164,26 +6837,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydNoticeDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydNoticeDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydNoticeDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydNoticeDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_notice_month_statistical_data(
+    def query_yyd_notice_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataHeaders()
-        return self.query_yyd_notice_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataHeaders()
+        return self.query_yyd_notice_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_notice_month_statistical_data_async(
+    async def query_yyd_notice_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataHeaders()
-        return await self.query_yyd_notice_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeDayStatisticalDataHeaders()
+        return await self.query_yyd_notice_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_notice_month_statistical_data_with_options(
         self,
@@ -5204,9 +6888,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydNoticeMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydNoticeMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydNoticeMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydNoticeMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_notice_month_statistical_data_with_options_async(
@@ -5228,26 +6923,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydNoticeMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydNoticeMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydNoticeMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydNoticeMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_notice_week_statistical_data(
+    def query_yyd_notice_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataHeaders()
-        return self.query_yyd_notice_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataHeaders()
+        return self.query_yyd_notice_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_notice_week_statistical_data_async(
+    async def query_yyd_notice_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataHeaders()
-        return await self.query_yyd_notice_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeMonthStatisticalDataHeaders()
+        return await self.query_yyd_notice_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_notice_week_statistical_data_with_options(
         self,
@@ -5268,9 +6974,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydNoticeWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydNoticeWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydNoticeWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydNoticeWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_notice_week_statistical_data_with_options_async(
@@ -5292,26 +7009,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydNoticeWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydNoticeWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydNoticeWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydNoticeWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_single_msg_day_statistical_data(
+    def query_yyd_notice_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataHeaders()
-        return self.query_yyd_single_msg_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataHeaders()
+        return self.query_yyd_notice_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_single_msg_day_statistical_data_async(
+    async def query_yyd_notice_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataHeaders()
-        return await self.query_yyd_single_msg_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydNoticeWeekStatisticalDataHeaders()
+        return await self.query_yyd_notice_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_single_msg_day_statistical_data_with_options(
         self,
@@ -5332,9 +7060,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydSingleMsgDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydSingleMsgDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydSingleMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydSingleMsgDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_single_msg_day_statistical_data_with_options_async(
@@ -5356,26 +7095,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydSingleMsgDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydSingleMsgDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydSingleMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydSingleMsgDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_single_msg_month_statistical_data(
+    def query_yyd_single_msg_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataHeaders()
-        return self.query_yyd_single_msg_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataHeaders()
+        return self.query_yyd_single_msg_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_single_msg_month_statistical_data_async(
+    async def query_yyd_single_msg_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataHeaders()
-        return await self.query_yyd_single_msg_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgDayStatisticalDataHeaders()
+        return await self.query_yyd_single_msg_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_single_msg_month_statistical_data_with_options(
         self,
@@ -5396,9 +7146,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydSingleMsgMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydSingleMsgMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydSingleMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydSingleMsgMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_single_msg_month_statistical_data_with_options_async(
@@ -5420,26 +7181,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydSingleMsgMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydSingleMsgMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydSingleMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydSingleMsgMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_single_msg_week_statistical_data(
+    def query_yyd_single_msg_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataHeaders()
-        return self.query_yyd_single_msg_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataHeaders()
+        return self.query_yyd_single_msg_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_single_msg_week_statistical_data_async(
+    async def query_yyd_single_msg_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataHeaders()
-        return await self.query_yyd_single_msg_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgMonthStatisticalDataHeaders()
+        return await self.query_yyd_single_msg_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_single_msg_week_statistical_data_with_options(
         self,
@@ -5460,9 +7232,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydSingleMsgWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydSingleMsgWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydSingleMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydSingleMsgWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_single_msg_week_statistical_data_with_options_async(
@@ -5484,26 +7267,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydSingleMsgWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydSingleMsgWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydSingleMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydSingleMsgWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_toatl_msg_day_statistical_data(
+    def query_yyd_single_msg_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataHeaders()
-        return self.query_yyd_toatl_msg_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataHeaders()
+        return self.query_yyd_single_msg_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_toatl_msg_day_statistical_data_async(
+    async def query_yyd_single_msg_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataHeaders()
-        return await self.query_yyd_toatl_msg_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydSingleMsgWeekStatisticalDataHeaders()
+        return await self.query_yyd_single_msg_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_toatl_msg_day_statistical_data_with_options(
         self,
@@ -5524,9 +7318,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydToatlMsgDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydToatlMsgDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydToatlMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydToatlMsgDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_toatl_msg_day_statistical_data_with_options_async(
@@ -5548,26 +7353,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydToatlMsgDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydToatlMsgDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydToatlMsgDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydToatlMsgDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_toatl_msg_month_statistical_data(
+    def query_yyd_toatl_msg_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataHeaders()
-        return self.query_yyd_toatl_msg_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataHeaders()
+        return self.query_yyd_toatl_msg_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_toatl_msg_month_statistical_data_async(
+    async def query_yyd_toatl_msg_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataHeaders()
-        return await self.query_yyd_toatl_msg_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgDayStatisticalDataHeaders()
+        return await self.query_yyd_toatl_msg_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_toatl_msg_month_statistical_data_with_options(
         self,
@@ -5588,9 +7404,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydToatlMsgMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydToatlMsgMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydToatlMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydToatlMsgMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_toatl_msg_month_statistical_data_with_options_async(
@@ -5612,26 +7439,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydToatlMsgMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydToatlMsgMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydToatlMsgMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydToatlMsgMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_toatl_msg_week_statistical_data(
+    def query_yyd_toatl_msg_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataHeaders()
-        return self.query_yyd_toatl_msg_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataHeaders()
+        return self.query_yyd_toatl_msg_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_toatl_msg_week_statistical_data_async(
+    async def query_yyd_toatl_msg_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataHeaders()
-        return await self.query_yyd_toatl_msg_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgMonthStatisticalDataHeaders()
+        return await self.query_yyd_toatl_msg_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_toatl_msg_week_statistical_data_with_options(
         self,
@@ -5652,9 +7490,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydToatlMsgWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydToatlMsgWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydToatlMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydToatlMsgWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_toatl_msg_week_statistical_data_with_options_async(
@@ -5676,26 +7525,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydToatlMsgWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydToatlMsgWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydToatlMsgWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydToatlMsgWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_todo_day_statistical_data(
+    def query_yyd_toatl_msg_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataHeaders()
-        return self.query_yyd_todo_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataHeaders()
+        return self.query_yyd_toatl_msg_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_todo_day_statistical_data_async(
+    async def query_yyd_toatl_msg_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataHeaders()
-        return await self.query_yyd_todo_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydToatlMsgWeekStatisticalDataHeaders()
+        return await self.query_yyd_toatl_msg_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_todo_day_statistical_data_with_options(
         self,
@@ -5716,9 +7576,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTodoDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTodoDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydTodoDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTodoDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_todo_day_statistical_data_with_options_async(
@@ -5740,26 +7611,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTodoDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTodoDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydTodoDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTodoDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_todo_month_statistical_data(
+    def query_yyd_todo_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataHeaders()
-        return self.query_yyd_todo_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataHeaders()
+        return self.query_yyd_todo_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_todo_month_statistical_data_async(
+    async def query_yyd_todo_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataHeaders()
-        return await self.query_yyd_todo_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTodoDayStatisticalDataHeaders()
+        return await self.query_yyd_todo_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_todo_month_statistical_data_with_options(
         self,
@@ -5780,9 +7662,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTodoMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTodoMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydTodoMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTodoMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_todo_month_statistical_data_with_options_async(
@@ -5804,26 +7697,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTodoMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTodoMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydTodoMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTodoMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_todo_week_statistical_data(
+    def query_yyd_todo_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataHeaders()
-        return self.query_yyd_todo_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataHeaders()
+        return self.query_yyd_todo_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_todo_week_statistical_data_async(
+    async def query_yyd_todo_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataHeaders()
-        return await self.query_yyd_todo_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTodoMonthStatisticalDataHeaders()
+        return await self.query_yyd_todo_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_todo_week_statistical_data_with_options(
         self,
@@ -5844,9 +7748,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTodoWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTodoWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydTodoWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTodoWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_todo_week_statistical_data_with_options_async(
@@ -5868,26 +7783,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTodoWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTodoWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydTodoWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTodoWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_total_day_statistical_data(
+    def query_yyd_todo_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataHeaders()
-        return self.query_yyd_total_day_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataHeaders()
+        return self.query_yyd_todo_week_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_total_day_statistical_data_async(
+    async def query_yyd_todo_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataHeaders()
-        return await self.query_yyd_total_day_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTodoWeekStatisticalDataHeaders()
+        return await self.query_yyd_todo_week_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_total_day_statistical_data_with_options(
         self,
@@ -5908,9 +7834,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTotalDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTotalDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataResponse(),
-            self.do_roarequest('QueryYydTotalDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTotalDayDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_total_day_statistical_data_with_options_async(
@@ -5932,26 +7869,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTotalDayStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTotalDayDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydTotalDayStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTotalDayDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_total_month_statistical_data(
+    def query_yyd_total_day_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataHeaders()
-        return self.query_yyd_total_month_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataHeaders()
+        return self.query_yyd_total_day_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_total_month_statistical_data_async(
+    async def query_yyd_total_day_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataHeaders()
-        return await self.query_yyd_total_month_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTotalDayStatisticalDataHeaders()
+        return await self.query_yyd_total_day_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_total_month_statistical_data_with_options(
         self,
@@ -5972,9 +7920,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTotalMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTotalMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataResponse(),
-            self.do_roarequest('QueryYydTotalMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTotalMonthDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_total_month_statistical_data_with_options_async(
@@ -5996,26 +7955,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTotalMonthStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTotalMonthDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydTotalMonthStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTotalMonthDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_total_std_statistical_data(
+    def query_yyd_total_month_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataHeaders()
-        return self.query_yyd_total_std_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataHeaders()
+        return self.query_yyd_total_month_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_total_std_statistical_data_async(
+    async def query_yyd_total_month_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataHeaders()
-        return await self.query_yyd_total_std_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTotalMonthStatisticalDataHeaders()
+        return await self.query_yyd_total_month_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_total_std_statistical_data_with_options(
         self,
@@ -6036,9 +8006,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTotalStdStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTotalStdDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataResponse(),
-            self.do_roarequest('QueryYydTotalStdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTotalStdDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_total_std_statistical_data_with_options_async(
@@ -6060,26 +8041,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTotalStdStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTotalStdDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydTotalStdStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTotalStdDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_yyd_total_week_statistical_data(
+    def query_yyd_total_std_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataHeaders()
-        return self.query_yyd_total_week_statistical_data_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataHeaders()
+        return self.query_yyd_total_std_statistical_data_with_options(request, headers, runtime)
 
-    async def query_yyd_total_week_statistical_data_async(
+    async def query_yyd_total_std_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataRequest,
-    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataHeaders()
-        return await self.query_yyd_total_week_statistical_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTotalStdStatisticalDataHeaders()
+        return await self.query_yyd_total_std_statistical_data_with_options_async(request, headers, runtime)
 
     def query_yyd_total_week_statistical_data_with_options(
         self,
@@ -6100,9 +8092,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTotalWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTotalWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataResponse(),
-            self.do_roarequest('QueryYydTotalWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTotalWeekDatas', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_yyd_total_week_statistical_data_with_options_async(
@@ -6124,26 +8127,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryYydTotalWeekStatisticalData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/yydTotalWeekDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataResponse(),
-            await self.do_roarequest_async('QueryYydTotalWeekStatisticalData', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/yydTotalWeekDatas', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def search_company(
+    def query_yyd_total_week_statistical_data(
         self,
-        request: dingtalkdatacenter__1__0_models.SearchCompanyRequest,
-    ) -> dingtalkdatacenter__1__0_models.SearchCompanyResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.SearchCompanyHeaders()
-        return self.search_company_with_options(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataHeaders()
+        return self.query_yyd_total_week_statistical_data_with_options(request, headers, runtime)
 
-    async def search_company_async(
+    async def query_yyd_total_week_statistical_data_async(
         self,
-        request: dingtalkdatacenter__1__0_models.SearchCompanyRequest,
-    ) -> dingtalkdatacenter__1__0_models.SearchCompanyResponse:
+        request: dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdatacenter__1__0_models.SearchCompanyHeaders()
-        return await self.search_company_with_options_async(request, headers, runtime)
+        headers = dingtalkdatacenter__1__0_models.QueryYydTotalWeekStatisticalDataHeaders()
+        return await self.query_yyd_total_week_statistical_data_with_options_async(request, headers, runtime)
 
     def search_company_with_options(
         self,
@@ -6168,9 +8182,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SearchCompany',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/keywords/companies',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.SearchCompanyResponse(),
-            self.do_roarequest('SearchCompany', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/keywords/companies', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def search_company_with_options_async(
@@ -6196,7 +8221,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SearchCompany',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/keywords/companies',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdatacenter__1__0_models.SearchCompanyResponse(),
-            await self.do_roarequest_async('SearchCompany', 'datacenter_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/datacenter/keywords/companies', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def search_company(
+        self,
+        request: dingtalkdatacenter__1__0_models.SearchCompanyRequest,
+    ) -> dingtalkdatacenter__1__0_models.SearchCompanyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.SearchCompanyHeaders()
+        return self.search_company_with_options(request, headers, runtime)
+
+    async def search_company_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.SearchCompanyRequest,
+    ) -> dingtalkdatacenter__1__0_models.SearchCompanyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.SearchCompanyHeaders()
+        return await self.search_company_with_options_async(request, headers, runtime)

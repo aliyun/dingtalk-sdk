@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.esign_1_0 import models as dingtalkesign__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def auth_url(
-        self,
-        request: dingtalkesign__1__0_models.AuthUrlRequest,
-    ) -> dingtalkesign__1__0_models.AuthUrlResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.AuthUrlHeaders()
-        return self.auth_url_with_options(request, headers, runtime)
-
-    async def auth_url_async(
-        self,
-        request: dingtalkesign__1__0_models.AuthUrlRequest,
-    ) -> dingtalkesign__1__0_models.AuthUrlResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.AuthUrlHeaders()
-        return await self.auth_url_with_options_async(request, headers, runtime)
 
     def auth_url_with_options(
         self,
@@ -58,9 +48,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AuthUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/auths/url',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.AuthUrlResponse(),
-            self.do_roarequest('AuthUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/auths/url', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def auth_url_with_options_async(
@@ -82,20 +83,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AuthUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/auths/url',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.AuthUrlResponse(),
-            await self.do_roarequest_async('AuthUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/auths/url', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def cancel_corp_auth(self) -> dingtalkesign__1__0_models.CancelCorpAuthResponse:
+    def auth_url(
+        self,
+        request: dingtalkesign__1__0_models.AuthUrlRequest,
+    ) -> dingtalkesign__1__0_models.AuthUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.CancelCorpAuthHeaders()
-        return self.cancel_corp_auth_with_options(headers, runtime)
+        headers = dingtalkesign__1__0_models.AuthUrlHeaders()
+        return self.auth_url_with_options(request, headers, runtime)
 
-    async def cancel_corp_auth_async(self) -> dingtalkesign__1__0_models.CancelCorpAuthResponse:
+    async def auth_url_async(
+        self,
+        request: dingtalkesign__1__0_models.AuthUrlRequest,
+    ) -> dingtalkesign__1__0_models.AuthUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.CancelCorpAuthHeaders()
-        return await self.cancel_corp_auth_with_options_async(headers, runtime)
+        headers = dingtalkesign__1__0_models.AuthUrlHeaders()
+        return await self.auth_url_with_options_async(request, headers, runtime)
 
     def cancel_corp_auth_with_options(
         self,
@@ -110,9 +128,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CancelCorpAuth',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/auth/cancel',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.CancelCorpAuthResponse(),
-            self.do_roarequest('CancelCorpAuth', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/auth/cancel', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def cancel_corp_auth_with_options_async(
@@ -128,26 +157,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CancelCorpAuth',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/auth/cancel',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.CancelCorpAuthResponse(),
-            await self.do_roarequest_async('CancelCorpAuth', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/auth/cancel', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def channel_order(
-        self,
-        request: dingtalkesign__1__0_models.ChannelOrderRequest,
-    ) -> dingtalkesign__1__0_models.ChannelOrderResponse:
+    def cancel_corp_auth(self) -> dingtalkesign__1__0_models.CancelCorpAuthResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.ChannelOrderHeaders()
-        return self.channel_order_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.CancelCorpAuthHeaders()
+        return self.cancel_corp_auth_with_options(headers, runtime)
 
-    async def channel_order_async(
-        self,
-        request: dingtalkesign__1__0_models.ChannelOrderRequest,
-    ) -> dingtalkesign__1__0_models.ChannelOrderResponse:
+    async def cancel_corp_auth_async(self) -> dingtalkesign__1__0_models.CancelCorpAuthResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.ChannelOrderHeaders()
-        return await self.channel_order_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.CancelCorpAuthHeaders()
+        return await self.cancel_corp_auth_with_options_async(headers, runtime)
 
     def channel_order_with_options(
         self,
@@ -178,9 +212,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ChannelOrder',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/orders/channel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.ChannelOrderResponse(),
-            self.do_roarequest('ChannelOrder', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/orders/channel', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def channel_order_with_options_async(
@@ -212,20 +257,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ChannelOrder',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/orders/channel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.ChannelOrderResponse(),
-            await self.do_roarequest_async('ChannelOrder', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/orders/channel', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def contract_margin(self) -> dingtalkesign__1__0_models.ContractMarginResponse:
+    def channel_order(
+        self,
+        request: dingtalkesign__1__0_models.ChannelOrderRequest,
+    ) -> dingtalkesign__1__0_models.ChannelOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.ContractMarginHeaders()
-        return self.contract_margin_with_options(headers, runtime)
+        headers = dingtalkesign__1__0_models.ChannelOrderHeaders()
+        return self.channel_order_with_options(request, headers, runtime)
 
-    async def contract_margin_async(self) -> dingtalkesign__1__0_models.ContractMarginResponse:
+    async def channel_order_async(
+        self,
+        request: dingtalkesign__1__0_models.ChannelOrderRequest,
+    ) -> dingtalkesign__1__0_models.ChannelOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.ContractMarginHeaders()
-        return await self.contract_margin_with_options_async(headers, runtime)
+        headers = dingtalkesign__1__0_models.ChannelOrderHeaders()
+        return await self.channel_order_with_options_async(request, headers, runtime)
 
     def contract_margin_with_options(
         self,
@@ -240,9 +302,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='ContractMargin',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/contracts/margin',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.ContractMarginResponse(),
-            self.do_roarequest('ContractMargin', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/contracts/margin', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def contract_margin_with_options_async(
@@ -258,20 +331,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='ContractMargin',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/contracts/margin',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.ContractMarginResponse(),
-            await self.do_roarequest_async('ContractMargin', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/contracts/margin', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def corp_console(self) -> dingtalkesign__1__0_models.CorpConsoleResponse:
+    def contract_margin(self) -> dingtalkesign__1__0_models.ContractMarginResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.CorpConsoleHeaders()
-        return self.corp_console_with_options(headers, runtime)
+        headers = dingtalkesign__1__0_models.ContractMarginHeaders()
+        return self.contract_margin_with_options(headers, runtime)
 
-    async def corp_console_async(self) -> dingtalkesign__1__0_models.CorpConsoleResponse:
+    async def contract_margin_async(self) -> dingtalkesign__1__0_models.ContractMarginResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.CorpConsoleHeaders()
-        return await self.corp_console_with_options_async(headers, runtime)
+        headers = dingtalkesign__1__0_models.ContractMarginHeaders()
+        return await self.contract_margin_with_options_async(headers, runtime)
 
     def corp_console_with_options(
         self,
@@ -286,9 +370,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CorpConsole',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/console',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.CorpConsoleResponse(),
-            self.do_roarequest('CorpConsole', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/console', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def corp_console_with_options_async(
@@ -304,20 +399,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CorpConsole',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/console',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.CorpConsoleResponse(),
-            await self.do_roarequest_async('CorpConsole', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/console', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def corp_info(self) -> dingtalkesign__1__0_models.CorpInfoResponse:
+    def corp_console(self) -> dingtalkesign__1__0_models.CorpConsoleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.CorpInfoHeaders()
-        return self.corp_info_with_options(headers, runtime)
+        headers = dingtalkesign__1__0_models.CorpConsoleHeaders()
+        return self.corp_console_with_options(headers, runtime)
 
-    async def corp_info_async(self) -> dingtalkesign__1__0_models.CorpInfoResponse:
+    async def corp_console_async(self) -> dingtalkesign__1__0_models.CorpConsoleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.CorpInfoHeaders()
-        return await self.corp_info_with_options_async(headers, runtime)
+        headers = dingtalkesign__1__0_models.CorpConsoleHeaders()
+        return await self.corp_console_with_options_async(headers, runtime)
 
     def corp_info_with_options(
         self,
@@ -332,9 +438,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CorpInfo',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/info',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.CorpInfoResponse(),
-            self.do_roarequest('CorpInfo', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/info', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def corp_info_with_options_async(
@@ -350,26 +467,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CorpInfo',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/info',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.CorpInfoResponse(),
-            await self.do_roarequest_async('CorpInfo', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/info', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_developer(
-        self,
-        request: dingtalkesign__1__0_models.CreateDeveloperRequest,
-    ) -> dingtalkesign__1__0_models.CreateDeveloperResponse:
+    def corp_info(self) -> dingtalkesign__1__0_models.CorpInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.CreateDeveloperHeaders()
-        return self.create_developer_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.CorpInfoHeaders()
+        return self.corp_info_with_options(headers, runtime)
 
-    async def create_developer_async(
-        self,
-        request: dingtalkesign__1__0_models.CreateDeveloperRequest,
-    ) -> dingtalkesign__1__0_models.CreateDeveloperResponse:
+    async def corp_info_async(self) -> dingtalkesign__1__0_models.CorpInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.CreateDeveloperHeaders()
-        return await self.create_developer_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.CorpInfoHeaders()
+        return await self.corp_info_with_options_async(headers, runtime)
 
     def create_developer_with_options(
         self,
@@ -390,9 +512,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateDeveloper',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/developers/create',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.CreateDeveloperResponse(),
-            self.do_roarequest('CreateDeveloper', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/developers/create', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_developer_with_options_async(
@@ -414,26 +547,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateDeveloper',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/developers/create',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.CreateDeveloperResponse(),
-            await self.do_roarequest_async('CreateDeveloper', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/developers/create', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_corp_realname_url(
+    def create_developer(
         self,
-        request: dingtalkesign__1__0_models.GetCorpRealnameUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetCorpRealnameUrlResponse:
+        request: dingtalkesign__1__0_models.CreateDeveloperRequest,
+    ) -> dingtalkesign__1__0_models.CreateDeveloperResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetCorpRealnameUrlHeaders()
-        return self.get_corp_realname_url_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.CreateDeveloperHeaders()
+        return self.create_developer_with_options(request, headers, runtime)
 
-    async def get_corp_realname_url_async(
+    async def create_developer_async(
         self,
-        request: dingtalkesign__1__0_models.GetCorpRealnameUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetCorpRealnameUrlResponse:
+        request: dingtalkesign__1__0_models.CreateDeveloperRequest,
+    ) -> dingtalkesign__1__0_models.CreateDeveloperResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetCorpRealnameUrlHeaders()
-        return await self.get_corp_realname_url_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.CreateDeveloperHeaders()
+        return await self.create_developer_with_options_async(request, headers, runtime)
 
     def get_corp_realname_url_with_options(
         self,
@@ -454,9 +598,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetCorpRealnameUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/realname',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetCorpRealnameUrlResponse(),
-            self.do_roarequest('GetCorpRealnameUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/corps/realname', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_corp_realname_url_with_options_async(
@@ -478,20 +633,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetCorpRealnameUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/realname',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetCorpRealnameUrlResponse(),
-            await self.do_roarequest_async('GetCorpRealnameUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/corps/realname', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_crop_status(self) -> dingtalkesign__1__0_models.GetCropStatusResponse:
+    def get_corp_realname_url(
+        self,
+        request: dingtalkesign__1__0_models.GetCorpRealnameUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetCorpRealnameUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetCropStatusHeaders()
-        return self.get_crop_status_with_options(headers, runtime)
+        headers = dingtalkesign__1__0_models.GetCorpRealnameUrlHeaders()
+        return self.get_corp_realname_url_with_options(request, headers, runtime)
 
-    async def get_crop_status_async(self) -> dingtalkesign__1__0_models.GetCropStatusResponse:
+    async def get_corp_realname_url_async(
+        self,
+        request: dingtalkesign__1__0_models.GetCorpRealnameUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetCorpRealnameUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetCropStatusHeaders()
-        return await self.get_crop_status_with_options_async(headers, runtime)
+        headers = dingtalkesign__1__0_models.GetCorpRealnameUrlHeaders()
+        return await self.get_corp_realname_url_with_options_async(request, headers, runtime)
 
     def get_crop_status_with_options(
         self,
@@ -506,9 +678,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetCropStatus',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/statuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetCropStatusResponse(),
-            self.do_roarequest('GetCropStatus', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/statuses', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_crop_status_with_options_async(
@@ -524,9 +707,90 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetCropStatus',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/corps/statuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetCropStatusResponse(),
-            await self.do_roarequest_async('GetCropStatus', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/corps/statuses', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_crop_status(self) -> dingtalkesign__1__0_models.GetCropStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkesign__1__0_models.GetCropStatusHeaders()
+        return self.get_crop_status_with_options(headers, runtime)
+
+    async def get_crop_status_async(self) -> dingtalkesign__1__0_models.GetCropStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkesign__1__0_models.GetCropStatusHeaders()
+        return await self.get_crop_status_with_options_async(headers, runtime)
+
+    def get_file_with_options(
+        self,
+        file_id: str,
+        headers: dingtalkesign__1__0_models.GetFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkesign__1__0_models.GetFileResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFile',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/files/{file_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_file_with_options_async(
+        self,
+        file_id: str,
+        headers: dingtalkesign__1__0_models.GetFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkesign__1__0_models.GetFileResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFile',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/files/{file_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetFileResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_file(
@@ -544,62 +808,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__1__0_models.GetFileHeaders()
         return await self.get_file_with_options_async(file_id, headers, runtime)
-
-    def get_file_with_options(
-        self,
-        file_id: str,
-        headers: dingtalkesign__1__0_models.GetFileHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkesign__1__0_models.GetFileResponse:
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkesign__1__0_models.GetFileResponse(),
-            self.do_roarequest('GetFile', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/files/{file_id}', 'json', req, runtime)
-        )
-
-    async def get_file_with_options_async(
-        self,
-        file_id: str,
-        headers: dingtalkesign__1__0_models.GetFileHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkesign__1__0_models.GetFileResponse:
-        file_id = OpenApiUtilClient.get_encode_param(file_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkesign__1__0_models.GetFileResponse(),
-            await self.do_roarequest_async('GetFile', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/files/{file_id}', 'json', req, runtime)
-        )
-
-    def get_flow_detail(
-        self,
-        request: dingtalkesign__1__0_models.GetFlowDetailRequest,
-    ) -> dingtalkesign__1__0_models.GetFlowDetailResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetFlowDetailHeaders()
-        return self.get_flow_detail_with_options(request, headers, runtime)
-
-    async def get_flow_detail_async(
-        self,
-        request: dingtalkesign__1__0_models.GetFlowDetailRequest,
-    ) -> dingtalkesign__1__0_models.GetFlowDetailResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetFlowDetailHeaders()
-        return await self.get_flow_detail_with_options_async(request, headers, runtime)
 
     def get_flow_detail_with_options(
         self,
@@ -620,9 +828,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFlowDetail',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/flows/detail',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetFlowDetailResponse(),
-            self.do_roarequest('GetFlowDetail', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/detail', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_flow_detail_with_options_async(
@@ -644,26 +863,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFlowDetail',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/flows/detail',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetFlowDetailResponse(),
-            await self.do_roarequest_async('GetFlowDetail', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/detail', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_flow_sign_detail(
+    def get_flow_detail(
         self,
-        request: dingtalkesign__1__0_models.GetFlowSignDetailRequest,
-    ) -> dingtalkesign__1__0_models.GetFlowSignDetailResponse:
+        request: dingtalkesign__1__0_models.GetFlowDetailRequest,
+    ) -> dingtalkesign__1__0_models.GetFlowDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetFlowSignDetailHeaders()
-        return self.get_flow_sign_detail_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetFlowDetailHeaders()
+        return self.get_flow_detail_with_options(request, headers, runtime)
 
-    async def get_flow_sign_detail_async(
+    async def get_flow_detail_async(
         self,
-        request: dingtalkesign__1__0_models.GetFlowSignDetailRequest,
-    ) -> dingtalkesign__1__0_models.GetFlowSignDetailResponse:
+        request: dingtalkesign__1__0_models.GetFlowDetailRequest,
+    ) -> dingtalkesign__1__0_models.GetFlowDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetFlowSignDetailHeaders()
-        return await self.get_flow_sign_detail_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetFlowDetailHeaders()
+        return await self.get_flow_detail_with_options_async(request, headers, runtime)
 
     def get_flow_sign_detail_with_options(
         self,
@@ -684,9 +914,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFlowSignDetail',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/flows/sign/detail',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetFlowSignDetailResponse(),
-            self.do_roarequest('GetFlowSignDetail', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/sign/detail', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_flow_sign_detail_with_options_async(
@@ -708,26 +949,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFlowSignDetail',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/flows/sign/detail',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetFlowSignDetailResponse(),
-            await self.do_roarequest_async('GetFlowSignDetail', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/sign/detail', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_process_start_url(
+    def get_flow_sign_detail(
         self,
-        request: dingtalkesign__1__0_models.GetProcessStartUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetProcessStartUrlResponse:
+        request: dingtalkesign__1__0_models.GetFlowSignDetailRequest,
+    ) -> dingtalkesign__1__0_models.GetFlowSignDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetProcessStartUrlHeaders()
-        return self.get_process_start_url_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetFlowSignDetailHeaders()
+        return self.get_flow_sign_detail_with_options(request, headers, runtime)
 
-    async def get_process_start_url_async(
+    async def get_flow_sign_detail_async(
         self,
-        request: dingtalkesign__1__0_models.GetProcessStartUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetProcessStartUrlResponse:
+        request: dingtalkesign__1__0_models.GetFlowSignDetailRequest,
+    ) -> dingtalkesign__1__0_models.GetFlowSignDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetProcessStartUrlHeaders()
-        return await self.get_process_start_url_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetFlowSignDetailHeaders()
+        return await self.get_flow_sign_detail_with_options_async(request, headers, runtime)
 
     def get_process_start_url_with_options(
         self,
@@ -760,9 +1012,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetProcessStartUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/process/start',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetProcessStartUrlResponse(),
-            self.do_roarequest('GetProcessStartUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/process/start', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_process_start_url_with_options_async(
@@ -796,26 +1059,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetProcessStartUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/process/start',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetProcessStartUrlResponse(),
-            await self.do_roarequest_async('GetProcessStartUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/process/start', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_sign_notice_url(
+    def get_process_start_url(
         self,
-        request: dingtalkesign__1__0_models.GetSignNoticeUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetSignNoticeUrlResponse:
+        request: dingtalkesign__1__0_models.GetProcessStartUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetProcessStartUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetSignNoticeUrlHeaders()
-        return self.get_sign_notice_url_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetProcessStartUrlHeaders()
+        return self.get_process_start_url_with_options(request, headers, runtime)
 
-    async def get_sign_notice_url_async(
+    async def get_process_start_url_async(
         self,
-        request: dingtalkesign__1__0_models.GetSignNoticeUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetSignNoticeUrlResponse:
+        request: dingtalkesign__1__0_models.GetProcessStartUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetProcessStartUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetSignNoticeUrlHeaders()
-        return await self.get_sign_notice_url_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetProcessStartUrlHeaders()
+        return await self.get_process_start_url_with_options_async(request, headers, runtime)
 
     def get_sign_notice_url_with_options(
         self,
@@ -836,9 +1110,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSignNoticeUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/signs/notice/url',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetSignNoticeUrlResponse(),
-            self.do_roarequest('GetSignNoticeUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/signs/notice/url', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_sign_notice_url_with_options_async(
@@ -860,26 +1145,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSignNoticeUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/signs/notice/url',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetSignNoticeUrlResponse(),
-            await self.do_roarequest_async('GetSignNoticeUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/signs/notice/url', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_upload_url(
+    def get_sign_notice_url(
         self,
-        request: dingtalkesign__1__0_models.GetUploadUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetUploadUrlResponse:
+        request: dingtalkesign__1__0_models.GetSignNoticeUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetSignNoticeUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetUploadUrlHeaders()
-        return self.get_upload_url_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetSignNoticeUrlHeaders()
+        return self.get_sign_notice_url_with_options(request, headers, runtime)
 
-    async def get_upload_url_async(
+    async def get_sign_notice_url_async(
         self,
-        request: dingtalkesign__1__0_models.GetUploadUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetUploadUrlResponse:
+        request: dingtalkesign__1__0_models.GetSignNoticeUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetSignNoticeUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetUploadUrlHeaders()
-        return await self.get_upload_url_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetSignNoticeUrlHeaders()
+        return await self.get_sign_notice_url_with_options_async(request, headers, runtime)
 
     def get_upload_url_with_options(
         self,
@@ -908,9 +1204,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetUploadUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/files/getUploadUrl',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetUploadUrlResponse(),
-            self.do_roarequest('GetUploadUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/files/getUploadUrl', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_upload_url_with_options_async(
@@ -940,9 +1247,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetUploadUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/files/getUploadUrl',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetUploadUrlResponse(),
-            await self.do_roarequest_async('GetUploadUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/files/getUploadUrl', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_upload_url(
+        self,
+        request: dingtalkesign__1__0_models.GetUploadUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetUploadUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkesign__1__0_models.GetUploadUrlHeaders()
+        return self.get_upload_url_with_options(request, headers, runtime)
+
+    async def get_upload_url_async(
+        self,
+        request: dingtalkesign__1__0_models.GetUploadUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetUploadUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkesign__1__0_models.GetUploadUrlHeaders()
+        return await self.get_upload_url_with_options_async(request, headers, runtime)
+
+    def get_user_info_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkesign__1__0_models.GetUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkesign__1__0_models.GetUserInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetUserInfo',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/users/{user_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetUserInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_user_info_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkesign__1__0_models.GetUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkesign__1__0_models.GetUserInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetUserInfo',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/users/{user_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkesign__1__0_models.GetUserInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_user_info(
@@ -960,62 +1354,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__1__0_models.GetUserInfoHeaders()
         return await self.get_user_info_with_options_async(user_id, headers, runtime)
-
-    def get_user_info_with_options(
-        self,
-        user_id: str,
-        headers: dingtalkesign__1__0_models.GetUserInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkesign__1__0_models.GetUserInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkesign__1__0_models.GetUserInfoResponse(),
-            self.do_roarequest('GetUserInfo', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/users/{user_id}', 'json', req, runtime)
-        )
-
-    async def get_user_info_with_options_async(
-        self,
-        user_id: str,
-        headers: dingtalkesign__1__0_models.GetUserInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkesign__1__0_models.GetUserInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkesign__1__0_models.GetUserInfoResponse(),
-            await self.do_roarequest_async('GetUserInfo', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/users/{user_id}', 'json', req, runtime)
-        )
-
-    def get_user_realname_url(
-        self,
-        request: dingtalkesign__1__0_models.GetUserRealnameUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetUserRealnameUrlResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetUserRealnameUrlHeaders()
-        return self.get_user_realname_url_with_options(request, headers, runtime)
-
-    async def get_user_realname_url_async(
-        self,
-        request: dingtalkesign__1__0_models.GetUserRealnameUrlRequest,
-    ) -> dingtalkesign__1__0_models.GetUserRealnameUrlResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.GetUserRealnameUrlHeaders()
-        return await self.get_user_realname_url_with_options_async(request, headers, runtime)
 
     def get_user_realname_url_with_options(
         self,
@@ -1038,9 +1376,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetUserRealnameUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/users/realname',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetUserRealnameUrlResponse(),
-            self.do_roarequest('GetUserRealnameUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/users/realname', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_user_realname_url_with_options_async(
@@ -1064,26 +1413,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetUserRealnameUrl',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/users/realname',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.GetUserRealnameUrlResponse(),
-            await self.do_roarequest_async('GetUserRealnameUrl', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/users/realname', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_flow_docs(
+    def get_user_realname_url(
         self,
-        request: dingtalkesign__1__0_models.ListFlowDocsRequest,
-    ) -> dingtalkesign__1__0_models.ListFlowDocsResponse:
+        request: dingtalkesign__1__0_models.GetUserRealnameUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetUserRealnameUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.ListFlowDocsHeaders()
-        return self.list_flow_docs_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetUserRealnameUrlHeaders()
+        return self.get_user_realname_url_with_options(request, headers, runtime)
 
-    async def list_flow_docs_async(
+    async def get_user_realname_url_async(
         self,
-        request: dingtalkesign__1__0_models.ListFlowDocsRequest,
-    ) -> dingtalkesign__1__0_models.ListFlowDocsResponse:
+        request: dingtalkesign__1__0_models.GetUserRealnameUrlRequest,
+    ) -> dingtalkesign__1__0_models.GetUserRealnameUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.ListFlowDocsHeaders()
-        return await self.list_flow_docs_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.GetUserRealnameUrlHeaders()
+        return await self.get_user_realname_url_with_options_async(request, headers, runtime)
 
     def list_flow_docs_with_options(
         self,
@@ -1104,9 +1464,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListFlowDocs',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/flows/docs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.ListFlowDocsResponse(),
-            self.do_roarequest('ListFlowDocs', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/docs', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_flow_docs_with_options_async(
@@ -1128,26 +1499,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListFlowDocs',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/flows/docs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.ListFlowDocsResponse(),
-            await self.do_roarequest_async('ListFlowDocs', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/flows/docs', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_seal_approval(
+    def list_flow_docs(
         self,
-        request: dingtalkesign__1__0_models.ListSealApprovalRequest,
-    ) -> dingtalkesign__1__0_models.ListSealApprovalResponse:
+        request: dingtalkesign__1__0_models.ListFlowDocsRequest,
+    ) -> dingtalkesign__1__0_models.ListFlowDocsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.ListSealApprovalHeaders()
-        return self.list_seal_approval_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.ListFlowDocsHeaders()
+        return self.list_flow_docs_with_options(request, headers, runtime)
 
-    async def list_seal_approval_async(
+    async def list_flow_docs_async(
         self,
-        request: dingtalkesign__1__0_models.ListSealApprovalRequest,
-    ) -> dingtalkesign__1__0_models.ListSealApprovalResponse:
+        request: dingtalkesign__1__0_models.ListFlowDocsRequest,
+    ) -> dingtalkesign__1__0_models.ListFlowDocsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.ListSealApprovalHeaders()
-        return await self.list_seal_approval_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.ListFlowDocsHeaders()
+        return await self.list_flow_docs_with_options_async(request, headers, runtime)
 
     def list_seal_approval_with_options(
         self,
@@ -1168,9 +1550,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSealApproval',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/seals/approval/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.ListSealApprovalResponse(),
-            self.do_roarequest('ListSealApproval', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/seals/approval/list', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_seal_approval_with_options_async(
@@ -1192,26 +1585,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSealApproval',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/seals/approval/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.ListSealApprovalResponse(),
-            await self.do_roarequest_async('ListSealApproval', 'esign_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/esign/seals/approval/list', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def order_resale(
+    def list_seal_approval(
         self,
-        request: dingtalkesign__1__0_models.OrderResaleRequest,
-    ) -> dingtalkesign__1__0_models.OrderResaleResponse:
+        request: dingtalkesign__1__0_models.ListSealApprovalRequest,
+    ) -> dingtalkesign__1__0_models.ListSealApprovalResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.OrderResaleHeaders()
-        return self.order_resale_with_options(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.ListSealApprovalHeaders()
+        return self.list_seal_approval_with_options(request, headers, runtime)
 
-    async def order_resale_async(
+    async def list_seal_approval_async(
         self,
-        request: dingtalkesign__1__0_models.OrderResaleRequest,
-    ) -> dingtalkesign__1__0_models.OrderResaleResponse:
+        request: dingtalkesign__1__0_models.ListSealApprovalRequest,
+    ) -> dingtalkesign__1__0_models.ListSealApprovalResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkesign__1__0_models.OrderResaleHeaders()
-        return await self.order_resale_with_options_async(request, headers, runtime)
+        headers = dingtalkesign__1__0_models.ListSealApprovalHeaders()
+        return await self.list_seal_approval_with_options_async(request, headers, runtime)
 
     def order_resale_with_options(
         self,
@@ -1240,9 +1644,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='OrderResale',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/orders/resale',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.OrderResaleResponse(),
-            self.do_roarequest('OrderResale', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/orders/resale', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def order_resale_with_options_async(
@@ -1272,7 +1687,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='OrderResale',
+            version='esign_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/esign/orders/resale',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkesign__1__0_models.OrderResaleResponse(),
-            await self.do_roarequest_async('OrderResale', 'esign_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/esign/orders/resale', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def order_resale(
+        self,
+        request: dingtalkesign__1__0_models.OrderResaleRequest,
+    ) -> dingtalkesign__1__0_models.OrderResaleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkesign__1__0_models.OrderResaleHeaders()
+        return self.order_resale_with_options(request, headers, runtime)
+
+    async def order_resale_async(
+        self,
+        request: dingtalkesign__1__0_models.OrderResaleRequest,
+    ) -> dingtalkesign__1__0_models.OrderResaleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkesign__1__0_models.OrderResaleHeaders()
+        return await self.order_resale_with_options_async(request, headers, runtime)

@@ -47,17 +47,11 @@ class CreateGroupBlackboardRequest(TeaModel):
         unique_id: str = None,
         user_id: str = None,
     ):
-        # 文本内容
         self.content = content
-        # 群会话的 Id
         self.open_conversation_id = open_conversation_id
-        # 是否发DING
         self.send_ding = send_ding
-        # 是否设为置顶
         self.sticky = sticky
-        # 业务唯一键
         self.unique_id = unique_id
-        # 操作用户的 userId
         self.user_id = user_id
 
     def validate(self):
@@ -106,9 +100,7 @@ class CreateGroupBlackboardResponseBody(TeaModel):
         data_id: str = None,
         success: bool = None,
     ):
-        # 群公告Id
         self.data_id = data_id
-        # 请求是否成功
         self.success = success
 
     def validate(self):
@@ -139,13 +131,16 @@ class CreateGroupBlackboardResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateGroupBlackboardResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -158,6 +153,8 @@ class CreateGroupBlackboardResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -166,6 +163,8 @@ class CreateGroupBlackboardResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateGroupBlackboardResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -212,11 +211,8 @@ class DeleteGroupBlackboardRequest(TeaModel):
         open_conversation_id: str = None,
         user_id: str = None,
     ):
-        # 群公告 Id
         self.data_id = data_id
-        # 群会话的 Id
         self.open_conversation_id = open_conversation_id
-        # 操作用户的 userId
         self.user_id = user_id
 
     def validate(self):
@@ -253,9 +249,7 @@ class DeleteGroupBlackboardResponseBody(TeaModel):
         is_deleted: bool = None,
         success: bool = None,
     ):
-        # 是否成功删除
         self.is_deleted = is_deleted
-        # 请求是否成功
         self.success = success
 
     def validate(self):
@@ -286,13 +280,16 @@ class DeleteGroupBlackboardResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteGroupBlackboardResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -305,6 +302,8 @@ class DeleteGroupBlackboardResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -313,6 +312,8 @@ class DeleteGroupBlackboardResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteGroupBlackboardResponseBody()
             self.body = temp_model.from_map(m['body'])

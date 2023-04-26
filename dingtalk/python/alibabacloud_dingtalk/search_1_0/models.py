@@ -49,21 +49,13 @@ class BatchInsertSearchItemRequestSearchItemModels(TeaModel):
         title: str = None,
         url: str = None,
     ):
-        # 数据项的脚注，长度不能超过64
         self.footer = footer
-        # 数据项的头像，长度不能超过512
         self.icon = icon
-        # 数据项的id，tabId和orgId相同的情况下，itemId唯一标识一条数据项，长度不能超过128
         self.item_id = item_id
-        # 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
         self.mobile_url = mobile_url
-        # 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
         self.pc_url = pc_url
-        # 数据项的摘要，长度不能超过64
         self.summary = summary
-        # 数据项的标题，长度不能超过16
         self.title = title
-        # 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
         self.url = url
 
     def validate(self):
@@ -153,11 +145,14 @@ class BatchInsertSearchItemResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -167,12 +162,16 @@ class BatchInsertSearchItemResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -219,17 +218,11 @@ class CreateSearchTabRequest(TeaModel):
         source: str = None,
         status: int = None,
     ):
-        # 暗黑模式下，数据源图标，非必填，不填则使用默认图标
         self.dark_icon = dark_icon
-        # 数据源图标，非必填，不填则使用默认图标
         self.icon = icon
-        # 数据源名称
         self.name = name
-        # 数据源优先级，数值越小优先级越高
         self.priority = priority
-        # 数据来源,非必填,默认来源为钉钉搜索内部引擎
         self.source = source
-        # 数据源状态，1表示上线，0表示下线
         self.status = status
 
     def validate(self):
@@ -277,7 +270,6 @@ class CreateSearchTabResponseBody(TeaModel):
         self,
         tab_id: int = None,
     ):
-        # 数据源的id,范围为3000-4000
         self.tab_id = tab_id
 
     def validate(self):
@@ -304,13 +296,16 @@ class CreateSearchTabResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateSearchTabResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -323,6 +318,8 @@ class CreateSearchTabResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -331,6 +328,8 @@ class CreateSearchTabResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateSearchTabResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -374,11 +373,14 @@ class DeleteSearchItemResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -388,12 +390,16 @@ class DeleteSearchItemResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -434,11 +440,14 @@ class DeleteSearchTabResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -448,12 +457,16 @@ class DeleteSearchTabResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -505,27 +518,16 @@ class GetSearchItemResponseBody(TeaModel):
         title: str = None,
         url: str = None,
     ):
-        # 数据项的脚注
         self.footer = footer
-        # 创建时间
         self.gmt_create = gmt_create
-        # 修改时间
         self.gmt_modified = gmt_modified
-        # 数据项的头像
         self.icon = icon
-        # 数据项的id,tabId和orgId相同的情况下，itemId唯一标识一条数据项
         self.item_id = item_id
-        # 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
         self.mobile_url = mobile_url
-        # 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
         self.pc_url = pc_url
-        # 数据项的摘要
         self.summary = summary
-        # 数据源id
         self.tab_id = tab_id
-        # 数据项的标题
         self.title = title
-        # 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
         self.url = url
 
     def validate(self):
@@ -592,13 +594,16 @@ class GetSearchItemResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSearchItemResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -611,6 +616,8 @@ class GetSearchItemResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -619,6 +626,8 @@ class GetSearchItemResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSearchItemResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -665,11 +674,8 @@ class GetSearchItemsByKeyWordRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # 搜索关键词
         self.key_word = key_word
-        # 一次性请求的item数量
         self.max_results = max_results
-        # 加密偏移量，第一次请求取“0”值，后续请求根据接口返回的nextToken值进行填写
         self.next_token = next_token
 
     def validate(self):
@@ -715,27 +721,16 @@ class GetSearchItemsByKeyWordResponseBodyValue(TeaModel):
         title: str = None,
         url: str = None,
     ):
-        # 数据项的脚注
         self.footer = footer
-        # 创建时间
         self.gmt_create = gmt_create
-        # 修改时间
         self.gmt_modified = gmt_modified
-        # 数据项的头像
         self.icon = icon
-        # 数据项的id,tabId和orgId相同的情况下，itemId唯一标识一条数据项
         self.item_id = item_id
-        # 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
         self.mobile_url = mobile_url
-        # 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
         self.pc_url = pc_url
-        # 数据项的摘要
         self.summary = summary
-        # 数据源id
         self.tab_id = tab_id
-        # 数据项的标题
         self.title = title
-        # 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
         self.url = url
 
     def validate(self):
@@ -805,9 +800,7 @@ class GetSearchItemsByKeyWordResponseBody(TeaModel):
         total_count: int = None,
         value: List[GetSearchItemsByKeyWordResponseBodyValue] = None,
     ):
-        # 下一次请求的加密offset，若为空则代表item已经读取完毕
         self.next_token = next_token
-        # 本次请求条件下的item总量
         self.total_count = total_count
         self.value = value
 
@@ -851,13 +844,16 @@ class GetSearchItemsByKeyWordResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSearchItemsByKeyWordResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -870,6 +866,8 @@ class GetSearchItemsByKeyWordResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -878,6 +876,8 @@ class GetSearchItemsByKeyWordResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSearchItemsByKeyWordResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -930,23 +930,14 @@ class GetSearchTabResponseBody(TeaModel):
         status: int = None,
         tab_id: int = None,
     ):
-        # 暗黑模式下，数据源图标，非必填，不填则使用默认图标
         self.dark_icon = dark_icon
-        # 创建时间
         self.gmt_create = gmt_create
-        # 修改时间
         self.gmt_modified = gmt_modified
-        # 数据源图标，非必填，不填则使用默认图标
         self.icon = icon
-        # 数据源名称
         self.name = name
-        # 数据源优先级，数值越小优先级越高
         self.priority = priority
-        # 数据来源,非必填,默认来源为钉钉搜索内部引擎
         self.source = source
-        # 数据源状态，1表示上线，0表示下线
         self.status = status
-        # 数据源的id,范围为3000-4000
         self.tab_id = tab_id
 
     def validate(self):
@@ -1005,13 +996,16 @@ class GetSearchTabResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSearchTabResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1024,6 +1018,8 @@ class GetSearchTabResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1032,6 +1028,8 @@ class GetSearchTabResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSearchTabResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1083,21 +1081,13 @@ class InsertSearchItemRequest(TeaModel):
         title: str = None,
         url: str = None,
     ):
-        # 数据项的脚注，长度不能超过64
         self.footer = footer
-        # 数据项的头像，长度不能超过512
         self.icon = icon
-        # 数据项的id，tabId和orgId相同的情况下，itemId唯一标识一条数据项，长度不能超过128
         self.item_id = item_id
-        # 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
         self.mobile_url = mobile_url
-        # 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
         self.pc_url = pc_url
-        # 数据项的摘要，长度不能超过64
         self.summary = summary
-        # 数据项的标题，长度不能超过16
         self.title = title
-        # 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
         self.url = url
 
     def validate(self):
@@ -1152,11 +1142,14 @@ class InsertSearchItemResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -1166,12 +1159,16 @@ class InsertSearchItemResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -1221,23 +1218,14 @@ class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
         status: int = None,
         tab_id: int = None,
     ):
-        # 暗黑模式下，数据源图标，非必填，不填则使用默认图标
         self.dark_icon = dark_icon
-        # 创建时间
         self.gmt_create = gmt_create
-        # 修改时间
         self.gmt_modified = gmt_modified
-        # 数据源图标，非必填，不填则使用默认图标
         self.icon = icon
-        # 数据源名称
         self.name = name
-        # 数据源优先级，数值越小优先级越高
         self.priority = priority
-        # 数据来源,非必填,默认来源为钉钉搜索内部引擎
         self.source = source
-        # 数据源状态，1表示上线，0表示下线
         self.status = status
-        # 数据源的id,范围为3000-4000
         self.tab_id = tab_id
 
     def validate(self):
@@ -1297,7 +1285,6 @@ class ListSearchTabsByOrgIdResponseBody(TeaModel):
         self,
         search_tab_result: List[ListSearchTabsByOrgIdResponseBodySearchTabResult] = None,
     ):
-        # 该企业拥有的所有数据源信息
         self.search_tab_result = search_tab_result
 
     def validate(self):
@@ -1332,13 +1319,16 @@ class ListSearchTabsByOrgIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListSearchTabsByOrgIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1351,6 +1341,8 @@ class ListSearchTabsByOrgIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1359,6 +1351,8 @@ class ListSearchTabsByOrgIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListSearchTabsByOrgIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1408,17 +1402,11 @@ class UpdateSearchTabRequest(TeaModel):
         source: str = None,
         status: int = None,
     ):
-        # 暗黑模式下，数据源图标，非必填，不填则使用默认图标
         self.dark_icon = dark_icon
-        # 数据源图标，非必填，不填则使用默认图标
         self.icon = icon
-        # 数据源名称
         self.name = name
-        # 数据源优先级，数值越小优先级越高
         self.priority = priority
-        # 数据来源,非必填,默认来源为钉钉搜索内部引擎
         self.source = source
-        # 数据源状态，1表示上线，0表示下线
         self.status = status
 
     def validate(self):
@@ -1465,11 +1453,14 @@ class UpdateSearchTabResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -1479,12 +1470,16 @@ class UpdateSearchTabResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 

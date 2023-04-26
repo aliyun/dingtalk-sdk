@@ -10,9 +10,7 @@ class AvaliableTemplate(TeaModel):
         name: str = None,
         process_code: str = None,
     ):
-        # 表单名称
         self.name = name
-        # 表单模板processCode
         self.process_code = process_code
 
     def validate(self):
@@ -47,13 +45,9 @@ class FormDataSourceTarget(TeaModel):
         biz_type: str = None,
         form_code: str = None,
     ):
-        # 表单类型，0流程表单
         self.app_type = app_type
-        # 应用appUuid
         self.app_uuid = app_uuid
-        # 关联表单业务标识
         self.biz_type = biz_type
-        # 关联表单的formCode
         self.form_code = form_code
 
     def validate(self):
@@ -94,9 +88,7 @@ class FormDataSource(TeaModel):
         target: FormDataSourceTarget = None,
         type: str = None,
     ):
-        # 关联表单信息
         self.target = target
-        # 关联类型，form关联表单
         self.type = type
 
     def validate(self):
@@ -131,9 +123,7 @@ class SelectOption(TeaModel):
         key: str = None,
         value: str = None,
     ):
-        # 每一个选项的唯一键
         self.key = key
-        # 每一个选项的值
         self.value = value
 
     def validate(self):
@@ -167,11 +157,8 @@ class FormComponentPropsStatField(TeaModel):
         label: str = None,
         upper: str = None,
     ):
-        # 需要统计的明细控件内子控件id
         self.component_id = component_id
-        # 子控件标题
         self.label = label
-        # 金额控件是否需要大写，1不需要大写，其他需要大写
         self.upper = upper
 
     def validate(self):
@@ -239,71 +226,38 @@ class FormComponentProps(TeaModel):
         upper: str = None,
         vertical_print: bool = None,
     ):
-        # 明细控件按钮显示文案
         self.action_name = action_name
-        # 地址控件模式city省市,district省市区,street省市区街道
         self.address_model = address_model
-        # 文字提示控件显示方式:top|middle|bottom
         self.align = align
-        # 套件中控件是否可设置为分条件字段
         self.async_condition = async_condition
-        # 关联审批单控件限定模板列表
         self.available_templates = available_templates
-        # 业务别名
         self.biz_alias = biz_alias
-        # 套件的业务标识
         self.biz_type = biz_type
-        # 联系人控件是否支持多选，1多选，0单选
         self.choice = choice
-        # 自定义控件渲染标识
         self.common_biz_type = common_biz_type
-        # 控件表单内唯一id
         self.component_id = component_id
-        # 说明文字控件内容
         self.content = content
-        # 关联数据源配置
         self.data_source = data_source
-        # 是否不可编辑
         self.disabled = disabled
-        # 是否自动计算时长
         self.duration = duration
-        # 时间格式
         self.format = format
-        # 公式
         self.formula = formula
-        # 是否隐藏字段
         self.invisible = invisible
-        # 控件标题
         self.label = label
-        # 评分控件上限
         self.limit = limit
-        # 说明文字控件链接地址
         self.link = link
-        # 文本控件支持的最大长度
         self.max_length = max_length
-        # 电话控件支持的类型
         self.mode = mode
-        # 部门控件是否可多选
         self.multiple = multiple
-        # 单选多选控件选项列表
         self.options = options
-        # 输入提示
         self.placeholder = placeholder
-        # 小数点位数
         self.precision = precision
-        # 字段是否可打印，1打印，0不打印，默认打印
         self.print = print
-        # 是否必填
         self.required = required
-        # 明细控件数据汇总统计
         self.stat_field = stat_field
-        # 明细填写方式，table（表格）、list（列表）
         self.table_view_mode = table_view_mode
-        # 时间单位（天、小时）
         self.unit = unit
-        # 金额控件是否需要大写，1不需要大写，其他需要大写
         self.upper = upper
-        # 明细打印方式false横向，true纵向
         self.vertical_print = vertical_print
 
     def validate(self):
@@ -490,11 +444,8 @@ class FormComponent(TeaModel):
         component_type: str = None,
         props: FormComponentProps = None,
     ):
-        # 子控件集合
         self.children = children
-        # 控件类型
         self.component_type = component_type
-        # 控件属性
         self.props = props
 
     def validate(self):
@@ -575,9 +526,7 @@ class AddApproveDentryAuthRequestFileInfos(TeaModel):
         file_id: str = None,
         space_id: int = None,
     ):
-        # 文件ID。
         self.file_id = file_id
-        # 钉盘空间spaceId。
         self.space_id = space_id
 
     def validate(self):
@@ -610,9 +559,7 @@ class AddApproveDentryAuthRequest(TeaModel):
         file_infos: List[AddApproveDentryAuthRequestFileInfos] = None,
         user_id: str = None,
     ):
-        # 授权的钉盘文件信息列表。支持批量授权，最大列表长度：10。
         self.file_infos = file_infos
-        # 授权的用户userid。
         self.user_id = user_id
 
     def validate(self):
@@ -653,9 +600,7 @@ class AddApproveDentryAuthResponseBody(TeaModel):
         result: bool = None,
         success: bool = None,
     ):
-        # 返回结果。
         self.result = result
-        # 接口调用是否成功。
         self.success = success
 
     def validate(self):
@@ -686,13 +631,16 @@ class AddApproveDentryAuthResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddApproveDentryAuthResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -705,6 +653,8 @@ class AddApproveDentryAuthResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -713,6 +663,8 @@ class AddApproveDentryAuthResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddApproveDentryAuthResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -761,15 +713,10 @@ class AddProcessInstanceCommentRequestFileAttachments(TeaModel):
         file_type: str = None,
         space_id: str = None,
     ):
-        # 文件ID。
         self.file_id = file_id
-        # 文件名称。
         self.file_name = file_name
-        # 文件大小。
         self.file_size = file_size
-        # 文件类型。
         self.file_type = file_type
-        # 钉盘空间ID。
         self.space_id = space_id
 
     def validate(self):
@@ -814,9 +761,7 @@ class AddProcessInstanceCommentRequestFile(TeaModel):
         attachments: List[AddProcessInstanceCommentRequestFileAttachments] = None,
         photos: List[str] = None,
     ):
-        # 附件列表。
         self.attachments = attachments
-        # 图片URL地址。
         self.photos = photos
 
     def validate(self):
@@ -859,13 +804,9 @@ class AddProcessInstanceCommentRequest(TeaModel):
         process_instance_id: str = None,
         text: str = None,
     ):
-        # 评论人的userid。
         self.comment_user_id = comment_user_id
-        # 文件。
         self.file = file
-        # 审批实例ID，可通过调用获取审批实例ID列表接口获取。
         self.process_instance_id = process_instance_id
-        # 评论的内容。
         self.text = text
 
     def validate(self):
@@ -908,9 +849,7 @@ class AddProcessInstanceCommentResponseBody(TeaModel):
         result: bool = None,
         success: bool = None,
     ):
-        # 评论是否成功。
         self.result = result
-        # 接口调用是否成功。
         self.success = success
 
     def validate(self):
@@ -941,13 +880,16 @@ class AddProcessInstanceCommentResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddProcessInstanceCommentResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -960,6 +902,8 @@ class AddProcessInstanceCommentResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -968,6 +912,8 @@ class AddProcessInstanceCommentResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddProcessInstanceCommentResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1012,7 +958,6 @@ class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers(Te
         self,
         user_id: str = None,
     ):
-        # 抄送接收人用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -1043,19 +988,9 @@ class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests(TeaModel):
         result: str = None,
         status: str = None,
     ):
-        # 抄送列表，注意最大抄送人数量不能超过30。
         self.notifiers = notifiers
-        # 实例id
         self.process_instance_id = process_instance_id
-        # 实例结果：
-        # 实例状态是COMPLETED，必须设置代表以下含义。
-        # agree：同意
-        # refuse：拒绝
-        # 实例状态为TERMINATED，必须设置代表含义，result取值agree和refuse均代表撤销审批流。
         self.result = result
-        # 实例状态：
-        # COMPLETED：结束审批流
-        # TERMINATED：终止审批流
         self.status = status
 
     def validate(self):
@@ -1103,7 +1038,6 @@ class BatchUpdateProcessInstanceRequest(TeaModel):
         self,
         update_process_instance_requests: List[BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests] = None,
     ):
-        # 实列列表。
         self.update_process_instance_requests = update_process_instance_requests
 
     def validate(self):
@@ -1139,7 +1073,6 @@ class BatchUpdateProcessInstanceResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 成功标识
         self.success = success
 
     def validate(self):
@@ -1166,13 +1099,16 @@ class BatchUpdateProcessInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BatchUpdateProcessInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1185,6 +1121,8 @@ class BatchUpdateProcessInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1193,6 +1131,8 @@ class BatchUpdateProcessInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchUpdateProcessInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1239,11 +1179,8 @@ class CancelIntegratedTaskRequest(TeaModel):
         activity_ids: List[str] = None,
         process_instance_id: str = None,
     ):
-        # 待办组ID，需要在调用创建待办接口时，主动设置该值。
         self.activity_id = activity_id
-        # 待办组ID列表，用于批量取消。
         self.activity_ids = activity_ids
-        # OA审批流程实例ID
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -1279,7 +1216,6 @@ class CancelIntegratedTaskResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 是否更新成功
         self.success = success
 
     def validate(self):
@@ -1306,13 +1242,16 @@ class CancelIntegratedTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CancelIntegratedTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1325,6 +1264,8 @@ class CancelIntegratedTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1333,6 +1274,8 @@ class CancelIntegratedTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CancelIntegratedTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1378,9 +1321,7 @@ class CleanProcessDataRequest(TeaModel):
         corp_id: str = None,
         process_code: str = None,
     ):
-        # 企业的corpId。
         self.corp_id = corp_id
-        # 模板唯一码。
         self.process_code = process_code
 
     def validate(self):
@@ -1412,7 +1353,6 @@ class CleanProcessDataResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 是否调用成功。
         self.success = success
 
     def validate(self):
@@ -1439,13 +1379,16 @@ class CleanProcessDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CleanProcessDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1458,6 +1401,8 @@ class CleanProcessDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1466,6 +1411,8 @@ class CleanProcessDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CleanProcessDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1510,9 +1457,6 @@ class CopyProcessRequestCopyOptions(TeaModel):
         self,
         copy_type: int = None,
     ):
-        # 默认为1
-        # COPE_TYPE_DEFAULT = 1 默认会使用groupId进行隔离分组，审批首页不可见
-        # COPE_TYPE_INCLUDE_FLOW = 2 使用dingtalk 2作为隔离分组，审批首页可见
         self.copy_type = copy_type
 
     def validate(self):
@@ -1542,11 +1486,8 @@ class CopyProcessRequestSourceProcessVOList(TeaModel):
         name: str = None,
         process_code: str = None,
     ):
-        # 套件业务标识
         self.biz_type = biz_type
-        # 模板名称
         self.name = name
-        # 模板code
         self.process_code = process_code
 
     def validate(self):
@@ -1584,10 +1525,8 @@ class CopyProcessRequest(TeaModel):
         source_corp_id: str = None,
         source_process_volist: List[CopyProcessRequestSourceProcessVOList] = None,
     ):
-        # 复制选项
         self.copy_options = copy_options
         self.source_corp_id = source_corp_id
-        # 源模版列表
         self.source_process_volist = source_process_volist
 
     def validate(self):
@@ -1636,11 +1575,8 @@ class CopyProcessResponseBodyResult(TeaModel):
         name: str = None,
         process_code: str = None,
     ):
-        # 业务标识
         self.biz_type = biz_type
-        # 模板名称
         self.name = name
-        # 模板code
         self.process_code = process_code
 
     def validate(self):
@@ -1710,13 +1646,16 @@ class CopyProcessResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CopyProcessResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1729,6 +1668,8 @@ class CopyProcessResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1737,6 +1678,8 @@ class CopyProcessResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CopyProcessResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1783,13 +1726,8 @@ class CreateIntegratedTaskRequestTasks(TeaModel):
         url: str = None,
         user_id: str = None,
     ):
-        # 用户自定义数据，页面跳转时将通过 url 查询参数回传，格式为 customData=xxxxx
         self.custom_data = custom_data
-        # 待办事项跳转URL。
-        # 创建审批实例接口里的url，实现的是钉钉审批应用里的审批单跳转。这个接口里的url，实现的是钉钉待办页面，对应的待办卡片的跳转。两种跳转场景不同。需要注意的是，钉钉的待办页面，也同时支持移动端和PC端，所以这个接口里传的url参数，它所对应的页面也要适配好移动端和PC端。
-        # 
         self.url = url
-        # OA审批任务执行人的用户ID
         self.user_id = user_id
 
     def validate(self):
@@ -1827,12 +1765,8 @@ class CreateIntegratedTaskRequest(TeaModel):
         process_instance_id: str = None,
         tasks: List[CreateIntegratedTaskRequestTasks] = None,
     ):
-        # 待办组ID，调用方提供自定义唯一分组标识
         self.activity_id = activity_id
-        # OA审批实例ID，通过创建实例接口获取。
-        # 
         self.process_instance_id = process_instance_id
-        # 任务列表
         self.tasks = tasks
 
     def validate(self):
@@ -1877,9 +1811,7 @@ class CreateIntegratedTaskResponseBodyResult(TeaModel):
         task_id: int = None,
         user_id: str = None,
     ):
-        # OA审批任务ID
         self.task_id = task_id
-        # OA审批任务执行人用户ID
         self.user_id = user_id
 
     def validate(self):
@@ -1913,7 +1845,6 @@ class CreateIntegratedTaskResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
-        # 是否创建成功
         self.success = success
 
     def validate(self):
@@ -1952,13 +1883,16 @@ class CreateIntegratedTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateIntegratedTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1971,6 +1905,8 @@ class CreateIntegratedTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1979,6 +1915,8 @@ class CreateIntegratedTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateIntegratedTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2024,9 +1962,7 @@ class DeleteProcessRequest(TeaModel):
         clean_running_task: bool = None,
         process_code: str = None,
     ):
-        # 是否清理正在运行的任务
         self.clean_running_task = clean_running_task
-        # 模板code
         self.process_code = process_code
 
     def validate(self):
@@ -2058,7 +1994,6 @@ class DeleteProcessResponseBodyResult(TeaModel):
         self,
         process_code: str = None,
     ):
-        # 模板code
         self.process_code = process_code
 
     def validate(self):
@@ -2114,13 +2049,16 @@ class DeleteProcessResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteProcessResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2133,6 +2071,8 @@ class DeleteProcessResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2141,6 +2081,8 @@ class DeleteProcessResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteProcessResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2189,15 +2131,10 @@ class ExecuteProcessInstanceRequestFileAttachments(TeaModel):
         file_type: str = None,
         space_id: str = None,
     ):
-        # 文件ID。
         self.file_id = file_id
-        # 文件名称。
         self.file_name = file_name
-        # 文件大小。
         self.file_size = file_size
-        # 文件类型。
         self.file_type = file_type
-        # 钉盘空间ID。
         self.space_id = space_id
 
     def validate(self):
@@ -2242,9 +2179,7 @@ class ExecuteProcessInstanceRequestFile(TeaModel):
         attachments: List[ExecuteProcessInstanceRequestFileAttachments] = None,
         photos: List[str] = None,
     ):
-        # 附件列表。
         self.attachments = attachments
-        # 图片URL地址。
         self.photos = photos
 
     def validate(self):
@@ -2289,21 +2224,11 @@ class ExecuteProcessInstanceRequest(TeaModel):
         result: str = None,
         task_id: int = None,
     ):
-        # 操作人userid，可通过调用获取审批实例详情接口获取。
         self.actioner_user_id = actioner_user_id
-        # 文件。
         self.file = file
-        # 审批实例ID，可通过调用获取审批实例ID列表接口获取。
         self.process_instance_id = process_instance_id
-        # 审批意见，可为空。
         self.remark = remark
-        # 审批操作，取值。
-        # 
-        # agree：同意
-        # 
-        # refuse：拒绝
         self.result = result
-        # 任务节点id，可通过调用获取审批实例详情接口获取。
         self.task_id = task_id
 
     def validate(self):
@@ -2354,9 +2279,7 @@ class ExecuteProcessInstanceResponseBody(TeaModel):
         result: bool = None,
         success: bool = None,
     ):
-        # 同意或拒绝结果。
         self.result = result
-        # 接口调用是否成功。
         self.success = success
 
     def validate(self):
@@ -2387,13 +2310,16 @@ class ExecuteProcessInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ExecuteProcessInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2406,6 +2332,8 @@ class ExecuteProcessInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2414,6 +2342,8 @@ class ExecuteProcessInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ExecuteProcessInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2465,21 +2395,13 @@ class FormCreateRequestTemplateConfig(TeaModel):
         hidden: bool = None,
         origin_dir_id: str = None,
     ):
-        # 更新后模板目录id
         self.dir_id = dir_id
-        # 禁用模板删除按钮
         self.disable_delete_process = disable_delete_process
-        # 禁用表单编辑
         self.disable_form_edit = disable_form_edit
-        # 首页工作台是否可见
         self.disable_homepage = disable_homepage
-        # 禁用再次提交
         self.disable_resubmit = disable_resubmit
-        # 禁用停止按钮
         self.disable_stop_process_button = disable_stop_process_button
-        # 审批场景内隐藏模板
         self.hidden = hidden
-        # 源模板目录id
         self.origin_dir_id = origin_dir_id
 
     def validate(self):
@@ -2539,14 +2461,10 @@ class FormCreateRequest(TeaModel):
         process_code: str = None,
         template_config: FormCreateRequestTemplateConfig = None,
     ):
-        # 表单模板描述
         self.description = description
-        # 表单控件列表
         self.form_components = form_components
-        # 表单模板名称
         self.name = name
         self.process_code = process_code
-        # 模板配置信息
         self.template_config = template_config
 
     def validate(self):
@@ -2601,7 +2519,6 @@ class FormCreateResponseBodyResult(TeaModel):
         self,
         process_code: str = None,
     ):
-        # 保存或更新的表单code
         self.process_code = process_code
 
     def validate(self):
@@ -2629,7 +2546,6 @@ class FormCreateResponseBody(TeaModel):
         self,
         result: FormCreateResponseBodyResult = None,
     ):
-        # 表单模板信息
         self.result = result
 
     def validate(self):
@@ -2658,13 +2574,16 @@ class FormCreateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: FormCreateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2677,6 +2596,8 @@ class FormCreateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2685,6 +2606,8 @@ class FormCreateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = FormCreateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2730,9 +2653,7 @@ class GetAttachmentSpaceRequest(TeaModel):
         agent_id: int = None,
         user_id: str = None,
     ):
-        # 应用的agentid。
         self.agent_id = agent_id
-        # 用户的userid
         self.user_id = user_id
 
     def validate(self):
@@ -2764,7 +2685,6 @@ class GetAttachmentSpaceResponseBodyResult(TeaModel):
         self,
         space_id: int = None,
     ):
-        # 钉盘空间ID。
         self.space_id = space_id
 
     def validate(self):
@@ -2793,9 +2713,7 @@ class GetAttachmentSpaceResponseBody(TeaModel):
         result: GetAttachmentSpaceResponseBodyResult = None,
         success: bool = None,
     ):
-        # 返回结果。
         self.result = result
-        # 接口调用是否成功。
         self.success = success
 
     def validate(self):
@@ -2828,13 +2746,16 @@ class GetAttachmentSpaceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAttachmentSpaceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2847,6 +2768,8 @@ class GetAttachmentSpaceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2855,6 +2778,8 @@ class GetAttachmentSpaceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAttachmentSpaceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2900,11 +2825,7 @@ class GetConditionFormComponentRequest(TeaModel):
         agent_id: int = None,
         process_code: str = None,
     ):
-        # 应用ID (三方应用为AppID)，可在开发者管理后台后台的应用详情页面获取。
         self.agent_id = agent_id
-        # 审批模板ID。
-        # 
-        # processCode需要OA管理后台，在编辑审批表单的URL中获取。
         self.process_code = process_code
 
     def validate(self):
@@ -2937,9 +2858,7 @@ class GetConditionFormComponentResponseBodyResult(TeaModel):
         id: str = None,
         label: str = None,
     ):
-        # 表单ID。
         self.id = id
-        # 表单名称。
         self.label = label
 
     def validate(self):
@@ -2971,7 +2890,6 @@ class GetConditionFormComponentResponseBody(TeaModel):
         self,
         result: List[GetConditionFormComponentResponseBodyResult] = None,
     ):
-        # 返回结果。
         self.result = result
 
     def validate(self):
@@ -3006,13 +2924,16 @@ class GetConditionFormComponentResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetConditionFormComponentResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3025,6 +2946,8 @@ class GetConditionFormComponentResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3033,6 +2956,8 @@ class GetConditionFormComponentResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetConditionFormComponentResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3077,7 +3002,6 @@ class GetCrmProcCodesResponseBody(TeaModel):
         self,
         result: List[str] = None,
     ):
-        # 模板code列表。
         self.result = result
 
     def validate(self):
@@ -3104,13 +3028,16 @@ class GetCrmProcCodesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetCrmProcCodesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3123,6 +3050,8 @@ class GetCrmProcCodesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3131,6 +3060,8 @@ class GetCrmProcCodesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCrmProcCodesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3175,7 +3106,6 @@ class GetManageProcessByStaffIdRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 用户的userid。
         self.user_id = user_id
 
     def validate(self):
@@ -3209,23 +3139,12 @@ class GetManageProcessByStaffIdResponseBodyResult(TeaModel):
         new_process: bool = None,
         process_code: str = None,
     ):
-        # 关联考勤类型，取值。
-        # 
-        # 0：无
-        # 1：补卡申请
-        # 2：请假
         self.attendance_type = attendance_type
-        # 模版名称。
         self.flow_title = flow_title
-        # 修改时间。
         self.gmt_modified = gmt_modified
-        # 模板图标名。
         self.icon_name = icon_name
-        # 图标URL地址。
         self.icon_url = icon_url
-        # 是否新模版。
         self.new_process = new_process
-        # 模版code。
         self.process_code = process_code
 
     def validate(self):
@@ -3278,9 +3197,7 @@ class GetManageProcessByStaffIdResponseBody(TeaModel):
         result: List[GetManageProcessByStaffIdResponseBodyResult] = None,
         success: bool = None,
     ):
-        # 返回结果列表。
         self.result = result
-        # 接口调用是否成功。
         self.success = success
 
     def validate(self):
@@ -3319,13 +3236,16 @@ class GetManageProcessByStaffIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetManageProcessByStaffIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3338,6 +3258,8 @@ class GetManageProcessByStaffIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3346,6 +3268,8 @@ class GetManageProcessByStaffIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetManageProcessByStaffIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3390,7 +3314,6 @@ class GetProcessCodeByNameRequest(TeaModel):
         self,
         name: str = None,
     ):
-        # 模板名称
         self.name = name
 
     def validate(self):
@@ -3418,7 +3341,6 @@ class GetProcessCodeByNameResponseBodyResult(TeaModel):
         self,
         process_code: str = None,
     ):
-        # 保存或更新的表单code
         self.process_code = process_code
 
     def validate(self):
@@ -3446,7 +3368,6 @@ class GetProcessCodeByNameResponseBody(TeaModel):
         self,
         result: GetProcessCodeByNameResponseBodyResult = None,
     ):
-        # 表单模板信息
         self.result = result
 
     def validate(self):
@@ -3475,13 +3396,16 @@ class GetProcessCodeByNameResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetProcessCodeByNameResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3494,6 +3418,8 @@ class GetProcessCodeByNameResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3502,6 +3428,8 @@ class GetProcessCodeByNameResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetProcessCodeByNameResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3546,7 +3474,6 @@ class GetProcessConfigRequest(TeaModel):
         self,
         proc_code: str = None,
     ):
-        # 模板code
         self.proc_code = proc_code
 
     def validate(self):
@@ -3576,11 +3503,8 @@ class GetProcessConfigResponseBodyResultCommentConf(TeaModel):
         comment_hidden_for_proposer: bool = None,
         comment_required: bool = None,
     ):
-        # 提示内容
         self.comment_description = comment_description
-        # 评论对发起人不可见
         self.comment_hidden_for_proposer = comment_hidden_for_proposer
-        # 评论必填
         self.comment_required = comment_required
 
     def validate(self):
@@ -3617,9 +3541,7 @@ class GetProcessConfigResponseBodyResultHandSignConf(TeaModel):
         hand_sign_enable: bool = None,
         resign_enable: bool = None,
     ):
-        # 开启手写签名
         self.hand_sign_enable = hand_sign_enable
-        # 是否使用上次签名
         self.resign_enable = resign_enable
 
     def validate(self):
@@ -3653,11 +3575,8 @@ class GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList(TeaMod
         type: str = None,
         value: str = None,
     ):
-        # 名称
         self.name = name
-        # 类型
         self.type = type
-        # 员工staffId/部门id
         self.value = value
 
     def validate(self):
@@ -3694,9 +3613,7 @@ class GetProcessConfigResponseBodyResultSubstituteSubmitConf(TeaModel):
         enable: bool = None,
         submitter_list: List[GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList] = None,
     ):
-        # 是否允许代提交
         self.enable = enable
-        # 代提交人
         self.submitter_list = submitter_list
 
     def validate(self):
@@ -3737,9 +3654,7 @@ class GetProcessConfigResponseBodyResultTitleGenRule(TeaModel):
         express: str = None,
         type: int = None,
     ):
-        # 规则表达式
         self.express = express
-        # 规则类型
         self.type = type
 
     def validate(self):
@@ -3772,9 +3687,7 @@ class GetProcessConfigResponseBodyResultVisibility(TeaModel):
         type: int = None,
         value: str = None,
     ):
-        # 类型
         self.type = type
-        # 员工staffId/部门id
         self.value = value
 
     def validate(self):
@@ -3824,43 +3737,24 @@ class GetProcessConfigResponseBodyResult(TeaModel):
         title_gen_rule: GetProcessConfigResponseBodyResultTitleGenRule = None,
         visibility: List[GetProcessConfigResponseBodyResultVisibility] = None,
     ):
-        # 自定义摘要信息
         self.abstract_gen_rule = abstract_gen_rule
-        # 表单节点权限
         self.activity_auth = activity_auth
-        # 是否允许撤销
         self.allow_revoke = allow_revoke
-        # 是否允许加签
         self.append_enable = append_enable
-        # 如果审批人和发起人是同一个人，则去重
         self.auto_execute_originator_tasks = auto_execute_originator_tasks
-        # 流程表单业务标识
         self.biz_category_id = biz_category_id
-        # 纯表单业务标识
         self.biz_type = biz_type
-        # 评论配置
         self.comment_conf = comment_conf
-        # 审批人自动去重
         self.duplicate_removal = duplicate_removal
-        # 表单配置
         self.form_schema = form_schema
-        # 手写签名配置
         self.hand_sign_conf = hand_sign_conf
-        # 表单管理员
         self.managers = managers
-        # 表单名称
         self.name = name
-        # 是否流程表单
         self.process_app_type = process_app_type
-        # 流程配置
         self.process_config = process_config
-        # 是否静态流程
         self.static_proc = static_proc
-        # 代提交配置
         self.substitute_submit_conf = substitute_submit_conf
-        # 自定义标题规则
         self.title_gen_rule = title_gen_rule
-        # 模板可见性
         self.visibility = visibility
 
     def validate(self):
@@ -4008,13 +3902,16 @@ class GetProcessConfigResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetProcessConfigResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4027,6 +3924,8 @@ class GetProcessConfigResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4035,6 +3934,8 @@ class GetProcessConfigResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetProcessConfigResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4079,7 +3980,6 @@ class GetProcessInstanceRequest(TeaModel):
         self,
         process_instance_id: str = None,
     ):
-        # 审批实例ID企业内部应用可通过获取审批实例ID列表接口获取。钉钉三方企业应用可以通过推送的审批事件中获取，参考biz_type=22。
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -4112,17 +4012,11 @@ class GetProcessInstanceResponseBodyResultFormComponentValues(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 组件别名。
         self.biz_alias = biz_alias
-        # 组件类型。
         self.component_type = component_type
-        # 标签扩展值。
         self.ext_value = ext_value
-        # 组件ID。
         self.id = id
-        # 组件名称。
         self.name = name
-        # 标签值。
         self.value = value
 
     def validate(self):
@@ -4173,13 +4067,9 @@ class GetProcessInstanceResponseBodyResultOperationRecordsAttachments(TeaModel):
         file_size: str = None,
         file_type: str = None,
     ):
-        # 附件ID。
         self.file_id = file_id
-        # 附件名称。
         self.file_name = file_name
-        # 附件大小。
         self.file_size = file_size
-        # 附件类型。
         self.file_type = file_type
 
     def validate(self):
@@ -4225,19 +4115,12 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
         type: str = None,
         user_id: str = None,
     ):
-        # 评论附件列表。
         self.attachments = attachments
-        # 抄送人userIds列表
         self.cc_user_ids = cc_user_ids
-        # 操作时间。
         self.date = date
-        # 评论内容。  审批操作附带评论时才返回该字段。
         self.remark = remark
-        # 操作结果：  AGREE：同意  REFUSE：拒绝  NONE
         self.result = result
-        # 操作类型：  EXECUTE_TASK_NORMAL：正常执行任务  EXECUTE_TASK_AGENT：代理人执行任务  APPEND_TASK_BEFORE：前加签任务  APPEND_TASK_AFTER：后加签任务  REDIRECT_TASK：转交任务  START_PROCESS_INSTANCE：发起流程实例  TERMINATE_PROCESS_INSTANCE：终止(撤销)流程实例  FINISH_PROCESS_INSTANCE：结束流程实例  ADD_REMARK：添加评论  REDIRECT_PROCESS：审批退回  PROCESS_CC：抄送
         self.type = type
-        # 操作人userid。
         self.user_id = user_id
 
     def validate(self):
@@ -4306,25 +4189,15 @@ class GetProcessInstanceResponseBodyResultTasks(TeaModel):
         task_id: int = None,
         user_id: str = None,
     ):
-        # 任务节点ID。
         self.activity_id = activity_id
-        # 开始时间。
         self.create_time = create_time
-        # 结束时间。
         self.finish_time = finish_time
-        # 移动端任务URL。
         self.mobile_url = mobile_url
-        # PC端任务URL。
         self.pc_url = pc_url
-        # 实例ID。
         self.process_instance_id = process_instance_id
-        # 结果：  AGREE：同意  REFUSE：拒绝  REDIRECTED：转交
         self.result = result
-        # 任务状态：  NEW：未启动  RUNNING：处理中  PAUSED：暂停  CANCELED：取消  COMPLETED：完成  TERMINATED：终止
         self.status = status
-        # 任务ID。
         self.task_id = task_id
-        # 任务处理人。
         self.user_id = user_id
 
     def validate(self):
@@ -4404,39 +4277,22 @@ class GetProcessInstanceResponseBodyResult(TeaModel):
         tasks: List[GetProcessInstanceResponseBodyResultTasks] = None,
         title: str = None,
     ):
-        # 审批人userid列表。
         self.approver_user_ids = approver_user_ids
-        # 审批附属实例列表，当已经通过的审批实例被修改或撤销，会生成一个新的实例，作为原有审批实例的附属。  如果想知道当前已经通过的审批实例的状态，可以依次遍历它的附属列表，查询里面每个实例的biz_action。
         self.attached_process_instance_ids = attached_process_instance_ids
-        # 审批实例业务动作：  MODIFY：表示该审批实例是基于原来的实例修改而来  REVOKE：表示该审批实例是由原来的实例撤销后重新发起的  NONE表示正常发起
         self.biz_action = biz_action
-        # 审批实例业务编号。
         self.business_id = business_id
-        # 抄送人userid列表。
         self.cc_user_ids = cc_user_ids
-        # 创建时间。
         self.create_time = create_time
-        # 结束时间。
         self.finish_time = finish_time
-        # 表单详情列表。
         self.form_component_values = form_component_values
-        # 主流程实例标识。
         self.main_process_instance_id = main_process_instance_id
-        # 操作记录列表。
         self.operation_records = operation_records
-        # 发起人的部门。-1表示根部门。
         self.originator_dept_id = originator_dept_id
-        # 发起人的部门名。
         self.originator_dept_name = originator_dept_name
-        # 发起人的userid。
         self.originator_user_id = originator_user_id
-        # 审批结果：  agree：同意  refuse：拒绝。 说明 status为COMPLETED且result为同意时，表示审批单完结并审批通过。
         self.result = result
-        # 审批状态：  NEW：新创建  RUNNING：审批中  TERMINATED：被终止  COMPLETED：完成  CANCELED：取消
         self.status = status
-        # 任务列表。
         self.tasks = tasks
-        # 审批实例标题。
         self.title = title
 
     def validate(self):
@@ -4555,9 +4411,7 @@ class GetProcessInstanceResponseBody(TeaModel):
         result: GetProcessInstanceResponseBodyResult = None,
         success: str = None,
     ):
-        # 返回结果。
         self.result = result
-        # 调用是否成功。
         self.success = success
 
     def validate(self):
@@ -4590,13 +4444,16 @@ class GetProcessInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetProcessInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4609,6 +4466,8 @@ class GetProcessInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4617,6 +4476,8 @@ class GetProcessInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetProcessInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4665,23 +4526,10 @@ class GetSpaceWithDownloadAuthRequest(TeaModel):
         process_instance_id: str = None,
         user_id: str = None,
     ):
-        # 应用的agentid。
         self.agent_id = agent_id
-        # 审批附件ID。
         self.file_id = file_id
-        # 附件ID列表，支持批量授权，最大列表长度：20。
         self.file_id_list = file_id_list
-        # 实例ID。
-        # 
-        # 企业内部应用
-        # 
-        # 可通过获取审批实例ID列表接口获取。
-        # 
-        # 第三方企业应用
-        # 
-        # 可以通过推送的审批事件中获取，参考biz_type=22。
         self.process_instance_id = process_instance_id
-        # 授权允许预览附件的用户userid。
         self.user_id = user_id
 
     def validate(self):
@@ -4725,7 +4573,6 @@ class GetSpaceWithDownloadAuthResponseBodyResult(TeaModel):
         self,
         space_id: int = None,
     ):
-        # 钉盘空间ID。
         self.space_id = space_id
 
     def validate(self):
@@ -4754,9 +4601,7 @@ class GetSpaceWithDownloadAuthResponseBody(TeaModel):
         result: GetSpaceWithDownloadAuthResponseBodyResult = None,
         success: bool = None,
     ):
-        # 返回结果。
         self.result = result
-        # 接口调用是否成功。
         self.success = success
 
     def validate(self):
@@ -4789,13 +4634,16 @@ class GetSpaceWithDownloadAuthResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSpaceWithDownloadAuthResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4808,6 +4656,8 @@ class GetSpaceWithDownloadAuthResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4816,6 +4666,8 @@ class GetSpaceWithDownloadAuthResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSpaceWithDownloadAuthResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4860,7 +4712,6 @@ class GetUserTodoTaskSumRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 要查询的用户userid。
         self.user_id = user_id
 
     def validate(self):
@@ -4888,7 +4739,6 @@ class GetUserTodoTaskSumResponseBody(TeaModel):
         self,
         result: int = None,
     ):
-        # 待处理的审批数量。
         self.result = result
 
     def validate(self):
@@ -4915,13 +4765,16 @@ class GetUserTodoTaskSumResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserTodoTaskSumResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4934,6 +4787,8 @@ class GetUserTodoTaskSumResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4942,6 +4797,8 @@ class GetUserTodoTaskSumResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserTodoTaskSumResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4989,13 +4846,9 @@ class GrantCspaceAuthorizationRequest(TeaModel):
         type: str = None,
         user_id: str = None,
     ):
-        # 权限有效时间，单位为秒。
         self.duration_seconds = duration_seconds
-        # 审批控件 id。
         self.space_id = space_id
-        # 权限类型。
         self.type = type
-        # 用户 id。
         self.user_id = user_id
 
     def validate(self):
@@ -5034,11 +4887,14 @@ class GrantCspaceAuthorizationResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -5048,12 +4904,16 @@ class GrantCspaceAuthorizationResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -5096,11 +4956,7 @@ class GrantProcessInstanceForDownloadFileRequest(TeaModel):
         file_id: str = None,
         process_instance_id: str = None,
     ):
-        # 文件id，调用获取审批实例详情接口获取。
         self.file_id = file_id
-        # 实例ID。
-        # 
-        # 调用获取审批实例详情接口获取。
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -5134,11 +4990,8 @@ class GrantProcessInstanceForDownloadFileResponseBodyResult(TeaModel):
         file_id: str = None,
         space_id: int = None,
     ):
-        # 文件下载地址。
         self.download_uri = download_uri
-        # 文件ID。
         self.file_id = file_id
-        # 钉盘空间ID。
         self.space_id = space_id
 
     def validate(self):
@@ -5175,9 +5028,7 @@ class GrantProcessInstanceForDownloadFileResponseBody(TeaModel):
         result: GrantProcessInstanceForDownloadFileResponseBodyResult = None,
         success: bool = None,
     ):
-        # 返回结果。
         self.result = result
-        # 接口调用是否成功。
         self.success = success
 
     def validate(self):
@@ -5210,13 +5061,16 @@ class GrantProcessInstanceForDownloadFileResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GrantProcessInstanceForDownloadFileResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5229,6 +5083,8 @@ class GrantProcessInstanceForDownloadFileResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5237,6 +5093,8 @@ class GrantProcessInstanceForDownloadFileResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GrantProcessInstanceForDownloadFileResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5281,7 +5139,6 @@ class InstallAppRequestInstallOption(TeaModel):
         self,
         is_sync: bool = None,
     ):
-        # 是否同步，目前只有同步
         self.is_sync = is_sync
 
     def validate(self):
@@ -5311,12 +5168,8 @@ class InstallAppRequest(TeaModel):
         install_option: InstallAppRequestInstallOption = None,
         source_dir_name: str = None,
     ):
-        # 业务分组
         self.biz_group = biz_group
-        # 安装选项
-        # 
         self.install_option = install_option
-        # 安装的目录名称
         self.source_dir_name = source_dir_name
 
     def validate(self):
@@ -5356,11 +5209,8 @@ class InstallAppResponseBodyResult(TeaModel):
         name: str = None,
         process_code: str = None,
     ):
-        # 套件业务类型
         self.biz_type = biz_type
-        # 模版名称
         self.name = name
-        # 模版processcode
         self.process_code = process_code
 
     def validate(self):
@@ -5396,7 +5246,6 @@ class InstallAppResponseBody(TeaModel):
         self,
         result: List[InstallAppResponseBodyResult] = None,
     ):
-        # 返回对象列表
         self.result = result
 
     def validate(self):
@@ -5431,13 +5280,16 @@ class InstallAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: InstallAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5450,6 +5302,8 @@ class InstallAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5458,6 +5312,8 @@ class InstallAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = InstallAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5508,28 +5364,12 @@ class ListProcessInstanceIdsRequest(TeaModel):
         statuses: List[str] = None,
         user_ids: List[str] = None,
     ):
-        # 审批实例结束时间，Unix时间戳，单位毫秒。  例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.14 23:59:59对应的时间戳1586879999000。
         self.end_time = end_time
-        # 分页参数，每页大小，最多传20。
         self.max_results = max_results
-        # 分页查询的游标，最开始传0，后续传返回参数中的nextToken值。
         self.next_token = next_token
-        # 审批流的唯一码。
-        # 
-        # processCode在审批模板编辑页面的URL中获取。
         self.process_code = process_code
-        # 审批实例开始时间。Unix时间戳，单位毫秒。
-        # 
-        # 例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.10 00:00:00对应的时间戳1586448000000。
         self.start_time = start_time
-        # 流程实例状态，未传值代表查询所有状态的实例ID列表。
-        # NEW：新创建  
-        # RUNNING：审批中  
-        # TERMINATED：被终止  
-        # COMPLETED：完成  
-        # CANCELED：取消
         self.statuses = statuses
-        # 发起userid列表，最大列表长度为10。
         self.user_ids = user_ids
 
     def validate(self):
@@ -5582,9 +5422,7 @@ class ListProcessInstanceIdsResponseBodyResult(TeaModel):
         list: List[str] = None,
         next_token: str = None,
     ):
-        # 审批实例ID列表。
         self.list = list
-        # 表示下次查询的游标，当返回结果没有该字段时表示没有更多数据了。
         self.next_token = next_token
 
     def validate(self):
@@ -5617,9 +5455,7 @@ class ListProcessInstanceIdsResponseBody(TeaModel):
         result: ListProcessInstanceIdsResponseBodyResult = None,
         success: bool = None,
     ):
-        # 返回结果。
         self.result = result
-        # 接口请求是否成功。
         self.success = success
 
     def validate(self):
@@ -5652,13 +5488,16 @@ class ListProcessInstanceIdsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListProcessInstanceIdsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5671,6 +5510,8 @@ class ListProcessInstanceIdsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5679,6 +5520,8 @@ class ListProcessInstanceIdsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListProcessInstanceIdsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5726,22 +5569,9 @@ class ListTodoWorkRecordsRequest(TeaModel):
         status: int = None,
         user_id: str = None,
     ):
-        # 分页大小，最大值50。
         self.max_results = max_results
-        # 分页游标。
-        # 
-        # 如果是首次调用，该参数传0。
-        # 如果是非首次调用，该参数传上次调用时返回的nextToken。
-        # 
         self.next_token = next_token
-        # 待办事项的状态：
-        # 
-        # 0：待处理
-        # 
-        # -1：已经移除
-        # 
         self.status = status
-        # 要查询的执行人userid。
         self.user_id = user_id
 
     def validate(self):
@@ -5782,9 +5612,7 @@ class ListTodoWorkRecordsResponseBodyResultListForms(TeaModel):
         content: str = None,
         title: str = None,
     ):
-        # 表单内容。
         self.content = content
-        # 表单标题。
         self.title = title
 
     def validate(self):
@@ -5820,15 +5648,10 @@ class ListTodoWorkRecordsResponseBodyResultList(TeaModel):
         title: str = None,
         url: str = None,
     ):
-        # 表单列表。
         self.forms = forms
-        # 实例ID。
         self.instance_id = instance_id
-        # 待办任务ID。
         self.task_id = task_id
-        # 待办标题。
         self.title = title
-        # 待办跳转链接。
         self.url = url
 
     def validate(self):
@@ -5881,9 +5704,7 @@ class ListTodoWorkRecordsResponseBodyResult(TeaModel):
         list: List[ListTodoWorkRecordsResponseBodyResultList] = None,
         next_token: int = None,
     ):
-        # 待办事项列表。
         self.list = list
-        # 分页游标。不为空表示有数据。
         self.next_token = next_token
 
     def validate(self):
@@ -5923,7 +5744,6 @@ class ListTodoWorkRecordsResponseBody(TeaModel):
         self,
         result: ListTodoWorkRecordsResponseBodyResult = None,
     ):
-        # 查询结果。
         self.result = result
 
     def validate(self):
@@ -5952,13 +5772,16 @@ class ListTodoWorkRecordsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListTodoWorkRecordsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5971,6 +5794,8 @@ class ListTodoWorkRecordsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5979,6 +5804,8 @@ class ListTodoWorkRecordsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListTodoWorkRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6025,11 +5852,8 @@ class ListUserVisibleBpmsProcessesRequest(TeaModel):
         next_token: int = None,
         user_id: str = None,
     ):
-        # 分页大小，最大可设置成100。
         self.max_results = max_results
-        # 分页游标，从0开始。根据返回结果里的nextToken是否为空来判断是否还有下一页，且再次调用时设置成nextToken的最新值。
         self.next_token = next_token
-        # 要查询的员工的userid。不传表示查询企业下所有审批表单。
         self.user_id = user_id
 
     def validate(self):
@@ -6068,13 +5892,9 @@ class ListUserVisibleBpmsProcessesResponseBodyResultProcessList(TeaModel):
         process_code: str = None,
         url: str = None,
     ):
-        # 图标URL。
         self.icon_url = icon_url
-        # 表单名称。
         self.name = name
-        # 表单唯一标识。
         self.process_code = process_code
-        # 表单URL。
         self.url = url
 
     def validate(self):
@@ -6115,9 +5935,7 @@ class ListUserVisibleBpmsProcessesResponseBodyResult(TeaModel):
         next_token: int = None,
         process_list: List[ListUserVisibleBpmsProcessesResponseBodyResultProcessList] = None,
     ):
-        # 下一次分页调用的值，当返回结果里没有nextToken时，表示分页结束。
         self.next_token = next_token
-        # 可见表单列表。
         self.process_list = process_list
 
     def validate(self):
@@ -6157,7 +5975,6 @@ class ListUserVisibleBpmsProcessesResponseBody(TeaModel):
         self,
         result: ListUserVisibleBpmsProcessesResponseBodyResult = None,
     ):
-        # 返回结果。
         self.result = result
 
     def validate(self):
@@ -6186,13 +6003,16 @@ class ListUserVisibleBpmsProcessesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListUserVisibleBpmsProcessesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6205,6 +6025,8 @@ class ListUserVisibleBpmsProcessesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6213,6 +6035,8 @@ class ListUserVisibleBpmsProcessesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListUserVisibleBpmsProcessesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6262,16 +6086,11 @@ class ProcessForecastRequestFormComponentValuesDetailsDetails(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 控件别名
         self.biz_alias = biz_alias
         self.component_type = component_type
-        # 控件扩展值
         self.ext_value = ext_value
-        # 控件id
         self.id = id
-        # 控件名称
         self.name = name
-        # 控件值
         self.value = value
 
     def validate(self):
@@ -6324,16 +6143,11 @@ class ProcessForecastRequestFormComponentValuesDetails(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 控件别名
         self.biz_alias = biz_alias
         self.details = details
-        # 控件扩展值
         self.ext_value = ext_value
-        # 控件id
         self.id = id
-        # 控件名称
         self.name = name
-        # 控件值
         self.value = value
 
     def validate(self):
@@ -6395,18 +6209,12 @@ class ProcessForecastRequestFormComponentValues(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 控件别名
         self.biz_alias = biz_alias
-        # 控件类型
         self.component_type = component_type
         self.details = details
-        # 控件扩展值
         self.ext_value = ext_value
-        # 控件id
         self.id = id
-        # 控件名称
         self.name = name
-        # 控件值
         self.value = value
 
     def validate(self):
@@ -6469,13 +6277,9 @@ class ProcessForecastRequest(TeaModel):
         process_code: str = None,
         user_id: str = None,
     ):
-        # 部门ID
         self.dept_id = dept_id
-        # 表单数据内容，控件列表
         self.form_component_values = form_component_values
-        # 审批流的唯一码
         self.process_code = process_code
-        # 审批发起人的userId
         self.user_id = user_id
 
     def validate(self):
@@ -6524,9 +6328,7 @@ class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSe
         user_name: str = None,
         work_no: str = None,
     ):
-        # 员工姓名
         self.user_name = user_name
-        # 员工 userId
         self.work_no = work_no
 
     def validate(self):
@@ -6559,9 +6361,7 @@ class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSe
         label_names: str = None,
         labels: str = None,
     ):
-        # 角色名字
         self.label_names = label_names
-        # 角色 id
         self.labels = labels
 
     def validate(self):
@@ -6594,9 +6394,7 @@ class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSe
         approvals: List[ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals] = None,
         labels: List[ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels] = None,
     ):
-        # 审批指定成员
         self.approvals = approvals
-        # 审批指定角色
         self.labels = labels
 
     def validate(self):
@@ -6653,23 +6451,14 @@ class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor(TeaMod
         approval_type: str = None,
         required: bool = None,
     ):
-        # 节点激活类型
         self.actor_activate_type = actor_activate_type
-        # 节点操作人 key
         self.actor_key = actor_key
-        # 节点操作人选择范围
         self.actor_selection_range = actor_selection_range
-        # 节点操作人选择范围类型
         self.actor_selection_type = actor_selection_type
-        # 节点操作人类型
         self.actor_type = actor_type
-        # 是否允许多选，还是仅允许选一人
         self.allowed_multi = allowed_multi
-        # 节点审批方式
         self.approval_method = approval_method
-        # 节点审批类型
         self.approval_type = approval_type
-        # 该审批人节点在发起审批时是否必填
         self.required = required
 
     def validate(self):
@@ -6736,17 +6525,11 @@ class ProcessForecastResponseBodyResultWorkflowActivityRules(TeaModel):
         prev_activity_id: str = None,
         workflow_actor: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor = None,
     ):
-        # 节点 id
         self.activity_id = activity_id
-        # 节点名称
         self.activity_name = activity_name
-        # 规则类型
         self.activity_type = activity_type
-        # 是否自选审批节点
         self.is_target_select = is_target_select
-        # 流程中前一个节点的 id
         self.prev_activity_id = prev_activity_id
-        # 节点操作人信息
         self.workflow_actor = workflow_actor
 
     def validate(self):
@@ -6797,9 +6580,7 @@ class ProcessForecastResponseBodyResultWorkflowForecastNodes(TeaModel):
         activity_id: str = None,
         out_id: str = None,
     ):
-        # 节点 id
         self.activity_id = activity_id
-        # 节点出线 id
         self.out_id = out_id
 
     def validate(self):
@@ -6837,15 +6618,10 @@ class ProcessForecastResponseBodyResult(TeaModel):
         workflow_activity_rules: List[ProcessForecastResponseBodyResultWorkflowActivityRules] = None,
         workflow_forecast_nodes: List[ProcessForecastResponseBodyResultWorkflowForecastNodes] = None,
     ):
-        # 是否预测成功
         self.is_forecast_success = is_forecast_success
-        # 是否静态流程
         self.is_static_workflow = is_static_workflow
-        # 流程 code
         self.process_code = process_code
-        # 流程 id
         self.process_id = process_id
-        # 用户 id
         self.user_id = user_id
         self.workflow_activity_rules = workflow_activity_rules
         self.workflow_forecast_nodes = workflow_forecast_nodes
@@ -6916,7 +6692,6 @@ class ProcessForecastResponseBody(TeaModel):
         self,
         result: ProcessForecastResponseBodyResult = None,
     ):
-        # 返回结果
         self.result = result
 
     def validate(self):
@@ -6945,13 +6720,16 @@ class ProcessForecastResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ProcessForecastResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6964,6 +6742,8 @@ class ProcessForecastResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6972,6 +6752,8 @@ class ProcessForecastResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ProcessForecastResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7019,13 +6801,9 @@ class QueryAllFormInstancesRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # 应用搭建id
         self.app_uuid = app_uuid
-        # 表单模板id
         self.form_code = form_code
-        # 翻页size
         self.max_results = max_results
-        # 分页游标，第一次调用传空或者null
         self.next_token = next_token
 
     def validate(self):
@@ -7070,17 +6848,11 @@ class QueryAllFormInstancesResponseBodyResultValuesFormInstDataList(TeaModel):
         label: str = None,
         value: str = None,
     ):
-        # 控件别名
         self.biz_alias = biz_alias
-        # 控件类型
         self.component_type = component_type
-        # 表单控件扩展数据
         self.extend_value = extend_value
-        # 控件唯一id
         self.key = key
-        # 控件名称
         self.label = label
-        # 控件填写的数据
         self.value = value
 
     def validate(self):
@@ -7139,29 +6911,17 @@ class QueryAllFormInstancesResponseBodyResultValues(TeaModel):
         out_instance_id: str = None,
         title: str = None,
     ):
-        # 应用搭建id
         self.app_uuid = app_uuid
-        # 扩展信息
         self.attributes = attributes
-        # 创建时间
         self.create_timestamp = create_timestamp
-        # 创建人
         self.creator = creator
-        # 表单模板code
         self.form_code = form_code
-        # 表单实例数据
         self.form_inst_data_list = form_inst_data_list
-        # 表单实例id
         self.form_instance_id = form_instance_id
-        # 修改人
         self.modifier = modifier
-        # 修改时间
         self.modify_timestamp = modify_timestamp
-        # 外部业务编码
         self.out_biz_code = out_biz_code
-        # 外部实例编码
         self.out_instance_id = out_instance_id
-        # 标题
         self.title = title
 
     def validate(self):
@@ -7244,13 +7004,9 @@ class QueryAllFormInstancesResponseBodyResult(TeaModel):
         next_token: str = None,
         values: List[QueryAllFormInstancesResponseBodyResultValues] = None,
     ):
-        # 是否有更多数据
         self.has_more = has_more
-        # 分页大小
         self.max_results = max_results
-        # 下一页的游标
         self.next_token = next_token
-        # 表单列表
         self.values = values
 
     def validate(self):
@@ -7298,7 +7054,6 @@ class QueryAllFormInstancesResponseBody(TeaModel):
         self,
         result: QueryAllFormInstancesResponseBodyResult = None,
     ):
-        # 分页结果
         self.result = result
 
     def validate(self):
@@ -7327,13 +7082,16 @@ class QueryAllFormInstancesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryAllFormInstancesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7346,6 +7104,8 @@ class QueryAllFormInstancesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7354,6 +7114,8 @@ class QueryAllFormInstancesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAllFormInstancesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7403,17 +7165,11 @@ class QueryAllProcessInstancesRequest(TeaModel):
         process_code: str = None,
         start_time_in_mills: int = None,
     ):
-        # 应用编码
         self.app_uuid = app_uuid
-        # 结束时间
         self.end_time_in_mills = end_time_in_mills
-        # 分页大小
         self.max_results = max_results
-        # 分页起始值
         self.next_token = next_token
-        # 模板编码
         self.process_code = process_code
-        # 开始时间
         self.start_time_in_mills = start_time_in_mills
 
     def validate(self):
@@ -7464,13 +7220,9 @@ class QueryAllProcessInstancesResponseBodyResultListFormComponentValues(TeaModel
         name: str = None,
         value: str = None,
     ):
-        # 控件扩展数据
         self.ext_value = ext_value
-        # 控件id
         self.id = id
-        # 控件名称
         self.name = name
-        # 控件数据
         self.value = value
 
     def validate(self):
@@ -7513,13 +7265,9 @@ class QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments(
         file_size: str = None,
         file_type: str = None,
     ):
-        # 附件钉盘id
         self.file_id = file_id
-        # 附件名称
         self.file_name = file_name
-        # 文件大小
         self.file_size = file_size
-        # 文件类型
         self.file_type = file_type
 
     def validate(self):
@@ -7564,17 +7312,11 @@ class QueryAllProcessInstancesResponseBodyResultListOperationRecords(TeaModel):
         timestamp: int = None,
         user_id: str = None,
     ):
-        # 评论附件
         self.attachments = attachments
-        # 操作类型
         self.operation_type = operation_type
-        # 评论
         self.remark = remark
-        # 操作结果
         self.result = result
-        # 操作时间戳
         self.timestamp = timestamp
-        # 操作人staffId
         self.user_id = user_id
 
     def validate(self):
@@ -7636,19 +7378,12 @@ class QueryAllProcessInstancesResponseBodyResultListTasks(TeaModel):
         task_id: int = None,
         user_id: str = None,
     ):
-        # 节点id
         self.activity_id = activity_id
-        # 任务创建时间戳
         self.create_timestamp = create_timestamp
-        # 任务结束时间戳
         self.finish_timestamp = finish_timestamp
-        # 任务结果
         self.result = result
-        # 任务状态
         self.status = status
-        # 任务Id
         self.task_id = task_id
-        # 任务处理人
         self.user_id = user_id
 
     def validate(self):
@@ -7713,32 +7448,19 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
         tasks: List[QueryAllProcessInstancesResponseBodyResultListTasks] = None,
         title: str = None,
     ):
-        # 附属单信息
         self.attached_process_instance_ids = attached_process_instance_ids
-        # 审批单编号
         self.business_id = business_id
-        # 审批单创建时间
         self.create_time = create_time
-        # 审批结束时间
         self.finish_time = finish_time
         self.form_component_values = form_component_values
-        # 主单实例Id
         self.main_process_instance_id = main_process_instance_id
-        # 审批单操作记录
         self.operation_records = operation_records
-        # 发起人部门id
         self.originator_dept_id = originator_dept_id
-        # 发起者userId
         self.originator_userid = originator_userid
-        # 流程实例ID
         self.process_instance_id = process_instance_id
-        # 审批结果
         self.result = result
-        # 审批单状态
         self.status = status
-        # 任务列表
         self.tasks = tasks
-        # 审批单标题
         self.title = title
 
     def validate(self):
@@ -7847,12 +7569,9 @@ class QueryAllProcessInstancesResponseBodyResult(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # 是否有更多数据
         self.has_more = has_more
         self.list = list
-        # 总数
         self.max_results = max_results
-        # 下次获取数据的游标
         self.next_token = next_token
 
     def validate(self):
@@ -7900,7 +7619,6 @@ class QueryAllProcessInstancesResponseBody(TeaModel):
         self,
         result: QueryAllProcessInstancesResponseBodyResult = None,
     ):
-        # result
         self.result = result
 
     def validate(self):
@@ -7929,13 +7647,16 @@ class QueryAllProcessInstancesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryAllProcessInstancesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7948,6 +7669,8 @@ class QueryAllProcessInstancesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7956,6 +7679,8 @@ class QueryAllProcessInstancesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAllProcessInstancesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8001,9 +7726,7 @@ class QueryFormByBizTypeRequest(TeaModel):
         app_uuid: str = None,
         biz_types: List[str] = None,
     ):
-        # 应用搭建id
         self.app_uuid = app_uuid
-        # 表单业务标识
         self.biz_types = biz_types
 
     def validate(self):
@@ -8047,31 +7770,18 @@ class QueryFormByBizTypeResponseBodyResult(TeaModel):
         owner_id: str = None,
         status: str = None,
     ):
-        # 表单类型，0为流程表单，1为数据表单
         self.app_type = app_type
-        # 应用搭建id
         self.app_uuid = app_uuid
-        # 业务标识
         self.biz_type = biz_type
-        # 表单控件描述
         self.content = content
-        # 创建时间
         self.create_time = create_time
-        # 创建人
         self.creator = creator
-        # 模板code
         self.form_code = form_code
-        # 表单uuid
         self.form_uuid = form_uuid
-        # 模板描述
         self.memo = memo
-        # 修改时间
         self.modifed_time = modifed_time
-        # 模板名称
         self.name = name
-        # 数据归属id
         self.owner_id = owner_id
-        # 模板状态
         self.status = status
 
     def validate(self):
@@ -8147,7 +7857,6 @@ class QueryFormByBizTypeResponseBody(TeaModel):
         self,
         result: List[QueryFormByBizTypeResponseBodyResult] = None,
     ):
-        # 模板列表
         self.result = result
 
     def validate(self):
@@ -8182,13 +7891,16 @@ class QueryFormByBizTypeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryFormByBizTypeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8201,6 +7913,8 @@ class QueryFormByBizTypeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8209,6 +7923,8 @@ class QueryFormByBizTypeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryFormByBizTypeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8255,11 +7971,8 @@ class QueryFormInstanceRequest(TeaModel):
         form_code: str = None,
         form_instance_id: str = None,
     ):
-        # 应用搭建id
         self.app_uuid = app_uuid
-        # 表单模板Code
         self.form_code = form_code
-        # 表单实例id
         self.form_instance_id = form_instance_id
 
     def validate(self):
@@ -8363,29 +8076,17 @@ class QueryFormInstanceResponseBody(TeaModel):
         out_instance_id: str = None,
         title: str = None,
     ):
-        # 应用搭建id
         self.app_uuid = app_uuid
-        # 扩展信息
         self.attributes = attributes
-        # 实例创建时间戳
         self.create_timestamp = create_timestamp
-        # 创建人
         self.creator = creator
-        # 表单模板id
         self.form_code = form_code
-        # 表单数据
         self.form_inst_data_list = form_inst_data_list
-        # 实例id
         self.form_instance_id = form_instance_id
-        # 修改人
         self.modifier = modifier
-        # 实例最近修改时间戳
         self.modify_timestamp = modify_timestamp
-        # 外联业务code
         self.out_biz_code = out_biz_code
-        # 外联业务实例id
         self.out_instance_id = out_instance_id
-        # 表单标题
         self.title = title
 
     def validate(self):
@@ -8464,13 +8165,16 @@ class QueryFormInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryFormInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8483,6 +8187,8 @@ class QueryFormInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8491,6 +8197,8 @@ class QueryFormInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryFormInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8538,11 +8246,8 @@ class QueryIntegratedTodoTaskRequest(TeaModel):
         page_size: int = None,
         user_id: str = None,
     ):
-        # 在此时间戳之前创建的
         self.create_before = create_before
-        # 第几页，取值范围为 1 ≤ page ≤ 1000
         self.page_number = page_number
-        # 分页大小，取值范围为 1 ≤ pageSize ≤ 40
         self.page_size = page_size
         self.user_id = user_id
 
@@ -8590,21 +8295,13 @@ class QueryIntegratedTodoTaskResponseBodyResultList(TeaModel):
         task_id: int = None,
         user_id: str = None,
     ):
-        # 待办组ID，需要在调用创建流程中心集成任务接口时，主动设置该值。
         self.activity_id = activity_id
-        # OA审批任务创建时间。
         self.create_time = create_time
-        # OA审批任务完成时间。
         self.finish_time = finish_time
-        # 流程实例ID
         self.process_instance_id = process_instance_id
-        # 任务处理结果：agree 或 refuse
         self.result = result
-        # 任务状态
         self.status = status
-        # OA审批任务ID
         self.task_id = task_id
-        # OA审批任务执行人的用户ID
         self.user_id = user_id
 
     def validate(self):
@@ -8661,7 +8358,6 @@ class QueryIntegratedTodoTaskResponseBodyResult(TeaModel):
         has_more: bool = None,
         list: List[QueryIntegratedTodoTaskResponseBodyResultList] = None,
     ):
-        # 是否还有下一页
         self.has_more = has_more
         self.list = list
 
@@ -8730,13 +8426,16 @@ class QueryIntegratedTodoTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryIntegratedTodoTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8749,6 +8448,8 @@ class QueryIntegratedTodoTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8757,6 +8458,8 @@ class QueryIntegratedTodoTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryIntegratedTodoTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8802,9 +8505,7 @@ class QueryProcessByBizCategoryIdRequest(TeaModel):
         biz_type: str = None,
         user_id: str = None,
     ):
-        # 业务标识
         self.biz_type = biz_type
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -8839,19 +8540,9 @@ class QueryProcessByBizCategoryIdResponseBodyResult(TeaModel):
         process_code: str = None,
         status: str = None,
     ):
-        # 模板描述
         self.description = description
-        # 模板名称
         self.name = name
-        # 模板code
         self.process_code = process_code
-        # 模版发布状态。
-        # 
-        # - PUBLISHED：已启用
-        # 
-        # - INVALID：停用
-        # 
-        # - SAVED：已保存
         self.status = status
 
     def validate(self):
@@ -8925,13 +8616,16 @@ class QueryProcessByBizCategoryIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryProcessByBizCategoryIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8944,6 +8638,8 @@ class QueryProcessByBizCategoryIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8952,6 +8648,8 @@ class QueryProcessByBizCategoryIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryProcessByBizCategoryIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8997,9 +8695,7 @@ class QuerySchemaByProcessCodeRequest(TeaModel):
         app_uuid: str = None,
         process_code: str = None,
     ):
-        # 应用搭建隔离信息
         self.app_uuid = app_uuid
-        # 表单的唯一码
         self.process_code = process_code
 
     def validate(self):
@@ -9034,13 +8730,9 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps(
         label: str = None,
         required: bool = None,
     ):
-        # 控件业务别名
         self.biz_alias = biz_alias
-        # 控件id
         self.id = id
-        # 控件名称
         self.label = label
-        # 是否必填
         self.required = required
 
     def validate(self):
@@ -9081,9 +8773,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren(TeaMo
         component_name: str = None,
         props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps = None,
     ):
-        # 控件类型
         self.component_name = component_name
-        # 子控件属性
         self.props = props
 
     def validate(self):
@@ -9118,9 +8808,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorL
         behavior: str = None,
         field_id: str = None,
     ):
-        # 行为。
         self.behavior = behavior
-        # 字段 id。
         self.field_id = field_id
 
     def validate(self):
@@ -9153,9 +8841,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorL
         targets: List[QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets] = None,
         value: str = None,
     ):
-        # 关联控件列表。
         self.targets = targets
-        # 控件值。
         self.value = value
 
     def validate(self):
@@ -9224,11 +8910,8 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush(TeaM
         push_switch: int = None,
         push_tag: str = None,
     ):
-        # 考勤类型(1表示请假, 2表示出差, 3表示加班, 4表示外出)
         self.attendance_rule = attendance_rule
-        # 开启状态(1表示开启, 0表示关闭)
         self.push_switch = push_switch
-        # 状态显示名称
         self.push_tag = push_tag
 
     def validate(self):
@@ -9267,13 +8950,9 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField
         unit: str = None,
         upper: bool = None,
     ):
-        # id 值。
         self.id = id
-        # 名称。
         self.label = label
-        # 单位。
         self.unit = unit
-        # 大写。
         self.upper = upper
 
     def validate(self):
@@ -9357,95 +9036,50 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
         use_calendar: bool = None,
         vertical_print: bool = None,
     ):
-        # 加班套件4.0新增 加班明细名称。
         self.action_name = action_name
-        # textnote的样式，top|middle|bottom。
         self.align = align
-        # ISV 微应用 appId，用于ISV身份权限识别，ISV可获得相应数据。
         self.app_id = app_id
-        # 套件是否开启异步获取分条件规则，true：开启；false：不开启。
         self.async_condition = async_condition
-        # 请假、出差、外出、加班类型标签。
         self.attend_type_label = attend_type_label
-        # 表单关联控件列表。
         self.behavior_linkage = behavior_linkage
-        # 控件业务自定义别名。
         self.biz_alias = biz_alias
-        # 业务套件类型。
         self.biz_type = biz_type
-        # 套件内子组件可见性
         self.child_field_visible = child_field_visible
-        # 内部联系人choice，1表示多选，0表示单选。
         self.choice = choice
-        # common field的commonBizType。
         self.common_biz_type = common_biz_type
-        # 是否可编辑。
         self.disabled = disabled
-        # 是否自动计算时长。
         self.duration = duration
-        # 兼容字段。
         self.duration_label = duration_label
-        # e签宝专用标识。
         self.e_sign = e_sign
-        # 套件值是否打平
         self.extract = extract
-        # 关联表单中的fields存储
         self.fields_info = fields_info
-        # 时间格式(DDDateField和DDDateRangeField)。
         self.format = format
-        # 公式。
         self.formula = formula
-        # 加班套件4.0新增 加班明细是否隐藏。
         self.hidden = hidden
-        # textnote在详情页是否隐藏，true隐藏， false不隐藏
         self.hidden_in_approval_detail = hidden_in_approval_detail
-        # 加班套件4.0新增 加班明细是否隐藏标签。
         self.hide_label = hide_label
-        # 兼容出勤套件类型。
         self.holiday_options = holiday_options
-        # 控件 id。
         self.id = id
-        # 控件名称。
         self.label = label
-        # label是否可修改 true：不可修改。
         self.label_editable_freeze = label_editable_freeze
-        # 说明文案的链接地址。
         self.link = link
-        # 加班套件4.0新增 加班明细描述。
         self.main_title = main_title
-        # 是否参与打印(1表示不打印, 0表示打印)。
         self.not_print = not_print
-        # 是否需要大写 默认是需要; 1:不需要大写, 空或者0:需要大写。
         self.not_upper = not_upper
-        # 选项内容列表，提供给业务方更多的选择器操作。
         self.obj_options = obj_options
-        # 单选框选项列表。
         self.options = options
-        # 是否有支付属性。
         self.pay_enable = pay_enable
-        # 占位符。
         self.placeholder = placeholder
-        # 同步到考勤, 表示是否设置为员工状态。
         self.push = push
-        # 推送到考勤, 子类型(DDSelectField)。
         self.push_to_attendance = push_to_attendance
-        # 是否推送管理日历(DDDateRangeField, 1表示推送, 0表示不推送, 该属性为兼容保留)。
         self.push_to_calendar = push_to_calendar
-        # 是否必填。
         self.required = required
-        # 必填是否可修改 true：不可修改。
         self.required_editable_freeze = required_editable_freeze
-        # 兼容出勤套件类型。
         self.show_attend_options = show_attend_options
-        # 是否开启员工状态。
         self.staff_status_enabled = staff_status_enabled
-        # 需要计算总和的明细组件
         self.stat_field = stat_field
-        # 数字组件/日期区间组件单位属性。
         self.unit = unit
-        # 是否使用考勤日历。
         self.use_calendar = use_calendar
-        # 明细打印排版方式 false：横向 true：纵向。
         self.vertical_print = vertical_print
 
     def validate(self):
@@ -9680,11 +9314,8 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems(TeaModel):
         component_name: str = None,
         props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps = None,
     ):
-        # 子控件列表
         self.children = children
-        # 控件类型，取值：
         self.component_name = component_name
-        # 控件属性。
         self.props = props
 
     def validate(self):
@@ -9733,11 +9364,8 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContent(TeaModel):
         items: List[QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems] = None,
         title: str = None,
     ):
-        # 图标
         self.icon = icon
-        # 控件列表
         self.items = items
-        # 表单名称。
         self.title = title
 
     def validate(self):
@@ -9799,43 +9427,24 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
         status: str = None,
         visible_range: str = None,
     ):
-        # 表单类型。
         self.app_type = app_type
-        # 表单应用 uuid 或者 corpId。
         self.app_uuid = app_uuid
-        # 代表表单业务含义的类型。
         self.biz_type = biz_type
-        # 创建人 userId。
         self.creator_user_id = creator_user_id
-        # 业务自定义设置数据。
         self.custom_setting = custom_setting
-        # 引擎类型，表单：0，页面：1
         self.engine_type = engine_type
-        # 表单的唯一码。
         self.form_code = form_code
-        # 表单 uuid。
         self.form_uuid = form_uuid
-        # 创建时间的时间戳。
         self.gmt_create = gmt_create
-        # 修改时间的时间戳。
         self.gmt_modified = gmt_modified
-        # 图标。
         self.icon = icon
-        # 排序 id。
         self.list_order = list_order
-        # 说明文案。
         self.memo = memo
-        # 表单名称。
         self.name = name
-        # 数据归属者的 id 类型。企业(orgId), 群(cid), 人(uid)。
         self.owner_id_type = owner_id_type
-        # 目标类型: inner, outer, customer。
         self.proc_type = proc_type
-        # 表单 schema 详情。
         self.schema_content = schema_content
-        # 状态, PUBLISHED(启用), INVALID(停用), SAVED(草稿)
         self.status = status
-        # 可见范围类型。
         self.visible_range = visible_range
 
     def validate(self):
@@ -9937,7 +9546,6 @@ class QuerySchemaByProcessCodeResponseBody(TeaModel):
         self,
         result: QuerySchemaByProcessCodeResponseBodyResult = None,
     ):
-        # 返回结果详情。
         self.result = result
 
     def validate(self):
@@ -9966,13 +9574,16 @@ class QuerySchemaByProcessCodeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QuerySchemaByProcessCodeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9985,6 +9596,8 @@ class QuerySchemaByProcessCodeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9993,6 +9606,8 @@ class QuerySchemaByProcessCodeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QuerySchemaByProcessCodeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10041,15 +9656,10 @@ class RedirectWorkflowTaskRequestFileAttachments(TeaModel):
         file_type: str = None,
         space_id: str = None,
     ):
-        # 文件ID。
         self.file_id = file_id
-        # 文件名称。
         self.file_name = file_name
-        # 文件大小。
         self.file_size = file_size
-        # 文件类型。
         self.file_type = file_type
-        # 钉盘空间ID。
         self.space_id = space_id
 
     def validate(self):
@@ -10094,9 +9704,7 @@ class RedirectWorkflowTaskRequestFile(TeaModel):
         attachments: List[RedirectWorkflowTaskRequestFileAttachments] = None,
         photos: List[str] = None,
     ):
-        # 附件列表。
         self.attachments = attachments
-        # 图片URL地址。
         self.photos = photos
 
     def validate(self):
@@ -10141,17 +9749,11 @@ class RedirectWorkflowTaskRequest(TeaModel):
         task_id: int = None,
         to_user_id: str = None,
     ):
-        # 操作节点名
         self.action_name = action_name
-        # 文件。
         self.file = file
-        # 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
         self.operate_user_id = operate_user_id
-        # 转交备注信息
         self.remark = remark
-        # OA审批任务ID
         self.task_id = task_id
-        # OA审批任务被转交对象的用户ID
         self.to_user_id = to_user_id
 
     def validate(self):
@@ -10201,7 +9803,6 @@ class RedirectWorkflowTaskResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 是否转交成功
         self.result = result
 
     def validate(self):
@@ -10228,13 +9829,16 @@ class RedirectWorkflowTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RedirectWorkflowTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10247,6 +9851,8 @@ class RedirectWorkflowTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10255,6 +9861,8 @@ class RedirectWorkflowTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RedirectWorkflowTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10304,55 +9912,11 @@ class SaveIntegratedInstanceRequestFormComponentValueList(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 控件别名
         self.biz_alias = biz_alias
-        # 控件类型，取值：
-        # 
-        # TextField：单行输入框
-        # 
-        # TextareaField：多行输入框
-        # 
-        # NumberField：数字输入框
-        # 
-        # DDSelectField：单选框
-        # 
-        # DDMultiSelectField：多选框
-        # 
-        # DDDateField：日期控件
-        # 
-        # DDDateRangeField：时间区间控件
-        # 
-        # TextNote：文字说明控件
-        # 
-        # PhoneField：电话控件
-        # 
-        # DDPhotoField：图片控件
-        # 
-        # MoneyField：金额控件
-        # 
-        # TableField：明细控件
-        # 
-        # DDAttachment：附件
-        # 
-        # InnerContactField：联系人控件
-        # 
-        # RelateField：关联审批单
-        # 
-        # FormRelateField：关联控件
-        # 
-        # AddressField：省市区控件
-        # 
-        # StarRatingField：评分控件
-        # 
-        # DepartmentField：部门控件
         self.component_type = component_type
-        # 表单扩展值
         self.ext_value = ext_value
-        # 控件id
         self.id = id
-        # 表单名称
         self.name = name
-        # 表单值
         self.value = value
 
     def validate(self):
@@ -10401,12 +9965,7 @@ class SaveIntegratedInstanceRequestNotifiers(TeaModel):
         position: str = None,
         userid: str = None,
     ):
-        # 抄送位置，可以值有：
-        # start - 审批发起时，通知抄送人
-        # finish - 审批通过后，通知抄送人
-        # start_finish - 审批发起时和审批通过后，都通知抄送人
         self.position = position
-        # 抄送接收人用户ID
         self.userid = userid
 
     def validate(self):
@@ -10445,13 +10004,9 @@ class SaveIntegratedInstanceRequest(TeaModel):
     ):
         self.form_component_value_list = form_component_value_list
         self.notifiers = notifiers
-        # 审批实例接收人的userId。
         self.originator_user_id = originator_user_id
-        # 审批模板唯一码
         self.process_code = process_code
-        # 实例标题
         self.title = title
-        # 三方审批系统中审批单的详情页地址
         self.url = url
 
     def validate(self):
@@ -10516,7 +10071,6 @@ class SaveIntegratedInstanceResponseBodyResult(TeaModel):
         self,
         process_instance_id: str = None,
     ):
-        # 实例id
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -10572,13 +10126,16 @@ class SaveIntegratedInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SaveIntegratedInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10591,6 +10148,8 @@ class SaveIntegratedInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10599,6 +10158,8 @@ class SaveIntegratedInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SaveIntegratedInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10645,11 +10206,8 @@ class SaveProcessRequestProcessFeatureConfigFeaturesCallback(TeaModel):
         app_uuid: str = None,
         version: str = None,
     ):
-        # 网关接口标识
         self.api_key = api_key
-        # 网关接口对应应用的uuid
         self.app_uuid = app_uuid
-        # 网关接口版本
         self.version = version
 
     def validate(self):
@@ -10690,15 +10248,9 @@ class SaveProcessRequestProcessFeatureConfigFeatures(TeaModel):
         run_type: str = None,
     ):
         self.callback = callback
-        # 手机端链接
         self.mobile_url = mobile_url
-        # 名称
         self.name = name
-        # pc端链接
         self.pc_url = pc_url
-        # 运行方式：
-        # ORIGIN：原生运行，即在官方审批内运行对应功能；
-        # REDIRECT：外部跳转运行，需要跳转到三方地址运行对应功能
         self.run_type = run_type
 
     def validate(self):
@@ -10744,7 +10296,6 @@ class SaveProcessRequestProcessFeatureConfig(TeaModel):
         self,
         features: List[SaveProcessRequestProcessFeatureConfigFeatures] = None,
     ):
-        # 配置列表
         self.features = features
 
     def validate(self):
@@ -10784,14 +10335,10 @@ class SaveProcessRequestTemplateConfig(TeaModel):
         hidden: bool = None,
         template_edit_url: str = None,
     ):
-        # 表单创建移动端地址
         self.create_instance_mobile_url = create_instance_mobile_url
-        # 表单创建PC端地址
         self.create_instance_pc_url = create_instance_pc_url
         self.disable_send_card = disable_send_card
-        # 是否为隐藏模板
         self.hidden = hidden
-        # 模板编辑地址
         self.template_edit_url = template_edit_url
 
     def validate(self):
@@ -10840,17 +10387,11 @@ class SaveProcessRequest(TeaModel):
         process_feature_config: SaveProcessRequestProcessFeatureConfig = None,
         template_config: SaveProcessRequestTemplateConfig = None,
     ):
-        # 表单模板描述
         self.description = description
-        # 表单控件列表
         self.form_components = form_components
-        # 表单模板名称
         self.name = name
-        # 模板code
         self.process_code = process_code
-        # 流程中心集成配置
         self.process_feature_config = process_feature_config
-        # 流程中心模板配置
         self.template_config = template_config
 
     def validate(self):
@@ -10912,7 +10453,6 @@ class SaveProcessResponseBodyResult(TeaModel):
         self,
         process_code: str = None,
     ):
-        # 保存或更新的表单code
         self.process_code = process_code
 
     def validate(self):
@@ -10940,7 +10480,6 @@ class SaveProcessResponseBody(TeaModel):
         self,
         result: SaveProcessResponseBodyResult = None,
     ):
-        # 表单模板信息
         self.result = result
 
     def validate(self):
@@ -10969,13 +10508,16 @@ class SaveProcessResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SaveProcessResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10988,6 +10530,8 @@ class SaveProcessResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10996,6 +10540,8 @@ class SaveProcessResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SaveProcessResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11041,9 +10587,7 @@ class StartProcessInstanceRequestApprovers(TeaModel):
         action_type: str = None,
         user_ids: List[str] = None,
     ):
-        # 审批类型
         self.action_type = action_type
-        # 审批人列表
         self.user_ids = user_ids
 
     def validate(self):
@@ -11080,17 +10624,11 @@ class StartProcessInstanceRequestFormComponentValuesDetailsDetails(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 控件别名
         self.biz_alias = biz_alias
-        # 控件类型
         self.component_type = component_type
-        # 控件扩展值
         self.ext_value = ext_value
-        # 控件id
         self.id = id
-        # 控件名称
         self.name = name
-        # 控件值
         self.value = value
 
     def validate(self):
@@ -11143,16 +10681,11 @@ class StartProcessInstanceRequestFormComponentValuesDetails(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 控件别名
         self.biz_alias = biz_alias
         self.details = details
-        # 控件扩展值
         self.ext_value = ext_value
-        # 控件id
         self.id = id
-        # 控件名称
         self.name = name
-        # 控件值
         self.value = value
 
     def validate(self):
@@ -11214,18 +10747,12 @@ class StartProcessInstanceRequestFormComponentValues(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 控件别名
         self.biz_alias = biz_alias
-        # 控件类型
         self.component_type = component_type
         self.details = details
-        # 控件扩展值
         self.ext_value = ext_value
-        # 控件id
         self.id = id
-        # 控件名称
         self.name = name
-        # 控件值
         self.value = value
 
     def validate(self):
@@ -11286,9 +10813,7 @@ class StartProcessInstanceRequestTargetSelectActioners(TeaModel):
         actioner_key: str = None,
         actioner_user_ids: List[str] = None,
     ):
-        # 自选节点的规则key
         self.actioner_key = actioner_key
-        # 操作人userId列表
         self.actioner_user_ids = actioner_user_ids
 
     def validate(self):
@@ -11328,23 +10853,14 @@ class StartProcessInstanceRequest(TeaModel):
         process_code: str = None,
         target_select_actioners: List[StartProcessInstanceRequestTargetSelectActioners] = None,
     ):
-        # 不使用审批流模板时，直接指定审批人列表
         self.approvers = approvers
-        # 抄送人userId列表
         self.cc_list = cc_list
-        # 抄送时间
         self.cc_position = cc_position
-        # 部门ID
         self.dept_id = dept_id
-        # 表单数据内容，控件列表
         self.form_component_values = form_component_values
-        # 企业微应用标识
         self.microapp_agent_id = microapp_agent_id
-        # 审批发起人的userId
         self.originator_user_id = originator_user_id
-        # 审批流的唯一码
         self.process_code = process_code
-        # 使用审批流模板时，模板上的自选操作人列表
         self.target_select_actioners = target_select_actioners
 
     def validate(self):
@@ -11430,7 +10946,6 @@ class StartProcessInstanceResponseBody(TeaModel):
         self,
         instance_id: str = None,
     ):
-        # 审批实例id
         self.instance_id = instance_id
 
     def validate(self):
@@ -11457,13 +10972,16 @@ class StartProcessInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: StartProcessInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11476,6 +10994,8 @@ class StartProcessInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11484,6 +11004,8 @@ class StartProcessInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = StartProcessInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11531,19 +11053,9 @@ class TerminateProcessInstanceRequest(TeaModel):
         process_instance_id: str = None,
         remark: str = None,
     ):
-        # 是否通过系统操作：
-        # 
-        # true：由系统直接终止
-        # 
-        # false：由指定的操作者终止
         self.is_system = is_system
-        # 操作人的userid。
-        # 
-        # 当is_system为false时，该参数必传。
         self.operating_user_id = operating_user_id
-        # 审批实例ID，可通过调用获取审批实例ID列表接口获取。
         self.process_instance_id = process_instance_id
-        # 终止说明。
         self.remark = remark
 
     def validate(self):
@@ -11584,9 +11096,7 @@ class TerminateProcessInstanceResponseBody(TeaModel):
         result: bool = None,
         success: bool = None,
     ):
-        # 撤销结果。
         self.result = result
-        # 接口调用是否成功。
         self.success = success
 
     def validate(self):
@@ -11617,13 +11127,16 @@ class TerminateProcessInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: TerminateProcessInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11636,6 +11149,8 @@ class TerminateProcessInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11644,6 +11159,8 @@ class TerminateProcessInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TerminateProcessInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11690,15 +11207,8 @@ class UpdateIntegratedTaskRequestTasks(TeaModel):
         status: str = None,
         task_id: int = None,
     ):
-        # 当status为COMPLETED时，必须指定任务结果：
-        # AGREE：同意
-        # REFUSE：拒绝
-        # 
-        # 说明 当status为CANCELED时，不需要传result。
         self.result = result
-        # 更新为目标任务状态，可选值 CANCELED、COMPLETED
         self.status = status
-        # OA审批任务ID
         self.task_id = task_id
 
     def validate(self):
@@ -11735,7 +11245,6 @@ class UpdateIntegratedTaskRequest(TeaModel):
         process_instance_id: str = None,
         tasks: List[UpdateIntegratedTaskRequestTasks] = None,
     ):
-        # OA审批流程实例ID，过创建实例接口获取
         self.process_instance_id = process_instance_id
         self.tasks = tasks
 
@@ -11776,7 +11285,6 @@ class UpdateIntegratedTaskResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 是否更新成功
         self.success = success
 
     def validate(self):
@@ -11803,13 +11311,16 @@ class UpdateIntegratedTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateIntegratedTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11822,6 +11333,8 @@ class UpdateIntegratedTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11830,6 +11343,8 @@ class UpdateIntegratedTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateIntegratedTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11874,7 +11389,6 @@ class UpdateProcessInstanceRequestNotifiers(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 抄送接收人用户userId。
         self.user_id = user_id
 
     def validate(self):
@@ -11905,19 +11419,9 @@ class UpdateProcessInstanceRequest(TeaModel):
         result: str = None,
         status: str = None,
     ):
-        # 抄送列表，注意最大抄送人数量不能超过30。
         self.notifiers = notifiers
-        # 审批实例ID。
         self.process_instance_id = process_instance_id
-        # 实例结果：
-        # 实例状态是COMPLETED，必须设置代表以下含义。
-        # agree：同意
-        # refuse：拒绝
-        # 实例状态为TERMINATED，必须设置代表含义，result取值agree和refuse均代表撤销审批流。
         self.result = result
-        # 实例状态：
-        # COMPLETED：结束审批流
-        # TERMINATED：终止审批流
         self.status = status
 
     def validate(self):
@@ -11991,13 +11495,16 @@ class UpdateProcessInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateProcessInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12010,6 +11517,8 @@ class UpdateProcessInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12018,6 +11527,8 @@ class UpdateProcessInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateProcessInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])

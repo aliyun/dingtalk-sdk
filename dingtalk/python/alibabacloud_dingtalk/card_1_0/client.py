@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.card_1_0 import models as dingtalkcard__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def append_space(
-        self,
-        request: dingtalkcard__1__0_models.AppendSpaceRequest,
-    ) -> dingtalkcard__1__0_models.AppendSpaceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.AppendSpaceHeaders()
-        return self.append_space_with_options(request, headers, runtime)
-
-    async def append_space_async(
-        self,
-        request: dingtalkcard__1__0_models.AppendSpaceRequest,
-    ) -> dingtalkcard__1__0_models.AppendSpaceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.AppendSpaceHeaders()
-        return await self.append_space_with_options_async(request, headers, runtime)
 
     def append_space_with_options(
         self,
@@ -66,9 +56,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AppendSpace',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances/spaces',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.AppendSpaceResponse(),
-            self.do_roarequest('AppendSpace', 'card_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/card/instances/spaces', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def append_space_with_options_async(
@@ -98,26 +99,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AppendSpace',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances/spaces',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.AppendSpaceResponse(),
-            await self.do_roarequest_async('AppendSpace', 'card_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/card/instances/spaces', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_and_deliver(
+    def append_space(
         self,
-        request: dingtalkcard__1__0_models.CreateAndDeliverRequest,
-    ) -> dingtalkcard__1__0_models.CreateAndDeliverResponse:
+        request: dingtalkcard__1__0_models.AppendSpaceRequest,
+    ) -> dingtalkcard__1__0_models.AppendSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.CreateAndDeliverHeaders()
-        return self.create_and_deliver_with_options(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.AppendSpaceHeaders()
+        return self.append_space_with_options(request, headers, runtime)
 
-    async def create_and_deliver_async(
+    async def append_space_async(
         self,
-        request: dingtalkcard__1__0_models.CreateAndDeliverRequest,
-    ) -> dingtalkcard__1__0_models.CreateAndDeliverResponse:
+        request: dingtalkcard__1__0_models.AppendSpaceRequest,
+    ) -> dingtalkcard__1__0_models.AppendSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.CreateAndDeliverHeaders()
-        return await self.create_and_deliver_with_options_async(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.AppendSpaceHeaders()
+        return await self.append_space_with_options_async(request, headers, runtime)
 
     def create_and_deliver_with_options(
         self,
@@ -172,9 +184,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateAndDeliver',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances/createAndDeliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.CreateAndDeliverResponse(),
-            self.do_roarequest('CreateAndDeliver', 'card_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/card/instances/createAndDeliver', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_and_deliver_with_options_async(
@@ -230,26 +253,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateAndDeliver',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances/createAndDeliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.CreateAndDeliverResponse(),
-            await self.do_roarequest_async('CreateAndDeliver', 'card_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/card/instances/createAndDeliver', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_card(
+    def create_and_deliver(
         self,
-        request: dingtalkcard__1__0_models.CreateCardRequest,
-    ) -> dingtalkcard__1__0_models.CreateCardResponse:
+        request: dingtalkcard__1__0_models.CreateAndDeliverRequest,
+    ) -> dingtalkcard__1__0_models.CreateAndDeliverResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.CreateCardHeaders()
-        return self.create_card_with_options(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.CreateAndDeliverHeaders()
+        return self.create_and_deliver_with_options(request, headers, runtime)
 
-    async def create_card_async(
+    async def create_and_deliver_async(
         self,
-        request: dingtalkcard__1__0_models.CreateCardRequest,
-    ) -> dingtalkcard__1__0_models.CreateCardResponse:
+        request: dingtalkcard__1__0_models.CreateAndDeliverRequest,
+    ) -> dingtalkcard__1__0_models.CreateAndDeliverResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.CreateCardHeaders()
-        return await self.create_card_with_options_async(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.CreateAndDeliverHeaders()
+        return await self.create_and_deliver_with_options_async(request, headers, runtime)
 
     def create_card_with_options(
         self,
@@ -292,9 +326,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateCard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.CreateCardResponse(),
-            self.do_roarequest('CreateCard', 'card_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/card/instances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_card_with_options_async(
@@ -338,26 +383,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateCard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.CreateCardResponse(),
-            await self.do_roarequest_async('CreateCard', 'card_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/card/instances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def deliver_card(
+    def create_card(
         self,
-        request: dingtalkcard__1__0_models.DeliverCardRequest,
-    ) -> dingtalkcard__1__0_models.DeliverCardResponse:
+        request: dingtalkcard__1__0_models.CreateCardRequest,
+    ) -> dingtalkcard__1__0_models.CreateCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.DeliverCardHeaders()
-        return self.deliver_card_with_options(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.CreateCardHeaders()
+        return self.create_card_with_options(request, headers, runtime)
 
-    async def deliver_card_async(
+    async def create_card_async(
         self,
-        request: dingtalkcard__1__0_models.DeliverCardRequest,
-    ) -> dingtalkcard__1__0_models.DeliverCardResponse:
+        request: dingtalkcard__1__0_models.CreateCardRequest,
+    ) -> dingtalkcard__1__0_models.CreateCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.DeliverCardHeaders()
-        return await self.deliver_card_with_options_async(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.CreateCardHeaders()
+        return await self.create_card_with_options_async(request, headers, runtime)
 
     def deliver_card_with_options(
         self,
@@ -392,9 +448,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeliverCard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances/deliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.DeliverCardResponse(),
-            self.do_roarequest('DeliverCard', 'card_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/card/instances/deliver', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def deliver_card_with_options_async(
@@ -430,26 +497,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeliverCard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances/deliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.DeliverCardResponse(),
-            await self.do_roarequest_async('DeliverCard', 'card_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/card/instances/deliver', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def register_callback(
+    def deliver_card(
         self,
-        request: dingtalkcard__1__0_models.RegisterCallbackRequest,
-    ) -> dingtalkcard__1__0_models.RegisterCallbackResponse:
+        request: dingtalkcard__1__0_models.DeliverCardRequest,
+    ) -> dingtalkcard__1__0_models.DeliverCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.RegisterCallbackHeaders()
-        return self.register_callback_with_options(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.DeliverCardHeaders()
+        return self.deliver_card_with_options(request, headers, runtime)
 
-    async def register_callback_async(
+    async def deliver_card_async(
         self,
-        request: dingtalkcard__1__0_models.RegisterCallbackRequest,
-    ) -> dingtalkcard__1__0_models.RegisterCallbackResponse:
+        request: dingtalkcard__1__0_models.DeliverCardRequest,
+    ) -> dingtalkcard__1__0_models.DeliverCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.RegisterCallbackHeaders()
-        return await self.register_callback_with_options_async(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.DeliverCardHeaders()
+        return await self.deliver_card_with_options_async(request, headers, runtime)
 
     def register_callback_with_options(
         self,
@@ -476,9 +554,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RegisterCallback',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/callbacks/register',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.RegisterCallbackResponse(),
-            self.do_roarequest('RegisterCallback', 'card_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/card/callbacks/register', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def register_callback_with_options_async(
@@ -506,26 +595,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RegisterCallback',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/callbacks/register',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.RegisterCallbackResponse(),
-            await self.do_roarequest_async('RegisterCallback', 'card_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/card/callbacks/register', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_card(
+    def register_callback(
         self,
-        request: dingtalkcard__1__0_models.UpdateCardRequest,
-    ) -> dingtalkcard__1__0_models.UpdateCardResponse:
+        request: dingtalkcard__1__0_models.RegisterCallbackRequest,
+    ) -> dingtalkcard__1__0_models.RegisterCallbackResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.UpdateCardHeaders()
-        return self.update_card_with_options(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.RegisterCallbackHeaders()
+        return self.register_callback_with_options(request, headers, runtime)
 
-    async def update_card_async(
+    async def register_callback_async(
         self,
-        request: dingtalkcard__1__0_models.UpdateCardRequest,
-    ) -> dingtalkcard__1__0_models.UpdateCardResponse:
+        request: dingtalkcard__1__0_models.RegisterCallbackRequest,
+    ) -> dingtalkcard__1__0_models.RegisterCallbackResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcard__1__0_models.UpdateCardHeaders()
-        return await self.update_card_with_options_async(request, headers, runtime)
+        headers = dingtalkcard__1__0_models.RegisterCallbackHeaders()
+        return await self.register_callback_with_options_async(request, headers, runtime)
 
     def update_card_with_options(
         self,
@@ -554,9 +654,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateCard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.UpdateCardResponse(),
-            self.do_roarequest('UpdateCard', 'card_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/card/instances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_card_with_options_async(
@@ -586,7 +697,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateCard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/instances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcard__1__0_models.UpdateCardResponse(),
-            await self.do_roarequest_async('UpdateCard', 'card_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/card/instances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_card(
+        self,
+        request: dingtalkcard__1__0_models.UpdateCardRequest,
+    ) -> dingtalkcard__1__0_models.UpdateCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.UpdateCardHeaders()
+        return self.update_card_with_options(request, headers, runtime)
+
+    async def update_card_async(
+        self,
+        request: dingtalkcard__1__0_models.UpdateCardRequest,
+    ) -> dingtalkcard__1__0_models.UpdateCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.UpdateCardHeaders()
+        return await self.update_card_with_options_async(request, headers, runtime)

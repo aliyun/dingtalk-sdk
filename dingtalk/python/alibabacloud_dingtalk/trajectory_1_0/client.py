@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.trajectory_1_0 import models as dingtalktrajectory__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def query_app_active_users(
-        self,
-        request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
-    ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders()
-        return self.query_app_active_users_with_options(request, headers, runtime)
-
-    async def query_app_active_users_async(
-        self,
-        request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
-    ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders()
-        return await self.query_app_active_users_with_options_async(request, headers, runtime)
 
     def query_app_active_users_with_options(
         self,
@@ -62,9 +52,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAppActiveUsers',
+            version='trajectory_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trajectory/activeUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse(),
-            self.do_roarequest('QueryAppActiveUsers', 'trajectory_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trajectory/activeUsers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_app_active_users_with_options_async(
@@ -90,26 +91,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAppActiveUsers',
+            version='trajectory_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trajectory/activeUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse(),
-            await self.do_roarequest_async('QueryAppActiveUsers', 'trajectory_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trajectory/activeUsers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_collecting_trace_task(
+    def query_app_active_users(
         self,
-        request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
-    ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
+        request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
+    ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders()
-        return self.query_collecting_trace_task_with_options(request, headers, runtime)
+        headers = dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders()
+        return self.query_app_active_users_with_options(request, headers, runtime)
 
-    async def query_collecting_trace_task_async(
+    async def query_app_active_users_async(
         self,
-        request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
-    ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
+        request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
+    ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders()
-        return await self.query_collecting_trace_task_with_options_async(request, headers, runtime)
+        headers = dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders()
+        return await self.query_app_active_users_with_options_async(request, headers, runtime)
 
     def query_collecting_trace_task_with_options(
         self,
@@ -130,9 +142,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryCollectingTraceTask',
+            version='trajectory_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trajectory/currentTasks/queryByUserIds',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse(),
-            self.do_roarequest('QueryCollectingTraceTask', 'trajectory_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trajectory/currentTasks/queryByUserIds', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_collecting_trace_task_with_options_async(
@@ -154,26 +177,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryCollectingTraceTask',
+            version='trajectory_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trajectory/currentTasks/queryByUserIds',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse(),
-            await self.do_roarequest_async('QueryCollectingTraceTask', 'trajectory_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/trajectory/currentTasks/queryByUserIds', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_page_trace_data(
+    def query_collecting_trace_task(
         self,
-        request: dingtalktrajectory__1__0_models.QueryPageTraceDataRequest,
-    ) -> dingtalktrajectory__1__0_models.QueryPageTraceDataResponse:
+        request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
+    ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalktrajectory__1__0_models.QueryPageTraceDataHeaders()
-        return self.query_page_trace_data_with_options(request, headers, runtime)
+        headers = dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders()
+        return self.query_collecting_trace_task_with_options(request, headers, runtime)
 
-    async def query_page_trace_data_async(
+    async def query_collecting_trace_task_async(
         self,
-        request: dingtalktrajectory__1__0_models.QueryPageTraceDataRequest,
-    ) -> dingtalktrajectory__1__0_models.QueryPageTraceDataResponse:
+        request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
+    ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalktrajectory__1__0_models.QueryPageTraceDataHeaders()
-        return await self.query_page_trace_data_with_options_async(request, headers, runtime)
+        headers = dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders()
+        return await self.query_collecting_trace_task_with_options_async(request, headers, runtime)
 
     def query_page_trace_data_with_options(
         self,
@@ -204,9 +238,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryPageTraceData',
+            version='trajectory_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trajectory/data',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalktrajectory__1__0_models.QueryPageTraceDataResponse(),
-            self.do_roarequest('QueryPageTraceData', 'trajectory_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trajectory/data', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_page_trace_data_with_options_async(
@@ -238,7 +283,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryPageTraceData',
+            version='trajectory_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trajectory/data',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalktrajectory__1__0_models.QueryPageTraceDataResponse(),
-            await self.do_roarequest_async('QueryPageTraceData', 'trajectory_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/trajectory/data', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def query_page_trace_data(
+        self,
+        request: dingtalktrajectory__1__0_models.QueryPageTraceDataRequest,
+    ) -> dingtalktrajectory__1__0_models.QueryPageTraceDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrajectory__1__0_models.QueryPageTraceDataHeaders()
+        return self.query_page_trace_data_with_options(request, headers, runtime)
+
+    async def query_page_trace_data_async(
+        self,
+        request: dingtalktrajectory__1__0_models.QueryPageTraceDataRequest,
+    ) -> dingtalktrajectory__1__0_models.QueryPageTraceDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrajectory__1__0_models.QueryPageTraceDataHeaders()
+        return await self.query_page_trace_data_with_options_async(request, headers, runtime)

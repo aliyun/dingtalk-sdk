@@ -3,8 +3,10 @@
 from Tea.core import TeaCore
 from typing import Dict
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.oauth2_1_0 import models as dingtalkoauth_2__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -15,24 +17,19 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def create_jsapi_ticket(self) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
-        return self.create_jsapi_ticket_with_options(headers, runtime)
-
-    async def create_jsapi_ticket_async(self) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
-        return await self.create_jsapi_ticket_with_options_async(headers, runtime)
 
     def create_jsapi_ticket_with_options(
         self,
@@ -47,9 +44,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CreateJsapiTicket',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/jsapiTickets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse(),
-            self.do_roarequest('CreateJsapiTicket', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/jsapiTickets', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_jsapi_ticket_with_options_async(
@@ -65,26 +73,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='CreateJsapiTicket',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/jsapiTickets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse(),
-            await self.do_roarequest_async('CreateJsapiTicket', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/jsapiTickets', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_access_token(
-        self,
-        request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+    def create_jsapi_ticket(self) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
-        return self.get_access_token_with_options(request, headers, runtime)
+        headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
+        return self.create_jsapi_ticket_with_options(headers, runtime)
 
-    async def get_access_token_async(
-        self,
-        request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+    async def create_jsapi_ticket_async(self) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
-        return await self.get_access_token_with_options_async(request, headers, runtime)
+        headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
+        return await self.create_jsapi_ticket_with_options_async(headers, runtime)
 
     def get_access_token_with_options(
         self,
@@ -102,9 +115,20 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetAccessToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/accessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetAccessTokenResponse(),
-            self.do_roarequest('GetAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/accessToken', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_access_token_with_options_async(
@@ -123,26 +147,37 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetAccessToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/accessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetAccessTokenResponse(),
-            await self.do_roarequest_async('GetAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/accessToken', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_auth_info(
+    def get_access_token(
         self,
-        request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkoauth_2__1__0_models.GetAuthInfoHeaders()
-        return self.get_auth_info_with_options(request, headers, runtime)
+        headers = {}
+        return self.get_access_token_with_options(request, headers, runtime)
 
-    async def get_auth_info_async(
+    async def get_access_token_async(
         self,
-        request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkoauth_2__1__0_models.GetAuthInfoHeaders()
-        return await self.get_auth_info_with_options_async(request, headers, runtime)
+        headers = {}
+        return await self.get_access_token_with_options_async(request, headers, runtime)
 
     def get_auth_info_with_options(
         self,
@@ -163,9 +198,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAuthInfo',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/apps/authInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetAuthInfoResponse(),
-            self.do_roarequest('GetAuthInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/apps/authInfo', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_auth_info_with_options_async(
@@ -187,26 +233,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAuthInfo',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/apps/authInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetAuthInfoResponse(),
-            await self.do_roarequest_async('GetAuthInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/apps/authInfo', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_corp_access_token(
+    def get_auth_info(
         self,
-        request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
-        return self.get_corp_access_token_with_options(request, headers, runtime)
+        headers = dingtalkoauth_2__1__0_models.GetAuthInfoHeaders()
+        return self.get_auth_info_with_options(request, headers, runtime)
 
-    async def get_corp_access_token_async(
+    async def get_auth_info_async(
         self,
-        request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
-        return await self.get_corp_access_token_with_options_async(request, headers, runtime)
+        headers = dingtalkoauth_2__1__0_models.GetAuthInfoHeaders()
+        return await self.get_auth_info_with_options_async(request, headers, runtime)
 
     def get_corp_access_token_with_options(
         self,
@@ -228,9 +285,20 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetCorpAccessToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/corpAccessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse(),
-            self.do_roarequest('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/corpAccessToken', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_corp_access_token_with_options_async(
@@ -253,20 +321,37 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetCorpAccessToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/corpAccessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse(),
-            await self.do_roarequest_async('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/corpAccessToken', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_personal_auth_rule(self) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+    def get_corp_access_token(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders()
-        return self.get_personal_auth_rule_with_options(headers, runtime)
+        headers = {}
+        return self.get_corp_access_token_with_options(request, headers, runtime)
 
-    async def get_personal_auth_rule_async(self) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+    async def get_corp_access_token_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders()
-        return await self.get_personal_auth_rule_with_options_async(headers, runtime)
+        headers = {}
+        return await self.get_corp_access_token_with_options_async(request, headers, runtime)
 
     def get_personal_auth_rule_with_options(
         self,
@@ -281,9 +366,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetPersonalAuthRule',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/authRules/user',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse(),
-            self.do_roarequest('GetPersonalAuthRule', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/authRules/user', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_personal_auth_rule_with_options_async(
@@ -299,26 +395,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetPersonalAuthRule',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/authRules/user',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse(),
-            await self.do_roarequest_async('GetPersonalAuthRule', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/authRules/user', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_sso_access_token(
-        self,
-        request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+    def get_personal_auth_rule(self) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
-        return self.get_sso_access_token_with_options(request, headers, runtime)
+        headers = dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders()
+        return self.get_personal_auth_rule_with_options(headers, runtime)
 
-    async def get_sso_access_token_async(
-        self,
-        request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+    async def get_personal_auth_rule_async(self) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
-        return await self.get_sso_access_token_with_options_async(request, headers, runtime)
+        headers = dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders()
+        return await self.get_personal_auth_rule_with_options_async(headers, runtime)
 
     def get_sso_access_token_with_options(
         self,
@@ -336,9 +437,20 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSsoAccessToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/ssoAccessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse(),
-            self.do_roarequest('GetSsoAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/ssoAccessToken', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_sso_access_token_with_options_async(
@@ -357,26 +469,37 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSsoAccessToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/ssoAccessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse(),
-            await self.do_roarequest_async('GetSsoAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/ssoAccessToken', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_sso_user_info(
+    def get_sso_access_token(
         self,
-        request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders()
-        return self.get_sso_user_info_with_options(request, headers, runtime)
+        headers = {}
+        return self.get_sso_access_token_with_options(request, headers, runtime)
 
-    async def get_sso_user_info_async(
+    async def get_sso_access_token_async(
         self,
-        request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders()
-        return await self.get_sso_user_info_with_options_async(request, headers, runtime)
+        headers = {}
+        return await self.get_sso_access_token_with_options_async(request, headers, runtime)
 
     def get_sso_user_info_with_options(
         self,
@@ -397,9 +520,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSsoUserInfo',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/ssoUserInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse(),
-            self.do_roarequest('GetSsoUserInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/ssoUserInfo', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_sso_user_info_with_options_async(
@@ -421,26 +555,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSsoUserInfo',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/ssoUserInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse(),
-            await self.do_roarequest_async('GetSsoUserInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/oauth2/ssoUserInfo', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_suite_access_token(
+    def get_sso_user_info(
         self,
-        request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
-        return self.get_suite_access_token_with_options(request, headers, runtime)
+        headers = dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders()
+        return self.get_sso_user_info_with_options(request, headers, runtime)
 
-    async def get_suite_access_token_async(
+    async def get_sso_user_info_async(
         self,
-        request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = {}
-        return await self.get_suite_access_token_with_options_async(request, headers, runtime)
+        headers = dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders()
+        return await self.get_sso_user_info_with_options_async(request, headers, runtime)
 
     def get_suite_access_token_with_options(
         self,
@@ -460,9 +605,20 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSuiteAccessToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/suiteAccessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse(),
-            self.do_roarequest('GetSuiteAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/suiteAccessToken', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_suite_access_token_with_options_async(
@@ -483,26 +639,37 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSuiteAccessToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/suiteAccessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse(),
-            await self.do_roarequest_async('GetSuiteAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/suiteAccessToken', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_user_token(
+    def get_suite_access_token(
         self,
-        request: dingtalkoauth_2__1__0_models.GetUserTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetUserTokenResponse:
+        request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
         runtime = util_models.RuntimeOptions()
         headers = {}
-        return self.get_user_token_with_options(request, headers, runtime)
+        return self.get_suite_access_token_with_options(request, headers, runtime)
 
-    async def get_user_token_async(
+    async def get_suite_access_token_async(
         self,
-        request: dingtalkoauth_2__1__0_models.GetUserTokenRequest,
-    ) -> dingtalkoauth_2__1__0_models.GetUserTokenResponse:
+        request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
         runtime = util_models.RuntimeOptions()
         headers = {}
-        return await self.get_user_token_with_options_async(request, headers, runtime)
+        return await self.get_suite_access_token_with_options_async(request, headers, runtime)
 
     def get_user_token_with_options(
         self,
@@ -526,9 +693,20 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetUserToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/userAccessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetUserTokenResponse(),
-            self.do_roarequest('GetUserToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/userAccessToken', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_user_token_with_options_async(
@@ -553,7 +731,34 @@ class Client(OpenApiClient):
             headers=headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetUserToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/userAccessToken',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetUserTokenResponse(),
-            await self.do_roarequest_async('GetUserToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/oauth2/userAccessToken', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def get_user_token(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetUserTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetUserTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.get_user_token_with_options(request, headers, runtime)
+
+    async def get_user_token_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.GetUserTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetUserTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.get_user_token_with_options_async(request, headers, runtime)

@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.ats_1_0 import models as dingtalkats__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_application_reg_form_template(
-        self,
-        request: dingtalkats__1__0_models.AddApplicationRegFormTemplateRequest,
-    ) -> dingtalkats__1__0_models.AddApplicationRegFormTemplateResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.AddApplicationRegFormTemplateHeaders()
-        return self.add_application_reg_form_template_with_options(request, headers, runtime)
-
-    async def add_application_reg_form_template_async(
-        self,
-        request: dingtalkats__1__0_models.AddApplicationRegFormTemplateRequest,
-    ) -> dingtalkats__1__0_models.AddApplicationRegFormTemplateResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.AddApplicationRegFormTemplateHeaders()
-        return await self.add_application_reg_form_template_with_options_async(request, headers, runtime)
 
     def add_application_reg_form_template_with_options(
         self,
@@ -68,9 +58,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddApplicationRegFormTemplate',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/applicationRegForms/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.AddApplicationRegFormTemplateResponse(),
-            self.do_roarequest('AddApplicationRegFormTemplate', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/flows/applicationRegForms/templates', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_application_reg_form_template_with_options_async(
@@ -102,26 +103,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddApplicationRegFormTemplate',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/applicationRegForms/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.AddApplicationRegFormTemplateResponse(),
-            await self.do_roarequest_async('AddApplicationRegFormTemplate', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/flows/applicationRegForms/templates', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_file(
+    def add_application_reg_form_template(
         self,
-        request: dingtalkats__1__0_models.AddFileRequest,
-    ) -> dingtalkats__1__0_models.AddFileResponse:
+        request: dingtalkats__1__0_models.AddApplicationRegFormTemplateRequest,
+    ) -> dingtalkats__1__0_models.AddApplicationRegFormTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.AddFileHeaders()
-        return self.add_file_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.AddApplicationRegFormTemplateHeaders()
+        return self.add_application_reg_form_template_with_options(request, headers, runtime)
 
-    async def add_file_async(
+    async def add_application_reg_form_template_async(
         self,
-        request: dingtalkats__1__0_models.AddFileRequest,
-    ) -> dingtalkats__1__0_models.AddFileResponse:
+        request: dingtalkats__1__0_models.AddApplicationRegFormTemplateRequest,
+    ) -> dingtalkats__1__0_models.AddApplicationRegFormTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.AddFileHeaders()
-        return await self.add_file_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.AddApplicationRegFormTemplateHeaders()
+        return await self.add_application_reg_form_template_with_options_async(request, headers, runtime)
 
     def add_file_with_options(
         self,
@@ -150,9 +162,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddFile',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/files',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.AddFileResponse(),
-            self.do_roarequest('AddFile', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/files', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_file_with_options_async(
@@ -182,26 +205,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddFile',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/files',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.AddFileResponse(),
-            await self.do_roarequest_async('AddFile', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/files', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_user_account(
+    def add_file(
         self,
-        request: dingtalkats__1__0_models.AddUserAccountRequest,
-    ) -> dingtalkats__1__0_models.AddUserAccountResponse:
+        request: dingtalkats__1__0_models.AddFileRequest,
+    ) -> dingtalkats__1__0_models.AddFileResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.AddUserAccountHeaders()
-        return self.add_user_account_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.AddFileHeaders()
+        return self.add_file_with_options(request, headers, runtime)
 
-    async def add_user_account_async(
+    async def add_file_async(
         self,
-        request: dingtalkats__1__0_models.AddUserAccountRequest,
-    ) -> dingtalkats__1__0_models.AddUserAccountResponse:
+        request: dingtalkats__1__0_models.AddFileRequest,
+    ) -> dingtalkats__1__0_models.AddFileResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.AddUserAccountHeaders()
-        return await self.add_user_account_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.AddFileHeaders()
+        return await self.add_file_with_options_async(request, headers, runtime)
 
     def add_user_account_with_options(
         self,
@@ -234,9 +268,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddUserAccount',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/channels/users/accounts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.AddUserAccountResponse(),
-            self.do_roarequest('AddUserAccount', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/users/accounts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_user_account_with_options_async(
@@ -270,26 +315,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddUserAccount',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/channels/users/accounts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.AddUserAccountResponse(),
-            await self.do_roarequest_async('AddUserAccount', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/users/accounts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def collect_recruit_job_detail(
+    def add_user_account(
         self,
-        request: dingtalkats__1__0_models.CollectRecruitJobDetailRequest,
-    ) -> dingtalkats__1__0_models.CollectRecruitJobDetailResponse:
+        request: dingtalkats__1__0_models.AddUserAccountRequest,
+    ) -> dingtalkats__1__0_models.AddUserAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.CollectRecruitJobDetailHeaders()
-        return self.collect_recruit_job_detail_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.AddUserAccountHeaders()
+        return self.add_user_account_with_options(request, headers, runtime)
 
-    async def collect_recruit_job_detail_async(
+    async def add_user_account_async(
         self,
-        request: dingtalkats__1__0_models.CollectRecruitJobDetailRequest,
-    ) -> dingtalkats__1__0_models.CollectRecruitJobDetailResponse:
+        request: dingtalkats__1__0_models.AddUserAccountRequest,
+    ) -> dingtalkats__1__0_models.AddUserAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.CollectRecruitJobDetailHeaders()
-        return await self.collect_recruit_job_detail_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.AddUserAccountHeaders()
+        return await self.add_user_account_with_options_async(request, headers, runtime)
 
     def collect_recruit_job_detail_with_options(
         self,
@@ -326,9 +382,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollectRecruitJobDetail',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/channels/jobs/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.CollectRecruitJobDetailResponse(),
-            self.do_roarequest('CollectRecruitJobDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/jobs/import', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def collect_recruit_job_detail_with_options_async(
@@ -366,26 +433,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollectRecruitJobDetail',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/channels/jobs/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.CollectRecruitJobDetailResponse(),
-            await self.do_roarequest_async('CollectRecruitJobDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/jobs/import', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def collect_resume_detail(
+    def collect_recruit_job_detail(
         self,
-        request: dingtalkats__1__0_models.CollectResumeDetailRequest,
-    ) -> dingtalkats__1__0_models.CollectResumeDetailResponse:
+        request: dingtalkats__1__0_models.CollectRecruitJobDetailRequest,
+    ) -> dingtalkats__1__0_models.CollectRecruitJobDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.CollectResumeDetailHeaders()
-        return self.collect_resume_detail_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.CollectRecruitJobDetailHeaders()
+        return self.collect_recruit_job_detail_with_options(request, headers, runtime)
 
-    async def collect_resume_detail_async(
+    async def collect_recruit_job_detail_async(
         self,
-        request: dingtalkats__1__0_models.CollectResumeDetailRequest,
-    ) -> dingtalkats__1__0_models.CollectResumeDetailResponse:
+        request: dingtalkats__1__0_models.CollectRecruitJobDetailRequest,
+    ) -> dingtalkats__1__0_models.CollectRecruitJobDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.CollectResumeDetailHeaders()
-        return await self.collect_resume_detail_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.CollectRecruitJobDetailHeaders()
+        return await self.collect_recruit_job_detail_with_options_async(request, headers, runtime)
 
     def collect_resume_detail_with_options(
         self,
@@ -424,9 +502,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollectResumeDetail',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/resumes/details',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.CollectResumeDetailResponse(),
-            self.do_roarequest('CollectResumeDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/details', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def collect_resume_detail_with_options_async(
@@ -466,26 +555,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollectResumeDetail',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/resumes/details',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.CollectResumeDetailResponse(),
-            await self.do_roarequest_async('CollectResumeDetail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/details', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def collect_resume_mail(
+    def collect_resume_detail(
         self,
-        request: dingtalkats__1__0_models.CollectResumeMailRequest,
-    ) -> dingtalkats__1__0_models.CollectResumeMailResponse:
+        request: dingtalkats__1__0_models.CollectResumeDetailRequest,
+    ) -> dingtalkats__1__0_models.CollectResumeDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.CollectResumeMailHeaders()
-        return self.collect_resume_mail_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.CollectResumeDetailHeaders()
+        return self.collect_resume_detail_with_options(request, headers, runtime)
 
-    async def collect_resume_mail_async(
+    async def collect_resume_detail_async(
         self,
-        request: dingtalkats__1__0_models.CollectResumeMailRequest,
-    ) -> dingtalkats__1__0_models.CollectResumeMailResponse:
+        request: dingtalkats__1__0_models.CollectResumeDetailRequest,
+    ) -> dingtalkats__1__0_models.CollectResumeDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.CollectResumeMailHeaders()
-        return await self.collect_resume_mail_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.CollectResumeDetailHeaders()
+        return await self.collect_resume_detail_with_options_async(request, headers, runtime)
 
     def collect_resume_mail_with_options(
         self,
@@ -530,9 +630,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollectResumeMail',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/resumes/mails',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.CollectResumeMailResponse(),
-            self.do_roarequest('CollectResumeMail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/mails', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def collect_resume_mail_with_options_async(
@@ -578,9 +689,108 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CollectResumeMail',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/resumes/mails',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.CollectResumeMailResponse(),
-            await self.do_roarequest_async('CollectResumeMail', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/resumes/mails', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def collect_resume_mail(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeMailRequest,
+    ) -> dingtalkats__1__0_models.CollectResumeMailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.CollectResumeMailHeaders()
+        return self.collect_resume_mail_with_options(request, headers, runtime)
+
+    async def collect_resume_mail_async(
+        self,
+        request: dingtalkats__1__0_models.CollectResumeMailRequest,
+    ) -> dingtalkats__1__0_models.CollectResumeMailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.CollectResumeMailHeaders()
+        return await self.collect_resume_mail_with_options_async(request, headers, runtime)
+
+    def confirm_rights_with_options(
+        self,
+        rights_code: str,
+        request: dingtalkats__1__0_models.ConfirmRightsRequest,
+        headers: dingtalkats__1__0_models.ConfirmRightsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ConfirmRightsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ConfirmRights',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/rights/{rights_code}/confirm',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ConfirmRightsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def confirm_rights_with_options_async(
+        self,
+        rights_code: str,
+        request: dingtalkats__1__0_models.ConfirmRightsRequest,
+        headers: dingtalkats__1__0_models.ConfirmRightsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ConfirmRightsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ConfirmRights',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/rights/{rights_code}/confirm',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ConfirmRightsResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def confirm_rights(
@@ -601,18 +811,19 @@ class Client(OpenApiClient):
         headers = dingtalkats__1__0_models.ConfirmRightsHeaders()
         return await self.confirm_rights_with_options_async(rights_code, request, headers, runtime)
 
-    def confirm_rights_with_options(
+    def finish_beginner_task_with_options(
         self,
-        rights_code: str,
-        request: dingtalkats__1__0_models.ConfirmRightsRequest,
-        headers: dingtalkats__1__0_models.ConfirmRightsHeaders,
+        task_code: str,
+        request: dingtalkats__1__0_models.FinishBeginnerTaskRequest,
+        headers: dingtalkats__1__0_models.FinishBeginnerTaskHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.ConfirmRightsResponse:
+    ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
         UtilClient.validate_model(request)
-        rights_code = OpenApiUtilClient.get_encode_param(rights_code)
         query = {}
-        if not UtilClient.is_unset(request.biz_code):
-            query['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.scope):
+            query['scope'] = request.scope
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -622,23 +833,35 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='FinishBeginnerTask',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/beginnerTasks/{task_code}/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkats__1__0_models.ConfirmRightsResponse(),
-            self.do_roarequest('ConfirmRights', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/rights/{rights_code}/confirm', 'json', req, runtime)
+            dingtalkats__1__0_models.FinishBeginnerTaskResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def confirm_rights_with_options_async(
+    async def finish_beginner_task_with_options_async(
         self,
-        rights_code: str,
-        request: dingtalkats__1__0_models.ConfirmRightsRequest,
-        headers: dingtalkats__1__0_models.ConfirmRightsHeaders,
+        task_code: str,
+        request: dingtalkats__1__0_models.FinishBeginnerTaskRequest,
+        headers: dingtalkats__1__0_models.FinishBeginnerTaskHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.ConfirmRightsResponse:
+    ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
         UtilClient.validate_model(request)
-        rights_code = OpenApiUtilClient.get_encode_param(rights_code)
         query = {}
-        if not UtilClient.is_unset(request.biz_code):
-            query['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.scope):
+            query['scope'] = request.scope
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -648,9 +871,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='FinishBeginnerTask',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/beginnerTasks/{task_code}/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkats__1__0_models.ConfirmRightsResponse(),
-            await self.do_roarequest_async('ConfirmRights', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/rights/{rights_code}/confirm', 'json', req, runtime)
+            dingtalkats__1__0_models.FinishBeginnerTaskResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def finish_beginner_task(
@@ -671,20 +905,17 @@ class Client(OpenApiClient):
         headers = dingtalkats__1__0_models.FinishBeginnerTaskHeaders()
         return await self.finish_beginner_task_with_options_async(task_code, request, headers, runtime)
 
-    def finish_beginner_task_with_options(
+    def get_application_reg_form_by_flow_id_with_options(
         self,
-        task_code: str,
-        request: dingtalkats__1__0_models.FinishBeginnerTaskRequest,
-        headers: dingtalkats__1__0_models.FinishBeginnerTaskHeaders,
+        flow_id: str,
+        request: dingtalkats__1__0_models.GetApplicationRegFormByFlowIdRequest,
+        headers: dingtalkats__1__0_models.GetApplicationRegFormByFlowIdHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
+    ) -> dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse:
         UtilClient.validate_model(request)
-        task_code = OpenApiUtilClient.get_encode_param(task_code)
         query = {}
-        if not UtilClient.is_unset(request.scope):
-            query['scope'] = request.scope
-        if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -694,25 +925,33 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetApplicationRegFormByFlowId',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/{flow_id}/applicationRegForms',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkats__1__0_models.FinishBeginnerTaskResponse(),
-            self.do_roarequest('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/beginnerTasks/{task_code}/finish', 'json', req, runtime)
+            dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def finish_beginner_task_with_options_async(
+    async def get_application_reg_form_by_flow_id_with_options_async(
         self,
-        task_code: str,
-        request: dingtalkats__1__0_models.FinishBeginnerTaskRequest,
-        headers: dingtalkats__1__0_models.FinishBeginnerTaskHeaders,
+        flow_id: str,
+        request: dingtalkats__1__0_models.GetApplicationRegFormByFlowIdRequest,
+        headers: dingtalkats__1__0_models.GetApplicationRegFormByFlowIdHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.FinishBeginnerTaskResponse:
+    ) -> dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse:
         UtilClient.validate_model(request)
-        task_code = OpenApiUtilClient.get_encode_param(task_code)
         query = {}
-        if not UtilClient.is_unset(request.scope):
-            query['scope'] = request.scope
-        if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -722,9 +961,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetApplicationRegFormByFlowId',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/{flow_id}/applicationRegForms',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkats__1__0_models.FinishBeginnerTaskResponse(),
-            await self.do_roarequest_async('FinishBeginnerTask', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/beginnerTasks/{task_code}/finish', 'json', req, runtime)
+            dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_application_reg_form_by_flow_id(
@@ -744,74 +994,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkats__1__0_models.GetApplicationRegFormByFlowIdHeaders()
         return await self.get_application_reg_form_by_flow_id_with_options_async(flow_id, request, headers, runtime)
-
-    def get_application_reg_form_by_flow_id_with_options(
-        self,
-        flow_id: str,
-        request: dingtalkats__1__0_models.GetApplicationRegFormByFlowIdRequest,
-        headers: dingtalkats__1__0_models.GetApplicationRegFormByFlowIdHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse:
-        UtilClient.validate_model(request)
-        flow_id = OpenApiUtilClient.get_encode_param(flow_id)
-        query = {}
-        if not UtilClient.is_unset(request.biz_code):
-            query['bizCode'] = request.biz_code
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse(),
-            self.do_roarequest('GetApplicationRegFormByFlowId', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/flows/{flow_id}/applicationRegForms', 'json', req, runtime)
-        )
-
-    async def get_application_reg_form_by_flow_id_with_options_async(
-        self,
-        flow_id: str,
-        request: dingtalkats__1__0_models.GetApplicationRegFormByFlowIdRequest,
-        headers: dingtalkats__1__0_models.GetApplicationRegFormByFlowIdHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse:
-        UtilClient.validate_model(request)
-        flow_id = OpenApiUtilClient.get_encode_param(flow_id)
-        query = {}
-        if not UtilClient.is_unset(request.biz_code):
-            query['bizCode'] = request.biz_code
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkats__1__0_models.GetApplicationRegFormByFlowIdResponse(),
-            await self.do_roarequest_async('GetApplicationRegFormByFlowId', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/flows/{flow_id}/applicationRegForms', 'json', req, runtime)
-        )
-
-    def get_candidate_by_phone_number(
-        self,
-        request: dingtalkats__1__0_models.GetCandidateByPhoneNumberRequest,
-    ) -> dingtalkats__1__0_models.GetCandidateByPhoneNumberResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.GetCandidateByPhoneNumberHeaders()
-        return self.get_candidate_by_phone_number_with_options(request, headers, runtime)
-
-    async def get_candidate_by_phone_number_async(
-        self,
-        request: dingtalkats__1__0_models.GetCandidateByPhoneNumberRequest,
-    ) -> dingtalkats__1__0_models.GetCandidateByPhoneNumberResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.GetCandidateByPhoneNumberHeaders()
-        return await self.get_candidate_by_phone_number_with_options_async(request, headers, runtime)
 
     def get_candidate_by_phone_number_with_options(
         self,
@@ -834,9 +1016,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCandidateByPhoneNumber',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/candidates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.GetCandidateByPhoneNumberResponse(),
-            self.do_roarequest('GetCandidateByPhoneNumber', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/candidates', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_candidate_by_phone_number_with_options_async(
@@ -860,26 +1053,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCandidateByPhoneNumber',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/candidates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.GetCandidateByPhoneNumberResponse(),
-            await self.do_roarequest_async('GetCandidateByPhoneNumber', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/candidates', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_file_upload_info(
+    def get_candidate_by_phone_number(
         self,
-        request: dingtalkats__1__0_models.GetFileUploadInfoRequest,
-    ) -> dingtalkats__1__0_models.GetFileUploadInfoResponse:
+        request: dingtalkats__1__0_models.GetCandidateByPhoneNumberRequest,
+    ) -> dingtalkats__1__0_models.GetCandidateByPhoneNumberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.GetFileUploadInfoHeaders()
-        return self.get_file_upload_info_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.GetCandidateByPhoneNumberHeaders()
+        return self.get_candidate_by_phone_number_with_options(request, headers, runtime)
 
-    async def get_file_upload_info_async(
+    async def get_candidate_by_phone_number_async(
         self,
-        request: dingtalkats__1__0_models.GetFileUploadInfoRequest,
-    ) -> dingtalkats__1__0_models.GetFileUploadInfoResponse:
+        request: dingtalkats__1__0_models.GetCandidateByPhoneNumberRequest,
+    ) -> dingtalkats__1__0_models.GetCandidateByPhoneNumberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.GetFileUploadInfoHeaders()
-        return await self.get_file_upload_info_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.GetCandidateByPhoneNumberHeaders()
+        return await self.get_candidate_by_phone_number_with_options_async(request, headers, runtime)
 
     def get_file_upload_info_with_options(
         self,
@@ -908,9 +1112,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFileUploadInfo',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/files/uploadInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.GetFileUploadInfoResponse(),
-            self.do_roarequest('GetFileUploadInfo', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/files/uploadInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_file_upload_info_with_options_async(
@@ -940,26 +1155,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFileUploadInfo',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/files/uploadInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.GetFileUploadInfoResponse(),
-            await self.do_roarequest_async('GetFileUploadInfo', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/files/uploadInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_flow_id_by_relation_entity_id(
+    def get_file_upload_info(
         self,
-        request: dingtalkats__1__0_models.GetFlowIdByRelationEntityIdRequest,
-    ) -> dingtalkats__1__0_models.GetFlowIdByRelationEntityIdResponse:
+        request: dingtalkats__1__0_models.GetFileUploadInfoRequest,
+    ) -> dingtalkats__1__0_models.GetFileUploadInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.GetFlowIdByRelationEntityIdHeaders()
-        return self.get_flow_id_by_relation_entity_id_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.GetFileUploadInfoHeaders()
+        return self.get_file_upload_info_with_options(request, headers, runtime)
 
-    async def get_flow_id_by_relation_entity_id_async(
+    async def get_file_upload_info_async(
         self,
-        request: dingtalkats__1__0_models.GetFlowIdByRelationEntityIdRequest,
-    ) -> dingtalkats__1__0_models.GetFlowIdByRelationEntityIdResponse:
+        request: dingtalkats__1__0_models.GetFileUploadInfoRequest,
+    ) -> dingtalkats__1__0_models.GetFileUploadInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.GetFlowIdByRelationEntityIdHeaders()
-        return await self.get_flow_id_by_relation_entity_id_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.GetFileUploadInfoHeaders()
+        return await self.get_file_upload_info_with_options_async(request, headers, runtime)
 
     def get_flow_id_by_relation_entity_id_with_options(
         self,
@@ -984,9 +1210,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFlowIdByRelationEntityId',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/ids',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.GetFlowIdByRelationEntityIdResponse(),
-            self.do_roarequest('GetFlowIdByRelationEntityId', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/flows/ids', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_flow_id_by_relation_entity_id_with_options_async(
@@ -1012,9 +1249,108 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFlowIdByRelationEntityId',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/ids',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.GetFlowIdByRelationEntityIdResponse(),
-            await self.do_roarequest_async('GetFlowIdByRelationEntityId', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/flows/ids', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_flow_id_by_relation_entity_id(
+        self,
+        request: dingtalkats__1__0_models.GetFlowIdByRelationEntityIdRequest,
+    ) -> dingtalkats__1__0_models.GetFlowIdByRelationEntityIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.GetFlowIdByRelationEntityIdHeaders()
+        return self.get_flow_id_by_relation_entity_id_with_options(request, headers, runtime)
+
+    async def get_flow_id_by_relation_entity_id_async(
+        self,
+        request: dingtalkats__1__0_models.GetFlowIdByRelationEntityIdRequest,
+    ) -> dingtalkats__1__0_models.GetFlowIdByRelationEntityIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.GetFlowIdByRelationEntityIdHeaders()
+        return await self.get_flow_id_by_relation_entity_id_with_options_async(request, headers, runtime)
+
+    def get_job_auth_with_options(
+        self,
+        job_id: str,
+        request: dingtalkats__1__0_models.GetJobAuthRequest,
+        headers: dingtalkats__1__0_models.GetJobAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.GetJobAuthResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetJobAuth',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/auths/jobs/{job_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.GetJobAuthResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_job_auth_with_options_async(
+        self,
+        job_id: str,
+        request: dingtalkats__1__0_models.GetJobAuthRequest,
+        headers: dingtalkats__1__0_models.GetJobAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.GetJobAuthResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetJobAuth',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/auths/jobs/{job_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.GetJobAuthResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_job_auth(
@@ -1034,74 +1370,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkats__1__0_models.GetJobAuthHeaders()
         return await self.get_job_auth_with_options_async(job_id, request, headers, runtime)
-
-    def get_job_auth_with_options(
-        self,
-        job_id: str,
-        request: dingtalkats__1__0_models.GetJobAuthRequest,
-        headers: dingtalkats__1__0_models.GetJobAuthHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.GetJobAuthResponse:
-        UtilClient.validate_model(request)
-        job_id = OpenApiUtilClient.get_encode_param(job_id)
-        query = {}
-        if not UtilClient.is_unset(request.op_user_id):
-            query['opUserId'] = request.op_user_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkats__1__0_models.GetJobAuthResponse(),
-            self.do_roarequest('GetJobAuth', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/auths/jobs/{job_id}', 'json', req, runtime)
-        )
-
-    async def get_job_auth_with_options_async(
-        self,
-        job_id: str,
-        request: dingtalkats__1__0_models.GetJobAuthRequest,
-        headers: dingtalkats__1__0_models.GetJobAuthHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.GetJobAuthResponse:
-        UtilClient.validate_model(request)
-        job_id = OpenApiUtilClient.get_encode_param(job_id)
-        query = {}
-        if not UtilClient.is_unset(request.op_user_id):
-            query['opUserId'] = request.op_user_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkats__1__0_models.GetJobAuthResponse(),
-            await self.do_roarequest_async('GetJobAuth', 'ats_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/ats/auths/jobs/{job_id}', 'json', req, runtime)
-        )
-
-    def query_interviews(
-        self,
-        request: dingtalkats__1__0_models.QueryInterviewsRequest,
-    ) -> dingtalkats__1__0_models.QueryInterviewsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.QueryInterviewsHeaders()
-        return self.query_interviews_with_options(request, headers, runtime)
-
-    async def query_interviews_async(
-        self,
-        request: dingtalkats__1__0_models.QueryInterviewsRequest,
-    ) -> dingtalkats__1__0_models.QueryInterviewsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.QueryInterviewsHeaders()
-        return await self.query_interviews_with_options_async(request, headers, runtime)
 
     def query_interviews_with_options(
         self,
@@ -1134,9 +1402,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryInterviews',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/interviews/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.QueryInterviewsResponse(),
-            self.do_roarequest('QueryInterviews', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/interviews/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_interviews_with_options_async(
@@ -1170,26 +1449,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryInterviews',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/interviews/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.QueryInterviewsResponse(),
-            await self.do_roarequest_async('QueryInterviews', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/interviews/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def report_message_status(
+    def query_interviews(
         self,
-        request: dingtalkats__1__0_models.ReportMessageStatusRequest,
-    ) -> dingtalkats__1__0_models.ReportMessageStatusResponse:
+        request: dingtalkats__1__0_models.QueryInterviewsRequest,
+    ) -> dingtalkats__1__0_models.QueryInterviewsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.ReportMessageStatusHeaders()
-        return self.report_message_status_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.QueryInterviewsHeaders()
+        return self.query_interviews_with_options(request, headers, runtime)
 
-    async def report_message_status_async(
+    async def query_interviews_async(
         self,
-        request: dingtalkats__1__0_models.ReportMessageStatusRequest,
-    ) -> dingtalkats__1__0_models.ReportMessageStatusResponse:
+        request: dingtalkats__1__0_models.QueryInterviewsRequest,
+    ) -> dingtalkats__1__0_models.QueryInterviewsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.ReportMessageStatusHeaders()
-        return await self.report_message_status_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.QueryInterviewsHeaders()
+        return await self.query_interviews_with_options_async(request, headers, runtime)
 
     def report_message_status_with_options(
         self,
@@ -1224,9 +1514,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReportMessageStatus',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/channels/messages/statuses/report',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.ReportMessageStatusResponse(),
-            self.do_roarequest('ReportMessageStatus', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/messages/statuses/report', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def report_message_status_with_options_async(
@@ -1262,26 +1563,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReportMessageStatus',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/channels/messages/statuses/report',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.ReportMessageStatusResponse(),
-            await self.do_roarequest_async('ReportMessageStatus', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/messages/statuses/report', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def sync_channel_message(
+    def report_message_status(
         self,
-        request: dingtalkats__1__0_models.SyncChannelMessageRequest,
-    ) -> dingtalkats__1__0_models.SyncChannelMessageResponse:
+        request: dingtalkats__1__0_models.ReportMessageStatusRequest,
+    ) -> dingtalkats__1__0_models.ReportMessageStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.SyncChannelMessageHeaders()
-        return self.sync_channel_message_with_options(request, headers, runtime)
+        headers = dingtalkats__1__0_models.ReportMessageStatusHeaders()
+        return self.report_message_status_with_options(request, headers, runtime)
 
-    async def sync_channel_message_async(
+    async def report_message_status_async(
         self,
-        request: dingtalkats__1__0_models.SyncChannelMessageRequest,
-    ) -> dingtalkats__1__0_models.SyncChannelMessageResponse:
+        request: dingtalkats__1__0_models.ReportMessageStatusRequest,
+    ) -> dingtalkats__1__0_models.ReportMessageStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.SyncChannelMessageHeaders()
-        return await self.sync_channel_message_with_options_async(request, headers, runtime)
+        headers = dingtalkats__1__0_models.ReportMessageStatusHeaders()
+        return await self.report_message_status_with_options_async(request, headers, runtime)
 
     def sync_channel_message_with_options(
         self,
@@ -1316,9 +1628,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SyncChannelMessage',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/channels/messages/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.SyncChannelMessageResponse(),
-            self.do_roarequest('SyncChannelMessage', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/messages/sync', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def sync_channel_message_with_options_async(
@@ -1354,9 +1677,120 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SyncChannelMessage',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/channels/messages/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.SyncChannelMessageResponse(),
-            await self.do_roarequest_async('SyncChannelMessage', 'ats_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/ats/channels/messages/sync', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_channel_message(
+        self,
+        request: dingtalkats__1__0_models.SyncChannelMessageRequest,
+    ) -> dingtalkats__1__0_models.SyncChannelMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.SyncChannelMessageHeaders()
+        return self.sync_channel_message_with_options(request, headers, runtime)
+
+    async def sync_channel_message_async(
+        self,
+        request: dingtalkats__1__0_models.SyncChannelMessageRequest,
+    ) -> dingtalkats__1__0_models.SyncChannelMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.SyncChannelMessageHeaders()
+        return await self.sync_channel_message_with_options_async(request, headers, runtime)
+
+    def update_application_reg_form_with_options(
+        self,
+        flow_id: str,
+        request: dingtalkats__1__0_models.UpdateApplicationRegFormRequest,
+        headers: dingtalkats__1__0_models.UpdateApplicationRegFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.UpdateApplicationRegFormResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.ding_pan_file):
+            body['dingPanFile'] = request.ding_pan_file
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateApplicationRegForm',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/{flow_id}/applicationRegForms',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.UpdateApplicationRegFormResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_application_reg_form_with_options_async(
+        self,
+        flow_id: str,
+        request: dingtalkats__1__0_models.UpdateApplicationRegFormRequest,
+        headers: dingtalkats__1__0_models.UpdateApplicationRegFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.UpdateApplicationRegFormResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_code):
+            query['bizCode'] = request.biz_code
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.ding_pan_file):
+            body['dingPanFile'] = request.ding_pan_file
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateApplicationRegForm',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/flows/{flow_id}/applicationRegForms',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.UpdateApplicationRegFormResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def update_application_reg_form(
@@ -1377,23 +1811,20 @@ class Client(OpenApiClient):
         headers = dingtalkats__1__0_models.UpdateApplicationRegFormHeaders()
         return await self.update_application_reg_form_with_options_async(flow_id, request, headers, runtime)
 
-    def update_application_reg_form_with_options(
+    def update_interview_sign_in_info_with_options(
         self,
-        flow_id: str,
-        request: dingtalkats__1__0_models.UpdateApplicationRegFormRequest,
-        headers: dingtalkats__1__0_models.UpdateApplicationRegFormHeaders,
+        interview_id: str,
+        request: dingtalkats__1__0_models.UpdateInterviewSignInInfoRequest,
+        headers: dingtalkats__1__0_models.UpdateInterviewSignInInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.UpdateApplicationRegFormResponse:
+    ) -> dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse:
         UtilClient.validate_model(request)
-        flow_id = OpenApiUtilClient.get_encode_param(flow_id)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
         body = {}
-        if not UtilClient.is_unset(request.content):
-            body['content'] = request.content
-        if not UtilClient.is_unset(request.ding_pan_file):
-            body['dingPanFile'] = request.ding_pan_file
+        if not UtilClient.is_unset(request.sign_in_time_millis):
+            body['signInTimeMillis'] = request.sign_in_time_millis
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1404,28 +1835,36 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInterviewSignInInfo',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/interviews/{interview_id}/signInInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkats__1__0_models.UpdateApplicationRegFormResponse(),
-            self.do_roarequest('UpdateApplicationRegForm', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/flows/{flow_id}/applicationRegForms', 'json', req, runtime)
+            dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def update_application_reg_form_with_options_async(
+    async def update_interview_sign_in_info_with_options_async(
         self,
-        flow_id: str,
-        request: dingtalkats__1__0_models.UpdateApplicationRegFormRequest,
-        headers: dingtalkats__1__0_models.UpdateApplicationRegFormHeaders,
+        interview_id: str,
+        request: dingtalkats__1__0_models.UpdateInterviewSignInInfoRequest,
+        headers: dingtalkats__1__0_models.UpdateInterviewSignInInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.UpdateApplicationRegFormResponse:
+    ) -> dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse:
         UtilClient.validate_model(request)
-        flow_id = OpenApiUtilClient.get_encode_param(flow_id)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
             query['bizCode'] = request.biz_code
         body = {}
-        if not UtilClient.is_unset(request.content):
-            body['content'] = request.content
-        if not UtilClient.is_unset(request.ding_pan_file):
-            body['dingPanFile'] = request.ding_pan_file
+        if not UtilClient.is_unset(request.sign_in_time_millis):
+            body['signInTimeMillis'] = request.sign_in_time_millis
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1436,9 +1875,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInterviewSignInInfo',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/interviews/{interview_id}/signInInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkats__1__0_models.UpdateApplicationRegFormResponse(),
-            await self.do_roarequest_async('UpdateApplicationRegForm', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/flows/{flow_id}/applicationRegForms', 'json', req, runtime)
+            dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def update_interview_sign_in_info(
@@ -1458,82 +1908,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkats__1__0_models.UpdateInterviewSignInInfoHeaders()
         return await self.update_interview_sign_in_info_with_options_async(interview_id, request, headers, runtime)
-
-    def update_interview_sign_in_info_with_options(
-        self,
-        interview_id: str,
-        request: dingtalkats__1__0_models.UpdateInterviewSignInInfoRequest,
-        headers: dingtalkats__1__0_models.UpdateInterviewSignInInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse:
-        UtilClient.validate_model(request)
-        interview_id = OpenApiUtilClient.get_encode_param(interview_id)
-        query = {}
-        if not UtilClient.is_unset(request.biz_code):
-            query['bizCode'] = request.biz_code
-        body = {}
-        if not UtilClient.is_unset(request.sign_in_time_millis):
-            body['signInTimeMillis'] = request.sign_in_time_millis
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query),
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse(),
-            self.do_roarequest('UpdateInterviewSignInInfo', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/interviews/{interview_id}/signInInfos', 'none', req, runtime)
-        )
-
-    async def update_interview_sign_in_info_with_options_async(
-        self,
-        interview_id: str,
-        request: dingtalkats__1__0_models.UpdateInterviewSignInInfoRequest,
-        headers: dingtalkats__1__0_models.UpdateInterviewSignInInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse:
-        UtilClient.validate_model(request)
-        interview_id = OpenApiUtilClient.get_encode_param(interview_id)
-        query = {}
-        if not UtilClient.is_unset(request.biz_code):
-            query['bizCode'] = request.biz_code
-        body = {}
-        if not UtilClient.is_unset(request.sign_in_time_millis):
-            body['signInTimeMillis'] = request.sign_in_time_millis
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query),
-            body=OpenApiUtilClient.parse_to_map(body)
-        )
-        return TeaCore.from_map(
-            dingtalkats__1__0_models.UpdateInterviewSignInInfoResponse(),
-            await self.do_roarequest_async('UpdateInterviewSignInInfo', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/interviews/{interview_id}/signInInfos', 'none', req, runtime)
-        )
-
-    def update_job_deliver(
-        self,
-        request: dingtalkats__1__0_models.UpdateJobDeliverRequest,
-    ) -> dingtalkats__1__0_models.UpdateJobDeliverResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.UpdateJobDeliverHeaders()
-        return self.update_job_deliver_with_options(request, headers, runtime)
-
-    async def update_job_deliver_async(
-        self,
-        request: dingtalkats__1__0_models.UpdateJobDeliverRequest,
-    ) -> dingtalkats__1__0_models.UpdateJobDeliverResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkats__1__0_models.UpdateJobDeliverHeaders()
-        return await self.update_job_deliver_with_options_async(request, headers, runtime)
 
     def update_job_deliver_with_options(
         self,
@@ -1572,9 +1946,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateJobDeliver',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/jobs/deliveryStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.UpdateJobDeliverResponse(),
-            self.do_roarequest('UpdateJobDeliver', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/jobs/deliveryStatus', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_job_deliver_with_options_async(
@@ -1614,7 +1999,34 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateJobDeliver',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/jobs/deliveryStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkats__1__0_models.UpdateJobDeliverResponse(),
-            await self.do_roarequest_async('UpdateJobDeliver', 'ats_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/ats/jobs/deliveryStatus', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_job_deliver(
+        self,
+        request: dingtalkats__1__0_models.UpdateJobDeliverRequest,
+    ) -> dingtalkats__1__0_models.UpdateJobDeliverResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.UpdateJobDeliverHeaders()
+        return self.update_job_deliver_with_options(request, headers, runtime)
+
+    async def update_job_deliver_async(
+        self,
+        request: dingtalkats__1__0_models.UpdateJobDeliverRequest,
+    ) -> dingtalkats__1__0_models.UpdateJobDeliverResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.UpdateJobDeliverHeaders()
+        return await self.update_job_deliver_with_options_async(request, headers, runtime)

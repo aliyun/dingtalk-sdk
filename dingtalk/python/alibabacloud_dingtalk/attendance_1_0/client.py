@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.attendance_1_0 import models as dingtalkattendance__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_leave_type(
-        self,
-        request: dingtalkattendance__1__0_models.AddLeaveTypeRequest,
-    ) -> dingtalkattendance__1__0_models.AddLeaveTypeResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.AddLeaveTypeHeaders()
-        return self.add_leave_type_with_options(request, headers, runtime)
-
-    async def add_leave_type_async(
-        self,
-        request: dingtalkattendance__1__0_models.AddLeaveTypeRequest,
-    ) -> dingtalkattendance__1__0_models.AddLeaveTypeResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.AddLeaveTypeHeaders()
-        return await self.add_leave_type_with_options_async(request, headers, runtime)
 
     def add_leave_type_with_options(
         self,
@@ -78,9 +68,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddLeaveType',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/types',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.AddLeaveTypeResponse(),
-            self.do_roarequest('AddLeaveType', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_leave_type_with_options_async(
@@ -122,26 +123,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddLeaveType',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/types',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.AddLeaveTypeResponse(),
-            await self.do_roarequest_async('AddLeaveType', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def attendance_ble_devices_add(
+    def add_leave_type(
         self,
-        request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
-    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse:
+        request: dingtalkattendance__1__0_models.AddLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.AddLeaveTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesAddHeaders()
-        return self.attendance_ble_devices_add_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.AddLeaveTypeHeaders()
+        return self.add_leave_type_with_options(request, headers, runtime)
 
-    async def attendance_ble_devices_add_async(
+    async def add_leave_type_async(
         self,
-        request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
-    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse:
+        request: dingtalkattendance__1__0_models.AddLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.AddLeaveTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesAddHeaders()
-        return await self.attendance_ble_devices_add_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.AddLeaveTypeHeaders()
+        return await self.add_leave_type_with_options_async(request, headers, runtime)
 
     def attendance_ble_devices_add_with_options(
         self,
@@ -166,9 +178,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AttendanceBleDevicesAdd',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/group/bledevices',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse(),
-            self.do_roarequest('AttendanceBleDevicesAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def attendance_ble_devices_add_with_options_async(
@@ -194,26 +217,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AttendanceBleDevicesAdd',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/group/bledevices',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse(),
-            await self.do_roarequest_async('AttendanceBleDevicesAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def attendance_ble_devices_query(
+    def attendance_ble_devices_add(
         self,
-        request: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryRequest,
-    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse:
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesQueryHeaders()
-        return self.attendance_ble_devices_query_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesAddHeaders()
+        return self.attendance_ble_devices_add_with_options(request, headers, runtime)
 
-    async def attendance_ble_devices_query_async(
+    async def attendance_ble_devices_add_async(
         self,
-        request: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryRequest,
-    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse:
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesAddRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesAddResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesQueryHeaders()
-        return await self.attendance_ble_devices_query_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesAddHeaders()
+        return await self.attendance_ble_devices_add_with_options_async(request, headers, runtime)
 
     def attendance_ble_devices_query_with_options(
         self,
@@ -236,9 +270,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AttendanceBleDevicesQuery',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/group/bledevices/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse(),
-            self.do_roarequest_with_form('AttendanceBleDevicesQuery', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def attendance_ble_devices_query_with_options_async(
@@ -262,26 +307,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AttendanceBleDevicesQuery',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/group/bledevices/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse(),
-            await self.do_roarequest_with_form_async('AttendanceBleDevicesQuery', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def attendance_ble_devices_remove(
+    def attendance_ble_devices_query(
         self,
-        request: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveRequest,
-    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse:
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders()
-        return self.attendance_ble_devices_remove_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesQueryHeaders()
+        return self.attendance_ble_devices_query_with_options(request, headers, runtime)
 
-    async def attendance_ble_devices_remove_async(
+    async def attendance_ble_devices_query_async(
         self,
-        request: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveRequest,
-    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse:
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesQueryRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders()
-        return await self.attendance_ble_devices_remove_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesQueryHeaders()
+        return await self.attendance_ble_devices_query_with_options_async(request, headers, runtime)
 
     def attendance_ble_devices_remove_with_options(
         self,
@@ -306,9 +362,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AttendanceBleDevicesRemove',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/group/bledevices/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse(),
-            self.do_roarequest('AttendanceBleDevicesRemove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def attendance_ble_devices_remove_with_options_async(
@@ -334,26 +401,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AttendanceBleDevicesRemove',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/group/bledevices/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse(),
-            await self.do_roarequest_async('AttendanceBleDevicesRemove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/group/bledevices/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def check_closing_account(
+    def attendance_ble_devices_remove(
         self,
-        request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
-    ) -> dingtalkattendance__1__0_models.CheckClosingAccountResponse:
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.CheckClosingAccountHeaders()
-        return self.check_closing_account_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders()
+        return self.attendance_ble_devices_remove_with_options(request, headers, runtime)
 
-    async def check_closing_account_async(
+    async def attendance_ble_devices_remove_async(
         self,
-        request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
-    ) -> dingtalkattendance__1__0_models.CheckClosingAccountResponse:
+        request: dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveRequest,
+    ) -> dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.CheckClosingAccountHeaders()
-        return await self.check_closing_account_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders()
+        return await self.attendance_ble_devices_remove_with_options_async(request, headers, runtime)
 
     def check_closing_account_with_options(
         self,
@@ -378,9 +456,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CheckClosingAccount',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/closingAccounts/status/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.CheckClosingAccountResponse(),
-            self.do_roarequest('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/status/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def check_closing_account_with_options_async(
@@ -406,26 +495,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CheckClosingAccount',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/closingAccounts/status/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.CheckClosingAccountResponse(),
-            await self.do_roarequest_async('CheckClosingAccount', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/status/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def check_write_permission(
+    def check_closing_account(
         self,
-        request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,
-    ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
+        request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
+    ) -> dingtalkattendance__1__0_models.CheckClosingAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.CheckWritePermissionHeaders()
-        return self.check_write_permission_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.CheckClosingAccountHeaders()
+        return self.check_closing_account_with_options(request, headers, runtime)
 
-    async def check_write_permission_async(
+    async def check_closing_account_async(
         self,
-        request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,
-    ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
+        request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
+    ) -> dingtalkattendance__1__0_models.CheckClosingAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.CheckWritePermissionHeaders()
-        return await self.check_write_permission_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.CheckClosingAccountHeaders()
+        return await self.check_closing_account_with_options_async(request, headers, runtime)
 
     def check_write_permission_with_options(
         self,
@@ -452,9 +552,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CheckWritePermission',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/writePermissions/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.CheckWritePermissionResponse(),
-            self.do_roarequest('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/writePermissions/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def check_write_permission_with_options_async(
@@ -482,26 +593,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CheckWritePermission',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/writePermissions/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.CheckWritePermissionResponse(),
-            await self.do_roarequest_async('CheckWritePermission', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/writePermissions/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_approve(
+    def check_write_permission(
         self,
-        request: dingtalkattendance__1__0_models.CreateApproveRequest,
-    ) -> dingtalkattendance__1__0_models.CreateApproveResponse:
+        request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,
+    ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.CreateApproveHeaders()
-        return self.create_approve_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.CheckWritePermissionHeaders()
+        return self.check_write_permission_with_options(request, headers, runtime)
 
-    async def create_approve_async(
+    async def check_write_permission_async(
         self,
-        request: dingtalkattendance__1__0_models.CreateApproveRequest,
-    ) -> dingtalkattendance__1__0_models.CreateApproveResponse:
+        request: dingtalkattendance__1__0_models.CheckWritePermissionRequest,
+    ) -> dingtalkattendance__1__0_models.CheckWritePermissionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.CreateApproveHeaders()
-        return await self.create_approve_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.CheckWritePermissionHeaders()
+        return await self.check_write_permission_with_options_async(request, headers, runtime)
 
     def create_approve_with_options(
         self,
@@ -532,9 +654,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateApprove',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/approves',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.CreateApproveResponse(),
-            self.do_roarequest('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approves', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_approve_with_options_async(
@@ -566,26 +699,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateApprove',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/approves',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.CreateApproveResponse(),
-            await self.do_roarequest_async('CreateApprove', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approves', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_water_mark_template(
+    def create_approve(
         self,
-        request: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateRequest,
-    ) -> dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse:
+        request: dingtalkattendance__1__0_models.CreateApproveRequest,
+    ) -> dingtalkattendance__1__0_models.CreateApproveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.DeleteWaterMarkTemplateHeaders()
-        return self.delete_water_mark_template_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.CreateApproveHeaders()
+        return self.create_approve_with_options(request, headers, runtime)
 
-    async def delete_water_mark_template_async(
+    async def create_approve_async(
         self,
-        request: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateRequest,
-    ) -> dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse:
+        request: dingtalkattendance__1__0_models.CreateApproveRequest,
+    ) -> dingtalkattendance__1__0_models.CreateApproveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.DeleteWaterMarkTemplateHeaders()
-        return await self.delete_water_mark_template_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.CreateApproveHeaders()
+        return await self.create_approve_with_options_async(request, headers, runtime)
 
     def delete_water_mark_template_with_options(
         self,
@@ -614,9 +758,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteWaterMarkTemplate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/watermarks/templates',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse(),
-            self.do_roarequest('DeleteWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_water_mark_template_with_options_async(
@@ -646,26 +801,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteWaterMarkTemplate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/watermarks/templates',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse(),
-            await self.do_roarequest_async('DeleteWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def ding_talk_security_check(
+    def delete_water_mark_template(
         self,
-        request: dingtalkattendance__1__0_models.DingTalkSecurityCheckRequest,
-    ) -> dingtalkattendance__1__0_models.DingTalkSecurityCheckResponse:
+        request: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.DingTalkSecurityCheckHeaders()
-        return self.ding_talk_security_check_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.DeleteWaterMarkTemplateHeaders()
+        return self.delete_water_mark_template_with_options(request, headers, runtime)
 
-    async def ding_talk_security_check_async(
+    async def delete_water_mark_template_async(
         self,
-        request: dingtalkattendance__1__0_models.DingTalkSecurityCheckRequest,
-    ) -> dingtalkattendance__1__0_models.DingTalkSecurityCheckResponse:
+        request: dingtalkattendance__1__0_models.DeleteWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.DeleteWaterMarkTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.DingTalkSecurityCheckHeaders()
-        return await self.ding_talk_security_check_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.DeleteWaterMarkTemplateHeaders()
+        return await self.delete_water_mark_template_with_options_async(request, headers, runtime)
 
     def ding_talk_security_check_with_options(
         self,
@@ -694,9 +860,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DingTalkSecurityCheck',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/securities/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.DingTalkSecurityCheckResponse(),
-            self.do_roarequest('DingTalkSecurityCheck', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/securities/check', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def ding_talk_security_check_with_options_async(
@@ -726,26 +903,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DingTalkSecurityCheck',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/securities/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.DingTalkSecurityCheckResponse(),
-            await self.do_roarequest_async('DingTalkSecurityCheck', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/securities/check', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_atmanage_scope(
+    def ding_talk_security_check(
         self,
-        request: dingtalkattendance__1__0_models.GetATManageScopeRequest,
-    ) -> dingtalkattendance__1__0_models.GetATManageScopeResponse:
+        request: dingtalkattendance__1__0_models.DingTalkSecurityCheckRequest,
+    ) -> dingtalkattendance__1__0_models.DingTalkSecurityCheckResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetATManageScopeHeaders()
-        return self.get_atmanage_scope_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.DingTalkSecurityCheckHeaders()
+        return self.ding_talk_security_check_with_options(request, headers, runtime)
 
-    async def get_atmanage_scope_async(
+    async def ding_talk_security_check_async(
         self,
-        request: dingtalkattendance__1__0_models.GetATManageScopeRequest,
-    ) -> dingtalkattendance__1__0_models.GetATManageScopeResponse:
+        request: dingtalkattendance__1__0_models.DingTalkSecurityCheckRequest,
+    ) -> dingtalkattendance__1__0_models.DingTalkSecurityCheckResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetATManageScopeHeaders()
-        return await self.get_atmanage_scope_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.DingTalkSecurityCheckHeaders()
+        return await self.ding_talk_security_check_with_options_async(request, headers, runtime)
 
     def get_atmanage_scope_with_options(
         self,
@@ -770,9 +958,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetATManageScope',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/manageScopes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetATManageScopeResponse(),
-            self.do_roarequest('GetATManageScope', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/manageScopes', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_atmanage_scope_with_options_async(
@@ -798,26 +997,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetATManageScope',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/manageScopes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetATManageScopeResponse(),
-            await self.do_roarequest_async('GetATManageScope', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/manageScopes', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_adjustments(
+    def get_atmanage_scope(
         self,
-        request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,
-    ) -> dingtalkattendance__1__0_models.GetAdjustmentsResponse:
+        request: dingtalkattendance__1__0_models.GetATManageScopeRequest,
+    ) -> dingtalkattendance__1__0_models.GetATManageScopeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetAdjustmentsHeaders()
-        return self.get_adjustments_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetATManageScopeHeaders()
+        return self.get_atmanage_scope_with_options(request, headers, runtime)
 
-    async def get_adjustments_async(
+    async def get_atmanage_scope_async(
         self,
-        request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,
-    ) -> dingtalkattendance__1__0_models.GetAdjustmentsResponse:
+        request: dingtalkattendance__1__0_models.GetATManageScopeRequest,
+    ) -> dingtalkattendance__1__0_models.GetATManageScopeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetAdjustmentsHeaders()
-        return await self.get_adjustments_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetATManageScopeHeaders()
+        return await self.get_atmanage_scope_with_options_async(request, headers, runtime)
 
     def get_adjustments_with_options(
         self,
@@ -840,9 +1050,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAdjustments',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/adjustments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetAdjustmentsResponse(),
-            self.do_roarequest('GetAdjustments', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/adjustments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_adjustments_with_options_async(
@@ -866,26 +1087,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAdjustments',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/adjustments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetAdjustmentsResponse(),
-            await self.do_roarequest_async('GetAdjustments', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/adjustments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_check_in_schema_template(
+    def get_adjustments(
         self,
-        request: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateRequest,
-    ) -> dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse:
+        request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,
+    ) -> dingtalkattendance__1__0_models.GetAdjustmentsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders()
-        return self.get_check_in_schema_template_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetAdjustmentsHeaders()
+        return self.get_adjustments_with_options(request, headers, runtime)
 
-    async def get_check_in_schema_template_async(
+    async def get_adjustments_async(
         self,
-        request: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateRequest,
-    ) -> dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse:
+        request: dingtalkattendance__1__0_models.GetAdjustmentsRequest,
+    ) -> dingtalkattendance__1__0_models.GetAdjustmentsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders()
-        return await self.get_check_in_schema_template_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetAdjustmentsHeaders()
+        return await self.get_adjustments_with_options_async(request, headers, runtime)
 
     def get_check_in_schema_template_with_options(
         self,
@@ -912,9 +1144,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCheckInSchemaTemplate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/watermarks/templates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse(),
-            self.do_roarequest('GetCheckInSchemaTemplate', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_check_in_schema_template_with_options_async(
@@ -942,26 +1185,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCheckInSchemaTemplate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/watermarks/templates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse(),
-            await self.do_roarequest_async('GetCheckInSchemaTemplate', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_closing_accounts(
+    def get_check_in_schema_template(
         self,
-        request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
-    ) -> dingtalkattendance__1__0_models.GetClosingAccountsResponse:
+        request: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetClosingAccountsHeaders()
-        return self.get_closing_accounts_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders()
+        return self.get_check_in_schema_template_with_options(request, headers, runtime)
 
-    async def get_closing_accounts_async(
+    async def get_check_in_schema_template_async(
         self,
-        request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
-    ) -> dingtalkattendance__1__0_models.GetClosingAccountsResponse:
+        request: dingtalkattendance__1__0_models.GetCheckInSchemaTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.GetCheckInSchemaTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetClosingAccountsHeaders()
-        return await self.get_closing_accounts_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders()
+        return await self.get_check_in_schema_template_with_options_async(request, headers, runtime)
 
     def get_closing_accounts_with_options(
         self,
@@ -982,9 +1236,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetClosingAccounts',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/closingAccounts/rules/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetClosingAccountsResponse(),
-            self.do_roarequest('GetClosingAccounts', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/rules/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_closing_accounts_with_options_async(
@@ -1006,26 +1271,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetClosingAccounts',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/closingAccounts/rules/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetClosingAccountsResponse(),
-            await self.do_roarequest_async('GetClosingAccounts', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/closingAccounts/rules/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_leave_records(
+    def get_closing_accounts(
         self,
-        request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,
-    ) -> dingtalkattendance__1__0_models.GetLeaveRecordsResponse:
+        request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
+    ) -> dingtalkattendance__1__0_models.GetClosingAccountsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetLeaveRecordsHeaders()
-        return self.get_leave_records_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetClosingAccountsHeaders()
+        return self.get_closing_accounts_with_options(request, headers, runtime)
 
-    async def get_leave_records_async(
+    async def get_closing_accounts_async(
         self,
-        request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,
-    ) -> dingtalkattendance__1__0_models.GetLeaveRecordsResponse:
+        request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
+    ) -> dingtalkattendance__1__0_models.GetClosingAccountsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetLeaveRecordsHeaders()
-        return await self.get_leave_records_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetClosingAccountsHeaders()
+        return await self.get_closing_accounts_with_options_async(request, headers, runtime)
 
     def get_leave_records_with_options(
         self,
@@ -1054,9 +1330,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetLeaveRecords',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/vacations/records/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetLeaveRecordsResponse(),
-            self.do_roarequest('GetLeaveRecords', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/vacations/records/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_leave_records_with_options_async(
@@ -1086,26 +1373,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetLeaveRecords',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/vacations/records/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetLeaveRecordsResponse(),
-            await self.do_roarequest_async('GetLeaveRecords', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/vacations/records/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_leave_type(
+    def get_leave_records(
         self,
-        request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,
-    ) -> dingtalkattendance__1__0_models.GetLeaveTypeResponse:
+        request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,
+    ) -> dingtalkattendance__1__0_models.GetLeaveRecordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetLeaveTypeHeaders()
-        return self.get_leave_type_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetLeaveRecordsHeaders()
+        return self.get_leave_records_with_options(request, headers, runtime)
 
-    async def get_leave_type_async(
+    async def get_leave_records_async(
         self,
-        request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,
-    ) -> dingtalkattendance__1__0_models.GetLeaveTypeResponse:
+        request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,
+    ) -> dingtalkattendance__1__0_models.GetLeaveRecordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetLeaveTypeHeaders()
-        return await self.get_leave_type_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetLeaveRecordsHeaders()
+        return await self.get_leave_records_with_options_async(request, headers, runtime)
 
     def get_leave_type_with_options(
         self,
@@ -1128,9 +1426,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetLeaveType',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/types',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetLeaveTypeResponse(),
-            self.do_roarequest('GetLeaveType', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_leave_type_with_options_async(
@@ -1154,9 +1463,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetLeaveType',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/types',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetLeaveTypeResponse(),
-            await self.do_roarequest_async('GetLeaveType', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_leave_type(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.GetLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetLeaveTypeHeaders()
+        return self.get_leave_type_with_options(request, headers, runtime)
+
+    async def get_leave_type_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.GetLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetLeaveTypeHeaders()
+        return await self.get_leave_type_with_options_async(request, headers, runtime)
+
+    def get_machine_with_options(
+        self,
+        dev_id: str,
+        headers: dingtalkattendance__1__0_models.GetMachineHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetMachineResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetMachine',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/machines/{dev_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetMachineResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_machine_with_options_async(
+        self,
+        dev_id: str,
+        headers: dingtalkattendance__1__0_models.GetMachineHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetMachineResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetMachine',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/machines/{dev_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetMachineResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_machine(
@@ -1175,44 +1571,80 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.GetMachineHeaders()
         return await self.get_machine_with_options_async(dev_id, headers, runtime)
 
-    def get_machine_with_options(
+    def get_machine_user_with_options(
         self,
         dev_id: str,
-        headers: dingtalkattendance__1__0_models.GetMachineHeaders,
+        request: dingtalkattendance__1__0_models.GetMachineUserRequest,
+        headers: dingtalkattendance__1__0_models.GetMachineUserHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkattendance__1__0_models.GetMachineResponse:
-        dev_id = OpenApiUtilClient.get_encode_param(dev_id)
+    ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetMachineUser',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/machines/getUser/{dev_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkattendance__1__0_models.GetMachineResponse(),
-            self.do_roarequest('GetMachine', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/machines/{dev_id}', 'json', req, runtime)
+            dingtalkattendance__1__0_models.GetMachineUserResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def get_machine_with_options_async(
+    async def get_machine_user_with_options_async(
         self,
         dev_id: str,
-        headers: dingtalkattendance__1__0_models.GetMachineHeaders,
+        request: dingtalkattendance__1__0_models.GetMachineUserRequest,
+        headers: dingtalkattendance__1__0_models.GetMachineUserHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkattendance__1__0_models.GetMachineResponse:
-        dev_id = OpenApiUtilClient.get_encode_param(dev_id)
+    ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetMachineUser',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/machines/getUser/{dev_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkattendance__1__0_models.GetMachineResponse(),
-            await self.do_roarequest_async('GetMachine', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/machines/{dev_id}', 'json', req, runtime)
+            dingtalkattendance__1__0_models.GetMachineUserResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_machine_user(
@@ -1233,78 +1665,6 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.GetMachineUserHeaders()
         return await self.get_machine_user_with_options_async(dev_id, request, headers, runtime)
 
-    def get_machine_user_with_options(
-        self,
-        dev_id: str,
-        request: dingtalkattendance__1__0_models.GetMachineUserRequest,
-        headers: dingtalkattendance__1__0_models.GetMachineUserHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
-        UtilClient.validate_model(request)
-        dev_id = OpenApiUtilClient.get_encode_param(dev_id)
-        query = {}
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkattendance__1__0_models.GetMachineUserResponse(),
-            self.do_roarequest('GetMachineUser', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/machines/getUser/{dev_id}', 'json', req, runtime)
-        )
-
-    async def get_machine_user_with_options_async(
-        self,
-        dev_id: str,
-        request: dingtalkattendance__1__0_models.GetMachineUserRequest,
-        headers: dingtalkattendance__1__0_models.GetMachineUserHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkattendance__1__0_models.GetMachineUserResponse:
-        UtilClient.validate_model(request)
-        dev_id = OpenApiUtilClient.get_encode_param(dev_id)
-        query = {}
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkattendance__1__0_models.GetMachineUserResponse(),
-            await self.do_roarequest_async('GetMachineUser', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/machines/getUser/{dev_id}', 'json', req, runtime)
-        )
-
-    def get_overtime_setting(
-        self,
-        request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
-    ) -> dingtalkattendance__1__0_models.GetOvertimeSettingResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetOvertimeSettingHeaders()
-        return self.get_overtime_setting_with_options(request, headers, runtime)
-
-    async def get_overtime_setting_async(
-        self,
-        request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
-    ) -> dingtalkattendance__1__0_models.GetOvertimeSettingResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetOvertimeSettingHeaders()
-        return await self.get_overtime_setting_with_options_async(request, headers, runtime)
-
     def get_overtime_setting_with_options(
         self,
         request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
@@ -1324,9 +1684,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetOvertimeSetting',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/overtimeSettings/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetOvertimeSettingResponse(),
-            self.do_roarequest('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/overtimeSettings/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_overtime_setting_with_options_async(
@@ -1348,26 +1719,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetOvertimeSetting',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/overtimeSettings/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetOvertimeSettingResponse(),
-            await self.do_roarequest_async('GetOvertimeSetting', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/overtimeSettings/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_simple_overtime_setting(
+    def get_overtime_setting(
         self,
-        request: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingRequest,
-    ) -> dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse:
+        request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
+    ) -> dingtalkattendance__1__0_models.GetOvertimeSettingResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetSimpleOvertimeSettingHeaders()
-        return self.get_simple_overtime_setting_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetOvertimeSettingHeaders()
+        return self.get_overtime_setting_with_options(request, headers, runtime)
 
-    async def get_simple_overtime_setting_async(
+    async def get_overtime_setting_async(
         self,
-        request: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingRequest,
-    ) -> dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse:
+        request: dingtalkattendance__1__0_models.GetOvertimeSettingRequest,
+    ) -> dingtalkattendance__1__0_models.GetOvertimeSettingResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetSimpleOvertimeSettingHeaders()
-        return await self.get_simple_overtime_setting_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetOvertimeSettingHeaders()
+        return await self.get_overtime_setting_with_options_async(request, headers, runtime)
 
     def get_simple_overtime_setting_with_options(
         self,
@@ -1390,9 +1772,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSimpleOvertimeSetting',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/overtimeSettings',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse(),
-            self.do_roarequest('GetSimpleOvertimeSetting', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/overtimeSettings', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_simple_overtime_setting_with_options_async(
@@ -1416,26 +1809,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSimpleOvertimeSetting',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/overtimeSettings',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse(),
-            await self.do_roarequest_async('GetSimpleOvertimeSetting', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/overtimeSettings', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_user_holidays(
+    def get_simple_overtime_setting(
         self,
-        request: dingtalkattendance__1__0_models.GetUserHolidaysRequest,
-    ) -> dingtalkattendance__1__0_models.GetUserHolidaysResponse:
+        request: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingRequest,
+    ) -> dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetUserHolidaysHeaders()
-        return self.get_user_holidays_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetSimpleOvertimeSettingHeaders()
+        return self.get_simple_overtime_setting_with_options(request, headers, runtime)
 
-    async def get_user_holidays_async(
+    async def get_simple_overtime_setting_async(
         self,
-        request: dingtalkattendance__1__0_models.GetUserHolidaysRequest,
-    ) -> dingtalkattendance__1__0_models.GetUserHolidaysResponse:
+        request: dingtalkattendance__1__0_models.GetSimpleOvertimeSettingRequest,
+    ) -> dingtalkattendance__1__0_models.GetSimpleOvertimeSettingResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GetUserHolidaysHeaders()
-        return await self.get_user_holidays_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetSimpleOvertimeSettingHeaders()
+        return await self.get_simple_overtime_setting_with_options_async(request, headers, runtime)
 
     def get_user_holidays_with_options(
         self,
@@ -1460,9 +1864,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetUserHolidays',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/holidays',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetUserHolidaysResponse(),
-            self.do_roarequest('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_user_holidays_with_options_async(
@@ -1488,26 +1903,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetUserHolidays',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/holidays',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GetUserHolidaysResponse(),
-            await self.do_roarequest_async('GetUserHolidays', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/holidays', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_add(
+    def get_user_holidays(
         self,
-        request: dingtalkattendance__1__0_models.GroupAddRequest,
-    ) -> dingtalkattendance__1__0_models.GroupAddResponse:
+        request: dingtalkattendance__1__0_models.GetUserHolidaysRequest,
+    ) -> dingtalkattendance__1__0_models.GetUserHolidaysResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GroupAddHeaders()
-        return self.group_add_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetUserHolidaysHeaders()
+        return self.get_user_holidays_with_options(request, headers, runtime)
 
-    async def group_add_async(
+    async def get_user_holidays_async(
         self,
-        request: dingtalkattendance__1__0_models.GroupAddRequest,
-    ) -> dingtalkattendance__1__0_models.GroupAddResponse:
+        request: dingtalkattendance__1__0_models.GetUserHolidaysRequest,
+    ) -> dingtalkattendance__1__0_models.GetUserHolidaysResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GroupAddHeaders()
-        return await self.group_add_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GetUserHolidaysHeaders()
+        return await self.get_user_holidays_with_options_async(request, headers, runtime)
 
     def group_add_with_options(
         self,
@@ -1614,9 +2040,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupAdd',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GroupAddResponse(),
-            self.do_roarequest('GroupAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_add_with_options_async(
@@ -1724,26 +2161,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupAdd',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GroupAddResponse(),
-            await self.do_roarequest_async('GroupAdd', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_update(
+    def group_add(
         self,
-        request: dingtalkattendance__1__0_models.GroupUpdateRequest,
-    ) -> dingtalkattendance__1__0_models.GroupUpdateResponse:
+        request: dingtalkattendance__1__0_models.GroupAddRequest,
+    ) -> dingtalkattendance__1__0_models.GroupAddResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GroupUpdateHeaders()
-        return self.group_update_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GroupAddHeaders()
+        return self.group_add_with_options(request, headers, runtime)
 
-    async def group_update_async(
+    async def group_add_async(
         self,
-        request: dingtalkattendance__1__0_models.GroupUpdateRequest,
-    ) -> dingtalkattendance__1__0_models.GroupUpdateResponse:
+        request: dingtalkattendance__1__0_models.GroupAddRequest,
+    ) -> dingtalkattendance__1__0_models.GroupAddResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.GroupUpdateHeaders()
-        return await self.group_update_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GroupAddHeaders()
+        return await self.group_add_with_options_async(request, headers, runtime)
 
     def group_update_with_options(
         self,
@@ -1824,9 +2272,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupUpdate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/groups',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GroupUpdateResponse(),
-            self.do_roarequest('GroupUpdate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_update_with_options_async(
@@ -1908,26 +2367,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupUpdate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/groups',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.GroupUpdateResponse(),
-            await self.do_roarequest_async('GroupUpdate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def init_and_get_leave_allocation_quotas(
+    def group_update(
         self,
-        request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,
-    ) -> dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse:
+        request: dingtalkattendance__1__0_models.GroupUpdateRequest,
+    ) -> dingtalkattendance__1__0_models.GroupUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasHeaders()
-        return self.init_and_get_leave_allocation_quotas_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GroupUpdateHeaders()
+        return self.group_update_with_options(request, headers, runtime)
 
-    async def init_and_get_leave_allocation_quotas_async(
+    async def group_update_async(
         self,
-        request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,
-    ) -> dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse:
+        request: dingtalkattendance__1__0_models.GroupUpdateRequest,
+    ) -> dingtalkattendance__1__0_models.GroupUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasHeaders()
-        return await self.init_and_get_leave_allocation_quotas_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.GroupUpdateHeaders()
+        return await self.group_update_with_options_async(request, headers, runtime)
 
     def init_and_get_leave_allocation_quotas_with_options(
         self,
@@ -1952,9 +2422,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='InitAndGetLeaveALlocationQuotas',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/initializations/balances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse(),
-            self.do_roarequest('InitAndGetLeaveALlocationQuotas', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/initializations/balances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def init_and_get_leave_allocation_quotas_with_options_async(
@@ -1980,26 +2461,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='InitAndGetLeaveALlocationQuotas',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/initializations/balances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse(),
-            await self.do_roarequest_async('InitAndGetLeaveALlocationQuotas', 'attendance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/attendance/leaves/initializations/balances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_approve_by_users(
+    def init_and_get_leave_allocation_quotas(
         self,
-        request: dingtalkattendance__1__0_models.ListApproveByUsersRequest,
-    ) -> dingtalkattendance__1__0_models.ListApproveByUsersResponse:
+        request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,
+    ) -> dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.ListApproveByUsersHeaders()
-        return self.list_approve_by_users_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasHeaders()
+        return self.init_and_get_leave_allocation_quotas_with_options(request, headers, runtime)
 
-    async def list_approve_by_users_async(
+    async def init_and_get_leave_allocation_quotas_async(
         self,
-        request: dingtalkattendance__1__0_models.ListApproveByUsersRequest,
-    ) -> dingtalkattendance__1__0_models.ListApproveByUsersResponse:
+        request: dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasRequest,
+    ) -> dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.ListApproveByUsersHeaders()
-        return await self.list_approve_by_users_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.InitAndGetLeaveALlocationQuotasHeaders()
+        return await self.init_and_get_leave_allocation_quotas_with_options_async(request, headers, runtime)
 
     def list_approve_by_users_with_options(
         self,
@@ -2026,9 +2518,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ListApproveByUsers',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/approvals/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.ListApproveByUsersResponse(),
-            self.do_roarequest('ListApproveByUsers', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approvals/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_approve_by_users_with_options_async(
@@ -2056,26 +2559,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ListApproveByUsers',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/approvals/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.ListApproveByUsersResponse(),
-            await self.do_roarequest_async('ListApproveByUsers', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/approvals/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def modify_water_mark_template(
+    def list_approve_by_users(
         self,
-        request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,
-    ) -> dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse:
+        request: dingtalkattendance__1__0_models.ListApproveByUsersRequest,
+    ) -> dingtalkattendance__1__0_models.ListApproveByUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.ModifyWaterMarkTemplateHeaders()
-        return self.modify_water_mark_template_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.ListApproveByUsersHeaders()
+        return self.list_approve_by_users_with_options(request, headers, runtime)
 
-    async def modify_water_mark_template_async(
+    async def list_approve_by_users_async(
         self,
-        request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,
-    ) -> dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse:
+        request: dingtalkattendance__1__0_models.ListApproveByUsersRequest,
+    ) -> dingtalkattendance__1__0_models.ListApproveByUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.ModifyWaterMarkTemplateHeaders()
-        return await self.modify_water_mark_template_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.ListApproveByUsersHeaders()
+        return await self.list_approve_by_users_with_options_async(request, headers, runtime)
 
     def modify_water_mark_template_with_options(
         self,
@@ -2112,9 +2626,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ModifyWaterMarkTemplate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/watermarks/templates',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse(),
-            self.do_roarequest('ModifyWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def modify_water_mark_template_with_options_async(
@@ -2152,26 +2677,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ModifyWaterMarkTemplate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/watermarks/templates',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse(),
-            await self.do_roarequest_async('ModifyWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def process_approve_create(
+    def modify_water_mark_template(
         self,
-        request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
-    ) -> dingtalkattendance__1__0_models.ProcessApproveCreateResponse:
+        request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
-        return self.process_approve_create_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.ModifyWaterMarkTemplateHeaders()
+        return self.modify_water_mark_template_with_options(request, headers, runtime)
 
-    async def process_approve_create_async(
+    async def modify_water_mark_template_async(
         self,
-        request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
-    ) -> dingtalkattendance__1__0_models.ProcessApproveCreateResponse:
+        request: dingtalkattendance__1__0_models.ModifyWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.ModifyWaterMarkTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
-        return await self.process_approve_create_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.ModifyWaterMarkTemplateHeaders()
+        return await self.modify_water_mark_template_with_options_async(request, headers, runtime)
 
     def process_approve_create_with_options(
         self,
@@ -2202,9 +2738,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ProcessApproveCreate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/workflows/checkInForms',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.ProcessApproveCreateResponse(),
-            self.do_roarequest('ProcessApproveCreate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/workflows/checkInForms', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def process_approve_create_with_options_async(
@@ -2236,26 +2783,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ProcessApproveCreate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/workflows/checkInForms',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.ProcessApproveCreateResponse(),
-            await self.do_roarequest_async('ProcessApproveCreate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/workflows/checkInForms', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def save_custom_water_mark_template(
+    def process_approve_create(
         self,
-        request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,
-    ) -> dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse:
+        request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveCreateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders()
-        return self.save_custom_water_mark_template_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
+        return self.process_approve_create_with_options(request, headers, runtime)
 
-    async def save_custom_water_mark_template_async(
+    async def process_approve_create_async(
         self,
-        request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,
-    ) -> dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse:
+        request: dingtalkattendance__1__0_models.ProcessApproveCreateRequest,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveCreateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders()
-        return await self.save_custom_water_mark_template_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
+        return await self.process_approve_create_with_options_async(request, headers, runtime)
 
     def save_custom_water_mark_template_with_options(
         self,
@@ -2292,9 +2850,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SaveCustomWaterMarkTemplate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/watermarks/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse(),
-            self.do_roarequest('SaveCustomWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def save_custom_water_mark_template_with_options_async(
@@ -2332,26 +2901,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SaveCustomWaterMarkTemplate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/watermarks/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse(),
-            await self.do_roarequest_async('SaveCustomWaterMarkTemplate', 'attendance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/attendance/watermarks/templates', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def sync_schedule_info(
+    def save_custom_water_mark_template(
         self,
-        request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,
-    ) -> dingtalkattendance__1__0_models.SyncScheduleInfoResponse:
+        request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.SyncScheduleInfoHeaders()
-        return self.sync_schedule_info_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders()
+        return self.save_custom_water_mark_template_with_options(request, headers, runtime)
 
-    async def sync_schedule_info_async(
+    async def save_custom_water_mark_template_async(
         self,
-        request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,
-    ) -> dingtalkattendance__1__0_models.SyncScheduleInfoResponse:
+        request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,
+    ) -> dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.SyncScheduleInfoHeaders()
-        return await self.sync_schedule_info_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders()
+        return await self.save_custom_water_mark_template_with_options_async(request, headers, runtime)
 
     def sync_schedule_info_with_options(
         self,
@@ -2374,9 +2954,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SyncScheduleInfo',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/schedules/additionalInfo',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.SyncScheduleInfoResponse(),
-            self.do_roarequest('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/schedules/additionalInfo', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def sync_schedule_info_with_options_async(
@@ -2400,26 +2991,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SyncScheduleInfo',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/schedules/additionalInfo',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.SyncScheduleInfoResponse(),
-            await self.do_roarequest_async('SyncScheduleInfo', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/schedules/additionalInfo', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_leave_type(
+    def sync_schedule_info(
         self,
-        request: dingtalkattendance__1__0_models.UpdateLeaveTypeRequest,
-    ) -> dingtalkattendance__1__0_models.UpdateLeaveTypeResponse:
+        request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,
+    ) -> dingtalkattendance__1__0_models.SyncScheduleInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders()
-        return self.update_leave_type_with_options(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.SyncScheduleInfoHeaders()
+        return self.sync_schedule_info_with_options(request, headers, runtime)
 
-    async def update_leave_type_async(
+    async def sync_schedule_info_async(
         self,
-        request: dingtalkattendance__1__0_models.UpdateLeaveTypeRequest,
-    ) -> dingtalkattendance__1__0_models.UpdateLeaveTypeResponse:
+        request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,
+    ) -> dingtalkattendance__1__0_models.SyncScheduleInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders()
-        return await self.update_leave_type_with_options_async(request, headers, runtime)
+        headers = dingtalkattendance__1__0_models.SyncScheduleInfoHeaders()
+        return await self.sync_schedule_info_with_options_async(request, headers, runtime)
 
     def update_leave_type_with_options(
         self,
@@ -2462,9 +3064,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateLeaveType',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/types',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.UpdateLeaveTypeResponse(),
-            self.do_roarequest('UpdateLeaveType', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_leave_type_with_options_async(
@@ -2508,7 +3121,34 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateLeaveType',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/types',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkattendance__1__0_models.UpdateLeaveTypeResponse(),
-            await self.do_roarequest_async('UpdateLeaveType', 'attendance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/attendance/leaves/types', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_leave_type(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.UpdateLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders()
+        return self.update_leave_type_with_options(request, headers, runtime)
+
+    async def update_leave_type_async(
+        self,
+        request: dingtalkattendance__1__0_models.UpdateLeaveTypeRequest,
+    ) -> dingtalkattendance__1__0_models.UpdateLeaveTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.UpdateLeaveTypeHeaders()
+        return await self.update_leave_type_with_options_async(request, headers, runtime)

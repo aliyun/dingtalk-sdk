@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.service_group_1_0 import models as dingtalkservice_group__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_contact_member_to_group(
-        self,
-        request: dingtalkservice_group__1__0_models.AddContactMemberToGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddContactMemberToGroupHeaders()
-        return self.add_contact_member_to_group_with_options(request, headers, runtime)
-
-    async def add_contact_member_to_group_async(
-        self,
-        request: dingtalkservice_group__1__0_models.AddContactMemberToGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddContactMemberToGroupHeaders()
-        return await self.add_contact_member_to_group_with_options_async(request, headers, runtime)
 
     def add_contact_member_to_group_with_options(
         self,
@@ -66,9 +56,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddContactMemberToGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/contacts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse(),
-            self.do_roarequest('AddContactMemberToGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/contacts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_contact_member_to_group_with_options_async(
@@ -98,26 +99,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddContactMemberToGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/contacts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse(),
-            await self.do_roarequest_async('AddContactMemberToGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/contacts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_knowledge(
+    def add_contact_member_to_group(
         self,
-        request: dingtalkservice_group__1__0_models.AddKnowledgeRequest,
-    ) -> dingtalkservice_group__1__0_models.AddKnowledgeResponse:
+        request: dingtalkservice_group__1__0_models.AddContactMemberToGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddKnowledgeHeaders()
-        return self.add_knowledge_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddContactMemberToGroupHeaders()
+        return self.add_contact_member_to_group_with_options(request, headers, runtime)
 
-    async def add_knowledge_async(
+    async def add_contact_member_to_group_async(
         self,
-        request: dingtalkservice_group__1__0_models.AddKnowledgeRequest,
-    ) -> dingtalkservice_group__1__0_models.AddKnowledgeResponse:
+        request: dingtalkservice_group__1__0_models.AddContactMemberToGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.AddContactMemberToGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddKnowledgeHeaders()
-        return await self.add_knowledge_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddContactMemberToGroupHeaders()
+        return await self.add_contact_member_to_group_with_options_async(request, headers, runtime)
 
     def add_knowledge_with_options(
         self,
@@ -166,9 +178,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddKnowledge',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/knowledges',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddKnowledgeResponse(),
-            self.do_roarequest('AddKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_knowledge_with_options_async(
@@ -218,26 +241,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddKnowledge',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/knowledges',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddKnowledgeResponse(),
-            await self.do_roarequest_async('AddKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_library(
+    def add_knowledge(
         self,
-        request: dingtalkservice_group__1__0_models.AddLibraryRequest,
-    ) -> dingtalkservice_group__1__0_models.AddLibraryResponse:
+        request: dingtalkservice_group__1__0_models.AddKnowledgeRequest,
+    ) -> dingtalkservice_group__1__0_models.AddKnowledgeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddLibraryHeaders()
-        return self.add_library_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddKnowledgeHeaders()
+        return self.add_knowledge_with_options(request, headers, runtime)
 
-    async def add_library_async(
+    async def add_knowledge_async(
         self,
-        request: dingtalkservice_group__1__0_models.AddLibraryRequest,
-    ) -> dingtalkservice_group__1__0_models.AddLibraryResponse:
+        request: dingtalkservice_group__1__0_models.AddKnowledgeRequest,
+    ) -> dingtalkservice_group__1__0_models.AddKnowledgeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddLibraryHeaders()
-        return await self.add_library_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddKnowledgeHeaders()
+        return await self.add_knowledge_with_options_async(request, headers, runtime)
 
     def add_library_with_options(
         self,
@@ -270,9 +304,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddLibrary',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/librarys',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddLibraryResponse(),
-            self.do_roarequest('AddLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/librarys', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_library_with_options_async(
@@ -306,26 +351,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddLibrary',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/librarys',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddLibraryResponse(),
-            await self.do_roarequest_async('AddLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/librarys', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_member_to_service_group(
+    def add_library(
         self,
-        request: dingtalkservice_group__1__0_models.AddMemberToServiceGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse:
+        request: dingtalkservice_group__1__0_models.AddLibraryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddLibraryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddMemberToServiceGroupHeaders()
-        return self.add_member_to_service_group_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddLibraryHeaders()
+        return self.add_library_with_options(request, headers, runtime)
 
-    async def add_member_to_service_group_async(
+    async def add_library_async(
         self,
-        request: dingtalkservice_group__1__0_models.AddMemberToServiceGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse:
+        request: dingtalkservice_group__1__0_models.AddLibraryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddLibraryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddMemberToServiceGroupHeaders()
-        return await self.add_member_to_service_group_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddLibraryHeaders()
+        return await self.add_library_with_options_async(request, headers, runtime)
 
     def add_member_to_service_group_with_options(
         self,
@@ -350,9 +406,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddMemberToServiceGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse(),
-            self.do_roarequest('AddMemberToServiceGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_member_to_service_group_with_options_async(
@@ -378,26 +445,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddMemberToServiceGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse(),
-            await self.do_roarequest_async('AddMemberToServiceGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_open_category(
+    def add_member_to_service_group(
         self,
-        request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,
-    ) -> dingtalkservice_group__1__0_models.AddOpenCategoryResponse:
+        request: dingtalkservice_group__1__0_models.AddMemberToServiceGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddOpenCategoryHeaders()
-        return self.add_open_category_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddMemberToServiceGroupHeaders()
+        return self.add_member_to_service_group_with_options(request, headers, runtime)
 
-    async def add_open_category_async(
+    async def add_member_to_service_group_async(
         self,
-        request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,
-    ) -> dingtalkservice_group__1__0_models.AddOpenCategoryResponse:
+        request: dingtalkservice_group__1__0_models.AddMemberToServiceGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.AddMemberToServiceGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddOpenCategoryHeaders()
-        return await self.add_open_category_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddMemberToServiceGroupHeaders()
+        return await self.add_member_to_service_group_with_options_async(request, headers, runtime)
 
     def add_open_category_with_options(
         self,
@@ -428,9 +506,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddOpenCategory',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/openCategories',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddOpenCategoryResponse(),
-            self.do_roarequest('AddOpenCategory', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openCategories', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_open_category_with_options_async(
@@ -462,26 +551,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddOpenCategory',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/openCategories',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddOpenCategoryResponse(),
-            await self.do_roarequest_async('AddOpenCategory', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openCategories', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_open_knowledge(
+    def add_open_category(
         self,
-        request: dingtalkservice_group__1__0_models.AddOpenKnowledgeRequest,
-    ) -> dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse:
+        request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenCategoryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddOpenKnowledgeHeaders()
-        return self.add_open_knowledge_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddOpenCategoryHeaders()
+        return self.add_open_category_with_options(request, headers, runtime)
 
-    async def add_open_knowledge_async(
+    async def add_open_category_async(
         self,
-        request: dingtalkservice_group__1__0_models.AddOpenKnowledgeRequest,
-    ) -> dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse:
+        request: dingtalkservice_group__1__0_models.AddOpenCategoryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenCategoryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddOpenKnowledgeHeaders()
-        return await self.add_open_knowledge_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddOpenCategoryHeaders()
+        return await self.add_open_category_with_options_async(request, headers, runtime)
 
     def add_open_knowledge_with_options(
         self,
@@ -530,9 +630,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddOpenKnowledge',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/openKnowledges',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse(),
-            self.do_roarequest('AddOpenKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openKnowledges', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_open_knowledge_with_options_async(
@@ -582,26 +693,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddOpenKnowledge',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/openKnowledges',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse(),
-            await self.do_roarequest_async('AddOpenKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openKnowledges', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_open_library(
+    def add_open_knowledge(
         self,
-        request: dingtalkservice_group__1__0_models.AddOpenLibraryRequest,
-    ) -> dingtalkservice_group__1__0_models.AddOpenLibraryResponse:
+        request: dingtalkservice_group__1__0_models.AddOpenKnowledgeRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddOpenLibraryHeaders()
-        return self.add_open_library_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddOpenKnowledgeHeaders()
+        return self.add_open_knowledge_with_options(request, headers, runtime)
 
-    async def add_open_library_async(
+    async def add_open_knowledge_async(
         self,
-        request: dingtalkservice_group__1__0_models.AddOpenLibraryRequest,
-    ) -> dingtalkservice_group__1__0_models.AddOpenLibraryResponse:
+        request: dingtalkservice_group__1__0_models.AddOpenKnowledgeRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenKnowledgeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddOpenLibraryHeaders()
-        return await self.add_open_library_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddOpenKnowledgeHeaders()
+        return await self.add_open_knowledge_with_options_async(request, headers, runtime)
 
     def add_open_library_with_options(
         self,
@@ -634,9 +756,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddOpenLibrary',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/openLibraries',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddOpenLibraryResponse(),
-            self.do_roarequest('AddOpenLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openLibraries', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_open_library_with_options_async(
@@ -670,26 +803,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddOpenLibrary',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/openLibraries',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddOpenLibraryResponse(),
-            await self.do_roarequest_async('AddOpenLibrary', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/openLibraries', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_ticket_memo(
+    def add_open_library(
         self,
-        request: dingtalkservice_group__1__0_models.AddTicketMemoRequest,
-    ) -> dingtalkservice_group__1__0_models.AddTicketMemoResponse:
+        request: dingtalkservice_group__1__0_models.AddOpenLibraryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenLibraryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddTicketMemoHeaders()
-        return self.add_ticket_memo_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddOpenLibraryHeaders()
+        return self.add_open_library_with_options(request, headers, runtime)
 
-    async def add_ticket_memo_async(
+    async def add_open_library_async(
         self,
-        request: dingtalkservice_group__1__0_models.AddTicketMemoRequest,
-    ) -> dingtalkservice_group__1__0_models.AddTicketMemoResponse:
+        request: dingtalkservice_group__1__0_models.AddOpenLibraryRequest,
+    ) -> dingtalkservice_group__1__0_models.AddOpenLibraryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AddTicketMemoHeaders()
-        return await self.add_ticket_memo_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddOpenLibraryHeaders()
+        return await self.add_open_library_with_options_async(request, headers, runtime)
 
     def add_ticket_memo_with_options(
         self,
@@ -716,9 +860,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddTicketMemo',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/memos',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddTicketMemoResponse(),
-            self.do_roarequest('AddTicketMemo', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/memos', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_ticket_memo_with_options_async(
@@ -746,26 +901,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddTicketMemo',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/memos',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AddTicketMemoResponse(),
-            await self.do_roarequest_async('AddTicketMemo', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/memos', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def assign_ticket(
+    def add_ticket_memo(
         self,
-        request: dingtalkservice_group__1__0_models.AssignTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.AssignTicketResponse:
+        request: dingtalkservice_group__1__0_models.AddTicketMemoRequest,
+    ) -> dingtalkservice_group__1__0_models.AddTicketMemoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AssignTicketHeaders()
-        return self.assign_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddTicketMemoHeaders()
+        return self.add_ticket_memo_with_options(request, headers, runtime)
 
-    async def assign_ticket_async(
+    async def add_ticket_memo_async(
         self,
-        request: dingtalkservice_group__1__0_models.AssignTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.AssignTicketResponse:
+        request: dingtalkservice_group__1__0_models.AddTicketMemoRequest,
+    ) -> dingtalkservice_group__1__0_models.AddTicketMemoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.AssignTicketHeaders()
-        return await self.assign_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AddTicketMemoHeaders()
+        return await self.add_ticket_memo_with_options_async(request, headers, runtime)
 
     def assign_ticket_with_options(
         self,
@@ -796,9 +962,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AssignTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/assign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AssignTicketResponse(),
-            self.do_roarequest('AssignTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/assign', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def assign_ticket_with_options_async(
@@ -830,26 +1007,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AssignTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/assign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.AssignTicketResponse(),
-            await self.do_roarequest_async('AssignTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/assign', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_binding_group_biz_ids(
+    def assign_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsRequest,
-    ) -> dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsResponse:
+        request: dingtalkservice_group__1__0_models.AssignTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.AssignTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsHeaders()
-        return self.batch_binding_group_biz_ids_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AssignTicketHeaders()
+        return self.assign_ticket_with_options(request, headers, runtime)
 
-    async def batch_binding_group_biz_ids_async(
+    async def assign_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsRequest,
-    ) -> dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsResponse:
+        request: dingtalkservice_group__1__0_models.AssignTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.AssignTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsHeaders()
-        return await self.batch_binding_group_biz_ids_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.AssignTicketHeaders()
+        return await self.assign_ticket_with_options_async(request, headers, runtime)
 
     def batch_binding_group_biz_ids_with_options(
         self,
@@ -872,9 +1060,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchBindingGroupBizIds',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/bind',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsResponse(),
-            self.do_roarequest('BatchBindingGroupBizIds', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/bind', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_binding_group_biz_ids_with_options_async(
@@ -898,26 +1097,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchBindingGroupBizIds',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/bind',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsResponse(),
-            await self.do_roarequest_async('BatchBindingGroupBizIds', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/bind', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_get_group_set_config(
+    def batch_binding_group_biz_ids(
         self,
-        request: dingtalkservice_group__1__0_models.BatchGetGroupSetConfigRequest,
-    ) -> dingtalkservice_group__1__0_models.BatchGetGroupSetConfigResponse:
+        request: dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BatchGetGroupSetConfigHeaders()
-        return self.batch_get_group_set_config_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsHeaders()
+        return self.batch_binding_group_biz_ids_with_options(request, headers, runtime)
 
-    async def batch_get_group_set_config_async(
+    async def batch_binding_group_biz_ids_async(
         self,
-        request: dingtalkservice_group__1__0_models.BatchGetGroupSetConfigRequest,
-    ) -> dingtalkservice_group__1__0_models.BatchGetGroupSetConfigResponse:
+        request: dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BatchGetGroupSetConfigHeaders()
-        return await self.batch_get_group_set_config_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BatchBindingGroupBizIdsHeaders()
+        return await self.batch_binding_group_biz_ids_with_options_async(request, headers, runtime)
 
     def batch_get_group_set_config_with_options(
         self,
@@ -942,9 +1152,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchGetGroupSetConfig',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groupSetConfigs/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BatchGetGroupSetConfigResponse(),
-            self.do_roarequest('BatchGetGroupSetConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groupSetConfigs/batchQuery', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_get_group_set_config_with_options_async(
@@ -970,26 +1191,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchGetGroupSetConfig',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groupSetConfigs/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BatchGetGroupSetConfigResponse(),
-            await self.do_roarequest_async('BatchGetGroupSetConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groupSetConfigs/batchQuery', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_query_group_member(
+    def batch_get_group_set_config(
         self,
-        request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
-    ) -> dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse:
+        request: dingtalkservice_group__1__0_models.BatchGetGroupSetConfigRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchGetGroupSetConfigResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BatchQueryGroupMemberHeaders()
-        return self.batch_query_group_member_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BatchGetGroupSetConfigHeaders()
+        return self.batch_get_group_set_config_with_options(request, headers, runtime)
 
-    async def batch_query_group_member_async(
+    async def batch_get_group_set_config_async(
         self,
-        request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
-    ) -> dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse:
+        request: dingtalkservice_group__1__0_models.BatchGetGroupSetConfigRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchGetGroupSetConfigResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BatchQueryGroupMemberHeaders()
-        return await self.batch_query_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BatchGetGroupSetConfigHeaders()
+        return await self.batch_get_group_set_config_with_options_async(request, headers, runtime)
 
     def batch_query_group_member_with_options(
         self,
@@ -1016,9 +1248,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchQueryGroupMember',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/members/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse(),
-            self.do_roarequest('BatchQueryGroupMember', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/batchQuery', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_query_group_member_with_options_async(
@@ -1046,26 +1289,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchQueryGroupMember',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/members/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse(),
-            await self.do_roarequest_async('BatchQueryGroupMember', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/batchQuery', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_query_send_message_task(
+    def batch_query_group_member(
         self,
-        request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,
-    ) -> dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse:
+        request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskHeaders()
-        return self.batch_query_send_message_task_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BatchQueryGroupMemberHeaders()
+        return self.batch_query_group_member_with_options(request, headers, runtime)
 
-    async def batch_query_send_message_task_async(
+    async def batch_query_group_member_async(
         self,
-        request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,
-    ) -> dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse:
+        request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskHeaders()
-        return await self.batch_query_send_message_task_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BatchQueryGroupMemberHeaders()
+        return await self.batch_query_group_member_with_options_async(request, headers, runtime)
 
     def batch_query_send_message_task_with_options(
         self,
@@ -1100,9 +1354,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchQuerySendMessageTask',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tasks/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse(),
-            self.do_roarequest('BatchQuerySendMessageTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_query_send_message_task_with_options_async(
@@ -1138,26 +1403,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchQuerySendMessageTask',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tasks/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse(),
-            await self.do_roarequest_async('BatchQuerySendMessageTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def bound_template_to_team(
+    def batch_query_send_message_task(
         self,
-        request: dingtalkservice_group__1__0_models.BoundTemplateToTeamRequest,
-    ) -> dingtalkservice_group__1__0_models.BoundTemplateToTeamResponse:
+        request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BoundTemplateToTeamHeaders()
-        return self.bound_template_to_team_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskHeaders()
+        return self.batch_query_send_message_task_with_options(request, headers, runtime)
 
-    async def bound_template_to_team_async(
+    async def batch_query_send_message_task_async(
         self,
-        request: dingtalkservice_group__1__0_models.BoundTemplateToTeamRequest,
-    ) -> dingtalkservice_group__1__0_models.BoundTemplateToTeamResponse:
+        request: dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.BoundTemplateToTeamHeaders()
-        return await self.bound_template_to_team_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BatchQuerySendMessageTaskHeaders()
+        return await self.batch_query_send_message_task_with_options_async(request, headers, runtime)
 
     def bound_template_to_team_with_options(
         self,
@@ -1188,9 +1464,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BoundTemplateToTeam',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/teams/templates/bound',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BoundTemplateToTeamResponse(),
-            self.do_roarequest('BoundTemplateToTeam', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/teams/templates/bound', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def bound_template_to_team_with_options_async(
@@ -1222,26 +1509,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BoundTemplateToTeam',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/teams/templates/bound',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.BoundTemplateToTeamResponse(),
-            await self.do_roarequest_async('BoundTemplateToTeam', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/teams/templates/bound', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def cancel_ticket(
+    def bound_template_to_team(
         self,
-        request: dingtalkservice_group__1__0_models.CancelTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.CancelTicketResponse:
+        request: dingtalkservice_group__1__0_models.BoundTemplateToTeamRequest,
+    ) -> dingtalkservice_group__1__0_models.BoundTemplateToTeamResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CancelTicketHeaders()
-        return self.cancel_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BoundTemplateToTeamHeaders()
+        return self.bound_template_to_team_with_options(request, headers, runtime)
 
-    async def cancel_ticket_async(
+    async def bound_template_to_team_async(
         self,
-        request: dingtalkservice_group__1__0_models.CancelTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.CancelTicketResponse:
+        request: dingtalkservice_group__1__0_models.BoundTemplateToTeamRequest,
+    ) -> dingtalkservice_group__1__0_models.BoundTemplateToTeamResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CancelTicketHeaders()
-        return await self.cancel_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.BoundTemplateToTeamHeaders()
+        return await self.bound_template_to_team_with_options_async(request, headers, runtime)
 
     def cancel_ticket_with_options(
         self,
@@ -1270,9 +1568,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CancelTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/cancel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CancelTicketResponse(),
-            self.do_roarequest('CancelTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/cancel', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def cancel_ticket_with_options_async(
@@ -1302,26 +1611,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CancelTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/cancel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CancelTicketResponse(),
-            await self.do_roarequest_async('CancelTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/cancel', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def category_statistics(
+    def cancel_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.CategoryStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.CategoryStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.CancelTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.CancelTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CategoryStatisticsHeaders()
-        return self.category_statistics_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CancelTicketHeaders()
+        return self.cancel_ticket_with_options(request, headers, runtime)
 
-    async def category_statistics_async(
+    async def cancel_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.CategoryStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.CategoryStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.CancelTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.CancelTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CategoryStatisticsHeaders()
-        return await self.category_statistics_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CancelTicketHeaders()
+        return await self.cancel_ticket_with_options_async(request, headers, runtime)
 
     def category_statistics_with_options(
         self,
@@ -1346,9 +1666,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CategoryStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/dashboards/categories/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CategoryStatisticsResponse(),
-            self.do_roarequest('CategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/categories/statistics', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def category_statistics_with_options_async(
@@ -1374,26 +1705,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='CategoryStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/dashboards/categories/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CategoryStatisticsResponse(),
-            await self.do_roarequest_async('CategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/categories/statistics', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def close_conversation(
+    def category_statistics(
         self,
-        request: dingtalkservice_group__1__0_models.CloseConversationRequest,
-    ) -> dingtalkservice_group__1__0_models.CloseConversationResponse:
+        request: dingtalkservice_group__1__0_models.CategoryStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.CategoryStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CloseConversationHeaders()
-        return self.close_conversation_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CategoryStatisticsHeaders()
+        return self.category_statistics_with_options(request, headers, runtime)
 
-    async def close_conversation_async(
+    async def category_statistics_async(
         self,
-        request: dingtalkservice_group__1__0_models.CloseConversationRequest,
-    ) -> dingtalkservice_group__1__0_models.CloseConversationResponse:
+        request: dingtalkservice_group__1__0_models.CategoryStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.CategoryStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CloseConversationHeaders()
-        return await self.close_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CategoryStatisticsHeaders()
+        return await self.category_statistics_with_options_async(request, headers, runtime)
 
     def close_conversation_with_options(
         self,
@@ -1424,9 +1766,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CloseConversation',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/conversions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CloseConversationResponse(),
-            self.do_roarequest('CloseConversation', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/conversions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def close_conversation_with_options_async(
@@ -1458,26 +1811,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CloseConversation',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/conversions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CloseConversationResponse(),
-            await self.do_roarequest_async('CloseConversation', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/conversions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def close_human_session(
+    def close_conversation(
         self,
-        request: dingtalkservice_group__1__0_models.CloseHumanSessionRequest,
-    ) -> dingtalkservice_group__1__0_models.CloseHumanSessionResponse:
+        request: dingtalkservice_group__1__0_models.CloseConversationRequest,
+    ) -> dingtalkservice_group__1__0_models.CloseConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CloseHumanSessionHeaders()
-        return self.close_human_session_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CloseConversationHeaders()
+        return self.close_conversation_with_options(request, headers, runtime)
 
-    async def close_human_session_async(
+    async def close_conversation_async(
         self,
-        request: dingtalkservice_group__1__0_models.CloseHumanSessionRequest,
-    ) -> dingtalkservice_group__1__0_models.CloseHumanSessionResponse:
+        request: dingtalkservice_group__1__0_models.CloseConversationRequest,
+    ) -> dingtalkservice_group__1__0_models.CloseConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CloseHumanSessionHeaders()
-        return await self.close_human_session_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CloseConversationHeaders()
+        return await self.close_conversation_with_options_async(request, headers, runtime)
 
     def close_human_session_with_options(
         self,
@@ -1500,9 +1864,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CloseHumanSession',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/humanSessions/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CloseHumanSessionResponse(),
-            self.do_roarequest('CloseHumanSession', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/humanSessions/close', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def close_human_session_with_options_async(
@@ -1526,26 +1901,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CloseHumanSession',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/humanSessions/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CloseHumanSessionResponse(),
-            await self.do_roarequest_async('CloseHumanSession', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/humanSessions/close', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def conversation_created_notify(
+    def close_human_session(
         self,
-        request: dingtalkservice_group__1__0_models.ConversationCreatedNotifyRequest,
-    ) -> dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse:
+        request: dingtalkservice_group__1__0_models.CloseHumanSessionRequest,
+    ) -> dingtalkservice_group__1__0_models.CloseHumanSessionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ConversationCreatedNotifyHeaders()
-        return self.conversation_created_notify_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CloseHumanSessionHeaders()
+        return self.close_human_session_with_options(request, headers, runtime)
 
-    async def conversation_created_notify_async(
+    async def close_human_session_async(
         self,
-        request: dingtalkservice_group__1__0_models.ConversationCreatedNotifyRequest,
-    ) -> dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse:
+        request: dingtalkservice_group__1__0_models.CloseHumanSessionRequest,
+    ) -> dingtalkservice_group__1__0_models.CloseHumanSessionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ConversationCreatedNotifyHeaders()
-        return await self.conversation_created_notify_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CloseHumanSessionHeaders()
+        return await self.close_human_session_with_options_async(request, headers, runtime)
 
     def conversation_created_notify_with_options(
         self,
@@ -1584,9 +1970,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ConversationCreatedNotify',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse(),
-            self.do_roarequest('ConversationCreatedNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def conversation_created_notify_with_options_async(
@@ -1626,26 +2023,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ConversationCreatedNotify',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse(),
-            await self.do_roarequest_async('ConversationCreatedNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def conversation_transfer_begin_notify(
+    def conversation_created_notify(
         self,
-        request: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyRequest,
-    ) -> dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse:
+        request: dingtalkservice_group__1__0_models.ConversationCreatedNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyHeaders()
-        return self.conversation_transfer_begin_notify_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ConversationCreatedNotifyHeaders()
+        return self.conversation_created_notify_with_options(request, headers, runtime)
 
-    async def conversation_transfer_begin_notify_async(
+    async def conversation_created_notify_async(
         self,
-        request: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyRequest,
-    ) -> dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse:
+        request: dingtalkservice_group__1__0_models.ConversationCreatedNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationCreatedNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyHeaders()
-        return await self.conversation_transfer_begin_notify_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ConversationCreatedNotifyHeaders()
+        return await self.conversation_created_notify_with_options_async(request, headers, runtime)
 
     def conversation_transfer_begin_notify_with_options(
         self,
@@ -1676,9 +2084,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ConversationTransferBeginNotify',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/transfers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse(),
-            self.do_roarequest('ConversationTransferBeginNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/transfers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def conversation_transfer_begin_notify_with_options_async(
@@ -1710,26 +2129,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ConversationTransferBeginNotify',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/transfers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse(),
-            await self.do_roarequest_async('ConversationTransferBeginNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/transfers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def conversation_transfer_complete_notify(
+    def conversation_transfer_begin_notify(
         self,
-        request: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyRequest,
-    ) -> dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse:
+        request: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyHeaders()
-        return self.conversation_transfer_complete_notify_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyHeaders()
+        return self.conversation_transfer_begin_notify_with_options(request, headers, runtime)
 
-    async def conversation_transfer_complete_notify_async(
+    async def conversation_transfer_begin_notify_async(
         self,
-        request: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyRequest,
-    ) -> dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse:
+        request: dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyHeaders()
-        return await self.conversation_transfer_complete_notify_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ConversationTransferBeginNotifyHeaders()
+        return await self.conversation_transfer_begin_notify_with_options_async(request, headers, runtime)
 
     def conversation_transfer_complete_notify_with_options(
         self,
@@ -1762,9 +2192,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ConversationTransferCompleteNotify',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/completes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse(),
-            self.do_roarequest('ConversationTransferCompleteNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/completes', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def conversation_transfer_complete_notify_with_options_async(
@@ -1798,26 +2239,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ConversationTransferCompleteNotify',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/completes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse(),
-            await self.do_roarequest_async('ConversationTransferCompleteNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/completes', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_group(
+    def conversation_transfer_complete_notify(
         self,
-        request: dingtalkservice_group__1__0_models.CreateGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateGroupResponse:
+        request: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateGroupHeaders()
-        return self.create_group_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyHeaders()
+        return self.conversation_transfer_complete_notify_with_options(request, headers, runtime)
 
-    async def create_group_async(
+    async def conversation_transfer_complete_notify_async(
         self,
-        request: dingtalkservice_group__1__0_models.CreateGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateGroupResponse:
+        request: dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateGroupHeaders()
-        return await self.create_group_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ConversationTransferCompleteNotifyHeaders()
+        return await self.conversation_transfer_complete_notify_with_options_async(request, headers, runtime)
 
     def create_group_with_options(
         self,
@@ -1850,9 +2302,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateGroupResponse(),
-            self.do_roarequest('CreateGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_group_with_options_async(
@@ -1886,26 +2349,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateGroupResponse(),
-            await self.do_roarequest_async('CreateGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_group_conversation(
+    def create_group(
         self,
-        request: dingtalkservice_group__1__0_models.CreateGroupConversationRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateGroupConversationResponse:
+        request: dingtalkservice_group__1__0_models.CreateGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateGroupConversationHeaders()
-        return self.create_group_conversation_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateGroupHeaders()
+        return self.create_group_with_options(request, headers, runtime)
 
-    async def create_group_conversation_async(
+    async def create_group_async(
         self,
-        request: dingtalkservice_group__1__0_models.CreateGroupConversationRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateGroupConversationResponse:
+        request: dingtalkservice_group__1__0_models.CreateGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateGroupConversationHeaders()
-        return await self.create_group_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateGroupHeaders()
+        return await self.create_group_with_options_async(request, headers, runtime)
 
     def create_group_conversation_with_options(
         self,
@@ -1942,9 +2416,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroupConversation',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/create/conversations',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateGroupConversationResponse(),
-            self.do_roarequest('CreateGroupConversation', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/create/conversations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_group_conversation_with_options_async(
@@ -1982,26 +2467,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroupConversation',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/create/conversations',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateGroupConversationResponse(),
-            await self.do_roarequest_async('CreateGroupConversation', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/create/conversations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_group_set(
+    def create_group_conversation(
         self,
-        request: dingtalkservice_group__1__0_models.CreateGroupSetRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateGroupSetResponse:
+        request: dingtalkservice_group__1__0_models.CreateGroupConversationRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateGroupSetHeaders()
-        return self.create_group_set_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateGroupConversationHeaders()
+        return self.create_group_conversation_with_options(request, headers, runtime)
 
-    async def create_group_set_async(
+    async def create_group_conversation_async(
         self,
-        request: dingtalkservice_group__1__0_models.CreateGroupSetRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateGroupSetResponse:
+        request: dingtalkservice_group__1__0_models.CreateGroupConversationRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateGroupSetHeaders()
-        return await self.create_group_set_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateGroupConversationHeaders()
+        return await self.create_group_conversation_with_options_async(request, headers, runtime)
 
     def create_group_set_with_options(
         self,
@@ -2026,9 +2522,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroupSet',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groupSets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateGroupSetResponse(),
-            self.do_roarequest('CreateGroupSet', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groupSets', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_group_set_with_options_async(
@@ -2054,26 +2561,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroupSet',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groupSets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateGroupSetResponse(),
-            await self.do_roarequest_async('CreateGroupSet', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groupSets', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_instance(
+    def create_group_set(
         self,
-        request: dingtalkservice_group__1__0_models.CreateInstanceRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateInstanceResponse:
+        request: dingtalkservice_group__1__0_models.CreateGroupSetRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateInstanceHeaders()
-        return self.create_instance_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateGroupSetHeaders()
+        return self.create_group_set_with_options(request, headers, runtime)
 
-    async def create_instance_async(
+    async def create_group_set_async(
         self,
-        request: dingtalkservice_group__1__0_models.CreateInstanceRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateInstanceResponse:
+        request: dingtalkservice_group__1__0_models.CreateGroupSetRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateInstanceHeaders()
-        return await self.create_instance_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateGroupSetHeaders()
+        return await self.create_group_set_with_options_async(request, headers, runtime)
 
     def create_instance_with_options(
         self,
@@ -2106,9 +2624,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateInstance',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateInstanceResponse(),
-            self.do_roarequest('CreateInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_instance_with_options_async(
@@ -2142,26 +2671,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateInstance',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateInstanceResponse(),
-            await self.do_roarequest_async('CreateInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_team(
+    def create_instance(
         self,
-        request: dingtalkservice_group__1__0_models.CreateTeamRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateTeamResponse:
+        request: dingtalkservice_group__1__0_models.CreateInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateTeamHeaders()
-        return self.create_team_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateInstanceHeaders()
+        return self.create_instance_with_options(request, headers, runtime)
 
-    async def create_team_async(
+    async def create_instance_async(
         self,
-        request: dingtalkservice_group__1__0_models.CreateTeamRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateTeamResponse:
+        request: dingtalkservice_group__1__0_models.CreateInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateTeamHeaders()
-        return await self.create_team_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateInstanceHeaders()
+        return await self.create_instance_with_options_async(request, headers, runtime)
 
     def create_team_with_options(
         self,
@@ -2184,9 +2724,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateTeam',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/teams',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateTeamResponse(),
-            self.do_roarequest('CreateTeam', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/teams', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_team_with_options_async(
@@ -2210,26 +2761,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateTeam',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/teams',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateTeamResponse(),
-            await self.do_roarequest_async('CreateTeam', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/teams', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_ticket(
+    def create_team(
         self,
-        request: dingtalkservice_group__1__0_models.CreateTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateTicketResponse:
+        request: dingtalkservice_group__1__0_models.CreateTeamRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateTeamResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateTicketHeaders()
-        return self.create_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateTeamHeaders()
+        return self.create_team_with_options(request, headers, runtime)
 
-    async def create_ticket_async(
+    async def create_team_async(
         self,
-        request: dingtalkservice_group__1__0_models.CreateTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.CreateTicketResponse:
+        request: dingtalkservice_group__1__0_models.CreateTeamRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateTeamResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.CreateTicketHeaders()
-        return await self.create_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateTeamHeaders()
+        return await self.create_team_with_options_async(request, headers, runtime)
 
     def create_ticket_with_options(
         self,
@@ -2266,9 +2828,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateTicketResponse(),
-            self.do_roarequest('CreateTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_ticket_with_options_async(
@@ -2306,26 +2879,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.CreateTicketResponse(),
-            await self.do_roarequest_async('CreateTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_group_members_from_group(
+    def create_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse:
+        request: dingtalkservice_group__1__0_models.CreateTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupHeaders()
-        return self.delete_group_members_from_group_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateTicketHeaders()
+        return self.create_ticket_with_options(request, headers, runtime)
 
-    async def delete_group_members_from_group_async(
+    async def create_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse:
+        request: dingtalkservice_group__1__0_models.CreateTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.CreateTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupHeaders()
-        return await self.delete_group_members_from_group_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.CreateTicketHeaders()
+        return await self.create_ticket_with_options_async(request, headers, runtime)
 
     def delete_group_members_from_group_with_options(
         self,
@@ -2354,9 +2938,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteGroupMembersFromGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/members/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse(),
-            self.do_roarequest('DeleteGroupMembersFromGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_group_members_from_group_with_options_async(
@@ -2386,26 +2981,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteGroupMembersFromGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/members/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse(),
-            await self.do_roarequest_async('DeleteGroupMembersFromGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_instance(
+    def delete_group_members_from_group(
         self,
-        request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
-    ) -> dingtalkservice_group__1__0_models.DeleteInstanceResponse:
+        request: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.DeleteInstanceHeaders()
-        return self.delete_instance_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupHeaders()
+        return self.delete_group_members_from_group_with_options(request, headers, runtime)
 
-    async def delete_instance_async(
+    async def delete_group_members_from_group_async(
         self,
-        request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
-    ) -> dingtalkservice_group__1__0_models.DeleteInstanceResponse:
+        request: dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.DeleteInstanceHeaders()
-        return await self.delete_instance_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.DeleteGroupMembersFromGroupHeaders()
+        return await self.delete_group_members_from_group_with_options_async(request, headers, runtime)
 
     def delete_instance_with_options(
         self,
@@ -2432,9 +3038,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteInstance',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.DeleteInstanceResponse(),
-            self.do_roarequest('DeleteInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_instance_with_options_async(
@@ -2462,26 +3079,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteInstance',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.DeleteInstanceResponse(),
-            await self.do_roarequest_async('DeleteInstance', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_knowledge(
+    def delete_instance(
         self,
-        request: dingtalkservice_group__1__0_models.DeleteKnowledgeRequest,
-    ) -> dingtalkservice_group__1__0_models.DeleteKnowledgeResponse:
+        request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.DeleteKnowledgeHeaders()
-        return self.delete_knowledge_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.DeleteInstanceHeaders()
+        return self.delete_instance_with_options(request, headers, runtime)
 
-    async def delete_knowledge_async(
+    async def delete_instance_async(
         self,
-        request: dingtalkservice_group__1__0_models.DeleteKnowledgeRequest,
-    ) -> dingtalkservice_group__1__0_models.DeleteKnowledgeResponse:
+        request: dingtalkservice_group__1__0_models.DeleteInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.DeleteKnowledgeHeaders()
-        return await self.delete_knowledge_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.DeleteInstanceHeaders()
+        return await self.delete_instance_with_options_async(request, headers, runtime)
 
     def delete_knowledge_with_options(
         self,
@@ -2508,9 +3136,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteKnowledge',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/knowledges/batchDelete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.DeleteKnowledgeResponse(),
-            self.do_roarequest('DeleteKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges/batchDelete', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_knowledge_with_options_async(
@@ -2538,26 +3177,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteKnowledge',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/knowledges/batchDelete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.DeleteKnowledgeResponse(),
-            await self.do_roarequest_async('DeleteKnowledge', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/knowledges/batchDelete', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def emotion_statistics(
+    def delete_knowledge(
         self,
-        request: dingtalkservice_group__1__0_models.EmotionStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.EmotionStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.DeleteKnowledgeRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteKnowledgeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.EmotionStatisticsHeaders()
-        return self.emotion_statistics_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.DeleteKnowledgeHeaders()
+        return self.delete_knowledge_with_options(request, headers, runtime)
 
-    async def emotion_statistics_async(
+    async def delete_knowledge_async(
         self,
-        request: dingtalkservice_group__1__0_models.EmotionStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.EmotionStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.DeleteKnowledgeRequest,
+    ) -> dingtalkservice_group__1__0_models.DeleteKnowledgeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.EmotionStatisticsHeaders()
-        return await self.emotion_statistics_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.DeleteKnowledgeHeaders()
+        return await self.delete_knowledge_with_options_async(request, headers, runtime)
 
     def emotion_statistics_with_options(
         self,
@@ -2590,9 +3240,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='EmotionStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/emotions/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.EmotionStatisticsResponse(),
-            self.do_roarequest('EmotionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/emotions/statistics', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def emotion_statistics_with_options_async(
@@ -2626,26 +3287,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='EmotionStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/emotions/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.EmotionStatisticsResponse(),
-            await self.do_roarequest_async('EmotionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/emotions/statistics', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def finish_ticket(
+    def emotion_statistics(
         self,
-        request: dingtalkservice_group__1__0_models.FinishTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.FinishTicketResponse:
+        request: dingtalkservice_group__1__0_models.EmotionStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.EmotionStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.FinishTicketHeaders()
-        return self.finish_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.EmotionStatisticsHeaders()
+        return self.emotion_statistics_with_options(request, headers, runtime)
 
-    async def finish_ticket_async(
+    async def emotion_statistics_async(
         self,
-        request: dingtalkservice_group__1__0_models.FinishTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.FinishTicketResponse:
+        request: dingtalkservice_group__1__0_models.EmotionStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.EmotionStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.FinishTicketHeaders()
-        return await self.finish_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.EmotionStatisticsHeaders()
+        return await self.emotion_statistics_with_options_async(request, headers, runtime)
 
     def finish_ticket_with_options(
         self,
@@ -2674,9 +3346,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='FinishTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.FinishTicketResponse(),
-            self.do_roarequest('FinishTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/finish', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def finish_ticket_with_options_async(
@@ -2706,26 +3389,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='FinishTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.FinishTicketResponse(),
-            await self.do_roarequest_async('FinishTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/finish', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_auth_token(
+    def finish_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.GetAuthTokenRequest,
-    ) -> dingtalkservice_group__1__0_models.GetAuthTokenResponse:
+        request: dingtalkservice_group__1__0_models.FinishTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.FinishTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetAuthTokenHeaders()
-        return self.get_auth_token_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.FinishTicketHeaders()
+        return self.finish_ticket_with_options(request, headers, runtime)
 
-    async def get_auth_token_async(
+    async def finish_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.GetAuthTokenRequest,
-    ) -> dingtalkservice_group__1__0_models.GetAuthTokenResponse:
+        request: dingtalkservice_group__1__0_models.FinishTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.FinishTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetAuthTokenHeaders()
-        return await self.get_auth_token_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.FinishTicketHeaders()
+        return await self.finish_ticket_with_options_async(request, headers, runtime)
 
     def get_auth_token_with_options(
         self,
@@ -2754,9 +3448,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetAuthToken',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/get/tokens',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetAuthTokenResponse(),
-            self.do_roarequest('GetAuthToken', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/get/tokens', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_auth_token_with_options_async(
@@ -2786,26 +3491,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetAuthToken',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/get/tokens',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetAuthTokenResponse(),
-            await self.do_roarequest_async('GetAuthToken', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/get/tokens', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_instances_by_ids(
+    def get_auth_token(
         self,
-        request: dingtalkservice_group__1__0_models.GetInstancesByIdsRequest,
-    ) -> dingtalkservice_group__1__0_models.GetInstancesByIdsResponse:
+        request: dingtalkservice_group__1__0_models.GetAuthTokenRequest,
+    ) -> dingtalkservice_group__1__0_models.GetAuthTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetInstancesByIdsHeaders()
-        return self.get_instances_by_ids_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetAuthTokenHeaders()
+        return self.get_auth_token_with_options(request, headers, runtime)
 
-    async def get_instances_by_ids_async(
+    async def get_auth_token_async(
         self,
-        request: dingtalkservice_group__1__0_models.GetInstancesByIdsRequest,
-    ) -> dingtalkservice_group__1__0_models.GetInstancesByIdsResponse:
+        request: dingtalkservice_group__1__0_models.GetAuthTokenRequest,
+    ) -> dingtalkservice_group__1__0_models.GetAuthTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetInstancesByIdsHeaders()
-        return await self.get_instances_by_ids_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetAuthTokenHeaders()
+        return await self.get_auth_token_with_options_async(request, headers, runtime)
 
     def get_instances_by_ids_with_options(
         self,
@@ -2830,9 +3546,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetInstancesByIds',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetInstancesByIdsResponse(),
-            self.do_roarequest('GetInstancesByIds', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/batchQuery', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_instances_by_ids_with_options_async(
@@ -2858,26 +3585,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetInstancesByIds',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetInstancesByIdsResponse(),
-            await self.do_roarequest_async('GetInstancesByIds', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/batchQuery', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_negative_word_cloud(
+    def get_instances_by_ids(
         self,
-        request: dingtalkservice_group__1__0_models.GetNegativeWordCloudRequest,
-    ) -> dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse:
+        request: dingtalkservice_group__1__0_models.GetInstancesByIdsRequest,
+    ) -> dingtalkservice_group__1__0_models.GetInstancesByIdsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetNegativeWordCloudHeaders()
-        return self.get_negative_word_cloud_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetInstancesByIdsHeaders()
+        return self.get_instances_by_ids_with_options(request, headers, runtime)
 
-    async def get_negative_word_cloud_async(
+    async def get_instances_by_ids_async(
         self,
-        request: dingtalkservice_group__1__0_models.GetNegativeWordCloudRequest,
-    ) -> dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse:
+        request: dingtalkservice_group__1__0_models.GetInstancesByIdsRequest,
+    ) -> dingtalkservice_group__1__0_models.GetInstancesByIdsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetNegativeWordCloudHeaders()
-        return await self.get_negative_word_cloud_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetInstancesByIdsHeaders()
+        return await self.get_instances_by_ids_with_options_async(request, headers, runtime)
 
     def get_negative_word_cloud_with_options(
         self,
@@ -2898,9 +3636,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetNegativeWordCloud',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/negatives/wordClouds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse(),
-            self.do_roarequest('GetNegativeWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/negatives/wordClouds', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_negative_word_cloud_with_options_async(
@@ -2922,26 +3671,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetNegativeWordCloud',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/negatives/wordClouds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse(),
-            await self.do_roarequest_async('GetNegativeWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/negatives/wordClouds', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_oss_temp_url(
+    def get_negative_word_cloud(
         self,
-        request: dingtalkservice_group__1__0_models.GetOssTempUrlRequest,
-    ) -> dingtalkservice_group__1__0_models.GetOssTempUrlResponse:
+        request: dingtalkservice_group__1__0_models.GetNegativeWordCloudRequest,
+    ) -> dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetOssTempUrlHeaders()
-        return self.get_oss_temp_url_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetNegativeWordCloudHeaders()
+        return self.get_negative_word_cloud_with_options(request, headers, runtime)
 
-    async def get_oss_temp_url_async(
+    async def get_negative_word_cloud_async(
         self,
-        request: dingtalkservice_group__1__0_models.GetOssTempUrlRequest,
-    ) -> dingtalkservice_group__1__0_models.GetOssTempUrlResponse:
+        request: dingtalkservice_group__1__0_models.GetNegativeWordCloudRequest,
+    ) -> dingtalkservice_group__1__0_models.GetNegativeWordCloudResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetOssTempUrlHeaders()
-        return await self.get_oss_temp_url_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetNegativeWordCloudHeaders()
+        return await self.get_negative_word_cloud_with_options_async(request, headers, runtime)
 
     def get_oss_temp_url_with_options(
         self,
@@ -2968,9 +3728,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetOssTempUrl',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/ossServices/tempUrls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetOssTempUrlResponse(),
-            self.do_roarequest('GetOssTempUrl', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/ossServices/tempUrls', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_oss_temp_url_with_options_async(
@@ -2998,26 +3769,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetOssTempUrl',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/ossServices/tempUrls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetOssTempUrlResponse(),
-            await self.do_roarequest_async('GetOssTempUrl', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/ossServices/tempUrls', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_storage_policy(
+    def get_oss_temp_url(
         self,
-        request: dingtalkservice_group__1__0_models.GetStoragePolicyRequest,
-    ) -> dingtalkservice_group__1__0_models.GetStoragePolicyResponse:
+        request: dingtalkservice_group__1__0_models.GetOssTempUrlRequest,
+    ) -> dingtalkservice_group__1__0_models.GetOssTempUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetStoragePolicyHeaders()
-        return self.get_storage_policy_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetOssTempUrlHeaders()
+        return self.get_oss_temp_url_with_options(request, headers, runtime)
 
-    async def get_storage_policy_async(
+    async def get_oss_temp_url_async(
         self,
-        request: dingtalkservice_group__1__0_models.GetStoragePolicyRequest,
-    ) -> dingtalkservice_group__1__0_models.GetStoragePolicyResponse:
+        request: dingtalkservice_group__1__0_models.GetOssTempUrlRequest,
+    ) -> dingtalkservice_group__1__0_models.GetOssTempUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetStoragePolicyHeaders()
-        return await self.get_storage_policy_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetOssTempUrlHeaders()
+        return await self.get_oss_temp_url_with_options_async(request, headers, runtime)
 
     def get_storage_policy_with_options(
         self,
@@ -3044,9 +3826,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetStoragePolicy',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/ossServices/policies',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetStoragePolicyResponse(),
-            self.do_roarequest('GetStoragePolicy', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/ossServices/policies', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_storage_policy_with_options_async(
@@ -3074,26 +3867,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetStoragePolicy',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/ossServices/policies',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetStoragePolicyResponse(),
-            await self.do_roarequest_async('GetStoragePolicy', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/ossServices/policies', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_ticket(
+    def get_storage_policy(
         self,
-        request: dingtalkservice_group__1__0_models.GetTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.GetTicketResponse:
+        request: dingtalkservice_group__1__0_models.GetStoragePolicyRequest,
+    ) -> dingtalkservice_group__1__0_models.GetStoragePolicyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetTicketHeaders()
-        return self.get_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetStoragePolicyHeaders()
+        return self.get_storage_policy_with_options(request, headers, runtime)
 
-    async def get_ticket_async(
+    async def get_storage_policy_async(
         self,
-        request: dingtalkservice_group__1__0_models.GetTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.GetTicketResponse:
+        request: dingtalkservice_group__1__0_models.GetStoragePolicyRequest,
+    ) -> dingtalkservice_group__1__0_models.GetStoragePolicyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetTicketHeaders()
-        return await self.get_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetStoragePolicyHeaders()
+        return await self.get_storage_policy_with_options_async(request, headers, runtime)
 
     def get_ticket_with_options(
         self,
@@ -3116,9 +3920,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetTicketResponse(),
-            self.do_roarequest('GetTicket', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/tickets', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_ticket_with_options_async(
@@ -3142,26 +3957,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetTicketResponse(),
-            await self.do_roarequest_async('GetTicket', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/tickets', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_word_cloud(
+    def get_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.GetWordCloudRequest,
-    ) -> dingtalkservice_group__1__0_models.GetWordCloudResponse:
+        request: dingtalkservice_group__1__0_models.GetTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.GetTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetWordCloudHeaders()
-        return self.get_word_cloud_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetTicketHeaders()
+        return self.get_ticket_with_options(request, headers, runtime)
 
-    async def get_word_cloud_async(
+    async def get_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.GetWordCloudRequest,
-    ) -> dingtalkservice_group__1__0_models.GetWordCloudResponse:
+        request: dingtalkservice_group__1__0_models.GetTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.GetTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GetWordCloudHeaders()
-        return await self.get_word_cloud_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetTicketHeaders()
+        return await self.get_ticket_with_options_async(request, headers, runtime)
 
     def get_word_cloud_with_options(
         self,
@@ -3182,9 +4008,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetWordCloud',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/wordClouds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetWordCloudResponse(),
-            self.do_roarequest('GetWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/wordClouds', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_word_cloud_with_options_async(
@@ -3206,26 +4043,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetWordCloud',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/wordClouds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GetWordCloudResponse(),
-            await self.do_roarequest_async('GetWordCloud', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/wordClouds', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_statistics(
+    def get_word_cloud(
         self,
-        request: dingtalkservice_group__1__0_models.GroupStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.GroupStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.GetWordCloudRequest,
+    ) -> dingtalkservice_group__1__0_models.GetWordCloudResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GroupStatisticsHeaders()
-        return self.group_statistics_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetWordCloudHeaders()
+        return self.get_word_cloud_with_options(request, headers, runtime)
 
-    async def group_statistics_async(
+    async def get_word_cloud_async(
         self,
-        request: dingtalkservice_group__1__0_models.GroupStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.GroupStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.GetWordCloudRequest,
+    ) -> dingtalkservice_group__1__0_models.GetWordCloudResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.GroupStatisticsHeaders()
-        return await self.group_statistics_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GetWordCloudHeaders()
+        return await self.get_word_cloud_with_options_async(request, headers, runtime)
 
     def group_statistics_with_options(
         self,
@@ -3250,9 +4098,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GroupStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/dashboards/groups/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GroupStatisticsResponse(),
-            self.do_roarequest('GroupStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/groups/statistics', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_statistics_with_options_async(
@@ -3278,26 +4137,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GroupStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/dashboards/groups/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.GroupStatisticsResponse(),
-            await self.do_roarequest_async('GroupStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/groups/statistics', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def intention_category_statistics(
+    def group_statistics(
         self,
-        request: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.GroupStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.GroupStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.IntentionCategoryStatisticsHeaders()
-        return self.intention_category_statistics_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GroupStatisticsHeaders()
+        return self.group_statistics_with_options(request, headers, runtime)
 
-    async def intention_category_statistics_async(
+    async def group_statistics_async(
         self,
-        request: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.GroupStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.GroupStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.IntentionCategoryStatisticsHeaders()
-        return await self.intention_category_statistics_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.GroupStatisticsHeaders()
+        return await self.group_statistics_with_options_async(request, headers, runtime)
 
     def intention_category_statistics_with_options(
         self,
@@ -3322,9 +4192,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='IntentionCategoryStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/dashboards/intentionCategories/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse(),
-            self.do_roarequest('IntentionCategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/intentionCategories/statistics', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def intention_category_statistics_with_options_async(
@@ -3350,26 +4231,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='IntentionCategoryStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/dashboards/intentionCategories/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse(),
-            await self.do_roarequest_async('IntentionCategoryStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/intentionCategories/statistics', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def intention_statistics(
+    def intention_category_statistics(
         self,
-        request: dingtalkservice_group__1__0_models.IntentionStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.IntentionStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.IntentionStatisticsHeaders()
-        return self.intention_statistics_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.IntentionCategoryStatisticsHeaders()
+        return self.intention_category_statistics_with_options(request, headers, runtime)
 
-    async def intention_statistics_async(
+    async def intention_category_statistics_async(
         self,
-        request: dingtalkservice_group__1__0_models.IntentionStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.IntentionStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.IntentionCategoryStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.IntentionCategoryStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.IntentionStatisticsHeaders()
-        return await self.intention_statistics_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.IntentionCategoryStatisticsHeaders()
+        return await self.intention_category_statistics_with_options_async(request, headers, runtime)
 
     def intention_statistics_with_options(
         self,
@@ -3394,9 +4286,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='IntentionStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/dashboards/intentions/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.IntentionStatisticsResponse(),
-            self.do_roarequest('IntentionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/intentions/statistics', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def intention_statistics_with_options_async(
@@ -3422,26 +4325,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='IntentionStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/dashboards/intentions/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.IntentionStatisticsResponse(),
-            await self.do_roarequest_async('IntentionStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/dashboards/intentions/statistics', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_ticket_operate_record(
+    def intention_statistics(
         self,
-        request: dingtalkservice_group__1__0_models.ListTicketOperateRecordRequest,
-    ) -> dingtalkservice_group__1__0_models.ListTicketOperateRecordResponse:
+        request: dingtalkservice_group__1__0_models.IntentionStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.IntentionStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ListTicketOperateRecordHeaders()
-        return self.list_ticket_operate_record_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.IntentionStatisticsHeaders()
+        return self.intention_statistics_with_options(request, headers, runtime)
 
-    async def list_ticket_operate_record_async(
+    async def intention_statistics_async(
         self,
-        request: dingtalkservice_group__1__0_models.ListTicketOperateRecordRequest,
-    ) -> dingtalkservice_group__1__0_models.ListTicketOperateRecordResponse:
+        request: dingtalkservice_group__1__0_models.IntentionStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.IntentionStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ListTicketOperateRecordHeaders()
-        return await self.list_ticket_operate_record_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.IntentionStatisticsHeaders()
+        return await self.intention_statistics_with_options_async(request, headers, runtime)
 
     def list_ticket_operate_record_with_options(
         self,
@@ -3464,9 +4378,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListTicketOperateRecord',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/operateRecords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ListTicketOperateRecordResponse(),
-            self.do_roarequest('ListTicketOperateRecord', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/tickets/operateRecords', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_ticket_operate_record_with_options_async(
@@ -3490,9 +4415,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListTicketOperateRecord',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/operateRecords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ListTicketOperateRecordResponse(),
-            await self.do_roarequest_async('ListTicketOperateRecord', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/tickets/operateRecords', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_ticket_operate_record(
+        self,
+        request: dingtalkservice_group__1__0_models.ListTicketOperateRecordRequest,
+    ) -> dingtalkservice_group__1__0_models.ListTicketOperateRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ListTicketOperateRecordHeaders()
+        return self.list_ticket_operate_record_with_options(request, headers, runtime)
+
+    async def list_ticket_operate_record_async(
+        self,
+        request: dingtalkservice_group__1__0_models.ListTicketOperateRecordRequest,
+    ) -> dingtalkservice_group__1__0_models.ListTicketOperateRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.ListTicketOperateRecordHeaders()
+        return await self.list_ticket_operate_record_with_options_async(request, headers, runtime)
+
+    def list_user_teams_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkservice_group__1__0_models.ListUserTeamsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ListUserTeamsResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListUserTeams',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/users/{user_id}/teams',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ListUserTeamsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_user_teams_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkservice_group__1__0_models.ListUserTeamsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.ListUserTeamsResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListUserTeams',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/users/{user_id}/teams',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.ListUserTeamsResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def list_user_teams(
@@ -3510,62 +4522,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkservice_group__1__0_models.ListUserTeamsHeaders()
         return await self.list_user_teams_with_options_async(user_id, headers, runtime)
-
-    def list_user_teams_with_options(
-        self,
-        user_id: str,
-        headers: dingtalkservice_group__1__0_models.ListUserTeamsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkservice_group__1__0_models.ListUserTeamsResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkservice_group__1__0_models.ListUserTeamsResponse(),
-            self.do_roarequest('ListUserTeams', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/users/{user_id}/teams', 'json', req, runtime)
-        )
-
-    async def list_user_teams_with_options_async(
-        self,
-        user_id: str,
-        headers: dingtalkservice_group__1__0_models.ListUserTeamsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkservice_group__1__0_models.ListUserTeamsResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkservice_group__1__0_models.ListUserTeamsResponse(),
-            await self.do_roarequest_async('ListUserTeams', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/users/{user_id}/teams', 'json', req, runtime)
-        )
-
-    def query_active_users(
-        self,
-        request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryActiveUsersResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryActiveUsersHeaders()
-        return self.query_active_users_with_options(request, headers, runtime)
-
-    async def query_active_users_async(
-        self,
-        request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryActiveUsersResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryActiveUsersHeaders()
-        return await self.query_active_users_with_options_async(request, headers, runtime)
 
     def query_active_users_with_options(
         self,
@@ -3590,9 +4546,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryActiveUsers',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/queryActiveUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryActiveUsersResponse(),
-            self.do_roarequest('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groups/queryActiveUsers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_active_users_with_options_async(
@@ -3618,26 +4585,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryActiveUsers',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/queryActiveUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryActiveUsersResponse(),
-            await self.do_roarequest_async('QueryActiveUsers', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groups/queryActiveUsers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_crm_group_contact(
+    def query_active_users(
         self,
-        request: dingtalkservice_group__1__0_models.QueryCrmGroupContactRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse:
+        request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryActiveUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryCrmGroupContactHeaders()
-        return self.query_crm_group_contact_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryActiveUsersHeaders()
+        return self.query_active_users_with_options(request, headers, runtime)
 
-    async def query_crm_group_contact_async(
+    async def query_active_users_async(
         self,
-        request: dingtalkservice_group__1__0_models.QueryCrmGroupContactRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse:
+        request: dingtalkservice_group__1__0_models.QueryActiveUsersRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryActiveUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryCrmGroupContactHeaders()
-        return await self.query_crm_group_contact_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryActiveUsersHeaders()
+        return await self.query_active_users_with_options_async(request, headers, runtime)
 
     def query_crm_group_contact_with_options(
         self,
@@ -3666,9 +4644,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryCrmGroupContact',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/contacts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse(),
-            self.do_roarequest('QueryCrmGroupContact', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/contacts/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_crm_group_contact_with_options_async(
@@ -3698,26 +4687,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryCrmGroupContact',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/contacts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse(),
-            await self.do_roarequest_async('QueryCrmGroupContact', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/contacts/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_customer_card(
+    def query_crm_group_contact(
         self,
-        request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryCustomerCardResponse:
+        request: dingtalkservice_group__1__0_models.QueryCrmGroupContactRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryCustomerCardHeaders()
-        return self.query_customer_card_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryCrmGroupContactHeaders()
+        return self.query_crm_group_contact_with_options(request, headers, runtime)
 
-    async def query_customer_card_async(
+    async def query_crm_group_contact_async(
         self,
-        request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryCustomerCardResponse:
+        request: dingtalkservice_group__1__0_models.QueryCrmGroupContactRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCrmGroupContactResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryCustomerCardHeaders()
-        return await self.query_customer_card_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryCrmGroupContactHeaders()
+        return await self.query_crm_group_contact_with_options_async(request, headers, runtime)
 
     def query_customer_card_with_options(
         self,
@@ -3740,9 +4740,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryCustomerCard',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/userDetials',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryCustomerCardResponse(),
-            self.do_roarequest('QueryCustomerCard', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/userDetials', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_customer_card_with_options_async(
@@ -3766,26 +4777,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryCustomerCard',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/userDetials',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryCustomerCardResponse(),
-            await self.do_roarequest_async('QueryCustomerCard', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/userDetials', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group(
+    def query_customer_card(
         self,
-        request: dingtalkservice_group__1__0_models.QueryGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryGroupResponse:
+        request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryGroupHeaders()
-        return self.query_group_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryCustomerCardHeaders()
+        return self.query_customer_card_with_options(request, headers, runtime)
 
-    async def query_group_async(
+    async def query_customer_card_async(
         self,
-        request: dingtalkservice_group__1__0_models.QueryGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryGroupResponse:
+        request: dingtalkservice_group__1__0_models.QueryCustomerCardRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryGroupHeaders()
-        return await self.query_group_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryCustomerCardHeaders()
+        return await self.query_customer_card_with_options_async(request, headers, runtime)
 
     def query_group_with_options(
         self,
@@ -3810,9 +4832,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryGroupResponse(),
-            self.do_roarequest('QueryGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_with_options_async(
@@ -3838,26 +4871,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryGroupResponse(),
-            await self.do_roarequest_async('QueryGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group_member(
+    def query_group(
         self,
-        request: dingtalkservice_group__1__0_models.QueryGroupMemberRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryGroupMemberResponse:
+        request: dingtalkservice_group__1__0_models.QueryGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryGroupMemberHeaders()
-        return self.query_group_member_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryGroupHeaders()
+        return self.query_group_with_options(request, headers, runtime)
 
-    async def query_group_member_async(
+    async def query_group_async(
         self,
-        request: dingtalkservice_group__1__0_models.QueryGroupMemberRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryGroupMemberResponse:
+        request: dingtalkservice_group__1__0_models.QueryGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryGroupMemberHeaders()
-        return await self.query_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryGroupHeaders()
+        return await self.query_group_with_options_async(request, headers, runtime)
 
     def query_group_member_with_options(
         self,
@@ -3882,9 +4926,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMember',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryGroupMemberResponse(),
-            self.do_roarequest('QueryGroupMember', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_member_with_options_async(
@@ -3910,26 +4965,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMember',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryGroupMemberResponse(),
-            await self.do_roarequest_async('QueryGroupMember', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/members/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group_set(
+    def query_group_member(
         self,
-        request: dingtalkservice_group__1__0_models.QueryGroupSetRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryGroupSetResponse:
+        request: dingtalkservice_group__1__0_models.QueryGroupMemberRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryGroupSetHeaders()
-        return self.query_group_set_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryGroupMemberHeaders()
+        return self.query_group_member_with_options(request, headers, runtime)
 
-    async def query_group_set_async(
+    async def query_group_member_async(
         self,
-        request: dingtalkservice_group__1__0_models.QueryGroupSetRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryGroupSetResponse:
+        request: dingtalkservice_group__1__0_models.QueryGroupMemberRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryGroupSetHeaders()
-        return await self.query_group_set_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryGroupMemberHeaders()
+        return await self.query_group_member_with_options_async(request, headers, runtime)
 
     def query_group_set_with_options(
         self,
@@ -3950,9 +5016,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupSet',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groupSets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryGroupSetResponse(),
-            self.do_roarequest('QueryGroupSet', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groupSets', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_set_with_options_async(
@@ -3974,26 +5051,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupSet',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groupSets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryGroupSetResponse(),
-            await self.do_roarequest_async('QueryGroupSet', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/groupSets', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_instances_by_multi_conditions(
+    def query_group_set(
         self,
-        request: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse:
+        request: dingtalkservice_group__1__0_models.QueryGroupSetRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsHeaders()
-        return self.query_instances_by_multi_conditions_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryGroupSetHeaders()
+        return self.query_group_set_with_options(request, headers, runtime)
 
-    async def query_instances_by_multi_conditions_async(
+    async def query_group_set_async(
         self,
-        request: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse:
+        request: dingtalkservice_group__1__0_models.QueryGroupSetRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsHeaders()
-        return await self.query_instances_by_multi_conditions_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryGroupSetHeaders()
+        return await self.query_group_set_with_options_async(request, headers, runtime)
 
     def query_instances_by_multi_conditions_with_options(
         self,
@@ -4024,9 +5112,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryInstancesByMultiConditions',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances/multiConditions/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse(),
-            self.do_roarequest('QueryInstancesByMultiConditions', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/multiConditions/batchQuery', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_instances_by_multi_conditions_with_options_async(
@@ -4058,26 +5157,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryInstancesByMultiConditions',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances/multiConditions/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse(),
-            await self.do_roarequest_async('QueryInstancesByMultiConditions', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customForms/instances/multiConditions/batchQuery', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_send_msg_task_statistics(
+    def query_instances_by_multi_conditions(
         self,
-        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsHeaders()
-        return self.query_send_msg_task_statistics_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsHeaders()
+        return self.query_instances_by_multi_conditions_with_options(request, headers, runtime)
 
-    async def query_send_msg_task_statistics_async(
+    async def query_instances_by_multi_conditions_async(
         self,
-        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsHeaders()
-        return await self.query_send_msg_task_statistics_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryInstancesByMultiConditionsHeaders()
+        return await self.query_instances_by_multi_conditions_with_options_async(request, headers, runtime)
 
     def query_send_msg_task_statistics_with_options(
         self,
@@ -4104,9 +5214,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QuerySendMsgTaskStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tasks/statistics/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse(),
-            self.do_roarequest('QuerySendMsgTaskStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/statistics/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_send_msg_task_statistics_with_options_async(
@@ -4134,26 +5255,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QuerySendMsgTaskStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tasks/statistics/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse(),
-            await self.do_roarequest_async('QuerySendMsgTaskStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/statistics/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_send_msg_task_statistics_detail(
+    def query_send_msg_task_statistics(
         self,
-        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailRequest,
-    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse:
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailHeaders()
-        return self.query_send_msg_task_statistics_detail_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsHeaders()
+        return self.query_send_msg_task_statistics_with_options(request, headers, runtime)
 
-    async def query_send_msg_task_statistics_detail_async(
+    async def query_send_msg_task_statistics_async(
         self,
-        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailRequest,
-    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse:
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailHeaders()
-        return await self.query_send_msg_task_statistics_detail_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsHeaders()
+        return await self.query_send_msg_task_statistics_with_options_async(request, headers, runtime)
 
     def query_send_msg_task_statistics_detail_with_options(
         self,
@@ -4182,9 +5314,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QuerySendMsgTaskStatisticsDetail',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tasks/statistics/details/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse(),
-            self.do_roarequest('QuerySendMsgTaskStatisticsDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/statistics/details/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_send_msg_task_statistics_detail_with_options_async(
@@ -4214,26 +5357,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QuerySendMsgTaskStatisticsDetail',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tasks/statistics/details/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse(),
-            await self.do_roarequest_async('QuerySendMsgTaskStatisticsDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tasks/statistics/details/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_service_group_message_read_status(
+    def query_send_msg_task_statistics_detail(
         self,
-        request: dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusResponse:
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusHeaders()
-        return self.query_service_group_message_read_status_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailHeaders()
+        return self.query_send_msg_task_statistics_detail_with_options(request, headers, runtime)
 
-    async def query_service_group_message_read_status_async(
+    async def query_send_msg_task_statistics_detail_async(
         self,
-        request: dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusRequest,
-    ) -> dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusResponse:
+        request: dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusHeaders()
-        return await self.query_service_group_message_read_status_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QuerySendMsgTaskStatisticsDetailHeaders()
+        return await self.query_send_msg_task_statistics_detail_with_options_async(request, headers, runtime)
 
     def query_service_group_message_read_status_with_options(
         self,
@@ -4262,9 +5416,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryServiceGroupMessageReadStatus',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/messages/readStatus/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusResponse(),
-            self.do_roarequest('QueryServiceGroupMessageReadStatus', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/readStatus/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_service_group_message_read_status_with_options_async(
@@ -4294,26 +5459,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryServiceGroupMessageReadStatus',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/messages/readStatus/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusResponse(),
-            await self.do_roarequest_async('QueryServiceGroupMessageReadStatus', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/readStatus/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def queue_notify(
+    def query_service_group_message_read_status(
         self,
-        request: dingtalkservice_group__1__0_models.QueueNotifyRequest,
-    ) -> dingtalkservice_group__1__0_models.QueueNotifyResponse:
+        request: dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueueNotifyHeaders()
-        return self.queue_notify_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusHeaders()
+        return self.query_service_group_message_read_status_with_options(request, headers, runtime)
 
-    async def queue_notify_async(
+    async def query_service_group_message_read_status_async(
         self,
-        request: dingtalkservice_group__1__0_models.QueueNotifyRequest,
-    ) -> dingtalkservice_group__1__0_models.QueueNotifyResponse:
+        request: dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.QueueNotifyHeaders()
-        return await self.queue_notify_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueryServiceGroupMessageReadStatusHeaders()
+        return await self.query_service_group_message_read_status_with_options_async(request, headers, runtime)
 
     def queue_notify_with_options(
         self,
@@ -4346,9 +5522,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueueNotify',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/dts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueueNotifyResponse(),
-            self.do_roarequest('QueueNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/dts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def queue_notify_with_options_async(
@@ -4382,26 +5569,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueueNotify',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/dts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.QueueNotifyResponse(),
-            await self.do_roarequest_async('QueueNotify', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/dts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def remove_contact_from_org(
+    def queue_notify(
         self,
-        request: dingtalkservice_group__1__0_models.RemoveContactFromOrgRequest,
-    ) -> dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse:
+        request: dingtalkservice_group__1__0_models.QueueNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.QueueNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.RemoveContactFromOrgHeaders()
-        return self.remove_contact_from_org_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueueNotifyHeaders()
+        return self.queue_notify_with_options(request, headers, runtime)
 
-    async def remove_contact_from_org_async(
+    async def queue_notify_async(
         self,
-        request: dingtalkservice_group__1__0_models.RemoveContactFromOrgRequest,
-    ) -> dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse:
+        request: dingtalkservice_group__1__0_models.QueueNotifyRequest,
+    ) -> dingtalkservice_group__1__0_models.QueueNotifyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.RemoveContactFromOrgHeaders()
-        return await self.remove_contact_from_org_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.QueueNotifyHeaders()
+        return await self.queue_notify_with_options_async(request, headers, runtime)
 
     def remove_contact_from_org_with_options(
         self,
@@ -4424,9 +5622,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RemoveContactFromOrg',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/organizations/contacts/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse(),
-            self.do_roarequest('RemoveContactFromOrg', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/organizations/contacts/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def remove_contact_from_org_with_options_async(
@@ -4450,26 +5659,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RemoveContactFromOrg',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/organizations/contacts/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse(),
-            await self.do_roarequest_async('RemoveContactFromOrg', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/organizations/contacts/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def report_customer_detail(
+    def remove_contact_from_org(
         self,
-        request: dingtalkservice_group__1__0_models.ReportCustomerDetailRequest,
-    ) -> dingtalkservice_group__1__0_models.ReportCustomerDetailResponse:
+        request: dingtalkservice_group__1__0_models.RemoveContactFromOrgRequest,
+    ) -> dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ReportCustomerDetailHeaders()
-        return self.report_customer_detail_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.RemoveContactFromOrgHeaders()
+        return self.remove_contact_from_org_with_options(request, headers, runtime)
 
-    async def report_customer_detail_async(
+    async def remove_contact_from_org_async(
         self,
-        request: dingtalkservice_group__1__0_models.ReportCustomerDetailRequest,
-    ) -> dingtalkservice_group__1__0_models.ReportCustomerDetailResponse:
+        request: dingtalkservice_group__1__0_models.RemoveContactFromOrgRequest,
+    ) -> dingtalkservice_group__1__0_models.RemoveContactFromOrgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ReportCustomerDetailHeaders()
-        return await self.report_customer_detail_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.RemoveContactFromOrgHeaders()
+        return await self.remove_contact_from_org_with_options_async(request, headers, runtime)
 
     def report_customer_detail_with_options(
         self,
@@ -4504,9 +5724,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReportCustomerDetail',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/activities/details/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ReportCustomerDetailResponse(),
-            self.do_roarequest('ReportCustomerDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers/activities/details/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def report_customer_detail_with_options_async(
@@ -4542,26 +5773,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReportCustomerDetail',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/activities/details/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ReportCustomerDetailResponse(),
-            await self.do_roarequest_async('ReportCustomerDetail', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers/activities/details/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def report_customer_statistics(
+    def report_customer_detail(
         self,
-        request: dingtalkservice_group__1__0_models.ReportCustomerStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.ReportCustomerDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ReportCustomerStatisticsHeaders()
-        return self.report_customer_statistics_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ReportCustomerDetailHeaders()
+        return self.report_customer_detail_with_options(request, headers, runtime)
 
-    async def report_customer_statistics_async(
+    async def report_customer_detail_async(
         self,
-        request: dingtalkservice_group__1__0_models.ReportCustomerStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.ReportCustomerDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerDetailResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ReportCustomerStatisticsHeaders()
-        return await self.report_customer_statistics_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ReportCustomerDetailHeaders()
+        return await self.report_customer_detail_with_options_async(request, headers, runtime)
 
     def report_customer_statistics_with_options(
         self,
@@ -4598,9 +5840,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReportCustomerStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/activities/statistics/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse(),
-            self.do_roarequest('ReportCustomerStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers/activities/statistics/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def report_customer_statistics_with_options_async(
@@ -4638,26 +5891,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReportCustomerStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/activities/statistics/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse(),
-            await self.do_roarequest_async('ReportCustomerStatistics', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/customers/activities/statistics/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def resubmit_ticket(
+    def report_customer_statistics(
         self,
-        request: dingtalkservice_group__1__0_models.ResubmitTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.ResubmitTicketResponse:
+        request: dingtalkservice_group__1__0_models.ReportCustomerStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ResubmitTicketHeaders()
-        return self.resubmit_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ReportCustomerStatisticsHeaders()
+        return self.report_customer_statistics_with_options(request, headers, runtime)
 
-    async def resubmit_ticket_async(
+    async def report_customer_statistics_async(
         self,
-        request: dingtalkservice_group__1__0_models.ResubmitTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.ResubmitTicketResponse:
+        request: dingtalkservice_group__1__0_models.ReportCustomerStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.ReportCustomerStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.ResubmitTicketHeaders()
-        return await self.resubmit_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ReportCustomerStatisticsHeaders()
+        return await self.report_customer_statistics_with_options_async(request, headers, runtime)
 
     def resubmit_ticket_with_options(
         self,
@@ -4698,9 +5962,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ResubmitTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/resubmit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ResubmitTicketResponse(),
-            self.do_roarequest('ResubmitTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/resubmit', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def resubmit_ticket_with_options_async(
@@ -4742,26 +6017,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ResubmitTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/resubmit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.ResubmitTicketResponse(),
-            await self.do_roarequest_async('ResubmitTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/resubmit', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def retract_ticket(
+    def resubmit_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.RetractTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.RetractTicketResponse:
+        request: dingtalkservice_group__1__0_models.ResubmitTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.ResubmitTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.RetractTicketHeaders()
-        return self.retract_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ResubmitTicketHeaders()
+        return self.resubmit_ticket_with_options(request, headers, runtime)
 
-    async def retract_ticket_async(
+    async def resubmit_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.RetractTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.RetractTicketResponse:
+        request: dingtalkservice_group__1__0_models.ResubmitTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.ResubmitTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.RetractTicketHeaders()
-        return await self.retract_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.ResubmitTicketHeaders()
+        return await self.resubmit_ticket_with_options_async(request, headers, runtime)
 
     def retract_ticket_with_options(
         self,
@@ -4790,9 +6076,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RetractTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/retract',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.RetractTicketResponse(),
-            self.do_roarequest('RetractTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/retract', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def retract_ticket_with_options_async(
@@ -4822,26 +6119,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RetractTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/retract',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.RetractTicketResponse(),
-            await self.do_roarequest_async('RetractTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/retract', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def robot_message_recall(
+    def retract_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.RobotMessageRecallRequest,
-    ) -> dingtalkservice_group__1__0_models.RobotMessageRecallResponse:
+        request: dingtalkservice_group__1__0_models.RetractTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.RetractTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.RobotMessageRecallHeaders()
-        return self.robot_message_recall_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.RetractTicketHeaders()
+        return self.retract_ticket_with_options(request, headers, runtime)
 
-    async def robot_message_recall_async(
+    async def retract_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.RobotMessageRecallRequest,
-    ) -> dingtalkservice_group__1__0_models.RobotMessageRecallResponse:
+        request: dingtalkservice_group__1__0_models.RetractTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.RetractTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.RobotMessageRecallHeaders()
-        return await self.robot_message_recall_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.RetractTicketHeaders()
+        return await self.retract_ticket_with_options_async(request, headers, runtime)
 
     def robot_message_recall_with_options(
         self,
@@ -4866,9 +6174,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RobotMessageRecall',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/robots/messages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.RobotMessageRecallResponse(),
-            self.do_roarequest('RobotMessageRecall', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/robots/messages/recall', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def robot_message_recall_with_options_async(
@@ -4894,26 +6213,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RobotMessageRecall',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/robots/messages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.RobotMessageRecallResponse(),
-            await self.do_roarequest_async('RobotMessageRecall', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/robots/messages/recall', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def search_group(
+    def robot_message_recall(
         self,
-        request: dingtalkservice_group__1__0_models.SearchGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.SearchGroupResponse:
+        request: dingtalkservice_group__1__0_models.RobotMessageRecallRequest,
+    ) -> dingtalkservice_group__1__0_models.RobotMessageRecallResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.SearchGroupHeaders()
-        return self.search_group_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.RobotMessageRecallHeaders()
+        return self.robot_message_recall_with_options(request, headers, runtime)
 
-    async def search_group_async(
+    async def robot_message_recall_async(
         self,
-        request: dingtalkservice_group__1__0_models.SearchGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.SearchGroupResponse:
+        request: dingtalkservice_group__1__0_models.RobotMessageRecallRequest,
+    ) -> dingtalkservice_group__1__0_models.RobotMessageRecallResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.SearchGroupHeaders()
-        return await self.search_group_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.RobotMessageRecallHeaders()
+        return await self.robot_message_recall_with_options_async(request, headers, runtime)
 
     def search_group_with_options(
         self,
@@ -4946,9 +6276,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SearchGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.SearchGroupResponse(),
-            self.do_roarequest('SearchGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/search', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def search_group_with_options_async(
@@ -4982,26 +6323,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SearchGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.SearchGroupResponse(),
-            await self.do_roarequest_async('SearchGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/search', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_msg_by_task(
+    def search_group(
         self,
-        request: dingtalkservice_group__1__0_models.SendMsgByTaskRequest,
-    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskResponse:
+        request: dingtalkservice_group__1__0_models.SearchGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.SearchGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.SendMsgByTaskHeaders()
-        return self.send_msg_by_task_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.SearchGroupHeaders()
+        return self.search_group_with_options(request, headers, runtime)
 
-    async def send_msg_by_task_async(
+    async def search_group_async(
         self,
-        request: dingtalkservice_group__1__0_models.SendMsgByTaskRequest,
-    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskResponse:
+        request: dingtalkservice_group__1__0_models.SearchGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.SearchGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.SendMsgByTaskHeaders()
-        return await self.send_msg_by_task_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.SearchGroupHeaders()
+        return await self.search_group_with_options_async(request, headers, runtime)
 
     def send_msg_by_task_with_options(
         self,
@@ -5030,9 +6382,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendMsgByTask',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/messages/tasks/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.SendMsgByTaskResponse(),
-            self.do_roarequest('SendMsgByTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/tasks/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_msg_by_task_with_options_async(
@@ -5062,26 +6425,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendMsgByTask',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/messages/tasks/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.SendMsgByTaskResponse(),
-            await self.do_roarequest_async('SendMsgByTask', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/tasks/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_service_group_message(
+    def send_msg_by_task(
         self,
-        request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
-    ) -> dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse:
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.SendServiceGroupMessageHeaders()
-        return self.send_service_group_message_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.SendMsgByTaskHeaders()
+        return self.send_msg_by_task_with_options(request, headers, runtime)
 
-    async def send_service_group_message_async(
+    async def send_msg_by_task_async(
         self,
-        request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
-    ) -> dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse:
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.SendServiceGroupMessageHeaders()
-        return await self.send_service_group_message_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.SendMsgByTaskHeaders()
+        return await self.send_msg_by_task_with_options_async(request, headers, runtime)
 
     def send_service_group_message_with_options(
         self,
@@ -5128,9 +6502,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendServiceGroupMessage',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse(),
-            self.do_roarequest('SendServiceGroupMessage', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_service_group_message_with_options_async(
@@ -5178,26 +6563,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendServiceGroupMessage',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse(),
-            await self.do_roarequest_async('SendServiceGroupMessage', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/messages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def set_robot_config(
+    def send_service_group_message(
         self,
-        request: dingtalkservice_group__1__0_models.SetRobotConfigRequest,
-    ) -> dingtalkservice_group__1__0_models.SetRobotConfigResponse:
+        request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
+    ) -> dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.SetRobotConfigHeaders()
-        return self.set_robot_config_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.SendServiceGroupMessageHeaders()
+        return self.send_service_group_message_with_options(request, headers, runtime)
 
-    async def set_robot_config_async(
+    async def send_service_group_message_async(
         self,
-        request: dingtalkservice_group__1__0_models.SetRobotConfigRequest,
-    ) -> dingtalkservice_group__1__0_models.SetRobotConfigResponse:
+        request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,
+    ) -> dingtalkservice_group__1__0_models.SendServiceGroupMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.SetRobotConfigHeaders()
-        return await self.set_robot_config_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.SendServiceGroupMessageHeaders()
+        return await self.send_service_group_message_with_options_async(request, headers, runtime)
 
     def set_robot_config_with_options(
         self,
@@ -5230,9 +6626,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SetRobotConfig',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/configs/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.SetRobotConfigResponse(),
-            self.do_roarequest('SetRobotConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/configs/set', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def set_robot_config_with_options_async(
@@ -5266,26 +6673,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SetRobotConfig',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/configs/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.SetRobotConfigResponse(),
-            await self.do_roarequest_async('SetRobotConfig', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/groups/configs/set', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def take_ticket(
+    def set_robot_config(
         self,
-        request: dingtalkservice_group__1__0_models.TakeTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.TakeTicketResponse:
+        request: dingtalkservice_group__1__0_models.SetRobotConfigRequest,
+    ) -> dingtalkservice_group__1__0_models.SetRobotConfigResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.TakeTicketHeaders()
-        return self.take_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.SetRobotConfigHeaders()
+        return self.set_robot_config_with_options(request, headers, runtime)
 
-    async def take_ticket_async(
+    async def set_robot_config_async(
         self,
-        request: dingtalkservice_group__1__0_models.TakeTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.TakeTicketResponse:
+        request: dingtalkservice_group__1__0_models.SetRobotConfigRequest,
+    ) -> dingtalkservice_group__1__0_models.SetRobotConfigResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.TakeTicketHeaders()
-        return await self.take_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.SetRobotConfigHeaders()
+        return await self.set_robot_config_with_options_async(request, headers, runtime)
 
     def take_ticket_with_options(
         self,
@@ -5310,9 +6728,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='TakeTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/apply',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.TakeTicketResponse(),
-            self.do_roarequest('TakeTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/apply', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def take_ticket_with_options_async(
@@ -5338,26 +6767,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='TakeTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/apply',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.TakeTicketResponse(),
-            await self.do_roarequest_async('TakeTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/apply', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def topic_statistics(
+    def take_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.TopicStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.TopicStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.TakeTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.TakeTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.TopicStatisticsHeaders()
-        return self.topic_statistics_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.TakeTicketHeaders()
+        return self.take_ticket_with_options(request, headers, runtime)
 
-    async def topic_statistics_async(
+    async def take_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.TopicStatisticsRequest,
-    ) -> dingtalkservice_group__1__0_models.TopicStatisticsResponse:
+        request: dingtalkservice_group__1__0_models.TakeTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.TakeTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.TopicStatisticsHeaders()
-        return await self.topic_statistics_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.TakeTicketHeaders()
+        return await self.take_ticket_with_options_async(request, headers, runtime)
 
     def topic_statistics_with_options(
         self,
@@ -5386,9 +6826,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='TopicStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/topics/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.TopicStatisticsResponse(),
-            self.do_roarequest('TopicStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/topics/statistics', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def topic_statistics_with_options_async(
@@ -5418,26 +6869,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='TopicStatistics',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/voices/topics/statistics',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.TopicStatisticsResponse(),
-            await self.do_roarequest_async('TopicStatistics', 'serviceGroup_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/serviceGroup/voices/topics/statistics', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def transfer_ticket(
+    def topic_statistics(
         self,
-        request: dingtalkservice_group__1__0_models.TransferTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.TransferTicketResponse:
+        request: dingtalkservice_group__1__0_models.TopicStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.TopicStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.TransferTicketHeaders()
-        return self.transfer_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.TopicStatisticsHeaders()
+        return self.topic_statistics_with_options(request, headers, runtime)
 
-    async def transfer_ticket_async(
+    async def topic_statistics_async(
         self,
-        request: dingtalkservice_group__1__0_models.TransferTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.TransferTicketResponse:
+        request: dingtalkservice_group__1__0_models.TopicStatisticsRequest,
+    ) -> dingtalkservice_group__1__0_models.TopicStatisticsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.TransferTicketHeaders()
-        return await self.transfer_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.TopicStatisticsHeaders()
+        return await self.topic_statistics_with_options_async(request, headers, runtime)
 
     def transfer_ticket_with_options(
         self,
@@ -5468,9 +6930,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='TransferTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/transfer',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.TransferTicketResponse(),
-            self.do_roarequest('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/transfer', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def transfer_ticket_with_options_async(
@@ -5502,26 +6975,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='TransferTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/transfer',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.TransferTicketResponse(),
-            await self.do_roarequest_async('TransferTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/transfer', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_set(
+    def transfer_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.UpdateGroupSetRequest,
-    ) -> dingtalkservice_group__1__0_models.UpdateGroupSetResponse:
+        request: dingtalkservice_group__1__0_models.TransferTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.TransferTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpdateGroupSetHeaders()
-        return self.update_group_set_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.TransferTicketHeaders()
+        return self.transfer_ticket_with_options(request, headers, runtime)
 
-    async def update_group_set_async(
+    async def transfer_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.UpdateGroupSetRequest,
-    ) -> dingtalkservice_group__1__0_models.UpdateGroupSetResponse:
+        request: dingtalkservice_group__1__0_models.TransferTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.TransferTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpdateGroupSetHeaders()
-        return await self.update_group_set_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.TransferTicketHeaders()
+        return await self.transfer_ticket_with_options_async(request, headers, runtime)
 
     def update_group_set_with_options(
         self,
@@ -5546,9 +7030,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupSet',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/configurations',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateGroupSetResponse(),
-            self.do_roarequest('UpdateGroupSet', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/groups/configurations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_set_with_options_async(
@@ -5574,26 +7069,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupSet',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/groups/configurations',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateGroupSetResponse(),
-            await self.do_roarequest_async('UpdateGroupSet', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/groups/configurations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_tag(
+    def update_group_set(
         self,
-        request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
-    ) -> dingtalkservice_group__1__0_models.UpdateGroupTagResponse:
+        request: dingtalkservice_group__1__0_models.UpdateGroupSetRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpdateGroupTagHeaders()
-        return self.update_group_tag_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpdateGroupSetHeaders()
+        return self.update_group_set_with_options(request, headers, runtime)
 
-    async def update_group_tag_async(
+    async def update_group_set_async(
         self,
-        request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
-    ) -> dingtalkservice_group__1__0_models.UpdateGroupTagResponse:
+        request: dingtalkservice_group__1__0_models.UpdateGroupSetRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpdateGroupTagHeaders()
-        return await self.update_group_tag_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpdateGroupSetHeaders()
+        return await self.update_group_set_with_options_async(request, headers, runtime)
 
     def update_group_tag_with_options(
         self,
@@ -5618,9 +7124,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupTag',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tags',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateGroupTagResponse(),
-            self.do_roarequest('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tags', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_tag_with_options_async(
@@ -5646,26 +7163,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupTag',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tags',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateGroupTagResponse(),
-            await self.do_roarequest_async('UpdateGroupTag', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tags', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_instance(
+    def update_group_tag(
         self,
-        request: dingtalkservice_group__1__0_models.UpdateInstanceRequest,
-    ) -> dingtalkservice_group__1__0_models.UpdateInstanceResponse:
+        request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupTagResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpdateInstanceHeaders()
-        return self.update_instance_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpdateGroupTagHeaders()
+        return self.update_group_tag_with_options(request, headers, runtime)
 
-    async def update_instance_async(
+    async def update_group_tag_async(
         self,
-        request: dingtalkservice_group__1__0_models.UpdateInstanceRequest,
-    ) -> dingtalkservice_group__1__0_models.UpdateInstanceResponse:
+        request: dingtalkservice_group__1__0_models.UpdateGroupTagRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateGroupTagResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpdateInstanceHeaders()
-        return await self.update_instance_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpdateGroupTagHeaders()
+        return await self.update_group_tag_with_options_async(request, headers, runtime)
 
     def update_instance_with_options(
         self,
@@ -5698,9 +7226,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInstance',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateInstanceResponse(),
-            self.do_roarequest('UpdateInstance', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/customForms/instances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_instance_with_options_async(
@@ -5734,26 +7273,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInstance',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customForms/instances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateInstanceResponse(),
-            await self.do_roarequest_async('UpdateInstance', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/customForms/instances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_ticket(
+    def update_instance(
         self,
-        request: dingtalkservice_group__1__0_models.UpdateTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.UpdateTicketResponse:
+        request: dingtalkservice_group__1__0_models.UpdateInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpdateTicketHeaders()
-        return self.update_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpdateInstanceHeaders()
+        return self.update_instance_with_options(request, headers, runtime)
 
-    async def update_ticket_async(
+    async def update_instance_async(
         self,
-        request: dingtalkservice_group__1__0_models.UpdateTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.UpdateTicketResponse:
+        request: dingtalkservice_group__1__0_models.UpdateInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpdateTicketHeaders()
-        return await self.update_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpdateInstanceHeaders()
+        return await self.update_instance_with_options_async(request, headers, runtime)
 
     def update_ticket_with_options(
         self,
@@ -5782,9 +7332,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateTicketResponse(),
-            self.do_roarequest('UpdateTicket', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tickets', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_ticket_with_options_async(
@@ -5814,26 +7375,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpdateTicketResponse(),
-            await self.do_roarequest_async('UpdateTicket', 'serviceGroup_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/serviceGroup/tickets', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def upgrade_cloud_group(
+    def update_ticket(
         self,
-        request: dingtalkservice_group__1__0_models.UpgradeCloudGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse:
+        request: dingtalkservice_group__1__0_models.UpdateTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpgradeCloudGroupHeaders()
-        return self.upgrade_cloud_group_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpdateTicketHeaders()
+        return self.update_ticket_with_options(request, headers, runtime)
 
-    async def upgrade_cloud_group_async(
+    async def update_ticket_async(
         self,
-        request: dingtalkservice_group__1__0_models.UpgradeCloudGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse:
+        request: dingtalkservice_group__1__0_models.UpdateTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.UpdateTicketResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpgradeCloudGroupHeaders()
-        return await self.upgrade_cloud_group_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpdateTicketHeaders()
+        return await self.update_ticket_with_options_async(request, headers, runtime)
 
     def upgrade_cloud_group_with_options(
         self,
@@ -5862,9 +7434,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpgradeCloudGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/cloudGroups/upgrade',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse(),
-            self.do_roarequest('UpgradeCloudGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/cloudGroups/upgrade', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def upgrade_cloud_group_with_options_async(
@@ -5894,26 +7477,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpgradeCloudGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/cloudGroups/upgrade',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse(),
-            await self.do_roarequest_async('UpgradeCloudGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/cloudGroups/upgrade', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def upgrade_normal_group(
+    def upgrade_cloud_group(
         self,
-        request: dingtalkservice_group__1__0_models.UpgradeNormalGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse:
+        request: dingtalkservice_group__1__0_models.UpgradeCloudGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpgradeNormalGroupHeaders()
-        return self.upgrade_normal_group_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpgradeCloudGroupHeaders()
+        return self.upgrade_cloud_group_with_options(request, headers, runtime)
 
-    async def upgrade_normal_group_async(
+    async def upgrade_cloud_group_async(
         self,
-        request: dingtalkservice_group__1__0_models.UpgradeNormalGroupRequest,
-    ) -> dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse:
+        request: dingtalkservice_group__1__0_models.UpgradeCloudGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.UpgradeCloudGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UpgradeNormalGroupHeaders()
-        return await self.upgrade_normal_group_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpgradeCloudGroupHeaders()
+        return await self.upgrade_cloud_group_with_options_async(request, headers, runtime)
 
     def upgrade_normal_group_with_options(
         self,
@@ -5940,9 +7534,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpgradeNormalGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/normalGroups/upgrade',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse(),
-            self.do_roarequest('UpgradeNormalGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/normalGroups/upgrade', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def upgrade_normal_group_with_options_async(
@@ -5970,26 +7575,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpgradeNormalGroup',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/normalGroups/upgrade',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse(),
-            await self.do_roarequest_async('UpgradeNormalGroup', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/normalGroups/upgrade', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def urge_ticket(
+    def upgrade_normal_group(
         self,
-        request: dingtalkservice_group__1__0_models.UrgeTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.UrgeTicketResponse:
+        request: dingtalkservice_group__1__0_models.UpgradeNormalGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UrgeTicketHeaders()
-        return self.urge_ticket_with_options(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpgradeNormalGroupHeaders()
+        return self.upgrade_normal_group_with_options(request, headers, runtime)
 
-    async def urge_ticket_async(
+    async def upgrade_normal_group_async(
         self,
-        request: dingtalkservice_group__1__0_models.UrgeTicketRequest,
-    ) -> dingtalkservice_group__1__0_models.UrgeTicketResponse:
+        request: dingtalkservice_group__1__0_models.UpgradeNormalGroupRequest,
+    ) -> dingtalkservice_group__1__0_models.UpgradeNormalGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkservice_group__1__0_models.UrgeTicketHeaders()
-        return await self.urge_ticket_with_options_async(request, headers, runtime)
+        headers = dingtalkservice_group__1__0_models.UpgradeNormalGroupHeaders()
+        return await self.upgrade_normal_group_with_options_async(request, headers, runtime)
 
     def urge_ticket_with_options(
         self,
@@ -6016,9 +7632,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UrgeTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/urge',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UrgeTicketResponse(),
-            self.do_roarequest('UrgeTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/urge', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def urge_ticket_with_options_async(
@@ -6046,7 +7673,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UrgeTicket',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/tickets/urge',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkservice_group__1__0_models.UrgeTicketResponse(),
-            await self.do_roarequest_async('UrgeTicket', 'serviceGroup_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/serviceGroup/tickets/urge', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def urge_ticket(
+        self,
+        request: dingtalkservice_group__1__0_models.UrgeTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.UrgeTicketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UrgeTicketHeaders()
+        return self.urge_ticket_with_options(request, headers, runtime)
+
+    async def urge_ticket_async(
+        self,
+        request: dingtalkservice_group__1__0_models.UrgeTicketRequest,
+    ) -> dingtalkservice_group__1__0_models.UrgeTicketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.UrgeTicketHeaders()
+        return await self.urge_ticket_with_options_async(request, headers, runtime)

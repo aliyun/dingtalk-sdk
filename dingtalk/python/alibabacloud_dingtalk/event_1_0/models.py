@@ -43,9 +43,7 @@ class GetCallBackFaileResultRequest(TeaModel):
         begin_time: int = None,
         end_time: int = None,
     ):
-        # 大于等于时间戳
         self.begin_time = begin_time
-        # 小于等于时间戳
         self.end_time = end_time
 
     def validate(self):
@@ -80,13 +78,9 @@ class GetCallBackFaileResultResponseBodyFailedList(TeaModel):
         corp_id: str = None,
         event_time: int = None,
     ):
-        # 返回的事件内容
         self.call_back_data = call_back_data
-        # 事件类型
         self.call_back_tag = call_back_tag
-        # 事件所属的corpId
         self.corp_id = corp_id
-        # 事件的时间戳。
         self.event_time = event_time
 
     def validate(self):
@@ -127,9 +121,7 @@ class GetCallBackFaileResultResponseBody(TeaModel):
         failed_list: List[GetCallBackFaileResultResponseBodyFailedList] = None,
         has_more: bool = None,
     ):
-        # 推送失败的事件列表，一次最多200个。
         self.failed_list = failed_list
-        # 是否还有推送失败的变更事件，若为true，则表示还有未回调的事件，或传入时间时范围内还有未回调的事件。
         self.has_more = has_more
 
     def validate(self):
@@ -168,13 +160,16 @@ class GetCallBackFaileResultResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetCallBackFaileResultResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -187,6 +182,8 @@ class GetCallBackFaileResultResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -195,6 +192,8 @@ class GetCallBackFaileResultResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCallBackFaileResultResponseBody()
             self.body = temp_model.from_map(m['body'])

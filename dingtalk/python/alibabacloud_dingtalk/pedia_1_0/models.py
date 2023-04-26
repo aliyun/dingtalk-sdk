@@ -44,11 +44,8 @@ class PediaWordsAddRequestContactList(TeaModel):
         nick_name: str = None,
         user_id: str = None,
     ):
-        # 头像地址也可以忽略
         self.avatar_media_id = avatar_media_id
-        # 名称可以忽略
         self.nick_name = nick_name
-        # 联系人的组织员工编号，开放平台员工信息接口获取userId
         self.user_id = user_id
 
     def validate(self):
@@ -84,8 +81,6 @@ class PediaWordsAddRequestPicList(TeaModel):
         self,
         media_id_url: str = None,
     ):
-        # 图片的HTTP地址
-        # 
         self.media_id_url = media_id_url
 
     def validate(self):
@@ -115,12 +110,8 @@ class PediaWordsAddRequestRelatedDoc(TeaModel):
         name: str = None,
         type: str = None,
     ):
-        # 文档地址
-        # 
         self.link = link
-        # 文档名称
         self.name = name
-        # 文档类型，adoc或者asheet字段
         self.type = type
 
     def validate(self):
@@ -157,10 +148,7 @@ class PediaWordsAddRequestRelatedLink(TeaModel):
         link: str = None,
         name: str = None,
     ):
-        # 链接地址
-        # 
         self.link = link
-        # 链接名称
         self.name = name
 
     def validate(self):
@@ -200,27 +188,14 @@ class PediaWordsAddRequest(TeaModel):
         word_name: str = None,
         word_paraphrase: str = None,
     ):
-        # 联系人列表
-        # 
         self.contact_list = contact_list
-        # 高亮的别名，从别名中选取，不在别名列表中不展示
         self.high_light_word_alias = high_light_word_alias
-        # 相关图片
-        # 
         self.pic_list = pic_list
-        # 相关文档，支持钉钉在线文档
         self.related_doc = related_doc
-        # 相关链接
         self.related_link = related_link
-        # 组织对应的员工编号
         self.user_id = user_id
-        # 词条的别名，多个名字的时候可以添加
-        # 
         self.word_alias = word_alias
-        # 新增词条的名称
         self.word_name = word_name
-        # 词条释义，针对词条的描述内容
-        # 
         self.word_paraphrase = word_paraphrase
 
     def validate(self):
@@ -316,12 +291,7 @@ class PediaWordsAddResponseBody(TeaModel):
         success: bool = None,
         uuid: int = None,
     ):
-        # 返回结果
-        # false，失败
-        # true，成功
         self.success = success
-        # 插入成功后的编号主键ID
-        # 
         self.uuid = uuid
 
     def validate(self):
@@ -352,13 +322,16 @@ class PediaWordsAddResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PediaWordsAddResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -371,6 +344,8 @@ class PediaWordsAddResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -379,6 +354,8 @@ class PediaWordsAddResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PediaWordsAddResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -428,17 +405,11 @@ class PediaWordsApproveRequest(TeaModel):
         user_id: str = None,
         uuid: int = None,
     ):
-        # 拒绝的原因，可选
         self.approve_reason = approve_reason
-        # 审核的结果，1通过0代表拒绝
         self.approve_status = approve_status
-        # 当前内部群是否高亮
         self.im_high_light = im_high_light
-        # 服务群是否高亮
         self.sim_high_light = sim_high_light
-        # 操作人的组织员工编号，开放平台员工信息接口获取userId
         self.user_id = user_id
-        # 当前审核的词条的主键编号
         self.uuid = uuid
 
     def validate(self):
@@ -486,9 +457,6 @@ class PediaWordsApproveResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 返回结果
-        # false，失败
-        # true，成功
         self.success = success
 
     def validate(self):
@@ -515,13 +483,16 @@ class PediaWordsApproveResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PediaWordsApproveResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -534,6 +505,8 @@ class PediaWordsApproveResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -542,6 +515,8 @@ class PediaWordsApproveResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PediaWordsApproveResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -587,9 +562,7 @@ class PediaWordsDeleteRequest(TeaModel):
         user_id: str = None,
         uuid: int = None,
     ):
-        # 当前操作用户编号
         self.user_id = user_id
-        # 当前需要删除的词条主键编号
         self.uuid = uuid
 
     def validate(self):
@@ -622,11 +595,7 @@ class PediaWordsDeleteResponseBody(TeaModel):
         success: bool = None,
         uuid: int = None,
     ):
-        # 返回结果
-        # false，失败
-        # true，成功
         self.success = success
-        # 删除成功，返回删除的uuid
         self.uuid = uuid
 
     def validate(self):
@@ -657,13 +626,16 @@ class PediaWordsDeleteResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PediaWordsDeleteResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -676,6 +648,8 @@ class PediaWordsDeleteResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -684,6 +658,8 @@ class PediaWordsDeleteResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PediaWordsDeleteResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -729,9 +705,7 @@ class PediaWordsQueryRequest(TeaModel):
         user_id: str = None,
         uuid: int = None,
     ):
-        # 操作用户编号
         self.user_id = user_id
-        # 查询主键编号
         self.uuid = uuid
 
     def validate(self):
@@ -766,13 +740,9 @@ class PediaWordsQueryResponseBodyDataAppLink(TeaModel):
         pc_link: str = None,
         phone_link: str = None,
     ):
-        # 应用名称
         self.app_name = app_name
-        # 应用icon
         self.icon_link = icon_link
-        # 桌面端链接
         self.pc_link = pc_link
-        # 手机端链接
         self.phone_link = phone_link
 
     def validate(self):
@@ -814,12 +784,8 @@ class PediaWordsQueryResponseBodyDataContactList(TeaModel):
         nick_name: str = None,
         user_id: str = None,
     ):
-        # 联系人图片办好
         self.avatar_media_id = avatar_media_id
-        # 联系人名称
         self.nick_name = nick_name
-        # 联系人员工编号
-        # 
         self.user_id = user_id
 
     def validate(self):
@@ -855,7 +821,6 @@ class PediaWordsQueryResponseBodyDataPicList(TeaModel):
         self,
         media_id_url: str = None,
     ):
-        # 图片HTTP地址
         self.media_id_url = media_id_url
 
     def validate(self):
@@ -886,9 +851,7 @@ class PediaWordsQueryResponseBodyDataRelatedDoc(TeaModel):
         type: str = None,
     ):
         self.link = link
-        # 文档名称
         self.name = name
-        # 文档类型，分别为adoc或者asheet
         self.type = type
 
     def validate(self):
@@ -925,9 +888,7 @@ class PediaWordsQueryResponseBodyDataRelatedLink(TeaModel):
         link: str = None,
         name: str = None,
     ):
-        # 链接地址
         self.link = link
-        # 链接名称
         self.name = name
 
     def validate(self):
@@ -980,50 +941,27 @@ class PediaWordsQueryResponseBodyData(TeaModel):
         word_name: str = None,
         word_paraphrase: str = None,
     ):
-        # 相关应用
         self.app_link = app_link
-        # 审核人
         self.approve_name = approve_name
-        # 联系人列表
         self.contact_list = contact_list
-        # 相关联系人
         self.contacts = contacts
-        # 创建者
         self.creator_name = creator_name
-        # 创建时间
         self.gmt_create = gmt_create
-        # 修改时间
         self.gmt_modify = gmt_modify
-        # 高亮的词条别名
-        # 
         self.high_light_word_alias = high_light_word_alias
-        # 内部群是否高亮
         self.im_high_light = im_high_light
-        # 当为待审核词条的时候的父编号
         self.parent_uuid = parent_uuid
         self.pic_list = pic_list
-        # 相关文档
         self.related_doc = related_doc
-        # 相关链接
         self.related_link = related_link
-        # 服务群是否高亮
         self.sim_high_light = sim_high_light
-        # 词条释义非富文本
         self.simple_word_paraphrase = simple_word_paraphrase
-        # 分类名称
         self.tags_list = tags_list
-        # 更新人
         self.updater_name = updater_name
-        # 操作员工userId
         self.user_id = user_id
-        # 词条主键ID
         self.uuid = uuid
-        # 词条别名
         self.word_alias = word_alias
-        # 词条名称
-        # 
         self.word_name = word_name
-        # 词条释义，富文本
         self.word_paraphrase = word_paraphrase
 
     def validate(self):
@@ -1180,12 +1118,7 @@ class PediaWordsQueryResponseBody(TeaModel):
         data: PediaWordsQueryResponseBodyData = None,
         success: bool = None,
     ):
-        # 返回词条具体对象
-        # 
         self.data = data
-        # 返回结果
-        # false，失败
-        # trur，成功
         self.success = success
 
     def validate(self):
@@ -1218,13 +1151,16 @@ class PediaWordsQueryResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PediaWordsQueryResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1237,6 +1173,8 @@ class PediaWordsQueryResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1245,6 +1183,8 @@ class PediaWordsQueryResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PediaWordsQueryResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1293,20 +1233,10 @@ class PediaWordsSearchRequest(TeaModel):
         user_id: str = None,
         word_name: str = None,
     ):
-        # 当前查询的页数，当超过总数后返回数据为空
-        # 
         self.page_number = page_number
-        # 当前每页需要展示的数量，最大20
-        # 
         self.page_size = page_size
-        # 当前搜索列表的状态0代表审核通过，1代表创建待审核，2代表更新待审核列表
-        # 默认是0，代表获取所有审核完成的词条
-        # 
         self.status = status
-        # 通过开放平台获取的员工编号userId
         self.user_id = user_id
-        # 搜索关键词
-        # 
         self.word_name = word_name
 
     def validate(self):
@@ -1353,13 +1283,9 @@ class PediaWordsSearchResponseBodyDataAppLink(TeaModel):
         pc_link: str = None,
         phone_link: str = None,
     ):
-        # 应用名称
         self.app_name = app_name
-        # 应用图标
         self.icon_link = icon_link
-        # PC端链接地址
         self.pc_link = pc_link
-        # 手机端地址
         self.phone_link = phone_link
 
     def validate(self):
@@ -1401,11 +1327,8 @@ class PediaWordsSearchResponseBodyDataContactList(TeaModel):
         nick_name: str = None,
         user_id: str = None,
     ):
-        # 员工头像
         self.avatar_media_id = avatar_media_id
-        # 员工的名字
         self.nick_name = nick_name
-        # 员工的userId
         self.user_id = user_id
 
     def validate(self):
@@ -1441,7 +1364,6 @@ class PediaWordsSearchResponseBodyDataPicList(TeaModel):
         self,
         media_id_url: str = None,
     ):
-        # 相关图片地址
         self.media_id_url = media_id_url
 
     def validate(self):
@@ -1471,12 +1393,8 @@ class PediaWordsSearchResponseBodyDataRelatedDoc(TeaModel):
         name: str = None,
         type: str = None,
     ):
-        # 当前在线文档链接地址
         self.link = link
-        # 在线文档的名称
         self.name = name
-        # 在线文档的类型，分别为adoc和asheet两个值获取文档图标
-        # 
         self.type = type
 
     def validate(self):
@@ -1514,11 +1432,8 @@ class PediaWordsSearchResponseBodyDataRelatedLink(TeaModel):
         name: str = None,
         type: str = None,
     ):
-        # 具体链接
         self.link = link
-        # 链接名称
         self.name = name
-        # 空
         self.type = type
 
     def validate(self):
@@ -1575,50 +1490,27 @@ class PediaWordsSearchResponseBodyData(TeaModel):
         word_name: str = None,
         word_paraphrase: str = None,
     ):
-        # 相关应用列表
         self.app_link = app_link
-        # 审核者名称
         self.approve_name = approve_name
-        # 相关联系人
         self.contact_list = contact_list
-        # 联系人列表
         self.contacts = contacts
-        # 创建者的名称
         self.creator_name = creator_name
-        # 词条创建时间
         self.gmt_create = gmt_create
-        # 词条修改时间
         self.gmt_modify = gmt_modify
-        # 词条中需要在聊天中被分词的别名
         self.high_light_word_alias = high_light_word_alias
-        # 该词条内部群是否分词
         self.im_high_light = im_high_light
-        # 当前词条的父类ID，审核通过的该字段为空
         self.parent_uuid = parent_uuid
-        # 相关图片
         self.pic_list = pic_list
-        # 相关文档链接，这里只针对钉钉在线文档，没有则忽略
         self.related_doc = related_doc
-        # 相关链接
-        # 
         self.related_link = related_link
-        # 该词条服务群是否分词
         self.sim_high_light = sim_high_light
-        # 词条非富文本释义
         self.simple_word_paraphrase = simple_word_paraphrase
-        # 分类列表
         self.tags_list = tags_list
-        # 更新者名称
         self.updater_name = updater_name
-        # 员工的userId
         self.user_id = user_id
-        # 当前词条对应的主键ID
         self.uuid = uuid
-        # 词条别名
         self.word_alias = word_alias
-        # 词条名称
         self.word_name = word_name
-        # 词条富文本释义
         self.word_paraphrase = word_paraphrase
 
     def validate(self):
@@ -1775,9 +1667,7 @@ class PediaWordsSearchResponseBody(TeaModel):
         data: List[PediaWordsSearchResponseBodyData] = None,
         success: bool = None,
     ):
-        # 词条详情对象
         self.data = data
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -1816,13 +1706,16 @@ class PediaWordsSearchResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PediaWordsSearchResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1835,6 +1728,8 @@ class PediaWordsSearchResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1843,6 +1738,8 @@ class PediaWordsSearchResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PediaWordsSearchResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1890,13 +1787,9 @@ class PediaWordsUpdateRequestAppLink(TeaModel):
         pc_link: str = None,
         phone_link: str = None,
     ):
-        # 应用名称
         self.app_name = app_name
-        # icon地址
         self.icon_link = icon_link
-        # 电脑端地址
         self.pc_link = pc_link
-        # 手机端地址
         self.phone_link = phone_link
 
     def validate(self):
@@ -1938,11 +1831,8 @@ class PediaWordsUpdateRequestContactList(TeaModel):
         nick_name: str = None,
         user_id: str = None,
     ):
-        # 联系人图片地址，可以不传
         self.avatar_media_id = avatar_media_id
-        # 名称，可空
         self.nick_name = nick_name
-        # 联系人的组织员工编号
         self.user_id = user_id
 
     def validate(self):
@@ -1978,7 +1868,6 @@ class PediaWordsUpdateRequestPicList(TeaModel):
         self,
         media_id_url: str = None,
     ):
-        # 图片地址，Http
         self.media_id_url = media_id_url
 
     def validate(self):
@@ -2008,11 +1897,8 @@ class PediaWordsUpdateRequestRelatedDoc(TeaModel):
         name: str = None,
         type: str = None,
     ):
-        # 在线文档链接
         self.link = link
-        # 文档名称
         self.name = name
-        # 文档类型，adoc或者asheet字段
         self.type = type
 
     def validate(self):
@@ -2049,9 +1935,7 @@ class PediaWordsUpdateRequestRelatedLink(TeaModel):
         link: str = None,
         name: str = None,
     ):
-        # 链接地址
         self.link = link
-        # 链接名称
         self.name = name
 
     def validate(self):
@@ -2093,27 +1977,16 @@ class PediaWordsUpdateRequest(TeaModel):
         word_name: str = None,
         word_paraphrase: str = None,
     ):
-        # 相关应用
         self.app_link = app_link
-        # 相关联系人
         self.contact_list = contact_list
-        # 在聊天中可命中的别名
         self.high_light_word_alias = high_light_word_alias
-        # 相关图片
         self.pic_list = pic_list
-        # 相关文档，支持钉钉在线文档
         self.related_doc = related_doc
-        # 相关链接
         self.related_link = related_link
-        # 操作人的组织员工编号
         self.user_id = user_id
-        # 更新的词条编号
         self.uuid = uuid
-        # 词条别名
         self.word_alias = word_alias
-        # 词条名称
         self.word_name = word_name
-        # 词条释义
         self.word_paraphrase = word_paraphrase
 
     def validate(self):
@@ -2226,11 +2099,7 @@ class PediaWordsUpdateResponseBody(TeaModel):
         success: bool = None,
         uuid: int = None,
     ):
-        # 返回结果
-        # false，失败
-        # true,成功
         self.success = success
-        # 更新后待审核词条编号
         self.uuid = uuid
 
     def validate(self):
@@ -2261,13 +2130,16 @@ class PediaWordsUpdateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PediaWordsUpdateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2280,6 +2152,8 @@ class PediaWordsUpdateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2288,6 +2162,8 @@ class PediaWordsUpdateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PediaWordsUpdateResponseBody()
             self.body = temp_model.from_map(m['body'])

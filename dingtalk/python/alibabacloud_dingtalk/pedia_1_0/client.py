@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.pedia_1_0 import models as dingtalkpedia__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def pedia_words_add(
-        self,
-        request: dingtalkpedia__1__0_models.PediaWordsAddRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsAddResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsAddHeaders()
-        return self.pedia_words_add_with_options(request, headers, runtime)
-
-    async def pedia_words_add_async(
-        self,
-        request: dingtalkpedia__1__0_models.PediaWordsAddRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsAddResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsAddHeaders()
-        return await self.pedia_words_add_with_options_async(request, headers, runtime)
 
     def pedia_words_add_with_options(
         self,
@@ -74,9 +64,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PediaWordsAdd',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsAddResponse(),
-            self.do_roarequest('PediaWordsAdd', 'pedia_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/pedia/words', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def pedia_words_add_with_options_async(
@@ -114,26 +115,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PediaWordsAdd',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsAddResponse(),
-            await self.do_roarequest_async('PediaWordsAdd', 'pedia_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/pedia/words', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def pedia_words_approve(
+    def pedia_words_add(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsApproveRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsApproveResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsAddRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsAddResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsApproveHeaders()
-        return self.pedia_words_approve_with_options(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsAddHeaders()
+        return self.pedia_words_add_with_options(request, headers, runtime)
 
-    async def pedia_words_approve_async(
+    async def pedia_words_add_async(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsApproveRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsApproveResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsAddRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsAddResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsApproveHeaders()
-        return await self.pedia_words_approve_with_options_async(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsAddHeaders()
+        return await self.pedia_words_add_with_options_async(request, headers, runtime)
 
     def pedia_words_approve_with_options(
         self,
@@ -164,9 +176,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PediaWordsApprove',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words/approve',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsApproveResponse(),
-            self.do_roarequest('PediaWordsApprove', 'pedia_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/pedia/words/approve', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def pedia_words_approve_with_options_async(
@@ -198,26 +221,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PediaWordsApprove',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words/approve',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsApproveResponse(),
-            await self.do_roarequest_async('PediaWordsApprove', 'pedia_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/pedia/words/approve', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def pedia_words_delete(
+    def pedia_words_approve(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsDeleteRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsDeleteResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsApproveRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsApproveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsDeleteHeaders()
-        return self.pedia_words_delete_with_options(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsApproveHeaders()
+        return self.pedia_words_approve_with_options(request, headers, runtime)
 
-    async def pedia_words_delete_async(
+    async def pedia_words_approve_async(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsDeleteRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsDeleteResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsApproveRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsApproveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsDeleteHeaders()
-        return await self.pedia_words_delete_with_options_async(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsApproveHeaders()
+        return await self.pedia_words_approve_with_options_async(request, headers, runtime)
 
     def pedia_words_delete_with_options(
         self,
@@ -240,9 +274,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='PediaWordsDelete',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsDeleteResponse(),
-            self.do_roarequest('PediaWordsDelete', 'pedia_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/pedia/words', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def pedia_words_delete_with_options_async(
@@ -266,26 +311,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='PediaWordsDelete',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsDeleteResponse(),
-            await self.do_roarequest_async('PediaWordsDelete', 'pedia_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/pedia/words', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def pedia_words_query(
+    def pedia_words_delete(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsQueryRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsQueryResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsDeleteRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsDeleteResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsQueryHeaders()
-        return self.pedia_words_query_with_options(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsDeleteHeaders()
+        return self.pedia_words_delete_with_options(request, headers, runtime)
 
-    async def pedia_words_query_async(
+    async def pedia_words_delete_async(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsQueryRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsQueryResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsDeleteRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsDeleteResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsQueryHeaders()
-        return await self.pedia_words_query_with_options_async(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsDeleteHeaders()
+        return await self.pedia_words_delete_with_options_async(request, headers, runtime)
 
     def pedia_words_query_with_options(
         self,
@@ -308,9 +364,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='PediaWordsQuery',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsQueryResponse(),
-            self.do_roarequest('PediaWordsQuery', 'pedia_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/pedia/words/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def pedia_words_query_with_options_async(
@@ -334,26 +401,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='PediaWordsQuery',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsQueryResponse(),
-            await self.do_roarequest_async('PediaWordsQuery', 'pedia_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/pedia/words/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def pedia_words_search(
+    def pedia_words_query(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsSearchRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsSearchResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsQueryRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsSearchHeaders()
-        return self.pedia_words_search_with_options(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsQueryHeaders()
+        return self.pedia_words_query_with_options(request, headers, runtime)
 
-    async def pedia_words_search_async(
+    async def pedia_words_query_async(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsSearchRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsSearchResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsQueryRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsSearchHeaders()
-        return await self.pedia_words_search_with_options_async(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsQueryHeaders()
+        return await self.pedia_words_query_with_options_async(request, headers, runtime)
 
     def pedia_words_search_with_options(
         self,
@@ -382,9 +460,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PediaWordsSearch',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsSearchResponse(),
-            self.do_roarequest('PediaWordsSearch', 'pedia_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/pedia/words/search', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def pedia_words_search_with_options_async(
@@ -414,26 +503,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PediaWordsSearch',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsSearchResponse(),
-            await self.do_roarequest_async('PediaWordsSearch', 'pedia_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/pedia/words/search', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def pedia_words_update(
+    def pedia_words_search(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsUpdateRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsUpdateResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsSearchRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsSearchResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsUpdateHeaders()
-        return self.pedia_words_update_with_options(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsSearchHeaders()
+        return self.pedia_words_search_with_options(request, headers, runtime)
 
-    async def pedia_words_update_async(
+    async def pedia_words_search_async(
         self,
-        request: dingtalkpedia__1__0_models.PediaWordsUpdateRequest,
-    ) -> dingtalkpedia__1__0_models.PediaWordsUpdateResponse:
+        request: dingtalkpedia__1__0_models.PediaWordsSearchRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsSearchResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkpedia__1__0_models.PediaWordsUpdateHeaders()
-        return await self.pedia_words_update_with_options_async(request, headers, runtime)
+        headers = dingtalkpedia__1__0_models.PediaWordsSearchHeaders()
+        return await self.pedia_words_search_with_options_async(request, headers, runtime)
 
     def pedia_words_update_with_options(
         self,
@@ -474,9 +574,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PediaWordsUpdate',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsUpdateResponse(),
-            self.do_roarequest('PediaWordsUpdate', 'pedia_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/pedia/words', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def pedia_words_update_with_options_async(
@@ -518,7 +629,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PediaWordsUpdate',
+            version='pedia_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/pedia/words',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkpedia__1__0_models.PediaWordsUpdateResponse(),
-            await self.do_roarequest_async('PediaWordsUpdate', 'pedia_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/pedia/words', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def pedia_words_update(
+        self,
+        request: dingtalkpedia__1__0_models.PediaWordsUpdateRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkpedia__1__0_models.PediaWordsUpdateHeaders()
+        return self.pedia_words_update_with_options(request, headers, runtime)
+
+    async def pedia_words_update_async(
+        self,
+        request: dingtalkpedia__1__0_models.PediaWordsUpdateRequest,
+    ) -> dingtalkpedia__1__0_models.PediaWordsUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkpedia__1__0_models.PediaWordsUpdateHeaders()
+        return await self.pedia_words_update_with_options_async(request, headers, runtime)

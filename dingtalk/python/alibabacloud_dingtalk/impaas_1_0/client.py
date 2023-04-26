@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.impaas_1_0 import models as dingtalkimpaas__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_group_members(
-        self,
-        request: dingtalkimpaas__1__0_models.AddGroupMembersRequest,
-    ) -> dingtalkimpaas__1__0_models.AddGroupMembersResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.AddGroupMembersHeaders()
-        return self.add_group_members_with_options(request, headers, runtime)
-
-    async def add_group_members_async(
-        self,
-        request: dingtalkimpaas__1__0_models.AddGroupMembersRequest,
-    ) -> dingtalkimpaas__1__0_models.AddGroupMembersResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.AddGroupMembersHeaders()
-        return await self.add_group_members_with_options_async(request, headers, runtime)
 
     def add_group_members_with_options(
         self,
@@ -64,9 +54,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddGroupMembers',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/members/batchAdd',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.AddGroupMembersResponse(),
-            self.do_roarequest('AddGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/members/batchAdd', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_group_members_with_options_async(
@@ -94,26 +95,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddGroupMembers',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/members/batchAdd',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.AddGroupMembersResponse(),
-            await self.do_roarequest_async('AddGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/members/batchAdd', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_profile(
+    def add_group_members(
         self,
-        request: dingtalkimpaas__1__0_models.AddProfileRequest,
-    ) -> dingtalkimpaas__1__0_models.AddProfileResponse:
+        request: dingtalkimpaas__1__0_models.AddGroupMembersRequest,
+    ) -> dingtalkimpaas__1__0_models.AddGroupMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.AddProfileHeaders()
-        return self.add_profile_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.AddGroupMembersHeaders()
+        return self.add_group_members_with_options(request, headers, runtime)
 
-    async def add_profile_async(
+    async def add_group_members_async(
         self,
-        request: dingtalkimpaas__1__0_models.AddProfileRequest,
-    ) -> dingtalkimpaas__1__0_models.AddProfileResponse:
+        request: dingtalkimpaas__1__0_models.AddGroupMembersRequest,
+    ) -> dingtalkimpaas__1__0_models.AddGroupMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.AddProfileHeaders()
-        return await self.add_profile_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.AddGroupMembersHeaders()
+        return await self.add_group_members_with_options_async(request, headers, runtime)
 
     def add_profile_with_options(
         self,
@@ -140,9 +152,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddProfile',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/users/profiles',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.AddProfileResponse(),
-            self.do_roarequest('AddProfile', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/users/profiles', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_profile_with_options_async(
@@ -170,26 +193,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddProfile',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/users/profiles',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.AddProfileResponse(),
-            await self.do_roarequest_async('AddProfile', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/users/profiles', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_send(
+    def add_profile(
         self,
-        request: dingtalkimpaas__1__0_models.BatchSendRequest,
-    ) -> dingtalkimpaas__1__0_models.BatchSendResponse:
+        request: dingtalkimpaas__1__0_models.AddProfileRequest,
+    ) -> dingtalkimpaas__1__0_models.AddProfileResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.BatchSendHeaders()
-        return self.batch_send_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.AddProfileHeaders()
+        return self.add_profile_with_options(request, headers, runtime)
 
-    async def batch_send_async(
+    async def add_profile_async(
         self,
-        request: dingtalkimpaas__1__0_models.BatchSendRequest,
-    ) -> dingtalkimpaas__1__0_models.BatchSendResponse:
+        request: dingtalkimpaas__1__0_models.AddProfileRequest,
+    ) -> dingtalkimpaas__1__0_models.AddProfileResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.BatchSendHeaders()
-        return await self.batch_send_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.AddProfileHeaders()
+        return await self.add_profile_with_options_async(request, headers, runtime)
 
     def batch_send_with_options(
         self,
@@ -216,9 +250,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchSend',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.BatchSendResponse(),
-            self.do_roarequest('BatchSend', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/batchSend', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_send_with_options_async(
@@ -246,26 +291,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchSend',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.BatchSendResponse(),
-            await self.do_roarequest_async('BatchSend', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/batchSend', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_group(
+    def batch_send(
         self,
-        request: dingtalkimpaas__1__0_models.CreateGroupRequest,
-    ) -> dingtalkimpaas__1__0_models.CreateGroupResponse:
+        request: dingtalkimpaas__1__0_models.BatchSendRequest,
+    ) -> dingtalkimpaas__1__0_models.BatchSendResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.CreateGroupHeaders()
-        return self.create_group_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.BatchSendHeaders()
+        return self.batch_send_with_options(request, headers, runtime)
 
-    async def create_group_async(
+    async def batch_send_async(
         self,
-        request: dingtalkimpaas__1__0_models.CreateGroupRequest,
-    ) -> dingtalkimpaas__1__0_models.CreateGroupResponse:
+        request: dingtalkimpaas__1__0_models.BatchSendRequest,
+    ) -> dingtalkimpaas__1__0_models.BatchSendResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.CreateGroupHeaders()
-        return await self.create_group_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.BatchSendHeaders()
+        return await self.batch_send_with_options_async(request, headers, runtime)
 
     def create_group_with_options(
         self,
@@ -298,9 +354,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.CreateGroupResponse(),
-            self.do_roarequest('CreateGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_group_with_options_async(
@@ -334,26 +401,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.CreateGroupResponse(),
-            await self.do_roarequest_async('CreateGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_trust_group(
+    def create_group(
         self,
-        request: dingtalkimpaas__1__0_models.CreateTrustGroupRequest,
-    ) -> dingtalkimpaas__1__0_models.CreateTrustGroupResponse:
+        request: dingtalkimpaas__1__0_models.CreateGroupRequest,
+    ) -> dingtalkimpaas__1__0_models.CreateGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.CreateTrustGroupHeaders()
-        return self.create_trust_group_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.CreateGroupHeaders()
+        return self.create_group_with_options(request, headers, runtime)
 
-    async def create_trust_group_async(
+    async def create_group_async(
         self,
-        request: dingtalkimpaas__1__0_models.CreateTrustGroupRequest,
-    ) -> dingtalkimpaas__1__0_models.CreateTrustGroupResponse:
+        request: dingtalkimpaas__1__0_models.CreateGroupRequest,
+    ) -> dingtalkimpaas__1__0_models.CreateGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.CreateTrustGroupHeaders()
-        return await self.create_trust_group_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.CreateGroupHeaders()
+        return await self.create_group_with_options_async(request, headers, runtime)
 
     def create_trust_group_with_options(
         self,
@@ -388,9 +466,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateTrustGroup',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/trusts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.CreateTrustGroupResponse(),
-            self.do_roarequest('CreateTrustGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/trusts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_trust_group_with_options_async(
@@ -426,26 +515,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateTrustGroup',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/trusts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.CreateTrustGroupResponse(),
-            await self.do_roarequest_async('CreateTrustGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/trusts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def dismiss_group(
+    def create_trust_group(
         self,
-        request: dingtalkimpaas__1__0_models.DismissGroupRequest,
-    ) -> dingtalkimpaas__1__0_models.DismissGroupResponse:
+        request: dingtalkimpaas__1__0_models.CreateTrustGroupRequest,
+    ) -> dingtalkimpaas__1__0_models.CreateTrustGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.DismissGroupHeaders()
-        return self.dismiss_group_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.CreateTrustGroupHeaders()
+        return self.create_trust_group_with_options(request, headers, runtime)
 
-    async def dismiss_group_async(
+    async def create_trust_group_async(
         self,
-        request: dingtalkimpaas__1__0_models.DismissGroupRequest,
-    ) -> dingtalkimpaas__1__0_models.DismissGroupResponse:
+        request: dingtalkimpaas__1__0_models.CreateTrustGroupRequest,
+    ) -> dingtalkimpaas__1__0_models.CreateTrustGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.DismissGroupHeaders()
-        return await self.dismiss_group_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.CreateTrustGroupHeaders()
+        return await self.create_trust_group_with_options_async(request, headers, runtime)
 
     def dismiss_group_with_options(
         self,
@@ -470,9 +570,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DismissGroup',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/dismiss',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.DismissGroupResponse(),
-            self.do_roarequest('DismissGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/dismiss', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def dismiss_group_with_options_async(
@@ -498,26 +609,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DismissGroup',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/dismiss',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.DismissGroupResponse(),
-            await self.do_roarequest_async('DismissGroup', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/dismiss', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_conversation_id(
+    def dismiss_group(
         self,
-        request: dingtalkimpaas__1__0_models.GetConversationIdRequest,
-    ) -> dingtalkimpaas__1__0_models.GetConversationIdResponse:
+        request: dingtalkimpaas__1__0_models.DismissGroupRequest,
+    ) -> dingtalkimpaas__1__0_models.DismissGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.GetConversationIdHeaders()
-        return self.get_conversation_id_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.DismissGroupHeaders()
+        return self.dismiss_group_with_options(request, headers, runtime)
 
-    async def get_conversation_id_async(
+    async def dismiss_group_async(
         self,
-        request: dingtalkimpaas__1__0_models.GetConversationIdRequest,
-    ) -> dingtalkimpaas__1__0_models.GetConversationIdResponse:
+        request: dingtalkimpaas__1__0_models.DismissGroupRequest,
+    ) -> dingtalkimpaas__1__0_models.DismissGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.GetConversationIdHeaders()
-        return await self.get_conversation_id_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.DismissGroupHeaders()
+        return await self.dismiss_group_with_options_async(request, headers, runtime)
 
     def get_conversation_id_with_options(
         self,
@@ -540,9 +662,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetConversationId',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/conversations',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.GetConversationIdResponse(),
-            self.do_roarequest('GetConversationId', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/conversations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_conversation_id_with_options_async(
@@ -566,26 +699,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetConversationId',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/conversations',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.GetConversationIdResponse(),
-            await self.do_roarequest_async('GetConversationId', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/conversations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_media_url(
+    def get_conversation_id(
         self,
-        request: dingtalkimpaas__1__0_models.GetMediaUrlRequest,
-    ) -> dingtalkimpaas__1__0_models.GetMediaUrlResponse:
+        request: dingtalkimpaas__1__0_models.GetConversationIdRequest,
+    ) -> dingtalkimpaas__1__0_models.GetConversationIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.GetMediaUrlHeaders()
-        return self.get_media_url_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.GetConversationIdHeaders()
+        return self.get_conversation_id_with_options(request, headers, runtime)
 
-    async def get_media_url_async(
+    async def get_conversation_id_async(
         self,
-        request: dingtalkimpaas__1__0_models.GetMediaUrlRequest,
-    ) -> dingtalkimpaas__1__0_models.GetMediaUrlResponse:
+        request: dingtalkimpaas__1__0_models.GetConversationIdRequest,
+    ) -> dingtalkimpaas__1__0_models.GetConversationIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.GetMediaUrlHeaders()
-        return await self.get_media_url_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.GetConversationIdHeaders()
+        return await self.get_conversation_id_with_options_async(request, headers, runtime)
 
     def get_media_url_with_options(
         self,
@@ -608,9 +752,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetMediaUrl',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/medium/urls',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.GetMediaUrlResponse(),
-            self.do_roarequest('GetMediaUrl', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/medium/urls', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_media_url_with_options_async(
@@ -634,26 +789,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetMediaUrl',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/medium/urls',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.GetMediaUrlResponse(),
-            await self.do_roarequest_async('GetMediaUrl', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/medium/urls', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_media_urls(
+    def get_media_url(
         self,
-        request: dingtalkimpaas__1__0_models.GetMediaUrlsRequest,
-    ) -> dingtalkimpaas__1__0_models.GetMediaUrlsResponse:
+        request: dingtalkimpaas__1__0_models.GetMediaUrlRequest,
+    ) -> dingtalkimpaas__1__0_models.GetMediaUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.GetMediaUrlsHeaders()
-        return self.get_media_urls_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.GetMediaUrlHeaders()
+        return self.get_media_url_with_options(request, headers, runtime)
 
-    async def get_media_urls_async(
+    async def get_media_url_async(
         self,
-        request: dingtalkimpaas__1__0_models.GetMediaUrlsRequest,
-    ) -> dingtalkimpaas__1__0_models.GetMediaUrlsResponse:
+        request: dingtalkimpaas__1__0_models.GetMediaUrlRequest,
+    ) -> dingtalkimpaas__1__0_models.GetMediaUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.GetMediaUrlsHeaders()
-        return await self.get_media_urls_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.GetMediaUrlHeaders()
+        return await self.get_media_url_with_options_async(request, headers, runtime)
 
     def get_media_urls_with_options(
         self,
@@ -676,9 +842,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetMediaUrls',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/mediaUrls/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.GetMediaUrlsResponse(),
-            self.do_roarequest('GetMediaUrls', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/mediaUrls/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_media_urls_with_options_async(
@@ -702,26 +879,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetMediaUrls',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/mediaUrls/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.GetMediaUrlsResponse(),
-            await self.do_roarequest_async('GetMediaUrls', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/mediaUrls/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_space_file_url(
+    def get_media_urls(
         self,
-        request: dingtalkimpaas__1__0_models.GetSpaceFileUrlRequest,
-    ) -> dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse:
+        request: dingtalkimpaas__1__0_models.GetMediaUrlsRequest,
+    ) -> dingtalkimpaas__1__0_models.GetMediaUrlsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.GetSpaceFileUrlHeaders()
-        return self.get_space_file_url_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.GetMediaUrlsHeaders()
+        return self.get_media_urls_with_options(request, headers, runtime)
 
-    async def get_space_file_url_async(
+    async def get_media_urls_async(
         self,
-        request: dingtalkimpaas__1__0_models.GetSpaceFileUrlRequest,
-    ) -> dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse:
+        request: dingtalkimpaas__1__0_models.GetMediaUrlsRequest,
+    ) -> dingtalkimpaas__1__0_models.GetMediaUrlsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.GetSpaceFileUrlHeaders()
-        return await self.get_space_file_url_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.GetMediaUrlsHeaders()
+        return await self.get_media_urls_with_options_async(request, headers, runtime)
 
     def get_space_file_url_with_options(
         self,
@@ -746,9 +934,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSpaceFileUrl',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/spaces/files/urls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse(),
-            self.do_roarequest('GetSpaceFileUrl', 'impaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/impaas/interconnections/spaces/files/urls', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_space_file_url_with_options_async(
@@ -774,26 +973,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSpaceFileUrl',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/spaces/files/urls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse(),
-            await self.do_roarequest_async('GetSpaceFileUrl', 'impaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/impaas/interconnections/spaces/files/urls', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_group_staff_members(
+    def get_space_file_url(
         self,
-        request: dingtalkimpaas__1__0_models.ListGroupStaffMembersRequest,
-    ) -> dingtalkimpaas__1__0_models.ListGroupStaffMembersResponse:
+        request: dingtalkimpaas__1__0_models.GetSpaceFileUrlRequest,
+    ) -> dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.ListGroupStaffMembersHeaders()
-        return self.list_group_staff_members_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.GetSpaceFileUrlHeaders()
+        return self.get_space_file_url_with_options(request, headers, runtime)
 
-    async def list_group_staff_members_async(
+    async def get_space_file_url_async(
         self,
-        request: dingtalkimpaas__1__0_models.ListGroupStaffMembersRequest,
-    ) -> dingtalkimpaas__1__0_models.ListGroupStaffMembersResponse:
+        request: dingtalkimpaas__1__0_models.GetSpaceFileUrlRequest,
+    ) -> dingtalkimpaas__1__0_models.GetSpaceFileUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.ListGroupStaffMembersHeaders()
-        return await self.list_group_staff_members_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.GetSpaceFileUrlHeaders()
+        return await self.get_space_file_url_with_options_async(request, headers, runtime)
 
     def list_group_staff_members_with_options(
         self,
@@ -814,9 +1024,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ListGroupStaffMembers',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/staffMemers/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.ListGroupStaffMembersResponse(),
-            self.do_roarequest('ListGroupStaffMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/staffMemers/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_group_staff_members_with_options_async(
@@ -838,26 +1059,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ListGroupStaffMembers',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/staffMemers/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.ListGroupStaffMembersResponse(),
-            await self.do_roarequest_async('ListGroupStaffMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/staffMemers/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_batch_send_result(
+    def list_group_staff_members(
         self,
-        request: dingtalkimpaas__1__0_models.QueryBatchSendResultRequest,
-    ) -> dingtalkimpaas__1__0_models.QueryBatchSendResultResponse:
+        request: dingtalkimpaas__1__0_models.ListGroupStaffMembersRequest,
+    ) -> dingtalkimpaas__1__0_models.ListGroupStaffMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.QueryBatchSendResultHeaders()
-        return self.query_batch_send_result_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.ListGroupStaffMembersHeaders()
+        return self.list_group_staff_members_with_options(request, headers, runtime)
 
-    async def query_batch_send_result_async(
+    async def list_group_staff_members_async(
         self,
-        request: dingtalkimpaas__1__0_models.QueryBatchSendResultRequest,
-    ) -> dingtalkimpaas__1__0_models.QueryBatchSendResultResponse:
+        request: dingtalkimpaas__1__0_models.ListGroupStaffMembersRequest,
+    ) -> dingtalkimpaas__1__0_models.ListGroupStaffMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.QueryBatchSendResultHeaders()
-        return await self.query_batch_send_result_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.ListGroupStaffMembersHeaders()
+        return await self.list_group_staff_members_with_options_async(request, headers, runtime)
 
     def query_batch_send_result_with_options(
         self,
@@ -880,9 +1112,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryBatchSendResult',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/batchSendResults',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.QueryBatchSendResultResponse(),
-            self.do_roarequest('QueryBatchSendResult', 'impaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/impaas/interconnections/messages/batchSendResults', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_batch_send_result_with_options_async(
@@ -906,26 +1149,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryBatchSendResult',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/batchSendResults',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.QueryBatchSendResultResponse(),
-            await self.do_roarequest_async('QueryBatchSendResult', 'impaas_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/impaas/interconnections/messages/batchSendResults', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def read_message(
+    def query_batch_send_result(
         self,
-        request: dingtalkimpaas__1__0_models.ReadMessageRequest,
-    ) -> dingtalkimpaas__1__0_models.ReadMessageResponse:
+        request: dingtalkimpaas__1__0_models.QueryBatchSendResultRequest,
+    ) -> dingtalkimpaas__1__0_models.QueryBatchSendResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.ReadMessageHeaders()
-        return self.read_message_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.QueryBatchSendResultHeaders()
+        return self.query_batch_send_result_with_options(request, headers, runtime)
 
-    async def read_message_async(
+    async def query_batch_send_result_async(
         self,
-        request: dingtalkimpaas__1__0_models.ReadMessageRequest,
-    ) -> dingtalkimpaas__1__0_models.ReadMessageResponse:
+        request: dingtalkimpaas__1__0_models.QueryBatchSendResultRequest,
+    ) -> dingtalkimpaas__1__0_models.QueryBatchSendResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.ReadMessageHeaders()
-        return await self.read_message_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.QueryBatchSendResultHeaders()
+        return await self.query_batch_send_result_with_options_async(request, headers, runtime)
 
     def read_message_with_options(
         self,
@@ -950,9 +1204,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReadMessage',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/read',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.ReadMessageResponse(),
-            self.do_roarequest('ReadMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/read', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def read_message_with_options_async(
@@ -978,26 +1243,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReadMessage',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/read',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.ReadMessageResponse(),
-            await self.do_roarequest_async('ReadMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/read', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def recall_message(
+    def read_message(
         self,
-        request: dingtalkimpaas__1__0_models.RecallMessageRequest,
-    ) -> dingtalkimpaas__1__0_models.RecallMessageResponse:
+        request: dingtalkimpaas__1__0_models.ReadMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.ReadMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.RecallMessageHeaders()
-        return self.recall_message_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.ReadMessageHeaders()
+        return self.read_message_with_options(request, headers, runtime)
 
-    async def recall_message_async(
+    async def read_message_async(
         self,
-        request: dingtalkimpaas__1__0_models.RecallMessageRequest,
-    ) -> dingtalkimpaas__1__0_models.RecallMessageResponse:
+        request: dingtalkimpaas__1__0_models.ReadMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.ReadMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.RecallMessageHeaders()
-        return await self.recall_message_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.ReadMessageHeaders()
+        return await self.read_message_with_options_async(request, headers, runtime)
 
     def recall_message_with_options(
         self,
@@ -1024,9 +1300,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RecallMessage',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.RecallMessageResponse(),
-            self.do_roarequest('RecallMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/recall', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def recall_message_with_options_async(
@@ -1054,26 +1341,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RecallMessage',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.RecallMessageResponse(),
-            await self.do_roarequest_async('RecallMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/recall', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def remove_group_members(
+    def recall_message(
         self,
-        request: dingtalkimpaas__1__0_models.RemoveGroupMembersRequest,
-    ) -> dingtalkimpaas__1__0_models.RemoveGroupMembersResponse:
+        request: dingtalkimpaas__1__0_models.RecallMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.RecallMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.RemoveGroupMembersHeaders()
-        return self.remove_group_members_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.RecallMessageHeaders()
+        return self.recall_message_with_options(request, headers, runtime)
 
-    async def remove_group_members_async(
+    async def recall_message_async(
         self,
-        request: dingtalkimpaas__1__0_models.RemoveGroupMembersRequest,
-    ) -> dingtalkimpaas__1__0_models.RemoveGroupMembersResponse:
+        request: dingtalkimpaas__1__0_models.RecallMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.RecallMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.RemoveGroupMembersHeaders()
-        return await self.remove_group_members_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.RecallMessageHeaders()
+        return await self.recall_message_with_options_async(request, headers, runtime)
 
     def remove_group_members_with_options(
         self,
@@ -1100,9 +1398,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RemoveGroupMembers',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/members/batchRemove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.RemoveGroupMembersResponse(),
-            self.do_roarequest('RemoveGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/members/batchRemove', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def remove_group_members_with_options_async(
@@ -1130,26 +1439,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RemoveGroupMembers',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/members/batchRemove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.RemoveGroupMembersResponse(),
-            await self.do_roarequest_async('RemoveGroupMembers', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/groups/members/batchRemove', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_message(
+    def remove_group_members(
         self,
-        request: dingtalkimpaas__1__0_models.SendMessageRequest,
-    ) -> dingtalkimpaas__1__0_models.SendMessageResponse:
+        request: dingtalkimpaas__1__0_models.RemoveGroupMembersRequest,
+    ) -> dingtalkimpaas__1__0_models.RemoveGroupMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.SendMessageHeaders()
-        return self.send_message_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.RemoveGroupMembersHeaders()
+        return self.remove_group_members_with_options(request, headers, runtime)
 
-    async def send_message_async(
+    async def remove_group_members_async(
         self,
-        request: dingtalkimpaas__1__0_models.SendMessageRequest,
-    ) -> dingtalkimpaas__1__0_models.SendMessageResponse:
+        request: dingtalkimpaas__1__0_models.RemoveGroupMembersRequest,
+    ) -> dingtalkimpaas__1__0_models.RemoveGroupMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.SendMessageHeaders()
-        return await self.send_message_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.RemoveGroupMembersHeaders()
+        return await self.remove_group_members_with_options_async(request, headers, runtime)
 
     def send_message_with_options(
         self,
@@ -1182,9 +1502,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendMessage',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.SendMessageResponse(),
-            self.do_roarequest('SendMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_message_with_options_async(
@@ -1218,26 +1549,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendMessage',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.SendMessageResponse(),
-            await self.do_roarequest_async('SendMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/messages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_robot_message(
+    def send_message(
         self,
-        request: dingtalkimpaas__1__0_models.SendRobotMessageRequest,
-    ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
+        request: dingtalkimpaas__1__0_models.SendMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.SendMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.SendRobotMessageHeaders()
-        return self.send_robot_message_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.SendMessageHeaders()
+        return self.send_message_with_options(request, headers, runtime)
 
-    async def send_robot_message_async(
+    async def send_message_async(
         self,
-        request: dingtalkimpaas__1__0_models.SendRobotMessageRequest,
-    ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
+        request: dingtalkimpaas__1__0_models.SendMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.SendMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.SendRobotMessageHeaders()
-        return await self.send_robot_message_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.SendMessageHeaders()
+        return await self.send_message_with_options_async(request, headers, runtime)
 
     def send_robot_message_with_options(
         self,
@@ -1286,9 +1628,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendRobotMessage',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/robots/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.SendRobotMessageResponse(),
-            self.do_roarequest('SendRobotMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/robots/messages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_robot_message_with_options_async(
@@ -1338,26 +1691,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendRobotMessage',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/robots/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.SendRobotMessageResponse(),
-            await self.do_roarequest_async('SendRobotMessage', 'impaas_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/impaas/interconnections/robots/messages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_name(
+    def send_robot_message(
         self,
-        request: dingtalkimpaas__1__0_models.UpdateGroupNameRequest,
-    ) -> dingtalkimpaas__1__0_models.UpdateGroupNameResponse:
+        request: dingtalkimpaas__1__0_models.SendRobotMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.UpdateGroupNameHeaders()
-        return self.update_group_name_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.SendRobotMessageHeaders()
+        return self.send_robot_message_with_options(request, headers, runtime)
 
-    async def update_group_name_async(
+    async def send_robot_message_async(
         self,
-        request: dingtalkimpaas__1__0_models.UpdateGroupNameRequest,
-    ) -> dingtalkimpaas__1__0_models.UpdateGroupNameResponse:
+        request: dingtalkimpaas__1__0_models.SendRobotMessageRequest,
+    ) -> dingtalkimpaas__1__0_models.SendRobotMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.UpdateGroupNameHeaders()
-        return await self.update_group_name_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.SendRobotMessageHeaders()
+        return await self.send_robot_message_with_options_async(request, headers, runtime)
 
     def update_group_name_with_options(
         self,
@@ -1384,9 +1748,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupName',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/names',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.UpdateGroupNameResponse(),
-            self.do_roarequest('UpdateGroupName', 'impaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/impaas/interconnections/groups/names', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_name_with_options_async(
@@ -1414,26 +1789,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupName',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/names',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.UpdateGroupNameResponse(),
-            await self.do_roarequest_async('UpdateGroupName', 'impaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/impaas/interconnections/groups/names', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_owner(
+    def update_group_name(
         self,
-        request: dingtalkimpaas__1__0_models.UpdateGroupOwnerRequest,
-    ) -> dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse:
+        request: dingtalkimpaas__1__0_models.UpdateGroupNameRequest,
+    ) -> dingtalkimpaas__1__0_models.UpdateGroupNameResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.UpdateGroupOwnerHeaders()
-        return self.update_group_owner_with_options(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.UpdateGroupNameHeaders()
+        return self.update_group_name_with_options(request, headers, runtime)
 
-    async def update_group_owner_async(
+    async def update_group_name_async(
         self,
-        request: dingtalkimpaas__1__0_models.UpdateGroupOwnerRequest,
-    ) -> dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse:
+        request: dingtalkimpaas__1__0_models.UpdateGroupNameRequest,
+    ) -> dingtalkimpaas__1__0_models.UpdateGroupNameResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkimpaas__1__0_models.UpdateGroupOwnerHeaders()
-        return await self.update_group_owner_with_options_async(request, headers, runtime)
+        headers = dingtalkimpaas__1__0_models.UpdateGroupNameHeaders()
+        return await self.update_group_name_with_options_async(request, headers, runtime)
 
     def update_group_owner_with_options(
         self,
@@ -1458,9 +1844,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupOwner',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/owners',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse(),
-            self.do_roarequest('UpdateGroupOwner', 'impaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/impaas/interconnections/groups/owners', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_owner_with_options_async(
@@ -1486,7 +1883,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupOwner',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/groups/owners',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse(),
-            await self.do_roarequest_async('UpdateGroupOwner', 'impaas_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/impaas/interconnections/groups/owners', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_group_owner(
+        self,
+        request: dingtalkimpaas__1__0_models.UpdateGroupOwnerRequest,
+    ) -> dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.UpdateGroupOwnerHeaders()
+        return self.update_group_owner_with_options(request, headers, runtime)
+
+    async def update_group_owner_async(
+        self,
+        request: dingtalkimpaas__1__0_models.UpdateGroupOwnerRequest,
+    ) -> dingtalkimpaas__1__0_models.UpdateGroupOwnerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.UpdateGroupOwnerHeaders()
+        return await self.update_group_owner_with_options_async(request, headers, runtime)

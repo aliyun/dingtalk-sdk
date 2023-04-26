@@ -24,7 +24,7 @@ from setuptools import setup, find_packages
 """
 setup module for alibabacloud_dingtalk.
 
-Created on 21/04/2023
+Created on 26/04/2023
 
 @author: Alibaba Cloud SDK
 """
@@ -40,7 +40,9 @@ REQUIRES = [
     "alibabacloud_tea_openapi>=0.3.6, <1.0.0",
     "alibabacloud_tea_util>=0.3.8, <1.0.0",
     "alibabacloud_openapi_util>=0.2.1, <1.0.0",
-    "alibabacloud_endpoint_util>=0.0.3, <1.0.0"
+    "alibabacloud_endpoint_util>=0.0.3, <1.0.0",
+    "alibabacloud_gateway_spi>=0.0.1, <1.0.0",
+    "alibabacloud_gateway_dingtalk>=1.0.2, <2.0.0"
 ]
 
 LONG_DESCRIPTION = ''

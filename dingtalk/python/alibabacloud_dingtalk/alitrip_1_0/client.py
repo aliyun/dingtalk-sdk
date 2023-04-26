@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.alitrip_1_0 import models as dingtalkalitrip__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_city_car_apply(
-        self,
-        request: dingtalkalitrip__1__0_models.AddCityCarApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.AddCityCarApplyResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.AddCityCarApplyHeaders()
-        return self.add_city_car_apply_with_options(request, headers, runtime)
-
-    async def add_city_car_apply_async(
-        self,
-        request: dingtalkalitrip__1__0_models.AddCityCarApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.AddCityCarApplyResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.AddCityCarApplyHeaders()
-        return await self.add_city_car_apply_with_options_async(request, headers, runtime)
 
     def add_city_car_apply_with_options(
         self,
@@ -88,9 +78,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddCityCarApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/cityCarApprovals',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.AddCityCarApplyResponse(),
-            self.do_roarequest('AddCityCarApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_city_car_apply_with_options_async(
@@ -142,26 +143,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddCityCarApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/cityCarApprovals',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.AddCityCarApplyResponse(),
-            await self.do_roarequest_async('AddCityCarApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def approve_city_car_apply(
+    def add_city_car_apply(
         self,
-        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        request: dingtalkalitrip__1__0_models.AddCityCarApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.AddCityCarApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
-        return self.approve_city_car_apply_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.AddCityCarApplyHeaders()
+        return self.add_city_car_apply_with_options(request, headers, runtime)
 
-    async def approve_city_car_apply_async(
+    async def add_city_car_apply_async(
         self,
-        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        request: dingtalkalitrip__1__0_models.AddCityCarApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.AddCityCarApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
-        return await self.approve_city_car_apply_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.AddCityCarApplyHeaders()
+        return await self.add_city_car_apply_with_options_async(request, headers, runtime)
 
     def approve_city_car_apply_with_options(
         self,
@@ -192,9 +204,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ApproveCityCarApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/cityCarApprovals',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse(),
-            self.do_roarequest('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def approve_city_car_apply_with_options_async(
@@ -226,26 +249,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ApproveCityCarApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/cityCarApprovals',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse(),
-            await self.do_roarequest_async('ApproveCityCarApply', 'alitrip_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def bill_settement_btrip_train(
+    def approve_city_car_apply(
         self,
-        request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
-    ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders()
-        return self.bill_settement_btrip_train_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
+        return self.approve_city_car_apply_with_options(request, headers, runtime)
 
-    async def bill_settement_btrip_train_async(
+    async def approve_city_car_apply_async(
         self,
-        request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
-    ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders()
-        return await self.bill_settement_btrip_train_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
+        return await self.approve_city_car_apply_with_options_async(request, headers, runtime)
 
     def bill_settement_btrip_train_with_options(
         self,
@@ -276,9 +310,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BillSettementBtripTrain',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/billSettlements/btripTrains',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse(),
-            self.do_roarequest('BillSettementBtripTrain', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/btripTrains', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def bill_settement_btrip_train_with_options_async(
@@ -310,26 +355,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BillSettementBtripTrain',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/billSettlements/btripTrains',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse(),
-            await self.do_roarequest_async('BillSettementBtripTrain', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/btripTrains', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def bill_settement_car(
+    def bill_settement_btrip_train(
         self,
-        request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
-    ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.BillSettementCarHeaders()
-        return self.bill_settement_car_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders()
+        return self.bill_settement_btrip_train_with_options(request, headers, runtime)
 
-    async def bill_settement_car_async(
+    async def bill_settement_btrip_train_async(
         self,
-        request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
-    ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.BillSettementCarHeaders()
-        return await self.bill_settement_car_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders()
+        return await self.bill_settement_btrip_train_with_options_async(request, headers, runtime)
 
     def bill_settement_car_with_options(
         self,
@@ -360,9 +416,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BillSettementCar',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/billSettlements/cars',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.BillSettementCarResponse(),
-            self.do_roarequest('BillSettementCar', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/cars', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def bill_settement_car_with_options_async(
@@ -394,26 +461,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BillSettementCar',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/billSettlements/cars',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.BillSettementCarResponse(),
-            await self.do_roarequest_async('BillSettementCar', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/cars', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def bill_settement_flight(
+    def bill_settement_car(
         self,
-        request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
-    ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.BillSettementFlightHeaders()
-        return self.bill_settement_flight_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.BillSettementCarHeaders()
+        return self.bill_settement_car_with_options(request, headers, runtime)
 
-    async def bill_settement_flight_async(
+    async def bill_settement_car_async(
         self,
-        request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
-    ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.BillSettementFlightHeaders()
-        return await self.bill_settement_flight_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.BillSettementCarHeaders()
+        return await self.bill_settement_car_with_options_async(request, headers, runtime)
 
     def bill_settement_flight_with_options(
         self,
@@ -444,9 +522,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BillSettementFlight',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/billSettlements/flights',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.BillSettementFlightResponse(),
-            self.do_roarequest('BillSettementFlight', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/flights', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def bill_settement_flight_with_options_async(
@@ -478,26 +567,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BillSettementFlight',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/billSettlements/flights',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.BillSettementFlightResponse(),
-            await self.do_roarequest_async('BillSettementFlight', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/flights', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def bill_settement_hotel(
+    def bill_settement_flight(
         self,
-        request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
-    ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.BillSettementHotelHeaders()
-        return self.bill_settement_hotel_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.BillSettementFlightHeaders()
+        return self.bill_settement_flight_with_options(request, headers, runtime)
 
-    async def bill_settement_hotel_async(
+    async def bill_settement_flight_async(
         self,
-        request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
-    ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.BillSettementHotelHeaders()
-        return await self.bill_settement_hotel_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.BillSettementFlightHeaders()
+        return await self.bill_settement_flight_with_options_async(request, headers, runtime)
 
     def bill_settement_hotel_with_options(
         self,
@@ -528,9 +628,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BillSettementHotel',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/billSettlements/hotels',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.BillSettementHotelResponse(),
-            self.do_roarequest('BillSettementHotel', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/hotels', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def bill_settement_hotel_with_options_async(
@@ -562,26 +673,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='BillSettementHotel',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/billSettlements/hotels',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.BillSettementHotelResponse(),
-            await self.do_roarequest_async('BillSettementHotel', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/billSettlements/hotels', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_flight_exceed_apply(
+    def bill_settement_hotel(
         self,
-        request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders()
-        return self.get_flight_exceed_apply_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.BillSettementHotelHeaders()
+        return self.bill_settement_hotel_with_options(request, headers, runtime)
 
-    async def get_flight_exceed_apply_async(
+    async def bill_settement_hotel_async(
         self,
-        request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
+    ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders()
-        return await self.get_flight_exceed_apply_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.BillSettementHotelHeaders()
+        return await self.bill_settement_hotel_with_options_async(request, headers, runtime)
 
     def get_flight_exceed_apply_with_options(
         self,
@@ -604,9 +726,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFlightExceedApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/exceedapply/getFlight',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse(),
-            self.do_roarequest('GetFlightExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getFlight', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_flight_exceed_apply_with_options_async(
@@ -630,26 +763,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFlightExceedApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/exceedapply/getFlight',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse(),
-            await self.do_roarequest_async('GetFlightExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getFlight', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_hotel_exceed_apply(
+    def get_flight_exceed_apply(
         self,
-        request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
+        request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders()
-        return self.get_hotel_exceed_apply_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders()
+        return self.get_flight_exceed_apply_with_options(request, headers, runtime)
 
-    async def get_hotel_exceed_apply_async(
+    async def get_flight_exceed_apply_async(
         self,
-        request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
+        request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders()
-        return await self.get_hotel_exceed_apply_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders()
+        return await self.get_flight_exceed_apply_with_options_async(request, headers, runtime)
 
     def get_hotel_exceed_apply_with_options(
         self,
@@ -672,9 +816,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetHotelExceedApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/exceedapply/getHotel',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse(),
-            self.do_roarequest('GetHotelExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getHotel', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_hotel_exceed_apply_with_options_async(
@@ -698,26 +853,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetHotelExceedApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/exceedapply/getHotel',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse(),
-            await self.do_roarequest_async('GetHotelExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getHotel', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_train_exceed_apply(
+    def get_hotel_exceed_apply(
         self,
-        request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders()
-        return self.get_train_exceed_apply_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders()
+        return self.get_hotel_exceed_apply_with_options(request, headers, runtime)
 
-    async def get_train_exceed_apply_async(
+    async def get_hotel_exceed_apply_async(
         self,
-        request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders()
-        return await self.get_train_exceed_apply_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders()
+        return await self.get_hotel_exceed_apply_with_options_async(request, headers, runtime)
 
     def get_train_exceed_apply_with_options(
         self,
@@ -740,9 +906,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetTrainExceedApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/exceedapply/getTrain',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse(),
-            self.do_roarequest('GetTrainExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getTrain', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_train_exceed_apply_with_options_async(
@@ -766,26 +943,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetTrainExceedApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/exceedapply/getTrain',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse(),
-            await self.do_roarequest_async('GetTrainExceedApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/exceedapply/getTrain', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_city_car_apply(
+    def get_train_exceed_apply(
         self,
-        request: dingtalkalitrip__1__0_models.QueryCityCarApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.QueryCityCarApplyResponse:
+        request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.QueryCityCarApplyHeaders()
-        return self.query_city_car_apply_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders()
+        return self.get_train_exceed_apply_with_options(request, headers, runtime)
 
-    async def query_city_car_apply_async(
+    async def get_train_exceed_apply_async(
         self,
-        request: dingtalkalitrip__1__0_models.QueryCityCarApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.QueryCityCarApplyResponse:
+        request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.QueryCityCarApplyHeaders()
-        return await self.query_city_car_apply_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders()
+        return await self.get_train_exceed_apply_with_options_async(request, headers, runtime)
 
     def query_city_car_apply_with_options(
         self,
@@ -818,9 +1006,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCityCarApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/cityCarApprovals',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.QueryCityCarApplyResponse(),
-            self.do_roarequest('QueryCityCarApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_city_car_apply_with_options_async(
@@ -854,26 +1053,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCityCarApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/cityCarApprovals',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.QueryCityCarApplyResponse(),
-            await self.do_roarequest_async('QueryCityCarApply', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/cityCarApprovals', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_union_order(
+    def query_city_car_apply(
         self,
-        request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
-    ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        request: dingtalkalitrip__1__0_models.QueryCityCarApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.QueryCityCarApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.QueryUnionOrderHeaders()
-        return self.query_union_order_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.QueryCityCarApplyHeaders()
+        return self.query_city_car_apply_with_options(request, headers, runtime)
 
-    async def query_union_order_async(
+    async def query_city_car_apply_async(
         self,
-        request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
-    ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        request: dingtalkalitrip__1__0_models.QueryCityCarApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.QueryCityCarApplyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.QueryUnionOrderHeaders()
-        return await self.query_union_order_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.QueryCityCarApplyHeaders()
+        return await self.query_city_car_apply_with_options_async(request, headers, runtime)
 
     def query_union_order_with_options(
         self,
@@ -898,9 +1108,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryUnionOrder',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/unionOrders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.QueryUnionOrderResponse(),
-            self.do_roarequest('QueryUnionOrder', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/unionOrders', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_union_order_with_options_async(
@@ -926,26 +1147,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryUnionOrder',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/unionOrders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.QueryUnionOrderResponse(),
-            await self.do_roarequest_async('QueryUnionOrder', 'alitrip_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/alitrip/unionOrders', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def sync_exceed_apply(
+    def query_union_order(
         self,
-        request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
+    ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.SyncExceedApplyHeaders()
-        return self.sync_exceed_apply_with_options(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.QueryUnionOrderHeaders()
+        return self.query_union_order_with_options(request, headers, runtime)
 
-    async def sync_exceed_apply_async(
+    async def query_union_order_async(
         self,
-        request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
-    ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
+    ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkalitrip__1__0_models.SyncExceedApplyHeaders()
-        return await self.sync_exceed_apply_with_options_async(request, headers, runtime)
+        headers = dingtalkalitrip__1__0_models.QueryUnionOrderHeaders()
+        return await self.query_union_order_with_options_async(request, headers, runtime)
 
     def sync_exceed_apply_with_options(
         self,
@@ -976,9 +1208,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SyncExceedApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/exceedapply/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.SyncExceedApplyResponse(),
-            self.do_roarequest('SyncExceedApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/alitrip/exceedapply/sync', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def sync_exceed_apply_with_options_async(
@@ -1010,7 +1253,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SyncExceedApply',
+            version='alitrip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/alitrip/exceedapply/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkalitrip__1__0_models.SyncExceedApplyResponse(),
-            await self.do_roarequest_async('SyncExceedApply', 'alitrip_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/alitrip/exceedapply/sync', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def sync_exceed_apply(
+        self,
+        request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.SyncExceedApplyHeaders()
+        return self.sync_exceed_apply_with_options(request, headers, runtime)
+
+    async def sync_exceed_apply_async(
+        self,
+        request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
+    ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalitrip__1__0_models.SyncExceedApplyHeaders()
+        return await self.sync_exceed_apply_with_options_async(request, headers, runtime)

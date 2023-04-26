@@ -44,11 +44,8 @@ class CreateFlashMeetingRequest(TeaModel):
         event_id: str = None,
         title: str = None,
     ):
-        # 创建人union id
         self.creator = creator
-        # 日程id
         self.event_id = event_id
-        # 钉闪会名称
         self.title = title
 
     def validate(self):
@@ -88,15 +85,10 @@ class CreateFlashMeetingResponseBody(TeaModel):
         title: str = None,
         url: str = None,
     ):
-        # 闪会结束时间
         self.end_time = end_time
-        # 闪会的key
         self.flash_meeting_key = flash_meeting_key
-        # 闪会开始时间
         self.start_time = start_time
-        # 闪会标题
         self.title = title
-        # 闪会url
         self.url = url
 
     def validate(self):
@@ -139,13 +131,16 @@ class CreateFlashMeetingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateFlashMeetingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -158,6 +153,8 @@ class CreateFlashMeetingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -166,6 +163,8 @@ class CreateFlashMeetingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateFlashMeetingResponseBody()
             self.body = temp_model.from_map(m['body'])

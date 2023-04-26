@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.rcs_call_1_0 import models as dingtalkrcs_call__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def run_call_user(
-        self,
-        request: dingtalkrcs_call__1__0_models.RunCallUserRequest,
-    ) -> dingtalkrcs_call__1__0_models.RunCallUserResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrcs_call__1__0_models.RunCallUserHeaders()
-        return self.run_call_user_with_options(request, headers, runtime)
-
-    async def run_call_user_async(
-        self,
-        request: dingtalkrcs_call__1__0_models.RunCallUserRequest,
-    ) -> dingtalkrcs_call__1__0_models.RunCallUserResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkrcs_call__1__0_models.RunCallUserHeaders()
-        return await self.run_call_user_with_options_async(request, headers, runtime)
 
     def run_call_user_with_options(
         self,
@@ -64,9 +54,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='RunCallUser',
+            version='rcsCall_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rcsCall/users/call',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrcs_call__1__0_models.RunCallUserResponse(),
-            self.do_roarequest('RunCallUser', 'rcsCall_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rcsCall/users/call', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def run_call_user_with_options_async(
@@ -94,7 +95,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='RunCallUser',
+            version='rcsCall_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rcsCall/users/call',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkrcs_call__1__0_models.RunCallUserResponse(),
-            await self.do_roarequest_async('RunCallUser', 'rcsCall_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/rcsCall/users/call', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def run_call_user(
+        self,
+        request: dingtalkrcs_call__1__0_models.RunCallUserRequest,
+    ) -> dingtalkrcs_call__1__0_models.RunCallUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrcs_call__1__0_models.RunCallUserHeaders()
+        return self.run_call_user_with_options(request, headers, runtime)
+
+    async def run_call_user_async(
+        self,
+        request: dingtalkrcs_call__1__0_models.RunCallUserRequest,
+    ) -> dingtalkrcs_call__1__0_models.RunCallUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrcs_call__1__0_models.RunCallUserHeaders()
+        return await self.run_call_user_with_options_async(request, headers, runtime)

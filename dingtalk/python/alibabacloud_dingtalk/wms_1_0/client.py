@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.wms_1_0 import models as dingtalkwms__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def query_goods_list(
-        self,
-        request: dingtalkwms__1__0_models.QueryGoodsListRequest,
-    ) -> dingtalkwms__1__0_models.QueryGoodsListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkwms__1__0_models.QueryGoodsListHeaders()
-        return self.query_goods_list_with_options(request, headers, runtime)
-
-    async def query_goods_list_async(
-        self,
-        request: dingtalkwms__1__0_models.QueryGoodsListRequest,
-    ) -> dingtalkwms__1__0_models.QueryGoodsListResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkwms__1__0_models.QueryGoodsListHeaders()
-        return await self.query_goods_list_with_options_async(request, headers, runtime)
 
     def query_goods_list_with_options(
         self,
@@ -64,9 +54,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGoodsList',
+            version='wms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/wms/goods',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkwms__1__0_models.QueryGoodsListResponse(),
-            self.do_roarequest('QueryGoodsList', 'wms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/wms/goods', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_goods_list_with_options_async(
@@ -94,7 +95,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGoodsList',
+            version='wms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/wms/goods',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkwms__1__0_models.QueryGoodsListResponse(),
-            await self.do_roarequest_async('QueryGoodsList', 'wms_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/wms/goods', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def query_goods_list(
+        self,
+        request: dingtalkwms__1__0_models.QueryGoodsListRequest,
+    ) -> dingtalkwms__1__0_models.QueryGoodsListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwms__1__0_models.QueryGoodsListHeaders()
+        return self.query_goods_list_with_options(request, headers, runtime)
+
+    async def query_goods_list_async(
+        self,
+        request: dingtalkwms__1__0_models.QueryGoodsListRequest,
+    ) -> dingtalkwms__1__0_models.QueryGoodsListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwms__1__0_models.QueryGoodsListHeaders()
+        return await self.query_goods_list_with_options_async(request, headers, runtime)

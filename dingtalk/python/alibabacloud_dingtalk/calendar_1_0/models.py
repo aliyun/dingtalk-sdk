@@ -109,11 +109,14 @@ class AddAttendeeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -123,12 +126,16 @@ class AddAttendeeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -258,13 +265,16 @@ class AddMeetingRoomsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddMeetingRoomsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -277,6 +287,8 @@ class AddMeetingRoomsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -285,6 +297,8 @@ class AddMeetingRoomsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddMeetingRoomsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -329,7 +343,6 @@ class CheckInResponseBody(TeaModel):
         self,
         check_in_time: int = None,
     ):
-        # 签到时间戳
         self.check_in_time = check_in_time
 
     def validate(self):
@@ -356,13 +369,16 @@ class CheckInResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CheckInResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -375,6 +391,8 @@ class CheckInResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -383,6 +401,8 @@ class CheckInResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CheckInResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -454,7 +474,6 @@ class ConvertLegacyEventIdResponseBody(TeaModel):
         self,
         legacy_event_id_map: Dict[str, Any] = None,
     ):
-        # legacyEventIdMap
         self.legacy_event_id_map = legacy_event_id_map
 
     def validate(self):
@@ -481,13 +500,16 @@ class ConvertLegacyEventIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ConvertLegacyEventIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -500,6 +522,8 @@ class ConvertLegacyEventIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -508,6 +532,8 @@ class ConvertLegacyEventIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ConvertLegacyEventIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -553,9 +579,7 @@ class CreateAclsRequestScope(TeaModel):
         scope_type: str = None,
         user_id: str = None,
     ):
-        # 权限类型
         self.scope_type = scope_type
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -589,11 +613,8 @@ class CreateAclsRequest(TeaModel):
         scope: CreateAclsRequestScope = None,
         send_msg: bool = None,
     ):
-        # 对日历的访问权限
         self.privilege = privilege
-        # 权限范围
         self.scope = scope
-        # 是否向授权人发消息
         self.send_msg = send_msg
 
     def validate(self):
@@ -632,9 +653,7 @@ class CreateAclsResponseBodyScope(TeaModel):
         scope_type: str = None,
         user_id: str = None,
     ):
-        # 权限类型
         self.scope_type = scope_type
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -668,11 +687,8 @@ class CreateAclsResponseBody(TeaModel):
         privilege: str = None,
         scope: CreateAclsResponseBodyScope = None,
     ):
-        # acl资源ID
         self.acl_id = acl_id
-        # 对日历的访问权限
         self.privilege = privilege
-        # 权限范围
         self.scope = scope
 
     def validate(self):
@@ -709,13 +725,16 @@ class CreateAclsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateAclsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -728,6 +747,8 @@ class CreateAclsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -736,6 +757,8 @@ class CreateAclsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateAclsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -815,11 +838,8 @@ class CreateEventRequestEnd(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 日程结束日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
         self.date = date
-        # 日程结束时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
         self.date_time = date_time
-        # 日程结束时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         self.time_zone = time_zone
 
     def validate(self):
@@ -917,8 +937,6 @@ class CreateEventRequestRecurrencePattern(TeaModel):
         self.days_of_week = days_of_week
         self.index = index
         self.interval = interval
-        # 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
-        # 
         self.type = type
 
     def validate(self):
@@ -1002,7 +1020,6 @@ class CreateEventRequestRecurrence(TeaModel):
         pattern: CreateEventRequestRecurrencePattern = None,
         range: CreateEventRequestRecurrenceRange = None,
     ):
-        # 循环规则
         self.pattern = pattern
         self.range = range
 
@@ -1075,11 +1092,8 @@ class CreateEventRequestStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
         self.date = date
-        # 日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
         self.date_time = date_time
-        # 日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
         self.time_zone = time_zone
 
     def validate(self):
@@ -1126,22 +1140,15 @@ class CreateEventRequest(TeaModel):
         summary: str = None,
     ):
         self.attendees = attendees
-        # 日程描述
         self.description = description
-        # 日程结束时间
         self.end = end
-        # 扩展信息
         self.extra = extra
-        # 是否为全天日程
         self.is_all_day = is_all_day
         self.location = location
         self.online_meeting_info = online_meeting_info
-        # 日程循环规则
         self.recurrence = recurrence
         self.reminders = reminders
-        # 日程开始时间
         self.start = start
-        # 日程标题
         self.summary = summary
 
     def validate(self):
@@ -1248,7 +1255,6 @@ class CreateEventResponseBodyAttendees(TeaModel):
         self.display_name = display_name
         self.id = id
         self.is_optional = is_optional
-        # 回复状态
         self.response_status = response_status
         self.self_ = self_
 
@@ -1407,10 +1413,8 @@ class CreateEventResponseBodyOrganizer(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
         self.id = id
-        # 回复状态
         self.response_status = response_status
         self.self_ = self_
 
@@ -1665,7 +1669,6 @@ class CreateEventResponseBody(TeaModel):
         update_time: str = None,
     ):
         self.attendees = attendees
-        # 创建时间
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -1676,10 +1679,8 @@ class CreateEventResponseBody(TeaModel):
         self.organizer = organizer
         self.recurrence = recurrence
         self.reminders = reminders
-        # 日程开始时间
         self.start = start
         self.summary = summary
-        # 更新时间
         self.update_time = update_time
 
     def validate(self):
@@ -1793,13 +1794,16 @@ class CreateEventResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateEventResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1812,6 +1816,8 @@ class CreateEventResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1820,6 +1826,8 @@ class CreateEventResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateEventResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1866,11 +1874,8 @@ class CreateSubscribedCalendarRequestSubscribeScope(TeaModel):
         open_conversation_ids: List[str] = None,
         union_ids: List[str] = None,
     ):
-        # 可订阅组织列表
         self.corp_ids = corp_ids
-        # 可订阅群组列表
         self.open_conversation_ids = open_conversation_ids
-        # 可订阅人员列表
         self.union_ids = union_ids
 
     def validate(self):
@@ -1909,13 +1914,9 @@ class CreateSubscribedCalendarRequest(TeaModel):
         name: str = None,
         subscribe_scope: CreateSubscribedCalendarRequestSubscribeScope = None,
     ):
-        # 日历介绍
         self.description = description
-        # 日历管理员列表
         self.managers = managers
-        # 日历名
         self.name = name
-        # 可订阅列表
         self.subscribe_scope = subscribe_scope
 
     def validate(self):
@@ -1957,7 +1958,6 @@ class CreateSubscribedCalendarResponseBody(TeaModel):
         self,
         calendar_id: str = None,
     ):
-        # 日历id
         self.calendar_id = calendar_id
 
     def validate(self):
@@ -1984,13 +1984,16 @@ class CreateSubscribedCalendarResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateSubscribedCalendarResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2003,6 +2006,8 @@ class CreateSubscribedCalendarResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2011,6 +2016,8 @@ class CreateSubscribedCalendarResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateSubscribedCalendarResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2054,11 +2061,14 @@ class DeleteAclResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -2068,12 +2078,16 @@ class DeleteAclResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -2114,11 +2128,14 @@ class DeleteEventResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -2128,12 +2145,16 @@ class DeleteEventResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -2201,13 +2222,16 @@ class DeleteSubscribedCalendarResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteSubscribedCalendarResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2220,6 +2244,8 @@ class DeleteSubscribedCalendarResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2228,6 +2254,8 @@ class DeleteSubscribedCalendarResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteSubscribedCalendarResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2242,7 +2270,6 @@ class GenerateCaldavAccountHeaders(TeaModel):
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
-        # 授权本次调用的用户id，该字段有值时认为本次调用已被授权访问该用户可以访问的所有数据
         self.ding_uid = ding_uid
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
@@ -2279,7 +2306,6 @@ class GenerateCaldavAccountRequest(TeaModel):
         self,
         device: str = None,
     ):
-        # 设备名称
         self.device = device
 
     def validate(self):
@@ -2345,13 +2371,16 @@ class GenerateCaldavAccountResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GenerateCaldavAccountResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2364,6 +2393,8 @@ class GenerateCaldavAccountResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2372,6 +2403,8 @@ class GenerateCaldavAccountResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GenerateCaldavAccountResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2416,7 +2449,6 @@ class GetEventRequest(TeaModel):
         self,
         max_attendees: int = None,
     ):
-        # 返回参与人，上限500人，默认为0
         self.max_attendees = max_attendees
 
     def validate(self):
@@ -2448,13 +2480,10 @@ class GetEventResponseBodyAttendees(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
         self.id = id
         self.is_optional = is_optional
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -2746,12 +2775,9 @@ class GetEventResponseBodyOrganizer(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
         self.id = id
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -2826,7 +2852,6 @@ class GetEventResponseBodyRecurrencePattern(TeaModel):
         self.days_of_week = days_of_week
         self.index = index
         self.interval = interval
-        # 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
         self.type = type
 
     def validate(self):
@@ -2874,7 +2899,6 @@ class GetEventResponseBodyRecurrenceRange(TeaModel):
     ):
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
-        # 范围类型(endDate, noEnd, numbered)
         self.type = type
 
     def validate(self):
@@ -2911,9 +2935,7 @@ class GetEventResponseBodyRecurrence(TeaModel):
         pattern: GetEventResponseBodyRecurrencePattern = None,
         range: GetEventResponseBodyRecurrenceRange = None,
     ):
-        # 重复模式
         self.pattern = pattern
-        # 重复范围
         self.range = range
 
     def validate(self):
@@ -2985,11 +3007,8 @@ class GetEventResponseBodyStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 日期，格式：yyyyMMdd
         self.date = date
-        # 时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -3046,15 +3065,11 @@ class GetEventResponseBody(TeaModel):
     ):
         self.attendees = attendees
         self.categories = categories
-        # 创建时间
         self.create_time = create_time
-        # 日程描述
         self.description = description
-        # 日程结束时间
         self.end = end
         self.extended_properties = extended_properties
         self.id = id
-        # 是否为全天日程
         self.is_all_day = is_all_day
         self.location = location
         self.meeting_rooms = meeting_rooms
@@ -3063,15 +3078,10 @@ class GetEventResponseBody(TeaModel):
         self.origin_start = origin_start
         self.recurrence = recurrence
         self.reminders = reminders
-        # 重复日程的主日程id，非重复日程为空
         self.series_master_id = series_master_id
-        # 日程开始时间
         self.start = start
-        # 日程状态
         self.status = status
-        # 日程标题
         self.summary = summary
-        # 更新时间
         self.update_time = update_time
 
     def validate(self):
@@ -3233,13 +3243,16 @@ class GetEventResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetEventResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3252,6 +3265,8 @@ class GetEventResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3260,6 +3275,8 @@ class GetEventResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetEventResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3306,11 +3323,8 @@ class GetMeetingRoomsScheduleRequest(TeaModel):
         room_ids: List[str] = None,
         start_time: str = None,
     ):
-        # 查询结束时间
         self.end_time = end_time
-        # 待查询的用户列表
         self.room_ids = room_ids
-        # 查询开始时间
         self.start_time = start_time
 
     def validate(self):
@@ -3347,9 +3361,7 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsEnd(Tea
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 结束时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 时间戳所属时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -3381,7 +3393,6 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganiz
         self,
         id: str = None,
     ):
-        # 组织者unionId。
         self.id = id
 
     def validate(self):
@@ -3410,9 +3421,7 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart(T
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 开始时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 所属时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -3448,15 +3457,10 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems(TeaMod
         start: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart = None,
         status: str = None,
     ):
-        # 结束时间，表示一个日期，或者一个带时区的时间戳
         self.end = end
-        # 日程id。
         self.event_id = event_id
-        # 日程组织者。
         self.organizer = organizer
-        # 开始时间，表示一个日期，或者一个带时区的时间戳
         self.start = start
-        # 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
         self.status = status
 
     def validate(self):
@@ -3510,9 +3514,7 @@ class GetMeetingRoomsScheduleResponseBodyScheduleInformation(TeaModel):
         room_id: str = None,
         schedule_items: List[GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems] = None,
     ):
-        # 异常描述
         self.error = error
-        # 用户userId
         self.room_id = room_id
         self.schedule_items = schedule_items
 
@@ -3557,7 +3559,6 @@ class GetMeetingRoomsScheduleResponseBody(TeaModel):
         self,
         schedule_information: List[GetMeetingRoomsScheduleResponseBodyScheduleInformation] = None,
     ):
-        # 闲忙信息
         self.schedule_information = schedule_information
 
     def validate(self):
@@ -3592,13 +3593,16 @@ class GetMeetingRoomsScheduleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetMeetingRoomsScheduleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3611,6 +3615,8 @@ class GetMeetingRoomsScheduleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3619,6 +3625,8 @@ class GetMeetingRoomsScheduleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMeetingRoomsScheduleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3665,11 +3673,8 @@ class GetScheduleRequest(TeaModel):
         start_time: str = None,
         user_ids: List[str] = None,
     ):
-        # 查询结束时间
         self.end_time = end_time
-        # 查询开始时间
         self.start_time = start_time
-        # 待查询的用户列表
         self.user_ids = user_ids
 
     def validate(self):
@@ -3707,11 +3712,8 @@ class GetScheduleResponseBodyScheduleInformationScheduleItemsEnd(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 结束日期
         self.date = date
-        # 结束时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 时间戳所属时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -3749,11 +3751,8 @@ class GetScheduleResponseBodyScheduleInformationScheduleItemsStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 开始日期
         self.date = date
-        # 开始时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 所属时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -3791,11 +3790,8 @@ class GetScheduleResponseBodyScheduleInformationScheduleItems(TeaModel):
         start: GetScheduleResponseBodyScheduleInformationScheduleItemsStart = None,
         status: str = None,
     ):
-        # 结束时间，表示一个日期，或者一个带时区的时间戳
         self.end = end
-        # 开始时间，表示一个日期，或者一个带时区的时间戳
         self.start = start
-        # 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
         self.status = status
 
     def validate(self):
@@ -3838,10 +3834,8 @@ class GetScheduleResponseBodyScheduleInformation(TeaModel):
         schedule_items: List[GetScheduleResponseBodyScheduleInformationScheduleItems] = None,
         user_id: str = None,
     ):
-        # 异常描述
         self.error = error
         self.schedule_items = schedule_items
-        # 用户userId
         self.user_id = user_id
 
     def validate(self):
@@ -3885,7 +3879,6 @@ class GetScheduleResponseBody(TeaModel):
         self,
         schedule_information: List[GetScheduleResponseBodyScheduleInformation] = None,
     ):
-        # 闲忙信息
         self.schedule_information = schedule_information
 
     def validate(self):
@@ -3920,13 +3913,16 @@ class GetScheduleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetScheduleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3939,6 +3935,8 @@ class GetScheduleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3947,6 +3945,8 @@ class GetScheduleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetScheduleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3993,10 +3993,8 @@ class GetSignInListRequest(TeaModel):
         next_token: str = None,
         type: str = None,
     ):
-        # 查询返回结果数（上限200）
         self.max_results = max_results
         self.next_token = next_token
-        # 签到信息类型（check_in，not_yet_check_in)
         self.type = type
 
     def validate(self):
@@ -4034,9 +4032,7 @@ class GetSignInListResponseBodyUsers(TeaModel):
         display_name: str = None,
         user_id: str = None,
     ):
-        # 签到时间
         self.check_in_time = check_in_time
-        # 用户名
         self.display_name = display_name
         self.user_id = user_id
 
@@ -4074,9 +4070,7 @@ class GetSignInListResponseBody(TeaModel):
         next_token: str = None,
         users: List[GetSignInListResponseBodyUsers] = None,
     ):
-        # 翻页token
         self.next_token = next_token
-        # 签到信息
         self.users = users
 
     def validate(self):
@@ -4115,13 +4109,16 @@ class GetSignInListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSignInListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4134,6 +4131,8 @@ class GetSignInListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4142,6 +4141,8 @@ class GetSignInListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSignInListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4188,10 +4189,8 @@ class GetSignOutListRequest(TeaModel):
         next_token: str = None,
         type: str = None,
     ):
-        # 查询返回结果数（上限200）
         self.max_results = max_results
         self.next_token = next_token
-        # 签到信息类型（sign_out，not_yet_sign_out)
         self.type = type
 
     def validate(self):
@@ -4229,9 +4228,7 @@ class GetSignOutListResponseBodyUsers(TeaModel):
         display_name: str = None,
         user_id: str = None,
     ):
-        # 签退时间
         self.check_out_time = check_out_time
-        # 用户名
         self.display_name = display_name
         self.user_id = user_id
 
@@ -4269,9 +4266,7 @@ class GetSignOutListResponseBody(TeaModel):
         next_token: str = None,
         users: List[GetSignOutListResponseBodyUsers] = None,
     ):
-        # 翻页token
         self.next_token = next_token
-        # 签退信息
         self.users = users
 
     def validate(self):
@@ -4310,13 +4305,16 @@ class GetSignOutListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSignOutListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4329,6 +4327,8 @@ class GetSignOutListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4337,6 +4337,8 @@ class GetSignOutListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSignOutListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4383,11 +4385,8 @@ class GetSubscribedCalendarResponseBodySubscribeScope(TeaModel):
         open_conversation_ids: List[str] = None,
         union_ids: List[str] = None,
     ):
-        # 可订阅组织
         self.corp_ids = corp_ids
-        # 可订阅群组
         self.open_conversation_ids = open_conversation_ids
-        # 可订阅用户
         self.union_ids = union_ids
 
     def validate(self):
@@ -4428,17 +4427,11 @@ class GetSubscribedCalendarResponseBody(TeaModel):
         name: str = None,
         subscribe_scope: GetSubscribedCalendarResponseBodySubscribeScope = None,
     ):
-        # 日历作者
         self.author = author
-        # 订阅日历id
         self.calendar_id = calendar_id
-        # 日历描述
         self.description = description
-        # 可管理人群
         self.managers = managers
-        # 日历名
         self.name = name
-        # 可订阅范围
         self.subscribe_scope = subscribe_scope
 
     def validate(self):
@@ -4487,13 +4480,16 @@ class GetSubscribedCalendarResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSubscribedCalendarResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4506,6 +4502,8 @@ class GetSubscribedCalendarResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4514,6 +4512,8 @@ class GetSubscribedCalendarResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSubscribedCalendarResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4559,9 +4559,7 @@ class ListAclsResponseBodyAclsScope(TeaModel):
         scope_type: str = None,
         user_id: str = None,
     ):
-        # 权限类型
         self.scope_type = scope_type
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -4595,11 +4593,8 @@ class ListAclsResponseBodyAcls(TeaModel):
         privilege: str = None,
         scope: ListAclsResponseBodyAclsScope = None,
     ):
-        # acl资源ID
         self.acl_id = acl_id
-        # 权限信息
         self.privilege = privilege
-        # 权限范围
         self.scope = scope
 
     def validate(self):
@@ -4637,7 +4632,6 @@ class ListAclsResponseBody(TeaModel):
         self,
         acls: List[ListAclsResponseBodyAcls] = None,
     ):
-        # 访问控制列表
         self.acls = acls
 
     def validate(self):
@@ -4672,13 +4666,16 @@ class ListAclsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListAclsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4691,6 +4688,8 @@ class ListAclsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4699,6 +4698,8 @@ class ListAclsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListAclsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4780,14 +4781,10 @@ class ListAttendeesResponseBodyAttendees(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
         self.is_optional = is_optional
-        # 回复状态
         self.response_status = response_status
-        # 是否当前用户
         self.self_ = self_
 
     def validate(self):
@@ -4832,9 +4829,7 @@ class ListAttendeesResponseBody(TeaModel):
         attendees: List[ListAttendeesResponseBodyAttendees] = None,
         next_token: str = None,
     ):
-        # 参与人
         self.attendees = attendees
-        # 翻页token
         self.next_token = next_token
 
     def validate(self):
@@ -4873,13 +4868,16 @@ class ListAttendeesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListAttendeesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4892,6 +4890,8 @@ class ListAttendeesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4900,6 +4900,8 @@ class ListAttendeesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListAttendeesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4950,19 +4952,12 @@ class ListCalendarsResponseBodyResponseCalendars(TeaModel):
         time_zone: str = None,
         type: str = None,
     ):
-        # 日历描述
         self.description = description
-        # Calendar资源的ETag，用于检测该Calendar以及内部的Event是否有被更新
         self.e_tag = e_tag
-        # 日历id
         self.id = id
-        # 权限信息
         self.privilege = privilege
-        # 日历标题
         self.summary = summary
-        # 时区
         self.time_zone = time_zone
-        # 日历类型
         self.type = type
 
     def validate(self):
@@ -5049,7 +5044,6 @@ class ListCalendarsResponseBody(TeaModel):
         self,
         response: ListCalendarsResponseBodyResponse = None,
     ):
-        # 日历信息
         self.response = response
 
     def validate(self):
@@ -5078,13 +5072,16 @@ class ListCalendarsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListCalendarsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5097,6 +5094,8 @@ class ListCalendarsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5105,6 +5104,8 @@ class ListCalendarsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListCalendarsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5156,20 +5157,13 @@ class ListEventsRequest(TeaModel):
         time_max: str = None,
         time_min: str = None,
     ):
-        # 每个日程的参与者查询个数，默认100，最大100
         self.max_attendees = max_attendees
-        # 返回的最大日程数，最大100个，默认100个
         self.max_results = max_results
-        # 查询翻页token
         self.next_token = next_token
         self.series_master_id = series_master_id
-        # 是否返回删除事件
         self.show_deleted = show_deleted
-        # 增量查询token
         self.sync_token = sync_token
-        # 查询截止时间
         self.time_max = time_max
-        # 查询开始时间
         self.time_min = time_min
 
     def validate(self):
@@ -5229,14 +5223,10 @@ class ListEventsResponseBodyEventsAttendees(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
         self.is_optional = is_optional
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -5409,7 +5399,6 @@ class ListEventsResponseBodyEventsLocation(TeaModel):
         display_name: str = None,
         meeting_rooms: List[str] = None,
     ):
-        # 展示名称
         self.display_name = display_name
         self.meeting_rooms = meeting_rooms
 
@@ -5529,13 +5518,9 @@ class ListEventsResponseBodyEventsOrganizer(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -5610,7 +5595,6 @@ class ListEventsResponseBodyEventsRecurrencePattern(TeaModel):
         self.days_of_week = days_of_week
         self.index = index
         self.interval = interval
-        # 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
         self.type = type
 
     def validate(self):
@@ -5658,7 +5642,6 @@ class ListEventsResponseBodyEventsRecurrenceRange(TeaModel):
     ):
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
-        # 范围类型(endDate, noEnd, numbered)
         self.type = type
 
     def validate(self):
@@ -5695,9 +5678,7 @@ class ListEventsResponseBodyEventsRecurrence(TeaModel):
         pattern: ListEventsResponseBodyEventsRecurrencePattern = None,
         range: ListEventsResponseBodyEventsRecurrenceRange = None,
     ):
-        # 重复模式
         self.pattern = pattern
-        # 重复范围
         self.range = range
 
     def validate(self):
@@ -5769,11 +5750,8 @@ class ListEventsResponseBodyEventsStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 日期，格式：yyyyMMdd
         self.date = date
-        # 时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -5828,39 +5806,25 @@ class ListEventsResponseBodyEvents(TeaModel):
         summary: str = None,
         update_time: str = None,
     ):
-        # 日程参与人
         self.attendees = attendees
         self.categories = categories
-        # 创建时间
         self.create_time = create_time
-        # 日程描述
         self.description = description
-        # 日程结束时间
         self.end = end
         self.extended_properties = extended_properties
-        # 日程事件id
         self.id = id
-        # 是否为全天日程
         self.is_all_day = is_all_day
-        # 日程地点
         self.location = location
         self.meeting_rooms = meeting_rooms
         self.online_meeting_info = online_meeting_info
-        # 日程组织人
         self.organizer = organizer
         self.origin_start = origin_start
-        # 日程重复规则
         self.recurrence = recurrence
         self.reminders = reminders
-        # 重复日程的主日程id，非重复日程为空
         self.series_master_id = series_master_id
-        # 日程开始时间
         self.start = start
-        # 日程状态
         self.status = status
-        # 日程标题
         self.summary = summary
-        # 更新时间
         self.update_time = update_time
 
     def validate(self):
@@ -6025,11 +5989,8 @@ class ListEventsResponseBody(TeaModel):
         next_token: str = None,
         sync_token: str = None,
     ):
-        # 日程
         self.events = events
-        # 翻页token
         self.next_token = next_token
-        # 增量同步token
         self.sync_token = sync_token
 
     def validate(self):
@@ -6072,13 +6033,16 @@ class ListEventsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListEventsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6091,6 +6055,8 @@ class ListEventsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6099,6 +6065,8 @@ class ListEventsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListEventsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6146,13 +6114,9 @@ class ListEventsInstancesRequest(TeaModel):
         series_master_id: str = None,
         start_recurrence_id: str = None,
     ):
-        # listInstances每个日程的参与者查询个数，默认100，最大100。
         self.max_attendees = max_attendees
-        # listInstances返回的最大日程数，最大100个，默认100个。
         self.max_results = max_results
-        # 循环主日程id。
         self.series_master_id = series_master_id
-        # 大于等于次序列id的所有实例
         self.start_recurrence_id = start_recurrence_id
 
     def validate(self):
@@ -6196,14 +6160,10 @@ class ListEventsInstancesResponseBodyEventsAttendees(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
         self.is_optional = is_optional
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -6249,11 +6209,8 @@ class ListEventsInstancesResponseBodyEventsEnd(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 日期，格式：yyyyMMdd
         self.date = date
-        # 时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -6346,7 +6303,6 @@ class ListEventsInstancesResponseBodyEventsLocation(TeaModel):
         display_name: str = None,
         meeting_rooms: List[str] = None,
     ):
-        # 展示名称
         self.display_name = display_name
         self.meeting_rooms = meeting_rooms
 
@@ -6381,11 +6337,8 @@ class ListEventsInstancesResponseBodyEventsOnlineMeetingInfo(TeaModel):
         type: str = None,
         url: str = None,
     ):
-        # 会议ID
         self.conference_id = conference_id
-        # 线上会议类型，目前支持：  dingtalk：钉钉视频会议
         self.type = type
-        # 会议url
         self.url = url
 
     def validate(self):
@@ -6424,13 +6377,9 @@ class ListEventsInstancesResponseBodyEventsOrganizer(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -6474,15 +6423,10 @@ class ListEventsInstancesResponseBodyEventsRecurrencePattern(TeaModel):
         interval: int = None,
         type: str = None,
     ):
-        # 每月的第几天
         self.day_of_month = day_of_month
-        # 每周的第几天
         self.days_of_week = days_of_week
-        # 指定事件发生在daysOfsWeek中指定的允许天数的哪个实例上，从该月的第一个实例开始计算。取值为:first, second, third, fourth, last。默认是first。如果类型是relativMonthly或relativeYear，则可选并使用
         self.index = index
-        # 循环间隔
         self.interval = interval
-        # 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
         self.type = type
 
     def validate(self):
@@ -6528,11 +6472,8 @@ class ListEventsInstancesResponseBodyEventsRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
-        # 循环终止日期
         self.end_date = end_date
-        # 循环出现次数
         self.number_of_occurrences = number_of_occurrences
-        # 范围类型(endDate, noEnd, numbered)
         self.type = type
 
     def validate(self):
@@ -6569,9 +6510,7 @@ class ListEventsInstancesResponseBodyEventsRecurrence(TeaModel):
         pattern: ListEventsInstancesResponseBodyEventsRecurrencePattern = None,
         range: ListEventsInstancesResponseBodyEventsRecurrenceRange = None,
     ):
-        # 重复模式
         self.pattern = pattern
-        # 重复范围
         self.range = range
 
     def validate(self):
@@ -6609,9 +6548,7 @@ class ListEventsInstancesResponseBodyEventsReminders(TeaModel):
         method: str = None,
         minutes: str = None,
     ):
-        # 提醒方式
         self.method = method
-        # 在日程开始前N分钟发出提醒
         self.minutes = minutes
 
     def validate(self):
@@ -6645,11 +6582,8 @@ class ListEventsInstancesResponseBodyEventsStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 日期，格式：yyyyMMdd
         self.date = date
-        # 时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -6701,38 +6635,22 @@ class ListEventsInstancesResponseBodyEvents(TeaModel):
         summary: str = None,
         update_time: str = None,
     ):
-        # 日程参与人
         self.attendees = attendees
-        # 创建时间
         self.create_time = create_time
-        # 日程描述
         self.description = description
-        # 日程结束时间
         self.end = end
         self.extended_properties = extended_properties
-        # 日程事件id
         self.id = id
-        # 是否为全天日程
         self.is_all_day = is_all_day
-        # 日程地点
         self.location = location
-        # 线上会议
         self.online_meeting_info = online_meeting_info
-        # 日程组织人
         self.organizer = organizer
-        # 日程重复规则
         self.recurrence = recurrence
-        # 日程提醒
         self.reminders = reminders
-        # 重复日程的主日程id，非重复日程为空
         self.series_master_id = series_master_id
-        # 日程开始时间
         self.start = start
-        # 日程状态
         self.status = status
-        # 日程标题
         self.summary = summary
-        # 更新时间
         self.update_time = update_time
 
     def validate(self):
@@ -6862,7 +6780,6 @@ class ListEventsInstancesResponseBody(TeaModel):
         self,
         events: List[ListEventsInstancesResponseBodyEvents] = None,
     ):
-        # 日程
         self.events = events
 
     def validate(self):
@@ -6897,13 +6814,16 @@ class ListEventsInstancesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListEventsInstancesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6916,6 +6836,8 @@ class ListEventsInstancesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6924,6 +6846,8 @@ class ListEventsInstancesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListEventsInstancesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6972,15 +6896,10 @@ class ListEventsViewRequest(TeaModel):
         time_max: str = None,
         time_min: str = None,
     ):
-        # 每个日程的参与者查询个数，默认100，最大100。
         self.max_attendees = max_attendees
-        # 返回的最大日程数，最大100个，默认100个。
         self.max_results = max_results
-        # 查询翻页token
         self.next_token = next_token
-        # 查询截止时间
         self.time_max = time_max
-        # 查询开始时间
         self.time_min = time_min
 
     def validate(self):
@@ -7028,14 +6947,10 @@ class ListEventsViewResponseBodyEventsAttendees(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
         self.is_optional = is_optional
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -7208,7 +7123,6 @@ class ListEventsViewResponseBodyEventsLocation(TeaModel):
         display_name: str = None,
         meeting_rooms: List[str] = None,
     ):
-        # 展示名称
         self.display_name = display_name
         self.meeting_rooms = meeting_rooms
 
@@ -7289,13 +7203,9 @@ class ListEventsViewResponseBodyEventsOrganizer(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -7370,7 +7280,6 @@ class ListEventsViewResponseBodyEventsRecurrencePattern(TeaModel):
         self.days_of_week = days_of_week
         self.index = index
         self.interval = interval
-        # 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
         self.type = type
 
     def validate(self):
@@ -7418,7 +7327,6 @@ class ListEventsViewResponseBodyEventsRecurrenceRange(TeaModel):
     ):
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
-        # 范围类型(endDate, noEnd, numbered)
         self.type = type
 
     def validate(self):
@@ -7455,9 +7363,7 @@ class ListEventsViewResponseBodyEventsRecurrence(TeaModel):
         pattern: ListEventsViewResponseBodyEventsRecurrencePattern = None,
         range: ListEventsViewResponseBodyEventsRecurrenceRange = None,
     ):
-        # 重复模式
         self.pattern = pattern
-        # 重复范围
         self.range = range
 
     def validate(self):
@@ -7496,11 +7402,8 @@ class ListEventsViewResponseBodyEventsStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 日期，格式：yyyyMMdd
         self.date = date
-        # 时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -7553,37 +7456,23 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         summary: str = None,
         update_time: str = None,
     ):
-        # 日程参与人
         self.attendees = attendees
         self.categories = categories
-        # 创建时间
         self.create_time = create_time
-        # 日程描述
         self.description = description
-        # 日程结束时间
         self.end = end
         self.extended_properties = extended_properties
-        # 日程事件id
         self.id = id
-        # 是否为全天日程
         self.is_all_day = is_all_day
-        # 日程地点
         self.location = location
         self.online_meeting_info = online_meeting_info
-        # 日程组织人
         self.organizer = organizer
         self.origin_start = origin_start
-        # 日程重复规则
         self.recurrence = recurrence
-        # 重复日程的主日程id，非重复日程为空
         self.series_master_id = series_master_id
-        # 日程开始时间
         self.start = start
-        # 日程状态
         self.status = status
-        # 日程标题
         self.summary = summary
-        # 更新时间
         self.update_time = update_time
 
     def validate(self):
@@ -7721,9 +7610,7 @@ class ListEventsViewResponseBody(TeaModel):
         events: List[ListEventsViewResponseBodyEvents] = None,
         next_token: str = None,
     ):
-        # 日程
         self.events = events
-        # 翻页token
         self.next_token = next_token
 
     def validate(self):
@@ -7762,13 +7649,16 @@ class ListEventsViewResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListEventsViewResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7781,6 +7671,8 @@ class ListEventsViewResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7789,6 +7681,8 @@ class ListEventsViewResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListEventsViewResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7837,15 +7731,10 @@ class ListInstancesRequest(TeaModel):
         time_max: str = None,
         time_min: str = None,
     ):
-        # 每个日程的参与者查询个数，默认100，最大100
         self.max_attendees = max_attendees
-        # 返回的最大日程数，最大100个，默认100个
         self.max_results = max_results
-        # 查询翻页token
         self.next_token = next_token
-        # 查询截止时间
         self.time_max = time_max
-        # 查询开始时间
         self.time_min = time_min
 
     def validate(self):
@@ -7893,14 +7782,10 @@ class ListInstancesResponseBodyEventsAttendees(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
         self.is_optional = is_optional
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -8045,7 +7930,6 @@ class ListInstancesResponseBodyEventsLocation(TeaModel):
         self,
         display_name: str = None,
     ):
-        # 展示名称
         self.display_name = display_name
 
     def validate(self):
@@ -8160,13 +8044,9 @@ class ListInstancesResponseBodyEventsOrganizer(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
-        # 用户id
         self.id = id
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -8214,7 +8094,6 @@ class ListInstancesResponseBodyEventsRecurrencePattern(TeaModel):
         self.days_of_week = days_of_week
         self.index = index
         self.interval = interval
-        # 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
         self.type = type
 
     def validate(self):
@@ -8262,7 +8141,6 @@ class ListInstancesResponseBodyEventsRecurrenceRange(TeaModel):
     ):
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
-        # 范围类型(endDate, noEnd, numbered)
         self.type = type
 
     def validate(self):
@@ -8299,9 +8177,7 @@ class ListInstancesResponseBodyEventsRecurrence(TeaModel):
         pattern: ListInstancesResponseBodyEventsRecurrencePattern = None,
         range: ListInstancesResponseBodyEventsRecurrenceRange = None,
     ):
-        # 重复模式
         self.pattern = pattern
-        # 重复范围
         self.range = range
 
     def validate(self):
@@ -8373,11 +8249,8 @@ class ListInstancesResponseBodyEventsStart(TeaModel):
         date_time: str = None,
         time_zone: str = None,
     ):
-        # 日期，格式：yyyyMMdd
         self.date = date
-        # 时间戳，按照ISO 8601格式
         self.date_time = date_time
-        # 时区
         self.time_zone = time_zone
 
     def validate(self):
@@ -8430,37 +8303,23 @@ class ListInstancesResponseBodyEvents(TeaModel):
         summary: str = None,
         update_time: str = None,
     ):
-        # 日程参与人
         self.attendees = attendees
-        # 创建时间
         self.create_time = create_time
-        # 日程描述
         self.description = description
-        # 日程结束时间
         self.end = end
         self.extended_properties = extended_properties
-        # 日程事件id
         self.id = id
-        # 是否为全天日程
         self.is_all_day = is_all_day
-        # 日程地点
         self.location = location
         self.meeting_rooms = meeting_rooms
         self.online_meeting_info = online_meeting_info
-        # 日程组织人
         self.organizer = organizer
-        # 日程重复规则
         self.recurrence = recurrence
         self.reminders = reminders
-        # 重复日程的主日程id，非重复日程为空
         self.series_master_id = series_master_id
-        # 日程开始时间
         self.start = start
-        # 日程状态
         self.status = status
-        # 日程标题
         self.summary = summary
-        # 更新时间
         self.update_time = update_time
 
     def validate(self):
@@ -8604,9 +8463,7 @@ class ListInstancesResponseBody(TeaModel):
         events: List[ListInstancesResponseBodyEvents] = None,
         next_token: str = None,
     ):
-        # 日程
         self.events = events
-        # 翻页token
         self.next_token = next_token
 
     def validate(self):
@@ -8645,13 +8502,16 @@ class ListInstancesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListInstancesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8664,6 +8524,8 @@ class ListInstancesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8672,6 +8534,8 @@ class ListInstancesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListInstancesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9028,17 +8892,13 @@ class PatchEventRequest(TeaModel):
         self.attendees = attendees
         self.description = description
         self.end = end
-        # 扩展信息
         self.extra = extra
-        # 日程id
         self.id = id
         self.is_all_day = is_all_day
         self.location = location
         self.recurrence = recurrence
         self.reminders = reminders
-        # 日程开始时间
         self.start = start
-        # 日程标题
         self.summary = summary
 
     def validate(self):
@@ -9139,13 +8999,10 @@ class PatchEventResponseBodyAttendees(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
         self.id = id
         self.is_optional = is_optional
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -9264,12 +9121,9 @@ class PatchEventResponseBodyOrganizer(TeaModel):
         response_status: str = None,
         self_: bool = None,
     ):
-        # 用户名
         self.display_name = display_name
         self.id = id
-        # 回复状态
         self.response_status = response_status
-        # 是否是当前登陆用户
         self.self_ = self_
 
     def validate(self):
@@ -9522,7 +9376,6 @@ class PatchEventResponseBody(TeaModel):
         update_time: str = None,
     ):
         self.attendees = attendees
-        # 创建时间
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -9532,10 +9385,8 @@ class PatchEventResponseBody(TeaModel):
         self.organizer = organizer
         self.recurrence = recurrence
         self.reminders = reminders
-        # 日程开始时间
         self.start = start
         self.summary = summary
-        # 更新时间
         self.update_time = update_time
 
     def validate(self):
@@ -9642,13 +9493,16 @@ class PatchEventResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PatchEventResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9661,6 +9515,8 @@ class PatchEventResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9669,6 +9525,8 @@ class PatchEventResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PatchEventResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9774,11 +9632,14 @@ class RemoveAttendeeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -9788,12 +9649,16 @@ class RemoveAttendeeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -9923,13 +9788,16 @@ class RemoveMeetingRoomsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RemoveMeetingRoomsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9942,6 +9810,8 @@ class RemoveMeetingRoomsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9950,6 +9820,8 @@ class RemoveMeetingRoomsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RemoveMeetingRoomsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10020,11 +9892,14 @@ class RespondEventResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -10034,12 +9909,16 @@ class RespondEventResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -10081,7 +9960,6 @@ class SignInResponseBody(TeaModel):
         self,
         check_in_time: int = None,
     ):
-        # 签到时间戳
         self.check_in_time = check_in_time
 
     def validate(self):
@@ -10108,13 +9986,16 @@ class SignInResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SignInResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10127,6 +10008,8 @@ class SignInResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10135,6 +10018,8 @@ class SignInResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SignInResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10179,7 +10064,6 @@ class SignOutResponseBody(TeaModel):
         self,
         check_out_time: int = None,
     ):
-        # 签退时间戳
         self.check_out_time = check_out_time
 
     def validate(self):
@@ -10206,13 +10090,16 @@ class SignOutResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SignOutResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10225,6 +10112,8 @@ class SignOutResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10233,6 +10122,8 @@ class SignOutResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SignOutResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10276,11 +10167,14 @@ class SubscribeCalendarResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -10290,12 +10184,16 @@ class SubscribeCalendarResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -10363,13 +10261,16 @@ class UnsubscribeCalendarResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UnsubscribeCalendarResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10382,6 +10283,8 @@ class UnsubscribeCalendarResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10390,6 +10293,8 @@ class UnsubscribeCalendarResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UnsubscribeCalendarResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10436,11 +10341,8 @@ class UpdateSubscribedCalendarsRequestSubscribeScope(TeaModel):
         open_conversation_ids: List[str] = None,
         union_ids: List[str] = None,
     ):
-        # 可订阅组织列表
         self.corp_ids = corp_ids
-        # 可订阅群组列表
         self.open_conversation_ids = open_conversation_ids
-        # 可订阅人员列表
         self.union_ids = union_ids
 
     def validate(self):
@@ -10479,13 +10381,9 @@ class UpdateSubscribedCalendarsRequest(TeaModel):
         name: str = None,
         subscribe_scope: UpdateSubscribedCalendarsRequestSubscribeScope = None,
     ):
-        # 日历介绍
         self.description = description
-        # 日历管理员列表
         self.managers = managers
-        # 日历名
         self.name = name
-        # 可订阅列表
         self.subscribe_scope = subscribe_scope
 
     def validate(self):
@@ -10553,13 +10451,16 @@ class UpdateSubscribedCalendarsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateSubscribedCalendarsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10572,6 +10473,8 @@ class UpdateSubscribedCalendarsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10580,6 +10483,8 @@ class UpdateSubscribedCalendarsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateSubscribedCalendarsResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -68,11 +68,14 @@ class AddDeviceVideoConferenceMembersResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -82,12 +85,16 @@ class AddDeviceVideoConferenceMembersResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -157,9 +164,7 @@ class CreateDeviceVideoConferenceResponseBody(TeaModel):
         code: str = None,
         conference_id: str = None,
     ):
-        # 入会口令
         self.code = code
-        # 会议id
         self.conference_id = conference_id
 
     def validate(self):
@@ -190,13 +195,16 @@ class CreateDeviceVideoConferenceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateDeviceVideoConferenceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -209,6 +217,8 @@ class CreateDeviceVideoConferenceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -217,6 +227,8 @@ class CreateDeviceVideoConferenceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateDeviceVideoConferenceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -320,13 +332,16 @@ class ExtractFacialFeatureResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ExtractFacialFeatureResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -339,6 +354,8 @@ class ExtractFacialFeatureResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -347,6 +364,8 @@ class ExtractFacialFeatureResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ExtractFacialFeatureResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -417,11 +436,14 @@ class KickDeviceVideoConferenceMembersResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -431,12 +453,16 @@ class KickDeviceVideoConferenceMembersResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -483,17 +509,11 @@ class MachineManagerUpdateRequestAtmManagerRightMap(TeaModel):
         face_punch_manage: bool = None,
         finger_punch_manage: bool = None,
     ):
-        # 添加/删除考勤人员。
         self.attendance_person_manage = attendance_person_manage
-        # 蓝牙打卡管理。
         self.bluetooth_punch_manage = bluetooth_punch_manage
-        # 设备解绑并重置。
         self.device_reset = device_reset
-        # 设备设置。
         self.device_settings = device_settings
-        # 人脸打卡管理。
         self.face_punch_manage = face_punch_manage
-        # 指纹打卡管理。
         self.finger_punch_manage = finger_punch_manage
 
     def validate(self):
@@ -544,13 +564,9 @@ class MachineManagerUpdateRequest(TeaModel):
         scope_dept_ids: List[int] = None,
         user_id: str = None,
     ):
-        # 设备管理员权限点。
         self.atm_manager_right_map = atm_manager_right_map
-        # 设备id。
         self.device_id = device_id
-        # 权限范围：可管理的部门id列表，-1表示全公司
         self.scope_dept_ids = scope_dept_ids
-        # 设备管理员的userId。
         self.user_id = user_id
 
     def validate(self):
@@ -591,11 +607,14 @@ class MachineManagerUpdateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -605,12 +624,16 @@ class MachineManagerUpdateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -657,17 +680,11 @@ class MachineUsersUpdateRequest(TeaModel):
         dev_ids: List[int] = None,
         device_ids: List[str] = None,
     ):
-        # 新增的部门id列表
         self.add_dept_ids = add_dept_ids
-        # 新增的员工id列表
         self.add_user_ids = add_user_ids
-        # 移除的部门id列表
         self.del_dept_ids = del_dept_ids
-        # 移除的员工id列表
         self.del_user_ids = del_user_ids
-        # 设备唯一标识id列表，Long数组
         self.dev_ids = dev_ids
-        # 设备唯一标识id列表，字符串数组
         self.device_ids = device_ids
 
     def validate(self):
@@ -714,11 +731,14 @@ class MachineUsersUpdateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -728,12 +748,16 @@ class MachineUsersUpdateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 
@@ -776,9 +800,7 @@ class QueryDeviceVideoConferenceBookResponseBody(TeaModel):
         code: str = None,
         conference_id: str = None,
     ):
-        # 入会口令
         self.code = code
-        # 会议id
         self.conference_id = conference_id
 
     def validate(self):
@@ -809,13 +831,16 @@ class QueryDeviceVideoConferenceBookResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDeviceVideoConferenceBookResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -828,6 +853,8 @@ class QueryDeviceVideoConferenceBookResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -836,6 +863,8 @@ class QueryDeviceVideoConferenceBookResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDeviceVideoConferenceBookResponseBody()
             self.body = temp_model.from_map(m['body'])

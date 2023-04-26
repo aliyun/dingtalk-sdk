@@ -44,11 +44,8 @@ class QueryAppActiveUsersRequest(TeaModel):
         need_position_info: bool = None,
         next_token: int = None,
     ):
-        # 本次读取的最大数据记录数量
         self.max_results = max_results
-        # 是否需要返回位置信息
         self.need_position_info = need_position_info
-        # 标记当前开始读取的位置，置空表示从头开始
         self.next_token = next_token
 
     def validate(self):
@@ -89,17 +86,11 @@ class QueryAppActiveUsersResponseBodyList(TeaModel):
         start_time: int = None,
         user_id: str = None,
     ):
-        # 应用轨迹ID
         self.app_trace_id = app_trace_id
-        # 纬度
         self.latitude = latitude
-        # 经度
         self.longitude = longitude
-        # 该位置采集时间
         self.report_time = report_time
-        # 轨迹采集开启时间
         self.start_time = start_time
-        # 员工Id
         self.user_id = user_id
 
     def validate(self):
@@ -150,13 +141,9 @@ class QueryAppActiveUsersResponseBody(TeaModel):
         next_token: int = None,
         total_count: int = None,
     ):
-        # 是否存在更多数据需要获取
         self.has_more = has_more
-        # 数据集合
         self.list = list
-        # 下一次获取开始位置
         self.next_token = next_token
-        # 总数
         self.total_count = total_count
 
     def validate(self):
@@ -203,13 +190,16 @@ class QueryAppActiveUsersResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryAppActiveUsersResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -222,6 +212,8 @@ class QueryAppActiveUsersResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -230,6 +222,8 @@ class QueryAppActiveUsersResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAppActiveUsersResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -274,7 +268,6 @@ class QueryCollectingTraceTaskRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
-        # 员工用户ID列表
         self.user_ids = user_ids
 
     def validate(self):
@@ -308,14 +301,12 @@ class QueryCollectingTraceTaskResponseBodyList(TeaModel):
         report_start_time: int = None,
         user_id: str = None,
     ):
-        # 应用轨迹ID
         self.app_trace_id = app_trace_id
         self.geo_collect_period = geo_collect_period
         self.geo_report_period = geo_report_period
         self.geo_report_status = geo_report_status
         self.report_end_time = report_end_time
         self.report_start_time = report_start_time
-        # 组织下员工Id
         self.user_id = user_id
 
     def validate(self):
@@ -367,7 +358,6 @@ class QueryCollectingTraceTaskResponseBody(TeaModel):
         self,
         list: List[QueryCollectingTraceTaskResponseBodyList] = None,
     ):
-        # result
         self.list = list
 
     def validate(self):
@@ -402,13 +392,16 @@ class QueryCollectingTraceTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryCollectingTraceTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -421,6 +414,8 @@ class QueryCollectingTraceTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -429,6 +424,8 @@ class QueryCollectingTraceTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCollectingTraceTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -478,17 +475,11 @@ class QueryPageTraceDataRequest(TeaModel):
         start_time: int = None,
         trace_id: str = None,
     ):
-        # 终止时间
         self.end_time = end_time
-        # 查询数量
         self.max_results = max_results
-        # 起始位置
         self.next_token = next_token
-        # 员工ID
         self.staff_id = staff_id
-        # 开始时间
         self.start_time = start_time
-        # traceId
         self.trace_id = trace_id
 
     def validate(self):
@@ -537,9 +528,7 @@ class QueryPageTraceDataResponseBodyListCoordinates(TeaModel):
         latitude: float = None,
         longitude: float = None,
     ):
-        # 纬度
         self.latitude = latitude
-        # 经度
         self.longitude = longitude
 
     def validate(self):
@@ -573,11 +562,8 @@ class QueryPageTraceDataResponseBodyList(TeaModel):
         gmt_location: int = None,
         gmt_upload: int = None,
     ):
-        # 经纬度
         self.coordinates = coordinates
-        # 定位时间
         self.gmt_location = gmt_location
-        # 上报时间
         self.gmt_upload = gmt_upload
 
     def validate(self):
@@ -617,11 +603,8 @@ class QueryPageTraceDataResponseBody(TeaModel):
         list: List[QueryPageTraceDataResponseBodyList] = None,
         next_token: int = None,
     ):
-        # 是否结束
         self.has_more = has_more
-        # 轨迹点列表
         self.list = list
-        # 下一个开始位置
         self.next_token = next_token
 
     def validate(self):
@@ -664,13 +647,16 @@ class QueryPageTraceDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryPageTraceDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -683,6 +669,8 @@ class QueryPageTraceDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -691,6 +679,8 @@ class QueryPageTraceDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryPageTraceDataResponseBody()
             self.body = temp_model.from_map(m['body'])

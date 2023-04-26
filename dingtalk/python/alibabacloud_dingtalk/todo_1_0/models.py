@@ -47,17 +47,11 @@ class CountTodoTasksRequest(TeaModel):
         role_types: List[List[str]] = None,
         to_due_time: int = None,
     ):
-        # 所属分类
         self.category = category
-        # 查询从计划完成时间开始
         self.from_due_time = from_due_time
-        # 待办完成状态。
         self.is_done = is_done
-        # 待办回收状态
         self.is_recycled = is_recycled
-        # 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
         self.role_types = role_types
-        # 查询到计划完成时间结束
         self.to_due_time = to_due_time
 
     def validate(self):
@@ -105,7 +99,6 @@ class CountTodoTasksResponseBody(TeaModel):
         self,
         result: int = None,
     ):
-        # 待办数量
         self.result = result
 
     def validate(self):
@@ -132,13 +125,16 @@ class CountTodoTasksResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CountTodoTasksResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -151,6 +147,8 @@ class CountTodoTasksResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -159,6 +157,8 @@ class CountTodoTasksResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CountTodoTasksResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -302,9 +302,7 @@ class CreateTodoTaskRequestContentFieldList(TeaModel):
         field_key: str = None,
         field_value: str = None,
     ):
-        # 字段唯一标识
         self.field_key = field_key
-        # 字段值
         self.field_value = field_value
 
     def validate(self):
@@ -337,9 +335,7 @@ class CreateTodoTaskRequestDetailUrl(TeaModel):
         app_url: str = None,
         pc_url: str = None,
     ):
-        # app端详情页url
         self.app_url = app_url
-        # pc端详情页url
         self.pc_url = pc_url
 
     def validate(self):
@@ -371,7 +367,6 @@ class CreateTodoTaskRequestNotifyConfigs(TeaModel):
         self,
         ding_notify: str = None,
     ):
-        # ding通知配置：1钉弹框通知
         self.ding_notify = ding_notify
 
     def validate(self):
@@ -414,33 +409,19 @@ class CreateTodoTaskRequest(TeaModel):
         operator_id: str = None,
     ):
         self.action_list = action_list
-        # 二级分类
         self.biz_category_id = biz_category_id
-        # 待办卡片内容区表单自定义字段列表
         self.content_field_list = content_field_list
-        # 创建者id，需传用户的unionId
         self.creator_id = creator_id
-        # 待办备注描述
         self.description = description
-        # 详情页url跳转地址
         self.detail_url = detail_url
-        # 截止时间
         self.due_time = due_time
-        # 执行者列表，需传用户的unionId
         self.executor_ids = executor_ids
-        # 生成的待办是否仅展示在执行者的待办列表中
         self.is_only_show_executor = is_only_show_executor
-        # 通知提醒配置
         self.notify_configs = notify_configs
-        # 参与者列表，需传用户的unionId
         self.participant_ids = participant_ids
-        # 优先级
         self.priority = priority
-        # 来源id，接入业务系统侧的唯一标识id
         self.source_id = source_id
-        # 待办标题
         self.subject = subject
-        # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -548,9 +529,7 @@ class CreateTodoTaskResponseBodyContentFieldList(TeaModel):
         field_key: str = None,
         field_value: str = None,
     ):
-        # 字段唯一标识
         self.field_key = field_key
-        # 字段值
         self.field_value = field_value
 
     def validate(self):
@@ -583,9 +562,7 @@ class CreateTodoTaskResponseBodyDetailUrl(TeaModel):
         app_url: str = None,
         pc_url: str = None,
     ):
-        # app端详情页地址
         self.app_url = app_url
-        # pc端详情页地址
         self.pc_url = pc_url
 
     def validate(self):
@@ -617,7 +594,6 @@ class CreateTodoTaskResponseBodyNotifyConfigs(TeaModel):
         self,
         ding_notify: str = None,
     ):
-        # ding通知配置：value:"channel"（1钉弹框通知，2钉短信通知，3钉电话通知）
         self.ding_notify = ding_notify
 
     def validate(self):
@@ -666,49 +642,27 @@ class CreateTodoTaskResponseBody(TeaModel):
         start_time: int = None,
         subject: str = None,
     ):
-        # 接入应用标识
         self.biz_tag = biz_tag
-        # 内容区表单字段配置
         self.content_field_list = content_field_list
-        # 创建时间
         self.created_time = created_time
-        # 创建者（用户的unionId）
         self.creator_id = creator_id
-        # 描述
         self.description = description
-        # 自定义详情页跳转配置
         self.detail_url = detail_url
-        # 完成状态
         self.done = done
-        # 截止时间
         self.due_time = due_time
-        # 执行者列表（用户的unionId）
         self.executor_ids = executor_ids
-        # 完成时间
         self.finish_time = finish_time
-        # id
         self.id = id
-        # 生成的待办是否仅展示在执行者的待办列表中
         self.is_only_show_executor = is_only_show_executor
-        # 更新时间
         self.modified_time = modified_time
-        # 更新者（用户的unionId）
         self.modifier_id = modifier_id
-        # 待办通知配置
         self.notify_configs = notify_configs
-        # 参与者列表（用户的unionId）
         self.participant_ids = participant_ids
-        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
         self.priority = priority
-        # requestId
         self.request_id = request_id
-        # 业务来源
         self.source = source
-        # 业务来源id
         self.source_id = source_id
-        # 开始时间
         self.start_time = start_time
-        # 标题
         self.subject = subject
 
     def validate(self):
@@ -833,13 +787,16 @@ class CreateTodoTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateTodoTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -852,6 +809,8 @@ class CreateTodoTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -860,6 +819,8 @@ class CreateTodoTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateTodoTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -908,15 +869,10 @@ class CreateTodoTypeConfigRequestActionList(TeaModel):
         name_i18n: Dict[str, Any] = None,
         url: str = None,
     ):
-        # 操作按钮的唯一标识
         self.action_key = action_key
-        # 按钮类型（1：有操作的，2：直接跳转）
         self.action_type = action_type
-        # 按钮样式类型（101：蓝色线型主按钮样式，例如「同意」，102：黑色线型副按钮样式，例如「拒绝」）
         self.button_style_type = button_style_type
-        # 按钮操作的显示名称（需支持国际化）
         self.name_i18n = name_i18n
-        # 按钮类型为直接跳转时，对应的跳转url
         self.url = url
 
     def validate(self):
@@ -962,11 +918,8 @@ class CreateTodoTypeConfigRequestContentFieldList(TeaModel):
         field_type: str = None,
         name_i18n: Dict[str, Any] = None,
     ):
-        # 字段唯一标识
         self.field_key = field_key
-        # 字段类型（取值为：text-文本，url-链接）
         self.field_type = field_type
-        # 字段显示名称(需支持国际化)
         self.name_i18n = name_i18n
 
     def validate(self):
@@ -1008,19 +961,12 @@ class CreateTodoTypeConfigRequest(TeaModel):
         pc_detail_url_open_mode: str = None,
         operator_id: str = None,
     ):
-        # 待办卡片操作区按钮配置
         self.action_list = action_list
-        # 卡片类型（取值为：1-标准卡片，2-自定义卡片）
         self.card_type = card_type
-        # 待办卡片内容区表单自定义字段配置
         self.content_field_list = content_field_list
-        # 待办卡片类型描述
         self.description = description
-        # 卡片类型icon，用于在待办列表展示
         self.icon = icon
-        # 详情页链接在PC端的打开方式，取值为：「PC_SLIDE」-PC端侧边栏打开，「PC_BROWSER」-浏览器打开
         self.pc_detail_url_open_mode = pc_detail_url_open_mode
-        # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -1093,15 +1039,10 @@ class CreateTodoTypeConfigResponseBodyActionList(TeaModel):
         name_i18n: Dict[str, Any] = None,
         url: str = None,
     ):
-        # 操作按钮的唯一标识
         self.action_key = action_key
-        # 按钮类型（1：有操作的，2：直接跳转）
         self.action_type = action_type
-        # 按钮样式类型（101：蓝色线型主按钮样式，例如「同意」，102：黑色线型副按钮样式，例如「拒绝」）
         self.button_style_type = button_style_type
-        # 按钮操作的显示名称（支持国际化）
         self.name_i18n = name_i18n
-        # 按钮类型为直接跳转时，对应的跳转url
         self.url = url
 
     def validate(self):
@@ -1147,11 +1088,8 @@ class CreateTodoTypeConfigResponseBodyContentFieldList(TeaModel):
         field_type: str = None,
         name_i18n: Dict[str, Any] = None,
     ):
-        # 字段唯一标识
         self.field_key = field_key
-        # 字段类型（取值为：text-文本，url-链接）
         self.field_type = field_type
-        # 字段的显示名称（支持国际化）
         self.name_i18n = name_i18n
 
     def validate(self):
@@ -1199,31 +1137,18 @@ class CreateTodoTypeConfigResponseBody(TeaModel):
         pc_detail_url_open_mode: str = None,
         request_id: str = None,
     ):
-        # 待办卡片操作区按钮配置
         self.action_list = action_list
-        # 接入应用标识
         self.biz_tag = biz_tag
-        # 卡片类型（取值为：1-标准卡片，2-自定义卡片）
         self.card_type = card_type
-        # 待办卡片内容区表单自定义字段配置
         self.content_field_list = content_field_list
-        # 创建时间
         self.created_time = created_time
-        # 创建者（用户的unionId）
         self.creator_id = creator_id
-        # 待办卡片类型描述
         self.description = description
-        # 卡片类型icon，用于在待办列表展示
         self.icon = icon
-        # id
         self.id = id
-        # 更新时间
         self.modified_time = modified_time
-        # 更新者（用户的unionId）
         self.modifier_id = modifier_id
-        # 详情页链接在PC端的打开方式，取值为：「PC_SLIDE」-PC端侧边栏打开，「PC_BROWSER」-浏览器打开
         self.pc_detail_url_open_mode = pc_detail_url_open_mode
-        # requestId
         self.request_id = request_id
 
     def validate(self):
@@ -1315,13 +1240,16 @@ class CreateTodoTypeConfigResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateTodoTypeConfigResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1334,6 +1262,8 @@ class CreateTodoTypeConfigResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1342,6 +1272,8 @@ class CreateTodoTypeConfigResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateTodoTypeConfigResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1386,7 +1318,6 @@ class DeleteTodoTaskRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
-        # 操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -1415,9 +1346,7 @@ class DeleteTodoTaskResponseBody(TeaModel):
         request_id: str = None,
         result: bool = None,
     ):
-        # requestId
         self.request_id = request_id
-        # 删除结果
         self.result = result
 
     def validate(self):
@@ -1448,13 +1377,16 @@ class DeleteTodoTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteTodoTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1467,6 +1399,8 @@ class DeleteTodoTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1475,6 +1409,8 @@ class DeleteTodoTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteTodoTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1520,9 +1456,7 @@ class GetTodoTaskResponseBodyDetailUrl(TeaModel):
         app_url: str = None,
         pc_url: str = None,
     ):
-        # app端详情页地址
         self.app_url = app_url
-        # pc端详情页地址
         self.pc_url = pc_url
 
     def validate(self):
@@ -1576,51 +1510,28 @@ class GetTodoTaskResponseBody(TeaModel):
         tenant_id: str = None,
         tenant_type: str = None,
     ):
-        # 接入业务应用标识
         self.biz_tag = biz_tag
-        # 待办卡片类型id
         self.card_type_id = card_type_id
-        # 创建时间
         self.created_time = created_time
-        # 创建者id（用户的unionId）
         self.creator_id = creator_id
-        # 描述
         self.description = description
-        # 自定义详情页跳转配置
         self.detail_url = detail_url
-        # 完成状态
         self.done = done
-        # 截止时间
         self.due_time = due_time
-        # 执行者列表（用户的unionId）
         self.executor_ids = executor_ids
-        # 完成时间
         self.finish_time = finish_time
-        # id
         self.id = id
-        # 待办是否仅展示在执行人的待办列表中
         self.is_only_show_executor = is_only_show_executor
-        # 更新时间
         self.modified_time = modified_time
-        # 更新者id（用户的unionId）
         self.modifier_id = modifier_id
-        # 参与者列表（用户的unionId）
         self.participant_ids = participant_ids
-        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
         self.priority = priority
-        # requestId
         self.request_id = request_id
-        # 业务来源
         self.source = source
-        # 业务来源id
         self.source_id = source_id
-        # 开始时间
         self.start_time = start_time
-        # 标题
         self.subject = subject
-        # 租户id(unionId/orgId/groupId)
         self.tenant_id = tenant_id
-        # 租户类型（user/org/group）
         self.tenant_type = tenant_type
 
     def validate(self):
@@ -1737,13 +1648,16 @@ class GetTodoTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetTodoTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1756,6 +1670,8 @@ class GetTodoTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1764,6 +1680,8 @@ class GetTodoTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTodoTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1809,9 +1727,7 @@ class GetTodoTaskBySourceIdResponseBodyDetailUrl(TeaModel):
         app_url: str = None,
         pc_url: str = None,
     ):
-        # app端详情页地址
         self.app_url = app_url
-        # pc端详情页地址
         self.pc_url = pc_url
 
     def validate(self):
@@ -1864,49 +1780,27 @@ class GetTodoTaskBySourceIdResponseBody(TeaModel):
         tenant_id: str = None,
         tenant_type: str = None,
     ):
-        # 接入业务应用标识
         self.biz_tag = biz_tag
-        # 创建时间
         self.created_time = created_time
-        # 创建者id（用户的unionId）
         self.creator_id = creator_id
-        # 描述
         self.description = description
-        # 自定义详情页跳转配置
         self.detail_url = detail_url
-        # 完成状态
         self.done = done
-        # 截止时间
         self.due_time = due_time
-        # 执行者列表（用户的unionId）
         self.executor_ids = executor_ids
-        # 完成时间
         self.finish_time = finish_time
-        # id
         self.id = id
-        # 待办是否仅展示在执行人的待办列表中
         self.is_only_show_executor = is_only_show_executor
-        # 更新时间
         self.modified_time = modified_time
-        # 更新者id（用户的unionId）
         self.modifier_id = modifier_id
-        # 参与者列表（用户的unionId）
         self.participant_ids = participant_ids
-        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
         self.priority = priority
-        # requestId
         self.request_id = request_id
-        # 业务来源
         self.source = source
-        # 业务来源id
         self.source_id = source_id
-        # 开始时间
         self.start_time = start_time
-        # 标题
         self.subject = subject
-        # 租户id(unionId/orgId/groupId)
         self.tenant_id = tenant_id
-        # 租户类型（user/org/group）
         self.tenant_type = tenant_type
 
     def validate(self):
@@ -2019,13 +1913,16 @@ class GetTodoTaskBySourceIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetTodoTaskBySourceIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2038,6 +1935,8 @@ class GetTodoTaskBySourceIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2046,6 +1945,8 @@ class GetTodoTaskBySourceIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTodoTaskBySourceIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2091,9 +1992,7 @@ class GetTodoTaskDetailResponseBodyDetailUrl(TeaModel):
         app_url: str = None,
         pc_url: str = None,
     ):
-        # app端详情页地址
         self.app_url = app_url
-        # pc端详情页地址
         self.pc_url = pc_url
 
     def validate(self):
@@ -2126,9 +2025,7 @@ class GetTodoTaskDetailResponseBodyExecutorStatus(TeaModel):
         is_done: bool = None,
         user_id: str = None,
     ):
-        # 执行者完成状态
         self.is_done = is_done
-        # 执行者id（用户的unionId）
         self.user_id = user_id
 
     def validate(self):
@@ -2161,9 +2058,7 @@ class GetTodoTaskDetailResponseBodyOrgInfo(TeaModel):
         corp_id: str = None,
         name: str = None,
     ):
-        # 组织corpId
         self.corp_id = corp_id
-        # 组织名称
         self.name = name
 
     def validate(self):
@@ -2196,9 +2091,7 @@ class GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList(TeaModel):
         name: str = None,
         value: str = None,
     ):
-        # 自定义表单内容名字
         self.name = name
-        # 自定义表单内容值
         self.value = value
 
     def validate(self):
@@ -2236,18 +2129,12 @@ class GetTodoTaskDetailResponseBodyTodoCardView(TeaModel):
         todo_card_content_list: List[GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList] = None,
         todo_card_title: str = None,
     ):
-        # link, button, 操作区类型，是链接类型，或者按钮类型
         self.action_type = action_type
-        # 卡片类型
         self.card_type = card_type
-        # 卡片左上角 区域类型是 icon, 或者checkbox 类型的
         self.circle_eltype = circle_eltype
-        # icon, name ,内容区域类型是 icon+value, 或者name+value 类型的
         self.content_type = content_type
-        # 卡片icon
         self.icon = icon
         self.todo_card_content_list = todo_card_content_list
-        # 卡片标题
         self.todo_card_title = todo_card_title
 
     def validate(self):
@@ -2332,57 +2219,31 @@ class GetTodoTaskDetailResponseBody(TeaModel):
         tenant_type: str = None,
         todo_card_view: GetTodoTaskDetailResponseBodyTodoCardView = None,
     ):
-        # 接入业务应用标识
         self.biz_tag = biz_tag
-        # 所属分类
         self.category = category
-        # 创建时间
         self.created_time = created_time
-        # 创建者id（用户的unionId）
         self.creator_id = creator_id
-        # 描述
         self.description = description
-        # 自定义详情页跳转配置
         self.detail_url = detail_url
-        # 完成状态
         self.done = done
-        # 截止时间
         self.due_time = due_time
-        # 执行者列表（用户的unionId）
         self.executor_ids = executor_ids
-        # 执行者待办完成状态列表
         self.executor_status = executor_status
-        # 完成时间
         self.finish_time = finish_time
-        # id
         self.id = id
-        # 待办是否仅展示在执行人的待办列表中
         self.is_only_show_executor = is_only_show_executor
-        # 更新时间
         self.modified_time = modified_time
-        # 更新者id（用户的unionId）
         self.modifier_id = modifier_id
-        # 所属组织信息
         self.org_info = org_info
-        # 参与者列表（用户的unionId）
         self.participant_ids = participant_ids
-        # 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
         self.priority = priority
-        # requestId
         self.request_id = request_id
-        # 业务来源
         self.source = source
-        # 业务来源id
         self.source_id = source_id
-        # 开始时间
         self.start_time = start_time
-        # 标题
         self.subject = subject
-        # 租户id(unionId/orgId/groupId)
         self.tenant_id = tenant_id
-        # 租户类型（user/org/group）
         self.tenant_type = tenant_type
-        # 待办卡片视图模型
         self.todo_card_view = todo_card_view
 
     def validate(self):
@@ -2526,13 +2387,16 @@ class GetTodoTaskDetailResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetTodoTaskDetailResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2545,6 +2409,8 @@ class GetTodoTaskDetailResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2553,6 +2419,8 @@ class GetTodoTaskDetailResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTodoTaskDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2601,15 +2469,10 @@ class GetTodoTypeConfigResponseBodyActionList(TeaModel):
         name_i18n: Dict[str, Any] = None,
         url: str = None,
     ):
-        # 操作按钮的唯一标识
         self.action_key = action_key
-        # 按钮类型（1：有操作的，2：直接跳转）
         self.action_type = action_type
-        # 按钮样式类型（101：蓝色线型主按钮样式，例如「同意」，102：黑色线型副按钮样式，例如「拒绝」）
         self.button_style_type = button_style_type
-        # 按钮操作的显示名称（支持国际化）
         self.name_i18n = name_i18n
-        # 按钮类型为直接跳转时，对应的跳转url
         self.url = url
 
     def validate(self):
@@ -2655,11 +2518,8 @@ class GetTodoTypeConfigResponseBodyContentFieldList(TeaModel):
         field_type: str = None,
         name_i18n: Dict[str, Any] = None,
     ):
-        # 字段唯一标识
         self.field_key = field_key
-        # 字段类型（取值为：text-文本，url-链接）
         self.field_type = field_type
-        # 字段的显示名称（支持国际化）
         self.name_i18n = name_i18n
 
     def validate(self):
@@ -2707,31 +2567,18 @@ class GetTodoTypeConfigResponseBody(TeaModel):
         pc_detail_url_open_mode: str = None,
         request_id: str = None,
     ):
-        # 待办卡片操作区按钮配置
         self.action_list = action_list
-        # 接入应用标识
         self.biz_tag = biz_tag
-        # 卡片类型（取值为：1-标准卡片，2-自定义卡片）
         self.card_type = card_type
-        # 待办卡片内容区表单自定义字段配置
         self.content_field_list = content_field_list
-        # 创建时间
         self.created_time = created_time
-        # 创建者（用户的unionId）
         self.creator_id = creator_id
-        # 待办卡片类型描述
         self.description = description
-        # 卡片类型icon，用于在待办列表展示
         self.icon = icon
-        # id
         self.id = id
-        # 更新时间
         self.modified_time = modified_time
-        # 更新者（用户的unionId）
         self.modifier_id = modifier_id
-        # 详情页链接在PC端的打开方式，取值为：「PC_SLIDE」-PC端侧边栏打开，「PC_BROWSER」-浏览器打开
         self.pc_detail_url_open_mode = pc_detail_url_open_mode
-        # requestId
         self.request_id = request_id
 
     def validate(self):
@@ -2823,13 +2670,16 @@ class GetTodoTypeConfigResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetTodoTypeConfigResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2842,6 +2692,8 @@ class GetTodoTypeConfigResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2850,6 +2702,8 @@ class GetTodoTypeConfigResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTodoTypeConfigResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2900,19 +2754,12 @@ class QueryOrgTodoByUserRequest(TeaModel):
         subject: str = None,
         to_due_time: int = None,
     ):
-        # 查询从计划完成时间开始
         self.from_due_time = from_due_time
-        # 待办完成状态。
         self.is_done = is_done
-        # 每页数量。
         self.max_results = max_results
-        # 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
         self.next_token = next_token
-        # 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
         self.role_types = role_types
-        # 待办标题
         self.subject = subject
-        # 查询到计划完成时间结束
         self.to_due_time = to_due_time
 
     def validate(self):
@@ -2965,9 +2812,7 @@ class QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl(TeaModel):
         app_url: str = None,
         pc_url: str = None,
     ):
-        # 移动端url地址
         self.app_url = app_url
-        # pc端url地址
         self.pc_url = pc_url
 
     def validate(self):
@@ -3009,27 +2854,16 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
         subject: str = None,
         task_id: str = None,
     ):
-        # 所属应用
         self.biz_tag = biz_tag
-        # 创建时间
         self.created_time = created_time
-        # 创建者id
         self.creator_id = creator_id
-        # 详情页链接
         self.detail_url = detail_url
-        # 待办截止时间
         self.due_time = due_time
-        # 待办完成状态
         self.is_done = is_done
-        # 更新时间
         self.modified_time = modified_time
-        # 优先级
         self.priority = priority
-        # 来源id
         self.source_id = source_id
-        # 待办标题
         self.subject = subject
-        # 待办id
         self.task_id = task_id
 
     def validate(self):
@@ -3101,11 +2935,8 @@ class QueryOrgTodoByUserResponseBody(TeaModel):
         next_token: str = None,
         todo_cards: List[QueryOrgTodoByUserResponseBodyTodoCards] = None,
     ):
-        # 每页数量
         self.max_results = max_results
-        # 翻页token
         self.next_token = next_token
-        # 待办卡片列表
         self.todo_cards = todo_cards
 
     def validate(self):
@@ -3148,13 +2979,16 @@ class QueryOrgTodoByUserResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryOrgTodoByUserResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3167,6 +3001,8 @@ class QueryOrgTodoByUserResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3175,6 +3011,8 @@ class QueryOrgTodoByUserResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOrgTodoByUserResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3220,9 +3058,7 @@ class QueryOrgTodoTasksRequest(TeaModel):
         is_done: bool = None,
         next_token: str = None,
     ):
-        # 待办完成状态。
         self.is_done = is_done
-        # 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
         self.next_token = next_token
 
     def validate(self):
@@ -3255,9 +3091,7 @@ class QueryOrgTodoTasksResponseBodyTodoCardsDetailUrl(TeaModel):
         app_url: str = None,
         pc_url: str = None,
     ):
-        # 移动端url地址
         self.app_url = app_url
-        # pc端url地址
         self.pc_url = pc_url
 
     def validate(self):
@@ -3299,27 +3133,16 @@ class QueryOrgTodoTasksResponseBodyTodoCards(TeaModel):
         subject: str = None,
         task_id: str = None,
     ):
-        # 所属应用
         self.biz_tag = biz_tag
-        # 创建时间
         self.created_time = created_time
-        # 创建者id
         self.creator_id = creator_id
-        # 详情页链接
         self.detail_url = detail_url
-        # 待办截止时间
         self.due_time = due_time
-        # 待办完成状态
         self.is_done = is_done
-        # 更新时间
         self.modified_time = modified_time
-        # 优先级
         self.priority = priority
-        # 来源id
         self.source_id = source_id
-        # 待办标题
         self.subject = subject
-        # 待办id
         self.task_id = task_id
 
     def validate(self):
@@ -3390,9 +3213,7 @@ class QueryOrgTodoTasksResponseBody(TeaModel):
         next_token: str = None,
         todo_cards: List[QueryOrgTodoTasksResponseBodyTodoCards] = None,
     ):
-        # 翻页token
         self.next_token = next_token
-        # 待办卡片列表
         self.todo_cards = todo_cards
 
     def validate(self):
@@ -3431,13 +3252,16 @@ class QueryOrgTodoTasksResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryOrgTodoTasksResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3450,6 +3274,8 @@ class QueryOrgTodoTasksResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3458,6 +3284,8 @@ class QueryOrgTodoTasksResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOrgTodoTasksResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3510,23 +3338,14 @@ class QueryTodoTasksRequest(TeaModel):
         role_types: List[List[str]] = None,
         to_due_time: int = None,
     ):
-        # 所属分类
         self.category = category
-        # 查询从计划完成时间开始
         self.from_due_time = from_due_time
-        # 待办完成状态。
         self.is_done = is_done
-        # 待办回收状态
         self.is_recycled = is_recycled
-        # 分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。
         self.next_token = next_token
-        # 排序字段。枚举值 默认为截止时间 dueTime。created | modified | finished | startTime | dueTime 创建时间 | 更新时间 | 完成时间 | 开始时间 | 截止时间
         self.order_by = order_by
-        # 排序方向。枚举值asc | desc 默认 asc
         self.order_direction = order_direction
-        # 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
         self.role_types = role_types
-        # 查询到计划完成时间结束
         self.to_due_time = to_due_time
 
     def validate(self):
@@ -3587,9 +3406,7 @@ class QueryTodoTasksResponseBodyTodoCardsDetailUrl(TeaModel):
         app_url: str = None,
         pc_url: str = None,
     ):
-        # 移动端url地址
         self.app_url = app_url
-        # pc端url地址
         self.pc_url = pc_url
 
     def validate(self):
@@ -3622,9 +3439,7 @@ class QueryTodoTasksResponseBodyTodoCardsOrgInfo(TeaModel):
         corp_id: str = None,
         name: str = None,
     ):
-        # 组织corpId
         self.corp_id = corp_id
-        # 组织名称
         self.name = name
 
     def validate(self):
@@ -3656,7 +3471,6 @@ class QueryTodoTasksResponseBodyTodoCardsOriginalSource(TeaModel):
         self,
         source_title: str = None,
     ):
-        # 业务来源展示名称
         self.source_title = source_title
 
     def validate(self):
@@ -3685,9 +3499,7 @@ class QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList(TeaMode
         name: str = None,
         value: str = None,
     ):
-        # 自定义表单内容名字
         self.name = name
-        # 自定义表单内容值
         self.value = value
 
     def validate(self):
@@ -3725,18 +3537,12 @@ class QueryTodoTasksResponseBodyTodoCardsTodoCardView(TeaModel):
         todo_card_content_list: List[QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList] = None,
         todo_card_title: str = None,
     ):
-        # link, button, 操作区类型，是链接类型，或者按钮类型
         self.action_type = action_type
-        # 卡片类型
         self.card_type = card_type
-        # 卡片左上角 区域类型是 icon, 或者checkbox 类型的
         self.circle_eltype = circle_eltype
-        # icon, name ,内容区域类型是 icon+value, 或者name+value 类型的
         self.content_type = content_type
-        # 卡片icon
         self.icon = icon
         self.todo_card_content_list = todo_card_content_list
-        # 卡片标题
         self.todo_card_title = todo_card_title
 
     def validate(self):
@@ -3811,37 +3617,21 @@ class QueryTodoTasksResponseBodyTodoCards(TeaModel):
         todo_card_view: QueryTodoTasksResponseBodyTodoCardsTodoCardView = None,
         todo_status: str = None,
     ):
-        # 所属应用
         self.biz_tag = biz_tag
-        # 所属分类
         self.category = category
-        # 创建时间
         self.created_time = created_time
-        # 创建者id
         self.creator_id = creator_id
-        # 详情页链接
         self.detail_url = detail_url
-        # 待办截止时间
         self.due_time = due_time
-        # 待办完成状态
         self.is_done = is_done
-        # 更新时间
         self.modified_time = modified_time
-        # 所属组织信息
         self.org_info = org_info
-        # 业务来源信息
         self.original_source = original_source
-        # 优先级
         self.priority = priority
-        # 来源id
         self.source_id = source_id
-        # 待办标题
         self.subject = subject
-        # 待办id
         self.task_id = task_id
-        # 待办卡片视图模型
         self.todo_card_view = todo_card_view
-        # 待办状态
         self.todo_status = todo_status
 
     def validate(self):
@@ -3942,11 +3732,8 @@ class QueryTodoTasksResponseBody(TeaModel):
         todo_cards: List[QueryTodoTasksResponseBodyTodoCards] = None,
         total_count: int = None,
     ):
-        # 翻页token
         self.next_token = next_token
-        # 待办卡片列表
         self.todo_cards = todo_cards
-        # 数据总量
         self.total_count = total_count
 
     def validate(self):
@@ -3989,13 +3776,16 @@ class QueryTodoTasksResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryTodoTasksResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4008,6 +3798,8 @@ class QueryTodoTasksResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4016,6 +3808,8 @@ class QueryTodoTasksResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryTodoTasksResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4066,19 +3860,12 @@ class UpdateTodoTaskRequest(TeaModel):
         subject: str = None,
         operator_id: str = None,
     ):
-        # 待办描述备注
         self.description = description
-        # 完成状态
         self.done = done
-        # 截止时间
         self.due_time = due_time
-        # 执行者列表，需传用户的unionId
         self.executor_ids = executor_ids
-        # 参与者列表，需传用户的unionId
         self.participant_ids = participant_ids
-        # 待办标题
         self.subject = subject
-        # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -4130,7 +3917,6 @@ class UpdateTodoTaskResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 更新结果
         self.result = result
 
     def validate(self):
@@ -4157,13 +3943,16 @@ class UpdateTodoTaskResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateTodoTaskResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4176,6 +3965,8 @@ class UpdateTodoTaskResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4184,6 +3975,8 @@ class UpdateTodoTaskResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateTodoTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4229,9 +4022,7 @@ class UpdateTodoTaskExecutorStatusRequestExecutorStatusList(TeaModel):
         id: str = None,
         is_done: bool = None,
     ):
-        # 执行者id，需传用户的unionId
         self.id = id
-        # 执行者完成状态
         self.is_done = is_done
 
     def validate(self):
@@ -4264,9 +4055,7 @@ class UpdateTodoTaskExecutorStatusRequest(TeaModel):
         executor_status_list: List[UpdateTodoTaskExecutorStatusRequestExecutorStatusList] = None,
         operator_id: str = None,
     ):
-        # 执行者状态列表，id需传用户的unionId
         self.executor_status_list = executor_status_list
-        # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -4306,7 +4095,6 @@ class UpdateTodoTaskExecutorStatusResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 更新结果
         self.result = result
 
     def validate(self):
@@ -4333,13 +4121,16 @@ class UpdateTodoTaskExecutorStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateTodoTaskExecutorStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4352,6 +4143,8 @@ class UpdateTodoTaskExecutorStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4360,6 +4153,8 @@ class UpdateTodoTaskExecutorStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateTodoTaskExecutorStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4408,15 +4203,10 @@ class UpdateTodoTypeConfigRequestActionList(TeaModel):
         name_i18n: Dict[str, Any] = None,
         url: str = None,
     ):
-        # 操作按钮的唯一标识
         self.action_key = action_key
-        # 按钮类型（1：有操作的，2：直接跳转）
         self.action_type = action_type
-        # 按钮样式类型（101：蓝色线型主按钮样式，例如「同意」，102：黑色线型副按钮样式，例如「拒绝」）
         self.button_style_type = button_style_type
-        # 按钮操作的显示名称（需支持国际化）
         self.name_i18n = name_i18n
-        # 按钮类型为直接跳转时，对应的跳转url
         self.url = url
 
     def validate(self):
@@ -4462,11 +4252,8 @@ class UpdateTodoTypeConfigRequestContentFieldList(TeaModel):
         field_type: str = None,
         name_i18n: Dict[str, Any] = None,
     ):
-        # 字段唯一标识
         self.field_key = field_key
-        # 字段类型（取值为：text-文本，url-链接）
         self.field_type = field_type
-        # 字段显示名称(需支持国际化)
         self.name_i18n = name_i18n
 
     def validate(self):
@@ -4508,19 +4295,12 @@ class UpdateTodoTypeConfigRequest(TeaModel):
         pc_detail_url_open_mode: str = None,
         operator_id: str = None,
     ):
-        # 待办卡片操作区按钮配置
         self.action_list = action_list
-        # 卡片类型（取值为：1-标准卡片，2-自定义卡片）
         self.card_type = card_type
-        # 待办卡片内容区表单自定义字段配置
         self.content_field_list = content_field_list
-        # 待办卡片类型描述
         self.description = description
-        # 卡片类型icon，用于在待办列表展示
         self.icon = icon
-        # 详情页链接在PC端的打开方式，取值为：「PC_SLIDE」-PC端侧边栏打开，「PC_BROWSER」-浏览器打开
         self.pc_detail_url_open_mode = pc_detail_url_open_mode
-        # 当前操作者id，需传用户的unionId
         self.operator_id = operator_id
 
     def validate(self):
@@ -4589,7 +4369,6 @@ class UpdateTodoTypeConfigResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 更新结果
         self.result = result
 
     def validate(self):
@@ -4616,13 +4395,16 @@ class UpdateTodoTypeConfigResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateTodoTypeConfigResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4635,6 +4417,8 @@ class UpdateTodoTypeConfigResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4643,6 +4427,8 @@ class UpdateTodoTypeConfigResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateTodoTypeConfigResponseBody()
             self.body = temp_model.from_map(m['body'])

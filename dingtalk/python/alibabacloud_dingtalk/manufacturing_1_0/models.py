@@ -28,45 +28,25 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         user_name_list: str = None,
         uuid: str = None,
     ):
-        # 钉钉组织id
         self.corp_id = corp_id
-        # 扩展字段，用于增加自定义字段
         self.extend = extend
-        # 工单编号
         self.inst_no = inst_no
-        # 是否是批量报工(取值[n,y])
         self.is_batch_job = is_batch_job
-        # 生产日期时间(到时分秒)
         self.manufacture_date = manufacture_date
-        # mes 系统唯一标识
         self.mes_app_key = mes_app_key
-        # 制程英文名称
         self.process_en_name = process_en_name
-        # 制程名称
         self.process_name = process_name
-        # 产品唯一标识
         self.product_code = product_code
-        # 产品英文名称
         self.product_en_name = product_en_name
-        # 产品名称，例如"双头螺柱001"
         self.product_name = product_name
-        # 产品规格
         self.product_specification = product_specification
-        # 合格数量
         self.qualified_quantity = qualified_quantity
-        # 可重工数量
         self.reworkable_quantity = reworkable_quantity
-        # 报废数量
         self.scrapped_quantity = scrapped_quantity
-        # 计件单价，单位：分
         self.unit_price = unit_price
-        # 批量报工时多个工人userId以英文逗号分隔
         self.user_id_list = user_id_list
-        # 员工姓名
         self.user_name = user_name
-        # 批量报工时多个人名以英文逗号分隔
         self.user_name_list = user_name_list
-        # 随机串，唯一标识(用于幂等及更新)
         self.uuid = uuid
 
     def validate(self):
@@ -171,9 +151,7 @@ class IndustrializeManufactureJobBookResponseBodyContent(TeaModel):
         count: int = None,
         id: int = None,
     ):
-        # 影响行数
         self.count = count
-        # 新增记录的数据库id
         self.id = id
 
     def validate(self):
@@ -211,19 +189,12 @@ class IndustrializeManufactureJobBookResponseBody(TeaModel):
         success: bool = None,
         uuid: str = None,
     ):
-        # content
         self.content = content
-        # errorCode
         self.error_code = error_code
-        # errorLevel
         self.error_level = error_level
-        # errorMsg
         self.error_msg = error_msg
-        # httpCode
         self.http_code = http_code
-        # success
         self.success = success
-        # 此次报工记录的唯一标识
         self.uuid = uuid
 
     def validate(self):
@@ -276,13 +247,16 @@ class IndustrializeManufactureJobBookResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: IndustrializeManufactureJobBookResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -295,6 +269,8 @@ class IndustrializeManufactureJobBookResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -303,6 +279,8 @@ class IndustrializeManufactureJobBookResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = IndustrializeManufactureJobBookResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -361,35 +339,20 @@ class IndustrializeManufactureQueryJobsRequest(TeaModel):
         user_name: str = None,
         uuid: str = None,
     ):
-        # 当前页序号(从1开始)
         self.current_page = current_page
-        # 工单编号
         self.inst_no = inst_no
-        # 生产日期
         self.manufacture_day = manufacture_day
-        # MES系统唯一标识
         self.mes_app_key = mes_app_key
-        # 每页显示记录条数
         self.page_size = page_size
-        # 工序名称
         self.process_name = process_name
-        # 产品唯一标识
         self.product_code = product_code
-        # 产品中文名称
         self.product_name = product_name
-        # 产品规格
         self.product_specification = product_specification
-        # 报工合格数量
         self.qualified_quantity = qualified_quantity
-        # 计件单价，单位：分
         self.unit_price = unit_price
-        # 员工钉钉userId
         self.user_id = user_id
-        # 批量报工时多个人钉钉工号以英文逗号分隔
         self.user_id_list = user_id_list
-        # 员工姓名
         self.user_name = user_name
-        # 报工记录的唯一标识
         self.uuid = uuid
 
     def validate(self):
@@ -489,39 +452,22 @@ class IndustrializeManufactureQueryJobsResponseBodyContent(TeaModel):
         user_name_list: str = None,
         uuid: str = None,
     ):
-        # 组织id
         self.corp_id = corp_id
-        # 创建时间
         self.gmt_create = gmt_create
-        # 修改时间
         self.gmt_modified = gmt_modified
-        # 数据库id
         self.id = id
-        # 工单id
         self.inst_no = inst_no
-        # 是否是批量报工，即一次报工由多个工人一起分担，取值[n,y],y表示是批量，批量时多个人名以英文逗号分隔
         self.is_batch_job = is_batch_job
-        # 生产日期时间(到时分秒),格式:2021-07-05 08:00:21
         self.manufacture_date = manufacture_date
-        # 生产日期(到天)
         self.manufacture_day = manufacture_day
-        # 分配给mes系统的appkey
         self.mes_app_key = mes_app_key
-        # 工序名称
         self.process_name = process_name
-        # 合格数
         self.qualified_quantity = qualified_quantity
-        # 不合格数
         self.scrapped_quantity = scrapped_quantity
-        # 计件单价，单位：分
         self.unit_price = unit_price
-        # 工人工号(isBatchJob=='n'时)
         self.user_id = user_id
-        # 批量报工时多个人钉钉工号以英文逗号分隔
         self.user_id_list = user_id_list
-        # 批量报工时多个人名以英文逗号分隔
         self.user_name_list = user_name_list
-        # 报工记录的唯一标识
         self.uuid = uuid
 
     def validate(self):
@@ -614,9 +560,7 @@ class IndustrializeManufactureQueryJobsResponseBody(TeaModel):
         content: IndustrializeManufactureQueryJobsResponseBodyContent = None,
         http_code: str = None,
     ):
-        # 查询的数据结果
         self.content = content
-        # httpCode
         self.http_code = http_code
 
     def validate(self):
@@ -649,13 +593,16 @@ class IndustrializeManufactureQueryJobsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: IndustrializeManufactureQueryJobsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -668,6 +615,8 @@ class IndustrializeManufactureQueryJobsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -676,6 +625,8 @@ class IndustrializeManufactureQueryJobsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = IndustrializeManufactureQueryJobsResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -44,11 +44,8 @@ class AddShareCidListRequest(TeaModel):
         group_ids: List[str] = None,
         user_id: str = None,
     ):
-        # 传入的群id类型（1 chatId / 2 openConversationId ）
         self.group_id_type = group_id_type
-        # 添加的联播群列表
         self.group_ids = group_ids
-        # 操作的的组织内id(staffId)
         self.user_id = user_id
 
     def validate(self):
@@ -85,9 +82,7 @@ class AddShareCidListResponseBody(TeaModel):
         has_share_success: bool = None,
         share_success_group_list: List[str] = None,
     ):
-        # 是否联播成功
         self.has_share_success = has_share_success
-        # 本次请求成功联播的群列表
         self.share_success_group_list = share_success_group_list
 
     def validate(self):
@@ -118,13 +113,16 @@ class AddShareCidListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddShareCidListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -137,6 +135,8 @@ class AddShareCidListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -145,6 +145,8 @@ class AddShareCidListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddShareCidListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -194,17 +196,11 @@ class CreateCloudFeedRequest(TeaModel):
         user_id: str = None,
         video_url: str = None,
     ):
-        # 课程封面Url
         self.cover_url = cover_url
-        # 课程简介
         self.intro = intro
-        # 预计开始的时间戳(未来的时间点)
         self.start_time = start_time
-        # 课程标题
         self.title = title
-        # 创建课程的主播id（staffId）
         self.user_id = user_id
-        # 云导播课程资源的url
         self.video_url = video_url
 
     def validate(self):
@@ -252,7 +248,6 @@ class CreateCloudFeedResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 8c0ed3c3-e125-4a9d-aa40-18ad999398d4
         self.result = result
 
     def validate(self):
@@ -279,13 +274,16 @@ class CreateCloudFeedResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateCloudFeedResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -298,6 +296,8 @@ class CreateCloudFeedResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -306,6 +306,8 @@ class CreateCloudFeedResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateCloudFeedResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -356,19 +358,12 @@ class CreateLiveRequest(TeaModel):
         title: str = None,
         union_id: str = None,
     ):
-        # 直播封面
         self.cover_url = cover_url
-        # 简介
         self.introduction = introduction
-        # 预计结束时间
         self.pre_end_time = pre_end_time
-        # 预计开播时间
         self.pre_start_time = pre_start_time
-        # 直播分享范围 0:不公开 1:全面公开 2:组织内公开
         self.public_type = public_type
-        # 标题
         self.title = title
-        # 用户id（主播id）
         self.union_id = union_id
 
     def validate(self):
@@ -475,13 +470,16 @@ class CreateLiveResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateLiveResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -494,6 +492,8 @@ class CreateLiveResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -502,6 +502,8 @@ class CreateLiveResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateLiveResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -547,9 +549,7 @@ class DeleteLiveRequest(TeaModel):
         live_id: str = None,
         union_id: str = None,
     ):
-        # 直播id
         self.live_id = live_id
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -636,13 +636,16 @@ class DeleteLiveResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteLiveResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -655,6 +658,8 @@ class DeleteLiveResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -663,6 +668,8 @@ class DeleteLiveResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteLiveResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -707,7 +714,6 @@ class DeleteLiveFeedRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 用户id（操作者的组织内id）
         self.user_id = user_id
 
     def validate(self):
@@ -735,7 +741,6 @@ class DeleteLiveFeedResponseBody(TeaModel):
         self,
         has_delete: bool = None,
     ):
-        # 是否删除成功
         self.has_delete = has_delete
 
     def validate(self):
@@ -762,13 +767,16 @@ class DeleteLiveFeedResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeleteLiveFeedResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -781,6 +789,8 @@ class DeleteLiveFeedResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -789,6 +799,8 @@ class DeleteLiveFeedResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteLiveFeedResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -835,11 +847,8 @@ class EditFeedReplayRequest(TeaModel):
         edit_start_time: int = None,
         user_id: str = None,
     ):
-        # 剪辑的结束位置的时间戳（在原开始结束的时间戳之内）
         self.edit_end_time = edit_end_time
-        # 剪辑的起始位置的时间戳（在原开始结束的时间戳之内）
         self.edit_start_time = edit_start_time
-        # 用户id(剪辑者的组织内id)
         self.user_id = user_id
 
     def validate(self):
@@ -875,7 +884,6 @@ class EditFeedReplayResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 剪辑后的视频地址（含authkey）
         self.result = result
 
     def validate(self):
@@ -902,13 +910,16 @@ class EditFeedReplayResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditFeedReplayResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -921,6 +932,8 @@ class EditFeedReplayResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -929,6 +942,8 @@ class EditFeedReplayResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditFeedReplayResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -979,19 +994,12 @@ class GetUserAllLiveListRequest(TeaModel):
         page_size: int = None,
         union_id: str = None,
     ):
-        # 筛选直播截止时间
         self.end_time = end_time
-        # 筛选直播开始时间
         self.start_time = start_time
-        # 直播状态列表
         self.statuses = statuses
-        # 筛选直播标题
         self.title = title
-        # 第几页，从1开始
         self.page_number = page_number
-        # 单次拉去上限，默认40个
         self.page_size = page_size
-        # 用户uid
         self.union_id = union_id
 
     def validate(self):
@@ -1045,11 +1053,8 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelListExtraInfo(TeaModel
         is_forecast_expired: bool = None,
         watch_progress_ms: int = None,
     ):
-        # 是否关注
         self.has_subscribed = has_subscribed
-        # 预告是否过期
         self.is_forecast_expired = is_forecast_expired
-        # 回放观看进度
         self.watch_progress_ms = watch_progress_ms
 
     def validate(self):
@@ -1096,29 +1101,17 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo(TeaM
         union_id: str = None,
         uv: int = None,
     ):
-        # 直播封面
         self.cover_url = cover_url
-        # 直播时长
         self.duration = duration
-        # 直播真实结束时间
         self.end_time = end_time
-        # 直播简介
         self.introduction = introduction
-        # 直播id
         self.live_id = live_id
-        # 直播观看地址
         self.live_play_url = live_play_url
-        # 直播状态
         self.live_status = live_status
-        # 直播真实开始时间
         self.start_time = start_time
-        # 预约人数
         self.subscribe_count = subscribe_count
-        # 直播标题
         self.title = title
-        # 主播id
         self.union_id = union_id
-        # 观看人数
         self.uv = uv
 
     def validate(self):
@@ -1191,9 +1184,7 @@ class GetUserAllLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         extra_info: GetUserAllLiveListResponseBodyResultLiveInfoPopModelListExtraInfo = None,
         live_basic_info: GetUserAllLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo = None,
     ):
-        # 直播额外信息
         self.extra_info = extra_info
-        # 直播基础信息
         self.live_basic_info = live_basic_info
 
     def validate(self):
@@ -1231,9 +1222,7 @@ class GetUserAllLiveListResponseBodyResult(TeaModel):
         has_finish: bool = None,
         live_info_pop_model_list: List[GetUserAllLiveListResponseBodyResultLiveInfoPopModelList] = None,
     ):
-        # 是否拉取完成
         self.has_finish = has_finish
-        # 直播详情
         self.live_info_pop_model_list = live_info_pop_model_list
 
     def validate(self):
@@ -1301,13 +1290,16 @@ class GetUserAllLiveListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserAllLiveListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1320,6 +1312,8 @@ class GetUserAllLiveListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1328,6 +1322,8 @@ class GetUserAllLiveListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserAllLiveListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1378,19 +1374,12 @@ class GetUserCreateLiveListRequest(TeaModel):
         next_token: str = None,
         union_id: str = None,
     ):
-        # 筛选直播截止时间
         self.end_time = end_time
-        # 筛选直播开始时间
         self.start_time = start_time
-        # 直播状态列表
         self.statuses = statuses
-        # 筛选的直播标题
         self.title = title
-        # 单次拉去上限，默认40个
         self.max_results = max_results
-        # 分页游标 第一次可不填， 后面填回包的值
         self.next_token = next_token
-        # 用户uid
         self.union_id = union_id
 
     def validate(self):
@@ -1444,11 +1433,8 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListHasSubscribed(T
         is_forecast_expired: bool = None,
         watch_progress_ms: int = None,
     ):
-        # 是否关注
         self.has_subscribed = has_subscribed
-        # 预告是否过期
         self.is_forecast_expired = is_forecast_expired
-        # 回放观看进度
         self.watch_progress_ms = watch_progress_ms
 
     def validate(self):
@@ -1495,29 +1481,17 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo(T
         union_id: str = None,
         uv: int = None,
     ):
-        # 直播封面
         self.cover_url = cover_url
-        # 直播时长
         self.duration = duration
-        # 直播真实结束时间
         self.end_time = end_time
-        # 直播简介
         self.introduction = introduction
-        # 直播id
         self.live_id = live_id
-        # 直播观看地址
         self.live_play_url = live_play_url
-        # 直播状态
         self.live_status = live_status
-        # 直播真实开始时间
         self.start_time = start_time
-        # 预约人数
         self.subscribe_count = subscribe_count
-        # 直播标题
         self.title = title
-        # 主播id
         self.union_id = union_id
-        # 观看人数
         self.uv = uv
 
     def validate(self):
@@ -1590,9 +1564,7 @@ class GetUserCreateLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         has_subscribed: GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListHasSubscribed = None,
         live_basic_info: GetUserCreateLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo = None,
     ):
-        # 直播额外信息
         self.has_subscribed = has_subscribed
-        # 直播基础信息
         self.live_basic_info = live_basic_info
 
     def validate(self):
@@ -1632,13 +1604,9 @@ class GetUserCreateLiveListResponseBodyResult(TeaModel):
         next_token: str = None,
         total: int = None,
     ):
-        # 是否拉取完成
         self.has_finish = has_finish
-        # 直播详情
         self.live_info_pop_model_list = live_info_pop_model_list
-        # 分页游标 分页时填到请求中
         self.next_token = next_token
-        # 总数
         self.total = total
 
     def validate(self):
@@ -1714,13 +1682,16 @@ class GetUserCreateLiveListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserCreateLiveListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1733,6 +1704,8 @@ class GetUserCreateLiveListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1741,6 +1714,8 @@ class GetUserCreateLiveListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserCreateLiveListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1788,13 +1763,9 @@ class GetUserWatchLiveListRequest(TeaModel):
         next_token: str = None,
         union_id: str = None,
     ):
-        # 过滤类型，0：不过滤， 1：过滤已经看完的
         self.filter_type = filter_type
-        # 单次拉去上限，默认40个
         self.max_results = max_results
-        # 分页游标 第一次可不填， 后面填回包的值
         self.next_token = next_token
-        # 用户uid
         self.union_id = union_id
 
     def validate(self):
@@ -1836,11 +1807,8 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo(TeaMod
         is_forecast_expired: bool = None,
         watch_progress_ms: int = None,
     ):
-        # 是否关注
         self.has_subscribed = has_subscribed
-        # 预告是否过期
         self.is_forecast_expired = is_forecast_expired
-        # 回放观看进度
         self.watch_progress_ms = watch_progress_ms
 
     def validate(self):
@@ -1887,29 +1855,17 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo(Te
         union_id: str = None,
         uv: int = None,
     ):
-        # 直播封面
         self.cover_url = cover_url
-        # 直播时长
         self.duration = duration
-        # 直播真实结束时间
         self.end_time = end_time
-        # 直播简介
         self.introduction = introduction
-        # 直播id
         self.live_id = live_id
-        # 直播观看地址
         self.live_play_url = live_play_url
-        # 直播状态
         self.live_status = live_status
-        # 直播真实开始时间
         self.start_time = start_time
-        # 预约人数
         self.subscribe_count = subscribe_count
-        # 直播标题
         self.title = title
-        # 主播id
         self.union_id = union_id
-        # 观看人数
         self.uv = uv
 
     def validate(self):
@@ -1982,9 +1938,7 @@ class GetUserWatchLiveListResponseBodyResultLiveInfoPopModelList(TeaModel):
         extra_info: GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListExtraInfo = None,
         live_basic_info: GetUserWatchLiveListResponseBodyResultLiveInfoPopModelListLiveBasicInfo = None,
     ):
-        # 直播额外信息
         self.extra_info = extra_info
-        # 直播基础信息
         self.live_basic_info = live_basic_info
 
     def validate(self):
@@ -2024,13 +1978,9 @@ class GetUserWatchLiveListResponseBodyResult(TeaModel):
         next_token: str = None,
         total: int = None,
     ):
-        # 是否拉取完成
         self.has_finish = has_finish
-        # 直播详情
         self.live_info_pop_model_list = live_info_pop_model_list
-        # 分页游标 分页时填到请求中
         self.next_token = next_token
-        # 总数
         self.total = total
 
     def validate(self):
@@ -2106,13 +2056,16 @@ class GetUserWatchLiveListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUserWatchLiveListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2125,6 +2078,8 @@ class GetUserWatchLiveListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2133,6 +2088,8 @@ class GetUserWatchLiveListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserWatchLiveListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2179,11 +2136,8 @@ class ModifyFeedWhiteListRequest(TeaModel):
         modify_user_list: List[str] = None,
         user_id: str = None,
     ):
-        # 操作类型（1 添加白名单 / 2 删除白名单）
         self.action = action
-        # 操作的白名单列表
         self.modify_user_list = modify_user_list
-        # 用户id（操作者的组织内id）
         self.user_id = user_id
 
     def validate(self):
@@ -2221,11 +2175,8 @@ class ModifyFeedWhiteListShrinkRequest(TeaModel):
         modify_user_list_shrink: str = None,
         user_id: str = None,
     ):
-        # 操作类型（1 添加白名单 / 2 删除白名单）
         self.action = action
-        # 操作的白名单列表
         self.modify_user_list_shrink = modify_user_list_shrink
-        # 用户id（操作者的组织内id）
         self.user_id = user_id
 
     def validate(self):
@@ -2261,7 +2212,6 @@ class ModifyFeedWhiteListResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 是否修改成功
         self.result = result
 
     def validate(self):
@@ -2288,13 +2238,16 @@ class ModifyFeedWhiteListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ModifyFeedWhiteListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2307,6 +2260,8 @@ class ModifyFeedWhiteListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2315,6 +2270,8 @@ class ModifyFeedWhiteListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ModifyFeedWhiteListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2359,7 +2316,6 @@ class QueryFeedWhiteListRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 用户组织内id（查询该用户是否在白名单列表中）
         self.user_id = user_id
 
     def validate(self):
@@ -2387,7 +2343,6 @@ class QueryFeedWhiteListResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 是否在白名单内
         self.result = result
 
     def validate(self):
@@ -2414,13 +2369,16 @@ class QueryFeedWhiteListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryFeedWhiteListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2433,6 +2391,8 @@ class QueryFeedWhiteListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2441,6 +2401,8 @@ class QueryFeedWhiteListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryFeedWhiteListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2530,31 +2492,18 @@ class QueryLiveInfoResponseBodyResultLiveInfo(TeaModel):
         union_id: str = None,
         uv: int = None,
     ):
-        # 直播封面
         self.cover_url = cover_url
-        # 直播时长
         self.duration = duration
-        # 直播真实结束时间
         self.end_time = end_time
-        # 直播简介
         self.introduction = introduction
-        # 直播id
         self.live_id = live_id
-        # 直播观看地址
         self.live_play_url = live_play_url
-        # 直播状态
         self.live_status = live_status
-        # 直播回放时长
         self.playback_duration = playback_duration
-        # 直播真实开始时间
         self.start_time = start_time
-        # 预约人数
         self.subscribe_count = subscribe_count
-        # 直播标题
         self.title = title
-        # 主播id
         self.union_id = union_id
-        # 观看人数
         self.uv = uv
 
     def validate(self):
@@ -2687,13 +2636,16 @@ class QueryLiveInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryLiveInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2706,6 +2658,8 @@ class QueryLiveInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2714,6 +2668,8 @@ class QueryLiveInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryLiveInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2759,9 +2715,7 @@ class QueryLiveWatchDetailRequest(TeaModel):
         live_id: str = None,
         union_id: str = None,
     ):
-        # 直播id
         self.live_id = live_id
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -2800,21 +2754,13 @@ class QueryLiveWatchDetailResponseBodyResult(TeaModel):
         total_watch_time: int = None,
         uv: int = None,
     ):
-        # 平均观看时长
         self.avg_watch_time = avg_watch_time
-        # 观看直播人数
         self.live_uv = live_uv
-        # 消息数
         self.msg_count = msg_count
-        # 观看回放人数
         self.playback_uv = playback_uv
-        # 点赞数
         self.praise_count = praise_count
-        # 观看次数
         self.pv = pv
-        # 观看总时长
         self.total_watch_time = total_watch_time
-        # 观看人数
         self.uv = uv
 
     def validate(self):
@@ -2898,13 +2844,16 @@ class QueryLiveWatchDetailResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryLiveWatchDetailResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2917,6 +2866,8 @@ class QueryLiveWatchDetailResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2925,6 +2876,8 @@ class QueryLiveWatchDetailResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryLiveWatchDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2972,13 +2925,9 @@ class QueryLiveWatchUserListRequest(TeaModel):
         page_size: int = None,
         union_id: str = None,
     ):
-        # 直播id
         self.live_id = live_id
-        # 分页起始位置
         self.page_number = page_number
-        # 分页大小
         self.page_size = page_size
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -3024,19 +2973,12 @@ class QueryLiveWatchUserListResponseBodyResultOrgUsesList(TeaModel):
         watch_playback_time: int = None,
         watch_progress_ms: int = None,
     ):
-        # 部门名称
         self.dept_name = dept_name
-        # 姓名
         self.name = name
-        # 用户id
         self.union_id = union_id
-        # 员工id
         self.user_id = user_id
-        # 观看直播时长
         self.watch_live_time = watch_live_time
-        # 观看回放时长
         self.watch_playback_time = watch_playback_time
-        # 回放观看进度
         self.watch_progress_ms = watch_progress_ms
 
     def validate(self):
@@ -3091,13 +3033,9 @@ class QueryLiveWatchUserListResponseBodyResultOutOrgUserList(TeaModel):
         watch_playback_time: int = None,
         watch_progress_ms: int = None,
     ):
-        # 姓名
         self.name = name
-        # 观看直播时长
         self.watch_live_time = watch_live_time
-        # 观看回放时长
         self.watch_playback_time = watch_playback_time
-        # 回放观看进度
         self.watch_progress_ms = watch_progress_ms
 
     def validate(self):
@@ -3138,9 +3076,7 @@ class QueryLiveWatchUserListResponseBodyResult(TeaModel):
         org_uses_list: List[QueryLiveWatchUserListResponseBodyResultOrgUsesList] = None,
         out_org_user_list: List[QueryLiveWatchUserListResponseBodyResultOutOrgUserList] = None,
     ):
-        # 组织内的观看用户列表
         self.org_uses_list = org_uses_list
-        # 组织外的观看用户列表
         self.out_org_user_list = out_org_user_list
 
     def validate(self):
@@ -3217,13 +3153,16 @@ class QueryLiveWatchUserListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryLiveWatchUserListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3236,6 +3175,8 @@ class QueryLiveWatchUserListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3244,6 +3185,8 @@ class QueryLiveWatchUserListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryLiveWatchUserListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3288,7 +3231,6 @@ class QuerySubscribeStatusRequestBody(TeaModel):
         self,
         live_ids: List[str] = None,
     ):
-        # 直播id列表
         self.live_ids = live_ids
 
     def validate(self):
@@ -3317,9 +3259,7 @@ class QuerySubscribeStatusRequest(TeaModel):
         body: QuerySubscribeStatusRequestBody = None,
         union_id: str = None,
     ):
-        # post请求体, 开放平台建议以对象形式存储
         self.body = body
-        # 用户id（主播id）
         self.union_id = union_id
 
     def validate(self):
@@ -3354,9 +3294,7 @@ class QuerySubscribeStatusShrinkRequest(TeaModel):
         body_shrink: str = None,
         union_id: str = None,
     ):
-        # post请求体, 开放平台建议以对象形式存储
         self.body_shrink = body_shrink
-        # 用户id（主播id）
         self.union_id = union_id
 
     def validate(self):
@@ -3389,9 +3327,7 @@ class QuerySubscribeStatusResponseBodyResultSubscribeStatusDTOS(TeaModel):
         live_id: str = None,
         subscribe: bool = None,
     ):
-        # 直播uuid
         self.live_id = live_id
-        # 是否订阅 true:订阅 false:非订阅
         self.subscribe = subscribe
 
     def validate(self):
@@ -3423,7 +3359,6 @@ class QuerySubscribeStatusResponseBodyResult(TeaModel):
         self,
         subscribe_status_dtos: List[QuerySubscribeStatusResponseBodyResultSubscribeStatusDTOS] = None,
     ):
-        # 订阅详情列表
         self.subscribe_status_dtos = subscribe_status_dtos
 
     def validate(self):
@@ -3487,13 +3422,16 @@ class QuerySubscribeStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QuerySubscribeStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3506,6 +3444,8 @@ class QuerySubscribeStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3514,6 +3454,8 @@ class QuerySubscribeStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QuerySubscribeStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3558,7 +3500,6 @@ class StartCloudFeedRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 操作者的组织内id（staffId）
         self.user_id = user_id
 
     def validate(self):
@@ -3586,7 +3527,6 @@ class StartCloudFeedResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 状态更改是否成功
         self.result = result
 
     def validate(self):
@@ -3613,13 +3553,16 @@ class StartCloudFeedResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: StartCloudFeedResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3632,6 +3575,8 @@ class StartCloudFeedResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3640,6 +3585,8 @@ class StartCloudFeedResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = StartCloudFeedResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3684,7 +3631,6 @@ class StopCloudFeedRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 操作者的组织内id（staffId）
         self.user_id = user_id
 
     def validate(self):
@@ -3712,7 +3658,6 @@ class StopCloudFeedResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 状态更改是否成功
         self.result = result
 
     def validate(self):
@@ -3739,13 +3684,16 @@ class StopCloudFeedResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: StopCloudFeedResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3758,6 +3706,8 @@ class StopCloudFeedResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3766,6 +3716,8 @@ class StopCloudFeedResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = StopCloudFeedResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3812,11 +3764,8 @@ class SubscribeLiveRequest(TeaModel):
         subscribe: bool = None,
         union_id: str = None,
     ):
-        # 直播uuid
         self.live_id = live_id
-        # true:关注 false:取消关注
         self.subscribe = subscribe
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -3907,13 +3856,16 @@ class SubscribeLiveResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SubscribeLiveResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3926,6 +3878,8 @@ class SubscribeLiveResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3934,6 +3888,8 @@ class SubscribeLiveResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SubscribeLiveResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3984,19 +3940,12 @@ class UpdateLiveRequest(TeaModel):
         title: str = None,
         union_id: str = None,
     ):
-        # 直播封面
         self.cover_url = cover_url
-        # 简介
         self.introduction = introduction
-        # 直播id
         self.live_id = live_id
-        # 预计结束时间
         self.pre_end_time = pre_end_time
-        # 预计开播时间
         self.pre_start_time = pre_start_time
-        # 标题
         self.title = title
-        # 用户id（主播id）
         self.union_id = union_id
 
     def validate(self):
@@ -4103,13 +4052,16 @@ class UpdateLiveResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateLiveResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4122,6 +4074,8 @@ class UpdateLiveResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4130,6 +4084,8 @@ class UpdateLiveResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateLiveResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4178,15 +4134,10 @@ class UpdateLiveFeedRequest(TeaModel):
         title: str = None,
         user_id: str = None,
     ):
-        # 封面图url
         self.cover_url = cover_url
-        # 课程简介
         self.introduction = introduction
-        # 预计开始时间（毫秒值）（课程必须预告状态才可以修改该项）
         self.start_time = start_time
-        # 课程标题
         self.title = title
-        # 操作者id（修改者的组织内id）
         self.user_id = user_id
 
     def validate(self):
@@ -4230,7 +4181,6 @@ class UpdateLiveFeedResponseBody(TeaModel):
         self,
         has_update: bool = None,
     ):
-        # 是否修改成功
         self.has_update = has_update
 
     def validate(self):
@@ -4257,13 +4207,16 @@ class UpdateLiveFeedResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateLiveFeedResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4276,6 +4229,8 @@ class UpdateLiveFeedResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4284,6 +4239,8 @@ class UpdateLiveFeedResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateLiveFeedResponseBody()
             self.body = temp_model.from_map(m['body'])

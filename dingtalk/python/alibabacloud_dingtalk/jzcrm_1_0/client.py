@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.jzcrm_1_0 import models as dingtalkjzcrm__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def edit_contact(
-        self,
-        request: dingtalkjzcrm__1__0_models.EditContactRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditContactResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditContactHeaders()
-        return self.edit_contact_with_options(request, headers, runtime)
-
-    async def edit_contact_async(
-        self,
-        request: dingtalkjzcrm__1__0_models.EditContactRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditContactResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditContactHeaders()
-        return await self.edit_contact_with_options_async(request, headers, runtime)
 
     def edit_contact_with_options(
         self,
@@ -64,9 +54,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditContact',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/contacts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditContactResponse(),
-            self.do_roarequest('EditContact', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/contacts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_contact_with_options_async(
@@ -94,26 +95,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditContact',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/contacts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditContactResponse(),
-            await self.do_roarequest_async('EditContact', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/contacts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_customer(
+    def edit_contact(
         self,
-        request: dingtalkjzcrm__1__0_models.EditCustomerRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditCustomerResponse:
+        request: dingtalkjzcrm__1__0_models.EditContactRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditContactResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditCustomerHeaders()
-        return self.edit_customer_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditContactHeaders()
+        return self.edit_contact_with_options(request, headers, runtime)
 
-    async def edit_customer_async(
+    async def edit_contact_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditCustomerRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditCustomerResponse:
+        request: dingtalkjzcrm__1__0_models.EditContactRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditContactResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditCustomerHeaders()
-        return await self.edit_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditContactHeaders()
+        return await self.edit_contact_with_options_async(request, headers, runtime)
 
     def edit_customer_with_options(
         self,
@@ -140,9 +152,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditCustomer',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/customers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditCustomerResponse(),
-            self.do_roarequest('EditCustomer', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/customers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_customer_with_options_async(
@@ -170,26 +193,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditCustomer',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/customers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditCustomerResponse(),
-            await self.do_roarequest_async('EditCustomer', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/customers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_customer_pool(
+    def edit_customer(
         self,
-        request: dingtalkjzcrm__1__0_models.EditCustomerPoolRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditCustomerPoolResponse:
+        request: dingtalkjzcrm__1__0_models.EditCustomerRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditCustomerPoolHeaders()
-        return self.edit_customer_pool_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditCustomerHeaders()
+        return self.edit_customer_with_options(request, headers, runtime)
 
-    async def edit_customer_pool_async(
+    async def edit_customer_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditCustomerPoolRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditCustomerPoolResponse:
+        request: dingtalkjzcrm__1__0_models.EditCustomerRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditCustomerPoolHeaders()
-        return await self.edit_customer_pool_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditCustomerHeaders()
+        return await self.edit_customer_with_options_async(request, headers, runtime)
 
     def edit_customer_pool_with_options(
         self,
@@ -216,9 +250,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditCustomerPool',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/customerPools',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditCustomerPoolResponse(),
-            self.do_roarequest('EditCustomerPool', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/customerPools', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_customer_pool_with_options_async(
@@ -246,26 +291,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditCustomerPool',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/customerPools',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditCustomerPoolResponse(),
-            await self.do_roarequest_async('EditCustomerPool', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/customerPools', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_exchange(
+    def edit_customer_pool(
         self,
-        request: dingtalkjzcrm__1__0_models.EditExchangeRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditExchangeResponse:
+        request: dingtalkjzcrm__1__0_models.EditCustomerPoolRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditCustomerPoolResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditExchangeHeaders()
-        return self.edit_exchange_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditCustomerPoolHeaders()
+        return self.edit_customer_pool_with_options(request, headers, runtime)
 
-    async def edit_exchange_async(
+    async def edit_customer_pool_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditExchangeRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditExchangeResponse:
+        request: dingtalkjzcrm__1__0_models.EditCustomerPoolRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditCustomerPoolResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditExchangeHeaders()
-        return await self.edit_exchange_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditCustomerPoolHeaders()
+        return await self.edit_customer_pool_with_options_async(request, headers, runtime)
 
     def edit_exchange_with_options(
         self,
@@ -292,9 +348,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditExchange',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/exchanges',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditExchangeResponse(),
-            self.do_roarequest('EditExchange', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/exchanges', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_exchange_with_options_async(
@@ -322,26 +389,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditExchange',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/exchanges',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditExchangeResponse(),
-            await self.do_roarequest_async('EditExchange', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/exchanges', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_goods(
+    def edit_exchange(
         self,
-        request: dingtalkjzcrm__1__0_models.EditGoodsRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditGoodsResponse:
+        request: dingtalkjzcrm__1__0_models.EditExchangeRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditExchangeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditGoodsHeaders()
-        return self.edit_goods_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditExchangeHeaders()
+        return self.edit_exchange_with_options(request, headers, runtime)
 
-    async def edit_goods_async(
+    async def edit_exchange_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditGoodsRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditGoodsResponse:
+        request: dingtalkjzcrm__1__0_models.EditExchangeRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditExchangeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditGoodsHeaders()
-        return await self.edit_goods_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditExchangeHeaders()
+        return await self.edit_exchange_with_options_async(request, headers, runtime)
 
     def edit_goods_with_options(
         self,
@@ -368,9 +446,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditGoods',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/goods',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditGoodsResponse(),
-            self.do_roarequest('EditGoods', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/goods', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_goods_with_options_async(
@@ -398,26 +487,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditGoods',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/goods',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditGoodsResponse(),
-            await self.do_roarequest_async('EditGoods', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/goods', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_intostock(
+    def edit_goods(
         self,
-        request: dingtalkjzcrm__1__0_models.EditIntostockRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditIntostockResponse:
+        request: dingtalkjzcrm__1__0_models.EditGoodsRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditGoodsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditIntostockHeaders()
-        return self.edit_intostock_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditGoodsHeaders()
+        return self.edit_goods_with_options(request, headers, runtime)
 
-    async def edit_intostock_async(
+    async def edit_goods_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditIntostockRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditIntostockResponse:
+        request: dingtalkjzcrm__1__0_models.EditGoodsRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditGoodsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditIntostockHeaders()
-        return await self.edit_intostock_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditGoodsHeaders()
+        return await self.edit_goods_with_options_async(request, headers, runtime)
 
     def edit_intostock_with_options(
         self,
@@ -444,9 +544,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditIntostock',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/intostocks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditIntostockResponse(),
-            self.do_roarequest('EditIntostock', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/intostocks', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_intostock_with_options_async(
@@ -474,26 +585,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditIntostock',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/intostocks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditIntostockResponse(),
-            await self.do_roarequest_async('EditIntostock', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/intostocks', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_invoice(
+    def edit_intostock(
         self,
-        request: dingtalkjzcrm__1__0_models.EditInvoiceRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditInvoiceResponse:
+        request: dingtalkjzcrm__1__0_models.EditIntostockRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditIntostockResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditInvoiceHeaders()
-        return self.edit_invoice_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditIntostockHeaders()
+        return self.edit_intostock_with_options(request, headers, runtime)
 
-    async def edit_invoice_async(
+    async def edit_intostock_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditInvoiceRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditInvoiceResponse:
+        request: dingtalkjzcrm__1__0_models.EditIntostockRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditIntostockResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditInvoiceHeaders()
-        return await self.edit_invoice_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditIntostockHeaders()
+        return await self.edit_intostock_with_options_async(request, headers, runtime)
 
     def edit_invoice_with_options(
         self,
@@ -520,9 +642,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditInvoice',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/invoices',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditInvoiceResponse(),
-            self.do_roarequest('EditInvoice', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/invoices', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_invoice_with_options_async(
@@ -550,26 +683,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditInvoice',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/invoices',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditInvoiceResponse(),
-            await self.do_roarequest_async('EditInvoice', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/invoices', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_order(
+    def edit_invoice(
         self,
-        request: dingtalkjzcrm__1__0_models.EditOrderRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditOrderResponse:
+        request: dingtalkjzcrm__1__0_models.EditInvoiceRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditOrderHeaders()
-        return self.edit_order_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditInvoiceHeaders()
+        return self.edit_invoice_with_options(request, headers, runtime)
 
-    async def edit_order_async(
+    async def edit_invoice_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditOrderRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditOrderResponse:
+        request: dingtalkjzcrm__1__0_models.EditInvoiceRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditOrderHeaders()
-        return await self.edit_order_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditInvoiceHeaders()
+        return await self.edit_invoice_with_options_async(request, headers, runtime)
 
     def edit_order_with_options(
         self,
@@ -596,9 +740,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditOrder',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/orders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditOrderResponse(),
-            self.do_roarequest('EditOrder', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/orders', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_order_with_options_async(
@@ -626,26 +781,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditOrder',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/orders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditOrderResponse(),
-            await self.do_roarequest_async('EditOrder', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/orders', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_outstock(
+    def edit_order(
         self,
-        request: dingtalkjzcrm__1__0_models.EditOutstockRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditOutstockResponse:
+        request: dingtalkjzcrm__1__0_models.EditOrderRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditOutstockHeaders()
-        return self.edit_outstock_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditOrderHeaders()
+        return self.edit_order_with_options(request, headers, runtime)
 
-    async def edit_outstock_async(
+    async def edit_order_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditOutstockRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditOutstockResponse:
+        request: dingtalkjzcrm__1__0_models.EditOrderRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditOutstockHeaders()
-        return await self.edit_outstock_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditOrderHeaders()
+        return await self.edit_order_with_options_async(request, headers, runtime)
 
     def edit_outstock_with_options(
         self,
@@ -672,9 +838,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditOutstock',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/outstocks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditOutstockResponse(),
-            self.do_roarequest('EditOutstock', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/outstocks', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_outstock_with_options_async(
@@ -702,26 +879,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditOutstock',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/outstocks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditOutstockResponse(),
-            await self.do_roarequest_async('EditOutstock', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/outstocks', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_production(
+    def edit_outstock(
         self,
-        request: dingtalkjzcrm__1__0_models.EditProductionRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditProductionResponse:
+        request: dingtalkjzcrm__1__0_models.EditOutstockRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditOutstockResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditProductionHeaders()
-        return self.edit_production_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditOutstockHeaders()
+        return self.edit_outstock_with_options(request, headers, runtime)
 
-    async def edit_production_async(
+    async def edit_outstock_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditProductionRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditProductionResponse:
+        request: dingtalkjzcrm__1__0_models.EditOutstockRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditOutstockResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditProductionHeaders()
-        return await self.edit_production_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditOutstockHeaders()
+        return await self.edit_outstock_with_options_async(request, headers, runtime)
 
     def edit_production_with_options(
         self,
@@ -748,9 +936,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditProduction',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/productions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditProductionResponse(),
-            self.do_roarequest('EditProduction', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/productions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_production_with_options_async(
@@ -778,26 +977,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditProduction',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/productions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditProductionResponse(),
-            await self.do_roarequest_async('EditProduction', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/productions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_purchase(
+    def edit_production(
         self,
-        request: dingtalkjzcrm__1__0_models.EditPurchaseRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditPurchaseResponse:
+        request: dingtalkjzcrm__1__0_models.EditProductionRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditProductionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditPurchaseHeaders()
-        return self.edit_purchase_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditProductionHeaders()
+        return self.edit_production_with_options(request, headers, runtime)
 
-    async def edit_purchase_async(
+    async def edit_production_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditPurchaseRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditPurchaseResponse:
+        request: dingtalkjzcrm__1__0_models.EditProductionRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditProductionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditPurchaseHeaders()
-        return await self.edit_purchase_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditProductionHeaders()
+        return await self.edit_production_with_options_async(request, headers, runtime)
 
     def edit_purchase_with_options(
         self,
@@ -824,9 +1034,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditPurchase',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/purchases',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditPurchaseResponse(),
-            self.do_roarequest('EditPurchase', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/purchases', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_purchase_with_options_async(
@@ -854,26 +1075,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditPurchase',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/purchases',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditPurchaseResponse(),
-            await self.do_roarequest_async('EditPurchase', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/purchases', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_quotation_record(
+    def edit_purchase(
         self,
-        request: dingtalkjzcrm__1__0_models.EditQuotationRecordRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditQuotationRecordResponse:
+        request: dingtalkjzcrm__1__0_models.EditPurchaseRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditPurchaseResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditQuotationRecordHeaders()
-        return self.edit_quotation_record_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditPurchaseHeaders()
+        return self.edit_purchase_with_options(request, headers, runtime)
 
-    async def edit_quotation_record_async(
+    async def edit_purchase_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditQuotationRecordRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditQuotationRecordResponse:
+        request: dingtalkjzcrm__1__0_models.EditPurchaseRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditPurchaseResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditQuotationRecordHeaders()
-        return await self.edit_quotation_record_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditPurchaseHeaders()
+        return await self.edit_purchase_with_options_async(request, headers, runtime)
 
     def edit_quotation_record_with_options(
         self,
@@ -900,9 +1132,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditQuotationRecord',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/quotationRecords',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditQuotationRecordResponse(),
-            self.do_roarequest('EditQuotationRecord', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/quotationRecords', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_quotation_record_with_options_async(
@@ -930,26 +1173,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditQuotationRecord',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/quotationRecords',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditQuotationRecordResponse(),
-            await self.do_roarequest_async('EditQuotationRecord', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/quotationRecords', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def edit_sales(
+    def edit_quotation_record(
         self,
-        request: dingtalkjzcrm__1__0_models.EditSalesRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditSalesResponse:
+        request: dingtalkjzcrm__1__0_models.EditQuotationRecordRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditQuotationRecordResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditSalesHeaders()
-        return self.edit_sales_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditQuotationRecordHeaders()
+        return self.edit_quotation_record_with_options(request, headers, runtime)
 
-    async def edit_sales_async(
+    async def edit_quotation_record_async(
         self,
-        request: dingtalkjzcrm__1__0_models.EditSalesRequest,
-    ) -> dingtalkjzcrm__1__0_models.EditSalesResponse:
+        request: dingtalkjzcrm__1__0_models.EditQuotationRecordRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditQuotationRecordResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.EditSalesHeaders()
-        return await self.edit_sales_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditQuotationRecordHeaders()
+        return await self.edit_quotation_record_with_options_async(request, headers, runtime)
 
     def edit_sales_with_options(
         self,
@@ -976,9 +1230,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditSales',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/sales',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditSalesResponse(),
-            self.do_roarequest('EditSales', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/sales', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def edit_sales_with_options_async(
@@ -1006,26 +1271,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='EditSales',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/sales',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.EditSalesResponse(),
-            await self.do_roarequest_async('EditSales', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/jzcrm/sales', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_data_list(
+    def edit_sales(
         self,
-        request: dingtalkjzcrm__1__0_models.GetDataListRequest,
-    ) -> dingtalkjzcrm__1__0_models.GetDataListResponse:
+        request: dingtalkjzcrm__1__0_models.EditSalesRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditSalesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.GetDataListHeaders()
-        return self.get_data_list_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditSalesHeaders()
+        return self.edit_sales_with_options(request, headers, runtime)
 
-    async def get_data_list_async(
+    async def edit_sales_async(
         self,
-        request: dingtalkjzcrm__1__0_models.GetDataListRequest,
-    ) -> dingtalkjzcrm__1__0_models.GetDataListResponse:
+        request: dingtalkjzcrm__1__0_models.EditSalesRequest,
+    ) -> dingtalkjzcrm__1__0_models.EditSalesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.GetDataListHeaders()
-        return await self.get_data_list_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.EditSalesHeaders()
+        return await self.edit_sales_with_options_async(request, headers, runtime)
 
     def get_data_list_with_options(
         self,
@@ -1050,9 +1326,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDataList',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/data',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.GetDataListResponse(),
-            self.do_roarequest('GetDataList', 'jzcrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/jzcrm/data', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_data_list_with_options_async(
@@ -1078,26 +1365,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDataList',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/data',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.GetDataListResponse(),
-            await self.do_roarequest_async('GetDataList', 'jzcrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/jzcrm/data', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_data_view(
+    def get_data_list(
         self,
-        request: dingtalkjzcrm__1__0_models.GetDataViewRequest,
-    ) -> dingtalkjzcrm__1__0_models.GetDataViewResponse:
+        request: dingtalkjzcrm__1__0_models.GetDataListRequest,
+    ) -> dingtalkjzcrm__1__0_models.GetDataListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.GetDataViewHeaders()
-        return self.get_data_view_with_options(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.GetDataListHeaders()
+        return self.get_data_list_with_options(request, headers, runtime)
 
-    async def get_data_view_async(
+    async def get_data_list_async(
         self,
-        request: dingtalkjzcrm__1__0_models.GetDataViewRequest,
-    ) -> dingtalkjzcrm__1__0_models.GetDataViewResponse:
+        request: dingtalkjzcrm__1__0_models.GetDataListRequest,
+    ) -> dingtalkjzcrm__1__0_models.GetDataListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkjzcrm__1__0_models.GetDataViewHeaders()
-        return await self.get_data_view_with_options_async(request, headers, runtime)
+        headers = dingtalkjzcrm__1__0_models.GetDataListHeaders()
+        return await self.get_data_list_with_options_async(request, headers, runtime)
 
     def get_data_view_with_options(
         self,
@@ -1120,9 +1418,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDataView',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/dataView',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.GetDataViewResponse(),
-            self.do_roarequest('GetDataView', 'jzcrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/jzcrm/dataView', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_data_view_with_options_async(
@@ -1146,7 +1455,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDataView',
+            version='jzcrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/jzcrm/dataView',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkjzcrm__1__0_models.GetDataViewResponse(),
-            await self.do_roarequest_async('GetDataView', 'jzcrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/jzcrm/dataView', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def get_data_view(
+        self,
+        request: dingtalkjzcrm__1__0_models.GetDataViewRequest,
+    ) -> dingtalkjzcrm__1__0_models.GetDataViewResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkjzcrm__1__0_models.GetDataViewHeaders()
+        return self.get_data_view_with_options(request, headers, runtime)
+
+    async def get_data_view_async(
+        self,
+        request: dingtalkjzcrm__1__0_models.GetDataViewRequest,
+    ) -> dingtalkjzcrm__1__0_models.GetDataViewResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkjzcrm__1__0_models.GetDataViewHeaders()
+        return await self.get_data_view_with_options_async(request, headers, runtime)

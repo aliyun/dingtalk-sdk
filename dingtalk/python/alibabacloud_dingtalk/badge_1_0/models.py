@@ -43,9 +43,7 @@ class CreateBadgeCodeUserInstanceRequestAvailableTimes(TeaModel):
         gmt_end: str = None,
         gmt_start: str = None,
     ):
-        # 结束时间
         self.gmt_end = gmt_end
-        # 开始时间
         self.gmt_start = gmt_start
 
     def validate(self):
@@ -87,27 +85,16 @@ class CreateBadgeCodeUserInstanceRequest(TeaModel):
         user_corp_relation_type: str = None,
         user_identity: str = None,
     ):
-        # 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
         self.available_times = available_times
-        # 码标识，由钉钉颁发
         self.code_identity = code_identity
-        # 码值
         self.code_value = code_value
-        # 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
         self.code_value_type = code_value_type
-        # 企业ID
         self.corp_id = corp_id
-        # 扩展参数
         self.ext_info = ext_info
-        # 临时码，传入过期时间
         self.gmt_expired = gmt_expired
-        # 业务幂等ID
         self.request_id = request_id
-        # 状态，传入关闭状态需要用户手动开启后才会渲染二维
         self.status = status
-        # 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
         self.user_corp_relation_type = user_corp_relation_type
-        # 用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号
         self.user_identity = user_identity
 
     def validate(self):
@@ -184,9 +171,7 @@ class CreateBadgeCodeUserInstanceResponseBody(TeaModel):
         code_detail_url: str = None,
         code_id: str = None,
     ):
-        # 码详情跳转地址
         self.code_detail_url = code_detail_url
-        # 码ID
         self.code_id = code_id
 
     def validate(self):
@@ -217,13 +202,16 @@ class CreateBadgeCodeUserInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateBadgeCodeUserInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -236,6 +224,8 @@ class CreateBadgeCodeUserInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -244,6 +234,8 @@ class CreateBadgeCodeUserInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateBadgeCodeUserInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -291,13 +283,9 @@ class CreateBadgeNotifyRequest(TeaModel):
         msg_type: str = None,
         user_id: str = None,
     ):
-        # 通知内容
         self.content = content
-        # 消息ID
         self.msg_id = msg_id
-        # 消息类型
         self.msg_type = msg_type
-        # 员工ID
         self.user_id = user_id
 
     def validate(self):
@@ -337,7 +325,6 @@ class CreateBadgeNotifyResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
-        # 处理结果
         self.result = result
 
     def validate(self):
@@ -364,13 +351,16 @@ class CreateBadgeNotifyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateBadgeNotifyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -383,6 +373,8 @@ class CreateBadgeNotifyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -391,6 +383,8 @@ class CreateBadgeNotifyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateBadgeNotifyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -436,9 +430,7 @@ class DecodeBadgeCodeRequest(TeaModel):
         pay_code: str = None,
         request_id: str = None,
     ):
-        # 码值
         self.pay_code = pay_code
-        # 请求ID
         self.request_id = request_id
 
     def validate(self):
@@ -478,23 +470,14 @@ class DecodeBadgeCodeResponseBody(TeaModel):
         user_corp_relation_type: str = None,
         user_id: str = None,
     ):
-        # 支付宝付款码
         self.alipay_code = alipay_code
-        # 码ID，对于访客或会展码等静态码值返回
         self.code_id = code_id
-        # 码标识，工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE
         self.code_identity = code_identity
-        # 码类型
         self.code_type = code_type
-        # 企业id
         self.corp_id = corp_id
-        # 扩展信息
         self.ext_info = ext_info
-        # 外部业务ID，值为调用创建工牌码接口传入的requestId
         self.out_biz_id = out_biz_id
-        # 用户和企业关系
         self.user_corp_relation_type = user_corp_relation_type
-        # 员工id
         self.user_id = user_id
 
     def validate(self):
@@ -553,13 +536,16 @@ class DecodeBadgeCodeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DecodeBadgeCodeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -572,6 +558,8 @@ class DecodeBadgeCodeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -580,6 +568,8 @@ class DecodeBadgeCodeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DecodeBadgeCodeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -629,17 +619,11 @@ class NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList(TeaM
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
-        # 1.00
         self.amount = amount
-        # 扩展信息
         self.ext_info = ext_info
-        # 资金渠道名称
         self.fund_tool_name = fund_tool_name
-        # 开始时间
         self.gmt_create = gmt_create
-        # 结束时间
         self.gmt_finish = gmt_finish
-        # 是否是优惠工具
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -694,21 +678,13 @@ class NotifyBadgeCodePayResultRequestPayChannelDetailList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
-        # 支付金额
         self.amount = amount
-        # 资金工具明细
         self.fund_tool_detail_list = fund_tool_detail_list
-        # 开始时间
         self.gmt_create = gmt_create
-        # 结束时间
         self.gmt_finish = gmt_finish
-        # 支付渠道名称
         self.pay_channel_name = pay_channel_name
-        # 支付渠道单号
         self.pay_channel_order_no = pay_channel_order_no
-        # 支付渠道类型
         self.pay_channel_type = pay_channel_type
-        # 优惠金额
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -788,39 +764,22 @@ class NotifyBadgeCodePayResultRequest(TeaModel):
         trade_status: str = None,
         user_id: str = None,
     ):
-        # 订单金额
         self.amount = amount
-        # 收费金额
         self.charge_amount = charge_amount
-        # 企业id
         self.corp_id = corp_id
-        # 扩展信息
         self.ext_info = ext_info
-        # 交易开始时间
         self.gmt_trade_create = gmt_trade_create
-        # 交易结束时间
         self.gmt_trade_finish = gmt_trade_finish
-        # merchantName
         self.merchant_name = merchant_name
-        # 支付渠道明细信息
         self.pay_channel_detail_list = pay_channel_detail_list
-        # 付款码值
         self.pay_code = pay_code
-        # 订单优惠金额
         self.promotion_amount = promotion_amount
-        # 备注
         self.remark = remark
-        # 订单标题
         self.title = title
-        # 支付失败错误码
         self.trade_error_code = trade_error_code
-        # 支付失败信息
         self.trade_error_msg = trade_error_msg
-        # 交易号
         self.trade_no = trade_no
-        # 交易状态
         self.trade_status = trade_status
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -920,7 +879,6 @@ class NotifyBadgeCodePayResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 处理结果
         self.result = result
 
     def validate(self):
@@ -947,13 +905,16 @@ class NotifyBadgeCodePayResultResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: NotifyBadgeCodePayResultResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -966,6 +927,8 @@ class NotifyBadgeCodePayResultResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -974,6 +937,8 @@ class NotifyBadgeCodePayResultResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = NotifyBadgeCodePayResultResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1023,17 +988,11 @@ class NotifyBadgeCodeRefundResultRequestPayChannelDetailListFundToolDetailList(T
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
-        # 金额
         self.amount = amount
-        # 扩展信息
         self.ext_info = ext_info
-        # 资金工具名称
         self.fund_tool_name = fund_tool_name
-        # 创建时间
         self.gmt_create = gmt_create
-        # 完成时间
         self.gmt_finish = gmt_finish
-        # 是否是优惠工具
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -1087,19 +1046,12 @@ class NotifyBadgeCodeRefundResultRequestPayChannelDetailList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
-        # 金额
         self.amount = amount
-        # 支付资金列表
         self.fund_tool_detail_list = fund_tool_detail_list
-        # 支付渠道名称
         self.pay_channel_name = pay_channel_name
-        # 支付渠道号
         self.pay_channel_order_no = pay_channel_order_no
-        # 支付渠道退款号
         self.pay_channel_refund_order_no = pay_channel_refund_order_no
-        # 支付渠道类型
         self.pay_channel_type = pay_channel_type
-        # 优惠金额
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -1168,25 +1120,15 @@ class NotifyBadgeCodeRefundResultRequest(TeaModel):
         trade_no: str = None,
         user_id: str = None,
     ):
-        # 企业id
         self.corp_id = corp_id
-        # 退款时间
         self.gmt_refund = gmt_refund
-        # 支付渠道信息
         self.pay_channel_detail_list = pay_channel_detail_list
-        # 支付时使用的付款码
         self.pay_code = pay_code
-        # 退款金额
         self.refund_amount = refund_amount
-        # 本次退款订单号
         self.refund_order_no = refund_order_no
-        # 退款的优惠金额
         self.refund_promotion_amount = refund_promotion_amount
-        # 备注
         self.remark = remark
-        # 交易订单号
         self.trade_no = trade_no
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -1258,7 +1200,6 @@ class NotifyBadgeCodeRefundResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 处理结果
         self.result = result
 
     def validate(self):
@@ -1285,13 +1226,16 @@ class NotifyBadgeCodeRefundResultResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: NotifyBadgeCodeRefundResultResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1304,6 +1248,8 @@ class NotifyBadgeCodeRefundResultResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1312,6 +1258,8 @@ class NotifyBadgeCodeRefundResultResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = NotifyBadgeCodeRefundResultResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1365,25 +1313,15 @@ class NotifyBadgeCodeVerifyResultRequest(TeaModel):
         verify_result: bool = None,
         verify_time: str = None,
     ):
-        # 企业ID
         self.corp_id = corp_id
-        # 码值
         self.pay_code = pay_code
-        # 备注信息
         self.remark = remark
-        # 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
         self.user_corp_relation_type = user_corp_relation_type
-        # 用户身份标识
         self.user_identity = user_identity
-        # 验证事件，长度不超过8个中文
         self.verify_event = verify_event
-        # 验证地点，调用时请务必传入，以便生成工牌使用记录
         self.verify_location = verify_location
-        # 验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录
         self.verify_no = verify_no
-        # 验证结果
         self.verify_result = verify_result
-        # 验证时间
         self.verify_time = verify_time
 
     def validate(self):
@@ -1447,7 +1385,6 @@ class NotifyBadgeCodeVerifyResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # 结果
         self.result = result
 
     def validate(self):
@@ -1474,13 +1411,16 @@ class NotifyBadgeCodeVerifyResultResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: NotifyBadgeCodeVerifyResultResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1493,6 +1433,8 @@ class NotifyBadgeCodeVerifyResultResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1501,6 +1443,8 @@ class NotifyBadgeCodeVerifyResultResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = NotifyBadgeCodeVerifyResultResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1548,13 +1492,9 @@ class SaveBadgeCodeCorpInstanceRequest(TeaModel):
         ext_info: Dict[str, str] = None,
         status: str = None,
     ):
-        # 码标识，由钉钉颁发
         self.code_identity = code_identity
-        # 开通的企业ID
         self.corp_id = corp_id
-        # 扩展参数
         self.ext_info = ext_info
-        # 状态，OPEN或CLOSED
         self.status = status
 
     def validate(self):
@@ -1597,13 +1537,9 @@ class SaveBadgeCodeCorpInstanceResponseBody(TeaModel):
         ext_info: Dict[str, str] = None,
         status: str = None,
     ):
-        # 码标识
         self.code_identity = code_identity
-        # 开通的企业ID
         self.corp_id = corp_id
-        # 扩展参数
         self.ext_info = ext_info
-        # 状态
         self.status = status
 
     def validate(self):
@@ -1642,13 +1578,16 @@ class SaveBadgeCodeCorpInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SaveBadgeCodeCorpInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1661,6 +1600,8 @@ class SaveBadgeCodeCorpInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1669,6 +1610,8 @@ class SaveBadgeCodeCorpInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SaveBadgeCodeCorpInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1714,9 +1657,7 @@ class UpdateBadgeCodeUserInstanceRequestAvailableTimes(TeaModel):
         gmt_end: str = None,
         gmt_start: str = None,
     ):
-        # 结束时间
         self.gmt_end = gmt_end
-        # 开始时间
         self.gmt_start = gmt_start
 
     def validate(self):
@@ -1757,25 +1698,15 @@ class UpdateBadgeCodeUserInstanceRequest(TeaModel):
         user_corp_relation_type: str = None,
         user_identity: str = None,
     ):
-        # 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
         self.available_times = available_times
-        # 用户码ID
         self.code_id = code_id
-        # 码标识
         self.code_identity = code_identity
-        # 码值
         self.code_value = code_value
-        # 企业ID
         self.corp_id = corp_id
-        # 扩展参数
         self.ext_info = ext_info
-        # 临时码，传入过期时间
         self.gmt_expired = gmt_expired
-        # 状态
         self.status = status
-        # 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
         self.user_corp_relation_type = user_corp_relation_type
-        # 用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号
         self.user_identity = user_identity
 
     def validate(self):
@@ -1847,7 +1778,6 @@ class UpdateBadgeCodeUserInstanceResponseBody(TeaModel):
         self,
         code_id: str = None,
     ):
-        # 码ID
         self.code_id = code_id
 
     def validate(self):
@@ -1874,13 +1804,16 @@ class UpdateBadgeCodeUserInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateBadgeCodeUserInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1893,6 +1826,8 @@ class UpdateBadgeCodeUserInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1901,6 +1836,8 @@ class UpdateBadgeCodeUserInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateBadgeCodeUserInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])

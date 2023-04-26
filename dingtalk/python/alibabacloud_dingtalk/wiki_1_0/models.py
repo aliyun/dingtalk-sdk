@@ -42,7 +42,6 @@ class WikiWordsDetailRequest(TeaModel):
         self,
         word_name: str = None,
     ):
-        # 传递的词条名称
         self.word_name = word_name
 
     def validate(self):
@@ -74,15 +73,10 @@ class WikiWordsDetailResponseBodyDataAppLink(TeaModel):
         pc_link: str = None,
         phone_link: str = None,
     ):
-        # 应用编号
         self.app_id = app_id
-        # 应用名称
         self.app_name = app_name
-        # 应用图片链接
         self.icon_link = icon_link
-        # 应用PC端链接
         self.pc_link = pc_link
-        # 应用手机端链接
         self.phone_link = phone_link
 
     def validate(self):
@@ -128,11 +122,8 @@ class WikiWordsDetailResponseBodyDataRelatedDoc(TeaModel):
         name: str = None,
         type: str = None,
     ):
-        # 链接
         self.link = link
-        # 名称
         self.name = name
-        # 文档类型doc或者sheet
         self.type = type
 
     def validate(self):
@@ -170,11 +161,8 @@ class WikiWordsDetailResponseBodyDataRelatedLink(TeaModel):
         name: str = None,
         type: str = None,
     ):
-        # 链接
         self.link = link
-        # 链接名称
         self.name = name
-        # 链接类型
         self.type = type
 
     def validate(self):
@@ -229,44 +217,25 @@ class WikiWordsDetailResponseBodyData(TeaModel):
         word_name: str = None,
         word_paraphrase: str = None,
     ):
-        # 应用对象
         self.app_link = app_link
-        # 审批人
         self.approve_name = approve_name
-        # 联系人
         self.contacts = contacts
-        # 创建人
         self.creator_name = creator_name
-        # 创建时间
         self.gmt_create = gmt_create
-        # 修改时间
         self.gmt_modify = gmt_modify
         self.high_light_word_alias = high_light_word_alias
-        # 内部群是否高亮
         self.im_high_light = im_high_light
-        # 组织名称
         self.org_name = org_name
-        # 相关文档
         self.related_doc = related_doc
-        # 相关链接
         self.related_link = related_link
-        # 服务群是否高亮
         self.sim_high_light = sim_high_light
-        # 抹除文本格式后的释义
         self.simple_word_paraphrase = simple_word_paraphrase
-        # 标签列表
         self.tags_list = tags_list
-        # 更新人
         self.updater_name = updater_name
-        # 唯一编号
         self.uuid = uuid
-        # 别名
         self.word_alias = word_alias
-        # 全名
         self.word_full_name = word_full_name
-        # 词条名称
         self.word_name = word_name
-        # 原始释义(带格式数据的释义）
         self.word_paraphrase = word_paraphrase
 
     def validate(self):
@@ -398,11 +367,8 @@ class WikiWordsDetailResponseBody(TeaModel):
         err_msg: str = None,
         success: bool = None,
     ):
-        # 返回的参数
         self.data = data
-        # 返回的错误信息
         self.err_msg = err_msg
-        # 查询是否成功
         self.success = success
 
     def validate(self):
@@ -445,13 +411,16 @@ class WikiWordsDetailResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WikiWordsDetailResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -464,6 +433,8 @@ class WikiWordsDetailResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -472,6 +443,8 @@ class WikiWordsDetailResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WikiWordsDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -516,7 +489,6 @@ class WikiWordsParseRequest(TeaModel):
         self,
         content: str = None,
     ):
-        # 消息体以及文章内容
         self.content = content
 
     def validate(self):
@@ -587,7 +559,6 @@ class WikiWordsParseResponseBody(TeaModel):
     ):
         self.data = data
         self.err_msg = err_msg
-        # Id of the request
         self.success = success
 
     def validate(self):
@@ -630,13 +601,16 @@ class WikiWordsParseResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WikiWordsParseResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -649,6 +623,8 @@ class WikiWordsParseResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -657,6 +633,8 @@ class WikiWordsParseResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WikiWordsParseResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.village_1_0 import models as dingtalkvillage__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,14 +16,94 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
+
+    def get_dept_with_options(
+        self,
+        department_id: str,
+        request: dingtalkvillage__1__0_models.GetDeptRequest,
+        headers: dingtalkvillage__1__0_models.GetDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvillage__1__0_models.GetDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.sub_corp_id):
+            query['subCorpId'] = request.sub_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDept',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/deptartments/{department_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvillage__1__0_models.GetDeptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_dept_with_options_async(
+        self,
+        department_id: str,
+        request: dingtalkvillage__1__0_models.GetDeptRequest,
+        headers: dingtalkvillage__1__0_models.GetDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvillage__1__0_models.GetDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.sub_corp_id):
+            query['subCorpId'] = request.sub_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDept',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/deptartments/{department_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvillage__1__0_models.GetDeptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
 
     def get_dept(
         self,
@@ -41,18 +123,15 @@ class Client(OpenApiClient):
         headers = dingtalkvillage__1__0_models.GetDeptHeaders()
         return await self.get_dept_with_options_async(department_id, request, headers, runtime)
 
-    def get_dept_with_options(
+    def get_resident_dept_with_options(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.GetDeptRequest,
-        headers: dingtalkvillage__1__0_models.GetDeptHeaders,
+        request: dingtalkvillage__1__0_models.GetResidentDeptRequest,
+        headers: dingtalkvillage__1__0_models.GetResidentDeptHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetDeptResponse:
+    ) -> dingtalkvillage__1__0_models.GetResidentDeptResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -64,23 +143,31 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetResidentDept',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentDepartments/departments/{department_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetDeptResponse(),
-            self.do_roarequest('GetDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/deptartments/{department_id}', 'json', req, runtime)
+            dingtalkvillage__1__0_models.GetResidentDeptResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def get_dept_with_options_async(
+    async def get_resident_dept_with_options_async(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.GetDeptRequest,
-        headers: dingtalkvillage__1__0_models.GetDeptHeaders,
+        request: dingtalkvillage__1__0_models.GetResidentDeptRequest,
+        headers: dingtalkvillage__1__0_models.GetResidentDeptHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetDeptResponse:
+    ) -> dingtalkvillage__1__0_models.GetResidentDeptResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -92,9 +179,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetResidentDept',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentDepartments/departments/{department_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetDeptResponse(),
-            await self.do_roarequest_async('GetDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/deptartments/{department_id}', 'json', req, runtime)
+            dingtalkvillage__1__0_models.GetResidentDeptResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_resident_dept(
@@ -115,15 +213,15 @@ class Client(OpenApiClient):
         headers = dingtalkvillage__1__0_models.GetResidentDeptHeaders()
         return await self.get_resident_dept_with_options_async(department_id, request, headers, runtime)
 
-    def get_resident_dept_with_options(
+    def get_resident_user_info_with_options(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.GetResidentDeptRequest,
-        headers: dingtalkvillage__1__0_models.GetResidentDeptHeaders,
+        user_id: str,
+        request: dingtalkvillage__1__0_models.GetResidentUserInfoRequest,
+        headers: dingtalkvillage__1__0_models.GetResidentUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetResidentDeptResponse:
+    ) -> dingtalkvillage__1__0_models.GetResidentUserInfoResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -136,20 +234,31 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetResidentUserInfo',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentDepartments/{department_id}/users/{user_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetResidentDeptResponse(),
-            self.do_roarequest('GetResidentDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/departments/{department_id}', 'json', req, runtime)
+            dingtalkvillage__1__0_models.GetResidentUserInfoResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def get_resident_dept_with_options_async(
+    async def get_resident_user_info_with_options_async(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.GetResidentDeptRequest,
-        headers: dingtalkvillage__1__0_models.GetResidentDeptHeaders,
+        user_id: str,
+        request: dingtalkvillage__1__0_models.GetResidentUserInfoRequest,
+        headers: dingtalkvillage__1__0_models.GetResidentUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetResidentDeptResponse:
+    ) -> dingtalkvillage__1__0_models.GetResidentUserInfoResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
@@ -162,9 +271,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetResidentUserInfo',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentDepartments/{department_id}/users/{user_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetResidentDeptResponse(),
-            await self.do_roarequest_async('GetResidentDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/departments/{department_id}', 'json', req, runtime)
+            dingtalkvillage__1__0_models.GetResidentUserInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_resident_user_info(
@@ -187,18 +307,17 @@ class Client(OpenApiClient):
         headers = dingtalkvillage__1__0_models.GetResidentUserInfoHeaders()
         return await self.get_resident_user_info_with_options_async(department_id, user_id, request, headers, runtime)
 
-    def get_resident_user_info_with_options(
+    def get_user_with_options(
         self,
-        department_id: str,
         user_id: str,
-        request: dingtalkvillage__1__0_models.GetResidentUserInfoRequest,
-        headers: dingtalkvillage__1__0_models.GetResidentUserInfoHeaders,
+        request: dingtalkvillage__1__0_models.GetUserRequest,
+        headers: dingtalkvillage__1__0_models.GetUserHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetResidentUserInfoResponse:
+    ) -> dingtalkvillage__1__0_models.GetUserResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -210,23 +329,33 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetUser',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/users/getByUserId',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetResidentUserInfoResponse(),
-            self.do_roarequest('GetResidentUserInfo', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/users/{user_id}', 'json', req, runtime)
+            dingtalkvillage__1__0_models.GetUserResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def get_resident_user_info_with_options_async(
+    async def get_user_with_options_async(
         self,
-        department_id: str,
         user_id: str,
-        request: dingtalkvillage__1__0_models.GetResidentUserInfoRequest,
-        headers: dingtalkvillage__1__0_models.GetResidentUserInfoHeaders,
+        request: dingtalkvillage__1__0_models.GetUserRequest,
+        headers: dingtalkvillage__1__0_models.GetUserHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetResidentUserInfoResponse:
+    ) -> dingtalkvillage__1__0_models.GetUserResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
         query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -238,9 +367,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetUser',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/users/getByUserId',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetResidentUserInfoResponse(),
-            await self.do_roarequest_async('GetResidentUserInfo', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/users/{user_id}', 'json', req, runtime)
+            dingtalkvillage__1__0_models.GetUserResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_user(
@@ -260,78 +400,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.GetUserHeaders()
         return await self.get_user_with_options_async(user_id, request, headers, runtime)
-
-    def get_user_with_options(
-        self,
-        user_id: str,
-        request: dingtalkvillage__1__0_models.GetUserRequest,
-        headers: dingtalkvillage__1__0_models.GetUserHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetUserResponse:
-        UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        query = {}
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
-        if not UtilClient.is_unset(request.sub_corp_id):
-            query['subCorpId'] = request.sub_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetUserResponse(),
-            self.do_roarequest('GetUser', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/users/getByUserId', 'json', req, runtime)
-        )
-
-    async def get_user_with_options_async(
-        self,
-        user_id: str,
-        request: dingtalkvillage__1__0_models.GetUserRequest,
-        headers: dingtalkvillage__1__0_models.GetUserHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetUserResponse:
-        UtilClient.validate_model(request)
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        query = {}
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
-        if not UtilClient.is_unset(request.sub_corp_id):
-            query['subCorpId'] = request.sub_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetUserResponse(),
-            await self.do_roarequest_async('GetUser', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/users/getByUserId', 'json', req, runtime)
-        )
-
-    def get_user_by_union_id(
-        self,
-        request: dingtalkvillage__1__0_models.GetUserByUnionIdRequest,
-    ) -> dingtalkvillage__1__0_models.GetUserByUnionIdResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.GetUserByUnionIdHeaders()
-        return self.get_user_by_union_id_with_options(request, headers, runtime)
-
-    async def get_user_by_union_id_async(
-        self,
-        request: dingtalkvillage__1__0_models.GetUserByUnionIdRequest,
-    ) -> dingtalkvillage__1__0_models.GetUserByUnionIdResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.GetUserByUnionIdHeaders()
-        return await self.get_user_by_union_id_with_options_async(request, headers, runtime)
 
     def get_user_by_union_id_with_options(
         self,
@@ -356,9 +424,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetUserByUnionId',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/users/getByUnionId',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.GetUserByUnionIdResponse(),
-            self.do_roarequest('GetUserByUnionId', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/users/getByUnionId', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_user_by_union_id_with_options_async(
@@ -384,9 +463,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetUserByUnionId',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/users/getByUnionId',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.GetUserByUnionIdResponse(),
-            await self.do_roarequest_async('GetUserByUnionId', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/users/getByUnionId', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_user_by_union_id(
+        self,
+        request: dingtalkvillage__1__0_models.GetUserByUnionIdRequest,
+    ) -> dingtalkvillage__1__0_models.GetUserByUnionIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkvillage__1__0_models.GetUserByUnionIdHeaders()
+        return self.get_user_by_union_id_with_options(request, headers, runtime)
+
+    async def get_user_by_union_id_async(
+        self,
+        request: dingtalkvillage__1__0_models.GetUserByUnionIdRequest,
+    ) -> dingtalkvillage__1__0_models.GetUserByUnionIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkvillage__1__0_models.GetUserByUnionIdHeaders()
+        return await self.get_user_by_union_id_with_options_async(request, headers, runtime)
+
+    def get_village_org_info_with_options(
+        self,
+        sub_corp_id: str,
+        headers: dingtalkvillage__1__0_models.GetVillageOrgInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvillage__1__0_models.GetVillageOrgInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetVillageOrgInfo',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/corps/{sub_corp_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvillage__1__0_models.GetVillageOrgInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_village_org_info_with_options_async(
+        self,
+        sub_corp_id: str,
+        headers: dingtalkvillage__1__0_models.GetVillageOrgInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvillage__1__0_models.GetVillageOrgInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetVillageOrgInfo',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/corps/{sub_corp_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvillage__1__0_models.GetVillageOrgInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_village_org_info(
@@ -405,44 +571,96 @@ class Client(OpenApiClient):
         headers = dingtalkvillage__1__0_models.GetVillageOrgInfoHeaders()
         return await self.get_village_org_info_with_options_async(sub_corp_id, headers, runtime)
 
-    def get_village_org_info_with_options(
+    def list_dept_simple_users_with_options(
         self,
-        sub_corp_id: str,
-        headers: dingtalkvillage__1__0_models.GetVillageOrgInfoHeaders,
+        department_id: str,
+        request: dingtalkvillage__1__0_models.ListDeptSimpleUsersRequest,
+        headers: dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetVillageOrgInfoResponse:
-        sub_corp_id = OpenApiUtilClient.get_encode_param(sub_corp_id)
+    ) -> dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.contain_access_limit):
+            query['containAccessLimit'] = request.contain_access_limit
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.order_field):
+            query['orderField'] = request.order_field
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        if not UtilClient.is_unset(request.sub_corp_id):
+            query['subCorpId'] = request.sub_corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListDeptSimpleUsers',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/simpleUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetVillageOrgInfoResponse(),
-            self.do_roarequest('GetVillageOrgInfo', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/corps/{sub_corp_id}', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def get_village_org_info_with_options_async(
+    async def list_dept_simple_users_with_options_async(
         self,
-        sub_corp_id: str,
-        headers: dingtalkvillage__1__0_models.GetVillageOrgInfoHeaders,
+        department_id: str,
+        request: dingtalkvillage__1__0_models.ListDeptSimpleUsersRequest,
+        headers: dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.GetVillageOrgInfoResponse:
-        sub_corp_id = OpenApiUtilClient.get_encode_param(sub_corp_id)
+    ) -> dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.contain_access_limit):
+            query['containAccessLimit'] = request.contain_access_limit
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.order_field):
+            query['orderField'] = request.order_field
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        if not UtilClient.is_unset(request.sub_corp_id):
+            query['subCorpId'] = request.sub_corp_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListDeptSimpleUsers',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/simpleUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
         )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.GetVillageOrgInfoResponse(),
-            await self.do_roarequest_async('GetVillageOrgInfo', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/corps/{sub_corp_id}', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def list_dept_simple_users(
@@ -463,26 +681,15 @@ class Client(OpenApiClient):
         headers = dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders()
         return await self.list_dept_simple_users_with_options_async(department_id, request, headers, runtime)
 
-    def list_dept_simple_users_with_options(
+    def list_dept_user_ids_with_options(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.ListDeptSimpleUsersRequest,
-        headers: dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders,
+        request: dingtalkvillage__1__0_models.ListDeptUserIdsRequest,
+        headers: dingtalkvillage__1__0_models.ListDeptUserIdsHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse:
+    ) -> dingtalkvillage__1__0_models.ListDeptUserIdsResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
-        if not UtilClient.is_unset(request.contain_access_limit):
-            query['containAccessLimit'] = request.contain_access_limit
-        if not UtilClient.is_unset(request.cursor):
-            query['cursor'] = request.cursor
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
-        if not UtilClient.is_unset(request.order_field):
-            query['orderField'] = request.order_field
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -494,31 +701,31 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListDeptUserIds',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/userIds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse(),
-            self.do_roarequest('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/simpleUsers', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListDeptUserIdsResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def list_dept_simple_users_with_options_async(
+    async def list_dept_user_ids_with_options_async(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.ListDeptSimpleUsersRequest,
-        headers: dingtalkvillage__1__0_models.ListDeptSimpleUsersHeaders,
+        request: dingtalkvillage__1__0_models.ListDeptUserIdsRequest,
+        headers: dingtalkvillage__1__0_models.ListDeptUserIdsHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse:
+    ) -> dingtalkvillage__1__0_models.ListDeptUserIdsResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
-        if not UtilClient.is_unset(request.contain_access_limit):
-            query['containAccessLimit'] = request.contain_access_limit
-        if not UtilClient.is_unset(request.cursor):
-            query['cursor'] = request.cursor
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
-        if not UtilClient.is_unset(request.order_field):
-            query['orderField'] = request.order_field
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -530,9 +737,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListDeptUserIds',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/userIds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListDeptSimpleUsersResponse(),
-            await self.do_roarequest_async('ListDeptSimpleUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/simpleUsers', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListDeptUserIdsResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def list_dept_user_ids(
@@ -553,16 +771,25 @@ class Client(OpenApiClient):
         headers = dingtalkvillage__1__0_models.ListDeptUserIdsHeaders()
         return await self.list_dept_user_ids_with_options_async(department_id, request, headers, runtime)
 
-    def list_dept_user_ids_with_options(
+    def list_dept_users_with_options(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.ListDeptUserIdsRequest,
-        headers: dingtalkvillage__1__0_models.ListDeptUserIdsHeaders,
+        request: dingtalkvillage__1__0_models.ListDeptUsersRequest,
+        headers: dingtalkvillage__1__0_models.ListDeptUsersHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListDeptUserIdsResponse:
+    ) -> dingtalkvillage__1__0_models.ListDeptUsersResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
+        if not UtilClient.is_unset(request.contain_access_limit):
+            query['containAccessLimit'] = request.contain_access_limit
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.order_field):
+            query['orderField'] = request.order_field
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -574,21 +801,41 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListDeptUsers',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListDeptUserIdsResponse(),
-            self.do_roarequest('ListDeptUserIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/userIds', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListDeptUsersResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def list_dept_user_ids_with_options_async(
+    async def list_dept_users_with_options_async(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.ListDeptUserIdsRequest,
-        headers: dingtalkvillage__1__0_models.ListDeptUserIdsHeaders,
+        request: dingtalkvillage__1__0_models.ListDeptUsersRequest,
+        headers: dingtalkvillage__1__0_models.ListDeptUsersHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListDeptUserIdsResponse:
+    ) -> dingtalkvillage__1__0_models.ListDeptUsersResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
+        if not UtilClient.is_unset(request.contain_access_limit):
+            query['containAccessLimit'] = request.contain_access_limit
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.order_field):
+            query['orderField'] = request.order_field
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -600,9 +847,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListDeptUsers',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListDeptUserIdsResponse(),
-            await self.do_roarequest_async('ListDeptUserIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/userIds', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListDeptUsersResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def list_dept_users(
@@ -622,94 +880,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListDeptUsersHeaders()
         return await self.list_dept_users_with_options_async(department_id, request, headers, runtime)
-
-    def list_dept_users_with_options(
-        self,
-        department_id: str,
-        request: dingtalkvillage__1__0_models.ListDeptUsersRequest,
-        headers: dingtalkvillage__1__0_models.ListDeptUsersHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListDeptUsersResponse:
-        UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
-        query = {}
-        if not UtilClient.is_unset(request.contain_access_limit):
-            query['containAccessLimit'] = request.contain_access_limit
-        if not UtilClient.is_unset(request.cursor):
-            query['cursor'] = request.cursor
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
-        if not UtilClient.is_unset(request.order_field):
-            query['orderField'] = request.order_field
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
-        if not UtilClient.is_unset(request.sub_corp_id):
-            query['subCorpId'] = request.sub_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListDeptUsersResponse(),
-            self.do_roarequest('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/users', 'json', req, runtime)
-        )
-
-    async def list_dept_users_with_options_async(
-        self,
-        department_id: str,
-        request: dingtalkvillage__1__0_models.ListDeptUsersRequest,
-        headers: dingtalkvillage__1__0_models.ListDeptUsersHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListDeptUsersResponse:
-        UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
-        query = {}
-        if not UtilClient.is_unset(request.contain_access_limit):
-            query['containAccessLimit'] = request.contain_access_limit
-        if not UtilClient.is_unset(request.cursor):
-            query['cursor'] = request.cursor
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
-        if not UtilClient.is_unset(request.order_field):
-            query['orderField'] = request.order_field
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
-        if not UtilClient.is_unset(request.sub_corp_id):
-            query['subCorpId'] = request.sub_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListDeptUsersResponse(),
-            await self.do_roarequest_async('ListDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/users', 'json', req, runtime)
-        )
-
-    def list_parent_by_dept(
-        self,
-        request: dingtalkvillage__1__0_models.ListParentByDeptRequest,
-    ) -> dingtalkvillage__1__0_models.ListParentByDeptResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListParentByDeptHeaders()
-        return self.list_parent_by_dept_with_options(request, headers, runtime)
-
-    async def list_parent_by_dept_async(
-        self,
-        request: dingtalkvillage__1__0_models.ListParentByDeptRequest,
-    ) -> dingtalkvillage__1__0_models.ListParentByDeptResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListParentByDeptHeaders()
-        return await self.list_parent_by_dept_with_options_async(request, headers, runtime)
 
     def list_parent_by_dept_with_options(
         self,
@@ -732,9 +902,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListParentByDept',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/listParentByDepartment',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListParentByDeptResponse(),
-            self.do_roarequest('ListParentByDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/listParentByDepartment', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_parent_by_dept_with_options_async(
@@ -758,26 +939,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListParentByDept',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/listParentByDepartment',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListParentByDeptResponse(),
-            await self.do_roarequest_async('ListParentByDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/listParentByDepartment', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_parent_by_user(
+    def list_parent_by_dept(
         self,
-        request: dingtalkvillage__1__0_models.ListParentByUserRequest,
-    ) -> dingtalkvillage__1__0_models.ListParentByUserResponse:
+        request: dingtalkvillage__1__0_models.ListParentByDeptRequest,
+    ) -> dingtalkvillage__1__0_models.ListParentByDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListParentByUserHeaders()
-        return self.list_parent_by_user_with_options(request, headers, runtime)
+        headers = dingtalkvillage__1__0_models.ListParentByDeptHeaders()
+        return self.list_parent_by_dept_with_options(request, headers, runtime)
 
-    async def list_parent_by_user_async(
+    async def list_parent_by_dept_async(
         self,
-        request: dingtalkvillage__1__0_models.ListParentByUserRequest,
-    ) -> dingtalkvillage__1__0_models.ListParentByUserResponse:
+        request: dingtalkvillage__1__0_models.ListParentByDeptRequest,
+    ) -> dingtalkvillage__1__0_models.ListParentByDeptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListParentByUserHeaders()
-        return await self.list_parent_by_user_with_options_async(request, headers, runtime)
+        headers = dingtalkvillage__1__0_models.ListParentByDeptHeaders()
+        return await self.list_parent_by_dept_with_options_async(request, headers, runtime)
 
     def list_parent_by_user_with_options(
         self,
@@ -800,9 +992,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListParentByUser',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/listParentByUser',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListParentByUserResponse(),
-            self.do_roarequest('ListParentByUser', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/listParentByUser', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_parent_by_user_with_options_async(
@@ -826,9 +1029,120 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListParentByUser',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/listParentByUser',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListParentByUserResponse(),
-            await self.do_roarequest_async('ListParentByUser', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/listParentByUser', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_parent_by_user(
+        self,
+        request: dingtalkvillage__1__0_models.ListParentByUserRequest,
+    ) -> dingtalkvillage__1__0_models.ListParentByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkvillage__1__0_models.ListParentByUserHeaders()
+        return self.list_parent_by_user_with_options(request, headers, runtime)
+
+    async def list_parent_by_user_async(
+        self,
+        request: dingtalkvillage__1__0_models.ListParentByUserRequest,
+    ) -> dingtalkvillage__1__0_models.ListParentByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkvillage__1__0_models.ListParentByUserHeaders()
+        return await self.list_parent_by_user_with_options_async(request, headers, runtime)
+
+    def list_resident_dept_users_with_options(
+        self,
+        department_id: str,
+        request: dingtalkvillage__1__0_models.ListResidentDeptUsersRequest,
+        headers: dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvillage__1__0_models.ListResidentDeptUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.role):
+            query['role'] = request.role
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        if not UtilClient.is_unset(request.sub_corp_id):
+            query['subCorpId'] = request.sub_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListResidentDeptUsers',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentDepartments/{department_id}/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvillage__1__0_models.ListResidentDeptUsersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_resident_dept_users_with_options_async(
+        self,
+        department_id: str,
+        request: dingtalkvillage__1__0_models.ListResidentDeptUsersRequest,
+        headers: dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvillage__1__0_models.ListResidentDeptUsersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.role):
+            query['role'] = request.role
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        if not UtilClient.is_unset(request.sub_corp_id):
+            query['subCorpId'] = request.sub_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListResidentDeptUsers',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentDepartments/{department_id}/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvillage__1__0_models.ListResidentDeptUsersResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def list_resident_dept_users(
@@ -849,20 +1163,17 @@ class Client(OpenApiClient):
         headers = dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders()
         return await self.list_resident_dept_users_with_options_async(department_id, request, headers, runtime)
 
-    def list_resident_dept_users_with_options(
+    def list_resident_sub_depts_with_options(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.ListResidentDeptUsersRequest,
-        headers: dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders,
+        request: dingtalkvillage__1__0_models.ListResidentSubDeptsRequest,
+        headers: dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListResidentDeptUsersResponse:
+    ) -> dingtalkvillage__1__0_models.ListResidentSubDeptsResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.cursor):
             query['cursor'] = request.cursor
-        if not UtilClient.is_unset(request.role):
-            query['role'] = request.role
         if not UtilClient.is_unset(request.size):
             query['size'] = request.size
         if not UtilClient.is_unset(request.sub_corp_id):
@@ -876,25 +1187,33 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListResidentSubDepts',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentDepartments/{department_id}/subDepartments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListResidentDeptUsersResponse(),
-            self.do_roarequest('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/users', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListResidentSubDeptsResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def list_resident_dept_users_with_options_async(
+    async def list_resident_sub_depts_with_options_async(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.ListResidentDeptUsersRequest,
-        headers: dingtalkvillage__1__0_models.ListResidentDeptUsersHeaders,
+        request: dingtalkvillage__1__0_models.ListResidentSubDeptsRequest,
+        headers: dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListResidentDeptUsersResponse:
+    ) -> dingtalkvillage__1__0_models.ListResidentSubDeptsResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
         if not UtilClient.is_unset(request.cursor):
             query['cursor'] = request.cursor
-        if not UtilClient.is_unset(request.role):
-            query['role'] = request.role
         if not UtilClient.is_unset(request.size):
             query['size'] = request.size
         if not UtilClient.is_unset(request.sub_corp_id):
@@ -908,9 +1227,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListResidentSubDepts',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentDepartments/{department_id}/subDepartments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListResidentDeptUsersResponse(),
-            await self.do_roarequest_async('ListResidentDeptUsers', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/users', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListResidentSubDeptsResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def list_resident_sub_depts(
@@ -930,82 +1260,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders()
         return await self.list_resident_sub_depts_with_options_async(department_id, request, headers, runtime)
-
-    def list_resident_sub_depts_with_options(
-        self,
-        department_id: str,
-        request: dingtalkvillage__1__0_models.ListResidentSubDeptsRequest,
-        headers: dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListResidentSubDeptsResponse:
-        UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
-        query = {}
-        if not UtilClient.is_unset(request.cursor):
-            query['cursor'] = request.cursor
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
-        if not UtilClient.is_unset(request.sub_corp_id):
-            query['subCorpId'] = request.sub_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListResidentSubDeptsResponse(),
-            self.do_roarequest('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/subDepartments', 'json', req, runtime)
-        )
-
-    async def list_resident_sub_depts_with_options_async(
-        self,
-        department_id: str,
-        request: dingtalkvillage__1__0_models.ListResidentSubDeptsRequest,
-        headers: dingtalkvillage__1__0_models.ListResidentSubDeptsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListResidentSubDeptsResponse:
-        UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
-        query = {}
-        if not UtilClient.is_unset(request.cursor):
-            query['cursor'] = request.cursor
-        if not UtilClient.is_unset(request.size):
-            query['size'] = request.size
-        if not UtilClient.is_unset(request.sub_corp_id):
-            query['subCorpId'] = request.sub_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListResidentSubDeptsResponse(),
-            await self.do_roarequest_async('ListResidentSubDepts', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentDepartments/{department_id}/subDepartments', 'json', req, runtime)
-        )
-
-    def list_resident_user_infos(
-        self,
-        request: dingtalkvillage__1__0_models.ListResidentUserInfosRequest,
-    ) -> dingtalkvillage__1__0_models.ListResidentUserInfosResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListResidentUserInfosHeaders()
-        return self.list_resident_user_infos_with_options(request, headers, runtime)
-
-    async def list_resident_user_infos_async(
-        self,
-        request: dingtalkvillage__1__0_models.ListResidentUserInfosRequest,
-    ) -> dingtalkvillage__1__0_models.ListResidentUserInfosResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListResidentUserInfosHeaders()
-        return await self.list_resident_user_infos_with_options_async(request, headers, runtime)
 
     def list_resident_user_infos_with_options(
         self,
@@ -1032,9 +1286,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListResidentUserInfos',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentUsers/getByUserIds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListResidentUserInfosResponse(),
-            self.do_roarequest('ListResidentUserInfos', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentUsers/getByUserIds', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_resident_user_infos_with_options_async(
@@ -1062,26 +1327,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListResidentUserInfos',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/residentUsers/getByUserIds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListResidentUserInfosResponse(),
-            await self.do_roarequest_async('ListResidentUserInfos', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/residentUsers/getByUserIds', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_simple_users_by_role(
+    def list_resident_user_infos(
         self,
-        request: dingtalkvillage__1__0_models.ListSimpleUsersByRoleRequest,
-    ) -> dingtalkvillage__1__0_models.ListSimpleUsersByRoleResponse:
+        request: dingtalkvillage__1__0_models.ListResidentUserInfosRequest,
+    ) -> dingtalkvillage__1__0_models.ListResidentUserInfosResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListSimpleUsersByRoleHeaders()
-        return self.list_simple_users_by_role_with_options(request, headers, runtime)
+        headers = dingtalkvillage__1__0_models.ListResidentUserInfosHeaders()
+        return self.list_resident_user_infos_with_options(request, headers, runtime)
 
-    async def list_simple_users_by_role_async(
+    async def list_resident_user_infos_async(
         self,
-        request: dingtalkvillage__1__0_models.ListSimpleUsersByRoleRequest,
-    ) -> dingtalkvillage__1__0_models.ListSimpleUsersByRoleResponse:
+        request: dingtalkvillage__1__0_models.ListResidentUserInfosRequest,
+    ) -> dingtalkvillage__1__0_models.ListResidentUserInfosResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListSimpleUsersByRoleHeaders()
-        return await self.list_simple_users_by_role_with_options_async(request, headers, runtime)
+        headers = dingtalkvillage__1__0_models.ListResidentUserInfosHeaders()
+        return await self.list_resident_user_infos_with_options_async(request, headers, runtime)
 
     def list_simple_users_by_role_with_options(
         self,
@@ -1108,9 +1384,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSimpleUsersByRole',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/users/listByRole',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListSimpleUsersByRoleResponse(),
-            self.do_roarequest('ListSimpleUsersByRole', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/users/listByRole', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_simple_users_by_role_with_options_async(
@@ -1138,26 +1425,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSimpleUsersByRole',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/users/listByRole',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListSimpleUsersByRoleResponse(),
-            await self.do_roarequest_async('ListSimpleUsersByRole', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/users/listByRole', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_sub_corps(
+    def list_simple_users_by_role(
         self,
-        request: dingtalkvillage__1__0_models.ListSubCorpsRequest,
-    ) -> dingtalkvillage__1__0_models.ListSubCorpsResponse:
+        request: dingtalkvillage__1__0_models.ListSimpleUsersByRoleRequest,
+    ) -> dingtalkvillage__1__0_models.ListSimpleUsersByRoleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListSubCorpsHeaders()
-        return self.list_sub_corps_with_options(request, headers, runtime)
+        headers = dingtalkvillage__1__0_models.ListSimpleUsersByRoleHeaders()
+        return self.list_simple_users_by_role_with_options(request, headers, runtime)
 
-    async def list_sub_corps_async(
+    async def list_simple_users_by_role_async(
         self,
-        request: dingtalkvillage__1__0_models.ListSubCorpsRequest,
-    ) -> dingtalkvillage__1__0_models.ListSubCorpsResponse:
+        request: dingtalkvillage__1__0_models.ListSimpleUsersByRoleRequest,
+    ) -> dingtalkvillage__1__0_models.ListSimpleUsersByRoleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkvillage__1__0_models.ListSubCorpsHeaders()
-        return await self.list_sub_corps_with_options_async(request, headers, runtime)
+        headers = dingtalkvillage__1__0_models.ListSimpleUsersByRoleHeaders()
+        return await self.list_simple_users_by_role_with_options_async(request, headers, runtime)
 
     def list_sub_corps_with_options(
         self,
@@ -1182,9 +1480,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSubCorps',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/corps/subCorps',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListSubCorpsResponse(),
-            self.do_roarequest('ListSubCorps', 'village_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/village/corps/subCorps', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_sub_corps_with_options_async(
@@ -1210,9 +1519,112 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSubCorps',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/corps/subCorps',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkvillage__1__0_models.ListSubCorpsResponse(),
-            await self.do_roarequest_async('ListSubCorps', 'village_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/village/corps/subCorps', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_sub_corps(
+        self,
+        request: dingtalkvillage__1__0_models.ListSubCorpsRequest,
+    ) -> dingtalkvillage__1__0_models.ListSubCorpsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkvillage__1__0_models.ListSubCorpsHeaders()
+        return self.list_sub_corps_with_options(request, headers, runtime)
+
+    async def list_sub_corps_async(
+        self,
+        request: dingtalkvillage__1__0_models.ListSubCorpsRequest,
+    ) -> dingtalkvillage__1__0_models.ListSubCorpsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkvillage__1__0_models.ListSubCorpsHeaders()
+        return await self.list_sub_corps_with_options_async(request, headers, runtime)
+
+    def list_sub_dept_with_options(
+        self,
+        department_id: str,
+        request: dingtalkvillage__1__0_models.ListSubDeptRequest,
+        headers: dingtalkvillage__1__0_models.ListSubDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvillage__1__0_models.ListSubDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.sub_corp_id):
+            query['subCorpId'] = request.sub_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListSubDept',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/subDepartments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvillage__1__0_models.ListSubDeptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_sub_dept_with_options_async(
+        self,
+        department_id: str,
+        request: dingtalkvillage__1__0_models.ListSubDeptRequest,
+        headers: dingtalkvillage__1__0_models.ListSubDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkvillage__1__0_models.ListSubDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.sub_corp_id):
+            query['subCorpId'] = request.sub_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListSubDept',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/subDepartments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkvillage__1__0_models.ListSubDeptResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def list_sub_dept(
@@ -1233,18 +1645,15 @@ class Client(OpenApiClient):
         headers = dingtalkvillage__1__0_models.ListSubDeptHeaders()
         return await self.list_sub_dept_with_options_async(department_id, request, headers, runtime)
 
-    def list_sub_dept_with_options(
+    def list_sub_dept_ids_with_options(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.ListSubDeptRequest,
-        headers: dingtalkvillage__1__0_models.ListSubDeptHeaders,
+        request: dingtalkvillage__1__0_models.ListSubDeptIdsRequest,
+        headers: dingtalkvillage__1__0_models.ListSubDeptIdsHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListSubDeptResponse:
+    ) -> dingtalkvillage__1__0_models.ListSubDeptIdsResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -1256,23 +1665,31 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSubDeptIds',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/subDepartmentIds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListSubDeptResponse(),
-            self.do_roarequest('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/subDepartments', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListSubDeptIdsResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def list_sub_dept_with_options_async(
+    async def list_sub_dept_ids_with_options_async(
         self,
         department_id: str,
-        request: dingtalkvillage__1__0_models.ListSubDeptRequest,
-        headers: dingtalkvillage__1__0_models.ListSubDeptHeaders,
+        request: dingtalkvillage__1__0_models.ListSubDeptIdsRequest,
+        headers: dingtalkvillage__1__0_models.ListSubDeptIdsHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListSubDeptResponse:
+    ) -> dingtalkvillage__1__0_models.ListSubDeptIdsResponse:
         UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
         query = {}
-        if not UtilClient.is_unset(request.language):
-            query['language'] = request.language
         if not UtilClient.is_unset(request.sub_corp_id):
             query['subCorpId'] = request.sub_corp_id
         real_headers = {}
@@ -1284,9 +1701,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSubDeptIds',
+            version='village_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/village/departments/{department_id}/subDepartmentIds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListSubDeptResponse(),
-            await self.do_roarequest_async('ListSubDept', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/subDepartments', 'json', req, runtime)
+            dingtalkvillage__1__0_models.ListSubDeptIdsResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def list_sub_dept_ids(
@@ -1306,55 +1734,3 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkvillage__1__0_models.ListSubDeptIdsHeaders()
         return await self.list_sub_dept_ids_with_options_async(department_id, request, headers, runtime)
-
-    def list_sub_dept_ids_with_options(
-        self,
-        department_id: str,
-        request: dingtalkvillage__1__0_models.ListSubDeptIdsRequest,
-        headers: dingtalkvillage__1__0_models.ListSubDeptIdsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListSubDeptIdsResponse:
-        UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
-        query = {}
-        if not UtilClient.is_unset(request.sub_corp_id):
-            query['subCorpId'] = request.sub_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListSubDeptIdsResponse(),
-            self.do_roarequest('ListSubDeptIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/subDepartmentIds', 'json', req, runtime)
-        )
-
-    async def list_sub_dept_ids_with_options_async(
-        self,
-        department_id: str,
-        request: dingtalkvillage__1__0_models.ListSubDeptIdsRequest,
-        headers: dingtalkvillage__1__0_models.ListSubDeptIdsHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkvillage__1__0_models.ListSubDeptIdsResponse:
-        UtilClient.validate_model(request)
-        department_id = OpenApiUtilClient.get_encode_param(department_id)
-        query = {}
-        if not UtilClient.is_unset(request.sub_corp_id):
-            query['subCorpId'] = request.sub_corp_id
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkvillage__1__0_models.ListSubDeptIdsResponse(),
-            await self.do_roarequest_async('ListSubDeptIds', 'village_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/village/departments/{department_id}/subDepartmentIds', 'json', req, runtime)
-        )

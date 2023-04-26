@@ -43,9 +43,7 @@ class GetSpaceRequest(TeaModel):
         open_conversation_id: str = None,
         union_id: str = None,
     ):
-        # 会话id
         self.open_conversation_id = open_conversation_id
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -80,13 +78,9 @@ class GetSpaceResponseBodySpace(TeaModel):
         modified_time: str = None,
         space_id: str = None,
     ):
-        # 空间归属企业的id
         self.corp_id = corp_id
-        # 创建时间
         self.create_time = create_time
-        # 修改时间
         self.modified_time = modified_time
-        # 空间id
         self.space_id = space_id
 
     def validate(self):
@@ -126,7 +120,6 @@ class GetSpaceResponseBody(TeaModel):
         self,
         space: GetSpaceResponseBodySpace = None,
     ):
-        # IM会话存储空间信息
         self.space = space
 
     def validate(self):
@@ -155,13 +148,16 @@ class GetSpaceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSpaceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -174,6 +170,8 @@ class GetSpaceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -182,6 +180,8 @@ class GetSpaceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSpaceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -229,13 +229,9 @@ class SendRequest(TeaModel):
         space_id: str = None,
         union_id: str = None,
     ):
-        # 文件id
         self.dentry_id = dentry_id
-        # 目标会话id
         self.open_conversation_id = open_conversation_id
-        # 文件所在空间id
         self.space_id = space_id
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -290,44 +286,21 @@ class SendResponseBodyFile(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
-        # 文件所在会话id
         self.conversation_id = conversation_id
-        # 创建时间
         self.create_time = create_time
-        # 创建者id
         self.creator_id = creator_id
-        # 文件后缀
         self.extension = extension
-        # 文件id
         self.id = id
-        # 修改时间
         self.modified_time = modified_time
-        # 修改者id
         self.modifier_id = modifier_id
-        # 文件(夹)名称
         self.name = name
-        # 文件所在的父目录id, 根目录id值为0
         self.parent_id = parent_id
-        # 文件路径
         self.path = path
-        # 文件大小, 单位:Byte
         self.size = size
-        # 文件所在空间id
         self.space_id = space_id
-        # 文件状态
-        # 枚举值:
-        # 	NORMAL: 正常
-        # 	DELETED: 已删除
-        # 	EXPIRED: 已过期
         self.status = status
-        # 文件类型：文件、文件夹
-        # 枚举值:
-        # 	FILE: 文件
-        # 	FOLDER: 文件夹
         self.type = type
-        # uuid，如移动文件，此字段不变
         self.uuid = uuid
-        # 文件版本
         self.version = version
 
     def validate(self):
@@ -415,7 +388,6 @@ class SendResponseBody(TeaModel):
         self,
         file: SendResponseBodyFile = None,
     ):
-        # 发送到目标会话的文件信息
         self.file = file
 
     def validate(self):
@@ -444,13 +416,16 @@ class SendResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SendResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -463,6 +438,8 @@ class SendResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -471,6 +448,8 @@ class SendResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SendResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -517,11 +496,8 @@ class SendByAppRequest(TeaModel):
         space_id: str = None,
         union_id: str = None,
     ):
-        # 文件id
         self.dentry_id = dentry_id
-        # 文件所在空间id
         self.space_id = space_id
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -572,44 +548,21 @@ class SendByAppResponseBodyFile(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
-        # 文件所在会话id
         self.conversation_id = conversation_id
-        # 创建时间
         self.create_time = create_time
-        # 创建者id
         self.creator_id = creator_id
-        # 文件后缀
         self.extension = extension
-        # 文件id
         self.id = id
-        # 修改时间
         self.modified_time = modified_time
-        # 修改者id
         self.modifier_id = modifier_id
-        # 文件(夹)名称
         self.name = name
-        # 文件所在的父目录id, 根目录id值为0
         self.parent_id = parent_id
-        # 文件路径
         self.path = path
-        # 文件大小, 单位:Byte
         self.size = size
-        # 文件所在空间id
         self.space_id = space_id
-        # 文件状态
-        # 枚举值:
-        # 	NORMAL: 正常
-        # 	DELETED: 已删除
-        # 	EXPIRED: 已过期
         self.status = status
-        # 文件类型：文件、文件夹
-        # 枚举值:
-        # 	FILE: 文件
-        # 	FOLDER: 文件夹
         self.type = type
-        # uuid，如移动文件，此字段不变
         self.uuid = uuid
-        # 文件版本
         self.version = version
 
     def validate(self):
@@ -697,7 +650,6 @@ class SendByAppResponseBody(TeaModel):
         self,
         file: SendByAppResponseBodyFile = None,
     ):
-        # 发送到目标会话的文件信息
         self.file = file
 
     def validate(self):
@@ -726,13 +678,16 @@ class SendByAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SendByAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -745,6 +700,8 @@ class SendByAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -753,6 +710,8 @@ class SendByAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SendByAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -800,13 +759,9 @@ class SendLinkRequest(TeaModel):
         space_id: str = None,
         union_id: str = None,
     ):
-        # 文件id
         self.dentry_id = dentry_id
-        # 目标会话id
         self.open_conversation_id = open_conversation_id
-        # 文件所在空间id
         self.space_id = space_id
-        # 用户id
         self.union_id = union_id
 
     def validate(self):
@@ -861,44 +816,21 @@ class SendLinkResponseBodyFile(TeaModel):
         uuid: str = None,
         version: int = None,
     ):
-        # 文件所在会话id
         self.conversation_id = conversation_id
-        # 创建时间
         self.create_time = create_time
-        # 创建者id
         self.creator_id = creator_id
-        # 文件后缀
         self.extension = extension
-        # 文件id
         self.id = id
-        # 修改时间
         self.modified_time = modified_time
-        # 修改者id
         self.modifier_id = modifier_id
-        # 文件(夹)名称
         self.name = name
-        # 文件所在的父目录id, 根目录id值为0
         self.parent_id = parent_id
-        # 文件路径
         self.path = path
-        # 文件大小, 单位:Byte
         self.size = size
-        # 文件所在空间id
         self.space_id = space_id
-        # 文件状态
-        # 枚举值:
-        # 	NORMAL: 正常
-        # 	DELETED: 已删除
-        # 	EXPIRED: 已过期
         self.status = status
-        # 文件类型：文件、文件夹
-        # 枚举值:
-        # 	FILE: 文件
-        # 	FOLDER: 文件夹
         self.type = type
-        # uuid，如移动文件，此字段不变
         self.uuid = uuid
-        # 文件版本
         self.version = version
 
     def validate(self):
@@ -986,7 +918,6 @@ class SendLinkResponseBody(TeaModel):
         self,
         file: SendLinkResponseBodyFile = None,
     ):
-        # 发送到目标会话的文件链接信息
         self.file = file
 
     def validate(self):
@@ -1015,13 +946,16 @@ class SendLinkResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SendLinkResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1034,6 +968,8 @@ class SendLinkResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1042,6 +978,8 @@ class SendLinkResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SendLinkResponseBody()
             self.body = temp_model.from_map(m['body'])

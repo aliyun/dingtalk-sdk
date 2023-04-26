@@ -42,7 +42,6 @@ class GetFormInstanceRequest(TeaModel):
         self,
         biz_type: int = None,
     ):
-        # 填表类型。0表示通用填表，1表示教育版填表
         self.biz_type = biz_type
 
     def validate(self):
@@ -72,11 +71,8 @@ class GetFormInstanceResponseBodyResultForms(TeaModel):
         label: str = None,
         value: str = None,
     ):
-        # 表单控件key。
         self.key = key
-        # 表单主题。  当label字段为空或不存在时，忽略这个label和value。
         self.label = label
-        # 表单的值。
         self.value = value
 
     def validate(self):
@@ -117,17 +113,11 @@ class GetFormInstanceResponseBodyResult(TeaModel):
         modify_time: str = None,
         title: str = None,
     ):
-        # 创建时间。iso8601格式。
         self.create_time = create_time
-        # 创建者userid
         self.creator = creator
-        # 填表code，用此code可调接口获取填表实例列表。
         self.form_code = form_code
-        # 表单内容列表。
         self.forms = forms
-        # 更新时间。iso8601格式。
         self.modify_time = modify_time
-        # 填表名称。
         self.title = title
 
     def validate(self):
@@ -184,9 +174,7 @@ class GetFormInstanceResponseBody(TeaModel):
         result: GetFormInstanceResponseBodyResult = None,
         success: bool = None,
     ):
-        # 返回结果对象。
         self.result = result
-        # 是否成功。
         self.success = success
 
     def validate(self):
@@ -219,13 +207,16 @@ class GetFormInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetFormInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -238,6 +229,8 @@ class GetFormInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -246,6 +239,8 @@ class GetFormInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetFormInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -293,13 +288,9 @@ class ListFormInstancesRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
-        # 时间，必须是YYYY-MM-DD的格式。循环填表才需要传这个参数。
         self.action_date = action_date
-        # 填表类型。0表示通用填表，1表示教育版填表
         self.biz_type = biz_type
-        # 分页大小，最大100。
         self.max_results = max_results
-        # 分页起始，从0开始。当返回结果中hasMore为false时，表示没有下一页了。否则取返回结果中nextToken的值作为下一次请求的offset。
         self.next_token = next_token
 
     def validate(self):
@@ -341,11 +332,8 @@ class ListFormInstancesResponseBodyResultListForms(TeaModel):
         label: str = None,
         value: str = None,
     ):
-        # 表单控件key。
         self.key = key
-        # 表单主题。  当label字段为空或不存在时，忽略这个label和value。
         self.label = label
-        # 表单的值。
         self.value = value
 
     def validate(self):
@@ -392,29 +380,17 @@ class ListFormInstancesResponseBodyResultList(TeaModel):
         submitter_user_name: str = None,
         title: str = None,
     ):
-        # 创建时间。iso8601格式。
         self.create_time = create_time
-        # 填表code，用此code可调接口获取填表列表。
         self.form_code = form_code
-        # 实例ID。
         self.form_instance_id = form_instance_id
-        # 表单内容列表。
         self.forms = forms
-        # 更新时间。iso8601格式。
         self.modify_time = modify_time
-        # 学生班级ID。
         self.student_class_id = student_class_id
-        # 学生班级名称。
         self.student_class_name = student_class_name
-        # 学生名称。
         self.student_name = student_name
-        # 学生ID。
         self.student_user_id = student_user_id
-        # 提交人的userid。
         self.submitter_user_id = submitter_user_id
-        # 提交人姓名。
         self.submitter_user_name = submitter_user_name
-        # 填表名称。
         self.title = title
 
     def validate(self):
@@ -496,11 +472,8 @@ class ListFormInstancesResponseBodyResult(TeaModel):
         list: List[ListFormInstancesResponseBodyResultList] = None,
         next_token: int = None,
     ):
-        # 是否还有下一页数据。
         self.has_more = has_more
-        # 填表实例列表。
         self.list = list
-        # 下一次分页offset的值。
         self.next_token = next_token
 
     def validate(self):
@@ -545,7 +518,6 @@ class ListFormInstancesResponseBody(TeaModel):
         result: ListFormInstancesResponseBodyResult = None,
         success: bool = None,
     ):
-        # 返回结果对象。
         self.result = result
         self.success = success
 
@@ -579,13 +551,16 @@ class ListFormInstancesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListFormInstancesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -598,6 +573,8 @@ class ListFormInstancesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -606,6 +583,8 @@ class ListFormInstancesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListFormInstancesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -653,13 +632,9 @@ class ListFormSchemasByCreatorRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
-        # 填表类型。0表示通用填表，1表示教育版填表
         self.biz_type = biz_type
-        # 填表创建人userid
         self.creator = creator
-        # 分页大小，最大200
         self.max_results = max_results
-        # 分页游标，从0开始。后续取返回结果中nextToken的值。
         self.next_token = next_token
 
     def validate(self):
@@ -705,19 +680,12 @@ class ListFormSchemasByCreatorResponseBodyResultListSetting(TeaModel):
         loop_time: str = None,
         stop: bool = None,
     ):
-        # 表单类型：  0：一次性填表  1：周期性填表
         self.biz_type = biz_type
-        # 创建时间。iso8601格式。
         self.create_time = create_time
-        # 截止时间。iso8601格式。
         self.end_time = end_time
-        # 表单类型：  0：一次性填表  1：周期性填表
         self.form_type = form_type
-        # 填表周期，周一到周日分别用1-7表示。
         self.loop_days = loop_days
-        # 循环执行的时间点。
         self.loop_time = loop_time
-        # 填表是否终止的标记。
         self.stop = stop
 
     def validate(self):
@@ -773,15 +741,10 @@ class ListFormSchemasByCreatorResponseBodyResultList(TeaModel):
         name: str = None,
         setting: ListFormSchemasByCreatorResponseBodyResultListSetting = None,
     ):
-        # 创建人。
         self.creator = creator
-        # 填表code，用此code可调接口获取填表列表。
         self.form_code = form_code
-        # 填表提示。
         self.memo = memo
-        # 填表名称。
         self.name = name
-        # 填表设置。
         self.setting = setting
 
     def validate(self):
@@ -829,11 +792,8 @@ class ListFormSchemasByCreatorResponseBodyResult(TeaModel):
         list: List[ListFormSchemasByCreatorResponseBodyResultList] = None,
         next_token: int = None,
     ):
-        # 是否还有下一页数据。
         self.has_more = has_more
-        # 创建的填表列表。
         self.list = list
-        # 下一次分页offset的值。
         self.next_token = next_token
 
     def validate(self):
@@ -878,9 +838,7 @@ class ListFormSchemasByCreatorResponseBody(TeaModel):
         result: ListFormSchemasByCreatorResponseBodyResult = None,
         success: bool = None,
     ):
-        # 返回结果对象。
         self.result = result
-        # 是否成功。
         self.success = success
 
     def validate(self):
@@ -913,13 +871,16 @@ class ListFormSchemasByCreatorResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListFormSchemasByCreatorResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -932,6 +893,8 @@ class ListFormSchemasByCreatorResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -940,6 +903,8 @@ class ListFormSchemasByCreatorResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListFormSchemasByCreatorResponseBody()
             self.body = temp_model.from_map(m['body'])

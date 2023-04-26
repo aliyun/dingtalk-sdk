@@ -47,17 +47,11 @@ class GetDingPortalDetailResponseBodyPages(TeaModel):
         role_ids: List[int] = None,
         userids: List[str] = None,
     ):
-        # 是否全公司可见
         self.all_visible = all_visible
-        # 可见部门 ID 铺
         self.dept_ids = dept_ids
-        # 页面名称
         self.page_name = page_name
-        # 页面ID
         self.page_uuid = page_uuid
-        # 可见角色列表
         self.role_ids = role_ids
-        # 可见员工 ID 列表
         self.userids = userids
 
     def validate(self):
@@ -107,11 +101,8 @@ class GetDingPortalDetailResponseBody(TeaModel):
         ding_portal_name: str = None,
         pages: List[GetDingPortalDetailResponseBodyPages] = None,
     ):
-        # 工作台ID
         self.app_uuid = app_uuid
-        # 工作台名称
         self.ding_portal_name = ding_portal_name
-        # 工作台页面信息
         self.pages = pages
 
     def validate(self):
@@ -154,13 +145,16 @@ class GetDingPortalDetailResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDingPortalDetailResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -173,6 +167,8 @@ class GetDingPortalDetailResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -181,6 +177,8 @@ class GetDingPortalDetailResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDingPortalDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -225,7 +223,6 @@ class GetPluginPermissionPointRequest(TeaModel):
         self,
         mini_app_id: str = None,
     ):
-        # 插件id
         self.mini_app_id = mini_app_id
 
     def validate(self):
@@ -253,7 +250,6 @@ class GetPluginPermissionPointResponseBody(TeaModel):
         self,
         permission_point_list: List[str] = None,
     ):
-        # 插件权限点列表
         self.permission_point_list = permission_point_list
 
     def validate(self):
@@ -280,13 +276,16 @@ class GetPluginPermissionPointResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPluginPermissionPointResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -299,6 +298,8 @@ class GetPluginPermissionPointResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -307,6 +308,8 @@ class GetPluginPermissionPointResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPluginPermissionPointResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -379,9 +382,7 @@ class GetPluginRuleCheckInfoResponseBody(TeaModel):
         pack_code: str = None,
         plugin_rule_check_detail: str = None,
     ):
-        # 权限包code
         self.pack_code = pack_code
-        # 校验规则
         self.plugin_rule_check_detail = plugin_rule_check_detail
 
     def validate(self):
@@ -412,13 +413,16 @@ class GetPluginRuleCheckInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPluginRuleCheckInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -431,6 +435,8 @@ class GetPluginRuleCheckInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -439,6 +445,8 @@ class GetPluginRuleCheckInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPluginRuleCheckInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -485,11 +493,8 @@ class ListWorkBenchGroupRequest(TeaModel):
         group_type: str = None,
         op_union_id: str = None,
     ):
-        # 合作空间corpId
         self.ecological_corp_id = ecological_corp_id
-        # WORK_ALL
         self.group_type = group_type
-        # 操作人unionId
         self.op_union_id = op_union_id
 
     def validate(self):
@@ -526,9 +531,7 @@ class ListWorkBenchGroupResponseBodyGroupList(TeaModel):
         component_id: str = None,
         name: str = None,
     ):
-        # 分组id
         self.component_id = component_id
-        # 分组名称
         self.name = name
 
     def validate(self):
@@ -560,7 +563,6 @@ class ListWorkBenchGroupResponseBody(TeaModel):
         self,
         group_list: List[ListWorkBenchGroupResponseBodyGroupList] = None,
     ):
-        # 应用列表
         self.group_list = group_list
 
     def validate(self):
@@ -595,13 +597,16 @@ class ListWorkBenchGroupResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListWorkBenchGroupResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -614,6 +619,8 @@ class ListWorkBenchGroupResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -622,6 +629,8 @@ class ListWorkBenchGroupResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListWorkBenchGroupResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -668,7 +677,6 @@ class QueryComponentScopesResponseBody(TeaModel):
         user_visible_scopes: List[str] = None,
     ):
         self.dept_visible_scopes = dept_visible_scopes
-        # scopes
         self.user_visible_scopes = user_visible_scopes
 
     def validate(self):
@@ -699,13 +707,16 @@ class QueryComponentScopesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryComponentScopesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -718,6 +729,8 @@ class QueryComponentScopesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -726,6 +739,8 @@ class QueryComponentScopesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryComponentScopesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -772,7 +787,6 @@ class QueryShortcutScopesResponseBody(TeaModel):
         user_visible_scopes: List[str] = None,
     ):
         self.dept_visible_scopes = dept_visible_scopes
-        # errorMsg
         self.user_visible_scopes = user_visible_scopes
 
     def validate(self):
@@ -803,13 +817,16 @@ class QueryShortcutScopesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryShortcutScopesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -822,6 +839,8 @@ class QueryShortcutScopesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -830,6 +849,8 @@ class QueryShortcutScopesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryShortcutScopesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -877,13 +898,9 @@ class UpdateDingPortalPageScopeRequest(TeaModel):
         role_ids: List[int] = None,
         userids: List[str] = None,
     ):
-        # 是否全员可见
         self.all_visible = all_visible
-        # 可见部门列表
         self.dept_ids = dept_ids
-        # 可见角色列表
         self.role_ids = role_ids
-        # 可见用户列表
         self.userids = userids
 
     def validate(self):
@@ -922,11 +939,14 @@ class UpdateDingPortalPageScopeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
     ):
         self.headers = headers
+        self.status_code = status_code
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
 
     def to_map(self):
         _map = super().to_map()
@@ -936,12 +956,16 @@ class UpdateDingPortalPageScopeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 

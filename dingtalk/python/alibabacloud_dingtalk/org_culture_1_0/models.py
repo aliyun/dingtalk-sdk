@@ -43,10 +43,7 @@ class AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList(TeaModel):
         out_id: str = None,
         target_user_id: str = None,
     ):
-        # 积分交易单号，长度1-32。
-        # 
         self.out_id = out_id
-        # 操作目标对象userId
         self.target_user_id = target_user_id
 
     def validate(self):
@@ -83,20 +80,11 @@ class AssignOrgHoldingToEmpHoldingBatchRequest(TeaModel):
         target_usage: str = None,
         target_user_list: List[AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList] = None,
     ):
-        # 备注信息 长度小于40
         self.remark = remark
-        # 是否发送组织文化通知
         self.send_org_culture_inform = send_org_culture_inform
-        # 发放积分或额度数量 1～100000
         self.single_amount = single_amount
-        # 发放人sourceUsage  发放人与接受人usage应一一对应
-        # 发放积分sourceUsage：OPEN_ORG_POINT_PERSONAL_ASSIGN 对应的targetUsage为OPEN_EMP_POINT_PERSONAL_RECEIVE；
-        # 发额度sourceUsage：OPEN_ORG_POINT_HOLDING_ASSIGN 对应的 targetUsage为OPEN_EMP_POINT_HOLDING_RECEIVE；
-        # 行为规则发积分 sourceUsage：OPEN_ACTION_RULE_PERSONAL_ASSIGN 对应的 targetUsage为OPEN_ACTION_RULE_PERSONAL_RECEIVE
         self.source_usage = source_usage
-        # 接受人targetUsage  发放人与接受人usage应一一对应
         self.target_usage = target_usage
-        # 发放目标用户
         self.target_user_list = target_user_list
 
     def validate(self):
@@ -156,16 +144,10 @@ class AssignOrgHoldingToEmpHoldingBatchResponseBodyResultOpenPointInvokeResultDT
         out_id: str = None,
         user_id: str = None,
     ):
-        # 错误码
         self.code = code
-        # 状态SUCCESS：成功。 FAIL：失败 UNKNOWN:结果未知
         self.invoke_status = invoke_status
-        # 错误信息
         self.msg = msg
-        # 积分交易单号
-        # 
         self.out_id = out_id
-        # 发放用户userId
         self.user_id = user_id
 
     def validate(self):
@@ -209,7 +191,6 @@ class AssignOrgHoldingToEmpHoldingBatchResponseBodyResult(TeaModel):
         self,
         open_point_invoke_result_dtos: List[AssignOrgHoldingToEmpHoldingBatchResponseBodyResultOpenPointInvokeResultDTOS] = None,
     ):
-        # 每个人发放的结果
         self.open_point_invoke_result_dtos = open_point_invoke_result_dtos
 
     def validate(self):
@@ -279,13 +260,16 @@ class AssignOrgHoldingToEmpHoldingBatchResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AssignOrgHoldingToEmpHoldingBatchResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -298,6 +282,8 @@ class AssignOrgHoldingToEmpHoldingBatchResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -306,6 +292,8 @@ class AssignOrgHoldingToEmpHoldingBatchResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AssignOrgHoldingToEmpHoldingBatchResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -353,13 +341,9 @@ class ConsumeUserPointsRequest(TeaModel):
         remark: str = None,
         usage: str = None,
     ):
-        # 扣减积分数量，1～1000000
         self.amount = amount
-        # 幂等外部ID，最大长度32个字符
         self.out_id = out_id
-        # 备注，最长32个字符
         self.remark = remark
-        # 用途，可用值：OPEN_EMP_POINT_CONSUME_DEFAULT-默认扣减，OPEN_EMP_POINT_PUNISH_CONSUME-惩罚扣减；默认为: OPEN_EMP_POINT_CONSUME_DEFAULT
         self.usage = usage
 
     def validate(self):
@@ -399,7 +383,6 @@ class ConsumeUserPointsResponseBodyResult(TeaModel):
         self,
         amount: int = None,
     ):
-        # 扣减后剩余积分数量
         self.amount = amount
 
     def validate(self):
@@ -428,9 +411,7 @@ class ConsumeUserPointsResponseBody(TeaModel):
         result: ConsumeUserPointsResponseBodyResult = None,
         success: bool = None,
     ):
-        # 响应数据
         self.result = result
-        # 请求响应状态
         self.success = success
 
     def validate(self):
@@ -463,13 +444,16 @@ class ConsumeUserPointsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ConsumeUserPointsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -482,6 +466,8 @@ class ConsumeUserPointsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -490,6 +476,8 @@ class ConsumeUserPointsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ConsumeUserPointsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -539,17 +527,11 @@ class CreateOrgHonorRequest(TeaModel):
         medal_name: str = None,
         user_id: str = None,
     ):
-        # 头像挂件   图片尺寸 240*240，不超过1M，支持PNG。图片请使用钉钉媒体资源标识符media_id，参考文档：https://open.dingtalk.com/document/isvapp-server/upload-media-files
         self.avatar_frame_media_id = avatar_frame_media_id
-        # 背景颜色，如下可选：#FFFBB4 #FFE7BC #FFDAF4 #DAF6A8 #E4D7FF #BFDFFF #B9F2D6
         self.default_bg_color = default_bg_color
-        # 描述 长度30字符 不支持表情图标等
         self.medal_desc = medal_desc
-        # 荣誉图片  图片尺寸 900*900，不超过1M，支持PNG 。图片请使用钉钉媒体资源标识符media_id，参考文档：https://open.dingtalk.com/document/isvapp-server/upload-media-files
         self.medal_media_id = medal_media_id
-        # 组织的勋章名称 长度10字符 不支持表情图标等
         self.medal_name = medal_name
-        # 创建荣誉勋章模板人在组织内的userid，需要主/子管理员角色
         self.user_id = user_id
 
     def validate(self):
@@ -658,13 +640,16 @@ class CreateOrgHonorResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateOrgHonorResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -677,6 +662,8 @@ class CreateOrgHonorResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -685,6 +672,8 @@ class CreateOrgHonorResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateOrgHonorResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -730,9 +719,7 @@ class DeductionPointBatchRequestTargetUserList(TeaModel):
         out_id: str = None,
         target_user_id: str = None,
     ):
-        # 积分交易单号
         self.out_id = out_id
-        # 扣减目标用户userId
         self.target_user_id = target_user_id
 
     def validate(self):
@@ -768,15 +755,10 @@ class DeductionPointBatchRequest(TeaModel):
         target_user_list: List[DeductionPointBatchRequestTargetUserList] = None,
         user_id: str = None,
     ):
-        # 扣减数量 范围：1—100000
         self.deduction_amount = deduction_amount
-        # 扣减积分原因
         self.remark = remark
-        # 是否发送组织文化通知
         self.send_org_culture_inform = send_org_culture_inform
-        # 批量扣减积分用户
         self.target_user_list = target_user_list
-        # 操作人userId
         self.user_id = user_id
 
     def validate(self):
@@ -832,15 +814,10 @@ class DeductionPointBatchResponseBodyResultOpenPointInvokeResultDTOS(TeaModel):
         out_id: str = None,
         user_id: str = None,
     ):
-        # 错误码
         self.code = code
-        # 状态 success：成功。 Fail：失败 UNKNOWN:结果未知
         self.invoke_status = invoke_status
-        # 错误信息
         self.msg = msg
-        # 积分交易单号
         self.out_id = out_id
-        # 扣减用户userId
         self.user_id = user_id
 
     def validate(self):
@@ -884,7 +861,6 @@ class DeductionPointBatchResponseBodyResult(TeaModel):
         self,
         open_point_invoke_result_dtos: List[DeductionPointBatchResponseBodyResultOpenPointInvokeResultDTOS] = None,
     ):
-        # 每个人发放的结果
         self.open_point_invoke_result_dtos = open_point_invoke_result_dtos
 
     def validate(self):
@@ -922,7 +898,6 @@ class DeductionPointBatchResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
-        # 调用是否成功
         self.success = success
 
     def validate(self):
@@ -955,13 +930,16 @@ class DeductionPointBatchResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: DeductionPointBatchResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -974,6 +952,8 @@ class DeductionPointBatchResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -982,6 +962,8 @@ class DeductionPointBatchResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeductionPointBatchResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1028,11 +1010,8 @@ class ExportPointOpenRequest(TeaModel):
         export_type: int = None,
         user_id: str = None,
     ):
-        # exportType为1时不需要传此参数，目前仅exportType=3时必须传入此参数,必须为七日内某一天且不能选择当日，格式yyyyMmdd。
         self.export_date = export_date
-        # 导出类型 1为七日内明细，3为七日内某一天榜单，且都不包含当日
         self.export_type = export_type
-        # 操作人userId 必须为管理员
         self.user_id = user_id
 
     def validate(self):
@@ -1100,13 +1079,16 @@ class ExportPointOpenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ExportPointOpenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1119,6 +1101,8 @@ class ExportPointOpenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1127,6 +1111,8 @@ class ExportPointOpenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ExportPointOpenResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1178,20 +1164,13 @@ class GrantHonorRequest(TeaModel):
         receiver_user_ids: List[str] = None,
         sender_user_id: str = None,
     ):
-        # 有效期到期时间 时间戳. 会处理成到期那天的23:59:59秒的时间戳
         self.expiration_time = expiration_time
-        # 颁奖词，最多可以填50字
         self.grant_reason = grant_reason
-        # 颁奖人名字，最多15个字
         self.granter_name = granter_name
-        # 是否使用官宣号发送内网动态
         self.notice_announcer = notice_announcer
-        # 是否触达单聊会话通知
         self.notice_single = notice_single
         self.open_conversation_ids = open_conversation_ids
-        # 接受人userId
         self.receiver_user_ids = receiver_user_ids
-        # 发送人userId
         self.sender_user_id = sender_user_id
 
     def validate(self):
@@ -1248,9 +1227,7 @@ class GrantHonorResponseBodyResult(TeaModel):
         failed_user_ids: List[str] = None,
         success_user_ids: List[str] = None,
     ):
-        # 失败的userId
         self.failed_user_ids = failed_user_ids
-        # 成功的userId
         self.success_user_ids = success_user_ids
 
     def validate(self):
@@ -1316,13 +1293,16 @@ class GrantHonorResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GrantHonorResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1335,6 +1315,8 @@ class GrantHonorResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1343,6 +1325,8 @@ class GrantHonorResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GrantHonorResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1387,7 +1371,6 @@ class QueryCorpPointsRequest(TeaModel):
         self,
         opt_user_id: str = None,
     ):
-        # 操作用户ID
         self.opt_user_id = opt_user_id
 
     def validate(self):
@@ -1415,7 +1398,6 @@ class QueryCorpPointsResponseBodyResult(TeaModel):
         self,
         amount: int = None,
     ):
-        # 企业员工可用于兑换积分总额
         self.amount = amount
 
     def validate(self):
@@ -1444,9 +1426,7 @@ class QueryCorpPointsResponseBody(TeaModel):
         result: QueryCorpPointsResponseBodyResult = None,
         success: bool = None,
     ):
-        # 响应数据
         self.result = result
-        # 请求响应状态
         self.success = success
 
     def validate(self):
@@ -1479,13 +1459,16 @@ class QueryCorpPointsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryCorpPointsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1498,6 +1481,8 @@ class QueryCorpPointsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1506,6 +1491,8 @@ class QueryCorpPointsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCorpPointsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1552,11 +1539,8 @@ class QueryEmpPointDetailsRequest(TeaModel):
         page_size: int = None,
         user_id: str = None,
     ):
-        # 第几页 第一页是1
         self.page_number = page_number
-        # 每页大小最多50 默认值10
         self.page_size = page_size
-        # 查询目标对象userId
         self.user_id = user_id
 
     def validate(self):
@@ -1594,13 +1578,8 @@ class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         emp_name: str = None,
         user_id: str = None,
     ):
-        # 积分账号的类型
-        # 企业账号：ORG, 员工账号：EMP
         self.account_type = account_type
-        # 企业内名字
         self.emp_name = emp_name
-        # 用户userId
-        # 
         self.user_id = user_id
 
     def validate(self):
@@ -1638,12 +1617,8 @@ class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         emp_name: str = None,
         user_id: str = None,
     ):
-        # 积分账号的类型
-        # 企业账号：ORG, 员工账号：EMP
         self.account_type = account_type
-        # 企业内名字
         self.emp_name = emp_name
-        # 用户useId
         self.user_id = user_id
 
     def validate(self):
@@ -1682,14 +1657,9 @@ class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         remark: str = None,
         usage: str = None,
     ):
-        # 来源账户
         self.account_source = account_source
-        # 目标账户
-        # 
         self.account_target = account_target
-        # 备注信息，在明细中展示
         self.remark = remark
-        # 来源/用途，一般是系统固定的场景
         self.usage = usage
 
     def validate(self):
@@ -1738,17 +1708,10 @@ class QueryEmpPointDetailsResponseBodyResultDetails(TeaModel):
         point_operate_feature_response_dto: QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO = None,
         source_biz_code: str = None,
     ):
-        # 积分数量 发放时为负。 扣减时为正
         self.amount = amount
-        # 创建时间
         self.gmt_create = gmt_create
-        # 积分交易单号
-        # 
         self.out_id = out_id
         self.point_operate_feature_response_dto = point_operate_feature_response_dto
-        # 源账户积分bizCode.
-        # 个人可用积分:personal
-        # 额度:credit
         self.source_biz_code = source_biz_code
 
     def validate(self):
@@ -1795,9 +1758,7 @@ class QueryEmpPointDetailsResponseBodyResult(TeaModel):
         details: List[QueryEmpPointDetailsResponseBodyResultDetails] = None,
         has_more: bool = None,
     ):
-        # 个人积分明细列表
         self.details = details
-        # 是否有下一页
         self.has_more = has_more
 
     def validate(self):
@@ -1839,7 +1800,6 @@ class QueryEmpPointDetailsResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
-        # 调用是否成功
         self.success = success
 
     def validate(self):
@@ -1872,13 +1832,16 @@ class QueryEmpPointDetailsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryEmpPointDetailsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1891,6 +1854,8 @@ class QueryEmpPointDetailsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1899,6 +1864,8 @@ class QueryEmpPointDetailsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryEmpPointDetailsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1944,9 +1911,7 @@ class QueryOrgHonorsRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # 分页获取数据时，数据的数量，默认为20，最大可传入100
         self.max_results = max_results
-        # 分页获取数据的标记，第一页调用时传0，非第一页传入上次调用本接口返回值中的nextToken
         self.next_token = next_token
 
     def validate(self):
@@ -1982,15 +1947,10 @@ class QueryOrgHonorsResponseBodyResultOpenHonors(TeaModel):
         honor_name: str = None,
         honor_pendant_img_url: str = None,
     ):
-        # 荣誉含义
         self.honor_desc = honor_desc
-        # 荣誉id
         self.honor_id = honor_id
-        # 荣誉图片url
         self.honor_img_url = honor_img_url
-        # 荣誉名字
         self.honor_name = honor_name
-        # 荣誉附赠的挂件图url
         self.honor_pendant_img_url = honor_pendant_img_url
 
     def validate(self):
@@ -2035,7 +1995,6 @@ class QueryOrgHonorsResponseBodyResult(TeaModel):
         next_token: str = None,
         open_honors: List[QueryOrgHonorsResponseBodyResultOpenHonors] = None,
     ):
-        # 下次获取数据的游标
         self.next_token = next_token
         self.open_honors = open_honors
 
@@ -2110,13 +2069,16 @@ class QueryOrgHonorsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryOrgHonorsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2129,6 +2091,8 @@ class QueryOrgHonorsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2137,6 +2101,8 @@ class QueryOrgHonorsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOrgHonorsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2184,13 +2150,9 @@ class QueryOrgPointDetailsRequest(TeaModel):
         page_size: int = None,
         user_id: str = None,
     ):
-        # 查询企业账号明细，ORG,ORG_DEDUCTIONS两种。     ORG:企业账户明细 查询的是企业积分发放明细       ORG_DEDUCTIONS:扣除账户明细，查询的是企业扣减积分明细
         self.account_type = account_type
-        # 查询页数 第一页是1 非空必传
         self.page_number = page_number
-        # 每页大小最多50，默认10
         self.page_size = page_size
-        # 操作人userId 必须是管理员
         self.user_id = user_id
 
     def validate(self):
@@ -2232,12 +2194,8 @@ class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         emp_name: str = None,
         user_id: str = None,
     ):
-        # 积分账号的类型
-        # 企业账号：ORG, 员工账号：EMP
         self.account_type = account_type
-        # 企业内名字
         self.emp_name = emp_name
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -2275,12 +2233,8 @@ class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         emp_name: str = None,
         user_id: str = None,
     ):
-        # 积分账号的类型
-        # 企业账号：ORG, 员工账号：EMP
         self.account_type = account_type
-        # 企业内名字
         self.emp_name = emp_name
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -2319,17 +2273,9 @@ class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         remark: str = None,
         usage: str = None,
     ):
-        # 如果是扣减操作明细，为被扣减账户
-        # 如果是发放操作明细，为操作发放账户
-        # 如果是个人积分明细，为来源账户
         self.account_source = account_source
-        # 如果是扣减操作明细，为操作扣减账户
-        # 如果是发放操作明细，为被发放账户
-        # 如果是个人积分明细，为目标账户
         self.account_target = account_target
-        # 备注信息，在明细中展示
         self.remark = remark
-        # 来源/用途 一般是系统固定的场景
         self.usage = usage
 
     def validate(self):
@@ -2378,17 +2324,10 @@ class QueryOrgPointDetailsResponseBodyResultDetails(TeaModel):
         point_operate_feature_response_dto: QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO = None,
         source_biz_code: str = None,
     ):
-        # 积分数量 发放时为负。 扣减时为正
         self.amount = amount
-        # 创建时间
         self.gmt_create = gmt_create
-        # 积分交易单号
         self.out_id = out_id
-        # 账户信息
         self.point_operate_feature_response_dto = point_operate_feature_response_dto
-        # 源账户积分bizCode。
-        # 个人可用积分:personal
-        # 额度:credit
         self.source_biz_code = source_biz_code
 
     def validate(self):
@@ -2436,11 +2375,8 @@ class QueryOrgPointDetailsResponseBodyResult(TeaModel):
         has_more: bool = None,
         success: bool = None,
     ):
-        # 积分明细列表
         self.details = details
-        # 分页使用，表示是否还有下一页
         self.has_more = has_more
-        # 调用是否成功
         self.success = success
 
     def validate(self):
@@ -2512,13 +2448,16 @@ class QueryOrgPointDetailsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryOrgPointDetailsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2531,6 +2470,8 @@ class QueryOrgPointDetailsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2539,6 +2480,8 @@ class QueryOrgPointDetailsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOrgPointDetailsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2587,15 +2530,10 @@ class QueryPointActionAutoAssignRuleResponseBodyResultQueryPointRuleResponseDTOS
         description: str = None,
         status: int = None,
     ):
-        # 奖励积分
         self.award_score = award_score
-        # 行为名称
         self.code = code
-        # 单日计次上限
         self.day_limit_times = day_limit_times
-        # 行为描述
         self.description = description
-        # 生效状态：0无效，1有效
         self.status = status
 
     def validate(self):
@@ -2639,7 +2577,6 @@ class QueryPointActionAutoAssignRuleResponseBodyResult(TeaModel):
         self,
         query_point_rule_response_dtos: List[QueryPointActionAutoAssignRuleResponseBodyResultQueryPointRuleResponseDTOS] = None,
     ):
-        # 行为规则列表
         self.query_point_rule_response_dtos = query_point_rule_response_dtos
 
     def validate(self):
@@ -2709,13 +2646,16 @@ class QueryPointActionAutoAssignRuleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryPointActionAutoAssignRuleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2728,6 +2668,8 @@ class QueryPointActionAutoAssignRuleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2736,6 +2678,8 @@ class QueryPointActionAutoAssignRuleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryPointActionAutoAssignRuleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2782,11 +2726,8 @@ class QueryPointAutoIssueSettingResponseBodyResult(TeaModel):
         point_auto_state: bool = None,
         point_auto_time: int = None,
     ):
-        # 企业每月额度自动发放给每个人的数量
         self.point_auto_num = point_auto_num
-        # 企业积分自动发放状态
         self.point_auto_state = point_auto_state
-        # 企业积分自动发放时间 指定的是每月1号或15号
         self.point_auto_time = point_auto_time
 
     def validate(self):
@@ -2824,7 +2765,6 @@ class QueryPointAutoIssueSettingResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
-        # 调用是否成功
         self.success = success
 
     def validate(self):
@@ -2857,13 +2797,16 @@ class QueryPointAutoIssueSettingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryPointAutoIssueSettingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2876,6 +2819,8 @@ class QueryPointAutoIssueSettingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2884,6 +2829,8 @@ class QueryPointAutoIssueSettingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryPointAutoIssueSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2929,9 +2876,7 @@ class QueryUserHonorsRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # 查询数据的条数，默认查询20条，最大可传100
         self.max_results = max_results
-        # 分页查询的标记，查询第一页时传0，非第一页时传入上次调用本接口返回值中的nextToken
         self.next_token = next_token
 
     def validate(self):
@@ -2964,9 +2909,7 @@ class QueryUserHonorsResponseBodyResultHonorsGrantHistory(TeaModel):
         grant_time: int = None,
         sender_userid: str = None,
     ):
-        # 授予时间 时间戳
         self.grant_time = grant_time
-        # 必须。荣誉发放人userid
         self.sender_userid = sender_userid
 
     def validate(self):
@@ -3002,15 +2945,10 @@ class QueryUserHonorsResponseBodyResultHonors(TeaModel):
         honor_id: str = None,
         honor_name: str = None,
     ):
-        # 有效期截止时间点，没有该属性则为永久生效
         self.expiration_time = expiration_time
-        # 授予历史记录 包含用户及授予时间
         self.grant_history = grant_history
-        # 荣誉含义
         self.honor_desc = honor_desc
-        # 必须。荣誉id
         self.honor_id = honor_id
-        # 必须。荣誉名字
         self.honor_name = honor_name
 
     def validate(self):
@@ -3137,13 +3075,16 @@ class QueryUserHonorsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryUserHonorsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3156,6 +3097,8 @@ class QueryUserHonorsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3164,6 +3107,8 @@ class QueryUserHonorsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryUserHonorsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3208,7 +3153,6 @@ class QueryUserPointsResponseBodyResult(TeaModel):
         self,
         amount: int = None,
     ):
-        # 员工积分数量
         self.amount = amount
 
     def validate(self):
@@ -3237,9 +3181,7 @@ class QueryUserPointsResponseBody(TeaModel):
         result: QueryUserPointsResponseBodyResult = None,
         success: bool = None,
     ):
-        # 响应数据
         self.result = result
-        # 请求响应状态
         self.success = success
 
     def validate(self):
@@ -3272,13 +3214,16 @@ class QueryUserPointsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryUserPointsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3291,6 +3236,8 @@ class QueryUserPointsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3299,6 +3246,8 @@ class QueryUserPointsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryUserPointsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3343,7 +3292,6 @@ class RecallHonorRequest(TeaModel):
         self,
         user_id: str = None,
     ):
-        # 要取消荣誉的员工userid 必填
         self.user_id = user_id
 
     def validate(self):
@@ -3432,13 +3380,16 @@ class RecallHonorResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RecallHonorResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3451,6 +3402,8 @@ class RecallHonorResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3459,6 +3412,8 @@ class RecallHonorResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RecallHonorResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3506,13 +3461,9 @@ class UpdateAutoIssuePointRequest(TeaModel):
         point_auto_time: int = None,
         user_id: str = None,
     ):
-        # 企业积分自动发放数量1-10000
         self.point_auto_num = point_auto_num
-        # 企业积分自动发放状态
         self.point_auto_state = point_auto_state
-        # 企业积分自动发放时间 必须为每月的1号或15号，传入1时为1号，传入15时为15号。
         self.point_auto_time = point_auto_time
-        # 操作人userId
         self.user_id = user_id
 
     def validate(self):
@@ -3552,7 +3503,6 @@ class UpdateAutoIssuePointResponseBodyResult(TeaModel):
         self,
         next_auto_issue_point_time: int = None,
     ):
-        # 下次自动发放时间
         self.next_auto_issue_point_time = next_auto_issue_point_time
 
     def validate(self):
@@ -3582,7 +3532,6 @@ class UpdateAutoIssuePointResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
-        # 调用是否成功
         self.success = success
 
     def validate(self):
@@ -3615,13 +3564,16 @@ class UpdateAutoIssuePointResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateAutoIssuePointResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3634,6 +3586,8 @@ class UpdateAutoIssuePointResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3642,6 +3596,8 @@ class UpdateAutoIssuePointResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateAutoIssuePointResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3689,13 +3645,9 @@ class UpdatePointActionAutoAssignRuleRequestUpdatePointRuleRequestDTOList(TeaMod
         day_limit_times: int = None,
         status: int = None,
     ):
-        # 奖励积分1～100
         self.award_score = award_score
-        # 行为名称 不支持修改 
         self.code = code
-        # 单日计次上限 1～10
         self.day_limit_times = day_limit_times
-        # 生效状态：0无效，1有效
         self.status = status
 
     def validate(self):
@@ -3736,9 +3688,7 @@ class UpdatePointActionAutoAssignRuleRequest(TeaModel):
         update_point_rule_request_dtolist: List[UpdatePointActionAutoAssignRuleRequestUpdatePointRuleRequestDTOList] = None,
         user_id: str = None,
     ):
-        # 行为规则列表
         self.update_point_rule_request_dtolist = update_point_rule_request_dtolist
-        # 操作人userId
         self.user_id = user_id
 
     def validate(self):
@@ -3804,13 +3754,16 @@ class UpdatePointActionAutoAssignRuleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdatePointActionAutoAssignRuleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3823,6 +3776,8 @@ class UpdatePointActionAutoAssignRuleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3831,6 +3786,8 @@ class UpdatePointActionAutoAssignRuleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdatePointActionAutoAssignRuleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3876,9 +3833,7 @@ class WearOrgHonorRequest(TeaModel):
         user_id: str = None,
         wear: bool = None,
     ):
-        # 员工userid
         self.user_id = user_id
-        # 佩戴true，卸下false
         self.wear = wear
 
     def validate(self):
@@ -3971,13 +3926,16 @@ class WearOrgHonorResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: WearOrgHonorResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3990,6 +3948,8 @@ class WearOrgHonorResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3998,6 +3958,8 @@ class WearOrgHonorResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = WearOrgHonorResponseBody()
             self.body = temp_model.from_map(m['body'])

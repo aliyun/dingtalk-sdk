@@ -45,13 +45,9 @@ class RunCallUserRequest(TeaModel):
         order_id: str = None,
         user_id: str = None,
     ):
-        # 授权isv套件企业的corpid
         self.authorize_corp_id = authorize_corp_id
-        # 授权isv套件企业的员工userid
         self.authorize_user_id = authorize_user_id
-        # 订单id
         self.order_id = order_id
-        # isv套件所属企业下的员工userid
         self.user_id = user_id
 
     def validate(self):
@@ -91,7 +87,6 @@ class RunCallUserResponseBody(TeaModel):
         self,
         success: str = None,
     ):
-        # 执行结果
         self.success = success
 
     def validate(self):
@@ -118,13 +113,16 @@ class RunCallUserResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RunCallUserResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -137,6 +135,8 @@ class RunCallUserResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -145,6 +145,8 @@ class RunCallUserResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RunCallUserResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.crm_1_0 import models as dingtalkcrm__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def abandon_customer(
-        self,
-        request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AbandonCustomerHeaders()
-        return self.abandon_customer_with_options(request, headers, runtime)
-
-    async def abandon_customer_async(
-        self,
-        request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AbandonCustomerHeaders()
-        return await self.abandon_customer_with_options_async(request, headers, runtime)
 
     def abandon_customer_with_options(
         self,
@@ -64,9 +54,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AbandonCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers/abandon',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AbandonCustomerResponse(),
-            self.do_roarequest('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers/abandon', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def abandon_customer_with_options_async(
@@ -94,26 +95,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AbandonCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers/abandon',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AbandonCustomerResponse(),
-            await self.do_roarequest_async('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers/abandon', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_crm_personal_customer(
+    def abandon_customer(
         self,
-        request: dingtalkcrm__1__0_models.AddCrmPersonalCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse:
+        request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AddCrmPersonalCustomerHeaders()
-        return self.add_crm_personal_customer_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AbandonCustomerHeaders()
+        return self.abandon_customer_with_options(request, headers, runtime)
 
-    async def add_crm_personal_customer_async(
+    async def abandon_customer_async(
         self,
-        request: dingtalkcrm__1__0_models.AddCrmPersonalCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse:
+        request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AddCrmPersonalCustomerHeaders()
-        return await self.add_crm_personal_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AbandonCustomerHeaders()
+        return await self.abandon_customer_with_options_async(request, headers, runtime)
 
     def add_crm_personal_customer_with_options(
         self,
@@ -148,9 +160,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddCrmPersonalCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse(),
-            self.do_roarequest('AddCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_crm_personal_customer_with_options_async(
@@ -186,26 +209,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddCrmPersonalCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse(),
-            await self.do_roarequest_async('AddCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_customer_track(
+    def add_crm_personal_customer(
         self,
-        request: dingtalkcrm__1__0_models.AddCustomerTrackRequest,
-    ) -> dingtalkcrm__1__0_models.AddCustomerTrackResponse:
+        request: dingtalkcrm__1__0_models.AddCrmPersonalCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AddCustomerTrackHeaders()
-        return self.add_customer_track_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AddCrmPersonalCustomerHeaders()
+        return self.add_crm_personal_customer_with_options(request, headers, runtime)
 
-    async def add_customer_track_async(
+    async def add_crm_personal_customer_async(
         self,
-        request: dingtalkcrm__1__0_models.AddCustomerTrackRequest,
-    ) -> dingtalkcrm__1__0_models.AddCustomerTrackResponse:
+        request: dingtalkcrm__1__0_models.AddCrmPersonalCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AddCustomerTrackHeaders()
-        return await self.add_customer_track_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AddCrmPersonalCustomerHeaders()
+        return await self.add_crm_personal_customer_with_options_async(request, headers, runtime)
 
     def add_customer_track_with_options(
         self,
@@ -242,9 +276,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddCustomerTrack',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customerTracks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AddCustomerTrackResponse(),
-            self.do_roarequest('AddCustomerTrack', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerTracks', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_customer_track_with_options_async(
@@ -282,26 +327,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddCustomerTrack',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customerTracks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AddCustomerTrackResponse(),
-            await self.do_roarequest_async('AddCustomerTrack', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerTracks', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_leads(
+    def add_customer_track(
         self,
-        request: dingtalkcrm__1__0_models.AddLeadsRequest,
-    ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        request: dingtalkcrm__1__0_models.AddCustomerTrackRequest,
+    ) -> dingtalkcrm__1__0_models.AddCustomerTrackResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
-        return self.add_leads_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AddCustomerTrackHeaders()
+        return self.add_customer_track_with_options(request, headers, runtime)
 
-    async def add_leads_async(
+    async def add_customer_track_async(
         self,
-        request: dingtalkcrm__1__0_models.AddLeadsRequest,
-    ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        request: dingtalkcrm__1__0_models.AddCustomerTrackRequest,
+    ) -> dingtalkcrm__1__0_models.AddCustomerTrackResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
-        return await self.add_leads_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AddCustomerTrackHeaders()
+        return await self.add_customer_track_with_options_async(request, headers, runtime)
 
     def add_leads_with_options(
         self,
@@ -330,9 +386,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddLeads',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/leads',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AddLeadsResponse(),
-            self.do_roarequest('AddLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/leads', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_leads_with_options_async(
@@ -362,26 +429,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddLeads',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/leads',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AddLeadsResponse(),
-            await self.do_roarequest_async('AddLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/leads', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_relation_meta_field(
+    def add_leads(
         self,
-        request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
-    ) -> dingtalkcrm__1__0_models.AddRelationMetaFieldResponse:
+        request: dingtalkcrm__1__0_models.AddLeadsRequest,
+    ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders()
-        return self.add_relation_meta_field_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
+        return self.add_leads_with_options(request, headers, runtime)
 
-    async def add_relation_meta_field_async(
+    async def add_leads_async(
         self,
-        request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
-    ) -> dingtalkcrm__1__0_models.AddRelationMetaFieldResponse:
+        request: dingtalkcrm__1__0_models.AddLeadsRequest,
+    ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders()
-        return await self.add_relation_meta_field_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
+        return await self.add_leads_with_options_async(request, headers, runtime)
 
     def add_relation_meta_field_with_options(
         self,
@@ -408,9 +486,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddRelationMetaField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/fields',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AddRelationMetaFieldResponse(),
-            self.do_roarequest('AddRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/fields', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_relation_meta_field_with_options_async(
@@ -438,26 +527,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddRelationMetaField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/fields',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.AddRelationMetaFieldResponse(),
-            await self.do_roarequest_async('AddRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/fields', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_add_contacts(
+    def add_relation_meta_field(
         self,
-        request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
+    ) -> dingtalkcrm__1__0_models.AddRelationMetaFieldResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchAddContactsHeaders()
-        return self.batch_add_contacts_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders()
+        return self.add_relation_meta_field_with_options(request, headers, runtime)
 
-    async def batch_add_contacts_async(
+    async def add_relation_meta_field_async(
         self,
-        request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
+    ) -> dingtalkcrm__1__0_models.AddRelationMetaFieldResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchAddContactsHeaders()
-        return await self.batch_add_contacts_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders()
+        return await self.add_relation_meta_field_with_options_async(request, headers, runtime)
 
     def batch_add_contacts_with_options(
         self,
@@ -480,9 +580,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchAddContacts',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/contacts/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchAddContactsResponse(),
-            self.do_roarequest('BatchAddContacts', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_add_contacts_with_options_async(
@@ -506,26 +617,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchAddContacts',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/contacts/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchAddContactsResponse(),
-            await self.do_roarequest_async('BatchAddContacts', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_add_follow_records(
+    def batch_add_contacts(
         self,
-        request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders()
-        return self.batch_add_follow_records_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchAddContactsHeaders()
+        return self.batch_add_contacts_with_options(request, headers, runtime)
 
-    async def batch_add_follow_records_async(
+    async def batch_add_contacts_async(
         self,
-        request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders()
-        return await self.batch_add_follow_records_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchAddContactsHeaders()
+        return await self.batch_add_contacts_with_options_async(request, headers, runtime)
 
     def batch_add_follow_records_with_options(
         self,
@@ -548,9 +670,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchAddFollowRecords',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/followRecords/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse(),
-            self.do_roarequest('BatchAddFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/followRecords/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_add_follow_records_with_options_async(
@@ -574,26 +707,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchAddFollowRecords',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/followRecords/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse(),
-            await self.do_roarequest_async('BatchAddFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/followRecords/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_add_relation_datas(
+    def batch_add_follow_records(
         self,
-        request: dingtalkcrm__1__0_models.BatchAddRelationDatasRequest,
-    ) -> dingtalkcrm__1__0_models.BatchAddRelationDatasResponse:
+        request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders()
-        return self.batch_add_relation_datas_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders()
+        return self.batch_add_follow_records_with_options(request, headers, runtime)
 
-    async def batch_add_relation_datas_async(
+    async def batch_add_follow_records_async(
         self,
-        request: dingtalkcrm__1__0_models.BatchAddRelationDatasRequest,
-    ) -> dingtalkcrm__1__0_models.BatchAddRelationDatasResponse:
+        request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders()
-        return await self.batch_add_relation_datas_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders()
+        return await self.batch_add_follow_records_with_options_async(request, headers, runtime)
 
     def batch_add_relation_datas_with_options(
         self,
@@ -620,9 +764,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchAddRelationDatas',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relationDatas/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchAddRelationDatasResponse(),
-            self.do_roarequest('BatchAddRelationDatas', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relationDatas/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_add_relation_datas_with_options_async(
@@ -650,26 +805,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchAddRelationDatas',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relationDatas/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchAddRelationDatasResponse(),
-            await self.do_roarequest_async('BatchAddRelationDatas', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relationDatas/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_remove_follow_records(
+    def batch_add_relation_datas(
         self,
-        request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        request: dingtalkcrm__1__0_models.BatchAddRelationDatasRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddRelationDatasResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders()
-        return self.batch_remove_follow_records_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders()
+        return self.batch_add_relation_datas_with_options(request, headers, runtime)
 
-    async def batch_remove_follow_records_async(
+    async def batch_add_relation_datas_async(
         self,
-        request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        request: dingtalkcrm__1__0_models.BatchAddRelationDatasRequest,
+    ) -> dingtalkcrm__1__0_models.BatchAddRelationDatasResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders()
-        return await self.batch_remove_follow_records_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders()
+        return await self.batch_add_relation_datas_with_options_async(request, headers, runtime)
 
     def batch_remove_follow_records_with_options(
         self,
@@ -692,9 +858,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRemoveFollowRecords',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/followRecords/batchRemove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse(),
-            self.do_roarequest('BatchRemoveFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/followRecords/batchRemove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_remove_follow_records_with_options_async(
@@ -718,26 +895,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchRemoveFollowRecords',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/followRecords/batchRemove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse(),
-            await self.do_roarequest_async('BatchRemoveFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/followRecords/batchRemove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_send_official_account_otomessage(
+    def batch_remove_follow_records(
         self,
-        request: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageRequest,
-    ) -> dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse:
+        request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageHeaders()
-        return self.batch_send_official_account_otomessage_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders()
+        return self.batch_remove_follow_records_with_options(request, headers, runtime)
 
-    async def batch_send_official_account_otomessage_async(
+    async def batch_remove_follow_records_async(
         self,
-        request: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageRequest,
-    ) -> dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse:
+        request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageHeaders()
-        return await self.batch_send_official_account_otomessage_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders()
+        return await self.batch_remove_follow_records_with_options_async(request, headers, runtime)
 
     def batch_send_official_account_otomessage_with_options(
         self,
@@ -762,9 +950,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchSendOfficialAccountOTOMessage',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/oToMessages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse(),
-            self.do_roarequest('BatchSendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/batchSend', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_send_official_account_otomessage_with_options_async(
@@ -790,26 +989,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchSendOfficialAccountOTOMessage',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/oToMessages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse(),
-            await self.do_roarequest_async('BatchSendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/batchSend', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_update_contacts(
+    def batch_send_official_account_otomessage(
         self,
-        request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        request: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageRequest,
+    ) -> dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchUpdateContactsHeaders()
-        return self.batch_update_contacts_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageHeaders()
+        return self.batch_send_official_account_otomessage_with_options(request, headers, runtime)
 
-    async def batch_update_contacts_async(
+    async def batch_send_official_account_otomessage_async(
         self,
-        request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        request: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageRequest,
+    ) -> dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchUpdateContactsHeaders()
-        return await self.batch_update_contacts_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageHeaders()
+        return await self.batch_send_official_account_otomessage_with_options_async(request, headers, runtime)
 
     def batch_update_contacts_with_options(
         self,
@@ -832,9 +1042,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchUpdateContacts',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/contacts/batch',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchUpdateContactsResponse(),
-            self.do_roarequest('BatchUpdateContacts', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_update_contacts_with_options_async(
@@ -858,26 +1079,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchUpdateContacts',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/contacts/batch',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchUpdateContactsResponse(),
-            await self.do_roarequest_async('BatchUpdateContacts', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/contacts/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_update_follow_records(
+    def batch_update_contacts(
         self,
-        request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders()
-        return self.batch_update_follow_records_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchUpdateContactsHeaders()
+        return self.batch_update_contacts_with_options(request, headers, runtime)
 
-    async def batch_update_follow_records_async(
+    async def batch_update_contacts_async(
         self,
-        request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
-    ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders()
-        return await self.batch_update_follow_records_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchUpdateContactsHeaders()
+        return await self.batch_update_contacts_with_options_async(request, headers, runtime)
 
     def batch_update_follow_records_with_options(
         self,
@@ -900,9 +1132,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchUpdateFollowRecords',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/followRecords/batch',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse(),
-            self.do_roarequest('BatchUpdateFollowRecords', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/followRecords/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_update_follow_records_with_options_async(
@@ -926,26 +1169,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchUpdateFollowRecords',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/followRecords/batch',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse(),
-            await self.do_roarequest_async('BatchUpdateFollowRecords', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/followRecords/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_update_relation_datas(
+    def batch_update_follow_records(
         self,
-        request: dingtalkcrm__1__0_models.BatchUpdateRelationDatasRequest,
-    ) -> dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse:
+        request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders()
-        return self.batch_update_relation_datas_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders()
+        return self.batch_update_follow_records_with_options(request, headers, runtime)
 
-    async def batch_update_relation_datas_async(
+    async def batch_update_follow_records_async(
         self,
-        request: dingtalkcrm__1__0_models.BatchUpdateRelationDatasRequest,
-    ) -> dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse:
+        request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders()
-        return await self.batch_update_relation_datas_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders()
+        return await self.batch_update_follow_records_with_options_async(request, headers, runtime)
 
     def batch_update_relation_datas_with_options(
         self,
@@ -972,9 +1226,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchUpdateRelationDatas',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relationDatas/batch',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse(),
-            self.do_roarequest('BatchUpdateRelationDatas', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/relationDatas/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_update_relation_datas_with_options_async(
@@ -1002,26 +1267,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchUpdateRelationDatas',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relationDatas/batch',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse(),
-            await self.do_roarequest_async('BatchUpdateRelationDatas', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/relationDatas/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_customer(
+    def batch_update_relation_datas(
         self,
-        request: dingtalkcrm__1__0_models.CreateCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.CreateCustomerResponse:
+        request: dingtalkcrm__1__0_models.BatchUpdateRelationDatasRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.CreateCustomerHeaders()
-        return self.create_customer_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders()
+        return self.batch_update_relation_datas_with_options(request, headers, runtime)
 
-    async def create_customer_async(
+    async def batch_update_relation_datas_async(
         self,
-        request: dingtalkcrm__1__0_models.CreateCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.CreateCustomerResponse:
+        request: dingtalkcrm__1__0_models.BatchUpdateRelationDatasRequest,
+    ) -> dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.CreateCustomerHeaders()
-        return await self.create_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders()
+        return await self.batch_update_relation_datas_with_options_async(request, headers, runtime)
 
     def create_customer_with_options(
         self,
@@ -1056,9 +1332,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.CreateCustomerResponse(),
-            self.do_roarequest('CreateCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_customer_with_options_async(
@@ -1094,26 +1381,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.CreateCustomerResponse(),
-            await self.do_roarequest_async('CreateCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_group(
+    def create_customer(
         self,
-        request: dingtalkcrm__1__0_models.CreateGroupRequest,
-    ) -> dingtalkcrm__1__0_models.CreateGroupResponse:
+        request: dingtalkcrm__1__0_models.CreateCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.CreateCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.CreateGroupHeaders()
-        return self.create_group_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.CreateCustomerHeaders()
+        return self.create_customer_with_options(request, headers, runtime)
 
-    async def create_group_async(
+    async def create_customer_async(
         self,
-        request: dingtalkcrm__1__0_models.CreateGroupRequest,
-    ) -> dingtalkcrm__1__0_models.CreateGroupResponse:
+        request: dingtalkcrm__1__0_models.CreateCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.CreateCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.CreateGroupHeaders()
-        return await self.create_group_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.CreateCustomerHeaders()
+        return await self.create_customer_with_options_async(request, headers, runtime)
 
     def create_group_with_options(
         self,
@@ -1140,9 +1438,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.CreateGroupResponse(),
-            self.do_roarequest('CreateGroup', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_group_with_options_async(
@@ -1170,26 +1479,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.CreateGroupResponse(),
-            await self.do_roarequest_async('CreateGroup', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_group_set(
+    def create_group(
         self,
-        request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        request: dingtalkcrm__1__0_models.CreateGroupRequest,
+    ) -> dingtalkcrm__1__0_models.CreateGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.CreateGroupSetHeaders()
-        return self.create_group_set_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.CreateGroupHeaders()
+        return self.create_group_with_options(request, headers, runtime)
 
-    async def create_group_set_async(
+    async def create_group_async(
         self,
-        request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        request: dingtalkcrm__1__0_models.CreateGroupRequest,
+    ) -> dingtalkcrm__1__0_models.CreateGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.CreateGroupSetHeaders()
-        return await self.create_group_set_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.CreateGroupHeaders()
+        return await self.create_group_with_options_async(request, headers, runtime)
 
     def create_group_set_with_options(
         self,
@@ -1228,9 +1548,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.CreateGroupSetResponse(),
-            self.do_roarequest('CreateGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/groupSets', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_group_set_with_options_async(
@@ -1270,26 +1601,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.CreateGroupSetResponse(),
-            await self.do_roarequest_async('CreateGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/groupSets', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_relation_meta(
+    def create_group_set(
         self,
-        request: dingtalkcrm__1__0_models.CreateRelationMetaRequest,
-    ) -> dingtalkcrm__1__0_models.CreateRelationMetaResponse:
+        request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.CreateRelationMetaHeaders()
-        return self.create_relation_meta_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.CreateGroupSetHeaders()
+        return self.create_group_set_with_options(request, headers, runtime)
 
-    async def create_relation_meta_async(
+    async def create_group_set_async(
         self,
-        request: dingtalkcrm__1__0_models.CreateRelationMetaRequest,
-    ) -> dingtalkcrm__1__0_models.CreateRelationMetaResponse:
+        request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.CreateRelationMetaHeaders()
-        return await self.create_relation_meta_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.CreateGroupSetHeaders()
+        return await self.create_group_set_with_options_async(request, headers, runtime)
 
     def create_relation_meta_with_options(
         self,
@@ -1314,9 +1656,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateRelationMeta',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.CreateRelationMetaResponse(),
-            self.do_roarequest('CreateRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/create', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_relation_meta_with_options_async(
@@ -1342,9 +1695,108 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateRelationMeta',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.CreateRelationMetaResponse(),
-            await self.do_roarequest_async('CreateRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/create', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_relation_meta(
+        self,
+        request: dingtalkcrm__1__0_models.CreateRelationMetaRequest,
+    ) -> dingtalkcrm__1__0_models.CreateRelationMetaResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.CreateRelationMetaHeaders()
+        return self.create_relation_meta_with_options(request, headers, runtime)
+
+    async def create_relation_meta_async(
+        self,
+        request: dingtalkcrm__1__0_models.CreateRelationMetaRequest,
+    ) -> dingtalkcrm__1__0_models.CreateRelationMetaResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.CreateRelationMetaHeaders()
+        return await self.create_relation_meta_with_options_async(request, headers, runtime)
+
+    def delete_crm_custom_object_data_with_options(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteCrmCustomObjectData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customObjectDatas/instances/{instance_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_crm_custom_object_data_with_options_async(
+        self,
+        instance_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteCrmCustomObjectData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customObjectDatas/instances/{instance_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def delete_crm_custom_object_data(
@@ -1365,18 +1817,19 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders()
         return await self.delete_crm_custom_object_data_with_options_async(instance_id, request, headers, runtime)
 
-    def delete_crm_custom_object_data_with_options(
+    def delete_crm_form_instance_with_options(
         self,
         instance_id: str,
-        request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
-        headers: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders,
+        request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+    ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
-        if not UtilClient.is_unset(request.form_code):
-            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.current_operator_user_id):
+            query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1386,23 +1839,35 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteCrmFormInstance',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/formInstances/{instance_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse(),
-            self.do_roarequest('DeleteCrmCustomObjectData', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/customObjectDatas/instances/{instance_id}', 'json', req, runtime)
+            dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def delete_crm_custom_object_data_with_options_async(
+    async def delete_crm_form_instance_with_options_async(
         self,
         instance_id: str,
-        request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
-        headers: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders,
+        request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+    ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
-        if not UtilClient.is_unset(request.form_code):
-            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.current_operator_user_id):
+            query['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1412,9 +1877,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteCrmFormInstance',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/formInstances/{instance_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse(),
-            await self.do_roarequest_async('DeleteCrmCustomObjectData', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/customObjectDatas/instances/{instance_id}', 'json', req, runtime)
+            dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def delete_crm_form_instance(
@@ -1435,20 +1911,19 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders()
         return await self.delete_crm_form_instance_with_options_async(instance_id, request, headers, runtime)
 
-    def delete_crm_form_instance_with_options(
+    def delete_crm_personal_customer_with_options(
         self,
-        instance_id: str,
-        request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
-        headers: dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders,
+        data_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+    ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1458,25 +1933,35 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteCrmPersonalCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers/{data_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse(),
-            self.do_roarequest('DeleteCrmFormInstance', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/formInstances/{instance_id}', 'json', req, runtime)
+            dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse(),
+            self.execute(params, req, runtime)
         )
 
-    async def delete_crm_form_instance_with_options_async(
+    async def delete_crm_personal_customer_with_options_async(
         self,
-        instance_id: str,
-        request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
-        headers: dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders,
+        data_id: str,
+        request: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerRequest,
+        headers: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+    ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
         UtilClient.validate_model(request)
-        instance_id = OpenApiUtilClient.get_encode_param(instance_id)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
             query['currentOperatorUserId'] = request.current_operator_user_id
-        if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1486,9 +1971,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteCrmPersonalCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers/{data_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
-            dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse(),
-            await self.do_roarequest_async('DeleteCrmFormInstance', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/formInstances/{instance_id}', 'json', req, runtime)
+            dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def delete_crm_personal_customer(
@@ -1509,78 +2005,6 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders()
         return await self.delete_crm_personal_customer_with_options_async(data_id, request, headers, runtime)
 
-    def delete_crm_personal_customer_with_options(
-        self,
-        data_id: str,
-        request: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerRequest,
-        headers: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
-        UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        query = {}
-        if not UtilClient.is_unset(request.current_operator_user_id):
-            query['currentOperatorUserId'] = request.current_operator_user_id
-        if not UtilClient.is_unset(request.relation_type):
-            query['relationType'] = request.relation_type
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse(),
-            self.do_roarequest('DeleteCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/personalCustomers/{data_id}', 'json', req, runtime)
-        )
-
-    async def delete_crm_personal_customer_with_options_async(
-        self,
-        data_id: str,
-        request: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerRequest,
-        headers: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
-        UtilClient.validate_model(request)
-        data_id = OpenApiUtilClient.get_encode_param(data_id)
-        query = {}
-        if not UtilClient.is_unset(request.current_operator_user_id):
-            query['currentOperatorUserId'] = request.current_operator_user_id
-        if not UtilClient.is_unset(request.relation_type):
-            query['relationType'] = request.relation_type
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse(),
-            await self.do_roarequest_async('DeleteCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/crm/personalCustomers/{data_id}', 'json', req, runtime)
-        )
-
-    def delete_leads(
-        self,
-        request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
-    ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.DeleteLeadsHeaders()
-        return self.delete_leads_with_options(request, headers, runtime)
-
-    async def delete_leads_async(
-        self,
-        request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
-    ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.DeleteLeadsHeaders()
-        return await self.delete_leads_with_options_async(request, headers, runtime)
-
     def delete_leads_with_options(
         self,
         request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
@@ -1600,9 +2024,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteLeads',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/leads/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DeleteLeadsResponse(),
-            self.do_roarequest('DeleteLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/leads/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_leads_with_options_async(
@@ -1624,26 +2059,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteLeads',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/leads/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DeleteLeadsResponse(),
-            await self.do_roarequest_async('DeleteLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/leads/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_relation_meta_field(
+    def delete_leads(
         self,
-        request: dingtalkcrm__1__0_models.DeleteRelationMetaFieldRequest,
-    ) -> dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse:
+        request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.DeleteRelationMetaFieldHeaders()
-        return self.delete_relation_meta_field_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.DeleteLeadsHeaders()
+        return self.delete_leads_with_options(request, headers, runtime)
 
-    async def delete_relation_meta_field_async(
+    async def delete_leads_async(
         self,
-        request: dingtalkcrm__1__0_models.DeleteRelationMetaFieldRequest,
-    ) -> dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse:
+        request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.DeleteRelationMetaFieldHeaders()
-        return await self.delete_relation_meta_field_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.DeleteLeadsHeaders()
+        return await self.delete_leads_with_options_async(request, headers, runtime)
 
     def delete_relation_meta_field_with_options(
         self,
@@ -1670,9 +2116,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteRelationMetaField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/fields/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse(),
-            self.do_roarequest('DeleteRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/fields/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_relation_meta_field_with_options_async(
@@ -1700,26 +2157,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteRelationMetaField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/fields/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse(),
-            await self.do_roarequest_async('DeleteRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/fields/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def describe_crm_personal_customer_object_meta(
+    def delete_relation_meta_field(
         self,
-        request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
-    ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+        request: dingtalkcrm__1__0_models.DeleteRelationMetaFieldRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
-        return self.describe_crm_personal_customer_object_meta_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.DeleteRelationMetaFieldHeaders()
+        return self.delete_relation_meta_field_with_options(request, headers, runtime)
 
-    async def describe_crm_personal_customer_object_meta_async(
+    async def delete_relation_meta_field_async(
         self,
-        request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
-    ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+        request: dingtalkcrm__1__0_models.DeleteRelationMetaFieldRequest,
+    ) -> dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
-        return await self.describe_crm_personal_customer_object_meta_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.DeleteRelationMetaFieldHeaders()
+        return await self.delete_relation_meta_field_with_options_async(request, headers, runtime)
 
     def describe_crm_personal_customer_object_meta_with_options(
         self,
@@ -1740,9 +2208,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DescribeCrmPersonalCustomerObjectMeta',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers/objectMeta',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse(),
-            self.do_roarequest('DescribeCrmPersonalCustomerObjectMeta', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/personalCustomers/objectMeta', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def describe_crm_personal_customer_object_meta_with_options_async(
@@ -1764,26 +2243,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DescribeCrmPersonalCustomerObjectMeta',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers/objectMeta',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse(),
-            await self.do_roarequest_async('DescribeCrmPersonalCustomerObjectMeta', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/personalCustomers/objectMeta', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def describe_relation_meta(
+    def describe_crm_personal_customer_object_meta(
         self,
-        request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
-    ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
-        return self.describe_relation_meta_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
+        return self.describe_crm_personal_customer_object_meta_with_options(request, headers, runtime)
 
-    async def describe_relation_meta_async(
+    async def describe_crm_personal_customer_object_meta_async(
         self,
-        request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
-    ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
-        return await self.describe_relation_meta_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
+        return await self.describe_crm_personal_customer_object_meta_with_options_async(request, headers, runtime)
 
     def describe_relation_meta_with_options(
         self,
@@ -1808,9 +2298,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DescribeRelationMeta',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DescribeRelationMetaResponse(),
-            self.do_roarequest('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def describe_relation_meta_with_options_async(
@@ -1836,26 +2337,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DescribeRelationMeta',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.DescribeRelationMetaResponse(),
-            await self.do_roarequest_async('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/relations/metas/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_all_customer_recycles(
+    def describe_relation_meta(
         self,
-        request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
-    ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
-        return self.get_all_customer_recycles_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
+        return self.describe_relation_meta_with_options(request, headers, runtime)
 
-    async def get_all_customer_recycles_async(
+    async def describe_relation_meta_async(
         self,
-        request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
-    ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
-        return await self.get_all_customer_recycles_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
+        return await self.describe_relation_meta_with_options_async(request, headers, runtime)
 
     def get_all_customer_recycles_with_options(
         self,
@@ -1878,9 +2390,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAllCustomerRecycles',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customerRecycles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse(),
-            self.do_roarequest('GetAllCustomerRecycles', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customerRecycles', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_all_customer_recycles_with_options_async(
@@ -1904,9 +2427,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetAllCustomerRecycles',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customerRecycles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse(),
-            await self.do_roarequest_async('GetAllCustomerRecycles', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customerRecycles', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_all_customer_recycles(
+        self,
+        request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
+    ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
+        return self.get_all_customer_recycles_with_options(request, headers, runtime)
+
+    async def get_all_customer_recycles_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
+    ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
+        return await self.get_all_customer_recycles_with_options_async(request, headers, runtime)
+
+    def get_crm_group_chat_with_options(
+        self,
+        open_conversation_id: str,
+        headers: dingtalkcrm__1__0_models.GetCrmGroupChatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetCrmGroupChat',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/crmGroupChats/{open_conversation_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCrmGroupChatResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_crm_group_chat_with_options_async(
+        self,
+        open_conversation_id: str,
+        headers: dingtalkcrm__1__0_models.GetCrmGroupChatHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetCrmGroupChat',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/crmGroupChats/{open_conversation_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetCrmGroupChatResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_crm_group_chat(
@@ -1924,62 +2534,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmGroupChatHeaders()
         return await self.get_crm_group_chat_with_options_async(open_conversation_id, headers, runtime)
-
-    def get_crm_group_chat_with_options(
-        self,
-        open_conversation_id: str,
-        headers: dingtalkcrm__1__0_models.GetCrmGroupChatHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
-        open_conversation_id = OpenApiUtilClient.get_encode_param(open_conversation_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkcrm__1__0_models.GetCrmGroupChatResponse(),
-            self.do_roarequest('GetCrmGroupChat', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/crmGroupChats/{open_conversation_id}', 'json', req, runtime)
-        )
-
-    async def get_crm_group_chat_with_options_async(
-        self,
-        open_conversation_id: str,
-        headers: dingtalkcrm__1__0_models.GetCrmGroupChatHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
-        open_conversation_id = OpenApiUtilClient.get_encode_param(open_conversation_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkcrm__1__0_models.GetCrmGroupChatResponse(),
-            await self.do_roarequest_async('GetCrmGroupChat', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/crmGroupChats/{open_conversation_id}', 'json', req, runtime)
-        )
-
-    def get_crm_group_chat_multi(
-        self,
-        request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
-    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders()
-        return self.get_crm_group_chat_multi_with_options(request, headers, runtime)
-
-    async def get_crm_group_chat_multi_async(
-        self,
-        request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
-    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders()
-        return await self.get_crm_group_chat_multi_with_options_async(request, headers, runtime)
 
     def get_crm_group_chat_multi_with_options(
         self,
@@ -2000,9 +2554,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetCrmGroupChatMulti',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/crmGroupChats/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse(),
-            self.do_roarequest('GetCrmGroupChatMulti', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/crmGroupChats/batchQuery', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_crm_group_chat_multi_with_options_async(
@@ -2024,26 +2589,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetCrmGroupChatMulti',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/crmGroupChats/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse(),
-            await self.do_roarequest_async('GetCrmGroupChatMulti', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/crmGroupChats/batchQuery', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_crm_group_chat_single(
+    def get_crm_group_chat_multi(
         self,
-        request: dingtalkcrm__1__0_models.GetCrmGroupChatSingleRequest,
-    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse:
+        request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetCrmGroupChatSingleHeaders()
-        return self.get_crm_group_chat_single_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders()
+        return self.get_crm_group_chat_multi_with_options(request, headers, runtime)
 
-    async def get_crm_group_chat_single_async(
+    async def get_crm_group_chat_multi_async(
         self,
-        request: dingtalkcrm__1__0_models.GetCrmGroupChatSingleRequest,
-    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse:
+        request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetCrmGroupChatSingleHeaders()
-        return await self.get_crm_group_chat_single_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders()
+        return await self.get_crm_group_chat_multi_with_options_async(request, headers, runtime)
 
     def get_crm_group_chat_single_with_options(
         self,
@@ -2064,9 +2640,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCrmGroupChatSingle',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/crmGroupChats/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse(),
-            self.do_roarequest('GetCrmGroupChatSingle', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/crmGroupChats/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_crm_group_chat_single_with_options_async(
@@ -2088,26 +2675,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCrmGroupChatSingle',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/crmGroupChats/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse(),
-            await self.do_roarequest_async('GetCrmGroupChatSingle', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/crmGroupChats/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_crm_role_permission(
+    def get_crm_group_chat_single(
         self,
-        request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
-    ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        request: dingtalkcrm__1__0_models.GetCrmGroupChatSingleRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders()
-        return self.get_crm_role_permission_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetCrmGroupChatSingleHeaders()
+        return self.get_crm_group_chat_single_with_options(request, headers, runtime)
 
-    async def get_crm_role_permission_async(
+    async def get_crm_group_chat_single_async(
         self,
-        request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
-    ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        request: dingtalkcrm__1__0_models.GetCrmGroupChatSingleRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders()
-        return await self.get_crm_role_permission_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetCrmGroupChatSingleHeaders()
+        return await self.get_crm_group_chat_single_with_options_async(request, headers, runtime)
 
     def get_crm_role_permission_with_options(
         self,
@@ -2130,9 +2728,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCrmRolePermission',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/permissions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetCrmRolePermissionResponse(),
-            self.do_roarequest('GetCrmRolePermission', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/permissions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_crm_role_permission_with_options_async(
@@ -2156,26 +2765,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCrmRolePermission',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/permissions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetCrmRolePermissionResponse(),
-            await self.do_roarequest_async('GetCrmRolePermission', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/permissions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_customer_tracks_by_relation_id(
+    def get_crm_role_permission(
         self,
-        request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
-    ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders()
-        return self.get_customer_tracks_by_relation_id_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders()
+        return self.get_crm_role_permission_with_options(request, headers, runtime)
 
-    async def get_customer_tracks_by_relation_id_async(
+    async def get_crm_role_permission_async(
         self,
-        request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
-    ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
+    ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders()
-        return await self.get_customer_tracks_by_relation_id_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders()
+        return await self.get_crm_role_permission_with_options_async(request, headers, runtime)
 
     def get_customer_tracks_by_relation_id_with_options(
         self,
@@ -2202,9 +2822,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCustomerTracksByRelationId',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customerTracks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse(),
-            self.do_roarequest('GetCustomerTracksByRelationId', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customerTracks', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_customer_tracks_by_relation_id_with_options_async(
@@ -2232,26 +2863,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCustomerTracksByRelationId',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customerTracks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse(),
-            await self.do_roarequest_async('GetCustomerTracksByRelationId', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customerTracks', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_group_set(
+    def get_customer_tracks_by_relation_id(
         self,
-        request: dingtalkcrm__1__0_models.GetGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
+    ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
-        return self.get_group_set_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders()
+        return self.get_customer_tracks_by_relation_id_with_options(request, headers, runtime)
 
-    async def get_group_set_async(
+    async def get_customer_tracks_by_relation_id_async(
         self,
-        request: dingtalkcrm__1__0_models.GetGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
+    ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
-        return await self.get_group_set_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders()
+        return await self.get_customer_tracks_by_relation_id_with_options_async(request, headers, runtime)
 
     def get_group_set_with_options(
         self,
@@ -2272,9 +2914,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetGroupSetResponse(),
-            self.do_roarequest('GetGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/groupSets', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_group_set_with_options_async(
@@ -2296,9 +2949,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetGroupSetResponse(),
-            await self.do_roarequest_async('GetGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/groupSets', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_group_set(
+        self,
+        request: dingtalkcrm__1__0_models.GetGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
+        return self.get_group_set_with_options(request, headers, runtime)
+
+    async def get_group_set_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
+        return await self.get_group_set_with_options_async(request, headers, runtime)
+
+    def get_official_account_contact_info_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetOfficialAccountContactInfo',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/contacts/{user_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_official_account_contact_info_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetOfficialAccountContactInfo',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/contacts/{user_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def get_official_account_contact_info(
@@ -2316,62 +3056,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders()
         return await self.get_official_account_contact_info_with_options_async(user_id, headers, runtime)
-
-    def get_official_account_contact_info_with_options(
-        self,
-        user_id: str,
-        headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse(),
-            self.do_roarequest('GetOfficialAccountContactInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/contacts/{user_id}', 'json', req, runtime)
-        )
-
-    async def get_official_account_contact_info_with_options_async(
-        self,
-        user_id: str,
-        headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
-        user_id = OpenApiUtilClient.get_encode_param(user_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse(),
-            await self.do_roarequest_async('GetOfficialAccountContactInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/contacts/{user_id}', 'json', req, runtime)
-        )
-
-    def get_official_account_contacts(
-        self,
-        request: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders()
-        return self.get_official_account_contacts_with_options(request, headers, runtime)
-
-    async def get_official_account_contacts_async(
-        self,
-        request: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders()
-        return await self.get_official_account_contacts_with_options_async(request, headers, runtime)
 
     def get_official_account_contacts_with_options(
         self,
@@ -2394,9 +3078,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetOfficialAccountContacts',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/contacts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse(),
-            self.do_roarequest('GetOfficialAccountContacts', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/contacts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_official_account_contacts_with_options_async(
@@ -2420,26 +3115,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetOfficialAccountContacts',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/contacts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse(),
-            await self.do_roarequest_async('GetOfficialAccountContacts', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/contacts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_official_account_otomessage_result(
+    def get_official_account_contacts(
         self,
-        request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        request: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
-        return self.get_official_account_otomessage_result_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders()
+        return self.get_official_account_contacts_with_options(request, headers, runtime)
 
-    async def get_official_account_otomessage_result_async(
+    async def get_official_account_contacts_async(
         self,
-        request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
-    ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        request: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
-        return await self.get_official_account_otomessage_result_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders()
+        return await self.get_official_account_contacts_with_options_async(request, headers, runtime)
 
     def get_official_account_otomessage_result_with_options(
         self,
@@ -2462,9 +3168,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetOfficialAccountOTOMessageResult',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/oToMessages/sendResults',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse(),
-            self.do_roarequest('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_official_account_otomessage_result_with_options_async(
@@ -2488,26 +3205,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetOfficialAccountOTOMessageResult',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/oToMessages/sendResults',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse(),
-            await self.do_roarequest_async('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_relation_uk_setting(
+    def get_official_account_otomessage_result(
         self,
-        request: dingtalkcrm__1__0_models.GetRelationUkSettingRequest,
-    ) -> dingtalkcrm__1__0_models.GetRelationUkSettingResponse:
+        request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetRelationUkSettingHeaders()
-        return self.get_relation_uk_setting_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
+        return self.get_official_account_otomessage_result_with_options(request, headers, runtime)
 
-    async def get_relation_uk_setting_async(
+    async def get_official_account_otomessage_result_async(
         self,
-        request: dingtalkcrm__1__0_models.GetRelationUkSettingRequest,
-    ) -> dingtalkcrm__1__0_models.GetRelationUkSettingResponse:
+        request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
+    ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.GetRelationUkSettingHeaders()
-        return await self.get_relation_uk_setting_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
+        return await self.get_official_account_otomessage_result_with_options_async(request, headers, runtime)
 
     def get_relation_uk_setting_with_options(
         self,
@@ -2528,9 +3256,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetRelationUkSetting',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relationUkSettings',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetRelationUkSettingResponse(),
-            self.do_roarequest('GetRelationUkSetting', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/relationUkSettings', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_relation_uk_setting_with_options_async(
@@ -2552,26 +3291,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetRelationUkSetting',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relationUkSettings',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.GetRelationUkSettingResponse(),
-            await self.do_roarequest_async('GetRelationUkSetting', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/relationUkSettings', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def join_group_set(
+    def get_relation_uk_setting(
         self,
-        request: dingtalkcrm__1__0_models.JoinGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.JoinGroupSetResponse:
+        request: dingtalkcrm__1__0_models.GetRelationUkSettingRequest,
+    ) -> dingtalkcrm__1__0_models.GetRelationUkSettingResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.JoinGroupSetHeaders()
-        return self.join_group_set_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetRelationUkSettingHeaders()
+        return self.get_relation_uk_setting_with_options(request, headers, runtime)
 
-    async def join_group_set_async(
+    async def get_relation_uk_setting_async(
         self,
-        request: dingtalkcrm__1__0_models.JoinGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.JoinGroupSetResponse:
+        request: dingtalkcrm__1__0_models.GetRelationUkSettingRequest,
+    ) -> dingtalkcrm__1__0_models.GetRelationUkSettingResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.JoinGroupSetHeaders()
-        return await self.join_group_set_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.GetRelationUkSettingHeaders()
+        return await self.get_relation_uk_setting_with_options_async(request, headers, runtime)
 
     def join_group_set_with_options(
         self,
@@ -2598,9 +3348,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='JoinGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets/join',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.JoinGroupSetResponse(),
-            self.do_roarequest('JoinGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/groupSets/join', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def join_group_set_with_options_async(
@@ -2628,26 +3389,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='JoinGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets/join',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.JoinGroupSetResponse(),
-            await self.do_roarequest_async('JoinGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/groupSets/join', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_crm_personal_customers(
+    def join_group_set(
         self,
-        request: dingtalkcrm__1__0_models.ListCrmPersonalCustomersRequest,
-    ) -> dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse:
+        request: dingtalkcrm__1__0_models.JoinGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.JoinGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.ListCrmPersonalCustomersHeaders()
-        return self.list_crm_personal_customers_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.JoinGroupSetHeaders()
+        return self.join_group_set_with_options(request, headers, runtime)
 
-    async def list_crm_personal_customers_async(
+    async def join_group_set_async(
         self,
-        request: dingtalkcrm__1__0_models.ListCrmPersonalCustomersRequest,
-    ) -> dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse:
+        request: dingtalkcrm__1__0_models.JoinGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.JoinGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.ListCrmPersonalCustomersHeaders()
-        return await self.list_crm_personal_customers_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.JoinGroupSetHeaders()
+        return await self.join_group_set_with_options_async(request, headers, runtime)
 
     def list_crm_personal_customers_with_options(
         self,
@@ -2671,9 +3443,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=request.body
         )
+        params = open_api_models.Params(
+            action='ListCrmPersonalCustomers',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse(),
-            self.do_roarequest('ListCrmPersonalCustomers', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/personalCustomers/batchQuery', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_crm_personal_customers_with_options_async(
@@ -2698,26 +3481,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=request.body
         )
+        params = open_api_models.Params(
+            action='ListCrmPersonalCustomers',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse(),
-            await self.do_roarequest_async('ListCrmPersonalCustomers', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/personalCustomers/batchQuery', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_group_set(
+    def list_crm_personal_customers(
         self,
-        request: dingtalkcrm__1__0_models.ListGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        request: dingtalkcrm__1__0_models.ListCrmPersonalCustomersRequest,
+    ) -> dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
-        return self.list_group_set_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.ListCrmPersonalCustomersHeaders()
+        return self.list_crm_personal_customers_with_options(request, headers, runtime)
 
-    async def list_group_set_async(
+    async def list_crm_personal_customers_async(
         self,
-        request: dingtalkcrm__1__0_models.ListGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        request: dingtalkcrm__1__0_models.ListCrmPersonalCustomersRequest,
+    ) -> dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
-        return await self.list_group_set_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.ListCrmPersonalCustomersHeaders()
+        return await self.list_crm_personal_customers_with_options_async(request, headers, runtime)
 
     def list_group_set_with_options(
         self,
@@ -2744,9 +3538,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.ListGroupSetResponse(),
-            self.do_roarequest('ListGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/groupSets/lists', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_group_set_with_options_async(
@@ -2774,26 +3579,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.ListGroupSetResponse(),
-            await self.do_roarequest_async('ListGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/groupSets/lists', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_all_customer(
+    def list_group_set(
         self,
-        request: dingtalkcrm__1__0_models.QueryAllCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.QueryAllCustomerResponse:
+        request: dingtalkcrm__1__0_models.ListGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryAllCustomerHeaders()
-        return self.query_all_customer_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
+        return self.list_group_set_with_options(request, headers, runtime)
 
-    async def query_all_customer_async(
+    async def list_group_set_async(
         self,
-        request: dingtalkcrm__1__0_models.QueryAllCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.QueryAllCustomerResponse:
+        request: dingtalkcrm__1__0_models.ListGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryAllCustomerHeaders()
-        return await self.query_all_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
+        return await self.list_group_set_with_options_async(request, headers, runtime)
 
     def query_all_customer_with_options(
         self,
@@ -2820,9 +3636,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryAllCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customerInstances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryAllCustomerResponse(),
-            self.do_roarequest('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerInstances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_all_customer_with_options_async(
@@ -2850,26 +3677,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryAllCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customerInstances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryAllCustomerResponse(),
-            await self.do_roarequest_async('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/customerInstances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_all_tracks(
+    def query_all_customer(
         self,
-        request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
-    ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        request: dingtalkcrm__1__0_models.QueryAllCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.QueryAllCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
-        return self.query_all_tracks_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.QueryAllCustomerHeaders()
+        return self.query_all_customer_with_options(request, headers, runtime)
 
-    async def query_all_tracks_async(
+    async def query_all_customer_async(
         self,
-        request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
-    ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        request: dingtalkcrm__1__0_models.QueryAllCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.QueryAllCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
-        return await self.query_all_tracks_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.QueryAllCustomerHeaders()
+        return await self.query_all_customer_with_options_async(request, headers, runtime)
 
     def query_all_tracks_with_options(
         self,
@@ -2894,9 +3732,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllTracks',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers/tracks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryAllTracksResponse(),
-            self.do_roarequest('QueryAllTracks', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customers/tracks', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_all_tracks_with_options_async(
@@ -2922,26 +3771,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAllTracks',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers/tracks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryAllTracksResponse(),
-            await self.do_roarequest_async('QueryAllTracks', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/customers/tracks', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_crm_group_chats(
+    def query_all_tracks(
         self,
-        request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
-    ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
+    ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders()
-        return self.query_crm_group_chats_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
+        return self.query_all_tracks_with_options(request, headers, runtime)
 
-    async def query_crm_group_chats_async(
+    async def query_all_tracks_async(
         self,
-        request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
-    ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
+    ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders()
-        return await self.query_crm_group_chats_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
+        return await self.query_all_tracks_with_options_async(request, headers, runtime)
 
     def query_crm_group_chats_with_options(
         self,
@@ -2968,9 +3828,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCrmGroupChats',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/crmGroupChats',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse(),
-            self.do_roarequest('QueryCrmGroupChats', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/crmGroupChats', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_crm_group_chats_with_options_async(
@@ -2998,26 +3869,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCrmGroupChats',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/crmGroupChats',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse(),
-            await self.do_roarequest_async('QueryCrmGroupChats', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/crmGroupChats', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_crm_personal_customer(
+    def query_crm_group_chats(
         self,
-        request: dingtalkcrm__1__0_models.QueryCrmPersonalCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse:
+        request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
+    ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders()
-        return self.query_crm_personal_customer_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders()
+        return self.query_crm_group_chats_with_options(request, headers, runtime)
 
-    async def query_crm_personal_customer_async(
+    async def query_crm_group_chats_async(
         self,
-        request: dingtalkcrm__1__0_models.QueryCrmPersonalCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse:
+        request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
+    ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders()
-        return await self.query_crm_personal_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders()
+        return await self.query_crm_group_chats_with_options_async(request, headers, runtime)
 
     def query_crm_personal_customer_with_options(
         self,
@@ -3046,9 +3928,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCrmPersonalCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse(),
-            self.do_roarequest('QueryCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_crm_personal_customer_with_options_async(
@@ -3078,26 +3971,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCrmPersonalCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse(),
-            await self.do_roarequest_async('QueryCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_official_account_user_basic_info(
+    def query_crm_personal_customer(
         self,
-        request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
-    ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        request: dingtalkcrm__1__0_models.QueryCrmPersonalCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders()
-        return self.query_official_account_user_basic_info_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders()
+        return self.query_crm_personal_customer_with_options(request, headers, runtime)
 
-    async def query_official_account_user_basic_info_async(
+    async def query_crm_personal_customer_async(
         self,
-        request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
-    ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        request: dingtalkcrm__1__0_models.QueryCrmPersonalCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders()
-        return await self.query_official_account_user_basic_info_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders()
+        return await self.query_crm_personal_customer_with_options_async(request, headers, runtime)
 
     def query_official_account_user_basic_info_with_options(
         self,
@@ -3120,9 +4024,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOfficialAccountUserBasicInfo',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/basics/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse(),
-            self.do_roarequest('QueryOfficialAccountUserBasicInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/basics/users', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_official_account_user_basic_info_with_options_async(
@@ -3146,9 +4061,108 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryOfficialAccountUserBasicInfo',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/basics/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse(),
-            await self.do_roarequest_async('QueryOfficialAccountUserBasicInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/officialAccounts/basics/users', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_official_account_user_basic_info(
+        self,
+        request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
+    ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders()
+        return self.query_official_account_user_basic_info_with_options(request, headers, runtime)
+
+    async def query_official_account_user_basic_info_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
+    ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders()
+        return await self.query_official_account_user_basic_info_with_options_async(request, headers, runtime)
+
+    def query_relation_datas_by_target_id_with_options(
+        self,
+        target_id: str,
+        request: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdRequest,
+        headers: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryRelationDatasByTargetId',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/datas/targets/{target_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_relation_datas_by_target_id_with_options_async(
+        self,
+        target_id: str,
+        request: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdRequest,
+        headers: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.relation_type):
+            query['relationType'] = request.relation_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryRelationDatasByTargetId',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/datas/targets/{target_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def query_relation_datas_by_target_id(
@@ -3168,74 +4182,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders()
         return await self.query_relation_datas_by_target_id_with_options_async(target_id, request, headers, runtime)
-
-    def query_relation_datas_by_target_id_with_options(
-        self,
-        target_id: str,
-        request: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdRequest,
-        headers: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse:
-        UtilClient.validate_model(request)
-        target_id = OpenApiUtilClient.get_encode_param(target_id)
-        query = {}
-        if not UtilClient.is_unset(request.relation_type):
-            query['relationType'] = request.relation_type
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse(),
-            self.do_roarequest('QueryRelationDatasByTargetId', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/relations/datas/targets/{target_id}', 'json', req, runtime)
-        )
-
-    async def query_relation_datas_by_target_id_with_options_async(
-        self,
-        target_id: str,
-        request: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdRequest,
-        headers: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse:
-        UtilClient.validate_model(request)
-        target_id = OpenApiUtilClient.get_encode_param(target_id)
-        query = {}
-        if not UtilClient.is_unset(request.relation_type):
-            query['relationType'] = request.relation_type
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
-        )
-        return TeaCore.from_map(
-            dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse(),
-            await self.do_roarequest_async('QueryRelationDatasByTargetId', 'crm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/crm/relations/datas/targets/{target_id}', 'json', req, runtime)
-        )
-
-    def recall_official_account_otomessage(
-        self,
-        request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
-    ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
-        return self.recall_official_account_otomessage_with_options(request, headers, runtime)
-
-    async def recall_official_account_otomessage_async(
-        self,
-        request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
-    ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
-        return await self.recall_official_account_otomessage_with_options_async(request, headers, runtime)
 
     def recall_official_account_otomessage_with_options(
         self,
@@ -3258,9 +4204,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RecallOfficialAccountOTOMessage',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/oToMessages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse(),
-            self.do_roarequest('RecallOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/recall', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def recall_official_account_otomessage_with_options_async(
@@ -3284,26 +4241,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RecallOfficialAccountOTOMessage',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/oToMessages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse(),
-            await self.do_roarequest_async('RecallOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/recall', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_official_account_otomessage(
+    def recall_official_account_otomessage(
         self,
-        request: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageRequest,
-    ) -> dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse:
+        request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
+    ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageHeaders()
-        return self.send_official_account_otomessage_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
+        return self.recall_official_account_otomessage_with_options(request, headers, runtime)
 
-    async def send_official_account_otomessage_async(
+    async def recall_official_account_otomessage_async(
         self,
-        request: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageRequest,
-    ) -> dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse:
+        request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
+    ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageHeaders()
-        return await self.send_official_account_otomessage_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
+        return await self.recall_official_account_otomessage_with_options_async(request, headers, runtime)
 
     def send_official_account_otomessage_with_options(
         self,
@@ -3328,9 +4296,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendOfficialAccountOTOMessage',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/oToMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse(),
-            self.do_roarequest('SendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_official_account_otomessage_with_options_async(
@@ -3356,26 +4335,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendOfficialAccountOTOMessage',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/oToMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse(),
-            await self.do_roarequest_async('SendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/oToMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_official_account_snsmessage(
+    def send_official_account_otomessage(
         self,
-        request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
-    ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        request: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageRequest,
+    ) -> dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders()
-        return self.send_official_account_snsmessage_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageHeaders()
+        return self.send_official_account_otomessage_with_options(request, headers, runtime)
 
-    async def send_official_account_snsmessage_async(
+    async def send_official_account_otomessage_async(
         self,
-        request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
-    ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        request: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageRequest,
+    ) -> dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders()
-        return await self.send_official_account_snsmessage_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageHeaders()
+        return await self.send_official_account_otomessage_with_options_async(request, headers, runtime)
 
     def send_official_account_snsmessage_with_options(
         self,
@@ -3400,9 +4390,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendOfficialAccountSNSMessage',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/snsMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse(),
-            self.do_roarequest('SendOfficialAccountSNSMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/snsMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_official_account_snsmessage_with_options_async(
@@ -3428,26 +4429,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendOfficialAccountSNSMessage',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/officialAccounts/snsMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse(),
-            await self.do_roarequest_async('SendOfficialAccountSNSMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/officialAccounts/snsMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def service_window_message_batch_push(
+    def send_official_account_snsmessage(
         self,
-        request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
-    ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
+        request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
+    ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
-        return self.service_window_message_batch_push_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders()
+        return self.send_official_account_snsmessage_with_options(request, headers, runtime)
 
-    async def service_window_message_batch_push_async(
+    async def send_official_account_snsmessage_async(
         self,
-        request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
-    ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
+        request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
+    ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
-        return await self.service_window_message_batch_push_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders()
+        return await self.send_official_account_snsmessage_with_options_async(request, headers, runtime)
 
     def service_window_message_batch_push_with_options(
         self,
@@ -3470,9 +4482,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ServiceWindowMessageBatchPush',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/messages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse(),
-            self.do_roarequest('ServiceWindowMessageBatchPush', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/messages/batchSend', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def service_window_message_batch_push_with_options_async(
@@ -3496,26 +4519,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ServiceWindowMessageBatchPush',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/messages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse(),
-            await self.do_roarequest_async('ServiceWindowMessageBatchPush', 'crm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/crm/messages/batchSend', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_crm_personal_customer(
+    def service_window_message_batch_push(
         self,
-        request: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse:
+        request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
+    ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders()
-        return self.update_crm_personal_customer_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
+        return self.service_window_message_batch_push_with_options(request, headers, runtime)
 
-    async def update_crm_personal_customer_async(
+    async def service_window_message_batch_push_async(
         self,
-        request: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerRequest,
-    ) -> dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse:
+        request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
+    ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders()
-        return await self.update_crm_personal_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
+        return await self.service_window_message_batch_push_with_options_async(request, headers, runtime)
 
     def update_crm_personal_customer_with_options(
         self,
@@ -3552,9 +4586,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateCrmPersonalCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse(),
-            self.do_roarequest('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_crm_personal_customer_with_options_async(
@@ -3592,26 +4637,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateCrmPersonalCustomer',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/personalCustomers',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse(),
-            await self.do_roarequest_async('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/personalCustomers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_set(
+    def update_crm_personal_customer(
         self,
-        request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        request: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
-        return self.update_group_set_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders()
+        return self.update_crm_personal_customer_with_options(request, headers, runtime)
 
-    async def update_group_set_async(
+    async def update_crm_personal_customer_async(
         self,
-        request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
-    ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        request: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
-        return await self.update_group_set_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders()
+        return await self.update_crm_personal_customer_with_options_async(request, headers, runtime)
 
     def update_group_set_with_options(
         self,
@@ -3648,9 +4704,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets/set',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='boolean'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateGroupSetResponse(),
-            self.do_roarequest('UpdateGroupSet', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/groupSets/set', 'boolean', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_set_with_options_async(
@@ -3688,26 +4755,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupSet',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/groupSets/set',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='boolean'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateGroupSetResponse(),
-            await self.do_roarequest_async('UpdateGroupSet', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/groupSets/set', 'boolean', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_relation_meta_field(
+    def update_group_set(
         self,
-        request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
-    ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders()
-        return self.update_relation_meta_field_with_options(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
+        return self.update_group_set_with_options(request, headers, runtime)
 
-    async def update_relation_meta_field_async(
+    async def update_group_set_async(
         self,
-        request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
-    ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders()
-        return await self.update_relation_meta_field_with_options_async(request, headers, runtime)
+        headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
+        return await self.update_group_set_with_options_async(request, headers, runtime)
 
     def update_relation_meta_field_with_options(
         self,
@@ -3734,9 +4812,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateRelationMetaField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/fields',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse(),
-            self.do_roarequest('UpdateRelationMetaField', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/relations/metas/fields', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_relation_meta_field_with_options_async(
@@ -3764,7 +4853,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateRelationMetaField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/relations/metas/fields',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse(),
-            await self.do_roarequest_async('UpdateRelationMetaField', 'crm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/crm/relations/metas/fields', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_relation_meta_field(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders()
+        return self.update_relation_meta_field_with_options(request, headers, runtime)
+
+    async def update_relation_meta_field_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders()
+        return await self.update_relation_meta_field_with_options_async(request, headers, runtime)

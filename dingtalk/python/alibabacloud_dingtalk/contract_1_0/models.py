@@ -45,13 +45,9 @@ class SendContractCardRequestContractInfo(TeaModel):
         create_time: int = None,
         sign_user_name: str = None,
     ):
-        # 合同编号
         self.contract_code = contract_code
-        # 合同名称
         self.contract_name = contract_name
-        # 签署时间
         self.create_time = create_time
-        # 签署人名称
         self.sign_user_name = sign_user_name
 
     def validate(self):
@@ -93,11 +89,8 @@ class SendContractCardRequestReceivers(TeaModel):
         user_id: str = None,
         user_type: str = None,
     ):
-        # 接收者所在组织
         self.corp_id = corp_id
-        # 用户id
         self.user_id = user_id
-        # 用户类型
         self.user_type = user_type
 
     def validate(self):
@@ -135,11 +128,8 @@ class SendContractCardRequestSender(TeaModel):
         user_id: str = None,
         user_type: str = None,
     ):
-        # 发起人所在组织
         self.corp_id = corp_id
-        # 用户id
         self.user_id = user_id
-        # 用户类型
         self.user_type = user_type
 
     def validate(self):
@@ -183,23 +173,14 @@ class SendContractCardRequest(TeaModel):
         sender: SendContractCardRequestSender = None,
         sync_single_chat: bool = None,
     ):
-        # 卡片类型
         self.card_type = card_type
-        # 合同信息
         self.contract_info = contract_info
-        # 合同的企业id
         self.corp_id = corp_id
-        # 额外信息
         self.extension = extension
-        # 审批实例id
         self.process_instance_id = process_instance_id
-        # 接收群id
         self.receive_groups = receive_groups
-        # 接收者
         self.receivers = receivers
-        # 发送者
         self.sender = sender
-        # 是否同步单聊
         self.sync_single_chat = sync_single_chat
 
     def validate(self):
@@ -273,7 +254,6 @@ class SendContractCardResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
-        # 成功
         self.success = success
 
     def validate(self):
@@ -300,13 +280,16 @@ class SendContractCardResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SendContractCardResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -319,6 +302,8 @@ class SendContractCardResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -327,6 +312,8 @@ class SendContractCardResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SendContractCardResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.finance_1_0 import models as dingtalkfinance__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def apply_batch_pay(
-        self,
-        request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
-    ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.ApplyBatchPayHeaders()
-        return self.apply_batch_pay_with_options(request, headers, runtime)
-
-    async def apply_batch_pay_async(
-        self,
-        request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
-    ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.ApplyBatchPayHeaders()
-        return await self.apply_batch_pay_with_options_async(request, headers, runtime)
 
     def apply_batch_pay_with_options(
         self,
@@ -72,9 +62,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ApplyBatchPay',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/batchTrades/orders/pay',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.ApplyBatchPayResponse(),
-            self.do_roarequest('ApplyBatchPay', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/pay', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def apply_batch_pay_with_options_async(
@@ -110,26 +111,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ApplyBatchPay',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/batchTrades/orders/pay',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.ApplyBatchPayResponse(),
-            await self.do_roarequest_async('ApplyBatchPay', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/pay', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def close_loan_entrance(
+    def apply_batch_pay(
         self,
-        request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
-    ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
+    ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CloseLoanEntranceHeaders()
-        return self.close_loan_entrance_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.ApplyBatchPayHeaders()
+        return self.apply_batch_pay_with_options(request, headers, runtime)
 
-    async def close_loan_entrance_async(
+    async def apply_batch_pay_async(
         self,
-        request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
-    ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
+    ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CloseLoanEntranceHeaders()
-        return await self.close_loan_entrance_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.ApplyBatchPayHeaders()
+        return await self.apply_batch_pay_with_options_async(request, headers, runtime)
 
     def close_loan_entrance_with_options(
         self,
@@ -150,9 +162,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CloseLoanEntrance',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/loans/entrances/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CloseLoanEntranceResponse(),
-            self.do_roarequest('CloseLoanEntrance', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/loans/entrances/close', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def close_loan_entrance_with_options_async(
@@ -174,26 +197,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CloseLoanEntrance',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/loans/entrances/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CloseLoanEntranceResponse(),
-            await self.do_roarequest_async('CloseLoanEntrance', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/loans/entrances/close', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def consult_create_sub_institution(
+    def close_loan_entrance(
         self,
-        request: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionRequest,
-    ) -> dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse:
+        request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
+    ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.ConsultCreateSubInstitutionHeaders()
-        return self.consult_create_sub_institution_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CloseLoanEntranceHeaders()
+        return self.close_loan_entrance_with_options(request, headers, runtime)
 
-    async def consult_create_sub_institution_async(
+    async def close_loan_entrance_async(
         self,
-        request: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionRequest,
-    ) -> dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse:
+        request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
+    ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.ConsultCreateSubInstitutionHeaders()
-        return await self.consult_create_sub_institution_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CloseLoanEntranceHeaders()
+        return await self.close_loan_entrance_with_options_async(request, headers, runtime)
 
     def consult_create_sub_institution_with_options(
         self,
@@ -246,9 +280,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ConsultCreateSubInstitution',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/subInstitutions/consult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse(),
-            self.do_roarequest('ConsultCreateSubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/subInstitutions/consult', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def consult_create_sub_institution_with_options_async(
@@ -302,26 +347,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ConsultCreateSubInstitution',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/subInstitutions/consult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse(),
-            await self.do_roarequest_async('ConsultCreateSubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/subInstitutions/consult', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def creat_withholding_order_and_pay(
+    def consult_create_sub_institution(
         self,
-        request: dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayRequest,
-    ) -> dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse:
+        request: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionRequest,
+    ) -> dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayHeaders()
-        return self.creat_withholding_order_and_pay_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.ConsultCreateSubInstitutionHeaders()
+        return self.consult_create_sub_institution_with_options(request, headers, runtime)
 
-    async def creat_withholding_order_and_pay_async(
+    async def consult_create_sub_institution_async(
         self,
-        request: dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayRequest,
-    ) -> dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse:
+        request: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionRequest,
+    ) -> dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayHeaders()
-        return await self.creat_withholding_order_and_pay_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.ConsultCreateSubInstitutionHeaders()
+        return await self.consult_create_sub_institution_with_options_async(request, headers, runtime)
 
     def creat_withholding_order_and_pay_with_options(
         self,
@@ -360,9 +416,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreatWithholdingOrderAndPay',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/withholdingOrders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse(),
-            self.do_roarequest('CreatWithholdingOrderAndPay', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/withholdingOrders', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def creat_withholding_order_and_pay_with_options_async(
@@ -402,26 +469,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreatWithholdingOrderAndPay',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/withholdingOrders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse(),
-            await self.do_roarequest_async('CreatWithholdingOrderAndPay', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/withholdingOrders', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_acquire_refund_order(
+    def creat_withholding_order_and_pay(
         self,
-        request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
-    ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        request: dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayRequest,
+    ) -> dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders()
-        return self.create_acquire_refund_order_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayHeaders()
+        return self.creat_withholding_order_and_pay_with_options(request, headers, runtime)
 
-    async def create_acquire_refund_order_async(
+    async def creat_withholding_order_and_pay_async(
         self,
-        request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
-    ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        request: dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayRequest,
+    ) -> dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders()
-        return await self.create_acquire_refund_order_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayHeaders()
+        return await self.creat_withholding_order_and_pay_with_options_async(request, headers, runtime)
 
     def create_acquire_refund_order_with_options(
         self,
@@ -458,9 +536,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateAcquireRefundOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/acquireOrders/refund',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse(),
-            self.do_roarequest('CreateAcquireRefundOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/acquireOrders/refund', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_acquire_refund_order_with_options_async(
@@ -498,26 +587,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateAcquireRefundOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/acquireOrders/refund',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse(),
-            await self.do_roarequest_async('CreateAcquireRefundOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/acquireOrders/refund', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_batch_trade_order(
+    def create_acquire_refund_order(
         self,
-        request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
-    ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
+    ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders()
-        return self.create_batch_trade_order_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders()
+        return self.create_acquire_refund_order_with_options(request, headers, runtime)
 
-    async def create_batch_trade_order_async(
+    async def create_acquire_refund_order_async(
         self,
-        request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
-    ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
+    ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders()
-        return await self.create_batch_trade_order_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders()
+        return await self.create_acquire_refund_order_with_options_async(request, headers, runtime)
 
     def create_batch_trade_order_with_options(
         self,
@@ -554,9 +654,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateBatchTradeOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/batchTrades/orders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse(),
-            self.do_roarequest('CreateBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_batch_trade_order_with_options_async(
@@ -594,26 +705,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateBatchTradeOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/batchTrades/orders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse(),
-            await self.do_roarequest_async('CreateBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_sub_institution(
+    def create_batch_trade_order(
         self,
-        request: dingtalkfinance__1__0_models.CreateSubInstitutionRequest,
-    ) -> dingtalkfinance__1__0_models.CreateSubInstitutionResponse:
+        request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreateSubInstitutionHeaders()
-        return self.create_sub_institution_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders()
+        return self.create_batch_trade_order_with_options(request, headers, runtime)
 
-    async def create_sub_institution_async(
+    async def create_batch_trade_order_async(
         self,
-        request: dingtalkfinance__1__0_models.CreateSubInstitutionRequest,
-    ) -> dingtalkfinance__1__0_models.CreateSubInstitutionResponse:
+        request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreateSubInstitutionHeaders()
-        return await self.create_sub_institution_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders()
+        return await self.create_batch_trade_order_with_options_async(request, headers, runtime)
 
     def create_sub_institution_with_options(
         self,
@@ -666,9 +788,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateSubInstitution',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/subInstitutions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateSubInstitutionResponse(),
-            self.do_roarequest('CreateSubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/subInstitutions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_sub_institution_with_options_async(
@@ -722,26 +855,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateSubInstitution',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/subInstitutions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateSubInstitutionResponse(),
-            await self.do_roarequest_async('CreateSubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/subInstitutions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_user_code_instance(
+    def create_sub_institution(
         self,
-        request: dingtalkfinance__1__0_models.CreateUserCodeInstanceRequest,
-    ) -> dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse:
+        request: dingtalkfinance__1__0_models.CreateSubInstitutionRequest,
+    ) -> dingtalkfinance__1__0_models.CreateSubInstitutionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreateUserCodeInstanceHeaders()
-        return self.create_user_code_instance_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreateSubInstitutionHeaders()
+        return self.create_sub_institution_with_options(request, headers, runtime)
 
-    async def create_user_code_instance_async(
+    async def create_sub_institution_async(
         self,
-        request: dingtalkfinance__1__0_models.CreateUserCodeInstanceRequest,
-    ) -> dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse:
+        request: dingtalkfinance__1__0_models.CreateSubInstitutionRequest,
+    ) -> dingtalkfinance__1__0_models.CreateSubInstitutionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.CreateUserCodeInstanceHeaders()
-        return await self.create_user_code_instance_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreateSubInstitutionHeaders()
+        return await self.create_sub_institution_with_options_async(request, headers, runtime)
 
     def create_user_code_instance_with_options(
         self,
@@ -782,9 +926,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateUserCodeInstance',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/userInstances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse(),
-            self.do_roarequest('CreateUserCodeInstance', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/userInstances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_user_code_instance_with_options_async(
@@ -826,26 +981,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateUserCodeInstance',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/userInstances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse(),
-            await self.do_roarequest_async('CreateUserCodeInstance', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/userInstances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def decode_pay_code(
+    def create_user_code_instance(
         self,
-        request: dingtalkfinance__1__0_models.DecodePayCodeRequest,
-    ) -> dingtalkfinance__1__0_models.DecodePayCodeResponse:
+        request: dingtalkfinance__1__0_models.CreateUserCodeInstanceRequest,
+    ) -> dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.DecodePayCodeHeaders()
-        return self.decode_pay_code_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreateUserCodeInstanceHeaders()
+        return self.create_user_code_instance_with_options(request, headers, runtime)
 
-    async def decode_pay_code_async(
+    async def create_user_code_instance_async(
         self,
-        request: dingtalkfinance__1__0_models.DecodePayCodeRequest,
-    ) -> dingtalkfinance__1__0_models.DecodePayCodeResponse:
+        request: dingtalkfinance__1__0_models.CreateUserCodeInstanceRequest,
+    ) -> dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.DecodePayCodeHeaders()
-        return await self.decode_pay_code_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.CreateUserCodeInstanceHeaders()
+        return await self.create_user_code_instance_with_options_async(request, headers, runtime)
 
     def decode_pay_code_with_options(
         self,
@@ -868,9 +1034,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DecodePayCode',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/decode',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.DecodePayCodeResponse(),
-            self.do_roarequest('DecodePayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/decode', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def decode_pay_code_with_options_async(
@@ -894,26 +1071,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DecodePayCode',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/decode',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.DecodePayCodeResponse(),
-            await self.do_roarequest_async('DecodePayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/decode', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def modify_sub_institution(
+    def decode_pay_code(
         self,
-        request: dingtalkfinance__1__0_models.ModifySubInstitutionRequest,
-    ) -> dingtalkfinance__1__0_models.ModifySubInstitutionResponse:
+        request: dingtalkfinance__1__0_models.DecodePayCodeRequest,
+    ) -> dingtalkfinance__1__0_models.DecodePayCodeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.ModifySubInstitutionHeaders()
-        return self.modify_sub_institution_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.DecodePayCodeHeaders()
+        return self.decode_pay_code_with_options(request, headers, runtime)
 
-    async def modify_sub_institution_async(
+    async def decode_pay_code_async(
         self,
-        request: dingtalkfinance__1__0_models.ModifySubInstitutionRequest,
-    ) -> dingtalkfinance__1__0_models.ModifySubInstitutionResponse:
+        request: dingtalkfinance__1__0_models.DecodePayCodeRequest,
+    ) -> dingtalkfinance__1__0_models.DecodePayCodeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.ModifySubInstitutionHeaders()
-        return await self.modify_sub_institution_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.DecodePayCodeHeaders()
+        return await self.decode_pay_code_with_options_async(request, headers, runtime)
 
     def modify_sub_institution_with_options(
         self,
@@ -964,9 +1152,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ModifySubInstitution',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/subInstitutions/modify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.ModifySubInstitutionResponse(),
-            self.do_roarequest('ModifySubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/subInstitutions/modify', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def modify_sub_institution_with_options_async(
@@ -1018,26 +1217,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ModifySubInstitution',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/subInstitutions/modify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.ModifySubInstitutionResponse(),
-            await self.do_roarequest_async('ModifySubInstitution', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/subInstitutions/modify', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def notify_pay_code_pay_result(
+    def modify_sub_institution(
         self,
-        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        request: dingtalkfinance__1__0_models.ModifySubInstitutionRequest,
+    ) -> dingtalkfinance__1__0_models.ModifySubInstitutionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
-        return self.notify_pay_code_pay_result_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.ModifySubInstitutionHeaders()
+        return self.modify_sub_institution_with_options(request, headers, runtime)
 
-    async def notify_pay_code_pay_result_async(
+    async def modify_sub_institution_async(
         self,
-        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        request: dingtalkfinance__1__0_models.ModifySubInstitutionRequest,
+    ) -> dingtalkfinance__1__0_models.ModifySubInstitutionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
-        return await self.notify_pay_code_pay_result_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.ModifySubInstitutionHeaders()
+        return await self.modify_sub_institution_with_options_async(request, headers, runtime)
 
     def notify_pay_code_pay_result_with_options(
         self,
@@ -1090,9 +1300,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyPayCodePayResult',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/payResults/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse(),
-            self.do_roarequest('NotifyPayCodePayResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/payResults/notify', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def notify_pay_code_pay_result_with_options_async(
@@ -1146,26 +1367,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyPayCodePayResult',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/payResults/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse(),
-            await self.do_roarequest_async('NotifyPayCodePayResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/payResults/notify', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def notify_pay_code_refund_result(
+    def notify_pay_code_pay_result(
         self,
-        request: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse:
+        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyPayCodeRefundResultHeaders()
-        return self.notify_pay_code_refund_result_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
+        return self.notify_pay_code_pay_result_with_options(request, headers, runtime)
 
-    async def notify_pay_code_refund_result_async(
+    async def notify_pay_code_pay_result_async(
         self,
-        request: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse:
+        request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyPayCodeRefundResultHeaders()
-        return await self.notify_pay_code_refund_result_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
+        return await self.notify_pay_code_pay_result_with_options_async(request, headers, runtime)
 
     def notify_pay_code_refund_result_with_options(
         self,
@@ -1204,9 +1436,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyPayCodeRefundResult',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/refundResults/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse(),
-            self.do_roarequest('NotifyPayCodeRefundResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/refundResults/notify', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def notify_pay_code_refund_result_with_options_async(
@@ -1246,26 +1489,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyPayCodeRefundResult',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/refundResults/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse(),
-            await self.do_roarequest_async('NotifyPayCodeRefundResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/refundResults/notify', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def notify_verify_result(
+    def notify_pay_code_refund_result(
         self,
-        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        request: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
-        return self.notify_verify_result_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.NotifyPayCodeRefundResultHeaders()
+        return self.notify_pay_code_refund_result_with_options(request, headers, runtime)
 
-    async def notify_verify_result_async(
+    async def notify_pay_code_refund_result_async(
         self,
-        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
-    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        request: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
-        return await self.notify_verify_result_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.NotifyPayCodeRefundResultHeaders()
+        return await self.notify_pay_code_refund_result_with_options_async(request, headers, runtime)
 
     def notify_verify_result_with_options(
         self,
@@ -1304,9 +1558,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyVerifyResult',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/verifyResults/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.NotifyVerifyResultResponse(),
-            self.do_roarequest('NotifyVerifyResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/verifyResults/notify', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def notify_verify_result_with_options_async(
@@ -1346,26 +1611,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='NotifyVerifyResult',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/verifyResults/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.NotifyVerifyResultResponse(),
-            await self.do_roarequest_async('NotifyVerifyResult', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/verifyResults/notify', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_acquire_refund_order(
+    def notify_verify_result(
         self,
-        request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders()
-        return self.query_acquire_refund_order_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
+        return self.notify_verify_result_with_options(request, headers, runtime)
 
-    async def query_acquire_refund_order_async(
+    async def notify_verify_result_async(
         self,
-        request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
+    ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders()
-        return await self.query_acquire_refund_order_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
+        return await self.notify_verify_result_with_options_async(request, headers, runtime)
 
     def query_acquire_refund_order_with_options(
         self,
@@ -1386,9 +1662,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAcquireRefundOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/acquireOrders/refunds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse(),
-            self.do_roarequest('QueryAcquireRefundOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/acquireOrders/refunds', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_acquire_refund_order_with_options_async(
@@ -1410,26 +1697,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryAcquireRefundOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/acquireOrders/refunds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse(),
-            await self.do_roarequest_async('QueryAcquireRefundOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/acquireOrders/refunds', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_batch_trade_detail_list(
+    def query_acquire_refund_order(
         self,
-        request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
-    ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders()
-        return self.query_batch_trade_detail_list_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders()
+        return self.query_acquire_refund_order_with_options(request, headers, runtime)
 
-    async def query_batch_trade_detail_list_async(
+    async def query_acquire_refund_order_async(
         self,
-        request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
-    ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders()
-        return await self.query_batch_trade_detail_list_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders()
+        return await self.query_acquire_refund_order_with_options_async(request, headers, runtime)
 
     def query_batch_trade_detail_list_with_options(
         self,
@@ -1454,9 +1752,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryBatchTradeDetailList',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/batchTrades/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse(),
-            self.do_roarequest('QueryBatchTradeDetailList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/batchTrades/details', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_batch_trade_detail_list_with_options_async(
@@ -1482,26 +1791,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryBatchTradeDetailList',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/batchTrades/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse(),
-            await self.do_roarequest_async('QueryBatchTradeDetailList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/batchTrades/details', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_batch_trade_order(
+    def query_batch_trade_detail_list(
         self,
-        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
-        return self.query_batch_trade_order_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders()
+        return self.query_batch_trade_detail_list_with_options(request, headers, runtime)
 
-    async def query_batch_trade_order_async(
+    async def query_batch_trade_detail_list_async(
         self,
-        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
-        return await self.query_batch_trade_order_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders()
+        return await self.query_batch_trade_detail_list_with_options_async(request, headers, runtime)
 
     def query_batch_trade_order_with_options(
         self,
@@ -1522,9 +1842,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryBatchTradeOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/batchTrades/orders/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
-            self.do_roarequest('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_batch_trade_order_with_options_async(
@@ -1546,20 +1877,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryBatchTradeOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/batchTrades/orders/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse(),
-            await self.do_roarequest_async('QueryBatchTradeOrder', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/batchTrades/orders/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_pay_account_list(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+    def query_batch_trade_order(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
-        return self.query_pay_account_list_with_options(headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
+        return self.query_batch_trade_order_with_options(request, headers, runtime)
 
-    async def query_pay_account_list_async(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+    async def query_batch_trade_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
-        return await self.query_pay_account_list_with_options_async(headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
+        return await self.query_batch_trade_order_with_options_async(request, headers, runtime)
 
     def query_pay_account_list_with_options(
         self,
@@ -1574,9 +1922,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryPayAccountList',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payAccounts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
-            self.do_roarequest('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_pay_account_list_with_options_async(
@@ -1592,26 +1951,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryPayAccountList',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payAccounts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryPayAccountListResponse(),
-            await self.do_roarequest_async('QueryPayAccountList', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/payAccounts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_register_order(
-        self,
-        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+    def query_pay_account_list(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
-        return self.query_register_order_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
+        return self.query_pay_account_list_with_options(headers, runtime)
 
-    async def query_register_order_async(
-        self,
-        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+    async def query_pay_account_list_async(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
-        return await self.query_register_order_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
+        return await self.query_pay_account_list_with_options_async(headers, runtime)
 
     def query_register_order_with_options(
         self,
@@ -1638,9 +2002,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryRegisterOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/subInstitutions/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryRegisterOrderResponse(),
-            self.do_roarequest('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/institutions/subInstitutions/orders', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_register_order_with_options_async(
@@ -1668,26 +2043,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryRegisterOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/subInstitutions/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryRegisterOrderResponse(),
-            await self.do_roarequest_async('QueryRegisterOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/institutions/subInstitutions/orders', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_user_agreement(
+    def query_register_order(
         self,
-        request: dingtalkfinance__1__0_models.QueryUserAgreementRequest,
-    ) -> dingtalkfinance__1__0_models.QueryUserAgreementResponse:
+        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryUserAgreementHeaders()
-        return self.query_user_agreement_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
+        return self.query_register_order_with_options(request, headers, runtime)
 
-    async def query_user_agreement_async(
+    async def query_register_order_async(
         self,
-        request: dingtalkfinance__1__0_models.QueryUserAgreementRequest,
-    ) -> dingtalkfinance__1__0_models.QueryUserAgreementResponse:
+        request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryUserAgreementHeaders()
-        return await self.query_user_agreement_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
+        return await self.query_register_order_with_options_async(request, headers, runtime)
 
     def query_user_agreement_with_options(
         self,
@@ -1716,9 +2102,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryUserAgreement',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/userAgreements',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryUserAgreementResponse(),
-            self.do_roarequest('QueryUserAgreement', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/userAgreements', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_user_agreement_with_options_async(
@@ -1748,20 +2145,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryUserAgreement',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/userAgreements',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryUserAgreementResponse(),
-            await self.do_roarequest_async('QueryUserAgreement', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/userAgreements', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_user_alipay_account(self) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
+    def query_user_agreement(
+        self,
+        request: dingtalkfinance__1__0_models.QueryUserAgreementRequest,
+    ) -> dingtalkfinance__1__0_models.QueryUserAgreementResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders()
-        return self.query_user_alipay_account_with_options(headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryUserAgreementHeaders()
+        return self.query_user_agreement_with_options(request, headers, runtime)
 
-    async def query_user_alipay_account_async(self) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
+    async def query_user_agreement_async(
+        self,
+        request: dingtalkfinance__1__0_models.QueryUserAgreementRequest,
+    ) -> dingtalkfinance__1__0_models.QueryUserAgreementResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders()
-        return await self.query_user_alipay_account_with_options_async(headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryUserAgreementHeaders()
+        return await self.query_user_agreement_with_options_async(request, headers, runtime)
 
     def query_user_alipay_account_with_options(
         self,
@@ -1776,9 +2190,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryUserAlipayAccount',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/userAlipayAccounts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse(),
-            self.do_roarequest('QueryUserAlipayAccount', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/userAlipayAccounts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_user_alipay_account_with_options_async(
@@ -1794,26 +2219,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryUserAlipayAccount',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/userAlipayAccounts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse(),
-            await self.do_roarequest_async('QueryUserAlipayAccount', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/userAlipayAccounts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_withholding_order(
-        self,
-        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+    def query_user_alipay_account(self) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
-        return self.query_withholding_order_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders()
+        return self.query_user_alipay_account_with_options(headers, runtime)
 
-    async def query_withholding_order_async(
-        self,
-        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
-    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+    async def query_user_alipay_account_async(self) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
-        return await self.query_withholding_order_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders()
+        return await self.query_user_alipay_account_with_options_async(headers, runtime)
 
     def query_withholding_order_with_options(
         self,
@@ -1834,9 +2264,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryWithholdingOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/withholdingOrders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryWithholdingOrderResponse(),
-            self.do_roarequest('QueryWithholdingOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/withholdingOrders', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_withholding_order_with_options_async(
@@ -1858,26 +2299,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryWithholdingOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/withholdingOrders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.QueryWithholdingOrderResponse(),
-            await self.do_roarequest_async('QueryWithholdingOrder', 'finance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/finance/withholdingOrders', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def save_corp_pay_code(
+    def query_withholding_order(
         self,
-        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
-    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
-        return self.save_corp_pay_code_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
+        return self.query_withholding_order_with_options(request, headers, runtime)
 
-    async def save_corp_pay_code_async(
+    async def query_withholding_order_async(
         self,
-        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
-    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
+    ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
-        return await self.save_corp_pay_code_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
+        return await self.query_withholding_order_with_options_async(request, headers, runtime)
 
     def save_corp_pay_code_with_options(
         self,
@@ -1904,9 +2356,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SaveCorpPayCode',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/corpSettings',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.SaveCorpPayCodeResponse(),
-            self.do_roarequest('SaveCorpPayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/corpSettings', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def save_corp_pay_code_with_options_async(
@@ -1934,26 +2397,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SaveCorpPayCode',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/corpSettings',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.SaveCorpPayCodeResponse(),
-            await self.do_roarequest_async('SaveCorpPayCode', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/payCodes/corpSettings', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def unsign_user_agreement(
+    def save_corp_pay_code(
         self,
-        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
-    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
+    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
-        return self.unsign_user_agreement_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
+        return self.save_corp_pay_code_with_options(request, headers, runtime)
 
-    async def unsign_user_agreement_async(
+    async def save_corp_pay_code_async(
         self,
-        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
-    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
+    ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
-        return await self.unsign_user_agreement_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
+        return await self.save_corp_pay_code_with_options_async(request, headers, runtime)
 
     def unsign_user_agreement_with_options(
         self,
@@ -1984,9 +2458,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UnsignUserAgreement',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/userAgreements/unsign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UnsignUserAgreementResponse(),
-            self.do_roarequest('UnsignUserAgreement', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/userAgreements/unsign', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def unsign_user_agreement_with_options_async(
@@ -2018,26 +2503,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UnsignUserAgreement',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/userAgreements/unsign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UnsignUserAgreementResponse(),
-            await self.do_roarequest_async('UnsignUserAgreement', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/userAgreements/unsign', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def upate_user_code_instance(
+    def unsign_user_agreement(
         self,
-        request: dingtalkfinance__1__0_models.UpateUserCodeInstanceRequest,
-    ) -> dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse:
+        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
+    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UpateUserCodeInstanceHeaders()
-        return self.upate_user_code_instance_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
+        return self.unsign_user_agreement_with_options(request, headers, runtime)
 
-    async def upate_user_code_instance_async(
+    async def unsign_user_agreement_async(
         self,
-        request: dingtalkfinance__1__0_models.UpateUserCodeInstanceRequest,
-    ) -> dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse:
+        request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
+    ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UpateUserCodeInstanceHeaders()
-        return await self.upate_user_code_instance_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
+        return await self.unsign_user_agreement_with_options_async(request, headers, runtime)
 
     def upate_user_code_instance_with_options(
         self,
@@ -2076,9 +2572,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpateUserCodeInstance',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/userInstances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse(),
-            self.do_roarequest('UpateUserCodeInstance', 'finance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/finance/payCodes/userInstances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def upate_user_code_instance_with_options_async(
@@ -2118,26 +2625,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpateUserCodeInstance',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/payCodes/userInstances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse(),
-            await self.do_roarequest_async('UpateUserCodeInstance', 'finance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/finance/payCodes/userInstances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_verify_status(
+    def upate_user_code_instance(
         self,
-        request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
-    ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        request: dingtalkfinance__1__0_models.UpateUserCodeInstanceRequest,
+    ) -> dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
-        return self.update_invoice_verify_status_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UpateUserCodeInstanceHeaders()
+        return self.upate_user_code_instance_with_options(request, headers, runtime)
 
-    async def update_invoice_verify_status_async(
+    async def upate_user_code_instance_async(
         self,
-        request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
-    ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        request: dingtalkfinance__1__0_models.UpateUserCodeInstanceRequest,
+    ) -> dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
-        return await self.update_invoice_verify_status_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UpateUserCodeInstanceHeaders()
+        return await self.upate_user_code_instance_with_options_async(request, headers, runtime)
 
     def update_invoice_verify_status_with_options(
         self,
@@ -2180,9 +2698,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceVerifyStatus',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/invoices/verifyStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse(),
-            self.do_roarequest('UpdateInvoiceVerifyStatus', 'finance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/finance/invoices/verifyStatus', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_verify_status_with_options_async(
@@ -2226,26 +2755,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceVerifyStatus',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/invoices/verifyStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse(),
-            await self.do_roarequest_async('UpdateInvoiceVerifyStatus', 'finance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/finance/invoices/verifyStatus', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def upload_invoice(
+    def update_invoice_verify_status(
         self,
-        request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
-    ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
+    ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadInvoiceHeaders()
-        return self.upload_invoice_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
+        return self.update_invoice_verify_status_with_options(request, headers, runtime)
 
-    async def upload_invoice_async(
+    async def update_invoice_verify_status_async(
         self,
-        request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
-    ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
+    ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadInvoiceHeaders()
-        return await self.upload_invoice_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
+        return await self.update_invoice_verify_status_with_options_async(request, headers, runtime)
 
     def upload_invoice_with_options(
         self,
@@ -2270,9 +2810,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UploadInvoice',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/invoices/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadInvoiceResponse(),
-            self.do_roarequest('UploadInvoice', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/invoices/upload', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def upload_invoice_with_options_async(
@@ -2298,26 +2849,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UploadInvoice',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/invoices/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadInvoiceResponse(),
-            await self.do_roarequest_async('UploadInvoice', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/invoices/upload', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def upload_invoice_by_auth(
+    def upload_invoice(
         self,
-        request: dingtalkfinance__1__0_models.UploadInvoiceByAuthRequest,
-    ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
+        request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadInvoiceByAuthHeaders()
-        return self.upload_invoice_by_auth_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UploadInvoiceHeaders()
+        return self.upload_invoice_with_options(request, headers, runtime)
 
-    async def upload_invoice_by_auth_async(
+    async def upload_invoice_async(
         self,
-        request: dingtalkfinance__1__0_models.UploadInvoiceByAuthRequest,
-    ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
+        request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadInvoiceByAuthHeaders()
-        return await self.upload_invoice_by_auth_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UploadInvoiceHeaders()
+        return await self.upload_invoice_with_options_async(request, headers, runtime)
 
     def upload_invoice_by_auth_with_options(
         self,
@@ -2340,9 +2902,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UploadInvoiceByAuth',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/invoices/authorizations/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse(),
-            self.do_roarequest('UploadInvoiceByAuth', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/invoices/authorizations/upload', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def upload_invoice_by_auth_with_options_async(
@@ -2366,26 +2939,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UploadInvoiceByAuth',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/invoices/authorizations/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse(),
-            await self.do_roarequest_async('UploadInvoiceByAuth', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/invoices/authorizations/upload', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def upload_invoice_by_mobile(
+    def upload_invoice_by_auth(
         self,
-        request: dingtalkfinance__1__0_models.UploadInvoiceByMobileRequest,
-    ) -> dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse:
+        request: dingtalkfinance__1__0_models.UploadInvoiceByAuthRequest,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadInvoiceByMobileHeaders()
-        return self.upload_invoice_by_mobile_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UploadInvoiceByAuthHeaders()
+        return self.upload_invoice_by_auth_with_options(request, headers, runtime)
 
-    async def upload_invoice_by_mobile_async(
+    async def upload_invoice_by_auth_async(
         self,
-        request: dingtalkfinance__1__0_models.UploadInvoiceByMobileRequest,
-    ) -> dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse:
+        request: dingtalkfinance__1__0_models.UploadInvoiceByAuthRequest,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadInvoiceByMobileHeaders()
-        return await self.upload_invoice_by_mobile_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UploadInvoiceByAuthHeaders()
+        return await self.upload_invoice_by_auth_with_options_async(request, headers, runtime)
 
     def upload_invoice_by_mobile_with_options(
         self,
@@ -2410,9 +2994,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UploadInvoiceByMobile',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/invoices/mobiles/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse(),
-            self.do_roarequest('UploadInvoiceByMobile', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/invoices/mobiles/upload', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def upload_invoice_by_mobile_with_options_async(
@@ -2438,26 +3033,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UploadInvoiceByMobile',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/invoices/mobiles/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse(),
-            await self.do_roarequest_async('UploadInvoiceByMobile', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/invoices/mobiles/upload', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def upload_register_image(
+    def upload_invoice_by_mobile(
         self,
-        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
-    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        request: dingtalkfinance__1__0_models.UploadInvoiceByMobileRequest,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
-        return self.upload_register_image_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UploadInvoiceByMobileHeaders()
+        return self.upload_invoice_by_mobile_with_options(request, headers, runtime)
 
-    async def upload_register_image_async(
+    async def upload_invoice_by_mobile_async(
         self,
-        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
-    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        request: dingtalkfinance__1__0_models.UploadInvoiceByMobileRequest,
+    ) -> dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
-        return await self.upload_register_image_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UploadInvoiceByMobileHeaders()
+        return await self.upload_invoice_by_mobile_with_options_async(request, headers, runtime)
 
     def upload_register_image_with_options(
         self,
@@ -2486,9 +3092,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UploadRegisterImage',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/images',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadRegisterImageResponse(),
-            self.do_roarequest('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/images', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def upload_register_image_with_options_async(
@@ -2518,26 +3135,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UploadRegisterImage',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/institutions/images',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UploadRegisterImageResponse(),
-            await self.do_roarequest_async('UploadRegisterImage', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/institutions/images', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def user_agreement_page_sign(
+    def upload_register_image(
         self,
-        request: dingtalkfinance__1__0_models.UserAgreementPageSignRequest,
-    ) -> dingtalkfinance__1__0_models.UserAgreementPageSignResponse:
+        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
+    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UserAgreementPageSignHeaders()
-        return self.user_agreement_page_sign_with_options(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
+        return self.upload_register_image_with_options(request, headers, runtime)
 
-    async def user_agreement_page_sign_async(
+    async def upload_register_image_async(
         self,
-        request: dingtalkfinance__1__0_models.UserAgreementPageSignRequest,
-    ) -> dingtalkfinance__1__0_models.UserAgreementPageSignResponse:
+        request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
+    ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkfinance__1__0_models.UserAgreementPageSignHeaders()
-        return await self.user_agreement_page_sign_with_options_async(request, headers, runtime)
+        headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
+        return await self.upload_register_image_with_options_async(request, headers, runtime)
 
     def user_agreement_page_sign_with_options(
         self,
@@ -2580,9 +3208,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UserAgreementPageSign',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/userAgreements',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UserAgreementPageSignResponse(),
-            self.do_roarequest('UserAgreementPageSign', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/userAgreements', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def user_agreement_page_sign_with_options_async(
@@ -2626,7 +3265,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UserAgreementPageSign',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/userAgreements',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkfinance__1__0_models.UserAgreementPageSignResponse(),
-            await self.do_roarequest_async('UserAgreementPageSign', 'finance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/finance/userAgreements', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def user_agreement_page_sign(
+        self,
+        request: dingtalkfinance__1__0_models.UserAgreementPageSignRequest,
+    ) -> dingtalkfinance__1__0_models.UserAgreementPageSignResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UserAgreementPageSignHeaders()
+        return self.user_agreement_page_sign_with_options(request, headers, runtime)
+
+    async def user_agreement_page_sign_async(
+        self,
+        request: dingtalkfinance__1__0_models.UserAgreementPageSignRequest,
+    ) -> dingtalkfinance__1__0_models.UserAgreementPageSignResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.UserAgreementPageSignHeaders()
+        return await self.user_agreement_page_sign_with_options_async(request, headers, runtime)

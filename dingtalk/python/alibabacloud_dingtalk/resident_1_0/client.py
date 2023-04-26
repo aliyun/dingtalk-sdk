@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.resident_1_0 import models as dingtalkresident__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_point(
-        self,
-        request: dingtalkresident__1__0_models.AddPointRequest,
-    ) -> dingtalkresident__1__0_models.AddPointResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddPointHeaders()
-        return self.add_point_with_options(request, headers, runtime)
-
-    async def add_point_async(
-        self,
-        request: dingtalkresident__1__0_models.AddPointRequest,
-    ) -> dingtalkresident__1__0_models.AddPointResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddPointHeaders()
-        return await self.add_point_with_options_async(request, headers, runtime)
 
     def add_point_with_options(
         self,
@@ -70,9 +60,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='AddPoint',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/points',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.AddPointResponse(),
-            self.do_roarequest('AddPoint', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/points', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_point_with_options_async(
@@ -106,26 +107,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='AddPoint',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/points',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.AddPointResponse(),
-            await self.do_roarequest_async('AddPoint', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/points', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_resident_department(
+    def add_point(
         self,
-        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
-    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        request: dingtalkresident__1__0_models.AddPointRequest,
+    ) -> dingtalkresident__1__0_models.AddPointResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
-        return self.add_resident_department_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.AddPointHeaders()
+        return self.add_point_with_options(request, headers, runtime)
 
-    async def add_resident_department_async(
+    async def add_point_async(
         self,
-        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
-    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        request: dingtalkresident__1__0_models.AddPointRequest,
+    ) -> dingtalkresident__1__0_models.AddPointResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
-        return await self.add_resident_department_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.AddPointHeaders()
+        return await self.add_point_with_options_async(request, headers, runtime)
 
     def add_resident_department_with_options(
         self,
@@ -150,9 +162,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='AddResidentDepartment',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/departments',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.AddResidentDepartmentResponse(),
-            self.do_roarequest('AddResidentDepartment', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/departments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_resident_department_with_options_async(
@@ -178,26 +201,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='AddResidentDepartment',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/departments',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.AddResidentDepartmentResponse(),
-            await self.do_roarequest_async('AddResidentDepartment', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/departments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_resident_member(
+    def add_resident_department(
         self,
-        request: dingtalkresident__1__0_models.AddResidentMemberRequest,
-    ) -> dingtalkresident__1__0_models.AddResidentMemberResponse:
+        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
+    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddResidentMemberHeaders()
-        return self.add_resident_member_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
+        return self.add_resident_department_with_options(request, headers, runtime)
 
-    async def add_resident_member_async(
+    async def add_resident_department_async(
         self,
-        request: dingtalkresident__1__0_models.AddResidentMemberRequest,
-    ) -> dingtalkresident__1__0_models.AddResidentMemberResponse:
+        request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
+    ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddResidentMemberHeaders()
-        return await self.add_resident_member_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
+        return await self.add_resident_department_with_options_async(request, headers, runtime)
 
     def add_resident_member_with_options(
         self,
@@ -218,9 +252,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddResidentMember',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.AddResidentMemberResponse(),
-            self.do_roarequest('AddResidentMember', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_resident_member_with_options_async(
@@ -242,26 +287,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddResidentMember',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.AddResidentMemberResponse(),
-            await self.do_roarequest_async('AddResidentMember', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_resident_users(
+    def add_resident_member(
         self,
-        request: dingtalkresident__1__0_models.AddResidentUsersRequest,
-    ) -> dingtalkresident__1__0_models.AddResidentUsersResponse:
+        request: dingtalkresident__1__0_models.AddResidentMemberRequest,
+    ) -> dingtalkresident__1__0_models.AddResidentMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddResidentUsersHeaders()
-        return self.add_resident_users_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.AddResidentMemberHeaders()
+        return self.add_resident_member_with_options(request, headers, runtime)
 
-    async def add_resident_users_async(
+    async def add_resident_member_async(
         self,
-        request: dingtalkresident__1__0_models.AddResidentUsersRequest,
-    ) -> dingtalkresident__1__0_models.AddResidentUsersResponse:
+        request: dingtalkresident__1__0_models.AddResidentMemberRequest,
+    ) -> dingtalkresident__1__0_models.AddResidentMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.AddResidentUsersHeaders()
-        return await self.add_resident_users_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.AddResidentMemberHeaders()
+        return await self.add_resident_member_with_options_async(request, headers, runtime)
 
     def add_resident_users_with_options(
         self,
@@ -294,9 +350,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='AddResidentUsers',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/users',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.AddResidentUsersResponse(),
-            self.do_roarequest('AddResidentUsers', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_resident_users_with_options_async(
@@ -330,26 +397,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='AddResidentUsers',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/users',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.AddResidentUsersResponse(),
-            await self.do_roarequest_async('AddResidentUsers', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_resident_black_board(
+    def add_resident_users(
         self,
-        request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
-    ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        request: dingtalkresident__1__0_models.AddResidentUsersRequest,
+    ) -> dingtalkresident__1__0_models.AddResidentUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders()
-        return self.create_resident_black_board_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.AddResidentUsersHeaders()
+        return self.add_resident_users_with_options(request, headers, runtime)
 
-    async def create_resident_black_board_async(
+    async def add_resident_users_async(
         self,
-        request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
-    ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        request: dingtalkresident__1__0_models.AddResidentUsersRequest,
+    ) -> dingtalkresident__1__0_models.AddResidentUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders()
-        return await self.create_resident_black_board_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.AddResidentUsersHeaders()
+        return await self.add_resident_users_with_options_async(request, headers, runtime)
 
     def create_resident_black_board_with_options(
         self,
@@ -376,9 +454,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateResidentBlackBoard',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/blackboards',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.CreateResidentBlackBoardResponse(),
-            self.do_roarequest('CreateResidentBlackBoard', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_resident_black_board_with_options_async(
@@ -406,26 +495,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateResidentBlackBoard',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/blackboards',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.CreateResidentBlackBoardResponse(),
-            await self.do_roarequest_async('CreateResidentBlackBoard', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_space(
+    def create_resident_black_board(
         self,
-        request: dingtalkresident__1__0_models.CreateSpaceRequest,
-    ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
+        request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.CreateSpaceHeaders()
-        return self.create_space_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders()
+        return self.create_resident_black_board_with_options(request, headers, runtime)
 
-    async def create_space_async(
+    async def create_resident_black_board_async(
         self,
-        request: dingtalkresident__1__0_models.CreateSpaceRequest,
-    ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
+        request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.CreateSpaceHeaders()
-        return await self.create_space_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders()
+        return await self.create_resident_black_board_with_options_async(request, headers, runtime)
 
     def create_space_with_options(
         self,
@@ -460,9 +560,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateSpace',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.CreateSpaceResponse(),
-            self.do_roarequest('CreateSpace', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_space_with_options_async(
@@ -498,26 +609,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateSpace',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.CreateSpaceResponse(),
-            await self.do_roarequest_async('CreateSpace', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_resident_black_board(
+    def create_space(
         self,
-        request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
-    ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        request: dingtalkresident__1__0_models.CreateSpaceRequest,
+    ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders()
-        return self.delete_resident_black_board_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.CreateSpaceHeaders()
+        return self.create_space_with_options(request, headers, runtime)
 
-    async def delete_resident_black_board_async(
+    async def create_space_async(
         self,
-        request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
-    ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        request: dingtalkresident__1__0_models.CreateSpaceRequest,
+    ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders()
-        return await self.delete_resident_black_board_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.CreateSpaceHeaders()
+        return await self.create_space_with_options_async(request, headers, runtime)
 
     def delete_resident_black_board_with_options(
         self,
@@ -538,9 +660,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteResidentBlackBoard',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/blackboards',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse(),
-            self.do_roarequest('DeleteResidentBlackBoard', 'resident_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_resident_black_board_with_options_async(
@@ -562,26 +695,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteResidentBlackBoard',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/blackboards',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse(),
-            await self.do_roarequest_async('DeleteResidentBlackBoard', 'resident_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_resident_department(
+    def delete_resident_black_board(
         self,
-        request: dingtalkresident__1__0_models.DeleteResidentDepartmentRequest,
-    ) -> dingtalkresident__1__0_models.DeleteResidentDepartmentResponse:
+        request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.DeleteResidentDepartmentHeaders()
-        return self.delete_resident_department_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders()
+        return self.delete_resident_black_board_with_options(request, headers, runtime)
 
-    async def delete_resident_department_async(
+    async def delete_resident_black_board_async(
         self,
-        request: dingtalkresident__1__0_models.DeleteResidentDepartmentRequest,
-    ) -> dingtalkresident__1__0_models.DeleteResidentDepartmentResponse:
+        request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.DeleteResidentDepartmentHeaders()
-        return await self.delete_resident_department_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders()
+        return await self.delete_resident_black_board_with_options_async(request, headers, runtime)
 
     def delete_resident_department_with_options(
         self,
@@ -602,9 +746,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteResidentDepartment',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/departments',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.DeleteResidentDepartmentResponse(),
-            self.do_roarequest('DeleteResidentDepartment', 'resident_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/resident/departments', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_resident_department_with_options_async(
@@ -626,26 +781,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='DeleteResidentDepartment',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/departments',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.DeleteResidentDepartmentResponse(),
-            await self.do_roarequest_async('DeleteResidentDepartment', 'resident_1.0', 'HTTP', 'DELETE', 'AK', f'/v1.0/resident/departments', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_space(
+    def delete_resident_department(
         self,
-        request: dingtalkresident__1__0_models.DeleteSpaceRequest,
-    ) -> dingtalkresident__1__0_models.DeleteSpaceResponse:
+        request: dingtalkresident__1__0_models.DeleteResidentDepartmentRequest,
+    ) -> dingtalkresident__1__0_models.DeleteResidentDepartmentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.DeleteSpaceHeaders()
-        return self.delete_space_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.DeleteResidentDepartmentHeaders()
+        return self.delete_resident_department_with_options(request, headers, runtime)
 
-    async def delete_space_async(
+    async def delete_resident_department_async(
         self,
-        request: dingtalkresident__1__0_models.DeleteSpaceRequest,
-    ) -> dingtalkresident__1__0_models.DeleteSpaceResponse:
+        request: dingtalkresident__1__0_models.DeleteResidentDepartmentRequest,
+    ) -> dingtalkresident__1__0_models.DeleteResidentDepartmentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.DeleteSpaceHeaders()
-        return await self.delete_space_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.DeleteResidentDepartmentHeaders()
+        return await self.delete_resident_department_with_options_async(request, headers, runtime)
 
     def delete_space_with_options(
         self,
@@ -666,9 +832,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteSpace',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.DeleteSpaceResponse(),
-            self.do_roarequest('DeleteSpace', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_space_with_options_async(
@@ -690,26 +867,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteSpace',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.DeleteSpaceResponse(),
-            await self.do_roarequest_async('DeleteSpace', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_conversation_id(
+    def delete_space(
         self,
-        request: dingtalkresident__1__0_models.GetConversationIdRequest,
-    ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        request: dingtalkresident__1__0_models.DeleteSpaceRequest,
+    ) -> dingtalkresident__1__0_models.DeleteSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetConversationIdHeaders()
-        return self.get_conversation_id_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.DeleteSpaceHeaders()
+        return self.delete_space_with_options(request, headers, runtime)
 
-    async def get_conversation_id_async(
+    async def delete_space_async(
         self,
-        request: dingtalkresident__1__0_models.GetConversationIdRequest,
-    ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        request: dingtalkresident__1__0_models.DeleteSpaceRequest,
+    ) -> dingtalkresident__1__0_models.DeleteSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetConversationIdHeaders()
-        return await self.get_conversation_id_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.DeleteSpaceHeaders()
+        return await self.delete_space_with_options_async(request, headers, runtime)
 
     def get_conversation_id_with_options(
         self,
@@ -730,9 +918,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetConversationId',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/conversations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetConversationIdResponse(),
-            self.do_roarequest('GetConversationId', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/conversations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_conversation_id_with_options_async(
@@ -754,20 +953,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetConversationId',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/conversations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetConversationIdResponse(),
-            await self.do_roarequest_async('GetConversationId', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/conversations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_industry_type(self) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
+    def get_conversation_id(
+        self,
+        request: dingtalkresident__1__0_models.GetConversationIdRequest,
+    ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetIndustryTypeHeaders()
-        return self.get_industry_type_with_options(headers, runtime)
+        headers = dingtalkresident__1__0_models.GetConversationIdHeaders()
+        return self.get_conversation_id_with_options(request, headers, runtime)
 
-    async def get_industry_type_async(self) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
+    async def get_conversation_id_async(
+        self,
+        request: dingtalkresident__1__0_models.GetConversationIdRequest,
+    ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetIndustryTypeHeaders()
-        return await self.get_industry_type_with_options_async(headers, runtime)
+        headers = dingtalkresident__1__0_models.GetConversationIdHeaders()
+        return await self.get_conversation_id_with_options_async(request, headers, runtime)
 
     def get_industry_type_with_options(
         self,
@@ -782,9 +998,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetIndustryType',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/organizations/industryTypes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetIndustryTypeResponse(),
-            self.do_roarequest('GetIndustryType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/organizations/industryTypes', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_industry_type_with_options_async(
@@ -800,26 +1027,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetIndustryType',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/organizations/industryTypes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetIndustryTypeResponse(),
-            await self.do_roarequest_async('GetIndustryType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/organizations/industryTypes', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_property_info(
-        self,
-        request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
-    ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+    def get_industry_type(self) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetPropertyInfoHeaders()
-        return self.get_property_info_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetIndustryTypeHeaders()
+        return self.get_industry_type_with_options(headers, runtime)
 
-    async def get_property_info_async(
-        self,
-        request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
-    ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+    async def get_industry_type_async(self) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetPropertyInfoHeaders()
-        return await self.get_property_info_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetIndustryTypeHeaders()
+        return await self.get_industry_type_with_options_async(headers, runtime)
 
     def get_property_info_with_options(
         self,
@@ -840,9 +1072,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetPropertyInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/propertyInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetPropertyInfoResponse(),
-            self.do_roarequest('GetPropertyInfo', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/propertyInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_property_info_with_options_async(
@@ -864,26 +1107,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetPropertyInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/propertyInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetPropertyInfoResponse(),
-            await self.do_roarequest_async('GetPropertyInfo', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/propertyInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_resident_info(
+    def get_property_info(
         self,
-        request: dingtalkresident__1__0_models.GetResidentInfoRequest,
-    ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetResidentInfoHeaders()
-        return self.get_resident_info_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetPropertyInfoHeaders()
+        return self.get_property_info_with_options(request, headers, runtime)
 
-    async def get_resident_info_async(
+    async def get_property_info_async(
         self,
-        request: dingtalkresident__1__0_models.GetResidentInfoRequest,
-    ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetResidentInfoHeaders()
-        return await self.get_resident_info_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetPropertyInfoHeaders()
+        return await self.get_property_info_with_options_async(request, headers, runtime)
 
     def get_resident_info_with_options(
         self,
@@ -904,9 +1158,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetResidentInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/residentInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetResidentInfoResponse(),
-            self.do_roarequest('GetResidentInfo', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/residentInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_resident_info_with_options_async(
@@ -928,26 +1193,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetResidentInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/residentInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetResidentInfoResponse(),
-            await self.do_roarequest_async('GetResidentInfo', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/residentInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_resident_members_info(
+    def get_resident_info(
         self,
-        request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
-    ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
+        request: dingtalkresident__1__0_models.GetResidentInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetResidentMembersInfoHeaders()
-        return self.get_resident_members_info_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetResidentInfoHeaders()
+        return self.get_resident_info_with_options(request, headers, runtime)
 
-    async def get_resident_members_info_async(
+    async def get_resident_info_async(
         self,
-        request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
-    ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
+        request: dingtalkresident__1__0_models.GetResidentInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetResidentMembersInfoHeaders()
-        return await self.get_resident_members_info_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetResidentInfoHeaders()
+        return await self.get_resident_info_with_options_async(request, headers, runtime)
 
     def get_resident_members_info_with_options(
         self,
@@ -970,9 +1246,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetResidentMembersInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/residences/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetResidentMembersInfoResponse(),
-            self.do_roarequest('GetResidentMembersInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/residences/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_resident_members_info_with_options_async(
@@ -996,26 +1283,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetResidentMembersInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/residences/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetResidentMembersInfoResponse(),
-            await self.do_roarequest_async('GetResidentMembersInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/residences/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_space_id_by_type(
+    def get_resident_members_info(
         self,
-        request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
-    ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders()
-        return self.get_space_id_by_type_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetResidentMembersInfoHeaders()
+        return self.get_resident_members_info_with_options(request, headers, runtime)
 
-    async def get_space_id_by_type_async(
+    async def get_resident_members_info_async(
         self,
-        request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
-    ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders()
-        return await self.get_space_id_by_type_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetResidentMembersInfoHeaders()
+        return await self.get_resident_members_info_with_options_async(request, headers, runtime)
 
     def get_space_id_by_type_with_options(
         self,
@@ -1036,9 +1334,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSpaceIdByType',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces/types',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetSpaceIdByTypeResponse(),
-            self.do_roarequest('GetSpaceIdByType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/types', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_space_id_by_type_with_options_async(
@@ -1060,26 +1369,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSpaceIdByType',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces/types',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetSpaceIdByTypeResponse(),
-            await self.do_roarequest_async('GetSpaceIdByType', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/types', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_spaces_info(
+    def get_space_id_by_type(
         self,
-        request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
-    ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
+    ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetSpacesInfoHeaders()
-        return self.get_spaces_info_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders()
+        return self.get_space_id_by_type_with_options(request, headers, runtime)
 
-    async def get_spaces_info_async(
+    async def get_space_id_by_type_async(
         self,
-        request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
-    ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
+    ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.GetSpacesInfoHeaders()
-        return await self.get_spaces_info_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders()
+        return await self.get_space_id_by_type_with_options_async(request, headers, runtime)
 
     def get_spaces_info_with_options(
         self,
@@ -1102,9 +1422,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSpacesInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetSpacesInfoResponse(),
-            self.do_roarequest('GetSpacesInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_spaces_info_with_options_async(
@@ -1128,26 +1459,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSpacesInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.GetSpacesInfoResponse(),
-            await self.do_roarequest_async('GetSpacesInfo', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/spaces/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_industry_role_users(
+    def get_spaces_info(
         self,
-        request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
-    ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders()
-        return self.list_industry_role_users_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetSpacesInfoHeaders()
+        return self.get_spaces_info_with_options(request, headers, runtime)
 
-    async def list_industry_role_users_async(
+    async def get_spaces_info_async(
         self,
-        request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
-    ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
+    ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders()
-        return await self.list_industry_role_users_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.GetSpacesInfoHeaders()
+        return await self.get_spaces_info_with_options_async(request, headers, runtime)
 
     def list_industry_role_users_with_options(
         self,
@@ -1168,9 +1510,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListIndustryRoleUsers',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/industryRoles/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListIndustryRoleUsersResponse(),
-            self.do_roarequest('ListIndustryRoleUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/industryRoles/users', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_industry_role_users_with_options_async(
@@ -1192,26 +1545,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListIndustryRoleUsers',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/industryRoles/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListIndustryRoleUsersResponse(),
-            await self.do_roarequest_async('ListIndustryRoleUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/industryRoles/users', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_point_rules(
+    def list_industry_role_users(
         self,
-        request: dingtalkresident__1__0_models.ListPointRulesRequest,
-    ) -> dingtalkresident__1__0_models.ListPointRulesResponse:
+        request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
+    ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListPointRulesHeaders()
-        return self.list_point_rules_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders()
+        return self.list_industry_role_users_with_options(request, headers, runtime)
 
-    async def list_point_rules_async(
+    async def list_industry_role_users_async(
         self,
-        request: dingtalkresident__1__0_models.ListPointRulesRequest,
-    ) -> dingtalkresident__1__0_models.ListPointRulesResponse:
+        request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
+    ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListPointRulesHeaders()
-        return await self.list_point_rules_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders()
+        return await self.list_industry_role_users_with_options_async(request, headers, runtime)
 
     def list_point_rules_with_options(
         self,
@@ -1232,9 +1596,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListPointRules',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/points/rules',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListPointRulesResponse(),
-            self.do_roarequest('ListPointRules', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/rules', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_point_rules_with_options_async(
@@ -1256,26 +1631,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListPointRules',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/points/rules',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListPointRulesResponse(),
-            await self.do_roarequest_async('ListPointRules', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/rules', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_sub_space(
+    def list_point_rules(
         self,
-        request: dingtalkresident__1__0_models.ListSubSpaceRequest,
-    ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        request: dingtalkresident__1__0_models.ListPointRulesRequest,
+    ) -> dingtalkresident__1__0_models.ListPointRulesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListSubSpaceHeaders()
-        return self.list_sub_space_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListPointRulesHeaders()
+        return self.list_point_rules_with_options(request, headers, runtime)
 
-    async def list_sub_space_async(
+    async def list_point_rules_async(
         self,
-        request: dingtalkresident__1__0_models.ListSubSpaceRequest,
-    ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        request: dingtalkresident__1__0_models.ListPointRulesRequest,
+    ) -> dingtalkresident__1__0_models.ListPointRulesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListSubSpaceHeaders()
-        return await self.list_sub_space_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListPointRulesHeaders()
+        return await self.list_point_rules_with_options_async(request, headers, runtime)
 
     def list_sub_space_with_options(
         self,
@@ -1298,9 +1684,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSubSpace',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces/subSpaces',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListSubSpaceResponse(),
-            self.do_roarequest('ListSubSpace', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/subSpaces', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_sub_space_with_options_async(
@@ -1324,26 +1721,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListSubSpace',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces/subSpaces',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListSubSpaceResponse(),
-            await self.do_roarequest_async('ListSubSpace', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/spaces/subSpaces', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_uncheck_users(
+    def list_sub_space(
         self,
-        request: dingtalkresident__1__0_models.ListUncheckUsersRequest,
-    ) -> dingtalkresident__1__0_models.ListUncheckUsersResponse:
+        request: dingtalkresident__1__0_models.ListSubSpaceRequest,
+    ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListUncheckUsersHeaders()
-        return self.list_uncheck_users_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListSubSpaceHeaders()
+        return self.list_sub_space_with_options(request, headers, runtime)
 
-    async def list_uncheck_users_async(
+    async def list_sub_space_async(
         self,
-        request: dingtalkresident__1__0_models.ListUncheckUsersRequest,
-    ) -> dingtalkresident__1__0_models.ListUncheckUsersResponse:
+        request: dingtalkresident__1__0_models.ListSubSpaceRequest,
+    ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListUncheckUsersHeaders()
-        return await self.list_uncheck_users_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListSubSpaceHeaders()
+        return await self.list_sub_space_with_options_async(request, headers, runtime)
 
     def list_uncheck_users_with_options(
         self,
@@ -1370,9 +1778,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListUncheckUsers',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/organizations/noJoinUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListUncheckUsersResponse(),
-            self.do_roarequest('ListUncheckUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/organizations/noJoinUsers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_uncheck_users_with_options_async(
@@ -1400,26 +1819,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListUncheckUsers',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/organizations/noJoinUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListUncheckUsersResponse(),
-            await self.do_roarequest_async('ListUncheckUsers', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/organizations/noJoinUsers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_user_industry_roles(
+    def list_uncheck_users(
         self,
-        request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
-    ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        request: dingtalkresident__1__0_models.ListUncheckUsersRequest,
+    ) -> dingtalkresident__1__0_models.ListUncheckUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListUserIndustryRolesHeaders()
-        return self.list_user_industry_roles_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListUncheckUsersHeaders()
+        return self.list_uncheck_users_with_options(request, headers, runtime)
 
-    async def list_user_industry_roles_async(
+    async def list_uncheck_users_async(
         self,
-        request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
-    ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        request: dingtalkresident__1__0_models.ListUncheckUsersRequest,
+    ) -> dingtalkresident__1__0_models.ListUncheckUsersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.ListUserIndustryRolesHeaders()
-        return await self.list_user_industry_roles_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListUncheckUsersHeaders()
+        return await self.list_uncheck_users_with_options_async(request, headers, runtime)
 
     def list_user_industry_roles_with_options(
         self,
@@ -1440,9 +1870,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListUserIndustryRoles',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/users/industryRoles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListUserIndustryRolesResponse(),
-            self.do_roarequest('ListUserIndustryRoles', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/users/industryRoles', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_user_industry_roles_with_options_async(
@@ -1464,26 +1905,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ListUserIndustryRoles',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/users/industryRoles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.ListUserIndustryRolesResponse(),
-            await self.do_roarequest_async('ListUserIndustryRoles', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/users/industryRoles', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def page_point_history(
+    def list_user_industry_roles(
         self,
-        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
-    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
+    ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
-        return self.page_point_history_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListUserIndustryRolesHeaders()
+        return self.list_user_industry_roles_with_options(request, headers, runtime)
 
-    async def page_point_history_async(
+    async def list_user_industry_roles_async(
         self,
-        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
-    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
+    ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
-        return await self.page_point_history_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.ListUserIndustryRolesHeaders()
+        return await self.list_user_industry_roles_with_options_async(request, headers, runtime)
 
     def page_point_history_with_options(
         self,
@@ -1514,9 +1966,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='PagePointHistory',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/points/records',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.PagePointHistoryResponse(),
-            self.do_roarequest('PagePointHistory', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/records', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def page_point_history_with_options_async(
@@ -1548,26 +2011,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='PagePointHistory',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/points/records',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.PagePointHistoryResponse(),
-            await self.do_roarequest_async('PagePointHistory', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/points/records', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def remove_resident_member(
+    def page_point_history(
         self,
-        request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
-    ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
+    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.RemoveResidentMemberHeaders()
-        return self.remove_resident_member_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
+        return self.page_point_history_with_options(request, headers, runtime)
 
-    async def remove_resident_member_async(
+    async def page_point_history_async(
         self,
-        request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
-    ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        request: dingtalkresident__1__0_models.PagePointHistoryRequest,
+    ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.RemoveResidentMemberHeaders()
-        return await self.remove_resident_member_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
+        return await self.page_point_history_with_options_async(request, headers, runtime)
 
     def remove_resident_member_with_options(
         self,
@@ -1592,9 +2066,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RemoveResidentMember',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/members/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.RemoveResidentMemberResponse(),
-            self.do_roarequest('RemoveResidentMember', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/members/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def remove_resident_member_with_options_async(
@@ -1620,26 +2105,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RemoveResidentMember',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/members/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.RemoveResidentMemberResponse(),
-            await self.do_roarequest_async('RemoveResidentMember', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/members/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def remove_resident_user(
+    def remove_resident_member(
         self,
-        request: dingtalkresident__1__0_models.RemoveResidentUserRequest,
-    ) -> dingtalkresident__1__0_models.RemoveResidentUserResponse:
+        request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
+    ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.RemoveResidentUserHeaders()
-        return self.remove_resident_user_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.RemoveResidentMemberHeaders()
+        return self.remove_resident_member_with_options(request, headers, runtime)
 
-    async def remove_resident_user_async(
+    async def remove_resident_member_async(
         self,
-        request: dingtalkresident__1__0_models.RemoveResidentUserRequest,
-    ) -> dingtalkresident__1__0_models.RemoveResidentUserResponse:
+        request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
+    ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.RemoveResidentUserHeaders()
-        return await self.remove_resident_user_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.RemoveResidentMemberHeaders()
+        return await self.remove_resident_member_with_options_async(request, headers, runtime)
 
     def remove_resident_user_with_options(
         self,
@@ -1662,9 +2158,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='RemoveResidentUser',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/users/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.RemoveResidentUserResponse(),
-            self.do_roarequest('RemoveResidentUser', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/users/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def remove_resident_user_with_options_async(
@@ -1688,26 +2195,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='RemoveResidentUser',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/users/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.RemoveResidentUserResponse(),
-            await self.do_roarequest_async('RemoveResidentUser', 'resident_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/resident/users/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def search_resident(
+    def remove_resident_user(
         self,
-        request: dingtalkresident__1__0_models.SearchResidentRequest,
-    ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        request: dingtalkresident__1__0_models.RemoveResidentUserRequest,
+    ) -> dingtalkresident__1__0_models.RemoveResidentUserResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.SearchResidentHeaders()
-        return self.search_resident_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.RemoveResidentUserHeaders()
+        return self.remove_resident_user_with_options(request, headers, runtime)
 
-    async def search_resident_async(
+    async def remove_resident_user_async(
         self,
-        request: dingtalkresident__1__0_models.SearchResidentRequest,
-    ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        request: dingtalkresident__1__0_models.RemoveResidentUserRequest,
+    ) -> dingtalkresident__1__0_models.RemoveResidentUserResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.SearchResidentHeaders()
-        return await self.search_resident_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.RemoveResidentUserHeaders()
+        return await self.remove_resident_user_with_options_async(request, headers, runtime)
 
     def search_resident_with_options(
         self,
@@ -1730,9 +2248,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SearchResident',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/residences',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.SearchResidentResponse(),
-            self.do_roarequest('SearchResident', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/residences', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def search_resident_with_options_async(
@@ -1756,26 +2285,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='SearchResident',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/residences',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.SearchResidentResponse(),
-            await self.do_roarequest_async('SearchResident', 'resident_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/resident/residences', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_residece_group(
+    def search_resident(
         self,
-        request: dingtalkresident__1__0_models.UpdateResideceGroupRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResideceGroupResponse:
+        request: dingtalkresident__1__0_models.SearchResidentRequest,
+    ) -> dingtalkresident__1__0_models.SearchResidentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResideceGroupHeaders()
-        return self.update_residece_group_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.SearchResidentHeaders()
+        return self.search_resident_with_options(request, headers, runtime)
 
-    async def update_residece_group_async(
+    async def search_resident_async(
         self,
-        request: dingtalkresident__1__0_models.UpdateResideceGroupRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResideceGroupResponse:
+        request: dingtalkresident__1__0_models.SearchResidentRequest,
+    ) -> dingtalkresident__1__0_models.SearchResidentResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResideceGroupHeaders()
-        return await self.update_residece_group_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.SearchResidentHeaders()
+        return await self.search_resident_with_options_async(request, headers, runtime)
 
     def update_residece_group_with_options(
         self,
@@ -1800,9 +2340,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateResideceGroup',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/departments/updateResideceGroup',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResideceGroupResponse(),
-            self.do_roarequest('UpdateResideceGroup', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/departments/updateResideceGroup', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_residece_group_with_options_async(
@@ -1828,26 +2379,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateResideceGroup',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/departments/updateResideceGroup',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResideceGroupResponse(),
-            await self.do_roarequest_async('UpdateResideceGroup', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/departments/updateResideceGroup', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_residence(
+    def update_residece_group(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidenceRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidenceResponse:
+        request: dingtalkresident__1__0_models.UpdateResideceGroupRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResideceGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidenceHeaders()
-        return self.update_residence_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResideceGroupHeaders()
+        return self.update_residece_group_with_options(request, headers, runtime)
 
-    async def update_residence_async(
+    async def update_residece_group_async(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidenceRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidenceResponse:
+        request: dingtalkresident__1__0_models.UpdateResideceGroupRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResideceGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidenceHeaders()
-        return await self.update_residence_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResideceGroupHeaders()
+        return await self.update_residece_group_with_options_async(request, headers, runtime)
 
     def update_residence_with_options(
         self,
@@ -1880,9 +2442,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateResidence',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/departments/updateResidece',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidenceResponse(),
-            self.do_roarequest('UpdateResidence', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/departments/updateResidece', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_residence_with_options_async(
@@ -1916,26 +2489,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateResidence',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/departments/updateResidece',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidenceResponse(),
-            await self.do_roarequest_async('UpdateResidence', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/departments/updateResidece', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_resident_black_board(
+    def update_residence(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        request: dingtalkresident__1__0_models.UpdateResidenceRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidenceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders()
-        return self.update_resident_black_board_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidenceHeaders()
+        return self.update_residence_with_options(request, headers, runtime)
 
-    async def update_resident_black_board_async(
+    async def update_residence_async(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        request: dingtalkresident__1__0_models.UpdateResidenceRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidenceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders()
-        return await self.update_resident_black_board_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidenceHeaders()
+        return await self.update_residence_with_options_async(request, headers, runtime)
 
     def update_resident_black_board_with_options(
         self,
@@ -1962,9 +2546,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateResidentBlackBoard',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/blackboards',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse(),
-            self.do_roarequest('UpdateResidentBlackBoard', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_resident_black_board_with_options_async(
@@ -1992,26 +2587,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateResidentBlackBoard',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/blackboards',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse(),
-            await self.do_roarequest_async('UpdateResidentBlackBoard', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/blackboards', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_resident_info(
+    def update_resident_black_board(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentInfoRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentInfoResponse:
+        request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentInfoHeaders()
-        return self.update_resident_info_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders()
+        return self.update_resident_black_board_with_options(request, headers, runtime)
 
-    async def update_resident_info_async(
+    async def update_resident_black_board_async(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentInfoRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentInfoResponse:
+        request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentInfoHeaders()
-        return await self.update_resident_info_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders()
+        return await self.update_resident_black_board_with_options_async(request, headers, runtime)
 
     def update_resident_info_with_options(
         self,
@@ -2050,9 +2656,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateResidentInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/residences',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidentInfoResponse(),
-            self.do_roarequest('UpdateResidentInfo', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/residences', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_resident_info_with_options_async(
@@ -2092,26 +2709,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateResidentInfo',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/residences',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidentInfoResponse(),
-            await self.do_roarequest_async('UpdateResidentInfo', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/residences', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_resident_member(
+    def update_resident_info(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentMemberRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentMemberResponse:
+        request: dingtalkresident__1__0_models.UpdateResidentInfoRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentMemberHeaders()
-        return self.update_resident_member_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidentInfoHeaders()
+        return self.update_resident_info_with_options(request, headers, runtime)
 
-    async def update_resident_member_async(
+    async def update_resident_info_async(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentMemberRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentMemberResponse:
+        request: dingtalkresident__1__0_models.UpdateResidentInfoRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentMemberHeaders()
-        return await self.update_resident_member_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidentInfoHeaders()
+        return await self.update_resident_info_with_options_async(request, headers, runtime)
 
     def update_resident_member_with_options(
         self,
@@ -2134,9 +2762,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateResidentMember',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/members',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidentMemberResponse(),
-            self.do_roarequest('UpdateResidentMember', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_resident_member_with_options_async(
@@ -2160,26 +2799,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateResidentMember',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/members',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidentMemberResponse(),
-            await self.do_roarequest_async('UpdateResidentMember', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_resident_user(
+    def update_resident_member(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        request: dingtalkresident__1__0_models.UpdateResidentMemberRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
-        return self.update_resident_user_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidentMemberHeaders()
+        return self.update_resident_member_with_options(request, headers, runtime)
 
-    async def update_resident_user_async(
+    async def update_resident_member_async(
         self,
-        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
-    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        request: dingtalkresident__1__0_models.UpdateResidentMemberRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
-        return await self.update_resident_user_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidentMemberHeaders()
+        return await self.update_resident_member_with_options_async(request, headers, runtime)
 
     def update_resident_user_with_options(
         self,
@@ -2216,9 +2866,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateResidentUser',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/users',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidentUserResponse(),
-            self.do_roarequest('UpdateResidentUser', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_resident_user_with_options_async(
@@ -2256,26 +2917,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateResidentUser',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/users',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateResidentUserResponse(),
-            await self.do_roarequest_async('UpdateResidentUser', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/users', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_space(
+    def update_resident_user(
         self,
-        request: dingtalkresident__1__0_models.UpdateSpaceRequest,
-    ) -> dingtalkresident__1__0_models.UpdateSpaceResponse:
+        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateSpaceHeaders()
-        return self.update_space_with_options(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
+        return self.update_resident_user_with_options(request, headers, runtime)
 
-    async def update_space_async(
+    async def update_resident_user_async(
         self,
-        request: dingtalkresident__1__0_models.UpdateSpaceRequest,
-    ) -> dingtalkresident__1__0_models.UpdateSpaceResponse:
+        request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
+    ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkresident__1__0_models.UpdateSpaceHeaders()
-        return await self.update_space_with_options_async(request, headers, runtime)
+        headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
+        return await self.update_resident_user_with_options_async(request, headers, runtime)
 
     def update_space_with_options(
         self,
@@ -2296,9 +2968,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateSpace',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateSpaceResponse(),
-            self.do_roarequest('UpdateSpace', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/spaces', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_space_with_options_async(
@@ -2320,7 +3003,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateSpace',
+            version='resident_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/resident/spaces',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkresident__1__0_models.UpdateSpaceResponse(),
-            await self.do_roarequest_async('UpdateSpace', 'resident_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/resident/spaces', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_space(
+        self,
+        request: dingtalkresident__1__0_models.UpdateSpaceRequest,
+    ) -> dingtalkresident__1__0_models.UpdateSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.UpdateSpaceHeaders()
+        return self.update_space_with_options(request, headers, runtime)
+
+    async def update_space_async(
+        self,
+        request: dingtalkresident__1__0_models.UpdateSpaceRequest,
+    ) -> dingtalkresident__1__0_models.UpdateSpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkresident__1__0_models.UpdateSpaceHeaders()
+        return await self.update_space_with_options_async(request, headers, runtime)

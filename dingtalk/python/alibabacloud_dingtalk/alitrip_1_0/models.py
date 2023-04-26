@@ -57,37 +57,21 @@ class AddCityCarApplyRequest(TeaModel):
         title: str = None,
         user_id: str = None,
     ):
-        # 出差事由
         self.cause = cause
-        # 用车城市
         self.city = city
-        # 第三方企业ID
         self.corp_id = corp_id
-        # 用车时间，按天管控，比如传值2021-03-18 20:26:56表示2021-03-18当天可用车，跨天情况配合finishedDate参数使用
         self.date = date
-        # 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
         self.finished_date = finished_date
-        # 审批单关联的项目code
         self.project_code = project_code
-        # 审批单关联的项目名
         self.project_name = project_name
-        # 审批单状态：0-申请，1-同意，2-拒绝
         self.status = status
-        # 三方审批单ID
         self.third_part_apply_id = third_part_apply_id
-        # 审批单关联的三方成本中心ID
         self.third_part_cost_center_id = third_part_cost_center_id
-        # 审批单关联的三方发票抬头ID
         self.third_part_invoice_id = third_part_invoice_id
-        # 审批单可用总次数
         self.times_total = times_total
-        # 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数；如果企业没有限制审批单使用次数的需求，这个参数传1(次数不限制)，同时times_total和times_used都传0即可
         self.times_type = times_type
-        # 审批单已用次数
         self.times_used = times_used
-        # 审批单标题
         self.title = title
-        # 发起审批的第三方员工ID
         self.user_id = user_id
 
     def validate(self):
@@ -175,7 +159,6 @@ class AddCityCarApplyResponseBody(TeaModel):
         self,
         apply_id: int = None,
     ):
-        # 商旅内部审批单ID
         self.apply_id = apply_id
 
     def validate(self):
@@ -202,13 +185,16 @@ class AddCityCarApplyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: AddCityCarApplyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -221,6 +207,8 @@ class AddCityCarApplyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -229,6 +217,8 @@ class AddCityCarApplyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AddCityCarApplyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -278,17 +268,11 @@ class ApproveCityCarApplyRequest(TeaModel):
         third_part_apply_id: str = None,
         user_id: str = None,
     ):
-        # 第三方企业ID
         self.corp_id = corp_id
-        # 审批时间
         self.operate_time = operate_time
-        # 审批备注
         self.remark = remark
-        # 审批结果：1-同意，2-拒绝
         self.status = status
-        # 第三方审批单ID
         self.third_part_apply_id = third_part_apply_id
-        # 审批的第三方员工ID
         self.user_id = user_id
 
     def validate(self):
@@ -336,7 +320,6 @@ class ApproveCityCarApplyResponseBody(TeaModel):
         self,
         approve_result: bool = None,
     ):
-        # 审批结果
         self.approve_result = approve_result
 
     def validate(self):
@@ -363,13 +346,16 @@ class ApproveCityCarApplyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ApproveCityCarApplyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -382,6 +368,8 @@ class ApproveCityCarApplyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -390,6 +378,8 @@ class ApproveCityCarApplyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ApproveCityCarApplyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -539,103 +529,54 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         traveler_name: str = None,
         voucher_type: int = None,
     ):
-        # 交易流水号
         self.alipay_trade_no = alipay_trade_no
-        # 审批单号
         self.apply_id = apply_id
-        # 到达日期
         self.arr_date = arr_date
-        # 到达站点
         self.arr_station = arr_station
-        # 到达时间
         self.arr_time = arr_time
-        # 入账时间
         self.bill_record_time = bill_record_time
-        # 预定时间
         self.book_time = book_time
-        # 预定人use id
         self.booker_id = booker_id
-        # 预订人工号
         self.booker_job_no = booker_job_no
-        # 预订人名称
         self.booker_name = booker_name
-        # 资金方向
         self.capital_direction = capital_direction
-        # 级联部门
         self.cascade_department = cascade_department
-        # 改签手续费
         self.change_fee = change_fee
-        # 成本中心名称
         self.cost_center = cost_center
-        # 成本中心编码
         self.cost_center_number = cost_center_number
-        # 折扣率
         self.coupon = coupon
-        # 末级部门
         self.department = department
-        # 部门id
         self.department_id = department_id
-        # 出发日期
         self.dept_date = dept_date
-        # 出发站
         self.dept_station = dept_station
-        # 出发时间
         self.dept_time = dept_time
-        # 费用类型
         self.fee_type = fee_type
-        # 序号
         self.index = index
-        # 发票抬头
         self.invoice_title = invoice_title
-        # 订单号
         self.order_id = order_id
-        # 订单金额
         self.order_price = order_price
-        # 超标审批单号
         self.over_apply_id = over_apply_id
-        # 主键id
         self.primary_id = primary_id
-        # 项目编号
         self.project_code = project_code
-        # 项目名称
         self.project_name = project_name
-        # 退款手续费
         self.refund_fee = refund_fee
-        # 备注
         self.remark = remark
-        # 运行时长
         self.run_time = run_time
-        # 座位号
         self.seat_no = seat_no
-        # 坐席
         self.seat_type = seat_type
-        # 服务费，仅在feeType 6007、6008中展示
         self.service_fee = service_fee
-        # 结算金额
         self.settlement_fee = settlement_fee
-        # 预存赠送金额消费
         self.settlement_grant_fee = settlement_grant_fee
-        # 结算时间
         self.settlement_time = settlement_time
-        # 结算类型
         self.settlement_type = settlement_type
-        # 入账状态
         self.status = status
-        # 票面票号
         self.ticket_no = ticket_no
-        # 票价
         self.ticket_price = ticket_price
-        # 车次号
         self.train_no = train_no
-        # 车次类型
         self.train_type = train_type
-        # 出行人useId
         self.traveler_id = traveler_id
-        # 出行人工号
         self.traveler_job_no = traveler_job_no
-        # 出行人名称
         self.traveler_name = traveler_name
-        # 发票类型
         self.voucher_type = voucher_type
 
     def validate(self):
@@ -860,17 +801,11 @@ class BillSettementBtripTrainResponseBodyModule(TeaModel):
         period_start: str = None,
         total_num: int = None,
     ):
-        # 类目
         self.category = category
-        # 企业id
         self.corp_id = corp_id
-        # 数据集合
         self.data_list = data_list
-        # 记账更新开始时间
         self.period_end = period_end
-        # 记账更新结束时间
         self.period_start = period_start
-        # 总数据量
         self.total_num = total_num
 
     def validate(self):
@@ -929,13 +864,9 @@ class BillSettementBtripTrainResponseBody(TeaModel):
         result_msg: str = None,
         success: bool = None,
     ):
-        # module
         self.module = module
-        # 结果code
         self.result_code = result_code
-        # 结果msg
         self.result_msg = result_msg
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -976,13 +907,16 @@ class BillSettementBtripTrainResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BillSettementBtripTrainResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -995,6 +929,8 @@ class BillSettementBtripTrainResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1003,6 +939,8 @@ class BillSettementBtripTrainResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BillSettementBtripTrainResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1160,118 +1098,62 @@ class BillSettementCarResponseBodyModuleDataList(TeaModel):
         user_confirm_desc: str = None,
         voucher_type: int = None,
     ):
-        # 支付交易流水号
         self.alipay_trade_no = alipay_trade_no
-        # 审批单号
         self.apply_id = apply_id
-        # 到达城市
         self.arr_city = arr_city
-        # 到达日期
         self.arr_date = arr_date
-        # 到达地
         self.arr_location = arr_location
-        # 到达时间
         self.arr_time = arr_time
-        # 入账时间
         self.bill_record_time = bill_record_time
-        # 预定时间
         self.book_time = book_time
-        # 预定人use id
         self.booker_id = booker_id
-        # 预订人工号
         self.booker_job_no = booker_job_no
-        # 预订人名称
         self.booker_name = booker_name
-        # 用车事由
         self.business_category = business_category
-        # 资金方向
         self.capital_direction = capital_direction
-        # 车型
         self.car_level = car_level
-        # 级联部门
         self.cascade_department = cascade_department
-        # 成本中心名称
         self.cost_center = cost_center
-        # 成本中心编号
         self.cost_center_number = cost_center_number
-        # 优惠券
         self.coupon = coupon
-        # 优惠金额
         self.coupon_price = coupon_price
-        # 末级部门
         self.department = department
-        # 部门id
         self.department_id = department_id
-        # 出发城市
         self.dept_city = dept_city
-        # 出发日期
         self.dept_date = dept_date
-        # 出发地
         self.dept_location = dept_location
-        # 出发时间
         self.dept_time = dept_time
-        # 预估行驶距离
         self.estimate_drive_distance = estimate_drive_distance
-        # 预估金额
         self.estimate_price = estimate_price
-        # 费用类型
         self.fee_type = fee_type
-        # 序号
         self.index = index
-        # 发票抬头
         self.invoice_title = invoice_title
-        # 用车事由
         self.memo = memo
-        # 订单id
         self.order_id = order_id
-        # 订单金额
         self.order_price = order_price
-        # 超标审批单号
         self.over_apply_id = over_apply_id
-        # 个人支付金额
         self.person_settle_fee = person_settle_fee
         self.primary_id = primary_id
-        # 项目编码
         self.project_code = project_code
-        # 项目名称
         self.project_name = project_name
-        # 供应商
         self.provider_name = provider_name
-        # 实际行驶距离
         self.real_drive_distance = real_drive_distance
-        # 实际上车点
         self.real_from_addr = real_from_addr
-        # 实际下车点
         self.real_to_addr = real_to_addr
-        # 备注
         self.remark = remark
-        # 服务费，仅在feeType 40111 中展示
         self.service_fee = service_fee
-        # 结算金额
         self.settlement_fee = settlement_fee
-        # 预存赠送金额消费
         self.settlement_grant_fee = settlement_grant_fee
-        # 结算时间
         self.settlement_time = settlement_time
-        # 结算类型
         self.settlement_type = settlement_type
-        # 特别关注订单
         self.special_order = special_order
-        # 特别关注原因
         self.special_reason = special_reason
-        # 入账状态
         self.status = status
-        # 子订单号
         self.sub_order_id = sub_order_id
-        # 出行人use id
         self.traveler_id = traveler_id
-        # 出行人工号
         self.traveler_job_no = traveler_job_no
-        # 出行人名称
         self.traveler_name = traveler_name
-        # 员工是否认可
         self.user_confirm_desc = user_confirm_desc
-        # 发票类型
         self.voucher_type = voucher_type
 
     def validate(self):
@@ -1528,17 +1410,11 @@ class BillSettementCarResponseBodyModule(TeaModel):
         period_start: str = None,
         total_num: int = None,
     ):
-        # 类目
         self.category = category
-        # 企业id
         self.corp_id = corp_id
-        # 数据集合
         self.data_list = data_list
-        # 记账更新开始日期
         self.period_end = period_end
-        # 记账更新结束日期
         self.period_start = period_start
-        # 总数量
         self.total_num = total_num
 
     def validate(self):
@@ -1597,13 +1473,9 @@ class BillSettementCarResponseBody(TeaModel):
         result_msg: str = None,
         success: bool = None,
     ):
-        # module
         self.module = module
-        # 结果code
         self.result_code = result_code
-        # 结果msg
         self.result_msg = result_msg
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -1644,13 +1516,16 @@ class BillSettementCarResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BillSettementCarResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1663,6 +1538,8 @@ class BillSettementCarResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1671,6 +1548,8 @@ class BillSettementCarResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BillSettementCarResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1720,17 +1599,11 @@ class BillSettementFlightRequest(TeaModel):
         period_end: str = None,
         period_start: str = None,
     ):
-        # 类目：机酒火车 1：机票； 2：酒店； 4：用车 6：商旅火车票
         self.category = category
-        # 第三方企业ID
         self.corp_id = corp_id
-        # 页数，从1开始
         self.page_number = page_number
-        # 每页数据量，默认100，最高500
         self.page_size = page_size
-        # 记账更新结束日期
         self.period_end = period_end
-        # 记账更新开始日期
         self.period_start = period_start
 
     def validate(self):
@@ -1848,147 +1721,76 @@ class BillSettementFlightResponseBodyModuleDataList(TeaModel):
         upgrade_cost: float = None,
         voucher_type: int = None,
     ):
-        # 提前预定天数
         self.advance_day = advance_day
-        # 航司三字码
         self.airline_corp_code = airline_corp_code
-        # 航司名称
         self.airline_corp_name = airline_corp_name
-        # 交易流水号
         self.alipay_trade_no = alipay_trade_no
-        # 审批单号
         self.apply_id = apply_id
-        # 到达机场二字码
         self.arr_airport_code = arr_airport_code
-        # 到达城市
         self.arr_city = arr_city
-        # 到达日期
         self.arr_date = arr_date
-        # 到达机场
         self.arr_station = arr_station
-        # 到达时间
         self.arr_time = arr_time
-        # 入账时间
         self.bill_record_time = bill_record_time
-        # 预定时间
         self.book_time = book_time
-        # 预订人use id
         self.booker_id = booker_id
-        # 预订人工号
         self.booker_job_no = booker_job_no
-        # 预订人名称
         self.booker_name = booker_name
-        # 商旅优惠金额
         self.btrip_coupon_fee = btrip_coupon_fee
-        # 基建费
         self.build_fee = build_fee
-        # 舱位
         self.cabin = cabin
-        # 舱位码
         self.cabin_class = cabin_class
-        # 资金方向
         self.capital_direction = capital_direction
-        # 级联部门
         self.cascade_department = cascade_department
-        # 改签费用
         self.change_fee = change_fee
-        # 订单金额
         self.corp_pay_order_fee = corp_pay_order_fee
-        # 成本中心名称
         self.cost_center = cost_center
-        # 成本中心编号
         self.cost_center_number = cost_center_number
-        # 优惠券
         self.coupon = coupon
-        # 起飞机场二字码
         self.dep_airport_code = dep_airport_code
-        # 末级部门
         self.department = department
-        # 部门id
         self.department_id = department_id
-        # 起飞城市
         self.dept_city = dept_city
-        # 起飞日期
         self.dept_date = dept_date
-        # 起飞机场
         self.dept_station = dept_station
-        # 起飞时间
         self.dept_time = dept_time
-        # 折扣率
         self.discount = discount
-        # 费用类型
         self.fee_type = fee_type
-        # 航班号
         self.flight_no = flight_no
-        # 序号
         self.index = index
-        # 保险费
         self.insurance_fee = insurance_fee
-        # 发票抬头
         self.invoice_title = invoice_title
-        # 行程单打印序号
         self.itinerary_num = itinerary_num
-        # 行程单金额
         self.itinerary_price = itinerary_price
-        # 低价提醒（起飞时间）
         self.most_difference_dept_time = most_difference_dept_time
-        # 低价提醒（折扣）
         self.most_difference_discount = most_difference_discount
-        # 低价提醒(航班号)
         self.most_difference_flight_no = most_difference_flight_no
-        # 低价提醒(与最低价差额)
         self.most_difference_price = most_difference_price
-        # 不选低价原因
         self.most_difference_reason = most_difference_reason
-        # 低价航班价格
         self.most_price = most_price
-        # 协议价优惠金额
         self.negotiation_coupon_fee = negotiation_coupon_fee
-        # 燃油费
         self.oil_fee = oil_fee
-        # 订单号
         self.order_id = order_id
-        # 超标审批单号
         self.over_apply_id = over_apply_id
-        # 主键id
         self.primary_id = primary_id
-        # 项目代码
         self.project_code = project_code
-        # 项目名称
         self.project_name = project_name
-        # 退款手续费
         self.refund_fee = refund_fee
-        # 改签退票手续费
         self.refund_upgrade_cost = refund_upgrade_cost
-        # 备注
         self.remark = remark
-        # 是否重复退
         self.repeat_refund = repeat_refund
-        # 销售价
         self.seal_price = seal_price
-        # 服务费，仅在feeType  11001、11002中展示
         self.service_fee = service_fee
-        # 结算金额
         self.settlement_fee = settlement_fee
-        # 预存赠送金额消费
         self.settlement_grant_fee = settlement_grant_fee
-        # 结算时间
         self.settlement_time = settlement_time
-        # 结算类型
         self.settlement_type = settlement_type
-        # 入账状态
         self.status = status
-        # 行程单号
         self.ticket_id = ticket_id
-        # 出行人use id
         self.traveler_id = traveler_id
-        # 出行人工号
         self.traveler_job_no = traveler_job_no
-        # 出行人名称
         self.traveler_name = traveler_name
-        # 改签差价
         self.upgrade_cost = upgrade_cost
-        # 发票类型
         self.voucher_type = voucher_type
 
     def validate(self):
@@ -2301,17 +2103,11 @@ class BillSettementFlightResponseBodyModule(TeaModel):
         period_start: str = None,
         total_num: int = None,
     ):
-        # 类目
         self.category = category
-        # 企业id
         self.corp_id = corp_id
-        # 数据集合
         self.data_list = data_list
-        # 记账更新开始日期
         self.period_end = period_end
-        # 记账更新结束日期
         self.period_start = period_start
-        # 总数据量
         self.total_num = total_num
 
     def validate(self):
@@ -2370,13 +2166,9 @@ class BillSettementFlightResponseBody(TeaModel):
         result_msg: str = None,
         success: bool = None,
     ):
-        # module
         self.module = module
-        # 结果code
         self.result_code = result_code
-        # 结果msg
         self.result_msg = result_msg
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -2417,13 +2209,16 @@ class BillSettementFlightResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BillSettementFlightResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2436,6 +2231,8 @@ class BillSettementFlightResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2444,6 +2241,8 @@ class BillSettementFlightResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BillSettementFlightResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2493,17 +2292,11 @@ class BillSettementHotelRequest(TeaModel):
         period_end: str = None,
         period_start: str = None,
     ):
-        # 类目：机酒火车 1：机票； 2：酒店； 4：用车 6：商旅火车票
         self.category = category
-        # 第三方企业
         self.corp_id = corp_id
-        # 页数，从1开始
         self.page_number = page_number
-        # 每页数据量，默认100，最高500
         self.page_size = page_size
-        # 记账更新结束日期
         self.period_end = period_end
-        # 记账更新开始日期
         self.period_start = period_start
 
     def validate(self):
@@ -2603,111 +2396,58 @@ class BillSettementHotelResponseBodyModuleDataList(TeaModel):
         traveler_name: str = None,
         voucher_type: int = None,
     ):
-        # 交易流水号
         self.alipay_trade_no = alipay_trade_no
-        # 审批单号
         self.apply_id = apply_id
-        # 入账时间
         self.bill_record_time = bill_record_time
-        # 预定时间
         self.book_time = book_time
-        # 预定人use id
         self.booker_id = booker_id
-        # 预订人工号
         self.booker_job_no = booker_job_no
-        # 预订人名称
         self.booker_name = booker_name
-        # 资金方向
         self.capital_direction = capital_direction
-        # 级联部门
         self.cascade_department = cascade_department
-        # 入住时间
         self.check_in_date = check_in_date
-        # 离店时间
         self.checkout_date = checkout_date
-        # 入住城市
         self.city = city
-        # 城市编码
         self.city_code = city_code
-        # 企业退款金额
         self.corp_refund_fee = corp_refund_fee
-        # 企业支付金额
         self.corp_total_fee = corp_total_fee
-        # 成本中心名称
         self.cost_center = cost_center
-        # 成本中心编码
         self.cost_center_number = cost_center_number
-        # 末级部门
         self.department = department
-        # 部门id
         self.department_id = department_id
-        # 费用类型
         self.fee_type = fee_type
-        # 杂费
         self.fees = fees
-        # 福豆支付
         self.fu_point_fee = fu_point_fee
-        # 酒店名称
         self.hotel_name = hotel_name
-        # 序号
         self.index = index
-        # 发票抬头
         self.invoice_title = invoice_title
-        # 是否协议价
         self.is_negotiation = is_negotiation
-        # 是否合住
         self.is_share_str = is_share_str
-        # 入住天数
         self.nights = nights
-        # 订单号
         self.order_id = order_id
-        # 订单金额
         self.order_price = order_price
-        # 订单类型
         self.order_type = order_type
-        # 超标审批单号
         self.over_apply_id = over_apply_id
-        # 个人退款金额
         self.person_refund_fee = person_refund_fee
-        # 个人支付金额
         self.person_settle_price = person_settle_price
-        # 主键id
         self.primary_id = primary_id
-        # 项目编码
         self.project_code = project_code
-        # 项目名称
         self.project_name = project_name
-        # 优惠券
         self.promotion_fee = promotion_fee
-        # 备注
         self.remark = remark
-        # 房间数
         self.room_number = room_number
-        # 房价
         self.room_price = room_price
-        # 房间类型
         self.room_type = room_type
-        # 服务费,仅在 feeType 20111、20112中展示
         self.service_fee = service_fee
-        # 结算金额
         self.settlement_fee = settlement_fee
-        # 预存赠送金额消费
         self.settlement_grant_fee = settlement_grant_fee
-        # 结算时间
         self.settlement_time = settlement_time
-        # 结算类型
         self.settlement_type = settlement_type
-        # 入账状态
         self.status = status
-        # 总间夜数
         self.total_nights = total_nights
-        # 出行人use id
         self.traveler_id = traveler_id
-        # 出行人工号
         self.traveler_job_no = traveler_job_no
-        # 出行人名称
         self.traveler_name = traveler_name
-        # 发票类型
         self.voucher_type = voucher_type
 
     def validate(self):
@@ -2948,17 +2688,11 @@ class BillSettementHotelResponseBodyModule(TeaModel):
         period_start: str = None,
         total_num: int = None,
     ):
-        # 类目
         self.category = category
-        # 企业id
         self.corp_id = corp_id
-        # 数据集合
         self.data_list = data_list
-        # 记账更新结束日期
         self.period_end = period_end
-        # 记账更新开始日期
         self.period_start = period_start
-        # 总数据量
         self.total_num = total_num
 
     def validate(self):
@@ -3017,13 +2751,9 @@ class BillSettementHotelResponseBody(TeaModel):
         result_msg: str = None,
         success: bool = None,
     ):
-        # module
         self.module = module
-        # 结果code
         self.result_code = result_code
-        # 结果msg
         self.result_msg = result_msg
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -3064,13 +2794,16 @@ class BillSettementHotelResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BillSettementHotelResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3083,6 +2816,8 @@ class BillSettementHotelResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3091,6 +2826,8 @@ class BillSettementHotelResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BillSettementHotelResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3136,9 +2873,7 @@ class GetFlightExceedApplyRequest(TeaModel):
         apply_id: str = None,
         corp_id: str = None,
     ):
-        # 商旅超标审批单id
         self.apply_id = apply_id
-        # 第三方企业id
         self.corp_id = corp_id
 
     def validate(self):
@@ -3182,31 +2917,18 @@ class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
         price: int = None,
         type: int = None,
     ):
-        # 到达城市三字码
         self.arr_city = arr_city
-        # 到达城市名称
         self.arr_city_name = arr_city_name
-        # 到达时间
         self.arr_time = arr_time
-        # 超标的舱位，F：头等舱 C：商务舱 Y：经济舱 P：超值经济舱
         self.cabin = cabin
-        # 申请超标的舱等 0：头等舱 1：商务舱 2：经济舱 3：超值经济舱
         self.cabin_class = cabin_class
-        # 舱等描述，头等舱，商务舱，经济舱，超值经济舱
         self.cabin_class_str = cabin_class_str
-        # 出发城市三字码
         self.dep_city = dep_city
-        # 出发城市名称
         self.dep_city_name = dep_city_name
-        # 出发时间
         self.dep_time = dep_time
-        # 折扣
         self.discount = discount
-        # 航班号
         self.flight_no = flight_no
-        # 意向航班价格（元）
         self.price = price
-        # 超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间
         self.type = type
 
     def validate(self):
@@ -3292,27 +3014,16 @@ class GetFlightExceedApplyResponseBody(TeaModel):
         thirdpart_apply_id: str = None,
         user_id: str = None,
     ):
-        # 商旅超标审批单id
         self.apply_id = apply_id
-        # 意向出行信息
         self.apply_intention_info_do = apply_intention_info_do
-        # 出差原因
         self.btrip_cause = btrip_cause
-        # 第三方企业id
         self.corp_id = corp_id
-        # 超标原因
         self.exceed_reason = exceed_reason
-        # 超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间
         self.exceed_type = exceed_type
-        # 原差旅标准
         self.origin_standard = origin_standard
-        # 审批单状态 0:审批中 1:已同意 2:已拒绝
         self.status = status
-        # 审批单提交时间
         self.submit_time = submit_time
-        # 第三方出差审批单号
         self.thirdpart_apply_id = thirdpart_apply_id
-        # 第三方用户id
         self.user_id = user_id
 
     def validate(self):
@@ -3381,13 +3092,16 @@ class GetFlightExceedApplyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetFlightExceedApplyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3400,6 +3114,8 @@ class GetFlightExceedApplyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3408,6 +3124,8 @@ class GetFlightExceedApplyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetFlightExceedApplyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3453,9 +3171,7 @@ class GetHotelExceedApplyRequest(TeaModel):
         apply_id: str = None,
         corp_id: str = None,
     ):
-        # 商旅超标审批单id
         self.apply_id = apply_id
-        # 第三方企业id
         self.corp_id = corp_id
 
     def validate(self):
@@ -3493,19 +3209,12 @@ class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
         together: bool = None,
         type: int = None,
     ):
-        # 入住日期
         self.check_in = check_in
-        # 离店日期
         self.check_out = check_out
-        # 入住城市三字码
         self.city_code = city_code
-        # 入住城市名称
         self.city_name = city_name
-        # 意向酒店金额（分）
         self.price = price
-        # 是否合住
         self.together = together
-        # 超标类型，32：金额超标
         self.type = type
 
     def validate(self):
@@ -3567,27 +3276,16 @@ class GetHotelExceedApplyResponseBody(TeaModel):
         thirdpart_apply_id: str = None,
         user_id: str = None,
     ):
-        # 商旅超标审批单id
         self.apply_id = apply_id
-        # 意向出行信息
         self.apply_intention_info_do = apply_intention_info_do
-        # 出差原因
         self.btrip_cause = btrip_cause
-        # 第三方企业id
         self.corp_id = corp_id
-        # 超标原因
         self.exceed_reason = exceed_reason
-        # 超标类型，32：金额超标
         self.exceed_type = exceed_type
-        # 原差旅标准
         self.origin_standard = origin_standard
-        # 审批单状态 0:审批中 1:已同意 2:已拒绝
         self.status = status
-        # 审批单提交时间
         self.submit_time = submit_time
-        # 第三方出差审批单号
         self.thirdpart_apply_id = thirdpart_apply_id
-        # 第三方用户id
         self.user_id = user_id
 
     def validate(self):
@@ -3656,13 +3354,16 @@ class GetHotelExceedApplyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetHotelExceedApplyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3675,6 +3376,8 @@ class GetHotelExceedApplyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3683,6 +3386,8 @@ class GetHotelExceedApplyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetHotelExceedApplyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3728,9 +3433,7 @@ class GetTrainExceedApplyRequest(TeaModel):
         apply_id: str = None,
         corp_id: str = None,
     ):
-        # 商旅超标审批单id
         self.apply_id = apply_id
-        # 第三方企业id
         self.corp_id = corp_id
 
     def validate(self):
@@ -3773,29 +3476,17 @@ class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
         train_no: str = None,
         train_type_desc: str = None,
     ):
-        # 到达城市三字码
         self.arr_city = arr_city
-        # 到达城市名
         self.arr_city_name = arr_city_name
-        # 到达站点名称
         self.arr_station = arr_station
-        # 到达时间
         self.arr_time = arr_time
-        # 出发城市三字码
         self.dep_city = dep_city
-        # 出发城市名
         self.dep_city_name = dep_city_name
-        # 出发站点名称
         self.dep_station = dep_station
-        # 出发时间
         self.dep_time = dep_time
-        # 意向坐席价格（分）
         self.price = price
-        # 意向坐席名称
         self.seat_name = seat_name
-        # 意向车次号
         self.train_no = train_no
-        # 意向车次类型
         self.train_type_desc = train_type_desc
 
     def validate(self):
@@ -3877,27 +3568,16 @@ class GetTrainExceedApplyResponseBody(TeaModel):
         thirdpart_apply_id: str = None,
         user_id: str = None,
     ):
-        # 商旅超标审批单id
         self.apply_id = apply_id
-        # 意向出行信息
         self.apply_intention_info_do = apply_intention_info_do
-        # 出差原因
         self.btrip_cause = btrip_cause
-        # 第三方企业id
         self.corp_id = corp_id
-        # 超标原因
         self.exceed_reason = exceed_reason
-        # 超标类型，32：坐席超标
         self.exceed_type = exceed_type
-        # 原差旅标准
         self.origin_standard = origin_standard
-        # 审批单状态 0:审批中 1:已同意 2:已拒绝
         self.status = status
-        # 审批单提交时间
         self.submit_time = submit_time
-        # 第三方出差审批单号
         self.thirdpart_apply_id = thirdpart_apply_id
-        # 第三方用户id
         self.user_id = user_id
 
     def validate(self):
@@ -3966,13 +3646,16 @@ class GetTrainExceedApplyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetTrainExceedApplyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3985,6 +3668,8 @@ class GetTrainExceedApplyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3993,6 +3678,8 @@ class GetTrainExceedApplyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTrainExceedApplyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4043,19 +3730,12 @@ class QueryCityCarApplyRequest(TeaModel):
         third_part_apply_id: str = None,
         user_id: str = None,
     ):
-        # 第三方企业ID
         self.corp_id = corp_id
-        # 审批单创建时间小于值
         self.created_end_at = created_end_at
-        # 审批单创建时间大于等于值
         self.created_start_at = created_start_at
-        # 页码，要求大于等于1，默认1
         self.page_number = page_number
-        # 每页数据量，要求大于等于1，默认20
         self.page_size = page_size
-        # 三方审批单ID
         self.third_part_apply_id = third_part_apply_id
-        # 第三方员工ID
         self.user_id = user_id
 
     def validate(self):
@@ -4113,19 +3793,12 @@ class QueryCityCarApplyResponseBodyApplyListApproverList(TeaModel):
         user_id: str = None,
         user_name: str = None,
     ):
-        # 审批备注
         self.note = note
-        # 审批时间
         self.operate_time = operate_time
-        # 审批人排序值
         self.order = order
-        # 审批状态枚举：审批状态：0-审批中，1-已同意，2-已拒绝
         self.status = status
-        # 审批状态描述
         self.status_desc = status_desc
-        # 审批员工ID
         self.user_id = user_id
-        # 审批员工名
         self.user_name = user_name
 
     def validate(self):
@@ -4190,33 +3863,19 @@ class QueryCityCarApplyResponseBodyApplyListItineraryList(TeaModel):
         project_title: str = None,
         traffic_type: int = None,
     ):
-        # 目的地城市
         self.arr_city = arr_city
-        # 目的地城市三字码
         self.arr_city_code = arr_city_code
-        # 到达目的地城市时间
         self.arr_date = arr_date
-        # 商旅内部成本中心ID
         self.cost_center_id = cost_center_id
-        # 成本中心名称
         self.cost_center_name = cost_center_name
-        # 出发城市
         self.dep_city = dep_city
-        # 出发城市三字码
         self.dep_city_code = dep_city_code
-        # 出发时间
         self.dep_date = dep_date
-        # 商旅内部发票抬头ID
         self.invoice_id = invoice_id
-        # 发票抬头名称
         self.invoice_name = invoice_name
-        # 商旅内部行程单ID
         self.itinerary_id = itinerary_id
-        # 项目code
         self.project_code = project_code
-        # 项目名称
         self.project_title = project_title
-        # 交通方式：4-市内交通
         self.traffic_type = traffic_type
 
     def validate(self):
@@ -4308,31 +3967,18 @@ class QueryCityCarApplyResponseBodyApplyList(TeaModel):
         user_id: str = None,
         user_name: str = None,
     ):
-        # 审批单列表
         self.approver_list = approver_list
-        # 员工所在部门ID
         self.depart_id = depart_id
-        # 员工所在部门名
         self.depart_name = depart_name
-        # 创建时间
         self.gmt_create = gmt_create
-        # 最近修改时间
         self.gmt_modified = gmt_modified
-        # 审批单关联的行程
         self.itinerary_list = itinerary_list
-        # 审批单状态：0-申请，1-同意，2-拒绝
         self.status = status
-        # 审批单状态：0-申请，1-同意，2-拒绝
         self.status_desc = status_desc
-        # 三方审批单ID
         self.third_part_apply_id = third_part_apply_id
-        # 申请事由
         self.trip_cause = trip_cause
-        # 审批单标题
         self.trip_title = trip_title
-        # 发起审批员工ID
         self.user_id = user_id
-        # 发起审批员工名
         self.user_name = user_name
 
     def validate(self):
@@ -4426,9 +4072,7 @@ class QueryCityCarApplyResponseBody(TeaModel):
         apply_list: List[QueryCityCarApplyResponseBodyApplyList] = None,
         total: int = None,
     ):
-        # 审批单列表
         self.apply_list = apply_list
-        # 总数
         self.total = total
 
     def validate(self):
@@ -4467,13 +4111,16 @@ class QueryCityCarApplyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryCityCarApplyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4486,6 +4133,8 @@ class QueryCityCarApplyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4494,6 +4143,8 @@ class QueryCityCarApplyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCityCarApplyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4540,11 +4191,8 @@ class QueryUnionOrderRequest(TeaModel):
         third_part_apply_id: str = None,
         union_no: str = None,
     ):
-        # 第三方企业id
         self.corp_id = corp_id
-        # 第三方申请单id
         self.third_part_apply_id = third_part_apply_id
-        # 关联单号
         self.union_no = union_no
 
     def validate(self):
@@ -4581,9 +4229,7 @@ class QueryUnionOrderResponseBodyFlightList(TeaModel):
         flight_order_id: int = None,
         flight_order_status: int = None,
     ):
-        # 订单id
         self.flight_order_id = flight_order_id
-        # 订单状态：0待支付,1出票中,2已关闭,3有改签单,4有退票单,5出票成功,6退票申请中,7改签申请中
         self.flight_order_status = flight_order_status
 
     def validate(self):
@@ -4616,9 +4262,7 @@ class QueryUnionOrderResponseBodyHotelList(TeaModel):
         hotel_order_id: int = None,
         hotel_order_status: int = None,
     ):
-        # 酒店订单号
         self.hotel_order_id = hotel_order_id
-        # 订单状态1:等待确认,2:等待付款,3:预订成功,4:申请退款,5:退款成功,6:已关闭,7:结账成功,8:支付成功
         self.hotel_order_status = hotel_order_status
 
     def validate(self):
@@ -4651,9 +4295,7 @@ class QueryUnionOrderResponseBodyTrainList(TeaModel):
         train_order_id: int = None,
         train_orderstatus: int = None,
     ):
-        # 火车订单号
         self.train_order_id = train_order_id
-        # 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
         self.train_orderstatus = train_orderstatus
 
     def validate(self):
@@ -4686,9 +4328,7 @@ class QueryUnionOrderResponseBodyVehicleList(TeaModel):
         vehicle_order_id: int = None,
         vehicle_order_status: int = None,
     ):
-        # 用车订单号
         self.vehicle_order_id = vehicle_order_id
-        # 订单状态:0:初始状态,1:已超时,2:派单成功,3:派单失败,4:已退款,5:已支付,6:已取消
         self.vehicle_order_status = vehicle_order_status
 
     def validate(self):
@@ -4724,15 +4364,10 @@ class QueryUnionOrderResponseBody(TeaModel):
         train_list: List[QueryUnionOrderResponseBodyTrainList] = None,
         vehicle_list: List[QueryUnionOrderResponseBodyVehicleList] = None,
     ):
-        # 企业id
         self.corp_id = corp_id
-        # 飞机订单信息
         self.flight_list = flight_list
-        # 酒店订单信息
         self.hotel_list = hotel_list
-        # 火车订单信息
         self.train_list = train_list
-        # 用车订单信息
         self.vehicle_list = vehicle_list
 
     def validate(self):
@@ -4810,13 +4445,16 @@ class QueryUnionOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryUnionOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4829,6 +4467,8 @@ class QueryUnionOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4837,6 +4477,8 @@ class QueryUnionOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryUnionOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4886,17 +4528,11 @@ class SyncExceedApplyRequest(TeaModel):
         thirdparty_flow_id: str = None,
         user_id: str = None,
     ):
-        # 商旅超标审批单id
         self.apply_id = apply_id
-        # 企业id
         self.corp_id = corp_id
-        # 审批意见
         self.remark = remark
-        # 审批单状态 1同意2拒绝
         self.status = status
-        # 第三方流程实例id
         self.thirdparty_flow_id = thirdparty_flow_id
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -4944,7 +4580,6 @@ class SyncExceedApplyResponseBody(TeaModel):
         self,
         module: bool = None,
     ):
-        # 是否同步成功
         self.module = module
 
     def validate(self):
@@ -4971,13 +4606,16 @@ class SyncExceedApplyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SyncExceedApplyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4990,6 +4628,8 @@ class SyncExceedApplyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4998,6 +4638,8 @@ class SyncExceedApplyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncExceedApplyResponseBody()
             self.body = temp_model.from_map(m['body'])

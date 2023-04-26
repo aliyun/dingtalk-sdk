@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.hrm_1_0 import models as dingtalkhrm__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_hrm_preentry(
-        self,
-        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
-    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
-        return self.add_hrm_preentry_with_options(request, headers, runtime)
-
-    async def add_hrm_preentry_async(
-        self,
-        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
-    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
-        return await self.add_hrm_preentry_with_options_async(request, headers, runtime)
 
     def add_hrm_preentry_with_options(
         self,
@@ -68,9 +58,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddHrmPreentry',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/preentries',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.AddHrmPreentryResponse(),
-            self.do_roarequest('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/preentries', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_hrm_preentry_with_options_async(
@@ -102,26 +103,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddHrmPreentry',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/preentries',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.AddHrmPreentryResponse(),
-            await self.do_roarequest_async('AddHrmPreentry', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/preentries', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def e_cert_query(
+    def add_hrm_preentry(
         self,
-        request: dingtalkhrm__1__0_models.ECertQueryRequest,
-    ) -> dingtalkhrm__1__0_models.ECertQueryResponse:
+        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
+    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.ECertQueryHeaders()
-        return self.e_cert_query_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
+        return self.add_hrm_preentry_with_options(request, headers, runtime)
 
-    async def e_cert_query_async(
+    async def add_hrm_preentry_async(
         self,
-        request: dingtalkhrm__1__0_models.ECertQueryRequest,
-    ) -> dingtalkhrm__1__0_models.ECertQueryResponse:
+        request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
+    ) -> dingtalkhrm__1__0_models.AddHrmPreentryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.ECertQueryHeaders()
-        return await self.e_cert_query_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
+        return await self.add_hrm_preentry_with_options_async(request, headers, runtime)
 
     def e_cert_query_with_options(
         self,
@@ -142,9 +154,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ECertQuery',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/eCerts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.ECertQueryResponse(),
-            self.do_roarequest('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/eCerts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def e_cert_query_with_options_async(
@@ -166,26 +189,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='ECertQuery',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/eCerts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.ECertQueryResponse(),
-            await self.do_roarequest_async('ECertQuery', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/eCerts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def hrm_process_regular(
+    def e_cert_query(
         self,
-        request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,
-    ) -> dingtalkhrm__1__0_models.HrmProcessRegularResponse:
+        request: dingtalkhrm__1__0_models.ECertQueryRequest,
+    ) -> dingtalkhrm__1__0_models.ECertQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.HrmProcessRegularHeaders()
-        return self.hrm_process_regular_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.ECertQueryHeaders()
+        return self.e_cert_query_with_options(request, headers, runtime)
 
-    async def hrm_process_regular_async(
+    async def e_cert_query_async(
         self,
-        request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,
-    ) -> dingtalkhrm__1__0_models.HrmProcessRegularResponse:
+        request: dingtalkhrm__1__0_models.ECertQueryRequest,
+    ) -> dingtalkhrm__1__0_models.ECertQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.HrmProcessRegularHeaders()
-        return await self.hrm_process_regular_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.ECertQueryHeaders()
+        return await self.e_cert_query_with_options_async(request, headers, runtime)
 
     def hrm_process_regular_with_options(
         self,
@@ -212,9 +246,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='HrmProcessRegular',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/processes/regulars/become',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.HrmProcessRegularResponse(),
-            self.do_roarequest('HrmProcessRegular', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/regulars/become', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def hrm_process_regular_with_options_async(
@@ -242,26 +287,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='HrmProcessRegular',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/processes/regulars/become',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.HrmProcessRegularResponse(),
-            await self.do_roarequest_async('HrmProcessRegular', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/regulars/become', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def hrm_process_transfer(
+    def hrm_process_regular(
         self,
-        request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,
-    ) -> dingtalkhrm__1__0_models.HrmProcessTransferResponse:
+        request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessRegularResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.HrmProcessTransferHeaders()
-        return self.hrm_process_transfer_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.HrmProcessRegularHeaders()
+        return self.hrm_process_regular_with_options(request, headers, runtime)
 
-    async def hrm_process_transfer_async(
+    async def hrm_process_regular_async(
         self,
-        request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,
-    ) -> dingtalkhrm__1__0_models.HrmProcessTransferResponse:
+        request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessRegularResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.HrmProcessTransferHeaders()
-        return await self.hrm_process_transfer_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.HrmProcessRegularHeaders()
+        return await self.hrm_process_regular_with_options_async(request, headers, runtime)
 
     def hrm_process_transfer_with_options(
         self,
@@ -298,9 +354,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='HrmProcessTransfer',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/processes/transfer',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.HrmProcessTransferResponse(),
-            self.do_roarequest('HrmProcessTransfer', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/transfer', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def hrm_process_transfer_with_options_async(
@@ -338,26 +405,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='HrmProcessTransfer',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/processes/transfer',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.HrmProcessTransferResponse(),
-            await self.do_roarequest_async('HrmProcessTransfer', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/processes/transfer', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def hrm_process_update_termination_info(
+    def hrm_process_transfer(
         self,
-        request: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoRequest,
-    ) -> dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse:
+        request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessTransferResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders()
-        return self.hrm_process_update_termination_info_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.HrmProcessTransferHeaders()
+        return self.hrm_process_transfer_with_options(request, headers, runtime)
 
-    async def hrm_process_update_termination_info_async(
+    async def hrm_process_transfer_async(
         self,
-        request: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoRequest,
-    ) -> dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse:
+        request: dingtalkhrm__1__0_models.HrmProcessTransferRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessTransferResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders()
-        return await self.hrm_process_update_termination_info_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.HrmProcessTransferHeaders()
+        return await self.hrm_process_transfer_with_options_async(request, headers, runtime)
 
     def hrm_process_update_termination_info_with_options(
         self,
@@ -382,9 +460,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='HrmProcessUpdateTerminationInfo',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/processes/employees/terminations',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse(),
-            self.do_roarequest('HrmProcessUpdateTerminationInfo', 'hrm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/hrm/processes/employees/terminations', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def hrm_process_update_termination_info_with_options_async(
@@ -410,26 +499,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='HrmProcessUpdateTerminationInfo',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/processes/employees/terminations',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse(),
-            await self.do_roarequest_async('HrmProcessUpdateTerminationInfo', 'hrm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/hrm/processes/employees/terminations', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def master_data_query(
+    def hrm_process_update_termination_info(
         self,
-        request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
-    ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
+        request: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.MasterDataQueryHeaders()
-        return self.master_data_query_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders()
+        return self.hrm_process_update_termination_info_with_options(request, headers, runtime)
 
-    async def master_data_query_async(
+    async def hrm_process_update_termination_info_async(
         self,
-        request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
-    ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
+        request: dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoRequest,
+    ) -> dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.MasterDataQueryHeaders()
-        return await self.master_data_query_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders()
+        return await self.hrm_process_update_termination_info_with_options_async(request, headers, runtime)
 
     def master_data_query_with_options(
         self,
@@ -466,9 +566,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='MasterDataQuery',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.MasterDataQueryResponse(),
-            self.do_roarequest('MasterDataQuery', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def master_data_query_with_options_async(
@@ -506,26 +617,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='MasterDataQuery',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.MasterDataQueryResponse(),
-            await self.do_roarequest_async('MasterDataQuery', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def master_data_save(
+    def master_data_query(
         self,
-        request: dingtalkhrm__1__0_models.MasterDataSaveRequest,
-    ) -> dingtalkhrm__1__0_models.MasterDataSaveResponse:
+        request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.MasterDataSaveHeaders()
-        return self.master_data_save_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.MasterDataQueryHeaders()
+        return self.master_data_query_with_options(request, headers, runtime)
 
-    async def master_data_save_async(
+    async def master_data_query_async(
         self,
-        request: dingtalkhrm__1__0_models.MasterDataSaveRequest,
-    ) -> dingtalkhrm__1__0_models.MasterDataSaveResponse:
+        request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.MasterDataSaveHeaders()
-        return await self.master_data_save_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.MasterDataQueryHeaders()
+        return await self.master_data_query_with_options_async(request, headers, runtime)
 
     def master_data_save_with_options(
         self,
@@ -547,9 +669,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=UtilClient.to_array(request.body)
         )
+        params = open_api_models.Params(
+            action='MasterDataSave',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/datas/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.MasterDataSaveResponse(),
-            self.do_roarequest('MasterDataSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/save', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def master_data_save_with_options_async(
@@ -572,26 +705,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=UtilClient.to_array(request.body)
         )
+        params = open_api_models.Params(
+            action='MasterDataSave',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/datas/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.MasterDataSaveResponse(),
-            await self.do_roarequest_async('MasterDataSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/masters/datas/save', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def master_data_tenant_quey(
+    def master_data_save(
         self,
-        request: dingtalkhrm__1__0_models.MasterDataTenantQueyRequest,
-    ) -> dingtalkhrm__1__0_models.MasterDataTenantQueyResponse:
+        request: dingtalkhrm__1__0_models.MasterDataSaveRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataSaveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders()
-        return self.master_data_tenant_quey_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.MasterDataSaveHeaders()
+        return self.master_data_save_with_options(request, headers, runtime)
 
-    async def master_data_tenant_quey_async(
+    async def master_data_save_async(
         self,
-        request: dingtalkhrm__1__0_models.MasterDataTenantQueyRequest,
-    ) -> dingtalkhrm__1__0_models.MasterDataTenantQueyResponse:
+        request: dingtalkhrm__1__0_models.MasterDataSaveRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataSaveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders()
-        return await self.master_data_tenant_quey_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.MasterDataSaveHeaders()
+        return await self.master_data_save_with_options_async(request, headers, runtime)
 
     def master_data_tenant_quey_with_options(
         self,
@@ -614,9 +758,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='MasterDataTenantQuey',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/tenants',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.MasterDataTenantQueyResponse(),
-            self.do_roarequest('MasterDataTenantQuey', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/masters/tenants', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def master_data_tenant_quey_with_options_async(
@@ -640,26 +795,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='MasterDataTenantQuey',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/tenants',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.MasterDataTenantQueyResponse(),
-            await self.do_roarequest_async('MasterDataTenantQuey', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/masters/tenants', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_custom_entry_processes(
+    def master_data_tenant_quey(
         self,
-        request: dingtalkhrm__1__0_models.QueryCustomEntryProcessesRequest,
-    ) -> dingtalkhrm__1__0_models.QueryCustomEntryProcessesResponse:
+        request: dingtalkhrm__1__0_models.MasterDataTenantQueyRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataTenantQueyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryCustomEntryProcessesHeaders()
-        return self.query_custom_entry_processes_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders()
+        return self.master_data_tenant_quey_with_options(request, headers, runtime)
 
-    async def query_custom_entry_processes_async(
+    async def master_data_tenant_quey_async(
         self,
-        request: dingtalkhrm__1__0_models.QueryCustomEntryProcessesRequest,
-    ) -> dingtalkhrm__1__0_models.QueryCustomEntryProcessesResponse:
+        request: dingtalkhrm__1__0_models.MasterDataTenantQueyRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataTenantQueyResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryCustomEntryProcessesHeaders()
-        return await self.query_custom_entry_processes_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders()
+        return await self.master_data_tenant_quey_with_options_async(request, headers, runtime)
 
     def query_custom_entry_processes_with_options(
         self,
@@ -684,9 +850,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCustomEntryProcesses',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/customEntryProcesses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryCustomEntryProcessesResponse(),
-            self.do_roarequest('QueryCustomEntryProcesses', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/customEntryProcesses', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_custom_entry_processes_with_options_async(
@@ -712,26 +889,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCustomEntryProcesses',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/customEntryProcesses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryCustomEntryProcessesResponse(),
-            await self.do_roarequest_async('QueryCustomEntryProcesses', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/customEntryProcesses', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_dismission_staff_id_list(
+    def query_custom_entry_processes(
         self,
-        request: dingtalkhrm__1__0_models.QueryDismissionStaffIdListRequest,
-    ) -> dingtalkhrm__1__0_models.QueryDismissionStaffIdListResponse:
+        request: dingtalkhrm__1__0_models.QueryCustomEntryProcessesRequest,
+    ) -> dingtalkhrm__1__0_models.QueryCustomEntryProcessesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryDismissionStaffIdListHeaders()
-        return self.query_dismission_staff_id_list_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryCustomEntryProcessesHeaders()
+        return self.query_custom_entry_processes_with_options(request, headers, runtime)
 
-    async def query_dismission_staff_id_list_async(
+    async def query_custom_entry_processes_async(
         self,
-        request: dingtalkhrm__1__0_models.QueryDismissionStaffIdListRequest,
-    ) -> dingtalkhrm__1__0_models.QueryDismissionStaffIdListResponse:
+        request: dingtalkhrm__1__0_models.QueryCustomEntryProcessesRequest,
+    ) -> dingtalkhrm__1__0_models.QueryCustomEntryProcessesResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryDismissionStaffIdListHeaders()
-        return await self.query_dismission_staff_id_list_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryCustomEntryProcessesHeaders()
+        return await self.query_custom_entry_processes_with_options_async(request, headers, runtime)
 
     def query_dismission_staff_id_list_with_options(
         self,
@@ -754,9 +942,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDismissionStaffIdList',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/employees/dismissions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryDismissionStaffIdListResponse(),
-            self.do_roarequest('QueryDismissionStaffIdList', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/employees/dismissions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_dismission_staff_id_list_with_options_async(
@@ -780,26 +979,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryDismissionStaffIdList',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/employees/dismissions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryDismissionStaffIdListResponse(),
-            await self.do_roarequest_async('QueryDismissionStaffIdList', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/employees/dismissions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_hrm_employee_dismission_info(
+    def query_dismission_staff_id_list(
         self,
-        request: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoRequest,
-    ) -> dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse:
+        request: dingtalkhrm__1__0_models.QueryDismissionStaffIdListRequest,
+    ) -> dingtalkhrm__1__0_models.QueryDismissionStaffIdListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoHeaders()
-        return self.query_hrm_employee_dismission_info_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryDismissionStaffIdListHeaders()
+        return self.query_dismission_staff_id_list_with_options(request, headers, runtime)
 
-    async def query_hrm_employee_dismission_info_async(
+    async def query_dismission_staff_id_list_async(
         self,
-        request: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoRequest,
-    ) -> dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse:
+        request: dingtalkhrm__1__0_models.QueryDismissionStaffIdListRequest,
+    ) -> dingtalkhrm__1__0_models.QueryDismissionStaffIdListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoHeaders()
-        return await self.query_hrm_employee_dismission_info_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryDismissionStaffIdListHeaders()
+        return await self.query_dismission_staff_id_list_with_options_async(request, headers, runtime)
 
     def query_hrm_employee_dismission_info_with_options(
         self,
@@ -824,9 +1034,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryHrmEmployeeDismissionInfo',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/employees/dimissionInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse(),
-            self.do_roarequest('QueryHrmEmployeeDismissionInfo', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/employees/dimissionInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_hrm_employee_dismission_info_with_options_async(
@@ -852,26 +1073,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryHrmEmployeeDismissionInfo',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/employees/dimissionInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse(),
-            await self.do_roarequest_async('QueryHrmEmployeeDismissionInfo', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/employees/dimissionInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_job_ranks(
+    def query_hrm_employee_dismission_info(
         self,
-        request: dingtalkhrm__1__0_models.QueryJobRanksRequest,
-    ) -> dingtalkhrm__1__0_models.QueryJobRanksResponse:
+        request: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoRequest,
+    ) -> dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryJobRanksHeaders()
-        return self.query_job_ranks_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoHeaders()
+        return self.query_hrm_employee_dismission_info_with_options(request, headers, runtime)
 
-    async def query_job_ranks_async(
+    async def query_hrm_employee_dismission_info_async(
         self,
-        request: dingtalkhrm__1__0_models.QueryJobRanksRequest,
-    ) -> dingtalkhrm__1__0_models.QueryJobRanksResponse:
+        request: dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoRequest,
+    ) -> dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryJobRanksHeaders()
-        return await self.query_job_ranks_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryHrmEmployeeDismissionInfoHeaders()
+        return await self.query_hrm_employee_dismission_info_with_options_async(request, headers, runtime)
 
     def query_job_ranks_with_options(
         self,
@@ -900,9 +1132,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryJobRanks',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/jobRanks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryJobRanksResponse(),
-            self.do_roarequest('QueryJobRanks', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/jobRanks', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_job_ranks_with_options_async(
@@ -932,26 +1175,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryJobRanks',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/jobRanks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryJobRanksResponse(),
-            await self.do_roarequest_async('QueryJobRanks', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/jobRanks', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_jobs(
+    def query_job_ranks(
         self,
-        request: dingtalkhrm__1__0_models.QueryJobsRequest,
-    ) -> dingtalkhrm__1__0_models.QueryJobsResponse:
+        request: dingtalkhrm__1__0_models.QueryJobRanksRequest,
+    ) -> dingtalkhrm__1__0_models.QueryJobRanksResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryJobsHeaders()
-        return self.query_jobs_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryJobRanksHeaders()
+        return self.query_job_ranks_with_options(request, headers, runtime)
 
-    async def query_jobs_async(
+    async def query_job_ranks_async(
         self,
-        request: dingtalkhrm__1__0_models.QueryJobsRequest,
-    ) -> dingtalkhrm__1__0_models.QueryJobsResponse:
+        request: dingtalkhrm__1__0_models.QueryJobRanksRequest,
+    ) -> dingtalkhrm__1__0_models.QueryJobRanksResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryJobsHeaders()
-        return await self.query_jobs_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryJobRanksHeaders()
+        return await self.query_job_ranks_with_options_async(request, headers, runtime)
 
     def query_jobs_with_options(
         self,
@@ -976,9 +1230,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryJobs',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/jobs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryJobsResponse(),
-            self.do_roarequest('QueryJobs', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/jobs', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_jobs_with_options_async(
@@ -1004,26 +1269,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryJobs',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/jobs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryJobsResponse(),
-            await self.do_roarequest_async('QueryJobs', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/jobs', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_positions(
+    def query_jobs(
         self,
-        request: dingtalkhrm__1__0_models.QueryPositionsRequest,
-    ) -> dingtalkhrm__1__0_models.QueryPositionsResponse:
+        request: dingtalkhrm__1__0_models.QueryJobsRequest,
+    ) -> dingtalkhrm__1__0_models.QueryJobsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryPositionsHeaders()
-        return self.query_positions_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryJobsHeaders()
+        return self.query_jobs_with_options(request, headers, runtime)
 
-    async def query_positions_async(
+    async def query_jobs_async(
         self,
-        request: dingtalkhrm__1__0_models.QueryPositionsRequest,
-    ) -> dingtalkhrm__1__0_models.QueryPositionsResponse:
+        request: dingtalkhrm__1__0_models.QueryJobsRequest,
+    ) -> dingtalkhrm__1__0_models.QueryJobsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.QueryPositionsHeaders()
-        return await self.query_positions_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryJobsHeaders()
+        return await self.query_jobs_with_options_async(request, headers, runtime)
 
     def query_positions_with_options(
         self,
@@ -1056,9 +1332,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryPositions',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/positions/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryPositionsResponse(),
-            self.do_roarequest('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/positions/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_positions_with_options_async(
@@ -1092,26 +1379,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryPositions',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/positions/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.QueryPositionsResponse(),
-            await self.do_roarequest_async('QueryPositions', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/positions/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def roster_meta_available_field_list(
+    def query_positions(
         self,
-        request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
-    ) -> dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse:
+        request: dingtalkhrm__1__0_models.QueryPositionsRequest,
+    ) -> dingtalkhrm__1__0_models.QueryPositionsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.RosterMetaAvailableFieldListHeaders()
-        return self.roster_meta_available_field_list_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryPositionsHeaders()
+        return self.query_positions_with_options(request, headers, runtime)
 
-    async def roster_meta_available_field_list_async(
+    async def query_positions_async(
         self,
-        request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
-    ) -> dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse:
+        request: dingtalkhrm__1__0_models.QueryPositionsRequest,
+    ) -> dingtalkhrm__1__0_models.QueryPositionsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.RosterMetaAvailableFieldListHeaders()
-        return await self.roster_meta_available_field_list_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.QueryPositionsHeaders()
+        return await self.query_positions_with_options_async(request, headers, runtime)
 
     def roster_meta_available_field_list_with_options(
         self,
@@ -1132,9 +1430,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='RosterMetaAvailableFieldList',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosters/meta/authorities/fields',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse(),
-            self.do_roarequest('RosterMetaAvailableFieldList', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/rosters/meta/authorities/fields', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def roster_meta_available_field_list_with_options_async(
@@ -1156,26 +1465,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='RosterMetaAvailableFieldList',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosters/meta/authorities/fields',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse(),
-            await self.do_roarequest_async('RosterMetaAvailableFieldList', 'hrm_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/hrm/rosters/meta/authorities/fields', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def roster_meta_field_options_update(
+    def roster_meta_available_field_list(
         self,
-        request: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,
-    ) -> dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse:
+        request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
+    ) -> dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateHeaders()
-        return self.roster_meta_field_options_update_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.RosterMetaAvailableFieldListHeaders()
+        return self.roster_meta_available_field_list_with_options(request, headers, runtime)
 
-    async def roster_meta_field_options_update_async(
+    async def roster_meta_available_field_list_async(
         self,
-        request: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,
-    ) -> dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse:
+        request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
+    ) -> dingtalkhrm__1__0_models.RosterMetaAvailableFieldListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateHeaders()
-        return await self.roster_meta_field_options_update_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.RosterMetaAvailableFieldListHeaders()
+        return await self.roster_meta_available_field_list_with_options_async(request, headers, runtime)
 
     def roster_meta_field_options_update_with_options(
         self,
@@ -1206,9 +1526,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RosterMetaFieldOptionsUpdate',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosters/meta/fields/options',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse(),
-            self.do_roarequest('RosterMetaFieldOptionsUpdate', 'hrm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/hrm/rosters/meta/fields/options', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def roster_meta_field_options_update_with_options_async(
@@ -1240,26 +1571,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RosterMetaFieldOptionsUpdate',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/rosters/meta/fields/options',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse(),
-            await self.do_roarequest_async('RosterMetaFieldOptionsUpdate', 'hrm_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/hrm/rosters/meta/fields/options', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def solution_task_init(
+    def roster_meta_field_options_update(
         self,
-        request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
-    ) -> dingtalkhrm__1__0_models.SolutionTaskInitResponse:
+        request: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,
+    ) -> dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.SolutionTaskInitHeaders()
-        return self.solution_task_init_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateHeaders()
+        return self.roster_meta_field_options_update_with_options(request, headers, runtime)
 
-    async def solution_task_init_async(
+    async def roster_meta_field_options_update_async(
         self,
-        request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
-    ) -> dingtalkhrm__1__0_models.SolutionTaskInitResponse:
+        request: dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateRequest,
+    ) -> dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.SolutionTaskInitHeaders()
-        return await self.solution_task_init_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateHeaders()
+        return await self.roster_meta_field_options_update_with_options_async(request, headers, runtime)
 
     def solution_task_init_with_options(
         self,
@@ -1298,9 +1640,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SolutionTaskInit',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/solutions/tasks/init',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskInitResponse(),
-            self.do_roarequest('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/init', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def solution_task_init_with_options_async(
@@ -1340,26 +1693,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SolutionTaskInit',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/solutions/tasks/init',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskInitResponse(),
-            await self.do_roarequest_async('SolutionTaskInit', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/init', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def solution_task_save(
+    def solution_task_init(
         self,
-        request: dingtalkhrm__1__0_models.SolutionTaskSaveRequest,
-    ) -> dingtalkhrm__1__0_models.SolutionTaskSaveResponse:
+        request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskInitResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.SolutionTaskSaveHeaders()
-        return self.solution_task_save_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.SolutionTaskInitHeaders()
+        return self.solution_task_init_with_options(request, headers, runtime)
 
-    async def solution_task_save_async(
+    async def solution_task_init_async(
         self,
-        request: dingtalkhrm__1__0_models.SolutionTaskSaveRequest,
-    ) -> dingtalkhrm__1__0_models.SolutionTaskSaveResponse:
+        request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskInitResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.SolutionTaskSaveHeaders()
-        return await self.solution_task_save_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.SolutionTaskInitHeaders()
+        return await self.solution_task_init_with_options_async(request, headers, runtime)
 
     def solution_task_save_with_options(
         self,
@@ -1404,9 +1768,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SolutionTaskSave',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/solutions/tasks/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskSaveResponse(),
-            self.do_roarequest('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def solution_task_save_with_options_async(
@@ -1452,26 +1827,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SolutionTaskSave',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/solutions/tasks/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SolutionTaskSaveResponse(),
-            await self.do_roarequest_async('SolutionTaskSave', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/save', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def sync_task_template(
+    def solution_task_save(
         self,
-        request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,
-    ) -> dingtalkhrm__1__0_models.SyncTaskTemplateResponse:
+        request: dingtalkhrm__1__0_models.SolutionTaskSaveRequest,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskSaveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
-        return self.sync_task_template_with_options(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.SolutionTaskSaveHeaders()
+        return self.solution_task_save_with_options(request, headers, runtime)
 
-    async def sync_task_template_async(
+    async def solution_task_save_async(
         self,
-        request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,
-    ) -> dingtalkhrm__1__0_models.SyncTaskTemplateResponse:
+        request: dingtalkhrm__1__0_models.SolutionTaskSaveRequest,
+    ) -> dingtalkhrm__1__0_models.SolutionTaskSaveResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
-        return await self.sync_task_template_with_options_async(request, headers, runtime)
+        headers = dingtalkhrm__1__0_models.SolutionTaskSaveHeaders()
+        return await self.solution_task_save_with_options_async(request, headers, runtime)
 
     def sync_task_template_with_options(
         self,
@@ -1510,9 +1896,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SyncTaskTemplate',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/solutions/tasks/templates/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SyncTaskTemplateResponse(),
-            self.do_roarequest('SyncTaskTemplate', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/templates/sync', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def sync_task_template_with_options_async(
@@ -1552,7 +1949,34 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SyncTaskTemplate',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/solutions/tasks/templates/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkhrm__1__0_models.SyncTaskTemplateResponse(),
-            await self.do_roarequest_async('SyncTaskTemplate', 'hrm_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/hrm/solutions/tasks/templates/sync', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def sync_task_template(
+        self,
+        request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,
+    ) -> dingtalkhrm__1__0_models.SyncTaskTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
+        return self.sync_task_template_with_options(request, headers, runtime)
+
+    async def sync_task_template_async(
+        self,
+        request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,
+    ) -> dingtalkhrm__1__0_models.SyncTaskTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
+        return await self.sync_task_template_with_options_async(request, headers, runtime)

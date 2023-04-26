@@ -69,61 +69,33 @@ class EditContactRequestData(TeaModel):
         lxr_weixin: str = None,
         lxr_worktel: str = None,
     ):
-        # 创建人
         self.data_userid = data_userid
-        # 住址
         self.lxr_address = lxr_address
-        # 生日
         self.lxr_birthday = lxr_birthday
-        # 称谓
         self.lxr_chengwei = lxr_chengwei
-        # 证件号码
         self.lxr_ctnumber = lxr_ctnumber
-        # 证件类型
         self.lxr_cttype = lxr_cttype
-        # 对应客户
         self.lxr_customerid = lxr_customerid
-        # 部门
         self.lxr_department = lxr_department
-        # 钉钉号
         self.lxr_dingtalk = lxr_dingtalk
-        # Email
         self.lxr_email = lxr_email
-        # 传真
         self.lxr_fax = lxr_fax
-        # 分类
         self.lxr_group = lxr_group
-        # 手机
         self.lxr_handset = lxr_handset
-        # 职务
         self.lxr_headship = lxr_headship
-        # 爱好
         self.lxr_like = lxr_like
-        # 姓名
         self.lxr_name = lxr_name
-        # 联系名片
         self.lxr_photo = lxr_photo
-        # 负责业务
         self.lxr_preside = lxr_preside
-        # 邮编
         self.lxr_pst = lxr_pst
-        # QQ
         self.lxr_qq = lxr_qq
-        # 备注
         self.lxr_remark = lxr_remark
-        # 性别（男，女）
         self.lxr_sex = lxr_sex
-        # Skype
         self.lxr_skype = lxr_skype
-        # 家庭电话
         self.lxr_tel = lxr_tel
-        # 类型（联系人，主联系人）
         self.lxr_type = lxr_type
-        # 旺旺
         self.lxr_wangwang = lxr_wangwang
-        # 微信号
         self.lxr_weixin = lxr_weixin
-        # 工作电话
         self.lxr_worktel = lxr_worktel
 
     def validate(self):
@@ -262,13 +234,9 @@ class EditContactRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写197
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -311,9 +279,7 @@ class EditContactResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -344,13 +310,16 @@ class EditContactResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditContactResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -363,6 +332,8 @@ class EditContactResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -371,6 +342,8 @@ class EditContactResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditContactResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -462,101 +435,53 @@ class EditCustomerRequestData(TeaModel):
         kh_weixin: str = None,
         kh_worktel: str = None,
     ):
-        # 创建人
         self.data_userid = data_userid
-        # 家庭地址
         self.kh_address = kh_address
-        # 称谓
         self.kh_appellation = kh_appellation
-        # 爱好
         self.kh_befontof = kh_befontof
-        # 开票资料
         self.kh_billinfo = kh_billinfo
-        # 城市
         self.kh_city = kh_city
-        # 类别（企业客户，个人客户，供应商，个人供应商）
         self.kh_class = kh_class
-        # 单位地址
         self.kh_coaddress = kh_coaddress
-        # 联系人分类
         self.kh_contype = kh_contype
-        # 国家地区
         self.kh_country = kh_country
-        # 信用等级（低，中，高）
         self.kh_creditgrade = kh_creditgrade
-        # 证件号码
         self.kh_ctnumber = kh_ctnumber
-        # 证件类型
         self.kh_cttype = kh_cttype
-        # 部门
         self.kh_department = kh_department
-        # 钉钉号
         self.kh_dingtalk = kh_dingtalk
-        # 邮箱
         self.kh_email = kh_email
-        # 人员规模
         self.kh_employees = kh_employees
-        # 传真
         self.kh_fax = kh_fax
-        # 来源
         self.kh_from = kh_from
-        # 手机
         self.kh_handset = kh_handset
-        # 职务
         self.kh_headship = kh_headship
-        # 热点分类
         self.kh_hotfl = kh_hotfl
-        # 热度（无，低热，中热，高热）
         self.kh_hotlevel = kh_hotlevel
-        # 热点说明
         self.kh_hotmemo = kh_hotmemo
-        # 热点客户（是，否）
         self.kh_hottype = kh_hottype
-        # 行业
         self.kh_industry = kh_industry
-        # 公司简介
         self.kh_info = kh_info
-        # 客户级别
         self.kh_jibie = kh_jibie
-        # 客户名称
         self.kh_name = kh_name
-        # 上级客户
         self.kh_pkhid = kh_pkhid
-        # 负责业务
         self.kh_preside = kh_preside
-        # 省份
         self.kh_province = kh_province
-        # 邮编
         self.kh_pst = kh_pst
-        # QQ
         self.kh_qq = kh_qq
-        # 关系等级
         self.kh_ralagrade = kh_ralagrade
-        # 备注
         self.kh_remark = kh_remark
-        # 性别（男，女）
         self.kh_sex = kh_sex
-        # 助记简称
         self.kh_shortname = kh_shortname
-        # Skype
         self.kh_skype = kh_skype
-        # 编号
         self.kh_sn = kh_sn
-        # 阶段
         self.kh_status = kh_status
-        # 家庭电话
         self.kh_tel = kh_tel
-        # 种类
         self.kh_type = kh_type
-        # 价值评估（低，中，高）
         self.kh_valrating = kh_valrating
-        # 旺旺
         self.kh_wangwang = kh_wangwang
-        # 网址
         self.kh_web = kh_web
-        # 微信号
         self.kh_weixin = kh_weixin
-        # 工作电话
         self.kh_worktel = kh_worktel
 
     def validate(self):
@@ -775,13 +700,9 @@ class EditCustomerRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写148
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -824,9 +745,7 @@ class EditCustomerResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -857,13 +776,16 @@ class EditCustomerResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditCustomerResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -876,6 +798,8 @@ class EditCustomerResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -884,6 +808,8 @@ class EditCustomerResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditCustomerResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -976,103 +902,54 @@ class EditCustomerPoolRequestData(TeaModel):
         kh_weixin: str = None,
         kh_worktel: str = None,
     ):
-        # 创建人
         self.data_userid = data_userid
-        # 家庭地址
         self.kh_address = kh_address
-        # 称谓
         self.kh_appellation = kh_appellation
-        # 爱好
         self.kh_befontof = kh_befontof
-        # 开票资料
         self.kh_billinfo = kh_billinfo
-        # 城市
         self.kh_city = kh_city
-        # 类别（企业客户，个人客户，供应商，个人供应商）
         self.kh_class = kh_class
-        # 单位地址
         self.kh_coaddress = kh_coaddress
-        # 联系人分类
         self.kh_contype = kh_contype
-        # 国家地区
         self.kh_country = kh_country
-        # 信用等级（低，中，高）
         self.kh_creditgrade = kh_creditgrade
-        # 证件号码
         self.kh_ctnumber = kh_ctnumber
-        # 证件类型
         self.kh_cttype = kh_cttype
-        # 部门
         self.kh_department = kh_department
-        # 钉钉号
         self.kh_dingtalk = kh_dingtalk
-        # 邮箱
         self.kh_email = kh_email
-        # 人员规模
         self.kh_employees = kh_employees
-        # 传真
         self.kh_fax = kh_fax
-        # 来源
         self.kh_from = kh_from
-        # 最后跟踪
         self.kh_genzongtime = kh_genzongtime
-        # 手机
         self.kh_handset = kh_handset
-        # 职务
         self.kh_headship = kh_headship
-        # 热点分类
         self.kh_hotfl = kh_hotfl
-        # 热度（无，低热，中热，高热）
         self.kh_hotlevel = kh_hotlevel
-        # 热点说明
         self.kh_hotmemo = kh_hotmemo
-        # 热点客户（是，否）
         self.kh_hottype = kh_hottype
-        # 行业
         self.kh_industry = kh_industry
-        # 公司简介
         self.kh_info = kh_info
-        # 客户级别
         self.kh_jibie = kh_jibie
-        # 客户名称
         self.kh_name = kh_name
-        # 上级客户
         self.kh_pkhid = kh_pkhid
-        # 负责业务
         self.kh_preside = kh_preside
-        # 省份
         self.kh_province = kh_province
-        # 邮编
         self.kh_pst = kh_pst
-        # QQ
         self.kh_qq = kh_qq
-        # 关系等级
         self.kh_ralagrade = kh_ralagrade
-        # 备注
         self.kh_remark = kh_remark
-        # 性别（男，女）
         self.kh_sex = kh_sex
-        # 助记简称
         self.kh_shortname = kh_shortname
-        # Skype
         self.kh_skype = kh_skype
-        # 编号
         self.kh_sn = kh_sn
-        # 阶段
         self.kh_status = kh_status
-        # 家庭电话
         self.kh_tel = kh_tel
-        # 种类
         self.kh_type = kh_type
-        # 价值评估（低，中，高）
         self.kh_valrating = kh_valrating
-        # 旺旺
         self.kh_wangwang = kh_wangwang
-        # 网址
         self.kh_web = kh_web
-        # 微信号
         self.kh_weixin = kh_weixin
-        # 工作电话
         self.kh_worktel = kh_worktel
 
     def validate(self):
@@ -1295,13 +1172,9 @@ class EditCustomerPoolRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写238
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -1344,9 +1217,7 @@ class EditCustomerPoolResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -1377,13 +1248,16 @@ class EditCustomerPoolResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditCustomerPoolResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1396,6 +1270,8 @@ class EditCustomerPoolResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1404,6 +1280,8 @@ class EditCustomerPoolResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditCustomerPoolResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1463,37 +1341,21 @@ class EditExchangeRequestData(TeaModel):
         hh_title: str = None,
         hh_type: str = None,
     ):
-        # 产品明细，json格式
         self.child_mx = child_mx
-        # 创建人
         self.data_userid = data_userid
-        # 对应客户
         self.hh_customerid = hh_customerid
-        # 换货日期
         self.hh_date = hh_date
-        # 换入操作员
         self.hh_inempid = hh_inempid
-        # 换入仓库
         self.hh_inlibid = hh_inlibid
-        # 换入时间
         self.hh_intime = hh_intime
-        # 换货单号
         self.hh_number = hh_number
-        # 合同/订单
         self.hh_orderid = hh_orderid
-        # 换出操作员
         self.hh_outempid = hh_outempid
-        # 换出仓库
         self.hh_outlibid = hh_outlibid
-        # 换出时间
         self.hh_outtime = hh_outtime
-        # 备注
         self.hh_remark = hh_remark
-        # 状态（未执行，已入待出，已出待入，结束）
         self.hh_state = hh_state
-        # 主题
         self.hh_title = hh_title
-        # 分类
         self.hh_type = hh_type
 
     def validate(self):
@@ -1584,13 +1446,9 @@ class EditExchangeRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写228
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -1633,9 +1491,7 @@ class EditExchangeResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -1666,13 +1522,16 @@ class EditExchangeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditExchangeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1685,6 +1544,8 @@ class EditExchangeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1693,6 +1554,8 @@ class EditExchangeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditExchangeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1765,63 +1628,34 @@ class EditGoodsRequestData(TeaModel):
         typeid: str = None,
         unitrate: str = None,
     ):
-        # 上架时间
         self.addedtime = addedtime
-        # 成本价格
         self.cbprice = cbprice
-        # 基准产品
         self.cp_parentid = cp_parentid
-        # 产品产地
         self.cparea = cparea
-        # 条形码
         self.cpbarcode = cpbarcode
-        # 产品品牌
         self.cpbrand = cpbrand
-        # 产品说明
         self.cpcontent = cpcontent
-        # 产品规格
         self.cpguige = cpguige
-        # 产品图片
         self.cpimg = cpimg
-        # 产品名称
         self.cpname = cpname
-        # 产品编号
         self.cpno = cpno
-        # 产品备注
         self.cpremark = cpremark
-        # 产品型号
         self.cptype = cptype
-        # 产品单位
         self.cpunit = cpunit
-        # 产品重量
         self.cpweight = cpweight
-        # 创建人
         self.data_userid = data_userid
-        # 默认供应商
         self.gysid = gysid
-        # 批次号管理（是，否）
         self.ispicimanage = ispicimanage
-        # 序列号管理（是，否）
         self.issnmanage = issnmanage
-        # 是否算库存（计算，不计算，计算(按基准规格)）
         self.isstock = isstock
-        # 产品状态（正常，停售，下架）
         self.isstop = isstop
-        # 零售价格
         self.preprice_1 = preprice_1
-        # 预设价格1
         self.preprice_2 = preprice_2
-        # 预设价格2
         self.preprice_3 = preprice_3
-        # 预设价格3
         self.preprice_4 = preprice_4
-        # 库存下限
         self.stockdown = stockdown
-        # 库存上限
         self.stockup = stockup
-        # 产品类别
         self.typeid = typeid
-        # 单位换算
         self.unitrate = unitrate
 
     def validate(self):
@@ -1964,13 +1798,9 @@ class EditGoodsRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写154
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -2013,9 +1843,7 @@ class EditGoodsResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -2046,13 +1874,16 @@ class EditGoodsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditGoodsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2065,6 +1896,8 @@ class EditGoodsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2073,6 +1906,8 @@ class EditGoodsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditGoodsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2130,33 +1965,19 @@ class EditIntostockRequestData(TeaModel):
         remark: str = None,
         stocklibid: str = None,
     ):
-        # 入库申请人
         self.askempid = askempid
-        # 入库备注
         self.auditreson = auditreson
-        # 入库单号
         self.billno = billno
-        # 产品明细，json格式
         self.child_mx = child_mx
-        # 供应商/客户
         self.customerid = customerid
-        # 创建人
         self.data_userid = data_userid
-        # 入库经办人
         self.empid = empid
-        # 单据类型（入库，销售退货，生产退料，生产入库，维修退货）
         self.inorout = inorout
-        # 入库日期
         self.libiodate = libiodate
-        # 入库主题
         self.libioname = libioname
-        # 入库状态（未入库，已入库）
         self.libiostate = libiostate
-        # 对应单据
         self.orderid = orderid
-        # 申请备注
         self.remark = remark
-        # 入库仓库
         self.stocklibid = stocklibid
 
     def validate(self):
@@ -2239,13 +2060,9 @@ class EditIntostockRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写189
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -2288,9 +2105,7 @@ class EditIntostockResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -2321,13 +2136,16 @@ class EditIntostockResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditIntostockResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2340,6 +2158,8 @@ class EditIntostockResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2348,6 +2168,8 @@ class EditIntostockResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditIntostockResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2414,51 +2236,28 @@ class EditInvoiceRequestData(TeaModel):
         fh_title: str = None,
         fh_yunfei: str = None,
     ):
-        # 产品明细，json格式
         self.child_mx = child_mx
-        # 创建人
         self.data_userid = data_userid
-        # 地址
         self.fh_address = fh_address
-        # 对应客户
         self.fh_customerid = fh_customerid
-        # 发货日期
         self.fh_date = fh_date
-        # Email
         self.fh_email = fh_email
-        # 手机
         self.fh_handset = fh_handset
-        # 对应订单
         self.fh_htorder = fh_htorder
-        # 打包件数
         self.fh_jianshu = fh_jianshu
-        # 重量(Kg)
         self.fh_kg = fh_kg
-        # 收货人
         self.fh_linkman = fh_linkman
-        # 联系人
         self.fh_lxrid = fh_lxrid
-        # 发货方式
         self.fh_mode = fh_mode
-        # MSN
         self.fh_msn = fh_msn
-        # 发货单号
         self.fh_number = fh_number
-        # 邮编
         self.fh_post = fh_post
-        # 所有者
         self.fh_preside = fh_preside
-        # 备注
         self.fh_remark = fh_remark
-        # 发货人
         self.fh_shipper = fh_shipper
-        # 发货状态
         self.fh_state = fh_state
-        # 电话
         self.fh_tel = fh_tel
-        # 发货主题
         self.fh_title = fh_title
-        # 运费
         self.fh_yunfei = fh_yunfei
 
     def validate(self):
@@ -2577,13 +2376,9 @@ class EditInvoiceRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写169
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -2626,9 +2421,7 @@ class EditInvoiceResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -2659,13 +2452,16 @@ class EditInvoiceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditInvoiceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2678,6 +2474,8 @@ class EditInvoiceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2686,6 +2484,8 @@ class EditInvoiceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditInvoiceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2759,65 +2559,35 @@ class EditOrderRequestData(TeaModel):
         ht_xshid: str = None,
         ht_yunfeimoney: str = None,
     ):
-        # 产品明细，json格式
         self.child_mx = child_mx
-        # 创建人
         self.data_userid = data_userid
-        # 收货地址
         self.fahuoaddressid = fahuoaddressid
-        # 开始日期
         self.ht_begindate = ht_begindate
-        # 合同正文
         self.ht_contract = ht_contract
-        # 对应客户
         self.ht_customerid = ht_customerid
-        # 客户签约人
         self.ht_cusub = ht_cusub
-        # 签单日期
         self.ht_date = ht_date
-        # 交付地点
         self.ht_deliplace = ht_deliplace
-        # 最晚发货日
         self.ht_enddate = ht_enddate
-        # 附加费用金额
         self.ht_fjmoney = ht_fjmoney
-        # 附加费用分类
         self.ht_fjmoneylx = ht_fjmoneylx
-        # 优惠抹零金额
         self.ht_kjmoney = ht_kjmoney
-        # 对应联系人
         self.ht_lxrid = ht_lxrid
-        # 联系方式
         self.ht_lxrinfo = ht_lxrinfo
-        # 优惠折扣率
         self.ht_moneyzhekou = ht_moneyzhekou
-        # 合同单号
         self.ht_number = ht_number
-        # 单据类型（合同，合同订单，店面单）
         self.ht_order = ht_order
-        # 付款方式
         self.ht_paymode = ht_paymode
-        # 所有者
         self.ht_preside = ht_preside
-        # 备注
         self.ht_remark = ht_remark
-        # 状态
         self.ht_state = ht_state
-        # 外币备注
         self.ht_summemo = ht_summemo
-        # 总金额
         self.ht_summoney = ht_summoney
-        # 主题
         self.ht_title = ht_title
-        # 分类
         self.ht_type = ht_type
-        # 我方签约人
         self.ht_wesub = ht_wesub
-        # 发货方式
         self.ht_wuliutype = ht_wuliutype
-        # 对应机会
         self.ht_xshid = ht_xshid
-        # 预计运费
         self.ht_yunfeimoney = ht_yunfeimoney
 
     def validate(self):
@@ -2964,13 +2734,9 @@ class EditOrderRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写150
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -3013,9 +2779,7 @@ class EditOrderResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -3046,13 +2810,16 @@ class EditOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3065,6 +2832,8 @@ class EditOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3073,6 +2842,8 @@ class EditOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3130,33 +2901,19 @@ class EditOutstockRequestData(TeaModel):
         remark: str = None,
         stocklibid: str = None,
     ):
-        # 申请人
         self.askempid = askempid
-        # 出库备注
         self.auditreson = auditreson
-        # 出库单号
         self.billno = billno
-        # 产品明细，json格式
         self.child_mx = child_mx
-        # 对应客户
         self.customerid = customerid
-        # 创建人
         self.data_userid = data_userid
-        # 经办人
         self.empid = empid
-        # 单据类型
         self.inorout = inorout
-        # 出库日期
         self.libiodate = libiodate
-        # 出库主题
         self.libioname = libioname
-        # 出库状态
         self.libiostate = libiostate
-        # 对应订单
         self.orderid = orderid
-        # 申请备注
         self.remark = remark
-        # 出库仓库
         self.stocklibid = stocklibid
 
     def validate(self):
@@ -3239,13 +2996,9 @@ class EditOutstockRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写191
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -3288,9 +3041,7 @@ class EditOutstockResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -3321,13 +3072,16 @@ class EditOutstockResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditOutstockResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3340,6 +3094,8 @@ class EditOutstockResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3348,6 +3104,8 @@ class EditOutstockResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditOutstockResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3404,31 +3162,18 @@ class EditProductionRequestData(TeaModel):
         sch_statesstr: str = None,
         sch_title: str = None,
     ):
-        # 创建人
         self.data_userid = data_userid
-        # 对应客户
         self.sch_customerid = sch_customerid
-        # 完成日期
         self.sch_endtime = sch_endtime
-        # 状态（未生产，生产中，生产中止，生产完成）
         self.sch_finished = sch_finished
-        # 订单
         self.sch_htid = sch_htid
-        # 生产人员
         self.sch_makeemp = sch_makeemp
-        # 单号
         self.sch_number = sch_number
-        # 计划完成
         self.sch_planendtime = sch_planendtime
-        # 负责人
         self.sch_principal = sch_principal
-        # 备注
         self.sch_remark = sch_remark
-        # 开始日期
         self.sch_starttime = sch_starttime
-        # 阶段（计划，审核，领料，生产，验收，入库/退料，结单，取消）
         self.sch_statesstr = sch_statesstr
-        # 主题
         self.sch_title = sch_title
 
     def validate(self):
@@ -3507,13 +3252,9 @@ class EditProductionRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写156
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -3556,9 +3297,7 @@ class EditProductionResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -3589,13 +3328,16 @@ class EditProductionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditProductionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3608,6 +3350,8 @@ class EditProductionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3616,6 +3360,8 @@ class EditProductionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditProductionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3679,45 +3425,25 @@ class EditPurchaseRequestData(TeaModel):
         order_khid: str = None,
         summoney: str = None,
     ):
-        # 附加费用金额
         self.cg_fjmoney = cg_fjmoney
-        # 附加费用分类
         self.cg_fjmoneylx = cg_fjmoneylx
-        # 优惠抹零金额
         self.cg_kjmoney = cg_kjmoney
-        # 优惠折扣率
         self.cg_moneyzhekou = cg_moneyzhekou
-        # 执行状态
         self.cg_zxstate = cg_zxstate
-        # 采购日期
         self.cgdate = cgdate
-        # 采购主题
         self.cgname = cgname
-        # 采购单号
         self.cgno = cgno
-        # 采购摘要
         self.cgremark = cgremark
-        # 采购分类
         self.cgtype = cgtype
-        # 产品明细，json格式
         self.child_mx = child_mx
-        # 创建人
         self.data_userid = data_userid
-        # 我方代表
         self.empid = empid
-        # 供应商联系人
         self.gys_lxrid = gys_lxrid
-        # 联系方式
         self.gys_lxrinfo = gys_lxrinfo
-        # 供应商
         self.gysid = gysid
-        # 供应商代表
         self.gysjingban = gysjingban
-        # 关联订单
         self.order_htid = order_htid
-        # 关联订单客户
         self.order_khid = order_khid
-        # 采购金额
         self.summoney = summoney
 
     def validate(self):
@@ -3824,13 +3550,9 @@ class EditPurchaseRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写153
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -3873,9 +3595,7 @@ class EditPurchaseResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -3906,13 +3626,16 @@ class EditPurchaseResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditPurchaseResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3925,6 +3648,8 @@ class EditPurchaseResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3933,6 +3658,8 @@ class EditPurchaseResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditPurchaseResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3996,45 +3723,25 @@ class EditQuotationRecordRequestData(TeaModel):
         child_mx: str = None,
         data_userid: str = None,
     ):
-        # 报价人
         self.bj_bjren = bj_bjren
-        # 包装运输
         self.bj_bzremark = bj_bzremark
-        # 对应客户
         self.bj_customerid = bj_customerid
-        # 报价日期
         self.bj_date = bj_date
-        # 附加费用金额
         self.bj_fjmoney = bj_fjmoney
-        # 附加费用分类
         self.bj_fjmoneylx = bj_fjmoneylx
-        # 付款说明
         self.bj_fkremark = bj_fkremark
-        # 交付说明
         self.bj_jfremark = bj_jfremark
-        # 接收人
         self.bj_jshren = bj_jshren
-        # 优惠抹零金额
         self.bj_kjmoney = bj_kjmoney
-        # 联系方式
         self.bj_lianxi = bj_lianxi
-        # 优惠折扣率
         self.bj_moneyzhekou = bj_moneyzhekou
-        # 报价单号
         self.bj_number = bj_number
-        # 报价(总)
         self.bj_price = bj_price
-        # 备注
         self.bj_remark = bj_remark
-        # 转成订单
         self.bj_state = bj_state
-        # 主题
         self.bj_title = bj_title
-        # 对应机会
         self.bj_xshid = bj_xshid
-        # 产品明细，json格式
         self.child_mx = child_mx
-        # 创建人
         self.data_userid = data_userid
 
     def validate(self):
@@ -4141,13 +3848,9 @@ class EditQuotationRecordRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写161
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -4190,9 +3893,7 @@ class EditQuotationRecordResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -4223,13 +3924,16 @@ class EditQuotationRecordResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditQuotationRecordResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4242,6 +3946,8 @@ class EditQuotationRecordResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4250,6 +3956,8 @@ class EditQuotationRecordResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditQuotationRecordResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4312,43 +4020,24 @@ class EditSalesRequestData(TeaModel):
         xsh_title: str = None,
         xsh_type: str = None,
     ):
-        # 创建人
         self.data_userid = data_userid
-        # 对应客户
         self.xsh_customerid = xsh_customerid
-        # 发现时间
         self.xsh_date = xsh_date
-        # 预计签单日
         self.xsh_expdate = xsh_expdate
-        # 预期金额
         self.xsh_expmoney = xsh_expmoney
-        # 来源
         self.xsh_from = xsh_from
-        # 可能性
         self.xsh_knx = xsh_knx
-        # 联系方式
         self.xsh_lianxi = xsh_lianxi
-        # 联系人
         self.xsh_lxrid = xsh_lxrid
-        # 外币备注
         self.xsh_moneynote = xsh_moneynote
-        # 机会编号
         self.xsh_number = xsh_number
-        # 阶段
         self.xsh_phase = xsh_phase
-        # 阶段备注
         self.xsh_phasenote = xsh_phasenote
-        # 所有者
         self.xsh_preside = xsh_preside
-        # 提供人
         self.xsh_provider = xsh_provider
-        # 客户需求
         self.xsh_require = xsh_require
-        # 状态
         self.xsh_state = xsh_state
-        # 主题
         self.xsh_title = xsh_title
-        # 类型
         self.xsh_type = xsh_type
 
     def validate(self):
@@ -4451,13 +4140,9 @@ class EditSalesRequest(TeaModel):
         msgid: int = None,
         stamp: int = None,
     ):
-        # 编辑数据
         self.data = data
-        # 数据类型，固定填写158
         self.datatype = datatype
-        # 数据id，不填或者填0为新增数据
         self.msgid = msgid
-        # 时间戳
         self.stamp = stamp
 
     def validate(self):
@@ -4500,9 +4185,7 @@ class EditSalesResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
-        # 编辑数据的id
         self.msgid = msgid
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -4533,13 +4216,16 @@ class EditSalesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: EditSalesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4552,6 +4238,8 @@ class EditSalesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4560,6 +4248,8 @@ class EditSalesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EditSalesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4606,11 +4296,8 @@ class GetDataListRequest(TeaModel):
         page: int = None,
         pagesize: int = None,
     ):
-        # 数据类型，参考数据类型ID对照表
         self.datatype = datatype
-        # 页码
         self.page = page
-        # 分页条数
         self.pagesize = pagesize
 
     def validate(self):
@@ -4678,17 +4365,11 @@ class GetDataListResponseBody(TeaModel):
         time: str = None,
         total_count: int = None,
     ):
-        # 数据列表
         self.data = data
-        # 字段明细
         self.dataname = dataname
-        # 当前页码
         self.page = page
-        # 分页条数
         self.page_size = page_size
-        # 响应时间
         self.time = time
-        # 总条数
         self.total_count = total_count
 
     def validate(self):
@@ -4743,13 +4424,16 @@ class GetDataListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDataListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4762,6 +4446,8 @@ class GetDataListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4770,6 +4456,8 @@ class GetDataListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDataListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4815,9 +4503,7 @@ class GetDataViewRequest(TeaModel):
         datatype: str = None,
         msgid: int = None,
     ):
-        # 数据类型，参考数据类型ID对照表
         self.datatype = datatype
-        # 数据id
         self.msgid = msgid
 
     def validate(self):
@@ -4849,7 +4535,6 @@ class GetDataViewResponseBodyData(TeaModel):
         self,
         detail: Dict[str, str] = None,
     ):
-        # 数据详情
         self.detail = detail
 
     def validate(self):
@@ -4880,9 +4565,7 @@ class GetDataViewResponseBody(TeaModel):
         time: str = None,
     ):
         self.data = data
-        # 字段明细
         self.dataname = dataname
-        # 响应时间
         self.time = time
 
     def validate(self):
@@ -4919,13 +4602,16 @@ class GetDataViewResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDataViewResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4938,6 +4624,8 @@ class GetDataViewResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4946,6 +4634,8 @@ class GetDataViewResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDataViewResponseBody()
             self.body = temp_model.from_map(m['body'])

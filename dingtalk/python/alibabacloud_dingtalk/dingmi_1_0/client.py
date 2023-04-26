@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.dingmi_1_0 import models as dingtalkdingmi__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_robot_instance_to_group(
-        self,
-        request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
-    ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders()
-        return self.add_robot_instance_to_group_with_options(request, headers, runtime)
-
-    async def add_robot_instance_to_group_async(
-        self,
-        request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
-    ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders()
-        return await self.add_robot_instance_to_group_with_options_async(request, headers, runtime)
 
     def add_robot_instance_to_group_with_options(
         self,
@@ -60,9 +50,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddRobotInstanceToGroup',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/intelligentRobots/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse(),
-            self.do_roarequest('AddRobotInstanceToGroup', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/intelligentRobots/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_robot_instance_to_group_with_options_async(
@@ -86,26 +87,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddRobotInstanceToGroup',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/intelligentRobots/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse(),
-            await self.do_roarequest_async('AddRobotInstanceToGroup', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/intelligentRobots/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def ask_robot(
+    def add_robot_instance_to_group(
         self,
-        request: dingtalkdingmi__1__0_models.AskRobotRequest,
-    ) -> dingtalkdingmi__1__0_models.AskRobotResponse:
+        request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
+    ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.AskRobotHeaders()
-        return self.ask_robot_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders()
+        return self.add_robot_instance_to_group_with_options(request, headers, runtime)
 
-    async def ask_robot_async(
+    async def add_robot_instance_to_group_async(
         self,
-        request: dingtalkdingmi__1__0_models.AskRobotRequest,
-    ) -> dingtalkdingmi__1__0_models.AskRobotResponse:
+        request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
+    ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.AskRobotHeaders()
-        return await self.ask_robot_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders()
+        return await self.add_robot_instance_to_group_with_options_async(request, headers, runtime)
 
     def ask_robot_with_options(
         self,
@@ -132,9 +144,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AskRobot',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/robots/ask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.AskRobotResponse(),
-            self.do_roarequest('AskRobot', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/robots/ask', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def ask_robot_with_options_async(
@@ -162,26 +185,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AskRobot',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/robots/ask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.AskRobotResponse(),
-            await self.do_roarequest_async('AskRobot', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/robots/ask', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_ding_me_base_data(
+    def ask_robot(
         self,
-        request: dingtalkdingmi__1__0_models.GetDingMeBaseDataRequest,
-    ) -> dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse:
+        request: dingtalkdingmi__1__0_models.AskRobotRequest,
+    ) -> dingtalkdingmi__1__0_models.AskRobotResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.GetDingMeBaseDataHeaders()
-        return self.get_ding_me_base_data_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.AskRobotHeaders()
+        return self.ask_robot_with_options(request, headers, runtime)
 
-    async def get_ding_me_base_data_async(
+    async def ask_robot_async(
         self,
-        request: dingtalkdingmi__1__0_models.GetDingMeBaseDataRequest,
-    ) -> dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse:
+        request: dingtalkdingmi__1__0_models.AskRobotRequest,
+    ) -> dingtalkdingmi__1__0_models.AskRobotResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.GetDingMeBaseDataHeaders()
-        return await self.get_ding_me_base_data_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.AskRobotHeaders()
+        return await self.ask_robot_with_options_async(request, headers, runtime)
 
     def get_ding_me_base_data_with_options(
         self,
@@ -208,9 +242,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDingMeBaseData',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/robots/data',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse(),
-            self.do_roarequest('GetDingMeBaseData', 'dingmi_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/dingmi/robots/data', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_ding_me_base_data_with_options_async(
@@ -238,26 +283,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetDingMeBaseData',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/robots/data',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse(),
-            await self.do_roarequest_async('GetDingMeBaseData', 'dingmi_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/dingmi/robots/data', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_intelligent_robot_info(
+    def get_ding_me_base_data(
         self,
-        request: dingtalkdingmi__1__0_models.GetIntelligentRobotInfoRequest,
-    ) -> dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse:
+        request: dingtalkdingmi__1__0_models.GetDingMeBaseDataRequest,
+    ) -> dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.GetIntelligentRobotInfoHeaders()
-        return self.get_intelligent_robot_info_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.GetDingMeBaseDataHeaders()
+        return self.get_ding_me_base_data_with_options(request, headers, runtime)
 
-    async def get_intelligent_robot_info_async(
+    async def get_ding_me_base_data_async(
         self,
-        request: dingtalkdingmi__1__0_models.GetIntelligentRobotInfoRequest,
-    ) -> dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse:
+        request: dingtalkdingmi__1__0_models.GetDingMeBaseDataRequest,
+    ) -> dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.GetIntelligentRobotInfoHeaders()
-        return await self.get_intelligent_robot_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.GetDingMeBaseDataHeaders()
+        return await self.get_ding_me_base_data_with_options_async(request, headers, runtime)
 
     def get_intelligent_robot_info_with_options(
         self,
@@ -278,9 +334,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetIntelligentRobotInfo',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/intelligentRobots/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse(),
-            self.do_roarequest('GetIntelligentRobotInfo', 'dingmi_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/dingmi/intelligentRobots/infos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_intelligent_robot_info_with_options_async(
@@ -302,26 +369,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetIntelligentRobotInfo',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/intelligentRobots/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse(),
-            await self.do_roarequest_async('GetIntelligentRobotInfo', 'dingmi_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/dingmi/intelligentRobots/infos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_official_account_robot_info(
+    def get_intelligent_robot_info(
         self,
-        request: dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoRequest,
-    ) -> dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse:
+        request: dingtalkdingmi__1__0_models.GetIntelligentRobotInfoRequest,
+    ) -> dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoHeaders()
-        return self.get_official_account_robot_info_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.GetIntelligentRobotInfoHeaders()
+        return self.get_intelligent_robot_info_with_options(request, headers, runtime)
 
-    async def get_official_account_robot_info_async(
+    async def get_intelligent_robot_info_async(
         self,
-        request: dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoRequest,
-    ) -> dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse:
+        request: dingtalkdingmi__1__0_models.GetIntelligentRobotInfoRequest,
+    ) -> dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoHeaders()
-        return await self.get_official_account_robot_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.GetIntelligentRobotInfoHeaders()
+        return await self.get_intelligent_robot_info_with_options_async(request, headers, runtime)
 
     def get_official_account_robot_info_with_options(
         self,
@@ -342,9 +420,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetOfficialAccountRobotInfo',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/officialAccounts/robots',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse(),
-            self.do_roarequest('GetOfficialAccountRobotInfo', 'dingmi_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/dingmi/officialAccounts/robots', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_official_account_robot_info_with_options_async(
@@ -366,26 +455,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetOfficialAccountRobotInfo',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/officialAccounts/robots',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse(),
-            await self.do_roarequest_async('GetOfficialAccountRobotInfo', 'dingmi_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/dingmi/officialAccounts/robots', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_web_channel_user_token(
+    def get_official_account_robot_info(
         self,
-        request: dingtalkdingmi__1__0_models.GetWebChannelUserTokenRequest,
-    ) -> dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse:
+        request: dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoRequest,
+    ) -> dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.GetWebChannelUserTokenHeaders()
-        return self.get_web_channel_user_token_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoHeaders()
+        return self.get_official_account_robot_info_with_options(request, headers, runtime)
 
-    async def get_web_channel_user_token_async(
+    async def get_official_account_robot_info_async(
         self,
-        request: dingtalkdingmi__1__0_models.GetWebChannelUserTokenRequest,
-    ) -> dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse:
+        request: dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoRequest,
+    ) -> dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.GetWebChannelUserTokenHeaders()
-        return await self.get_web_channel_user_token_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoHeaders()
+        return await self.get_official_account_robot_info_with_options_async(request, headers, runtime)
 
     def get_web_channel_user_token_with_options(
         self,
@@ -410,9 +510,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetWebChannelUserToken',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/webChannels/userTokens',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse(),
-            self.do_roarequest('GetWebChannelUserToken', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/webChannels/userTokens', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_web_channel_user_token_with_options_async(
@@ -438,26 +549,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetWebChannelUserToken',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/webChannels/userTokens',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse(),
-            await self.do_roarequest_async('GetWebChannelUserToken', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/webChannels/userTokens', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def push_customer_group_message(
+    def get_web_channel_user_token(
         self,
-        request: dingtalkdingmi__1__0_models.PushCustomerGroupMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse:
+        request: dingtalkdingmi__1__0_models.GetWebChannelUserTokenRequest,
+    ) -> dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushCustomerGroupMessageHeaders()
-        return self.push_customer_group_message_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.GetWebChannelUserTokenHeaders()
+        return self.get_web_channel_user_token_with_options(request, headers, runtime)
 
-    async def push_customer_group_message_async(
+    async def get_web_channel_user_token_async(
         self,
-        request: dingtalkdingmi__1__0_models.PushCustomerGroupMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse:
+        request: dingtalkdingmi__1__0_models.GetWebChannelUserTokenRequest,
+    ) -> dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushCustomerGroupMessageHeaders()
-        return await self.push_customer_group_message_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.GetWebChannelUserTokenHeaders()
+        return await self.get_web_channel_user_token_with_options_async(request, headers, runtime)
 
     def push_customer_group_message_with_options(
         self,
@@ -482,9 +604,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushCustomerGroupMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/officialAccounts/robots/groupMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse(),
-            self.do_roarequest('PushCustomerGroupMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/officialAccounts/robots/groupMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def push_customer_group_message_with_options_async(
@@ -510,26 +643,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushCustomerGroupMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/officialAccounts/robots/groupMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse(),
-            await self.do_roarequest_async('PushCustomerGroupMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/officialAccounts/robots/groupMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def push_intelligent_robot_group_message(
+    def push_customer_group_message(
         self,
-        request: dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse:
+        request: dingtalkdingmi__1__0_models.PushCustomerGroupMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageHeaders()
-        return self.push_intelligent_robot_group_message_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushCustomerGroupMessageHeaders()
+        return self.push_customer_group_message_with_options(request, headers, runtime)
 
-    async def push_intelligent_robot_group_message_async(
+    async def push_customer_group_message_async(
         self,
-        request: dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse:
+        request: dingtalkdingmi__1__0_models.PushCustomerGroupMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageHeaders()
-        return await self.push_intelligent_robot_group_message_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushCustomerGroupMessageHeaders()
+        return await self.push_customer_group_message_with_options_async(request, headers, runtime)
 
     def push_intelligent_robot_group_message_with_options(
         self,
@@ -556,9 +700,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushIntelligentRobotGroupMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/intelligentRobots/groupMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse(),
-            self.do_roarequest('PushIntelligentRobotGroupMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/intelligentRobots/groupMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def push_intelligent_robot_group_message_with_options_async(
@@ -586,26 +741,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushIntelligentRobotGroupMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/intelligentRobots/groupMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse(),
-            await self.do_roarequest_async('PushIntelligentRobotGroupMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/intelligentRobots/groupMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def push_intelligent_robot_message(
+    def push_intelligent_robot_group_message(
         self,
-        request: dingtalkdingmi__1__0_models.PushIntelligentRobotMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse:
+        request: dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushIntelligentRobotMessageHeaders()
-        return self.push_intelligent_robot_message_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageHeaders()
+        return self.push_intelligent_robot_group_message_with_options(request, headers, runtime)
 
-    async def push_intelligent_robot_message_async(
+    async def push_intelligent_robot_group_message_async(
         self,
-        request: dingtalkdingmi__1__0_models.PushIntelligentRobotMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse:
+        request: dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushIntelligentRobotMessageHeaders()
-        return await self.push_intelligent_robot_message_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageHeaders()
+        return await self.push_intelligent_robot_group_message_with_options_async(request, headers, runtime)
 
     def push_intelligent_robot_message_with_options(
         self,
@@ -632,9 +798,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushIntelligentRobotMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/intelligentRobots/oToMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse(),
-            self.do_roarequest('PushIntelligentRobotMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/intelligentRobots/oToMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def push_intelligent_robot_message_with_options_async(
@@ -662,26 +839,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushIntelligentRobotMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/intelligentRobots/oToMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse(),
-            await self.do_roarequest_async('PushIntelligentRobotMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/intelligentRobots/oToMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def push_official_account_message(
+    def push_intelligent_robot_message(
         self,
-        request: dingtalkdingmi__1__0_models.PushOfficialAccountMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse:
+        request: dingtalkdingmi__1__0_models.PushIntelligentRobotMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushOfficialAccountMessageHeaders()
-        return self.push_official_account_message_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushIntelligentRobotMessageHeaders()
+        return self.push_intelligent_robot_message_with_options(request, headers, runtime)
 
-    async def push_official_account_message_async(
+    async def push_intelligent_robot_message_async(
         self,
-        request: dingtalkdingmi__1__0_models.PushOfficialAccountMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse:
+        request: dingtalkdingmi__1__0_models.PushIntelligentRobotMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushOfficialAccountMessageHeaders()
-        return await self.push_official_account_message_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushIntelligentRobotMessageHeaders()
+        return await self.push_intelligent_robot_message_with_options_async(request, headers, runtime)
 
     def push_official_account_message_with_options(
         self,
@@ -706,9 +894,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushOfficialAccountMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/officialAccounts/robots/oToMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse(),
-            self.do_roarequest('PushOfficialAccountMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/officialAccounts/robots/oToMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def push_official_account_message_with_options_async(
@@ -734,26 +933,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushOfficialAccountMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/officialAccounts/robots/oToMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse(),
-            await self.do_roarequest_async('PushOfficialAccountMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/officialAccounts/robots/oToMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def push_robot_message(
+    def push_official_account_message(
         self,
-        request: dingtalkdingmi__1__0_models.PushRobotMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushRobotMessageResponse:
+        request: dingtalkdingmi__1__0_models.PushOfficialAccountMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushRobotMessageHeaders()
-        return self.push_robot_message_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushOfficialAccountMessageHeaders()
+        return self.push_official_account_message_with_options(request, headers, runtime)
 
-    async def push_robot_message_async(
+    async def push_official_account_message_async(
         self,
-        request: dingtalkdingmi__1__0_models.PushRobotMessageRequest,
-    ) -> dingtalkdingmi__1__0_models.PushRobotMessageResponse:
+        request: dingtalkdingmi__1__0_models.PushOfficialAccountMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.PushRobotMessageHeaders()
-        return await self.push_robot_message_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushOfficialAccountMessageHeaders()
+        return await self.push_official_account_message_with_options_async(request, headers, runtime)
 
     def push_robot_message_with_options(
         self,
@@ -780,9 +990,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushRobotMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/robots/oToMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushRobotMessageResponse(),
-            self.do_roarequest('PushRobotMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/robots/oToMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def push_robot_message_with_options_async(
@@ -810,26 +1031,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='PushRobotMessage',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/robots/oToMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.PushRobotMessageResponse(),
-            await self.do_roarequest_async('PushRobotMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/robots/oToMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def reply_robot(
+    def push_robot_message(
         self,
-        request: dingtalkdingmi__1__0_models.ReplyRobotRequest,
-    ) -> dingtalkdingmi__1__0_models.ReplyRobotResponse:
+        request: dingtalkdingmi__1__0_models.PushRobotMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushRobotMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.ReplyRobotHeaders()
-        return self.reply_robot_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushRobotMessageHeaders()
+        return self.push_robot_message_with_options(request, headers, runtime)
 
-    async def reply_robot_async(
+    async def push_robot_message_async(
         self,
-        request: dingtalkdingmi__1__0_models.ReplyRobotRequest,
-    ) -> dingtalkdingmi__1__0_models.ReplyRobotResponse:
+        request: dingtalkdingmi__1__0_models.PushRobotMessageRequest,
+    ) -> dingtalkdingmi__1__0_models.PushRobotMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.ReplyRobotHeaders()
-        return await self.reply_robot_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.PushRobotMessageHeaders()
+        return await self.push_robot_message_with_options_async(request, headers, runtime)
 
     def reply_robot_with_options(
         self,
@@ -850,9 +1082,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReplyRobot',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/robots/reply',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.ReplyRobotResponse(),
-            self.do_roarequest('ReplyRobot', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/robots/reply', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def reply_robot_with_options_async(
@@ -874,26 +1117,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ReplyRobot',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/robots/reply',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.ReplyRobotResponse(),
-            await self.do_roarequest_async('ReplyRobot', 'dingmi_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/dingmi/robots/reply', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_official_account_robot_info(
+    def reply_robot(
         self,
-        request: dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoRequest,
-    ) -> dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse:
+        request: dingtalkdingmi__1__0_models.ReplyRobotRequest,
+    ) -> dingtalkdingmi__1__0_models.ReplyRobotResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoHeaders()
-        return self.update_official_account_robot_info_with_options(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.ReplyRobotHeaders()
+        return self.reply_robot_with_options(request, headers, runtime)
 
-    async def update_official_account_robot_info_async(
+    async def reply_robot_async(
         self,
-        request: dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoRequest,
-    ) -> dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse:
+        request: dingtalkdingmi__1__0_models.ReplyRobotRequest,
+    ) -> dingtalkdingmi__1__0_models.ReplyRobotResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoHeaders()
-        return await self.update_official_account_robot_info_with_options_async(request, headers, runtime)
+        headers = dingtalkdingmi__1__0_models.ReplyRobotHeaders()
+        return await self.reply_robot_with_options_async(request, headers, runtime)
 
     def update_official_account_robot_info_with_options(
         self,
@@ -926,9 +1180,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateOfficialAccountRobotInfo',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/officialAccounts/robots',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse(),
-            self.do_roarequest('UpdateOfficialAccountRobotInfo', 'dingmi_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/dingmi/officialAccounts/robots', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_official_account_robot_info_with_options_async(
@@ -962,7 +1227,34 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateOfficialAccountRobotInfo',
+            version='dingmi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dingmi/officialAccounts/robots',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse(),
-            await self.do_roarequest_async('UpdateOfficialAccountRobotInfo', 'dingmi_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/dingmi/officialAccounts/robots', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_official_account_robot_info(
+        self,
+        request: dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoRequest,
+    ) -> dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoHeaders()
+        return self.update_official_account_robot_info_with_options(request, headers, runtime)
+
+    async def update_official_account_robot_info_async(
+        self,
+        request: dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoRequest,
+    ) -> dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoHeaders()
+        return await self.update_official_account_robot_info_with_options_async(request, headers, runtime)

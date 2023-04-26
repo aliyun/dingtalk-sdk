@@ -99,7 +99,6 @@ class CreateMiniAppResponseBody(TeaModel):
         self,
         mini_app_id: str = None,
     ):
-        # result
         self.mini_app_id = mini_app_id
 
     def validate(self):
@@ -126,13 +125,16 @@ class CreateMiniAppResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateMiniAppResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -145,6 +147,8 @@ class CreateMiniAppResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -153,6 +157,8 @@ class CreateMiniAppResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateMiniAppResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -254,7 +260,6 @@ class CreateMiniAppPluginResponseBody(TeaModel):
         self,
         mini_app_id: str = None,
     ):
-        # result
         self.mini_app_id = mini_app_id
 
     def validate(self):
@@ -281,13 +286,16 @@ class CreateMiniAppPluginResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateMiniAppPluginResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -300,6 +308,8 @@ class CreateMiniAppPluginResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -308,6 +318,8 @@ class CreateMiniAppPluginResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateMiniAppPluginResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -356,14 +368,10 @@ class CreateVersionAcrossBundleRequest(TeaModel):
         source_version: str = None,
         version: str = None,
     ):
-        # bundleId
         self.bundle_id = bundle_id
         self.mini_app_id = mini_app_id
-        # sourceBundleId
         self.source_bundle_id = source_bundle_id
-        # sourceVersion
         self.source_version = source_version
-        # version
         self.version = version
 
     def validate(self):
@@ -407,7 +415,6 @@ class CreateVersionAcrossBundleResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # result
         self.result = result
 
     def validate(self):
@@ -434,13 +441,16 @@ class CreateVersionAcrossBundleResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateVersionAcrossBundleResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -453,6 +463,8 @@ class CreateVersionAcrossBundleResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -461,6 +473,8 @@ class CreateVersionAcrossBundleResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateVersionAcrossBundleResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -507,11 +521,8 @@ class GetMaxVersionRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
-        # bundleId
         self.bundle_id = bundle_id
-        # miniAppId
         self.mini_app_id = mini_app_id
-        # version
         self.version = version
 
     def validate(self):
@@ -547,7 +558,6 @@ class GetMaxVersionResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # result
         self.result = result
 
     def validate(self):
@@ -574,13 +584,16 @@ class GetMaxVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetMaxVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -593,6 +606,8 @@ class GetMaxVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -601,6 +616,8 @@ class GetMaxVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMaxVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -690,7 +707,6 @@ class GetMiniAppMetaDataResponseBodyResult(TeaModel):
         self,
         data: Dict[str, Any] = None,
     ):
-        # data
         self.data = data
 
     def validate(self):
@@ -721,13 +737,9 @@ class GetMiniAppMetaDataResponseBody(TeaModel):
         result: GetMiniAppMetaDataResponseBodyResult = None,
         success: bool = None,
     ):
-        # receiveTime
         self.ding_open_errcode = ding_open_errcode
-        # errorMsg
         self.error_msg = error_msg
-        # result
         self.result = result
-        # requestId
         self.success = success
 
     def validate(self):
@@ -768,13 +780,16 @@ class GetMiniAppMetaDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetMiniAppMetaDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -787,6 +802,8 @@ class GetMiniAppMetaDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -795,6 +812,8 @@ class GetMiniAppMetaDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMiniAppMetaDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -865,13 +884,16 @@ class GetSettingByMiniAppIdResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSettingByMiniAppIdResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -884,6 +906,8 @@ class GetSettingByMiniAppIdResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -892,6 +916,8 @@ class GetSettingByMiniAppIdResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSettingByMiniAppIdResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1001,13 +1027,16 @@ class InvokeHtmlBundleBuildResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: InvokeHtmlBundleBuildResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1020,6 +1049,8 @@ class InvokeHtmlBundleBuildResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1028,6 +1059,8 @@ class InvokeHtmlBundleBuildResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = InvokeHtmlBundleBuildResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1174,7 +1207,6 @@ class ListAvaiableVersionResponseBody(TeaModel):
         self,
         versions: List[ListAvaiableVersionResponseBodyVersions] = None,
     ):
-        # result
         self.versions = versions
 
     def validate(self):
@@ -1209,13 +1241,16 @@ class ListAvaiableVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ListAvaiableVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1228,6 +1263,8 @@ class ListAvaiableVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1236,6 +1273,8 @@ class ListAvaiableVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListAvaiableVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1282,11 +1321,8 @@ class QueryHtmlBundleBuildRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
-        # bundleId
         self.bundle_id = bundle_id
-        # miniAppId
         self.mini_app_id = mini_app_id
-        # version
         self.version = version
 
     def validate(self):
@@ -1348,13 +1384,16 @@ class QueryHtmlBundleBuildResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryHtmlBundleBuildResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1367,6 +1406,8 @@ class QueryHtmlBundleBuildResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1375,6 +1416,8 @@ class QueryHtmlBundleBuildResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryHtmlBundleBuildResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1431,7 +1474,6 @@ class RollBackVersionResponseBody(TeaModel):
         self,
         result: str = None,
     ):
-        # Id of the request
         self.result = result
 
     def validate(self):
@@ -1458,13 +1500,16 @@ class RollBackVersionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RollBackVersionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1477,6 +1522,8 @@ class RollBackVersionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1485,6 +1532,8 @@ class RollBackVersionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RollBackVersionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1588,13 +1637,16 @@ class SetExtendSettingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SetExtendSettingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1607,6 +1659,8 @@ class SetExtendSettingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1615,6 +1669,8 @@ class SetExtendSettingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SetExtendSettingResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1730,13 +1786,16 @@ class UpdateVersionStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateVersionStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1749,6 +1808,8 @@ class UpdateVersionStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1757,6 +1818,8 @@ class UpdateVersionStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateVersionStatusResponseBody()
             self.body = temp_model.from_map(m['body'])

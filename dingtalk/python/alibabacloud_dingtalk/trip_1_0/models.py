@@ -47,22 +47,11 @@ class SyncBusinessSignInfoRequest(TeaModel):
         sign_status: str = None,
         target_corp_id: str = None,
     ):
-        # 签约企业所支持的订单类目，如机票、酒店、火车票、打车。
-        # 枚举值如下：
-        # ["HOTEL","FLIGHT","TAXI","TRAIN"]
         self.biz_type_list = biz_type_list
-        # 开通企业支付的时间戳，毫秒
-        # 
         self.gmt_org_pay = gmt_org_pay
-        # 签约时间戳，毫秒
-        # 
         self.gmt_sign = gmt_sign
-        # 开通企业支付状态
-        # 
         self.org_pay_status = org_pay_status
-        # 企业签约状态
         self.sign_status = sign_status
-        # 签约企业corpId
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -111,7 +100,6 @@ class SyncBusinessSignInfoResponseBody(TeaModel):
         request_id: str = None,
         success: bool = None,
     ):
-        # Id of the request
         self.request_id = request_id
         self.success = success
 
@@ -143,13 +131,16 @@ class SyncBusinessSignInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SyncBusinessSignInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -162,6 +153,8 @@ class SyncBusinessSignInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -170,6 +163,8 @@ class SyncBusinessSignInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncBusinessSignInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -219,17 +214,11 @@ class SyncSecretKeyRequest(TeaModel):
         trip_app_security: str = None,
         trip_corp_id: str = None,
     ):
-        # 操作类型，ADD/QUERY/MODIFY/DEL
         self.action_type = action_type
-        # 验签加密串
         self.secret_string = secret_string
-        # 钉钉侧对应的组织ID
         self.target_corp_id = target_corp_id
-        # 商旅侧appkey
         self.trip_app_key = trip_app_key
-        # 商旅对接密钥
         self.trip_app_security = trip_app_security
-        # 商旅侧组织ID
         self.trip_corp_id = trip_corp_id
 
     def validate(self):
@@ -281,15 +270,10 @@ class SyncSecretKeyResponseBodyResult(TeaModel):
         trip_app_security: str = None,
         trip_corp_id: str = None,
     ):
-        # 验签加密串
         self.secret_string = secret_string
-        # 钉钉侧对应的组织ID
         self.target_corp_id = target_corp_id
-        # 商旅侧对接key
         self.trip_app_key = trip_app_key
-        # 商旅侧对接密钥
         self.trip_app_security = trip_app_security
-        # 商旅侧对应的组织ID
         self.trip_corp_id = trip_corp_id
 
     def validate(self):
@@ -335,8 +319,6 @@ class SyncSecretKeyResponseBody(TeaModel):
         success: str = None,
     ):
         self.result = result
-        # 是否成功
-        # 
         self.success = success
 
     def validate(self):
@@ -369,13 +351,16 @@ class SyncSecretKeyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SyncSecretKeyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -388,6 +373,8 @@ class SyncSecretKeyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -396,6 +383,8 @@ class SyncSecretKeyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncSecretKeyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -441,9 +430,7 @@ class SyncTripOrderRequestEvent(TeaModel):
         action: str = None,
         gmt_action: str = None,
     ):
-        # 订单事件
         self.action = action
-        # 事件时间
         self.gmt_action = gmt_action
 
     def validate(self):
@@ -478,16 +465,9 @@ class SyncTripOrderRequestOrderDetailsHotelLocation(TeaModel):
         source: str = None,
         url: str = None,
     ):
-        # 纬度
         self.lat = lat
-        # 经度
         self.lon = lon
-        # 坐标数据源
-        # - BD09：来自百度地图的经纬坐标
-        # - GCJ02: 来自高德地图，腾讯地图，Apple地图的坐标
-        # - WGS84: 来自GPS的坐标
         self.source = source
-        # 定位url
         self.url = url
 
     def validate(self):
@@ -553,58 +533,32 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         transport_number: str = None,
         type_description: str = None,
     ):
-        # 到达时间
         self.arrival_time = arrival_time
-        # 车辆颜色
         self.car_color = car_color
-        # 车辆型号
         self.car_model = car_model
-        # 车牌号
         self.car_number = car_number
-        # 餐食描述
         self.catering_type = catering_type
-        # 入住时间
         self.check_in_time = check_in_time
-        # 离店时间
         self.check_out_time = check_out_time
-        # 出发时间
         self.depart_time = depart_time
-        # 目的地城市
         self.destination_city = destination_city
-        # 目的地城市码
         self.destination_city_code = destination_city_code
-        # 目的站名称
         self.destination_station = destination_station
-        # 酒店地址
         self.hotel_address = hotel_address
         self.hotel_city = hotel_city
-        # 酒店定位信息
         self.hotel_location = hotel_location
-        # 酒店名称
         self.hotel_name = hotel_name
-        # 出发地城市
         self.origin_city = origin_city
-        # 出发地城市码
         self.origin_city_code = origin_city_code
-        # 出发站名称
         self.origin_station = origin_station
-        # 房间数
         self.room_count = room_count
-        # 舱位
         self.seat_info = seat_info
-        # “服务类型”
         self.service_type = service_type
-        # 下游供应商logo
         self.sub_supply_logo = sub_supply_logo
-        # 下游供应商名称
         self.sub_supply_name = sub_supply_name
-        # 专车类型
         self.taxi_type = taxi_type
-        # 联系方式
         self.telephone = telephone
-        # 火车/航班班次
         self.transport_number = transport_number
-        # 房型描述
         self.type_description = type_description
 
     def validate(self):
@@ -758,46 +712,26 @@ class SyncTripOrderRequest(TeaModel):
         total_amount: str = None,
         type: str = None,
     ):
-        # 订单渠道，枚举值：BUSINESS、CUSTOMER
         self.channel_type = channel_type
-        # 币种
         self.currency = currency
-        # 钉钉用户id
         self.ding_user_id = ding_user_id
-        # 优惠金额
         self.discount_amount = discount_amount
-        # 是否是改签单
         self.endorse_flag = endorse_flag
         self.event = event
-        # 下单时间
         self.gmt_order = gmt_order
-        # 付款时间
         self.gmt_pay = gmt_pay
-        # 退款时间
         self.gmt_refund = gmt_refund
-        # 发票申请链接
         self.invoice_apply_url = invoice_apply_url
-        # 行程单号
         self.journey_biz_no = journey_biz_no
-        # 订单详情列表
         self.order_details = order_details
-        # 供应商订单号
         self.order_no = order_no
-        # 订单详情链接
         self.order_url = order_url
-        # 实付金额
         self.real_amount = real_amount
-        # 退款金额
         self.refund_amount = refund_amount
-        # 供应商关联订单号
         self.relative_order_no = relative_order_no
-        # 来源埋点
         self.source = source
-        # 用户组织id
         self.target_corp_id = target_corp_id
-        # 总金额
         self.total_amount = total_amount
-        # 订单类型
         self.type = type
 
     def validate(self):
@@ -917,9 +851,7 @@ class SyncTripOrderResponseBody(TeaModel):
         request_id: str = None,
         success: bool = None,
     ):
-        # Id of the request
         self.request_id = request_id
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -950,13 +882,16 @@ class SyncTripOrderResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SyncTripOrderResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -969,6 +904,8 @@ class SyncTripOrderResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -977,6 +914,8 @@ class SyncTripOrderResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncTripOrderResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -58,39 +58,22 @@ class BatchCreateTemplateRequestTemplateList(TeaModel):
         template_key: str = None,
         use_cases_media_list: List[str] = None,
     ):
-        # adaptEnv
         self.adapt_env = adapt_env
-        # appDesc
         self.app_desc = app_desc
-        # appIcon
         self.app_icon = app_icon
-        # caseVideoList
         self.case_video_list = case_video_list
-        # category
         self.category_code = category_code
-        # coverImgList
         self.cover_img_list = cover_img_list
-        # expUrl
         self.exp_url = exp_url
-        # industryLabelList
         self.industry_label_list = industry_label_list
-        # installTimes
         self.install_times = install_times
-        # mobilePreviewMediaList
         self.mobile_preview_media_list = mobile_preview_media_list
-        # name
         self.name = name
-        # previewMediaList
         self.preview_media_list = preview_media_list
-        # providerName
         self.provider_name = provider_name
-        # roleLabelList
         self.role_label_list = role_label_list
-        # simpleDesc
         self.simple_desc = simple_desc
-        # templateKey
         self.template_key = template_key
-        # useCasesMediaList
         self.use_cases_media_list = use_cases_media_list
 
     def validate(self):
@@ -284,13 +267,16 @@ class BatchCreateTemplateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BatchCreateTemplateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -303,6 +289,8 @@ class BatchCreateTemplateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -311,6 +299,8 @@ class BatchCreateTemplateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchCreateTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -539,13 +529,16 @@ class BatchQueryByTemplateKeyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BatchQueryByTemplateKeyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -558,6 +551,8 @@ class BatchQueryByTemplateKeyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -566,6 +561,8 @@ class BatchQueryByTemplateKeyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchQueryByTemplateKeyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -625,37 +622,21 @@ class BatchUpdateTemplateRequestTemplateList(TeaModel):
         template_key: str = None,
         use_cases_media_list: List[str] = None,
     ):
-        # adaptEnv
         self.adapt_env = adapt_env
-        # appDesc
         self.app_desc = app_desc
-        # appIcon
         self.app_icon = app_icon
-        # caseVideoList
         self.case_video_list = case_video_list
-        # category
         self.category_code = category_code
-        # coverImgList
         self.cover_img_list = cover_img_list
-        # expUrl
         self.exp_url = exp_url
-        # industryLabelList
         self.industry_label_list = industry_label_list
-        # mobilePreviewMediaList
         self.mobile_preview_media_list = mobile_preview_media_list
-        # name
         self.name = name
-        # previewMediaList
         self.preview_media_list = preview_media_list
-        # providerName
         self.provider_name = provider_name
-        # roleLabelList
         self.role_label_list = role_label_list
-        # simpleDesc
         self.simple_desc = simple_desc
-        # templateKey
         self.template_key = template_key
-        # useCasesMediaList
         self.use_cases_media_list = use_cases_media_list
 
     def validate(self):
@@ -845,13 +826,16 @@ class BatchUpdateTemplateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: BatchUpdateTemplateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -864,6 +848,8 @@ class BatchUpdateTemplateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -872,6 +858,8 @@ class BatchUpdateTemplateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchUpdateTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -942,13 +930,16 @@ class QueryIndustryTagListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryIndustryTagListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -961,6 +952,8 @@ class QueryIndustryTagListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -969,6 +962,8 @@ class QueryIndustryTagListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryIndustryTagListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1039,13 +1034,16 @@ class QueryRoleTagListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryRoleTagListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1058,6 +1056,8 @@ class QueryRoleTagListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1066,6 +1066,8 @@ class QueryRoleTagListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryRoleTagListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1111,9 +1113,7 @@ class QueryTemplateCategorysResponseBodyCategoryList(TeaModel):
         code: str = None,
         name: str = None,
     ):
-        # 分类编码
         self.code = code
-        # 分类名称
         self.name = name
 
     def validate(self):
@@ -1147,7 +1147,6 @@ class QueryTemplateCategorysResponseBody(TeaModel):
         total: str = None,
     ):
         self.category_list = category_list
-        # 总数
         self.total = total
 
     def validate(self):
@@ -1186,13 +1185,16 @@ class QueryTemplateCategorysResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryTemplateCategorysResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1205,6 +1207,8 @@ class QueryTemplateCategorysResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1213,6 +1217,8 @@ class QueryTemplateCategorysResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryTemplateCategorysResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1351,13 +1357,16 @@ class RecallAuditTemplateResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RecallAuditTemplateResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1370,6 +1379,8 @@ class RecallAuditTemplateResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1378,6 +1389,8 @@ class RecallAuditTemplateResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RecallAuditTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])

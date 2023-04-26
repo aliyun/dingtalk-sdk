@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.carbon_1_0 import models as dingtalkcarbon__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def get_personal_carbon_info(
-        self,
-        request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
-    ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders()
-        return self.get_personal_carbon_info_with_options(request, headers, runtime)
-
-    async def get_personal_carbon_info_async(
-        self,
-        request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
-    ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders()
-        return await self.get_personal_carbon_info_with_options_async(request, headers, runtime)
 
     def get_personal_carbon_info_with_options(
         self,
@@ -60,9 +50,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetPersonalCarbonInfo',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/personals/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse(),
-            self.do_roarequest('GetPersonalCarbonInfo', 'carbon_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/carbon/personals/infos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_personal_carbon_info_with_options_async(
@@ -86,26 +87,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetPersonalCarbonInfo',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/personals/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse(),
-            await self.do_roarequest_async('GetPersonalCarbonInfo', 'carbon_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/carbon/personals/infos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def write_alibaba_org_carbon(
+    def get_personal_carbon_info(
         self,
-        request: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse:
+        request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
+    ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonHeaders()
-        return self.write_alibaba_org_carbon_with_options(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders()
+        return self.get_personal_carbon_info_with_options(request, headers, runtime)
 
-    async def write_alibaba_org_carbon_async(
+    async def get_personal_carbon_info_async(
         self,
-        request: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse:
+        request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
+    ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonHeaders()
-        return await self.write_alibaba_org_carbon_with_options_async(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders()
+        return await self.get_personal_carbon_info_with_options_async(request, headers, runtime)
 
     def write_alibaba_org_carbon_with_options(
         self,
@@ -126,9 +138,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteAlibabaOrgCarbon',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/alibabaOrgDetails/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse(),
-            self.do_roarequest('WriteAlibabaOrgCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaOrgDetails/write', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def write_alibaba_org_carbon_with_options_async(
@@ -150,26 +173,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteAlibabaOrgCarbon',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/alibabaOrgDetails/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse(),
-            await self.do_roarequest_async('WriteAlibabaOrgCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaOrgDetails/write', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def write_alibaba_user_carbon(
+    def write_alibaba_org_carbon(
         self,
-        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        request: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
-        return self.write_alibaba_user_carbon_with_options(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonHeaders()
+        return self.write_alibaba_org_carbon_with_options(request, headers, runtime)
 
-    async def write_alibaba_user_carbon_async(
+    async def write_alibaba_org_carbon_async(
         self,
-        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        request: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
-        return await self.write_alibaba_user_carbon_with_options_async(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonHeaders()
+        return await self.write_alibaba_org_carbon_with_options_async(request, headers, runtime)
 
     def write_alibaba_user_carbon_with_options(
         self,
@@ -190,9 +224,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteAlibabaUserCarbon',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/alibabaUserDetails/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse(),
-            self.do_roarequest('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaUserDetails/write', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def write_alibaba_user_carbon_with_options_async(
@@ -214,26 +259,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteAlibabaUserCarbon',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/alibabaUserDetails/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse(),
-            await self.do_roarequest_async('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/alibabaUserDetails/write', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def write_isv_state(
+    def write_alibaba_user_carbon(
         self,
-        request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteIsvStateHeaders()
-        return self.write_isv_state_with_options(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
+        return self.write_alibaba_user_carbon_with_options(request, headers, runtime)
 
-    async def write_isv_state_async(
+    async def write_alibaba_user_carbon_async(
         self,
-        request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteIsvStateHeaders()
-        return await self.write_isv_state_with_options_async(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
+        return await self.write_alibaba_user_carbon_with_options_async(request, headers, runtime)
 
     def write_isv_state_with_options(
         self,
@@ -256,9 +312,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='WriteIsvState',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/datas/states/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteIsvStateResponse(),
-            self.do_roarequest('WriteIsvState', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/datas/states/write', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def write_isv_state_with_options_async(
@@ -282,26 +349,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='WriteIsvState',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/datas/states/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteIsvStateResponse(),
-            await self.do_roarequest_async('WriteIsvState', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/datas/states/write', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def write_org_carbon(
+    def write_isv_state(
         self,
-        request: dingtalkcarbon__1__0_models.WriteOrgCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteOrgCarbonResponse:
+        request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteOrgCarbonHeaders()
-        return self.write_org_carbon_with_options(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteIsvStateHeaders()
+        return self.write_isv_state_with_options(request, headers, runtime)
 
-    async def write_org_carbon_async(
+    async def write_isv_state_async(
         self,
-        request: dingtalkcarbon__1__0_models.WriteOrgCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteOrgCarbonResponse:
+        request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteOrgCarbonHeaders()
-        return await self.write_org_carbon_with_options_async(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteIsvStateHeaders()
+        return await self.write_isv_state_with_options_async(request, headers, runtime)
 
     def write_org_carbon_with_options(
         self,
@@ -322,9 +400,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteOrgCarbon',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/orgDetails/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteOrgCarbonResponse(),
-            self.do_roarequest('WriteOrgCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/orgDetails/write', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def write_org_carbon_with_options_async(
@@ -346,26 +435,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteOrgCarbon',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/orgDetails/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteOrgCarbonResponse(),
-            await self.do_roarequest_async('WriteOrgCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/orgDetails/write', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def write_user_carbon(
+    def write_org_carbon(
         self,
-        request: dingtalkcarbon__1__0_models.WriteUserCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteUserCarbonResponse:
+        request: dingtalkcarbon__1__0_models.WriteOrgCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteOrgCarbonResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteUserCarbonHeaders()
-        return self.write_user_carbon_with_options(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteOrgCarbonHeaders()
+        return self.write_org_carbon_with_options(request, headers, runtime)
 
-    async def write_user_carbon_async(
+    async def write_org_carbon_async(
         self,
-        request: dingtalkcarbon__1__0_models.WriteUserCarbonRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteUserCarbonResponse:
+        request: dingtalkcarbon__1__0_models.WriteOrgCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteOrgCarbonResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteUserCarbonHeaders()
-        return await self.write_user_carbon_with_options_async(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteOrgCarbonHeaders()
+        return await self.write_org_carbon_with_options_async(request, headers, runtime)
 
     def write_user_carbon_with_options(
         self,
@@ -386,9 +486,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteUserCarbon',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/userDetails/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteUserCarbonResponse(),
-            self.do_roarequest('WriteUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/userDetails/write', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def write_user_carbon_with_options_async(
@@ -410,26 +521,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteUserCarbon',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/userDetails/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteUserCarbonResponse(),
-            await self.do_roarequest_async('WriteUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/userDetails/write', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def write_user_carbon_energy(
+    def write_user_carbon(
         self,
-        request: dingtalkcarbon__1__0_models.WriteUserCarbonEnergyRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse:
+        request: dingtalkcarbon__1__0_models.WriteUserCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteUserCarbonResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteUserCarbonEnergyHeaders()
-        return self.write_user_carbon_energy_with_options(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteUserCarbonHeaders()
+        return self.write_user_carbon_with_options(request, headers, runtime)
 
-    async def write_user_carbon_energy_async(
+    async def write_user_carbon_async(
         self,
-        request: dingtalkcarbon__1__0_models.WriteUserCarbonEnergyRequest,
-    ) -> dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse:
+        request: dingtalkcarbon__1__0_models.WriteUserCarbonRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteUserCarbonResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkcarbon__1__0_models.WriteUserCarbonEnergyHeaders()
-        return await self.write_user_carbon_energy_with_options_async(request, headers, runtime)
+        headers = dingtalkcarbon__1__0_models.WriteUserCarbonHeaders()
+        return await self.write_user_carbon_with_options_async(request, headers, runtime)
 
     def write_user_carbon_energy_with_options(
         self,
@@ -450,9 +572,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteUserCarbonEnergy',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/userDetails/energies/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse(),
-            self.do_roarequest('WriteUserCarbonEnergy', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/userDetails/energies/write', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def write_user_carbon_energy_with_options_async(
@@ -474,7 +607,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='WriteUserCarbonEnergy',
+            version='carbon_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/carbon/userDetails/energies/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse(),
-            await self.do_roarequest_async('WriteUserCarbonEnergy', 'carbon_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/carbon/userDetails/energies/write', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def write_user_carbon_energy(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteUserCarbonEnergyRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcarbon__1__0_models.WriteUserCarbonEnergyHeaders()
+        return self.write_user_carbon_energy_with_options(request, headers, runtime)
+
+    async def write_user_carbon_energy_async(
+        self,
+        request: dingtalkcarbon__1__0_models.WriteUserCarbonEnergyRequest,
+    ) -> dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcarbon__1__0_models.WriteUserCarbonEnergyHeaders()
+        return await self.write_user_carbon_energy_with_options_async(request, headers, runtime)

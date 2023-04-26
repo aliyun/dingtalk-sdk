@@ -44,11 +44,8 @@ class GetAbnormalOperationRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -85,15 +82,7 @@ class GetAbnormalOperationResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # DEPARTMENT:列入决定机关
-        # IN_REASON 列入原因
-        # OUT_DATE:移出日期
-        # OUT_DEPARTMENT:移出决定机关
-        # OUT_REASON:移出原因
-        # IN_DATE:列入日期
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -124,13 +113,16 @@ class GetAbnormalOperationResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAbnormalOperationResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -143,6 +135,8 @@ class GetAbnormalOperationResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -151,6 +145,8 @@ class GetAbnormalOperationResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAbnormalOperationResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -197,11 +193,8 @@ class GetAdministrativeLicensingRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -238,15 +231,7 @@ class GetAdministrativeLicensingResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # LicenseNo:许可文件编号
-        # LicenseName:许可文件名称
-        # Department:许可机关
-        # StartDate:有效期自
-        # EndDate:有效期至
-        # Content:许可内容
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -277,13 +262,16 @@ class GetAdministrativeLicensingResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAdministrativeLicensingResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -296,6 +284,8 @@ class GetAdministrativeLicensingResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -304,6 +294,8 @@ class GetAdministrativeLicensingResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAdministrativeLicensingResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -350,11 +342,8 @@ class GetAdministrativePenaltiesRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -391,17 +380,7 @@ class GetAdministrativePenaltiesResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # DATE_COL:处罚日期
-        # NUMBER:决定书文号
-        # ILLEGAL_TYPE:处罚类型
-        # DEPARTMENT:处罚机关
-        # PUBLIC_DATE 公示日期
-        # CONTENT:处罚内容
-        # BASED_ON:处罚依据
-        # DESCRIPTION:处罚判决书
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -432,13 +411,16 @@ class GetAdministrativePenaltiesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetAdministrativePenaltiesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -451,6 +433,8 @@ class GetAdministrativePenaltiesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -459,6 +443,8 @@ class GetAdministrativePenaltiesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAdministrativePenaltiesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -505,11 +491,8 @@ class GetBasicInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -546,39 +529,7 @@ class GetBasicInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # ENT_NAME:企业名称
-        # LEGAL_NAME:法定代表人姓名
-        # ES_DATE:开业日期
-        # ENT_STATUS:经营状态
-        # REG_CAP:注册资本
-        # REC_CAP:实收资本
-        # SOCIAL_CREDIT_CODE:统一社会信用代码
-        # LICENSE_NUMBER:工商注册号
-        # ORG_NO:组织机构代码
-        # TAX_NUM:纳税人识别号
-        # ENT_TYPE:企业类型
-        # INDUSTRY_NAME_LV1:国民经济行业门类名称
-        # INDUSTRY_NAME_LV2:国民经济行业大类名称
-        # OP_FROM:经营期限自
-        # OP_TO:经营期限至
-        # COLLEGUES_NUM:人员规模
-        # INSURED_NUM:参保人数
-        # ENT_NAME_ENG:英文名称
-        # FORMER_NAMES:曾用名
-        # REG_ORG:登记机关
-        # CHECK_DATE:核准日期
-        # OP_SCOPE:经营范围
-        # IDENTITY_ID:ID
-        # ENT_ADDRESS:企业地址
-        # EMPLOYEES_INFO:主要管理人员
-        # ENT_BRIEF:公司简介
-        # REG_ORG_PROVINCE:注册地址所在省
-        # REG_ORG_CITY:注册地址所在城市
-        # REG_ORG_DISTRICT:注册地址所在区县
-        # STD_REG_CAP:清洗后注册资本
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -609,13 +560,16 @@ class GetBasicInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetBasicInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -628,6 +582,8 @@ class GetBasicInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -636,6 +592,8 @@ class GetBasicInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetBasicInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -682,11 +640,8 @@ class GetBiddingInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -723,25 +678,7 @@ class GetBiddingInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:企业名称
-        # BidTitle:标文标题
-        # BidType:招标方式
-        # RegionName:地区
-        # BidIndustry:标的所属行业
-        # PublicDate:发布时间
-        # ProjectNum:项目编号
-        # ProjectName:项目名称
-        # ProjectAmount:项目金额
-        # TenderEntName:招标企业
-        # AgentEntName:代理企业
-        # WinnerEntName:中标企业
-        # Content:正文
-        # InfoType:标文类型
-        # SubType:子类型
-        # OpeningTime:开标时间
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -772,13 +709,16 @@ class GetBiddingInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetBiddingInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -791,6 +731,8 @@ class GetBiddingInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -799,6 +741,8 @@ class GetBiddingInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetBiddingInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -845,11 +789,8 @@ class GetBranchInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -886,13 +827,7 @@ class GetBranchInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:分支机构名称
-        # EntStatus:经营状态
-        # OperName:负责人
-        # EsDate:成立日期
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -923,13 +858,16 @@ class GetBranchInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetBranchInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -942,6 +880,8 @@ class GetBranchInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -950,6 +890,8 @@ class GetBranchInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetBranchInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -996,11 +938,8 @@ class GetChangeRecordRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -1037,13 +976,7 @@ class GetChangeRecordResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # Type:变更事项
-        # ChangeDate:变更日期
-        # BeforeContent:变更前
-        # AfterContent:变更后
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -1074,13 +1007,16 @@ class GetChangeRecordResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetChangeRecordResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1093,6 +1029,8 @@ class GetChangeRecordResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1101,6 +1039,8 @@ class GetChangeRecordResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetChangeRecordResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1147,11 +1087,8 @@ class GetDomainInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -1188,15 +1125,7 @@ class GetDomainInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:企业名称
-        # Number:备案号
-        # Domain:域名
-        # SiteName:网站名称
-        # HomeUrl:网站首页链接
-        # CheckDate:备案日期
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -1227,13 +1156,16 @@ class GetDomainInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDomainInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1246,6 +1178,8 @@ class GetDomainInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1254,6 +1188,8 @@ class GetDomainInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDomainInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1300,11 +1236,8 @@ class GetDoubleRandomRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -1341,18 +1274,7 @@ class GetDoubleRandomResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # InspectPlanId:抽查计划编号
-        # InspectPlanName:抽查计划名称
-        # InspectTaskId:抽查任务编号
-        # InspectTaskName:抽查任务名称
-        # InspectTypeName:抽查类型
-        # InspectDepartment:抽查机关
-        # InspectDate:抽查完成时间
-        # InspectItem:检查事项
-        # InspectResult:检查结果
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -1383,13 +1305,16 @@ class GetDoubleRandomResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetDoubleRandomResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1402,6 +1327,8 @@ class GetDoubleRandomResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1410,6 +1337,8 @@ class GetDoubleRandomResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDoubleRandomResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1456,11 +1385,8 @@ class GetEnvironmentalPenaltiesRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -1497,18 +1423,7 @@ class GetEnvironmentalPenaltiesResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # DEPARTMENT:处罚单位
-        # ENT_NAME:企业名称
-        # EXEC_STATUS 执行情况
-        # PUNISH_BASIS:处罚依据
-        # PUNISH_CONTENT:处罚事由
-        # PUNISH_LAW:违反法律
-        # PUNISH_NUM:决定文书号
-        # PUNISH_RES:处罚结果
-        # PUNISH_DATE:处罚时间
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -1539,13 +1454,16 @@ class GetEnvironmentalPenaltiesResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetEnvironmentalPenaltiesResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1558,6 +1476,8 @@ class GetEnvironmentalPenaltiesResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1566,6 +1486,8 @@ class GetEnvironmentalPenaltiesResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetEnvironmentalPenaltiesResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1612,11 +1534,8 @@ class GetHolderInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -1653,14 +1572,7 @@ class GetHolderInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # STOCK_TYPE:股东类型
-        # STOCK_NAME:股东名称
-        # STOCK_PERCENT:持股比例
-        # SHOULD_CAPI:认缴出资额
-        # SHOULD_CAPI_TIME:认缴出资日期
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -1691,13 +1603,16 @@ class GetHolderInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetHolderInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1710,6 +1625,8 @@ class GetHolderInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1718,6 +1635,8 @@ class GetHolderInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetHolderInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1764,11 +1683,8 @@ class GetIntellectualPropertyRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -1805,17 +1721,7 @@ class GetIntellectualPropertyResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:公司名称
-        # Number:登记证号
-        # Type:种类
-        # Pledgor:出质人名称
-        # Pawnee:质权人名称
-        # Period:质权登记期限
-        # Status:出质状态
-        # PublicDate:公示日期
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -1846,13 +1752,16 @@ class GetIntellectualPropertyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetIntellectualPropertyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1865,6 +1774,8 @@ class GetIntellectualPropertyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1873,6 +1784,8 @@ class GetIntellectualPropertyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetIntellectualPropertyResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1919,11 +1832,8 @@ class GetInvestmentAbroadRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -1960,19 +1870,7 @@ class GetInvestmentAbroadResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:企业名称	
-        # InvestName:被投资企业名称	北京德润华日投资顾问有限公司
-        # InvestCreditCode:被投资企业社会信用编码	911101073991890434
-        # InvestLicenseNo:被投资企业注册号	110107017240281
-        # InvestEsDate:被投资企业成立日期	2014-05-19
-        # InvestLegalName:被投资企业法定代表人	北京星际智慧投资基金管理有限公司
-        # InvestRegCap:被投资企业注册资本	13500.0万人民币
-        # InvestStatus:被投资企业经营状态	在营
-        # ShouldCap:投资数额	4000.0万人民币
-        # StockPercentage:投资比例	19.5%\
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -2003,13 +1901,16 @@ class GetInvestmentAbroadResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetInvestmentAbroadResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2022,6 +1923,8 @@ class GetInvestmentAbroadResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2030,6 +1933,8 @@ class GetInvestmentAbroadResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetInvestmentAbroadResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2076,11 +1981,8 @@ class GetJobInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -2117,21 +2019,7 @@ class GetJobInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:企业名称
-        # RecruitingName:职位
-        # Description:描述
-        # Salary:薪资
-        # RecruitingAddress:公司地点
-        # Education:学历
-        # Experience:工作经验
-        # BenefitList:福利
-        # PublishDate:发布日期
-        # StartDate:招聘开始日期
-        # EndDate:招聘截止日期
-        # PageUrl:数据源链接
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -2162,13 +2050,16 @@ class GetJobInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetJobInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2181,6 +2072,8 @@ class GetJobInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2189,6 +2082,8 @@ class GetJobInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetJobInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2235,11 +2130,8 @@ class GetPatentInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -2276,26 +2168,7 @@ class GetPatentInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:企业名称
-        # PatentType:专利类型
-        # PatentName:专利名
-        # PatentStatus:专利状态
-        # RequestNum:申请号
-        # RequestDate:申请日
-        # PublicNum:公开(公告)号
-        # PublicDate:公开(公告)日
-        # InventorList:发明人
-        # PatenteeList:专利权人
-        # CateNum:分类号
-        # PrioNum:优先权号
-        # PrioDate:优先权日
-        # Agency:专利代理机构
-        # Agent:代理人
-        # Brief:简要说明
-        # MainClaim:主权项
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -2326,13 +2199,16 @@ class GetPatentInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPatentInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2345,6 +2221,8 @@ class GetPatentInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2353,6 +2231,8 @@ class GetPatentInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPatentInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2399,11 +2279,8 @@ class GetPrincipalEmployeeRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -2440,11 +2317,7 @@ class GetPrincipalEmployeeResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # Name:姓名
-        # JobTitle:职位
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -2475,13 +2348,16 @@ class GetPrincipalEmployeeResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetPrincipalEmployeeResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2494,6 +2370,8 @@ class GetPrincipalEmployeeResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2502,6 +2380,8 @@ class GetPrincipalEmployeeResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetPrincipalEmployeeResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2548,11 +2428,8 @@ class GetQeneralTaxpayerInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -2589,16 +2466,7 @@ class GetQeneralTaxpayerInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # DEPARTMENT:主管机关
-        # END_DATE:有效日期止
-        # ENT_NAME:纳税人名称
-        # QUALIFICATION 纳税人资格
-        # START_DATE:有效日期起
-        # TAXPAYER_NUM:纳税人识别号
-        # JUDGE_DATE:认定时间
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -2629,13 +2497,16 @@ class GetQeneralTaxpayerInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetQeneralTaxpayerInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2648,6 +2519,8 @@ class GetQeneralTaxpayerInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2656,6 +2529,8 @@ class GetQeneralTaxpayerInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetQeneralTaxpayerInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2702,11 +2577,8 @@ class GetQualificationCertRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -2743,19 +2615,7 @@ class GetQualificationCertResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:企业名称
-        # CertType:证书类型
-        # CertNum:证书认证编号
-        # ValidStartDate:有效期开始日期
-        # ValidEndDate:有效期截止日期
-        # AuthorizeDate:授权日期
-        # AuthorizeDepartment:授权部门
-        # PubDate:公示日期
-        # Province:省份
-        # CertScope:认证范围
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -2786,13 +2646,16 @@ class GetQualificationCertResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetQualificationCertResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2805,6 +2668,8 @@ class GetQualificationCertResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2813,6 +2678,8 @@ class GetQualificationCertResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetQualificationCertResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2859,11 +2726,8 @@ class GetSeriousViolationRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -2900,12 +2764,7 @@ class GetSeriousViolationResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # IN_DATE:列入日期
-        # IN_DEPARTMENT:列入决定机关
-        # IN_REASON:列入严重违法失信企业名单原因
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -2936,13 +2795,16 @@ class GetSeriousViolationResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSeriousViolationResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2955,6 +2817,8 @@ class GetSeriousViolationResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2963,6 +2827,8 @@ class GetSeriousViolationResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSeriousViolationResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3009,11 +2875,8 @@ class GetSoftwareCopyrightRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -3050,18 +2913,7 @@ class GetSoftwareCopyrightResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:企业名称
-        # CopyNum:登记号
-        # TypeNum:分类号
-        # ShortName:作品简称
-        # CopyName:作品全称
-        # Version:版本号
-        # SuccessDate:创作完成日期
-        # FirstDate:首次发表日期
-        # ApprovalDate:登记批准日期
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -3092,13 +2944,16 @@ class GetSoftwareCopyrightResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetSoftwareCopyrightResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3111,6 +2966,8 @@ class GetSoftwareCopyrightResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3119,6 +2976,8 @@ class GetSoftwareCopyrightResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSoftwareCopyrightResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3165,11 +3024,8 @@ class GetTrademarkInfoRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -3206,24 +3062,7 @@ class GetTrademarkInfoResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # entName:企业名称
-        # trademarkName:商标名称
-        # regNum:商标注册号
-        # trademarkType:商标类型
-        # trademarkForm:商标形式
-        # trademarkStatus:商标状态
-        # applyDate:申请日期
-        # imageUrl:图片链接
-        # typeName:商标类型名
-        # period:专用权期限
-        # agent:代理人名称
-        # regPubNo:注册公告号
-        # regPubDate:注册公告日期
-        # firstPubNo:初审公告号
-        # firstPubDate:初审公告日期
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -3254,13 +3093,16 @@ class GetTrademarkInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetTrademarkInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3273,6 +3115,8 @@ class GetTrademarkInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3281,6 +3125,8 @@ class GetTrademarkInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTrademarkInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3327,11 +3173,8 @@ class GetWorkCopyrightRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 页数,第几页
         self.page_number = page_number
-        # 每页条数
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -3368,16 +3211,7 @@ class GetWorkCopyrightResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回结果
-        # EntName:企业名称
-        # CopyName:作品全称
-        # TypeName:作品类别
-        # CopyNum:登记号
-        # SuccessDate:创作完成日期
-        # FirstDate:首次发表日期
-        # ApprovalDate:登记批准日期
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -3408,13 +3242,16 @@ class GetWorkCopyrightResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetWorkCopyrightResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3427,6 +3264,8 @@ class GetWorkCopyrightResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3435,6 +3274,8 @@ class GetWorkCopyrightResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetWorkCopyrightResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3505,13 +3346,16 @@ class PostCorpAuthInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PostCorpAuthInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3524,6 +3368,8 @@ class PostCorpAuthInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3532,6 +3378,8 @@ class PostCorpAuthInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PostCorpAuthInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3576,7 +3424,6 @@ class QueryActiveUserStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -3608,15 +3455,10 @@ class QueryActiveUserStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -3661,9 +3503,7 @@ class QueryActiveUserStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryActiveUserStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -3702,13 +3542,16 @@ class QueryActiveUserStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryActiveUserStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3721,6 +3564,8 @@ class QueryActiveUserStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3729,6 +3574,8 @@ class QueryActiveUserStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryActiveUserStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3777,7 +3624,6 @@ class QueryAnhmdStatisticalDataRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -3817,15 +3663,10 @@ class QueryAnhmdStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -3870,9 +3711,7 @@ class QueryAnhmdStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryAnhmdStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -3911,13 +3750,16 @@ class QueryAnhmdStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryAnhmdStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3930,6 +3772,8 @@ class QueryAnhmdStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3938,6 +3782,8 @@ class QueryAnhmdStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAnhmdStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3982,7 +3828,6 @@ class QueryApprovalStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -4014,15 +3859,10 @@ class QueryApprovalStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -4067,9 +3907,7 @@ class QueryApprovalStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryApprovalStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -4108,13 +3946,16 @@ class QueryApprovalStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryApprovalStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4127,6 +3968,8 @@ class QueryApprovalStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4135,6 +3978,8 @@ class QueryApprovalStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryApprovalStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4179,7 +4024,6 @@ class QueryAttendanceStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -4211,15 +4055,10 @@ class QueryAttendanceStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -4264,9 +4103,7 @@ class QueryAttendanceStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryAttendanceStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -4305,13 +4142,16 @@ class QueryAttendanceStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryAttendanceStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4324,6 +4164,8 @@ class QueryAttendanceStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4332,6 +4174,8 @@ class QueryAttendanceStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAttendanceStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4376,7 +4220,6 @@ class QueryBlackboardStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -4408,15 +4251,10 @@ class QueryBlackboardStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -4461,9 +4299,7 @@ class QueryBlackboardStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryBlackboardStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -4502,13 +4338,16 @@ class QueryBlackboardStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryBlackboardStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4521,6 +4360,8 @@ class QueryBlackboardStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4529,6 +4370,8 @@ class QueryBlackboardStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryBlackboardStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4573,7 +4416,6 @@ class QueryCalendarStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -4605,15 +4447,10 @@ class QueryCalendarStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -4658,9 +4495,7 @@ class QueryCalendarStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryCalendarStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -4699,13 +4534,16 @@ class QueryCalendarStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryCalendarStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4718,6 +4556,8 @@ class QueryCalendarStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4726,6 +4566,8 @@ class QueryCalendarStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCalendarStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4770,7 +4612,6 @@ class QueryCheckinStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -4802,15 +4643,10 @@ class QueryCheckinStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -4855,9 +4691,7 @@ class QueryCheckinStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryCheckinStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -4896,13 +4730,16 @@ class QueryCheckinStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryCheckinStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -4915,6 +4752,8 @@ class QueryCheckinStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -4923,6 +4762,8 @@ class QueryCheckinStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCheckinStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -4967,7 +4808,6 @@ class QueryCircleStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -4999,15 +4839,10 @@ class QueryCircleStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -5052,9 +4887,7 @@ class QueryCircleStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryCircleStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -5093,13 +4926,16 @@ class QueryCircleStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryCircleStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5112,6 +4948,8 @@ class QueryCircleStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5120,6 +4958,8 @@ class QueryCircleStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCircleStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5207,15 +5047,10 @@ class QueryCompanyBasicInfoResponseBody(TeaModel):
         request_id: str = None,
         total: int = None,
     ):
-        # code
         self.code = code
-        # data
         self.data = data
-        # message
         self.message = message
-        # traceId
         self.request_id = request_id
-        # total
         self.total = total
 
     def validate(self):
@@ -5258,13 +5093,16 @@ class QueryCompanyBasicInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryCompanyBasicInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5277,6 +5115,8 @@ class QueryCompanyBasicInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5285,6 +5125,8 @@ class QueryCompanyBasicInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCompanyBasicInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5363,9 +5205,7 @@ class QueryDigitalDistrictOrgInfoResponseBody(TeaModel):
         arguments: List[str] = None,
         result: str = None,
     ):
-        # arguments
         self.arguments = arguments
-        # result
         self.result = result
 
     def validate(self):
@@ -5396,13 +5236,16 @@ class QueryDigitalDistrictOrgInfoResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDigitalDistrictOrgInfoResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5415,6 +5258,8 @@ class QueryDigitalDistrictOrgInfoResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5423,6 +5268,8 @@ class QueryDigitalDistrictOrgInfoResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDigitalDistrictOrgInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5467,7 +5314,6 @@ class QueryDingReciveStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -5499,15 +5345,10 @@ class QueryDingReciveStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -5552,9 +5393,7 @@ class QueryDingReciveStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryDingReciveStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -5593,13 +5432,16 @@ class QueryDingReciveStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDingReciveStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5612,6 +5454,8 @@ class QueryDingReciveStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5620,6 +5464,8 @@ class QueryDingReciveStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDingReciveStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5664,7 +5510,6 @@ class QueryDingSendStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -5696,15 +5541,10 @@ class QueryDingSendStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -5749,9 +5589,7 @@ class QueryDingSendStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryDingSendStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -5790,13 +5628,16 @@ class QueryDingSendStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDingSendStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -5809,6 +5650,8 @@ class QueryDingSendStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -5817,6 +5660,8 @@ class QueryDingSendStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDingSendStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -5861,7 +5706,6 @@ class QueryDocumentStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -5893,15 +5737,10 @@ class QueryDocumentStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -5946,9 +5785,7 @@ class QueryDocumentStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryDocumentStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -5987,13 +5824,16 @@ class QueryDocumentStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDocumentStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6006,6 +5846,8 @@ class QueryDocumentStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6014,6 +5856,8 @@ class QueryDocumentStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDocumentStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6058,7 +5902,6 @@ class QueryDriveStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -6090,15 +5933,10 @@ class QueryDriveStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -6143,9 +5981,7 @@ class QueryDriveStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryDriveStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -6184,13 +6020,16 @@ class QueryDriveStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryDriveStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6203,6 +6042,8 @@ class QueryDriveStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6211,6 +6052,8 @@ class QueryDriveStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDriveStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6255,7 +6098,6 @@ class QueryEmployeeTypeStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -6287,15 +6129,10 @@ class QueryEmployeeTypeStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -6340,9 +6177,7 @@ class QueryEmployeeTypeStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryEmployeeTypeStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -6381,13 +6216,16 @@ class QueryEmployeeTypeStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryEmployeeTypeStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6400,6 +6238,8 @@ class QueryEmployeeTypeStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6408,6 +6248,8 @@ class QueryEmployeeTypeStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryEmployeeTypeStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6458,19 +6300,12 @@ class QueryGeneralDataServiceRequest(TeaModel):
         start_date: str = None,
         user_id: str = None,
     ):
-        # 部门ID
         self.dept_id = dept_id
-        # 结束日期
         self.end_date = end_date
-        # 分页页码
         self.page_number = page_number
-        # 每页大小
         self.page_size = page_size
-        # 服务编码
         self.service_id = service_id
-        # statDate
         self.start_date = start_date
-        # 员工ID
         self.user_id = user_id
 
     def validate(self):
@@ -6525,13 +6360,9 @@ class QueryGeneralDataServiceResponseBodyMetaList(TeaModel):
         field_name: str = None,
         field_type: str = None,
     ):
-        # 指标名称
         self.field_desc = field_desc
-        # 指标口径
         self.field_id = field_id
-        # 指标ID
         self.field_name = field_name
-        # 指标单位
         self.field_type = field_type
 
     def validate(self):
@@ -6572,9 +6403,7 @@ class QueryGeneralDataServiceResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryGeneralDataServiceResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -6613,13 +6442,16 @@ class QueryGeneralDataServiceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryGeneralDataServiceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6632,6 +6464,8 @@ class QueryGeneralDataServiceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6640,6 +6474,8 @@ class QueryGeneralDataServiceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryGeneralDataServiceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6684,7 +6520,6 @@ class QueryGroupLiveStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -6716,15 +6551,10 @@ class QueryGroupLiveStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -6769,9 +6599,7 @@ class QueryGroupLiveStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryGroupLiveStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -6810,13 +6638,16 @@ class QueryGroupLiveStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryGroupLiveStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -6829,6 +6660,8 @@ class QueryGroupLiveStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -6837,6 +6670,8 @@ class QueryGroupLiveStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryGroupLiveStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -6881,7 +6716,6 @@ class QueryGroupMessageStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -6913,15 +6747,10 @@ class QueryGroupMessageStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -6966,9 +6795,7 @@ class QueryGroupMessageStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryGroupMessageStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -7007,13 +6834,16 @@ class QueryGroupMessageStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryGroupMessageStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7026,6 +6856,8 @@ class QueryGroupMessageStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7034,6 +6866,8 @@ class QueryGroupMessageStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryGroupMessageStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7078,7 +6912,6 @@ class QueryHealthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -7110,15 +6943,10 @@ class QueryHealthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -7163,9 +6991,7 @@ class QueryHealthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryHealthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -7204,13 +7030,16 @@ class QueryHealthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryHealthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7223,6 +7052,8 @@ class QueryHealthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7231,6 +7062,8 @@ class QueryHealthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryHealthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7275,7 +7108,6 @@ class QueryMailStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -7307,15 +7139,10 @@ class QueryMailStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -7360,9 +7187,7 @@ class QueryMailStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryMailStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -7401,13 +7226,16 @@ class QueryMailStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryMailStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7420,6 +7248,8 @@ class QueryMailStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7428,6 +7258,8 @@ class QueryMailStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMailStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7537,13 +7369,16 @@ class QueryOfficialDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryOfficialDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7556,6 +7391,8 @@ class QueryOfficialDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7564,6 +7401,8 @@ class QueryOfficialDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOfficialDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7609,9 +7448,7 @@ class QueryOfficialDatasetFieldsRequest(TeaModel):
         ds_id: str = None,
         user_id: str = None,
     ):
-        # 数据集id
         self.ds_id = ds_id
-        # 用户id
         self.user_id = user_id
 
     def validate(self):
@@ -7763,13 +7600,16 @@ class QueryOfficialDatasetFieldsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryOfficialDatasetFieldsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -7782,6 +7622,8 @@ class QueryOfficialDatasetFieldsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -7790,6 +7632,8 @@ class QueryOfficialDatasetFieldsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOfficialDatasetFieldsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -7836,11 +7680,8 @@ class QueryOfficialDatasetListRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
-        # 关键词搜索
         self.keyword = keyword
-        # 起始页，从1开始
         self.page_number = page_number
-        # 单页大小，最大100
         self.page_size = page_size
 
     def validate(self):
@@ -7984,13 +7825,16 @@ class QueryOfficialDatasetListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryOfficialDatasetListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8003,6 +7847,8 @@ class QueryOfficialDatasetListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8011,6 +7857,8 @@ class QueryOfficialDatasetListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOfficialDatasetListResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8055,7 +7903,6 @@ class QueryOnlineUserStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -8087,15 +7934,10 @@ class QueryOnlineUserStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -8140,9 +7982,7 @@ class QueryOnlineUserStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryOnlineUserStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -8181,13 +8021,16 @@ class QueryOnlineUserStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryOnlineUserStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8200,6 +8043,8 @@ class QueryOnlineUserStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8208,6 +8053,8 @@ class QueryOnlineUserStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOnlineUserStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8252,7 +8099,6 @@ class QueryRedEnvelopeReciveStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -8284,15 +8130,10 @@ class QueryRedEnvelopeReciveStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -8337,9 +8178,7 @@ class QueryRedEnvelopeReciveStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryRedEnvelopeReciveStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -8378,13 +8217,16 @@ class QueryRedEnvelopeReciveStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryRedEnvelopeReciveStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8397,6 +8239,8 @@ class QueryRedEnvelopeReciveStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8405,6 +8249,8 @@ class QueryRedEnvelopeReciveStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryRedEnvelopeReciveStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8449,7 +8295,6 @@ class QueryRedEnvelopeSendStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -8481,15 +8326,10 @@ class QueryRedEnvelopeSendStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -8534,9 +8374,7 @@ class QueryRedEnvelopeSendStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryRedEnvelopeSendStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -8575,13 +8413,16 @@ class QueryRedEnvelopeSendStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryRedEnvelopeSendStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8594,6 +8435,8 @@ class QueryRedEnvelopeSendStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8602,6 +8445,8 @@ class QueryRedEnvelopeSendStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryRedEnvelopeSendStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8646,7 +8491,6 @@ class QueryReportStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -8678,15 +8522,10 @@ class QueryReportStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -8731,9 +8570,7 @@ class QueryReportStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryReportStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -8772,13 +8609,16 @@ class QueryReportStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryReportStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8791,6 +8631,8 @@ class QueryReportStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8799,6 +8641,8 @@ class QueryReportStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryReportStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -8843,7 +8687,6 @@ class QuerySingleMessageStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -8875,15 +8718,10 @@ class QuerySingleMessageStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -8928,9 +8766,7 @@ class QuerySingleMessageStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QuerySingleMessageStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -8969,13 +8805,16 @@ class QuerySingleMessageStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QuerySingleMessageStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -8988,6 +8827,8 @@ class QuerySingleMessageStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -8996,6 +8837,8 @@ class QuerySingleMessageStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QuerySingleMessageStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9040,7 +8883,6 @@ class QueryTelMeetingStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -9072,15 +8914,10 @@ class QueryTelMeetingStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -9125,9 +8962,7 @@ class QueryTelMeetingStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryTelMeetingStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -9166,13 +9001,16 @@ class QueryTelMeetingStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryTelMeetingStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9185,6 +9023,8 @@ class QueryTelMeetingStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9193,6 +9033,8 @@ class QueryTelMeetingStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryTelMeetingStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9237,7 +9079,6 @@ class QueryTodoStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -9269,15 +9110,10 @@ class QueryTodoStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -9322,9 +9158,7 @@ class QueryTodoStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryTodoStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -9363,13 +9197,16 @@ class QueryTodoStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryTodoStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9382,6 +9219,8 @@ class QueryTodoStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9390,6 +9229,8 @@ class QueryTodoStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryTodoStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9434,7 +9275,6 @@ class QueryVedioMeetingStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -9466,15 +9306,10 @@ class QueryVedioMeetingStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -9519,9 +9354,7 @@ class QueryVedioMeetingStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryVedioMeetingStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -9560,13 +9393,16 @@ class QueryVedioMeetingStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryVedioMeetingStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9579,6 +9415,8 @@ class QueryVedioMeetingStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9587,6 +9425,8 @@ class QueryVedioMeetingStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryVedioMeetingStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9631,7 +9471,6 @@ class QueryYydActiveDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -9663,15 +9502,10 @@ class QueryYydActiveDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -9716,9 +9550,7 @@ class QueryYydActiveDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydActiveDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -9757,13 +9589,16 @@ class QueryYydActiveDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydActiveDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9776,6 +9611,8 @@ class QueryYydActiveDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9784,6 +9621,8 @@ class QueryYydActiveDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydActiveDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -9828,7 +9667,6 @@ class QueryYydActiveMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -9860,15 +9698,10 @@ class QueryYydActiveMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -9913,9 +9746,7 @@ class QueryYydActiveMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydActiveMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -9954,13 +9785,16 @@ class QueryYydActiveMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydActiveMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -9973,6 +9807,8 @@ class QueryYydActiveMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -9981,6 +9817,8 @@ class QueryYydActiveMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydActiveMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10025,7 +9863,6 @@ class QueryYydActiveWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -10057,15 +9894,10 @@ class QueryYydActiveWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -10110,9 +9942,7 @@ class QueryYydActiveWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydActiveWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -10151,13 +9981,16 @@ class QueryYydActiveWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydActiveWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10170,6 +10003,8 @@ class QueryYydActiveWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10178,6 +10013,8 @@ class QueryYydActiveWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydActiveWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10222,7 +10059,6 @@ class QueryYydAppDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -10254,15 +10090,10 @@ class QueryYydAppDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -10307,9 +10138,7 @@ class QueryYydAppDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydAppDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -10348,13 +10177,16 @@ class QueryYydAppDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydAppDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10367,6 +10199,8 @@ class QueryYydAppDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10375,6 +10209,8 @@ class QueryYydAppDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydAppDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10419,7 +10255,6 @@ class QueryYydAppMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -10451,15 +10286,10 @@ class QueryYydAppMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -10504,9 +10334,7 @@ class QueryYydAppMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydAppMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -10545,13 +10373,16 @@ class QueryYydAppMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydAppMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10564,6 +10395,8 @@ class QueryYydAppMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10572,6 +10405,8 @@ class QueryYydAppMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydAppMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10616,7 +10451,6 @@ class QueryYydAppStdStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -10648,15 +10482,10 @@ class QueryYydAppStdStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -10701,9 +10530,7 @@ class QueryYydAppStdStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydAppStdStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -10742,13 +10569,16 @@ class QueryYydAppStdStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydAppStdStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10761,6 +10591,8 @@ class QueryYydAppStdStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10769,6 +10601,8 @@ class QueryYydAppStdStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydAppStdStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -10813,7 +10647,6 @@ class QueryYydAppWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -10845,15 +10678,10 @@ class QueryYydAppWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -10898,9 +10726,7 @@ class QueryYydAppWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydAppWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -10939,13 +10765,16 @@ class QueryYydAppWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydAppWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -10958,6 +10787,8 @@ class QueryYydAppWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -10966,6 +10797,8 @@ class QueryYydAppWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydAppWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11010,7 +10843,6 @@ class QueryYydCalendarDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -11042,15 +10874,10 @@ class QueryYydCalendarDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -11095,9 +10922,7 @@ class QueryYydCalendarDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydCalendarDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -11136,13 +10961,16 @@ class QueryYydCalendarDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydCalendarDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11155,6 +10983,8 @@ class QueryYydCalendarDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11163,6 +10993,8 @@ class QueryYydCalendarDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydCalendarDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11207,7 +11039,6 @@ class QueryYydCalendarMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -11239,15 +11070,10 @@ class QueryYydCalendarMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -11292,9 +11118,7 @@ class QueryYydCalendarMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydCalendarMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -11333,13 +11157,16 @@ class QueryYydCalendarMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydCalendarMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11352,6 +11179,8 @@ class QueryYydCalendarMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11360,6 +11189,8 @@ class QueryYydCalendarMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydCalendarMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11404,7 +11235,6 @@ class QueryYydCalendarWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -11436,15 +11266,10 @@ class QueryYydCalendarWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -11489,9 +11314,7 @@ class QueryYydCalendarWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydCalendarWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -11530,13 +11353,16 @@ class QueryYydCalendarWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydCalendarWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11549,6 +11375,8 @@ class QueryYydCalendarWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11557,6 +11385,8 @@ class QueryYydCalendarWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydCalendarWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11601,7 +11431,6 @@ class QueryYydDingMsgDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -11633,15 +11462,10 @@ class QueryYydDingMsgDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -11686,9 +11510,7 @@ class QueryYydDingMsgDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydDingMsgDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -11727,13 +11549,16 @@ class QueryYydDingMsgDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydDingMsgDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11746,6 +11571,8 @@ class QueryYydDingMsgDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11754,6 +11581,8 @@ class QueryYydDingMsgDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydDingMsgDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11798,7 +11627,6 @@ class QueryYydDingMsgMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -11830,15 +11658,10 @@ class QueryYydDingMsgMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -11883,9 +11706,7 @@ class QueryYydDingMsgMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydDingMsgMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -11924,13 +11745,16 @@ class QueryYydDingMsgMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydDingMsgMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -11943,6 +11767,8 @@ class QueryYydDingMsgMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -11951,6 +11777,8 @@ class QueryYydDingMsgMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydDingMsgMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -11995,7 +11823,6 @@ class QueryYydDingMsgWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -12027,15 +11854,10 @@ class QueryYydDingMsgWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -12080,9 +11902,7 @@ class QueryYydDingMsgWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydDingMsgWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -12121,13 +11941,16 @@ class QueryYydDingMsgWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydDingMsgWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12140,6 +11963,8 @@ class QueryYydDingMsgWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12148,6 +11973,8 @@ class QueryYydDingMsgWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydDingMsgWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12192,7 +12019,6 @@ class QueryYydGroupMsgDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -12224,15 +12050,10 @@ class QueryYydGroupMsgDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -12277,9 +12098,7 @@ class QueryYydGroupMsgDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydGroupMsgDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -12318,13 +12137,16 @@ class QueryYydGroupMsgDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydGroupMsgDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12337,6 +12159,8 @@ class QueryYydGroupMsgDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12345,6 +12169,8 @@ class QueryYydGroupMsgDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydGroupMsgDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12389,7 +12215,6 @@ class QueryYydGroupMsgMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -12421,15 +12246,10 @@ class QueryYydGroupMsgMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -12474,9 +12294,7 @@ class QueryYydGroupMsgMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydGroupMsgMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -12515,13 +12333,16 @@ class QueryYydGroupMsgMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydGroupMsgMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12534,6 +12355,8 @@ class QueryYydGroupMsgMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12542,6 +12365,8 @@ class QueryYydGroupMsgMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydGroupMsgMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12586,7 +12411,6 @@ class QueryYydGroupMsgWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -12618,15 +12442,10 @@ class QueryYydGroupMsgWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -12671,9 +12490,7 @@ class QueryYydGroupMsgWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydGroupMsgWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -12712,13 +12529,16 @@ class QueryYydGroupMsgWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydGroupMsgWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12731,6 +12551,8 @@ class QueryYydGroupMsgWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12739,6 +12561,8 @@ class QueryYydGroupMsgWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydGroupMsgWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12783,7 +12607,6 @@ class QueryYydLogDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -12815,15 +12638,10 @@ class QueryYydLogDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -12868,9 +12686,7 @@ class QueryYydLogDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydLogDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -12909,13 +12725,16 @@ class QueryYydLogDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydLogDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -12928,6 +12747,8 @@ class QueryYydLogDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -12936,6 +12757,8 @@ class QueryYydLogDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydLogDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -12980,7 +12803,6 @@ class QueryYydLogMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -13012,15 +12834,10 @@ class QueryYydLogMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -13065,9 +12882,7 @@ class QueryYydLogMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydLogMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -13106,13 +12921,16 @@ class QueryYydLogMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydLogMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -13125,6 +12943,8 @@ class QueryYydLogMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -13133,6 +12953,8 @@ class QueryYydLogMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydLogMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -13177,7 +12999,6 @@ class QueryYydLogWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -13209,15 +13030,10 @@ class QueryYydLogWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -13262,9 +13078,7 @@ class QueryYydLogWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydLogWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -13303,13 +13117,16 @@ class QueryYydLogWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydLogWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -13322,6 +13139,8 @@ class QueryYydLogWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -13330,6 +13149,8 @@ class QueryYydLogWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydLogWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -13374,7 +13195,6 @@ class QueryYydMeetingDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -13406,15 +13226,10 @@ class QueryYydMeetingDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -13459,9 +13274,7 @@ class QueryYydMeetingDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydMeetingDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -13500,13 +13313,16 @@ class QueryYydMeetingDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydMeetingDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -13519,6 +13335,8 @@ class QueryYydMeetingDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -13527,6 +13345,8 @@ class QueryYydMeetingDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydMeetingDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -13571,7 +13391,6 @@ class QueryYydMeetingMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -13603,15 +13422,10 @@ class QueryYydMeetingMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -13656,9 +13470,7 @@ class QueryYydMeetingMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydMeetingMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -13697,13 +13509,16 @@ class QueryYydMeetingMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydMeetingMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -13716,6 +13531,8 @@ class QueryYydMeetingMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -13724,6 +13541,8 @@ class QueryYydMeetingMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydMeetingMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -13768,7 +13587,6 @@ class QueryYydMeetingWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -13800,15 +13618,10 @@ class QueryYydMeetingWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -13853,9 +13666,7 @@ class QueryYydMeetingWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydMeetingWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -13894,13 +13705,16 @@ class QueryYydMeetingWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydMeetingWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -13913,6 +13727,8 @@ class QueryYydMeetingWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -13921,6 +13737,8 @@ class QueryYydMeetingWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydMeetingWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -13965,7 +13783,6 @@ class QueryYydNoticeDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -13997,15 +13814,10 @@ class QueryYydNoticeDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -14050,9 +13862,7 @@ class QueryYydNoticeDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydNoticeDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -14091,13 +13901,16 @@ class QueryYydNoticeDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydNoticeDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -14110,6 +13923,8 @@ class QueryYydNoticeDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -14118,6 +13933,8 @@ class QueryYydNoticeDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydNoticeDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -14162,7 +13979,6 @@ class QueryYydNoticeMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -14194,15 +14010,10 @@ class QueryYydNoticeMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -14247,9 +14058,7 @@ class QueryYydNoticeMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydNoticeMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -14288,13 +14097,16 @@ class QueryYydNoticeMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydNoticeMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -14307,6 +14119,8 @@ class QueryYydNoticeMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -14315,6 +14129,8 @@ class QueryYydNoticeMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydNoticeMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -14359,7 +14175,6 @@ class QueryYydNoticeWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -14391,15 +14206,10 @@ class QueryYydNoticeWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -14444,9 +14254,7 @@ class QueryYydNoticeWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydNoticeWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -14485,13 +14293,16 @@ class QueryYydNoticeWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydNoticeWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -14504,6 +14315,8 @@ class QueryYydNoticeWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -14512,6 +14325,8 @@ class QueryYydNoticeWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydNoticeWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -14556,7 +14371,6 @@ class QueryYydSingleMsgDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -14588,15 +14402,10 @@ class QueryYydSingleMsgDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -14641,9 +14450,7 @@ class QueryYydSingleMsgDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydSingleMsgDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -14682,13 +14489,16 @@ class QueryYydSingleMsgDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydSingleMsgDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -14701,6 +14511,8 @@ class QueryYydSingleMsgDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -14709,6 +14521,8 @@ class QueryYydSingleMsgDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydSingleMsgDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -14753,7 +14567,6 @@ class QueryYydSingleMsgMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -14785,15 +14598,10 @@ class QueryYydSingleMsgMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -14838,9 +14646,7 @@ class QueryYydSingleMsgMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydSingleMsgMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -14879,13 +14685,16 @@ class QueryYydSingleMsgMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydSingleMsgMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -14898,6 +14707,8 @@ class QueryYydSingleMsgMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -14906,6 +14717,8 @@ class QueryYydSingleMsgMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydSingleMsgMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -14950,7 +14763,6 @@ class QueryYydSingleMsgWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -14982,15 +14794,10 @@ class QueryYydSingleMsgWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -15035,9 +14842,7 @@ class QueryYydSingleMsgWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydSingleMsgWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -15076,13 +14881,16 @@ class QueryYydSingleMsgWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydSingleMsgWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -15095,6 +14903,8 @@ class QueryYydSingleMsgWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -15103,6 +14913,8 @@ class QueryYydSingleMsgWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydSingleMsgWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -15147,7 +14959,6 @@ class QueryYydToatlMsgDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -15179,15 +14990,10 @@ class QueryYydToatlMsgDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -15232,9 +15038,7 @@ class QueryYydToatlMsgDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydToatlMsgDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -15273,13 +15077,16 @@ class QueryYydToatlMsgDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydToatlMsgDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -15292,6 +15099,8 @@ class QueryYydToatlMsgDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -15300,6 +15109,8 @@ class QueryYydToatlMsgDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydToatlMsgDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -15344,7 +15155,6 @@ class QueryYydToatlMsgMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -15376,15 +15186,10 @@ class QueryYydToatlMsgMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -15429,9 +15234,7 @@ class QueryYydToatlMsgMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydToatlMsgMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -15470,13 +15273,16 @@ class QueryYydToatlMsgMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydToatlMsgMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -15489,6 +15295,8 @@ class QueryYydToatlMsgMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -15497,6 +15305,8 @@ class QueryYydToatlMsgMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydToatlMsgMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -15541,7 +15351,6 @@ class QueryYydToatlMsgWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -15573,15 +15382,10 @@ class QueryYydToatlMsgWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -15626,9 +15430,7 @@ class QueryYydToatlMsgWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydToatlMsgWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -15667,13 +15469,16 @@ class QueryYydToatlMsgWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydToatlMsgWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -15686,6 +15491,8 @@ class QueryYydToatlMsgWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -15694,6 +15501,8 @@ class QueryYydToatlMsgWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydToatlMsgWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -15738,7 +15547,6 @@ class QueryYydTodoDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -15770,15 +15578,10 @@ class QueryYydTodoDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -15823,9 +15626,7 @@ class QueryYydTodoDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydTodoDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -15864,13 +15665,16 @@ class QueryYydTodoDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydTodoDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -15883,6 +15687,8 @@ class QueryYydTodoDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -15891,6 +15697,8 @@ class QueryYydTodoDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydTodoDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -15935,7 +15743,6 @@ class QueryYydTodoMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -15967,15 +15774,10 @@ class QueryYydTodoMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -16020,9 +15822,7 @@ class QueryYydTodoMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydTodoMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -16061,13 +15861,16 @@ class QueryYydTodoMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydTodoMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -16080,6 +15883,8 @@ class QueryYydTodoMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -16088,6 +15893,8 @@ class QueryYydTodoMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydTodoMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -16132,7 +15939,6 @@ class QueryYydTodoWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -16164,15 +15970,10 @@ class QueryYydTodoWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -16217,9 +16018,7 @@ class QueryYydTodoWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydTodoWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -16258,13 +16057,16 @@ class QueryYydTodoWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydTodoWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -16277,6 +16079,8 @@ class QueryYydTodoWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -16285,6 +16089,8 @@ class QueryYydTodoWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydTodoWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -16329,7 +16135,6 @@ class QueryYydTotalDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -16361,15 +16166,10 @@ class QueryYydTotalDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -16414,9 +16214,7 @@ class QueryYydTotalDayStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydTotalDayStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -16455,13 +16253,16 @@ class QueryYydTotalDayStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydTotalDayStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -16474,6 +16275,8 @@ class QueryYydTotalDayStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -16482,6 +16285,8 @@ class QueryYydTotalDayStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydTotalDayStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -16526,7 +16331,6 @@ class QueryYydTotalMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -16558,15 +16362,10 @@ class QueryYydTotalMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -16611,9 +16410,7 @@ class QueryYydTotalMonthStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydTotalMonthStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -16652,13 +16449,16 @@ class QueryYydTotalMonthStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydTotalMonthStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -16671,6 +16471,8 @@ class QueryYydTotalMonthStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -16679,6 +16481,8 @@ class QueryYydTotalMonthStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydTotalMonthStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -16723,7 +16527,6 @@ class QueryYydTotalStdStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -16755,15 +16558,10 @@ class QueryYydTotalStdStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -16808,9 +16606,7 @@ class QueryYydTotalStdStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydTotalStdStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -16849,13 +16645,16 @@ class QueryYydTotalStdStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydTotalStdStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -16868,6 +16667,8 @@ class QueryYydTotalStdStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -16876,6 +16677,8 @@ class QueryYydTotalStdStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydTotalStdStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -16920,7 +16723,6 @@ class QueryYydTotalWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
-        # statDate
         self.stat_date = stat_date
 
     def validate(self):
@@ -16952,15 +16754,10 @@ class QueryYydTotalWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
-        # 指标口径
         self.kpi_caliber = kpi_caliber
-        # 指标ID
         self.kpi_id = kpi_id
-        # 指标名称
         self.kpi_name = kpi_name
-        # 指标周期
         self.period = period
-        # 指标单位
         self.unit = unit
 
     def validate(self):
@@ -17005,9 +16802,7 @@ class QueryYydTotalWeekStatisticalDataResponseBody(TeaModel):
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryYydTotalWeekStatisticalDataResponseBodyMetaList] = None,
     ):
-        # 指标数据
         self.data_list = data_list
-        # 指标元数据
         self.meta_list = meta_list
 
     def validate(self):
@@ -17046,13 +16841,16 @@ class QueryYydTotalWeekStatisticalDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryYydTotalWeekStatisticalDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -17065,6 +16863,8 @@ class QueryYydTotalWeekStatisticalDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -17073,6 +16873,8 @@ class QueryYydTotalWeekStatisticalDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryYydTotalWeekStatisticalDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -17119,11 +16921,8 @@ class SearchCompanyRequest(TeaModel):
         page_size: int = None,
         search_key: str = None,
     ):
-        # 起始页
         self.page_number = page_number
-        # 页面大小
         self.page_size = page_size
-        # 关键词
         self.search_key = search_key
 
     def validate(self):
@@ -17160,9 +16959,7 @@ class SearchCompanyResponseBody(TeaModel):
         data: str = None,
         total: int = None,
     ):
-        # 返回数据结果
         self.data = data
-        # 总条数
         self.total = total
 
     def validate(self):
@@ -17193,13 +16990,16 @@ class SearchCompanyResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SearchCompanyResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -17212,6 +17012,8 @@ class SearchCompanyResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -17220,6 +17022,8 @@ class SearchCompanyResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchCompanyResponseBody()
             self.body = temp_model.from_map(m['body'])

@@ -42,7 +42,6 @@ class CloseHPackageRequest(TeaModel):
         self,
         mini_app_id: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
 
     def validate(self):
@@ -96,13 +95,16 @@ class CloseHPackageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CloseHPackageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -115,6 +117,8 @@ class CloseHPackageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -123,6 +127,8 @@ class CloseHPackageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CloseHPackageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -167,7 +173,6 @@ class GetUploadTokenRequest(TeaModel):
         self,
         mini_app_id: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
 
     def validate(self):
@@ -202,21 +207,13 @@ class GetUploadTokenResponseBody(TeaModel):
         region: str = None,
         sts_token: str = None,
     ):
-        # 阿里云OSS SDK初始化配置项
         self.access_key_id = access_key_id
-        # 阿里云OSS SDK初始化配置项
         self.access_key_secret = access_key_secret
-        # 阿里云OSS SDK初始化配置项
         self.bucket = bucket
-        # 阿里云OSS SDK初始化配置项
         self.endpoint = endpoint
-        # 阿里云OSS SDK初始化配置项
         self.expiration = expiration
-        # 阿里云OSS SDK初始化配置项
         self.name = name
-        # 阿里云OSS SDK初始化配置项
         self.region = region
-        # 阿里云OSS SDK初始化配置项
         self.sts_token = sts_token
 
     def validate(self):
@@ -271,13 +268,16 @@ class GetUploadTokenResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetUploadTokenResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -290,6 +290,8 @@ class GetUploadTokenResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -298,6 +300,8 @@ class GetUploadTokenResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUploadTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -344,11 +348,8 @@ class HPackageListGetRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 分页设置
         self.page_number = page_number
-        # 每页内容数量
         self.page_size = page_size
 
     def validate(self):
@@ -391,21 +392,13 @@ class HPackageListGetResponseBodyList(TeaModel):
         task_id: str = None,
         version: str = None,
     ):
-        # 版本是否可用
         self.avaliable = avaliable
-        # 上传者
         self.creator = creator
-        # 上传是否已完成
         self.finished = finished
-        # 上传时间
         self.operation_time = operation_time
-        # 离线包大小，单位byte
         self.package_size = package_size
-        # 版本状态
         self.status = status
-        # 上传任务ID
         self.task_id = task_id
-        # 版本号
         self.version = version
 
     def validate(self):
@@ -462,9 +455,7 @@ class HPackageListGetResponseBody(TeaModel):
         list: List[HPackageListGetResponseBodyList] = None,
         total_count: int = None,
     ):
-        # 离线包列表
         self.list = list
-        # 总数量
         self.total_count = total_count
 
     def validate(self):
@@ -503,13 +494,16 @@ class HPackageListGetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: HPackageListGetResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -522,6 +516,8 @@ class HPackageListGetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -530,6 +526,8 @@ class HPackageListGetResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = HPackageListGetResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -575,9 +573,7 @@ class HPublishPackageRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 离线包版本号
         self.version = version
 
     def validate(self):
@@ -635,13 +631,16 @@ class HPublishPackageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: HPublishPackageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -654,6 +653,8 @@ class HPublishPackageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -662,6 +663,8 @@ class HPublishPackageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = HPublishPackageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -707,9 +710,7 @@ class HUploadPackageRequest(TeaModel):
         mini_app_id: str = None,
         oss_object_key: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 离线包资源OSS Key
         self.oss_object_key = oss_object_key
 
     def validate(self):
@@ -767,13 +768,16 @@ class HUploadPackageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: HUploadPackageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -786,6 +790,8 @@ class HUploadPackageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -794,6 +800,8 @@ class HUploadPackageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = HUploadPackageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -839,9 +847,7 @@ class HUploadPackageStatusRequest(TeaModel):
         mini_app_id: str = None,
         task_id: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 上传任务ID
         self.task_id = task_id
 
     def validate(self):
@@ -878,17 +884,11 @@ class HUploadPackageStatusResponseBody(TeaModel):
         task_id: str = None,
         version: str = None,
     ):
-        # 创建时间
         self.build_time = build_time
-        # 任务是否已结束
         self.finished = finished
-        # H5离线包体积，单位Byte
         self.package_size = package_size
-        # 任务状态。1：构建中；2：成功；3：失败；5：超时。
         self.status = status
-        # 创建离线包接口返回的taskId
         self.task_id = task_id
-        # H5离线包版本号
         self.version = version
 
     def validate(self):
@@ -935,13 +935,16 @@ class HUploadPackageStatusResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: HUploadPackageStatusResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -954,6 +957,8 @@ class HUploadPackageStatusResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -962,6 +967,8 @@ class HUploadPackageStatusResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = HUploadPackageStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1006,7 +1013,6 @@ class OpenMicroAppPackageRequest(TeaModel):
         self,
         agent_id: int = None,
     ):
-        # 企业自建应用agentId
         self.agent_id = agent_id
 
     def validate(self):
@@ -1034,7 +1040,6 @@ class OpenMicroAppPackageResponseBody(TeaModel):
         self,
         mini_app_id: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
 
     def validate(self):
@@ -1061,13 +1066,16 @@ class OpenMicroAppPackageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: OpenMicroAppPackageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1080,6 +1088,8 @@ class OpenMicroAppPackageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1088,6 +1098,8 @@ class OpenMicroAppPackageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = OpenMicroAppPackageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1133,9 +1145,7 @@ class ReleaseGrayDeployRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 离线包版本号
         self.version = version
 
     def validate(self):
@@ -1193,13 +1203,16 @@ class ReleaseGrayDeployResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ReleaseGrayDeployResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1212,6 +1225,8 @@ class ReleaseGrayDeployResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1220,6 +1235,8 @@ class ReleaseGrayDeployResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReleaseGrayDeployResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1265,9 +1282,7 @@ class ReleaseGrayExitRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 退出灰度的版本号
         self.version = version
 
     def validate(self):
@@ -1325,13 +1340,16 @@ class ReleaseGrayExitResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ReleaseGrayExitResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1344,6 +1362,8 @@ class ReleaseGrayExitResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1352,6 +1372,8 @@ class ReleaseGrayExitResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReleaseGrayExitResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1397,9 +1419,7 @@ class ReleaseGrayOrgGetRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 离线包版本号
         self.version = version
 
     def validate(self):
@@ -1431,7 +1451,6 @@ class ReleaseGrayOrgGetResponseBody(TeaModel):
         self,
         value: List[str] = None,
     ):
-        # 灰度组织corpId列表
         self.value = value
 
     def validate(self):
@@ -1458,13 +1477,16 @@ class ReleaseGrayOrgGetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ReleaseGrayOrgGetResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1477,6 +1499,8 @@ class ReleaseGrayOrgGetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1485,6 +1509,8 @@ class ReleaseGrayOrgGetResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReleaseGrayOrgGetResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1531,11 +1557,8 @@ class ReleaseGrayOrgSetRequest(TeaModel):
         value: List[str] = None,
         version: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 灰度企业corpId列表
         self.value = value
-        # 离线包版本号
         self.version = version
 
     def validate(self):
@@ -1597,13 +1620,16 @@ class ReleaseGrayOrgSetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ReleaseGrayOrgSetResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1616,6 +1642,8 @@ class ReleaseGrayOrgSetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1624,6 +1652,8 @@ class ReleaseGrayOrgSetResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReleaseGrayOrgSetResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1669,9 +1699,7 @@ class ReleaseGrayPercentGetRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 离线包版本号
         self.version = version
 
     def validate(self):
@@ -1729,13 +1757,16 @@ class ReleaseGrayPercentGetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ReleaseGrayPercentGetResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1748,6 +1779,8 @@ class ReleaseGrayPercentGetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1756,6 +1789,8 @@ class ReleaseGrayPercentGetResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReleaseGrayPercentGetResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1802,11 +1837,8 @@ class ReleaseGrayPercentSetRequest(TeaModel):
         value: float = None,
         version: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 百分比值，范围为0.0.1~100
         self.value = value
-        # 要设置的离线包版本号
         self.version = version
 
     def validate(self):
@@ -1868,13 +1900,16 @@ class ReleaseGrayPercentSetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ReleaseGrayPercentSetResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1887,6 +1922,8 @@ class ReleaseGrayPercentSetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1895,6 +1932,8 @@ class ReleaseGrayPercentSetResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReleaseGrayPercentSetResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1940,9 +1979,7 @@ class ReleaseGrayUserIdGetRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
-        # 离线包ID
         self.mini_app_id = mini_app_id
-        # 离线包版本
         self.version = version
 
     def validate(self):
@@ -1974,7 +2011,6 @@ class ReleaseGrayUserIdGetResponseBody(TeaModel):
         self,
         value: List[str] = None,
     ):
-        # 灰度用户的工号列表
         self.value = value
 
     def validate(self):
@@ -2001,13 +2037,16 @@ class ReleaseGrayUserIdGetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: ReleaseGrayUserIdGetResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2020,6 +2059,8 @@ class ReleaseGrayUserIdGetResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2028,6 +2069,8 @@ class ReleaseGrayUserIdGetResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReleaseGrayUserIdGetResponseBody()
             self.body = temp_model.from_map(m['body'])

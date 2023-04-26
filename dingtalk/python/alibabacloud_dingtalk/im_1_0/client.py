@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.im_1_0 import models as dingtalkim__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def add_org_text_emotion(
-        self,
-        request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
-    ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.AddOrgTextEmotionHeaders()
-        return self.add_org_text_emotion_with_options(request, headers, runtime)
-
-    async def add_org_text_emotion_async(
-        self,
-        request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
-    ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.AddOrgTextEmotionHeaders()
-        return await self.add_org_text_emotion_with_options_async(request, headers, runtime)
 
     def add_org_text_emotion_with_options(
         self,
@@ -64,9 +54,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddOrgTextEmotion',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/textEmotions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AddOrgTextEmotionResponse(),
-            self.do_roarequest('AddOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/textEmotions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_org_text_emotion_with_options_async(
@@ -94,26 +95,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddOrgTextEmotion',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/textEmotions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AddOrgTextEmotionResponse(),
-            await self.do_roarequest_async('AddOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/textEmotions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_robot_to_conversation(
+    def add_org_text_emotion(
         self,
-        request: dingtalkim__1__0_models.AddRobotToConversationRequest,
-    ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
+    ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
-        return self.add_robot_to_conversation_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.AddOrgTextEmotionHeaders()
+        return self.add_org_text_emotion_with_options(request, headers, runtime)
 
-    async def add_robot_to_conversation_async(
+    async def add_org_text_emotion_async(
         self,
-        request: dingtalkim__1__0_models.AddRobotToConversationRequest,
-    ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
+    ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
-        return await self.add_robot_to_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.AddOrgTextEmotionHeaders()
+        return await self.add_org_text_emotion_with_options_async(request, headers, runtime)
 
     def add_robot_to_conversation_with_options(
         self,
@@ -140,9 +152,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddRobotToConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/robots',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AddRobotToConversationResponse(),
-            self.do_roarequest('AddRobotToConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_robot_to_conversation_with_options_async(
@@ -170,20 +193,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='AddRobotToConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/robots',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AddRobotToConversationResponse(),
-            await self.do_roarequest_async('AddRobotToConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def auto_open_ding_talk_connect(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+    def add_robot_to_conversation(
+        self,
+        request: dingtalkim__1__0_models.AddRobotToConversationRequest,
+    ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
-        return self.auto_open_ding_talk_connect_with_options(headers, runtime)
+        headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
+        return self.add_robot_to_conversation_with_options(request, headers, runtime)
 
-    async def auto_open_ding_talk_connect_async(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+    async def add_robot_to_conversation_async(
+        self,
+        request: dingtalkim__1__0_models.AddRobotToConversationRequest,
+    ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
-        return await self.auto_open_ding_talk_connect_with_options_async(headers, runtime)
+        headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
+        return await self.add_robot_to_conversation_with_options_async(request, headers, runtime)
 
     def auto_open_ding_talk_connect_with_options(
         self,
@@ -198,9 +238,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='AutoOpenDingTalkConnect',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/apps/open',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse(),
-            self.do_roarequest('AutoOpenDingTalkConnect', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/apps/open', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def auto_open_ding_talk_connect_with_options_async(
@@ -216,26 +267,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='AutoOpenDingTalkConnect',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/apps/open',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse(),
-            await self.do_roarequest_async('AutoOpenDingTalkConnect', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/apps/open', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_query_family_school_message(
-        self,
-        request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
-    ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+    def auto_open_ding_talk_connect(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders()
-        return self.batch_query_family_school_message_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
+        return self.auto_open_ding_talk_connect_with_options(headers, runtime)
 
-    async def batch_query_family_school_message_async(
-        self,
-        request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
-    ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+    async def auto_open_ding_talk_connect_async(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders()
-        return await self.batch_query_family_school_message_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
+        return await self.auto_open_ding_talk_connect_with_options_async(headers, runtime)
 
     def batch_query_family_school_message_with_options(
         self,
@@ -260,9 +316,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchQueryFamilySchoolMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/familySchools/messages/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse(),
-            self.do_roarequest('BatchQueryFamilySchoolMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/messages/batchQuery', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_query_family_school_message_with_options_async(
@@ -288,26 +355,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchQueryFamilySchoolMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/familySchools/messages/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse(),
-            await self.do_roarequest_async('BatchQueryFamilySchoolMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/messages/batchQuery', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_query_group_member(
+    def batch_query_family_school_message(
         self,
-        request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
+    ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.BatchQueryGroupMemberHeaders()
-        return self.batch_query_group_member_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders()
+        return self.batch_query_family_school_message_with_options(request, headers, runtime)
 
-    async def batch_query_group_member_async(
+    async def batch_query_family_school_message_async(
         self,
-        request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
+    ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.BatchQueryGroupMemberHeaders()
-        return await self.batch_query_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders()
+        return await self.batch_query_family_school_message_with_options_async(request, headers, runtime)
 
     def batch_query_group_member_with_options(
         self,
@@ -334,9 +412,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchQueryGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/members/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.BatchQueryGroupMemberResponse(),
-            self.do_roarequest('BatchQueryGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/members/batchQuery', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_query_group_member_with_options_async(
@@ -364,26 +453,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchQueryGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/members/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.BatchQueryGroupMemberResponse(),
-            await self.do_roarequest_async('BatchQueryGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/members/batchQuery', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def card_template_build_action(
+    def batch_query_group_member(
         self,
-        request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
-    ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CardTemplateBuildActionHeaders()
-        return self.card_template_build_action_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.BatchQueryGroupMemberHeaders()
+        return self.batch_query_group_member_with_options(request, headers, runtime)
 
-    async def card_template_build_action_async(
+    async def batch_query_group_member_async(
         self,
-        request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
-    ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CardTemplateBuildActionHeaders()
-        return await self.card_template_build_action_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.BatchQueryGroupMemberHeaders()
+        return await self.batch_query_group_member_with_options_async(request, headers, runtime)
 
     def card_template_build_action_with_options(
         self,
@@ -406,9 +506,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CardTemplateBuildAction',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards/templates/buildAction',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CardTemplateBuildActionResponse(),
-            self.do_roarequest('CardTemplateBuildAction', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/templates/buildAction', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def card_template_build_action_with_options_async(
@@ -432,26 +543,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CardTemplateBuildAction',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards/templates/buildAction',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CardTemplateBuildActionResponse(),
-            await self.do_roarequest_async('CardTemplateBuildAction', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/templates/buildAction', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def change_group_owner(
+    def card_template_build_action(
         self,
-        request: dingtalkim__1__0_models.ChangeGroupOwnerRequest,
-    ) -> dingtalkim__1__0_models.ChangeGroupOwnerResponse:
+        request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
+    ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.ChangeGroupOwnerHeaders()
-        return self.change_group_owner_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CardTemplateBuildActionHeaders()
+        return self.card_template_build_action_with_options(request, headers, runtime)
 
-    async def change_group_owner_async(
+    async def card_template_build_action_async(
         self,
-        request: dingtalkim__1__0_models.ChangeGroupOwnerRequest,
-    ) -> dingtalkim__1__0_models.ChangeGroupOwnerResponse:
+        request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
+    ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.ChangeGroupOwnerHeaders()
-        return await self.change_group_owner_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CardTemplateBuildActionHeaders()
+        return await self.card_template_build_action_with_options_async(request, headers, runtime)
 
     def change_group_owner_with_options(
         self,
@@ -476,9 +598,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ChangeGroupOwner',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/owners',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.ChangeGroupOwnerResponse(),
-            self.do_roarequest('ChangeGroupOwner', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/owners', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def change_group_owner_with_options_async(
@@ -504,9 +637,96 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ChangeGroupOwner',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/owners',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.ChangeGroupOwnerResponse(),
-            await self.do_roarequest_async('ChangeGroupOwner', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/owners', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
+        )
+
+    def change_group_owner(
+        self,
+        request: dingtalkim__1__0_models.ChangeGroupOwnerRequest,
+    ) -> dingtalkim__1__0_models.ChangeGroupOwnerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ChangeGroupOwnerHeaders()
+        return self.change_group_owner_with_options(request, headers, runtime)
+
+    async def change_group_owner_async(
+        self,
+        request: dingtalkim__1__0_models.ChangeGroupOwnerRequest,
+    ) -> dingtalkim__1__0_models.ChangeGroupOwnerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ChangeGroupOwnerHeaders()
+        return await self.change_group_owner_with_options_async(request, headers, runtime)
+
+    def chat_id_to_open_conversation_id_with_options(
+        self,
+        chat_id: str,
+        headers: dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ChatIdToOpenConversationId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chat/{chat_id}/convertToOpenConversationId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_id_to_open_conversation_id_with_options_async(
+        self,
+        chat_id: str,
+        headers: dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ChatIdToOpenConversationId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chat/{chat_id}/convertToOpenConversationId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse(),
+            await self.execute_async(params, req, runtime)
         )
 
     def chat_id_to_open_conversation_id(
@@ -524,62 +744,6 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders()
         return await self.chat_id_to_open_conversation_id_with_options_async(chat_id, headers, runtime)
-
-    def chat_id_to_open_conversation_id_with_options(
-        self,
-        chat_id: str,
-        headers: dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
-        chat_id = OpenApiUtilClient.get_encode_param(chat_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse(),
-            self.do_roarequest('ChatIdToOpenConversationId', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/chat/{chat_id}/convertToOpenConversationId', 'json', req, runtime)
-        )
-
-    async def chat_id_to_open_conversation_id_with_options_async(
-        self,
-        chat_id: str,
-        headers: dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders,
-        runtime: util_models.RuntimeOptions,
-    ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
-        chat_id = OpenApiUtilClient.get_encode_param(chat_id)
-        real_headers = {}
-        if not UtilClient.is_unset(headers.common_headers):
-            real_headers = headers.common_headers
-        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
-            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
-        req = open_api_models.OpenApiRequest(
-            headers=real_headers
-        )
-        return TeaCore.from_map(
-            dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse(),
-            await self.do_roarequest_async('ChatIdToOpenConversationId', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/chat/{chat_id}/convertToOpenConversationId', 'json', req, runtime)
-        )
-
-    def chat_sub_admin_update(
-        self,
-        request: dingtalkim__1__0_models.ChatSubAdminUpdateRequest,
-    ) -> dingtalkim__1__0_models.ChatSubAdminUpdateResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.ChatSubAdminUpdateHeaders()
-        return self.chat_sub_admin_update_with_options(request, headers, runtime)
-
-    async def chat_sub_admin_update_async(
-        self,
-        request: dingtalkim__1__0_models.ChatSubAdminUpdateRequest,
-    ) -> dingtalkim__1__0_models.ChatSubAdminUpdateResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.ChatSubAdminUpdateHeaders()
-        return await self.chat_sub_admin_update_with_options_async(request, headers, runtime)
 
     def chat_sub_admin_update_with_options(
         self,
@@ -604,9 +768,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ChatSubAdminUpdate',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/subAdministrators',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.ChatSubAdminUpdateResponse(),
-            self.do_roarequest('ChatSubAdminUpdate', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/subAdministrators', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def chat_sub_admin_update_with_options_async(
@@ -632,26 +807,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ChatSubAdminUpdate',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/subAdministrators',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.ChatSubAdminUpdateResponse(),
-            await self.do_roarequest_async('ChatSubAdminUpdate', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/subAdministrators', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def check_user_is_group_member(
+    def chat_sub_admin_update(
         self,
-        request: dingtalkim__1__0_models.CheckUserIsGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.CheckUserIsGroupMemberResponse:
+        request: dingtalkim__1__0_models.ChatSubAdminUpdateRequest,
+    ) -> dingtalkim__1__0_models.ChatSubAdminUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders()
-        return self.check_user_is_group_member_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.ChatSubAdminUpdateHeaders()
+        return self.chat_sub_admin_update_with_options(request, headers, runtime)
 
-    async def check_user_is_group_member_async(
+    async def chat_sub_admin_update_async(
         self,
-        request: dingtalkim__1__0_models.CheckUserIsGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.CheckUserIsGroupMemberResponse:
+        request: dingtalkim__1__0_models.ChatSubAdminUpdateRequest,
+    ) -> dingtalkim__1__0_models.ChatSubAdminUpdateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders()
-        return await self.check_user_is_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.ChatSubAdminUpdateHeaders()
+        return await self.chat_sub_admin_update_with_options_async(request, headers, runtime)
 
     def check_user_is_group_member_with_options(
         self,
@@ -674,9 +860,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CheckUserIsGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/innerGroups/members/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CheckUserIsGroupMemberResponse(),
-            self.do_roarequest('CheckUserIsGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/innerGroups/members/check', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def check_user_is_group_member_with_options_async(
@@ -700,26 +897,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CheckUserIsGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/innerGroups/members/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CheckUserIsGroupMemberResponse(),
-            await self.do_roarequest_async('CheckUserIsGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/innerGroups/members/check', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_couple_group_conversation(
+    def check_user_is_group_member(
         self,
-        request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        request: dingtalkim__1__0_models.CheckUserIsGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.CheckUserIsGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
-        return self.create_couple_group_conversation_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders()
+        return self.check_user_is_group_member_with_options(request, headers, runtime)
 
-    async def create_couple_group_conversation_async(
+    async def check_user_is_group_member_async(
         self,
-        request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        request: dingtalkim__1__0_models.CheckUserIsGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.CheckUserIsGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
-        return await self.create_couple_group_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders()
+        return await self.check_user_is_group_member_with_options_async(request, headers, runtime)
 
     def create_couple_group_conversation_with_options(
         self,
@@ -750,9 +958,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateCoupleGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/coupleGroups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateCoupleGroupConversationResponse(),
-            self.do_roarequest('CreateCoupleGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/coupleGroups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_couple_group_conversation_with_options_async(
@@ -784,26 +1003,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateCoupleGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/coupleGroups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateCoupleGroupConversationResponse(),
-            await self.do_roarequest_async('CreateCoupleGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/coupleGroups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_group_conversation(
+    def create_couple_group_conversation(
         self,
-        request: dingtalkim__1__0_models.CreateGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.CreateGroupConversationResponse:
+        request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateGroupConversationHeaders()
-        return self.create_group_conversation_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
+        return self.create_couple_group_conversation_with_options(request, headers, runtime)
 
-    async def create_group_conversation_async(
+    async def create_couple_group_conversation_async(
         self,
-        request: dingtalkim__1__0_models.CreateGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.CreateGroupConversationResponse:
+        request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateGroupConversationHeaders()
-        return await self.create_group_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
+        return await self.create_couple_group_conversation_with_options_async(request, headers, runtime)
 
     def create_group_conversation_with_options(
         self,
@@ -838,9 +1068,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateGroupConversationResponse(),
-            self.do_roarequest('CreateGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_group_conversation_with_options_async(
@@ -876,26 +1117,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateGroupConversationResponse(),
-            await self.do_roarequest_async('CreateGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_interconnection(
+    def create_group_conversation(
         self,
-        request: dingtalkim__1__0_models.CreateInterconnectionRequest,
-    ) -> dingtalkim__1__0_models.CreateInterconnectionResponse:
+        request: dingtalkim__1__0_models.CreateGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateInterconnectionHeaders()
-        return self.create_interconnection_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateGroupConversationHeaders()
+        return self.create_group_conversation_with_options(request, headers, runtime)
 
-    async def create_interconnection_async(
+    async def create_group_conversation_async(
         self,
-        request: dingtalkim__1__0_models.CreateInterconnectionRequest,
-    ) -> dingtalkim__1__0_models.CreateInterconnectionResponse:
+        request: dingtalkim__1__0_models.CreateGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateInterconnectionHeaders()
-        return await self.create_interconnection_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateGroupConversationHeaders()
+        return await self.create_group_conversation_with_options_async(request, headers, runtime)
 
     def create_interconnection_with_options(
         self,
@@ -916,9 +1168,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateInterconnection',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateInterconnectionResponse(),
-            self.do_roarequest('CreateInterconnection', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_interconnection_with_options_async(
@@ -940,26 +1203,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateInterconnection',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateInterconnectionResponse(),
-            await self.do_roarequest_async('CreateInterconnection', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_scene_group_conversation(
+    def create_interconnection(
         self,
-        request: dingtalkim__1__0_models.CreateSceneGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.CreateSceneGroupConversationResponse:
+        request: dingtalkim__1__0_models.CreateInterconnectionRequest,
+    ) -> dingtalkim__1__0_models.CreateInterconnectionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateSceneGroupConversationHeaders()
-        return self.create_scene_group_conversation_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateInterconnectionHeaders()
+        return self.create_interconnection_with_options(request, headers, runtime)
 
-    async def create_scene_group_conversation_async(
+    async def create_interconnection_async(
         self,
-        request: dingtalkim__1__0_models.CreateSceneGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.CreateSceneGroupConversationResponse:
+        request: dingtalkim__1__0_models.CreateInterconnectionRequest,
+    ) -> dingtalkim__1__0_models.CreateInterconnectionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateSceneGroupConversationHeaders()
-        return await self.create_scene_group_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateInterconnectionHeaders()
+        return await self.create_interconnection_with_options_async(request, headers, runtime)
 
     def create_scene_group_conversation_with_options(
         self,
@@ -994,9 +1268,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateSceneGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateSceneGroupConversationResponse(),
-            self.do_roarequest('CreateSceneGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_scene_group_conversation_with_options_async(
@@ -1032,26 +1317,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateSceneGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateSceneGroupConversationResponse(),
-            await self.do_roarequest_async('CreateSceneGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_store_group_conversation(
+    def create_scene_group_conversation(
         self,
-        request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        request: dingtalkim__1__0_models.CreateSceneGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateSceneGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
-        return self.create_store_group_conversation_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateSceneGroupConversationHeaders()
+        return self.create_scene_group_conversation_with_options(request, headers, runtime)
 
-    async def create_store_group_conversation_async(
+    async def create_scene_group_conversation_async(
         self,
-        request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        request: dingtalkim__1__0_models.CreateSceneGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateSceneGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
-        return await self.create_store_group_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateSceneGroupConversationHeaders()
+        return await self.create_scene_group_conversation_with_options_async(request, headers, runtime)
 
     def create_store_group_conversation_with_options(
         self,
@@ -1084,9 +1380,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateStoreGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/storeGroups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateStoreGroupConversationResponse(),
-            self.do_roarequest('CreateStoreGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/storeGroups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_store_group_conversation_with_options_async(
@@ -1120,26 +1427,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateStoreGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/storeGroups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.CreateStoreGroupConversationResponse(),
-            await self.do_roarequest_async('CreateStoreGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/storeGroups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_org_text_emotion(
+    def create_store_group_conversation(
         self,
-        request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
-    ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders()
-        return self.delete_org_text_emotion_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
+        return self.create_store_group_conversation_with_options(request, headers, runtime)
 
-    async def delete_org_text_emotion_async(
+    async def create_store_group_conversation_async(
         self,
-        request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
-    ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders()
-        return await self.delete_org_text_emotion_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
+        return await self.create_store_group_conversation_with_options_async(request, headers, runtime)
 
     def delete_org_text_emotion_with_options(
         self,
@@ -1162,9 +1480,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteOrgTextEmotion',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/textEmotions/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.DeleteOrgTextEmotionResponse(),
-            self.do_roarequest('DeleteOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/textEmotions/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_org_text_emotion_with_options_async(
@@ -1188,26 +1517,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteOrgTextEmotion',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/textEmotions/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.DeleteOrgTextEmotionResponse(),
-            await self.do_roarequest_async('DeleteOrgTextEmotion', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/textEmotions/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def dismiss_group_conversation(
+    def delete_org_text_emotion(
         self,
-        request: dingtalkim__1__0_models.DismissGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.DismissGroupConversationResponse:
+        request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
+    ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.DismissGroupConversationHeaders()
-        return self.dismiss_group_conversation_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders()
+        return self.delete_org_text_emotion_with_options(request, headers, runtime)
 
-    async def dismiss_group_conversation_async(
+    async def delete_org_text_emotion_async(
         self,
-        request: dingtalkim__1__0_models.DismissGroupConversationRequest,
-    ) -> dingtalkim__1__0_models.DismissGroupConversationResponse:
+        request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
+    ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.DismissGroupConversationHeaders()
-        return await self.dismiss_group_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders()
+        return await self.delete_org_text_emotion_with_options_async(request, headers, runtime)
 
     def dismiss_group_conversation_with_options(
         self,
@@ -1228,9 +1568,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DismissGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/dismiss',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.DismissGroupConversationResponse(),
-            self.do_roarequest('DismissGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/dismiss', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def dismiss_group_conversation_with_options_async(
@@ -1252,26 +1603,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DismissGroupConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/dismiss',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.DismissGroupConversationResponse(),
-            await self.do_roarequest_async('DismissGroupConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/dismiss', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_conversation_url(
+    def dismiss_group_conversation(
         self,
-        request: dingtalkim__1__0_models.GetConversationUrlRequest,
-    ) -> dingtalkim__1__0_models.GetConversationUrlResponse:
+        request: dingtalkim__1__0_models.DismissGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.DismissGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetConversationUrlHeaders()
-        return self.get_conversation_url_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.DismissGroupConversationHeaders()
+        return self.dismiss_group_conversation_with_options(request, headers, runtime)
 
-    async def get_conversation_url_async(
+    async def dismiss_group_conversation_async(
         self,
-        request: dingtalkim__1__0_models.GetConversationUrlRequest,
-    ) -> dingtalkim__1__0_models.GetConversationUrlResponse:
+        request: dingtalkim__1__0_models.DismissGroupConversationRequest,
+    ) -> dingtalkim__1__0_models.DismissGroupConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetConversationUrlHeaders()
-        return await self.get_conversation_url_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.DismissGroupConversationHeaders()
+        return await self.dismiss_group_conversation_with_options_async(request, headers, runtime)
 
     def get_conversation_url_with_options(
         self,
@@ -1298,9 +1660,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetConversationUrl',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/urls',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetConversationUrlResponse(),
-            self.do_roarequest('GetConversationUrl', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/urls', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_conversation_url_with_options_async(
@@ -1328,26 +1701,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetConversationUrl',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/urls',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetConversationUrlResponse(),
-            await self.do_roarequest_async('GetConversationUrl', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/urls', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_family_school_conversation_msg(
+    def get_conversation_url(
         self,
-        request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
-    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        request: dingtalkim__1__0_models.GetConversationUrlRequest,
+    ) -> dingtalkim__1__0_models.GetConversationUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders()
-        return self.get_family_school_conversation_msg_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetConversationUrlHeaders()
+        return self.get_conversation_url_with_options(request, headers, runtime)
 
-    async def get_family_school_conversation_msg_async(
+    async def get_conversation_url_async(
         self,
-        request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
-    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        request: dingtalkim__1__0_models.GetConversationUrlRequest,
+    ) -> dingtalkim__1__0_models.GetConversationUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders()
-        return await self.get_family_school_conversation_msg_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetConversationUrlHeaders()
+        return await self.get_conversation_url_with_options_async(request, headers, runtime)
 
     def get_family_school_conversation_msg_with_options(
         self,
@@ -1376,9 +1760,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetFamilySchoolConversationMsg',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/familySchools/messages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse(),
-            self.do_roarequest('GetFamilySchoolConversationMsg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/messages/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_family_school_conversation_msg_with_options_async(
@@ -1408,26 +1803,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetFamilySchoolConversationMsg',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/familySchools/messages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse(),
-            await self.do_roarequest_async('GetFamilySchoolConversationMsg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/messages/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_family_school_conversations(
+    def get_family_school_conversation_msg(
         self,
-        request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
-    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
-        return self.get_family_school_conversations_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders()
+        return self.get_family_school_conversation_msg_with_options(request, headers, runtime)
 
-    async def get_family_school_conversations_async(
+    async def get_family_school_conversation_msg_async(
         self,
-        request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
-    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
-        return await self.get_family_school_conversations_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders()
+        return await self.get_family_school_conversation_msg_with_options_async(request, headers, runtime)
 
     def get_family_school_conversations_with_options(
         self,
@@ -1452,9 +1858,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetFamilySchoolConversations',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/familySchools/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetFamilySchoolConversationsResponse(),
-            self.do_roarequest('GetFamilySchoolConversations', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_family_school_conversations_with_options_async(
@@ -1480,26 +1897,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetFamilySchoolConversations',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/familySchools/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetFamilySchoolConversationsResponse(),
-            await self.do_roarequest_async('GetFamilySchoolConversations', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/familySchools/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_inner_group_members(
+    def get_family_school_conversations(
         self,
-        request: dingtalkim__1__0_models.GetInnerGroupMembersRequest,
-    ) -> dingtalkim__1__0_models.GetInnerGroupMembersResponse:
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetInnerGroupMembersHeaders()
-        return self.get_inner_group_members_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
+        return self.get_family_school_conversations_with_options(request, headers, runtime)
 
-    async def get_inner_group_members_async(
+    async def get_family_school_conversations_async(
         self,
-        request: dingtalkim__1__0_models.GetInnerGroupMembersRequest,
-    ) -> dingtalkim__1__0_models.GetInnerGroupMembersResponse:
+        request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
+    ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetInnerGroupMembersHeaders()
-        return await self.get_inner_group_members_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
+        return await self.get_family_school_conversations_with_options_async(request, headers, runtime)
 
     def get_inner_group_members_with_options(
         self,
@@ -1526,9 +1954,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetInnerGroupMembers',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/innerGroups/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetInnerGroupMembersResponse(),
-            self.do_roarequest('GetInnerGroupMembers', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/innerGroups/members/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_inner_group_members_with_options_async(
@@ -1556,26 +1995,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetInnerGroupMembers',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/innerGroups/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetInnerGroupMembersResponse(),
-            await self.do_roarequest_async('GetInnerGroupMembers', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/innerGroups/members/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_interconnection_url(
+    def get_inner_group_members(
         self,
-        request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
-    ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        request: dingtalkim__1__0_models.GetInnerGroupMembersRequest,
+    ) -> dingtalkim__1__0_models.GetInnerGroupMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetInterconnectionUrlHeaders()
-        return self.get_interconnection_url_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetInnerGroupMembersHeaders()
+        return self.get_inner_group_members_with_options(request, headers, runtime)
 
-    async def get_interconnection_url_async(
+    async def get_inner_group_members_async(
         self,
-        request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
-    ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        request: dingtalkim__1__0_models.GetInnerGroupMembersRequest,
+    ) -> dingtalkim__1__0_models.GetInnerGroupMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetInterconnectionUrlHeaders()
-        return await self.get_interconnection_url_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetInnerGroupMembersHeaders()
+        return await self.get_inner_group_members_with_options_async(request, headers, runtime)
 
     def get_interconnection_url_with_options(
         self,
@@ -1616,9 +2066,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetInterconnectionUrl',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/sessions/urls',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetInterconnectionUrlResponse(),
-            self.do_roarequest('GetInterconnectionUrl', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/sessions/urls', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_interconnection_url_with_options_async(
@@ -1660,26 +2121,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetInterconnectionUrl',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/sessions/urls',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetInterconnectionUrlResponse(),
-            await self.do_roarequest_async('GetInterconnectionUrl', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/sessions/urls', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_newest_inner_groups(
+    def get_interconnection_url(
         self,
-        request: dingtalkim__1__0_models.GetNewestInnerGroupsRequest,
-    ) -> dingtalkim__1__0_models.GetNewestInnerGroupsResponse:
+        request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
+    ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetNewestInnerGroupsHeaders()
-        return self.get_newest_inner_groups_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetInterconnectionUrlHeaders()
+        return self.get_interconnection_url_with_options(request, headers, runtime)
 
-    async def get_newest_inner_groups_async(
+    async def get_interconnection_url_async(
         self,
-        request: dingtalkim__1__0_models.GetNewestInnerGroupsRequest,
-    ) -> dingtalkim__1__0_models.GetNewestInnerGroupsResponse:
+        request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
+    ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetNewestInnerGroupsHeaders()
-        return await self.get_newest_inner_groups_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetInterconnectionUrlHeaders()
+        return await self.get_interconnection_url_with_options_async(request, headers, runtime)
 
     def get_newest_inner_groups_with_options(
         self,
@@ -1700,9 +2172,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetNewestInnerGroups',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/activities/innerGroups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetNewestInnerGroupsResponse(),
-            self.do_roarequest('GetNewestInnerGroups', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/activities/innerGroups', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_newest_inner_groups_with_options_async(
@@ -1724,26 +2207,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetNewestInnerGroups',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/activities/innerGroups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetNewestInnerGroupsResponse(),
-            await self.do_roarequest_async('GetNewestInnerGroups', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/activities/innerGroups', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_scene_group_info(
+    def get_newest_inner_groups(
         self,
-        request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
-    ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
+        request: dingtalkim__1__0_models.GetNewestInnerGroupsRequest,
+    ) -> dingtalkim__1__0_models.GetNewestInnerGroupsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetSceneGroupInfoHeaders()
-        return self.get_scene_group_info_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetNewestInnerGroupsHeaders()
+        return self.get_newest_inner_groups_with_options(request, headers, runtime)
 
-    async def get_scene_group_info_async(
+    async def get_newest_inner_groups_async(
         self,
-        request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
-    ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
+        request: dingtalkim__1__0_models.GetNewestInnerGroupsRequest,
+    ) -> dingtalkim__1__0_models.GetNewestInnerGroupsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetSceneGroupInfoHeaders()
-        return await self.get_scene_group_info_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetNewestInnerGroupsHeaders()
+        return await self.get_newest_inner_groups_with_options_async(request, headers, runtime)
 
     def get_scene_group_info_with_options(
         self,
@@ -1766,9 +2260,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSceneGroupInfo',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetSceneGroupInfoResponse(),
-            self.do_roarequest('GetSceneGroupInfo', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_scene_group_info_with_options_async(
@@ -1792,26 +2297,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSceneGroupInfo',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetSceneGroupInfoResponse(),
-            await self.do_roarequest_async('GetSceneGroupInfo', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_scene_group_members(
+    def get_scene_group_info(
         self,
-        request: dingtalkim__1__0_models.GetSceneGroupMembersRequest,
-    ) -> dingtalkim__1__0_models.GetSceneGroupMembersResponse:
+        request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
+    ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetSceneGroupMembersHeaders()
-        return self.get_scene_group_members_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetSceneGroupInfoHeaders()
+        return self.get_scene_group_info_with_options(request, headers, runtime)
 
-    async def get_scene_group_members_async(
+    async def get_scene_group_info_async(
         self,
-        request: dingtalkim__1__0_models.GetSceneGroupMembersRequest,
-    ) -> dingtalkim__1__0_models.GetSceneGroupMembersResponse:
+        request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
+    ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GetSceneGroupMembersHeaders()
-        return await self.get_scene_group_members_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetSceneGroupInfoHeaders()
+        return await self.get_scene_group_info_with_options_async(request, headers, runtime)
 
     def get_scene_group_members_with_options(
         self,
@@ -1838,9 +2354,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSceneGroupMembers',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetSceneGroupMembersResponse(),
-            self.do_roarequest('GetSceneGroupMembers', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/members/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_scene_group_members_with_options_async(
@@ -1868,26 +2395,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSceneGroupMembers',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GetSceneGroupMembersResponse(),
-            await self.do_roarequest_async('GetSceneGroupMembers', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/members/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_ban_words(
+    def get_scene_group_members(
         self,
-        request: dingtalkim__1__0_models.GroupBanWordsRequest,
-    ) -> dingtalkim__1__0_models.GroupBanWordsResponse:
+        request: dingtalkim__1__0_models.GetSceneGroupMembersRequest,
+    ) -> dingtalkim__1__0_models.GetSceneGroupMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupBanWordsHeaders()
-        return self.group_ban_words_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetSceneGroupMembersHeaders()
+        return self.get_scene_group_members_with_options(request, headers, runtime)
 
-    async def group_ban_words_async(
+    async def get_scene_group_members_async(
         self,
-        request: dingtalkim__1__0_models.GroupBanWordsRequest,
-    ) -> dingtalkim__1__0_models.GroupBanWordsResponse:
+        request: dingtalkim__1__0_models.GetSceneGroupMembersRequest,
+    ) -> dingtalkim__1__0_models.GetSceneGroupMembersResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupBanWordsHeaders()
-        return await self.group_ban_words_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GetSceneGroupMembersHeaders()
+        return await self.get_scene_group_members_with_options_async(request, headers, runtime)
 
     def group_ban_words_with_options(
         self,
@@ -1912,9 +2450,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupBanWords',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/words/ban',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupBanWordsResponse(),
-            self.do_roarequest('GroupBanWords', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/words/ban', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_ban_words_with_options_async(
@@ -1940,26 +2489,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupBanWords',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/words/ban',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupBanWordsResponse(),
-            await self.do_roarequest_async('GroupBanWords', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/words/ban', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_capacity_inquiry(
+    def group_ban_words(
         self,
-        request: dingtalkim__1__0_models.GroupCapacityInquiryRequest,
-    ) -> dingtalkim__1__0_models.GroupCapacityInquiryResponse:
+        request: dingtalkim__1__0_models.GroupBanWordsRequest,
+    ) -> dingtalkim__1__0_models.GroupBanWordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupCapacityInquiryHeaders()
-        return self.group_capacity_inquiry_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupBanWordsHeaders()
+        return self.group_ban_words_with_options(request, headers, runtime)
 
-    async def group_capacity_inquiry_async(
+    async def group_ban_words_async(
         self,
-        request: dingtalkim__1__0_models.GroupCapacityInquiryRequest,
-    ) -> dingtalkim__1__0_models.GroupCapacityInquiryResponse:
+        request: dingtalkim__1__0_models.GroupBanWordsRequest,
+    ) -> dingtalkim__1__0_models.GroupBanWordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupCapacityInquiryHeaders()
-        return await self.group_capacity_inquiry_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupBanWordsHeaders()
+        return await self.group_ban_words_with_options_async(request, headers, runtime)
 
     def group_capacity_inquiry_with_options(
         self,
@@ -1988,9 +2548,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupCapacityInquiry',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/capacities/inquiries/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupCapacityInquiryResponse(),
-            self.do_roarequest('GroupCapacityInquiry', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/inquiries/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_capacity_inquiry_with_options_async(
@@ -2020,26 +2591,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupCapacityInquiry',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/capacities/inquiries/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupCapacityInquiryResponse(),
-            await self.do_roarequest_async('GroupCapacityInquiry', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/inquiries/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_capacity_order_confirm(
+    def group_capacity_inquiry(
         self,
-        request: dingtalkim__1__0_models.GroupCapacityOrderConfirmRequest,
-    ) -> dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse:
+        request: dingtalkim__1__0_models.GroupCapacityInquiryRequest,
+    ) -> dingtalkim__1__0_models.GroupCapacityInquiryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupCapacityOrderConfirmHeaders()
-        return self.group_capacity_order_confirm_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupCapacityInquiryHeaders()
+        return self.group_capacity_inquiry_with_options(request, headers, runtime)
 
-    async def group_capacity_order_confirm_async(
+    async def group_capacity_inquiry_async(
         self,
-        request: dingtalkim__1__0_models.GroupCapacityOrderConfirmRequest,
-    ) -> dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse:
+        request: dingtalkim__1__0_models.GroupCapacityInquiryRequest,
+    ) -> dingtalkim__1__0_models.GroupCapacityInquiryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupCapacityOrderConfirmHeaders()
-        return await self.group_capacity_order_confirm_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupCapacityInquiryHeaders()
+        return await self.group_capacity_inquiry_with_options_async(request, headers, runtime)
 
     def group_capacity_order_confirm_with_options(
         self,
@@ -2062,9 +2644,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupCapacityOrderConfirm',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/capacities/orders/confirm',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse(),
-            self.do_roarequest('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/orders/confirm', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_capacity_order_confirm_with_options_async(
@@ -2088,26 +2681,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupCapacityOrderConfirm',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/capacities/orders/confirm',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse(),
-            await self.do_roarequest_async('GroupCapacityOrderConfirm', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/orders/confirm', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_capacity_order_place(
+    def group_capacity_order_confirm(
         self,
-        request: dingtalkim__1__0_models.GroupCapacityOrderPlaceRequest,
-    ) -> dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse:
+        request: dingtalkim__1__0_models.GroupCapacityOrderConfirmRequest,
+    ) -> dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupCapacityOrderPlaceHeaders()
-        return self.group_capacity_order_place_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupCapacityOrderConfirmHeaders()
+        return self.group_capacity_order_confirm_with_options(request, headers, runtime)
 
-    async def group_capacity_order_place_async(
+    async def group_capacity_order_confirm_async(
         self,
-        request: dingtalkim__1__0_models.GroupCapacityOrderPlaceRequest,
-    ) -> dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse:
+        request: dingtalkim__1__0_models.GroupCapacityOrderConfirmRequest,
+    ) -> dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupCapacityOrderPlaceHeaders()
-        return await self.group_capacity_order_place_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupCapacityOrderConfirmHeaders()
+        return await self.group_capacity_order_confirm_with_options_async(request, headers, runtime)
 
     def group_capacity_order_place_with_options(
         self,
@@ -2148,9 +2752,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupCapacityOrderPlace',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/capacities/orders/place',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse(),
-            self.do_roarequest('GroupCapacityOrderPlace', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/orders/place', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_capacity_order_place_with_options_async(
@@ -2192,26 +2807,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupCapacityOrderPlace',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/capacities/orders/place',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse(),
-            await self.do_roarequest_async('GroupCapacityOrderPlace', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/orders/place', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_manage_query(
+    def group_capacity_order_place(
         self,
-        request: dingtalkim__1__0_models.GroupManageQueryRequest,
-    ) -> dingtalkim__1__0_models.GroupManageQueryResponse:
+        request: dingtalkim__1__0_models.GroupCapacityOrderPlaceRequest,
+    ) -> dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupManageQueryHeaders()
-        return self.group_manage_query_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupCapacityOrderPlaceHeaders()
+        return self.group_capacity_order_place_with_options(request, headers, runtime)
 
-    async def group_manage_query_async(
+    async def group_capacity_order_place_async(
         self,
-        request: dingtalkim__1__0_models.GroupManageQueryRequest,
-    ) -> dingtalkim__1__0_models.GroupManageQueryResponse:
+        request: dingtalkim__1__0_models.GroupCapacityOrderPlaceRequest,
+    ) -> dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupManageQueryHeaders()
-        return await self.group_manage_query_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupCapacityOrderPlaceHeaders()
+        return await self.group_capacity_order_place_with_options_async(request, headers, runtime)
 
     def group_manage_query_with_options(
         self,
@@ -2250,9 +2876,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupManageQuery',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/managements/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupManageQueryResponse(),
-            self.do_roarequest('GroupManageQuery', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/managements/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_manage_query_with_options_async(
@@ -2292,26 +2929,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupManageQuery',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/managements/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupManageQueryResponse(),
-            await self.do_roarequest_async('GroupManageQuery', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/managements/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def group_manage_reduce(
+    def group_manage_query(
         self,
-        request: dingtalkim__1__0_models.GroupManageReduceRequest,
-    ) -> dingtalkim__1__0_models.GroupManageReduceResponse:
+        request: dingtalkim__1__0_models.GroupManageQueryRequest,
+    ) -> dingtalkim__1__0_models.GroupManageQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupManageReduceHeaders()
-        return self.group_manage_reduce_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupManageQueryHeaders()
+        return self.group_manage_query_with_options(request, headers, runtime)
 
-    async def group_manage_reduce_async(
+    async def group_manage_query_async(
         self,
-        request: dingtalkim__1__0_models.GroupManageReduceRequest,
-    ) -> dingtalkim__1__0_models.GroupManageReduceResponse:
+        request: dingtalkim__1__0_models.GroupManageQueryRequest,
+    ) -> dingtalkim__1__0_models.GroupManageQueryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.GroupManageReduceHeaders()
-        return await self.group_manage_reduce_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupManageQueryHeaders()
+        return await self.group_manage_query_with_options_async(request, headers, runtime)
 
     def group_manage_reduce_with_options(
         self,
@@ -2336,9 +2984,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupManageReduce',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/capacities/reduce',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupManageReduceResponse(),
-            self.do_roarequest('GroupManageReduce', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/reduce', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def group_manage_reduce_with_options_async(
@@ -2364,26 +3023,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GroupManageReduce',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/capacities/reduce',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.GroupManageReduceResponse(),
-            await self.do_roarequest_async('GroupManageReduce', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/groups/capacities/reduce', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def install_robot_to_org(
+    def group_manage_reduce(
         self,
-        request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
-    ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        request: dingtalkim__1__0_models.GroupManageReduceRequest,
+    ) -> dingtalkim__1__0_models.GroupManageReduceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
-        return self.install_robot_to_org_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupManageReduceHeaders()
+        return self.group_manage_reduce_with_options(request, headers, runtime)
 
-    async def install_robot_to_org_async(
+    async def group_manage_reduce_async(
         self,
-        request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
-    ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        request: dingtalkim__1__0_models.GroupManageReduceRequest,
+    ) -> dingtalkim__1__0_models.GroupManageReduceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
-        return await self.install_robot_to_org_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.GroupManageReduceHeaders()
+        return await self.group_manage_reduce_with_options_async(request, headers, runtime)
 
     def install_robot_to_org_with_options(
         self,
@@ -2418,9 +3088,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='InstallRobotToOrg',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/robots/install',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.InstallRobotToOrgResponse(),
-            self.do_roarequest('InstallRobotToOrg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/robots/install', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def install_robot_to_org_with_options_async(
@@ -2456,26 +3137,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='InstallRobotToOrg',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/robots/install',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.InstallRobotToOrgResponse(),
-            await self.do_roarequest_async('InstallRobotToOrg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/robots/install', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def interactive_card_create_instance(
+    def install_robot_to_org(
         self,
-        request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
-    ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
+    ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
-        return self.interactive_card_create_instance_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
+        return self.install_robot_to_org_with_options(request, headers, runtime)
 
-    async def interactive_card_create_instance_async(
+    async def install_robot_to_org_async(
         self,
-        request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
-    ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
+    ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
-        return await self.interactive_card_create_instance_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
+        return await self.install_robot_to_org_with_options_async(request, headers, runtime)
 
     def interactive_card_create_instance_with_options(
         self,
@@ -2518,9 +3210,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='InteractiveCardCreateInstance',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse(),
-            self.do_roarequest('InteractiveCardCreateInstance', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/instances', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def interactive_card_create_instance_with_options_async(
@@ -2564,20 +3267,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='InteractiveCardCreateInstance',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse(),
-            await self.do_roarequest_async('InteractiveCardCreateInstance', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/instances', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def list_org_text_emotion(self) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+    def interactive_card_create_instance(
+        self,
+        request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
+    ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
-        return self.list_org_text_emotion_with_options(headers, runtime)
+        headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
+        return self.interactive_card_create_instance_with_options(request, headers, runtime)
 
-    async def list_org_text_emotion_async(self) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+    async def interactive_card_create_instance_async(
+        self,
+        request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
+    ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
-        return await self.list_org_text_emotion_with_options_async(headers, runtime)
+        headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
+        return await self.interactive_card_create_instance_with_options_async(request, headers, runtime)
 
     def list_org_text_emotion_with_options(
         self,
@@ -2592,9 +3312,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='ListOrgTextEmotion',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/textEmotions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.ListOrgTextEmotionResponse(),
-            self.do_roarequest('ListOrgTextEmotion', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/organizations/textEmotions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def list_org_text_emotion_with_options_async(
@@ -2610,26 +3341,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='ListOrgTextEmotion',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/textEmotions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.ListOrgTextEmotionResponse(),
-            await self.do_roarequest_async('ListOrgTextEmotion', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/organizations/textEmotions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group_info_by_member_auth(
-        self,
-        request: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthRequest,
-    ) -> dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse:
+    def list_org_text_emotion(self) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryGroupInfoByMemberAuthHeaders()
-        return self.query_group_info_by_member_auth_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
+        return self.list_org_text_emotion_with_options(headers, runtime)
 
-    async def query_group_info_by_member_auth_async(
-        self,
-        request: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthRequest,
-    ) -> dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse:
+    async def list_org_text_emotion_async(self) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryGroupInfoByMemberAuthHeaders()
-        return await self.query_group_info_by_member_auth_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
+        return await self.list_org_text_emotion_with_options_async(headers, runtime)
 
     def query_group_info_by_member_auth_with_options(
         self,
@@ -2652,9 +3388,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryGroupInfoByMemberAuth',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/memberAuthorizations/groups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse(),
-            self.do_roarequest('QueryGroupInfoByMemberAuth', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/memberAuthorizations/groups/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_info_by_member_auth_with_options_async(
@@ -2678,26 +3425,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryGroupInfoByMemberAuth',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/memberAuthorizations/groups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse(),
-            await self.do_roarequest_async('QueryGroupInfoByMemberAuth', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/memberAuthorizations/groups/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group_member(
+    def query_group_info_by_member_auth(
         self,
-        request: dingtalkim__1__0_models.QueryGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        request: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryGroupMemberHeaders()
-        return self.query_group_member_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryGroupInfoByMemberAuthHeaders()
+        return self.query_group_info_by_member_auth_with_options(request, headers, runtime)
 
-    async def query_group_member_async(
+    async def query_group_info_by_member_auth_async(
         self,
-        request: dingtalkim__1__0_models.QueryGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        request: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryGroupMemberHeaders()
-        return await self.query_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryGroupInfoByMemberAuthHeaders()
+        return await self.query_group_info_by_member_auth_with_options_async(request, headers, runtime)
 
     def query_group_member_with_options(
         self,
@@ -2718,9 +3476,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/conversations/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryGroupMemberResponse(),
-            self.do_roarequest('QueryGroupMember', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/interconnections/conversations/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_member_with_options_async(
@@ -2742,26 +3511,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/conversations/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryGroupMemberResponse(),
-            await self.do_roarequest_async('QueryGroupMember', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/interconnections/conversations/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group_member_by_member_auth(
+    def query_group_member(
         self,
-        request: dingtalkim__1__0_models.QueryGroupMemberByMemberAuthRequest,
-    ) -> dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse:
+        request: dingtalkim__1__0_models.QueryGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryGroupMemberByMemberAuthHeaders()
-        return self.query_group_member_by_member_auth_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryGroupMemberHeaders()
+        return self.query_group_member_with_options(request, headers, runtime)
 
-    async def query_group_member_by_member_auth_async(
+    async def query_group_member_async(
         self,
-        request: dingtalkim__1__0_models.QueryGroupMemberByMemberAuthRequest,
-    ) -> dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse:
+        request: dingtalkim__1__0_models.QueryGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryGroupMemberByMemberAuthHeaders()
-        return await self.query_group_member_by_member_auth_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryGroupMemberHeaders()
+        return await self.query_group_member_with_options_async(request, headers, runtime)
 
     def query_group_member_by_member_auth_with_options(
         self,
@@ -2784,9 +3564,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMemberByMemberAuth',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/memberAuthorizations/groups/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse(),
-            self.do_roarequest('QueryGroupMemberByMemberAuth', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/memberAuthorizations/groups/members/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_member_by_member_auth_with_options_async(
@@ -2810,26 +3601,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMemberByMemberAuth',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/memberAuthorizations/groups/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse(),
-            await self.do_roarequest_async('QueryGroupMemberByMemberAuth', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/memberAuthorizations/groups/members/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_group_mute_status(
+    def query_group_member_by_member_auth(
         self,
-        request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
-    ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
+        request: dingtalkim__1__0_models.QueryGroupMemberByMemberAuthRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryGroupMuteStatusHeaders()
-        return self.query_group_mute_status_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryGroupMemberByMemberAuthHeaders()
+        return self.query_group_member_by_member_auth_with_options(request, headers, runtime)
 
-    async def query_group_mute_status_async(
+    async def query_group_member_by_member_auth_async(
         self,
-        request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
-    ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
+        request: dingtalkim__1__0_models.QueryGroupMemberByMemberAuthRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryGroupMuteStatusHeaders()
-        return await self.query_group_mute_status_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryGroupMemberByMemberAuthHeaders()
+        return await self.query_group_member_by_member_auth_with_options_async(request, headers, runtime)
 
     def query_group_mute_status_with_options(
         self,
@@ -2852,9 +3654,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMuteStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/muteSettings',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryGroupMuteStatusResponse(),
-            self.do_roarequest('QueryGroupMuteStatus', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/sceneGroups/muteSettings', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_group_mute_status_with_options_async(
@@ -2878,26 +3691,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryGroupMuteStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/muteSettings',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryGroupMuteStatusResponse(),
-            await self.do_roarequest_async('QueryGroupMuteStatus', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/sceneGroups/muteSettings', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_members_of_group_role(
+    def query_group_mute_status(
         self,
-        request: dingtalkim__1__0_models.QueryMembersOfGroupRoleRequest,
-    ) -> dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse:
+        request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders()
-        return self.query_members_of_group_role_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryGroupMuteStatusHeaders()
+        return self.query_group_mute_status_with_options(request, headers, runtime)
 
-    async def query_members_of_group_role_async(
+    async def query_group_mute_status_async(
         self,
-        request: dingtalkim__1__0_models.QueryMembersOfGroupRoleRequest,
-    ) -> dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse:
+        request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
+    ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders()
-        return await self.query_members_of_group_role_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryGroupMuteStatusHeaders()
+        return await self.query_group_mute_status_with_options_async(request, headers, runtime)
 
     def query_members_of_group_role_with_options(
         self,
@@ -2922,9 +3746,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryMembersOfGroupRole',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/roles/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse(),
-            self.do_roarequest('QueryMembersOfGroupRole', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/roles/members/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_members_of_group_role_with_options_async(
@@ -2950,26 +3785,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryMembersOfGroupRole',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/roles/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse(),
-            await self.do_roarequest_async('QueryMembersOfGroupRole', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/roles/members/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_scene_group_template_robot(
+    def query_members_of_group_role(
         self,
-        request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
-    ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        request: dingtalkim__1__0_models.QueryMembersOfGroupRoleRequest,
+    ) -> dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders()
-        return self.query_scene_group_template_robot_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders()
+        return self.query_members_of_group_role_with_options(request, headers, runtime)
 
-    async def query_scene_group_template_robot_async(
+    async def query_members_of_group_role_async(
         self,
-        request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
-    ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        request: dingtalkim__1__0_models.QueryMembersOfGroupRoleRequest,
+    ) -> dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders()
-        return await self.query_scene_group_template_robot_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders()
+        return await self.query_members_of_group_role_with_options_async(request, headers, runtime)
 
     def query_scene_group_template_robot_with_options(
         self,
@@ -2992,9 +3838,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QuerySceneGroupTemplateRobot',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/templates/robots',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse(),
-            self.do_roarequest('QuerySceneGroupTemplateRobot', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/sceneGroups/templates/robots', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_scene_group_template_robot_with_options_async(
@@ -3018,26 +3875,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QuerySceneGroupTemplateRobot',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/templates/robots',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse(),
-            await self.do_roarequest_async('QuerySceneGroupTemplateRobot', 'im_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/im/sceneGroups/templates/robots', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_single_group(
+    def query_scene_group_template_robot(
         self,
-        request: dingtalkim__1__0_models.QuerySingleGroupRequest,
-    ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
+    ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QuerySingleGroupHeaders()
-        return self.query_single_group_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders()
+        return self.query_scene_group_template_robot_with_options(request, headers, runtime)
 
-    async def query_single_group_async(
+    async def query_scene_group_template_robot_async(
         self,
-        request: dingtalkim__1__0_models.QuerySingleGroupRequest,
-    ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
+    ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QuerySingleGroupHeaders()
-        return await self.query_single_group_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders()
+        return await self.query_scene_group_template_robot_with_options_async(request, headers, runtime)
 
     def query_single_group_with_options(
         self,
@@ -3060,9 +3928,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QuerySingleGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/doubleGroups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QuerySingleGroupResponse(),
-            self.do_roarequest('QuerySingleGroup', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/doubleGroups/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_single_group_with_options_async(
@@ -3086,26 +3965,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QuerySingleGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/doubleGroups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QuerySingleGroupResponse(),
-            await self.do_roarequest_async('QuerySingleGroup', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/doubleGroups/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_un_read_message(
+    def query_single_group(
         self,
-        request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
-    ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        request: dingtalkim__1__0_models.QuerySingleGroupRequest,
+    ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
-        return self.query_un_read_message_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QuerySingleGroupHeaders()
+        return self.query_single_group_with_options(request, headers, runtime)
 
-    async def query_un_read_message_async(
+    async def query_single_group_async(
         self,
-        request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
-    ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        request: dingtalkim__1__0_models.QuerySingleGroupRequest,
+    ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
-        return await self.query_un_read_message_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QuerySingleGroupHeaders()
+        return await self.query_single_group_with_options_async(request, headers, runtime)
 
     def query_un_read_message_with_options(
         self,
@@ -3128,9 +4018,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryUnReadMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/unReadMsgs/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryUnReadMessageResponse(),
-            self.do_roarequest('QueryUnReadMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/unReadMsgs/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_un_read_message_with_options_async(
@@ -3154,26 +4055,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryUnReadMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/unReadMsgs/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.QueryUnReadMessageResponse(),
-            await self.do_roarequest_async('QueryUnReadMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/unReadMsgs/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def remove_robot_from_conversation(
+    def query_un_read_message(
         self,
-        request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
-    ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
+    ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
-        return self.remove_robot_from_conversation_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
+        return self.query_un_read_message_with_options(request, headers, runtime)
 
-    async def remove_robot_from_conversation_async(
+    async def query_un_read_message_async(
         self,
-        request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
-    ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
+    ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
-        return await self.remove_robot_from_conversation_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
+        return await self.query_un_read_message_with_options_async(request, headers, runtime)
 
     def remove_robot_from_conversation_with_options(
         self,
@@ -3196,9 +4108,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RemoveRobotFromConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/robots/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.RemoveRobotFromConversationResponse(),
-            self.do_roarequest('RemoveRobotFromConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def remove_robot_from_conversation_with_options_async(
@@ -3222,26 +4145,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='RemoveRobotFromConversation',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/conversations/robots/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.RemoveRobotFromConversationResponse(),
-            await self.do_roarequest_async('RemoveRobotFromConversation', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/conversations/robots/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def search_inner_groups(
+    def remove_robot_from_conversation(
         self,
-        request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
-    ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
+    ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SearchInnerGroupsHeaders()
-        return self.search_inner_groups_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
+        return self.remove_robot_from_conversation_with_options(request, headers, runtime)
 
-    async def search_inner_groups_async(
+    async def remove_robot_from_conversation_async(
         self,
-        request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
-    ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
+    ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SearchInnerGroupsHeaders()
-        return await self.search_inner_groups_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
+        return await self.remove_robot_from_conversation_with_options_async(request, headers, runtime)
 
     def search_inner_groups_with_options(
         self,
@@ -3266,9 +4200,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SearchInnerGroups',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/innerGroups/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SearchInnerGroupsResponse(),
-            self.do_roarequest('SearchInnerGroups', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/innerGroups/search', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def search_inner_groups_with_options_async(
@@ -3294,26 +4239,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SearchInnerGroups',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/innerGroups/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SearchInnerGroupsResponse(),
-            await self.do_roarequest_async('SearchInnerGroups', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/innerGroups/search', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_interactive_card(
+    def search_inner_groups(
         self,
-        request: dingtalkim__1__0_models.SendInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.SendInteractiveCardResponse:
+        request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
+    ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendInteractiveCardHeaders()
-        return self.send_interactive_card_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SearchInnerGroupsHeaders()
+        return self.search_inner_groups_with_options(request, headers, runtime)
 
-    async def send_interactive_card_async(
+    async def search_inner_groups_async(
         self,
-        request: dingtalkim__1__0_models.SendInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.SendInteractiveCardResponse:
+        request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
+    ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendInteractiveCardHeaders()
-        return await self.send_interactive_card_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SearchInnerGroupsHeaders()
+        return await self.search_inner_groups_with_options_async(request, headers, runtime)
 
     def send_interactive_card_with_options(
         self,
@@ -3360,9 +4316,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendInteractiveCardResponse(),
-            self.do_roarequest('SendInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_interactive_card_with_options_async(
@@ -3410,26 +4377,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendInteractiveCardResponse(),
-            await self.do_roarequest_async('SendInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_otointeractive_card(
+    def send_interactive_card(
         self,
-        request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        request: dingtalkim__1__0_models.SendInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
-        return self.send_otointeractive_card_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendInteractiveCardHeaders()
+        return self.send_interactive_card_with_options(request, headers, runtime)
 
-    async def send_otointeractive_card_async(
+    async def send_interactive_card_async(
         self,
-        request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        request: dingtalkim__1__0_models.SendInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
-        return await self.send_otointeractive_card_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendInteractiveCardHeaders()
+        return await self.send_interactive_card_with_options_async(request, headers, runtime)
 
     def send_otointeractive_card_with_options(
         self,
@@ -3472,9 +4450,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendOTOInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/privateChat/interactiveCards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendOTOInteractiveCardResponse(),
-            self.do_roarequest('SendOTOInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/privateChat/interactiveCards/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_otointeractive_card_with_options_async(
@@ -3518,26 +4507,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendOTOInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/privateChat/interactiveCards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendOTOInteractiveCardResponse(),
-            await self.do_roarequest_async('SendOTOInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/privateChat/interactiveCards/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_robot_interactive_card(
+    def send_otointeractive_card(
         self,
-        request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendRobotInteractiveCardHeaders()
-        return self.send_robot_interactive_card_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
+        return self.send_otointeractive_card_with_options(request, headers, runtime)
 
-    async def send_robot_interactive_card_async(
+    async def send_otointeractive_card_async(
         self,
-        request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendRobotInteractiveCardHeaders()
-        return await self.send_robot_interactive_card_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
+        return await self.send_otointeractive_card_with_options_async(request, headers, runtime)
 
     def send_robot_interactive_card_with_options(
         self,
@@ -3578,9 +4578,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendRobotInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/v1.0/robot/interactiveCards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendRobotInteractiveCardResponse(),
-            self.do_roarequest('SendRobotInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/v1.0/robot/interactiveCards/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_robot_interactive_card_with_options_async(
@@ -3622,26 +4633,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendRobotInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/v1.0/robot/interactiveCards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendRobotInteractiveCardResponse(),
-            await self.do_roarequest_async('SendRobotInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/v1.0/robot/interactiveCards/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_robot_message(
+    def send_robot_interactive_card(
         self,
-        request: dingtalkim__1__0_models.SendRobotMessageRequest,
-    ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendRobotMessageHeaders()
-        return self.send_robot_message_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendRobotInteractiveCardHeaders()
+        return self.send_robot_interactive_card_with_options(request, headers, runtime)
 
-    async def send_robot_message_async(
+    async def send_robot_interactive_card_async(
         self,
-        request: dingtalkim__1__0_models.SendRobotMessageRequest,
-    ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendRobotMessageHeaders()
-        return await self.send_robot_message_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendRobotInteractiveCardHeaders()
+        return await self.send_robot_interactive_card_with_options_async(request, headers, runtime)
 
     def send_robot_message_with_options(
         self,
@@ -3674,9 +4696,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendRobotMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/robotMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendRobotMessageResponse(),
-            self.do_roarequest('SendRobotMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/robotMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_robot_message_with_options_async(
@@ -3710,26 +4743,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendRobotMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/robotMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendRobotMessageResponse(),
-            await self.do_roarequest_async('SendRobotMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/robotMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_template_interactive_card(
+    def send_robot_message(
         self,
-        request: dingtalkim__1__0_models.SendTemplateInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.SendTemplateInteractiveCardResponse:
+        request: dingtalkim__1__0_models.SendRobotMessageRequest,
+    ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendTemplateInteractiveCardHeaders()
-        return self.send_template_interactive_card_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendRobotMessageHeaders()
+        return self.send_robot_message_with_options(request, headers, runtime)
 
-    async def send_template_interactive_card_async(
+    async def send_robot_message_async(
         self,
-        request: dingtalkim__1__0_models.SendTemplateInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.SendTemplateInteractiveCardResponse:
+        request: dingtalkim__1__0_models.SendRobotMessageRequest,
+    ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendTemplateInteractiveCardHeaders()
-        return await self.send_template_interactive_card_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendRobotMessageHeaders()
+        return await self.send_robot_message_with_options_async(request, headers, runtime)
 
     def send_template_interactive_card_with_options(
         self,
@@ -3764,9 +4808,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendTemplateInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards/templates/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendTemplateInteractiveCardResponse(),
-            self.do_roarequest('SendTemplateInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/templates/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_template_interactive_card_with_options_async(
@@ -3802,26 +4857,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendTemplateInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards/templates/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendTemplateInteractiveCardResponse(),
-            await self.do_roarequest_async('SendTemplateInteractiveCard', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interactiveCards/templates/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def set_right_panel(
+    def send_template_interactive_card(
         self,
-        request: dingtalkim__1__0_models.SetRightPanelRequest,
-    ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        request: dingtalkim__1__0_models.SendTemplateInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendTemplateInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SetRightPanelHeaders()
-        return self.set_right_panel_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendTemplateInteractiveCardHeaders()
+        return self.send_template_interactive_card_with_options(request, headers, runtime)
 
-    async def set_right_panel_async(
+    async def send_template_interactive_card_async(
         self,
-        request: dingtalkim__1__0_models.SetRightPanelRequest,
-    ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        request: dingtalkim__1__0_models.SendTemplateInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.SendTemplateInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SetRightPanelHeaders()
-        return await self.set_right_panel_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendTemplateInteractiveCardHeaders()
+        return await self.send_template_interactive_card_with_options_async(request, headers, runtime)
 
     def set_right_panel_with_options(
         self,
@@ -3852,9 +4918,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SetRightPanel',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/rightPanels/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SetRightPanelResponse(),
-            self.do_roarequest('SetRightPanel', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/rightPanels/set', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def set_right_panel_with_options_async(
@@ -3886,26 +4963,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SetRightPanel',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/rightPanels/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SetRightPanelResponse(),
-            await self.do_roarequest_async('SetRightPanel', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/rightPanels/set', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def topbox_close(
+    def set_right_panel(
         self,
-        request: dingtalkim__1__0_models.TopboxCloseRequest,
-    ) -> dingtalkim__1__0_models.TopboxCloseResponse:
+        request: dingtalkim__1__0_models.SetRightPanelRequest,
+    ) -> dingtalkim__1__0_models.SetRightPanelResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.TopboxCloseHeaders()
-        return self.topbox_close_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SetRightPanelHeaders()
+        return self.set_right_panel_with_options(request, headers, runtime)
 
-    async def topbox_close_async(
+    async def set_right_panel_async(
         self,
-        request: dingtalkim__1__0_models.TopboxCloseRequest,
-    ) -> dingtalkim__1__0_models.TopboxCloseResponse:
+        request: dingtalkim__1__0_models.SetRightPanelRequest,
+    ) -> dingtalkim__1__0_models.SetRightPanelResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.TopboxCloseHeaders()
-        return await self.topbox_close_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SetRightPanelHeaders()
+        return await self.set_right_panel_with_options_async(request, headers, runtime)
 
     def topbox_close_with_options(
         self,
@@ -3936,9 +5024,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='TopboxClose',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/topBoxes/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.TopboxCloseResponse(),
-            self.do_roarequest('TopboxClose', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/close', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def topbox_close_with_options_async(
@@ -3970,26 +5069,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='TopboxClose',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/topBoxes/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.TopboxCloseResponse(),
-            await self.do_roarequest_async('TopboxClose', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/close', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def topbox_open(
+    def topbox_close(
         self,
-        request: dingtalkim__1__0_models.TopboxOpenRequest,
-    ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        request: dingtalkim__1__0_models.TopboxCloseRequest,
+    ) -> dingtalkim__1__0_models.TopboxCloseResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.TopboxOpenHeaders()
-        return self.topbox_open_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.TopboxCloseHeaders()
+        return self.topbox_close_with_options(request, headers, runtime)
 
-    async def topbox_open_async(
+    async def topbox_close_async(
         self,
-        request: dingtalkim__1__0_models.TopboxOpenRequest,
-    ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        request: dingtalkim__1__0_models.TopboxCloseRequest,
+    ) -> dingtalkim__1__0_models.TopboxCloseResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.TopboxOpenHeaders()
-        return await self.topbox_open_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.TopboxCloseHeaders()
+        return await self.topbox_close_with_options_async(request, headers, runtime)
 
     def topbox_open_with_options(
         self,
@@ -4024,9 +5134,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='TopboxOpen',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/topBoxes/open',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.TopboxOpenResponse(),
-            self.do_roarequest('TopboxOpen', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/open', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def topbox_open_with_options_async(
@@ -4062,26 +5183,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='TopboxOpen',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/topBoxes/open',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.TopboxOpenResponse(),
-            await self.do_roarequest_async('TopboxOpen', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/topBoxes/open', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_avatar(
+    def topbox_open(
         self,
-        request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
-    ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        request: dingtalkim__1__0_models.TopboxOpenRequest,
+    ) -> dingtalkim__1__0_models.TopboxOpenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateGroupAvatarHeaders()
-        return self.update_group_avatar_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.TopboxOpenHeaders()
+        return self.topbox_open_with_options(request, headers, runtime)
 
-    async def update_group_avatar_async(
+    async def topbox_open_async(
         self,
-        request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
-    ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        request: dingtalkim__1__0_models.TopboxOpenRequest,
+    ) -> dingtalkim__1__0_models.TopboxOpenResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateGroupAvatarHeaders()
-        return await self.update_group_avatar_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.TopboxOpenHeaders()
+        return await self.topbox_open_with_options_async(request, headers, runtime)
 
     def update_group_avatar_with_options(
         self,
@@ -4104,9 +5236,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupAvatar',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/avatars',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateGroupAvatarResponse(),
-            self.do_roarequest('UpdateGroupAvatar', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/avatars', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_avatar_with_options_async(
@@ -4130,26 +5273,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupAvatar',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/avatars',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateGroupAvatarResponse(),
-            await self.do_roarequest_async('UpdateGroupAvatar', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/avatars', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_name(
+    def update_group_avatar(
         self,
-        request: dingtalkim__1__0_models.UpdateGroupNameRequest,
-    ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateGroupNameHeaders()
-        return self.update_group_name_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateGroupAvatarHeaders()
+        return self.update_group_avatar_with_options(request, headers, runtime)
 
-    async def update_group_name_async(
+    async def update_group_avatar_async(
         self,
-        request: dingtalkim__1__0_models.UpdateGroupNameRequest,
-    ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateGroupNameHeaders()
-        return await self.update_group_name_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateGroupAvatarHeaders()
+        return await self.update_group_avatar_with_options_async(request, headers, runtime)
 
     def update_group_name_with_options(
         self,
@@ -4172,9 +5326,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupName',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/names',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateGroupNameResponse(),
-            self.do_roarequest('UpdateGroupName', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/names', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_name_with_options_async(
@@ -4198,26 +5363,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupName',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/names',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateGroupNameResponse(),
-            await self.do_roarequest_async('UpdateGroupName', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interconnections/groups/names', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_permission(
+    def update_group_name(
         self,
-        request: dingtalkim__1__0_models.UpdateGroupPermissionRequest,
-    ) -> dingtalkim__1__0_models.UpdateGroupPermissionResponse:
+        request: dingtalkim__1__0_models.UpdateGroupNameRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateGroupPermissionHeaders()
-        return self.update_group_permission_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateGroupNameHeaders()
+        return self.update_group_name_with_options(request, headers, runtime)
 
-    async def update_group_permission_async(
+    async def update_group_name_async(
         self,
-        request: dingtalkim__1__0_models.UpdateGroupPermissionRequest,
-    ) -> dingtalkim__1__0_models.UpdateGroupPermissionResponse:
+        request: dingtalkim__1__0_models.UpdateGroupNameRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateGroupPermissionHeaders()
-        return await self.update_group_permission_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateGroupNameHeaders()
+        return await self.update_group_name_with_options_async(request, headers, runtime)
 
     def update_group_permission_with_options(
         self,
@@ -4242,9 +5418,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupPermission',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/permissions',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateGroupPermissionResponse(),
-            self.do_roarequest('UpdateGroupPermission', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/permissions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_permission_with_options_async(
@@ -4270,26 +5457,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupPermission',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/permissions',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateGroupPermissionResponse(),
-            await self.do_roarequest_async('UpdateGroupPermission', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/permissions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_group_sub_admin(
+    def update_group_permission(
         self,
-        request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
-    ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
+        request: dingtalkim__1__0_models.UpdateGroupPermissionRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupPermissionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateGroupSubAdminHeaders()
-        return self.update_group_sub_admin_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateGroupPermissionHeaders()
+        return self.update_group_permission_with_options(request, headers, runtime)
 
-    async def update_group_sub_admin_async(
+    async def update_group_permission_async(
         self,
-        request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
-    ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
+        request: dingtalkim__1__0_models.UpdateGroupPermissionRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupPermissionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateGroupSubAdminHeaders()
-        return await self.update_group_sub_admin_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateGroupPermissionHeaders()
+        return await self.update_group_permission_with_options_async(request, headers, runtime)
 
     def update_group_sub_admin_with_options(
         self,
@@ -4314,9 +5512,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupSubAdmin',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/subAdmins',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateGroupSubAdminResponse(),
-            self.do_roarequest('UpdateGroupSubAdmin', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/subAdmins', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_group_sub_admin_with_options_async(
@@ -4342,26 +5551,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateGroupSubAdmin',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/subAdmins',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateGroupSubAdminResponse(),
-            await self.do_roarequest_async('UpdateGroupSubAdmin', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/subAdmins', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_interactive_card(
+    def update_group_sub_admin(
         self,
-        request: dingtalkim__1__0_models.UpdateInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.UpdateInteractiveCardResponse:
+        request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateInteractiveCardHeaders()
-        return self.update_interactive_card_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateGroupSubAdminHeaders()
+        return self.update_group_sub_admin_with_options(request, headers, runtime)
 
-    async def update_interactive_card_async(
+    async def update_group_sub_admin_async(
         self,
-        request: dingtalkim__1__0_models.UpdateInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.UpdateInteractiveCardResponse:
+        request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateInteractiveCardHeaders()
-        return await self.update_interactive_card_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateGroupSubAdminHeaders()
+        return await self.update_group_sub_admin_with_options_async(request, headers, runtime)
 
     def update_interactive_card_with_options(
         self,
@@ -4390,9 +5610,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateInteractiveCardResponse(),
-            self.do_roarequest('UpdateInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interactiveCards', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_interactive_card_with_options_async(
@@ -4422,26 +5653,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interactiveCards',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateInteractiveCardResponse(),
-            await self.do_roarequest_async('UpdateInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/interactiveCards', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_member_ban_words(
+    def update_interactive_card(
         self,
-        request: dingtalkim__1__0_models.UpdateMemberBanWordsRequest,
-    ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
+        request: dingtalkim__1__0_models.UpdateInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.UpdateInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateMemberBanWordsHeaders()
-        return self.update_member_ban_words_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateInteractiveCardHeaders()
+        return self.update_interactive_card_with_options(request, headers, runtime)
 
-    async def update_member_ban_words_async(
+    async def update_interactive_card_async(
         self,
-        request: dingtalkim__1__0_models.UpdateMemberBanWordsRequest,
-    ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
+        request: dingtalkim__1__0_models.UpdateInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.UpdateInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateMemberBanWordsHeaders()
-        return await self.update_member_ban_words_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateInteractiveCardHeaders()
+        return await self.update_interactive_card_with_options_async(request, headers, runtime)
 
     def update_member_ban_words_with_options(
         self,
@@ -4468,9 +5710,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateMemberBanWords',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/muteMembers/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateMemberBanWordsResponse(),
-            self.do_roarequest('UpdateMemberBanWords', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/muteMembers/set', 'none', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_member_ban_words_with_options_async(
@@ -4498,26 +5751,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateMemberBanWords',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/muteMembers/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateMemberBanWordsResponse(),
-            await self.do_roarequest_async('UpdateMemberBanWords', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/sceneGroups/muteMembers/set', 'none', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_member_group_nick(
+    def update_member_ban_words(
         self,
-        request: dingtalkim__1__0_models.UpdateMemberGroupNickRequest,
-    ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
+        request: dingtalkim__1__0_models.UpdateMemberBanWordsRequest,
+    ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateMemberGroupNickHeaders()
-        return self.update_member_group_nick_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateMemberBanWordsHeaders()
+        return self.update_member_ban_words_with_options(request, headers, runtime)
 
-    async def update_member_group_nick_async(
+    async def update_member_ban_words_async(
         self,
-        request: dingtalkim__1__0_models.UpdateMemberGroupNickRequest,
-    ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
+        request: dingtalkim__1__0_models.UpdateMemberBanWordsRequest,
+    ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateMemberGroupNickHeaders()
-        return await self.update_member_group_nick_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateMemberBanWordsHeaders()
+        return await self.update_member_ban_words_with_options_async(request, headers, runtime)
 
     def update_member_group_nick_with_options(
         self,
@@ -4542,9 +5806,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateMemberGroupNick',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/members/groupNicks',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateMemberGroupNickResponse(),
-            self.do_roarequest('UpdateMemberGroupNick', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupNicks', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_member_group_nick_with_options_async(
@@ -4570,26 +5845,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateMemberGroupNick',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/members/groupNicks',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateMemberGroupNickResponse(),
-            await self.do_roarequest_async('UpdateMemberGroupNick', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupNicks', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_robot_in_org(
+    def update_member_group_nick(
         self,
-        request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
-    ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        request: dingtalkim__1__0_models.UpdateMemberGroupNickRequest,
+    ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateRobotInOrgHeaders()
-        return self.update_robot_in_org_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateMemberGroupNickHeaders()
+        return self.update_member_group_nick_with_options(request, headers, runtime)
 
-    async def update_robot_in_org_async(
+    async def update_member_group_nick_async(
         self,
-        request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
-    ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        request: dingtalkim__1__0_models.UpdateMemberGroupNickRequest,
+    ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateRobotInOrgHeaders()
-        return await self.update_robot_in_org_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateMemberGroupNickHeaders()
+        return await self.update_member_group_nick_with_options_async(request, headers, runtime)
 
     def update_robot_in_org_with_options(
         self,
@@ -4624,9 +5910,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateRobotInOrg',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/robots',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateRobotInOrgResponse(),
-            self.do_roarequest('UpdateRobotInOrg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/robots', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_robot_in_org_with_options_async(
@@ -4662,26 +5959,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateRobotInOrg',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/organizations/robots',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateRobotInOrgResponse(),
-            await self.do_roarequest_async('UpdateRobotInOrg', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/organizations/robots', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_robot_interactive_card(
+    def update_robot_in_org(
         self,
-        request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
+    ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
-        return self.update_robot_interactive_card_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateRobotInOrgHeaders()
+        return self.update_robot_in_org_with_options(request, headers, runtime)
 
-    async def update_robot_interactive_card_async(
+    async def update_robot_in_org_async(
         self,
-        request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
-    ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
+    ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
-        return await self.update_robot_interactive_card_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateRobotInOrgHeaders()
+        return await self.update_robot_in_org_with_options_async(request, headers, runtime)
 
     def update_robot_interactive_card_with_options(
         self,
@@ -4710,9 +6018,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateRobotInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/robots/interactiveCards',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse(),
-            self.do_roarequest('UpdateRobotInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/robots/interactiveCards', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_robot_interactive_card_with_options_async(
@@ -4742,26 +6061,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateRobotInteractiveCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/robots/interactiveCards',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse(),
-            await self.do_roarequest_async('UpdateRobotInteractiveCard', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/robots/interactiveCards', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_the_group_roles_of_group_member(
+    def update_robot_interactive_card(
         self,
-        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
-        return self.update_the_group_roles_of_group_member_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
+        return self.update_robot_interactive_card_with_options(request, headers, runtime)
 
-    async def update_the_group_roles_of_group_member_async(
+    async def update_robot_interactive_card_async(
         self,
-        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
+    ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
-        return await self.update_the_group_roles_of_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
+        return await self.update_robot_interactive_card_with_options_async(request, headers, runtime)
 
     def update_the_group_roles_of_group_member_with_options(
         self,
@@ -4786,9 +6116,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateTheGroupRolesOfGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/members/groupRoles',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse(),
-            self.do_roarequest('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupRoles', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_the_group_roles_of_group_member_with_options_async(
@@ -4814,26 +6155,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateTheGroupRolesOfGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/members/groupRoles',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse(),
-            await self.do_roarequest_async('UpdateTheGroupRolesOfGroupMember', 'im_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/im/sceneGroups/members/groupRoles', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def add_group_member(
+    def update_the_group_roles_of_group_member(
         self,
-        request: dingtalkim__1__0_models.AddGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.AddGroupMemberResponse:
+        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.AddGroupMemberHeaders()
-        return self.add_group_member_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
+        return self.update_the_group_roles_of_group_member_with_options(request, headers, runtime)
 
-    async def add_group_member_async(
+    async def update_the_group_roles_of_group_member_async(
         self,
-        request: dingtalkim__1__0_models.AddGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.AddGroupMemberResponse:
+        request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.AddGroupMemberHeaders()
-        return await self.add_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
+        return await self.update_the_group_roles_of_group_member_with_options_async(request, headers, runtime)
 
     def add_group_member_with_options(
         self,
@@ -4860,9 +6212,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='addGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AddGroupMemberResponse(),
-            self.do_roarequest('addGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/members', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def add_group_member_with_options_async(
@@ -4890,26 +6253,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='addGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.AddGroupMemberResponse(),
-            await self.do_roarequest_async('addGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/members', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def remove_group_member(
+    def add_group_member(
         self,
-        request: dingtalkim__1__0_models.RemoveGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.RemoveGroupMemberResponse:
+        request: dingtalkim__1__0_models.AddGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.AddGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.RemoveGroupMemberHeaders()
-        return self.remove_group_member_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.AddGroupMemberHeaders()
+        return self.add_group_member_with_options(request, headers, runtime)
 
-    async def remove_group_member_async(
+    async def add_group_member_async(
         self,
-        request: dingtalkim__1__0_models.RemoveGroupMemberRequest,
-    ) -> dingtalkim__1__0_models.RemoveGroupMemberResponse:
+        request: dingtalkim__1__0_models.AddGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.AddGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.RemoveGroupMemberHeaders()
-        return await self.remove_group_member_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.AddGroupMemberHeaders()
+        return await self.add_group_member_with_options_async(request, headers, runtime)
 
     def remove_group_member_with_options(
         self,
@@ -4936,9 +6310,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='removeGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/members/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.RemoveGroupMemberResponse(),
-            self.do_roarequest('removeGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/members/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def remove_group_member_with_options_async(
@@ -4966,26 +6351,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='removeGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/groups/members/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.RemoveGroupMemberResponse(),
-            await self.do_roarequest_async('removeGroupMember', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/groups/members/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_ding_message(
+    def remove_group_member(
         self,
-        request: dingtalkim__1__0_models.SendDingMessageRequest,
-    ) -> dingtalkim__1__0_models.SendDingMessageResponse:
+        request: dingtalkim__1__0_models.RemoveGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.RemoveGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendDingMessageHeaders()
-        return self.send_ding_message_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.RemoveGroupMemberHeaders()
+        return self.remove_group_member_with_options(request, headers, runtime)
 
-    async def send_ding_message_async(
+    async def remove_group_member_async(
         self,
-        request: dingtalkim__1__0_models.SendDingMessageRequest,
-    ) -> dingtalkim__1__0_models.SendDingMessageResponse:
+        request: dingtalkim__1__0_models.RemoveGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.RemoveGroupMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendDingMessageHeaders()
-        return await self.send_ding_message_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.RemoveGroupMemberHeaders()
+        return await self.remove_group_member_with_options_async(request, headers, runtime)
 
     def send_ding_message_with_options(
         self,
@@ -5016,9 +6412,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='sendDingMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/dingMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendDingMessageResponse(),
-            self.do_roarequest('sendDingMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/dingMessages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_ding_message_with_options_async(
@@ -5050,26 +6457,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='sendDingMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/dingMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendDingMessageResponse(),
-            await self.do_roarequest_async('sendDingMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/dingMessages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_message(
+    def send_ding_message(
         self,
-        request: dingtalkim__1__0_models.SendMessageRequest,
-    ) -> dingtalkim__1__0_models.SendMessageResponse:
+        request: dingtalkim__1__0_models.SendDingMessageRequest,
+    ) -> dingtalkim__1__0_models.SendDingMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendMessageHeaders()
-        return self.send_message_with_options(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendDingMessageHeaders()
+        return self.send_ding_message_with_options(request, headers, runtime)
 
-    async def send_message_async(
+    async def send_ding_message_async(
         self,
-        request: dingtalkim__1__0_models.SendMessageRequest,
-    ) -> dingtalkim__1__0_models.SendMessageResponse:
+        request: dingtalkim__1__0_models.SendDingMessageRequest,
+    ) -> dingtalkim__1__0_models.SendDingMessageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkim__1__0_models.SendMessageHeaders()
-        return await self.send_message_with_options_async(request, headers, runtime)
+        headers = dingtalkim__1__0_models.SendDingMessageHeaders()
+        return await self.send_ding_message_with_options_async(request, headers, runtime)
 
     def send_message_with_options(
         self,
@@ -5100,9 +6518,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='sendMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendMessageResponse(),
-            self.do_roarequest('sendMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/messages/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_message_with_options_async(
@@ -5134,7 +6563,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='sendMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/interconnections/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkim__1__0_models.SendMessageResponse(),
-            await self.do_roarequest_async('sendMessage', 'im_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/im/interconnections/messages/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def send_message(
+        self,
+        request: dingtalkim__1__0_models.SendMessageRequest,
+    ) -> dingtalkim__1__0_models.SendMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendMessageHeaders()
+        return self.send_message_with_options(request, headers, runtime)
+
+    async def send_message_async(
+        self,
+        request: dingtalkim__1__0_models.SendMessageRequest,
+    ) -> dingtalkim__1__0_models.SendMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendMessageHeaders()
+        return await self.send_message_with_options_async(request, headers, runtime)

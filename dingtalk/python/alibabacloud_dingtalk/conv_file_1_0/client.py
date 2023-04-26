@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.conv_file_1_0 import models as dingtalkconv_file__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def get_space(
-        self,
-        request: dingtalkconv_file__1__0_models.GetSpaceRequest,
-    ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkconv_file__1__0_models.GetSpaceHeaders()
-        return self.get_space_with_options(request, headers, runtime)
-
-    async def get_space_async(
-        self,
-        request: dingtalkconv_file__1__0_models.GetSpaceRequest,
-    ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkconv_file__1__0_models.GetSpaceHeaders()
-        return await self.get_space_with_options_async(request, headers, runtime)
 
     def get_space_with_options(
         self,
@@ -62,9 +52,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSpace',
+            version='convFile_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/convFile/conversations/spaces/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkconv_file__1__0_models.GetSpaceResponse(),
-            self.do_roarequest('GetSpace', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/conversations/spaces/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_space_with_options_async(
@@ -90,26 +91,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='GetSpace',
+            version='convFile_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/convFile/conversations/spaces/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkconv_file__1__0_models.GetSpaceResponse(),
-            await self.do_roarequest_async('GetSpace', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/conversations/spaces/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send(
+    def get_space(
         self,
-        request: dingtalkconv_file__1__0_models.SendRequest,
-    ) -> dingtalkconv_file__1__0_models.SendResponse:
+        request: dingtalkconv_file__1__0_models.GetSpaceRequest,
+    ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkconv_file__1__0_models.SendHeaders()
-        return self.send_with_options(request, headers, runtime)
+        headers = dingtalkconv_file__1__0_models.GetSpaceHeaders()
+        return self.get_space_with_options(request, headers, runtime)
 
-    async def send_async(
+    async def get_space_async(
         self,
-        request: dingtalkconv_file__1__0_models.SendRequest,
-    ) -> dingtalkconv_file__1__0_models.SendResponse:
+        request: dingtalkconv_file__1__0_models.GetSpaceRequest,
+    ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkconv_file__1__0_models.SendHeaders()
-        return await self.send_with_options_async(request, headers, runtime)
+        headers = dingtalkconv_file__1__0_models.GetSpaceHeaders()
+        return await self.get_space_with_options_async(request, headers, runtime)
 
     def send_with_options(
         self,
@@ -138,9 +150,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='Send',
+            version='convFile_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/convFile/conversations/files/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkconv_file__1__0_models.SendResponse(),
-            self.do_roarequest('Send', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/conversations/files/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_with_options_async(
@@ -170,26 +193,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='Send',
+            version='convFile_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/convFile/conversations/files/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkconv_file__1__0_models.SendResponse(),
-            await self.do_roarequest_async('Send', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/conversations/files/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_by_app(
+    def send(
         self,
-        request: dingtalkconv_file__1__0_models.SendByAppRequest,
-    ) -> dingtalkconv_file__1__0_models.SendByAppResponse:
+        request: dingtalkconv_file__1__0_models.SendRequest,
+    ) -> dingtalkconv_file__1__0_models.SendResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkconv_file__1__0_models.SendByAppHeaders()
-        return self.send_by_app_with_options(request, headers, runtime)
+        headers = dingtalkconv_file__1__0_models.SendHeaders()
+        return self.send_with_options(request, headers, runtime)
 
-    async def send_by_app_async(
+    async def send_async(
         self,
-        request: dingtalkconv_file__1__0_models.SendByAppRequest,
-    ) -> dingtalkconv_file__1__0_models.SendByAppResponse:
+        request: dingtalkconv_file__1__0_models.SendRequest,
+    ) -> dingtalkconv_file__1__0_models.SendResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkconv_file__1__0_models.SendByAppHeaders()
-        return await self.send_by_app_with_options_async(request, headers, runtime)
+        headers = dingtalkconv_file__1__0_models.SendHeaders()
+        return await self.send_with_options_async(request, headers, runtime)
 
     def send_by_app_with_options(
         self,
@@ -216,9 +250,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendByApp',
+            version='convFile_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/convFile/apps/conversations/files/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkconv_file__1__0_models.SendByAppResponse(),
-            self.do_roarequest('SendByApp', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/apps/conversations/files/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_by_app_with_options_async(
@@ -246,26 +291,37 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendByApp',
+            version='convFile_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/convFile/apps/conversations/files/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkconv_file__1__0_models.SendByAppResponse(),
-            await self.do_roarequest_async('SendByApp', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/apps/conversations/files/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def send_link(
+    def send_by_app(
         self,
-        request: dingtalkconv_file__1__0_models.SendLinkRequest,
-    ) -> dingtalkconv_file__1__0_models.SendLinkResponse:
+        request: dingtalkconv_file__1__0_models.SendByAppRequest,
+    ) -> dingtalkconv_file__1__0_models.SendByAppResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkconv_file__1__0_models.SendLinkHeaders()
-        return self.send_link_with_options(request, headers, runtime)
+        headers = dingtalkconv_file__1__0_models.SendByAppHeaders()
+        return self.send_by_app_with_options(request, headers, runtime)
 
-    async def send_link_async(
+    async def send_by_app_async(
         self,
-        request: dingtalkconv_file__1__0_models.SendLinkRequest,
-    ) -> dingtalkconv_file__1__0_models.SendLinkResponse:
+        request: dingtalkconv_file__1__0_models.SendByAppRequest,
+    ) -> dingtalkconv_file__1__0_models.SendByAppResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkconv_file__1__0_models.SendLinkHeaders()
-        return await self.send_link_with_options_async(request, headers, runtime)
+        headers = dingtalkconv_file__1__0_models.SendByAppHeaders()
+        return await self.send_by_app_with_options_async(request, headers, runtime)
 
     def send_link_with_options(
         self,
@@ -294,9 +350,20 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendLink',
+            version='convFile_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/convFile/conversations/files/links/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkconv_file__1__0_models.SendLinkResponse(),
-            self.do_roarequest('SendLink', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/conversations/files/links/send', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def send_link_with_options_async(
@@ -326,7 +393,34 @@ class Client(OpenApiClient):
             query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='SendLink',
+            version='convFile_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/convFile/conversations/files/links/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkconv_file__1__0_models.SendLinkResponse(),
-            await self.do_roarequest_async('SendLink', 'convFile_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/convFile/conversations/files/links/send', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def send_link(
+        self,
+        request: dingtalkconv_file__1__0_models.SendLinkRequest,
+    ) -> dingtalkconv_file__1__0_models.SendLinkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconv_file__1__0_models.SendLinkHeaders()
+        return self.send_link_with_options(request, headers, runtime)
+
+    async def send_link_async(
+        self,
+        request: dingtalkconv_file__1__0_models.SendLinkRequest,
+    ) -> dingtalkconv_file__1__0_models.SendLinkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconv_file__1__0_models.SendLinkHeaders()
+        return await self.send_link_with_options_async(request, headers, runtime)

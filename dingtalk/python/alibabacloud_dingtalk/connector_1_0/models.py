@@ -77,11 +77,8 @@ class CreateActionRequestActionInfoOutputDataRules(TeaModel):
         operate: str = None,
         property_path: str = None,
     ):
-        # 规则的预期值。
         self.expect_value = expect_value
-        # 操作类型。
         self.operate = operate
-        # 规则的属性路径。
         self.property_path = property_path
 
     def validate(self):
@@ -160,25 +157,16 @@ class CreateActionRequestActionInfo(TeaModel):
         output_mapping_config: CreateActionRequestActionInfoOutputMappingConfig = None,
         output_schema: str = None,
     ):
-        # api请求url path，结合Connector上的apiDomain使用
         self.api_path = api_path
-        # 描述
         self.description = description
-        # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
         self.input_mapping_config = input_mapping_config
-        # 入参schema
         self.input_schema = input_schema
-        # 服务商的执行事件Id
         self.integrator_action_id = integrator_action_id
-        # 服务商的连接器Id
         self.integrator_connector_id = integrator_connector_id
-        # 名称
         self.name = name
-        # 执行动作接口成功调用规则。
         self.output_data_rules = output_data_rules
         self.output_mapping_config = output_mapping_config
-        # 出参schema
         self.output_schema = output_schema
 
     def validate(self):
@@ -307,19 +295,12 @@ class CreateActionResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: str = None,
     ):
-        # 连接平台执行事件id
         self.ding_action_id = ding_action_id
-        # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
-        # 服务商的执行事件id
         self.integrator_action_id = integrator_action_id
-        # 服务商的连接器Id
         self.integrator_connector_id = integrator_connector_id
-        # 错误码
         self.sub_err_code = sub_err_code
-        # 错误信息
         self.sub_err_msg = sub_err_msg
-        # 是否执行成功
         self.success = success
 
     def validate(self):
@@ -371,7 +352,6 @@ class CreateActionResponseBody(TeaModel):
         self,
         item: List[CreateActionResponseBodyItem] = None,
     ):
-        # Id of the request
         self.item = item
 
     def validate(self):
@@ -406,13 +386,16 @@ class CreateActionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateActionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -425,6 +408,8 @@ class CreateActionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -433,6 +418,8 @@ class CreateActionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateActionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -485,15 +472,11 @@ class CreateConnectorRequestConnectorInfo(TeaModel):
         integrator_connector_id: str = None,
         name: str = None,
     ):
-        # 连接器中执行动作的接口路径域名。
         self.api_domain = api_domain
-        # 连接器中执行动作接口的加密签名。
         self.api_secret = api_secret
         self.app_id = app_id
-        # 将apiSecret设置为模板变量。
         self.auth_value_env = auth_value_env
         self.description = description
-        # 将执行动作域名设为环境变量。
         self.domain_env = domain_env
         self.icon_media_id = icon_media_id
         self.integrator_connector_id = integrator_connector_id
@@ -601,15 +584,10 @@ class CreateConnectorResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: bool = None,
     ):
-        # 连接平台connectorId
         self.ding_connector_id = ding_connector_id
-        # 服务商连接器connectorId
         self.integrator_connector_id = integrator_connector_id
-        # 错误码
         self.sub_err_code = sub_err_code
-        # 错误信息
         self.sub_err_msg = sub_err_msg
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -653,7 +631,6 @@ class CreateConnectorResponseBody(TeaModel):
         self,
         item: List[CreateConnectorResponseBodyItem] = None,
     ):
-        # responseUnitList
         self.item = item
 
     def validate(self):
@@ -688,13 +665,16 @@ class CreateConnectorResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateConnectorResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -707,6 +687,8 @@ class CreateConnectorResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -715,6 +697,8 @@ class CreateConnectorResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateConnectorResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -760,9 +744,7 @@ class CreateInvocableInstanceRequest(TeaModel):
         connect_asset_uri: str = None,
         instance_key: str = None,
     ):
-        # 连接资产标识
         self.connect_asset_uri = connect_asset_uri
-        # 关联实例标识
         self.instance_key = instance_key
 
     def validate(self):
@@ -795,9 +777,7 @@ class CreateInvocableInstanceResponseBody(TeaModel):
         connect_asset_uri: str = None,
         version_id: str = None,
     ):
-        # 资产标识
         self.connect_asset_uri = connect_asset_uri
-        # 连接实例版本ID
         self.version_id = version_id
 
     def validate(self):
@@ -828,13 +808,16 @@ class CreateInvocableInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateInvocableInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -847,6 +830,8 @@ class CreateInvocableInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -855,6 +840,8 @@ class CreateInvocableInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateInvocableInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -904,17 +891,11 @@ class CreateTriggerRequestTriggerInfo(TeaModel):
         integrator_trigger_id: str = None,
         name: str = None,
     ):
-        # 描述
         self.description = description
-        # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
-        # 入参jsonSchema
         self.input_schema = input_schema
-        # 服务商的连接器Id，优先使用dingConnectorId，其次使用integratorConnectorId
         self.integrator_connector_id = integrator_connector_id
-        # 服务商的触发事件Id
         self.integrator_trigger_id = integrator_trigger_id
-        # 名称
         self.name = name
 
     def validate(self):
@@ -1009,19 +990,12 @@ class CreateTriggerResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: bool = None,
     ):
-        # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
-        # 连接平台触发事件id
         self.ding_trigger_id = ding_trigger_id
-        # 服务商的连接器Id
         self.integrator_connector_id = integrator_connector_id
-        # 服务商的触发事件id
         self.integrator_trigger_id = integrator_trigger_id
-        # 错误码
         self.sub_err_code = sub_err_code
-        # 错误信息
         self.sub_err_msg = sub_err_msg
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -1073,7 +1047,6 @@ class CreateTriggerResponseBody(TeaModel):
         self,
         item: List[CreateTriggerResponseBodyItem] = None,
     ):
-        # Id of the request
         self.item = item
 
     def validate(self):
@@ -1108,13 +1081,16 @@ class CreateTriggerResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: CreateTriggerResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1127,6 +1103,8 @@ class CreateTriggerResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1135,6 +1113,8 @@ class CreateTriggerResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateTriggerResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1179,7 +1159,6 @@ class GetActionDetailRequest(TeaModel):
         self,
         connect_asset_uri: str = None,
     ):
-        # 连接资产标识
         self.connect_asset_uri = connect_asset_uri
 
     def validate(self):
@@ -1207,7 +1186,6 @@ class GetActionDetailResponseBodyIntegrationConfigCategoryNames(TeaModel):
         self,
         value: str = None,
     ):
-        # 类目名称
         self.value = value
 
     def validate(self):
@@ -1236,9 +1214,7 @@ class GetActionDetailResponseBodyIntegrationConfigProps(TeaModel):
         key: str = None,
         value: str = None,
     ):
-        # 配置的KEY值
         self.key = key
-        # 配置的属性值
         self.value = value
 
     def validate(self):
@@ -1272,11 +1248,8 @@ class GetActionDetailResponseBodyIntegrationConfig(TeaModel):
         entity_name: str = None,
         props: List[GetActionDetailResponseBodyIntegrationConfigProps] = None,
     ):
-        # 类目配置
         self.category_names = category_names
-        # 集成对象的名称
         self.entity_name = entity_name
-        # 其它额外属性
         self.props = props
 
     def validate(self):
@@ -1336,21 +1309,13 @@ class GetActionDetailResponseBody(TeaModel):
         ref_provider_corp_id: str = None,
         ref_type: str = None,
     ):
-        # 连接资产标识
         self.connect_asset_uri = connect_asset_uri
-        # 调用时以JsonSchema描述的入参格式
         self.input_schema = input_schema
-        # 执行动作集成配置信息
         self.integration_config = integration_config
-        # 执行动作的名称
         self.name = name
-        # 调用时以JsonSchema描述的出参格式
         self.output_schema = output_schema
-        # 执行动作的ID
         self.ref_id = ref_id
-        # 执行动作提供组织
         self.ref_provider_corp_id = ref_provider_corp_id
-        # 连接资产类型
         self.ref_type = ref_type
 
     def validate(self):
@@ -1407,13 +1372,16 @@ class GetActionDetailResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetActionDetailResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1426,6 +1394,8 @@ class GetActionDetailResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1434,6 +1404,8 @@ class GetActionDetailResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetActionDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1480,11 +1452,8 @@ class InvokeInstanceRequest(TeaModel):
         input_json_string: str = None,
         instance_key: str = None,
     ):
-        # 连接资产标识
         self.connect_asset_uri = connect_asset_uri
-        # 入参JSON文本
         self.input_json_string = input_json_string
-        # 外部实例唯一标识
         self.instance_key = instance_key
 
     def validate(self):
@@ -1524,15 +1493,10 @@ class InvokeInstanceResponseBody(TeaModel):
         instance_id: str = None,
         output_json: str = None,
     ):
-        # 本次执行耗时
         self.cost = cost
-        # 连接器错误码
         self.error_code = error_code
-        # 连接器错误信息
         self.error_message = error_message
-        # 调用记录的ID
         self.instance_id = instance_id
-        # Id of the request
         self.output_json = output_json
 
     def validate(self):
@@ -1575,13 +1539,16 @@ class InvokeInstanceResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: InvokeInstanceResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1594,6 +1561,8 @@ class InvokeInstanceResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1602,6 +1571,8 @@ class InvokeInstanceResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = InvokeInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1652,19 +1623,12 @@ class PullDataByPageRequest(TeaModel):
         min_datetime: int = None,
         next_token: str = None,
     ):
-        # 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
         self.app_id = app_id
-        # 要拉取的主数据模型id。
         self.data_model_id = data_model_id
-        # 用于过滤时间范围的字段，包含数据创建时间(dataGmtCreate)和数据修改时间(dataGmtModified)，如不传则不过滤。
         self.datetime_filter_field = datetime_filter_field
-        # 当配置了datetimeFilterField字段后，数据的时间终点，如果不传则按最新一条数据作为终点。
         self.max_datetime = max_datetime
-        # 单次获取的最大记录条数，最大限制100条。
         self.max_results = max_results
-        # 当配置了datetimeFilterField字段后，数据的时间起点，如果不传则将最早一条数据作为起点。
         self.min_datetime = min_datetime
-        # 用于翻页的游标，如果为空则从第一条数据开始查询。
         self.next_token = next_token
 
     def validate(self):
@@ -1722,19 +1686,12 @@ class PullDataByPageResponseBodyList(TeaModel):
         data_modified_app_type: str = None,
         json_data: str = None,
     ):
-        # 创建数据的应用id。
         self.data_create_app_id = data_create_app_id
-        # 创建数据的应用类型，isv应用为premium_microapp。
         self.data_create_app_type = data_create_app_type
-        # 数据创建时间。
         self.data_gmt_create = data_gmt_create
-        # 数据最后修改时间。
         self.data_gmt_modified = data_gmt_modified
-        # 最后修改数据的应用id。
         self.data_modified_app_id = data_modified_app_id
-        # 最后修改数据的应用类型，取值同dataCreateAppType。
         self.data_modified_app_type = data_modified_app_type
-        # 数据完整内容。
         self.json_data = json_data
 
     def validate(self):
@@ -1788,11 +1745,8 @@ class PullDataByPageResponseBody(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # resultList
         self.list = list
-        # 单次获取的最大记录条数。
         self.max_results = max_results
-        # 用于查看下一页数据的游标，如果为空则说明没有更多数据了。
         self.next_token = next_token
 
     def validate(self):
@@ -1835,13 +1789,16 @@ class PullDataByPageResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PullDataByPageResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -1854,6 +1811,8 @@ class PullDataByPageResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -1862,6 +1821,8 @@ class PullDataByPageResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PullDataByPageResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -1907,9 +1868,7 @@ class PullDataByPkRequest(TeaModel):
         app_id: str = None,
         primary_key: str = None,
     ):
-        # 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
         self.app_id = app_id
-        # 数据的主键字段值。
         self.primary_key = primary_key
 
     def validate(self):
@@ -1947,19 +1906,12 @@ class PullDataByPkResponseBody(TeaModel):
         data_modified_app_type: str = None,
         json_data: str = None,
     ):
-        # 创建数据的应用id。
         self.data_create_app_id = data_create_app_id
-        # 创建数据的应用类型，isv应用为premium_microapp。
         self.data_create_app_type = data_create_app_type
-        # 数据创建时间。
         self.data_gmt_create = data_gmt_create
-        # 数据最后修改时间。
         self.data_gmt_modified = data_gmt_modified
-        # 最后修改数据的应用id。
         self.data_modified_app_id = data_modified_app_id
-        # 最后修改数据的应用类型，取值同dataCreateAppType。
         self.data_modified_app_type = data_modified_app_type
-        # 数据完整内容。
         self.json_data = json_data
 
     def validate(self):
@@ -2010,13 +1962,16 @@ class PullDataByPkResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: PullDataByPkResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2029,6 +1984,8 @@ class PullDataByPkResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2037,6 +1994,8 @@ class PullDataByPkResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PullDataByPkResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2085,15 +2044,10 @@ class SearchActionsRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # 连接器的ID
         self.connector_id = connector_id
-        # 连接器提供组织ID
         self.connector_provider_corp_id = connector_provider_corp_id
-        # 集成类型，默认只有basic-基础类型
         self.integration_types = integration_types
-        # 最大返回记录数
         self.max_results = max_results
-        # 查询位置，为空表示从头开始
         self.next_token = next_token
 
     def validate(self):
@@ -2146,25 +2100,15 @@ class SearchActionsResponseBodyList(TeaModel):
         name: str = None,
         provider_corp_id: str = None,
     ):
-        # 授权页地址
         self.authority_url = authority_url
-        # 是否已授权
         self.authorized = authorized
-        # 连接资产唯一标识
         self.connect_asset_uri = connect_asset_uri
-        # 执行动作所属连接器ID
         self.connector_id = connector_id
-        # 描述
         self.description = description
-        # 图标
         self.icon = icon
-        # 执行动作的ID
         self.id = id
-        # 集成类型
         self.integration_type = integration_type
-        # 名称
         self.name = name
-        # 提供组织
         self.provider_corp_id = provider_corp_id
 
     def validate(self):
@@ -2231,13 +2175,9 @@ class SearchActionsResponseBody(TeaModel):
         next_token: str = None,
         total_count: int = None,
     ):
-        # 是否有更多记录
         self.has_more = has_more
-        # 执行动作列表
         self.list = list
-        # 下一页位置
         self.next_token = next_token
-        # 总记录数
         self.total_count = total_count
 
     def validate(self):
@@ -2284,13 +2224,16 @@ class SearchActionsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SearchActionsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2303,6 +2246,8 @@ class SearchActionsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2311,6 +2256,8 @@ class SearchActionsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchActionsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2357,11 +2304,8 @@ class SearchConnectorsRequest(TeaModel):
         next_token: str = None,
         type: str = None,
     ):
-        # 最大返回记录数，最多50
         self.max_results = max_results
-        # 查询指定位置的记录，为空则从头开始
         self.next_token = next_token
-        # 查询连接器的类型
         self.type = type
 
     def validate(self):
@@ -2401,15 +2345,10 @@ class SearchConnectorsResponseBodyList(TeaModel):
         name: str = None,
         provider_corp_id: str = None,
     ):
-        # 连接器的描述信息
         self.description = description
-        # 连接器的图标
         self.icon = icon
-        # 连接器的ID
         self.id = id
-        # 连接器的名称
         self.name = name
-        # 连接器的提供组织
         self.provider_corp_id = provider_corp_id
 
     def validate(self):
@@ -2456,13 +2395,9 @@ class SearchConnectorsResponseBody(TeaModel):
         next_token: str = None,
         total_count: str = None,
     ):
-        # 是否有更多记录
         self.has_more = has_more
-        # 连接器信息列表
         self.list = list
-        # 下一页记录的查询位置
         self.next_token = next_token
-        # 总记录数
         self.total_count = total_count
 
     def validate(self):
@@ -2509,13 +2444,16 @@ class SearchConnectorsResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SearchConnectorsResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2528,6 +2466,8 @@ class SearchConnectorsResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2536,6 +2476,8 @@ class SearchConnectorsResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchConnectorsResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2650,7 +2592,6 @@ class SyncDataRequest(TeaModel):
         app_id: str = None,
         trigger_data_list: List[SyncDataRequestTriggerDataList] = None,
     ):
-        # 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
         self.app_id = app_id
         self.trigger_data_list = trigger_data_list
 
@@ -2742,7 +2683,6 @@ class SyncDataResponseBody(TeaModel):
         self,
         list: List[SyncDataResponseBodyList] = None,
     ):
-        # resultList
         self.list = list
 
     def validate(self):
@@ -2777,13 +2717,16 @@ class SyncDataResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: SyncDataResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -2796,6 +2739,8 @@ class SyncDataResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -2804,6 +2749,8 @@ class SyncDataResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncDataResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -2883,11 +2830,8 @@ class UpdateActionRequestActionInfoOutputDataRules(TeaModel):
         operate: str = None,
         property_path: str = None,
     ):
-        # 规则的预期值。
         self.expect_value = expect_value
-        # 操作类型。
         self.operate = operate
-        # 规则的属性路径。
         self.property_path = property_path
 
     def validate(self):
@@ -2967,27 +2911,17 @@ class UpdateActionRequestActionInfo(TeaModel):
         output_mapping_config: UpdateActionRequestActionInfoOutputMappingConfig = None,
         output_schema: str = None,
     ):
-        # api请求url path，结合Connector上的apiDomain使用
         self.api_path = api_path
-        # 描述
         self.description = description
-        # 连接平台的执行动作唯一标识。
         self.ding_action_id = ding_action_id
-        # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
         self.input_mapping_config = input_mapping_config
-        # 入参schema
         self.input_schema = input_schema
-        # 服务商的执行事件Id
         self.integrator_action_id = integrator_action_id
-        # 服务商的连接器Id
         self.integrator_connector_id = integrator_connector_id
-        # 名称
         self.name = name
-        # 执行动作接口成功调用规则。
         self.output_data_rules = output_data_rules
         self.output_mapping_config = output_mapping_config
-        # 出参schema
         self.output_schema = output_schema
 
     def validate(self):
@@ -3120,19 +3054,12 @@ class UpdateActionResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: str = None,
     ):
-        # 连接平台执行事件id
         self.ding_action_id = ding_action_id
-        # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
-        # 服务商的执行事件id
         self.integrator_action_id = integrator_action_id
-        # 服务商的连接器Id
         self.integrator_connector_id = integrator_connector_id
-        # 错误码
         self.sub_err_code = sub_err_code
-        # 错误信息
         self.sub_err_msg = sub_err_msg
-        # 是否执行成功
         self.success = success
 
     def validate(self):
@@ -3184,7 +3111,6 @@ class UpdateActionResponseBody(TeaModel):
         self,
         item: List[UpdateActionResponseBodyItem] = None,
     ):
-        # Id of the request
         self.item = item
 
     def validate(self):
@@ -3219,13 +3145,16 @@ class UpdateActionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateActionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3238,6 +3167,8 @@ class UpdateActionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3246,6 +3177,8 @@ class UpdateActionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateActionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3299,24 +3232,15 @@ class UpdateConnectorRequestConnectorInfo(TeaModel):
         integrator_connector_id: str = None,
         name: str = None,
     ):
-        # 连接器中执行动作的接口路径域名。
         self.api_domain = api_domain
-        # 连接器中执行动作接口的加密签名。
         self.api_secret = api_secret
-        # 应用id。
         self.app_id = app_id
-        # 将执行动作鉴权值设为环境变量。
         self.auth_value_env = auth_value_env
-        # 连接器描述。
         self.description = description
-        # 连接平台连接器唯一标识。
         self.ding_connector_id = ding_connector_id
-        # 将执行动作域名设为环境变量。
         self.domain_env = domain_env
         self.icon_media_id = icon_media_id
-        # 服务商的连接器唯一标识。
         self.integrator_connector_id = integrator_connector_id
-        # 连接器名称。
         self.name = name
 
     def validate(self):
@@ -3425,15 +3349,10 @@ class UpdateConnectorResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: bool = None,
     ):
-        # 连接平台connectorId
         self.ding_connector_id = ding_connector_id
-        # 服务商连接器connectorId
         self.integrator_connector_id = integrator_connector_id
-        # 错误码
         self.sub_err_code = sub_err_code
-        # 错误信息
         self.sub_err_msg = sub_err_msg
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -3477,7 +3396,6 @@ class UpdateConnectorResponseBody(TeaModel):
         self,
         item: List[UpdateConnectorResponseBodyItem] = None,
     ):
-        # responseUnitList
         self.item = item
 
     def validate(self):
@@ -3512,13 +3430,16 @@ class UpdateConnectorResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateConnectorResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3531,6 +3452,8 @@ class UpdateConnectorResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3539,6 +3462,8 @@ class UpdateConnectorResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateConnectorResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -3589,19 +3514,12 @@ class UpdateTriggerRequestTriggerInfo(TeaModel):
         integrator_trigger_id: str = None,
         name: str = None,
     ):
-        # 触发事件描述。
         self.description = description
-        # 连接平台连接器唯一标识。
         self.ding_connector_id = ding_connector_id
-        # 连接平台触发事件唯一标识。
         self.ding_trigger_id = ding_trigger_id
-        # 入参属性描述。
         self.input_schema = input_schema
-        # 服务商的连接器唯一标识。
         self.integrator_connector_id = integrator_connector_id
-        # 服务商的触发事件唯一标识。
         self.integrator_trigger_id = integrator_trigger_id
-        # 触发事件名称。
         self.name = name
 
     def validate(self):
@@ -3700,19 +3618,12 @@ class UpdateTriggerResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: bool = None,
     ):
-        # 连接平台连接器id
         self.ding_connector_id = ding_connector_id
-        # 连接平台触发事件id
         self.ding_trigger_id = ding_trigger_id
-        # 服务商的连接器Id
         self.integrator_connector_id = integrator_connector_id
-        # 服务商的触发事件id
         self.integrator_trigger_id = integrator_trigger_id
-        # 错误码
         self.sub_err_code = sub_err_code
-        # 错误信息
         self.sub_err_msg = sub_err_msg
-        # 是否成功
         self.success = success
 
     def validate(self):
@@ -3764,7 +3675,6 @@ class UpdateTriggerResponseBody(TeaModel):
         self,
         item: List[UpdateTriggerResponseBodyItem] = None,
     ):
-        # Id of the request
         self.item = item
 
     def validate(self):
@@ -3799,13 +3709,16 @@ class UpdateTriggerResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdateTriggerResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -3818,6 +3731,8 @@ class UpdateTriggerResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -3826,6 +3741,8 @@ class UpdateTriggerResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateTriggerResponseBody()
             self.body = temp_model.from_map(m['body'])

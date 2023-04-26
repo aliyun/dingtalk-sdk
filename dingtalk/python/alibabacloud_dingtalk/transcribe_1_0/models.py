@@ -73,7 +73,6 @@ class GetTranscribeBriefResponseBody(TeaModel):
     ):
         self.data = data
         self.status_code = status_code
-        # 用于描述本次请求是否成功的字段
         self.success = success
 
     def validate(self):
@@ -110,13 +109,16 @@ class GetTranscribeBriefResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: GetTranscribeBriefResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -129,6 +131,8 @@ class GetTranscribeBriefResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -137,6 +141,8 @@ class GetTranscribeBriefResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTranscribeBriefResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -183,21 +189,8 @@ class RemovePermissionRequestMembers(TeaModel):
         member_type: str = None,
         policy_type: str = None,
     ):
-        # 执行授权操作的闪记任务的任务Id
         self.member_id = member_id
-        # 要赋予用户的权限名称。该字段表示要授予特定用户的权限名称，由开发者填写。
-        # 
-        # EDITOR：可编辑权限
-        # 
-        # READ_DOWNLOAD：仅可查看、下载
-        # 
-        # READ：只读权限
         self.member_type = member_type
-        # 要被移除的权限，枚举值类型。
-        # "EDITOR", //可编辑权限
-        #     "READ_DOWNLOAD", //仅可查看、下载的权限
-        #     "READ"//只读权限
-        # 
         self.policy_type = policy_type
 
     def validate(self):
@@ -238,9 +231,7 @@ class RemovePermissionRequest(TeaModel):
     ):
         self.biz_type = biz_type
         self.members = members
-        # 任务的创建者uid
         self.task_creator = task_creator
-        # 闪记任务的闪记ID
         self.task_id = task_id
 
     def validate(self):
@@ -317,11 +308,8 @@ class RemovePermissionResponseBody(TeaModel):
         status_code: int = None,
         success: bool = None,
     ):
-        # 当执行出错的时候，移除权限失败的用户昵称列表
         self.data = data
-        # 服务端返回的错误代码
         self.status_code = status_code
-        # 描述本次调用的业务层面是否成功
         self.success = success
 
     def validate(self):
@@ -358,13 +346,16 @@ class RemovePermissionResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: RemovePermissionResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -377,6 +368,8 @@ class RemovePermissionResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -385,6 +378,8 @@ class RemovePermissionResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RemovePermissionResponseBody()
             self.body = temp_model.from_map(m['body'])
@@ -432,13 +427,6 @@ class UpdatePermissionForUsersRequestMembers(TeaModel):
         policy_type: str = None,
     ):
         self.member_id = member_id
-        # 要赋予用户的权限名称。该字段表示要授予特定用户的权限名称，由开发者填写。
-        # 
-        # EDITOR：可编辑权限
-        # 
-        # READ_DOWNLOAD：仅可查看、下载
-        # 
-        # READ：只读权限
         self.member_type = member_type
         self.policy_type = policy_type
 
@@ -478,11 +466,8 @@ class UpdatePermissionForUsersRequest(TeaModel):
         task_creator: int = None,
         operator_uid: int = None,
     ):
-        # 闪记任务的类型。枚举值，从任务详情中获取。
         self.biz_type = biz_type
-        # 被授权的用户信息列表
         self.members = members
-        # 要操作的闪记任务的创建者userId。
         self.task_creator = task_creator
         self.operator_uid = operator_uid
 
@@ -557,13 +542,16 @@ class UpdatePermissionForUsersResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: UpdatePermissionForUsersResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -576,6 +564,8 @@ class UpdatePermissionForUsersResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -584,6 +574,8 @@ class UpdatePermissionForUsersResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdatePermissionForUsersResponseBody()
             self.body = temp_model.from_map(m['body'])

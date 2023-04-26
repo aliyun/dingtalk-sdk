@@ -2,8 +2,10 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
+from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
+from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
 from alibabacloud_tea_util.client import Client as UtilClient
 from alibabacloud_dingtalk.bizfinance_1_0 import models as dingtalkbizfinance__1__0_models
 from alibabacloud_tea_util import models as util_models
@@ -14,30 +16,18 @@ class Client(OpenApiClient):
     """
     *\
     """
+    _client: SPIClient = None
+
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._client = GatewayClientClient()
+        self._spi = self._client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
-
-    def batch_add_invoice(
-        self,
-        request: dingtalkbizfinance__1__0_models.BatchAddInvoiceRequest,
-    ) -> dingtalkbizfinance__1__0_models.BatchAddInvoiceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.BatchAddInvoiceHeaders()
-        return self.batch_add_invoice_with_options(request, headers, runtime)
-
-    async def batch_add_invoice_async(
-        self,
-        request: dingtalkbizfinance__1__0_models.BatchAddInvoiceRequest,
-    ) -> dingtalkbizfinance__1__0_models.BatchAddInvoiceResponse:
-        runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.BatchAddInvoiceHeaders()
-        return await self.batch_add_invoice_with_options_async(request, headers, runtime)
 
     def batch_add_invoice_with_options(
         self,
@@ -60,9 +50,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchAddInvoice',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.BatchAddInvoiceResponse(),
-            self.do_roarequest('BatchAddInvoice', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_add_invoice_with_options_async(
@@ -86,26 +87,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchAddInvoice',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.BatchAddInvoiceResponse(),
-            await self.do_roarequest_async('BatchAddInvoice', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def batch_create_customer(
+    def batch_add_invoice(
         self,
-        request: dingtalkbizfinance__1__0_models.BatchCreateCustomerRequest,
-    ) -> dingtalkbizfinance__1__0_models.BatchCreateCustomerResponse:
+        request: dingtalkbizfinance__1__0_models.BatchAddInvoiceRequest,
+    ) -> dingtalkbizfinance__1__0_models.BatchAddInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.BatchCreateCustomerHeaders()
-        return self.batch_create_customer_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.BatchAddInvoiceHeaders()
+        return self.batch_add_invoice_with_options(request, headers, runtime)
 
-    async def batch_create_customer_async(
+    async def batch_add_invoice_async(
         self,
-        request: dingtalkbizfinance__1__0_models.BatchCreateCustomerRequest,
-    ) -> dingtalkbizfinance__1__0_models.BatchCreateCustomerResponse:
+        request: dingtalkbizfinance__1__0_models.BatchAddInvoiceRequest,
+    ) -> dingtalkbizfinance__1__0_models.BatchAddInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.BatchCreateCustomerHeaders()
-        return await self.batch_create_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.BatchAddInvoiceHeaders()
+        return await self.batch_add_invoice_with_options_async(request, headers, runtime)
 
     def batch_create_customer_with_options(
         self,
@@ -128,9 +140,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchCreateCustomer',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/auxiliaries/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.BatchCreateCustomerResponse(),
-            self.do_roarequest('BatchCreateCustomer', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/auxiliaries/batch', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def batch_create_customer_with_options_async(
@@ -154,26 +177,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='BatchCreateCustomer',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/auxiliaries/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.BatchCreateCustomerResponse(),
-            await self.do_roarequest_async('BatchCreateCustomer', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/auxiliaries/batch', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def check_voucher_status(
+    def batch_create_customer(
         self,
-        request: dingtalkbizfinance__1__0_models.CheckVoucherStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.CheckVoucherStatusResponse:
+        request: dingtalkbizfinance__1__0_models.BatchCreateCustomerRequest,
+    ) -> dingtalkbizfinance__1__0_models.BatchCreateCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.CheckVoucherStatusHeaders()
-        return self.check_voucher_status_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.BatchCreateCustomerHeaders()
+        return self.batch_create_customer_with_options(request, headers, runtime)
 
-    async def check_voucher_status_async(
+    async def batch_create_customer_async(
         self,
-        request: dingtalkbizfinance__1__0_models.CheckVoucherStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.CheckVoucherStatusResponse:
+        request: dingtalkbizfinance__1__0_models.BatchCreateCustomerRequest,
+    ) -> dingtalkbizfinance__1__0_models.BatchCreateCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.CheckVoucherStatusHeaders()
-        return await self.check_voucher_status_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.BatchCreateCustomerHeaders()
+        return await self.batch_create_customer_with_options_async(request, headers, runtime)
 
     def check_voucher_status_with_options(
         self,
@@ -210,9 +244,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CheckVoucherStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/checkVoucherStatus/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.CheckVoucherStatusResponse(),
-            self.do_roarequest('CheckVoucherStatus', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/checkVoucherStatus/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def check_voucher_status_with_options_async(
@@ -250,26 +295,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CheckVoucherStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/checkVoucherStatus/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.CheckVoucherStatusResponse(),
-            await self.do_roarequest_async('CheckVoucherStatus', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/checkVoucherStatus/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_customer(
+    def check_voucher_status(
         self,
-        request: dingtalkbizfinance__1__0_models.CreateCustomerRequest,
-    ) -> dingtalkbizfinance__1__0_models.CreateCustomerResponse:
+        request: dingtalkbizfinance__1__0_models.CheckVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.CheckVoucherStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.CreateCustomerHeaders()
-        return self.create_customer_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.CheckVoucherStatusHeaders()
+        return self.check_voucher_status_with_options(request, headers, runtime)
 
-    async def create_customer_async(
+    async def check_voucher_status_async(
         self,
-        request: dingtalkbizfinance__1__0_models.CreateCustomerRequest,
-    ) -> dingtalkbizfinance__1__0_models.CreateCustomerResponse:
+        request: dingtalkbizfinance__1__0_models.CheckVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.CheckVoucherStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.CreateCustomerHeaders()
-        return await self.create_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.CheckVoucherStatusHeaders()
+        return await self.check_voucher_status_with_options_async(request, headers, runtime)
 
     def create_customer_with_options(
         self,
@@ -310,9 +366,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateCustomer',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/auxiliaries/customers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.CreateCustomerResponse(),
-            self.do_roarequest('CreateCustomer', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/auxiliaries/customers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_customer_with_options_async(
@@ -354,26 +421,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateCustomer',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/auxiliaries/customers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.CreateCustomerResponse(),
-            await self.do_roarequest_async('CreateCustomer', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/auxiliaries/customers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def create_receipt(
+    def create_customer(
         self,
-        request: dingtalkbizfinance__1__0_models.CreateReceiptRequest,
-    ) -> dingtalkbizfinance__1__0_models.CreateReceiptResponse:
+        request: dingtalkbizfinance__1__0_models.CreateCustomerRequest,
+    ) -> dingtalkbizfinance__1__0_models.CreateCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.CreateReceiptHeaders()
-        return self.create_receipt_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.CreateCustomerHeaders()
+        return self.create_customer_with_options(request, headers, runtime)
 
-    async def create_receipt_async(
+    async def create_customer_async(
         self,
-        request: dingtalkbizfinance__1__0_models.CreateReceiptRequest,
-    ) -> dingtalkbizfinance__1__0_models.CreateReceiptResponse:
+        request: dingtalkbizfinance__1__0_models.CreateCustomerRequest,
+    ) -> dingtalkbizfinance__1__0_models.CreateCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.CreateReceiptHeaders()
-        return await self.create_receipt_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.CreateCustomerHeaders()
+        return await self.create_customer_with_options_async(request, headers, runtime)
 
     def create_receipt_with_options(
         self,
@@ -394,9 +472,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateReceipt',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.CreateReceiptResponse(),
-            self.do_roarequest('CreateReceipt', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/receipts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def create_receipt_with_options_async(
@@ -418,26 +507,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='CreateReceipt',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.CreateReceiptResponse(),
-            await self.do_roarequest_async('CreateReceipt', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/receipts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def delete_receipt(
+    def create_receipt(
         self,
-        request: dingtalkbizfinance__1__0_models.DeleteReceiptRequest,
-    ) -> dingtalkbizfinance__1__0_models.DeleteReceiptResponse:
+        request: dingtalkbizfinance__1__0_models.CreateReceiptRequest,
+    ) -> dingtalkbizfinance__1__0_models.CreateReceiptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.DeleteReceiptHeaders()
-        return self.delete_receipt_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.CreateReceiptHeaders()
+        return self.create_receipt_with_options(request, headers, runtime)
 
-    async def delete_receipt_async(
+    async def create_receipt_async(
         self,
-        request: dingtalkbizfinance__1__0_models.DeleteReceiptRequest,
-    ) -> dingtalkbizfinance__1__0_models.DeleteReceiptResponse:
+        request: dingtalkbizfinance__1__0_models.CreateReceiptRequest,
+    ) -> dingtalkbizfinance__1__0_models.CreateReceiptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.DeleteReceiptHeaders()
-        return await self.delete_receipt_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.CreateReceiptHeaders()
+        return await self.create_receipt_with_options_async(request, headers, runtime)
 
     def delete_receipt_with_options(
         self,
@@ -458,9 +558,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteReceipt',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.DeleteReceiptResponse(),
-            self.do_roarequest('DeleteReceipt', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/receipts/remove', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def delete_receipt_with_options_async(
@@ -482,20 +593,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='DeleteReceipt',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.DeleteReceiptResponse(),
-            await self.do_roarequest_async('DeleteReceipt', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/receipts/remove', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_bookkeeping_user_list(self) -> dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse:
+    def delete_receipt(
+        self,
+        request: dingtalkbizfinance__1__0_models.DeleteReceiptRequest,
+    ) -> dingtalkbizfinance__1__0_models.DeleteReceiptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetBookkeepingUserListHeaders()
-        return self.get_bookkeeping_user_list_with_options(headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.DeleteReceiptHeaders()
+        return self.delete_receipt_with_options(request, headers, runtime)
 
-    async def get_bookkeeping_user_list_async(self) -> dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse:
+    async def delete_receipt_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.DeleteReceiptRequest,
+    ) -> dingtalkbizfinance__1__0_models.DeleteReceiptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetBookkeepingUserListHeaders()
-        return await self.get_bookkeeping_user_list_with_options_async(headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.DeleteReceiptHeaders()
+        return await self.delete_receipt_with_options_async(request, headers, runtime)
 
     def get_bookkeeping_user_list_with_options(
         self,
@@ -510,9 +638,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetBookkeepingUserList',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/bookkeeping/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse(),
-            self.do_roarequest('GetBookkeepingUserList', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/bookkeeping/users', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_bookkeeping_user_list_with_options_async(
@@ -528,26 +667,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetBookkeepingUserList',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/bookkeeping/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse(),
-            await self.do_roarequest_async('GetBookkeepingUserList', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/bookkeeping/users', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_category(
-        self,
-        request: dingtalkbizfinance__1__0_models.GetCategoryRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetCategoryResponse:
+    def get_bookkeeping_user_list(self) -> dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetCategoryHeaders()
-        return self.get_category_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetBookkeepingUserListHeaders()
+        return self.get_bookkeeping_user_list_with_options(headers, runtime)
 
-    async def get_category_async(
-        self,
-        request: dingtalkbizfinance__1__0_models.GetCategoryRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetCategoryResponse:
+    async def get_bookkeeping_user_list_async(self) -> dingtalkbizfinance__1__0_models.GetBookkeepingUserListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetCategoryHeaders()
-        return await self.get_category_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetBookkeepingUserListHeaders()
+        return await self.get_bookkeeping_user_list_with_options_async(headers, runtime)
 
     def get_category_with_options(
         self,
@@ -568,9 +712,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCategory',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/categories/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetCategoryResponse(),
-            self.do_roarequest('GetCategory', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/categories/get', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_category_with_options_async(
@@ -592,26 +747,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCategory',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/categories/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetCategoryResponse(),
-            await self.do_roarequest_async('GetCategory', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/categories/get', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_customer(
+    def get_category(
         self,
-        request: dingtalkbizfinance__1__0_models.GetCustomerRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetCustomerResponse:
+        request: dingtalkbizfinance__1__0_models.GetCategoryRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetCategoryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetCustomerHeaders()
-        return self.get_customer_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetCategoryHeaders()
+        return self.get_category_with_options(request, headers, runtime)
 
-    async def get_customer_async(
+    async def get_category_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetCustomerRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetCustomerResponse:
+        request: dingtalkbizfinance__1__0_models.GetCategoryRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetCategoryResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetCustomerHeaders()
-        return await self.get_customer_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetCategoryHeaders()
+        return await self.get_category_with_options_async(request, headers, runtime)
 
     def get_customer_with_options(
         self,
@@ -632,9 +798,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCustomer',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/customers/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetCustomerResponse(),
-            self.do_roarequest('GetCustomer', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/customers/details', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_customer_with_options_async(
@@ -656,26 +833,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetCustomer',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/customers/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetCustomerResponse(),
-            await self.do_roarequest_async('GetCustomer', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/customers/details', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_finance_account(
+    def get_customer(
         self,
-        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+        request: dingtalkbizfinance__1__0_models.GetCustomerRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
-        return self.get_finance_account_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetCustomerHeaders()
+        return self.get_customer_with_options(request, headers, runtime)
 
-    async def get_finance_account_async(
+    async def get_customer_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
+        request: dingtalkbizfinance__1__0_models.GetCustomerRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetCustomerResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
-        return await self.get_finance_account_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetCustomerHeaders()
+        return await self.get_customer_with_options_async(request, headers, runtime)
 
     def get_finance_account_with_options(
         self,
@@ -696,9 +884,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFinanceAccount',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/financeAccounts/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetFinanceAccountResponse(),
-            self.do_roarequest('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/get', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_finance_account_with_options_async(
@@ -720,26 +919,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetFinanceAccount',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/financeAccounts/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetFinanceAccountResponse(),
-            await self.do_roarequest_async('GetFinanceAccount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/get', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_invoice_by_page(
+    def get_finance_account(
         self,
-        request: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetInvoiceByPageResponse:
+        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetInvoiceByPageHeaders()
-        return self.get_invoice_by_page_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
+        return self.get_finance_account_with_options(request, headers, runtime)
 
-    async def get_invoice_by_page_async(
+    async def get_finance_account_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetInvoiceByPageResponse:
+        request: dingtalkbizfinance__1__0_models.GetFinanceAccountRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetFinanceAccountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetInvoiceByPageHeaders()
-        return await self.get_invoice_by_page_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
+        return await self.get_finance_account_with_options_async(request, headers, runtime)
 
     def get_invoice_by_page_with_options(
         self,
@@ -764,9 +974,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetInvoiceByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetInvoiceByPageResponse(),
-            self.do_roarequest('GetInvoiceByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/invoices', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_invoice_by_page_with_options_async(
@@ -792,20 +1013,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetInvoiceByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetInvoiceByPageResponse(),
-            await self.do_roarequest_async('GetInvoiceByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/invoices', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_is_new_version(self) -> dingtalkbizfinance__1__0_models.GetIsNewVersionResponse:
+    def get_invoice_by_page(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetInvoiceByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetIsNewVersionHeaders()
-        return self.get_is_new_version_with_options(headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetInvoiceByPageHeaders()
+        return self.get_invoice_by_page_with_options(request, headers, runtime)
 
-    async def get_is_new_version_async(self) -> dingtalkbizfinance__1__0_models.GetIsNewVersionResponse:
+    async def get_invoice_by_page_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetInvoiceByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetIsNewVersionHeaders()
-        return await self.get_is_new_version_with_options_async(headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetInvoiceByPageHeaders()
+        return await self.get_invoice_by_page_with_options_async(request, headers, runtime)
 
     def get_is_new_version_with_options(
         self,
@@ -820,9 +1058,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetIsNewVersion',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/accounts/uses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetIsNewVersionResponse(),
-            self.do_roarequest('GetIsNewVersion', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/accounts/uses', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_is_new_version_with_options_async(
@@ -838,26 +1087,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='GetIsNewVersion',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/accounts/uses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetIsNewVersionResponse(),
-            await self.do_roarequest_async('GetIsNewVersion', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/accounts/uses', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_product(
-        self,
-        request: dingtalkbizfinance__1__0_models.GetProductRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetProductResponse:
+    def get_is_new_version(self) -> dingtalkbizfinance__1__0_models.GetIsNewVersionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetProductHeaders()
-        return self.get_product_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetIsNewVersionHeaders()
+        return self.get_is_new_version_with_options(headers, runtime)
 
-    async def get_product_async(
-        self,
-        request: dingtalkbizfinance__1__0_models.GetProductRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetProductResponse:
+    async def get_is_new_version_async(self) -> dingtalkbizfinance__1__0_models.GetIsNewVersionResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetProductHeaders()
-        return await self.get_product_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetIsNewVersionHeaders()
+        return await self.get_is_new_version_with_options_async(headers, runtime)
 
     def get_product_with_options(
         self,
@@ -878,9 +1132,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetProduct',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/products',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetProductResponse(),
-            self.do_roarequest('GetProduct', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/products', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_product_with_options_async(
@@ -902,26 +1167,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetProduct',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/products',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetProductResponse(),
-            await self.do_roarequest_async('GetProduct', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/products', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_project(
+    def get_product(
         self,
-        request: dingtalkbizfinance__1__0_models.GetProjectRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetProjectResponse:
+        request: dingtalkbizfinance__1__0_models.GetProductRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetProductResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetProjectHeaders()
-        return self.get_project_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetProductHeaders()
+        return self.get_product_with_options(request, headers, runtime)
 
-    async def get_project_async(
+    async def get_product_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetProjectRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetProjectResponse:
+        request: dingtalkbizfinance__1__0_models.GetProductRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetProductResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetProjectHeaders()
-        return await self.get_project_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetProductHeaders()
+        return await self.get_product_with_options_async(request, headers, runtime)
 
     def get_project_with_options(
         self,
@@ -942,9 +1218,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetProject',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/projects/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetProjectResponse(),
-            self.do_roarequest('GetProject', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/projects/get', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_project_with_options_async(
@@ -966,26 +1253,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetProject',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/projects/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetProjectResponse(),
-            await self.do_roarequest_async('GetProject', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/projects/get', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_receipt(
+    def get_project(
         self,
-        request: dingtalkbizfinance__1__0_models.GetReceiptRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetReceiptResponse:
+        request: dingtalkbizfinance__1__0_models.GetProjectRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetProjectResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetReceiptHeaders()
-        return self.get_receipt_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetProjectHeaders()
+        return self.get_project_with_options(request, headers, runtime)
 
-    async def get_receipt_async(
+    async def get_project_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetReceiptRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetReceiptResponse:
+        request: dingtalkbizfinance__1__0_models.GetProjectRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetProjectResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetReceiptHeaders()
-        return await self.get_receipt_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetProjectHeaders()
+        return await self.get_project_with_options_async(request, headers, runtime)
 
     def get_receipt_with_options(
         self,
@@ -1008,9 +1306,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetReceipt',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetReceiptResponse(),
-            self.do_roarequest('GetReceipt', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/receipts/details', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_receipt_with_options_async(
@@ -1034,26 +1343,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetReceipt',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetReceiptResponse(),
-            await self.do_roarequest_async('GetReceipt', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/receipts/details', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def get_supplier(
+    def get_receipt(
         self,
-        request: dingtalkbizfinance__1__0_models.GetSupplierRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetSupplierResponse:
+        request: dingtalkbizfinance__1__0_models.GetReceiptRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetReceiptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetSupplierHeaders()
-        return self.get_supplier_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetReceiptHeaders()
+        return self.get_receipt_with_options(request, headers, runtime)
 
-    async def get_supplier_async(
+    async def get_receipt_async(
         self,
-        request: dingtalkbizfinance__1__0_models.GetSupplierRequest,
-    ) -> dingtalkbizfinance__1__0_models.GetSupplierResponse:
+        request: dingtalkbizfinance__1__0_models.GetReceiptRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetReceiptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.GetSupplierHeaders()
-        return await self.get_supplier_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetReceiptHeaders()
+        return await self.get_receipt_with_options_async(request, headers, runtime)
 
     def get_supplier_with_options(
         self,
@@ -1074,9 +1394,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSupplier',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/suppliers/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetSupplierResponse(),
-            self.do_roarequest('GetSupplier', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers/details', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_supplier_with_options_async(
@@ -1098,26 +1429,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='GetSupplier',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/suppliers/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.GetSupplierResponse(),
-            await self.do_roarequest_async('GetSupplier', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers/details', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def profession_benefit_consume(
+    def get_supplier(
         self,
-        request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
-    ) -> dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse:
+        request: dingtalkbizfinance__1__0_models.GetSupplierRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetSupplierResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders()
-        return self.profession_benefit_consume_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetSupplierHeaders()
+        return self.get_supplier_with_options(request, headers, runtime)
 
-    async def profession_benefit_consume_async(
+    async def get_supplier_async(
         self,
-        request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
-    ) -> dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse:
+        request: dingtalkbizfinance__1__0_models.GetSupplierRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetSupplierResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders()
-        return await self.profession_benefit_consume_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.GetSupplierHeaders()
+        return await self.get_supplier_with_options_async(request, headers, runtime)
 
     def profession_benefit_consume_with_options(
         self,
@@ -1142,9 +1484,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ProfessionBenefitConsume',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/professions/benefits/consume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse(),
-            self.do_roarequest('ProfessionBenefitConsume', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/professions/benefits/consume', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def profession_benefit_consume_with_options_async(
@@ -1170,26 +1523,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='ProfessionBenefitConsume',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/professions/benefits/consume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse(),
-            await self.do_roarequest_async('ProfessionBenefitConsume', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/professions/benefits/consume', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_category_by_page(
+    def profession_benefit_consume(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryCategoryByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryCategoryByPageResponse:
+        request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryCategoryByPageHeaders()
-        return self.query_category_by_page_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders()
+        return self.profession_benefit_consume_with_options(request, headers, runtime)
 
-    async def query_category_by_page_async(
+    async def profession_benefit_consume_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryCategoryByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryCategoryByPageResponse:
+        request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryCategoryByPageHeaders()
-        return await self.query_category_by_page_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders()
+        return await self.profession_benefit_consume_with_options_async(request, headers, runtime)
 
     def query_category_by_page_with_options(
         self,
@@ -1214,9 +1578,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCategoryByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/categories/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryCategoryByPageResponse(),
-            self.do_roarequest('QueryCategoryByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/categories/list', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_category_by_page_with_options_async(
@@ -1242,26 +1617,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCategoryByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/categories/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryCategoryByPageResponse(),
-            await self.do_roarequest_async('QueryCategoryByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/categories/list', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_customer_by_page(
+    def query_category_by_page(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryCustomerByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryCategoryByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCategoryByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryCustomerByPageHeaders()
-        return self.query_customer_by_page_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryCategoryByPageHeaders()
+        return self.query_category_by_page_with_options(request, headers, runtime)
 
-    async def query_customer_by_page_async(
+    async def query_category_by_page_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryCustomerByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryCategoryByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCategoryByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryCustomerByPageHeaders()
-        return await self.query_customer_by_page_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryCategoryByPageHeaders()
+        return await self.query_category_by_page_with_options_async(request, headers, runtime)
 
     def query_customer_by_page_with_options(
         self,
@@ -1284,9 +1670,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCustomerByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/customers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse(),
-            self.do_roarequest('QueryCustomerByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/customers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_customer_by_page_with_options_async(
@@ -1310,26 +1707,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCustomerByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/customers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse(),
-            await self.do_roarequest_async('QueryCustomerByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/customers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_customer_info(
+    def query_customer_by_page(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryCustomerInfoRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryCustomerInfoResponse:
+        request: dingtalkbizfinance__1__0_models.QueryCustomerByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryCustomerInfoHeaders()
-        return self.query_customer_info_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryCustomerByPageHeaders()
+        return self.query_customer_by_page_with_options(request, headers, runtime)
 
-    async def query_customer_info_async(
+    async def query_customer_by_page_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryCustomerInfoRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryCustomerInfoResponse:
+        request: dingtalkbizfinance__1__0_models.QueryCustomerByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCustomerByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryCustomerInfoHeaders()
-        return await self.query_customer_info_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryCustomerByPageHeaders()
+        return await self.query_customer_by_page_with_options_async(request, headers, runtime)
 
     def query_customer_info_with_options(
         self,
@@ -1354,9 +1762,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCustomerInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/auxiliaries/customers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryCustomerInfoResponse(),
-            self.do_roarequest('QueryCustomerInfo', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/auxiliaries/customers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_customer_info_with_options_async(
@@ -1382,26 +1801,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryCustomerInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/auxiliaries/customers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryCustomerInfoResponse(),
-            await self.do_roarequest_async('QueryCustomerInfo', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/auxiliaries/customers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_enterprise_account_by_page(
+    def query_customer_info(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryCustomerInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCustomerInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageHeaders()
-        return self.query_enterprise_account_by_page_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryCustomerInfoHeaders()
+        return self.query_customer_info_with_options(request, headers, runtime)
 
-    async def query_enterprise_account_by_page_async(
+    async def query_customer_info_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryCustomerInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCustomerInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageHeaders()
-        return await self.query_enterprise_account_by_page_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryCustomerInfoHeaders()
+        return await self.query_customer_info_with_options_async(request, headers, runtime)
 
     def query_enterprise_account_by_page_with_options(
         self,
@@ -1424,9 +1854,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryEnterpriseAccountByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/financeAccounts/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageResponse(),
-            self.do_roarequest('QueryEnterpriseAccountByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/list', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_enterprise_account_by_page_with_options_async(
@@ -1450,20 +1891,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryEnterpriseAccountByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/financeAccounts/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageResponse(),
-            await self.do_roarequest_async('QueryEnterpriseAccountByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/financeAccounts/list', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_finance_company_info(self) -> dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoResponse:
+    def query_enterprise_account_by_page(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoHeaders()
-        return self.query_finance_company_info_with_options(headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageHeaders()
+        return self.query_enterprise_account_by_page_with_options(request, headers, runtime)
 
-    async def query_finance_company_info_async(self) -> dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoResponse:
+    async def query_enterprise_account_by_page_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoHeaders()
-        return await self.query_finance_company_info_with_options_async(headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryEnterpriseAccountByPageHeaders()
+        return await self.query_enterprise_account_by_page_with_options_async(request, headers, runtime)
 
     def query_finance_company_info_with_options(
         self,
@@ -1478,9 +1936,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryFinanceCompanyInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/companies',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoResponse(),
-            self.do_roarequest('QueryFinanceCompanyInfo', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/companies', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_finance_company_info_with_options_async(
@@ -1496,20 +1965,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryFinanceCompanyInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/companies',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoResponse(),
-            await self.do_roarequest_async('QueryFinanceCompanyInfo', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/companies', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_invoice_relation_count(self) -> dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountResponse:
+    def query_finance_company_info(self) -> dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountHeaders()
-        return self.query_invoice_relation_count_with_options(headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoHeaders()
+        return self.query_finance_company_info_with_options(headers, runtime)
 
-    async def query_invoice_relation_count_async(self) -> dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountResponse:
+    async def query_finance_company_info_async(self) -> dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountHeaders()
-        return await self.query_invoice_relation_count_with_options_async(headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryFinanceCompanyInfoHeaders()
+        return await self.query_finance_company_info_with_options_async(headers, runtime)
 
     def query_invoice_relation_count_with_options(
         self,
@@ -1524,9 +2004,20 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryInvoiceRelationCount',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/relationReceipts/counts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountResponse(),
-            self.do_roarequest('QueryInvoiceRelationCount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/invoices/relationReceipts/counts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_invoice_relation_count_with_options_async(
@@ -1542,26 +2033,31 @@ class Client(OpenApiClient):
         req = open_api_models.OpenApiRequest(
             headers=real_headers
         )
+        params = open_api_models.Params(
+            action='QueryInvoiceRelationCount',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/relationReceipts/counts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountResponse(),
-            await self.do_roarequest_async('QueryInvoiceRelationCount', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/invoices/relationReceipts/counts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_permission_by_user_id(
-        self,
-        request: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
+    def query_invoice_relation_count(self) -> dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryPermissionByUserIdHeaders()
-        return self.query_permission_by_user_id_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountHeaders()
+        return self.query_invoice_relation_count_with_options(headers, runtime)
 
-    async def query_permission_by_user_id_async(
-        self,
-        request: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
+    async def query_invoice_relation_count_async(self) -> dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryPermissionByUserIdHeaders()
-        return await self.query_permission_by_user_id_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountHeaders()
+        return await self.query_invoice_relation_count_with_options_async(headers, runtime)
 
     def query_permission_by_user_id_with_options(
         self,
@@ -1582,9 +2078,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryPermissionByUserId',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/permissions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse(),
-            self.do_roarequest('QueryPermissionByUserId', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/permissions', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_permission_by_user_id_with_options_async(
@@ -1606,26 +2113,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryPermissionByUserId',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/permissions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse(),
-            await self.do_roarequest_async('QueryPermissionByUserId', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/permissions', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_permission_role_member(
+    def query_permission_by_user_id(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
+        request: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberHeaders()
-        return self.query_permission_role_member_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryPermissionByUserIdHeaders()
+        return self.query_permission_by_user_id_with_options(request, headers, runtime)
 
-    async def query_permission_role_member_async(
+    async def query_permission_by_user_id_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
+        request: dingtalkbizfinance__1__0_models.QueryPermissionByUserIdRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberHeaders()
-        return await self.query_permission_role_member_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryPermissionByUserIdHeaders()
+        return await self.query_permission_by_user_id_with_options_async(request, headers, runtime)
 
     def query_permission_role_member_with_options(
         self,
@@ -1646,9 +2164,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryPermissionRoleMember',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/roles/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse(),
-            self.do_roarequest('QueryPermissionRoleMember', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/roles/members/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_permission_role_member_with_options_async(
@@ -1670,26 +2199,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryPermissionRoleMember',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/roles/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse(),
-            await self.do_roarequest_async('QueryPermissionRoleMember', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/roles/members/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_product_by_page(
+    def query_permission_role_member(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryProductByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryProductByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryProductByPageHeaders()
-        return self.query_product_by_page_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberHeaders()
+        return self.query_permission_role_member_with_options(request, headers, runtime)
 
-    async def query_product_by_page_async(
+    async def query_permission_role_member_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryProductByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryProductByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryProductByPageHeaders()
-        return await self.query_product_by_page_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberHeaders()
+        return await self.query_permission_role_member_with_options_async(request, headers, runtime)
 
     def query_product_by_page_with_options(
         self,
@@ -1712,9 +2252,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryProductByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/products/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryProductByPageResponse(),
-            self.do_roarequest('QueryProductByPage', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/products/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_product_by_page_with_options_async(
@@ -1738,26 +2289,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryProductByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/products/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryProductByPageResponse(),
-            await self.do_roarequest_async('QueryProductByPage', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/products/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_project_by_page(
+    def query_product_by_page(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryProjectByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryProjectByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryProductByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryProductByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryProjectByPageHeaders()
-        return self.query_project_by_page_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryProductByPageHeaders()
+        return self.query_product_by_page_with_options(request, headers, runtime)
 
-    async def query_project_by_page_async(
+    async def query_product_by_page_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryProjectByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryProjectByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryProductByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryProductByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryProjectByPageHeaders()
-        return await self.query_project_by_page_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryProductByPageHeaders()
+        return await self.query_product_by_page_with_options_async(request, headers, runtime)
 
     def query_project_by_page_with_options(
         self,
@@ -1780,9 +2342,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryProjectByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/projects/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryProjectByPageResponse(),
-            self.do_roarequest('QueryProjectByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/projects/list', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_project_by_page_with_options_async(
@@ -1806,26 +2379,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryProjectByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/projects/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryProjectByPageResponse(),
-            await self.do_roarequest_async('QueryProjectByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/projects/list', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_receipt_detail_for_invoice(
+    def query_project_by_page(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse:
+        request: dingtalkbizfinance__1__0_models.QueryProjectByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryProjectByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceHeaders()
-        return self.query_receipt_detail_for_invoice_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryProjectByPageHeaders()
+        return self.query_project_by_page_with_options(request, headers, runtime)
 
-    async def query_receipt_detail_for_invoice_async(
+    async def query_project_by_page_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse:
+        request: dingtalkbizfinance__1__0_models.QueryProjectByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryProjectByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceHeaders()
-        return await self.query_receipt_detail_for_invoice_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryProjectByPageHeaders()
+        return await self.query_project_by_page_with_options_async(request, headers, runtime)
 
     def query_receipt_detail_for_invoice_with_options(
         self,
@@ -1846,9 +2430,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryReceiptDetailForInvoice',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/receipts/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse(),
-            self.do_roarequest('QueryReceiptDetailForInvoice', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/invoices/receipts/details', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_receipt_detail_for_invoice_with_options_async(
@@ -1870,26 +2465,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryReceiptDetailForInvoice',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/receipts/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse(),
-            await self.do_roarequest_async('QueryReceiptDetailForInvoice', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/invoices/receipts/details', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_receipt_for_invoice(
+    def query_receipt_detail_for_invoice(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceResponse:
+        request: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceHeaders()
-        return self.query_receipt_for_invoice_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceHeaders()
+        return self.query_receipt_detail_for_invoice_with_options(request, headers, runtime)
 
-    async def query_receipt_for_invoice_async(
+    async def query_receipt_detail_for_invoice_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceResponse:
+        request: dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceHeaders()
-        return await self.query_receipt_for_invoice_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptDetailForInvoiceHeaders()
+        return await self.query_receipt_detail_for_invoice_with_options_async(request, headers, runtime)
 
     def query_receipt_for_invoice_with_options(
         self,
@@ -1922,9 +2528,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryReceiptForInvoice',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/receipts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceResponse(),
-            self.do_roarequest('QueryReceiptForInvoice', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/receipts/query', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_receipt_for_invoice_with_options_async(
@@ -1958,26 +2575,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='QueryReceiptForInvoice',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/receipts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceResponse(),
-            await self.do_roarequest_async('QueryReceiptForInvoice', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/receipts/query', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_receipts_base_info(
+    def query_receipt_for_invoice(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoResponse:
+        request: dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoHeaders()
-        return self.query_receipts_base_info_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceHeaders()
+        return self.query_receipt_for_invoice_with_options(request, headers, runtime)
 
-    async def query_receipts_base_info_async(
+    async def query_receipt_for_invoice_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoResponse:
+        request: dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoHeaders()
-        return await self.query_receipts_base_info_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceHeaders()
+        return await self.query_receipt_for_invoice_with_options_async(request, headers, runtime)
 
     def query_receipts_base_info_with_options(
         self,
@@ -2010,9 +2638,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryReceiptsBaseInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts/dataInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoResponse(),
-            self.do_roarequest('QueryReceiptsBaseInfo', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/receipts/dataInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_receipts_base_info_with_options_async(
@@ -2046,26 +2685,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryReceiptsBaseInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts/dataInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoResponse(),
-            await self.do_roarequest_async('QueryReceiptsBaseInfo', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/receipts/dataInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_receipts_by_page(
+    def query_receipts_base_info(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryReceiptsByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryReceiptsByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryReceiptsByPageHeaders()
-        return self.query_receipts_by_page_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoHeaders()
+        return self.query_receipts_base_info_with_options(request, headers, runtime)
 
-    async def query_receipts_by_page_async(
+    async def query_receipts_base_info_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryReceiptsByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryReceiptsByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryReceiptsByPageHeaders()
-        return await self.query_receipts_by_page_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoHeaders()
+        return await self.query_receipts_base_info_with_options_async(request, headers, runtime)
 
     def query_receipts_by_page_with_options(
         self,
@@ -2096,9 +2746,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryReceiptsByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryReceiptsByPageResponse(),
-            self.do_roarequest('QueryReceiptsByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/receipts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_receipts_by_page_with_options_async(
@@ -2130,26 +2791,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryReceiptsByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryReceiptsByPageResponse(),
-            await self.do_roarequest_async('QueryReceiptsByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/receipts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_supplier_by_page(
+    def query_receipts_by_page(
         self,
-        request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryReceiptsByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptsByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QuerySupplierByPageHeaders()
-        return self.query_supplier_by_page_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptsByPageHeaders()
+        return self.query_receipts_by_page_with_options(request, headers, runtime)
 
-    async def query_supplier_by_page_async(
+    async def query_receipts_by_page_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
-    ) -> dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse:
+        request: dingtalkbizfinance__1__0_models.QueryReceiptsByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryReceiptsByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QuerySupplierByPageHeaders()
-        return await self.query_supplier_by_page_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryReceiptsByPageHeaders()
+        return await self.query_receipts_by_page_with_options_async(request, headers, runtime)
 
     def query_supplier_by_page_with_options(
         self,
@@ -2172,9 +2844,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QuerySupplierByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/suppliers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse(),
-            self.do_roarequest('QuerySupplierByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_supplier_by_page_with_options_async(
@@ -2198,26 +2881,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QuerySupplierByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/suppliers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse(),
-            await self.do_roarequest_async('QuerySupplierByPage', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/suppliers', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def query_user_role_list(
+    def query_supplier_by_page(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryUserRoleListRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryUserRoleListResponse:
+        request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryUserRoleListHeaders()
-        return self.query_user_role_list_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QuerySupplierByPageHeaders()
+        return self.query_supplier_by_page_with_options(request, headers, runtime)
 
-    async def query_user_role_list_async(
+    async def query_supplier_by_page_async(
         self,
-        request: dingtalkbizfinance__1__0_models.QueryUserRoleListRequest,
-    ) -> dingtalkbizfinance__1__0_models.QueryUserRoleListResponse:
+        request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QuerySupplierByPageResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.QueryUserRoleListHeaders()
-        return await self.query_user_role_list_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QuerySupplierByPageHeaders()
+        return await self.query_supplier_by_page_with_options_async(request, headers, runtime)
 
     def query_user_role_list_with_options(
         self,
@@ -2238,9 +2932,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryUserRoleList',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/users/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryUserRoleListResponse(),
-            self.do_roarequest('QueryUserRoleList', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/users/roles', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def query_user_role_list_with_options_async(
@@ -2262,26 +2967,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='QueryUserRoleList',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/users/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.QueryUserRoleListResponse(),
-            await self.do_roarequest_async('QueryUserRoleList', 'bizfinance_1.0', 'HTTP', 'GET', 'AK', f'/v1.0/bizfinance/users/roles', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def unbind_apply_receipt_and_invoice_related(
+    def query_user_role_list(
         self,
-        request: dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedRequest,
-    ) -> dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedResponse:
+        request: dingtalkbizfinance__1__0_models.QueryUserRoleListRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryUserRoleListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedHeaders()
-        return self.unbind_apply_receipt_and_invoice_related_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryUserRoleListHeaders()
+        return self.query_user_role_list_with_options(request, headers, runtime)
 
-    async def unbind_apply_receipt_and_invoice_related_async(
+    async def query_user_role_list_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedRequest,
-    ) -> dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedResponse:
+        request: dingtalkbizfinance__1__0_models.QueryUserRoleListRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryUserRoleListResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedHeaders()
-        return await self.unbind_apply_receipt_and_invoice_related_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.QueryUserRoleListHeaders()
+        return await self.query_user_role_list_with_options_async(request, headers, runtime)
 
     def unbind_apply_receipt_and_invoice_related_with_options(
         self,
@@ -2306,9 +3022,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UnbindApplyReceiptAndInvoiceRelated',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/unbind',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedResponse(),
-            self.do_roarequest('UnbindApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/unbind', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def unbind_apply_receipt_and_invoice_related_with_options_async(
@@ -2334,26 +3061,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UnbindApplyReceiptAndInvoiceRelated',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/unbind',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedResponse(),
-            await self.do_roarequest_async('UnbindApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/unbind', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_apply_receipt_and_invoice_related(
+    def unbind_apply_receipt_and_invoice_related(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse:
+        request: dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedRequest,
+    ) -> dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedHeaders()
-        return self.update_apply_receipt_and_invoice_related_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedHeaders()
+        return self.unbind_apply_receipt_and_invoice_related_with_options(request, headers, runtime)
 
-    async def update_apply_receipt_and_invoice_related_async(
+    async def unbind_apply_receipt_and_invoice_related_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse:
+        request: dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedRequest,
+    ) -> dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedHeaders()
-        return await self.update_apply_receipt_and_invoice_related_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UnbindApplyReceiptAndInvoiceRelatedHeaders()
+        return await self.unbind_apply_receipt_and_invoice_related_with_options_async(request, headers, runtime)
 
     def update_apply_receipt_and_invoice_related_with_options(
         self,
@@ -2378,9 +3116,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateApplyReceiptAndInvoiceRelated',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/applyReceipts/relate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse(),
-            self.do_roarequest('UpdateApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/applyReceipts/relate', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_apply_receipt_and_invoice_related_with_options_async(
@@ -2406,26 +3155,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateApplyReceiptAndInvoiceRelated',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/applyReceipts/relate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse(),
-            await self.do_roarequest_async('UpdateApplyReceiptAndInvoiceRelated', 'bizfinance_1.0', 'HTTP', 'POST', 'AK', f'/v1.0/bizfinance/invoices/applyReceipts/relate', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_digital_invoice_org_info(
+    def update_apply_receipt_and_invoice_related(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoHeaders()
-        return self.update_digital_invoice_org_info_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedHeaders()
+        return self.update_apply_receipt_and_invoice_related_with_options(request, headers, runtime)
 
-    async def update_digital_invoice_org_info_async(
+    async def update_apply_receipt_and_invoice_related_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoHeaders()
-        return await self.update_digital_invoice_org_info_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateApplyReceiptAndInvoiceRelatedHeaders()
+        return await self.update_apply_receipt_and_invoice_related_with_options_async(request, headers, runtime)
 
     def update_digital_invoice_org_info_with_options(
         self,
@@ -2452,9 +3212,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateDigitalInvoiceOrgInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/organizationInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse(),
-            self.do_roarequest('UpdateDigitalInvoiceOrgInfo', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/organizationInfos', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_digital_invoice_org_info_with_options_async(
@@ -2482,26 +3253,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateDigitalInvoiceOrgInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/organizationInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse(),
-            await self.do_roarequest_async('UpdateDigitalInvoiceOrgInfo', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/organizationInfos', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_finance_company_info(
+    def update_digital_invoice_org_info(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoHeaders()
-        return self.update_finance_company_info_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoHeaders()
+        return self.update_digital_invoice_org_info_with_options(request, headers, runtime)
 
-    async def update_finance_company_info_async(
+    async def update_digital_invoice_org_info_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoHeaders()
-        return await self.update_finance_company_info_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateDigitalInvoiceOrgInfoHeaders()
+        return await self.update_digital_invoice_org_info_with_options_async(request, headers, runtime)
 
     def update_finance_company_info_with_options(
         self,
@@ -2528,9 +3310,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateFinanceCompanyInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/companies',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoResponse(),
-            self.do_roarequest('UpdateFinanceCompanyInfo', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/companies', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_finance_company_info_with_options_async(
@@ -2558,26 +3351,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateFinanceCompanyInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/companies',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoResponse(),
-            await self.do_roarequest_async('UpdateFinanceCompanyInfo', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/companies', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_abandon_status(
+    def update_finance_company_info(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusHeaders()
-        return self.update_invoice_abandon_status_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoHeaders()
+        return self.update_finance_company_info_with_options(request, headers, runtime)
 
-    async def update_invoice_abandon_status_async(
+    async def update_finance_company_info_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusHeaders()
-        return await self.update_invoice_abandon_status_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoHeaders()
+        return await self.update_finance_company_info_with_options_async(request, headers, runtime)
 
     def update_invoice_abandon_status_with_options(
         self,
@@ -2616,9 +3420,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAbandonStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/abandonStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusResponse(),
-            self.do_roarequest('UpdateInvoiceAbandonStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/abandonStatus', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_abandon_status_with_options_async(
@@ -2658,26 +3473,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAbandonStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/abandonStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusResponse(),
-            await self.do_roarequest_async('UpdateInvoiceAbandonStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/abandonStatus', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_account_period(
+    def update_invoice_abandon_status(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodHeaders()
-        return self.update_invoice_account_period_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusHeaders()
+        return self.update_invoice_abandon_status_with_options(request, headers, runtime)
 
-    async def update_invoice_account_period_async(
+    async def update_invoice_abandon_status_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodHeaders()
-        return await self.update_invoice_account_period_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusHeaders()
+        return await self.update_invoice_abandon_status_with_options_async(request, headers, runtime)
 
     def update_invoice_account_period_with_options(
         self,
@@ -2704,9 +3530,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAccountPeriod',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/accountPeriods',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse(),
-            self.do_roarequest('UpdateInvoiceAccountPeriod', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accountPeriods', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_account_period_with_options_async(
@@ -2734,26 +3571,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAccountPeriod',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/accountPeriods',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse(),
-            await self.do_roarequest_async('UpdateInvoiceAccountPeriod', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accountPeriods', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_accounting_period_date(
+    def update_invoice_account_period(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateHeaders()
-        return self.update_invoice_accounting_period_date_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodHeaders()
+        return self.update_invoice_account_period_with_options(request, headers, runtime)
 
-    async def update_invoice_accounting_period_date_async(
+    async def update_invoice_account_period_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateHeaders()
-        return await self.update_invoice_accounting_period_date_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountPeriodHeaders()
+        return await self.update_invoice_account_period_with_options_async(request, headers, runtime)
 
     def update_invoice_accounting_period_date_with_options(
         self,
@@ -2776,9 +3624,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAccountingPeriodDate',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/accounts/periodDates',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse(),
-            self.do_roarequest('UpdateInvoiceAccountingPeriodDate', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accounts/periodDates', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_accounting_period_date_with_options_async(
@@ -2802,26 +3661,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAccountingPeriodDate',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/accounts/periodDates',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse(),
-            await self.do_roarequest_async('UpdateInvoiceAccountingPeriodDate', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accounts/periodDates', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_accounting_status(
+    def update_invoice_accounting_period_date(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusHeaders()
-        return self.update_invoice_accounting_status_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateHeaders()
+        return self.update_invoice_accounting_period_date_with_options(request, headers, runtime)
 
-    async def update_invoice_accounting_status_async(
+    async def update_invoice_accounting_period_date_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusHeaders()
-        return await self.update_invoice_accounting_status_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateHeaders()
+        return await self.update_invoice_accounting_period_date_with_options_async(request, headers, runtime)
 
     def update_invoice_accounting_status_with_options(
         self,
@@ -2844,9 +3714,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAccountingStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/accounts/statuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse(),
-            self.do_roarequest('UpdateInvoiceAccountingStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accounts/statuses', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_accounting_status_with_options_async(
@@ -2870,26 +3751,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAccountingStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/accounts/statuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse(),
-            await self.do_roarequest_async('UpdateInvoiceAccountingStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/accounts/statuses', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_and_receipt_related(
+    def update_invoice_accounting_status(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedHeaders()
-        return self.update_invoice_and_receipt_related_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusHeaders()
+        return self.update_invoice_accounting_status_with_options(request, headers, runtime)
 
-    async def update_invoice_and_receipt_related_async(
+    async def update_invoice_accounting_status_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedHeaders()
-        return await self.update_invoice_and_receipt_related_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusHeaders()
+        return await self.update_invoice_accounting_status_with_options_async(request, headers, runtime)
 
     def update_invoice_and_receipt_related_with_options(
         self,
@@ -2918,9 +3810,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAndReceiptRelated',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/approvalReceipts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedResponse(),
-            self.do_roarequest('UpdateInvoiceAndReceiptRelated', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/approvalReceipts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_and_receipt_related_with_options_async(
@@ -2950,26 +3853,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceAndReceiptRelated',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/approvalReceipts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedResponse(),
-            await self.do_roarequest_async('UpdateInvoiceAndReceiptRelated', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/approvalReceipts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_ignore_status(
+    def update_invoice_and_receipt_related(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusHeaders()
-        return self.update_invoice_ignore_status_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedHeaders()
+        return self.update_invoice_and_receipt_related_with_options(request, headers, runtime)
 
-    async def update_invoice_ignore_status_async(
+    async def update_invoice_and_receipt_related_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusHeaders()
-        return await self.update_invoice_ignore_status_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceAndReceiptRelatedHeaders()
+        return await self.update_invoice_and_receipt_related_with_options_async(request, headers, runtime)
 
     def update_invoice_ignore_status_with_options(
         self,
@@ -2994,9 +3908,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceIgnoreStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/ignoreStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse(),
-            self.do_roarequest('UpdateInvoiceIgnoreStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/ignoreStatus', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_ignore_status_with_options_async(
@@ -3022,26 +3947,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceIgnoreStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/ignoreStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse(),
-            await self.do_roarequest_async('UpdateInvoiceIgnoreStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/ignoreStatus', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_verify_status(
+    def update_invoice_ignore_status(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
-        return self.update_invoice_verify_status_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusHeaders()
+        return self.update_invoice_ignore_status_with_options(request, headers, runtime)
 
-    async def update_invoice_verify_status_async(
+    async def update_invoice_ignore_status_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
-        return await self.update_invoice_verify_status_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceIgnoreStatusHeaders()
+        return await self.update_invoice_ignore_status_with_options_async(request, headers, runtime)
 
     def update_invoice_verify_status_with_options(
         self,
@@ -3070,9 +4006,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceVerifyStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/verifyStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse(),
-            self.do_roarequest('UpdateInvoiceVerifyStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/verifyStatus', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_verify_status_with_options_async(
@@ -3102,26 +4049,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceVerifyStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/verifyStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse(),
-            await self.do_roarequest_async('UpdateInvoiceVerifyStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/verifyStatus', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_invoice_voucher_status(
+    def update_invoice_verify_status(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusHeaders()
-        return self.update_invoice_voucher_status_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
+        return self.update_invoice_verify_status_with_options(request, headers, runtime)
 
-    async def update_invoice_voucher_status_async(
+    async def update_invoice_verify_status_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusHeaders()
-        return await self.update_invoice_voucher_status_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
+        return await self.update_invoice_verify_status_with_options_async(request, headers, runtime)
 
     def update_invoice_voucher_status_with_options(
         self,
@@ -3150,9 +4108,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceVoucherStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/vouchers/states',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse(),
-            self.do_roarequest('UpdateInvoiceVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/vouchers/states', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_invoice_voucher_status_with_options_async(
@@ -3182,26 +4151,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateInvoiceVoucherStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/vouchers/states',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse(),
-            await self.do_roarequest_async('UpdateInvoiceVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/invoices/vouchers/states', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_receipt(
+    def update_invoice_voucher_status(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateReceiptRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateReceiptHeaders()
-        return self.update_receipt_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusHeaders()
+        return self.update_invoice_voucher_status_with_options(request, headers, runtime)
 
-    async def update_receipt_async(
+    async def update_invoice_voucher_status_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateReceiptRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateReceiptHeaders()
-        return await self.update_receipt_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusHeaders()
+        return await self.update_invoice_voucher_status_with_options_async(request, headers, runtime)
 
     def update_receipt_with_options(
         self,
@@ -3222,9 +4202,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateReceipt',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateReceiptResponse(),
-            self.do_roarequest('UpdateReceipt', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/receipts', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_receipt_with_options_async(
@@ -3246,26 +4237,37 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateReceipt',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/receipts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='json',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateReceiptResponse(),
-            await self.do_roarequest_async('UpdateReceipt', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/receipts', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
-    def update_receipt_voucher_status(
+    def update_receipt(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateReceiptRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusHeaders()
-        return self.update_receipt_voucher_status_with_options(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateReceiptHeaders()
+        return self.update_receipt_with_options(request, headers, runtime)
 
-    async def update_receipt_voucher_status_async(
+    async def update_receipt_async(
         self,
-        request: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusRequest,
-    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse:
+        request: dingtalkbizfinance__1__0_models.UpdateReceiptRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptResponse:
         runtime = util_models.RuntimeOptions()
-        headers = dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusHeaders()
-        return await self.update_receipt_voucher_status_with_options_async(request, headers, runtime)
+        headers = dingtalkbizfinance__1__0_models.UpdateReceiptHeaders()
+        return await self.update_receipt_with_options_async(request, headers, runtime)
 
     def update_receipt_voucher_status_with_options(
         self,
@@ -3296,9 +4298,20 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateReceiptVoucherStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/vouchers/recepits',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse(),
-            self.do_roarequest('UpdateReceiptVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/vouchers/recepits', 'json', req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def update_receipt_voucher_status_with_options_async(
@@ -3330,7 +4343,34 @@ class Client(OpenApiClient):
             headers=real_headers,
             body=OpenApiUtilClient.parse_to_map(body)
         )
+        params = open_api_models.Params(
+            action='UpdateReceiptVoucherStatus',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/vouchers/recepits',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
         return TeaCore.from_map(
             dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse(),
-            await self.do_roarequest_async('UpdateReceiptVoucherStatus', 'bizfinance_1.0', 'HTTP', 'PUT', 'AK', f'/v1.0/bizfinance/vouchers/recepits', 'json', req, runtime)
+            await self.execute_async(params, req, runtime)
         )
+
+    def update_receipt_voucher_status(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusHeaders()
+        return self.update_receipt_voucher_status_with_options(request, headers, runtime)
+
+    async def update_receipt_voucher_status_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateReceiptVoucherStatusHeaders()
+        return await self.update_receipt_voucher_status_with_options_async(request, headers, runtime)

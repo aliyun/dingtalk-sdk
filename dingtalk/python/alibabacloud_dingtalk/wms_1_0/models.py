@@ -45,13 +45,9 @@ class QueryGoodsListRequest(TeaModel):
         next_token: int = None,
         start_time_in_mills: int = None,
     ):
-        # 结束时间
         self.end_time_in_mills = end_time_in_mills
-        # 分页大小
         self.max_results = max_results
-        # 分页起始值
         self.next_token = next_token
-        # 开始时间
         self.start_time_in_mills = start_time_in_mills
 
     def validate(self):
@@ -95,15 +91,10 @@ class QueryGoodsListResponseBodyResultList(TeaModel):
         product_specs: str = None,
         unit: str = None,
     ):
-        # 物料名称
         self.goods_name = goods_name
-        # 物料编号
         self.goods_no = goods_no
-        # 物料ID
         self.instance_id = instance_id
-        # 规格
         self.product_specs = product_specs
-        # 计量单位
         self.unit = unit
 
     def validate(self):
@@ -150,12 +141,9 @@ class QueryGoodsListResponseBodyResult(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
-        # 下次获取数据的游标
         self.has_more = has_more
         self.list = list
-        # 总数
         self.max_results = max_results
-        # 下次获取数据的游标
         self.next_token = next_token
 
     def validate(self):
@@ -204,9 +192,7 @@ class QueryGoodsListResponseBody(TeaModel):
         result: QueryGoodsListResponseBodyResult = None,
         success: bool = None,
     ):
-        # result
         self.result = result
-        # success
         self.success = success
 
     def validate(self):
@@ -239,13 +225,16 @@ class QueryGoodsListResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
+        status_code: int = None,
         body: QueryGoodsListResponseBody = None,
     ):
         self.headers = headers
+        self.status_code = status_code
         self.body = body
 
     def validate(self):
         self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
         self.validate_required(self.body, 'body')
         if self.body:
             self.body.validate()
@@ -258,6 +247,8 @@ class QueryGoodsListResponse(TeaModel):
         result = dict()
         if self.headers is not None:
             result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         if self.body is not None:
             result['body'] = self.body.to_map()
         return result
@@ -266,6 +257,8 @@ class QueryGoodsListResponse(TeaModel):
         m = m or dict()
         if m.get('headers') is not None:
             self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryGoodsListResponseBody()
             self.body = temp_model.from_map(m['body'])
